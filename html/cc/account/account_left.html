@@ -1,0 +1,31 @@
+
+<div class="user_left">
+     <h1>我的彩票</h1>
+     <a href="/account/myaccount.html" page=",myaccount,"><em>我的账户</em></a>
+     <a href="/account/orderlist.html" page=",orderlist,"><em>投注记录</em></a>
+     <a href="/account/chase.html" page=",chase,"><em>追号记录</em></a>
+     <a href="/account/gendan.html" page=",gendan,followme,"><em>自动跟单</em></a>
+     <a href="/account/jiaoyi.html" page=",jiaoyi,"><em>账户明细</em></a>
+     <a href="/account/chongzhi.html" page=",chongzhi,creditCard,card,"><em>充值</em></a>
+     <a href="/account/tikuan.html" page=",tikuan,"><em>提款</em></a>
+     <a href="/account/safecenter.html" page=",safecenter,emailinfo,mibao,mobile,trueinfo,bankinfo,"><em>安全中心</em></a>
+     <a href="/account/baseinfo.html" page=",baseinfo,"><em>基本资料</em></a>
+     <a href="/account/password.html" page=",password,"><em>修改密码</em></a>
+     <a href="/account/myfanli.html" page=",myfanli," id="myfanli" style="display: none;"><em>佣金查询</em></a>
+     <a href="/account/parent.html" page=",parent," id="parent" style="display: none;"><em>用户查询</em></a>
+     <a href="/account/tuiguang.html" page=",tuiguang," id="tuiguang" style="display: none;"><em>推广说明</em></a>
+
+    </div>
+    
+
+<script language="javascript">
+//by jack 2013-01-16
+var filename=location.pathname;
+filename=filename.replace(/(.*\/)*([^.]+).*/ig,"$2");
+$(".user_left a").each(function(i){
+	  var page=$(this).attr("page");
+	  if (page.indexOf(","+filename+",")>-1){
+		  $(this).attr("class","cur");
+	  }
+});
+</script>

@@ -1,0 +1,197 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>网上买彩票_账户中心_银行卡绑定_159彩票网</title>
+<meta name="keywords"
+	content="福利彩票，福彩，体育彩票，体彩，足彩，网上买彩票，彩票合买，彩票开奖，彩票走势图，彩票预测" />
+<meta name="description"
+	content="159彩票网为彩民提供专业的彩票网上投注、合买、开奖结果、走势分析、比分直播等服务，覆盖福彩、体彩、足彩、竞彩、快频等彩种。159彩票网上投注最佳选择！" />
+<link href="/css/new159cai.css" rel="stylesheet" type="text/css" />
+<link href="/css/cai888.css" rel="stylesheet" type="text/css" />
+
+<script type="text/javascript" src="/public/jq2.js"></script>
+<script type="text/javascript" src="/public/jq.js"></script>
+<script type="text/javascript" src="/public/menu.js"></script>
+<script type="text/javascript" src="/public/area.js"></script>
+<script type="text/javascript" src="/public/159cp.js"></script>
+<script type="text/javascript" src="/public/chklogin.js"></script>
+<script type="text/javascript" src="/account/js/bankinfo.js"></script>
+</head>
+<body>
+	<!--#include virtual="/cc/header.html"-->
+	<!--#include virtual="/cc/nav.html"-->
+	<div id="container">
+		<div class="breadcrumb">
+			<p>
+				您现在的位置：<a href="/"><font>159彩票网</font></a> > 我的账户
+			</p>
+		</div>
+
+		<div class="user">
+			<!--#include virtual="/cc/account/account_left.html"-->
+
+			<div class="user_right" id="div1" style="display: none;">
+				<div class="usertitle usertitgd">
+					<h2>银行卡绑定</h2>
+				</div>
+				<div class="czsay">银行卡开户名必须与绑定的身份证一致才能提款！绑定的银行卡只用于提款。</div>
+				<div class="rztab">
+
+					<table width="400" border="0" class="mm">
+						<tr>
+							<td>开户银行名称：</td>
+							<td><select id="bankType" name="carofbank">
+									<option value="">==请选择开户银行==</option>
+									<option value="1">招商银行</option>
+									<option value="2">工商银行</option>
+									<option value="3">建设银行</option>
+									<option value="13">农业银行</option>
+									<option value="4">中国银行</option>
+									<option value="6">交通银行</option>
+									<option value="8">中信银行</option>
+									<option value="9">兴业银行</option>
+									<option value="10">光大银行</option>
+									<option value="11">华夏银行</option>
+									<option value="12">中国民生银行</option>
+									<option value="25">中国邮政储蓄银行</option>
+									<option value="1000">广东发展银行</option>
+									<option value="1001">深圳发展银行</option>
+									<option value="4000">上海浦东发展银行</option>
+									<option value="15">农村信用合作社</option>
+									<option value="16">农村商业银行</option>
+									<option value="17">农村合作银行</option>
+									<option value="18">城市商业银行</option>
+									<option value="19">城市信用合作社</option>
+									<option value="23">平安银行</option>
+									<option value="4001">上海银行</option>
+									<option value="2000">北京银行</option>
+									<option value="22">恒丰银行</option>
+									<option value="24">渤海银行</option>
+									<option value="1002">广州银行</option>
+									<option value="1003">珠海南通银行</option>
+									<option value="3000">天津银行</option>
+									<option value="5000">浙商银行</option>
+									<option value="5001">浙江商业银行</option>
+									<option value="5002">宁波国际银行</option>
+									<option value="5003">宁波银行</option>
+									<option value="5004">温州银行</option>
+									<option value="6000">南京银行</option>
+									<option value="6001">常熟农村商业银行</option>
+									<option value="7000">福建亚洲银行</option>
+									<option value="7001">福建兴业银行</option>
+									<option value="7002">徽商银行</option>
+									<option value="7003">厦门国际银行</option>
+									<option value="8000">青岛市商业银行</option>
+									<option value="8001">济南市商业银行</option>
+									<option value="9000">重庆银行</option>
+									<option value="10000">成都市商业银行</option>
+									<option value="11000">哈尔滨银行</option>
+									<option value="12000">包头市商业银行</option>
+									<option value="13000">南昌市商业银行</option>
+									<option value="14000">贵阳商业银行</option>
+									<option value="15000">兰州市商业银行</option>
+							</select></td>
+						</tr>
+						<tr>
+							<td>省份/城市：</td>
+							<td><select id="province" name="province"
+								onchange="changeProvince(this.options[this.selectedIndex].value, 'select_city', 'city')">
+									<option value="">==请选择==</option>
+									<option value="北京">北京</option>
+									<option value="上海">上海</option>
+									<option value="重庆">重庆</option>
+									<option value="天津">天津</option>
+									<option value="广东">广东</option>
+									<option value="河北">河北</option>
+									<option value="山西">山西</option>
+									<option value="内蒙古">内蒙古</option>
+									<option value="辽宁">辽宁</option>
+									<option value="吉林">吉林</option>
+									<option value="黑龙江">黑龙江</option>
+									<option value="江苏">江苏</option>
+									<option value="浙江">浙江</option>
+									<option value="安徽">安徽</option>
+									<option value="福建">福建</option>
+									<option value="江西">江西</option>
+									<option value="山东">山东</option>
+									<option value="河南">河南</option>
+									<option value="湖北">湖北</option>
+									<option value="湖南">湖南</option>
+									<option value="广西">广西</option>
+									<option value="海南">海南</option>
+									<option value="四川">四川</option>
+									<option value="贵州">贵州</option>
+									<option value="云南">云南</option>
+									<option value="西藏">西藏</option>
+									<option value="陕西">陕西</option>
+									<option value="甘肃">甘肃</option>
+									<option value="青海">青海</option>
+									<option value="宁夏">宁夏</option>
+									<option value="新疆">新疆</option>
+							</select><span id="select_city"><select id="city" name="city">
+										<option value="">==请选择==</option>
+								</select> </span></td>
+						</tr>
+						<tr>
+							<td>支行名称：</td>
+							<td><input type="text" class="text" name="bankname"
+								id="bankname" /></td>
+						</tr>
+						<tr>
+							<td>银行卡号：</td>
+							<td><input type="text" class="text" name="cardnumber"
+								id="cardnumber" /></td>
+						</tr>
+						<tr style="display: none;">
+							<td>159彩密码</td>
+							<td><input name="password" id="password" type="password" /></td>
+						</tr>
+						<tr>
+							<td>&nbsp;</td>
+							<td><a href="javascript:void(0);" class="czbtn" id="submit"
+								style="margin: 0">提交</a></td>
+						</tr>
+					</table>
+				</div>
+
+			</div>
+			<div class="user_right" style="display: none" id="div2">
+				<div class="usertitle usertitgd">
+					<h2>银行卡绑定</h2>
+					<a href="safecenter.html" class="a1">返回安全中心>></a>
+				</div>
+				<div class="rztab">
+
+					<table width="100%" border="0" cellpadding="0" cellspacing="0">
+						<colgroup>
+							<col width="175" />
+							<col width="" />
+						</colgroup>
+						<tr>
+							<td>开户银行名称 ：</td>
+							<td><label id="name"></label>
+							<p>
+									<a id="edit_kh_info">修改开户行信息</a>
+								</p></td>
+
+						</tr>
+						<tr>
+							<td>银行卡号：</td>
+							<td><label id="card"></label></td>
+						</tr>
+					</table>
+				</div>
+				<p class="userp1">
+					<strong>安全服务提示</strong> 1、159彩票网不会泄露您任何绑定的信息。<br />
+					2、真实姓名和银行卡绑定后不可修改。
+				</p>
+			</div>
+
+
+		</div>
+	</div>
+	</div>
+	<!--#include virtual="/cc/footer.html"-->
+</body>
+</html>

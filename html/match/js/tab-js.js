@@ -1,0 +1,54 @@
+﻿	
+$(function(){
+        $(".vs_tab1").mouseover(function(){
+            $(".a1_tab").css('display','block');
+        });
+	$(".a1_tab").mouseout(function(){
+            $(".a1_tab").css('display','none');
+        });
+		$(".vs_tab2").mouseover(function(){
+            $(".a2_tab").css('display','block');
+        });
+	$(".a2_tab").mouseout(function(){
+            $(".a2_tab").css('display','none');
+        });
+		$(".vs_tab3").mouseover(function(){
+            $(".a3_tab").css('display','block');
+        });
+	$(".a3_tab").mouseout(function(){
+            $(".a3_tab").css('display','none');
+        });
+		$(".vs_tab4").mouseover(function(){
+            $(".a4_tab").css('display','block');
+        });
+	$(".a4_tab").mouseout(function(){
+            $(".a4_tab").css('display','none');
+        });
+		$(".vs_tbb1").mouseover(function(){
+            $(".b1_tab").css('display','block');
+        });
+	$(".b1_tab").mouseout(function(){
+            $(".b1_tab").css('display','none');
+        });
+		$(".vs_tbb2").mouseover(function(){
+            $(".b2_tab").css('display','block');
+        });
+	$(".b2_tab").mouseout(function(){
+            $(".b2_tab").css('display','none');
+        });
+		$(".vs_tbb3").mouseover(function(){
+            $(".b3_tab").css('display','block');
+        });
+	$(".b3_tab").mouseout(function(){
+            $(".b3_tab").css('display','none');
+        });
+		$(".vs_tbb4").mouseover(function(){
+            $(".b4_tab").css('display','block');
+        });
+	$(".b4_tab").mouseout(function(){
+            $(".b4_tab").css('display','none');
+        });
+	
+		
+});	
+		

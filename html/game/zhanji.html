@@ -1,0 +1,133 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>159用户奖牌战绩</title>
+<link href="/css/159cai.css"  rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="/public/jq2.js"></script>
+<script type="text/javascript" src="/public/jq.js"></script>
+<script type="text/javascript" src="/public/menu.js"></script>
+<script type="text/javascript" src="/public/159cp.js"></script>
+<script type="text/javascript" src="/public/chklogin.js"></script>
+<script type="text/javascript" src="/game/js/zhanji.js"></script>
+</head>
+
+<body style="background-image:none;">
+<div class="main_tan_1">
+<div class="tan_top">
+ <div class="tan_top_l">
+ </div>
+ <div class="tan_top_m1">
+  <h3>用户战绩</h3>
+ </div>
+ <div class="tan_top_r" onclick="top.Y.closeUrl()">
+ <a href="#"></a>
+ </div>
+</div>
+<div class="tan_mid">
+ <div class="zj_top">
+  <div class="zj_top_1">
+   <table width="100%" border="0">
+   <colgroup>
+   <col width="228" />
+   <col width="260" />
+   <col/>
+   </colgroup>
+  <tr>
+    <td class="r_tb"><strong>用户名：</strong><em id="suid"></em></td>
+    <td><span>战绩:</span><span id="jpnum"><b class="b7 jj"></b><b class="b8 jj"></b><b class="b9 jj"></b></span><a href="/help/helpzjgz.html" target=_blank class="t_a_zj">战绩规则</a></td>
+    <td><span><strong>定制人气：</strong><em id="numbers">931人</em></span><a href="javascript:void(0);" class="t_a_dz" id="dzgd">定制跟单</a></td>
+  </tr>
+</table>
+  </div>
+  <div class="zj_top_2">
+   <ul>
+   <li class="cur" id="tb_1" onclick="HoverLi2(1);"><b class="m_log1"></b><span>足彩</span></li>
+   <li id="tb_2" onclick="HoverLi2(2);"><b class="m_log2"></b><span>数字彩</span></li>
+   <li id="tb_3" onclick="HoverLi2(3);"><b class="m_log3"></b><span>足球单场</span></li>
+   <li id="tb_4" onclick="HoverLi2(4);"><b class="m_log4"></b><span>竞彩足球</span></li>
+   <li id="tb_5" onclick="HoverLi2(5);"><b class="m_log5"></b><span>竞彩篮球</span></li>
+   </ul><p>近三个月<input name="ss" id="ss2" type="radio" value="award" checked="checked"  onclick='jpAwardClick("award")'/>中奖记录<input name="ss" id="ss1" type="radio" value="jp"  onclick='jpAwardClick("jp")'/>奖牌记录</p>
+  </div>
+ </div>
+ <div class="zj_mab">
+ <div class="tb_q">
+ <p id="tbc_01">
+	<input name="as" id="as1" type="radio" value="80" onclick="gameClick('80');"/><label for="as1">胜负彩</label>
+	<input name="as" id="as2" type="radio" value="81" onclick="gameClick('81');"/><label for="as2">任选九</label>
+	<input name="as" id="as3" type="radio" value="82" onclick="gameClick('82');"/><label for="as3">四场进球彩</label>
+	<input name="as" id="as4" type="radio" value="83" onclick="gameClick('83');"/><label for="as4">六场半全场</label>
+ </p>
+ <p id="tbc_02" style="display:none;">
+     <input name="as" id="as5" type="radio" value="01" onclick="gameClick('01');"/><label for="as5">双色球</label>
+     <input name="as" id="as6" type="radio" value="50" onclick="gameClick('50');"/><label for="as6">大乐透</label>
+     <input name="as" id="as7" type="radio" value="03" onclick="gameClick('03');"/><label for="as7">福彩3D</label>
+     <input name="as" id="as8" type="radio" value="07" onclick="gameClick('07');"/><label for="as8">七乐彩</label>
+     <input name="as" id="as9" type="radio" value="53" onclick="gameClick('53');"/><label for="as9">排列3</label>
+     <input name="as" id="as10" type="radio" value="52" onclick="gameClick('52');"/><label for="as10">排列5</label>
+     <input name="as" id="as11" type="radio" value="51" onclick="gameClick('51');"/><label for="as11">七星彩</label>
+    </p>
+    <p id="tbc_03" style="display:none;">
+     <input name="as" id="as12" type="radio" value="85" onclick="gameClick('85');"/><label for="as12">胜平负</label>
+     <input name="as" id="as13" type="radio" value="89" onclick="gameClick('89');"/><label for="as13">总进球数</label>
+     <input name="as" id="as14" type="radio" value="87" onclick="gameClick('87');"/><label for="as14">半全场</label>
+     <input name="as" id="as15" type="radio" value="86" onclick="gameClick('86');"/><label for="as15">比分</label>
+     <input name="as" id="as16" type="radio" value="88" onclick="gameClick('88');"/><label for="as16">上下单双</label>
+    </p>
+    <p id="tbc_04" style="display:none;">
+     <input name="as" id="as17" type="radio" value="90" onclick="gameClick('90');"/><label for="as17">胜平负</label>
+     <input name="as" id="as27" type="radio" value="72" onclick="gameClick('72');"/><label for="as27">让球胜平负</label>
+     <input name="as" id="as18" type="radio" value="93" onclick="gameClick('93');"/><label for="as18">总进球数</label>
+     <input name="as" id="as19" type="radio" value="92" onclick="gameClick('92');"/><label for="as19">半全场</label>
+     <input name="as" id="as20" type="radio" value="91" onclick="gameClick('91');"/><label for="as20">比分</label>
+     <input name="as" id="as25" type="radio" value="70" onclick="gameClick('70');"/><label for="as25">混合投注</label>
+    </p>
+    <p id="tbc_05" style="display:none;">
+     <input name="as" id="as21" type="radio" value="94" onclick="gameClick('94');"/><label for="as21">胜负</label>
+     <input name="as" id="as22" type="radio" value="95" onclick="gameClick('95');"/><label for="as22">让分胜负</label>
+     <input name="as" id="as23" type="radio" value="96" onclick="gameClick('96');"/><label for="as23">胜分差</label>
+     <input name="as" id="as24" type="radio" value="97" onclick="gameClick('97');"/><label for="as24">大小分</label>
+     <input name="as" id="as26" type="radio" value="71" onclick="gameClick('71');"/><label for="as26">混合投注</label>
+    </p>
+ <table width="100%" border="0" cellspacing="0" cellpadding="0" id="showdatalist">
+ <colgroup>
+ <col width="65" />
+ <col width="70" />
+ <col width="160" />
+ <col width="110" />
+ <col width="120" />
+ <col width="130" />
+ <col/>
+ </colgroup>
+  <tr>
+    <td>期号 </td>
+    <td>奖牌</td>
+    <td>方案编号</td>
+    <td>方案金额</td>
+    <td>中奖金额</td>
+    <td>盈利金额</td>
+    <td>回报率</td>
+  </tr>
+</table>
+
+<div class="pagination" id="pagehtml">
+  <a href="#" class="a1" style="margin-right:5px">首页</a>
+  <a href="#" class="a2" style="margin-right:5px">上一页</a>
+  <a href="#" class="a3">1</a>
+  <a href="#" class="a3">2</a>
+  <a href="#" class="a3">3</a><a href="#" class="a3">4</a>
+  <a href="#" class="a2" style="margin-left:10px">下一页</a>
+  <a href="#" class="a1" style="margin-left:5px">尾页</a>
+  <span><input type="text" />共2页，31条记录</span> 
+</div>
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>
+
+
+
+	
+

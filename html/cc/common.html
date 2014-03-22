@@ -1,0 +1,386 @@
+<!--未登录提示层-->
+<div class="main_tan_login" id="loginLay" style="display:none">
+<div class="tan_top">
+ <div class="tan_top_l">
+ </div>
+ <div class="tan_top_login">
+  <h3>用户登录</h3>
+ </div>
+ <div class="tan_top_r" id="flclose">
+ <a href="#"></a>
+ </div>
+</div>
+<div class="tan_mid">
+<table width="330" border="0" cellpadding="0" cellspacing="0" class="log_tab">
+<colgroup>
+<col width="55">
+<col width="220">
+<col>
+</colgroup>
+  <tr>
+    <th>用户名</th>
+    <td><input type="text"  class="text_log" id="uid"/></td>
+    <td></td>
+  </tr>
+  <tr>
+    <th>密  码</th>
+    <td><input type="password"  class="text_log" id="pwd"/></td>
+    <td></td>
+  </tr>
+  <tr>
+    <th></th>
+    <td colspan="2"><a href="javascript:void(0);" id="floginbtn"class="but_log">登&nbsp;&nbsp;录</a></td>
+  </tr>
+  <tr>
+    <th></th>
+    <td><a href="/user/reg.html" target="_blank"class="aa">注册用户</a><a href="/user/getpwd.html" target="_blank"class="aa">忘记密码？</a></td>
+    <td></td>
+  </tr>
+</table>
+<span class="say_4" id="error_user" style="display:none"></span>
+<span class="say_5" id="error_pass" style="display:none"></span>
+</div>
+</div>
+
+<!--默认提示层-->
+<div class="main_tan_yet" id="defLay" style="display:none">
+<div class="tan_top">
+ <div class="tan_top_l">
+ </div>
+ <div class="tan_top_yet">
+  <h3>温馨提示</h3>
+ </div>
+ <div class="tan_top_r" id="defTopClose">
+ <a href="#"></a>
+ </div>
+</div>
+<div class="tan_mid">
+ <span class="suc_reg" id="defConent"></span>
+<a href="#" class="but_log a_auto" id="defCloseBtn" >关 闭</a>
+</div>
+</div>
+<!--号码示例层-->
+<div class="cm_account_znxx1" id="codeTpl" style="display:none;">
+	<div class="cm_znxx_text1">
+		<div class="tips_title clear">
+			<h5 class="cm_left">温馨提示</h5>
+		    <span class="cm_right" id="codeTplClose"></span>
+         </div>
+         <div class="cm_znxx_news1" ><div id="codeTplConent" class="cm_lineheight"></div></div>
+		<div class="cm_znxx_num2 margin"><a href="javascript:void(0);" id="codeTplYes"  style="color: #FFFFFF;display: inline-block;font-weight: bold;height: 30px;line-height: 30px;margin: 0 15px 0 0;text-align: center;width: 80px;">知道了</a></div>
+    </div>
+</div>
+
+<!--余额不足内容-->
+<div class="main_tan_yet" id="addMoneyLay" style="display:none;">
+<div class="tan_top">
+ <div class="tan_top_l">
+ </div>
+ <div class="tan_top_yet">
+  <h3>温馨提示</h3>
+ </div>
+ <div class="tan_top_r" id="addMoneyClose">
+ <a href="#"></a>
+ </div>
+</div>
+<div class="tan_mid">
+ <span class="ye_say">您的可投注余额不足，请及时充值</span>
+<a href="javascript:void(0);" id="addMoneyYes" class="but_log a_auto">立即充值</a>
+</div>
+</div>
+
+<!--自购确认-->
+<div class="cm_account_znxx1" id="b2_dlg" style="display:none;">
+	<div class="cm_znxx_text1">
+		<div class="tips_title clear">
+			<h5 class="cm_left">确认投注内容</h5>
+		    <span class="cm_right" id="b2_dlg_close"></span>
+         </div>
+         <div class="cm_znxx_news1" ><div id="b2_dlg_content" class="cm_lineheight"></div></div>
+		<div class="cm_znxx_num3 margin"><a href="javascript:void(0);" id="b2_dlg_no" class="cm_tkjl_cxbtn1">取 消</a><a href="javascript:void(0);" id="b2_dlg_yes" class="btn_Dora_b">确 定</a></div>
+    </div>
+</div>
+
+<!--机选号码列表-->
+<div class="main_tan_yet" style="width:270px;display:none;" id="jx_dlg">
+<div class="tan_top">
+ <div class="tan_top_l">
+ </div>
+ <div class="tan_top_yet" style="width:223px">
+  <h3>机选号码列表</h3>
+ </div>
+ <div class="tan_top_r" id="jx_dlg_close">
+ <a href="javascript:void(0);"></a>
+ </div>
+</div>
+<div class="tan_mid">
+ <div class="sz_jlist" id="jx_dlg_list" style="width:249px;height:310px; overflow-x:hidden; overflow-y:scroll;">
+ </div>
+<a class="t_a_qx" href="javascript:void(0);" style="margin-left:18px;_margin-left:10px" id="jx_dlg_re">重新机选</a>
+<a class="t_a_qd" href="javascript:void(0);" id="jx_dlg_ok">选好了</a>
+</div>
+</div>
+
+<!--查看胆拖明细列表-->
+<div class="main_tan_yet" style="width:270px;display:none;" id="split_dlg">
+<div class="tan_top">
+ <div class="tan_top_l">
+ </div>
+ <div class="tan_top_yet" style="width:223px">
+  <h3>胆拖明细列表</h3>
+ </div>
+ <div class="tan_top_r" id="split_dlg_close">
+ <a href="javascript:void(0);"></a>
+ </div>
+</div>
+<div class="tan_mid">
+ <div class="sz_jlist" id="split_dlg_list" style="height:220px; overflow-x:hidden; overflow-y:scroll;">
+ </div>
+<a class="t_a_qd" href="javascript:void(0);" style="margin-left:60px;_margin-left:10px" id="split_dlg_ok">选好了</a>
+</div>
+</div>
+
+<div class="cm_account_znxx1" id="example_stand" style="width:280px;display:none;">
+	<div class="cm_znxx_text1">
+		<div class="tips_title clear">
+			<h5 class="cm_left">查看标准投注格式</h5>
+		    <span class="cm_right" id="example_close"></span>
+         </div>
+         <ul class="cm_dtmx_news1 arial" id="example_list" style="height:220px; overflow-x:hidden; overflow-y:scroll;">
+         </ul>
+		<div class="cm_znxx_num2"><a href="javascript:void(0);" class=" cm_block margin" id="example_ok" style="color: #FFFFFF;display: inline-block;font-weight: bold;height: 30;pxline-height: 30px;margin: 0 15px 0 0;text-align: center;width: 80px;">知道了</a></div>
+    </div>
+</div>
+
+<!--温馨提示-->
+<div class="main_tan_yet" id="info_dlg" style="display:none;">
+<div class="tan_top">
+ <div class="tan_top_l">
+ </div>
+ <div class="tan_top_yet">
+  <h3>温馨提示</h3>
+ </div>
+ <div class="tan_top_r" id="info_dlg_close">
+ <a href="javascript:void(0);"></a>
+ </div>
+</div>
+<div class="tan_mid">
+ <p class="wxts_7" id="info_dlg_content"></p>
+ <a  href="javascript:void(0);" class="a_smsuc" id="info_dlg_ok">确定</a>
+</div>
+</div>
+
+<!-- 确认投注内容 -->
+<div class="main_tan_1" id="ishm_dlg" style="display:none;">
+<div class="tan_top">
+ <div class="tan_top_l">
+ </div>
+ <div class="tan_top_m1">
+  <h3 id="ishm_dlg_title">方案代购</h3>
+ </div>
+ <div class="tan_top_r" id="ishm_dlg_close">
+ <a href="javascript:void(0);"></a>
+ </div>
+</div>
+<div class="tan_mid" id="ishm_dlg_content">
+</div>
+<div class="tan_mid">
+<a class="but2" style="margin:20px 20px 15px 340px;float:left;_margin:20px 10px 8px 170px" href="javascript:void(0);"  id="ishm_dlg_yes">确认投注</a><a href="javascript:void(0);" class="a_x_g"  id="ishm_dlg_no">返回修改</a>
+</div>
+</div>
+
+<div class="cm_account_znxx1" id="iszh_dlg" style="display:none; width:690px;">
+	<div class="cm_znxx_text1">
+	  <div class="tips_title clear">
+	    <h5 class="cm_left" id="iszh_dlg_title">方案合买</h5>
+	    <span class="cm_right" id="iszh_dlg_close"></span>
+      </div>
+      <div id="iszh_dlg_content">
+      </div>
+      <div class="margin cm_dz_btn clear" style="margin-top:10px; padding-bottom:10px;">
+      <a href="javascript:void(0);" class="cm_bd_btn cm_left" style="margin-left:0px;"  id="iszh_dlg_yes" >确认投注</a>
+      <a href="javascript:void(0);" class="cm_close_btn cm_left" id="iszh_dlg_no" title=返回修改>返回修改</a></div>
+  </div>
+</div>
+
+<div class="main_tan_yet" id="confirm_dlg" style="display:none;">
+<div class="tan_top">
+ <div class="tan_top_l">
+ </div>
+ <div class="tan_top_yet">
+  <h3>温馨提示</h3>
+ </div>
+ <div class="tan_top_r" id="confirm_dlg_close">
+ <a href="javascript:void(0);"></a>
+ </div>
+</div>
+<div class="tan_mid">
+<span class="s_p_p">
+ <p id="confirm_dlg_content"></p>
+ <a  href="javascript:void(0);" class="p_a" id="confirm_dlg_yes">确定</a><a  href="javascript:void(0);" id="confirm_dlg_no">取消</a></span>
+</div>
+</div>
+
+ <!--认购成功层-->
+<div class="main_tan_2" id="dlg_buysuc" style="display:none;">
+<div class="tan_top">
+ <div class="tan_top_l">
+ </div>
+ <div class="tan_top_m2">
+  <h3>购买成功</h3>
+ </div>
+ <div class="tan_top_r" id="dlg_buysuc_close">
+ <a href="#"></a>
+ </div>
+</div>
+<div class="tan_mid">
+ <span class="buy_sucess" id="dlg_buysuc_content">您好，恭喜您购买成功!</span>
+ <p class="buy_sucess">您还可以选择：<a id="dlg_buysuc_view" href="javascript:void(0);">查看方案详情</a> | <a href="/dating/" target=_blank>购买其它玩法</a><br />
+<strong>查看我的帐户：</strong>
+<a  href="/account/jiaoyi.html" style="padding-left:0">帐户明细</a>|<a href="/account/orderlist.html" target=_blank>投注记录</a>|<a href="/account/chongzhi.html" target=_blank>在线充值</a></p>
+<a href="#" class="but_log a_auto" id="dlg_buysuc_close2">确认</a>
+</div>
+</div>
+
+
+<!--认购成功层-->
+<div class="cm_account_znxx1" id="dlg_suc" style="display:none">
+	<div class="cm_znxx_text1">
+		<div class="tips_title clear">
+			<h5 class="cm_left">温馨提示</h5>
+		    <span class="cm_right" id="dlg_suc_close"></span>
+         </div>
+         <div class="cm_znxx_news1 suc cm_lineheight">
+          <div class="cm_fontsize cm_znxx_a suc_p"><strong>恭喜您购买成功！</strong></div>
+          <div class="suc_p">159祝您中大奖！ <a href="javascript:void 0" class="a1" id="dlg_suc_close2" title="">继续购买&gt;&gt;</a></div>
+          <div class="cm_znxx_a suc_p"><a href="/account/orderlist.html" id="dlg_suc_buyjr">投注记录</a>|<a id="dlg_suc_buymx" href="/account/jiaoyi.html">账户明细</a>|<a id="dlg_suc_addmoney" href="/account/chongzhi.html">在线充值</a></div>
+         </div>         
+		
+    </div>
+</div>
+
+
+<div id="responseJson" style="display:none"><input type="hidden" value="" name="serverTime" id="serverTime" /><input type="hidden" value="" name="endTime" id="endTime" /></div>
+
+<!-- 奖金明细信息弹出层 -->  
+<div class="cpxq_tan" id="T_Detail" style="display: none;"><div class="tan_top">
+ <div class="tan_top_l" style="margin-left:3px">
+ </div>
+ <div class="tan_top_m1" style="width:628px">
+  <h3>出票明细</h3>
+ </div>
+ <div class="tan_top_r">
+ <a id="close_T_Detail" ></a>
+ </div>
+</div>
+  <div class="cpxq_tan_2"><div class="cpxq_tan_m" id="detail_reco">
+  </div><p>提示："出票明细"仅为出票时sp值,比赛场次取消时,计算奖金时sp值按1.0计算；计奖sp以出票sp为准</p></div><div class="cpxq_tan_3"></div></div>
+</div>
+
+<!-- <div class="cpxq_tan" id="T_Detail" style="display: none;"><div class="cpxq_tan_1"><a id="close_T_Detail" ></a></div> -->
+<!--   <div class="cpxq_tan_2"><div class="cpxq_tan_m" id="detail_reco"> -->
+<!--   </div><p>提示：“出票明细”仅为出票时sp值,比赛场次取消时,计算奖金时sp值按1.0计算；计奖sp以出票sp为准</p></div><div class="cpxq_tan_3"></div></div> -->
+
+
+
+<!-- 定制信息弹出层 -->  
+<div class="cm_pup_dz" style="display:none">
+ <div class="cm_dz_text">
+  <div class="tips_title clear"><h5 class="cm_left">定制</h5><span class="cm_right"></span></div>
+  <ul class="cm_dz_news arial clear">
+   <li class="cm_dz_news_li1">用户名：<a href="#" class="a1">dongdong999</a></li>
+   <li class="cm_dz_news_li2">彩种：<a href="#" class="a1">双色球</a></li>
+   <li class="cm_dz_news_li3">战绩：</li>
+   <li class="cm_dz_news_li1">定制人数：<b class="cm_yellow cm_fontsize">8</b>人</li>
+   <li class="cm_dz_news_li2">跟单总金额：<b class="cm_yellow cm_fontsize">45</b>人</li>
+  </ul> 
+  <div class="cm_dz_bottom_text">
+   <ul class="clear">
+    <li><input name="" type="radio" value="" checked="checked" />按固定金额自动跟单</li>
+    <li><input name="" type="radio" value="" />按百分比自动跟单</li>
+   </ul>
+ <!-- 按固定金额自动跟单内容   --> 
+   <div class="cm_lineheight">
+    <div class="cm_dz_margin clear"><span class="cm_left">每次认购金额&nbsp;</span><input name="" type="text" value="10" class="cm_puplogin_input1" /><em class="cm_left">元</em></div>
+    <div class="cm_gray"><em class="cm_red">[注]</em> 进行自动认购时，您的<em class="cm_red">账户余额</em>不能低于<em class="cm_red">每次认购金额</em>。</div>
+    <p>&nbsp;</p>
+    <div>方案金额不足是否认购&nbsp;<span class="cm_dz_select cm_pointer"><input name="" type="radio" value="" checked="checked" />是</span><span class="cm_pointer"><input name="" type="radio" value="" />否</span></div>
+    <div class="cm_gray"><em class="cm_red">[注]</em>  进行自动认购时，此<em class="cm_red">方案剩余余额</em>小于您定制的“每次认购金额”，是否认购其方案。</div>
+    <p>&nbsp;</p>
+    <div>对认购的方案金额不做限制</div>
+    <div><span class="cm_dz_select cm_pointer"><input name="" type="radio" value="" checked="checked" />是</span><span class="cm_pointer"><input name="" type="radio" value="" />否,我要限制</span></div>
+    <p>&nbsp;</p>
+    <div><input name="" type="checkbox" value="" />&nbsp;若连续<input name="" type="text" value="10" class="cm_dz_input" />期无方案盈利，则取消自动跟单</div>
+    <div class="margin cm_dz_btn"><a href="#" class="cm_bd_btn">定&nbsp;制</a></div>
+   </div>
+ <!-- 按百分比自动跟单内容   --> 
+   <div class="cm_lineheight">
+    <div class="cm_dz_margin clear"><span class="cm_left">每次认购金额&nbsp;</span><input name="" type="text" value="10" class="cm_puplogin_input1" />
+    <em class="cm_left">%</em></div>
+    <div class="cm_gray"><em class="cm_red">[注]</em> 最低认购比例为1%。进行自动认购时，您的<em class="cm_red">账户余额</em>不能低于<em class="cm_red">每次认购金额</em>。</div>
+    <div class="cm_gray"><em class="cm_red">[注]</em> 每次认购金额=方案金额*每次认购比例，每次认购金额先四舍五入取整，如果是奇数则减一。</div>
+    <p>&nbsp;</p>
+    <div>方案金额不足是否认购&nbsp;<span class="cm_dz_select cm_pointer"><input name="" type="radio" value="" checked="checked" />是</span><span class="cm_pointer"><input name="" type="radio" value="" />否</span></div>
+    <div class="cm_gray"><em class="cm_red">[注]</em>  进行自动认购时，此<em class="cm_red">方案剩余余额</em>小于您定制的“每次认购金额”，是否认购其方案。</div>
+    <p>&nbsp;</p>
+    <div>对认购的方案金额不做限制</div>
+    <div><span class="cm_dz_select cm_pointer"><input name="" type="radio" value="" checked="checked" />是</span><span class="cm_pointer"><input name="" type="radio" value="" />否,我要限制</span></div>
+    <p>&nbsp;</p>
+    <div><input name="" type="checkbox" value="" />&nbsp;若连续<input name="" type="text" value="10" class="cm_dz_input" />期无方案盈利，则取消自动跟单</div>
+    <div class="margin cm_dz_btn"><a href="#" class="cm_bd_btn">定&nbsp;制</a></div>
+   </div>
+  </div>
+ </div>
+</div>
+
+<!--弹出层设置追号计划-->
+<div class="cm_account_znxx1" style="width:670px;display:none;" id="lay_zhjh">
+	<div class="cm_znxx_text1">
+		<div class="tips_title clear">
+			<h5 class="cm_left">设置追号计划</h5>
+		    <span class="cm_right" id="zhjh_close"></span>
+         </div>
+         <div class="cm_zhjh_news cm_lineheight">
+          <div class="clear">
+           <div class="cm_left cm_jssz">
+            <h6 class="cm_fontsize">计算设置</h6>
+			<div class="cm_jssz_p"><span>开始期号：</span><select name="" size="1" id="jh_opts">
+			</select></div>
+			<div class="cm_jssz_p"><span>投入期数：</span><input name="" type="text" value="10" class="cm_tuqs_input" id="jh_qs" maxLength="3"/><span>期<em class="cm_gray">（最多可追<i id="maxJhZh"></i>期）</em></span></div>
+            <div class="cm_jssz_p"><span>投入倍数：</span><input name="" type="text" value="1" class="cm_tuqs_input"  id="jh_bs" maxLength="6"/><span>倍</span></div>
+           </div>
+           <div class="cm_right cm_jssz">
+            <div class="clear"><h6 class="cm_fontsize cm_left">预期收益</h6><em class="cm_gray cm_left cm_padding_left5">(按方案中最高奖金计算)</em></div>
+			<div class="cm_jssz_p"><input name="" type="checkbox" value="on" class="cm_margintop3" id="ljyl"/><label for="ljyl">累计盈利不低于</label><input name="" type="text" value="100" class="cm_tuqs_input"  id="jh_ljyl" maxLength="6"/><span>元</span></div>
+			<div class="cm_jssz_p"><input name="yqsy" type="radio" value="on" id="qcyl" class="cm_margintop3"  checked="checked"/><label for="qcyl">全程盈利率</label><input name="" type="text" value="10" class="cm_tuqs_input" id="jh_qcyl" maxLength="6"/><span>%</span></div>
+            <div class="cm_jssz_p"><input name="yqsy" type="radio" value="on" id="qqyl" class="cm_margintop3" /><label for="qqyl">前</label><input name="" type="text" id="jh_before" value="10" class="cm_tuqs_input" maxLength="2" disabled="disabled"/><span>期盈利率</span><input name="" id="jh_bm" type="text" value="10" class="cm_tuqs_input" maxLength="6" disabled="disabled"/><span>%</span><span>&nbsp;&nbsp;之后盈利率</span><input name="" id="jh_am" type="text" value="5" class="cm_tuqs_input" maxLength="6" disabled="disabled"/><span>%</span></div>
+           </div>
+          </div>
+		 <div class="cm_zhjh_text cm_margintop20">
+          <div class="clear"><span class="cm_left cm_margintop10"><i id="extpect2"></i>离投注截止还有 <b class="cm_red cm_fontsize16 arial"><i id="countDown2"></i></b> 请关注截止时间，以免错过投注。</span><span class="cm_zhjh_js cm_right" id="jh_show">计算</span></div>
+          <div class="cm_szborder cm_margintop5 clear">
+           <ul class="cm_gray cm_zhjh_ul cm_bg_gray">
+            <li class="cm_account_ul9_li1">序号</li>
+            <li class="cm_account_ul7_li1">追号期数</li>
+            <li class="cm_w78">倍数</li>
+            <li class="cm_account_li4">当期投入</li>
+            <li class="cm_account_li4">累计投入</li>
+            <li class="cm_account_ul11_li6">累计盈利</li>
+            <li class="cm_account_ul11_li6">盈利率</li>
+            <li style="width:16px;">&nbsp;</li>
+            <div class="clear1"></div>
+           </ul>
+           <div style="height:155px; overflow-x:hidden; overflow-y:scroll;" id="expectListBox">
+           
+          </div>
+          </div>
+           <div class="cm_margintop20 cm_align_center clear">追号<i id="expect_num" class="red"></i>期，总金额为<i id="sum_m" class="red"></i>元，购买后您的账户余额为<i id="buySYSpan" class="red"></i>元</div>
+          <div class="cm_margintop20 cm_align_center clear">追号停止条件&nbsp;&nbsp;<label><input name="tzzh" type="radio" value="1" checked="checked"/>中奖后停止</label>&nbsp;&nbsp;&nbsp;<label><input name="tzzh" type="radio" value="0" />完成最后一期时停止</label>&nbsp;&nbsp;&nbsp;<label><input name="tzzh" type="radio" value="2" />盈利后停止</label></div>
+          <div><a href="#" class="cm_zhjh_buy" id="buy_jh">确定按计划购买</a></div>
+          
+         </div>
+        </div>
+    </div>
+</div>
+<!-- 页脚内容 -->
+</div>

@@ -1,0 +1,69 @@
+﻿@charset "utf-8";
+{margin:0;padding:0}
+body,h3,h4,h2,h1,h5,table,td,th,ul,li,ol,dd,dt,dl,div,span,p,b,i,s,em,thead,tbody,font,select,input,option{margin:0;padding:0}
+body{font-size:12px; font-family: Arial,simsun;}
+em,i,s,b{ font-style:normal; text-decoration:none;}
+img{border:none;}
+div{zoom:1}
+body a{outline:none;blr:expression(this.onFocus=this.blur());text-decoration:none;color:#444;outline:none;cursor:pointer}
+div,ul,li{ list-style-type:none;overflow:hidden}
+.top{height:70px;width:1000px;margin:0 auto}
+.top img{display:block;height:34px;float:left;width:99px}
+.top span{float:left;color:#444;line-height:34px;padding-left:20px}
+.top span a{color:#444;margin:0 10px}
+.top span a:hover{color:#ff6600; text-decoration:underline}
+.tp{width:263px;margin:0 auto;height:38px;float:right; background:url(images/czs_02.jpg)}
+.tp p{line-height:38px;text-align:center;color:#444;font-size:12px;height:38px}
+.tp p a{color:#444;margin:0 5px}
+.tp p a:hover{ text-decoration:underline;color:#ff6600}
+.topa{padding:267px 0 0 497px;}
+.topa a{display:block;float:left;width:167px;height:52px;}
+.main{background:url(../images/19jc_07.jpg) 0px 0px ;width:1494px;height:951px;margin:0 auto}
+.jcm{padding:266px 0 0 285px;height:545px}
+.jcm2{float:left;width:385px;}
+.jcm2 table{border:1px solid #ddd;}
+.jcm2 td{text-align:left;color:#444;font-size:14px; font-family:Arial;padding-left:30px;height:40px;line-height:40px;}
+.jcm2 tr.tr1{color:#fff;font-weight:bold;background:url(../images/fg_03.jpg) 0px 0 ;border:none}
+.jcm2 tr.odd{ background-color:#ffebe0}
+.jcm2 tr.tr1 td{color:#fff}
+.jcm3{float:left;width:485px;margin-left:63px}
+.jcm3 p{display:block;font-family:"微软雅黑";clear:both;line-height:22px;padding:10px 0;}
+.jcm3 b{display:block;height:20px;width:20px;text-align:Center;line-height:20px;color:#fff;font-size:14px;float:left;margin-right:12px;background:url(../images/ico_06.jpg);font-weight:100}
+.jcm3 span{float:left;color:#666;font-size:16px;line-height:22px;width:430px;}
+.foot{width:1000px;line-height:26px;text-align:center;margin:0 auto;font-size:12px;color:#fff;padding-top:10px}
+.foot a{color:#fff}
+.foot a:hover{ text-decoration:underline}
+#foot { 
+    background-color: #9b2847;
+    height:75px;
+}
+.main1{background:url(../images/159tc_04.jpg) 0px 0px ;width:1284px;height:1711px;margin:0 auto}
+.tcdt{padding:542px 0 0 512px;height:30px}
+.tcxz{padding:85px 0 0 190px} 
+.tcdt span{display:block;height:30px;line-height:30px;color:#fff;font-weight:bold;font-size:22px;font-family:"微软雅黑";text-align:left;width:53px;float:left}
+.tclist{width:209px;height:180px;float:left;background:url(../images/tck_03.jpg);margin-left:63px;cursor:pointer}
+.tclist h3{color:#444;font-size:20px;font-weight:100;font-family:"微软雅黑";padding-left:10px;line-height:38px;height:38px}
+.tclist p{line-height:24px;color:#ff0000;font-size:16px;font-family:"微软雅黑";padding:15px 0 0 30px}
+.tclist p strong{font-weight:100;color:#333}
+.tclistover{background:url(../images/tck_07.jpg);}
+.tclistcur{background:url(../images/tck_05.jpg)}
+.tclistover h3,.tclistcur h3{color:#fff}
+.tctab{padding:92px 0 0 190px}
+.tctab table{border-right:1px solid #ddd;border-top:1px solid #ddd;height:198px}
+.tctab td{border-left:1px solid #ddd;border-bottom:1px solid #ddd;line-height:26px;padding:10px 0;text-align:center;font-size:16px;color:#444;font-family:"微软雅黑";}
+.tctab tr.tr1 td{ background-color:#fdeca8;color:#ff0000}
+.tctab input.box{vertical-align: -2px;_vertical-align: -1px;margin-right: 2px;width:30px;height:30px; vertical-align:middle}
+.tctab div{width:430px;padding-left:18px}
+.tctab  p{padding-left:18px; text-align:left;}
+.tctab div p{float:left;padding:0;display:block;width:100%;height:30px;line-height:30px;padding-bottom:5px}
+.tctab div input{width:20px;height:16px;color:#e52e04;font-size:14px;text-align:center; background:none transparent;display:block;border:none;margin:9px auto 0;font-weight:bold}
+.tctab div b{background:url(../images/159tc_13.jpg);width:34px;height:34px;display:block;float:left;margin-right:3px}
+.tctab div b.blue{background:url(../images/159tc_15.jpg)}
+.tctab div b.blue input{color:#0053ae}
+.tctab div strong{color:#ff0000;font-size:20px;font-weight:100}
+.tctab div a{displya:block;background:url(../images/159tc_17.jpg);width:100px;height:34px;line-height:34px;text-align:center;font-size:16px;color:#444;float:left;margin-left:20px}
+.topa1{padding:61px 0 0 496px}
+.topa1 a{width:260px;height:65px}
+.topa1 a.a1{background:url(../images/ddkj.png)}
+.topa1 a.a2{background:url(../images/jies.png)}
+.tcsay{padding:227px 0 0 186px;line-height:28px;color:#444;font-size:14px}

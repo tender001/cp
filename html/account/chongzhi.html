@@ -1,0 +1,1049 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>网上买彩票_账户中心_用户充值_159彩票</title>
+<meta name="keywords"
+	content="福利彩票，福彩，体育彩票，体彩，足彩，网上买彩票，彩票合买，彩票开奖，彩票走势图，彩票预测" />
+<meta name="description"
+	content="159彩票为彩民提供专业的彩票网上投注、合买、开奖结果、走势分析、比分直播等服务，覆盖福彩、体彩、足彩、竞彩、快频等彩种。159彩票上投注最佳选择！" />
+<link href="/css/new159cai.css" rel="stylesheet" type="text/css" />
+<link href="/css/cai888.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="/public/jq2.js"></script>
+<script type="text/javascript" src="/public/jq.js"></script>
+<script type="text/javascript" src="/public/menu.js"></script>
+<script type="text/javascript" src="/public/159cp.js"></script>
+<script type="text/javascript" src="/public/chklogin.js"></script>
+<script type="text/javascript" src="/account/js/chongzhi.js"></script>
+
+</head>
+<body>
+
+	<!--#include virtual="/cc/header.html"-->
+	<!--#include virtual="/cc/nav.html"-->
+	<div id="container">
+		<div class="breadcrumb">
+			<p>
+				您现在的位置：<a href="/" title="网上买彩票"><font>159cai彩票</font></a> > <a
+					href="/account/myaccount.html" title="我的账户"><font>我的账户</font></a> >
+				信用卡快捷支付
+			</p>
+		</div>
+		<div class="user">
+			<!--#include virtual="/cc/account/account_left.html"-->
+			<div class="user_right">
+				<div class="usertitle usertitgd">
+					<h2>
+						<strong>充值中心</strong>
+					</h2>
+					<span class="usertitab"> <b id="kq" class="cur"><a
+							href="chongzhi.html" title="网银充值">网银充值</a></b> <b id="creditCard"><a
+							href="creditCard.html" title="信用卡快捷支付">信用卡快捷支付</a></b> <b
+						id="mobileCard"><a href="card.html" title="手机充值卡充值">手机充值卡充值</a></b>
+					</span>
+				</div>
+				<div class="czsay">为了防止套现和洗钱，充值后需消费30%，剩余金额才可以提款 </div>
+				<!--   <div class="on_b_1" style="margin-top:10px"> -->
+				<!--    <span>选择银行</span><div id="bankc" class="bank_select"> -->
+				<!-- </div><s>即日起本充值方式由银联收取0.60%的手续费，最低0.01元/笔</s> -->
+				<!--    </div> -->
+				<div class="czje">
+
+					<p>
+						<form target="_blank" method="post" action="/phpu/addmoney.apsx"
+							id="bankform" name="bankform">
+							充值金额： <input type="text"
+								onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/^\D*(\d*(?:\.\d{0,2})?).*$/g, '$1'));"
+								onkeyup="this.value=this.value.replace(/^\D*(\d*(?:\.\d{0,2})?).*$/g, '$1');"
+								onfocus="this.value='';" id="addmoney" name="addmoney" /><span>(至少<em>10</em>元，限整数)
+							</span> <input id="banktype" type="hidden" name="banktype"
+								value="ICBCB2C"> <input id="bankid" type="hidden"
+								name="bankid" value="3"> <input id="payType"
+									type="hidden" name="B2CBANK" value=""> <input
+										id="iszfb" type="hidden" name="iszfb" value="0"><input
+											id="bid" type="hidden" name="bid" value="2">
+						</form>
+					</p>
+				</div>
+				<div class="un_b_main bank_zj" id="bankdiv" style="display: block;">
+					<p>选择网银：</p>
+					<div class="ae_card">
+						<ul>
+							<li id="bank_div_21" onclick="changdiv(21);"
+								style="cursor: pointer"><em class="zfb" class="cur"></em></li>
+							<li id="bank_div_2" onclick="changdiv(2);"
+								style="cursor: pointer"><em class="gh"></em></li>
+							<li id="bank_div_4" onclick="changdiv(4);"
+								style="cursor: pointer"><em class="jh"></em></li>
+							<li id="bank_div_5" onclick="changdiv(5);"
+								style="cursor: pointer"><em class="nh"></em></li>
+							<li id="bank_div_22" onclick="changdiv(22);"
+								style="cursor: pointer"><em class="cx"></em></li>
+							<li id="bank_div_3" onclick="changdiv(3);"
+								style="cursor: pointer"><em class="zh"></em></li>
+							<!-- <li style="cursor: pointer" onclick="changdiv(6);" id="bank_div_6"> -->
+							<!--  <em class="jth"></em> -->
+							<!-- </li> -->
+							<li id="bank_div_16" onclick="changdiv(16);"
+								style="cursor: pointer"><em class="zxh"></em></li>
+							<li id="bank_div_17" onclick="changdiv(17);"
+								style="cursor: pointer"><em class="gfh"></em></li>
+							<li id="bank_div_18" onclick="changdiv(18);"
+								style="cursor: pointer"><em class="zgh"></em></li>
+							<li id="bank_div_7" onclick="changdiv(7);"
+								style="cursor: pointer"><em class="pfh"></em></li>
+							<li id="bank_div_15" onclick="changdiv(15);"
+								style="cursor: pointer"><em class="gdh"></em></li>
+							<li id="bank_div_19" onclick="changdiv(19);"
+								style="cursor: pointer"><em class="pah"></em></li>
+							<li id="bank_div_10" onclick="changdiv(10);"
+								style="cursor: pointer"><em class="msh"></em></li>
+							<li id="bank_div_8" onclick="changdiv(8);"
+								style="cursor: pointer"><em class="xyh"></em></li>
+							<li id="bank_div_23" onclick="changdiv(23);"
+								style="cursor: pointer"><em class="shh"></em></li>
+							<li id="bank_div_25" onclick="changdiv(25);"
+								style="cursor: pointer"><em class="hzh"></em></li>
+						</ul>
+					</div>
+					<div class="bank_instruct">
+						<p style="display: none;">
+							本次充值由 <i id="bankconn">支付宝</i> 提供接口支持
+						</p>
+						<div id="bank_info" style="display: none">
+							<!-- 工商银行-->
+							<table width="100%" border="0" cellpadding="0" cellspacing="0"
+								id="bank_info_2" style="display: none">
+								<colgroup>
+									<col width="100" />
+									<col width="400" />
+									<col width="130" />
+									<col />
+								</colgroup>
+								<thead>
+									<tr>
+										<td>卡类别</td>
+										<td>在线支付客户类型</td>
+										<td>单笔限额（元）</td>
+										<td>每日限额（元）</td>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<th rowspan="4">储蓄卡</th>
+										<td>工行e支付。无须网银，需预留的手机号接收验证码。<a
+											href="http://big5.icbc.com.cn/ICBC/html/guanggao/2011nian/1130ywkhgfx/payment.html"
+											target="_blank">如何办理？</a></td>
+										<td class="td1">1000</td>
+										<td class="td1">1000</td>
+									</tr>
+									<tr>
+										<td>电子银行口令卡支付。未开通短信认证。<a
+											href="http://www.icbc.com.cn/ICBC/%E7%94%B5%E5%AD%90%E9%93%B6%E8%A1%8C/%E7%94%B5%E5%AD%90%E9%93%B6%E8%A1%8C%E4%BA%A7%E5%93%81/%E5%AE%89%E5%85%A8%E6%9C%8D%E5%8A%A1/%E7%94%B5%E5%AD%90%E9%93%B6%E8%A1%8C%E5%8F%A3%E4%BB%A4%E5%8D%A1/"
+											target="_blank">如何办理？</a></td>
+										<td class="td1">500</td>
+										<td class="td1">1000</td>
+									</tr>
+									<tr>
+										<td>电子银行口令卡支付。已开通短信认证。<a
+											href="http://www.icbc.com.cn/ICBC/%E7%94%B5%E5%AD%90%E9%93%B6%E8%A1%8C/%E7%94%B5%E5%AD%90%E9%93%B6%E8%A1%8C%E4%BA%A7%E5%93%81/%E5%AE%89%E5%85%A8%E6%9C%8D%E5%8A%A1/%E7%94%B5%E5%AD%90%E9%93%B6%E8%A1%8C%E5%8F%A3%E4%BB%A4%E5%8D%A1/"
+											target="_blank">如何办理？</a></td>
+										<td class="td1">2000</td>
+										<td class="td1">5000</td>
+									</tr>
+									<tr>
+										<td>U盾用户。<a
+											href="http://www.icbc.com.cn/icbc/%E7%94%B5%E5%AD%90%E9%93%B6%E8%A1%8C/%E7%94%B5%E5%AD%90%E9%93%B6%E8%A1%8C%E4%BA%A7%E5%93%81/%E5%AE%89%E5%85%A8%E6%9C%8D%E5%8A%A1/u%E7%9B%BE%E4%B8%AA%E4%BA%BA%E5%AE%A2%E6%88%B7/"
+											target="_blank">如何办理？</a></td>
+										<td class="td1">100万</td>
+										<td class="td1">100万</td>
+									</tr>
+									<tr>
+										<th rowspan="4">信用卡</th>
+										<td>工行e支付。无须网银，需预留的手机号接受验证码。<a
+											href="http://big5.icbc.com.cn/ICBC/html/guanggao/2011nian/1130ywkhgfx/payment.html"
+											target="_blank">如何办理？</a></td>
+										<td class="td1">1000</td>
+										<td class="td1">1000或卡限额</td>
+									</tr>
+									<tr>
+										<td>电子银行口令卡支付。未开通短信认证。<a
+											href="http://www.icbc.com.cn/ICBC/%E7%94%B5%E5%AD%90%E9%93%B6%E8%A1%8C/%E7%94%B5%E5%AD%90%E9%93%B6%E8%A1%8C%E4%BA%A7%E5%93%81/%E5%AE%89%E5%85%A8%E6%9C%8D%E5%8A%A1/%E7%94%B5%E5%AD%90%E9%93%B6%E8%A1%8C%E5%8F%A3%E4%BB%A4%E5%8D%A1/"
+											target="_blank">如何办理？</a></td>
+										<td class="td1">500</td>
+										<td class="td1">1000或卡限额</td>
+									</tr>
+									<tr>
+										<td>电子银行口令卡支付。已开通短信认证。<a
+											href="http://www.icbc.com.cn/ICBC/%E7%94%B5%E5%AD%90%E9%93%B6%E8%A1%8C/%E7%94%B5%E5%AD%90%E9%93%B6%E8%A1%8C%E4%BA%A7%E5%93%81/%E5%AE%89%E5%85%A8%E6%9C%8D%E5%8A%A1/%E7%94%B5%E5%AD%90%E9%93%B6%E8%A1%8C%E5%8F%A3%E4%BB%A4%E5%8D%A1/"
+											target="_blank">如何办理？</a></td>
+										<td class="td1">2000</td>
+										<td class="td1">2000或卡限额</td>
+									</tr>
+									<tr>
+										<td>U盾用户。<a
+											href="http://www.icbc.com.cn/icbc/%E7%94%B5%E5%AD%90%E9%93%B6%E8%A1%8C/%E7%94%B5%E5%AD%90%E9%93%B6%E8%A1%8C%E4%BA%A7%E5%93%81/%E5%AE%89%E5%85%A8%E6%9C%8D%E5%8A%A1/u%E7%9B%BE%E4%B8%AA%E4%BA%BA%E5%AE%A2%E6%88%B7/"
+											target="_blank">如何办理？</a></td>
+										<td class="td1">1000</td>
+										<td class="td1">1000或卡限额</td>
+									</tr>
+								</tbody>
+								<tfoot>
+									<tr>
+										<th>备注</th>
+										<td colspan="3">1.如果您的网上支付额度低于右表限额，以您的设置为准。<br />
+											2.存量静态密码客户的总累计限额为300元。<br /> 3.工商银行客服电话：95588
+										</td>
+									</tr>
+								</tfoot>
+							</table>
+							<!-- 建设银行内容 -->
+							<table width="100%" border="0" cellpadding="0" cellspacing="0"
+								id="bank_info_4" style="display: none">
+								<colgroup>
+									<col width="100" />
+									<col width="400" />
+									<col width="130" />
+									<col />
+								</colgroup>
+								<thead>
+									<tr>
+										<td>卡类别</td>
+										<td>在线支付客户类型</td>
+										<td>单笔限额（元）</td>
+										<td>每日限额（元）</td>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<th rowspan="4">储蓄卡</th>
+										<td>便捷支付。无须网银，需预留的手机号接收验证码。<a
+											href="http://ebank.ccb.com/cn/ebank/20100402_1270200714.html"
+											target="_blank">如何办理？</a></td>
+										<td class="td1">500</td>
+										<td class="td1">500</td>
+									</tr>
+									<tr>
+										<td>账号支付。无须网银，通过银行卡和手机号即可支付。<a
+											href="http://ebank.ccb.com/cn/ebank/20110602_1306997752.html"
+											target="_blank">如何办理？</a></td>
+										<td class="td1">1000</td>
+										<td class="td1">1000</td>
+									</tr>
+									<tr>
+										<td>动态口令卡支付。需柜台开通网银。<a
+											href="http://ebank.ccb.com/cn/ebank/20101125_1290659083.html"
+											target="_blank">如何办理？</a></td>
+										<td class="td1">5000</td>
+										<td class="td1">5000</td>
+									</tr>
+									<tr>
+										<td>U盾用户。<a
+											href="http://ebank.ccb.com/cn/ebank/wsyh_products_list.html"
+											target="_blank">如何办理？</a></td>
+										<td class="td1">50万</td>
+										<td class="td1">50万</td>
+									</tr>
+									<tr>
+										<th rowspan="4">信用卡</th>
+										<td>便捷支付。无须网银，需预留的手机号接收验证码。<a
+											href="http://ebank.ccb.com/cn/ebank/20100402_1270200714.html"
+											target="_blank">如何办理？</a></td>
+										<td class="td1">500</td>
+										<td class="td1">500或卡限额</td>
+									</tr>
+									<tr>
+										<td>账号支付。无须网银，通过银行卡和手机号即可支付。<a
+											href="http://ebank.ccb.com/cn/ebank/20110602_1306997752.html"
+											target="_blank">如何办理？</a></td>
+										<td class="td1">1000</td>
+										<td class="td1">1000或卡限额</td>
+									</tr>
+									<tr>
+										<td>动态口令卡支付。需柜台开通网银。<a
+											href="http://ebank.ccb.com/cn/ebank/20101125_1290659083.html"
+											target="_blank">如何办理？</a></td>
+										<td class="td1">5000</td>
+										<td class="td1">1000或卡限额</td>
+									</tr>
+									<tr>
+										<td>U盾用户。<a
+											href="http://ebank.ccb.com/cn/ebank/wsyh_products_list.html"
+											target="_blank">如何办理？</a></td>
+										<td class="td1">1000</td>
+										<td class="td1">1000或卡限额</td>
+									</tr>
+								</tbody>
+								<tfoot>
+									<tr>
+										<th>备注</th>
+										<td colspan="3">1.如果您的网上支付额度低于右表限额，以您的设置为准。<br />
+
+											2.建行客服电话：95533
+										</td>
+									</tr>
+								</tfoot>
+							</table>
+							<!-- 中国农业银行内容 -->
+							<table width="100%" border="0" cellpadding="0" cellspacing="0"
+								id="bank_info_5" style="display: none">
+								<colgroup>
+									<col width="100" />
+									<col width="400" />
+									<col width="130" />
+									<col />
+								</colgroup>
+								<thead>
+									<tr>
+										<td>卡类别</td>
+										<td>在线支付客户类型</td>
+										<td>单笔限额（元）</td>
+										<td>每日限额（元）</td>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<th rowspan="4">储蓄卡<br />准贷记卡
+										</th>
+										<td>K宝一代支付。需柜台开通网银。<a
+											href="http://www.abchina.com/cn/EBanking/Safety/Authentication/PersonalBankingCertification/seckbao/"
+											target="_blank">如何办理？</a></td>
+										<td class="td1">50万</td>
+										<td class="td1">100万</td>
+									</tr>
+									<tr>
+										<td>K宝二代支付。需柜台开通网银。<a
+											href="http://www.abchina.com/cn/EBanking/Safety/Authentication/PersonalBankingCertification/seckbao/"
+											target="_blank">如何办理？</a></td>
+										<td class="td1">50万</td>
+										<td class="td1">100万</td>
+									</tr>
+									<tr>
+										<td>动态口令卡支付。需柜台开通网银。<a
+											href="http://www.abchina.com/cn/EBanking/Safety/Authentication/DynamicPasswordCard/201201/t20120116_199346.htm"
+											target="_blank">如何办理？</a></td>
+										<td class="td1">100万</td>
+										<td class="td1">500万</td>
+									</tr>
+									<tr>
+										<td>动态口令卡支付。需柜台开通网银。<a
+											href="http://www.abchina.com/cn/EBanking/Safety/Authentication/DynamicPasswordCard/201201/t20120116_199346.htm"
+											target="_blank">如何办理？</a></td>
+										<td class="td1">1000</td>
+										<td class="td1">3000</td>
+									</tr>
+
+								</tbody>
+								<tfoot>
+									<tr>
+										<th>备注</th>
+										<td colspan="3">农行客服热线：95599<br /></td>
+									</tr>
+								</tfoot>
+							</table>
+							<!-- 中国招商银行内容 -->
+							<table width="100%" border="0" cellpadding="0" cellspacing="0"
+								id="bank_info_3" style="display: none">
+								<colgroup>
+									<col width="100" />
+									<col width="400" />
+									<col width="130" />
+									<col />
+								</colgroup>
+								<thead>
+									<tr>
+										<td>卡类别</td>
+										<td>在线支付客户类型</td>
+										<td>单笔限额（元）</td>
+										<td>每日限额（元）</td>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<th rowspan="3">储蓄卡</th>
+										<td>专业版支付。需到柜台开通。<a
+											href="http://www.cmbchina.com/personal/netbank/NetbankInfo.aspx?guid=7d5da554-96b0-4296-bcc1-aab6cc1a5658"
+											target="_blank">如何办理？</a></td>
+										<td class="td1">无限额</td>
+										<td class="td1">无限额</td>
+									</tr>
+									<tr>
+										<td>大众版卡密支付。在线开通，通过卡号和密码支付。<a
+											href="http://www.cmbchina.com/personal/netbank/NetbankInfo.aspx?guid=4e10e0f1-ae18-4ef5-bcd0-906916d7dd33"
+											target="_blank">如何办理？</a></td>
+										<td class="td1">500</td>
+										<td class="td1">500</td>
+									</tr>
+									<tr>
+										<td>手机支付。在线开通，通过卡号和密码支付。<a
+											href="http://www.cmbchina.com/personalbank/netpay/CmbPay.htm#null"
+											target="_blank">如何办理？</a></td>
+										<td class="td1">500</td>
+										<td class="td1">500</td>
+									</tr>
+
+									<tr>
+										<th rowspan="2">信用卡</th>
+										<td>大众版卡密支付。在线开通，通过卡号和密码支付。<a
+											href="http://www.cmbchina.com/personal/netbank/NetbankInfo.aspx?guid=4e10e0f1-ae18-4ef5-bcd0-906916d7dd33"
+											target="_blank">如何办理？</a></td>
+										<td class="td1">500</td>
+										<td class="td1">信用卡限额</td>
+									</tr>
+									<tr>
+										<td>手机支付。在线开通，通过卡号和密码支付。<a
+											href="http://www.cmbchina.com/personalbank/netpay/CmbPay.htm#null"
+											target="_blank">如何办理？</a></td>
+										<td class="td1">500</td>
+										<td class="td1">信用卡限额</td>
+									</tr>
+
+								</tbody>
+								<tfoot>
+									<tr>
+										<th>备注</th>
+										<td colspan="3">1.如果您的网上支付额度低于右表限额，以您的设置为准。<br />
+											2.招行客服电话：95555
+										</td>
+									</tr>
+								</tfoot>
+							</table>
+							<!-- 交通银行内容 -->
+							<table width="100%" border="0" cellpadding="0" cellspacing="0"
+								id="bank_info_6" style="display: none">
+								<colgroup>
+									<col width="100" />
+									<col width="400" />
+									<col width="130" />
+									<col />
+								</colgroup>
+								<thead>
+									<tr>
+										<td>卡类别</td>
+										<td>在线支付客户类型</td>
+										<td>单笔限额（元）</td>
+										<td>每日限额（元）</td>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<th rowspan="2">储蓄卡<br />准贷记卡
+										</th>
+										<td>手机注册版支付。需到柜台开通。<a
+											href="https://pbank.95559.com.cn/personbank/newuserhelp1.html"
+											target="_blank" class="a1">如何办理？</a></td>
+										<td class="td1">5000</td>
+										<td class="td1">5000</td>
+									</tr>
+									<tr>
+										<td>证书认证版支付。需到柜台开通。<a
+											href="https://pbank.95559.com.cn/personbank/newuserhelp1.html"
+											target="_blank" class="a1">如何办理？</a></td>
+										<td class="td1">100万</td>
+										<td class="td1">100万</td>
+									</tr>
+
+									<tr>
+										<th rowspan="2">信用卡</th>
+										<td>手机注册版支付。需到柜台开通。<a
+											href="https://pbank.95559.com.cn/personbank/newuserhelp1.html"
+											target="_blank" class="a1">如何办理？</a></td>
+										<td class="td1">5000</td>
+										<td class="td1">5000或卡限额</td>
+									</tr>
+									<tr>
+										<td>证书认证版支付。需到柜台开通。<a
+											href="https://pbank.95559.com.cn/personbank/newuserhelp1.html"
+											target="_blank" class="a1">如何办理？</a></td>
+										<td class="td1">10000</td>
+										<td class="td1">10000或卡限额</td>
+									</tr>
+
+								</tbody>
+								<tfoot>
+									<tr>
+										<th>备注</th>
+										<td colspan="3">1.如果您的网上支付额度低于右表限额，以您的设置为准。<br />
+											2.交行客服电话：400-800-9888
+										</td>
+									</tr>
+								</tfoot>
+							</table>
+							<!-- 中国银行内容 -->
+							<table width="100%" border="0" cellpadding="0" cellspacing="0"
+								id="bank_info_18" style="display: none">
+								<colgroup>
+									<col width="100" />
+									<col width="400" />
+									<col width="130" />
+									<col />
+								</colgroup>
+								<thead>
+									<tr>
+										<td>卡类别</td>
+										<td>在线支付客户类型</td>
+										<td>单笔限额（元）</td>
+										<td>每日限额（元）</td>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<th rowspan="2">储蓄卡</th>
+										<td>网银支付。需到柜台开通。<a
+											href="http://www.bankofchina.com/ebanking/service/cs1/200904/t20090421_990717.html"
+											target="_blank" class="a1">如何办理？</a></td>
+										<td class="td1">5万</td>
+										<td class="td1">10万</td>
+									</tr>
+									<tr>
+										<td>中银快付。无须网银，需预留的手机号接收验证码。<a
+											href="http://www.bank-of-china.com/ebanking/bocnet_pb/pb7/201206/t20120608_1847926.html"
+											target="_blank" class="a1">如何办理？</a></td>
+										<td class="td1">1000</td>
+										<td class="td1">5000</td>
+									</tr>
+
+									<tr>
+										<th rowspan="2">信用卡</th>
+										<td>网银支付。需到柜台开通，并网上开通网上支付功能。<a
+											href="http://www.bankofchina.com/ebanking/service/cs1/200904/t20090421_990717.html"
+											target="_blank" class="a1">如何办理？</a></td>
+										<td class="td1">5000</td>
+										<td class="td1">5000或卡限额</td>
+									</tr>
+									<tr>
+										<td>中银快付。无须网银，需预留的手机号接收验证码。<a
+											href="http://www.bank-of-china.com/ebanking/bocnet_pb/pb7/201206/t20120608_1847926.html"
+											target="_blank" class="a1">如何办理？</a></td>
+										<td class="td1">1000</td>
+										<td class="td1">1000或卡限额</td>
+									</tr>
+
+								</tbody>
+								<tfoot>
+									<tr>
+										<th>备注</th>
+										<td colspan="3">1.如果您的网上支付额度低于右表限额，以您的设置为准。<br />
+											2.中行客服电话：95566
+										</td>
+									</tr>
+								</tfoot>
+							</table>
+							<!-- 平安银行内容 -->
+							<table width="100%" border="0" cellpadding="0" cellspacing="0"
+								id="bank_info_19" style="display: none">
+								<colgroup>
+									<col width="100" />
+									<col width="400" />
+									<col width="130" />
+									<col />
+								</colgroup>
+								<thead>
+									<tr>
+										<td>卡类别</td>
+										<td>在线支付客户类型</td>
+										<td>单笔限额（元）</td>
+										<td>每日限额（元）</td>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<th>储蓄卡</th>
+										<td>网银支付。需到柜台开通。<a
+											href="http://one.pingan.com/yizhangtongjieshao/index.shtml"
+											target="_blank" class="a1">如何办理？</a></td>
+										<td class="td1">5万</td>
+										<td class="td1">10万</td>
+									</tr>
+								</tbody>
+								<tfoot>
+									<tr>
+										<th>备注</th>
+										<td colspan="3">平安银行客服电话：400-669-9999</td>
+									</tr>
+								</tfoot>
+							</table>
+							<!-- 浦发银行内容 -->
+							<table width="100%" border="0" cellpadding="0" cellspacing="0"
+								id="bank_info_7" style="display: none">
+								<colgroup>
+									<col width="100" />
+									<col width="400" />
+									<col width="130" />
+									<col />
+								</colgroup>
+								<thead>
+									<tr>
+										<td>卡类别</td>
+										<td>在线支付客户类型</td>
+										<td>单笔限额（元）</td>
+										<td>每日限额（元）</td>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<th rowspan="2">储蓄卡</th>
+										<td>动态密码版网上支付。需到柜台开通。<a
+											href="http://ebank.spdb.com.cn/per2008/per_dongtaimima_08.html"
+											target="_blank" class="a1">如何办理？</a></td>
+										<td class="td1">20万</td>
+										<td class="td1">20万</td>
+									</tr>
+									<tr>
+										<td>数字证书版网上支付。需到柜台开通。<a
+											href="http://ebank.spdb.com.cn/per2008/per_transnotice_08.html"
+											target="_blank" class="a1">如何办理？</a></td>
+										<td class="td1">自行设置</td>
+										<td class="td1">自行设置</td>
+									</tr>
+
+									<tr>
+										<th>信用卡</th>
+										<td>数字证书版网上支付。需到柜台开通。<a
+											href="http://ebank.spdb.com.cn/per2008/per_transnotice_08.html"
+											target="_blank" class="a1">如何办理？</a></td>
+										<td class="td1">自行设置</td>
+										<td class="td1">自行设置</td>
+									</tr>
+
+								</tbody>
+								<tfoot>
+									<tr>
+										<th>备注</th>
+										<td colspan="3">浦发银行客服电话：95528</td>
+									</tr>
+								</tfoot>
+							</table>
+							<!-- 民生银行内容-->
+							<table width="100%" border="0" cellpadding="0" cellspacing="0"
+								id="bank_info_10" style="display: none">
+								<colgroup>
+									<col width="100" />
+									<col width="400" />
+									<col width="130" />
+									<col />
+								</colgroup>
+								<thead>
+									<tr>
+										<td>卡类别</td>
+										<td>在线支付客户类型</td>
+										<td>单笔限额（元）</td>
+										<td>每日限额（元）</td>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<th rowspan="3">储蓄卡</th>
+										<td>大众版网上支付。无须去柜台，在线即可办理。<a
+											href="http://www.cmbc.com.cn/dzyh_grwy/grwy.shtml"
+											target="_blank" class="a1">如何办理？</a></td>
+										<td class="td1">300</td>
+										<td class="td1">300</td>
+									</tr>
+									<tr>
+										<td>证书版网上支付。需到柜台开通。<a
+											href="http://www.cmbc.com.cn/cjwt/%E6%B0%91%E7%94%9F%E9%93%B6%E8%A1%8C%E7%BD%91%E4%B8%8A%E9%93%B6%E8%A1%8C%E5%A4%A7%E4%BC%97%E7%89%88%E7%BD%91%E4%B8%8A%E6%94%AF%E4%BB%98%E5%BC%80%E9%80%9A%E5%BC%95%E5%AF%BC%E6%89%8B%E5%86%8C.doc"
+											target="_blank" class="a1">如何办理？</a></td>
+										<td class="td1">5000</td>
+										<td class="td1">5000</td>
+									</tr>
+									<tr>
+										<td>U宝网上支付。需到柜台开通。<a
+											href="http://www.cmbc.com.cn/cmbc_guangao/jidex/note/yzzs.html"
+											target="_blank" class="a1">如何办理？</a></td>
+										<td class="td1">50万</td>
+										<td class="td1">50万</td>
+									</tr>
+									<tr>
+										<th rowspan="3">信用卡</th>
+										<td>大众版网上支付。无须去柜台，在线即可办理。<a
+											href="http://www.cmbc.com.cn/dzyh_grwy/grwy.shtml"
+											target="_blank" class="a1">如何办理？</a></td>
+										<td class="td1">自行设置</td>
+										<td class="td1">自行设置</td>
+									</tr>
+									<tr>
+										<td>证书版网上支付。需到柜台开通。<a
+											href="http://www.cmbc.com.cn/cjwt/%E6%B0%91%E7%94%9F%E9%93%B6%E8%A1%8C%E7%BD%91%E4%B8%8A%E9%93%B6%E8%A1%8C%E5%A4%A7%E4%BC%97%E7%89%88%E7%BD%91%E4%B8%8A%E6%94%AF%E4%BB%98%E5%BC%80%E9%80%9A%E5%BC%95%E5%AF%BC%E6%89%8B%E5%86%8C.doc"
+											target="_blank" class="a1">如何办理？</a></td>
+										<td class="td1">5000</td>
+										<td class="td1">5000或卡额度</td>
+									</tr>
+									<tr>
+										<td>U宝网上支付。需到柜台开通。<a
+											href="http://www.cmbc.com.cn/cmbc_guangao/jidex/note/yzzs.html"
+											target="_blank" class="a1">如何办理？</a></td>
+										<td class="td1">50万</td>
+										<td class="td1">50万或卡额度</td>
+									</tr>
+								</tbody>
+								<tfoot>
+									<tr>
+										<th>备注</th>
+										<td colspan="3">1.大众版网上支付累计限额为300元，超出限额需去柜台办理。<br />
+											2.民生银行客服电话：95568
+										</td>
+									</tr>
+								</tfoot>
+							</table>
+							<!-- 深圳发展银行内容 -->
+							<table width="100%" border="0" cellpadding="0" cellspacing="0"
+								id="bank_info_9" style="display: none">
+								<colgroup>
+									<col width="100" />
+									<col width="400" />
+									<col width="130" />
+									<col />
+								</colgroup>
+								<thead>
+									<tr>
+										<td>卡类别</td>
+										<td>在线支付客户类型</td>
+										<td>单笔限额（元）</td>
+										<td>每日限额（元）</td>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<th rowspan="3">储蓄卡</th>
+										<td>动态口令卡支付。需到柜台开通。<a
+											href="http://www.sdb.com.cn/website/page/66696c6573/77636d73/534442/7072696d617279/7a685f434e/506572736f6e616c42616e6b696e67/e794b5e5ad90e993b6e8a18c/e7bd91e4b88ae993b6e8a18c/e7bd91e4b88ae694afe4bb98/e4b8aae4babae694afe4bb98e68c87e58d972d6e65772e68746d6c"
+											target="_blank" class="a1">如何办理？</a></td>
+										<td class="td1">5000</td>
+										<td class="td1">5000</td>
+									</tr>
+									<tr>
+										<td>手机动态口令支付。需到柜台开通。<a
+											href="http://www.sdb.com.cn/website/page/66696c6573/77636d73/534442/7072696d617279/7a685f434e/506572736f6e616c42616e6b696e67/e794b5e5ad90e993b6e8a18c/e7bd91e4b88ae993b6e8a18c/e5ae89e585a8e5b7a5e585b7/e58aa8e68081e58fa3e4bba4e7ae80e4bb8b2e68746d"
+											target="_blank" class="a1">如何办理？</a></td>
+										<td class="td1">20万</td>
+										<td class="td1">20万</td>
+									</tr>
+									<tr>
+										<td>动态口令编辑器或数字证书。需到柜台开通。<a
+											href="http://www.sdb.com.cn/website/page/66696c6573/77636d73/534442/7072696d617279/7a685f434e/506572736f6e616c42616e6b696e67/e794b5e5ad90e993b6e8a18c/e7bd91e4b88ae993b6e8a18c/e7bd91e4b88ae694afe4bb98/e4b8aae4babae694afe4bb98e68c87e58d972d6e65772e68746d6c"
+											target="_blank" class="a1">如何办理？</a></td>
+										<td class="td1">无限额</td>
+										<td class="td1">无限额</td>
+									</tr>
+
+								</tbody>
+								<tfoot>
+									<tr>
+										<th>备注</th>
+										<td colspan="3">深圳发展银行客服电话：95501</td>
+									</tr>
+								</tfoot>
+							</table>
+							<!-- 中信发展银行内容 -->
+							<table width="100%" border="0" cellpadding="0" cellspacing="0"
+								id="bank_info_16" style="display: none">
+								<colgroup>
+									<col width="100" />
+									<col width="400" />
+									<col width="130" />
+									<col />
+								</colgroup>
+								<thead>
+									<tr>
+										<td>卡类别</td>
+										<td>在线支付客户类型</td>
+										<td>单笔限额（元）</td>
+										<td>每日限额（元）</td>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<th rowspan="2">储蓄卡</th>
+										<td>文件证书支付。需到柜台开通。<a
+											href="https://e.bank.ecitic.com/perbank5/5.0helpcenter/bank_ask2.html#ask1"
+											target="_blank" class="a1">如何办理？</a></td>
+										<td class="td1">1000</td>
+										<td class="td1">5000</td>
+									</tr>
+									<tr>
+										<td>移动证书支付。需到柜台开通。<a
+											href="https://e.bank.ecitic.com/perbank5/5.0helpcenter/bank_ask2.html#ask1"
+											target="_blank" class="a1">如何办理？</a></td>
+										<td class="td1">100万</td>
+										<td class="td1">100万</td>
+									</tr>
+
+									<tr>
+										<th rowspan="2">信用卡</th>
+										<td>开通网上支付。无须去柜台，在线即可办理。<a
+											href="https://e.bank.ecitic.com/perbank5/5.0helpcenter/bank_ask2.html#ask1"
+											target="_blank" class="a1">如何办理？</a></td>
+										<td class="td1">1000</td>
+										<td class="td1">10000或卡限额</td>
+									</tr>
+									<tr>
+										<td>移动证书支付。需到柜台开通。<a
+											href="https://e.bank.ecitic.com/perbank5/5.0helpcenter/bank_ask2.html#ask1"
+											target="_blank" class="a1">如何办理？</a></td>
+										<td class="td1">1000</td>
+										<td class="td1">10000或卡限额</td>
+									</tr>
+								</tbody>
+								<tfoot>
+									<tr>
+										<th>备注</th>
+										<td colspan="3">1.中信银行信用卡每月网上支付限额不超过1万元。<br />
+											2.中信银行客服电话：95558
+										</td>
+									</tr>
+								</tfoot>
+							</table>
+							<!-- 邮政储蓄内容 -->
+							<table width="100%" border="0" cellpadding="0" cellspacing="0"
+								id="bank_info_22" style="display: none">
+								<colgroup>
+									<col width="100" />
+									<col width="400" />
+									<col width="130" />
+									<col />
+								</colgroup>
+								<thead>
+									<tr>
+										<td>卡类别</td>
+										<td>在线支付客户类型</td>
+										<td>单笔限额（元）</td>
+										<td>每日限额（元）</td>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<th rowspan="3">储蓄卡</th>
+										<td>手机短信支付。需到柜台开通。<a
+											href="http://www.psbc.com/portal/zh_CN/EBanking/PersonalEBanking/pebankHelp/11582.html"
+											target="_blank" class="a1">如何办理？</a></td>
+										<td class="td1">10000</td>
+										<td class="td1">10000</td>
+									</tr>
+									<tr>
+										<td>电子令牌支付。需到柜台开通。<a
+											href="http://www.psbc.com/portal/zh_CN/EBanking/PersonalEBanking/pebankHelp/11582.html"
+											target="_blank" class="a1">如何办理？</a></td>
+										<td class="td1">10万</td>
+										<td class="td1">10万</td>
+									</tr>
+									<tr>
+										<td>USB-KEY支付。需到柜台开通。<a
+											href="http://www.psbc.com/portal/zh_CN/EBanking/PersonalEBanking/pebankHelp/11582.html"
+											target="_blank" class="a1">如何办理？</a></td>
+										<td class="td1">100万</td>
+										<td class="td1">100万</td>
+									</tr>
+
+								</tbody>
+								<tfoot>
+									<tr>
+										<th>备注</th>
+										<td colspan="3">邮政储蓄银行客服电话：95580</td>
+									</tr>
+								</tfoot>
+							</table>
+							<!-- 广发银行内容 -->
+							<table width="100%" border="0" cellpadding="0" cellspacing="0"
+								id="bank_info_17" style="display: none">
+								<colgroup>
+									<col width="100" />
+									<col width="400" />
+									<col width="130" />
+									<col />
+								</colgroup>
+								<thead>
+									<tr>
+										<td>卡类别</td>
+										<td>在线支付客户类型</td>
+										<td>单笔限额（元）</td>
+										<td>每日限额（元）</td>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<th rowspan="3">储蓄卡</th>
+										<td>通用版网上支付。无须去柜台，在线即可办理。<a
+											href="http://www.cgbchina.com.cn/Info/3326033"
+											target="_blank" class="a1">如何办理？</a></td>
+										<td class="td1">500</td>
+										<td class="td1">1500</td>
+									</tr>
+									<tr>
+										<td>手机验证码支付。需到柜台开通。<a
+											href="http://www.cgbchina.com.cn/Channel/11583586"
+											target="_blank" class="a1">如何办理？</a></td>
+										<td class="td1">3000</td>
+										<td class="td1">3000</td>
+									</tr>
+									<tr>
+										<td>Key盾支付。需到柜台开通。<a
+											href="http://www.cgbchina.com.cn/Channel/11583586"
+											target="_blank" class="a1">如何办理？</a></td>
+										<td class="td1">5000</td>
+										<td class="td1">5000</td>
+									</tr>
+									<tr>
+										<th rowspan="2">信用卡</th>
+										<td>通用版网上支付。无须去柜台，在线即可办理。<a
+											href="http://www.cgbchina.com.cn/Info/3326033"
+											target="_blank" class="a1">如何办理？</a></td>
+										<td class="td1">500</td>
+										<td class="td1">1500或卡限额</td>
+									</tr>
+									<tr>
+										<td>手机验证码或Key盾支付。需到柜台开通。<a
+											href="http://www.cgbchina.com.cn/Channel/11583586"
+											target="_blank" class="a1">如何办理？</a></td>
+										<td class="td1">2000</td>
+										<td class="td1">2000</td>
+									</tr>
+
+								</tbody>
+								<tfoot>
+									<tr>
+										<th>备注</th>
+										<td colspan="3">广东发展银行客服电话：95508</td>
+									</tr>
+								</tfoot>
+							</table>
+							<!-- 兴业银行内容 -->
+							<table width="100%" border="0" cellpadding="0" cellspacing="0"
+								id="bank_info_8" style="display: none">
+								<colgroup>
+									<col width="100" />
+									<col width="400" />
+									<col width="130" />
+									<col />
+								</colgroup>
+								<thead>
+									<tr>
+										<td>卡类别</td>
+										<td>在线支付客户类型</td>
+										<td>单笔限额（元）</td>
+										<td>每日限额（元）</td>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<th rowspan="3">储蓄卡</th>
+										<td>电子支付卡支付。需到柜台开通。<a
+											href="http://www.cib.com.cn/netbank/cn/ebank/Personal_Internet_Banking/Application_Manual/index.html"
+											target="_blank" class="a1">如何办理？</a></td>
+										<td class="td1">5000</td>
+										<td class="td1">5000</td>
+									</tr>
+									<tr>
+										<td>证书版网上支付。需到柜台开通。<a
+											href="http://www.cib.com.cn/netbank/cn/ebank/Personal_Internet_Banking/Application_Manual/index.html"
+											target="_blank" class="a1">如何办理？</a></td>
+										<td class="td1">无限额</td>
+										<td class="td1">无限额</td>
+									</tr>
+									<tr>
+										<td>网上支付。无须到柜台，在线即可开通。<a
+											href="http://www.cib.com.cn/netbank/cn/ebank/Personal_Internet_Banking/Application_Manual/index.html"
+											target="_blank" class="a1">如何办理？</a></td>
+										<td class="td1">1000</td>
+										<td class="td1">1000</td>
+									</tr>
+									<tr>
+										<th rowspan="2">信用卡</th>
+										<td>电子支付卡支付。需到柜台开通。<a
+											href="http://www.cib.com.cn/netbank/cn/ebank/Personal_Internet_Banking/Application_Manual/index.html"
+											target="_blank" class="a1">如何办理？</a></td>
+										<td class="td1">600</td>
+										<td class="td1">1000</td>
+									</tr>
+									<tr>
+										<td>网上支付。无须到柜台，在线即可开通。<a
+											href="http://www.cib.com.cn/netbank/cn/ebank/Personal_Internet_Banking/Application_Manual/index.html"
+											target="_blank" class="a1">如何办理？</a></td>
+										<td class="td1">600</td>
+										<td class="td1">1000</td>
+									</tr>
+								</tbody>
+								<tfoot>
+									<tr>
+										<th>备注</th>
+										<td colspan="3">1.信用卡账期内限额1000元，储蓄卡可自行设置网上支付限额。<br />
+											2.兴业银行客服电话：95561
+										</td>
+									</tr>
+								</tfoot>
+							</table>
+							<!-- 光大银行内容 -->
+							<table width="100%" border="0" cellpadding="0" cellspacing="0"
+								id="bank_info_15" style="display: none">
+								<colgroup>
+									<col width="100" />
+									<col width="400" />
+									<col width="130" />
+									<col />
+								</colgroup>
+								<thead>
+									<tr>
+										<td>卡类别</td>
+										<td>在线支付客户类型</td>
+										<td>单笔限额（元）</td>
+										<td>每日限额（元）</td>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<th rowspan="3">储蓄卡</th>
+										<td>大众版网银支付。无须到柜台，在线即可开通。<a
+											href="http://ebank.cebbank.com/newhelp/index_help.html####"
+											target="_blank" class="a1">如何办理？</a></td>
+										<td class="td1">5000</td>
+										<td class="td1">5000</td>
+									</tr>
+									<tr>
+										<td>专业版网银支付。需到柜台开通。<a
+											href="http://ebank.cebbank.com/newhelp/index_help.html####"
+											target="_blank" class="a1">如何办理？</a></td>
+										<td class="td1">5000</td>
+										<td class="td1">5000</td>
+									</tr>
+									<tr>
+										<td>阳光网盾支付。需到柜台开通。<a
+											href="http://ebank.cebbank.com/newhelp/index_help.html####"
+											target="_blank" class="a1">如何办理？</a></td>
+										<td class="td1">20万</td>
+										<td class="td1">20万</td>
+									</tr>
+									<tr>
+										<td>信用卡</td>
+										<td>专业版网上支付。需到柜台开通。<a
+											href="http://ebank.cebbank.com/newhelp/index_help.html####"
+											target="_blank" class="a1">如何办理？</a></td>
+										<td class="td1">300</td>
+										<td class="td1">300</td>
+									</tr>
+								</tbody>
+								<tfoot>
+									<tr>
+										<th>备注</th>
+										<td colspan="3">光大银行客服电话：95595</td>
+									</tr>
+								</tfoot>
+							</table>
+						</div>
+					</div>
+					
+				</div>
+				<a href="javascript:void(0);" id="submit" class="czbtn"
+						name="submit">确认充值</a>
+				<p class="userp1">
+					<strong>充值遇到问题？</strong><b>1、充值后什么时间可以到？</b><br />答：一般在您充值成功后1到5分钟资金会到账。未及时到帐的用户可以通过联系
+					<a href="javascript:void(0);" style="margin: 0" target="_blank"
+						onclick="this.newWindow = window.open('http://chat.live800.com/live800/chatClient/chatbox.jsp?companyID=331528&amp;jid=4618724443&amp;configID=123978', '159彩在线客服', 'toolbar=0,scrollbars=0,location=0,menubar=0,resizable=1,width=710,height=480');this.newWindow.focus();this.newWindow.opener=window;return false;"
+						class="a1">在线客服</a>或拨打24小时服务热线：<em>400-0696-159</em>帮您处理。 <br />
+					<b>2、银行页面打不开，怎么办？</b><br />答：为确保充值成功，建议您使用IE内核浏览器进行充值操作（如IE、QQ浏览器、遨游、世界之窗等）。
+				</p>
+			</div>
+		</div>
+	</div>
+	<!--#include virtual="/cc/footer.html"-->
+</body>
+</html>
