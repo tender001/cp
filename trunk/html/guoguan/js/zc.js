@@ -342,7 +342,9 @@ var loadmain = function(lotid, expect,type) {
 				g_info=' <table width="100%" border="0" cellpadding="0" cellspacing="0">';
 				g_info +='<colgroup><col width="114" /><col width="114" /><col width="" /></colgroup><thead><tr><td>奖项</td><td>中奖注数</td><td>每注金额(元)</td></tr></thead>';
 				g_info += '<tr><td>一等奖</td><td>'+one_no+'</td> <td><em>'+one_money+'</em></td> </tr> <tr><td>二等奖</td><td>'+two_no+'</td><td><em>'+two_money+'</em></td></tr>';
-				g_info += '<tr><td colspan="2" class="cop" style="border-right:none"><strong>全国销量：</strong><em>'+xl+'</em>元</td><td class="cop"><strong>奖池滚存：</strong><em>'+gc+'</em>元</td></tr></table>';
+//				g_info += '<tr><td colspan="2" class="cop" style="border-right:none"><strong>全国销量：</strong><em>'+xl+'</em>元</td><td class="cop"><strong>奖池滚存：</strong><em>'+gc+'</em>元</td></tr></table>';
+				g_info += '<tr><td class="cop" colspan="3"><span><strong>全国销量：</strong><em>'+xl+'</em>元</span><span style="padding-left:20px"><strong>奖池滚存：</strong><em>'+gc+'</em>元</san></td>';
+				g_info += '</tr></table>';
 			}else{
 				g_info=' <table width="100%" border="0" cellpadding="0" cellspacing="0"><thead><tr><td>奖项</td><td>中奖注数</td> <td>每注金额(元)</td></tr></thead>';
 				//g_info +='<thead><tr><td>奖项</td><td>中奖注数</td><td>每注金额(元)</td></tr></thead>';
