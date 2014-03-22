@@ -1,0 +1,190 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>网上买彩票_找回密码_159彩票网</title>
+<meta name="keywords" content="福利彩票，福彩，体育彩票，体彩，足彩，网上买彩票，彩票合买，彩票开奖，彩票走势图，彩票预测"/>
+<meta name="description" content="159彩票网为彩民提供专业的彩票网上投注、合买、开奖结果、走势分析、比分直播等服务，覆盖福彩、体彩、足彩、竞彩、快频等彩种。159—彩票网上投注最佳选择！"/>
+<link href="/css/159cai.css"  rel="stylesheet" type="text/css" />
+<link href="/css/new159cai.css"  rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="/public/jq2.js"></script>
+<script type="text/javascript" src="/public/jq.js"></script>
+<script type="text/javascript" src="/public/menu.js"></script>
+<script type="text/javascript" src="/public/159cp.js"></script>
+<script type="text/javascript" src="/public/chklogin.js"></script>
+<script type="text/javascript" src="/user/js/getpwd.js"></script>
+</head>
+<body>
+<!--#include virtual="/cc/header.html"-->
+<!--#include virtual="/cc/nav.html"-->
+<div class="getwod" id="step_1">
+<h1>找回密码</h1>
+<table width="500" border="0" cellpadding="0" cellspacing="0" >
+ <colgroup>
+<col width="75">
+<col width="220">
+<col>
+</colgroup>
+  <tr>
+    <th>用户名</th>
+    <td><input type="text"  class="text_log" name="username" id="username"/></td>
+    <td><span class="say_1" id="username_err" style="display:none;">用户名不能为空</span></td>
+  </tr>
+  <tr>
+    <th></th>
+    <td><a href="javascript:void(0);" class="but_getw" id="btn_tj">提&nbsp;&nbsp;交</a></td>
+    <td></td>
+  </tr>
+</table>
+</div>
+
+
+<div class="getwod" id="step_2" style="display:none;">
+<h1>选择绑定工具找回密码</h1>
+<h2>您需要找回密码的用户名是:<strong class="red"></strong></h2>
+<div class="getwod_col f_l" id="getway1">
+ <div class="a_out" id="m1"><a href="javascript:void(0);" class="a_inner" title="用手机找回"><img src="/images/cdbg/getw_13.gif" /></a></div>
+ <div class="a_out_y" id="m2" style="display:none;"><a href="javascript:void(0);" class="a_inner" id="mobile_openBtn" title="用手机找回"><img src="/images/cdbg/getw_22.gif" /></a></div>
+ <p>未绑定<br />
+不可使用</p>
+</div>
+<div class="getwod_col" id="getway2">
+ <div class="a_out" id="e1"><a href="javascript:void(0);" class="a_inner" title="用邮箱找回"><img src="/images/cdbg/getw_15.gif" /></a></div>
+ <div class="a_out_y" id="e2" style="display:none;"><a href="javascript:void(0);" class="a_inner" id="email_openBtn" title="用邮箱找回"><img src="/images/cdbg/getw_23.gif" /></a></div>
+ <p>未绑定<br />
+不可使用</p>
+</div>
+<div class="getwod_col" id="getway3">
+ <div class="a_out" id="p1"><a href="javascript:void(0);" class="a_inner" title="用密保找回"><img src="/images/cdbg/getw_17.gif" /></a></div>
+ <div class="a_out_y" id="p2" style="display:none;"><a href="javascript:void(0);" class="a_inner" id="protect_openBtn" title="用密保找回"><img src="/images/cdbg/getw_24.gif" /></a></div>
+ <p>未绑定<br />
+不可使用</p>
+</div>
+</div>
+
+<div class="getwod" id="layer_email1" style="display:none;">
+<h1>找回密码</h1>
+<table width="500" border="0" cellpadding="0" cellspacing="0" >
+ <colgroup>
+<col width="75">
+<col width="220">
+<col>
+</colgroup>
+  <tr>
+    <th>用户名</th>
+    <td class="red"></td>
+    <td></td>
+  </tr>
+  <tr>
+    <th>邮箱</th>
+    <td><input name="" type="text" id="email" value="请填写邮箱地址" 
+    onFocus="if(this.value=='请填写邮箱地址'){this.value='';this.style.color='#333'}" 
+    onBlur="if(this.value==''){this.value='请填写邮箱地址';this.style.color='#999'}" class="text_log"/></td>
+    <td><span class="say_1" id="err_info2" style="display:none;">邮箱不能为空</span></td>
+  </tr>
+  <tr>
+    <th></th>
+    <td><a href="javascript:void(0);" class="but_getw" id="btn_tj_email">提&nbsp;&nbsp;交</a></td>
+    <td></td>
+  </tr>
+
+</table>
+</div>
+
+<!-- 用手机找回密码   --> 
+<div class="getwod"  id="layer_mobile1" style="display:none;">
+<h1>找回密码</h1>
+<table width="500" border="0" cellpadding="0" cellspacing="0" >
+ <colgroup>
+<col width="75">
+<col width="220">
+<col>
+</colgroup>
+  <tr>
+    <th>用户名</th>
+    <td class="red"></td>
+    <td></td>
+  </tr>
+  <tr>
+    <th>手机号码</th>
+    <td><input name="" id="mobile" type="text" value="请填写手机号码" 
+    onFocus="if(this.value=='请填写手机号码'){this.value='';this.style.color='#333'}" 
+    onBlur="if(this.value==''){this.value='请填写手机号码';this.style.color='#999'}" class="text_log"/></td>
+    <td><span class="say_1" id="err_info1" style="display:none;">手机号不能为空</span></td>
+  </tr>
+  <tr>
+    <th>验证码</th>
+    <td><input type="text"  class="text_log" style="width:88px;float:left;" name="vcode" id="vcode" maxlength="6"/><input name="mobile_again" type="button" id="mobile_again" class="but" value="发送验证码"/></td>
+    <td><span class="say_1" id="err_info3" style="display:none;">验证码不能为空</span></td>
+  </tr>
+  <tr>
+    <th></th>
+    <td><a href="javascript:void(0);" class="but_getw" id="mobile_btn">提&nbsp;&nbsp;交</a></td>
+    <td></td>
+  </tr>
+</table>
+</div>
+
+<div class="getwod" id="layer_protect1" style="display:none;">
+<h1>找回密码</h1>
+<h2>1. 填写用户名 >><strong> 2. 选择密保问题提交答案 </strong>>> 3. 重置密码</h2>
+<table width="500" border="0" cellpadding="0" cellspacing="0" >
+ <colgroup>
+<col width="75">
+<col width="220">
+<col>
+</colgroup>
+  <tr>
+    <th>用户名</th>
+    <td class="red"></td>
+    <td></td>
+  </tr>
+  <tr>
+    <th>密保</th>
+    <td><select name="question" id="question">
+        <option value="">请选择密码提示问题</option>
+        <option value="1">我的小名或者外号</option>
+        <option value="2">我的宠物名字</option>
+        <option value="3">我最亲密的朋友是</option>
+        <option value="4">我最喜欢的颜色</option>
+        <option value="5">我最喜欢的演员</option>
+        <option value="6">我经常买的彩票彩种</option>
+        <option value="7">我最喜欢的球星</option>
+        <option value="8">我最喜欢的球队</option>
+        <option value="9">我最喜欢吃的菜</option>
+        <option value="10">我喜欢的人的生日</option>
+        <option value="11">我崇拜的人</option>
+        <option value="12">我读的中学学校全称是</option>
+        <option value="13">我的幸运数字</option>
+       </select></td>
+    <td><span class="say_1" id="err_info5" style="display:none;"></span></td>
+  </tr>
+  <tr>
+    <th>答案</th>
+    <td><input type="text"  class="text_log"  name="answer" id="answer"/></td>
+    <td><span class="say_1" id="err_info6" style="display:none;"></span></td>
+  </tr>
+  <tr>
+    <th></th>
+    <td><a href="javascript:void(0);" class="but_getw" id="btn_tj_protect">提&nbsp;&nbsp;交</a></td>
+    <td></td>
+  </tr>
+</table>
+</div>
+
+<div class="success_cz" id="step_suc" style="display:none;">
+ <span class="suc_cz"><strong>您好，<b class="red"></b>，密码已重置！</strong><br />密码：<font id="newpwd"></font></span>
+ <p class="p1">建议立即登录修改密码</p>
+ <p class="p1">您可以<a href="/user/login.html">登录159彩票</a>|<a href="/">彩票首页</a>|<a href="/">彩票首页</a></p>
+</div>
+
+<div class="zf_judge" id="common_msg" style="display:none;">
+ <h1 class="sb" id="msg_title">错误提示</h1>
+ <div class="zf_j_bg">
+  <p class="sb"><em id="msg_content">该地址无效，请确认验证地址！</em></p>
+</div>
+<p>您可以 <a href="/" target="_blank">返回首页</a>|<a href="#">联系客服</a></p>
+</div>
+<!--#include virtual="/cc/footer.html"-->
+</body>
+</html>

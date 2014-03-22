@@ -1,0 +1,204 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+<title>13/14赛季德甲法甲专题_159彩票网</title>
+<meta name="Keywords" content="德甲,法甲" />
+<meta name="Description" content="德甲拜仁、多特和沙尔克04三国鼎立，法甲大巴黎与摩纳哥双雄会，硝烟四起，群雄逐鹿，风云突变，谁主沉浮？激情燃烧的绿茵场，这个8月" />
+<link href="/css/159cai.css"  rel="stylesheet" type="text/css" />
+<link href="/css/k3.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="/public/jq2.js"></script>
+<script type="text/javascript" src="/public/jq.js"></script>
+<script type="text/javascript" src="/public/menu.js"></script>
+<script type="text/javascript" src="/public/159cp.js"></script>
+<script type="text/javascript" src="/public/chklogin.js"></script>
+<style type="text/css">
+.focus {width:520px;height:220px;margin-bottom:10px;  position: relative;}
+.frame{position:relative;width:520px;height:220px; overflow:hidden; }
+.controls{  bottom: 5px;
+    float: right;
+    height: 20px;
+    overflow: hidden;
+    position: absolute;
+    right: 5px;
+    z-index: 9999;}
+
+.off{ text-align:center; float:left; width:105px;}
+.off .dot_list{ display:inline-block;width:14px; height:14px;margin:2px;overflow:hidden;border:1px solid #CCCCCC;background:#FFFFFF;color:#333333;cursor:pointer;}
+.off .current{border-color:#EE0000;background:#EE0000;color:#FFFFFF;}
+#btn_prev,#btn_next {display:none;}
+
+.btn_prevOff2,.btn_prevOn2,.btn_nextOff2,.btn_nextOn2{ width:20px; height:20px; float:left; display:block; background:url(/img/index/cm_bz_bg.gif) no-repeat 0 0; cursor:pointer;}
+.btn_prevOff2{ background-position:0 -188px; margin-right:11px;}
+.btn_nextOff2{ background-position:-27px -188px; margin-left:8px;}
+.btn_prevOn2{ background-position:0 -188px; margin-right:11px;}
+.btn_nextOn2{ background-position:-27px -188px; margin-left:8px;}
+
+
+ul{list-style:none;margin:0px;padding:0px}
+.click_out{margin-left:5px; float:left; text-align:center; height:16px; line-height:16px; width:16px; background:#fff; color:#444; font-weight:bold; font-size:12px; cursor:pointer;_display:inline-block; }
+.click_over{margin-left:5px; float:left;text-align:center; height:16px; line-height:16px; width:16px; background:#cc0000; color:#fff; font-weight:bold; font-size:12px; cursor:pointer; _display:inline-block; }
+#header{background-color:#FFFDF3;padding-bottom:5px}
+.index_ta{display:block;margin:0 auto;width:1590px;height:155px;}
+
+</style>
+</head>
+<body>
+<!-- 头部内容 -->  
+<!--#include virtual="/cc/header.html"-->
+<!--#include virtual="/cc/nav.html"-->
+<!-- 头部内容 --> 
+<div id="container">
+ <div class="fivemch">
+   <div class="five_top">
+   <div class="news_img">
+     <div class="focus cm_left">
+		<div id="flash_outer" style="height:230px;  background:#EBEBEB; position:relative">
+		  <div id="flash_pic" style=" position:absolute; left:0px; top:0px; width:530px; height:230px; overflow:hidden">
+		  <a title="五大联赛王者归来 竞彩激情再度点燃" target="_blank" href="http://www.159cai.com/jczq/yuce/2013/0814/3071.html" style="display: inline;"><img alt="五大联赛王者归来 竞彩激情再度点燃" src="/images/match/006.jpg"></a>
+			 <a title="蓝军恶斗曼市双雄" target="_blank" href="http://www.159cai.com/jczq/yuce/2013/0815/3088.html" style="display: none;"><img alt="蓝军恶斗曼市双雄" src="/images/match/008.jpg"></a>
+			 <a title="巨资助法甲崛起" target="_blank" href="http://www.159cai.com/jczq/yuce/2013/0809/3018.html" style="display: none;"><img alt="巨资助法甲崛起" src="/images/match/003.jpg"></a>
+			 <a title="鲁尔双雄战拜仁" target="_blank" href="http://www.159cai.com/jczq/yuce/2013/0809/3015.html" style="display: none;"><img alt="鲁尔双雄战拜仁" src="/images/match/004.jpg"></a>
+			 <a href="http://www.159cai.com/jczq/yuce/2013/0815/3094.html" target="_blank" title="皇马巴萨双雄会" style="display: none;"><img src="/images/match/007.jpg" alt="皇马巴萨双雄会"></a>
+			
+
+			
+			 
+		  </div>
+		  <ul id="flash_num" style="position:absolute; right:10px; bottom:0px; height:38px">
+		   <li class="click_out">1</li>
+		   <li class="click_over">2</li>
+		   <li class="click_out">3</li>
+		   <li class="click_out">4</li>
+		   <li class="click_out">5</li>
+		 </ul>
+		</div>
+     <script>
+   	$(document).ready(function(){
+   var len=$("#flash_num>li").length;
+   var index=1;
+   var int;
+   function showSys(num)  //图片切换函数
+   {
+    $("#flash_num>li").removeClass().addClass("click_out").eq(num).toggleClass("click_out").addClass("click_over");
+    $("#flash_pic>a").fadeOut().eq(num).fadeIn();
+   }
+   function ziDong()  //自动切换
+   {
+    if(index==len)
+    {
+     index=0;
+    }
+    showSys(index);
+    index=index+1;
+   }
+   int=setInterval(ziDong,4000);
+   $("#flash_num>li").mouseover(function() //点击切换
+   {
+    var index_num=$("#flash_num>li").index(this);
+    showSys(index_num);
+    index=index_num+1;  //改变全局变量的值，以便鼠标移开的时候能够衔接上
+    //$(".click_out").removeClass("click_over").eq(index).addClass("click_over");
+    //$(".click_out").eq(index).removeClass().addClass("click_over");
+       //alert(index);
+   });
+   $("#flash_outer").mouseover(function()  //移动到上面时停止自动切换
+       {
+        clearInterval(int);
+       });
+   $("#flash_outer").mouseout(function()  //移开时继续自动切换
+       {
+        int=setInterval(ziDong,4000);
+       });
+});
+    
+    </script> 
+  
+    </div>
+     </div>
+
+   
+   
+   
+    <!--#include virtual="/dedeinc/hotmatch_list.html"-->
+ </div>
+   <div class="five_c">
+     <div class="five_ct">
+      <p>五大联赛<em>赛季前瞻</em></p><div class="fc_line"></div>
+     </div>
+      <div class="five_cleft">
+       <div class="five_cc">
+         <h3><a target="_blank"  href="http://www.159cai.com/jczq/yuce/2013/0814/3071.html">五大联赛王者归来 竞彩激情再度点燃</a></h3>
+         <p>进入8月，新赛季欧洲五大联赛将陆续揭幕，竞彩的热情将在未来一个多月里迅速升温，达到沸点,重装上阵的竞彩足球游戏将为广大球迷和彩民带来更多欢乐……<a target="_blank"  href="http://www.159cai.com/jczq/yuce/2013/0814/3071.html">[详细]</a></p>
+         </div><div class="five_cc">
+         <h3><a target="_blank"  href="http://www.159cai.com/jczq/yuce/2013/0815/3096.html">英西联赛来袭 英超三人行西甲二人转</a></h3>
+         <p>在度过了近3个月的休战期后，12-13赛季西甲英超终于要回归了。广大球迷们想必已经对新赛季的西甲英超联赛感到迫不及待……<a target="_blank"  href="http://www.159cai.com/jczq/yuce/2013/0815/3096.html">[详细]</a></p>
+         </div><div class="five_cc" style="border:none">
+         <h3><a target="_blank"  href="http://www.159cai.com/jczq/yuce/2013/0809/3020.html">德甲法甲拉开帷幕 重视青训vs奢侈引援</a></h3>
+         <p>德甲拜仁、多特和沙尔克04三国鼎立，法甲大巴黎与摩纳哥双雄会，硝烟四起，群雄逐鹿，风云突变，谁主沉浮？激情燃烧的绿茵场，这个8月，要你好看！……<a target="_blank"  href="http://www.159cai.com/jczq/yuce/2013/0809/3020.html">[详细]</a></p>
+         </div>
+      </div>
+      <div class="five_cright">
+        <div class="five_dt">
+        </div>
+        <div class="five_d">
+          <div class="five_dd">
+          <a target="_blank"  href="http://info.159cai.com/index.php?controller=teaminfo&action=index&lid=39&sid=4136&tid=500">
+           <em><img src="/images/fivels/fivels_24.gif" /></em>
+           拜仁慕尼黑
+           </a><a target="_blank"  href="http://info.159cai.com/index.php?controller=teaminfo&action=index&lid=39&sid=4136&tid=415">
+           <em><img src="/images/fivels/fivels_25.gif" /></em>
+           多特蒙德
+           </a><a target="_blank"  href="http://info.159cai.com/index.php?controller=teaminfo&action=index&lid=39&sid=4136&tid=123">
+           <em><img src="/images/fivels/fivels_26.gif" /></em>
+           沙尔克
+           </a>
+          </div>
+          <div class="five_dd">
+          <a target="_blank"  href="http://info.159cai.com/index.php?controller=teaminfo&action=index&lid=93&sid=4137&tid=517">
+           <em><img src="/images/fivels/fivels_27.gif" /></em>
+           巴黎圣日耳曼
+           </a><a target="_blank"  href="http://info.159cai.com/index.php?controller=teaminfo&action=index&lid=93&sid=4137&tid=219">
+           <em><img src="/images/fivels/fivels_28.gif" /></em>
+           摩纳哥
+           </a><a target="_blank"  href="http://info.159cai.com/index.php?controller=teaminfo&action=index&lid=93&sid=4137&tid=292">
+           <em><img src="/images/fivels/fivels_29.gif" /></em>
+           里昂
+           </a>
+          </div>
+        </div>
+      </div>
+   </div>
+   <div class="five_m"> 
+      <div class="five_mc">
+      <h2  class="fvh3">2013-2014赛季<em>英超</em>数据</h2>
+      <p><a target="_blank"  href="http://www.159cai.com/jczq/yuce/2013/0815/3088.html">英超新赛季揭幕：蓝军恶斗曼市双雄</a></p>
+      <p><a target="_blank"  href="http://www.159cai.com/jczq/yuce/2013/0815/3090.html">英超中下游球队前瞻：升班马全遭轻视</a></p>
+      <p style="border:none"><a target="_blank"  href="http://www.159cai.com/jczq/yuce/2013/0815/3089.html">英超欧战区：枪手保欧冠 红军难敌热刺</a></p>
+     </div>
+     <div class="five_mc"  style="float:right">
+      <h2  class="fvh4">2013-2014赛季<em>西甲</em>数据</h2>
+      <p><a target="_blank"  href="http://www.159cai.com/jczq/yuce/2013/0815/3094.html">西甲新赛季揭幕：西超双雄皇马巴萨依然带起节奏</a></p>
+      <p><a target="_blank"  href="http://www.159cai.com/jczq/yuce/2013/0815/3095.html">西甲中下游球队前瞻：国内经济危机多队转出主力</a></p>
+      <p style="border:none"><a target="_blank"  href="http://www.159cai.com/jczq/yuce/2013/0815/3097.html">西甲升班马：潜水艇底蕴在 阿尔梅保级堪忧</a></p>
+     </div> 
+     <div class="five_mc">
+      <h2>2013-2014赛季<em>德甲</em>数据</h2>
+      <p><a target="_blank"  href="http://www.159cai.com/jczq/yuce/2013/0809/3015.html">德甲前瞻之争冠集团：多特、沙尔克双雄火拼拜仁慕尼黑</a></p>
+      <p><a target="_blank"  href="http://www.159cai.com/jczq/yuce/2013/0809/3016.html">德甲前瞻之欧战争夺：弗赖堡、勒沃库森能否脱颖而出?</a></p>
+      <p style="border:none"><a target="_blank"  href="http://www.159cai.com/jczq/yuce/2013/0809/3017.html">德甲前瞻之保级大战：布瑞伦克、霍格斯堡形势严峻难有作为</a></p>
+     </div>
+     <div class="five_mc" style="float:right">
+      <h2 class="fvh2">2013-2014赛季<em>法甲</em>数据</h2>
+      <p><a target="_blank"  href="http://www.159cai.com/jczq/yuce/2013/0809/3022.html">法甲前瞻之巴黎：目标卫冕 伊布卡瓦尼组梦幻锋</a></p>
+      <p><a target="_blank"  href="http://www.159cai.com/jczq/yuce/2013/0809/3021.html">法甲升班马：摩纳哥剑指冠军 甘冈三年两升</a></p>
+      <p style="border:none"><a target="_blank"  href="http://www.159cai.com/jczq/yuce/2013/0809/3018.html">法甲前瞻：两大因素或影响巴黎卫冕 里昂彻底沦</a></p>
+     </div>
+
+   </div>
+ </div>
+</div>
+<!--#include virtual="/cc/footer.html"-->
+</body>
+</html>
