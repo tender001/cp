@@ -857,14 +857,14 @@ border-radius: 3px;-moz-border-radius:3px;}
     color: #484848;
     float: left;
     text-align: center;
-    width: 52px;
+    width: 48px;
 }
 
 .bqggtb .td_shu div.t2 {
     color: #484848;
     float: right;
-    padding-right: 2px;
-    width: 12px;
+    padding-right: 4px;
+    width: 15px;
 }
 .navmlist a.sre {
     background: url(../images/159/re.gif) no-repeat scroll 96px 5px ;
@@ -990,3 +990,7 @@ p.buy_sucess a:hover{color:#ff6600; text-decoration:underline}
 .cpxq_tan_m table strong{font-weight:bold;font-size:16px;color:#970701;padding-right:5px}
 .cpxq_tan_2 p{line-height:25px;color:#444;font-size:12px;margin-leolor:#145fab;margin-left:50px;}
 table.log_tab td a.aa:hover{color:#790500; text-decoration:underline}
+table.co1 tbody td.last a.red_b{color:#fff;background:#ff6600;display:inline-block;margin-left:40px;line-height:20px;padding:0 10px;font-size:14px;}
+.news_left h4 a.a1{color:#145fab;text-decoration:underline}
+.news_left p a.a1{color:#145fab;text-decoration:underline}
+.news_left  a.a1:hover{color:#ff6600}
