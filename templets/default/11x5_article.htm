@@ -26,7 +26,7 @@
 <div class="news">
  <div class="news_left">
   <h1>{dede:field.title/}</h1>
-  <h4>{dede:field.pubdate function="MyDate('Y-m-d H:i',@me)"/}  来源：{dede:field.source/}    编辑：{dede:field.writer/}</h4>
+  <h4>{dede:field.pubdate function="MyDate('Y-m-d H:i',@me)"/}  来源：<a mark="source" class="a1"target="_blank"  >{dede:field.source/}</a>   编辑：{dede:field.writer/}</h4>
   {dede:field.body/}
 <h2><a href="/11x5/jiqiao/" target="_blank">更多相关阅读</a></h2>
 <div class="news_l_list">
@@ -38,7 +38,12 @@
 </div>
 </div>
  
- 
+  <script >
+ 	var source=Y.get("a[mark=source]").html();
+ 	if(source=='159彩票网' ||source=='159彩票网综合整理'){
+ 		Y.get("a[mark=source]").attr('href','http://www.159cai.com');
+ 	}
+ </script>
  <div class="newsr">
    <!-- 开奖公告开始 -->
    <!--#include virtual="/cc/module/kaijianggonggao.html"-->
