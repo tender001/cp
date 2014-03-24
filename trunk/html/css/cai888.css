@@ -387,12 +387,21 @@ a.czbtn{display:block;height:32px;width:98px;line-height:32px;text-align:center;
 .clearfix{*zoom:1;}
 .txt_p a.a1{color:#145fab; text-decoration:underline}
 .nosuc_reg{background:none}
-.dialog01 .dialog-title{color:#fff;padding:0 10px}
+.dialog01 .dialog-title{color:#fff;padding:0 10px;height:34px;line-height:34px;background:#ff6600;font-size:14px;font-weight:bold;border-bottom:1px solid #ff6600}
 .dialog01 .dialog-content{margin:10px}
-.dialog01 .dialog-title .dialog-close{width:9px;height:9px;float:right;display:inline;margin:12px 0 0 0;background-position:-350px -76px;cursor:pointer;overflow:hidden;}
-.filter_box h3{background:#ff6600}
+.dialog01 .dialog-title .dialog-close{float:right;display:inline;cursor:pointer;overflow:hidden;color:#fff;font-size:16px}
+.filter_box h3{background:#e7e7e7;color:#444}
 .filter_box .step2{background:#FFFFEF}
-.youhua{border:1px solid #ff6600;border-top:2px solid #ff6600}
+.youhua{border:1px solid #ccc;border-top:2px solid #ccc}
 .aut_btn{border:none}
 .aut_red{border:none;background:#ff6600}
 .aut_red span{border:none}                    
+.dialog01{border:1px solid #ff6600}
+.padding_t10{clear:both}
+.aut_blue{background:#ff6600}
+.aut_blue span{border:none}
+.gl_tab .see_all{color:#145fab}
+.gl_tab .see_all:hover{color:#ff6600; text-decoration:underline}
+.youhua .tab_team_mix th{boder-left:none}
+.youhua .tab_team_mix td{border-left:none}
+.condition_select .open_up, .condition_select .fold{width:117px}
