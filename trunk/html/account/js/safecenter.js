@@ -33,7 +33,8 @@ Class({
 							var bank = r.bank;
 
 							var mobbind = r.mobbind;
-
+							var mobile = r.mobile;
+							var email =r.email;
 							var mailbind = r.mailbind;
 
 							if (isprot == 1) {
@@ -52,9 +53,11 @@ Class({
 							if (rname.length > 2 && idcard.length > 10) {
 								$("#realname s")
 										.html(
-												'已绑定，<a id="realname" class="s" href="/account/trueinfo.html">修改</a>')
+												'已绑定，不可修改')
 										.removeClass("cur");
 								$("#realname_i").removeClass("cardcur");
+								$("#na").html('真实姓名：<em id="rname">'+rname+'</em>'+'&nbsp;&nbsp;&nbsp;&nbsp;身份证号：<em id="idcard">'+idcard+'</em>');
+//								$("#idcard").html(idcard);
 
 								safe += 1;
 							} else {
@@ -63,31 +66,36 @@ Class({
 								$("#realname s").html(
 										'<a href="/account/trueinfo.html">绑定</a>')
 										.addClass("cur");
+								$("#na").html("实名信息（真实姓名、身份证号）是领奖、提款的重要信息，绑定后不可更改");
+
 							}
 							
 							if (mobbind == 0) {
 								// $("#mobbind").removeClass().addClass("bd");
 								$("#mobbind_i").removeClass("telc").addClass("telcur");
-
 								$("#mobbind s").html('<a href="/account/mobile.html">绑定</a>').addClass("cur");
+								$("#tel").html('绑定手机，可以免费定制中奖通知、账户异动通知等服务');
+
 							} else {
 								// $("#mobbind").removeClass().addClass("xg");
 								// $("#mobbind_i").removeClass().addClass("aqcc_cur");
+								
 								$("#mobbind s").html('已绑定，<a id="div4" name="sendphone" class="s" href="/account/mobile.html">修改</a>').removeClass("cur");
 								
 								$("mobbind_i").addClass("telc").addClass("telcur");
+								$("#tel").html('手机号码：<em id="mobile">'+mobile+'</em>');
 								safe += 1;
 							}
 							
 							if (bank.length > 10) {
 								// $("#bank").removeClass().addClass("xg");
 								// $("#bank_i").removeClass().addClass("bank_cur");
+								$("#bank_i").removeClass("cardcur");
 								$("#bank s")
-								.html(
-										'已绑定，<a id="bank" class="s" href="/account/bankinfo.html">修改</a>')
-								.removeClass("cur");
-						$("#bank_i").removeClass("cardcur");
-
+								.html('已绑定，不可修改').removeClass("cur");
+						
+//						$("#bank").html(bank);
+								$("#bk").html('银行卡号：<em id="bank">'+bank+'</em>');
 								safe += 1;
 							} else {
 								// $("#bank").removeClass().addClass("bd");
@@ -96,6 +104,8 @@ Class({
 								$("#bank s").html(
 										'<a href="/account/bankinfo.html">绑定</a>')
 										.addClass("cur");
+								$("#bk").html('绑定银行卡是您提款时的唯一用卡，是资金提取的安全保证');
+
 							}
 							
 							if (mailbind == 0) {
@@ -104,6 +114,8 @@ Class({
 								$("#mailbind s").html(
 										'<a href="/account/emailinfo.html">绑定</a>')
 										.addClass("cur");
+								$("#emal").html('认证后可找回密码；可定制安全服务，保障账户安全');
+
 								// $("#mailbind").removeClass().addClass("bd");
 							} else {
 								// $("#mailbind").removeClass().addClass("xg");
@@ -113,7 +125,8 @@ Class({
 										'已绑定，<a id="div5" name="sent_mail" class="s" href="/account/emailinfo.html">修改</a>')
 								.removeClass("cur");
 						$("#mailbind_i").removeClass("cardcur");
-
+						$("#emal").html('邮箱：<em id="mailbind">'+email+'</em>');
+						
 								safe += 1;
 							}
 
@@ -135,7 +148,8 @@ Class({
 							} else if (safe == 5) {
 								cascade = "高";
 								caspaint = "100";
-								
+//								this.get("#djimg").attr(
+//										"style","background:#00AE38;width:" + caspaint + "%");
 							}
 							this.get("#djimg").attr(
 									"style","width:" + caspaint + "%");
