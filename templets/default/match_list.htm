@@ -1,0 +1,26 @@
+   <div class="gccn">
+     <div class="gccn_top">
+      <h3>焦点赛事</h3><a href="/lc/">竞彩篮球</a><a href="/jc/">竞彩足球</a>
+     </div>
+     
+     <div class="ov_main">
+     {dede:arclist  addfields='pic,leaguename,hometeam,guestteam,matchtime,tidian,link' orderby='pubdate' idlist='3' channelid='17'}
+       <div class="ov_list">
+      <span><b>[field:leaguename/]</b><p>[field:matchtime/]</p></span>
+      <div class="ov_r"><a href="/jc/" target="_blank" class="abt">投注竞足</a><a href="/bj/" target="_blank" class="abt">投注单场</a><a href="[field:link/]" target="_blank" class="pap">[field:hometeam/] <font>vs</font>[field:guestteam/]</a></div>
+      </div>
+      {/dede:arclist}	
+ {dede:arclist  addfields='pic,leaguename,hometeam,guestteam,matchtime,tidian,link' orderby='pubdate' idlist='4' channelid='17'}
+      <div class="ov_list">
+      <span><b class="cur">[field:leaguename/]</b><p>[field:matchtime/]</p></span>
+      <div class="ov_r"><a href="/jc/" target="_blank" class="abt">投注竞足</a><a href="/bj/" target="_blank" class="abt">投注单场</a><a href="[field:link/]" target="_blank" class="pap">[field:hometeam/] <font>vs</font>[field:guestteam/]</a></div>
+      </div>
+       {/dede:arclist}	
+ {dede:arclist  addfields='pic,leaguename,hometeam,guestteam,matchtime,tidian,link' orderby='pubdate'   idlist='5' channelid='17'}
+      <div class="ov_list" style="border:none">
+      <span><b>[field:leaguename/]</b><p>[field:matchtime/]</p></span>
+      <div class="ov_r"><a href="/lc/" target="_blank" class="abt">投注竞蓝</a><a href="[field:link/]" target="_blank" class="pap">[field:hometeam/] <font>vs</font>[field:guestteam/]</a></div>
+      </div>
+       {/dede:arclist}
+     </div>
+    </div>
