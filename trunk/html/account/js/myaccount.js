@@ -132,13 +132,17 @@ var showSafe = function(){
 								 this.get('#acc_mobile').swapClass('a1', 'a1 a1cur').attr('title','已绑定手机号'+mobile);
 							 }
 							 if(rname==""){
-
+									
+								 $('#acc_truename').attr("href","/account/trueinfo.html");
 							 }else{
 								 this.get('#acc_truename').swapClass('a2', 'a2 a2cur').attr('title','已绑定身份证号'+idcode);
-								this.get("#shiming").hide();
+								$('#acc_truename').removeAttr("href");
 							 }
-							 if(bank!=""){
+							if(bank!=""){
 								this.get('#acc_bank').swapClass('a3', 'a3 a3cur').attr('title','已绑定银行卡号'+bank);
+								$('#acc_bank').removeAttr("href");
+							 }else{
+								 $('#acc_bank').attr("href","/account/bankinfo.html");
 							 }
 					   }
              }
