@@ -31,7 +31,8 @@ Class({
 							var rname = r.rname;
 							var idcard = r.idcard;
 							var bank = r.bank;
-
+							var name=r.name;
+							
 							var mobbind = r.mobbind;
 							var mobile = r.mobile;
 							var email =r.email;
@@ -94,8 +95,8 @@ Class({
 								$("#bank s")
 								.html('已绑定，不可修改').removeClass("cur");
 						
-//						$("#bank").html(bank);
-								$("#bk").html('银行卡号：<em id="bank">'+bank+'</em>');
+//					$("#name").html(name);
+								$("#bk").html('银行卡号：<em id="bank">'+bank+'</em>'+'&nbsp;&nbsp;&nbsp;&nbsp;支行名称：<em id="name"></em>'+name);
 								safe += 1;
 							} else {
 								// $("#bank").removeClass().addClass("bd");
