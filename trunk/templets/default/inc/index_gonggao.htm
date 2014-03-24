@@ -1,0 +1,11 @@
+<dl>
+  {dede:arclist titlelen='45' row='6' typeid='1'}
+ <dd><a href="http://www.159cai.com[field:arcurl/]" target="_blank">[field:title/]</a>[field:pubdate runphp='yes']   
+    $a="<span style='color:#FF0000;'>".strftime('%m-%d',@me)."</span>";  
+    $b="<span>".strftime('%m-%d',@me)."</span>";   
+    $c=strftime('%Y%m%d',@me);   
+    if($c==date("Ymd")) @me = $a;  
+    else @me =$b;   
+    [/field:pubdate]</dd>
+  {/dede:arclist}
+</dl>
