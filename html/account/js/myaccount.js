@@ -136,6 +136,7 @@ var showSafe = function(){
 								 $('#acc_truename').attr("href","/account/trueinfo.html");
 							 }else{
 								 this.get('#acc_truename').swapClass('a2', 'a2 a2cur').attr('title','已绑定身份证号'+idcode);
+								 $("#shiming").hide();
 								$('#acc_truename').removeAttr("href");
 							 }
 							if(bank!=""){
