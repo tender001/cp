@@ -71,7 +71,7 @@ Class({
 							if (mobbind == 0) {
 						
 								
-								$("#mobbind_i").addClass("telc").addClass("telcur");
+								$("#mobbind_i").removeClass("telcur");
 								$("#mobbind s").html('<a href="/account/mobile.html">绑定</a>').addClass("cur");
 								$("#tel").html('绑定手机，可以免费定制中奖通知、账户异动通知等服务');
 
