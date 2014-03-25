@@ -28,9 +28,9 @@ Class({
 					var mobile =r.mobile;
 					if(mobbind==1){
 						$("#div1").hide();
-						$("#div4").show();
+						$("#div3").show();
 					}else{
-						$("#div4").hide();
+						$("#div3").hide();
 						$("#div1").show();
 						
 					}
