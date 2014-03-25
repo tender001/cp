@@ -60,7 +60,10 @@ Class({
 							Y.get("#name").html(city+"市");
 						}
 						$("#name").append(name);
-						Y.get("#card").html(card);
+						if(Y.get("#card").html()==""){
+							Y.get("#card").html(card);
+						}
+						
 						Y.get("#div1").hide();
 						Y.get("#div2").show();
 					}
@@ -147,11 +150,13 @@ Class({
 					var desc = obj.Resp.desc;
 					if (code == "0") {	
 						Y.alert(desc);
+						Y.get("#card").html($("#cardnumber").val());
 					} else {
 						if (code=="1"){
 							Y.postMsg('msg_login', function() {						
 								window.location.reload();			
 							});
+							Y.get("#card").html($("#cardnumber").val());
 						}else{
 							Y.alert(desc);
 						}

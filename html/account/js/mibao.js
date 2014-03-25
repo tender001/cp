@@ -47,13 +47,13 @@ Class({
 							window.location.reload();			
 						});
 					}else{
-						alert(desc);
+						Y.alert(desc);
 					}
 					
 				}			
 			},
 			error : function() {
-				alert("您所请求的页面有异常！");
+				Y.alert("您所请求的页面有异常！");
 			}
 		});
 	}
@@ -62,12 +62,12 @@ Class({
 		$("#conform_btn_0").bind({
 			click:function(){
 				if ($.trim($("#pwdselect_0").val())==""){
-					alert("请选择密码保护问题");
+					Y.alert("请选择密码保护问题");
 					$("#pwdselect_0").focus();
 					return false;
 				}
 				if ($.trim($("#pwdanswer_0").val())==""){
-					alert("请输入您的答案");
+					Y.alert("请输入您的答案");
 					$("#pwdanswer_0").focus();
 					return false;
 				}
@@ -83,21 +83,21 @@ Class({
 						var code = obj.Resp.code;
 						var desc = obj.Resp.desc;
 						if (code == "0") {	
-							$("#div1").hide();
-							$("#div2").hide();
-							$("#div3").show();
+							Y.postMsg('msg_login', function() {						
+								 location.href='safecenter.html';
+							});
 						} else {
 							if (code=="1"){
 								parent.window.Y.postMsg('msg_login', function() {						
 									window.location.reload();			
 								});
 							}else{
-								alert(desc);
+								Y.alert(desc);
 							}
 						}
 					},
 					error : function() {
-						alert("您所请求的页面有异常！");
+						Y.alert("您所请求的页面有异常！");
 					}
 				});
 			}		
@@ -106,17 +106,17 @@ Class({
 		$("#conform_btn_1").bind({
 			click:function(){
 				if ($.trim($("#pwdselect_1").val())==""){
-					alert("请选择新的密码保护问题");
+					Y.alert("请选择新的密码保护问题");
 					$("#pwdselect_1").focus();
 					return false;
 				};
 				if ($.trim($("#pwdanswer_1").val())==""){
-					alert("请输入您的新答案");
+					Y.alert("请输入您的新答案");
 					$("#pwdanswer_1").focus();
 					return false;
 				};
 				if ($.trim($("#oldAnswer").val())==""){
-					alert("请输入您的旧答案");
+					Y.alert("请输入您的旧答案");
 					$("#oldAnswer").focus();
 					return false;
 				};
@@ -135,21 +135,21 @@ Class({
 						var code = obj.Resp.code;
 						var desc = obj.Resp.desc;
 						if (code == "0") {	
-							$("#div1").hide();
-							$("#div2").hide();
-							$("#div3").show();
+							Y.postMsg('msg_login', function() {						
+								 location.href='safecenter.html';
+							});
 						} else {
 							if (code=="1"){
 								parent.window.Y.postMsg('msg_login', function() {						
 									window.location.reload();			
 								});
 							}else{
-								alert(desc);
+								Y.alert(desc);
 							}
 						}
 					},
 					error : function() {
-						alert("您所请求的页面有异常！");
+						Y.alert("您所请求的页面有异常！");
 					}
 				});
 			}

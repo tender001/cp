@@ -73,8 +73,12 @@ Class({
 				 	 		      
 				 	 		       if(obj2.Resp.code==0){
 				 	 		    	   Y.alert('恭喜您：<br />已获取2元彩金<a class="a3" href="/account/myaccount.html" target="_blank" >点击查看</a>');
+				 	 		    	 $("#username").html($("#truename").val());
+				 	 		    	 $("#usercard").html($("#idnumber").val())
 				 	 		       }else if(obj2.Resp.code==2){
 				 	 		    	 Y.alert('已实名<br/>新用户<a class="a3" href="/account/mobile.html" target="_blank" id="showClose">绑定手机</a>后系统赠送2元彩金');
+				 	 		    	 $("#username").html($("#truename").val());
+				 	 		    	 $("#usercard").html($("#idnumber").val())
 				 	 		       }else{
 				 	 		    	 Y.alert(desc);
 				 	 		       }
@@ -118,8 +122,11 @@ Class({
 						$("#info2").hide();
 						$("#info1").hide();
 					}else{
-						$("#rname").html(rname);
-						$("#idcard").html(idcard);
+						if($("#usercard").html()==""){
+							$("#username").html(rname);
+							$("#usercard").html(idcard);
+						}
+						
 						$("#info0").hide();
 						$("#info2").show();
 					}				
