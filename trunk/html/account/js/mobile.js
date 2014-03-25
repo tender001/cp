@@ -34,6 +34,7 @@ Class({
 						$("#div1").show();
 						
 					}
+					
 					$("#phoneend").html(mobile);
 					
 					P.btnbind();
@@ -86,6 +87,8 @@ Class({
 							Y.postMsg('msg_login', function() {						
 								window.location.reload();			
 							});
+							$("#div3").show();
+							$("#div4").hide();
 						}else{
 							Y.alert(desc);
 						}
@@ -161,24 +164,32 @@ Class({
 					var desc = obj.Resp.desc;
 					if (code == "0") {
 						$("#phoneend").html($.trim($("#phoneNumber").val()));
-						P.sentYZM(3);
+
+					  
+	 	 		    
 						Y.ajax({
 					 	     url:'/phpu/p.phpx?fid=u_hdssq',
 					 	     end:function (data){
 					 	         if (data.error) {
 					 	        	Y.alert(desc);
+									P.sentYZM(3);
 					 	        	return false;
+					 	        	
 					 	         }else{
 					 	       	   var obj2 = eval("(" + data.text + ")");
-				 	 		      Y
+				 	 		   
 				 	 		       if(obj2.Resp.code==0){
 				 	 		    	   Y.alert('恭喜您：<br />已获取2元彩金<a class="a3" href="/account/myaccount.html" target="_blank" >点击查看</a>');
+				 	 		    	
 				 	 		       }else if(obj2.Resp.code==4){
 				 	 		    	 Y.alert('手机已绑定<br/>新用户<a class="a3" href="/account/trueinfo.html" target="_blank" id="showClose">实名后</a>后系统赠送2元彩金');
+				 	 		    	
 				 	 		       }else{
 				 	 		    	 Y.alert(desc);
 				 	 		       }
-
+				 	 		     $("#userphone").html($("#phoneNumber").val());
+				 	 			 $("#div4").show();
+			 	 		    	 $("#div2").hide();
 					 	         }
 					 	     }
 					 	   });
