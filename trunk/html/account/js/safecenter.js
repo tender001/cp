@@ -39,15 +39,13 @@ Class({
 							var mailbind = r.mailbind;
 
 							if (isprot == 1) {
-								$("#isport_i").addClass("cardcur");
-
+								
+								$("#isport_i").removeClass("mibacur");
 								$("#isport s").html('<a href="/account/mibao.html">绑定</a>').addClass("cur");
 							} else {
-								// $("#isprot").removeClass().addClass("xg");
-								// $("#isprot_i").removeClass().addClass("password_cur");
 								$("#isport s").html('已绑定，<a id="isport" class="s" href="/account/mibao.html">修改</a>').removeClass("cur");
-								$("#isport_i").removeClass("cardcur");
-
+								
+								$("#isport_i").addClass("mibacur");
 								safe += 1;
 							}
 
@@ -56,14 +54,13 @@ Class({
 										.html(
 												'已绑定，不可修改')
 										.removeClass("cur");
-								$("#realname_i").removeClass("cardcur");
+								$("#realname_i").addClass("cardcur");
 								$("#na").html('真实姓名：<em id="rname">'+rname+'</em>'+'&nbsp;&nbsp;&nbsp;&nbsp;身份证号：<em id="idcard">'+idcard+'</em>');
-//								$("#idcard").html(idcard);
 
 								safe += 1;
 							} else {
-								$("#realname_i").addClass("cardcur");
-
+							
+								$("#realname_i").removeClass("cardcur");
 								$("#realname s").html(
 										'<a href="/account/trueinfo.html">绑定</a>')
 										.addClass("cur");
@@ -72,36 +69,31 @@ Class({
 							}
 							
 							if (mobbind == 0) {
-								// $("#mobbind").removeClass().addClass("bd");
-								$("#mobbind_i").removeClass("telc").addClass("telcur");
+						
+								
+								$("#mobbind_i").addClass("telc").addClass("telcur");
 								$("#mobbind s").html('<a href="/account/mobile.html">绑定</a>').addClass("cur");
 								$("#tel").html('绑定手机，可以免费定制中奖通知、账户异动通知等服务');
 
 							} else {
-								// $("#mobbind").removeClass().addClass("xg");
-								// $("#mobbind_i").removeClass().addClass("aqcc_cur");
+							
 								
 								$("#mobbind s").html('已绑定，<a id="div4" name="sendphone" class="s" href="/account/mobile.html">修改</a>').removeClass("cur");
 								
-								$("mobbind_i").addClass("telc").addClass("telcur");
+								$("#mobbind_i").removeClass("telc").addClass("telcur");
 								$("#tel").html('手机号码：<em id="mobile">'+mobile+'</em>');
 								safe += 1;
 							}
 							
 							if (bank.length > 10) {
-								// $("#bank").removeClass().addClass("xg");
-								// $("#bank_i").removeClass().addClass("bank_cur");
-								$("#bank_i").removeClass("cardcur");
-								$("#bank s")
-								.html('已绑定，不可修改').removeClass("cur");
-						
-//					$("#name").html(name);
+								
+								$("#bank s").html('已绑定，不可修改').removeClass("cur");
+								$("#bank_i").addClass("bankcur");
 								$("#bk").html('银行卡号：<em id="bank">'+bank+'</em>'+'&nbsp;&nbsp;&nbsp;&nbsp;支行名称：<em id="name"></em>'+name);
 								safe += 1;
 							} else {
-								// $("#bank").removeClass().addClass("bd");
-								$("#bank_i").addClass("cardcur");
-
+							
+								$("#bank_i").removeClass("bankcur");
 								$("#bank s").html(
 										'<a href="/account/bankinfo.html">绑定</a>')
 										.addClass("cur");
@@ -110,8 +102,8 @@ Class({
 							}
 							
 							if (mailbind == 0) {
-								$("#mailbind_i").addClass("cardcur");
-
+								
+								$("#mailbind_i").removeClass("mailcur");
 								$("#mailbind s").html(
 										'<a href="/account/emailinfo.html">绑定</a>')
 										.addClass("cur");
@@ -119,13 +111,13 @@ Class({
 
 								// $("#mailbind").removeClass().addClass("bd");
 							} else {
-								// $("#mailbind").removeClass().addClass("xg");
+								$("#mailbind_i").addClass("mailcur");
 								// $("#mailbind_i").removeClass().addClass("mail_cur");
 								$("#mailbind s")
 								.html(
 										'已绑定，<a id="div5" name="sent_mail" class="s" href="/account/emailinfo.html">修改</a>')
 								.removeClass("cur");
-						$("#mailbind_i").removeClass("cardcur");
+						
 						$("#emal").html('邮箱：<em id="mailbind">'+email+'</em>');
 						
 								safe += 1;
