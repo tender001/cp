@@ -30,6 +30,15 @@ Class({
 				Y.alert("请输入你的身份证号码");
 				return false;
 			}
+			if($.trim($("#idnumbers").val())==""){
+				Y.alert("请再次输入你的身份证号码");
+				return false;
+			}
+			if($.trim($("#idnumber").val()) != $.trim($("#idnumbers").val())){
+				Y.alert("你两次输入的身份证号码不一致");
+				return false;
+			}
+			
 //			if ($.trim($("#password").val())==""){
 //				Y.alert("请输入您的登录密码以确认您的身份");
 //				return false;
@@ -44,6 +53,7 @@ Class({
 				dataType : "json",
 				data : $_user.key.realName + "=" + encodeURIComponent($.trim($("#truename").val()))
 				+ "&" + $_user.key.idCardNo + "=" + encodeURIComponent($.trim($("#idnumber").val()))
+				+ "&" + $_user.key.idCardTwo + "=" + encodeURIComponent($.trim($("#idnumbers").val()))
 //				+ "&" + $_user.key.upwd + "=" + encodeURIComponent($.trim($("#password").val()))
 				+ "&yzm=" + encodeURIComponent($.trim($("#verifycode").val()))
 				+ "&rnd=" + Math.random(),
