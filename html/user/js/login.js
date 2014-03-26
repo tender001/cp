@@ -25,10 +25,11 @@ Class({// 用户登录
     	var u = $("#uid1").val();
     	var p = $("#pwd1").val();
     	var dis = $("#dis");
-
+    	
     	var um = "请输入用户名！";
     	var pm = "请输入密码！";
     	var msg = '';
+    	
     	if (!p.length) {
     		msg = pm;
     	}
@@ -36,7 +37,7 @@ Class({// 用户登录
     	if (!u.length) {
     		msg = um;
     	}
-
+    	
     	if (msg.length > 0) {
     		dis.html(msg);
     		dis.show();
