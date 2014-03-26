@@ -208,10 +208,10 @@ font.cm_red{color:#ff6600}
 .user_right h2{line-height:32px;height:32px;clear:both;padding-left:25px;color:#444;font-weight:bold;font-size:20px;font-family:"微软雅黑";}
 .usercod{border:1px solid #ddd;border-top:3px solid #ddd;margin:0 20px;}
 .usercod td{text-align:center;color:#444;line-height:35px; background:#f8f8f8;}
-.usercodtab{margin:0 20px;}
+.usercodtab{margin:0 20px;border-right:1px solid #ddd;border-left:1px solid #ddd}
 .usercodtab table thead td{border-bottom:1px solid #ccc;text-align:center;color:#444;line-height:35px; background:#f8f8f8;border-top:1px solid #ddd;border-bottom:1px solid #ddd}
-.usercodtab table tbody td{text-align:center;color:#444;line-height:30px; font-family:Arial, Helvetica, sans-serif}
-.usercodtab table tr.odd td{ background:#f8f8f8;border-bottom:1px solid #ddd}
+.usercodtab table tbody td{text-align:center;color:#444;line-height:30px; font-family:Arial, Helvetica, sans-serif;border-bottom:1px solid #ddd}
+.usercodtab table tr.odd td{ background:#f8f8f8;}
 .usercodtab table span{color:#ff6600}
 .usercodtab a{color:#145fab}
 .usercodtab a:hover{color:#E52E04; text-decoration: underline}
@@ -230,7 +230,7 @@ font.cm_red{color:#ff6600}
 .usertitab{display:block;height:32px;float:left}
 .usertitab b{display:block;margin-left:8px;border:1px solid #ddd;height:32px;line-height:32px;float:left;padding:0 18px; background:#efefef;margin-top:2px;cursor:pointer}
 .usertitab b.cur{border-bottom:2px solid #fff; background:#fff}
-.userp1{line-height:22px;color:#999;width:790px;padding:50px 0 10px 30px;clear:both;}
+.userp1{line-height:22px;color:#666;width:790px;padding:50px 0 10px 30px;clear:both;font-size:14px}
 .userp1 strong{display:block;color:#444;font-size:14px;}
 .userp1 a{color:#145fab;margin-left:40px}
 .userp1 a:hover{color:#ff6600; text-decoration:underline}
@@ -238,7 +238,7 @@ font.cm_red{color:#ff6600}
 .userzhmx{margin:0 20px 15px;border:1px solid #ddd;padding:5px 20px ;border-top:3px solid #ddd;}
 .userzhmx em{color:#E52E04;font-weight:bold}
 .userzhmx td{color:#666;line-height:24px}
-.userzhmx th{color:#333;line-height:24px}
+.userzhmx th{color:#333;line-height:24px;text-align:left}
 .usercodtab font{color:#ff6600}
 .usertitle a.a1{color:#145fab;line-height:31px;margin-right:20px;float:right}
 .usertitle a.a1:hover{color:#ff6600; text-decoration: underline}
@@ -356,16 +356,17 @@ a.czbtn{display:block;height:32px;width:98px;line-height:32px;text-align:center;
 .aqcenter{padding:0 20px}
 .aqcc em{color:#ff6600;font-size:16px;font-weight:bold}
 .aqcc b{width:50px;height:50px;margin:23px 10px 0px 20px}
-.aqcc b.cardc{ background:url(../images/cai888/rzyb_03.jpg) 0 0 no-repeat}
-.aqcc b.telc{ background:url(../images/cai888/rzyb_06.jpg) 0 0 no-repeat}
-.aqcc b.bankc{ background:url(../images/cai888/rzyb_09.jpg) 0 0 no-repeat}
-.aqcc b.mailc{ background:url(../images/cai888/rzyb_12.jpg) 0 0 no-repeat}
-.aqcc b.mibac{ background:url(../images/cai888/rzyb_14.jpg) 0 0 no-repeat}
-.aqcc b.cardcur{ background:url(../images/cai888/aqtbx_03.jpg) 0 0 no-repeat}
-.aqcc b.telcur{ background:url(../images/cai888/aqtbx_07.jpg) 0 0 no-repeat}
-.aqcc b.bankcur{ background:url(../images/cai888/aqtbx_09.jpg) 0 0 no-repeat}
-.aqcc b.mailcur{ background:url(../images/cai888/aqtbx_11.jpg) 0 0 no-repeat}
-.aqcc b.mibacur{ background:url(../images/cai888/aqtbx_15.jpg) 0 0 no-repeat}
+.aqcc b.cardc{ background:url(../images/cai888/aqtbx_03.jpg) 0 0 no-repeat}
+.aqcc b.cardcur{ background:url(../images/cai888/rzyb_03.jpg) 0 0 no-repeat}
+.aqcc b.telc{ background:url(../images/cai888/aqtbx_07.jpg) 0 0 no-repeat}
+.aqcc b.telcur{ background:url(../images/cai888/rzyb_06.jpg) 0 0 no-repeat}
+.aqcc b.bankc{ background:url(../images/cai888/aqtbx_09.jpg) 0 0 no-repeat}
+.aqcc b.bankcur{ background:url(../images/cai888/rzyb_09.jpg) 0 0 no-repeat}
+.aqcc b.mailc{ background:url(../images/cai888/aqtbx_11.jpg ) 0 0 no-repeat}
+.aqcc b.mibac{ background:url(../images/cai888/aqtbx_15.jpg) 0 0 no-repeat}
+.aqcc b.mibacur{ background:url(../images/cai888/rzyb_14.jpg) 0 0 no-repeat}
+.aqcc b.mailcur{ background:url(../images/cai888/rzyb_12.jpg) 0 0 no-repeat}
+
 .confitp{background:url(../images/cai888/yes_06.jpg) 200px 55px no-repeat;padding:70px 0 30px 275px;line-height:30px;color:#444;font-size:14px;}
 .confitp a{color:#145fab; text-decoration:underline}
 .confitp a:hover{color:#ff6600}
@@ -405,3 +406,65 @@ a.czbtn{display:block;height:32px;width:98px;line-height:32px;text-align:center;
 .youhua .tab_team_mix th{boder-left:none}
 .youhua .tab_team_mix td{border-left:none}
 .condition_select .open_up, .condition_select .fold{width:117px}
+.loghedm{ background:#fff}
+.loghed{width:960px;margin:0px auto;padding:15px 0;}
+.loghed .log{display:block;float:left;width:177px;height:70px}
+.loghed p{float:right;line-height:30px;color:#444;text-align:right}
+.loghed p a{color:444;margin:0 5px;}
+.loghed p a:hover{color:#ff6600; text-decoration:underline}
+.loghed p img{display:block;width:218px;height:35px;margin-top:5px}
+.loginm{ background:url(../images/cai888/login_11.jpg) 50% 0  no-repeat #ff912c;height:400px;width:100%}
+.logm{width:960px;margin:0 auto}
+.logtb{width:252px;float:right;margin:59px 29px 0 0;_margin-right:15px}
+.logtb td{height:66px;text-align:left;color:#444; vertical-align:top}
+.logtb td.td1{height:40px;line-height:40px;color:#ff0000}
+.logtb td input{border:none; background:none;display:block;width:245px;height:44px;font-size:16px;color:#444;padding:14px 0 0 5px\9;height:28px\9;}
+:root .logtb td input{padding:0 0 0 5px;height:44px;}
+.logtb td a.btn{width:252px;height:45px;display:block;line-height:44px;color:#fff;font-size:20px; font-family:"微软雅黑";text-align:Center}
+.logtb p{line-height:35px;color:#444;height:35px}
+.logtb p a{color:#ff6600;}
+.logtb p a.a1{float:left}
+.logtb p a:hover{color:#ff6600; text-decoration:underline}
+.logtb p span{float:right}
+.logfot{padding:60px 0}
+.logfot p.p1{color:#444;line-height:24px;text-align:Center;padding-bottom:15px}
+.regline{height:40px; background:#ff912c;width:100%}
+.regline div{ background:url(../images/cai888/reg_03.jpg) 0 0 no-repeat;width:960px;margin:0 auto;height:40px}
+.reginm{ background:#fff;height:355px;padding:40px 0 35px 0}
+.regm{width:960px;margin:0 auto}
+.regleft{width:600px;float:left;height:355px;border-right:1px solid #ddd}
+.regleft th{height:60px;text-align:right;color:#333; vertical-align:top;font-size:14px;line-height:40px}
+.regleft td{height:60px;text-align:left;color:#444; vertical-align:top;line-height:40px}
+.regleft td input.text{border:1px solid #bbb; background:none;display:block;width:235px;height:38px;font-size:16px;color:#444;padding:11px 0 0 5px\9;height:27px\9;float:left}
+:root .regleft td input.text{padding:0 0 0 5px;height:38px;}
+.regleft  a{color:#145fab;}
+.regleft  a:hover{color:#ff6600; text-decoration:underline}
+.regleft  img{display:block;float:left;width:102px;height:35px;margin:2px 0 0 12px}
+.regleft a.btn{width:240px;height:38px;display:block;text-align:Center;color:#fff;line-height:38px; background:url(../images/cai888/reg_22.jpg);font-size:18px; font-family:"微软雅黑"}
+.regleft a.btn:hover{color:#fff; text-decoration:none}
+.regleft p {line-height:14px;padding-top:10px}
+.regleft p input{vertical-align: -2px;_vertical-align: -1px;margin-right: 2px;}
+.regleft span{display:block;line-height:40px;color:#444;height:40px;float:left; background:url(../images/cai888/reg_10.jpg) 0 11px  no-repeat;padding-left:25px}
+.regleft span.regrs{ background:url(../images/cai888/dui.jpg) 1px 12px  no-repeat;}
+.regright{width:200px;float:right;padding-right:60px;background:url(../images/cai888/reg_18.jpg) 2px 193px  no-repeat;height:355px}
+.regr1{height:29px}
+.regr1 span{float:left;color:#444;font-size:14px;font-weight:bold;line-height:29px}
+.regr1 a{display:block;float:left;background:url(../images/cai888/reg_07.jpg);width:78px;height:29px;text-align:center;line-height:29px;color:#444;font-size:12px;margin-left:13px}
+.regr2{padding-top:20px;clear:both}
+.regr2 span{display:block;color:#444;font-size:14px;line-height:28px}
+.regr2 img{display:block;width:103px;height:36px;margin-top:6px}
+.rztab .susessp{line-height:28px;font-size:14px;text-align:left;color:#444;padding:20px 0 20px 200px}
+.rztab .susessp strong{font-weight:bold}
+.rztab .susessp a{margin:0;padding:0}
+.regsus{padding:60px 0 0 55px;width:905px;margin:0 auto}
+.regsus h2{border-bottom:1px solid #ddd;height:40px;line-height:40px;font-size:18px;font-family:"微软雅黑";color:#444}
+.regsusbg{ background: url(../images/cai888/regsus_03.jpg) 0 10px no-repeat;height:300px;padding:55px 0 0 270px;font-size:12px;color:#888;}
+.regsusbg span{font-size:22px;color:#444;font-family:"微软雅黑";line-height:32px;display:block}
+.regsusbg strong{color:#ff6600;font-weight:100}
+.regsusbg p a{color:#145fab}
+.regsusbg p a:hover{ text-decoration:underline;color:#ff6600}
+.regsusbg p{display:block;padding:30px 0 10px;color:#145fab}
+.regsusbg a.a1{width:260px;height:50px;text-align:center;line-height:50px; background:#ff6600;color:#fff;font-family:"微软雅黑";font-size:26px;margin-right:12px;display:block;}
+.regdv{font-size:16px;color:#000;font-family:"微软雅黑";line-height:35px;height:35px}
+.regdv a{color:#145fab}
+.regdv a:hover{ text-decoration:underline;color:#ff6600}
