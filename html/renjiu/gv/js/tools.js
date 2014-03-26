@@ -174,7 +174,7 @@ var Tools = {
 			var a = [];
 			$.each(arr, function(j, item){   
 				a.push(item[i]);		
-		　　});
+		});
 			var v = a.sort(function compare(a, b){return a - b});
 			array.push(v[0])
 		}
