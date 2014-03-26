@@ -41,6 +41,7 @@ $(function() {
 			{
 				blur : function() {
 					var ln = $.trim($(this).val());
+
 					var len = $_base_s.getStrLen(ln);
 					if (len < 4) {
 						return showErr('username', '用户名至少为4个字符');
