@@ -72,6 +72,7 @@ Class({// 用户登录
             	dis.html(err);
         		dis.show();
                 $("#uid1").focus();  
+                $("#pwd1").focus();
             }else{
             	var backurl =location.search.getParam('backurl');
             	
