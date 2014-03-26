@@ -380,11 +380,14 @@ var loadmain = function(lotid, expect,type) {
 			$("#gpool").html("-");
 			if(rs.gsale > 0){ $("#gsale").html(rs.gsale); }
 			if(rs.gpool >= 0){ $("#gpool").html(rs.gpool); }
-			$("#kj_time").html(rs.atime.substr(0,16))
+			$("#kj_time").html(rs.atime.substr(0,16));
 			if(ninfo.length > 0 && ninfo[0].length > 0){
 				$("#level_num_1").html(ninfo[0]);
 				$("#level_num_2").html(ninfo[1]);
 				$("#level_num_3").html(ninfo[2]);
+				$("#level_num_4").html(ninfo[3]);
+				$("#level_num_5").html(ninfo[4]);
+				$("#level_num_6").html(ninfo[5]);
 				if(!!$("#level_num_3")){
 					$("#level_num_3").html(ninfo[2]);
 				}
@@ -404,6 +407,9 @@ var loadmain = function(lotid, expect,type) {
 				if(!!$("#level_money_3")){
 					$("#level_money_3").html(ginfo[2]);
 				}
+				$("#level_money_4").html(ginfo[3]);
+				$("#level_money_5").html(ginfo[4]);
+				$("#level_money_6").html(ginfo[5]);
 				if(!!$("#level_money_9")){
 					$("#level_money_9").html(ginfo[8]);
 				}
