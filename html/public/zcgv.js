@@ -60,8 +60,8 @@ Class('Application',{
            });
            e.end();
            return false;
-       }) 
-    },
+       })
+
 
         //购买方式
 
