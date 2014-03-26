@@ -3,7 +3,7 @@ var refreshVerify=function (){
 	$("#CheckCode").attr('src',"/rand.phpx?rnd="+Math.random());
 };
 
-//¿ØÖÆÏÔÊ¾DIV
+//æ§åˆ¶æ˜¾ç¤ºDIV
 var show=function(a) {
 	$("#email").val("");
 	$("#phone").val("");
@@ -44,15 +44,15 @@ $(function() {
 
 					var len = $_base_s.getStrLen(ln);
 					if (len < 4) {
-						return showErr('username', 'ÓÃ»§ÃûÖÁÉÙÎª4¸ö×Ö·û');
+						return showErr('username', 'ç”¨æˆ·åè‡³å°‘ä¸º4ä¸ªå­—ç¬¦');
 					} else if (len > 16) {
 						
-						return showErr('username', 'ÓÃ»§Ãû²»³¬¹ı16¸ö×Ö·û');
+						return showErr('username', 'ç”¨æˆ·åä¸è¶…è¿‡16ä¸ªå­—ç¬¦');
 					}
 					
 					var rn = ln.replace(/[\d\w\\u4e00-\u9fa5]/gi, "");
 					if (rn != "") {
-						return showErr('username', 'ÓÃ»§Ãûº¬ÓĞ·Ç·¨×Ö·û');
+						return showErr('username', 'ç”¨æˆ·åå«æœ‰éæ³•å­—ç¬¦');
 					}
 					
 					$.ajax({
@@ -65,9 +65,9 @@ $(function() {
 							var code = data.Resp.code;
 							var nid = typeof (data.Resp.row) == "undefined"?"-":"ok";
 							if (code=="0") {
-								return showErr('username', "ÓÃ»§ÃûÒÑ´æÔÚ");
+								return showErr('username', "ç”¨æˆ·åå·²å­˜åœ¨");
 							} else if (code=="1000"){
-								return showErr('username', "×î¶àº¬6Î»Á¬ĞøÊı×Ö");
+								return showErr('username', "æœ€å¤šå«6ä½è¿ç»­æ•°å­—");
 							}else if (code=="9000"){
 								_status['username'] = true;
 								return showOK('username');
@@ -82,17 +82,17 @@ $(function() {
 			var pwd = $.trim($(this).val());
 			var len = pwd.length;
 			if (len == 0) {
-				return showErr('password', 'ÇëÊäÈëÃÜÂë');
+				return showErr('password', 'è¯·è¾“å…¥å¯†ç ');
 			} else if (len < 6) {
-				return showErr('password', 'ÃÜÂëÖÁÉÙ6Î»');
+				return showErr('password', 'å¯†ç è‡³å°‘6ä½');
 			} else if (len > 20) {
-				return showErr('password', 'ÃÜÂë²»ÄÜ³¬¹ı15Î»');
+				return showErr('password', 'å¯†ç ä¸èƒ½è¶…è¿‡15ä½');
 			} else if (pwd == $.trim($("#username").val())) {
-				return showErr('password', 'ÃÜÂë²»ÄÜÓëÓÃ»§ÃûÒ»ÖÂ');
+				return showErr('password', 'å¯†ç ä¸èƒ½ä¸ç”¨æˆ·åä¸€è‡´');
 			}
 			var cat = /^[\x20-\x7f]+$/;
 			if (!(cat.test(pwd))) {
-				return showErr('password', 'ÃÜÂëÇëÎğ°üº¬ÖĞÎÄ');
+				return showErr('password', 'å¯†ç è¯·å‹¿åŒ…å«ä¸­æ–‡');
 			}
 			_status['password'] = true;
 			showOK('password');
@@ -104,10 +104,10 @@ $(function() {
 			var pwd = $.trim($("#password").val());
 			var pwd2 = $.trim($(this).val());
 			if (pwd2 == '') {
-				return showErr('password2', 'ÔÙ´ÎÈ·ÈÏÄúµÄÃÜÂë');
+				return showErr('password2', 'å†æ¬¡ç¡®è®¤æ‚¨çš„å¯†ç ');
 			}
 			if (pwd != pwd2) {
-				return showErr('password2', 'Á½´ÎÃÜÂë²»Ò»ÖÂ');
+				return showErr('password2', 'ä¸¤æ¬¡å¯†ç ä¸ä¸€è‡´');
 			} else {
 				_status['password2'] = true;
 				return showOK('password2');
@@ -119,7 +119,7 @@ $(function() {
 		blur : function() {
 			var email = $("#email").val();
 			if(!isEmailOk(email)){
-				return showErr('email', 'ÇëÊäÈëÕıÈ·ÓÊÏäµØÖ·');
+				return showErr('email', 'è¯·è¾“å…¥æ­£ç¡®é‚®ç®±åœ°å€');
 			}
 			_status['email'] = true;
 			return showOK('email');
@@ -130,7 +130,7 @@ $(function() {
 		blur : function() {
 			var phone = $("#phone").val();
 			if(!isPhoneOk(phone)){
-				return showErr('phone', 'ÇëÊäÈëÕıÈ·µÄÊÖ»úºÅÂë');
+				return showErr('phone', 'è¯·è¾“å…¥æ­£ç¡®çš„æ‰‹æœºå·ç ');
 			}
 			_status['phone'] = true;
 			return showOK('phone');
@@ -142,7 +142,7 @@ $(function() {
 			var verifycode = $.trim($("#verifycode").val());
 			var len = verifycode.length;
 			if (len < 4) {
-				return showErr('verifycode', 'ÇëÊäÈëÕıÈ·ÑéÖ¤Âë');
+				return showErr('verifycode', 'è¯·è¾“å…¥æ­£ç¡®éªŒè¯ç ');
 			} 
 			
 			_status['verifycode'] = true;
@@ -156,7 +156,7 @@ $(function() {
 						
 						$("#subfrm").attr("disabled", true);
 						if (!$("#year18")[0].checked) {
-							alert("ÇëÈ·ÈÏÄúÊÇ·ñÄêÂú18ÖÜËê");
+							alert("è¯·ç¡®è®¤æ‚¨æ˜¯å¦å¹´æ»¡18å‘¨å²");
 							$("#subfrm").attr("disabled", false);
 							return false;
 						}
@@ -218,7 +218,7 @@ $(function() {
 				
 			
 
-//ÑéÖ¤ÓÊÏäµÄÓĞĞ§ĞÔ
+//éªŒè¯é‚®ç®±çš„æœ‰æ•ˆæ€§
 	var isEmailOk=function(email){
 		if(email.length>0){
 			reg=/^([a-zA-Z0-9]+[_|\-|\.]?)*[a-zA-Z0-9]+@([a-zA-Z0-9]+[_|\_|\.]?)*[a-zA-Z0-9]+\.[a-zA-Z]{2,}$/;
@@ -231,7 +231,7 @@ $(function() {
 		return false;
 	};
 	
-	//ÑéÖ¤ÊÖ»úºÅÂëµÄÓĞĞ§ĞÔ
+	//éªŒè¯æ‰‹æœºå·ç çš„æœ‰æ•ˆæ€§
 	var isPhoneOk=function(tel){
 		var reg = 	/^((13[0-9])|(15[^4,\\d])|(18[0-9])|(14[0-9]))\d{8}$/;
 		if(reg.test(tel)){
