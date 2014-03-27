@@ -1,62 +1,62 @@
-/** *********·ÖÒ³¿ªÊ¼**************** */
-function executionPage(obj){//Ö´ĞĞ·ÖÒ³²Ù×÷
-   //Ê×Ò³
-   $("#loadPage .firstPage").die('click').live('click',function(){
-       if($("#loadPage a.sel").text() ==1){
-		    alert("ÒÑ¾­ÊÇµÚÒ»Ò³");
+/** *********åˆ†é¡µå¼€å§‹**************** */
+function executionPage(obj){//æ‰§è¡Œåˆ†é¡µæ“ä½œ
+   //é¦–é¡µ
+   $("#loadPage li[mark=start]").die('click').live('click',function(){
+	   if($("#loadPage a.a4").text() ==1){
+		    Y.alert("å·²ç»æ˜¯ç¬¬ä¸€é¡µ");
 			return false;
 	   }
-	   obj.pageno =1;//µÚ¼¸Ò³
+	   obj.pageno =1;//ç¬¬å‡ é¡µ
 	   loadShow(obj);
 	   return false;
    })
-   //Î²Ò³
-   $("#loadPage .lastPage").die('click').live('click',function(){
-        if($("#loadPage a.sel").text() ==allInterFace.totalpages){
-		    alert("ÒÑ¾­ÊÇ×îºóÒ»Ò³");
+   //å°¾é¡µ
+   $("#loadPage li[mark=end]").die('click').live('click',function(){
+	   if($("#loadPage a.a4").text() ==allInterFace.totalpages){
+		    Y.alert("å·²ç»æ˜¯æœ€åä¸€é¡µ");
 			return false;
 		}
-		obj.pageno =allInterFace.totalpages;//µÚ¼¸Ò³
+		obj.pageno =allInterFace.totalpages;//ç¬¬å‡ é¡µ
 		loadShow(obj);
 		return false;
    })
-   //ÉÏÒ»Ò³
-   $("#loadPage .upPage").die('click').live('click',function(){
-        if($("#loadPage a.sel").text() ==1){
-		    alert("ÒÑ¾­ÊÇµÚÒ»Ò³");
+   //ä¸Šä¸€é¡µ
+   $("#loadPage a[mark=prov]").die('click').live('click',function(){
+	   if($("#loadPage a.a4").text() ==1){
+		    Y.alert("å·²ç»æ˜¯ç¬¬ä¸€é¡µ");
 			return false;
 		}
 		allInterFace.pageno--;
-		obj.pageno =allInterFace.pageno;//µÚ¼¸Ò³
+		obj.pageno =allInterFace.pageno;//ç¬¬å‡ é¡µ
 		loadShow(obj);
 		return false;
    })
-   //ÏÂÒ»Ò³
-   $("#loadPage .downPage").die('click').live('click',function(){
-        if($("#loadPage a.sel").text() ==allInterFace.totalpages){
-		    alert("ÒÑ¾­ÊÇ×îºóÒ»Ò³");
+   //ä¸‹ä¸€é¡µ
+   $("#loadPage a[mark=next]").die('click').live('click',function(){
+        if($("#loadPage a.a4").text() ==allInterFace.totalpages){
+		    Y.alert("å·²ç»æ˜¯æœ€åä¸€é¡µ");
 			return false;
 		}
 		allInterFace.pageno++;
-		obj.pageno =allInterFace.pageno;//µÚ¼¸Ò³
+		obj.pageno =allInterFace.pageno;//ç¬¬å‡ é¡µ
 		loadShow(obj);
 		return false;
    })
-   //µ¥»÷
-   $("#loadPage a.pagenum").die('click').live('click',function(){
+   //å•å‡»
+   $("#loadPage a[mark=pn]").die('click').live('click',function(){
         allInterFace.pageno =$(this).text();
-		obj.pageno =allInterFace.pageno;//µÚ¼¸Ò³
+		obj.pageno =allInterFace.pageno;//ç¬¬å‡ é¡µ
 		loadShow(obj);
 		return false;
    })
-   //È·¶¨
+   //ç¡®å®š
    $("#loadPage a#okButton").die('click').live('click',function(){
         allInterFace.pageno =$("#nopage").val();
-		obj.pageno =allInterFace.pageno;//µÚ¼¸Ò³
+		obj.pageno =allInterFace.pageno;//ç¬¬å‡ é¡µ
 		loadShow(obj);
 		return false;
    })
-   Common.isNum("nopage",function(val){//ÊäÈëÒ³Êı
+   Common.isNum("nopage",function(val){//è¾“å…¥é¡µæ•°
 	     if(val =="" || val ==0)val =1;
 		 if(val>allInterFace.totalpages)val = allInterFace.totalpages;
 		 $("#nopage").val(val);
@@ -64,10 +64,10 @@ function executionPage(obj){//Ö´ĞĞ·ÖÒ³²Ù×÷
 }
 
 function callpage(n,size) {
-	var lastpage = allInterFace.totalpages;// ×îºóÒ»Ò³
-	var firstpage = 1;// µÚÒ»Ò³
-	var maxpage = allInterFace.totalpages;// µ±Ç°×î´óµÄÒ³ÂëÊı
-	var minpage = 1;// µ±Ç°×îĞ¡µÄÒ³Âë
+	var lastpage = allInterFace.totalpages;// æœ€åä¸€é¡µ
+	var firstpage = 1;// ç¬¬ä¸€é¡µ
+	var maxpage = allInterFace.totalpages;// å½“å‰æœ€å¤§çš„é¡µç æ•°
+	var minpage = 1;// å½“å‰æœ€å°çš„é¡µç 
 	var pageTemp = 0;
 	var p = n % 9;
 	pageTemp = parseInt(n / 9);
@@ -90,23 +90,24 @@ function callpage(n,size) {
 			maxpage = lastpage;
 		}
 	}
-	var html = "<a href='javascript:void(0)' class='pagebtn firstPage'><span>Ê×Ò³</span></a>";
-	    html += "<a href='javascript:void(0)' class='pagebtn upPage'><span>ÉÏÒ»Ò³</span></a>"
+
+	var html = "<ul><li style='line-height:27px;color:#444;padding-right:10px'>å…±"+ size+"æ¡</li><li class='disabled PagedList-skipToFirst' mark='start'><a href='javascript:void(0)' >é¦–é¡µ</a></li>";
+	    html += "<li class='active'><a href='javascript:void(0)' mark='prov'>ä¸Šä¸€é¡µ</a></li>"
 	for (var i = minpage; i <= maxpage; i++) {
 		if (i == n) {
-			html += '<a class="pagenum sel" href="#">'+i+'</a>';
+			html += '<li class="active"><a class="a4" href="javascript:void(0);" mark=pn>'+i+'</a></li>';
 		} else {
-		    html += '<a class="pagenum" href="#">'+i+'</a>';
+			html += '<li><a class="a3" href="javascript:void(0);"mark=pn>'+i+'</a></li>';
 		}
 	}
-	html += "<a href='javascript:void(0)' class='pagebtn downPage'><span>ÏÂÒ»Ò³</span></a>";
-	html += "<a href='javascript:void(0)' class='pagebtn lastPage'><span>Î²Ò³</span></a>";
-	html += "<span class='v_m'>µ½µÚ</span><input type='text' id='nopage' class='page_inputnum' value =1 maxLength =3/><span class='v_m'>Ò³</span>";
-	html += "<a href='#' id='okButton' class='pagebtn'><span>È·¶¨</span></a>";
-	html += "<span class='color_gray v_m'>¹²"+allInterFace.totalpages+"Ò³£¬"+ size+" Ìõ¼ÇÂ¼</span>";
+	html += "<li class='PagedList-skipToNext'><a href='javascript:void(0)' mark='next'>ä¸‹ä¸€é¡µ</a></li><li class='PagedList-skipToNext' mark='end'><a href='javascript:void(0)' >å°¾é¡µ</a></li></ul>";
+
+
+
+
 	if(size == 0){
 	    $("#loadPage").html(html).hide();
 	}else{
-	    $("#loadPage").html(html).show();
+	    $("#loadPage").html(html).show().addClass('paginachange ');
 	}
 }

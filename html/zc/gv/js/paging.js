@@ -1,7 +1,7 @@
 /** *********分页开始**************** */
 function executionPage(obj){//执行分页操作
    //首页
-   $("#loadPage a[mark=start]").die('click').live('click',function(){
+   $("#loadPage li[mark=start]").die('click').live('click',function(){
 	   if($("#loadPage a.a4").text() ==1){
 		    Y.alert("已经是第一页");
 			return false;
@@ -11,7 +11,7 @@ function executionPage(obj){//执行分页操作
 	   return false;
    })
    //尾页
-   $("#loadPage a[mark=end]").die('click').live('click',function(){
+   $("#loadPage li[mark=end]").die('click').live('click',function(){
 	   if($("#loadPage a.a4").text() ==allInterFace.totalpages){
 		    Y.alert("已经是最后一页");
 			return false;
@@ -91,19 +91,19 @@ function callpage(n,size) {
 		}
 	}
 
-	var html = "<ul><li style='line-height:27px;color:#444;padding-right:10px'>共"+ size+"条</li><li class='disabled PagedList-skipToFirst' mark='start'><a href='javascript:void(0)' 首页</a></li>";
+	var html = "<ul><li style='line-height:27px;color:#444;padding-right:10px'>共"+ size+"条</li><li class='disabled PagedList-skipToFirst' mark='start'><a href='javascript:void(0)' >首页</a></li>";
 	    html += "<li class='active'><a href='javascript:void(0)' mark='prov'>上一页</a></li>"
 	for (var i = minpage; i <= maxpage; i++) {
 		if (i == n) {
 			html += '<li class="active"><a class="a4" href="javascript:void(0);" mark=pn>'+i+'</a></li>';
 		} else {
-			html += '<li class="active"><a class="a3" href="javascript:void(0);"mark=pn>'+i+'</a></li>';
+			html += '<li><a class="a3" href="javascript:void(0);"mark=pn>'+i+'</a></li>';
 		}
 	}
-	html += "<li class='PagedList-skipToNext'><a href='javascript:void(0)' mark='nex'>下一页</a></li><li class='PagedList-skipToNext' mark='end'><a href='javascript:void(0)' >尾页</a></li><ul>";
-	html += "<a href='javascript:void(0)' class='pagebtn lastPage'><span>尾页</span></a>";
-	html += "<span class='v_m'>到第</span><input type='text' id='nopage' class='page_inputnum' value =1 maxLength =3/><span class='v_m'>页</span>";
-	html += "<a href='#' id='okButton' class='pagebtn'><span>确定</span></a>";
+	html += "<li class='PagedList-skipToNext'><a href='javascript:void(0)' mark='next'>下一页</a></li><li class='PagedList-skipToNext' mark='end'><a href='javascript:void(0)' >尾页</a></li></ul>";
+
+
+
 
 	if(size == 0){
 	    $("#loadPage").html(html).hide();
