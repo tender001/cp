@@ -646,7 +646,7 @@ var filter = {
 		type : "get",
 		cache:false,
 		dataType : "json",
-		url : "/cpdata/match/zc/81/"+filter.expect+".json"+ "?rnd=" + Math.random(),
+		url : "/cpdata/match/zc/80/"+filter.expect+".json"+ "?rnd=" + Math.random(),
 		end : function(data) {
 			 var obj = eval("(" + data.text + ")");
 			 var r= obj.rows.row
@@ -683,7 +683,7 @@ var filter = {
 		$("#showlist table").html(h.join(""));
 		Y.use('mask', function(){
 			var gvbuy =  this.lib.MaskLay("#showgv");
-			gvbuy.addClose('#"showgv"_close','#ok_close');
+			gvbuy.addClose('#showgv_close','#ok_close');
 			Y.get('#showgv .dialog-title').drag('#showgv');
 			gvbuy.pop();
 
@@ -719,7 +719,7 @@ var filter = {
 			Y.alert("投注金额不能大于200万");
 			return false;
 		}
-		Y.alert(page.loadingbuy);
+	
 		if(filter.params.caseid!=filter.params.buyid){
 			var url="/abc.c",
 			databuy = "t=buy&id=" + filter.params.caseid,

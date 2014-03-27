@@ -442,7 +442,7 @@ var filter = {
 					$("#duizhen tr:eq("+i+") .sp1").text(od);
 					$("#duizhen tr:eq("+i+") .sp0").text(oa);
 				})
-				tools.calSFCZhushu();
+				tools.calRJZhushu();
 			}
 		});
 
@@ -603,7 +603,7 @@ var filter = {
 		//下载方案
 		downloadCase: function(){
 			if($("#afterfilter").text()=="未处理"){
-				Common.dialog(page.alertErro("请先过滤方案！"));
+				Y.alert("请先过滤方案！");
 				return false;
 			}
 			var url = "/abc.c",
@@ -613,30 +613,19 @@ var filter = {
 			msg = $(json).attr("msg");
 			
 			if(code == 1){
-				Common.dialog(page.alertErroOK("是否确认下载"));
-				$("#dialog").height($(".dialog-content").height() + $(".dialog-title").height() +25);
-				$("#inofOK").attr("href","/abc.c?t="+msg);
-				$("#inofOK").die().live("click",function(){
-					$.unblockUI();
-				});
-				 //弹出下载框
-				//window.open("/abc.c?t="+msg);
+				window.open("/abc.c?t="+msg);
+				
 			}else{
-				dialog.alertMsg(msg);
+				Y.aert(msg);
 			}
 		}
 	},
 	//显示所有
 	showAll: function(){
-		$("#me_close,#ok_close").die().live("click",function(){
-			$.unblockUI();
-		});
 		$("#showall").die().live("click",function(){
 			if(filter.params.caseid==""){
-				Common.dialog(page.alertErro("请先过滤"));
-				$("#dialog").height($(".dialog-content").height() + $(".dialog-title").height() +25);
+				Y.alert("请先过滤");
 			}else{
-				Common.dialog(page.showAllpage(),"",760,365);
 				var o=[];
 				filter.showPage(o);
 			}
@@ -646,18 +635,29 @@ var filter = {
 	showPage:function(o){
 		var pageno = (typeof o.pageno == 'undefined' ? 1 : o.pageno);
 		var h=[];
-		var dzurl="/trade/queryvs.go?lottype=1&expect="+filter.expect;
-		var xml = Common.getAjax(dzurl);
-		var code = $(xml).find("Resp").attr("code");
-		if(code == 0){
+		Y.ajax({
+		type : "get",
+		cache:false,
+		dataType : "json",
+		url : "/cpdata/match/zc/81/"+filter.expect+".json"+ "?rnd=" + Math.random(),
+		end : function(data) {
+			 var obj = eval("(" + data.text + ")");
+			 var r= obj.rows.row
 			h[h.length]='<tr>';
-				h[h.length]='<th width="42">序号</th>';
-			$(xml).find("vs").each(function(i){
-				var hostteam = $(this).attr("hostteam");
+			h[h.length]='<th width="42">序号</th>';
+			r.each(function(rt,o) {
+			
+				var hostteam = rt.hn;
 				h[h.length]='<th width="49">'+hostteam+'</th>';
-			});
+			})
 			h[h.length]='</tr>';
+			
+			
 		}
+
+	
+	});
+	
 		var url = "/abc.c",
 		data = "t=show&page="+pageno+"&id=" + filter.params.caseid,
 		json = Common.getAjax(url,"post",data,"json"),
@@ -672,9 +672,17 @@ var filter = {
 				});
 			h[h.length]='</tr>';
 		});
-		
 		$("#showlist").show();
 		$("#showlist table").html(h.join(""));
+		Y.use('mask', function(){
+			var gvbuy =  this.lib.MaskLay("#showgv");
+			gvbuy.addClose('#showgv_close','#ok_close');
+			Y.get('#showgv .dialog-title').drag('#showgv');
+			gvbuy.pop();
+
+		}); 
+		
+		
 		
 		var countPage = parseInt($(json).attr("fliter_list")[$(json).attr("fliter_list").length-1]);// 总共数据量
 		var pagesize = 10;// 每页显示数量
@@ -704,7 +712,7 @@ var filter = {
 			Y.alert("投注金额不能大于200万");
 			return false;
 		}
-		Y.alert(page.loadingbuy);
+		
 		if(filter.params.caseid!=filter.params.buyid){
 			var url="/abc.c",
 			databuy = "t=buy&id=" + filter.params.caseid,
