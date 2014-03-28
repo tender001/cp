@@ -263,7 +263,8 @@ var showInfo = function(stime,etime,tid,pn,ps,tp,tr) {//页码		页面大小 		�
 						window.location.reload();			
 					});
 				}else{
-					html+="<tr><td colspan='7'>暂时没有您的信息！</td></tr>";
+					$("#nocount").show();
+					
 				}
 			}
 			$("#touzhulist").html(html);
