@@ -1,6 +1,7 @@
 
 var refreshVerify=function (){
-	$("#CheckCode").attr('src',"/rand.phpx?rnd="+Math.random());
+	$("#CheckCode").attr('src',"/rand.phpx?rnd="+Math.random()).val("");
+	$("#verifycode").val("");
 };
 
 //控制显示DIV
@@ -25,6 +26,7 @@ $(function() {
 		$('#' + input + '_err').html("<span class='regws'>"+msg+"</span>");
 		return false;
 	};
+	
 	var showOK = function(input) {
 		$('#' + input + '_err').html("<span class='regrs'></span>");
 		return true;
@@ -106,7 +108,7 @@ $(function() {
 			if (pwd2 == '') {
 				return showErr('password2', '再次确认您的密码');
 			}
-			if (pwd != pwd2) {
+			if (pwd2 != pwd) {
 				return showErr('password2', '两次密码不一致');
 			} else {
 				_status['password2'] = true;
@@ -142,9 +144,11 @@ $(function() {
 			var verifycode = $.trim($("#verifycode").val());
 			var len = verifycode.length;
 			if (len < 4) {
-				return showErr('verifycode', '请输入正确验证码');
+				return showErr('verifycode', '请输入验证码');
 			} 
-			
+			if(verifycode  != $("#CheckCode").attr('src',"/rand.phpx?rnd="+Math.random()).val("")){
+				return showErr('verifycode', '请输入正确验证码');
+			}
 			_status['verifycode'] = true;
 			return showOK('verifycode');
 		}
@@ -178,6 +182,19 @@ $(function() {
 							$("#subfrm").attr("disabled", false);
 							return false;
 						}
+						
+						if($("#password").val()==''){
+//							alert("请输入密码");
+							return showErr('password', '请输入密码');
+						}
+						if($("#password2").val()==''){
+//							alert("请再次输入密码");
+							return showErr('password2', '再次确认您的密码');
+						}
+						if($("#password2").val() != $("#password").val()){
+//							alert("密码不一致");
+							return showErr('password2', '两次密码不一致');
+						}
 						$.ajax({
 							url : $_user.url.register,
 							type : "POST",
@@ -190,7 +207,13 @@ $(function() {
 									+ $_user.key.pwd
 									+ "="
 									+ encodeURIComponent($.trim($("#password")
-											.val())) + "&" + $_user.key.mailAddr
+											.val())) 
+											+ "&"
+											+ $_user.key.pwd2
+											+ "="
+											+ encodeURIComponent($.trim($("#password2")
+													.val()))+ "&" 
+											+ $_user.key.mailAddr
 									+ "="
 									+ encodeURIComponent($.trim($("#email").val()))+ "&" + $_user.key.mobileNo
 									+ "="
@@ -206,7 +229,6 @@ $(function() {
 									
 									refreshVerify();
 									
-									alert(desc);
 									$("#subfrm").attr("disabled", false);
 									
 								}
@@ -242,7 +264,11 @@ $(function() {
 
 	var regsuc = function(uname) {
 		$("#main1").hide();
+		$("#reguest").hide();
+
 		$("#main2").show();
+		$("#regsucc").show();
+
 		$("#regusername").html(uname);
 	};
 
