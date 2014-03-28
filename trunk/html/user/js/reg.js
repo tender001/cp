@@ -146,9 +146,6 @@ $(function() {
 			if (len < 4) {
 				return showErr('verifycode', '请输入验证码');
 			} 
-			if(verifycode  != $("#CheckCode").attr('src',"/rand.phpx?rnd="+Math.random()).val("")){
-				return showErr('verifycode', '请输入正确验证码');
-			}
 			_status['verifycode'] = true;
 			return showOK('verifycode');
 		}
@@ -207,13 +204,7 @@ $(function() {
 									+ $_user.key.pwd
 									+ "="
 									+ encodeURIComponent($.trim($("#password")
-											.val())) 
-											+ "&"
-											+ $_user.key.pwd2
-											+ "="
-											+ encodeURIComponent($.trim($("#password2")
-													.val()))+ "&" 
-											+ $_user.key.mailAddr
+											.val()))+ "&"+ $_user.key.mailAddr
 									+ "="
 									+ encodeURIComponent($.trim($("#email").val()))+ "&" + $_user.key.mobileNo
 									+ "="
@@ -228,17 +219,13 @@ $(function() {
 								} else {
 									
 									refreshVerify();
-									
-									$("#subfrm").attr("disabled", false);
-									
+									alert(desc);
+									$("#subfrm").attr("disabled", false);	
 								}
 							}
 						});
 						return false;
-					
-				});
-				
-			
+				});	
 
 //验证邮箱的有效性
 	var isEmailOk=function(email){
