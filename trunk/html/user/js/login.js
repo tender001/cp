@@ -33,11 +33,9 @@ Class({// 用户登录
     	if (!p.length) {
     		msg = pm;
     	}
-
     	if (!u.length) {
     		msg = um;
     	}
-    	
     	if (msg.length > 0) {
     		dis.html(msg);
     		dis.show();
@@ -75,7 +73,6 @@ Class({// 用户登录
                 $("#pwd1").focus();
             }else{
             	var backurl =location.search.getParam('backurl');
-            	
             	if (backurl == ""){}
             	if(backurl=="chongzhi"){
             		location.href ="/account/chongzhi.html";
