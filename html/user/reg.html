@@ -16,37 +16,23 @@
 <script type="text/javascript" src="/user/js/reg.js"></script>
 </head>
 <body style="background: #f1f8fa;">
-	<div id="loghedm">
+<div class="adnav">
+ <div class="ad_nav">
+   <span><a href="login.html">登录</a>|<a href="reg.html">注册</a></span>
+   <p><a href="/">首页</a>|<a href="/dating/">购彩大厅</a>|<a  href="/about/sitemap.html" target="_blank">网站地图</a>|<a href="/help/">帮助中心</a>|<a href="href="javascript:void(0);" target="_blank"
+					onclick="this.newWindow = window.open('http://chat.live800.com/live800/chatClient/chatbox.jsp?companyID=331528&jid=4618724443&configID=123978', '159彩在线客服', 'toolbar=0,scrollbars=0,location=0,menubar=0,resizable=1,width=710,height=480');this.newWindow.focus();this.newWindow.opener=window;return false;">在线客服</a></p>
+  </div>
+</div>
+	<div class="loghedm">
 		<div class="loghed">
 			<a href="/"><img src="/images/cai888/login_03.jpg" class="log" /></a>
-			<p>
-				<a href="/about/sitemap.html" target="_blank">网站地图</a>|<a
-					href="/help/" target="_blank">帮助中心</a>|<a
-					href="javascript:void(0);" target="_blank"
-					onclick="this.newWindow = window.open('http://chat.live800.com/live800/chatClient/chatbox.jsp?companyID=331528&jid=4618724443&configID=123978', '159彩在线客服', 'toolbar=0,scrollbars=0,location=0,menubar=0,resizable=1,width=710,height=480');this.newWindow.focus();this.newWindow.opener=window;return false;">在线客服</a><img
-					src="/images/cai888/login_06.jpg" />
-			</p>
+			<p><img src="/images/cai888/login_06.jpg" href="javascript:void(0);" target="_blank"
+					onclick="this.newWindow = window.open('http://chat.live800.com/live800/chatClient/chatbox.jsp?companyID=331528&jid=4618724443&configID=123978', '159彩在线客服', 'toolbar=0,scrollbars=0,location=0,menubar=0,resizable=1,width=710,height=480');this.newWindow.focus();this.newWindow.opener=window;return false;"/></p>
 		</div>
 	</div>
-	<!-- 
-		<div class="head_r">
-			<ul>
-				<li><a href="/about/sitemap.html" target="_blank">网站地图</a></li>
-				<li>|</li>
-				<li><a href="/help/" target="_blank">帮助中心</a></li>
-				<li>|</li>
-				<li><a href="javascript:void(0);" target="_blank"
-					onclick="this.newWindow = window.open('http://chat.live800.com/live800/chatClient/chatbox.jsp?companyID=331528&jid=4618724443&configID=123978', '159彩在线客服', 'toolbar=0,scrollbars=0,location=0,menubar=0,resizable=1,width=710,height=480');this.newWindow.focus();this.newWindow.opener=window;return false;">在线客服</a></li>
-			</ul>
-			<div class="head_tel">
-				<a href="javascript:void(0);" target="_blank"
-					onclick="this.newWindow = window.open('http://chat32.live800.com/live800/chatClient/chatbox.jsp?companyID=238039&jid=5780576363', 'chatbox78478', 'toolbar=0,scrollbars=0,location=0,menubar=0,resizable=1,width=710,height=480');this.newWindow.focus();this.newWindow.opener=window;return false;"><img
-					src="/images/in_06.jpg" /></a>
-			</div> 
-		</div>
-	</div>-->
-	<div class="regline">
-		<div></div>
+	
+	<div class="regline" id="reguest">
+		<div class="div1"></div>
 	</div>
 
 	<div class="reginm" id="main1">
@@ -67,28 +53,14 @@
 								name="username" /></td>
 							<td id="username_err" style="display: none;"></td>
 						</tr>
-						<!--  <tr>
-						<th>用户名</th>
-						<td width="255"><input type="text" class="text1"
-							id="username" value="" onfocus="onfocuss('username_err')"
-							name="username" /></td>
-						<td id="username_err" style="display: none;"><span
-							class="say_2">4-16位汉字/数字/字母</span></td>
-					</tr>-->
+						
 						<tr>
 							<th>输入密码：</th>
 							<td><input type="password" id="password" class="text"
 								value="" name="password" onfocus="onfocuss('password_err')" /></td>
 							<td id="password_err" style="display: none;"></td>
 						</tr>
-						<!--  <tr>
-						<th>密码</th>
-						<td><input type="password" id="password" value=""
-							name="password" maxlength="20" class="text1"
-							onfocus="onfocuss('password_err')" /></td>
-						<td id="password_err" style="display: none;"><span
-							class="say_2">6-20个字符</span></td>
-					</tr>-->
+						
 						<tr>
 							<th>确认密码：</th>
 							<td><input type="password" id="password2" class="text"
@@ -96,64 +68,18 @@
 								onfocus="onfocuss('password2_err')" /></td>
 							<td id="password2_err" style="display: none;">&nbsp;</td>
 						</tr>
-						<!--  <tr>
-						<th>确认密码</th>
-						<td><input type="password" id="password2" value=""
-							name="password2" type="text" class="text1"
-							onfocus="onfocuss('password2_err')" /></td>
-						<td id="password2_err" style="display: none;"><span
-							class="say_2">请再次输入密码</span></td>
-					</tr>-->
-						<!--<tr id="show1" style="display: none;">
-						<th>邮箱</th>
-						<td><input type="text" class="text1" id="email" name="email"
-							onfocus="onfocuss('email_err')" /></td>
-						<td id="email_err" style="display: none;"><span class="say_2">请输入您的邮箱地址</span></td>
-					</tr>
-					<tr id="show11" style="display: none;">
-						<td>&nbsp;</td>
-						<td>如果没有邮箱您也可以 <a href="javascript:void(0);"
-							onclick="show(2)" class="a1">填写手机号码</a></td>
-						<td>&nbsp;</td>
-					</tr>
-					<tr id="show2">
-						<th>手机</th>
-						<td><input type="text" class="text1" id="phone" name="phone"
-							onfocus="onfocuss('phone_err')" /></td>
-						<td id="phone_err" style="display: none;"><span class="say_2">请输入您的手机号码</span></td>
-					</tr>
-					<tr id="show22">
-						<td>&nbsp;</td>
-						<td>中奖通知，或选择&nbsp; <a href="javascript:void(0);"
-							onclick="show(1)" class="a1">填写邮箱</a></td>
-						<td>&nbsp;</td>
-					</tr>-->
+						
 						<tr>
 							<th>验证码：</th>
 							<td><input type="text" class="text" id="verifycode"
 								name="verifycode" style="width: 120px"
 								onfocus="onfocuss('verifycode_err')" /><img src="/rand.phpx"
 								id="CheckCode" alt="点击刷新" onclick="refreshVerify();" width="60"
-								height="25" class="code-img" /></td>
-							<td id="verifycode_err">看不清楚？<a onclick="refreshVerify();">换一张</a></td>
+								height="25"/></td>
+							<td id="verifycode_err">
+							</td>
 						</tr>
-						<!--  <tr>
-						<th>验证码</th>
-						<td><input type="text" class="text2" id="verifycode"
-							name="verifycode" maxlength="4"
-							onfocus="onfocuss('verifycode_err')" /><img src="/rand.phpx"
-							class="code-img" id="CheckCode" alt="点击刷新"
-							onclick="refreshVerify()" width="60" height="25" /></td>
-						<td id="verifycode_err" style="display: none;"><span
-							class="say_2">看不清？请点击图片刷新</span></td>
-					</tr>-->
-						<!--  <tr>
-						<th>&nbsp;</th>
-						<td><input type="checkbox" class="box" name="year18"
-							id="year18" checked="checked" />我已满18岁并同意《<a
-							href="/help/helpbz.html" target="_blank" class="a2">159彩票网服务条款</a>》</td>
-						<td>&nbsp;</td>
-					</tr>-->
+						
 						<tr>
 							<th>&nbsp;</th>
 							<td><a href="javascript:void(0);" class="btn" id="subfrm"
@@ -170,12 +96,7 @@
 							<td></td>
 							<td>&nbsp;</td>
 						</tr>
-						<!--  <tr>
-						<th>&nbsp;</th>
-						<td><a href="javascript:void(0);" class="but" id="subfrm"
-							name="subfrm">立即注册</a></td>
-						<td>&nbsp;</td>
-					</tr>-->
+						
 					</table>
 
 				</div>
@@ -197,14 +118,8 @@
 		</div>
 	
 </div>
-	<!--  <a class="but" href="login.html">立即登录</a><a class="text"
-					href="getpwd.html">忘记密码？</a>-->
-	<!-- <div class="hz_adl">
- <p>您可以用以下方式直接登录：</p>
- <a href="/phpu/allylogin.phpx?type=1" title="支付宝账户登录"> <img src="/images/newimg/hzdl_03.jpg" /></a><a href="/phpu/allylogin.phpx?type=2" title="QQ账户登录">  <img src="/images/newimg/hzdl_06.jpg" /></a></div> -->
-	
-	
-<div class="regsusm" id="main2" style="display:none;">    
+	<div id="regsucc" class="regline" style="display:none"><div></div></div> 
+<div class="regsusm" id="main2" style="display:none;">   
  <div class="regsus">
  <h2>注册成功</h2>
  <div class="regsusbg"><span><strong id="regusername"></strong>恭喜您注册成功</span><p><a href="/huodong/zcs.html">实名注册就送2元彩金</a>，<a href="/huodong/czs.html">首冲10元送10元彩金</a>！</p>
@@ -212,7 +127,6 @@
  <div class="regdv">您还可以去购彩大厅试试手气，<a href="/dating/">购彩大厅>></a></div>
  </div>
  </div> 
-
 </div>
 <div class="logfot">
  <p class="p1">159彩票网 | 客服热线：400-0696-159 | 客服邮箱：kf@159cai.com |沪ICP备13044715号-1<br />
