@@ -1,4 +1,5 @@
 var gcsum,fksum,zksum,jjsum,czsum,tksum;//购彩、返款、转款、奖金、充值、提款
+
 $(function(){
 	$("#inm").empty();	
 	for ( var i = 0; i < $_sys.inm.length; i++) {
@@ -12,12 +13,14 @@ $(function(){
 	//查询
 	$("#td_submit").click(function(){
 		var pn=1;//页码
-		var ps=$("input[name='pages']:checked").val();//页面大小
+		//$("input[name='pages']:checked").val();
+		var ps=10;//页面大小
 		var tp = 0;//总页数
 		var tr = 0;//总记录数
 		
 		showInfo($("#begintime").val(),$("#endtime").val(),$("#busisort").val(),pn,ps,tp,tr);
 		loadSUM($("#begintime").val(),$("#endtime").val(),$("#busisort").val());
+		
 	});
 	
 	//加载账户明细
@@ -77,6 +80,7 @@ var loadSUM = function(stime,etime,tid){
 				if (tr%ps==0){tp=tr/ps;}else{tp=Math.ceil(tr/ps);}
 				
 				if(tr==0){
+					
 				}else{
 					if(!this.isArray(r)){r=new Array(r);}
 					r.each(function(rt,o){
@@ -123,6 +127,8 @@ var loadSUM = function(stime,etime,tid){
 					});
 				}else{
 					//html+="<tr><td colspan='7'>暂时没有您的信息！</td></tr>";
+					$("#nocount").show();
+					$("#page_div").hide();
 				}
 			}
 			
@@ -162,7 +168,8 @@ var showInfo = function(stime,etime,tid,pn,ps,tp,tr) {//页码		页面大小 		�
 	
 	
 		
-	$("#showdatalist").html("");
+	$("#touzhulist").html(html);
+	$("#page_div").html(getpage(pn,ps,tp,tr,"takeShow"));
 	var html="";
 	data += "&"+$_user.key.pn+"="+pn;
 	data += "&"+$_user.key.ps+"="+ps;
@@ -192,6 +199,7 @@ var showInfo = function(stime,etime,tid,pn,ps,tp,tr) {//页码		页面大小 		�
 				if(tr==0){
 //					html+="<tr><td colspan='7'>暂时没有您的信息！</td></tr>";
 					$("#nocount").show();
+					$("#page_div").hide();
 				}else{
 					if(!this.isArray(r)){r=new Array(r);}
 					r.each(function(rt,o){
@@ -232,47 +240,30 @@ var showInfo = function(stime,etime,tid,pn,ps,tp,tr) {//页码		页面大小 		�
 						}
 						
 						html += " </tr>";	
-						
-						
-//						if(ibiztype=='100' || ibiztype=='101' || ibiztype=='102' || ibiztype=='103'){
-//							gcsum += parseFloat(imoney);
-//						}
-//						else if(ibiztype=='210' || ibiztype=='211' || ibiztype=='212' || ibiztype=='213' || ibiztype=='214' || ibiztype=='215'){
-//							fksum += parseFloat(imoney);
-//						}
-//						else if(ibiztype=='300'||ibiztype=='214'){
-//							zksum += parseFloat(imoney);
-//						}
-//						else if(ibiztype=='201' || ibiztype=='202' || ibiztype=='203' || ibiztype=='204' || ibiztype=='216')
-//							jjsum += parseFloat(imoney);
-//						
-//						else if(ibiztype=='200')
-//							czsum += parseFloat(imoney);
-//						
-//						else if (ibiztype=='104')
-//							tksum += parseFloat(imoney);
-							
 					});
 					
-					//gcsum=fksum=zksum=jjsum=czsum=tksum=0;
 				}
 				
 			}else{
 				if (code=="1"){
 					parent.window.Y.postMsg('msg_login', function() {						
-						window.location.reload();			
+						window.location.reload();	
+						$("#page_div").html(getpage(pn,ps,tp,tr,"takeShow"));
 					});
 				}else{
 					$("#nocount").show();
+					$("#page_div").hide();
 					
 				}
 			}
 			$("#touzhulist").html(html);
+			$("#page_div").html(getpage(pn,ps,tp,tr,"takeShow"));
 			if(tr>0){
 				$("#page_div").html(getpage(pn,ps,tp,tr,"takeShow"));
+				$("#nocount").hide();
 			}else{
-				
-				$("#page_div").html("");
+				$("#nocount").show();
+				$("#page_div").hide();
 			}
 			
 		},
