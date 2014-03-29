@@ -248,7 +248,7 @@ var showInfo = function(stime,etime,tid,pn,ps,tp,tr) {//页码		页面大小 		�
 				if (code=="1"){
 					parent.window.Y.postMsg('msg_login', function() {						
 						window.location.reload();	
-						$("#page_div").html(getpage(pn,ps,tp,tr,"takeShow"));
+						//$("#page_div").html(getpage(pn,ps,tp,tr,"takeShow"));
 					});
 				}else{
 					$("#nocount").show();
