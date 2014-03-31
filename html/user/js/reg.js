@@ -2,7 +2,7 @@
 var refreshVerify=function (){
 	$("#CheckCode").attr('src',"/rand.phpx?rnd="+Math.random()).val("");
 	$("#verifycode").val("");
-	$("#reg").hide();
+	$("#reg,#rege").hide();
 };
 
 //控制显示DIV
