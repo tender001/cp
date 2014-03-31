@@ -71,11 +71,11 @@
 						<tr>
 							<th>验证码：</th>
 							<td id="removeC"><input type="text" class="text" id="verifycode"
-								name="verifycode" style="width: 120px"
+								name="verifycode" style="width: 100px"
 								onfocus="onfocuss('verifycode_err')" maxlength="4"/><img src="/rand.phpx"
 								id="CheckCode" alt="点击刷新" onclick="refreshVerify();" width="60"
-								height="25"/></td>
-							<td id="verifycode_err">看不清？<a onclick="refreshVerify();">换一张</a>
+								height="25"/><b onclick="refreshVerify();"></b></td>
+							<td id="verifycode_err"></a>
 							</td>
 						</tr>
 						
