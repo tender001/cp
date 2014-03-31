@@ -15,7 +15,7 @@
 <script type="text/javascript" src="/public/159cp.js"></script>
 <script type="text/javascript" src="/user/js/reg.js"></script>
 </head>
-<body style="background: #f1f8fa;">
+<body>
 <div class="adnav">
  <div class="ad_nav">
    <span><a href="login.html">登录</a>|<a href="reg.html">注册</a></span>
@@ -25,9 +25,8 @@
 </div>
 	<div class="loghedm">
 		<div class="loghed">
-			<a href="/"><img src="/images/cai888/login_03.jpg" class="log" /></a>
-			<p><img src="/images/cai888/login_06.jpg" href="javascript:void(0);" target="_blank"
-					onclick="this.newWindow = window.open('http://chat.live800.com/live800/chatClient/chatbox.jsp?companyID=331528&jid=4618724443&configID=123978', '159彩在线客服', 'toolbar=0,scrollbars=0,location=0,menubar=0,resizable=1,width=710,height=480');this.newWindow.focus();this.newWindow.opener=window;return false;"/></p>
+			<a href="/"><img class="log" src="/images/cai888/login_03a.jpg" style="width:260px"/></a>
+			<p><a onclick="this.newWindow = window.open('http://chat32.live800.com/live800/chatClient/chatbox.jsp?companyID=238039&jid=5780576363', 'chatbox78478', 'toolbar=0,scrollbars=0,location=0,menubar=0,resizable=1,width=710,height=480');this.newWindow.focus();this.newWindow.opener=window;return false;" target="_blank" href="javascript:void(0);"><img src="/images/cai888/login_06.jpg" /></a></p>
 		</div>
 	</div>
 	
@@ -71,12 +70,12 @@
 						
 						<tr>
 							<th>验证码：</th>
-							<td><input type="text" class="text" id="verifycode"
+							<td id="removeC"><input type="text" class="text" id="verifycode"
 								name="verifycode" style="width: 120px"
-								onfocus="onfocuss('verifycode_err')" /><img src="/rand.phpx"
+								onfocus="onfocuss('verifycode_err')" maxlength="4"/><img src="/rand.phpx"
 								id="CheckCode" alt="点击刷新" onclick="refreshVerify();" width="60"
 								height="25"/></td>
-							<td id="verifycode_err">
+							<td id="verifycode_err">看不清？<a onclick="refreshVerify();">换一张</a>
 							</td>
 						</tr>
 						
