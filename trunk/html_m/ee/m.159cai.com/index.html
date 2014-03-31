@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>159彩网触屏版</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=1' name='viewport' />
+<meta content='yes' name='apple-mobile-web-app-capable' />
+<meta content='black' name='apple-mobile-web-app-status-bar-style' />
+<meta content='telephone=no' name='format-detection' />
+<script src='/js/jquery.js'></script>
+<script src='/js/159cp.js'></script>
+<script src='/js/base.js'></script>
+<script src='/js/login.js'></script>
+<link rel='stylesheet' href='/style/main.css?v=1.1.1' />
+<link href="/images/touch-icon.png" rel="apple-touch-icon-precomposed" /> 
+<style>
+/* 首页 */
+#webnews {
+	clear: both;
+	height: 35px;
+	border-bottom: 1px solid #C9DBF5;
+	line-height: 35px;
+	padding-right: 8px;
+	padding-left: 8px;
+	background:#F6D8CE;
+	background:#F6D8CE;
+	background:-webkit-gradient(linear,0 0,0 100%,from(#F6D8CE),to(#F6D8CE));
+	background:-moz-linear-gradient(top,#F6D8CE,#F6D8CE);
+	background:-o-linear-gradient(top, #F6D8CE, #F6D8CE);
+}
+.bg_img {
+	background-image: url(../images/arrow.gif);
+	background-repeat: no-repeat;
+	background-position: 98% center;
+}
+.bg_img div{display:none;}
+#smenu {
+	padding: 16px 0px 0px 12px;
+	background-color: #F6D8CE;
+	margin: 0px;
+}
+#smenu li{
+	display:inline-block;
+	font-size: 13px;
+	padding-right: 10px;
+	padding-bottom:12px;
+	text-align: center;
+}
+#smenu li a{
+	/*line-height: 36px;*/
+	color: #666666;
+}
+.sm1,.sm2,.sm3,.sm4,.sm5,.sm6,.sm7,.sm8,.sm9,.sm10,.sm11,.sm12,.sm13,.sm14,.sm15,.sm16 {
+	-webkit-border-top-left-radius:8px;
+	-webkit-border-top-right-radius:8px;
+	-webkit-border-bottom-left-radius:8px;
+	-webkit-border-bottom-right-radius:8px;
+	-moz-border-radius-topleft:4px;
+	-moz-border-radius-topright:4px;
+	-moz-border-radius-bottomleft:4px;
+	-moz-border-radius-bottomright:4px;
+	-webkit-box-shadow:2px 1px 2px #B3C4CA;
+	-moz-box-shadow:2px 1px 2px #ccc;
+	height: 62px;
+	width: 62px;
+	display: block;
+	text-align: center;
+	margin-bottom:8px;
+	}
+.sm1 {background:#DCF63A;background:-webkit-gradient(linear,0 0,0 100%,from(#FFFFC4),to(#DCF63A));background:-moz-linear-gradient(top,#FFFFC4,#DCF63A);background:-o-linear-gradient(top, #FFFFC4, #DCF63A);}
+.sm2 {background:#ECC73F;background:-webkit-gradient(linear,0 0,0 100%,from(#FCF3DC),to(#ECC73F));background:-moz-linear-gradient(top,#FCF3DC,#ECC73F);background:-o-linear-gradient(top, #FCF3DC, #ECC73F);}
+.sm3 {background:#FFFF99;background:-webkit-gradient(linear,0 0,0 100%,from(#FFFFFF),to(#FFFF99));background:-moz-linear-gradient(top,#FFFFFF,#FFFF99);background:-o-linear-gradient(top, #FFFFFF, #FFFF99);}
+.sm4 {background:#FCE891;background:-webkit-gradient(linear,0 0,0 100%,from(#FFFFFF),to(#FCE891));background:-moz-linear-gradient(top,#FFFFFF,#FCE891);background:-o-linear-gradient(top, #FFFFFF, #FCE891);}
+.sm5 {background:#D0EB7A;background:-webkit-gradient(linear,0 0,0 100%,from(#F5FFCA),to(#D0EB7A));background:-moz-linear-gradient(top,#F5FFCA,#D0EB7A);background:-o-linear-gradient(top, #F5FFCA, #D0EB7A);}
+.sm6 {background:#F2DB0D;background:-webkit-gradient(linear,0 0,0 100%,from(#EFFE98),to(#F2DB0D));background:-moz-linear-gradient(top,#EFFE98,#F2DB0D);background:-o-linear-gradient(top, #EFFE98, #F2DB0D);}
+.sm7 {background:#DFF07D;background:-webkit-gradient(linear,0 0,0 100%,from(#FFFFFF),to(#DFF07D));background:-moz-linear-gradient(top,#FFFFFF,#DFF07D);background:-o-linear-gradient(top, #FFFFFF, #DFF07D);}
+.sm8 {background:#D5DFE5;background:-webkit-gradient(linear,0 0,0 100%,from(#FFFFFF),to(#D5DFE5));background:-moz-linear-gradient(top,#FFFFFF,#D5DFE5);background:-o-linear-gradient(top, #FFFFFF, #D5DFE5);}
+.sm9 {background:#FFE3D1;background:-webkit-gradient(linear,0 0,0 100%,from(#FFFFFF),to(#FFE3D1));background:-moz-linear-gradient(top,#FFFFFF,#FFE3D1);background:-o-linear-gradient(top, #FFFFFF, #FFE3D1);}
+.sm10 {background:#FFE000;background:-webkit-gradient(linear,0 0,0 100%,from(#FFFFA4),to(#FFE000));background:-moz-linear-gradient(top,#FFFFA4,#FFE000);background:-o-linear-gradient(top, #FFFFA4, #FFE000);}
+.sm11 {background:#C2E3F5;background:-webkit-gradient(linear,0 0,0 100%,from(#FFFFFF),to(#C2E3F5));background:-moz-linear-gradient(top,#FFFFFF,#C2E3F5);background:-o-linear-gradient(top, #FFFFFF, #C2E3F5);}
+.sm12 {background:#F9EBDD;background:-webkit-gradient(linear,0 0,0 100%,from(#FDFBFC),to(#F9EBDD));background:-moz-linear-gradient(top,#FDFBFC,#F9EBDD);background:-o-linear-gradient(top, #FDFBFC, #F9EBDD);}
+.sm13 {background:#FFE000;background:-webkit-gradient(linear,0 0,0 100%,from(#FFFFA4),to(#FFE000));background:-moz-linear-gradient(top,#FFFFA4,#FFE000);background:-o-linear-gradient(top, #FFFFA4, #FFE000);}
+.sm14 {background:#C2E3F5;background:-webkit-gradient(linear,0 0,0 100%,from(#FFFFFF),to(#C2E3F5));background:-moz-linear-gradient(top,#FFFFFF,#C2E3F5);background:-o-linear-gradient(top, #FFFFFF, #C2E3F5);}
+.sm15 {background:#F5F9DD;background:-webkit-gradient(linear,0 0,0 100%,from(#FFFFFF),to(#F5F9DD));background:-moz-linear-gradient(top,#FFFFFF,#F5F9DD);background:-o-linear-gradient(top, #FFFFFF, #F5F9DD);}
+.sm16 {background:#F9EBDD;background:-webkit-gradient(linear,0 0,0 100%,from(#FDFBFC),to(#F9EBDD));background:-moz-linear-gradient(top,#FDFBFC,#F9EBDD);background:-o-linear-gradient(top, #FDFBFC, #F9EBDD);}
+#down_menu {
+	clear: both;
+	margin: 0px;
+	background-color: #FE9A2E;
+	border-top: 1px solid #BBE8F9;
+	padding: 10px 0px 4px 23px;
+}
+#down_menu li{
+	float: left;
+	margin-right: 10px;
+	padding-bottom: 9px;
+}
+#down_menu li a{
+	-webkit-border-top-left-radius:4px;
+	-webkit-border-top-right-radius:4px;
+	-webkit-border-bottom-left-radius:4px;
+	-webkit-border-bottom-right-radius:4px;
+	-moz-border-radius-topleft:4px;
+	-moz-border-radius-topright:4px;
+	-moz-border-radius-bottomleft:4px;
+	-moz-border-radius-bottomright:4px;
+	-webkit-box-shadow:2px 1px 2px #8E8E8E;
+	-moz-box-shadow:2px 1px 2px #B3C4CA;
+	display: block;
+	background:#E8E8E8;
+	background:-webkit-gradient(linear,0 0,0 100%,from(#FDFDFD),to(#E8E8E8));
+	background:-moz-linear-gradient(top,#FDFDFD,#E8E8E8);
+	background:-o-linear-gradient(top, #FDFDFD, #E8E8E8);
+	border: 1px solid #BFC1C6;
+	height: 26px;
+	width: 80px;
+	font-size: 13px;
+	font-weight: bold;
+	line-height: 27px;
+	color: #575757;
+	text-align: center;
+}
+</style>
+</head>
+<body>
+<!--#include virtual="/cc/login.html"-->
+<script>
+$(document).ready(function() {
+	chklogin();
+});
+</script>
+<div id="webnews">
+	<div class="bg_img">
+		<div style="display: none;">159彩票网欢迎您</div>
+	</div>
+</div>
+<ul id="smenu">
+<li><a href="/zc"><span class="sm7"><img src="/images/menu/s5.gif" style="margin-top:13px"></span>胜负彩</a></li>
+<li><a href="/zc/r9.html"><span class="sm16"><img src="/images/menu/s15.gif" style="margin-top:8px"></span>任选九</a></li>
+<li><a href="/zc/bqc.html"><span class="sm13"><img src="/images/menu/s17.gif" style="margin-top:10px"></span>6场半全</a></li>
+<li><a href="/zc/jqs.html"><span class="sm15"><img src="/images/menu/s14.gif" style="margin-top:6px"></span>4场进球</a></li>
+<li><a href="/bd"><span class="sm1"><img src="/images/menu/s2.gif" style="margin-top:8px"></span>北京单场</a></li>
+<li><a href="/jczq"><span class="sm5"><img src="/images/menu/s12.gif" style="margin-top:10px"></span>竞彩足球</a></li>
+<li><a href="/jclq"><span class="sm2"><img src="/images/menu/s4.gif" style="margin-top:10px"></span>竞彩篮球</a></li>
+<li><a href="/ssq"><span class="sm3"><img src="/images/menu/s3.gif" style="margin-top:7px"></span>双色球</a></li>
+<li><a href="/3d"><span class="sm6"><img src="/images/menu/s8.gif" style="margin-top:8px"></span>福彩3D</a></li>
+<li><a href="/qlc"><span class="sm10"><img src="/images/menu/s12qlc.gif" style="margin-top:8px"></span>七乐彩</a></li>
+<li><a href="/dlt"><span class="sm3"><img src="/images/menu/s32.gif" style="margin-top:5px"></span>大乐透</a></li>
+<li><a href="/p3"><span class="sm4"><img src="/images/menu/s13.gif" style="margin-top:11px"></span>排列3</a></li>
+<li><a href="/p5"><span class="sm8"><img src="/images/menu/s11.gif" style="margin-top:10px"></span>排列5</a></li>
+<li><a href="/qxc"><span class="sm11"><img src="/images/menu/s6.gif" style="margin-top:8px"></span>七星彩</a></li>
+<li><a href="/ssc"><span class="sm9"><img src="/images/menu/s13ssc.gif" style="margin-top:11px"></span>时时彩</a></li>
+<li><a href="/11x5"><span class="sm2"><img src="/images/menu/s173.gif" style="margin-top:11px"></span>11选5</a></li>
+<li><a href="/sd11x5"><span class="sm5"><img src="/images/menu/s11ydj.gif" style="margin-top:11px"></span>十一运夺金</a></li>
+<br style="clear:both">
+</ul>
+<ul id="down_menu">
+<li><a href="/hemai" target="_blank">合买大厅</a></li>
+<li><a href="/history" target="_blank">开奖查询</a></li>
+<li><a href="/award" target="_blank">中奖查询</a></li>
+<br style="clear:both">
+</ul>
+<!--#include virtual="/cc/footer.html"-->
+</body>
+</html>
+<script>
+    var RollIndex = 0;
+    var RollHold = false;
+    $(document).ready(function() {
+        $(".bg_img").find("div").each(function(index) {
+            if (index == RollIndex) $(this).show();
+            else $(this).hide();
+        });
+    });
+    setInterval(function() {
+        if (RollHold) return;
+        RollIndex = (RollIndex + 1) % $(".bg_img").find("div").length;
+        $(".bg_img").find("div").each(function(index) {
+        if (index == RollIndex) $(this).slideToggle("slow");
+            else $(this).slideUp("slow");
+        });
+    }, 4000);
+</script>

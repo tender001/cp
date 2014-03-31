@@ -1,0 +1,14 @@
+<div class="switchWF" style="padding: 5px;text-align:left;background:#FDFCF2;color:#C61D00;">
+<a href="/bd/index.html" id="g85" class="btn">胜平负</a>
+<a href="/bd/jqs.html" id="g89" class="btn">进球数</a>
+<a href="/bd/sxp.html" id="g88" class="btn">上下单双</a>
+<a href="/bd/cbf.html" id="g86" class="btn">比分</a>
+<a href="/bd/bqc.html" id="g87" class="btn">半全场</a>
+</div>
+<script>
+$(document).ready(function() {
+	chklogin();
+	$("#spid").html(salePeriod);
+    $("#g"+$("#gid").val()).removeClass("btn").addClass("btnC");
+});
+</script>

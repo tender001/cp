@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head><title>
+	篮球胜负手机购彩页-159彩票网
+</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=1' name='viewport' />
+<meta content='yes' name='apple-mobile-web-app-capable' />
+<meta content='black' name='apple-mobile-web-app-status-bar-style' />
+<meta content='telephone=no' name='format-detection' />
+<script src='/js/jquery.js'></script>
+<script src='/js/159cp.js'></script>
+<script src='/js/base.js'></script>
+<script src='/js/login.js'></script>
+<link rel='stylesheet' href='/style/main.css' />
+<link href="/images/touch-icon.png" rel="apple-touch-icon-precomposed" /> 
+<script>
+var typeID=111;
+var OddsType=2;
+var SelX="3,0";
+var SelCodes="3,0";
+var SelNames='胜,负';
+var SelKeys="wl3,wl0";
+var MaxMatch = 8;
+var MaxPowNum = 3;
+<!--#include virtual="/data/jclq/wap_sf.html"-->
+</script>
+<style>
+.switchOff{background:#F7ECBC;background:-webkit-gradient(linear,0 0,0 100%,from(#FFF),to(#F7ECBC));width:70px; border:1px solid #FFBA3C; color:#8A6544}
+.switchOn{background:#FFA505;background:-webkit-gradient(linear,0 0,0 100%,from(#FFCB6A),to(#FFA505));width:70px}
+.mo{text-align: center;display:inline-block;margin:0px 2px 0px 2px;width:60px;}
+.mo,.md{color:#999;}
+.md{font-size:13px;padding-top:3px;}
+.mi{color:#FFA1A1;}
+.hunheType{border-bottom:1px dotted #ccc;padding:5px 0px 5px 0px;}
+.hunheType .mBTN, .hunheType .mBtnCheck{line-height:22px;}
+</style>
+</head>
+<body>
+<!--#include virtual="/cc/login.html"-->
+<a id='goTop'></a>
+<div id="choosePanel">
+<section class="header-panel" style="display: none;border-bottom:1px solid #FFCB6A;" id="Filter_Panel">
+<div style="color:#fff;background:#FFCB6A;background:-webkit-gradient(linear,0 0,0 100%,from(#FFA505),to(#FFCB6A));line-height:30px;">
+<div class="closeR" onclick="$('#Filter_Panel').slideUp('fast');$('.yellow').removeClass('switchOn').removeClass('switchOn').addClass('switchOff');return false;">关闭</div>
+<span style='margin-left:15px;' id="spnPanelTitle"></span></div>
+<div class="filterContent">加载中..</div>
+<!--#include virtual="/jclq/playtype.html"-->
+<input type="hidden" id="gid" value="94" />
+</section>
+<section class="mainSec" style='background:#F8E6E0;'>
+<table border=0 cellpadding="0" style="width:100%;color:green;">
+    <tr>
+        <td>
+            篮球胜负(<span style="color:Red;">过关</span>)
+        </td>
+        <td><div class="yellow btn001 switchOff">玩法切换</div></td>
+        <td><div class="yellow btn001 switchOff">赛事筛选</div></td>
+    </tr>
+</table>
+</section>
+<section class="mainSec">
+    <div class="step">第一步：选择赛程</div>
+    <div id="matchList" style="padding:0px;">加载中...</div>
+</section>
+<section class="mainSec">
+    <div class="step">第二步：选择过关方式</div>
+    <div id="passModeList"> 请选择2-10场投注</div>
+</section>
+<section class="mainSec">
+    <div class="step">第三步：确认投注信息</div>
+    <div style="margin-top:5px;">&nbsp;倍数：<input value="1" type="number" maxLength="5" size=5  id="preTimes" onchange='TimesNum(this,1,99999)'>(1-99999)</div>
+    <div id="preMoney">金额：(0场)0注×0倍=￥<span style='color:red'>0</span>元</div>
+    <div id="BuyInfo"></div>
+    <div><input type="button" class='btnC' onclick="prebuy(2);" value="发起代购" style="width:80px;height:35px;line-height:35px;font-size:16px;" />
+    &nbsp;<input type="button" class='btnC' onclick="prebuy(4);" value="发起合买" style="width:80px;height:35px;line-height:35px;font-size:16px;" />
+    &nbsp;<input type="button" class='btn' onclick="ReChoose();" value="重选" style="width:60px;height:35px;line-height:35px;font-size:16px;" /></div>
+    <div style="color:Red;padding:5px;">对阵时间为截止投注时间</div>
+    <input type="hidden" id="hidAmount" />
+    <input type="hidden" id="hidTypeName" value="篮球胜负" />
+</section>
+<div id="bottonAn"></div>
+<!--#include virtual="/cc/footer.html"-->
+</div>
+<!--#include virtual="/jczq/buy.html"-->
+</body>
+</html>
+<script type="text/javascript" src='/js/310JQ.js'></script>
+<script type="text/javascript" src="/js/JingJi.js"></script>

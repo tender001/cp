@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+<head><title>
+	开奖列表-159彩票网
+</title>
+<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=1' name='viewport' />
+<meta content='yes' name='apple-mobile-web-app-capable' />
+<meta content='black' name='apple-mobile-web-app-status-bar-style' />
+<meta content='telephone=no' name='format-detection' />
+<script src='/js/jquery.js'></script>
+<script src='/js/159cp.js'></script>
+<script src='/js/base.js'></script>
+<script src='/js/login.js'></script>
+<script src='/js/kaijiang.js'></script>
+<link rel='stylesheet' href='/style/main.css' />
+<link href="/images/touch-icon.png" rel="apple-touch-icon-precomposed" /> 
+<style>
+    .type { color: #2C507E; font-size: 18px; font-weight: bolder;text-align: left; }
+    .kjico { width: 65px; }
+    .qi { color: Gray; text-align: right; }
+</style>
+</head>
+<body>
+<!--#include virtual="/cc/login.html"-->
+<script>
+$(document).ready(function() {
+	chklogin();
+	loadKaiJiang();
+});
+</script>
+
+<a href="/kj/match.html?gid=jczq" id="jczq">
+<table class="list" border="0" cellSpacing="0" cellPadding="0">
+<tr>
+<td class='kjico'><img src="../images/140_jczq.png" /></td>
+<td class="type">竞彩足球比分</td>
+<td class="arrow"><img src='../images/arrow.gif' /></td>
+</tr>
+</table>
+</a>
+
+<a href="/kj/match.html?gid=jclq" id="jclq">
+<table class="list" border="0" cellSpacing="0" cellPadding="0">
+<tr>
+<td class='kjico'><img src="../images/140_jclq.png" /></td>
+<td class="type">竞彩篮球比分</td>
+<td class="arrow"><img src='../images/arrow.gif' /></td>
+</tr>
+</table>
+</a>
+
+<a href="/kj/match.html?gid=bjdc" id="bjdc">
+<table class="list" border="0" cellSpacing="0" cellPadding="0">
+<tr>
+<td class='kjico'><img src="../images/140_dcjc.png" /></td>
+<td class="type">单场比分</td>
+<td class="arrow"><img src='../images/arrow.gif' /></td>
+</tr>
+</table>
+</a>
+
+<a href="/kj/list.html?gid=80" id="80">
+<table class="list" border="0" cellSpacing="0" cellPadding="0">
+<tr style="height:35px;">
+<td class='kjico' rowspan="2"><img src="../images/ico1.png" /></td>
+<td class="type">14场(任九)</td>
+<td class="qi">------期</td>
+<td class="arrow" rowspan="2"><img src='../images/arrow.gif' /></td>
+</tr>
+<tr><td colspan=2 style="color:Red;text-align:left;" class="code">- - - - - - - - - - - - - -</td></tr>
+</table>
+</a>
+
+<a href="/kj/list.html?gid=83" id="83">
+<table class="list" border="0" cellSpacing="0" cellPadding="0">
+<tr style="height:35px;">
+<td class='kjico' rowspan="2"><img src="../images/ico3.png" /></td>
+<td class="type">六场半全场</td>
+<td class="qi">------期</td>
+<td class="arrow" rowspan="2"><img src='../images/arrow.gif' /></td>
+</tr>
+<tr><td colspan=2 style="color:Red;text-align:left;" class="code">- - - - - - - - - - - -</td></tr>
+</table>
+</a>
+
+<a href="/kj/list.html?gid=82" id="82">
+<table class="list" border="0" cellSpacing="0" cellPadding="0">
+<tr style="height:35px;">
+<td class='kjico' rowspan="2"><img src="../images/ico4.png" /></td>
+<td class="type">四场进球</td>
+<td class="qi">------期</td>
+<td class="arrow" rowspan="2"><img src='../images/arrow.gif' /></td>
+</tr>
+<tr><td colspan=2 style="color:Red;text-align:left;" class="code">- - - - - - - -</td></tr>
+</table>
+</a>
+
+<a href="/kj/list.html?gid=01" id="01">
+<table class="list" border="0" cellSpacing="0" cellPadding="0">
+<tr style="height:35px;">
+<td class='kjico' rowspan="2"><img src="../images/ico10.png" /></td>
+<td class="type">双色球</td>
+<td class="qi">------期</td>
+<td class="arrow" rowspan="2"><img src='../images/arrow.gif' /></td>
+</tr>
+<tr><td colspan=2 style="color:Red;text-align:left;" class="code"><span style='color:red'>--,--,--,--,--,--</span><span style='color:blue'>+--</span></td></tr>
+</table>
+</a>
+
+<a href="/kj/list.html?gid=50" id="50">
+<table class="list" border="0" cellSpacing="0" cellPadding="0">
+<tr style="height:35px;">
+<td class='kjico' rowspan="2"><img src="../images/ico20.png" /></td>
+<td class="type">超级大乐透</td>
+<td class="qi">------期</td>
+<td class="arrow" rowspan="2"><img src='../images/arrow.gif' /></td>
+</tr>
+<tr><td colspan=2 style="color:Red;text-align:left;" class="code"><span style='color:red'>--,--,--,--,--</span><span style='color:blue'>+--,--</span></td></tr>
+</table>
+</a>
+
+<a href="/kj/list.html?gid=51" id="51">
+<table class="list" border="0" cellSpacing="0" cellPadding="0">
+<tr style="height:35px;">
+<td class='kjico' rowspan="2"><img src="../images/ico25.png" /></td>
+<td class="type">七星彩</td>
+<td class="qi">------期</td>
+<td class="arrow" rowspan="2"><img src='../images/arrow.gif' /></td>
+</tr>
+<tr><td colspan=2 style="color:Red;text-align:left;" class="code">- - - - - - -</td></tr>
+</table>
+</a>
+
+<a href="/kj/list.html?gid=53" id="53">
+<table class="list" border="0" cellSpacing="0" cellPadding="0">
+<tr style="height:35px;">
+<td class='kjico' rowspan="2"><img src="../images/ico26.png" /></td>
+<td class="type">排列3</td>
+<td class="qi">------期</td>
+<td class="arrow" rowspan="2"><img src='../images/arrow.gif' /></td>
+</tr>
+<tr><td colspan=2 style="color:Red;text-align:left;" class="code">- - -</td></tr>
+</table>
+</a>
+
+<a href="/kj/list.html?gid=52" id="52">
+<table class="list" border="0" cellSpacing="0" cellPadding="0">
+<tr style="height:35px;">
+<td class='kjico' rowspan="2"><img src="../images/ico27.png" /></td>
+<td class="type">排列5</td>
+<td class="qi">------期</td>
+<td class="arrow" rowspan="2"><img src='../images/arrow.gif' /></td>
+</tr>
+<tr><td colspan=2 style="color:Red;text-align:left;" class="code">- - - - -</td></tr>
+</table>
+</a>
+
+<a href="/kj/list.html?gid=03" id="03">
+<table class="list" border="0" cellSpacing="0" cellPadding="0">
+<tr style="height:35px;">
+<td class='kjico' rowspan="2"><img src="../images/ico44.png" /></td>
+<td class="type">福彩3D</td>
+<td class="qi">------期</td>
+<td class="arrow" rowspan="2"><img src='../images/arrow.gif' /></td>
+</tr>
+<tr><td colspan=2 style="color:Red;text-align:left;" class="code">- - -</td></tr>
+</table>
+</a>
+
+<a href="/kj/list.html?gid=07" id="07">
+<table class="list" border="0" cellSpacing="0" cellPadding="0">
+<tr style="height:35px;">
+<td class='kjico' rowspan="2"><img src="../images/ico45.png" /></td>
+<td class="type">七乐彩</td>
+<td class="qi">------期</td>
+<td class="arrow" rowspan="2"><img src='../images/arrow.gif' /></td>
+</tr>
+<tr><td colspan=2 style="color:Red;text-align:left;" class="code"><span style='color:red'>--,--,--,--,--,--,--</span><span style='color:blue'>+--</span></td></tr>
+</table>
+</a>
+
+<a href="/kj/list.html?gid=56" id="56">
+<table class="list" border="0" cellSpacing="0" cellPadding="0">
+<tr style="height:35px;">
+<td class='kjico' rowspan="2"><img src="../images/ico115.png" /></td>
+<td class="type">十一运夺金</td>
+<td class="qi">------期</td>
+<td class="arrow" rowspan="2"><img src='../images/arrow.gif' /></td>
+</tr>
+<tr><td colspan=2 style="color:Red;text-align:left;" class="code">-- -- -- -- --</td></tr>
+</table>
+</a>
+
+<a href="/kj/list.html?gid=54" id="54">
+<table class="list" border="0" cellSpacing="0" cellPadding="0">
+<tr style="height:35px;">
+<td class='kjico' rowspan="2"><img src="../images/ico119.png" /></td>
+<td class="type">江西11选5</td>
+<td class="qi">------期</td>
+<td class="arrow" rowspan="2"><img src='../images/arrow.gif' /></td>
+</tr>
+<tr><td colspan=2 style="color:Red;text-align:left;" class="code">-- -- -- -- --</td></tr>
+</table></a>
+
+<a href="/kj/list.html?gid=04" id="04">
+<table class="list" border="0" cellSpacing="0" cellPadding="0">
+<tr style="height:35px;">
+<td class='kjico' rowspan="2"><img src="../images/ico120.png" /></td>
+<td class="type">时时彩</td>
+<td class="qi">------期</td>
+<td class="arrow" rowspan="2"><img src='../images/arrow.gif' /></td>
+</tr>
+<tr><td colspan=2 style="color:Red;text-align:left;" class="code">- - - - -</td></tr>
+</table>
+</a>
+<!--#include virtual="/cc/footer.html"-->
+</body>
+</html>

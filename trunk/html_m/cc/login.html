@@ -1,0 +1,20 @@
+<noscript><div style="color:Red;padding:5px;line-height:30px;background-color:#FFCBCB;">您的浏览器不支持159彩触屏版<br>请进入使用<a href="http://wap.310win.com">159彩标准版</a>。</div></noscript>
+<header>
+<div id="webtop">
+<a href="/">&nbsp;<img src="/images/159logo.png" height="35"/></a>
+<div style="float:right;padding-right:10px;" id="headlogintd">加载中...</div>
+</div>
+</header>
+<div class="header-panel" id="Login_Panel" style="display: none;">
+<div style="color:#fff;background:#FF8000;line-height:30px;">
+<div class="closeR" onclick="closeLogin()">关闭</div>
+<span style='margin-left:15px;'>用户登录</span></div>
+<div class="loginContent">加载中..</div>
+</div>
+<script>
+function loginHdl() {
+    $('#Filter_Panel').slideUp('fast');
+    if ($('#Login_Panel').is(':hidden')) showLogin(); else closeLogin()
+    return false;
+}
+</script>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head><title>
+支付宝充值-手机159彩票网
+</title>
+<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=1;' name='viewport' />
+<meta content='yes' name='apple-mobile-web-app-capable' />
+<meta content='black' name='apple-mobile-web-app-status-bar-style' />
+<meta content='telephone=no' name='format-detection' />
+<script src='/js/jquery.js'></script>
+<script src='/js/159cp.js'></script>
+<script src='/js/base.js'></script>
+<script src='/js/login.js'></script>
+<script src='/js/addmoney.js'></script>
+<link rel='stylesheet' href='/style/main.css' />
+<link href="/images/apple-touch-icon.png" rel="apple-touch-icon-precomposed" />
+ <link rel='stylesheet' href='/style/user.css' /></head>
+<body>
+<!--#include virtual="/cc/login.html"-->
+<form name="payform" method="post" action="/pwap/addmoney.phpx" id="bankform">
+<ul class="usernav" >
+	<li><a href="/">首页</a></li>
+	<li><a href="/user/account.html">用户中心</a></li>
+	<li class="navc" onclick="javascript:location.href='/user/addmoney.html'">账户充值</li>
+	<li>支付宝充值</li>
+</ul>
+<div class="areac">
+	<span style="color:Red">*</span>&nbsp;充值账户：<font color="blue" id="p_uname"><b></b></font><br/>
+    <input type="hidden" name="banktype" id="banktype" value="00" /> 
+    <input type="hidden" name="bankid" id="bankid"	value="3" />
+    <span style="color:Red">*</span>&nbsp;
+    <input name="addmoney" type="text" id="addmoney" size="4" onfocus="this.value='';" onkeyup="this.value=this.value.replace(/^\D*(\d*(?:\.\d{0,2})?).*$/g, '$1');" onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/^\D*(\d*(?:\.\d{0,2})?).*$/g, '$1'));"/>元<span style="color:Red">(存入金额至少1元)</span><br/>
+    &nbsp;&nbsp;<span style="color:#999">请填写整数金额，交易额度以银行为准</span><br />
+	<div></div>
+    <p style="padding-left:10px;">
+        <input type="submit" name="btnPay" value="去支付宝支付" id="btnPay" class="sbtn" onclick="addmoney();"/><br />
+    </p>
+</div>
+<div class="borderColor">
+	<b>提醒：</b><br />
+    1.如您还不是支付宝会员，请先注册支付宝账号<br />
+    2.手机支付宝将通过WAP或短信方式从您的支付宝账户扣款完成支付<br />
+    3.支付宝客服热线：0571-88156688    
+</div>
+</form>
+<!--#include virtual="/cc/footer.html"-->
+<div class="clear">
+</div>
+</body>
+</html>

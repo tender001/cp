@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head><title>
+	追号详情-手机159彩票网
+</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=1;' name='viewport' />
+<meta content='yes' name='apple-mobile-web-app-capable' />
+<meta content='black' name='apple-mobile-web-app-status-bar-style' />
+<meta content='telephone=no' name='format-detection' />
+<script src='/js/jquery.js'></script>
+<script src='/js/159cp.js'></script>
+<script src='/js/base.js'></script>
+<script src='/js/login.js'></script>
+<script src='/js/xchase.js'></script>
+<link rel='stylesheet' href='/style/main.css' />
+<link href="/images/apple-touch-icon.png" rel="apple-touch-icon-precomposed" /> 
+<link rel='stylesheet' href='/style/user.css' />
+</head>
+<body>
+<!--#include virtual="/cc/login.html"-->
+<div class="title"><div class="title"><a href="/">首页</a>><a href="/user/account.html">用户中心</a>><a href="/user/chase.html">追号记录</a>>追号详情</div></div>		   
+<table cellpadding="0" cellspacing="0" border=0 style="width:100%;border-bottom:1px solid #A7BCCD;">
+<tr class="list">
+	<td>
+		<b>【<span id="gname"></span>】追号计划</b>&nbsp;&nbsp;<br>
+		<font size="2">发起时间：<span class="cm_red" id="adate"></span></font><br>
+		<font size="2">追号编号：<span id="zhid"></span>&nbsp;&nbsp;投注周期：<span id="ztotal"></span>期</font><br>
+		<font size="2">已完成：<span id="zfinish"></span>&nbsp;&nbsp;已撤销：<span id="zfailure"></span></font><br>
+		<font size="2">追号总金额：<span id="tmoney"></span>元&nbsp;&nbsp;累计中奖：<span id="tbonus"></span>元</font><br>
+		<font size="2">追号状态：<span id="zhstate"></span>&nbsp;&nbsp;追号类型：<span id="ztype"></span></font><br>
+		<font size="2">投注号码：<span id="zcode"></span></font>
+	</td>
+</tr>
+</table>
+<table cellpadding="0" cellspacing="0" border=0 style="width:100%;border-bottom:1px solid #A7BCCD;">
+<tbody id="tdata">
+</tbody>
+</table>
+<!--#include virtual="/cc/footer.html"-->
+<div class="clear"></div>
+</body>
+</html>
