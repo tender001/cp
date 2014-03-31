@@ -15,7 +15,7 @@ $(function(){
 		var tr = 0;//总记录数
 		
 		showInfo($("#begintime").val(),$("#endtime").val(),pn,ps,tp,tr,$("#cname").val());
-		xiaoliang($("#begintime").val(),$("#endtime").val());
+		xiaoliang($("#begintime").val(),$("#endtime").val(),$("#cname").val());
 	});
 });
 
@@ -56,7 +56,8 @@ var agVerify = function(pn,ps,tp,tr){
 				$("#caid").val(r.cagentid);
 				$("#nid").val(r.nickid);	
 				if(isagent==1){
-					showInfo($("#begintime").val(),$("#endtime").val(),pn,ps,tp,tr,$("#cname").val());					
+					showInfo($("#begintime").val(),$("#endtime").val(),pn,ps,tp,tr,$("#cname").val());		
+					xiaoliang($("#begintime").val(),$("#endtime").val());
 				}else{
 					Y.alert("您的用户类型错误！",0,0,1);
 					return false;
@@ -79,8 +80,11 @@ var agVerify = function(pn,ps,tp,tr){
 	});
 };
 
-var xiaoliang = function(stime,etime){
+var xiaoliang = function(stime,etime,uid){
 	var data = $_user.key.stime+"=" + stime + "&"+$_user.key.etime+"=" + etime;
+	if(uid != "" &&!(uid===undefined)){
+		data +="&"+$_user.key.uid+"="+uid
+	}
 	Y.ajax({
 		url : "/phpu/q.phpx?fid=u_agentsales",
 		type : "POST",
