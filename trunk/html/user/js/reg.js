@@ -2,6 +2,7 @@
 var refreshVerify=function (){
 	$("#CheckCode").attr('src',"/rand.phpx?rnd="+Math.random()).val("");
 	$("#verifycode").val("");
+	$("#reg").hide();
 };
 
 //控制显示DIV
@@ -23,12 +24,12 @@ var show=function(a) {
 
 $(function() {
 	var showErr = function(input, msg) {
-		$('#' + input + '_err').html("<span class='regws'>"+msg+"</span>");
+		$('#' + input + '_err').html("<span class='regws' id='rege'>"+msg+"</span>");
 		return false;
 	};
 	
 	var showOK = function(input) {
-		$('#' + input + '_err').html("<span class='regrs'></span>");
+		$('#' + input + '_err').html("<span class='regrs' id='reg'></span>");
 		return true;
 	};
 	var inputs = [ 'username', 'password', 'password2','verifycode'];
@@ -143,9 +144,13 @@ $(function() {
 		blur : function() {
 			var verifycode = $.trim($("#verifycode").val());
 			var len = verifycode.length;
+			if (len == 0){
+				return showErr('verifycode','请输入验证码');
+			}
 			if (len < 4) {
-				return showErr('verifycode', '请输入验证码');
+				return showErr('verifycode', '请输入正确的验证码');
 			} 
+			
 			_status['verifycode'] = true;
 			return showOK('verifycode');
 		}
