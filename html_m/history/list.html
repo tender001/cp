@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>
+	开奖列表-159彩票网
+</title>
+<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=1' name='viewport' />
+<meta content='yes' name='apple-mobile-web-app-capable' />
+<meta content='black' name='apple-mobile-web-app-status-bar-style' />
+<meta content='telephone=no' name='format-detection' />
+<script src='/js/jquery.js'></script>
+<script src='/js/159cp.js'></script>
+<script src='/js/base.js'></script>
+<script src='/js/login.js'></script>
+<script src='/js/listkj.js'></script>
+<link rel='stylesheet' href='/style/main.css' />
+<link href="/images/touch-icon.png" rel="apple-touch-icon-precomposed" /> 
+<style>
+    .list td{text-align:left;line-height:25px;padding-left:5px;}
+</style>
+</head>
+<body>
+<!--#include virtual="/cc/login.html"-->
+<script>
+$(document).ready(function() {
+	chklogin();
+	showlistkj();
+});
+</script>
+<div class="bar">
+<span id="gname"></span>开奖<a href="index.html" style="float:right;">返回</a>
+</div>
+<div id="showlist">
+加载中...
+</div>
+<!--#include virtual="/cc/footer.html"-->
+</body>
+</html>

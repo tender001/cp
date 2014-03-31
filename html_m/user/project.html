@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head><title>
+	方案详情-159彩票网
+</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=1;' name='viewport' />
+<meta content='yes' name='apple-mobile-web-app-capable' />
+<meta content='black' name='apple-mobile-web-app-status-bar-style' />
+<meta content='telephone=no' name='format-detection' />
+<script src='/js/jquery.js'></script>
+<script src='/js/159cp.js'></script>
+<script src='/js/base.js'></script>
+<script src='/js/login.js'></script>
+<script src='/js/project.js'></script>
+<link rel='stylesheet' href='/style/main.css' />
+<link href="/images/apple-touch-icon.png" rel="apple-touch-icon-precomposed" /> 
+<link rel='stylesheet' href='/style/user.css' /></head>
+<style>
+        section div { padding: 2px 0px 2px 5px; }
+.title{line-height:30px;padding-left:5px;border-top:1px solid #B3D2F2;font-weight:bold;background:#D6EBCA;background: -webkit-gradient(linear,0 0,0 100%,from(#F1FBFE),to(#DAEEFD));border-bottom:1px solid #B3D2F2; font-size:18px}
+        label { color: Blue; padding: 2px 0px 2px 0px; }
+        .spitems { color: white; background-color: #F56202; display: inline-block; border: 1px solid #D55500; line-height: 20px; margin: 0 2px; padding: 0 2px; word-break: keep-all; white-space: nowrap; }
+        .spitems2 { color: white; background-color: #999; border: 1px solid black; line-height: 20px; display: inline-block; margin: 0 2px; padding: 0 2px; }
+        .ni0 { background: #EBEFF1; padding: 5px; line-height: 22px; word-break:break-all; }
+        .ni1 { padding: 5px; line-height: 22px;word-break:break-all; }
+</style>
+</head>
+<body>
+<!--#include virtual="/cc/login.html"-->
+<section>
+	<div id="dvLotDesc" class="title">方案描述</div>
+    <div id="dvLotDesCont" style="padding:6px"><span id="pdesc" style="color:Blue;">&nbsp;</span></div>
+</section>
+<section>
+	<div class="title">方案详情</div>
+    <div style="padding:6px">
+        <label>彩种：</label><span style="color:blue;" id="gname"></span><br/>
+        <label>发起人：</label><span style="color:Red;" id="mainname"></span><br/>
+        <label>金额：</label><span id="tmoney"></span><br/>
+        <label>已认购：</label><span style="color:Red" class="bmoney">-</span>元(<span style="color:Red" class="proc">-</span>)
+        <br/><label>保底：</label><span style='color:red' class="pnum" id="pnum"></span><span id="baoodi"></span><br/>
+        <label>发起人提成：</label><span id="rate"></span><br/>
+        <label>发起：</label><span id="ptime"></span><br/>
+        <label>状态：</label><span id="state"></span><br/>
+    </div>
+</section>
+<section id="bymain" style="display:none;">
+    <div class="title">方案操作</div>
+    <div style="padding:6px">
+        <input type="button" class="btnC" onclick="JQConfirm('确定撤销方案吗？','maincal()')" value="撤销方案" />
+   </div>
+</section>
+<section id="tobuy" style="display:none;">
+    <div class="title">我要认购</div>
+    <div style="padding:6px">
+		方案总金额<span style="color:Red" id="pmoney">-</span>元<br>
+		已认购<span style="color:Red" class="bmoney">-</span>元(<span style="color:Red" class="proc">20%</span>)<br />
+    	<label>还可以认购<span style="color:Red" class="lnum">-</span>元</label><br/>
+    	我要认购<input id="hmRenGou" size="10" type="text" onkeydown="getParsetInt(this);" value="1"/>元<br/>
+        <input type="button" class="btnC" onclick="JQConfirm('确定认购吗？','tobuy()')" value="确定认购" />
+   </div>
+</section>
+<section id="tobd" style="display:none;">
+    <div class="title">追加保底</div>
+    <div style="padding:6px">
+		<label>可保底<span style="color:Red" class="lnum">-</span>元</label><br/>
+		追加保底<input id="hmBaoDi" size="10" type="text" onkeydown="getParsetInt(this);" value="1"/>元<br/>
+		<input type="button" class="btnC" onclick="JQConfirm('确定保底？','tobaodi()')" value="确认" />
+    </div>
+</section>
+<section id="tocontent">
+    <div class="title">投注内容</div>
+    <div style="padding:6px;" id="content">加载中...</div>
+</section>
+<section id="wins" style="display:none;">
+    <div class="title">中奖情况</div>
+    <div id="windetail"></div>
+</section>
+<section id="prodetail">
+    <div class="title">合买详情</div>
+    <div id="buyrec">
+    	您的认购记录如下：<br/>加载中...
+    </div>
+</section>
+<!--#include virtual="/cc/footer.html"-->
+<input type="hidden" id="lotid" value="0" />
+<input type="hidden" id="proid" value="0" />
+<input type="hidden" id="lnums" value="0" />
+<input type="hidden" id="baodi" value="0" />
+</body>
+
+</html>

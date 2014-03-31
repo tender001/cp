@@ -1,0 +1,9 @@
+<section class="header-panel prePanel mainSec" style="display: none;" id="popupPre">
+	<div class="step">购买预览<a href="javascript:void()" onclick="$('#btnCancel001').click();return false;" style="float:right;margin-right:10px;color:Red;">关闭</a></div>
+	<div id="divPreView">加载中...</div>
+	<div id="divPayPwd" style="padding:5px;"><input type="checkbox" name="agreement" id="agreement" checked/>我已阅读并同意《<a href="/user/agreement.html">用户合买代购协议</a>》</div>
+	<div style="line-height:50px;height:50px;">&nbsp;
+		<div class='btn001 Fillet' onclick="SubmitLot(this)" id="submitBtn">确定</div>
+		<div class='btn001 Fillet' onclick='$("#popupPre").hide("fast");$("#choosePanel").show();window.location.href="#bottonAn"' id='btnCancel001'>取消</div>
+	</div>
+</section>

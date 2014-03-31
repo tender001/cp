@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head><title>
+	账户中心-手机159彩
+</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=1;' name='viewport' />
+<meta content='yes' name='apple-mobile-web-app-capable' />
+<meta content='black' name='apple-mobile-web-app-status-bar-style' />
+<meta content='telephone=no' name='format-detection' />
+<script src='/js/jquery.js'></script>
+<script src='/js/159cp.js'></script>
+<script src='/js/base.js'></script>
+<script src='/js/login.js'></script>
+<link rel='stylesheet' href='/style/main.css' />
+<link href="/images/apple-touch-icon.png" rel="apple-touch-icon-precomposed" /> 
+<link rel='stylesheet' href='/style/user.css' /></head>
+<body>
+<!--#include virtual="/cc/login.html"-->
+<input type="hidden" id='logintype' value="1">
+<script>
+$(document).ready(function() {
+	chklogin(1);
+});
+</script>
+    <table class="usernav" width="100%"> 
+        <tr>
+          <td height="30" align="center"> <span style="font-size:18px">账户中心</span> </td>
+        </tr>
+    </table>
+    <div class="uinfo">
+          欢迎您：<font color="#00f" id="u_username"></font> 余额：￥<font color="#f00" id="u_money"></font>元
+    </div>
+    <div class="menutitle"><b>账户管理</b></div>
+      <table class="menulist" width="100%" >
+      <tr>
+	      <td width="110px"><img src='/images/er.gif' valign='absmiddle'/>&nbsp;<a href="accdetail.html">账户明细</a></td>
+	      <td><img src='/images/er.gif' valign='absmiddle'/>&nbsp;<a href="addmoney.html">账户充值</a></td>
+      </tr> 
+      </table>
+    <div class="menutitle"><b>投注管理</b></div>
+      <table class="menulist" width="100%" >
+      <tr>
+	      <td width="110px"><img src='/images/er.gif' valign='absmiddle'/>&nbsp;<a href="buyrec.html">投注记录</a></td>
+	      <td><img src='/images/er.gif' valign='absmiddle'/>&nbsp;<a href="chase.html">追号记录</a></td>
+      </tr> 
+      </table>
+    <div id="bottonAn"></div>
+<!--#include virtual="/cc/footer.html"-->
+</body>
+</html>
