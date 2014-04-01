@@ -134,9 +134,12 @@ var showSafe = function(){
 							 if(rname==""){
 									
 								 $('#acc_truename').attr("href","/account/trueinfo.html");
+								 $("#nocount").css("padding", "125px 0px"); 
 							 }else{
 								 this.get('#acc_truename').swapClass('a2', 'a2 a2cur').attr('title','已绑定身份证号'+idcode);
 								 $("#shiming").hide();
+								 $("#nocount").css("padding", "170px 0px");; 
+								// 详细出处参考：http://www.jb51.net/article/31780.htm
 								$('#acc_truename').removeAttr("href");
 							 }
 							if(bank!=""){
