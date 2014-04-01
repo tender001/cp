@@ -1,7 +1,8 @@
-
 var refreshVerify=function (){
 	$("#CheckCode").attr('src',"/rand.phpx?rnd="+Math.random()).val("");
+//刷新验证码时清空文本框
 	$("#verifycode").val("");
+//刷新验证码时隐藏提示信息
 	$("#reg,#rege").hide();
 };
 
@@ -184,19 +185,17 @@ $(function() {
 							$("#subfrm").attr("disabled", false);
 							return false;
 						}
-						
+//验证两次密码是否一致
 						if($("#password").val()==''){
-//							alert("请输入密码");
 							return showErr('password', '请输入密码');
 						}
 						if($("#password2").val()==''){
-//							alert("请再次输入密码");
 							return showErr('password2', '再次确认您的密码');
 						}
 						if($("#password2").val() != $("#password").val()){
-//							alert("密码不一致");
 							return showErr('password2', '两次密码不一致');
 						}
+						
 						$.ajax({
 							url : $_user.url.register,
 							type : "POST",
@@ -222,9 +221,12 @@ $(function() {
 								if (code == "0") {
 									regsuc($.trim($("#username").val()));
 								} else {
-									
+									if($("#verifycode").val() !=$("#CheckCode").val()){
+										return showErr('verifycode', '请输入正确的验证码');
+									}
 									refreshVerify();
-									alert(desc);
+									
+//									alert(desc);
 									$("#subfrm").attr("disabled", false);	
 								}
 							}
