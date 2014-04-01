@@ -704,7 +704,7 @@ Class('Ball2>Multi',{
 //                        alert(code+"===");
                         Y.clearCode();
                         if (!Y.bad.length) {
-                        	if(!(code[0][0]=="||-|-|-"))
+                        	if(!(code[0][0]=="||-|-|-" || code[0][0]=="|||-|-"))
                         	{
                         		Y.postMsg('msg_put_code', code);//广播号码输出消息, 列表框应该监听此消息               
                         	}
