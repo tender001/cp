@@ -20,12 +20,23 @@ Class({
 	,setdata:function(){
 		P = this;
 	    this.get('#submit').click(function (){
-			var reg=/^[u0391-uffe5]+$/; 
+			var reg=/^[\u4e00-\u9fa5]{2,4}$/i; 
+			var regcard = /(^\d{15}$)|(^\d{18}$)|(^\d{17}(\d|X|x)$)/; 
 			var truename=$.trim($("#truename").val());
-			if (truename=="" || reg.test(truename)){
+			var idnumber =$.trim($("#idnumber").val());
+			if (truename==""){
 				Y.alert("请输入您的真实姓名");
 				return false;
 			}
+			if(!reg.test(truename)){
+				Y.alert("姓名必须为2到5个汉字");
+				return false;
+			}
+			if(!regcard.test(idnumber))  
+			   {  
+			       Y.alert("身份证输入不合法");  
+			       return  false;  
+			   }  
 			if ($.trim($("#idnumber").val())==""){
 				Y.alert("请输入你的身份证号码");
 				return false;
