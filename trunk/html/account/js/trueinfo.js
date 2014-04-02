@@ -33,7 +33,15 @@ Class({
 				Y.alert("姓名必须为2到5个汉字");
 				return false;
 			}
-			
+			var namelen=truename.length;
+			var len=0;
+			for(var i=0;i<namelen; i++){
+				len +=truename.split(truename[i]).length;
+			}
+			if(len>namelen*2){
+				Y.alert("请输入您的真实姓名");
+				return false;
+			}
 				if (!(isIDCard1.test(idnumber))&&!(isIDCard2.test(idnumber)))
 			   {  
 			       Y.alert("身份证输入不合法");  
@@ -60,60 +68,60 @@ Class({
 //				Y.alert("请输入验证码");
 //				return false;
 //			}
-			Y.ajax({
-				url : $_user.modify.name,
-				type : "POST",
-				dataType : "json",
-				data : $_user.key.realName + "=" + encodeURIComponent($.trim($("#truename").val()))
-				+ "&" + $_user.key.idCardNo + "=" + encodeURIComponent($.trim($("#idnumber").val()))
-				+ "&" + $_user.key.idCardTwo + "=" + encodeURIComponent($.trim($("#idnumbers").val()))
-//				+ "&" + $_user.key.upwd + "=" + encodeURIComponent($.trim($("#password").val()))
-				+ "&yzm=" + encodeURIComponent($.trim($("#verifycode").val()))
-				+ "&rnd=" + Math.random(),
-				end  : function (d){
-					var obj = eval("(" + d.text + ")");
-		   		    var code = obj.Resp.code;
-		   		    var desc = obj.Resp.desc;
-					if (code == "0") {	
-					 	Y.ajax({
-					 	     url:'/phpu/p.phpx?fid=u_hdssq',
-					 	     end:function (data){
-					 	         if (data.error) {
-					 	        	Y.alert(desc);
-					 	        	return false;
-					 	         }else{
-					 	       	   var obj2 = eval("(" + data.text + ")");
-				 	 		      
-				 	 		       if(obj2.Resp.code==0){
-				 	 		    	   Y.alert('恭喜您：<br />已获取2元彩金<a class="a3" href="/account/myaccount.html" target="_blank" >点击查看</a>');
-				 	 		    	 $("#username").html($("#truename").val());
-				 	 		    	 $("#usercard").html($("#idnumber").val())
-				 	 		       }else if(obj2.Resp.code==2){
-				 	 		    	 Y.alert('已实名<br/>新用户<a class="a3" href="/account/mobile.html" target="_blank" id="showClose">绑定手机</a>后系统赠送2元彩金');
-				 	 		    	 $("#username").html($("#truename").val());
-				 	 		    	 $("#usercard").html($("#idnumber").val())
-				 	 		       }else{
-				 	 		    	 Y.alert(desc);
-				 	 		       }
-
-					 	         }
-					 	     }
-					 	   });
-					} else {
-						if (code=="1"){
-							Y.alert(desc);
-							
-						}else{
-							Y.alert(desc);
-						}
-					}
-					P.showinfo();
-				},
-				error : function() {
-					Y.alert("您所请求的页面有异常！");
-					return false;
-				}
-			});
+//			Y.ajax({
+//				url : $_user.modify.name,
+//				type : "POST",
+//				dataType : "json",
+//				data : $_user.key.realName + "=" + encodeURIComponent($.trim($("#truename").val()))
+//				+ "&" + $_user.key.idCardNo + "=" + encodeURIComponent($.trim($("#idnumber").val()))
+//				+ "&" + $_user.key.idCardTwo + "=" + encodeURIComponent($.trim($("#idnumbers").val()))
+////				+ "&" + $_user.key.upwd + "=" + encodeURIComponent($.trim($("#password").val()))
+//				+ "&yzm=" + encodeURIComponent($.trim($("#verifycode").val()))
+//				+ "&rnd=" + Math.random(),
+//				end  : function (d){
+//					var obj = eval("(" + d.text + ")");
+//		   		    var code = obj.Resp.code;
+//		   		    var desc = obj.Resp.desc;
+//					if (code == "0") {	
+//					 	Y.ajax({
+//					 	     url:'/phpu/p.phpx?fid=u_hdssq',
+//					 	     end:function (data){
+//					 	         if (data.error) {
+//					 	        	Y.alert(desc);
+//					 	        	return false;
+//					 	         }else{
+//					 	       	   var obj2 = eval("(" + data.text + ")");
+//				 	 		      
+//				 	 		       if(obj2.Resp.code==0){
+//				 	 		    	   Y.alert('恭喜您：<br />已获取2元彩金<a class="a3" href="/account/myaccount.html" target="_blank" >点击查看</a>');
+//				 	 		    	 $("#username").html($("#truename").val());
+//				 	 		    	 $("#usercard").html($("#idnumber").val())
+//				 	 		       }else if(obj2.Resp.code==2){
+//				 	 		    	 Y.alert('已实名<br/>新用户<a class="a3" href="/account/mobile.html" target="_blank" id="showClose">绑定手机</a>后系统赠送2元彩金');
+//				 	 		    	 $("#username").html($("#truename").val());
+//				 	 		    	 $("#usercard").html($("#idnumber").val())
+//				 	 		       }else{
+//				 	 		    	 Y.alert(desc);
+//				 	 		       }
+//
+//					 	         }
+//					 	     }
+//					 	   });
+//					} else {
+//						if (code=="1"){
+//							Y.alert(desc);
+//							
+//						}else{
+//							Y.alert(desc);
+//						}
+//					}
+//					P.showinfo();
+//				},
+//				error : function() {
+//					Y.alert("您所请求的页面有异常！");
+//					return false;
+//				}
+//			});
         });
 	}
 	
