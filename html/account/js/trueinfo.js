@@ -38,7 +38,7 @@ Class({
 			for(var i=0;i<namelen; i++){
 				len +=truename.split(truename[i]).length;
 			}
-			if(len>namelen*2){
+			if(len>namelen*3){
 				Y.alert("请输入您的真实姓名");
 				return false;
 			}
