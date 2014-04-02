@@ -20,7 +20,7 @@ Class({
 	,setdata:function(){
 		P = this;
 	    this.get('#submit').click(function (){
-			var reg=/^[\u4e00-\u9fa5]{2,4}$/i; 
+			var reg=/^[\u4e00-\u9fa5]{2,5}$/i; 
 			var isIDCard2=/^[1-9]\d{5}[1-9]\d{3}((0\d)|(1[0-2]))(([0|1|2]\d)|3[0-1])((\d{4})|\d{3}[A-Z])$/; 
 			var isIDCard1=/^[1-9]\d{7}((0\d)|(1[0-2]))(([0|1|2]\d)|3[0-1])\d{3}$/;
 			var truename=$.trim($("#truename").val());
