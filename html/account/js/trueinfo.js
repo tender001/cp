@@ -21,7 +21,8 @@ Class({
 		P = this;
 	    this.get('#submit').click(function (){
 			var reg=/^[\u4e00-\u9fa5]{2,4}$/i; 
-			var regcard = /(^\d{15}$)|(^\d{18}$)|(^\d{17}(\d|X|x)$)/; 
+			var isIDCard2=/^[1-9]\d{5}[1-9]\d{3}((0\d)|(1[0-2]))(([0|1|2]\d)|3[0-1])((\d{4})|\d{3}[A-Z])$/; 
+			var isIDCard1=/^[1-9]\d{7}((0\d)|(1[0-2]))(([0|1|2]\d)|3[0-1])\d{3}$/;
 			var truename=$.trim($("#truename").val());
 			var idnumber =$.trim($("#idnumber").val());
 			if (truename==""){
@@ -32,7 +33,8 @@ Class({
 				Y.alert("姓名必须为2到5个汉字");
 				return false;
 			}
-			if(!regcard.test(idnumber))  
+			
+				if (!(isIDCard1.test(idnumber))&&!(isIDCard2.test(idnumber)))
 			   {  
 			       Y.alert("身份证输入不合法");  
 			       return  false;  
