@@ -62,7 +62,7 @@ Class({
 		 */
    	 	this.get('#conform_btn').click(function (){
 			if ($.trim($("#Phone").val())==""){
-				alert("请输入您的手机号码");
+				Y.alert("请输入您的手机号码");
 				return false;
 			}
 			
@@ -216,8 +216,8 @@ Class({
    	 		P.sentYZM(3);
    	 	});
    	 this.get('#xiugai').click(function (){
-   		$("#div1").hide();
-		$("#div4").show();
+   		$("#div4").hide();
+		$("#div3").show();
 	 	});
    	 
    	 	this.get('#conform_b').click(function (){
