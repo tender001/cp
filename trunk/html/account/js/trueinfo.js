@@ -91,15 +91,20 @@ Class({
 					 	        	return false;
 					 	         }else{
 					 	       	   var obj2 = eval("(" + data.text + ")");
-				 	 		      
+					 	       	var  wrapLay = Y.lib.MaskLay('#wrapLay', '#wrapLayConent');
+				            	wrapLay.addClose('#wrapLayCloseBtn', '#wrapLayClose');
+				                 Y.get('#yclass_alert  div.tantop').drag('#wrapLay');
+				               
 				 	 		       if(obj2.Resp.code==0){
-				 	 		    	   Y.alert('恭喜您：<br />已获取2元彩金<a class="a3" href="/account/myaccount.html" target="_blank" >点击查看</a>');
+				 	 		    	 $("#wrapLayConent").html('恭喜您：<br />已获取2元彩金<a class="a3" href="/account/myaccount.html" target="_blank" >点击查看</a>');
 				 	 		    	 $("#username").html($("#truename").val());
 				 	 		    	 $("#usercard").html($("#idnumber").val())
+				 	 		    	  wrapLay.pop();
 				 	 		       }else if(obj2.Resp.code==2){
-				 	 		    	 Y.alert('已实名<br/>新用户<a class="a3" href="/account/mobile.html" target="_blank" id="showClose">绑定手机</a>后系统赠送2元彩金');
+				 	 		    	 $("#wrapLayConent").html('已实名<br/>新用户<a class="a3" href="/account/mobile.html" target="_blank" id="showClose">绑定手机</a>后系统赠送2元彩金');
 				 	 		    	 $("#username").html($("#truename").val());
 				 	 		    	 $("#usercard").html($("#idnumber").val())
+				 	 		    	  wrapLay.pop();
 				 	 		       }else{
 				 	 		    	 Y.alert(desc);
 				 	 		       }

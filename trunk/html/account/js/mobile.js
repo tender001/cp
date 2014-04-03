@@ -177,13 +177,15 @@ Class({
 					 	        	
 					 	         }else{
 					 	       	   var obj2 = eval("(" + data.text + ")");
-				 	 		   
+					 	         	var  wrapLay = Y.lib.MaskLay('#wrapLay', '#wrapLayConent');
+					            	wrapLay.addClose('#wrapLayCloseBtn', '#wrapLayClose');
+					                 Y.get('#yclass_alert  div.tantop').drag('#wrapLay');
 				 	 		       if(obj2.Resp.code==0){
-				 	 		    	   Y.alert('恭喜您：<br />已获取2元彩金<a class="a3" href="/account/myaccount.html" target="_blank" >点击查看</a>');
-				 	 		    	
+				 	 		    	 $("#wrapLayConent").html('恭喜您：<br />已获取2元彩金<a class="a3" href="/account/myaccount.html" target="_blank" >点击查看</a>');
+				 	 		    	  wrapLay.pop();
 				 	 		       }else if(obj2.Resp.code==4){
-				 	 		    	 Y.alert('手机已绑定<br/>新用户<a class="a3" href="/account/trueinfo.html" target="_blank" id="showClose">实名后</a>后系统赠送2元彩金');
-				 	 		    	
+				 	 		    	 $("#wrapLayConent").html('手机已绑定<br/>新用户<a class="a3" href="/account/trueinfo.html" target="_blank" id="showClose">实名后</a>后系统赠送2元彩金');
+				 	 		    	  wrapLay.pop();
 				 	 		       }else{
 				 	 		    	 Y.alert(desc);
 				 	 		       }
