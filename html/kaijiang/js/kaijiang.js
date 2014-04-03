@@ -9,7 +9,7 @@ Class({
 		this._loadcode();
 		this.get("#kj_select").click(function(){
 			var s=document.getElementById("select_cz").selectedIndex;
-			if(s==0){alert("请选择您要查询的彩种");
+			if(s==0){Y.alert("请选择您要查询的彩种");
 			}else if(s==1){
 				window.open('/jc/kaijiang.html');
 			}else if(s==2){
@@ -39,7 +39,7 @@ Class({
 			}else if(s==14){
 				window.open('/qixingcai/kaijiang.html');
 			}else if(s==15){
-				alert("请选择其他彩种")
+				Y.alert("请选择其他彩种")
 			}
 			
 		})
