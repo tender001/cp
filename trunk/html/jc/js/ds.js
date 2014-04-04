@@ -283,7 +283,10 @@ Class( 'TheForm', {
 
 		this.fileInput   = this.need(config.fileInput);
 		this.beishuInput = this.need(config.beishuInput);
-		
+	    this.createIntInput(this.beishuInput, function (e, Y){//修改倍数
+        	
+        	
+        }, 99);
 		this.fileInput.change( function() {
 			if (this.value != '' && /\.txt$/i.test(this.value) == false) {
 				Y.postMsg('msg_show_dlg', '文件格式错误，请选择.txt文本文件上传！');
@@ -316,6 +319,27 @@ Class( 'TheForm', {
 		}
 	}
 
+});
+Class.extend('createIntInput', function (input, fn, max){
+    this.get(input).keyup(check).blur(check).focus(function (){
+        setTimeout((function() {
+            this.select()
+        }).proxy(this),10);
+    });
+    function check(e, Y){
+        var val = Math.max(1, Math.min(parseInt(this.value||0, 10)||0, max || Number.MAX_VALUE));
+        if (this.value == ''){
+            if(e.type != 'keyup') {
+                this.value = val
+            }                
+        }else if(val != this.value){
+            this.value = val
+        }
+        if (this.value != this.preValue) {
+             fn.call(this, e, Y);
+             this.preValue = this.value
+        }
+    }
 });
 
 /* 启动
