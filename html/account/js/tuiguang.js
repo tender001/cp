@@ -33,14 +33,7 @@ Class({
 				return false;
 			}
 		});
-		$("#copy").zclip({
-			path:'/public/ZeroClipboard.swf',
-			copy:function(){
-				return $(".tgdiv > input").val();
-			},
-			afterCopy: function(){
-				Y.alert("复制成功 : " + $(".tgdiv > input").val());
-			}
-		});
+
+
 	}
 });
