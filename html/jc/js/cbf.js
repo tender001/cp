@@ -1084,7 +1084,7 @@
             this.createIntInput('#bs', function (e, Y){//修改倍数
             	
             	Y._upView(Y.C('choose_data'));
-            }, 50000);
+            }, 100000);
             this.onMsg('msg_choose_update', function (data){//选择场次或者子项变化, 可能化引起过关方式自动切换
                 this._upView(data)
             });
@@ -1104,11 +1104,11 @@
                 }else if(!duoc && ggData.zy.length === 0){
                     return Y.alert('您好，请选择过关方式！')
                 }
-                if (isDg && Y.get('#bs').val() > 50000) {
-                    return Y.alert('您好，代购倍数不能超过50000倍！')
+                if (isDg && Y.get('#bs').val() > 100000) {
+                    return Y.alert('您好，代购倍数不能超过100000倍！')
                 }
-                if (ishm && Y.get('#bs').val() > 50000) {
-                    return Y.alert('您好，合买倍数不能超过50000倍！')
+                if (ishm && Y.get('#bs').val() > 100000) {
+                    return Y.alert('您好，合买倍数不能超过100000倍！')
                 }
                 if (!isDg && Y.checkMaxMoney(data, ggData)) {
                     return Y.alert('您好，单倍认购金额不能超过20,000元！')
@@ -1189,8 +1189,8 @@
                     }else if(ggData.zy.length>1){
                     	return Y.alert('奖金优化暂不支持同时选择多个过关方式！')
                     }
-                    if (Y.get('#bs').val() > 50000) {
-                        return Y.alert('您好，奖金优化倍数不能超过50000倍！')
+                    if (Y.get('#bs').val() > 100000) {
+                        return Y.alert('您好，奖金优化倍数不能超过100000倍！')
                     }
                     
                     
@@ -1288,7 +1288,7 @@
 					sum += Math.c(match_num, n);
 				});
 			}
-			return sum <= 50000;
+			return sum <= 100000;
 		},
         _upView: function (data, hand){//更新视图
             var bs = this.getInt(this.get('#bs').val());
