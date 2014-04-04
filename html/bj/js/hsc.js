@@ -153,11 +153,11 @@ Class( 'GuoguanType', {
 		/* bof 格式转化修改相关 */
 		this.displayFormat();
 		this.formatSwitchDialog = this.lib.MaskLay(config.formatSwitch);
-		this.get('.tan_top', this.formatSwitch).drag(this.formatSwitch);
+		this.get('.tantop', this.formatSwitch).drag(this.formatSwitch);
 		this.switchLink.click( function() { //弹出格式转化窗口
 			Y.popFormatSwitchDialog();
 		} );
-		this.get('.tan_top_r,.a_oth', this.formatSwitch).click( function() { //确认
+		this.get('[mark=format_close],.a_oth', this.formatSwitch).click( function() { //确认
 			Y.checkAndSaveCode(this.id);
 		} );
 		this.get('#clear_btn').click( function() { //清空
@@ -370,8 +370,8 @@ Class( {
 		
 		// 创建一个公共弹窗, 使用msg_show_dlg进行调用
 		this.infoLay = this.lib.MaskLay('#defLay', '#defConent');
-		this.infoLay.addClose('#defCloseBtn', '#defTopClose a');
-		this.get('#defLay div.tan_top').drag(this.get('#defLay'));
+		this.infoLay.addClose('#defCloseBtn', '#defTopClose');
+		this.get('#defLay div.tantop').drag(this.get('#defLay'));
 
 		// 提供弹窗服务
 		this.onMsg('msg_show_dlg', function (msg, fn, forbid_close) {
@@ -570,83 +570,121 @@ Class('Loadduizhen',{
 		this.postMsg('load_duizhen_succ');			
 	},
 	Loadgeshi:function(lotid){
-		var tableTmpl=['<div class="main_tan_yet">'+
-		               '<div class="tan_top"><div class="tan_top_l"></div><div class="tan_top_yet"><h3>胜平负格式转化修改</h3></div><div class="tan_top_r"><a></a></div></div>'+
-		               '<div class="tan_mid"><div class="gs_xg_b"><table width="100%" border="0">'+
-		               '<colgroup><col width="60" /><col width="60" /><col width="60" /><col width="60" /><col /></colgroup>'+
-		               '<tr><th>选项</th><td> 胜</td><td>平</td><td>负</td><td  rowspan="2"><a class="a_oth" id=confirm_btn>确认</a><a id="clear_btn">清除</a><a id="reset_btn">还原</a></td></tr>'+
-		               '<tr><th>上传字符</th><td><input type="text" value=3 maxLength=1/></td><td><input type="text" value=1 maxLength=1/></td><td><input type="text" value=0 maxLength=1/></td></tr>'+
-		               '</table></div></div></div>',
-		               '<div class="main_tan_yet"><div class="tan_top"><div class="tan_top_l"></div><div class="tan_top_yet"><h3>总进球数格式转化修改</h3></div>'+
-		               '<div class="tan_top_r"><a></a></div></div>'+
-		               '<div class="tan_mid"><div class="gs_xg_b"><table width="100%" border="0"><colgroup><col width="50" />'+
-		               '<col width="45" /><col width="45" /><col width="45" /><col width="45" /><col width="45" /><col width="45" /><col width="45" /><col /></colgroup>'+
-		               '<tr><th>选项</th><td>0</td><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7+</td></tr>'+
-		               '<tr><th>上传字符</th><td><input type="text" value=0 maxLength=1/></td><td><input type="text" value=1 maxLength=1/></td><td><input type="text" value=2 maxLength=1/></td><td><input type="text" value=3 maxLength=1/></td>'+
-		               '<td><input type="text" value=4 maxLength=1/></td><td><input type="text" value=5 maxLength=1/></td><td><input type="text" value=6 maxLength=1/></td><td><input type="text" value=7 maxLength=1/></td></tr>'+
-		               '<tr><td colspan="10"><a id=confirm_btn class="a_oth" style="margin-left:150px;_margin-left:75px">确认</a><a id="clear_btn">清除</a><a id="reset_btn">还原</a></td></tr>'+
-		               '</table></div></div></div>',
-		               '<div class="main_tan_yet1"><div class="tan_top"><div class="tan_top_l"></div>'+
-		               '<div class="tan_top_yet1"><h3>半全场格式转化修改</h3></div><div class="tan_top_r"><a></a></div></div>'+
-		               '<div class="tan_mid"><div class="gs_xg_b"><table width="100%" border="0"><colgroup><col width="50" />'+
-		               '<col width="50" /><col width="50" /><col width="50" /><col width="50" /><col width="50" />'+
-		               '<col width="50" /><col width="50" /><col width="50" /><col /></colgroup>'+
-		               '<tr><th>选项</th><td>胜-胜</td><td>胜-负</td><td>胜-平</td>'+
-		               '<td>负-胜</td><td>负-负</td><td>负-平</td><td>平-胜</td><td>平-负</td><td>平-平</td></tr>'+
-		               '<tr><th>上传字符</th><td><input type="text" value="33" maxlength="2" /></td>'+
-		               '<td><input type="text" value="30" maxlength="2" /></td>'+
-		               '<td><input type="text" value="31" maxlength="2" /></td>'+
-		               '<td><input type="text" value="03" maxlength="2" /></td>'+
-		               '<td><input type="text" value="00" maxlength="2" /></td>'+
-		               '<td><input type="text" value="01" maxlength="2" /></td>'+
-		               '<td><input type="text" value="13" maxlength="2" /></td>'+
-		               '<td><input type="text" value="10" maxlength="2" /></td>'+
-		               '<td><input type="text" value="11" maxlength="2" /></td></tr>'+
-		               '<tr><td colspan="10"><a id=confirm_btn class="a_oth" style="margin-left:200px;_margin-left:100px">确认</a><a id="clear_btn">清除</a><a id="reset_btn">还原</a></td></tr>'+
-		               '</table></div></div></div>',
-		               '<div class="main_tan_yet">'+
-					   '<div class="tan_top"><div class="tan_top_l"></div>'+
-				       '<div class="tan_top_yet"><h3>上下单双格式转化修改</h3></div>'+
-					   '<div class="tan_top_r"><a></a></div></div>'+
-				       '<div class="tan_mid"><div class="gs_xg_b"><table width="100%" border="0">'+
-				       '<colgroup><col width="50" /><col width="45" /><col width="45" /><col width="45" /><col width="45" /><col /></colgroup>'+
-				       '<tr><th>选项</th><td>上+单</td><td>上+双</td><td>下+单</td><td>下+双</td><td  rowspan="2"><a id=confirm_btn class="a_oth">确认</a><a id="clear_btn">清除</a><a id="reset_btn">还原</a></td></tr>'+
-					   '<tr><th>上传字符</th><td><input type="text" value=3 maxLength=1/></td><td><input type="text" value=2 maxLength=1/></td><td><input type="text" value=1 maxLength=1/></td><td><input type="text" value=0 maxLength=1/></td></tr>'+
-					   '</table></div></div></div>'
+		var tableTmpl=['<div class="caitan" style="width:500px">'+
+			      		 '<div class="tantop">'+
+			    		 '<span>胜平负格式转化修改</span><a mark=format_close></a>'+
+			    		 '</div>'+
+			    		 '<div class="caitain">'+
+			    		 '<div class="gs_xgbj">'+
+			    		 '<table width="100%" border="0">'+
+			             '<colgroup><col width="60" /><col width="60" /><col width="60" /><col width="60" /><col /></colgroup>'+
+			             '<tr><th>选项</th><td> 胜</td><td>平</td><td>负</td><td  rowspan="2"><a class="a_oth" id=confirm_btn>确认</a><a id="clear_btn">清除</a><a id="reset_btn">还原</a></td></tr>'+
+			             '<tr><th>上传字符</th><td><input type="text" value=3 maxLength=1/></td><td><input type="text" value=1 maxLength=1/></td><td><input type="text" value=0 maxLength=1/></td></tr>'+
+			             '</table>'+
+			    		 '</div>'+
+			    		 '</div>'+
+			    		 '<div class="caitanbm">'+
+			    	  	 '<div class="caitanbm1"></div>'+
+			    		 '<div class="caitanbm2"></div>'+
+			    		 '</div></div>',
+			    		 '<div class="caitan" style="width:500px">'+
+			    		 '<div class="tantop">'+
+			    		 '<span>总进球格式转化修改</span><a mark=format_close></a>'+
+			    		 '</div>'+
+			    		 '<div class="caitain">'+
+			    		 '<div class="gs_xgbj">'+
+			    		 '<table width="100%" border="0"><colgroup><col width="50" />'+
+			             '<col width="45" /><col width="45" /><col width="45" /><col width="45" /><col width="45" /><col width="45" /><col width="45" /><col /></colgroup>'+
+			             '<tr><th>选项</th><td>0</td><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7+</td></tr>'+
+			             '<tr><th>上传字符</th><td><input type="text" value=0 maxLength=1/></td><td><input type="text" value=1 maxLength=1/></td><td><input type="text" value=2 maxLength=1/></td><td><input type="text" value=3 maxLength=1/></td>'+
+			             '<td><input type="text" value=4 maxLength=1/></td><td><input type="text" value=5 maxLength=1/></td><td><input type="text" value=6 maxLength=1/></td><td><input type="text" value=7 maxLength=1/></td></tr>'+
+			             '<tr><td colspan="10"><a id=confirm_btn class="a_oth" style="margin-left:150px;_margin-left:75px">确认</a><a id="clear_btn">清除</a><a id="reset_btn">还原</a></td></tr>'+
+			             '</table>'+
+			    		 '</div>'+
+			    		 '</div>'+
+			    		 '<div class="caitanbm" >'+
+			    	  	 '<div class="caitanbm1"></div>'+
+			    		 '<div class="caitanbm2"></div>'+
+			    		 '</div></div>',
+			    		 '<div class="caitan" style="width:580px">'+
+			    		 '<div class="tantop">'+
+			    		 '<span>半全场格式转化修改</span><a mark=format_close></a>'+
+			    		 '</div>'+
+			    		 '<div class="caitain">'+
+			    		 '<div class="gs_xgbj">'+
+			    		 '<table width="100%" border="0" cellspacing="0" cellpadding="0"><colgroup><col width="50" />'+
+			             '<col width="50" /><col width="50" /><col width="50" /><col width="50" /><col width="50" />'+
+			             '<col width="50" /><col width="50" /><col width="50" /><col /></colgroup>'+
+			             '<tr><th>选项</th><td>胜-胜</td><td>胜-负</td><td>胜-平</td>'+
+			             '<td>负-胜</td><td>负-负</td><td>负-平</td><td>平-胜</td><td>平-负</td><td>平-平</td></tr>'+
+			             '<tr><th>上传字符</th><td><input type="text" value="33" maxlength="2" /></td>'+
+			             '<td><input type="text" value="30" maxlength="2" /></td>'+
+			             '<td><input type="text" value="31" maxlength="2" /></td>'+
+			             '<td><input type="text" value="03" maxlength="2" /></td>'+
+			             '<td><input type="text" value="00" maxlength="2" /></td>'+
+			             '<td><input type="text" value="01" maxlength="2" /></td>'+
+			             '<td><input type="text" value="13" maxlength="2" /></td>'+
+			             '<td><input type="text" value="10" maxlength="2" /></td>'+
+			             '<td><input type="text" value="11" maxlength="2" /></td></tr>'+
+			             '<tr><td colspan="10"><a id=confirm_btn class="a_oth" style="margin-left:200px;_margin-left:100px">确认</a><a id="clear_btn">清除</a><a id="reset_btn">还原</a></td></tr>'+
+			             '</table>'+
+			    		 '</div>'+
+			    		 '</div>'+
+			    		 '<div class="caitanbm">'+
+			    	  	 '<div class="caitanbm1"></div>'+
+			    		 '<div class="caitanbm2"></div>'+
+			    		 '</div></div>',
+			    		 '<div class="caitan" style="width:500px">'+
+			      		 '<div class="tantop">'+
+			    		 '<span>上下单双格式转化修改</span><a mark=format_close></a>'+
+			    		 '</div>'+
+			    		 '<div class="caitain">'+
+			    		 '<div class="gs_xgbj">'+
+			    		 '<table width="100%" border="0">'+
+					       '<colgroup><col width="50" /><col width="45" /><col width="45" /><col width="45" /><col width="45" /><col /></colgroup>'+
+					       '<tr><th>选项</th><td>上+单</td><td>上+双</td><td>下+单</td><td>下+双</td><td  rowspan="2"><a id=confirm_btn class="a_oth">确认</a><a id="clear_btn">清除</a><a id="reset_btn">还原</a></td></tr>'+
+						   '<tr><th>上传字符</th><td><input type="text" value=3 maxLength=1/></td><td><input type="text" value=2 maxLength=1/></td><td><input type="text" value=1 maxLength=1/></td><td><input type="text" value=0 maxLength=1/></td></tr>'+
+						   '</table>'+
+			    		 '</div>'+
+			    		 '</div>'+
+			    		 '<div class="caitanbm">'+
+			    	  	 '<div class="caitanbm1"></div>'+
+			    		 '<div class="caitanbm2"></div>'+
+			    		 '</div></div>'
 		               ];	
 		 switch (lotid) {
-		 case "85" :    //让球胜平负
+			case "85" :    //让球胜平负
 				$("#format_switch").html(tableTmpl[0]);
 				$("#tzurl").attr('href','/bj/index.html');
 				$("#bzgs").click(function(){
-					Yobj.openUrl('/bj/bzgs/SPF.html',450,387)
+					Yobj.openUrl('/bj/bzgs/SPF.html',450,470)
 				});
 				break;
 			case "89" :    //总进球数
 				$("#format_switch").html(tableTmpl[1]);
 				$("#tzurl").attr('href','/bj/jqs.html');
 				$("#bzgs").click(function(){
-					Yobj.openUrl('/bj/bzgs/JQS.html',450,387)
+					Yobj.openUrl('/bj/bzgs/JQS.html',450,470)
 				});
 				break;
 			case "88" :    //上下单双
 				$("#format_switch").html(tableTmpl[3]);
 				$("#tzurl").attr('href','/bj/sxds.html');
 				$("#bzgs").click(function(){
-					Yobj.openUrl('/bj/bzgs/SXP.html',450,387)
+					Yobj.openUrl('/bj/bzgs/SXP.html',450,470)
 				});
 				break;
 			case "86" :    //比分
 				$("#tzurl").attr('href','/bj/cbf.html');
 				$("#bzgs").click(function(){
-					Yobj.openUrl('/bj/bzgs/CBF.html',470,387)
+					Yobj.openUrl('/bj/bzgs/CBF.html',450,470)
 				});
 				break;
 			case "87" :    //半全场
 			    $("#format_switch").html(tableTmpl[2]);
 			    $("#tzurl").attr('href','/bj/bqc.html');
 				$("#bzgs").click(function(){
-					Yobj.openUrl('/bj/bzgs/BQC.html',450,387)
+					Yobj.openUrl('/bj/bzgs/BQC.html',450,470)
 				});
 			    break;
 		}	

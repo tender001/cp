@@ -1,7 +1,7 @@
 ﻿@charset "utf-8";
 {margin:0;padding:0}
 body,h3,h4,h2,h1,h5,table,td,th,ul,li,ol,dd,dt,dl,div,span,p,b,i,s,em,thead,tbody,font,select,input,option{margin:0;padding:0}
-body{font-size:12px; font-family: Arial,simsun; background-color:#fffdf3}
+body{font-size:12px; font-family: Arial,simsun; }
 a{text-decoration:none;color:#333333;outline:none;cursor:pointer} 
 em,i,s,b{ font-style:normal; text-decoration:none}
 img{border:none;}

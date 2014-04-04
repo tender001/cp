@@ -29,7 +29,7 @@ Class( 'PrizePredict', {
 		this.prizePredictDialog  = this.lib.MaskLay(this.prizePredictWrapper);
 		this.prizePredictDialog.noMask = self != top;
 		this.prizePredictDialog.addClose('#close1');
-		this.prizePredictWrapper.find('.tan_top').drag(this.prizePredictWrapper);
+		this.prizePredictWrapper.find('.tantop').drag(this.prizePredictWrapper);
 
 		this.get('#see_prize_predict').click( function(e) {
 			Y.C('clientY', e.clientY);  //记录下以便跨域时调整弹窗的位置

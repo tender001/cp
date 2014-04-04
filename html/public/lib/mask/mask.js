@@ -184,6 +184,7 @@
                     e.stop();
                     return false
                 });
+                
                 o.click(_close)
             }, this);
              function _close(e, Y){

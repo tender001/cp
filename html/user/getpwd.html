@@ -5,7 +5,7 @@
 <title>网上买彩票_找回密码_159彩票网</title>
 <meta name="keywords" content="福利彩票，福彩，体育彩票，体彩，足彩，网上买彩票，彩票合买，彩票开奖，彩票走势图，彩票预测"/>
 <meta name="description" content="159彩票网为彩民提供专业的彩票网上投注、合买、开奖结果、走势分析、比分直播等服务，覆盖福彩、体彩、足彩、竞彩、快频等彩种。159—彩票网上投注最佳选择！"/>
-<link href="/css/159cai.css"  rel="stylesheet" type="text/css" />
+<link href="/css/cai888.css"  rel="stylesheet" type="text/css" />
 <link href="/css/new159cai.css"  rel="stylesheet" type="text/css" />
 <script type="text/javascript" src="/public/jq2.js"></script>
 <script type="text/javascript" src="/public/jq.js"></script>
@@ -14,35 +14,53 @@
 <script type="text/javascript" src="/public/chklogin.js"></script>
 <script type="text/javascript" src="/user/js/getpwd.js"></script>
 </head>
-<body>
-<!--#include virtual="/cc/header.html"-->
-<!--#include virtual="/cc/nav.html"-->
-<div class="getwod" id="step_1">
-<h1>找回密码</h1>
-<table width="500" border="0" cellpadding="0" cellspacing="0" >
+<body >
+<div class="adnav">
+ <div class="ad_nav">
+   <span><a href="/user/login.html" target="_blank" >登录</a>|<a href="/user/reg.html" target="_blank" >注册</a></span>
+   <p><a href="/" target="_blank" >首页</a>|<a href="/dating/" target="_blank" >购彩大厅</a>|<a href="/kaijiang/" target="_blank" >全国开奖</a>|
+   <a href="/help/" target="_blank" >帮助中心</a>|
+      <a target="_blank"  onclick="this.newWindow = window.open('http://chat.live800.com/live800/chatClient/chatbox.jsp?companyID=331528&jid=4618724443&configID=123978', '159彩在线客服', 'toolbar=0,scrollbars=0,location=0,menubar=0,resizable=1,width=710,height=480');this.newWindow.focus();this.newWindow.opener=window;return false;" >在线客服</a></p>
+  </div></div>
+   <div class="loghedm">
+ <div class="loghed">
+  <a href="/"><img class="log" src="/images/cai888/login_03b.jpg" style="width:310px"></a>
+  <p><a target="_blank"
+					onclick="this.newWindow = window.open('http://chat.live800.com/live800/chatClient/chatbox.jsp?companyID=331528&jid=4618724443&configID=123978', '159彩在线客服', 'toolbar=0,scrollbars=0,location=0,menubar=0,resizable=1,width=710,height=480');this.newWindow.focus();this.newWindow.opener=window;return false;"><img src="/images/cai888/login_06.jpg" /></a></p>
+ </div></div>  
+ <div class="regline"><div class="div2"></div></div>  
+ 
+ <div class="regsusm" id="step_1">    
+ <div class="getword">
+ <h2>第一步：输入用户名找回密码</h2>
+ <div class="getwtb">
+ <table width="100%" border="0" cellspacing="0" cellpadding="0">
  <colgroup>
-<col width="75">
-<col width="220">
-<col>
-</colgroup>
-  <tr>
-    <th>用户名</th>
-    <td><input type="text"  class="text_log" name="username" id="username"/></td>
-    <td><span class="say_1" id="username_err" style="display:none;">用户名不能为空</span></td>
+  <col width="90">
+  <col width="">
+ </colgroup>
+  <tbody><tr>
+    <td class="tdred">&nbsp;</td>
+    <td class="tdred" id="username_err"  mark="err_info"></td>
   </tr>
   <tr>
-    <th></th>
-    <td><a href="javascript:void(0);" class="but_getw" id="btn_tj">提&nbsp;&nbsp;交</a></td>
-    <td></td>
+    <td>用户名：</td>
+    <td><input type="text" class="text1" id="username"/><a class="a1"  id="pwbhelp">忘记用户名？</a></td>
   </tr>
-</table>
+  <tr>
+    <td>&nbsp;</td>
+    <td><a class="btn" id="btn_tj">提交</a></td>
+  </tr>
+</tbody></table>
 </div>
-
-
-<div class="getwod" id="step_2" style="display:none;">
-<h1>选择绑定工具找回密码</h1>
-<h2>您需要找回密码的用户名是:<strong class="red"></strong></h2>
-<div class="getwod_col f_l" id="getway1">
+ </div> </div>
+ 
+ <div class="regsusm" id="step_2" style="display:none;">    
+ <div class="getword">
+ <h2>第二步：选择已绑定的工具</h2>
+ <div class="getwtb">
+ <h3>您需要找回密码的用户名是 "<strong mark="username">通宵看电视</strong>"， 请选择您准备找回密码的方式：</h3>
+ <div class="getwod_col f_l" id="getway1">
  <div class="a_out" id="m1"><a href="javascript:void(0);" class="a_inner" title="用手机找回"><img src="/images/cdbg/getw_13.gif" /></a></div>
  <div class="a_out_y" id="m2" style="display:none;"><a href="javascript:void(0);" class="a_inner" id="mobile_openBtn" title="用手机找回"><img src="/images/cdbg/getw_22.gif" /></a></div>
  <p>未绑定<br />
@@ -61,86 +79,144 @@
 不可使用</p>
 </div>
 </div>
+ </div> </div>
+ 
 
-<div class="getwod" id="layer_email1" style="display:none;">
-<h1>找回密码</h1>
-<table width="500" border="0" cellpadding="0" cellspacing="0" >
- <colgroup>
-<col width="75">
-<col width="220">
-<col>
-</colgroup>
-  <tr>
-    <th>用户名</th>
-    <td class="red"></td>
-    <td></td>
-  </tr>
-  <tr>
-    <th>邮箱</th>
-    <td><input name="" type="text" id="email" value="请填写邮箱地址" 
-    onFocus="if(this.value=='请填写邮箱地址'){this.value='';this.style.color='#333'}" 
-    onBlur="if(this.value==''){this.value='请填写邮箱地址';this.style.color='#999'}" class="text_log"/></td>
-    <td><span class="say_1" id="err_info2" style="display:none;">邮箱不能为空</span></td>
-  </tr>
-  <tr>
-    <th></th>
-    <td><a href="javascript:void(0);" class="but_getw" id="btn_tj_email">提&nbsp;&nbsp;交</a></td>
-    <td></td>
-  </tr>
+<div class="regsusm" id="step_suc" style="display:none;">    
+ <div class="getword" >
+ <h2>第三步：查询结果</h2>
+ <div class="getwtb" style="padding-left:260px">
+  <div class="getsus"><strong>祝贺您，<s mark="username"></s>，成功找回密码</strong>
+  <p><s style="float:left">您的密码被重置为：</s>
+<!--   <input type="text" style="float:left"><a style="float:left" class="a3" href="#">点击复制</a> -->
+<font id="newpwd" color="#ff0000" style="font-size:14px"></font>
+  </p><p style="padding-top:30px">建议您尽快登陆并修改密码.<a class="a4" href="/user/login.html"  target="_blank" >登陆159cai.com</a></p></div>
+</div>
+ </div> </div>
 
-</table>
+<!-- <div class="success_cz" id="step_suc" style="display:none;"> -->
+<!--  <span class="suc_cz"><strong>您好，<b class="red"></b>，密码已重置！</strong><br />密码：<font id="newpwd"></font></span> -->
+<!--  <p class="p1">建议立即登录修改密码</p> -->
+<!--  <p class="p1">您可以<a href="/user/login.html">登录159彩票</a>|<a href="/">彩票首页</a>|<a href="/">彩票首页</a></p> -->
+<!-- </div> -->
+<div class="regsusm" id="common_msg" style="display:none;">    
+ <div class="getword">
+ <h2>第三步：查询结果</h2>
+ <div class="getwtb">
+  <div class="getsus"><strong>祝贺您，<s mark="username"></s>，邮件已发送</strong>
+  <p>密码重置已发送到您绑定的邮箱：<font color="#ff0000" style="font-size:14px" id="msg_content">该地址无效，请确认验证地址！</font></p><p style="padding-top:30px">建议您尽快登陆进行操作.<a class="a4" id="load_mail">立即登录到邮箱</a></p></div>
+</div>
+ </div> </div>
+
+<!-- <div class="zf_judge" id="common_msg" style="display:none;"> -->
+<!--  <h1 class="sb" id="msg_title">错误提示</h1> -->
+<!--  <div class="zf_j_bg"> -->
+<!--   <p class="sb"><em id="msg_content">该地址无效，请确认验证地址！</em></p> -->
+<!-- </div> -->
+<!-- <p>您可以 <a href="/" target="_blank">返回首页</a>|<a href="#">联系客服</a></p> -->
+<!-- </div> -->
+
+
+
+<div style="width:360px;display:none;" class="caitan" id="getpwd_help"  >
+<div class="tantop">
+<span>温馨提示</span><a id="getpwd_close"></a>
+</div>
+<div class="tanms">
+<a class="a1" target="_blank"  onclick="this.newWindow = window.open('http://chat.live800.com/live800/chatClient/chatbox.jsp?companyID=331528&jid=4618724443&configID=123978', '159彩在线客服', 'toolbar=0,scrollbars=0,location=0,menubar=0,resizable=1,width=710,height=480');this.newWindow.focus();this.newWindow.opener=window;return false;"></a>
+</div>
 </div>
 
-<!-- 用手机找回密码   --> 
-<div class="getwod"  id="layer_mobile1" style="display:none;">
-<h1>找回密码</h1>
-<table width="500" border="0" cellpadding="0" cellspacing="0" >
+<div style="width:440px;display:none;" class="caitan" id="mobilehep">
+<div class="tantop">
+<span>温馨提示</span><a id="mobileclose"></a>
+</div>
+<div class="caitanm">
+ <p class="p1">用手机找回密码</p><div style="padding-left:50px">
+ <table width="100%" border="0" cellspacing="" cellpadding="0">
  <colgroup>
-<col width="75">
-<col width="220">
-<col>
-</colgroup>
-  <tr>
-    <th>用户名</th>
-    <td class="red"></td>
-    <td></td>
+ <col width="75"><col width="">
+ </colgroup>
+  <tbody><tr>
+    <td colspan="2">您好，<em mark="username"></em>，请输入您绑定的手机号码</td>
   </tr>
   <tr>
-    <th>手机号码</th>
-    <td><input name="" id="mobile" type="text" value="请填写手机号码" 
+    <td>手机号码：</td>
+    <td><input type="text" class="text1" id="mobile" value="请填写手机号码" 
     onFocus="if(this.value=='请填写手机号码'){this.value='';this.style.color='#333'}" 
-    onBlur="if(this.value==''){this.value='请填写手机号码';this.style.color='#999'}" class="text_log"/></td>
-    <td><span class="say_1" id="err_info1" style="display:none;">手机号不能为空</span></td>
+    onBlur="if(this.value==''){this.value='请填写手机号码';this.style.color='#999'}" /></td>
   </tr>
   <tr>
-    <th>验证码</th>
-    <td><input type="text"  class="text_log" style="width:88px;float:left;" name="vcode" id="vcode" maxlength="6"/><input name="mobile_again" type="button" id="mobile_again" class="but" value="发送验证码"/></td>
-    <td><span class="say_1" id="err_info3" style="display:none;">验证码不能为空</span></td>
+    <td>验证码：</td>
+    <td><input type="text" style="width:90px" class="text1" id="vcode" maxlength="6"/><a class="a5" id="mobile_again" >发送验证码</a></td>
   </tr>
-  <tr>
-    <th></th>
-    <td><a href="javascript:void(0);" class="but_getw" id="mobile_btn">提&nbsp;&nbsp;交</a></td>
-    <td></td>
+   <tr>
+    <td class="td1">&nbsp;</td>
+    <td class="td1" id="err_info3"  mark="err_info"></td>
   </tr>
-</table>
-</div>
+   <tr>
+    <td>&nbsp;</td>
+    <td><a id="mobile_btn" class="btn">提交</a></td>
+  </tr>
+</tbody></table></div>
 
-<div class="getwod" id="layer_protect1" style="display:none;">
-<h1>找回密码</h1>
-<h2>1. 填写用户名 >><strong> 2. 选择密保问题提交答案 </strong>>> 3. 重置密码</h2>
-<table width="500" border="0" cellpadding="0" cellspacing="0" >
+</div>
+<div class="caitanbm">
+<div class="caitanbm1"></div>
+<div class="caitanbm2"></div>
+</div></div>
+<div style="width:440px;display:none;" class="caitan" id="emailhelp">
+<div class="tantop">
+<span>温馨提示</span><a id="emailclose"></a>
+</div>
+<div class="caitanm">
+ <p class="p1">用邮箱找回密码</p><div style="padding-left:50px">
+ <table width="100%" border="0" cellspacing="" cellpadding="0">
  <colgroup>
-<col width="75">
-<col width="220">
-<col>
-</colgroup>
-  <tr>
-    <th>用户名</th>
-    <td class="red"></td>
-    <td></td>
+ <col width="75"><col width="">
+ </colgroup>
+  <tbody><tr>
+    <td colspan="2">您好，<em mark="username"></em>，请输入您的绑定邮箱</td>
   </tr>
   <tr>
-    <th>密保</th>
+    <td>邮箱地址：</td>
+    <td><input type="text" class="text1" id="email" value="请填写邮箱地址"
+					onFocus="if(this.value=='请填写邮箱地址'){this.value='';this.style.color='#333'}"
+					onBlur="if(this.value==''){this.value='请填写邮箱地址';this.style.color='#999'}"></td>
+  </tr>
+   <tr>
+    <td class="td1">&nbsp;</td>
+    <td class="td1" id="err_info2"  mark="err_info"></td>
+    
+    
+    
+  </tr>
+   <tr>
+    <td>&nbsp;</td>
+    <td><a id="btn_tj_email" class="btn">提交</a></td>
+  </tr>
+</tbody></table></div>
+
+</div>
+<div class="caitanbm">
+<div class="caitanbm1"></div>
+<div class="caitanbm2"></div>
+</div></div>
+<div style="width:440px;display:none;" class="caitan" id="mibaohelp">
+<div class="tantop">
+<span>温馨提示</span><a id="mibaoclose"></a>
+</div>
+<div class="caitanm">
+ <p class="p1">用密保找回密码</p><div style="padding-left:50px">
+ <table width="100%" border="0" cellspacing="" cellpadding="0">
+ <colgroup>
+ <col width="75"><col width="">
+ </colgroup>
+  <tbody><tr>
+    <td colspan="2">您好，<em mark="username"></em>，请回答您的密保问题</td>
+  </tr>
+  <tr>
+    <td>密保问题：</td>
     <td><select name="question" id="question">
         <option value="">请选择密码提示问题</option>
         <option value="1">我的小名或者外号</option>
@@ -157,34 +233,65 @@
         <option value="12">我读的中学学校全称是</option>
         <option value="13">我的幸运数字</option>
        </select></td>
-    <td><span class="say_1" id="err_info5" style="display:none;"></span></td>
   </tr>
   <tr>
-    <th>答案</th>
-    <td><input type="text"  class="text_log"  name="answer" id="answer"/></td>
-    <td><span class="say_1" id="err_info6" style="display:none;"></span></td>
+    <td>密保答案：</td>
+    <td><input type="text" class="text1" name="answer" id="answer"/></td>
   </tr>
-  <tr>
-    <th></th>
-    <td><a href="javascript:void(0);" class="but_getw" id="btn_tj_protect">提&nbsp;&nbsp;交</a></td>
-    <td></td>
+    <tr>
+    <td class="td1">&nbsp;</td>
+    <td class="td1" id="err_info6"   mark="err_info" ></td>
   </tr>
-</table>
-</div>
+   <tr>
+    <td>&nbsp;</td>
+    <td><a id="btn_tj_protect" class="btn">提交</a></td>
+  </tr>
+</tbody></table></div>
 
-<div class="success_cz" id="step_suc" style="display:none;">
- <span class="suc_cz"><strong>您好，<b class="red"></b>，密码已重置！</strong><br />密码：<font id="newpwd"></font></span>
- <p class="p1">建议立即登录修改密码</p>
- <p class="p1">您可以<a href="/user/login.html">登录159彩票</a>|<a href="/">彩票首页</a>|<a href="/">彩票首页</a></p>
 </div>
-
-<div class="zf_judge" id="common_msg" style="display:none;">
- <h1 class="sb" id="msg_title">错误提示</h1>
- <div class="zf_j_bg">
-  <p class="sb"><em id="msg_content">该地址无效，请确认验证地址！</em></p>
+<div class="caitanbm">
+<div class="caitanbm1"></div>
+<div class="caitanbm2"></div>
+</div></div>
+<div class="logfot">
+ <p class="p1">159彩票网 | 客服热线：400-0696-159 | 客服邮箱：kf@159cai.com |沪ICP备13044715号-1
+</p>
+<div class="jxxk" style="margin:0 auto;width:850px;padding:0">
+			<div class="jxxk_col">
+				<a style="cursor: default"><img title="体彩" alt="体彩" src="/images/njc/index_03.jpg"></a>
+				<p>
+					体彩<br>合作伙伴
+				</p>
+			</div>
+			<div class="jxxk_col">
+				<a style="cursor: default"><img title="福彩" alt="福彩" src="/images/njc/index_05.jpg"></a>
+				<p>
+					福彩<br>合作伙伴
+				</p>
+			</div>
+			<div class="jxxk_col">
+				<a title="不良信息举报中心" target="_blank" href="http://net.china.com.cn/index.htm" rel="nofollow"><img alt="不良信息举报中心" src="/images/njc/index_07.jpg"></a>
+				<p>
+					不良信息<br>举报中心
+				</p>
+			</div>
+			<div title="经营性网站备案" class="jxxk_col">
+				<a target="_blank" href="http://www.miibeian.gov.cn" rel="nofollow"><img alt="经营性网站备案信息" src="/images/njc/index_09.jpg" style="margin: 6px 6px 0 3px"></a>
+				<p>
+					经营性网站<br>备案信息
+				</p>
+			</div>
+			<div title="网络社会诚信网" class="jxxk_col">
+				<a target="_blank" href="http://pinggu.zx110.org/checkWebsite.do?lt=1&amp;wd=159cai.com" rel="nofollow"><img alt="网络社会诚信网" src="/images/njc/index_11.jpg" style="margin: 6px 6px 0 3px"></a>
+				<p>
+					网络社会<br>诚信网
+				</p>
+			</div>
+			<div title="安全联盟标识" class="jxxk_col" style="border:none">
+				<a target="_blank" href="http://www.anquan.org/s/www.159cai.com?tab=wzmp" rel="nofollow"><img alt="安全联盟" src="/images/159/smrz.png" style="margin:0"></a>
+				
+			</div>
+		</div>
 </div>
-<p>您可以 <a href="/" target="_blank">返回首页</a>|<a href="#">联系客服</a></p>
-</div>
-<!--#include virtual="/cc/footer.html"-->
 </body>
 </html>

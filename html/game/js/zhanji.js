@@ -116,7 +116,7 @@ var showinfo = function() {// 页码 页面大小 总页数 总记录数
 						var wrate = parseFloat(iwmoney / ipmoney).rmb(false) ;
 						if ( imoney <= 0 ) {
 							imoney = 0;
-							wrate = 0;
+//							wrate = 0;
 						} 
 						
 						var iaunum = rt.iaunum;
@@ -153,36 +153,42 @@ var showinfo = function() {// 页码 页面大小 总页数 总记录数
 					}
 					html += " </tr>";
 				}
+				var maxshow=5;
+				var pagehtml='<ul><li style="line-height:27px;color:#444;padding-right:10px">共'+tr+'条</li><li class="disabled PagedList-skipToFirst"  ><a onclick="gopage(1);" href="javascript:void(0)" >首页</a></li>';
+				pagehtml += '<li class="PagedList-skipToNext"><a  onclick="gopage(pn-1)" href="javascript:void(0)">上一页</a></li>';
+				var min=0;
+				var max=0;
+				
+				if (tp > maxshow){
+				var pageTemp=parseInt(pn*1/maxshow);
 
-				var pagehtml='';
-		        pagehtml+='<a class="a1" style="margin-right:5px"  href="javascript:void(0);" title="" onclick="gopage(1);">首页</a>'+ 
-		    	'<a class="a2" style="margin-right:5px" href="javascript:void(0);" title="上一页" onclick="gopage(pn-1);">上一页</a>';
-			    var min=0;
-			    var max=0; 
-			    var maxshow=6;
-			    if (tp > maxshow){
-					var pageTemp=parseInt(pn*1/maxshow);
-					max	= pageTemp*maxshow+maxshow;
-				    min	= pageTemp*maxshow;
-					if(max>tp){
-						max=tp;
-					}
-					if(pn>min){min=min+1;}
-			    }else{
-			    	min = 1;
-			    	max = tp;
-			    }
-	
-				for (var i=min;i<max*1+1;i++){
-					if (i==pn){
-						pagehtml+='<a class="a4" href="javascript:void(0);" onclick="gopage('+i+');">'+i+'</a>';
-					}else{
-						pagehtml+='<a class="a3" href="javascript:void(0);" onclick="gopage('+i+');">'+i+'</a>';
-					}	     
+				
+				max = pageTemp*maxshow+maxshow;
+				min = pageTemp*maxshow;
+				
+				if(max>tp){
+				max=tp;
 				}
-			    pagehtml+='<a class="a2" style="margin-left:10px" href="javascript:void(0)" title="下一页" onclick="gopage(pn+1)">下一页</a>'+
-			    '<a class="a1" style="margin-left:5px" href="javascript:void(0)" title="" onclick="gopage(tp)">尾页</a>'+
-			    '<SPAN class="gray">共'+tp+'页，'+tr+'条记录</SPAN>';
+				if(pn>min){min=min+1;}
+				}else{
+				min = 1;
+				max = tp;
+				}
+				
+
+				
+				for (var i=min;i<max*1+1;i++){
+				if (i==pn){
+				pagehtml+='<li class="active"><a href="javascript:void(0);" id="'+i+'" class="a4" onclick="gopage('+i+');">' + i + '</a></li>';
+				}else{
+					pagehtml+='<li><a href="javascript:void(0);" id="'+i+'" class="a3" onclick="gopage('+i+');">' + i + '</a></li>';
+				}
+				}
+
+				
+				pagehtml+='<li class="PagedList-skipToNext"><a onclick="gopage(pn+1)"  href="javascript:void(0)">下一页</a></li><li class="PagedList-skipToNext"><a onclick="gopage(tr)"  href="javascript:void(0)">尾页</a></li><ul>';
+
+			
 			    $("#pagehtml").html(pagehtml);
 			} else {
 				if (code == "1") {

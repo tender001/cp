@@ -61,7 +61,7 @@ $(function() {
      			title +=isfirst?'定制':'修改';
 				title += ' '+owner +'  '+ $_sys.getlotname(lotid)+'的自动跟单  '  ;
 				
-				$(".tan_top_ad h3").html(title);
+				$("div.tantop  span").html(title);
 				if (isfirst){
 					$("#btnAuto").html('首次定制');
 					$("#history").hide();
@@ -89,7 +89,7 @@ $(function() {
 					$("#abl").removeClass("cur");
 					$("#aje").addClass("cur");
 					$("#je1").show();
-					$("#je2").show();
+//					$("#je2").show();
 					$("#bl1").hide();
 					$("#bl2").hide();
 					$("#ty").val("0");
@@ -98,7 +98,7 @@ $(function() {
 					$("#aje").removeClass("cur");
 					$("#abl").addClass("cur");
 					$("#je1").hide();
-					$("#je2").hide();
+//					$("#je2").hide();
 					$("#bl1").show();
 					$("#bl2").show();
 					$("#ty").val("1");

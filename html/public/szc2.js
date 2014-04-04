@@ -9,11 +9,11 @@
        '<td>{$stop}</td></tr>'+
      '<tr>'+
        '<td  class="t_td_c">投注内容</td>'+
-       '<td colspan="7"><div style="max-height:200px;overflow-y:auto"><p>{$codelist}</p></div></td>'+
+       '<td colspan="7" class="tdff"><div style="max-height:200px;overflow-y:auto"><p>{$codelist}</p></div></td>'+
      '</tr>'+
      '<tr>'+
        '<td  class="t_td_c">投注信息</td>'+
-       '<td colspan="7" style="line-height:33px;text-align:left;padding-left:30px">您本次购买需消费<font>{$totalmoney}</font>元</td>'+
+       '<td colspan="7" class="tdff" style="line-height:33px;text-align:left;padding-left:30px">您本次购买需消费<font>{$totalmoney}</font>元</td>'+
      '</tr>'+
    '</table>';
     isdgTpl = '<table width="100%" border="0" cellpadding="0" cellspacing="0"  class="cot">'+
@@ -22,11 +22,11 @@
      '<tr><td>{$type}</td><td>{$zhushu}</td><td>{$beishu}</td>{$iszj2}<td>{$totalmoney}元</td>'+
      '</tr>'+
      '<tr><td  class="t_td_c">投注内容</td>'+
-      '<td colspan="5"><div style="max-height:200px;overflow-y:auto"><p>{$codelist}</p></div></td>'+
+      '<td colspan="5" class="tdff"><div style="max-height:200px;overflow-y:auto"><p>{$codelist}</p></div></td>'+
      '</tr>'+
      '<tr>'+
        '<td  class="t_td_c">认购信息</td>'+
-       '<td colspan="5" style="line-height:33px;text-align:left;padding-left:30px">您本次购买需消费<font>{$totalmoney}</font>元</td>'+
+       '<td colspan="5" class="tdff" style="line-height:33px;text-align:left;padding-left:30px">您本次购买需消费<font>{$totalmoney}</font>元</td>'+
      '</tr>'+
    '</table>';
    
@@ -39,11 +39,11 @@
        '<td>{$bdscale}</td><td>{$tc}%</td><td>{$hidetype}</td></tr>'+
      '<tr>'+
        '<td  class="t_td_c">投注内容</td>'+
-       '<td colspan="9"><div style="max-height:200px;overflow-y:auto"><p>{$codelist}</p></div></td>'+
+       '<td colspan="9" class="tdff"><div style="max-height:200px;overflow-y:auto"><p>{$codelist}</p></div></td>'+
      '</tr>'+
      '<tr>'+
        '<td  class="t_td_c">认购信息</td>'+
-       '<td colspan="9" style="line-height:33px;text-align:left;padding-left:30px">您本次购买需消费<font>{$needmoney}</font>元</td>'+
+       '<td colspan="9" class="tdff" style="line-height:33px;text-align:left;padding-left:30px">您本次购买需消费<font>{$needmoney}</font>元</td>'+
      '</tr>'+
      '</table>';
 
@@ -160,43 +160,41 @@
     Class('Dlg', {
         index:function (){
     	//成功
-        this.dlgbuysuc = this.lib.MaskLay('#dlg_buysuc', '#dlg_buysuc_content');
-        this.dlgbuysuc.addClose('#dlg_buysuc_close,#dlg_buysuc_close2,#dlg_buysuc_back');
-        this.get('#dlg_buysuc div.tan_top').drag('#dlg_buysuc');         	
+          	
         //通用
         this.dlg = this.lib.MaskLay('#info_dlg','#info_dlg_content');
-        this.dlg.addClose('#info_dlg_close a,#info_dlg_ok');
-        this.get('#info_dlg div.tan_top').drag('#info_dlg');
+        this.dlg.addClose('#info_dlg_close,#info_dlg_ok');
+        this.get('#info_dlg div.tantop').drag('#info_dlg');
         //确认
             //this.confirm = this.lib.MaskLay('#b2_dlg','#b2_dlg_content','#b2_dlg_title');
             //this.confirm.addClose('#b2_dlg_close a,#b2_dlg_no,#b2_dlg_yes');
             //this.get('#b2_dlg div.tips_title').drag('#b2_dlg');
         //通用确认
             this.confirm2 = this.lib.MaskLay('#confirm_dlg','#confirm_dlg_content','#confirm_dlg_title');
-            this.confirm2.addClose('#confirm_dlg_close a,#confirm_dlg_no,#confirm_dlg_yes');
-            this.get('#confirm_dlg div.tan_top').drag('#confirm_dlg');
+            this.confirm2.addClose('#confirm_dlg_close,#confirm_dlg_no,#confirm_dlg_yes');
+            this.get('#confirm_dlg div.tantop').drag('#confirm_dlg');
         //机选
             this.jxDlg =  this.lib.MaskLay('#jx_dlg','#jx_dlg_list');
-            this.jxDlg.addClose('#jx_dlg_close a','#jx_dlg_re','#jx_dlg_ok');
-            this.get('#jx_dlg div.tan_top').drag('#jx_dlg');
+            this.jxDlg.addClose('#jx_dlg_close','#jx_dlg_re','#jx_dlg_ok');
+            this.get('#jx_dlg div.tantop').drag('#jx_dlg');
         //合买确认
             this.isBuy = this.lib.MaskLay('#ishm_dlg','#ishm_dlg_content', '#ishm_dlg_title');
             this.isBuy.addClose('#ishm_dlg_close,#ishm_dlg_no,#ishm_dlg_yes');
-            this.get('#ishm_dlg div.tan_top').drag('#ishm_dlg');
+            this.get('#ishm_dlg div.tantop').drag('#ishm_dlg');
         //胆拖拆分明细
             this.splitDlg =  this.lib.MaskLay('#split_dlg','#split_dlg_list');
-            this.splitDlg.addClose('#split_dlg_close a','#split_dlg_ok');
-            this.get('#split_dlg div.tan_top').drag('#split_dlg');
+            this.splitDlg.addClose('#split_dlg_close','#split_dlg_ok');
+//            this.get('#split_dlg div.tantop').drag('#split_dlg');
         //充值
             this.addMoneyDlg =  this.lib.MaskLay('#addMoneyLay');
             this.addMoneyDlg.addClose('#addMoneyClose','#addMoneyYes');
-            this.get('#addMoneyLay div.tan_top').drag('#addMoneyLay');
+            this.get('#addMoneyLay div.tantop').drag('#addMoneyLay');
             this.bindMsg();
         },
         bindMsg: function (){
 	       	 var Y = this;
 	         Class.extend('buySucceedDlg', function (lotid,projid,ischase){
-	             $('#dlg_buysuc_view').bind({
+	             $('#newbuysucview').bind({
 	            	 click:function(){	 
 	            		 if (ischase==1){
 	            			 window.location= '/account/xchase.html?zid='+projid+'&lotid='+lotid;	     
@@ -205,7 +203,13 @@
 	            		 }     		 
 	            	 }
 	             });
-	             Y.dlgbuysuc.pop('<div class="txt_suc">您好，'+Y.C('userName')+'，恭喜您购买成功!</div>');
+	             Y.use('mask', function(){
+	         	var dlgbuysuc = Y.lib.MaskLay('#newbuysuc', '#newbuysuc_content');
+		        dlgbuysuc.addClose('#newbuysuc_close,#newbuysuc_ok');
+		        Y.get('#newbuysuc div.tantop').drag('#newbuysuc');  
+		   
+		        dlgbuysuc.pop('<div class="txt_suc">您好，'+Y.C('userName')+'，恭喜您购买成功!</div>');
+	             });
 	         });          	
             this.onMsg('msg_show_dlg', function (msg, fn){
                 this.dlg.pop.apply(this.dlg, arguments)

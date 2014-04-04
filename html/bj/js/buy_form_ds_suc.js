@@ -56,8 +56,8 @@ Class( 'BuyFormsuc', {
 
 		//创建一个公共弹窗, 使用msg_show_dlg进行调用
 		this.infoLay = this.lib.MaskLay('#defLay', '#defConent');
-		this.infoLay.addClose('#defCloseBtn', '#defTopClose a');
-		this.get('#defLay div.tan_top').drag(this.get('#defLay'));
+		this.infoLay.addClose('#defCloseBtn', '#defTopClose');
+		this.get('#defLay div.tantop').drag(this.get('#defLay'));
 
 		// 提供弹窗服务
 		this.onMsg('msg_show_dlg', function (msg, fn, forbid_close) {
@@ -67,7 +67,7 @@ Class( 'BuyFormsuc', {
 		// 余额不足请充值的弹窗
 		this.addMoneyDlg = this.lib.MaskLay('#addMoneyLay');
 		this.addMoneyDlg.addClose('#addMoneyClose', '#addMoneyYes');
-		this.get('#addMoneyLay div.tan_top').drag('#addMoneyLay');
+		this.get('#addMoneyLay div.tantop').drag('#addMoneyLay');
 		this.onMsg('msg_show_addmoney', function (fn, args) {
 			this.addMoneyDlg.pop(false, function (e, btn) {
 				if (typeof fn === 'function' && btn.id == 'addMoneyYes') {

@@ -2,7 +2,7 @@
 	var tpl_ishm =  '<table width="100%" border="0" cellpadding="0" cellspacing="0"  class="cot">'+
 	'<tr><td rowspan="2" class="t_td_c">方案信息</td><td>玩法</td><td>注数</td><td>倍数</td><td>总金额</td><td>份数</td><td>保底</td><td>提成</td><td>保密类型</td></tr>'+
 	'<tr><td>{$play}</td><td>{$zhushu}</td><td>{$beishu}</td><td>{$allmoney}元</td><td>{$buymun}份</td><td>{$bdscale}</td><td>{$tc_bili}</td><td>{$hidetype}</td></tr>'+
-	'<tr><td  class="t_td_c">投注内容</td><td colspan="8">{$ytcase}'+
+	'<tr><td  class="t_td_c">投注内容</td><td colspan="8" class="tdff">{$ytcase}'+
 	'<table width="620" border="0" cellpadding="0" cellspacing="0" class="coz" style="display:{$codesHidden};">'+
 	'<col width="50" /><col width="20" /><col width="20" /><col width="20" /><col width="20" />'+
 	'<col width="20" /><col width="20" /><col width="20" /><col width="20" /><col width="20" />'+
@@ -10,14 +10,14 @@
 	'<tr><td class="coza">场次</td>{$index}</tr></thead>'+
 	'<tr><td  class="coza">对阵</td>{$vsName}</tr>'+
 	'<tr><td  class="coza">选号</td>{$code}</tr><tfoot><tr style="display:{$dthidden}"><td class="coza">胆拖</td>{$dan}</tr></tfoot></table></td></tr>'+
-	'<tr><td  class="t_td_c">认购信息</td><td colspan="8" style="line-height:33px;text-align:left;padding-left:30px">您本次购买需消费<font>{$buymoney}</font>元</td>'+
+	'<tr><td  class="t_td_c">认购信息</td><td colspan="8" style="line-height:33px;text-align:left;padding-left:30px" class="tdff">您本次购买需消费<font>{$buymoney}</font>元</td>'+
 	'</tr></table>';
 
 	var tpl_isdg =  '<table width="100%" border="0" cellpadding="0" cellspacing="0"  class="cot">'+
     '<colgroup><col width="135" /><col width="160" /><col width="160" /><col width="160" /><col />'+
     '<tr><td rowspan="2" class="t_td_c">方案信息</td><td>玩法</td><td>注数</td><td>倍数</td><td>总金额</td></tr>'+
     '<tr><td>{$play}</td><td>{$zhushu}</td><td>{$beishu}</td><td>{$buymoney}元</td></tr>'+
-    '<tr><td  class="t_td_c">认购信息</td><td colspan="4">{$ytcase}'+
+    '<tr><td  class="t_td_c">认购信息</td><td colspan="4" class="tdff">{$ytcase}'+
     '<table width="620" border="0" cellpadding="0" cellspacing="0" class="coz" style="display:{$codesHidden};">'+
     '<col width="50" /><col width="20" /><col width="20" /><col width="20" /><col width="20" />'+
     '<col width="20" /><col width="20" /><col width="20" /><col width="20" /><col width="20" />'+
@@ -25,7 +25,7 @@
     '<tr><td class="coza">场次</td>{$index}</tr></thead>'+
     '<tr><td  class="coza">对阵</td>{$vsName}</tr>'+
     '<tr><td  class="coza">选号</td>{$code}</tr><tfoot><tr style="display:{$dthidden}"><td class="coza">胆拖</td>{$dan}</tr></tfoot></table></td></tr>'+
-    '<tr><td  class="t_td_c">投注信息</td><td colspan="4" style="line-height:33px;text-align:left;padding-left:30px">您本次购买需消费<font>{$buymoney}</font>元</td>'+
+    '<tr><td  class="t_td_c">投注信息</td><td colspan="4" style="line-height:33px;text-align:left;padding-left:30px" class="tdff">您本次购买需消费<font>{$buymoney}</font>元</td>'+
     '</tr></table>';
 
     Class.C('root', 'http://'+location.host+'/');
@@ -49,7 +49,7 @@
             this.getTip().hide()
         }
         return true
-    });
+    }); 
     Class.extend('moveToBuy', function (fn){//购买按钮可见
         var h, ph, a, b;
         h = this.getXY(this.one('#b_form'));
@@ -148,11 +148,11 @@
       	  	//成功
 	        this.dlgbuysuc = this.lib.MaskLay('#dlg_buysuc', '#dlg_buysuc_content');
 	        this.dlgbuysuc.addClose('#dlg_buysuc_close,#dlg_buysuc_close2,#dlg_buysuc_back');
-	        this.get('#dlg_buysuc div.tan_top').drag('#dlg_buysuc');         	
+	        this.get('#dlg_buysuc div.tantop').drag('#dlg_buysuc');         	
             //通用
             this.dlg = this.lib.MaskLay('#info_dlg','#info_dlg_content');
             this.dlg.addClose('#info_dlg_close a,#info_dlg_ok');
-            this.get('#info_dlg div.tan_top').drag('#info_dlg');
+            this.get('#info_dlg div.tantop').drag('#info_dlg');
             //确认
             //this.confirm = this.lib.MaskLay('#b2_dlg','#b2_dlg_content','#b2_dlg_title');
             //this.confirm.addClose('#b2_dlg_close a,#b2_dlg_no,#b2_dlg_yes');
@@ -160,11 +160,11 @@
             //通用确认
             this.confirm2 = this.lib.MaskLay('#confirm_dlg','#confirm_dlg_content','#confirm_dlg_title');
             this.confirm2.addClose('#confirm_dlg_close a,#confirm_dlg_no,#confirm_dlg_yes');
-            this.get('#confirm_dlg div.tan_top').drag('#confirm_dlg');
+            this.get('#confirm_dlg div.tantop').drag('#confirm_dlg');
             //合买确认
             this.isBuy = this.lib.MaskLay('#ishm_dlg','#ishm_dlg_content', '#ishm_dlg_title');
             this.isBuy.addClose('#ishm_dlg_close,#ishm_dlg_no,#ishm_dlg_yes');
-            this.get('#ishm_dlg div.tan_top').drag('#ishm_dlg');
+            this.get('#ishm_dlg div.tantop').drag('#ishm_dlg');
             //胆拖拆分明细
             this.splitDlg =  this.lib.MaskLay('#split_dlg','#split_dlg_list');
             this.splitDlg.addClose('#split_dlg_close a','#split_dlg_ok');
@@ -172,7 +172,7 @@
             //充值
             this.addMoneyDlg =  this.lib.MaskLay('#addMoneyLay');
             this.addMoneyDlg.addClose('#addMoneyClose','#addMoneyYes');
-            this.get('#addMoneyLay div.tan_top').drag('#addMoneyLay');
+            this.get('#addMoneyLay div.tantop').drag('#addMoneyLay');
             this.bindMsg();
         },
         bindMsg: function (){
@@ -1024,7 +1024,7 @@
 											+'<td  id="b3'+((i)*2-1)+'">'+parseFloat(vs[i*2][4]).rmb(false,2)+'</td>'
 											+'<td  id="b1'+((i)*2-1)+'">'+parseFloat(vs[i*2][5]).rmb(false,2)+'</td>'
 											+'<td  id="b0'+((i)*2-1)+'">'+parseFloat(vs[i*2][6]).rmb(false,2)+'</td>'
-											+'<td rowspan="2"><a href="#" class="mtc_name" id="ox'+(i+1)+'">析</a><a href="#" class="mtc_name" id="oy'+(i+1)+'">亚</a><a href="#" class="mtc_name" id="oz'+(i+1)+'">欧</a></td>'
+											+'<td rowspan="2"><a href="#" class="mtc_name" id="ox'+(i+1)+'" target="_blank">析</a><a href="#" class="mtc_name" id="oy'+(i+1)+'" target="_blank">亚</a><a href="#" class="mtc_name" id="oz'+(i+1)+'" target="_blank">欧</a></td>'
 											+'</tr>'
 											+'<tr data-vs="'+vs[i*2][1]+','+vs[i*2][2]+'  全" name='+i+'><td>[客] <a href="" target="_blank" id="vteam'+(i+1)+'" class="mtc_name"><em id="gtid'+((i+1)*2-1)+'" class="ew_e">'+vs[i*2][2]+'</em></a><em></em></td>'
 											+'<td>全场</td>'
@@ -1190,15 +1190,12 @@
 	                    	 if(Class.C('lot_gid')==3){//半全场
 	                    		 htid=(u.items.xid)/2;
 	                    		 $("#mn"+htid).attr("href","http://info.159cai.com/index.php?controller=main&lid="+u.items.lid+"&sid="+u.items.sid+"&cid="+u.items.cid+"&t=2");
-//	                    		 if((u.items.xid)%2==0){
-	                    			
-//	                    			 $("#mn"+htid).attr("href","http://info.159cai.com/index.php?controller=main&lid="+u.items.lid+"&sid="+u.items.sid+"&cid="+u.items.cid+"&t=1");
-	                    			 $("#hteam"+htid).attr("href","http://info.159cai.com/index.php?controller=teaminfo&lid="+u.items.lid+"&sid="+u.items.sid+"&tid="+u.items.htid);
-	 	            				 $("#vteam"+htid).attr("href","http://info.159cai.com/index.php?controller=teaminfo&lid="+u.items.lid+"&sid="+u.items.sid+"&tid="+u.items.gtid);
-	 	            				 $("#ox"+htid).attr("href","http://info.159cai.com/index.php?controller=analysis&action=index&mid="+u.items.oddsmid+"&sit=4");
-	 	            				 $("#oz"+htid).attr("href","http://odds.159cai.com/index.php?controller=detail&action=index&mid="+u.items.oddsmid+"&sit=1");
-	 	            				 $("#oy"+htid).attr("href","http://odds.159cai.com/index.php?controller=detail&action=index&mid="+u.items.oddsmid+"&sit=2");
-//	                    		 }
+	 	            				$("#mn"+htid).attr("href","http://info.159cai.com/league/index/"+u.items.lid);
+		             				$("#hteam"+htid).attr("href","http://info.159cai.com/team/index/"+u.items.htid);
+		                        	$("#vteam"+htid).attr("href","http://info.159cai.com/team/index/"+u.items.gtid);
+	 	            				 $("#ox"+htid).attr("href","http://odds.159cai.com/match/analysis/"+u.items.oddsmid+"?lotyid=1");
+	 	            				 $("#oz"+htid).attr("href","http://odds.159cai.com/match/odds/"+u.items.oddsmid+"?lotyid=1");
+	 	            				 $("#oy"+htid).attr("href","http://odds.159cai.com/match/asia/"+u.items.oddsmid+"?lotyid=1");
 	 	            				var hm=isNaN(u.items.hm)||u.items.hm==""?"":u.items.hm<10?'0'+u.items.hm:u.items.hm;
 		            				var am=isNaN(u.items.am)||u.items.hm==""?"":u.items.am<10?'0'+u.items.am:u.items.am;
 		            				$("#htid"+u.items.xid).attr("data",u.items.htid).parent().next().html(hm==""?"":'['+hm+']');
@@ -1211,12 +1208,14 @@
 	            				 if($("#b1"+u.items.xid).html()=="0.00"){$("#b1"+u.items.xid).html(parseFloat(u.items.od).rmb(false,2));}
 	            				 if($("#b0"+u.items.xid).html()=="0.00"){$("#b0"+u.items.xid).html(parseFloat(u.items.oa).rmb(false,2));}
 	             			 }else{
-	             				 $("#mn"+u.items.xid).attr("href","http://info.159cai.com/index.php?controller=main&lid="+u.items.lid+"&sid="+u.items.sid+"&cid="+u.items.cid+"&t=2");
-	             				 $("#hteam"+u.items.xid).attr("href","http://info.159cai.com/index.php?controller=teaminfo&lid="+u.items.lid+"&sid="+u.items.sid+"&tid="+u.items.htid);
-	            				$("#vteam"+u.items.xid).attr("href","http://info.159cai.com/index.php?controller=teaminfo&lid="+u.items.lid+"&sid="+u.items.sid+"&tid="+u.items.gtid);
-	            				$("#ox"+u.items.xid).attr("href","http://info.159cai.com/index.php?controller=analysis&action=index&mid="+u.items.oddsmid+"&sit=4");
-	            				$("#oz"+u.items.xid).attr("href","http://odds.159cai.com/index.php?controller=detail&action=index&mid="+u.items.oddsmid+"&sit=1");
-	            				$("#oy"+u.items.xid).attr("href","http://odds.159cai.com/index.php?controller=detail&action=index&mid="+u.items.oddsmid+"&sit=2");
+	             			
+	            				
+	            				$("#mn"+u.items.xid).attr("href","http://info.159cai.com/league/index/"+u.items.lid);
+	             				$("#hteam"+u.items.xid).attr("href","http://info.159cai.com/team/index/"+u.items.htid);
+	                        	$("#vteam"+u.items.xid).attr("href","http://info.159cai.com/team/index/"+u.items.gtid);
+ 	            				 $("#ox"+u.items.xid).attr("href","http://odds.159cai.com/match/analysis/"+u.items.oddsmid+"?lotyid=1");
+ 	            				 $("#oz"+u.items.xid).attr("href","http://odds.159cai.com/match/odds/"+u.items.oddsmid+"?lotyid=1");
+ 	            				 $("#oy"+u.items.xid).attr("href","http://odds.159cai.com/match/asia/"+u.items.oddsmid+"?lotyid=1");
 	            				//if(Class.C('lot_gid')==1){
 	            				//if($("#oh"+u.items.xid).html()=="--"){$("#b3"+u.items.xid).html(u.items.oh==""?"--":parseFloat(u.items.oh).rmb(false,2));}
 	            				//if($("#od"+u.items.xid).html()=="--"){$("#b1"+u.items.xid).html(u.items.od==""?"--":parseFloat(u.items.od).rmb(false,2));}

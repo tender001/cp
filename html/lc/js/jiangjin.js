@@ -224,7 +224,7 @@ Class('DcPrix', {
         index:function (){
             var dlg = this.lib.MaskLay('#blk1');
             dlg.addClose('#close1');
-			this.get('#blk1 div.tan_top').drag(this.get('#blk1'));
+			this.get('#blk1 div.tantop').drag(this.get('#blk1'));
             dlg.panel.find('div.tan_mid').setStyle('overflow-y:auto; overflow-x:hidden;');
             this.bs = 1;
             this.get('#seemore').click(function (e, Y){

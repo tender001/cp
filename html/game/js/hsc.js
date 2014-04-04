@@ -46,6 +46,7 @@ $(function() {
 	 		              if (j.errcode == 0) {// && j.headerurl  
 	 		  				Y.uploadSuccess();
 	 		  				top.Y.closeUrl();
+	 		  				setTimeout( function(){top.location.reload();},2000);
 	 		              }else{
 	 		                Y.uploadErr(j.msg);
 	 		              }

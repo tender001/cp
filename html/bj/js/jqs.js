@@ -1581,12 +1581,14 @@ Class( {
 				url:"/cpdata/omi/bjdc/"+ex+"/"+ex+"_odds.xml",
         		end:function(data,i){
                      this.qXml('//row', data.xml, function (u, i){
-                    	 Y.get("#match"+u.items.xid).attr("href","http://info.159cai.com/index.php?controller=main&lid="+u.items.lid+"&sid="+u.items.sid+"&cid="+u.items.cid+"&t="+u.items.t);
-                    	 Y.get("#hn"+u.items.xid).attr("href","http://info.159cai.com/index.php?controller=teaminfo&lid="+u.items.lid+"&sid="+u.items.sid+"&tid="+u.items.htid);
-                    	 Y.get("#gn"+u.items.xid).attr("href","http://info.159cai.com/index.php?controller=teaminfo&lid="+u.items.lid+"&sid="+u.items.sid+"&tid="+u.items.gtid);
-                    	 Y.get("#ox"+u.items.xid).attr("href","http://info.159cai.com/index.php?controller=analysis&action=index&mid="+u.items.oddsmid+"&sit=4&lotyid=5");
-                    	 Y.get("#oz"+u.items.xid).attr("href","http://odds.159cai.com/index.php?controller=detail&action=index&mid="+u.items.oddsmid+"&sit=1&lotyid=5");
-                    	 Y.get("#oy"+u.items.xid).attr("href","http://odds.159cai.com/index.php?controller=detail&action=index&mid="+u.items.oddsmid+"&sit=2&lotyid=5");
+                    	 $("#match"+u.items.xid).html(u.items.ln);	
+                    	 $("#match"+u.items.xid).attr("href","http://info.159cai.com/league/index/"+u.items.lid);
+                    	 $("#hn"+u.items.xid).attr("href","http://info.159cai.com/team/index/"+u.items.htid);
+                       	 $("#gn"+u.items.xid).attr("href","http://info.159cai.com/team/index/"+u.items.gtid);
+             			
+        				$("#ox"+u.items.xid).attr("href","http://odds.159cai.com/match/analysis/"+u.items.oddsmid+"?lotyid=5");
+         				$("#oz"+u.items.xid).attr("href","http://odds.159cai.com/match/odds/"+u.items.oddsmid+"?lotyid=5");
+         				$("#oy"+u.items.xid).attr("href","http://odds.159cai.com/match/asia/"+u.items.oddsmid+"?lotyid=5");
                     	 $("#htid"+u.items.xid+" ").attr("data",u.items.htid);
         				 $("#gtid"+u.items.xid+" ").attr("data",u.items.gtid);	
             				if(lottype==34 || lottype==42){//添加赔率信息
@@ -1754,8 +1756,8 @@ Class( {
 
 		//创建一个公共弹窗, 使用msg_show_dlg进行调用
 		this.infoLay = this.lib.MaskLay('#defLay', '#defConent');
-		this.infoLay.addClose('#defCloseBtn', '#defTopClose a');
-		this.get('#defLay div.tan_top').drag(this.get('#defLay'));
+		this.infoLay.addClose('#defCloseBtn', '#defTopClose');
+		this.get('#defLay div.tantop').drag(this.get('#defLay'));
 		this.infoLay.noMask = self != top;
 
 		// 提供弹窗服务

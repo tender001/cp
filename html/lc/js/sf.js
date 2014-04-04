@@ -899,7 +899,7 @@
             this.createIntInput('#bs', function (e, Y){//修改倍数
             	
             	Y._upView(Y.C('choose_data'));
-            }, 50000);
+            }, 100000);
             this.onMsg('msg_choose_update', function (data){//选择场次或者子项变化, 可能化引起过关方式自动切换
                 this._upView(data)
             });
@@ -919,11 +919,11 @@
                 }else if(!duoc && ggData.zy.length === 0){
                     return Y.alert('您好，请选择过关方式！')
                 }
-                if (isDg && Y.get('#bs').val() > 50000) {
-                    return Y.alert('您好，代购倍数不能超过50000倍！')
+                if (isDg && Y.get('#bs').val() > 100000) {
+                    return Y.alert('您好，代购倍数不能超过100000倍！')
                 }
-                if (ishm && Y.get('#bs').val() > 50000) {
-                    return Y.alert('您好，合买倍数不能超过50000倍！')
+                if (ishm && Y.get('#bs').val() > 100000) {
+                    return Y.alert('您好，合买倍数不能超过100000倍！')
                 }
                 var chkgroup = isDg ? 1 : (duoc ? false : ggData.zy.map(function (e){
                     return parseInt(e)
@@ -1292,11 +1292,11 @@ Class('SPUpdate', {
             		end:function(data,i){
             			 var htid =1;
                          this.qXml('//row', data.xml, function (u, i){
-                        	 Y.get("#mn"+u.items.xid).attr("href","http://info.159cai.com/index.php?controller=lqmain&lid="+u.items.lid+"&sid="+u.items.sid);
-                        	 Y.get("#hn"+u.items.xid).attr("href","http://info.159cai.com/index.php?controller=lqteam&action=index&sid=1&tid="+u.items.htid);
-                        	 Y.get("#gn"+u.items.xid).attr("href","http://info.159cai.com/index.php?controller=lqteam&action=index&sid=1&tid="+u.items.gtid);
-                        	 Y.get("#ox"+u.items.xid).attr("href","http://info.159cai.com/index.php?controller=fenxi&mid="+u.items.mid);
-                        	 Y.get("#oz"+u.items.xid).attr("href","http://info.159cai.com/index.php?controller=lqeodds&mid="+u.items.mid);
+                        	 Y.get("#mn"+u.items.xid).attr("href","http://info.159cai.com/leagueb/index/"+u.items.lid);
+	            				Y.get("#gn"+u.items.xid).attr("href","http://info.159cai.com/teamb/index/"+u.items.htid);
+	                        	 Y.get("#hn"+u.items.xid).attr("href","http://info.159cai.com/teamb/index/"+u.items.gtid);
+	                        	 Y.get("#ox"+u.items.xid).attr("href","http://odds.159cai.com/bmatch/analysis/"+u.items.mid);
+	                        	 Y.get("#oz"+u.items.xid).attr("href","http://odds.159cai.com/bmatch/odds/"+u.items.mid);
                 				
                 				if(lottype==94 || lottype==95 || lottype==97){//添加赔率信息
                 					if(u.items.oa!=""){Y.get("#oh"+u.items.xid).html(parseFloat(u.items.oa).rmb(false,2));}
