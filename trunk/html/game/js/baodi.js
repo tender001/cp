@@ -91,6 +91,7 @@ var baodi = function(){
     	   		    var desc = obj.Resp.desc;
     				if (code == "0") {
     					//重新初始化刷新UI
+    				 
     					top.Y.alert("方案保底成功!");
     					setTimeout( function(){  top.location.reload();}, 2000);		
     					                        

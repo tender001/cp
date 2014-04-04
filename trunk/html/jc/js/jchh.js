@@ -1224,11 +1224,14 @@ Class('Main', {
 				url:"/cpdata/omi/jczq/odds/odds.xml",
         		end:function(data,i){
                      this.qXml('//row', data.xml, function (u, i){
-                    	    Y.get("#mn"+u.items.xid).attr("href","http://info.159cai.com/index.php?controller=main&lid="+u.items.lid+"&sid="+u.items.sid+"&cid="+u.items.cid+"&t="+u.items.t);
-                    	    Y.get("#hn"+u.items.xid).attr("href","http://info.159cai.com/index.php?controller=teaminfo&lid="+u.items.lid+"&sid="+u.items.sid+"&tid="+u.items.htid);
-                       	    Y.get("#gn"+u.items.xid).attr("href","http://info.159cai.com/index.php?controller=teaminfo&lid="+u.items.lid+"&sid="+u.items.sid+"&tid="+u.items.gtid);
-                    	    Y.get("#ox"+u.items.xid).attr("href","http://info.159cai.com/index.php?controller=analysis&action=index&mid="+u.items.oddsmid+"&sit=4&lotyid=6");
-                    	    Y.get("#oz"+u.items.xid).attr("href","http://odds.159cai.com/index.php?controller=detail&action=index&mid="+u.items.oddsmid+"&sit=1&lotyid=6");
+                    	   
+                    	 Y.get("#mm"+u.items.xid).attr("href","http://info.159cai.com/league/index/"+u.items.lid);
+                    	    Y.get("#hn"+u.items.xid).attr("href","http://info.159cai.com/team/index/"+u.items.htid);
+                       	 	Y.get("#gn"+u.items.xid).attr("href","http://info.159cai.com/team/index/"+u.items.gtid);
+                       	 Y.get("#ox"+u.items.xid).attr("href","http://odds.159cai.com/match/analysis/"+u.items.oddsmid+"?lotyid=6");
+                       	Y.get("#oz"+u.items.xid).attr("href","http://odds.159cai.com/match/odds/"+u.items.oddsmid+"?lotyid=6");
+             			
+
                     	    Y.get("#oh"+u.items.xid).html(u.items.oh);
         					Y.get("#od"+u.items.xid).html(u.items.od);
         					Y.get("#oa"+u.items.xid).html(u.items.oa);

@@ -303,49 +303,86 @@ Class( 'shezhi', {
 		if(type=="1" || type=="8"){
 			var len1 = inputs1.length;
 			for ( var i = 0; i < len1; i++) {
+				
+				if(Y.get("#" + inputs1[i]).val()>num){
+				
+				}else{
 					Y.get("#" + inputs1[i]).val(num);
+				}
 			}
+		
 		}
 		
 		if(type=="2" || type=="8"){
 			var len2 = inputs2.length;
 			for ( var i = 0; i < len2; i++) {
+				
+				if(Y.get("#" + inputs2[i]).val()>num){
+				
+				}else{
 					Y.get("#" + inputs2[i]).val(num);
+				}
 			}
+		
 		}
 		
 		if(type=="3" || type=="8"){
 			var len3 = inputs3.length;
 			for ( var i = 0; i < len3; i++) {
+				
+				if(Y.get("#" + inputs3[i]).val()>num){
+				
+				}else{
 					Y.get("#" + inputs3[i]).val(num);
+				}
 			}
 		}
 		
 		if(type=="4" || type=="8"){
 			var len4 = inputs4.length;
 			for ( var i = 0; i < len4; i++) {
+				
+				if(Y.get("#" + inputs4[i]).val()>num){
+				
+				}else{
 					Y.get("#" + inputs4[i]).val(num);
+				}
 			}
 		}
 		
 		if(type=="5" || type=="8"){
 			var len5 = inputs5.length;
 			for ( var i = 0; i < len5; i++) {
+				
+				if(Y.get("#" + inputs5[i]).val()>num){
+				
+				}else{
 					Y.get("#" + inputs5[i]).val(num);
+				}
 			}
 		}
 		
 		if(type=="6" || type=="8"){
 			var len6 = inputs6.length;
 			for ( var i = 0; i < len6; i++) {
+				
+				if(Y.get("#" + inputs6[i]).val()>num){
+				
+				}else{
 					Y.get("#" + inputs6[i]).val(num);
+				}
 			}
 		}
 		
 		if(type=="7" || type=="8"){
 			var len7 = inputs7.length;
 			for ( var i = 0; i < len7; i++) {
+				
+				if(Y.get("#" + inputs7[i]).val()>num){
+				
+				}else{
 					Y.get("#" + inputs7[i]).val(num);
+				}
 			}
 		}
 		

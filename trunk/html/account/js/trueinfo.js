@@ -96,12 +96,12 @@ Class({
 				                 Y.get('#yclass_alert  div.tantop').drag('#wrapLay');
 				               
 				 	 		       if(obj2.Resp.code==0){
-				 	 		    	 $("#wrapLayConent").html('恭喜您：<br />已获取2元彩金<a class="a3" href="/account/myaccount.html" target="_blank" >点击查看</a>');
+				 	 		    	 $("#wrapLayConent").html('<div class="buy_sucs">恭喜您：<br />已获取2元彩金<a class="a3" href="/account/myaccount.html" target="_blank" >点击查看</a></div>');
 				 	 		    	 $("#username").html($("#truename").val());
 				 	 		    	 $("#usercard").html($("#idnumber").val())
 				 	 		    	  wrapLay.pop();
 				 	 		       }else if(obj2.Resp.code==2){
-				 	 		    	 $("#wrapLayConent").html('已实名<br/>新用户<a class="a3" href="/account/mobile.html" target="_blank" id="showClose">绑定手机</a>后系统赠送2元彩金');
+				 	 		    	 $("#wrapLayConent").html('<div class="buy_sucs">已实名<br/>新用户<a class="a3" href="/account/mobile.html" target="_blank" id="showClose">绑定手机</a>后系统赠送2元彩金</div>');
 				 	 		    	 $("#username").html($("#truename").val());
 				 	 		    	 $("#usercard").html($("#idnumber").val())
 				 	 		    	  wrapLay.pop();

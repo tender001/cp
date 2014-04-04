@@ -335,7 +335,13 @@ var filter = {
 				return false;
 			}
 			Y.postMsg('msg_login', function (){
-					filter.buy();
+				if($("#buymoney").text()>2000000){
+					Y.alert("投注金额不能大于200万");
+					return false;
+				}
+				Y.confirm("您好，认购方案总金额"+$("#buymoney").text()+"元，请确认！",function (){filter.buy();}); 	
+
+				
 			})
 		});
 		
@@ -526,7 +532,7 @@ var filter = {
 				return false;
 			}
 //			Y.confirm("正在过滤，请稍后！");
-			Y.alert(' 正在过滤，请稍等...');	
+//			Y.alert(' 正在过滤，请稍等...');	
 			//生成参数
 			filter.creatParams();
 			
@@ -580,8 +586,14 @@ var filter = {
 				filter.params.step=$(".closed1").length+1;
 				$("#savecase").attr("able",true);
 //				//$.unblockUI();
-				Y.alert("<b>过滤成功！</b><br>过滤前 "+beforef+" 注，过滤后 "+afterf+" 注");
-				
+			
+				Y.use('mask', function(){
+				var  wrapLay = Y.lib.MaskLay('#wrapLay', '#wrapLayConent');
+            	wrapLay.addClose('#wrapLayCloseBtn', '#wrapLayClose');
+                 Y.get('#yclass_alert  div.tantop').drag('#wrapLay');
+                 $("#wrapLayConent").html("<div class=buy_sucs>过滤成功！<br/>过滤前 "+beforef+" 注，过滤后 "+afterf+" 注</div>");
+                 wrapLay.pop();
+				});
 			}else if(code == 0){ //过滤失败
 //				//$.unblockUI();
 				Y.alert($(json).attr("msg"));
@@ -616,7 +628,7 @@ var filter = {
 				window.open("/abc.c?t="+msg);
 				
 			}else{
-				Y.aert(msg);
+				Y.alert(msg);
 			}
 		}
 	},
@@ -708,11 +720,8 @@ var filter = {
 	},
 	//购买
 	buy: function(){
-		if($("#buymoney").text()>2000000){
-			Y.alert("投注金额不能大于200万");
-			return false;
-		}
 		
+	
 		if(filter.params.caseid!=filter.params.buyid){
 			var url="/abc.c",
 			databuy = "t=buy&id=" + filter.params.caseid,
@@ -765,8 +774,8 @@ var filter = {
 							Y.use('mask', function(){
 								var dlgbuysuc = this.lib.MaskLay('#dlg_buysuc', '#dlg_buysuc_content');
 						        dlgbuysuc.addClose('#dlg_buysuc_close,#dlg_buysuc_close2,#dlg_buysuc_back');
-						        Y.get('#dlg_buysuc div.tan_top').drag('#dlg_buysuc');  
-						        dlgbuysuc.pop('<div class="txt_suc" style="font-size:14px">恭喜您购买成功!</div>');
+						        Y.get('#dlg_buysuc div.tantop').drag('#dlg_buysuc');  
+						        dlgbuysuc.pop('恭喜您购买成功!');
 							});
 							
 						}else{
@@ -826,7 +835,7 @@ var filter = {
 		Y.use('mask', function(){
 			var gvbuy =  this.lib.MaskLay('#gvbuy');
 			gvbuy.addClose('#gvbuy_close','#gvbuy_ok');
-			Y.get('#gvbuy .tan_top').drag('#gvbuy');
+			Y.get('#gvbuy div.tantop').drag('#gvbuy');
 			gvbuy.pop();
 
 		}); 
@@ -903,8 +912,8 @@ var filter = {
 							Y.use('mask', function(){
 								var dlgbuysuc = this.lib.MaskLay('#dlg_buysuc', '#dlg_buysuc_content');
 						        dlgbuysuc.addClose('#dlg_buysuc_close,#dlg_buysuc_close2,#dlg_buysuc_back');
-						        Y.get('#dlg_buysuc div.tan_top').drag('#dlg_buysuc');  
-						        dlgbuysuc.pop('<div class="txt_suc" style="font-size:14px">恭喜您购买成功!</div>');
+						        Y.get('#dlg_buysuc div.tantop').drag('#dlg_buysuc');  
+						        dlgbuysuc.pop('恭喜您购买成功!');
 							});
 							$("#gvbuy_close").click();
 

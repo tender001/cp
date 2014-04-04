@@ -892,7 +892,7 @@ Class('App', {
 		this.get("#sdinput").show();
 		var sdinput =  this.lib.MaskLay('#inputalert','#inputtext');
 		sdinput.addClose('#input_close');
-		this.get('#inputalert div.tan_top_yet').drag('#inputalert');
+		this.get('#inputalert div.tantop').drag('#inputalert');
 		this.get("#sdinput").click(function(){
 			if(Y.getPlayId()>256&& Y.getPlayId()<246){
 				Y.alert("改玩法暂不支持手工录入")
@@ -1253,7 +1253,12 @@ Class('CodeList', {
             		 var pdate = Y.getDate(Date.parse(Y.getDate(dt))-1000*60*60*24).format('YYMMDD');
             		 ppid = (pdate + "") + Class.C('sump');
             	 }
-                 this.alert('您好，<span style="color:#999">'+ppid+'</span>期已截止，当前期是<span style="color:#FF4E00">'+expect+'</span>期，投注时请确认您选择的期号。');
+
+            	var  wrapLay = Y.lib.MaskLay('#wrapLay', '#wrapLayConent');
+            	wrapLay.addClose('#wrapLayCloseBtn', '#wrapLayClose');
+                 Y.get('#yclass_alert  div.tantop').drag('#wrapLay');
+                 $("#wrapLayConent").html('<div class=wxts_p>您好，<span style="color:#999">'+ppid+'</span>期已截止<br/>当前期是<span style="color:#FF4E00">'+expect+'</span>期<br/>投注时请确认您选择的期号。</div>');
+                 wrapLay.pop();
              }
              this.C('-is-continue-buy', false);
          });
@@ -1942,9 +1947,8 @@ Class('BuyProject', {
         var oldSet, Y, ini;
 		oldSet = {};
 		Y = this;
-		 var listdata = Y.postMsg('msg_get_list_data').data;
 		this.showResult.onclick = function() {
-           
+            var listdata = Y.postMsg('msg_get_list_data').data;
             if(listdata.zhushu>1){
             	Y.postMsg("msg_buy_succeed_zhlist");
             	Y.alert("您好，高级追号功能只支持单注投注方案!");

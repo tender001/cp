@@ -5,7 +5,8 @@
 <title>上传方案_159彩票网</title>
 <meta name="keywords" content="网上购买双色球,网上买彩票,网上购买彩票,网上投注,159彩票"/>
 <meta name="description" content="159彩票网提供福利彩票双色球、福彩3D、时时彩、体育彩票大乐透、七星彩、11选5、足球彩票等全国彩票的网上购买、网上投注、合买彩票等服务，还提供彩票走势图、开奖结果查询等服务，是您专业的网上购买彩票投注站！"/>
-<link href="/css/159cai.css"  rel="stylesheet" type="text/css" />
+<link href="/css/new159cai.css" rel="stylesheet" type="text/css" />
+<link href="/css/cai888.css" rel="stylesheet" type="text/css" />
 <script type="text/javascript" src="/public/jq2.js"></script>
 <script type="text/javascript" src="/public/jq.js"></script>
 <script type="text/javascript" src="/public/menu.js"></script>
@@ -13,33 +14,34 @@
 <script type="text/javascript" src="/public/chklogin.js"></script>
 <script type="text/javascript" src="/game/js/hsc.js"></script>
 </head>
-<body style="background-image:none;">
-<div class="main_tan_yet1">
-<div class="tan_top">
- <div class="tan_top_l">
- </div>
- <div class="tan_top_yet1">
-  <h3>单式上传</h3>
- </div>
- <div class="tan_top_r" onclick="top.Y.closeUrl();">
- <a href="javascript:void(0);"></a>
- </div>
+<body >
+<div style="width:510px" class="caitan">
+<div class="tantop">
+<span>单式上传</span><a onclick="top.Y.closeUrl();"></a>
 </div>
-<div class="tan_mid">
+<div class="caitain">
+<div class="gs_stp">
 <form name="project_form" id="project_form" action="/fupload.phpx" method="post" enctype="multipart/form-data" onsubmit="return checkform()" >
- <div class="gs_tp">
 <p><input name="upfile" id="upfile" type="file" />您发起方案为：<font id="beishu">1</font>倍，共<font id="allmoney">0</font>元<br /><br />
-1、请严格参照"<a href="javascript:void(0);" id="bzgs">标准格式样本</a>"格式上传方案。<br />
-2、文件格式必须是文本文件。<br />
+1、请严格参照"<a href="javascript:void(0);" >标准格式样本</a>"格式上传方案。<br />
+2、文件格式必须是文本文件。<br>
 3、由于上传的文件较大，会导致上传时间及在本页停留时间较长，请耐心等待。</p>
-<a class="a_smsuc" href="javascript:void(0);" title="确认上传" id="hsc">确认上传</a>
+</div>
+<a href="javascript:void(0);" title="确认上传" id="hsc" class="btn">确认上传</a>
 </div>
 <input name="ishsc" id="ishsc" type="hidden" value="1" /><!--上传-->
 <input name="gid" id="gid" type="hidden" value="" /><!--彩种-->
 <input name="hid" id="hid" type="hidden" value="" /><!--方案Id--> 
 </form>
-</div>
-</div>
+<div class="caitanbm">
+<div class="caitanbm1"></div>
+<div class="caitanbm2"></div>
+</div></div>
+
+
+
+
+
 <!--弹框提示-->
 <div class="main_tan_yet" id="info_dlg" style="display:none;">
 <div class="tan_top">

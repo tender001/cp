@@ -4,7 +4,7 @@ Class('Loginer', {// 登陆器
         var Y = this;
         this.loginDlg = this.lib.MaskLay('#loginLay');// 登陆框
         this.loginDlg.addClose('#flclose','#fclosebtn');// 关闭元素
-        this.get('#loginLay div.tan_top').drag('#loginLay');
+        this.get('#loginLay div.logtop').drag('#loginLay');
         this.loginDlg.esc = true;
         this.userMoneys = '#userMoneyInfo,#userMoneyInfo2,#userMoneyInfo3,#userBuyMoneyInfo,#cp_checklogin';// 用户信息显示面板
         this.userBuyMoneys = '#userBuyMoneyInfo,#userBuyMoneyInfo1';// 用户信息显示面板
@@ -135,12 +135,12 @@ Class('Loginer', {// 登陆器
         this.user = this.need('#uid');
         this.pwd = this.need('#pwd');
         this.errorTip1 = this.get('#error_user');
-        this.errorTip2 = this.get('#error_pass');
+//        this.errorTip1 = this.get('#error_pass');
 
         // passport callback
         window.acceptLoginMsg = function (err){
             if (err) {
-                Y.errorTip2.html(err).show();
+                Y.errorTip1.html(err).show();
                 Y.user.one().select();
             }else{
                 Y.showUserInfo();
@@ -165,8 +165,8 @@ Class('Loginer', {// 登陆器
         });
 
 
- 		this.user.focus(function(){Y.errorTip1.hide();});
- 		this.pwd.focus(function(){Y.errorTip2.hide();});
+ 		this.user.focus(function(){Y.errorTip1.html("&nbsp;")});
+ 		this.pwd.focus(function(){Y.errorTip1.html("&nbsp;")});
  		this.user.keydown(enter);
  		this.pwd.keydown(enter);
         
@@ -201,8 +201,8 @@ Class('Loginer', {// 登陆器
         this.loginDlg.onclose = function (){
             Y.user.val('');
             Y.pwd.val('');
-            Y.errorTip1.hide();
-            Y.errorTip2.hide();
+            Y.errorTip1.html("&nbsp;")
+            Y.errorTip1.html("&nbsp;")
         };
     },
     
@@ -241,14 +241,14 @@ Class('Loginer', {// 登陆器
     },
     doLogin: function (){// 提交表单
        var Y = this;
-       this.errorTip1.hide();
-       this.errorTip2.hide();
+       this.errorTip1.html("&nbsp;")
+       this.errorTip1.html("&nbsp;")
         if(this.user.val() == ""){
             this.errorTip1.html("请输入用户名").show();
             this.user.one().focus();
             return false;
         } else if(this.pwd.val() == ""){
-            this.errorTip2.html("请输入密码").show();
+            this.errorTip1.html("请输入密码").show();
             this.pwd.one().focus();
             return false;
         } else {
@@ -268,7 +268,7 @@ Class('Loginer', {// 登陆器
                 		if(code=="1010"){
                 			Y.errorTip1.html(desc).show();
                 		}else{
-                			Y.errorTip2.html(desc).show();
+                			Y.errorTip1.html(desc).show();
                 		}
                 	}                 
                 }
@@ -345,10 +345,10 @@ Class('Loginer', {// 登陆器
 				                     });
 		                     }
                              if(r.isagent=="1" && (r.vlevel>0)){
-                            	 this.get("#tuiguang").show();
-                            	 this.get("#parent").show();
-                            	 this.get("#myfanli").show();
-                            	 this.get("#fzurl").click(function(){	
+                            	 $("#tuiguang").show();
+                            	 $("#parent").show();
+                            	 $("#myfanli").show();
+                            	 Y.get("#fzurl").click(function(){	
  	        							copyurl('http://www.159cai.com/from.phpx?comeFrom='+u.items.cagentid);
  	        						}
  	        					);
@@ -363,7 +363,7 @@ Class('Loginer', {// 登陆器
 					   }      
                  Y.user.val('');
                  Y.pwd.val('');
-                 $("#cp_checklogin").html(cpshowText);
+                 Y.get("#cp_checklogin").html(cpshowText);
               }
           }
         });
@@ -616,18 +616,18 @@ Class({
         }
         _alert = this.lib.MaskLay('#yclass_alert', '#yclass_alert_content');
         _alert.addClose('#yclass_alert_close', '#yclass_alert_ok','#yclass_confirm_11');
-        this.get('#yclass_alert  div.tan_top').drag('#yclass_alert');
+        this.get('#yclass_alert  div.tantop').drag('#yclass_alert');
         
         _confirm = this.lib.MaskLay('#yclass_confirm', '#yclass_confirm_content', '#yclass_confirm_title');
         _confirm.addClose('#yclass_confirm_close', '#yclass_confirm_no', '#yclass_confirm_ok');
-        this.get('#yclass_confirm div.tan_top').drag('#yclass_confirm');
+        this.get('#yclass_confirm div.tantop').drag('#yclass_confirm');
         
         if (this.get('#example_stand').size() == 0) {
         	this.createHtml();
         }
         _example =  this.lib.MaskLay('#example_stand','#example_list');
         _example.addClose('#example_close','#example_ok');
-        this.get('#example_stand div.tips_title').drag('#example_stand');
+//        this.get('#example_stand div.tips_title').drag('#example_stand');
         
         _open = this.lib.MaskLay();
         _open2 = this.lib.MaskLay('',1001);
@@ -703,38 +703,35 @@ Class({
         });
     },
     createHtml: function (){
-    	var dlgHTML = '<div class="main_tan_yet" id="yclass_alert" style="display:none;">'
-    				+'<div class="tan_top">'
-    				+'<div class="tan_top_l">'
-    				+'</div>'
-    				+'<div class="tan_top_yet">'
-    				+'<h3>温馨提示</h3>'
-    				+'</div>'
-    				+'<div class="tan_top_r" id="yclass_alert_close">'
-    				+'<a href="#"></a>'
-    				+'</div>'
-    				+'</div>'
-    				+'<div class="tan_mid">'
-    				+'<span class="suc_reg" id="yclass_alert_content"></span>'
-    				+'<a href="javascript:void(0);" class="t_a_qc" id="yclass_alert_ok" style="display:block;"><b>确认</b></a>'
-    				+'</div>'
-    				+'</div>'
-    				+'<div class="main_tan_yet" id="yclass_confirm" style="display:none;">'
-    				+'<div class="tan_top">'
-    				+'<div class="tan_top_l">'
-    				+'</div>'
-    				+'<div class="tan_top_yet">'
-    				+'<h3 id="yclass_confirm_title">温馨提示</h3>'
-    				+'</div>'
-    				+'<div class="tan_top_r" id="yclass_confirm_close">'
-    				+'<a href="#"></a>'
-    				+'</div>'
-    				+'</div>'
-    				+'<div class="tan_mid">'
-    				+'<p class="qq_say" id="yclass_confirm_content">&nbsp;</p>'
-    				+'<a href="javascript:void(0);" id="yclass_confirm_no" class="t_a_qx">取消</a><a href="javascript:void(0);" id="yclass_confirm_ok" class="t_a_qd">确定</a>'
-    				+'</div>'
-    				+'</div>'
+
+    	var dlgHTML = '<div style="width:500px;display:none;" class="caitan" id="yclass_alert">'
+		    		+'<div class="tantop">'
+		    		+'<span>温馨提示</span><a id="yclass_alert_close"></a>'
+		    		+'</div>'
+		    		+'<div class="caitain">'
+		    		+' <p class="pzong" id="yclass_alert_content"></p>'
+		    		+'<span id="yclass_alert_ok"><a class="btn" >确认</a></span>'
+		    		+'</div>'
+		    		+'<div class="caitanbm">'
+		    		+'<div class="caitanbm1"></div>'
+		    		+'<div class="caitanbm2"></div>'
+		    		+'</div></div>'
+		    		
+		    		
+		    		 +'<div style="width:500px;display:none;" class="caitan" id="yclass_confirm" >'
+		    		+'<div class="tantop">'
+		    		+'<span id="yclass_confirm_title">温馨提示</span><a id="yclass_confirm_close"></a>'
+		    		+'</div>'
+		    		+'<div class="caitain">'
+		    		+' <p class="pzong" id="yclass_confirm_content"></p>'
+		    		+'<div class="tandiva"><a id="yclass_confirm_no" class="a1">取消</a><a id="yclass_confirm_ok" class="btn">确认</a></div>'
+		    		+'</div>'
+		    		+'<div class="caitanbm">'
+		    		+'<div class="caitanbm1"></div>'
+		    		+'<div class="caitanbm2"></div>'
+		    		+'</div></div>'
+		    		
+
 		    	 	+'<div style="display:none;" id="open_iframe">'+
 		    	    +' <div id="open_iframe_content"></div>'+
 		    	    +'</div>'

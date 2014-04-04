@@ -250,8 +250,8 @@ Class( 'BuyFormsuc', {
 
 		//创建一个公共弹窗, 使用msg_show_dlg进行调用
 		this.infoLay = this.lib.MaskLay('#defLay', '#defConent');
-		this.infoLay.addClose('#defCloseBtn', '#defTopClose a');
-		this.get('#defLay div.tan_top').drag(this.get('#defLay'));
+		this.infoLay.addClose('#defCloseBtn', '#defTopClose');
+		this.get('#defLay div.tantop').drag(this.get('#defLay'));
 
 		// 提供弹窗服务
 		this.onMsg('msg_show_dlg', function (msg, fn, forbid_close) {

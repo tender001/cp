@@ -1,5 +1,16 @@
-$(function(){
+	Y.use('mask', function(){
 	var act=location.search.getParam('act');
+	var mobilehep =  Y.lib.MaskLay('#mobilehep');
+	mobilehep.addClose('#mobileclose');
+	Y.get('#mobilehep .tantop').drag('#mobilehep');
+	
+	var emailhelp =  Y.lib.MaskLay('#emailhelp');
+	emailhelp.addClose('#emailclose');
+	Y.get('#emailhelp .tantop').drag('#emailhelp');
+	
+	var mibaohelp =  Y.lib.MaskLay('#mibaohelp');
+	mibaohelp.addClose('#mibaoclose');
+	Y.get('#mibaohelp .tantop').drag('#mobilehep');
 	if ($.trim(act)=="verifyemail"){
 		$('#step_1').hide();
 		var username=location.search.getParam('username');
@@ -9,6 +20,7 @@ $(function(){
 			return false;
 		}
 		var data ="flag=0&uid=" + encodeURIComponent(username)+ "&yzm=" + $.trim(vcode)+ "&rnd=" + Math.random();
+		$("div.regline div").addClass("div4");
 		Y.ajax({
 			url : "/phpu/usergetpwdyz.phpx",
 			type : "POST",
@@ -20,10 +32,12 @@ $(function(){
 				if (code == "0") {	
 					var r= obj.Resp.row;
 					var pass = r.pass;
+					
 					showStepSuc('#email_msg',$.trim(username),pass,false);
 				} else {
 					showCommonMsg('#step_1','链接地址失效。','该地址已过有效期，或者您已经成功修改了密码！');
 				}			
+				$('[mark=username]').html($.trim(username));
 			},
 			error : function() {
 				showCommonMsg('#step_1','请求地址无效。','请重新申请验证地址！');
@@ -36,11 +50,19 @@ $(function(){
 	$("#btn_back2").click(function(){
 		$("#layer_err1").hide();
 	});
-	
+	$("#username,#mobile,#vcode,#email,#answer,#question").click(function(){
+		$("[mark=err_info]").html("&nbsp;")
+	})
 	$("#mobile_again").click(function(){
 		checkMobileForm();
 	});
-	
+	$("#pwbhelp").click(function(){
+			var getpwd_help =  Y.lib.MaskLay('#getpwd_help');
+			getpwd_help.addClose('#getpwd_close');
+			Y.get('#getpwd_help .tantop').drag('#getpwd_help');
+			getpwd_help.pop();
+
+	})
 	$("#btn_tj").click(function(){
 		checkUserForm();
 	});
@@ -48,7 +70,9 @@ $(function(){
 	$("#mobile_btn").click(function(){
 		checkMobileVCode();
 	});
-	
+	$('#load_mail').click(function (){
+	 		changehref(this);
+ 	}); 	
 	$("#btn_tj_email").click(function(){
 		checkEmailForm();
 	});
@@ -72,6 +96,8 @@ $(function(){
 						$('#username_err').html("用户名不存在");
 						$('#username_err').show();
 					} else {
+						$("div.regline div").addClass("div3")
+						emailhelp.close();
 						showStep2("#step_1");
 					}			
 				},
@@ -102,7 +128,7 @@ $(function(){
 					var mailbind = r.mailbind;
 					var mobbind = r.mobbind;
 					
-					$('.red').each(function(){
+					$('[mark=username]').each(function(){
 						this.innerHTML = $.trim($("#username").val());
 					});
 
@@ -110,23 +136,38 @@ $(function(){
 						$('#getway1 > p').html('<strong>已绑定</strong><br />（可以使用）');
 						$("#m1").hide();
 						$("#m2").show();
-						$("#mobile_openBtn").click(showStep3Mobile);
+//						$("#mobile_openBtn").click(showStep3Mobile);
+						$("#mobile_openBtn").click(function(){
+							
+								mobilehep.pop();
+
+						})
+						
 					}
 
 					if(mailbind==1){
 						$('#getway2 > p').html('<strong>已绑定</strong><br />（可以使用）');
 						$("#e1").hide();
 						$("#e2").show();
-						$("#email_openBtn").click(showStep3Email);
+//						$("#email_openBtn").click(showStep3Email);
+						$("#email_openBtn").click(function(){
+						
+							emailhelp.pop();
+
+					})
 					}
 
 					if(isprot==0){
 						$('#getway3 > p').html('<strong>已开通</strong><br />（可以使用）');
 						$("#p1").hide();
 						$("#p2").show();
+					
 						$("#protect_openBtn").click(function(){
-							showStep3Protect();
-						});
+							
+							mibaohelp.pop();
+//							showStep3Protect();
+
+					})
 					}
 
 					$(from).fadeOut(200,function()
@@ -167,11 +208,14 @@ $(function(){
 					var code = d.Resp.code;
 					var desc = d.Resp.desc;
 					if (code == "0") {	
-						showCommonMsg('#layer_email1','请查收邮件', '邮件已发送到：'+$.trim($("#email").val()));
+						$("div.regline div").addClass("div4");
+						emailhelp.close();
+						showCommonMsg('#layer_email1','请查收邮件', $.trim($("#email").val()));
 					} else {
 						$('#err_info2').html(desc);
 						$('#err_info2').show();
-					}			
+					}	
+					
 				},
 				error : function() {
 					alert("您所请求的页面有异常！");
@@ -189,10 +233,12 @@ $(function(){
 	function checkProtectForm(){
 		var question = $('#question').attr('value');
 		var answer = $('#answer').attr('value');
+	
 		if(question==''){
-			$('#err_info5').html('请选择密保问题');
-			$('#err_info5').show();
+			$('#err_info6').html('请选择密保问题');
+			$('#err_info6').show();
 			return false;
+			
 		}
 		if(answer==''){
 			$('#err_info6').html('请填写密保答案');
@@ -209,9 +255,12 @@ $(function(){
 				success : function(d) {
 					var code = d.Resp.code;
 					var desc = d.Resp.desc;
+					
 					if (code == "0") {
 						var r= d.Resp.row;
 						var pass = r.pass;
+						mibaohelp.close();
+						$("div.regline div").addClass("div4")
 						showStepSuc('#layer_protect1',$.trim($("#username").val()),pass,true);
 					} else {
 						$('#err_info6').html(desc);
@@ -234,8 +283,8 @@ $(function(){
 		$("#mobile_again").attr("disabled", false);
 		var mobile = $('#mobile').attr('value');
 		if(mobile=='' || mobile==undefined){
-			$('#err_info1').html('请填写手机号码');
-			$('#err_info1').show();
+			$('#err_info3').html('请填写手机号码');
+			$('#err_info3').show();
 			return false;
 		}
 		if(mobile>''){
@@ -249,11 +298,12 @@ $(function(){
 					var code = d.Resp.code;
 					var desc = d.Resp.desc;
 					if (code == "0") {
+						$("div.regline div").addClass("div4");
 						$("#mobile_again").attr("disabled", true);
 						showMobileMsg($.trim($("#mobile").val()));
 					} else {
-						$('#err_info1').html(desc);
-						$('#err_info1').show();
+						$('#err_info3').html(desc);
+						$('#err_info3').show();
 						//showErrInfo(desc,'#layer_mobile1','mobile');
 					}			
 				},
@@ -292,11 +342,13 @@ $(function(){
 					if (code == "0") {	
 						var r= d.Resp.row;
 						var pass = r.pass;
-						showStepSuc('#layer_mobile1',$.trim($("#username").val()),pass,false);
+						mobilehep.close();
+						showStepSuc('#mobilehep',$.trim($("#username").val()),pass,false);
 					} else {
 						$('#err_info3').html(desc);
 						$('#err_info3').show();
 					}			
+					
 				},
 				error : function() {
 					alert("您所请求的页面有异常！");
@@ -307,9 +359,9 @@ $(function(){
 	}
 
 	function showStepSuc(from,name,pwd,fadein){
-		$('.red').each(function(){
-			this.innerHTML = name;
-		});
+		
+		
+		
 		$('#newpwd').html(pwd);
 		$('#step_1').hide();
 		$('#step_2').hide();
@@ -335,15 +387,88 @@ $(function(){
 	}
 
 });
+	var changehref = function(obj) {
+		obj.href = ""+alertEmail.getEmailHttp($("#email").val());
+		return true;
+	};
 
+	var alertEmail = {
+		getEmailHttp : function(email) {
+			var emailType = email.substring(email.indexOf('@') + 1), emailUrl = '', html = '';
+			emailType = emailType.toLowerCase();
+			switch (emailType) {
+			case 'qq.com':
+			case 'vip.qq.com':
+			case 'foxmail.com':
+				emailUrl = 'http://mail.qq.com/';
+				break;
+			case '163.com':
+			case '126.com':
+			case 'yeah.net':
+			case 'vip.163.com':
+			case '188.com':
+				emailUrl = 'http://email.163.com/';
+				break;
+			case 'tom.com':
+				emailUrl = 'http://mail.tom.com/';
+				break;
+			case 'sina.com':
+			case 'vip.sina.com':
+			case 'sina.com.cn':
+				emailUrl = 'http://mail.sina.com.cn/';
+				break;
+			case 'sohu.com':
+			case 'souhu.com':
+			case 'vip.sohu.com':
+				emailUrl = 'http://mail.sohu.com/';
+				break;
+			case '139.com':
+			case '136.com':
+				emailUrl = 'http://mail.10086.cn/';
+				break;
+			case 'gmail.com':
+				emailUrl = 'http://www.gmail.com/';
+				break;
+			case 'hotmail.com':
+			case 'msn.com':
+			case 'live.cn':
+			case 'live.com':
+			case 'msn.cn':
+			case 'hotmail.com.cn':
+				emailUrl = 'https://login.live.com/';
+				break;
+			case 'yahoo.com.cn':
+			case 'yahoo.cn':
+			case 'yahoo.com':
+				emailUrl = 'http://mail.cn.yahoo.com/';
+				break;
+			case '21cn.com':
+			case '21cn.net':
+				emailUrl = 'http://mail.21cn.com/';
+				break;
+			case 'sogou.com':
+				emailUrl = 'http://mail.sogou.com/';
+				break;
+			case '189.cn':
+				emailUrl = 'http://www.189.cn/';
+				break;
+			case 'eyou.com':
+				emailUrl = 'http://www.eyou.com/';
+				break;
+			default:
+				emailUrl = 'http://www.' + emailType + '/';
+			}
+			return emailUrl;
+		}
+	};
 var Timer=function(num) { 
 	var wait = 30; //设置秒数(单位秒) 
 	var secs = 0;
 	 if(num==wait)  { 
-	  $("#mobile_again").val("重新发送");
+	  $("#mobile_again").html("重新发送");
 	  $("#mobile_again").attr("disabled", false);
 	 }else{ 
 	  secs=wait-num; 
-	  $("#mobile_again").val("重新发送 "+secs);
+	  $("#mobile_again").html("重新发送 "+secs);
 	 } 
 };

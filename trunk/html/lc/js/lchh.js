@@ -918,11 +918,12 @@ Class('Main', {
 				url:"/cpdata/omi/jclq/odds/odds.xml",
         		end:function(data,i){
                      this.qXml('//row', data.xml, function (u, i){
-                    	 Y.get("#mn"+u.items.xid).attr("href","http://info.159cai.com/index.php?controller=lqmain&lid="+u.items.lid+"&sid="+u.items.sid);
-                    	 Y.get("#hn"+u.items.xid).attr("href","http://info.159cai.com/index.php?controller=lqteam&action=index&sid=1&tid="+u.items.htid);
-                    	 Y.get("#gn"+u.items.xid).attr("href","http://info.159cai.com/index.php?controller=lqteam&action=index&sid=1&tid="+u.items.gtid);
-                    	 Y.get("#ox"+u.items.xid).attr("href","http://info.159cai.com/index.php?controller=fenxi&mid="+u.items.mid);
-                    	 Y.get("#oz"+u.items.xid).attr("href","http://info.159cai.com/index.php?controller=lqeodds&mid="+u.items.mid);
+                    	
+                    	 Y.get("#mn"+u.items.xid).attr("href","http://info.159cai.com/leagueb/index/"+u.items.lid);
+         				Y.get("#gn"+u.items.xid).attr("href","http://info.159cai.com/teamb/index/"+u.items.htid);
+                     	 Y.get("#hn"+u.items.xid).attr("href","http://info.159cai.com/teamb/index/"+u.items.gtid);
+                     	 Y.get("#ox"+u.items.xid).attr("href","http://odds.159cai.com/bmatch/analysis/"+u.items.mid);
+                     	 Y.get("#oz"+u.items.xid).attr("href","http://odds.159cai.com/bmatch/odds/"+u.items.mid);
             			 if(u.items.oa!=""){Y.get("#oh"+u.items.xid).html(parseFloat(u.items.oa).rmb(false,2));}
             			 if(u.items.oh!=""){Y.get("#oa"+u.items.xid).html(parseFloat(u.items.oh).rmb(false,2));}
                      });                     

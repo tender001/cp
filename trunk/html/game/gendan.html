@@ -3,7 +3,8 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>设置自动跟单_ 159彩票网</title>
-<link href="/css/159cai.css"  rel="stylesheet" type="text/css" />
+<link href="/css/new159cai.css" rel="stylesheet" type="text/css" />
+<link href="/css/cai888.css" rel="stylesheet" type="text/css" />
 <script type="text/javascript" src="/public/jq2.js"></script>
 <script type="text/javascript" src="/public/jq.js"></script>
 <script type="text/javascript" src="/public/menu.js"></script>
@@ -12,84 +13,95 @@
 <script type="text/javascript" src="/game/js/gendan.js"></script>
 </head>
 <body>
-
-<div class="main_tan_atdz">
-<div class="tan_top">
- <div class="tan_top_l">
- </div>
- <div class="tan_top_ad">
-  <h3>自动跟单定制</h3>
- </div>
- <div class="tan_top_r" onclick="parent.Y.closeUrl();">
- <a href="#"></a>
- </div>
+<div style="width:630px" class="caitan">
+<div class="tantop">
+<span >定制 <strong>破阵明王</strong> 双色球的自动跟单</span><a onclick="parent.Y.closeUrl();"></a>
 </div>
-<div class="tan_mid">
- <div class="ad_top">
-  <div class="ad_top_1">
+<div class="caitain">
+<div class="dztktop">
    <table width="100%" border="0">
    <colgroup>
-   <col width="200" />
-   <col width="150" />
-   <col/>
+   <col width="170">
+   <col width="120">
+   <col width="150">
+   <col>
    </colgroup>
-  <tr>
-    <td class="r_tb"><strong>用户名：</strong><a id="owner" href="javascript:void(0);"></a></td>
-    <td><span>战绩:</span><a id="zhanji" href="javascript:void(0);"></a></td>
-    <td></td>
+  <tbody><tr>
+    <td><span class="titspan" id="owner"></span><span id="zhanji" ></span></td>
+    <td><strong>彩种：</strong><s id="lotname"></s></td>
+    <td><strong>定制人数：</strong><font id="d_allrs"></font>人</td>
+    <td><strong>跟单总金额:</strong><font  id="d_allnum"></font>元</td>
   </tr>
-  <tr>
-    <td><strong>彩种：</strong><a id="lotname" href="javascript:void(0);"></a></td>
-    <td><strong>定制人数：</strong><font id="d_allrs">10</font>人</td>
-    <td><strong>跟单总金额:</strong><font id="d_allnum">450</font>元</td>
-  </tr>
-</table>
+</tbody></table>
   </div>
-  <div class="ad_top_2">
-   <ul><li class="cur" onclick="jeselect();" id="aje">按固定金额自动跟单</li><li onclick="blselect();" id="abl">按百分比自动跟单</li></ul>
-  </div>
- </div>
- <div class="ad_mab">
- <div class="tb_q">
-<table width="100%" border="0">
-  <tr id="je1">
-    <th>每次认购金额</th>
-    <td><input class="x_it" name="bmoney" id="bmoney" type="text" value="20" maxLength="6" onafterpaste="this.value=this.value.replace(/\D/g,'')" onkeyup="this.value=this.value.replace(/\D/g,'');if(this.value==0){this.value='';};" /><span>元</span></td>
+<div class="ad_mab addz_mab">
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tbody>
+  <tr>
+    <th>自动更单方式：</th>
+    <td class="box"><label><input type="radio" onclick="jeselect();" id="aje" name="gendan" checked="checked" >按固定金额</label><label><input type="radio" name="gendan" onclick="blselect();" id="abl">按百分比</label></td>
   </tr>
-  <tr id="je2">
-    <th>&nbsp;</th>
-    <td><p>进行自动认购时，您的账户余额不能低于每次认购金额</p></td>
+  </tbody>
+  </table>
+</div>
+<div class="ad_mab">
+ <div  class="tb_q">
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<!--   <tr id="je1"> -->
+<!--     <th>每次认购金额</th> -->
+<!--     <td><input class="x_it" name="bmoney" id="bmoney" type="text" value="20" maxLength="6" onafterpaste="this.value=this.value.replace(/\D/g,'')" onkeyup="this.value=this.value.replace(/\D/g,'');if(this.value==0){this.value='';};" /><span>元</span></td> -->
+<!--   </tr> -->
+ <tr id="je1">
+    <th>每次认购金额：</th>
+    <td><span class="s1"><input type="text" class="text" id="bmoney"  value="20" maxLength="6" onafterpaste="this.value=this.value.replace(/\D/g,'')" onkeyup="this.value=this.value.replace(/\D/g,'');if(this.value==0){this.value='';};" /></span><span>元</span>
+    <span class="spzhu">注：进行自动认购时，您的账户余额不能低于每次认购金额</span></td>
   </tr>
+
+  
+
   <tr id="bl1" style="display:none;">
-    <th>每次认购比例</th>
-    <td><input class="x_it" name="blnum" id="blnum" type="text" value="5" maxLength="2" onafterpaste="this.value=this.value.replace(/\D/g,'')" onkeyup="this.value=this.value.replace(/\D/g,'');if(this.value==0){this.value='';};" />%</span><span>最低认购比例为%</td>
+    <th>每次认购比例：</th>
+    <td><span class="s1"><input class="text"  id="blnum" type="text" value="5" maxLength="2" onafterpaste="this.value=this.value.replace(/\D/g,'')" onkeyup="this.value=this.value.replace(/\D/g,'');if(this.value==0){this.value='';};" /></span><span>%最低认购比例为%</span></td>
   </tr>
   <tr id="bl2" style="display:none;">
-    <th>&nbsp;</th>
-    <td><p>[注]每次认购金额=方案金额*每次认购比例，每次认购金额按四舍五入取整，如果是奇数则减1。</p></td>
+    <th style="padding:0">&nbsp;</th>
+    <td class="box"><span style="line-height:18px" class="spzhu">注：每次认购金额=方案金额*每次认购比例，每次认购金额按<br>
+四舍五入取整，如果是奇数则减1。</span></td>
   </tr>
+
+        <tr>
+    <th>方案金额不足是否认购：</th>
+    <td class="box"><label><input id="rg1" name="rg" type="radio" value="1" checked="checked" />是</label><label><input  id="rg0"  name="rg" type="radio" value="0"/>否</label><span class="spzhu">注：此方案剩余余额少于您定制的“认购金额”，是否认购</span></td>
+  </tr>
+
+
+
   <tr>
-    <th>方案金额不足是否认购</th>
-    <td  class="box"><input name="rg" id="rg1" type="radio" value="1" checked="checked" style="margin-left:0" />是 <input name="rg" id="rg0" type="radio" value="0"/>否</td>
+    <th>对认购方案的金额不做限制：</th>
+    <td class="box"><label><input name="ra" id="ra0" type="radio" value="0" checked onclick="minm.disabled=maxm.disabled=this.checked" />是</label>
+    <label><input name="ra" id="ra1" type="radio" value="1" onclick="minm.disabled=maxm.disabled=!this.checked"/>否</label><span>我要限制</span>
+    <input type="text" class="text" size=5 id="minm" disabled  onafterpaste="this.value=this.value.replace(/\D/g,'')" onkeyup="this.value=this.value.replace(/\D/g,'');if(this.value==0){this.value='';};"/><span>到</span>
+    <input size=5 id="maxm" type="text"  class="text" disabled onafterpaste="this.value=this.value.replace(/\D/g,'')" onkeyup="this.value=this.value.replace(/\D/g,'');if(this.value==0){this.value='';};"/><span>元的方案</span></td>
   </tr>
-  <tr>
-    <th>&nbsp;</th>
-    <td><p>[注]此方案剩余余额小于您定制的“认购金额”，是否认购。</p></td>
-  </tr>
-  <tr>
-    <th>对认购的方案金额不做限制</th>
-    <td class="box"><input name="ra" id="ra0" type="radio" value="0" checked onclick="minm.disabled=maxm.disabled=this.checked" />是 <input name="ra" id="ra1" type="radio" value="1" onclick="minm.disabled=maxm.disabled=!this.checked"/>否,我要限制 
-<input  name="minm" size=5 id="minm" type="text" class="text" disabled  onafterpaste="this.value=this.value.replace(/\D/g,'')" onkeyup="this.value=this.value.replace(/\D/g,'');if(this.value==0){this.value='';};"/>到<input name="maxm" size=5 id="maxm" type="text"  class="text" disabled onafterpaste="this.value=this.value.replace(/\D/g,'')" onkeyup="this.value=this.value.replace(/\D/g,'');if(this.value==0){this.value='';};"/>元的方案</td>
-  </tr>
+
   <tr>
     <th></th>
     <td><a id="btnAuto" href="javascript:void(0);" class="but">立即定制</a></td>
-  </tr>
-</table>
+  </tr></table>
+
+  </div>
+
+   
+ </div>
 </div>
-</div>
-</div>
-</div>
+<div class="caitanbm">
+<div class="caitanbm1"></div>
+<div class="caitanbm2"></div>
+</div></div>
+
+
+
+
 <input name="ty" id="ty" type="hidden" value="0" /><!--类型-->
 </body>
 </html>

@@ -58,7 +58,7 @@ div{zoom:1}
 .jindu .percentage .fq{ background:#ff6600; margin:0; float:left; position:absolute; top:0; left:0; z-index:2;}
 .jindu .percentage .baodi{ background:#FFB548; margin:0; float:right; position:absolute; top:0; right:0; z-index:1;}
 .jindu .percentage .liubiao{ background:#756a69; margin:0; float:left;}
-.jindu .jd_tip_right{ overflow:visible;position:absolute;bottom:55px; left:0; height:16px;border:solid 2px #ff6600; border-top:none; border-bottom:none; line-height:16px; background:#ff6600; color:#fff;_width:expression(this.scrollWidth > 180 ? "180px" : true); max-width:180px;}
+.jindu .jd_tip_right{ overflow:visible;position:absolute;bottom:55px; left:0; height:16px;border:solid 2px #ff6600; border-top:none; border-bottom:none; line-height:16px; background:#ff6600; color:#fff;_width:expression(this.scrollWidth > 250 ? "250px" : true); max-width:250px;}
 .jindu  i{ width:6px; height:6px; display:block; position:absolute; bottom:-6px;_bottom:-15px;left:-2px; background:url(../images/cai888/bj67.gif) no-repeat;}
 .jd_b_font{clear: both;}
 .jd_b_font p{color: #555;float: left;font-family: Arial,Helvetica,sans-serif;font-size: 12px;line-height: 24px;text-align: left;}
@@ -486,7 +486,7 @@ a.czbtn{display:block;height:32px;width:98px;line-height:32px;text-align:center;
 .ad_nav a:hover{color:#ff3300; text-decoration:underline}
 .getword{width:940px;margin:0 auto;padding:30px 0 100px 10px}
 .getword h2{border-bottom:1px solid #ddd;height:40px;line-height:40px;font-size:18px;font-family:"微软雅黑";color:#444}
-.getwtb{padding:47px 0 0 75px}
+.getwtb{padding:47px 0 0 180px}
 .getwtb td{height:30px;line-height:30px;color:#333;font-size:14px;text-align:right}
 .getwtb td.tdred{height:22px;line-height:22px;text-align:left;color:#ff0000;font-size:12px;}
 .getwtb input.text1{width:245px;height:30px;background: url(../images/cai888/getw_07.jpg) 0 0px no-repeat transparent;display:block;float:left;border:none;padding:8px 0 0 3px\9;height:22px\9;font-size:14px;color:#444;border-right:1px solid #ddd}
@@ -494,6 +494,7 @@ a.czbtn{display:block;height:32px;width:98px;line-height:32px;text-align:center;
 .getwtb a.a1{color:#555;font-size:12px;margin-left:15px;float:left}
 .getwtb a.a1:hover{color:#ff6600; text-decoration:underline}
 .getwtb a.btn{color:#fff;font-size:14px;width:103px;height:34px;display:block;text-align:Center;line-height:34px;font-family:"微软雅黑";background: url(../images/cai888/getw_10.jpg) ;margin-top:20px;float:left}
+/*弹框css 
 .tantop{height:38px;line-height:36px;background: url(../images/cai888/getwtan_03.jpg)}
 .tantop span{float:left;color:#fff;font-size:18px;font-family:"微软雅黑";padding-left:10px;}
 .tantop strong{color:#fff;font-size:18px;font-family:"微软雅黑";padding:0 3px;}
@@ -522,7 +523,7 @@ a.a_inner{width:166px;height:128px;display:block;margin:4px auto 0}
 .caitanbm{ background: url(../images/cai888/btm2.gif);height:27px;}
 .caitanbm1{background: url(../images/cai888/btm1.gif);height:27px;width:176px;float:left}
 .caitanbm2{background: url(../images/cai888/btm3.gif);height:27px;width:176px;float:right}
-.caitanm{ background:#fff}
+.caitanm{background:#fff}
 .caitanm p.p1{line-height:30px;padding:8px 0 2px 22px;color:#333;font-size:14px;font-weight:bold}
 .caitanm td{font-size:14px;line-height:24px;color:#444;text-align:left;padding:5px 0}
 .caitanm select{height:22px;border:1px solid #bbb}
@@ -532,12 +533,12 @@ a.a_inner{width:166px;height:128px;display:block;margin:4px auto 0}
 .caitanm em{font-size:14px;color:#ff6600}
 .caitanm td.td1{color:#ff0000;font-size:12px;line-height:20px;padding:0}
 .caitanm a.a5{height:28px;width:100px;border:1px solid #ddd;background: url(../images/cai888/rgb14.jpg);line-height:28px;text-align:center;color:#145fab;display:block;margin-left:10px;float:left}
-.caitain{}
+.caitain{background:#fff}
 .caitain p.pzong img{margin-right:12px;}
-.caitain p.pzong{margin-right:12px;height:50px;color:#444;font-size:14px;text-align:center;font-size:14px;padding-top:27px}
+.caitain p.pzong{margin-right:12px;height:50px;color:#444;font-size:14px;text-align:center;font-size:14px;padding-top:27px;line-height:50px}
 .caitain a.btn{color:#fff;font-size:14px;width:103px;height:34px;display:block;text-align:Center;line-height:34px;font-family:"微软雅黑";background: url(../images/cai888/getw_10.jpg) ;margin:20px auto 5px}
 .pzong b{display:inline-block;width:44px;height:40px;background: url(../images/cai888/gttb.jpg);margin-right:10px }
-.pzong b.cur{background: url(../images/cai888/gttd.jpg);height:50px;width:59px;}
+.pzong b.cur{background: url(../images/cai888/gttd.jpg);height:40px;width:47px;}
 table.cot{border-left:1px solid #ddd}
 table.cot td{border-bottom:1px solid #ddd;border-right:1px solid #ddd;text-align:center;color:#444;font-size:12px;line-height:16px;padding:8px 0; background:#f5f5f5}
 table.cot td.t_td_c{color:#999;width:135px}
@@ -579,7 +580,7 @@ table.cpmxtab thead td{text-align:center;color:#444;border-right:1px solid #ddd;
 table.cpmxtab td.m{text-align:left;padding:5px 20px}
 table.cpmxtab strong{font-weight:bold;font-size:16px;color:#970701;padding-right:5px}
 table.cpmxtab p{line-height:25px;color:#444;font-size:12px;margin-leolor:#145fab;margin-left:50px;}
-.cptsp{line-height:30px;color:#333;padding-left:20px;}
+.cptsp{line-height:30px;color:#333;padding-left:25px;}
 .cptsp em{color:#ff0000}
 .userp1p{font-size:14px}
 b.jj{display:inline-block;width:19px;height:19px;margin-left:4px; background:url(../images/hm/hm2_07.gif) 0 0 no-repeat;margin-top:5px}
@@ -647,3 +648,4 @@ a.t_a_dz:hover{background-image: url(../images/hm/hmt_05.gif)}
 .zj_mab table font{color:#a91e24; font-family:Arial;font-size:12px}
 .zj_mab table b{margin-left:25px}
 .zj_mab tr.odd td{ background-color:#f5f5f5}
+*/

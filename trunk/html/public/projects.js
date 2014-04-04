@@ -30,7 +30,7 @@ $_sys.getspfsel=function(sel){
 Y.use('mask', function(){
 	var addMoneyDlg =  this.lib.MaskLay('#addMoneyLay');
 	addMoneyDlg.addClose('#addMoneyClose','#addMoneyYes');
-//	Y.get('#addMoneyLay .h2').drag('#addMoneyLay');
+	Y.get('#addMoneyLay div.tantop').drag('#addMoneyLay');
 	Y.extend('addMoney', function(){
 		addMoneyDlg.pop('', function(e, btn){
 			if(btn.id === 'addMoneyYes'){
@@ -45,7 +45,7 @@ Y.use('mask',function(){
 	Y.loading.noMask = true;
 	var billcodediv = Y.lib.MaskLay('#T_Detail');
 	billcodediv.addClose('#close_T_Detail');
-//	Y.get('#T_Detail h2').drag('#T_Detail');
+	Y.get('#T_Detail div.tantop').drag('#T_Detail');
 	Y.extend('billCode', function(){
 		billcodediv.pop('', function(e, btn){
 					
@@ -316,9 +316,7 @@ main_return_confirm = function (){
   					var desc = obj.Resp.desc; 	
 	    			if (code == "0") {
 	    				 Y.alert(desc);
-//            	         setTimeout(function(){
-//            	               location.reload();
-//            	           }, 3000);
+	    				 setTimeout( function(){top.location.reload();},2000);
 	    			}else{
 	                	Y.alert(desc);
 	                }
@@ -633,8 +631,8 @@ var showview = function(lotid,projid){
 //					$(".hm_top_1").next().html(dghtml);
 					
 				}
-				$("#cp_biaoti").html(typeof cdesc == "undefined"?"":cname);
-				$("#cp_miaoshu").html(typeof cname == "undefined"?"":cdesc);
+				$("#cp_biaoti").html(typeof cdesc == "undefined"?"":"方案标题："+cname);
+				$("#cp_miaoshu").html(typeof cname == "undefined"?"":"方案描述："+cdesc);
 				var iscancel=false;
 				if ((nums-lnum+pnum)/nums<0.8){					
 					iscancel=true;
@@ -873,9 +871,9 @@ var showview = function(lotid,projid){
 		
 				var baodistat="";
 				if(onum+pnum==tmoney){
-						baodistat=(pnum!=0 ? (''+pnum+'('+(100-parseInt(onum*100/tmoney))+'%)'+(iclear=='2' ? '已清' : '')) : '无保底');
+						baodistat=jindu+"%"+"+"+(pnum!=0 ? ((100-parseInt(onum*100/tmoney))+'%(保)'+(iclear=='2' ? '&nbsp;&nbsp;已清' : '')) : '&nbsp;无保底');
 					}else{
-						baodistat=(pnum!=0 ? (''+pnum+'('+(parseInt(pnum*100/tmoney))+'%)'+(iclear=='2' ? '已清' : '')) : '无保底');
+						baodistat=jindu+"%"+"+"+(pnum!=0 ? ((parseInt(pnum*100/tmoney))+'%(保)'+(iclear=='2' ? '&nbsp;&nbsp;已清' : '')) : '&nbsp;无保底');
 					}
 				$("#cp_ticheng").html((wrate==0?'无提成':wrate+'%'))
 //				var cp_info =' <tr class="tr1"><td colspan="3">'+$_sys.showzhanjiname(gameid,cnickid,'award')+'</td>'
@@ -931,11 +929,15 @@ var showview = function(lotid,projid){
 							
 						}else{
 //							$("#scfa").html('<s>您的方案未上传请及时上传</s><a href="javascript:void (0);" onclick="Y.openUrl(\'/game/hsc.html?lotid='+gameid+'&projid='+projid+'\',582, 274);" ></a>');
+//							$("a#scfa").click(function(){
+//								var _dsalert = Y.lib.MaskLay('#ds_dlg', '##ds_dlg_close', '#ds_dlg_content');
+//								_dsalert.addClose('#ds_dlg_close');
+////						        Y.get('#ds_dlg .tan_top').drag('#ds_dlg');
+//						        _dsalert.pop();
+//							})
+							
 							$("a#scfa").click(function(){
-								var _dsalert = Y.lib.MaskLay('#ds_dlg', '##ds_dlg_close', '#ds_dlg_content');
-								_dsalert.addClose('#ds_dlg_close');
-//						        Y.get('#ds_dlg .tan_top').drag('#ds_dlg');
-						        _dsalert.pop();
+								Y.openUrl('/game/hsc.html?lotid='+gameid+'&projid='+projid,582, 270);
 							})
 						}
 						
@@ -947,7 +949,11 @@ var showview = function(lotid,projid){
 					prohtml += '<tr><td>1</td><td id="buy_codes"><div class="buy_codes"><div id="max_height">未上传</div></div></td><td>'+fs+'</td><td>'+mulity+'</td><td>'+parseInt(nums/smoney/2)+'</td><td>'+buy_zj+'</td><td>' + adddate + '</td></tr>';
 					if(source==10){
 						
-					}else{
+					}else if(istate==3||istate==4){
+//						if((istate) (lotid==80 ||lotid==81 ||lotid==82 ||lotid==83))
+						$("#cp_infotable").html('<p class="xqtbpa">发起人未上传</p>')
+						$("#buy_info").html(prohtml);
+					}else if(!isself){
 						$("#cp_infotable").html('<p class="xqtbpa">等待发起人上传方案</p>')
 						$("#buy_info").html(prohtml);
 					}
@@ -1042,7 +1048,7 @@ var showview = function(lotid,projid){
 						
 							if(i>9){
 								$("#oshow").show();
-								prohtml +='<tr class="over_ten" style="display:none;"><td>'+(i+1)+'</td><td>'+ccodehtml.split("<br/>")[i]+'</td><td>'+fs+'</td><td>'+mulity+'</td><td>'+rb+'</td></tr>';
+								prohtml +='<tr><td>'+(i+1)+'</td><td>'+ccodehtml.split("<br/>")[i]+'</td><td>'+fs+'</td><td>'+mulity+'</td><td>'+rb+'</td></tr>';
 							}else{
 								if(ccodes.split(';')[0].split(':')[1]==2){
 									prohtml +='<tr><td>'+(i+1)+'</td><td>'+ccodehtml.split("<br/>")[i]+'</td><td>追加</td><td>'+mulity+'</td><td>'+rb+'</td></tr>';
@@ -1237,10 +1243,14 @@ var showview = function(lotid,projid){
 						    var buymoney = Y.one('#permoney').value;      //方案金额
 						});
 						
-					}else if (istate=="2" && bonus ==0 && itype!=0){					
-//						$("p[mark=cp_countDownSpan]").html('<b class="cur">'+((itype == '0')?"代购":"合买")+'成功</b>');
+					}else if (istate=="2" && bonus ==0 ){					
+						if(itype==0){
+							$("#cp_status").html(award ==0?'<div style=""><div class="hm_rpxq"><p class="hmreson"><strong>待开奖</strong><br>('+Y.getDate(castdate).format('MM-DD hh:mm:ss')+')</p> </div></div>':'<div style=""><div class="hm_rpxq"><p class="hmreson"><strong>未中奖</strong><br>('+Y.getDate(awarddate).format('MM-DD hh:mm:ss')+')</p> </div></div>');
+						}else{
+							$("#cp_status").html(award ==0?'<div style=""><div class="hm_rpxq"><p class="hmreson"><strong>已满员</strong><br>('+Y.getDate(castdate).format('MM-DD hh:mm:ss')+')</p> </div></div>':'<div style=""><div class="hm_rpxq"><p class="hmreson"><strong>未中奖</strong><br>('+Y.getDate(awarddate).format('MM-DD hh:mm:ss')+')</p> </div></div>');
+						}
 						$("p[mark=cp_countDownSpan]").html("");
-						$("#cp_status").html(award ==0?'<div style=""><div class="hm_rpxq"><p class="hmreson"><strong>已满员</strong><br>('+Y.getDate(castdate).format('MM-DD hh:mm:ss')+')</p> </div></div>':'<div style=""><div class="hm_rpxq"><p class="hmreson"><strong>未中奖</strong><br>('+Y.getDate(awarddate).format('MM-DD hh:mm:ss')+')</p> </div></div>');
+						
 					}else if (istate=="3" ){ //该方案系统已撤单
 //						$("p[mark=cp_countDownSpan]").html("<b>方案流产</b>");
 						$("p[mark=cp_countDownSpan]").html("");
@@ -2214,7 +2224,7 @@ showduizhen =function (lotid,expect,projid,type,codes,cp){
 					$("#yhdetail").click(function(){
 						var yhalert = Y.lib.MaskLay('#yhinfodiv', '#yhdetailDIV');
 						yhalert.addClose('#yhinfodiv_close');
-						Y.get('#yhinfodiv .tan_top').drag('#yhinfodiv');
+						Y.get('#yhinfodiv .tantop').drag('#yhinfodiv');
 						
 						
 						Y.ajax({
@@ -2348,15 +2358,15 @@ showduizhen =function (lotid,expect,projid,type,codes,cp){
 billcode = function(lotid,projid){
 	$("#detail_reco").html("");
 	var htmlstr = '';
-	htmlstr = '<table width="100%" border="0" cellspacing="0" cellpadding="0">';
-	htmlstr+= '<tr>';
-	htmlstr+= '<td width="10%">序号</td>';
-	htmlstr+= '<td width="10%">玩法</td>';
-	htmlstr+= '<td width="50%">投注内容</td>';
-	htmlstr+= '<td width="10%">过关方式</td>';
-	htmlstr+= '<td width="10%">倍数</td>';
-	htmlstr+= '<td width="10%">奖金</td>';
-	htmlstr+= '</tr>';
+	htmlstr = '<table width="100%" border="0" cellspacing="0" cellpadding="0" class="cpmxtab">';
+	htmlstr+= '<colgroup><col width="68"><col width="68"><col width=""><col width="68"><col width="68"><col width="68"></colgroup><thead><tr>';
+	htmlstr+= '<td >序号</td>';
+	htmlstr+= '<td >玩法</td>';
+	htmlstr+= '<td >投注内容</td>';
+	htmlstr+= '<td >过关方式</td>';
+	htmlstr+= '<td >倍数</td>';
+	htmlstr+= '<td >奖金</td>';
+	htmlstr+= '</tr></thead>';
 	var data = "gid=" + lotid + "&hid="+projid;	
 	Y.ajax({
 		type : 'POST',

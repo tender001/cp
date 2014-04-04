@@ -1418,10 +1418,11 @@ Class('ScrollStill', {
             		end:function(data,i){
             			 var htid =1;
                          this.qXml('//row', data.xml, function (u, i){
-                        	    Y.get("#mn"+u.items.xid).attr("href","http://info.159cai.com/index.php?controller=main&lid="+u.items.lid+"&sid="+u.items.sid+"&cid="+u.items.cid+"&t="+u.items.t);
-                        	    Y.get("#ox"+u.items.xid).attr("href","http://info.159cai.com/index.php?controller=analysis&action=index&mid="+u.items.oddsmid+"&sit=4&lotyid=6");
-                        	    Y.get("#oz"+u.items.xid).attr("href","http://odds.159cai.com/index.php?controller=detail&action=index&mid="+u.items.oddsmid+"&sit=1&lotyid=6");
-                        	    Y.get("#oy"+u.items.xid).attr("href","http://odds.159cai.com/index.php?controller=detail&action=index&mid="+u.items.oddsmid+"&sit=2&lotyid=6");
+                        	 $("#mm"+u.items.xid).attr("href","http://info.159cai.com/league/index/"+u.items.lid);
+                      	   
+                     	 	$("#ox"+u.items.xid).attr("href","http://odds.159cai.com/match/analysis/"+u.items.oddsmid+"?lotyid=6");
+              				$("#oz"+u.items.xid).attr("href","http://odds.159cai.com/match/odds/"+u.items.oddsmid+"?lotyid=6");
+              				$("#oy"+u.items.xid).attr("href","http://odds.159cai.com/match/asia/"+u.items.oddsmid+"?lotyid=6");
                         	    var hm=isNaN(u.items.hm)||u.items.hm==""?"":u.items.hm<10?'0'+u.items.hm:u.items.hm;
 	            				var am=isNaN(u.items.am)||u.items.hm==""?"":u.items.am<10?'0'+u.items.am:u.items.am;
 	            				$("#htid_"+u.items.xid).attr("data",u.items.htid).parent().prev().html(hm==""?"&nbsp;":'['+hm+']');

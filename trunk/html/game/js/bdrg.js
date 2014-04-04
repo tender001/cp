@@ -71,7 +71,7 @@ var baodi = function(){
     if(check() === false){
 	    return;
 	}
-
+  
     Y.alert('您好， 正在提交您的请求，请稍等...');
 	Y.ajax({
 		url : $_trade.url.pb2g,
@@ -84,11 +84,13 @@ var baodi = function(){
         	bnum:baodinum
         },
 		end : function(d) {
+			Y.alert.close();        	
 			var obj = eval("(" + d.text + ")");
 				var code = obj.Resp.code;
 				var desc = obj.Resp.desc; 		
 			if (code == "0") {
-				Y.alert("保底转认购成功");
+				  
+				top.Y.alert("保底转认购成功");
 				setTimeout( function(){top.location.reload();},2000);
 			}else{
             	Y.alert(desc);

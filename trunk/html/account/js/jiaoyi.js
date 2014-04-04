@@ -215,7 +215,7 @@ var showInfo = function(stime,etime,tid,pn,ps,tp,tr) {//页码		页面大小 		�
 						var s=link.split( "\"" )[1];
 						var cl=o%2==0?"":"odd"
 							html += "<tr class="+cl+">";
-						if(ibiztype ==213|| ibiztype ==200|| ibiztype ==104|| ibiztype ==216|| ibiztype ==214){
+						if(ibiztype ==213|| ibiztype ==200|| ibiztype ==104|| ibiztype ==216|| ibiztype ==214|| ibiztype ==300){
 							html += "<td>" + ichargeid + "</td>";
 						}else{
 						

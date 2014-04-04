@@ -26,7 +26,7 @@ $(document).ready(function(){
 	Y.use('mask', function(){
 		var addMoneyDlg =  this.lib.MaskLay('#addMoneyLay');
 		addMoneyDlg.addClose('#addMoneyClose','#addMoneyYes');
-		Y.get('#addMoneyLay div.tan_top').drag('#addMoneyLay');
+		Y.get('#addMoneyLay div.tantop').drag('#addMoneyLay');
 		Y.extend('addMoney', function(){
 			addMoneyDlg.pop('', function(e, btn){
 				if(btn.id === 'addMoneyYes'){

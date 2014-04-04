@@ -12,10 +12,10 @@
     
     Class('Dlg', {
         index:function (){
-        	//成功        	
+            //成功        	
             this.dlg = this.lib.MaskLay('#dlg_buysuc', '#dlg_buysuc_content');
             this.dlg.addClose('#dlg_buysuc_close,#dlg_buysuc_close2');
-            this.get('#dlg_suc div.tips_title').drag('#dlg_suc');
+            this.get('#dlg_suc div.tantop').drag('#dlg_suc');
             //无图标 codeTpl
             this.codeDlg = this.lib.MaskLay('#codeTpl', '#codeTplConent', '#codeTpl h2');
             this.codeDlg.addClose('#codeTplClose,#codeTplYes');
@@ -24,7 +24,7 @@
             //充值
             this.addMoneyDlg =  this.lib.MaskLay('#addMoneyLay');
             this.addMoneyDlg.addClose('#addMoneyClose','#addMoneyYes');
-            this.get('#addMoneyLay div.tan_top').drag('#addMoneyLay');
+            this.get('#addMoneyLay div.tantop').drag('#addMoneyLay');
             
             this.get('strong.c-s-hide').each(function (el){
                 var tip = '<h5>什么叫遗漏</h5>遗漏是指该号码自上次开出至本期未出现的期数';
