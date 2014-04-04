@@ -134,7 +134,7 @@ table.log_tab td a.aa:hover{color:#790500; text-decoration:underline}
 .comxx{clear:both}
 .comxx p{line-height:25px;color:#434343;text-align:center;font-size:12px}
 .comxx p em{color:#999}
-.righter{float:right;width:760px;margin-left:0}
+.righter{float:right;width:760px;margin-left:0;margin-bottom:15px}
 .gg_main dd span{color:#888}
 .gg_main div{height:170px}
 .gg_main dl dd{height:25px;line-height:25px}
@@ -1002,16 +1002,16 @@ table.co1 tbody td.last a.red_b{color:#fff;background:#ff6600;display:inline-blo
 .newpag li{display:block;float:left;width:250px;font-size:14px;color:#444;line-height:30px;height:30px}
 .newpag li a{color:#145fab;font-size:14px}
 .newpag li.li1{float:right;text-align:right}
-.logk{width:437px;height:330px;background-image:url(../images/cai888/logk.png)}
+.logk{width:420px;height:330px;background-image:url(../images/cai888/logk.png)}
 .logtop{height:55px}
 .logk a.a1{width:55px;height:55px;float:right;display:block}
-.logkm{width:397px;padding:7px 0 0 34px}
+.logkm{width:386px;padding:7px 0 0 34px}
 .logkm table{clear:both}
-.logkm td{height:69px;text-align:left;color:#444; vertical-align:top;}
-.logkm td.td1{height:40px;line-height:40px;color:#ff0000;padding-left:5px}
-.logkm td.td2{height:37px;line-height:37px;color:#ff0000;padding-left:10px}
-.logkm td input{border:none; background:none;display:block;width:300px;height:44px;font-size:16px;color:#444;padding:14px 0 0 13px\9;height:28px\9;margin-left:52px}
-:root .logkm td input{padding:0 0 0 13px;height:44px;}
+.logkm td{height:66px;text-align:left;color:#444; vertical-align:top;}
+.logkm td.td1{height:40px;line-height:40px;color:#ff0000;padding-left:5px;padding-top:3px}
+.logkm td.td2{height:41px;line-height:41px;color:#ff0000;padding-left:10px}
+.logkm td input{border:none; background:none;display:block;width:277px;height:38px;font-size:16px;color:#444;padding:11px 0 0 13px\9;height:27px\9;margin-left:52px;outline:none;}
+:root .logkm td input{padding:0 0 0 13px;height:38px;}
 .logkm td a.btn{width:133px;height:40px;display:block;line-height:40px;color:#fff;font-size:20px; font-family:"微软雅黑";text-align:Center;margin-top:3px;float:left;margin-right:22px}
 .logkm td.td1{line-height:45px;color:#444}
 .logkm td.td1 a{color:#ff6600}

@@ -419,7 +419,7 @@ a.czbtn{display:block;height:32px;width:98px;line-height:32px;text-align:center;
 .logtb{width:252px;float:right;margin:59px 29px 0 0;_margin-right:15px}
 .logtb td{height:66px;text-align:left;color:#444; vertical-align:top}
 .logtb td.td1{height:40px;line-height:40px;color:#ff0000}
-.logtb td input{border:none; background:none;display:block;width:245px;height:44px;font-size:16px;color:#444;padding:14px 0 0 5px\9;height:28px\9;}
+.logtb td input{border:none; background:none;display:block;width:236px;height:44px;font-size:16px;color:#444;padding:14px 0 0 5px\9;height:28px\9;}
 :root .logtb td input{padding:0 0 0 5px;height:44px;}
 .logtb td a.btn{width:252px;height:45px;display:block;line-height:44px;color:#fff;font-size:20px; font-family:"微软雅黑";text-align:Center;background:url(../images/cai888/loginbtn.jpg)}
 .logtb td a.btn:hover{ background-position:0 -50px}
@@ -649,3 +649,16 @@ a.t_a_dz:hover{background-image: url(../images/hm/hmt_05.gif)}
 .zj_mab table b{margin-left:25px}
 .zj_mab tr.odd td{ background-color:#f5f5f5}
 */
+.hdmain{background:url(../images/cai888/act_03.jpg) 0 0  no-repeat transparent;padding-top:215px;}
+.hduk{width:880px;margin:0 auto;padding-bottom:80px}
+.hdlist{height:170px;padding:20px 0 25px 0;border-bottom:1px dashed #ccc;position:relative}
+.hdlist img{display:block;float:left;width:465px;height:170px}
+.hdlist p{line-height:18px;color:#777;width:388px;float:right}
+.hdlist p strong{display:block;height:36px;line-height:24px; font-family:"微软雅黑";color:#333;font-size:20px;}
+.hdlist a{display:block;color:#fff;text-align:Center;height:40px;line-height:40px;font-size:18px;width:118px;background:url(../images/cai888/acts_06.jpg);font-family:"微软雅黑"; position:absolute;right:0;bottom:25px}
+.hdlist a.a1{background:url(../images/cai888/acta_03.jpg)}
+.hdlist a.a2{background:url(../images/cai888/acta_07.jpg)}
+.hdbom{background:url(../images/cai888/act_07.jpg) 0 0;height:78px}
+.imggray{filter:url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\'/></filter></svg>#grayscale");/* Firefox 10+, Firefox on Android */
+filter: gray;/* IE6-9 */
+-webkit-filter:grayscale(100%);/* Chrome 19+, Safari 6+, Safari 6+ iOS */}
