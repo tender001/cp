@@ -349,7 +349,7 @@ Class('Loginer', {// 登陆器
                             	 $("#parent").show();
                             	 $("#myfanli").show();
                             	 Y.get("#fzurl").click(function(){	
- 	        							copyurl('http://www.159cai.com/from.phpx?comeFrom='+u.items.cagentid);
+ 	        							copyurl(Y.get(".tgdiv > input").val());
  	        						}
  	        					);
                             	 
