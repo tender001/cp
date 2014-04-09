@@ -80,7 +80,7 @@ Class({
 					var code = obj.Resp.code;
 					var desc = obj.Resp.desc;
 					if (code == "0") {	
-						$("#sendphone").html($.trim($("#phoneNumber").val()));
+						//$("#sendphone").html($.trim($("#phoneNumber").val()));
 						P.sentYZM(2);
 					} else {
 						if (code=="1"){
@@ -183,11 +183,14 @@ Class({
 				 	 		       if(obj2.Resp.code==0){
 				 	 		    	 $("#wrapLayConent").html('<div class="buy_sucs">恭喜您：<br />已获取2元彩金<a class="a3" href="/account/myaccount.html" target="_blank" >点击查看</a></div>');
 				 	 		    	  wrapLay.pop();
-				 	 		       }else if(obj2.Resp.code==4){
-				 	 		    	 $("#wrapLayConent").html('<div class="buy_sucs">手机已绑定<br/>新用户<a class="a3" href="/account/trueinfo.html" target="_blank" id="showClose">实名后</a>后系统赠送2元彩金</div>');
-				 	 		    	  wrapLay.pop();
-				 	 		       }else{
+				 	 		       /*}else if(obj2.Resp.code==4){
+				 	 		    	 $("#wrapLayConent").html('<div class="buy_sucs">手机已绑定<br/>新用户<a class="a3" href="/account/trueinfo.html" target="_blank" id="showClose">实名后</a>系统赠送2元彩金</div>');
+				 	 		    	  //wrapLay.pop();
+*/				 	 		       }else{
 				 	 		    	 Y.alert(desc);
+				 	 		    	 
+				 	 		    	 
+				 	 		    	 
 				 	 		       }
 				 	 		     $("#userphone").html($("#phoneNumber").val());
 				 	 			 $("#div4").show();
@@ -253,6 +256,7 @@ Class({
 					if (code == "0") {	
 						$("#sendphone").html($.trim($("#phoneNumber").val()));
 						P.sentYZM(2);
+						$("#bangding").html("修改");;
 					} else {
 						if (code=="1"){
 							Y.postMsg('msg_login', function() {						
