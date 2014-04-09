@@ -128,9 +128,9 @@ table.log_tab td a.aa:hover{color:#790500; text-decoration:underline}
 .foot_dd ul li a:hover{color:#ff6600; text-decoration:underline;}
 .foot_dd ul li.first{padding-right:10px}
 .jxxk{padding:10px 0 0 150px;clear:both}
-.jxxk_col{width:auto;float:left;height:45px;margin-right:20px;border:1px solid #ddd}
+.jxxk_col{width:auto;float:left;height:41px;margin-right:20px;border:1px solid #ddd}
 .jxxk_col img {float:left;display:block;}
-.jxxk_col p{font-size:12px;color:#434343;line-height:16px;padding:8px 0 0 3px;width:80px;float:left}
+.jxxk_col p{font-size:12px;color:#434343;line-height:16px;padding:5px 0 0 3px;width:70px;float:left}
 .comxx{clear:both}
 .comxx p{line-height:25px;color:#434343;text-align:center;font-size:12px}
 .comxx p em{color:#999}
@@ -248,7 +248,7 @@ a.a_auto{margin:0 auto 20px auto}
 .fotop a{margin:0 10px;color:#fff}
 .fotop a:hover{color:#aaa}
 p.fotpp{line-height:24px;text-align:center;padding:16px 0;color:#666;}
-.jxxk_col img{width:auto;margin:4px 0 0 3px}
+.jxxk_col img{width:auto;margin:3px 0 0 3px;}
 .jxxk{padding-top:0}
 .navfn{margin-top:20px}
 .navfn span{width:73px;height:24px;display:block;text-align:center;color:#666;font-weight:100; background-image:url(../images/159/bttm_19.jpg);float:left}
