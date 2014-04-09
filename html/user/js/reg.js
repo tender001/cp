@@ -259,11 +259,16 @@ $(function() {
 	var regsuc = function(uname) {
 		$("#main1").hide();
 		$("#reguest").hide();
-
+		$("#zcreg").hide();
+		$("#loghedm1").hide();
+		
 		$("#main2").show();
 		$("#regsucc").show();
+		$("#zcscc").show();
+		$("#loghedm2").show();
 
 		$("#regusername").html(uname);
+		$("#regusername1").html(uname);
 	};
 
 });

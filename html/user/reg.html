@@ -10,26 +10,35 @@
 <link href="/css/cai888.css" rel="stylesheet" type="text/css" />
 <link href="/css/new159cai.css" rel="stylesheet" type="text/css" />
 
+<script type="text/javascript" src="/public/loginoutLink.js"></script>
 <script type="text/javascript" src="/public/jq2.js"></script>
 <script type="text/javascript" src="/public/jq.js"></script>
 <script type="text/javascript" src="/public/159cp.js"></script>
 <script type="text/javascript" src="/user/js/reg.js"></script>
+<script type="text/javascript" src="/user/js/login.js"></script>
 </head>
 <body>
-<div class="adnav">
- <div class="ad_nav">
-   <span><a href="login.html">登录</a>|<a href="reg.html">注册</a></span>
-   <p><a href="/">首页</a>|<a href="/dating/">购彩大厅</a>|<a  href="/kaijiang/" target="_blank">全国开奖</a>|<a href="/help/">帮助中心</a>|<a href="javascript:void(0);" target="_blank"
-					onclick="this.newWindow = window.open('http://chat.live800.com/live800/chatClient/chatbox.jsp?companyID=331528&jid=4618724443&configID=123978', '159彩在线客服', 'toolbar=0,scrollbars=0,location=0,menubar=0,resizable=1,width=710,height=480');this.newWindow.focus();this.newWindow.opener=window;return false;">在线客服</a></p>
-  </div>
-</div>
-	<div class="loghedm">
-		<div class="loghed">
-			<a href="/"><img class="log" src="/images/cai888/login_03a.jpg" style="width:260px"/></a>
-			<p><img src="/images/cai888/login_06.jpg" /></p>
+	<div class="adnav" id="zcreg">
+		<div class="ad_nav">
+			<span><a href="login.html">登录</a>|<a href="reg.html">注册</a></span>
+			<p>
+				<a href="/">首页</a>|<a href="/dating/">购彩大厅</a>|<a href="/kaijiang/"
+					target="_blank">全国开奖</a>|<a href="/help/">帮助中心</a>|<a
+					href="javascript:void(0);" target="_blank"
+					onclick="this.newWindow = window.open('http://chat.live800.com/live800/chatClient/chatbox.jsp?companyID=331528&jid=4618724443&configID=123978', '159彩在线客服', 'toolbar=0,scrollbars=0,location=0,menubar=0,resizable=1,width=710,height=480');this.newWindow.focus();this.newWindow.opener=window;return false;">在线客服</a>
+			</p>
 		</div>
 	</div>
-	
+	<div class="loghedm" id="loghedm1">
+		<div class="loghed">
+			<a href="/"><img class="log" src="/images/cai888/login_03a.jpg"
+				style="width: 260px" /></a>
+			<p>
+				<img src="/images/cai888/login_06.jpg" />
+			</p>
+		</div>
+	</div>
+
 	<div class="regline" id="reguest">
 		<div class="div1"></div>
 	</div>
@@ -52,14 +61,14 @@
 								name="username" /></td>
 							<td id="username_err" style="display: none;"></td>
 						</tr>
-						
+
 						<tr>
 							<th>输入密码：</th>
 							<td><input type="password" id="password" class="text"
 								value="" name="password" onfocus="onfocuss('password_err')" /></td>
 							<td id="password_err" style="display: none;"></td>
 						</tr>
-						
+
 						<tr>
 							<th>确认密码：</th>
 							<td><input type="password" id="password2" class="text"
@@ -67,18 +76,18 @@
 								onfocus="onfocuss('password2_err')" /></td>
 							<td id="password2_err" style="display: none;">&nbsp;</td>
 						</tr>
-						
+
 						<tr>
 							<th>验证码：</th>
-							<td id="removeC"><input type="text" class="text" id="verifycode"
-								name="verifycode" style="width: 100px"
-								onfocus="onfocuss('verifycode_err')" maxlength="4"/><img src="/rand.phpx"
-								id="CheckCode" alt="点击刷新" onclick="refreshVerify();" width="60"
-								height="25"/><b onclick="refreshVerify();"></b></td>
-							<td id="verifycode_err">
-							</td>
+							<td id="removeC"><input type="text" class="text"
+								id="verifycode" name="verifycode" style="width: 100px"
+								onfocus="onfocuss('verifycode_err')" maxlength="4" /><img
+								src="/rand.phpx" id="CheckCode" alt="点击刷新"
+								onclick="refreshVerify();" width="60" height="25" /><b
+								onclick="refreshVerify();"></b></td>
+							<td id="verifycode_err"></td>
 						</tr>
-						
+
 						<tr>
 							<th>&nbsp;</th>
 							<td><a href="javascript:void(0);" class="btn" id="subfrm"
@@ -95,7 +104,7 @@
 							<td></td>
 							<td>&nbsp;</td>
 						</tr>
-						
+
 					</table>
 
 				</div>
@@ -115,58 +124,98 @@
 				</div>
 			</div>
 		</div>
-	
-</div>
-	<div id="regsucc" class="regline" style="display:none"><div></div></div> 
-<div class="regsusm" id="main2" style="display:none;">   
- <div class="regsus">
- <h2>注册成功</h2>
- <div class="regsusbg"><span><strong id="regusername"></strong>恭喜您注册成功</span><p><a href="/huodong/zcs.html">实名注册就送2元彩金</a>，<a href="/huodong/czs.html">首冲10元送10元彩金</a>！</p>
- <a href="/account/safecenter.html" class="a1">立即实名</a>
- <div class="regdv">您还可以去购彩大厅试试手气，<a href="/dating/">购彩大厅>></a></div>
- </div>
- </div> 
-</div>
-<div class="logfot">
- <p class="p1">159彩票网 | 客服热线：400-0696-159 | 客服邮箱：kf@159cai.com |沪ICP备13044715号-1<br />
-郑重提示：彩票有风险，投注需谨慎 不向未满18周岁的青少年出售彩票</p>
-<div style="margin:0 auto;width:850px;padding:0" class="jxxk">
-			<div class="jxxk_col">
-				<a style="cursor: default"><img src="/images/njc/index_03.jpg" alt="体彩" title="体彩"/></a>
+	</div>
+	<div class="adnav" id="zcscc" style="display:none">
+		<div class="ad_nav">
+			 <span><a href="/account/myaccount.html"><strong id="regusername" style="color:#004398"></strong></a>|<a style="color:#004398" href="/" id="logoutLink">退出</a></span> 
+			<p>
+				<a href="/">首页</a>|<a href="/dating/">购彩大厅</a>|<a href="/kaijiang/"
+					target="_blank">全国开奖</a>|<a href="/help/">帮助中心</a>|<a
+					href="javascript:void(0);" target="_blank"
+					onclick="this.newWindow = window.open('http://chat.live800.com/live800/chatClient/chatbox.jsp?companyID=331528&jid=4618724443&configID=123978', '159彩在线客服', 'toolbar=0,scrollbars=0,location=0,menubar=0,resizable=1,width=710,height=480');this.newWindow.focus();this.newWindow.opener=window;return false;">在线客服</a>
+			</p>
+		</div>
+	</div>
+	<div class="loghedm" id="loghedm2" style="display: none">
+		<div class="loghed">
+			<a href="/"><img class="log" src="/images/cai888/login_03a.jpg"
+				style="width: 260px" /></a>
+			<p>
+				<img src="/images/cai888/login_06.jpg" />
+			</p>
+		</div>
+	</div>
+	<div id="regsucc" class="regline" style="display: none">
+		<div></div>
+	</div>
+	<div class="regsusm" id="main2" style="display: none;">
+		<div class="regsus">
+			<h2>注册成功</h2>
+			<div class="regsusbg">
+				<span><strong id="regusername1"></strong>恭喜您注册成功</span>
 				<p>
-					体彩<br/>合作伙伴
+					<a href="/huodong/zcs.html">实名注册就送2元彩金</a>，<a
+						href="/huodong/czs.html">首冲10元送10元彩金</a>！
+				</p>
+				<a href="/account/safecenter.html" class="a1">立即实名</a>
+				<div class="regdv">
+					您还可以去购彩大厅试试手气，<a href="/dating/">购彩大厅>></a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="logfot">
+		<p class="p1">
+			159彩票网 | 客服热线：400-0696-159 | 客服邮箱：kf@159cai.com |沪ICP备13044715号-1<br />
+			郑重提示：彩票有风险，投注需谨慎 不向未满18周岁的青少年出售彩票
+		</p>
+		<div style="margin: 0 auto; width: 850px; padding: 0" class="jxxk">
+			<div class="jxxk_col">
+				<a style="cursor: default"><img src="/images/njc/index_03.jpg"
+					alt="体彩" title="体彩" /></a>
+				<p>
+					体彩<br />合作伙伴
 				</p>
 			</div>
 			<div class="jxxk_col">
-				<a style="cursor: default"><img src="/images/njc/index_05.jpg" alt="福彩" title="福彩"/></a>
+				<a style="cursor: default"><img src="/images/njc/index_05.jpg"
+					alt="福彩" title="福彩" /></a>
 				<p>
-					福彩<br/>合作伙伴
+					福彩<br />合作伙伴
 				</p>
 			</div>
 			<div class="jxxk_col">
-				<a rel="nofollow" href="http://net.china.com.cn/index.htm" target="_blank" title="不良信息举报中心"><img src="/images/njc/index_07.jpg" alt="不良信息举报中心"/></a>
+				<a rel="nofollow" href="http://net.china.com.cn/index.htm"
+					target="_blank" title="不良信息举报中心"><img
+					src="/images/njc/index_07.jpg" alt="不良信息举报中心" /></a>
 				<p>
-					不良信息<br/>举报中心
+					不良信息<br />举报中心
 				</p>
 			</div>
 			<div class="jxxk_col" title="经营性网站备案">
-				<a rel="nofollow" href="http://www.miibeian.gov.cn" target="_blank"><img style="margin: 6px 6px 0 3px" src="/images/njc/index_09.jpg" alt="经营性网站备案信息"/></a>
+				<a rel="nofollow" href="http://www.miibeian.gov.cn" target="_blank"><img
+					style="margin: 6px 6px 0 3px" src="/images/njc/index_09.jpg"
+					alt="经营性网站备案信息" /></a>
 				<p>
-					经营性网站<br/>备案信息
+					经营性网站<br />备案信息
 				</p>
 			</div>
 			<div class="jxxk_col" title="网络社会诚信网">
-				<a rel="nofollow" href="http://pinggu.zx110.org/checkWebsite.do?lt=1&amp;wd=159cai.com" target="_blank"><img style="margin: 6px 6px 0 3px" src="/images/njc/index_11.jpg" alt="网络社会诚信网"/></a>
+				<a rel="nofollow"
+					href="http://pinggu.zx110.org/checkWebsite.do?lt=1&amp;wd=159cai.com"
+					target="_blank"><img style="margin: 6px 6px 0 3px"
+					src="/images/njc/index_11.jpg" alt="网络社会诚信网" /></a>
 				<p>
-					网络社会<br/>诚信网
+					网络社会<br />诚信网
 				</p>
 			</div>
-			<div style="border:none" class="jxxk_col" title="安全联盟标识">
-				<a rel="nofollow" href="http://www.anquan.org/s/www.159cai.com?tab=wzmp" target="_blank"><img style="margin:0" src="/images/159/smrz.png" alt="安全联盟"/></a>
-				
+			<div style="border: none" class="jxxk_col" title="安全联盟标识">
+				<a rel="nofollow"
+					href="http://www.anquan.org/s/www.159cai.com?tab=wzmp"
+					target="_blank"><img style="margin: 0"
+					src="/images/159/smrz.png" alt="安全联盟" /></a>
 			</div>
-			
 		</div>
-</div>
+	</div>
 </body>
 </html>
