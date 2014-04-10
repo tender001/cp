@@ -388,6 +388,9 @@ var mark=function(isc, awa, isre, istat,adddate,castdate,awarddate,retdate,proce
 	case 3://等待出票3
 			if(upload==0){
 			$("#process").html("等待上传方案<i></i>").css("left",process+"px");
+			if(istate==2){
+				$("#cp_full").addClass("fq").removeClass("liubiao");
+			}
 		}else{
 			$("#process").html("还差"+processmoney+"元即达出票要求<i></i>").css("left",process+"px");
 		}
@@ -916,7 +919,7 @@ var showview = function(lotid,projid){
 				$("#fqrcd").hide();
 				$("#scfa").hide();
 				if (upload=="0" &&source!=10){
-					if (((pnum==0&& (istate=="0" || istate=="1"|| istate=="2"))||(pnum!=0 && istate=="1" )) && isself){
+					if (((pnum==0&& (istate=="0" || istate=="1"|| istate=="2"))||(pnum!=0 && (istate=="1"|| istate=="2") )) && isself){
 						$("#scfa").show();
 						$("#cp_infotable").html('<p class="xqtbpa"><a id="scfa" target="_blank">上传方案</a></p>');
 						if(lotid==90 ||lotid==91 ||lotid==92 ||lotid==93||lotid==72){
@@ -1247,7 +1250,12 @@ var showview = function(lotid,projid){
 						if(itype==0){
 							$("#cp_status").html(award ==0?'<div style=""><div class="hm_rpxq"><p class="hmreson"><strong>待开奖</strong><br>('+Y.getDate(castdate).format('MM-DD hh:mm:ss')+')</p> </div></div>':'<div style=""><div class="hm_rpxq"><p class="hmreson"><strong>未中奖</strong><br>('+Y.getDate(awarddate).format('MM-DD hh:mm:ss')+')</p> </div></div>');
 						}else{
-							$("#cp_status").html(award ==0?'<div style=""><div class="hm_rpxq"><p class="hmreson"><strong>已满员</strong><br>('+Y.getDate(castdate).format('MM-DD hh:mm:ss')+')</p> </div></div>':'<div style=""><div class="hm_rpxq"><p class="hmreson"><strong>未中奖</strong><br>('+Y.getDate(awarddate).format('MM-DD hh:mm:ss')+')</p> </div></div>');
+							if(castdate==""||castdate===undefined){
+								$("#cp_status").html(award ==0?'<div style=""><div class="hm_rpxq"><p class="hmreson"><strong>已满员</strong><br></p> </div></div>':'<div style=""><div class="hm_rpxq"><p class="hmreson"><strong>未中奖</strong><br>('+Y.getDate(awarddate).format('MM-DD hh:mm:ss')+')</p> </div></div>');
+							}else{
+								$("#cp_status").html(award ==0?'<div style=""><div class="hm_rpxq"><p class="hmreson"><strong>已满员</strong><br>('+Y.getDate(castdate).format('MM-DD hh:mm:ss')+')</p> </div></div>':'<div style=""><div class="hm_rpxq"><p class="hmreson"><strong>未中奖</strong><br>('+Y.getDate(awarddate).format('MM-DD hh:mm:ss')+')</p> </div></div>');
+							}
+							
 						}
 						$("p[mark=cp_countDownSpan]").html("");
 						
