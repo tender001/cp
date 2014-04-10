@@ -7,43 +7,63 @@ function showkjdetail(){
 	}
 	var gname = $_sys.getlotname(gid);
 	document.title = gname + document.title;
-	$("#gname").html(gname);
-	
+	$("em#em").html(gname+"开奖");
+//	if(gid==80){
+//		$("em#em").html("胜负彩开奖");
+//	}else if(gid==81){
+//		$("em#em").html("任九开奖");
+//	}else if(gid==82){
+//		$("em#em").html("进球彩开奖");
+//	}else if(gid==83){
+//		$("em#em").html("半全场开奖");
+//	}
 	$.ajax({
-		url:"/cpdata/game/"+gid+"/c.json?r="+Math.random(),
+		url:"/cpdata/guoguan/"+gid+"/index.json?r="+Math.random(),
+//		http://www.159cai.com/cpdata/guoguan/83/index.json
 		type : "get",
 		dataType : "json",
 		success : function(d) {
-			var code = d.period.code;	
-			if (code == "0") {
-				var rs = d.period.row;
+		
+		
+				var rs = d.rows.row;
 				var html = [];
 				if(!isArray(rs)){rs = new Array(rs);}
 				$.each(rs,function(o,r) {
 					var _pid = r.pid;
-					var flag = r.flag;
-					if(flag != 1){
+					
+				
+					if(o == 0){
 						if(_pid == pid){
-							html.push('<option value="detail.html?gid=' + gid + '&pid='+_pid+'" selected>'+_pid+'</option>');
+							html.push('<option value="zc.html?gid=' + gid + '&pid='+_pid+'" selected>'+_pid+'</option>');
 						} else {
-							html.push('<option value="detail.html?gid=' + gid + '&pid='+_pid+'">'+_pid+'</option>');
+							html.push('<option value="zc.html?gid=' + gid + '&pid='+_pid+'">'+_pid+'</option>');
 						}
+						if(pid==""){
+							pid=_pid;
+						}
+						
+					}else{
+						html.push('<option value="zc.html?gid=' + gid + '&pid='+_pid+'">'+_pid+'</option>');
 					}
 				});
-				html.push("<option value='/kj/list.html?gid=" + gid + "'>返回列表</option>");
+				html.push("<option value='/history/'>返回列表</option>");
 				$("#listexpect").html(html.join(""));
-			} else {
-				var desc = data.period.code;
-				showTips('发生错误:' + desc);
-			}
+				 loadzc(gid,pid);
+		
 		},
 		error:function(){
 			showTips('网络异常!');
         }
 	});
 	
+
+	
+	
+}
+function loadzc(gid,pid){
 	$.ajax({
 		url:"/cpdata/guoguan/" + gid + "/" + pid + "/" + pid + ".json?r="+Math.random(),
+//		http://www.159cai.com/cpdata/guoguan/80/2014052/2014052.json
 		type : "get",
 		dataType : "json",
 		success : function(d) {
@@ -113,7 +133,6 @@ function showkjdetail(){
 			showTips('网络异常!');
         }
 	});
-	
 }
 function loadRXJ(pid){
 	$.ajax({
@@ -137,7 +156,9 @@ function loadRXJ(pid){
         }
 	});
 }
-function showchange(){
-	var url = $("#listexpect").val();
-	window.location = url;
+function goexpect(){
+	$("#listexpect").change(function(){
+		var url = $(this).val();
+		window.location = url;
+	});
 }
