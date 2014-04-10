@@ -6,12 +6,14 @@ function showmatchkj(){
 		return;
 	}
 
-	var gs = [["jczq","竞彩足球"], ["jclq","竞彩篮球"], ["bjdc","北京单场"]];
-	
+	var gs = [["jczq","竞彩足球开奖"], ["jclq","竞彩篮球开奖"], ["bjdc","北京单场开奖"]];
+
+
 	var flag = false;
 	$.each(gs,function(o,g){
 		if(g[0] == gid){
-			$("#gname").html(g[1]);
+			$("em#em").html(g[1]);
+			document.title = g[1] + document.title;
 			flag = true;
 			return;
 		}
@@ -37,19 +39,22 @@ function showmatchkj(){
 						$.each(rs,function(o,r) {
 							var flag = r.flag;
 							var pid = r.pid;
-							if(xpid != '' && xpid == pid){
+							if(xpid != '' ){
+							
+								cpid=xpid
+							}else{
 								cpid = pid;
 							}
 							if(flag == 1){
-								html.push("<option value='/kj/match.html?gid=bjdc&pid="+pid+"' id="+pid+">当前期"+pid+"</option>");
+								html.push("<option value='/info/football.html?gid=bjdc&="+pid+"' id="+pid+">当前期"+pid+"</option>");
 								if(xpid == ''){
 									cpid = pid;
 								}
 							} else {
-								html.push("<option value='/kj/match.html?gid=bjdc&pid="+pid+"' id="+pid+">历史期"+pid+"</option>");
+								html.push("<option value='/info/football.html?gid=bjdc&pid="+pid+"' id="+pid+">历史期"+pid+"</option>");
 							}
 						});
-						html.push("<option value='/kj'>返回列表</option>");
+						html.push("<option value='/history/'>返回列表</option>");
 						$("#listexpect").html(html.join(""));
 						if(cpid != ''){
 							$("#"+cpid).attr("selected","selected");
@@ -76,17 +81,20 @@ function showmatchkj(){
 					var html = [];
 					var cpid = "";
 					$.each(rs,function(o,r) {
-						var pid = "20" + r.did;
+						var pid =  r.did;
 						var day = pid.substring(0,4) + "-" + pid.substring(4,6) + "-" + pid.substring(6, 8);
-						if(xpid != '' && xpid == pid){
+						if(xpid != ''){
+							cpid = xpid;
+						}else{
 							cpid = pid;
 						}
-						html.push("<option value='/kj/match.html?gid=" + gid + "&pid="+pid+"' id="+pid+">"+day+"</option>");
+//						http://local.159cai.com/info/football.html?gid=jclq&did=140409
+						html.push("<option value='/info/football.html?gid=" + gid + "&pid="+pid+"' id="+pid+">"+day+"</option>");
 						if(cpid == ''){
 							cpid = pid;
 						}
 					});
-					html.push("<option value='/kj'>返回列表</option>");
+					html.push("<option value='/history/'>返回列表</option>");
 					$("#listexpect").html(html.join(""));
 					if(cpid != ''){
 						$("#"+cpid).attr("selected","selected");
@@ -99,10 +107,13 @@ function showmatchkj(){
 			}
 		});
 	}
+//	goexpect();
 }
 function goexpect(){
-	var url = $("#listexpect").val();
-	window.location = url;
+	$("#listexpect").change(function(){
+		var url = $(this).val();
+		window.location = url;
+	});
 }
 function showmatch(gid, expect){
 	if(gid == 'bjdc'){
@@ -197,7 +208,7 @@ function showmatch(gid, expect){
 		});
 	} else if(gid == 'jczq'){
 		$.ajax({
-			url :"/cpdata/match/jczq/award/"+expect.substring(2)+"/"+expect.substring(2)+".json",
+			url :"/cpdata/match/jczq/award/"+expect+"/"+expect+".json",
 			dataType:"json",
 			success:function(data){
 				var rs = data.rows.row;
