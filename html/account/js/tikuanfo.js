@@ -143,6 +143,10 @@ Class({
 									html +="<td  style='color:green'>" +"成功"+ "</td>";
 									tkallmy+=parseFloat(money);
 								}
+								else if(success==0){
+									html +="<td>" +"处理中"+ "</td>";
+								
+								}
 								else{
 									html +="<td>" +"失败"+ "</td>";
 								}
