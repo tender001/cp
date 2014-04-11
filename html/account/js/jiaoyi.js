@@ -1,4 +1,4 @@
-var gcsum,fksum,zksum,jjsum,czsum,tksum;//购彩、返款、转款、奖金、充值、提款
+var gcsum,fksum,zksum,jjsum,czsum,tksum,tkshibai;//购彩、返款、转款、奖金、充值、提款
 
 $(function(){
 	$("#inm").empty();	
@@ -58,7 +58,7 @@ var loadSUM = function(stime,etime,tid){
 	}else{
 		data = $_user.key.stime+"=" + stime + "&"+$_user.key.etime+"=" + etime+"&tid="+tid; 
 	}
-	gcsum=fksum=zksum=jjsum=czsum=tksum=0;
+	gcsum=fksum=zksum=jjsum=czsum=tksum=tkshibai=0;
 		Y.ajax({
 		url : $_user.url.account,
 		type : "POST",
@@ -101,6 +101,9 @@ var loadSUM = function(stime,etime,tid){
 							gcsum += parseFloat(imoney);
 						}else if(ibiztype=='210' || ibiztype=='211' || ibiztype=='212' || ibiztype=='213' || ibiztype=='214' || ibiztype=='215'){
 							fksum += parseFloat(imoney);
+							if(ibiztype=='213'){
+								tkshibai += parseFloat(imoney);
+							}
 						}else if(ibiztype=='300'||ibiztype=='214'){
 							zksum += parseFloat(imoney);
 						}else if(ibiztype=='201' || ibiztype=='202' || ibiztype=='203' || ibiztype=='204' ){
@@ -116,7 +119,7 @@ var loadSUM = function(stime,etime,tid){
 					$("#czsum").html(czsum.toFixed(2));
 					$("#fksum").html(fksum.toFixed(2));
 					$("#jjsum").html((jjsum).toFixed(2));
-					$("#tksum").html(tksum.toFixed(2));
+					$("#tksum").html(tksum==0?0:tksum.toFixed(2)- tkshibai.toFixed(2));
 					//gcsum=fksum=zksum=jjsum=czsum=tksum=0;
 				}
 				
@@ -227,7 +230,7 @@ var showInfo = function(stime,etime,tid,pn,ps,tp,tr) {//页码		页面大小 		�
 							html += "<td>&nbsp;</td>";
 						} else {
 							html += "<td>&nbsp;</td>";
-							html += "<td><s style='color:red;'>￥" + parseFloat(imoney).rmb(false) + "</s></td>";
+							html += "<td><s style='color:red;'>￥" + (parseFloat(imoney)).rmb(false) + "</s></td>";
 						}
 						html += "<td>" + parseFloat(ibalance).rmb() + "</td>";
 						html += "<td>" +$_sys.biztype(ibiztype) + "</td>";
