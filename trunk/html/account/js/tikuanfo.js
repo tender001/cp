@@ -97,7 +97,7 @@ Class({
 				var obj = eval("(" + d.text + ")");
 	   		    var code = obj.Resp.code;
 	   		    var desc = obj.Resp.desc;
-				var innum = incount = outnum = outcount = 0;
+				var innum = incount = outnum = outcount = tkallmy = 0;
 				rows = "";
 				if (code == "0") {
 					var r = obj.Resp.row;
@@ -141,6 +141,7 @@ Class({
 
 								if(success==1){
 									html +="<td  style='color:green'>" +"成功"+ "</td>";
+									tkallmy+=parseFloat(money);
 								}
 								else{
 									html +="<td>" +"失败"+ "</td>";
@@ -151,6 +152,7 @@ Class({
 							outcount++;
 							//if (ireturn==2 || cancel==0){outnum += parseFloat(money);}//已撤单的不算认购金额
 						});
+						$("#tkallmy").html(tkallmy.rmb(false));
 						$("#nocount").hide();
 						$("#touzhulist").html(html);	
 						
