@@ -129,7 +129,6 @@ var loadSUM = function(stime,etime,tid){
 						window.location.reload();			
 					});
 				}else{
-					//html+="<tr><td colspan='7'>暂时没有您的信息！</td></tr>";
 					$("#nocount").show();
 					$("#page_div").hide();
 				}
