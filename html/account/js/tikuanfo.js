@@ -146,8 +146,8 @@ Class({
 								else{
 									html +="<td>" +"失败"+ "</td>";
 								}
-								html +="<td>" + memo + "</td>";
-								html +="</td></tr>";
+								html +="<td style='line-height:15px;'>" + memo + "</td>";
+								html +="</tr>";
 							
 							outcount++;
 							//if (ireturn==2 || cancel==0){outnum += parseFloat(money);}//已撤单的不算认购金额
