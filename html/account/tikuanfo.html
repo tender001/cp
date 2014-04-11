@@ -14,7 +14,8 @@
 <script type="text/javascript" src="/public/menu.js"></script>
 <script type="text/javascript" src="/public/159cp.js"></script>
 <script type="text/javascript" src="/public/chklogin.js"></script>
-<script type="text/javascript" src="/account/js/tikuan.js"></script>
+<script type="text/javascript" src="/public/riqi.js"></script>
+<script type="text/javascript" src="/account/js/tikuanfo.js"></script>
 
 </head>
 <body>
@@ -39,84 +40,52 @@
 						<strong>提款中心</strong>
 					</h2>
 					<span class="usertitab">
-						<b  class="cur"><a>提取现金</a></b>
-						<b><a  href="tikuanfo.html">提款记录</a></b>
+						<b><a href="tikuan.html">提取现金</a></b>
+						<b  class="cur"><a>提款记录</a></b>
 					</span>
-				</div>
-				<div class="uacnop" id="div1" style="display: none;">
 					<p>
-						<strong>您还没有绑定身份信息</strong>绑定后我们才可以将您的159彩票 账户资金打到您身份信息的银行卡里！
+						<span>起始时间：</span><input type="text" id="begintime" name="begintime" value=""> <span>-</span><input type="text" id="endtime" name="endtime" value=""><a class="chaxun" id="submit" href="javascript:void(0);">查询</a>
 					</p>
-					<a href="trueinfo.html">绑定身份证</a>
 				</div>
-				<div class="uacnop" id="div2" style="display: none;">
-					<p>
-						<strong>您还没有绑定银行卡</strong>绑定后我们才可以将您的159彩票 账户资金打到您绑定的银行卡里！
-					</p>
-					<a href="bankinfo.html">绑定银行卡</a>
-				</div>
-
-				<div style="display: none;" id="div3" class="draw_main">
-					<table width="800" border="0">
+				<div style="margin-top: 10px;" class="usercod">
+					<table width="100%" border="0" cellspacing="0" cellpadding="0">
 						<colgroup>
-							<col width="100" />
-							<col width="150" />
-							<col />
+							<col width="120">
+								<col width="100">
+									<col width="100">
+										<col width="100">
+											<col width="100">
+												<col width="120">
+													
 						</colgroup>
-						<tbody>
+						<thead>
 							<tr>
-								<th>真实姓名：</th>
-								<td><input type="text" class="text1" id="realname" /></td>
-								<td></td>
+								<td>交易时间</td>
+								<td>提款金额</td>
+								<td>(手续费)</td>
+								<td>订单号</td>
+								<td>状态</td>
+								<td>备注</td>
 							</tr>
-							<tr>
-								<th>开户银行：</th>
-								<td colspan="2" id="cardname"></td>
-							</tr>
-							<tr>
-								<th>银行卡号：</th>
-								<td id="card"></td>
-								<td></td>
-							</tr>
-							<tr>
-								<th>当前可用余额：</th>
-								<td><font id="usermoeny"></font>元</td>
-								<td>&nbsp;</td>
-							</tr>
-							<tr>
-								<th>提款金额：</th>
-								<td><div class="tkje_k">
-										<input type="text"
-											onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/^\D*(\d*(?:\.\d{0,2})?).*$/g, '$1'));"
-											onkeyup="this.value=this.value.replace(/^\D*(\d*(?:\.\d{0,2})?).*$/g, '$1');"
-											onfocus="this.value='';" name="tkmoney" id="tkmoney" />元<input
-											type="hidden" value="154.17" id="mn" name="mn" />
-									</div></td>
-								<td>提款金额至少<font>10</font>元
-								</td>
-							</tr>
-							<tr>
-								<th>&nbsp;</th>
-								<td><a class="czbtn" href="#" style="margin-left: 0"
-									id="submit">确认提款</a></td>
-								<td>&nbsp;</td>
-							</tr>
-						</tbody>
+						</thead>
 					</table>
-					
 				</div>
-					
-				
-					
-					<div class="tk_tan_2 tk_tan_2a"  id="div4" style="display: none;">
-						<img src="/images/cai888/tk_16.jpg">
-							<p class="p1">
-								<em id="nickid">哈尼</em>，您提出的提款申请已受理！<br> 24小时内会转到您指定的银行账户。
-							</p>
-							<div class="tk_t_ts">
-								<p>除法定节日外,周一到周日全天处理提款，每日16:00之前申请提款财务在当日处理，16:00之后申请财务次日处理</p>
-							</div>
-					</div>
+				<div class="usercodtab">
+					<table width="100%" border="0" cellspacing="0" cellpadding="0">
+						<colgroup>
+							<col width="120">
+								<col width="100">
+									<col width="100">
+										<col width="100">
+											<col width="100">
+												<col width="120">
+													
+						</colgroup>
+						<tbody id="touzhulist"></tbody>
+					</table>
+					<p style="display: block; font-size: 13px; color: rgb(68, 68, 68); text-align: center; border-bottom: 1px solid rgb(221, 221, 221); padding: 155px 0px;" id="nocount">暂时没有您的信息！</p>
+				</div>
+                <div style="display: none;" id="page_div" class="paginachange "><ul><li style="line-height:27px;color:#444;padding-right:10px">共1条</li><li class="disabled PagedList-skipToFirst"><a href="javascript:void(0)" onclick="P.showlist(1,15,1,1);">首页</a></li><li class="PagedList-skipToNext"><a href="javascript:void(0)" onclick="P.showlist(1,15,1,1);">上一页</a></li><li class="active"><a onclick="P.showlist(1,15,1,1);" class="a4" id="1" href="javascript:void(0);">1</a></li><li class="PagedList-skipToNext"><a href="javascript:void(0)" onclick="P.showlist(1,15,1,1);">下一页</a></li><ul></ul></ul></div>
 					<p class="userp1">
 
 
