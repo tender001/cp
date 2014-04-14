@@ -377,9 +377,9 @@ var filter = {
 				var hostteam = rt.hn;
 				var visitteam = rt.gn;
 				var matchdate = rt.bt;
-				var bet3 = (rt.b3!=""&&!isNaN(rt.b3)?parseFloat(rt.b3).rmb(false,2):"--");
-				var bet1 = (rt.b3!=""&&!isNaN(rt.b1)?parseFloat(rt.b1).rmb(false,2):"--");
-				var bet0 = (rt.b3!=""&&!isNaN(rt.b0)?parseFloat(rt.b0).rmb(false,2):"--");
+				var bet3 = (rt.b3!=""&&!isNaN(rt.b3)?parseFloat(rt.b3).rmb(false,2):"0.00");
+				var bet1 = (rt.b3!=""&&!isNaN(rt.b1)?parseFloat(rt.b1).rmb(false,2):"0.00");
+				var bet0 = (rt.b3!=""&&!isNaN(rt.b0)?parseFloat(rt.b0).rmb(false,2):"0.00");
 				risk = rt.iaudit,
 				matchstate =  rt.iaudit;		
 				html.push('<tr>');
