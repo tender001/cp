@@ -1570,14 +1570,14 @@ showduizhen =function (lotid,expect,projid,type,codes,cp){
 							if(c==0){
 								var spvalue = spvalues[0].split(",");
 								if(hsstr.length>0){
-									var rt=(hs-vs)*1+(lose)*1;
+									var rt=(hs-vs)*1;
 									var hrt=(hhs-hvs)*1;
 									
 									if(rt*1>0){result1="3";}else if(rt*1==0){result1="1";}else{result1="0";}
 								
 								}else{
 									result1 = "&nbsp;";
-									
+									  vc
 								}
 							result1=result1.replace("3","胜").replace("1","平").replace("0","负");
 							dzhtml +='<tr class='+odd+'><td>胜平负</td><td></td><td>'+result1+'</td></tr>';
@@ -1599,7 +1599,7 @@ showduizhen =function (lotid,expect,projid,type,codes,cp){
 							
 								if(hsstr.length>0){
 									var rt=(hs+vs)*1;
-									if(rt>=7){jqres=7;}else{jqres=rt;}
+									if(rt>=7){jqres="7+";}else{jqres=rt;}
 									
 								}else{
 									jqres = "&nbsp;";
@@ -1616,7 +1616,7 @@ showduizhen =function (lotid,expect,projid,type,codes,cp){
 										if(cbfstr[r]==bfres){ii=r;}
 									}
 									if(ii==100){
-										if(hs>vs){bfres="9:0";}else if(hs==vs){bfres="9:9";}else{bfres="0:9";}
+										if(hs>vs){bfres="胜其他";}else if(hs==vs){bfres="平其他";}else{bfres="负其他";}
 									}
 								
 								}else{
