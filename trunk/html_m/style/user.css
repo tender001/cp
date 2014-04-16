@@ -15,7 +15,7 @@ body{margin:0px;color: #5A5A5A;}
 (startcolorstr=red,endcolorstr=blue,gradientType=0);
     -ms-filter:alpha(opacity=100 finishopacity=50 style=1 startx=0,starty=0,finishx=0,finishy=150) progid:DXImageTransform.Microsoft.gradient
 (startcolorstr=red,endcolorstr=blue,gradientType=0);/*IE8*/
-	background:#BFE6FA; /* 一些不支持背景渐变的浏览器 */
+	background:#BFE6FA; /* 涓�簺涓嶆敮鎸佽儗鏅笎鍙樼殑娴忚鍣�*/
 	background:-moz-linear-gradient(top, red, rgba(0, 0, 255, 0.5));
 	background:-webkit-gradient(linear, 0 0, 0 bottom, from(#FDFEFE),to(#CCEAFA));
 	background:-o-linear-gradient(top, red, rgba(0, 0, 255, 0.5));
@@ -238,7 +238,7 @@ body{margin:0px;color: #5A5A5A;}
 	padding:8px 8px;
 	font-size:13px;
 }
-.AspNetPager{padding-top: 5px;padding-bottom: 5px;clear: both;font-family:Arial, Helvetica, sans-serif,宋休;font-size:12px;margin:0px auto;background-color:#AFD9F6}
+.AspNetPager{padding-top: 5px;padding-bottom: 5px;clear: both;font-family:Arial, Helvetica, sans-serif,瀹嬩紤;font-size:12px;margin:0px auto;background-color:#AFD9F6}
 .arrow { color: #B0C5DB; font-weight: bolder; text-align: right; padding-right: 5px;width:20px; }
 .divErrorMSG { border: 1px solid #FEA485; line-height: 20px; padding: 3px 3px 3px 10px; background-color: #FEFDE9; margin:3px 0px 3px 2px; color: #F30; width: 90%; }
 .uinfo{
@@ -284,3 +284,14 @@ body{margin:0px;color: #5A5A5A;}
 	float:left;
 }
 .ih {height: 28px;padding-left: 3px;}
+.cm_sfzbd_ts {
+    background: none repeat scroll 0 0 #FFF9D7;
+    border: 1px solid #FFC9A8;
+    height: 52px;
+    line-height: 20px;
+    padding: 0 10px;
+}
+
+.cm_gray {
+    color: #999999;
+}
