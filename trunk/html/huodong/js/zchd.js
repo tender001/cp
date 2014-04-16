@@ -59,7 +59,7 @@ $("#getcp,#getcp2").click(function(){
 				$("#alertdiv").css("left", d_left + "px");
 				$('.yclass_mask_panel').show();
 				if(code == 0){
-				$("#alertInfo").html('恭喜您：<br />获取3元彩金<a class="a3" href="/account/orderlist.html" target="_blank" id="showClose">点击查看</a>');
+				$("#alertInfo").html('恭喜您：<br />获取2元彩金<a class="a3" href="/account/orderlist.html" target="_blank" id="showClose">点击查看</a>');
 				$("#alertok,#showClose").click(function(){
 					$('#alertdiv').hide();
 					$('.yclass_mask_panel').hide();
@@ -79,11 +79,11 @@ $("#getcp,#getcp2").click(function(){
 					$('.yclass_mask_panel').hide();
 				  });
 				}else if(code == 4){
-				$("#alertInfo").html('未实名认证，不能领取<br /><em>谢谢您的支持！</em>');
+				$("#alertInfo").html('系统已赠送过2元彩金<br /><em>不能重复领取！</em>');
 				    $("#alertok").click(function(){
 					$('#alertdiv').hide();
 					$('.yclass_mask_panel').hide();
-					location.href ='/account/safecenter.html?backurl=sssq';
+//					location.href ='/account/safecenter.html?backurl=sssq';
 				  
 				  });
 				}
