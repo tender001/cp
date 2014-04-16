@@ -83,7 +83,7 @@ Class({// 用户登录
             	}else if(backurl=="orderlist"){
             		location.href ="/account/orderlist.html";
             	}else if(backurl=="sssq"){
-            		location.href ="/huodong/sssq.html";
+            		location.href ="/huodong/czs.html";
             	}else{
             	location.href ="/";
             	}
