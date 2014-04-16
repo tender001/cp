@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head><title>
+	账户中心-手机159彩
+</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=1;' name='viewport' />
+<meta content='yes' name='apple-mobile-web-app-capable' />
+<meta content='black' name='apple-mobile-web-app-status-bar-style' />
+<meta content='telephone=no' name='format-detection' />
+<script src='/js/jquery.js'></script>
+<script src='/js/159cp.js'></script>
+<script src='/js/base.js'></script>
+<script src='/js/login.js'></script>
+<script src='/js/idbd.js'></script>
+<link rel='stylesheet' href='/style/main.css' />
+<link href="/images/apple-touch-icon.png" rel="apple-touch-icon-precomposed" /> 
+<link rel='stylesheet' href='/style/user.css' /></head>
+<body>
+<!--#include virtual="/cc/login.html"-->
+<input type="hidden" id='logintype' value="1">
+<script>
+function loginHdl() {
+    $('#Filter_Panel').slideUp('fast');
+    if ($('#Login_Panel').is(':hidden')) showLogin(true);
+    else closeLogin()
+    return false;
+}
+$(document).ready(function() {
+	chklogin(1);
+	showinfo();
+	$("#btnSumit").click(function(){
+		setdata();
+	});
+});
+</script>
+<ul class="usernav"><li><a href="/">首页</a></li>
+        <li><a href="myaccount.html">用户中心</a></li>
+        <li><b>身份证绑定</b></li></ul>
+        <div style="display:none;" id="div3" class="topround">
+			         <font color="#F18D8D"><b>您好  请先登录！</b></font>
+</div>
+<div style="display:none;" id="div1">
+	 		<div class="cm_sfzbd_ts cm_gray">
+		   		  <p class="cm_aqzx_ts">您还没有填写真实姓名和身份证！<span class="cm_red">真实姓名和身份证是提款的重要凭证</span>，建议您马上填写！</p>
+		    </div>
+	        <div id="dvNoBinding">
+	          <div class="areac">
+	                <b>真实姓名：</b><input type="text" style="width:100px;" id="truename" name="truename"><br>
+	                <b>身份证号：</b><input type="text" style="width:200px;" id="idnumber" name="idnumber"><br>
+	                <b>登录密码：</b><input type="password" style="width:200px;" id="password" name="password"><br>
+	                <a class="btnC" id="btnSumit" href="javascript:void(0);">提&nbsp;交</a>
+	           </div> 
+	        </div>
+		</div>
+		<div style="" id="div2">
+           <div class="topround"></div>
+            <div class="aread">
+	             <font color="#181C1F"><b>身份证号：</b></font><br>
+	             <span style="color:#F34115;" id="idcard"></span><br>
+	             <font color="#181C1F"><b>真实姓名：</b></font><br>
+	             <span style="color:#F34115;" id="idname"></span>
+            </div>
+        </div>
+        <div class="borderColor"><b>提示：</b><br>
+             1、暂不支持港澳台身份证，军官证，护照等相关证件进行实名认证。<br>
+             2、如您有任何疑问，可以随时咨询我们的<a href="tel:4006739188">在线客服</a>。
+        </div>
+    <div id="bottonAn"></div>
+<!--#include virtual="/cc/footer.html"-->
+</body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head><title>
+	账户中心-手机159彩
+</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=1;' name='viewport' />
+<meta content='yes' name='apple-mobile-web-app-capable' />
+<meta content='black' name='apple-mobile-web-app-status-bar-style' />
+<meta content='telephone=no' name='format-detection' />
+<script src='/js/jquery.js'></script>
+<script src='/js/159cp.js'></script>
+<script src='/js/base.js'></script>
+<script src='/js/login.js'></script>
+<script src='/js/drawmoney.js'></script>
+<link rel='stylesheet' href='/style/main.css' />
+<link href="/images/apple-touch-icon.png" rel="apple-touch-icon-precomposed" /> 
+<link rel='stylesheet' href='/style/user.css' /></head>
+<body>
+<!--#include virtual="/cc/login.html"-->
+<input type="hidden" id='logintype' value="1">
+<script>
+$(document).ready(function() {
+	chklogin(1);
+	card();
+	 $("#btnApply").click(function (){
+		 tikuan();
+		 }); 
+});
+</script>
+    <table class="usernav" width="100%"> 
+        <tr>
+          <td height="30" align="center"> <span style="font-size:18px">账户中心</span> </td>
+        </tr>
+    </table>
+    <div class="uinfo">
+          欢迎您：<font color="#00f" id="u_username"></font> 余额：￥<font color="#f00" id="u_money"></font>元
+    </div>
+    <div id="mn" style="display:none;"></div>
+    <div style="display:none;" id="div3" class="topround">
+			         <font color="#F18D8D"><b>您好  请先登录！</b></font>
+		</div>
+		<div id="div1" style="font-size:16px;color:#333333;font-weight:bold;padding:5px;display:none;" class="aread"> 
+	<div>
+		<span id="lblBankInfo">
+			<img valign="absmiddle" src="/images/er.gif">&nbsp;<font color="red">提款前请绑定银行卡信息&nbsp;&nbsp;&nbsp;&nbsp;<a href="/user/bankcardmanager.html">立即绑定</a></font>
+		</span>
+	</div>
+</div>
+<div id="div2">
+	<div style="font-size:16px;color:#333333;font-weight:bold;padding:5px;" class="aread"> 
+		<div>
+			<span id="lblBankInfo"><img valign="absmiddle" src="/images/er.gif"><span id="bank"></span><br><img valign="absmiddle" src="/images/er.gif">&nbsp;提款账号：<span id="tkcard"></span></span>
+			<br><img valign="absmiddle" src="/images/er.gif">&nbsp;当前帐号余额：<span id="yue"></span>
+		</div>
+	</div>
+	
+	<div style="line-height:32px;" class="topround">
+	    <table>
+	    	<tbody><tr>
+	    		<td>
+	    			<font color="red">*</font>&nbsp;<b>提款金额：</b>
+	    		</td>
+	    		<td>
+	    			<input type="text" style="width:135px;" id="txtDrawMoney" size="16" name="txtDrawMoney"> <font color="red"><b>元</b></font>
+	    		</td>
+	    	</tr>
+	 		<tr>
+	 			<td>
+	 				<font color="red">*</font>&nbsp;<b>真实姓名：</b>
+	 			</td>
+	 			<td>
+	 				<input type="text" style="width:135px;" id="txtRealName" size="16" name="txtRealName">
+	 			</td>
+	 		</tr>
+	    	 <tr>
+		    	 <td colspan="2"> 
+		    	 	<input type="submit" class="btnC" id="btnApply" value="确 认" name="btnApply">&nbsp;&nbsp;<span style="color:Red;" id="msgVerifyCode"></span>
+		    	 </td>
+	    	 </tr>
+	   </tbody></table> 
+	</div>
+</div>
+		
+    <div id="bottonAn"></div>
+<!--#include virtual="/cc/footer.html"-->
+</body>
+</html>
