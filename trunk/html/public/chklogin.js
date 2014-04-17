@@ -494,7 +494,7 @@ Class({
                 this.get('span.if_buy_yue').show();
             }
         });
-        this.get('b.i-hp,s.i-qw,#xianhao1,#xianhao2,#xianhao3').tip('data-help', 1, false, 360);// 帮助说明
+        this.get('b.i-hp,s.i-qw,#xianhao1,#xianhao2,#xianhao3,[mark=pro_em]').tip('data-help', 1, false, 360);// 帮助说明
         this.get('ul.main-menu-container').setStyle('z-index:9999');
         this.get('div.main-menu').slideDrop('ul.main-menu-container',{
             onshow: function (m, b, mk){
