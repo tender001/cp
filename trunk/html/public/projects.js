@@ -514,8 +514,8 @@ var showmyjoin = function(lotid,projid){
 						myjoinhtml += '<span>';
 						myjoinhtml += buydate.substr(5,11)+"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"
 						myjoinhtml += parseFloat(bmoney).rmb(true) ;
-					
-						if(o==0&&cnickid==nickid&&cancel==0&&(cp_istate==1||cp_istate==0)){
+				
+						if(o==0&&iscancel&&cnickid==nickid&&cancel==0&&(cp_istate==1||cp_istate==0)){
 							myjoinhtml +='<a onclick="return main_return_confirm();" href="javascript:void(0);">我要撤单</a>'
 						}else{
 							myjoinhtml += cancel==0?(iscancel?(cnickid==nickid?'&nbsp':'<a href="javascript:void(0);" onclick="user_return_confirm(\''+buyid+'\')" class="a1">撤资</a>'):'&nbsp;'):(cancel==1?'<em>本人撤销</em> ':'<em>系统撤销</em>');
@@ -670,7 +670,8 @@ var showview = function(lotid,projid){
 						myjoinhtml += ' <td><em>' + parseFloat(bmoney).rmb(true) + '<em></td>';
 						myjoinhtml += '<td>' + buydate + '</td>';
 						myjoinhtml += '<td>';
-						if(o==0&&cnickid==nickid&&cancel==0&&(istate==1||istate==0)){
+						var jd=(onum*100/tmoney)+jindu<80;
+						if(jd&&o==0&&cnickid==nickid&&cancel==0&&(istate==1||istate==0)){
 							myjoinhtml +='<input type="button" t="btncd" value="我要撤单" onclick="return main_return_confirm();" class="link_cz">'
 						}else{
 							myjoinhtml += cancel==0?(iscancel?(cnickid==nickid?'--':'<a href="javascript:void(0);" onclick="user_return_confirm(\''+buyid+'\')" class="a1">撤资</a>'):'--'):(cancel==1?'本人撤资 ':'系统撤销');
