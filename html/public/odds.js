@@ -131,16 +131,29 @@ $.fn.odds_select_name=function(){
 	$self=$(this);
 	$self.each(function(){
 		var $div1=$self.children("div");
-		var $div2=$div1.children("div");
-		$div1.click(function(){
+		var $div2=$self.find("div.jcslt");
+		$div1.mouseover(function(){
 			$div2.show();
-			$(this).addClass("dz_plv_ck");
-			document.onclick = function(){
-				$div2.hide();
-				$div1.removeClass("dz_plv_ck");
-			};
+//			$div1.toggle();
+			$div1.addClass("matchxzc");
+//			$(this).addClass("matchxzc");
+			
+			
+		
 			return false;
+			
 		});
+		$div1.mouseout(function(){
+			$div2.hide();
+			$div1.removeClass("matchxzc");
+		});
+		
+//	
+//		document.onclick = function(){
+//			$div2.hide();
+//			$div1.removeClass("matchxzc");
+//			
+//		};
 		$div2.find("a").click(function(){
 			$(this).blur();  
 			var txt=$(this).text();
@@ -148,10 +161,10 @@ $.fn.odds_select_name=function(){
 			$div1.find("em").attr("data", ctxt);
 			$div1.find("em").text(txt);
 			Class.config('odds_t',ctxt);
-			$div2.find("a").removeClass("cm_cur");   
-			$(this).addClass("cm_cur");
+//			$div2.find("a").removeClass("cm_cur");   
+//			$(this).addClass("cm_cur");
 			$div2.hide();
-			$div1.removeClass("dz_plv_ck");
+			$div1.removeClass("matchxzc");
 			load_odds_sp();
 			return false;	
 		});
