@@ -913,7 +913,7 @@
     			row.lhn=row.hn;
     			row.lgn=row.gn;
     			row.mname=row.mname.substr(0,4);
-    			row.name=row.name.trim();
+    			row.name=row.name.trim().substr(2,5);;
     			if (Y.getDate(data.date)>Y.getDate(row.et)){//已经过期的场次
     				out_of_date_matches++;
     					row.shuju='<a href="#">析</a> <a href="#">亚</a> <a href="#">欧</a>';
