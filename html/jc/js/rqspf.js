@@ -788,36 +788,41 @@
     	spf:function(data){
     		 var html = [];
     		 var tableTpl=['<table width="100%" border="0" cellspacing="0" cellpadding="0" class="dc_table">'+
-		           '<colgroup>'+
-		           '<col width="9%"><col width="8%"><col width="8%"><col width="22%"><col width="8%"><col width="19%"><col width="4%"><col width="15%">'+
-		           '<col width="8%"><col width="2%">'+
-		           '</colgroup>'+
-		           '<tbody>'+
-		           '<tr>'+
-		           '<th>赛事编号</th>'+
-		           '<th>赛事类型</th>'+
-		           '<th><select id="select_time">'+
-		           '<option value="0">截止</option>'+
-		           '<option value="1">开赛</option></select></th>'+
-		           '<th><span class="pro_span pro_span1"><strong>主队(让球)</strong><em id="losehelp" data-help=\'主队后的数字为让球值，负数表示主让客，正数表示客让主。\'></em></span></th><th>平局</th><th>客队</th>'+
-		           '<th class="last_th">包</th>'+
-		           '<th id="oddstype"><div class="dz_plv" ><em data="0" id="oddstype_v">平均欧指</em><div class="plv_set" style="display:none;">'+
-		           '<a href="javascript:void(0);" name="0">平均欧指</a>'+
-		           '<a href="javascript:void(0);" name="1">威廉希尔</a>'+
-		           '<a href="javascript:void(0);" name="2">澳门</a>'+
-		           '<a href="javascript:void(0);" name="3">立博</a>'+ 
-		           '<a href="javascript:void(0);" name="4">Bet365</a>'+
-		           '<a href="javascript:void(0);" name="5">SNAI</a>'+
-		           '<a href="javascript:void(0);" name="6">易胜博</a>'+
-		           '<a href="javascript:void(0);" name="7">伟德</a>'+
-		           '<a href="javascript:void(0);" name="8">Bwin</a>'+
-		           '<a href="javascript:void(0);" name="9">Coral</a>'+
-		           '<a href="javascript:void(0);" name="10">oddset</a>'+
-		           '</div></div></th>'+
-		           '<th>数据</th>'+
-		           '</tr>'+
-		           '</tbody>'+
-		           '</table>',//0对阵头
+    		               '<colgroup>'+
+    			           '<col width="109"><col width="64"><col width="154"><col width="62"><col width="154"><col width="32"><col width="118">'+
+    			           '<col width=""><col/>'+
+    			           '</colgroup>'+
+    			           '<tbody>'+
+    			           '<tr>'+
+    			           '<th id="sssx"><div  class="matchxzk" id="listDisplay">'+
+    			           '<div class="matchxz">比赛筛选<i></i></div>'+
+    			           '<div  class="jcslt" style="display:none;overflow:visible;width:200px"><div class="dc_ls_n" id="listMenu"><ul class="clearfix" mark="lgList" >12</ul></div></div></div></th>'+
+    			           '<th id="jztime"><div  class="matchxzk">'+
+    			           '<div class="matchxz"><em id="select_time">截止</em><i></i></div>'+
+    			           '<div  class="jcslt" style="display:none;overflow:visible;width:59px">'+
+    			           '<div class="plv_set">'+
+    			           '<a href="javascript:void(0);" value="0">截止</a>'+
+    			           '<a href="javascript:void(0);" value="1">开赛</a>'+
+    			           '</div></div></div></th>'+
+    			           '<th>主队</th><th>平局</th><th>客队</th>'+
+    			           '<th class="last_th">包</th>'+
+    			           '<th id="oddstype"><div  class="matchxzk"><div class="matchxz" ><em data="0" id="oddstype_v">平均欧指</em><i></i></div><div  class="jcslt" style="display:none;overflow:visible"><div class="plv_set">'+
+    			           '<a href="javascript:void(0);" name="0">平均欧指</a>'+
+    			           '<a href="javascript:void(0);" name="1">威廉希尔</a>'+
+    			           '<a href="javascript:void(0);" name="2">澳门</a>'+
+    			           '<a href="javascript:void(0);" name="3">立博</a>'+
+    			           '<a href="javascript:void(0);" name="4">Bet365</a>'+
+    			           '<a href="javascript:void(0);" name="5">SNAI</a>'+
+    			           '<a href="javascript:void(0);" name="6">易胜博</a>'+
+    			           '<a href="javascript:void(0);" name="7">伟德</a>'+
+    			           '<a href="javascript:void(0);" name="8">Bwin</a>'+
+    			           '<a href="javascript:void(0);" name="9">Coral</a>'+
+    			           '<a href="javascript:void(0);" name="10">oddset</a>'+
+    			           '</div></div></th>'+
+    			           '<th style="border-right:none">数据</th>'+
+    			           '</tr>'+
+    			           '</tbody>'+
+    			           '</table>',//0对阵头
 		           '<div class=dc_hs style="text-align: left; padding-left: 10px;"><strong>{$enddate} {$weekday} </strong>[12:00 -- 次日 12:00] <b><span id=num{$num} class="red">num{$num}</span>场比赛可投注</b> <a href="javascript:void 0">隐藏<s class=c_up></s></a> </div>',//1按天分类
 		           '<table id=d_{$enddate} class=dc_table border=0 cellspacing=0 cellpadding=0 width="100%" onselectstart="return false">'+
 		           '<colgroup>'+
@@ -924,11 +929,12 @@
     		    		}
     			};
     		});
-    		this.get("#lgList").html(lgstr);
+			this.get("#isend").html(out_of_date_matches);
+    		this.get("#vsTable").html(tableTpl[0]+html.join('')+ tableTpl[5]);
+    		$("[mark=lgList]").html(lgstr);
     		numstr[numstr.length]=num;
 
-    		this.get("#isend").html(out_of_date_matches);
-    		this.get("#vsTable").html(tableTpl[0]+html.join('')+ tableTpl[5]);
+    		
     		for(ii=0;ii<numstr.length;ii++){
     			this.get("#num"+ii).html(numstr[ii]);
     		}
@@ -1444,7 +1450,9 @@ Class('ScrollStill', {
            	                         tip: '#odds_tip',
            	                         fleft: 260
            	                     }); 
-                        	     $("#oddstype").odds_select_name();
+                        	     $("#sssx").sssx_select_name();
+                        	     $("#jztime").jztime_select_name();
+        	                     $("#oddstype").odds_select_name();
         	                     // load_odds_sp();
         	                     ozOdds({
            	                         items: '.even td .pjpl',
@@ -1892,3 +1900,47 @@ Class.fn.setFixed = function (opt){
    } 
    return this
 };
+$.fn.jztime_select_name=function(){
+	$self=$(this);
+	$self.each(function(){
+		var $div1=$self.children("div");
+		var $div2=$self.find("div.jcslt");
+		$div1.mouseover(function(){
+			$div2.show();
+			$div1.addClass("matchxzc");
+			return false;	
+		});
+		$div1.mouseout(function(){
+			$div2.hide();
+			$div1.removeClass("matchxzc");
+		});
+		$div2.find("a").click(function(){
+			$(this).blur();  
+			var txt=$(this).text();
+			var ctxt=$(this).attr("value");
+			 Y.postMsg('msg_change_time', ctxt);
+			$div1.find("em").attr("value", ctxt);
+			$div1.find("em").text(txt);
+			$div2.hide();
+			$div1.removeClass("matchxzc");
+			return false;	
+		});
+	});
+}
+$.fn.sssx_select_name=function(){
+	$self=$(this);
+	$self.each(function(){
+		var $div1=$self.children("div");
+		var $div2=$self.find("div.jcslt");
+		$div1.mouseover(function(){
+			$div2.show();
+			$div1.addClass("matchxzc");
+			return false;	
+		});
+		$div1.mouseout(function(){
+			$div2.hide();
+			$div1.removeClass("matchxzc");
+		});
+	
+	});
+}
