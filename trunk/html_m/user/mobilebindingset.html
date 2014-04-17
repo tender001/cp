@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>账户中心-手机159彩</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta
+	content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=1;'
+	name='viewport' />
+<meta content='yes' name='apple-mobile-web-app-capable' />
+<meta content='black' name='apple-mobile-web-app-status-bar-style' />
+<meta content='telephone=no' name='format-detection' />
+<script src='/js/jquery.js'></script>
+<script src='/js/159cp.js'></script>
+<script src='/js/base.js'></script>
+<script src='/js/login.js'></script>
+<script src='/js/mobilebindingset.js'></script>
+<link rel='stylesheet' href='/style/main.css' />
+<link href="/images/apple-touch-icon.png"
+	rel="apple-touch-icon-precomposed" />
+<link rel='stylesheet' href='/style/user.css' />
+</head>
+<body>
+	<!--#include virtual="/cc/login.html"-->
+	<input type="hidden" id='logintype' value="1">
+	<script type="text/javascript">
+		function loginHdl() {
+			$("#Filter_Panel").slideUp("fast");
+			if ($("#Login_Panel").is(":hidden"))
+				showLogin(true);
+			else
+				closeLogin()
+			return false;
+		}
+		$(document).ready(function() {
+			chklogin(1);
+			showinfo();
+			$("#conform_btn").click(function() {
+				btnbind();
+			});
+			$("#conform").click(function() {
+				sub();
+			});
+			$("#again").click(function() {
+				sendbind();
+			});
+		});
+	</script>
+	<ul class="usernav">
+		<li><a href="/">首页</a></li>
+		<li><a href="myaccount.html">用户中心</a></li>
+		<li><b>手机短信服务</b></li>
+	</ul>
+	<div style="display:none;" id="div4" class="topround">
+		<font color="#F18D8D"><b>您好 请先登录！</b></font>
+	</div>
+	<div id="divBindingNot">
+		<div id="divBindingNotStep1">
+			<div id="div1">
+				<div class="topround" style="color:#F37703">输入您要绑定的手机号码</div>
+				<b>手机号码：</b> <br> <input id="Phone" type="text"
+					style="width:200px;" maxlength="11" name="Phone"> <br>
+				<a id="conform_btn" class="ubtn"
+					onmouseover="this.style.cursor='pointer'"
+					href="javascript:void(0);" style="cursor: pointer;">获取验证码</a>
+
+			</div>
+			<div style="display:none;" id="div2" class="topround">
+				<font>验证码已经发送到&nbsp;<span class="cm_red" id="sendphone"></span>，请注意查收！
+				</font> <br> <b>输入验证码：</b><input type="text" id="YZM" name="YZM">&nbsp;
+				<a id="conform" name="conform" class="ubtn"
+					href="javascript:void(0);">确&nbsp;认</a> <br> <a id="again"
+					name="again" class="btn" href="javascript:void(0);">重新获取验证码</a> <input
+					type="hidden" value="" name="phoneNumber" id="phoneNumber">
+			</div>
+			<div style="display:none;" id="div3">
+				<div style="color:#F37703" class="topround">手机号已绑定</div>
+				<div class="curved_box">
+					你绑定的手机号为：<span id="ybdphone"></span>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="borderColor">
+		<b>说明：</b><br> &nbsp;1、用于找回密码和接收提款、中奖等短信。<br>
+		&nbsp;2、一个手机号码只能绑定一个159彩票账号。<br> &nbsp;3、绑定手机不收取任何费用。
+	</div>
+	<div id="bottonAn"></div>
+	<!--#include virtual="/cc/footer.html"-->
+</body>
+</html>
