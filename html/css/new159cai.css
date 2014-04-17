@@ -1301,7 +1301,7 @@ a.jc_mtz:hover, a.jc_mhm:hover{background-position:-110px 0}
 .matchxzk{ cursor: pointer;height: 32px;line-height: 32px;position: relative;z-index: 2;overflow:visible}
 .matchxz{}
 .matchxz i{background:url("/images/cai888/jtdown_11.jpg") 0 0;transition: all 0.2s ease-in 0s;height: 4px;margin-left: 5px;vertical-align: middle;width: 7px;display:inline-block}
-.jcslt{position:absolute;top:30px;left:-2px;background:#fff;width:113px;border:2px solid #444;border-top:none}
+.jcslt{position:absolute;top:30px;left:-2px;background:#fff;width:113px;border:2px solid #444;border-top:none;padding-bottom:10px}
 .matchxzc{border:2px solid #444;border-bottom:none; background:#fff;height:30px;line-height:28px}
 .plv_set a{padding-left:6px}
 .matchxzc i{transform:rotate(180deg)}
@@ -1324,3 +1324,10 @@ a.jc_mtz:hover, a.jc_mhm:hover{background-position:-110px 0}
 .unselect{cursor:pointer;}
 .unselect font{color:#ff0000;font-weight:100;font-size:12px}
 .unselectcur{background:#fffeed}
+.dc_ls_n ul.clearfix li{width:95px;text-align:left;padding-left:10px}
+.dc_ls_n ul.clearfix li input{margin-right:2px}
+.dc_ls_n h3{line-height:24px;color:#333;padding-left:10px;font-weight:100;text-align:left;padding-top:5px;font-size:12px;font-weight:bold;clear:both}
+.dc_ls_n p{padding:2px 0 2px 6px}
+.dc_ls_n p a{display:block;float:left;width:45px;height:20px;background:#ff6600;margin-left:4px;text-align:center;color:#fff;line-height:20px}
+.dc_ls_n p a:hover{color:#fff}
+.pagina{width:630px}
