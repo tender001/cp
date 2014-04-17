@@ -70,9 +70,9 @@ div{zoom:1}
 .xqtab1 b{height:30px;display:block;line-height:30px;border:1px solid #ccc; background:#fde9d9;padding:0 15px;color:#444;cursor:pointer;font-size:14px;z-index:9; position:absolute;bottom:-1px;_bottom:-2px}
 .xqtab1 b.cur{ background:#fff;border-bottom:1px solid #fff}
 .xqtabm{padding-top:14px;clear:both}
-.xqtabm td{line-height:35px;height:35px;text-align:center;color:#444}
+.xqtabm td{line-height:30px;height:30px;text-align:center;color:#444}
 .xqtabm tr.odd td{ background:#f5f5f5;}
-.xqtabm tr.tr1 td{height:27px;line-height:27px;color:#666; background:#ececec;}
+.xqtabm tr.tr1 td{color:#666; background:#ececec;}
 .xqtabm tr td{border-bottom:1px solid #ddd}
 .xqtabm table{border:1px solid #ddd;border-bottom:none}
 .xqtabm tr.tr2 td{color:#e52e04}
