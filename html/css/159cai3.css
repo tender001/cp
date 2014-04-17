@@ -2612,7 +2612,7 @@ table.co1 tbody td em.ew_e{color:#145fab}
 table.co1 tbody td em.ew_e:hover{color:#ff6600}
 .dz_plv{width:83px;height:23px;z-index:999; background:url(../images/cdbg/plv_bg.png) -7px -3px no-repeat;text-align:left;padding-left:10px;line-height:23px;font-size:12px;color:#222;font-weight:bold;margin:0 auto;cursor:pointer; position:relative; overflow:visible}
 .dz_plv_ck{ background-position:-119px -3px}
-.plv_set{ position:absolute;left:0px;top:22px; background-color:#fff;border:1px solid #ccc;border-top:none;width:90px;z-index:9999999999}
+.plv_set{background-color:#fff;z-index:9999999999}
 .plv_set a{line-height:20px;color:#333;font-size:12px;text-align:left;padding-left:10px;display:block;font-weight:100}
 .plv_set a:hover{ background-color:#ddd; text-decoration:none}
 .plv_tk{width:245px;border:1px solid #9f0700;position:absolute;background-color:#fff}
