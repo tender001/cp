@@ -237,7 +237,7 @@ var showInfo = function(stime,etime,tid,pn,ps,tp,tr) {//页码		页面大小 		�
 						if(ibiztype=='104'){
 							html += "<td title='提现'>提现</td>";
 						}else{
-							html += "<td title="+ (cm.title?cm.title:cmemo) +">";
+							html += "<td title='"+ (cm.title?cm.title:cmemo) +"'>";
 							html +=  (cm.title?cm.title:cmemo).replace((cm.title?cm.title:cmemo),sub((cm.title?cm.title:cmemo),20))+" </td>";
 						}
 						
