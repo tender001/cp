@@ -42,7 +42,10 @@
                 Y.postMsg('msg_select_list', this.getAttribute('value'), 0, this.checked);
             }).get('#selectAllBtn').click(function (){
                 lg.prop('checked', true);//所有
-                Y.postMsg('msg_select_list', false, 2, all.attr('checked'));
+                Y.postMsg('msg_select_list', true, 2, lg.attr('checked'));
+            }).get('#unAllBtn').click(function (){
+                lg.prop('checked', false);//全清
+                Y.postMsg('msg_select_list', true, 5, lg.attr('checked'));
             }).get('#selectOppBtn').click(function (){
                 var data = {};//反选
                 lg.prop('checked', function (old){
@@ -54,7 +57,22 @@
             });
             rq.click(function(){
            	 Y.postMsg('msg_select_list', this.getAttribute('value'), 3, this.checked);
-           })
+           }).get('#selectrqBtn').click(function (){
+        	   rq.prop('checked', true);//所有
+               Y.postMsg('msg_select_list', false, 2,  rq.attr('checked'));
+           }).get('#unrqBtn').click(function (){
+        	   rq.prop('checked', false);//全清
+               Y.postMsg('msg_select_list', true, 6,  rq.attr('checked'));
+           }).get('#selectOrqBtn').click(function (){
+               var data = {};//反选
+               rq.prop('checked', function (old){
+                   var ed = !old;
+                   data[this.getAttribute('value')] = ed;
+                   return ed;
+               });
+               Y.postMsg('msg_select_list', data, 1);
+           });
+           
             rqc.click(function(){
             	 Y.postMsg('msg_select_list', this.getAttribute('value'), 4, this.checked);
             });
@@ -300,6 +318,14 @@
                      });
                 	 target.show(sel);
                 	 break;
+                 case 5://全选
+                     Y.allList.hide(sel);
+                     break;
+                 case 6:
+                	 
+                	 Y.allList.hide(sel);
+                	 break;
+                 
                  }
                  this.getHideCount()
              });
@@ -968,7 +994,7 @@
        			var league_name = item;
        				if ($_sys.getSub(arr_league,league_name) == -1 ) {
        					arr_league.push(league_name);
-       					league_list_html += '<ul><li><label for="' + league_name + '"><input name="lg" type="checkbox" value="' + league_name + '" checked="checked"/><span>' + league_name + '</span>[<i>'+league_name +'_num</i>]</label></li></ul>';
+       					league_list_html += '<li><label for="' + league_name + '"><input name="lg" type="checkbox" value="' + league_name + '" checked="checked"/><span>' + league_name + '</span>[<i>'+league_name +'_num</i>]</label></li>';
       				}
        				if (typeof match_num_of_league[league_name] == 'undefined') {
        					match_num_of_league[league_name] = 1;
@@ -995,7 +1021,7 @@
        					if((Y.getDate(newday)-Y.getDate(item.split("_")[1]))==0){
        						wd='(今天)';
        					}
-       					week_list_html+='<ul><li><label for=' + week_name + wd+'><input class="radio" type="checkbox" value="'+item.split("_")[1]+'" checked="checked"/><span>' + week_name + wd+'赛程</span>[<i>'+week_name + '_num</i>]</label></li></ul>';
+       					week_list_html+='<li style="width:145px"><label for=' + week_name + wd+'><input class="radio" type="checkbox" value="'+item.split("_")[1]+'" checked="checked"/><span>' + week_name + wd+'赛程</span>[<i>'+week_name + '_num</i>]</label></li>';
       				}
       				if (typeof match_num_of_week[week_name] == 'undefined') {
       					match_num_of_week[week_name] = 1;
