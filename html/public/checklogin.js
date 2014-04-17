@@ -1,5 +1,4 @@
 $(document).ready(function(){
-	  alert(1);
    		Y.ajax({
 	       url:Class.C("url-login-user")+"&rnd=" + Math.random(),
 	       end:function (data){
@@ -16,13 +15,11 @@ $(document).ready(function(){
 								   this.get("#acc_userinfo").html(u.nickid);
 								   $("#sjandscc").show();
    	 	  						   $("#sjand").hide();
-   	 	  					 alert(2);
 								  
 								  
 						   }else{
 							  	$("#sjandscc").hide();
    								$("#sjand").show();
-   								alert(3);
 						   }      
 	           }
 	       }
