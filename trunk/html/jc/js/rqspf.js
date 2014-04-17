@@ -826,8 +826,8 @@
 		           '<div class=dc_hs style="text-align: left; padding-left: 10px;"><strong>{$enddate} {$weekday} </strong>[12:00 -- 次日 12:00] <b><span id=num{$num} class="red">num{$num}</span>场比赛可投注</b> <a href="javascript:void 0">隐藏<s class=c_up></s></a> </div>',//1按天分类
 		           '<table id=d_{$enddate} class=dc_table border=0 cellspacing=0 cellpadding=0 width="100%" onselectstart="return false">'+
 		           '<colgroup>'+
-		           '<col width="9%"><col width="8%"><col width="8%"><col width="22%"><col width="8%"><col width="19%"><col width="4%"><col width="15%">'+
-		           '<col width="8%"><col width="2%">'+
+		           '<col width="45"><col width="64"><col width="64"><col width="154"><col width="62"><col width="154"><col width="32"><col width="118">'+
+		           '<col width=""><col/>'+
 		           '</colgroup>',//table
 		           '<tbody>'+
 		           '<tr class="{$classname}" style="display: none" lg="{$mname}" isend="1" lost="{$sp0}" draw="{$sp1}" win="{$sp3}" pendtime="{$et}" rq="{$close}" pdate="{$itemid}" pname="{$itemid}" mid="{$mid}" zid="{$itemid}" title="已截止场次">'+
