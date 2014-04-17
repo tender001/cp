@@ -70,7 +70,7 @@
                    data[this.getAttribute('value')] = ed;
                    return ed;
                });
-               Y.postMsg('msg_select_list', data, 1);
+               Y.postMsg('msg_select_list', data, 7);
            });
            
             rqc.click(function(){
@@ -325,6 +325,19 @@
                 	 
                 	 Y.allList.hide(sel);
                 	 break;
+                 case 7://反选
+                     Y.allList.each(function (tr){
+                         var show = data[tr.getAttribute('rq')];
+                         this.get(tr).show(show);
+                         if (Y.isbf && !show){
+                             var next=document.getElementById('pltr_'+tr.getAttribute('mid'));
+                             if (next && next.style.display != 'none') {
+                                 Y.get('a.bf_btn', tr).swapClass('public_Dora', 'public_Lblue').html('<b>展开选项<s class="c_down"></s></b>');
+//                                 next.style.display='none';
+                             }
+                         }
+                     }, this);
+                     break;
                  
                  }
                  this.getHideCount()
