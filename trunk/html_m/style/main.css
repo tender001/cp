@@ -30,7 +30,7 @@ footer
 	padding:2px;
 }
 .listG{background-color: #FFF588;background: -webkit-gradient(linear,0 0,0 100%,from(#FFEEC1),to(#FFF588));}
-/* 拉下的层 */
+/* 鎷変笅鐨勫眰 */
 .header-panel {
 width: 100%;
 position: absolute;
@@ -54,7 +54,7 @@ opacity: .98;
 	cursor:pointer;
 }
 
-/*购彩页面*/
+/*璐僵椤甸潰*/
 .mainSec{
 }
 .step
@@ -90,7 +90,7 @@ height:20px;
 }
 .mBTN .odds{color:gray;}
 .mBtnCheck  .odds{color:#7D5C3E;}
-/* 圆角*/
+/* 鍦嗚*/
 .logout,.yellow,.mBTN,.mBtnCheck,.btn,.btnC,.btnD,.mDan,.mDanCheck,.mXi,.mDan1,.Filter_Panel,.Fillet {
 -webkit-border-top-left-radius:4px;
 -webkit-border-top-right-radius:4px;
@@ -104,7 +104,7 @@ height:20px;
 -moz-box-shadow:2px 1px 2px #ccc;
 }
 
-/* 一场赛事 */
+/* 涓�満璧涗簨 */
 .match
 {
 	background-color:#F8E6E0;
@@ -117,14 +117,14 @@ height:20px;
 	border-bottom: 1px solid #DDF5FD;
 	border-top: 1px solid #A7BCCD;
 }
-/* 投注左边栏 */
+/* 鎶曟敞宸﹁竟鏍�*/
 .matchL
 {
 	width:45px;
 	text-align:center;
 }
 ul, ol, li {list-style: none;}
-/* 投注按钮上一层 */
+/* 鎶曟敞鎸夐挳涓婁竴灞�*/
 .btnList
 {
 width:100%;
@@ -148,7 +148,7 @@ margin:2px;
 width:60px;
 line-height:25px;
 }
-/* 投注按钮 */
+/* 鎶曟敞鎸夐挳 */
 .mBTN,.mDan,.btn
 {
 border:1px solid #B0B5B9;
@@ -158,7 +158,7 @@ background:-moz-linear-gradient(top,#fff,#E4E4E4);
 background:-webkit-gradient(linear,0 0,0 100%,from(#fff),to(#E4E4E4));
 background:-o-linear-gradient(top, #fff, #E4E4E4);
 }
-/* 投注按钮 */
+/* 鎶曟敞鎸夐挳 */
 .mBtnCheck,.mDanCheck,.btnC,.mBtnCheck:link,.mDanCheck:link
 {
 border:1px solid #FF7C00;
@@ -177,7 +177,7 @@ background:-o-linear-gradient(top, #FFA600, #FF6600);
 	background:-webkit-gradient(linear,0 0,0 100%,from(#FFFDE1),to(#F4E5AE));
 	background:-o-linear-gradient(top, #FFFDE1, #F4E5AE);
 }
-/*析*/
+/*鏋�/
 .mXi
 {
 border:1px solid #B79F9D;
@@ -187,7 +187,7 @@ background:-moz-linear-gradient(top,#FFFDE1,#F4E5AE);
 background:-webkit-gradient(linear,0 0,0 100%,from(#FFFDE1),to(#F4E5AE));
 background:-o-linear-gradient(top, #FFFDE1, #F4E5AE);
 }
-/*胆*/
+/*鑳�/
 .mDan1
 {
 background-color:#EAEAEA;
@@ -267,7 +267,7 @@ opacity: .99;
 	border-bottom-color: #DCDCDC;
 }
 
-/*头*/
+/*澶�/
 #webtop {
 	height:40px;
 	width:100%;
@@ -279,3 +279,7 @@ opacity: .99;
 }
 #webtop a { color:#FFF}
 #webtop .mBTN{width:35px;color:#000;font-size:14px;}
+.downClient {
+    clear: both;
+    float: none;
+}
