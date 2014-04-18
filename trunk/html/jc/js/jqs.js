@@ -797,7 +797,7 @@
               '<TD style="text-align: right; padding-right:2px;"><A title={$lhn} href="" target="_blank" id="hn{$itemid}"><em id="htid{$itemid}" class="ew_e">{$hn}</em></A></TD>'+
               '<TD style="text-align: center;">VS</TD>'+
               '<TD style="text-align: left; padding-left:2px;"><A title={$lgn} href="" target="_blank" id="gn{$itemid}"><em id="gtid{$itemid}" class="ew_e">{$gn}</em></A></TD>'+
-              '<TD class=h_br>{$sp0}</TD>'+
+              '<TD class=h_br style="border-left:1px solid #62A3D0">{$sp0}</TD>'+
               '<TD class=h_br>{$sp1}</TD>'+
               '<TD class=h_br>{$sp2}</TD>'+
               '<TD class=h_br>{$sp3}</TD>'+
@@ -815,7 +815,7 @@
               '<TD style="text-align: right; padding-right:2px;"><A title={$lhn} href="" target="_blank" id="hn{$itemid}"><em id="htid{$itemid}" class="ew_e">{$hn}</em></A></TD>'+
               '<TD style="text-align: center;">VS</TD>'+
               '<TD style="text-align: left; padding-left:2px;"><A title={$lgn} href="" target="_blank" id="gn{$itemid}"><em id="gtid{$itemid}" class="ew_e">{$gn}</em></A></TD>'+
-              '<TD style="CURSOR: pointer" class=h_br><DIV class=label_br><INPUT class=chbox value=0 type=checkbox style="display: none"><SPAN class=eng>{$sp0}</SPAN></DIV></TD>'+
+              '<TD style="CURSOR: pointer;border-left:1px solid #62A3D0" class=h_br><DIV class=label_br><INPUT class=chbox value=0 type=checkbox style="display: none"><SPAN class=eng>{$sp0}</SPAN></DIV></TD>'+
               '<TD style="CURSOR: pointer" class=h_br><DIV class=label_br><INPUT class=chbox value=1 type=checkbox style="display: none"><SPAN class=eng>{$sp1}</SPAN></DIV></TD>'+
               '<TD style="CURSOR: pointer" class=h_br><DIV class=label_br><INPUT class=chbox value=2 type=checkbox style="display: none"><SPAN class=eng>{$sp2}</SPAN></DIV></TD>'+
               '<TD style="CURSOR: pointer" class=h_br><DIV class=label_br><INPUT class=chbox value=3 type=checkbox style="display: none"><SPAN class=eng>{$sp3}</SPAN></DIV></TD>'+

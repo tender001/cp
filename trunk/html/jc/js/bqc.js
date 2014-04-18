@@ -789,14 +789,14 @@
               '<TD style="text-align: right; padding-right:2px;"><A title={$lhn} href="" target="_blank" id="hn{$itemid}">{$hn}</A></TD>'+
               '<TD style="text-align: center;">VS</TD>'+
               '<TD style="text-align: left; padding-left:2px;"><A title={$lgn} href="" target="_blank" id="gn{$itemid}">{$gn}</A></TD>'+
-              '<TD class=h_br>{$sp0}</TD>'+
-              '<TD class=h_br>{$sp1}</TD>'+
+              '<TD class=h_br style="border-left:1px solid #62A3D0">{$sp0}</TD>'+
+              '<TD class=h_br >{$sp1}</TD>'+
               '<TD class=h_br>{$sp2}</TD>'+
-              '<TD class=h_br>{$sp3}</TD>'+
+              '<TD class=h_br >{$sp3}</TD>'+
               '<TD class=h_br>{$sp4}</TD>'+
-              '<TD class=h_br>{$sp5}</TD>'+
-              '<TD class=h_br>{$sp6}</TD>'+
-              '<TD class=h_br>{$sp7}</TD>'+
+              '<TD class=h_br >{$sp5}</TD>'+
+              '<TD class=h_br >{$sp6}</TD>'+
+              '<TD class=h_br >{$sp7}</TD>'+
               '<TD class=h_br>{$sp8}</TD>'+
               '<TD><a href="" target="_blank" id="ox{$itemid}">析</a> <a href="" target="_blank" id="oz{$itemid}">欧</a></TD></TR>'+
               '</TBODY>',//3隐藏对阵
@@ -808,15 +808,15 @@
               '<TD style="text-align: right; padding-right:2px;"><A title={$lhn} href="" target="_blank" id="hn{$itemid}"><em id="htid{$itemid}" class="ew_e">{$hn}</em></A></TD>'+
               '<TD style="text-align: center;">VS</TD>'+
               '<TD style="text-align: left; padding-left:2px;"><A title={$lgn} href="" target="_blank" id="gn{$itemid}"><em id="gtid{$itemid}" class="ew_e">{$gn}</em></A></TD>'+
-              '<TD style="CURSOR: pointer" class=h_br><DIV class=label_br><INPUT class=chbox value=33 type=checkbox style="display: none"><SPAN class=eng>{$sp0}</SPAN></DIV></TD>'+
-              '<TD style="CURSOR: pointer" class=h_br><DIV class=label_br><INPUT class=chbox value=31 type=checkbox style="display: none"><SPAN class=eng>{$sp1}</SPAN></DIV></TD>'+
-              '<TD style="CURSOR: pointer" class=h_br><DIV class=label_br><INPUT class=chbox value=30 type=checkbox style="display: none"><SPAN class=eng>{$sp2}</SPAN></DIV></TD>'+
-              '<TD style="CURSOR: pointer" class=h_br><DIV class=label_br><INPUT class=chbox value=13 type=checkbox style="display: none"><SPAN class=eng>{$sp3}</SPAN></DIV></TD>'+
-              '<TD style="CURSOR: pointer" class=h_br><DIV class=label_br><INPUT class=chbox value=11 type=checkbox style="display: none"><SPAN class=eng>{$sp4}</SPAN></DIV></TD>'+
-              '<TD style="CURSOR: pointer" class=h_br><DIV class=label_br><INPUT class=chbox value=10 type=checkbox style="display: none"><SPAN class=eng>{$sp5}</SPAN></DIV></TD>'+
-              '<TD style="CURSOR: pointer" class=h_br><DIV class=label_br><INPUT class=chbox value=03 type=checkbox style="display: none"><SPAN class=eng>{$sp6}</SPAN></DIV></TD>'+
-              '<TD style="CURSOR: pointer" class=h_br><DIV class=label_br><INPUT class=chbox value=01 type=checkbox style="display: none"><SPAN class=eng>{$sp7}</SPAN></DIV></TD>'+
-              '<TD style="CURSOR: pointer" class=h_br><DIV class=label_br><INPUT class=chbox value=00 type=checkbox style="display: none"><SPAN class=eng>{$sp8}</SPAN></DIV></TD>'+
+              '<TD style="CURSOR: pointer;border-left:1px solid #62A3D0" class=h_br  ><DIV class=label_br><INPUT class=chbox value=33 type=checkbox style="display: none"><SPAN class=eng>{$sp0}</SPAN></DIV></TD>'+
+              '<TD style="CURSOR: pointer" class=h_br ><DIV class=label_br><INPUT class=chbox value=31 type=checkbox style="display: none"><SPAN class=eng>{$sp1}</SPAN></DIV></TD>'+
+              '<TD style="CURSOR: pointer" class=h_br ><DIV class=label_br><INPUT class=chbox value=30 type=checkbox style="display: none"><SPAN class=eng>{$sp2}</SPAN></DIV></TD>'+
+              '<TD style="CURSOR: pointer" class=h_br ><DIV class=label_br><INPUT class=chbox value=13 type=checkbox style="display: none"><SPAN class=eng>{$sp3}</SPAN></DIV></TD>'+
+              '<TD style="CURSOR: pointer" class=h_br ><DIV class=label_br><INPUT class=chbox value=11 type=checkbox style="display: none"><SPAN class=eng>{$sp4}</SPAN></DIV></TD>'+
+              '<TD style="CURSOR: pointer" class=h_br ><DIV class=label_br><INPUT class=chbox value=10 type=checkbox style="display: none"><SPAN class=eng>{$sp5}</SPAN></DIV></TD>'+
+              '<TD style="CURSOR: pointer" class=h_br ><DIV class=label_br><INPUT class=chbox value=03 type=checkbox style="display: none"><SPAN class=eng>{$sp6}</SPAN></DIV></TD>'+
+              '<TD style="CURSOR: pointer" class=h_br ><DIV class=label_br><INPUT class=chbox value=01 type=checkbox style="display: none"><SPAN class=eng>{$sp7}</SPAN></DIV></TD>'+
+              '<TD style="CURSOR: pointer" class=h_br ><DIV class=label_br><INPUT class=chbox value=00 type=checkbox style="display: none"><SPAN class=eng>{$sp8}</SPAN></DIV></TD>'+
               '<TD><a href="" target="_blank" id="ox{$itemid}">析</a> <a href="" target="_blank" id="oz{$itemid}">欧</a></TD></TR>'+
               '</TBODY>',//4显示对阵
               '</TABLE>'//5
