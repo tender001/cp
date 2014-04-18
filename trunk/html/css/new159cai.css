@@ -1258,10 +1258,10 @@ table.bk_yd  p{text-align:left;padding-left:10px}
 .kj_yctj{margin-top:0}
 .dc_table tr.odd td{background-color:#fff}
 .dc_table tr:hover td,.dc_table tr.odd td:hover{background-color:#fffee6}
-.dc_table td.h_br{background:url(/images/cai888/ban1.jpg) no-repeat scroll 100% 0;border-right:1px solid #62a3d0 }
+.dc_table td.h_br,table.co1 tbody td.btn_a{background:url(/images/cai888/ban1.jpg) no-repeat scroll 100% bottom;border-right:1px solid #62a3d0 }
 .dc_table td.h_br:hover{background:url(/images/cai888/ban3.jpg) 0 0 no-repeat}
 .dc_table td.h_brx{background: url(/images/cai888/ban2.jpg) 0 0 no-repeat;}
-.dc_table td.label_cd,.dc_table td.label_cd:hover{background:url(../images/cai888/ban4.jpg) 0 0 no-repeat;cursor:pointer}
+.dc_table td.label_cd,.dc_table td.label_cd:hover,table.co1 tbody td.btn_b,table.co1 tbody td.btn_b:hover{background:url(../images/cai888/ban4.jpg) 0 bottom no-repeat;cursor:pointer}
 .jc_l_t {padding-left: 6px;overflow: visible;background: url("/images/cai888/lc_25.jpg") left center no-repeat;border-top:none
 }
 .dc_r_m h2.h_2{ background: url("/images/cai888/lc_28.jpg") left 2px transparent no-repeat;padding:7px 10px 0 0;height:28px;border-bottom:1px solid #ddd}
@@ -1292,17 +1292,17 @@ a.jc_mtz:hover, a.jc_mhm:hover{background-position:-110px 0}
 .touzcm p a{color:#333;margin:0 5px;}
 .touzcm p a:hover{color:#ff0000;text-decoration:underline}
 .tzsontab{height:30px;padding-top:8px;}
-.tzsontab span{float:left;padding-left:20px}
+.tzsontab span{float:left;padding-left:20px;color:}
 .tzsontab span a{color:#444;display:block;float:left;padding:0 18px;line-height:30px;height:30px}
 .tzsontab span a.cur{border:1px solid #ccc;border-bottom:none;background:#fff}
-.tzsontab p{float:right;margin-right:20px;line-height:26px;}
+.tzsontab p{float:right;margin-right:20px;line-height:26px;color:#333}
 .tzsontab p em{color:#e52e04;font-weight:bold;font-family:Arial;margin:0 2px}
 .tzsontab p b{background:url("/images/cai888/jctop_06.jpg") 0 0 ;height:15px;width:15px;cursor:pointer;display:block;float:left;margin:5px 0 0 3px}
 .matchxzk{ cursor: pointer;height: 32px;line-height: 32px;position: relative;z-index: 2;overflow:visible}
 .matchxz{}
 .matchxz i{background:url("/images/cai888/jtdown_11.jpg") 0 0;transition: all 0.2s ease-in 0s;height: 4px;margin-left: 5px;vertical-align: middle;width: 7px;display:inline-block}
-.jcslt{position:absolute;top:30px;left:-2px;background:#fff;width:113px;border:2px solid #444;border-top:none;padding-bottom:10px}
-.matchxzc{border:2px solid #444;border-bottom:none; background:#fff;height:30px;line-height:28px}
+.jcslt{position:absolute;z-index:9;top:30px;left:0;background:#fff;width:113px;border:2px solid #444;padding-bottom:10px}
+.matchxzc{border:2px solid #444;border-bottom:none; background:#fff;height:30px;line-height:28px;position:relative;z-index:99}
 .plv_set a{padding-left:6px}
 .matchxzc i{transform:rotate(180deg)}
 .dc_l_tl{float:left;padding-left:102px}
@@ -1331,3 +1331,11 @@ a.jc_mtz:hover, a.jc_mhm:hover{background-position:-110px 0}
 .dc_ls_n p a{display:block;float:left;width:45px;height:20px;background:#ff6600;margin-left:4px;text-align:center;color:#fff;line-height:20px}
 .dc_ls_n p a:hover{color:#fff}
 .pagina{width:630px}
+.jckj_tb table.co1 thead td{background: none repeat scroll 0 0 #F5F5F5;border-bottom: 1px solid #CCCCCC;border-right: 1px solid #CCCCCC;height: 32px;}
+.jc_ds_col_1 p{color:#333;font-size:12px}
+.jc_ds_col_1 b.cm_red{color:#E52E04;margin:0 2px}
+.jc_ds_col_1 em{color:#333;font-size:12px;font-weight:100}
+.jc_ds_col_1{background:none;}
+.jc_ds_col_1 a{background:url(../images/cai888/zcys_05.jpg) 0 0 no-repeat;line-height:22px;color:#fff;text-align:cetner;height:28px;width:128px;display:block;float:left;margin-right:12px;text-align:Center;font-size:12px}
+.jc_ds_col_1 a.cur{background:url(../images/cai888/zcys_03.jpg) 0 0 no-repeat}
+.jckj_tb{padding-top:6px}
