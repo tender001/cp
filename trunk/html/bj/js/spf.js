@@ -1446,7 +1446,7 @@ Class('LoadExpect',{
 		'<a  href="" target="_blank" id="match{$mid}" style="color:#fff;">{$mname}</a>'+
 		'</td>'+
 		'<td><span class="eng end_time" title="截止时间：{$et}">{$short_et}</span><span style="display: none" class="eng match_time" title="开赛时间：{$bt}">{$short_bt}</span></td>'+
-		'<td class="h_br" style="text-align: right; padding-right: 10px;"><div class="dz_dv"><s class="s_left">&nbsp;</s>'+
+		'<td class="h_br" style="text-align: right; padding-right: 10px;border-left:1px solid #62A3D0;"><div class="dz_dv"><s class="s_left">&nbsp;</s>'+
 		'<label class="label_n span_left">'+
 		'<input type="checkbox" class="chbox" value="胜" onclick="return false"  disabled="disabled" style="display: none"/><em id="htid_{$mid}" class="em_left">{$hn}</em>{$closestr} {$sp3str}</label>'+
 		'</div></td>'+
@@ -1476,7 +1476,7 @@ Class('LoadExpect',{
 		'<a  href="" target="_blank" id="match{$mid}" style="color:#fff;">{$mname}</a>'+
 		'</td>'+
 		'<td><span class="eng end_time" title="截止时间：{$et}">{$short_et}</span><span style="display: none" class="eng match_time" title="开赛时间：{$bt}">{$short_bt}</span></td>'+
-		'<td class="h_br" style="text-align: right; padding-right: 10px; cursor: pointer" title="{$hn}"><div class="dz_dv"><s class="s_left">&nbsp;</s>'+
+		'<td class="h_br" style="text-align: right; padding-right: 10px; cursor: pointer;border-left:1px solid #62A3D0" title="{$hn}"><div class="dz_dv"><s class="s_left">&nbsp;</s>'+
 		'<label class="label_n span_left" >'+
 		'<input type="checkbox" class="chbox" value="胜" onclick="return false" style="display: none"/><em id="htid_{$mid}" class="em_left">{$hn}</em>{$closestr} <span class="sp_value eng b_left1">{$sp3}</span>'+
 		'</label>'+

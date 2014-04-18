@@ -1749,7 +1749,7 @@ Class('LoadExpect',{
 	       '</colgroup>'+
 	       '<tbody>'+
 	       '<tr>'+
-	       '<td class="h_br">'+
+	       '<td class="h_br" style="border-left:1px solid #62A3D0">'+
 	       '<label class="eng">'+
 	       '<input type="checkbox" class="chbox" value="胜其他" onclick="return false"  {$disabled} style="display:none"/><span class="f_bf">胜其他</span><br/>'+
 	       '{$sp90str}'+
