@@ -158,7 +158,7 @@ background:-moz-linear-gradient(top,#fff,#E4E4E4);
 background:-webkit-gradient(linear,0 0,0 100%,from(#fff),to(#E4E4E4));
 background:-o-linear-gradient(top, #fff, #E4E4E4);
 }
-/* 鎶曟敞鎸夐挳 */
+
 .mBtnCheck,.mDanCheck,.btnC,.mBtnCheck:link,.mDanCheck:link
 {
 border:1px solid #FF7C00;
@@ -177,7 +177,7 @@ background:-o-linear-gradient(top, #FFA600, #FF6600);
 	background:-webkit-gradient(linear,0 0,0 100%,from(#FFFDE1),to(#F4E5AE));
 	background:-o-linear-gradient(top, #FFFDE1, #F4E5AE);
 }
-/*鏋�/
+
 .mXi
 {
 border:1px solid #B79F9D;
@@ -187,7 +187,7 @@ background:-moz-linear-gradient(top,#FFFDE1,#F4E5AE);
 background:-webkit-gradient(linear,0 0,0 100%,from(#FFFDE1),to(#F4E5AE));
 background:-o-linear-gradient(top, #FFFDE1, #F4E5AE);
 }
-/*鑳�/
+
 .mDan1
 {
 background-color:#EAEAEA;
@@ -267,7 +267,6 @@ opacity: .99;
 	border-bottom-color: #DCDCDC;
 }
 
-/*澶�/
 #webtop {
 	height:40px;
 	width:100%;
