@@ -805,9 +805,9 @@
     	},
     	_updateUrl : function(expect) {    		
     		//期号导航链接
-    		this.get("#expect_tab a").each(function(a,i){
-    			a.href=Class.C('isds')?location.pathname+'?lotid='+Class.C('lot_id')+'&expect='+a.id.substr(3):location.pathname+'?expect='+a.id.substr(3);
-    		});
+//    		this.get("#expect_tab a").each(function(a,i){
+//    			a.href=Class.C('isds')?location.pathname+'?lotid='+Class.C('lot_id')+'&expect='+a.id.substr(3):location.pathname+'?expect='+a.id.substr(3);
+//    		});
     		//选号投注、参与合买、定制跟单、我的方案等链接
     		    		   		
 			var hrefurl=[this.getLotPath()+'?expect='+expect,'/hemai/project_list.html?lotid='+Class.C('lot_id')+'&expect='+expect,'/account/'];
@@ -894,11 +894,18 @@
 									if (this.get("#expect").val() == "") {
 										this.get("#expect").val(expectlist[i][0]);
 									}
-									html = '<a' +" "+  'value=' + expectlist[i][0] +'>'+'当前期(第' + expectlist[i][0] + '期)</a>';
+<<<<<<< .mine
+									html = '<a' +" "+  'value=' + expectlist[i][0] +' mark="expect">'+'当前期(第' + expectlist[i][0] + '期)</a>';
+=======
+									html = '<label for="exp' + expectlist[i][0] + '" value="' + expectlist[i][0] + '"><input type="radio" name="radio1" id="exp' + expectlist[i][0] + '"/>当前期(第' + expectlist[i][0] + '期)</label>';
+>>>>>>> .r115
 								} else {
-									html += '<a' +" "+ 'value=' + expectlist[i][0] + '>'+'预售期(第' + expectlist[i][0] + '期)</a>';
+<<<<<<< .mine
+									html += '<a' +" "+ 'value=' + expectlist[i][0] + ' mark="expect">'+'预售期(第' + expectlist[i][0] + '期)</a>';
+=======
+									html += '<label for="exp' + expectlist[i][0] + '" value="' + expectlist[i][0] + '"><input type="radio" name="radio1" id="exp' + expectlist[i][0] + '"/>预售期(第' + expectlist[i][0] + '期)</label>';
+>>>>>>> .r115
 								}
-								    
 							}		
 						}	
 						var find = false;
@@ -930,12 +937,18 @@
 						if ($("#expect").val() == "") {
 							$("#expect").val(expectlist[expectlist.length - 1][0]);
 						}
-						if ($("#exp" + $("#expect").val())) {
-							$("#exp" + $("#expect").val()).attr("checked", true);
-							this.postMsg('msg_get_expect_suc',$("#expect").val());
-						}
+						$("a[mark=expect]").each(function(ex,o){
+							if($(o).attr("value")==$("#expect").val()){
+								$(o).addClass("cur");
+								Y.postMsg('msg_get_expect_suc',$("#expect").val());
+							}
+						})
+//						if ($("#exp" + $("#expect").val())) {
+//							$("#exp" + $("#expect").val()).attr("checked", true);
+//							
+//						}
 						
-						$("#expect_tab label").each(function(){
+						$("#expect_tab a[mark=expect]").each(function(){
 			    			$(this).click(function(){
 			    				var ex=$(this).attr("value");
 			    				$("#expect").val(ex);
@@ -1058,9 +1071,9 @@
 												+ '<td>'+mid+'</td>'
 												+ '<td style="background:'+cl+';"><a href="" id="mn'+mid+'" target="_blank" class="bq_xa" >'+mn+'</a></td>'
 												+ '<td>'+Y.getDate(bt).format('MM-DD hh:mm')+'</td>'
-												+ '<td style="border-right:none"><em></em><a href="" target="_blank" id="hteam'+mid+'" class="mtc_name"><em id="htid'+mid+'" class="ew_e">'+hn+'</em></a> VS '
+												+ '<td><em></em><a href="" target="_blank" id="hteam'+mid+'" class="mtc_name"><em id="htid'+mid+'" class="ew_e">'+hn+'</em></a> VS '
 												+ '<a href="" target="_blank" id="vteam'+mid+'" class="mtc_name"><em id="gtid'+mid+'" class="ew_e">'+gn+'</em></a><em></em></td>'
-												+ '<td class="btn_a" style="border-left:1px solid #62A3D0">3</td>'
+												+ '<td class="btn_a">3</td>'
 												+ '<td class="btn_a">1</td>'
 												+ '<td class="btn_a">0</td>'
 												+ '<td><a class="mtc_name sp_all">全</a></td>'
@@ -1074,9 +1087,9 @@
 												+ '<td>'+mid+'</td>'
 												+ '<td style="background:'+cl+';"><a href="" id="mn'+mid+'" target="_blank" class="bq_xa" >'+mn+'</a></td>'
 												+ '<td>'+Y.getDate(bt).format('MM-DD hh:mm')+'</td>'
-												+ '<td style="border-right:none"><em></em><a href="" target="_blank" id="hteam'+mid+'" class="mtc_name"><em id="htid'+mid+'" class="ew_e">'+hn+'</em></a> VS '
+												+ '<td><em></em><a href="" target="_blank" id="hteam'+mid+'" class="mtc_name"><em id="htid'+mid+'" class="ew_e">'+hn+'</em></a> VS '
 												+ '<a href="" target="_blank" id="vteam'+mid+'" class="mtc_name"><em id="gtid'+mid+'" class="ew_e">'+gn+'</em></a><em></em></td>'
-												+ '<td class="btn_a" style="border-left:1px solid #62A3D0">3</td>'
+												+ '<td class="btn_a">3</td>'
 												+ '<td class="btn_a">1</td>'
 												+ '<td class="btn_a">0</td>'
 												+'<td><a href="javascript:void(0);" class="jcq_q">全</a></td>'
@@ -1091,8 +1104,8 @@
 												+ '<td rowspan="2">'+mid+'</td>'
 												+ '<td  class="sup_1" style="background:'+cl+';" rowspan="2"><a href="" class="bq_xa" target="_blank" id="mn'+mid+'" >'+mn+'</a></td>'
 												+ '<td rowspan="2">'+Y.getDate(bt).format('MM-DD hh:mm')+'</td>'
-												+ '<td style="border-right:none">[主] <a href="" target="_blank" id="hteam'+mid+'" class="mtc_name"><em id="htid'+mid+'" class="ew_e">'+hn+'</em></a><em></em></td>'
-												+ '<td class="btn_a" style="border-left:1px solid #62A3D0">0</td>'
+												+ '<td>[主] <a href="" target="_blank" id="hteam'+mid+'" class="mtc_name"><em id="htid'+mid+'" class="ew_e">'+hn+'</em></a><em></em></td>'
+												+ '<td class="btn_a">0</td>'
 												+ '<td class="btn_a">1</td>'
 												+ '<td class="btn_a">2</td>'
 												+ '<td class="btn_a">3+</td>'
@@ -1103,8 +1116,8 @@
 												+ '<td rowspan="2"><a href="" target="_blank" id="ox'+mid+'" class="mtc_name">析</a> <a href="" target="_blank" id="oy'+mid+'" class="mtc_name">亚</a> '
 												+ '<a href="" target="_blank" id="oz'+mid+'" class="mtc_name">欧</a></td>'
 												+ '</tr>'
-												+ '<tr data-vs="'+gn+'" name='+mid+' style="border-right:none"><td>[客] <a href="" target="_blank" id="vteam'+mid+'" class="mtc_name"><em id="gtid'+mid+'" class="ew_e">'+gn+'</em></a><em></em></td>'
-												+ '<td class="btn_a" style="border-left:1px solid #62A3D0">0</td>'
+												+ '<tr data-vs="'+gn+'" name='+mid+'><td>[客] <a href="" target="_blank" id="vteam'+mid+'" class="mtc_name"><em id="gtid'+mid+'" class="ew_e">'+gn+'</em></a><em></em></td>'
+												+ '<td class="btn_a">0</td>'
 												+ '<td class="btn_a">1</td>'
 												+ '<td class="btn_a">2</td>'
 												+ '<td class="btn_a">3+</td>'
