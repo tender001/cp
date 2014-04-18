@@ -144,36 +144,40 @@
     
 //对话框类
     Class('Dlg', {
-        index:function (){
-      	  	//成功
-	        this.dlgbuysuc = this.lib.MaskLay('#dlg_buysuc', '#dlg_buysuc_content');
-	        this.dlgbuysuc.addClose('#dlg_buysuc_close,#dlg_buysuc_close2,#dlg_buysuc_back');
-	        this.get('#dlg_buysuc div.tan_top').drag('#dlg_buysuc');         	
-            //通用
-            this.dlg = this.lib.MaskLay('#info_dlg','#info_dlg_content');
-            this.dlg.addClose('#info_dlg_close a,#info_dlg_ok');
-            this.get('#info_dlg div.tan_top').drag('#info_dlg');
-            //确认
-            //this.confirm = this.lib.MaskLay('#b2_dlg','#b2_dlg_content','#b2_dlg_title');
-            //this.confirm.addClose('#b2_dlg_close a,#b2_dlg_no,#b2_dlg_yes');
-            //this.get('#b2_dlg div.tips_title').drag('#b2_dlg');
-            //通用确认
-            this.confirm2 = this.lib.MaskLay('#confirm_dlg','#confirm_dlg_content','#confirm_dlg_title');
-            this.confirm2.addClose('#confirm_dlg_close a,#confirm_dlg_no,#confirm_dlg_yes');
-            this.get('#confirm_dlg div.tan_top').drag('#confirm_dlg');
-            //合买确认
-            this.isBuy = this.lib.MaskLay('#ishm_dlg','#ishm_dlg_content', '#ishm_dlg_title');
-            this.isBuy.addClose('#ishm_dlg_close,#ishm_dlg_no,#ishm_dlg_yes');
-            this.get('#ishm_dlg div.tan_top').drag('#ishm_dlg');
-            //胆拖拆分明细
-            this.splitDlg =  this.lib.MaskLay('#split_dlg','#split_dlg_list');
-            this.splitDlg.addClose('#split_dlg_close a','#split_dlg_ok');
-            this.get('#split_dlg div.tan_top').drag('#split_dlg');
-            //充值
-            this.addMoneyDlg =  this.lib.MaskLay('#addMoneyLay');
-            this.addMoneyDlg.addClose('#addMoneyClose','#addMoneyYes');
-            this.get('#addMoneyLay div.tan_top').drag('#addMoneyLay');
-            this.bindMsg();
+    	   index:function (){
+    	    	//成功
+    	        this.dlgbuysuc = this.lib.MaskLay('#dlg_buysuc', '#dlg_buysuc_content');
+    	        this.dlgbuysuc.addClose('#dlg_buysuc_close,#dlg_buysuc_close2,#dlg_buysuc_back');
+    	        this.get('#dlg_buysuc div.tantop').drag('#dlg_buysuc');         	
+    	        //通用
+    	        this.dlg = this.lib.MaskLay('#info_dlg','#info_dlg_content');
+    	        this.dlg.addClose('#info_dlg_close a,#info_dlg_ok');
+    	        this.get('#info_dlg div.tantop').drag('#info_dlg');
+    	        //确认
+    	            //this.confirm = this.lib.MaskLay('#b2_dlg','#b2_dlg_content','#b2_dlg_title');
+    	            //this.confirm.addClose('#b2_dlg_close a,#b2_dlg_no,#b2_dlg_yes');
+    	            //this.get('#b2_dlg div.tips_title').drag('#b2_dlg');
+    	        //通用确认
+    	            this.confirm2 = this.lib.MaskLay('#confirm_dlg','#confirm_dlg_content','#confirm_dlg_title');
+    	            this.confirm2.addClose('#confirm_dlg_close,#confirm_dlg_no,#confirm_dlg_yes');
+    	            this.get('#confirm_dlg div.tantop').drag('#confirm_dlg');
+    	        //机选
+    	            this.jxDlg =  this.lib.MaskLay('#jx_dlg','#jx_dlg_list');
+    	            this.jxDlg.addClose('#jx_dlg_close','#jx_dlg_re','#jx_dlg_ok');
+    	            this.get('#jx_dlg div.tantop').drag('#jx_dlg');
+    	        //合买确认
+    	            this.isBuy = this.lib.MaskLay('#ishm_dlg','#ishm_dlg_content', '#ishm_dlg_title');
+    	            this.isBuy.addClose('#ishm_dlg_close,#ishm_dlg_no,#ishm_dlg_yes');
+    	            this.get('#ishm_dlg div.tantop').drag('#ishm_dlg');
+    	        //胆拖拆分明细
+    	            this.splitDlg =  this.lib.MaskLay('#split_dlg','#split_dlg_list');
+    	            this.splitDlg.addClose('#split_dlg_close','#split_dlg_ok');
+//    	            this.get('#split_dlg div.tantop').drag('#split_dlg');
+    	        //充值
+    	            this.addMoneyDlg =  this.lib.MaskLay('#addMoneyLay');
+    	            this.addMoneyDlg.addClose('#addMoneyClose','#addMoneyYes');
+    	            this.get('#addMoneyLay div.tantop').drag('#addMoneyLay');
+    	            this.bindMsg();
         },
         bindMsg: function (){
 	       	 var Y = this;
@@ -805,9 +809,9 @@
     	},
     	_updateUrl : function(expect) {    		
     		//期号导航链接
-//    		this.get("#expect_tab a").each(function(a,i){
-//    			a.href=Class.C('isds')?location.pathname+'?lotid='+Class.C('lot_id')+'&expect='+a.id.substr(3):location.pathname+'?expect='+a.id.substr(3);
-//    		});
+    		this.get("#expect_tab a").each(function(a,i){
+    			a.href=Class.C('isds')?location.pathname+'?lotid='+Class.C('lot_id')+'&expect='+a.id.substr(3):location.pathname+'?expect='+a.id.substr(3);
+    		});
     		//选号投注、参与合买、定制跟单、我的方案等链接
     		    		   		
 			var hrefurl=[this.getLotPath()+'?expect='+expect,'/hemai/project_list.html?lotid='+Class.C('lot_id')+'&expect='+expect,'/account/'];
@@ -894,17 +898,9 @@
 									if (this.get("#expect").val() == "") {
 										this.get("#expect").val(expectlist[i][0]);
 									}
-<<<<<<< .mine
-									html = '<a' +" "+  'value=' + expectlist[i][0] +' mark="expect">'+'当前期(第' + expectlist[i][0] + '期)</a>';
-=======
 									html = '<label for="exp' + expectlist[i][0] + '" value="' + expectlist[i][0] + '"><input type="radio" name="radio1" id="exp' + expectlist[i][0] + '"/>当前期(第' + expectlist[i][0] + '期)</label>';
->>>>>>> .r115
 								} else {
-<<<<<<< .mine
-									html += '<a' +" "+ 'value=' + expectlist[i][0] + ' mark="expect">'+'预售期(第' + expectlist[i][0] + '期)</a>';
-=======
 									html += '<label for="exp' + expectlist[i][0] + '" value="' + expectlist[i][0] + '"><input type="radio" name="radio1" id="exp' + expectlist[i][0] + '"/>预售期(第' + expectlist[i][0] + '期)</label>';
->>>>>>> .r115
 								}
 							}		
 						}	
@@ -937,18 +933,12 @@
 						if ($("#expect").val() == "") {
 							$("#expect").val(expectlist[expectlist.length - 1][0]);
 						}
-						$("a[mark=expect]").each(function(ex,o){
-							if($(o).attr("value")==$("#expect").val()){
-								$(o).addClass("cur");
-								Y.postMsg('msg_get_expect_suc',$("#expect").val());
-							}
-						})
-//						if ($("#exp" + $("#expect").val())) {
-//							$("#exp" + $("#expect").val()).attr("checked", true);
-//							
-//						}
+						if ($("#exp" + $("#expect").val())) {
+							$("#exp" + $("#expect").val()).attr("checked", true);
+							this.postMsg('msg_get_expect_suc',$("#expect").val());
+						}
 						
-						$("#expect_tab a[mark=expect]").each(function(){
+						$("#expect_tab label").each(function(){
 			    			$(this).click(function(){
 			    				var ex=$(this).attr("value");
 			    				$("#expect").val(ex);
