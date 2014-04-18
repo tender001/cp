@@ -22,33 +22,30 @@
 <!-- 头部内容 -->
 <div id="container">
 <div class=breadcrumb><p>您现在的位置：<a href="/" title="网上买彩票"><font>159彩票网</font></a> &gt; <a href="/dating/" title="购彩大厅"><font>购彩大厅</font></a>&gt;胜负彩</p></div>
-<div class=b-top>
-<div class=b-top-inner>
-<h2 class="sfc-logo"  title="159彩票网_胜负彩">胜负彩</h2>
-<div class="b-top-info">
-<div  class="dc_w"><b>胜负彩</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;单注最高奖金<span class="f99">5,000,000</span>元&nbsp;&nbsp;&nbsp;&nbsp;
-单式截至:<span id="endTimeSpan"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;复式截至:<span id="fs_endTimeSpan"></span></div>
-<div class="dc_q dc_zcq"><p><span>离投注截至还剩：</span><span id="countDownSpan"></span></p></div></div>
-<div class="b-top-nav">
-  <ul class="b-top-mainNav">
-    <li class="cur"><a href="/zc/"><span>选号投注</span></a></li>
-    <li><a href="/hemai/index.html?lotid=80" target="_blank"><span>参与合买</span></a></li>
-    <li><a href="/zc/zc_kj.html?lotid=80" target="_blank"><span>足彩开奖</span></a></li>
-    <li><a href="/account/myaccount.html" target="_blank"><span>我的方案</span></a></li>
-  </ul>
-  <div class="b-top-links"><a href="http://bf.159cai.com/zucai" target="_blank">即时比分</a> | <a href="/help/help_sfcjs.html" target="_blank">玩法规则</a></div></div>
-  <div class="ds">
-  <ul class="b-top-subNav">
-    <li class="cur"><a href="javascript:void(0);"><em>选号投注</em><s></s></a></li>
-    <li><a href="ds.html"><em>单式投注</em><s></s></a></li>
-  </ul>
-<!--  <p class="b-top-tip">  </p>-->
+<div class="touztop">
+<div class="touzcm">
+<h1>胜负彩</h1>
+<span>
+<a href="/zc/" class="cur">选号投注</a>
+<a target="_blank" href="/hemai/index.html?lotid=80">参与合买</a>
+<a target="_blank" href="/zc/zc_kj.html?lotid=80">足彩开奖</a>
+<a target="_blank" href="/account/myaccount.html">我的方案</a>
+
+</span>
+<p><a target="_blank" href="http://bf.159cai.com/zucai">即时比分</a>|<a target="_blank" href="/help/help_sfcjs.html">玩法规则</a></p>
 </div>
-</div></div>
+<div class="tzsontab">
+<span>
+<a href="javascript:void(0);" class="cur">选号投注</a>
+<a href="/zc/ds.html">单式投注</a>
+</span>
+<p><span> 单注最高奖金<em>5,000,000元</em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;单式截至:<s id="endTimeSpan"></s>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;复式截至:<s id="fs_endTimeSpan"></s></span><b></b></p>
+</div>
+</div>
 <div class="jckj_tb" style="padding-left:10px;">
 <span class="jc_ds_col_1" id="expect_tab">
   <input type="radio" name="radio1" />当前期(第13002期)           <input type="radio" name="radio1" />预售期(第13003期)
- </span>
+ <p style="float: right; padding-right: 15px;"><span>离投注截至还剩：</span><span id="countDownSpan"><em style="width:50px;"><b class="cm_red arial"></b>天</em><em><b class="cm_red arial"></b>小时</em><em><b class="cm_red arial"></b>分</em></span></p></span>
  <table width="100%" border="0" class="co1" cellpadding="0" cellspacing="0" id="vsTable">
  <colgroup>
  <col width="55" />
@@ -65,23 +62,25 @@
  <col/>
  </colgroup>
   <thead><tr> 
-    <td rowspan="2" class="suq">场次</td>
-    <td rowspan="2" class="suq">赛事</td>
-    <td rowspan="2" class="suq">比赛时间</td>
-    <td rowspan="2" class="suq">对&nbsp;&nbsp;阵</td>
-    <td colspan="3" class="sub">投注区</td>
-    <td rowspan="2" class="suq">全包</td>
-    <td colspan="3" class="sub" id="oddstype"><div class="dz_plv"><em id="oddstype_v" data="0">平均欧指</em><div style="display:none;" class="plv_set"><a name="0" href="javascript:void(0);">平均欧指</a><a name="1" href="javascript:void(0);">威廉希尔</a><a name="2" href="javascript:void(0);">澳门</a><a name="3" href="javascript:void(0);">立博</a><a name="4" href="javascript:void(0);">Bet365</a><a name="5" href="javascript:void(0);">SNAI</a><a name="6" href="javascript:void(0);">易胜博</a><a name="7" href="javascript:void(0);">伟德</a><a name="8" href="javascript:void(0);">Bwin</a><a name="9" href="javascript:void(0);">Coral</a><a name="10" href="javascript:void(0);">oddset</a></div></div></td>
-    <td rowspan="2" class="suq">数据分析</td>
+    <td>场次</td>
+    <td>赛事</td>
+    <td>比赛时间</td>
+    <td>对&nbsp;&nbsp;阵</td>
+    <td>胜</td>
+    <td>平</td>
+    <td>负</td>
+    <td>全包</td>
+    <td id="oddstype" colspan="3"><div class="matchxzk">
+										<div class="matchxz">
+											<em id="oddstype_v" data="0">平均欧指</em><i></i>
+										</div>
+										<div style="overflow: visible; display: none;width:145px" class="jcslt">
+											<div class="plv_set">
+												<a name="0" href="javascript:void(0);">平均欧指</a> <a name="1" href="javascript:void(0);">威廉希尔</a> <a name="2" href="javascript:void(0);">澳门</a> <a name="3" href="javascript:void(0);">立博</a> <a name="4" href="javascript:void(0);">Bet365</a> <a name="5" href="javascript:void(0);">SNAI</a> <a name="6" href="javascript:void(0);">易胜博</a> <a name="7" href="javascript:void(0);">伟德</a> <a name="8" href="javascript:void(0);">Bwin</a> <a name="9" href="javascript:void(0);">Coral</a> <a name="10" href="javascript:void(0);">oddset</a>
+											</div>
+										</div></div></td>
+    <td>数据分析</td>
   </tr>
-    <tr>
-      <td class="sup">胜</td>
-      <td class="sup">平</td>
-      <td class="sup">负</td>
-      <td class="sup">胜</td>
-      <td class="sup">平</td>
-      <td class="sup">负</td>
-    </tr>
   </thead>
  <tbody id="duizhen"></tbody>
 </table>
