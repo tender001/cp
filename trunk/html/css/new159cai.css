@@ -969,7 +969,7 @@ table.col_2 td em.cur{ background-image:url(../images/cdbg/tan_k_07.gif);border:
 span.fa{line-height:27px;font-size:14px;color:#444;padding-right:15px;margin-top:11px;display:block;float:left}
 .conduct_msg input.bt{width:320px;border:1px solid #ddd;height:25px;display:block;float:left;margin-top:11px;padding-top:4px\9;height:21px\9}
 :root .conduct_msg input.bt{height:25px;padding-top:0;color:#444}
-span.fa_play{float:left;display:block;line-height:27px;font-size:12px;color:#555;padding-left:15px;margin-top:11px}
+span.fa_play{float:left;display:block;line-height:27px;font-size:12px;color:#555;padding-left:15px;margin-top:0px}
 span.fa_play font{color:#ff6600;font-size:14px;padding:0 2px}
 .conduct_msg textarea{dislay:block;width:310px;height:150px;border:1px solid #ddd;padding:5px;float:left;margin-top:11px;color:#444;font-size:12px}
 .tan_mid p.zf{font-weight:bold;font-size:16px;padding-top:20px;clear:both}
@@ -1332,10 +1332,34 @@ a.jc_mtz:hover, a.jc_mhm:hover{background-position:-110px 0}
 .dc_ls_n p a:hover{color:#fff}
 .pagina{width:630px}
 .jckj_tb table.co1 thead td{background: none repeat scroll 0 0 #F5F5F5;border-bottom: 1px solid #CCCCCC;border-right: 1px solid #CCCCCC;height: 32px;}
-.jc_ds_col_1 p{color:#333;font-size:12px}
-.jc_ds_col_1 b.cm_red{color:#E52E04;margin:0 2px}
-.jc_ds_col_1 em{color:#333;font-size:12px;font-weight:100}
-.jc_ds_col_1{background:none;}
-.jc_ds_col_1 a{background:url(../images/cai888/zcys_05.jpg) 0 0 no-repeat;line-height:22px;color:#fff;text-align:cetner;height:28px;width:128px;display:block;float:left;margin-right:12px;text-align:Center;font-size:12px}
-.jc_ds_col_1 a.cur{background:url(../images/cai888/zcys_03.jpg) 0 0 no-repeat}
-.jckj_tb{padding-top:6px}
+.jc_ds_col_1{background:#f5f5f5;border:1px solid #ddd;}
+.buyfimsg{border-left:1px solid #ddd;border-bottom:1px solid #ddd;}
+.buyfimsg td{border-right:1px solid #ddd;border-top:1px solid #ddd;padding:7px 0;color:#444;font-size:12px;text-align:left;padding-left:13px;valign:middle;font-size:14px}
+.buyfimsg td.td1{background:#f5f5f5;line-height:28px;color:#222;padding-left:30px;font-size:12px}
+.buyfimsg td font {color: #E62E04;font-size: 14px;font-weight: bold;padding: 0 5px;font-family:arial}
+.buyfimsg td input.text {border: 1px solid #DDDDDD;height: 22px;margin-right: 5px;text-align: center;width: 45px;}
+:root .buyfimsg td input.text {height: 22px;padding-top: 0;}
+.buyfimsg td input.box {margin-right:4px;vertical-align: -2px;}
+.buyfimsg td b {background:#eee;border: 1px solid #CCCCCC;border-left:1px solid #eee;color: #444444;cursor: pointer;display: block;float: left;font-family: Arial,Helvetica,sans-serif;font-size: 14px;font-weight: 100;line-height: 28px;padding: 0 15px;}
+.buyfimsg td b.first{border-left:1px solid #ccc}
+.buyfimsg td b.cur,.buyfimsg td b:hover{border:1px solid #ff6600;}
+.buyfimsg td b.cur{border:1px solid #ff6600;background:#ff6600;color:#fff}
+.buyfimsg td em {margin-right:12px;background:#eee;border: 1px solid #CCCCCC;color: #444444;cursor: pointer;display: block;float: left;font-family: Arial,Helvetica,sans-serif;font-size: 14px;font-weight: 100;line-height: 28px;padding: 0 15px;}
+.buyfimsg td em.cur,.buyfimsg td em:hover{border:1px solid #ff6600;}
+.buyfimsg td em.cur{border:1px solid #ff6600;background:#ff6600;color:#fff}
+.buyfimsg td input.bt {border: 1px solid #DDDDDD;display: block;float: left;height: 25px;margin-top:1px;width: 515px;font-size:12px;padding:6px 0 0 5px\9;height:19px\9}
+:root .buyfimsg td input.bt{padding:0 0 0 5px}
+#container {margin: 0 auto;position: relative;width: 1000px;}
+.buyfimsg textarea {border: 1px solid #DDDDDD;color: #444444;float: left;font-size: 12px;height: 100px;margin-top: 11px;padding: 5px;width: 510px;}
+a.buyfa {background: #ff7213;border:1px solid #CF5955;color: #FFFFFF;display: block;font-family: "微软雅黑";font-size: 16px;height: 42px;line-height: 42px;margin:7px auto 2px;text-align: center;width: 190px;}
+a.buyfa:hover{background:#ff6600}
+.buyfimsg p.p2{font-size:12px;line-height:18px;height:24px}
+.buyfimsg p.p2 a{color:#145fab}
+.buyfimsg p.p2 a:hover{color:#ff0000; text-decoration:underline}
+.buyfimsg p.p1{text-align:Center;padding-top:8px}
+.buyfimsg p.p1 a{color:#145fab}
+.buyfimsg p.p1 a:hover{color:#ff0000; text-decoration:underline}
+.buyfimvs{width:840px;margin:10px auto;border:4px solid #f1f1f1}
+.buyfimvs table{border-left:1px solid #ccc;border-bottom:1px solid #ccc}
+.buyfimvs td{padding:0;text-align:center;border-right:1px solid #ccc;border-top:1px solid #ccc;line-height:30px;height:30px;font-size:12px}
+.buyfimvs tr.tr1 td{background:#f5f5f5}
