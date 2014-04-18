@@ -40,18 +40,54 @@ function showinfo(){
 
 function setdata(){
 //	alert("网络ds！");
-		if ($.trim($("#truename").val())==""){
-			showTips('请输入您的真实姓名');
-			return false;
-		}
-		if ($.trim($("#idnumber").val())==""){
-			showTips('请输入你的身份证号码');
-			return false;
-		}
+	var reg=/^[\u4e00-\u9fa5]{2,5}$/i; 
+	var isCrad2=/^[1-9]\d{5}[1-9]\d{3}((0\d)|(1[0-2]))(([0|1|2]\d)|3[0-1])((\d{4})|\d{3}[A-Z])$/i; 
+	var isCrad=/^[1-9]\d{7}((0\d)|(1[0-2]))(([0|1|2]\d)|3[0-1])\d{3}$/i;
+	var truename=$.trim($("#truename").val());
+	var idnumber =$.trim($("#idnumber").val());
+	if (truename==""){
+		showTips('请输入您的真实姓名');
+		return false;
+	}
+	if(!reg.test(truename)){
+		showTips('姓名必须为2到5个汉字');
+		return false;
+	}
+	var namelen=truename.length;
+	var len=0;
+	for(var i=0;i<namelen; i++){
+		len +=truename.split(truename[i]).length;
+	}
+	if(len>namelen*3){
+		showTips('请输入您的真实姓名');
+		return false;
+	}
+	if ($.trim($("#idnumber").val())==""){
+		showTips('请输入你的身份证号码');
+		return false;
+	}
+		if (!(isCrad.test(idnumber))&&!(isCrad2.test(idnumber)))
+	   {  
+			showTips('身份证必须为15或18位');  
+	       return  false;  
+	   }  
 		if ($.trim($("#password").val())==""){
 			showTips('请输入您的登录密码以确认您的身份');
 			return false;
 		}
+	
+//		if ($.trim($("#truename").val())==""){
+//			showTips('请输入您的真实姓名');
+//			return false;
+//		}
+//		if ($.trim($("#idnumber").val())==""){
+//			showTips('请输入你的身份证号码');
+//			return false;
+//		}
+//		if ($.trim($("#password").val())==""){
+//			showTips('请输入您的登录密码以确认您的身份');
+//			return false;
+//		}
 		$.ajax({
 			url : $_user.modify.name,
 			type : "POST",
