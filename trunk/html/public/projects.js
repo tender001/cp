@@ -2250,16 +2250,16 @@ showduizhen =function (lotid,expect,projid,type,codes,cp){
 									jjyhstr += '<table border="0" class="bk_yd" cellpadding="0" cellspacing="0">';
 									if(lotid == 72){
 										jjyhstr += ' <colgroup><col width="90"><col width="240"><col width=""><col width="65"></colgroup><tbody><tr class="odd">';
-										jjyhstr += '<th ><strong>场次</strong></td>';
-										jjyhstr += '<th class="th1">比赛</td>';
-										jjyhstr += '<th class="th1">让球数</td>';
-										jjyhstr += '<th class="th1">投注选项</td>';
+										jjyhstr += '<td><strong>场次</strong></td>';
+										jjyhstr += '<td>比赛</td>';
+										jjyhstr += '<td>让球数</td>';
+										jjyhstr += '<td>投注选项</td>';
 									}else{
 										jjyhstr += ' <colgroup><col width="175"><col width="205"><col width=""></colgroup><tbody><tr class="odd">';
 										jjyhstr += '<td>场次</td>';
-										jjyhstr += '<th class="th1">比赛</td>';
+										jjyhstr += '<td>比赛</td>';
 										/*jjyhstr += '<th width="57"><strong>让球数</strong></td>';*/
-										jjyhstr += '<th class="th1">投注选项</td>';
+										jjyhstr += '<td>投注选项</td>';
 									}
 									
 									jjyhstr += '</tr>';
