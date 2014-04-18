@@ -282,7 +282,7 @@ function showmatch(gid, expect){
 		});
 	} else if(gid == 'jclq'){
 		$.ajax({
-			url :"/cpdata/match/jclq/award/"+expect.substring(2)+"/"+expect.substring(2)+".json",
+			url :"/cpdata/match/jclq/award/"+expect+"/"+expect+".json",
 			dataType:"json",
 			success:function(data){
 				var rs = data.rows.row;
