@@ -49,8 +49,16 @@ function LoadMatchList() {
 					var oddsHTML = "";
 					if(jj.OT!=""){
 						var ot = jj.OT.split(',');
-						if(ot.length==3 && (typeID == 6 ||typeID == 7 ||typeID == 103 ||typeID == 112 ||typeID == 114)){
+						if(ot.length==3 && (typeID == 6 ||typeID == 7 ||typeID == 103 )){
 							oddsHTML = "<div class='mo'>"+ot[0]+"</div><div class='mo mi'>"+ot[1]+"</div><div class='mo'>"+ot[2]+"</div>";
+						}else if( typeID == 112|| typeID == 114||typeID == 111|| typeID == 113|| typeID == 110){
+							if(typeID == 111|| typeID == 113|| typeID == 110){
+								oddsHTML = "<div class='mo'>"+ot[1]+"</div><div class='mo'>"+ot[0]+"</div>";
+							}else{
+								oddsHTML = "<div class='mo'>"+ot[2]+"</div><div class='mo mi'>"+ot[1]+"</div><div class='mo'>"+ot[0]+"</div>";
+							}
+							
+						
 						}
 						else
 							oddsHTML = "<div class='mo'>"+ot.join("</div><div class='mo'>")+"</div>";
@@ -63,7 +71,7 @@ function LoadMatchList() {
 							+ "<tr><td rowspan=\"3\" class='matchL'><div style=\"background-color:" + jj.color + ";\" class=\"Sclass Fillet\">" + jj.sclass + "</div>"
 							+ leftTime + "</td>";
 							if(typeID == 111 || typeID == 112|| typeID == 114|| typeID == 113){
-								matchHTML+= "<td>(<font color=red>主</font>)" + jj.home + " " + (typeID >= 110 || jj.rq == "0" ? "VS" : "<span style='color:" + (jj.rq.indexOf("-") == -1 ? "red" : "green") + "'>" +(jj.rq.indexOf("-") == -1 ? "+" : "")+ jj.rq + "</span>") + " " + jj.guest + "</td>";
+								matchHTML+= "<td> " + jj.guest + " " + (typeID >= 110 || jj.rq == "0" ? "VS" : "<span style='color:" + (jj.rq.indexOf("-") == -1 ? "red" : "green") + "'>" +(jj.rq.indexOf("-") == -1 ? "+" : "")+ jj.rq + "</span>") +"" + jj.home + " (<font color=red>主</font>)</td>";
 							}else{
 								matchHTML+= "<td>" + jj.home + " " + (typeID >= 110 || jj.rq == "0" ? "VS" : "<span style='color:" + (jj.rq.indexOf("-") == -1 ? "red" : "green") + "'>" +(jj.rq.indexOf("-") == -1 ? "+" : "")+ jj.rq + "</span>") + " " + jj.guest + "</td>";
 							}
@@ -81,9 +89,14 @@ function LoadMatchList() {
 					{
 						matchHTML += "<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" class=\"match\">"
 							+ "<tr><td rowspan=\"3\" class='matchL'><div style=\"background-color:" + jj.color + ";\" class=\"Sclass Fillet\">" + jj.sclass + "</div>"
-							+ leftTime + "</td>"
-							+ "<td>" + jj.home + " "+(typeID == 110 || jj.rq == "0" ? "VS" : "<span style='color:" + (jj.rq.indexOf("-") == -1 ? "red" : "green") + "'>" +(jj.rq.indexOf("-") == -1 ? "+" : "")+ jj.rq + "</span>")+" " + jj.guest + "</td>"
-							+ "<td width='20%'><div class=\"mXi\">"+jj.MID+"</div></td></tr>"
+							+ leftTime + "</td>";
+							if(typeID ==110){
+								matchHTML+= "<td> " + jj.guest + " " + (typeID >= 110 || jj.rq == "0" ? "VS" : "<span style='color:" + (jj.rq.indexOf("-") == -1 ? "red" : "green") + "'>" +(jj.rq.indexOf("-") == -1 ? "+" : "")+ jj.rq + "</span>") +"" + jj.home + " (<font color=red>主</font>)</td>";
+							}else{
+								matchHTML+="<td>" + jj.home + " "+(typeID == 110 || jj.rq == "0" ? "VS" : "<span style='color:" + (jj.rq.indexOf("-") == -1 ? "red" : "green") + "'>" +(jj.rq.indexOf("-") == -1 ? "+" : "")+ jj.rq + "</span>")+" " + jj.guest + "</td>";
+							}
+							
+							matchHTML+= "<td width='20%'><div class=\"mXi\">"+jj.MID+"</div></td></tr>"
 							+"<tr><td>"+oddsHTML+"</td><td class='md'>欧赔</td></tr>"
 							+ "<tr><td><div class='btn' style='width:150px' id='op_" + jj.ID + "' onclick='openC(" + jj.ID + ")'>展开投注选项</div></td>"
 							+ "<td>" + (OddsType == 2 ? "<div class='mDan1' id='D" + jj.ID + "' onclick='ChooseDan(this)'>胆</div>" : "") + "</td></tr>";
@@ -159,7 +172,7 @@ function LoadMatchList() {
 							+ "<tr><td rowspan=\"3\" class='matchL'><div style=\"background-color:" + jj.color + ";\" class=\"Sclass Fillet\">" + jj.sclass + "</div>"
 							+ leftTime + "</td>";
 							if(typeID == 113){
-								matchHTML +=  "<td>(<font color=red>主</font>)" + jj.home + " VS " + jj.guest + "</td>";
+								matchHTML +=  "<td>" + jj.guest + " VS " + jj.home + "(<font color=red>主</font>)</td>";
 							}else{
 								matchHTML +=  "<td>" + jj.home + " VS " + jj.guest + "</td>";
 							}
@@ -398,7 +411,12 @@ function prebuy(preKind) {
         for (var i = 0; i < chooseArray.length; i++) {
             for (var k = 0; k < matchArray.length; k++) {
                 if (matchArray[k].ID == chooseArray[i][0]) {
-                    html += "<div class='preM1'>" + matchArray[k].home + (matchArray[k].rq == "0" ? " VS " : "(<span style='color:" + (matchArray[k].rq.toInt() > 0 ? "red" : "green") + "'>" + matchArray[k].rq + "</span>)") + matchArray[k].guest + "</div>";
+                	if(typeID == 111 || typeID == 112|| typeID == 114|| typeID == 113|| typeID == 110){
+                		html += "<div class='preM1'>" + matchArray[k].guest + (matchArray[k].rq == "0" ? " VS " : "(<span style='color:" + (matchArray[k].rq.toInt() > 0 ? "red" : "green") + "'>" + matchArray[k].rq + "</span>)") + matchArray[k].home + "</div>";
+                	}else{
+                		html += "<div class='preM1'>" + matchArray[k].home + (matchArray[k].rq == "0" ? " VS " : "(<span style='color:" + (matchArray[k].rq.toInt() > 0 ? "red" : "green") + "'>" + matchArray[k].rq + "</span>)") + matchArray[k].guest + "</div>";
+                	}
+                	
                     break;
                 }
             }

@@ -408,15 +408,27 @@ showjccode=function(option){
 	$.each(row,function(i,r){
 		var bt = r.bt;
 		var lls = new String(r.lose).split("|");
-		var lose = lls.length > 1 ? (gid == 95 ? lls[0] : lls[2]) : r.lose;
+		var lose = lls.length > 1 ? (gid == 95 ? lls[1] : lls[2]) : r.lose;
 		var cancel = r.cancel;
 		var html = "<div class='ni" + i%2 + "'>";
-		if(lose == 0 || gid == 91 || gid == 92 || gid == 93 | gid==70 || gid == 94 || gid==96 || gid == 71 || gid == 90){
-			html += "<label>["+(r.name==undefined?r.id:r.name)+"] "+r.hn+" VS "+r.vn+"</label><br>";
+		if(lose == 0 || gid == 91 || gid == 92 || gid == 93 | gid==70  || gid == 90){
+			if( gid == 94 || gid==96 || gid == 71){
+				html += "<label>["+(r.name==undefined?r.id:r.name)+"] "+r.vn+" VS "+r.hn+"</label><br>";
+			}else{
+				html += "<label>["+(r.name==undefined?r.id:r.name)+"] "+r.hn+" VS "+r.vn+"</label><br>";
+			}
+			
 		} else {
-			html += "<label>["+(r.name==undefined?r.id:r.name)+"] "+r.hn+" ";
-			html += (parseFloat(lose) > 0) ? "<span style='color:Red'>(<b>+"+lose+"</b>)</span>" : "<span style='color:green'>(<b>"+lose+"</b>)</span>";
-			html += r.vn+" </label><br>";
+			if( gid == 95){
+				html += "<label>["+(r.name==undefined?r.id:r.name)+"] "+r.vn+" ";
+				html += (parseFloat(lose) > 0) ? "<span style='color:Red'>(<b>+"+lose+"</b>)</span>" : "<span style='color:green'>(<b>"+lose+"</b>)</span>";
+				html += r.hn+" </label><br>";
+			}else{
+				html += "<label>["+(r.name==undefined?r.id:r.name)+"] "+r.hn+" ";
+				html += (parseFloat(lose) > 0) ? "<span style='color:Red'>(<b>+"+lose+"</b>)</span>" : "<span style='color:green'>(<b>"+lose+"</b>)</span>";
+				html += r.vn+" </label><br>";
+			}
+			
 		}
 		html += "<div>比赛时间: "+bt.toDate().format('MM-DD hh:mm')+"</div>";
 		var rst = false;
