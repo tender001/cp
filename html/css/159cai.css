@@ -1369,7 +1369,7 @@ a.jckj_tmcx:hover{ background-image:url(../images/jc/kjcxx_06.gif)}
 .jckj_tb table.co1 thead.lc td{border-bottom:1px solid #DDD;border-right:1px solid #ddd;font-size:14px;text-align:center;font-weight:bold;color:#754c24}
 .jckj_tb table.co1 thead.lc td.suq{height:54px;line-height:20px}
 .jckj_tb table.co1 thead.lc td.sub{line-height:33px;height:33px;}
-.jckj_tb table.co1 thead.lc td.sup{line-height:21px;height:21px; background-image:url(../images/jc/lckj1_10.gif);border-right:1px solid #aaa;border-bottom:1px solid #bbb;font-size:12px;font-weight:100;}
+.jckj_tb table.co1 thead.lc td.sup{line-height:21px;height:21px; background:#f2f2f2;font-size:12px;font-weight:100;}
 .jckj_tb table.co1 select{width:60px;border:1px solid #ddd;}
 table.co1 tbody td{border-bottom:1px solid #DDD;border-right:1px solid #ddd;line-height:21px;padding:5px 0;text-align:center;color:#444; font-family: Arial, Helvetica, sans-serif;}
 table.co1 tbody td.last{ background-color:#f0eeec;font-size:14px;padding:9px 0}

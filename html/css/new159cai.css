@@ -1363,3 +1363,5 @@ a.buyfa:hover{background:#ff6600}
 .buyfimvs table{border-left:1px solid #ccc;border-bottom:1px solid #ccc}
 .buyfimvs td{padding:0;text-align:center;border-right:1px solid #ccc;border-top:1px solid #ccc;line-height:30px;height:30px;font-size:12px}
 .buyfimvs tr.tr1 td{background:#f5f5f5}
+em.ew_e {display: inline-block;float: left;height: 38px;line-height: 38px;overflow: hidden;text-align: left;width: 62px;}
+em.ew_eright{text-align:right;float:right}
