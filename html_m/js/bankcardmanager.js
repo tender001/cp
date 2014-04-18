@@ -58,8 +58,6 @@ function bdyh() {
 		showTips('请填写开户行');
 	} else if ($("#cardnumber").val() == "") {
 		showTips('请填写银行账号');
-	} else if ($("#password").val() == "") {
-		showTips('请输入密码');
 	} else {
 		var bankCard = $("#cardnumber").val();
 		var bankCode = $("#selBankName").val();
