@@ -801,9 +801,9 @@
               '<TD rowSpan=2><LABEL for=m{$itemid}><INPUT id=m{$itemid} class=i-cr value={$itemid} CHECKED type=checkbox name=m{$itemid}>{$name}</LABEL></TD>'+
 	             '<TD style="BACKGROUND: {$cl}; COLOR: #fff" class=league rowSpan=2><A title={$lmname} href="" target="_blank" id="mn{$itemid}" style="color: #fff">{$mname}</A></TD>'+
 	             '<TD rowSpan=2><SPAN class="eng end_time" title="开赛时间：{$mt}">{$short_et}</SPAN><SPAN style="display:none" class="eng match_time" title="截止时间：{$et}">{$short_mt}</SPAN> </TD>'+
-	             '<TD><A title={$gn} href="" target="_blank" id="gn{$itemid}">{$gn}</A></TD>'+
-	             '<TD style="color:blue">客胜</TD>'+
-	             '<TD style="CURSOR: pointer" class=h_br><INPUT style="display: none" value=11 type=checkbox><SPAN>{$sp11}</SPAN></TD>'+
+	             '<TD style="border-left:1px solid #ddd"><A title={$gn} href="" target="_blank" id="gn{$itemid}">{$gn}</A></TD>'+
+	             '<TD style="color:blue;border-left:1px solid #ddd">客胜</TD>'+
+	             '<TD style="CURSOR: pointer;border-left:1px solid #62A3D0" class=h_br><INPUT style="display: none" value=11 type=checkbox><SPAN>{$sp11}</SPAN></TD>'+
 	             '<TD style="CURSOR: pointer" class=h_br><INPUT style="display: none" value=12 type=checkbox><SPAN>{$sp12}</SPAN></TD>'+
 	             '<TD style="CURSOR: pointer" class=h_br><INPUT style="display: none" value=13 type=checkbox><SPAN>{$sp13}</SPAN></TD>'+
 	             '<TD style="CURSOR: pointer" class=h_br><INPUT style="display: none" value=14 type=checkbox><SPAN>{$sp14}</SPAN></TD>'+
@@ -811,9 +811,9 @@
 	             '<TD style="CURSOR: pointer" class=h_br><INPUT style="display: none" value=16 type=checkbox><SPAN>{$sp16}</SPAN></TD>'+
 	             '<TD rowSpan=2><a href="" target="_blank" id="ox{$itemid}">析</a> <a href="" target="_blank" id="oz{$itemid}">欧</a></TD></TR>'+
 	             '<TR isend="0" lg="{$mname}" mid="{$mid}" zid="{$itemid}" subrow="true">'+
-	             '<TD><A title={$hn} href="" target="_blank" id="hn{$itemid}">{$hn}</A></TD>'+
-	             '<TD style="color:red">主胜</TD>'+
-	             '<TD style="CURSOR: pointer" class=h_br><INPUT style="display: none" value=01 type=checkbox><SPAN>{$sp01}</SPAN></TD>'+
+	             '<TD style="border-left:1px solid #ddd"><A title={$hn} href="" target="_blank" id="hn{$itemid}">{$hn}</A></TD>'+
+	             '<TD style="color:red;border-left:1px solid #ddd">主胜</TD>'+
+	             '<TD style="CURSOR: pointer;border-left:1px solid #62A3D0" class=h_br><INPUT style="display: none" value=01 type=checkbox><SPAN>{$sp01}</SPAN></TD>'+
 	             '<TD style="CURSOR: pointer" class=h_br><INPUT style="display: none" value=02 type=checkbox><SPAN>{$sp02}</SPAN></TD>'+
 	             '<TD style="CURSOR: pointer" class=h_br><INPUT style="display: none" value=03 type=checkbox><SPAN>{$sp03}</SPAN></TD>'+
 	             '<TD style="CURSOR: pointer" class=h_br><INPUT style="display: none" value=04 type=checkbox><SPAN>{$sp04}</SPAN></TD>'+
