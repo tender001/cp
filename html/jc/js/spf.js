@@ -33,45 +33,70 @@
     			Y.get('#dshelp').setStyle('zIndex', 1).tip('data-help', 1, false, 360);// 帮助说明
     		});
         },
-        addMenu: function (){//联赛菜单
-           var Y = this,
-               all = Y.get('#listMenu :checkbox');
-            this.get('#listDisplay').drop( this.get('#listMenu'),{focusCss: 'ls_h_btn', fixed: true, y: -1});
-            all.click(function (){//单个
-                Y.postMsg('msg_select_list', this.getAttribute('m'), 0, this.checked);
-            }).get('#selectAllBtn').click(function (){
-                all.prop('checked', true);//所有
-                Y.postMsg('msg_select_list', false, 2, all.attr('checked'));
-            }).get('#selectOppBtn').click(function (){
-                var data = {};//反选
-                all.prop('checked', function (old){
-                    var ed = !old;
-                    data[this.getAttribute('m')] = ed;
-                    return ed;
-                });
-                Y.postMsg('msg_select_list', data, 1);
+        addMenu: function (){
+            var Y = this,
+            lg  = Y.get('#lglist :checkbox'),
+            rq = Y.get('#rqlist :checkbox'), //让球
+            rqc = Y.get('#datachoose :checkbox');//日期
+//         this.get('#listDisplay').drop( this.get('#listMenu'),{focusCss: 'ls_h_btn', fixed: true, y: -1});
+         lg.click(function (){//单个
+             Y.postMsg('msg_select_list', this.getAttribute('value'), 0, this.checked);
+         }).get('#selectAllBtn').click(function (){
+             lg.prop('checked', true);//所有
+             Y.postMsg('msg_select_list', true, 2, lg.attr('checked'));
+         }).get('#unAllBtn').click(function (){
+             lg.prop('checked', false);//全清
+             Y.postMsg('msg_select_list', true, 5, lg.attr('checked'));
+         }).get('#selectOppBtn').click(function (){
+             var data = {};//反选
+             lg.prop('checked', function (old){
+                 var ed = !old;
+                 data[this.getAttribute('value')] = ed;
+                 return ed;
+             });
+             Y.postMsg('msg_select_list', data, 1);
+         });
+         rq.click(function(){
+        	 Y.postMsg('msg_select_list', this.getAttribute('value'), 3, this.checked);
+        }).get('#selectrqBtn').click(function (){
+     	   rq.prop('checked', true);//所有
+            Y.postMsg('msg_select_list', false, 2,  rq.attr('checked'));
+        }).get('#unrqBtn').click(function (){
+     	   rq.prop('checked', false);//全清
+            Y.postMsg('msg_select_list', true, 5,  rq.attr('checked'));
+        }).get('#selectOrqBtn').click(function (){
+            var data = {};//反选
+            rq.prop('checked', function (old){
+                var ed = !old;
+                data[this.getAttribute('value')] = ed;
+                return ed;
             });
-            this.onMsg('msg_reset_display', function (){
-                all.prop('checked', true);
-            });
-            var only_lg = this.cookie('jczq_league');//来源于资讯跳转
-            if (only_lg) {
-                var lg = decodeURIComponent(only_lg), has;
-                all.prop('checked', function (){
-                    var zd = this.getAttribute('m') == lg;
-                    if (zd) {
-                        has = true;
-                    }
-                    return zd;
-                });
-                if (has) {//如果含有才隐藏
-                    Y.postMsg('msg_select_list', this.getObj(lg, true), 1);
-                    this.cookie('jczq_league', '', {timeout:-1, path: '/'});  
-                    
-                }
-            }
-        }
-    });
+            Y.postMsg('msg_select_list', data, 6);
+        });
+        
+         rqc.click(function(){
+         	 Y.postMsg('msg_select_list', this.getAttribute('value'), 4, this.checked);
+         });
+         this.onMsg('msg_reset_display', function (){
+             all.prop('checked', true);
+         });
+         var only_lg = this.cookie('jczq_league');//来源于资讯跳转
+         if (only_lg) {
+             var lg = decodeURIComponent(only_lg), has;
+             all.prop('checked', function (){
+                 var zd = this.getAttribute('m') == lg;
+                 if (zd) {
+                     has = true;
+                 }
+                 return zd;
+             });
+             if (has) {//如果含有才隐藏
+                 Y.postMsg('msg_select_list', this.getObj(lg, true), 1);
+                 this.cookie('jczq_league', '', {timeout:-1, path: '/'});                    
+             }
+         }
+     }
+   });
   //转换为整数输入框
     Class.extend('createIntInput', function (input, fn, max){
         this.get(input).keyup(check).blur(check).focus(function (){
@@ -285,6 +310,34 @@
                     break;
                  case 2://全选
                     Y.allList.show(sel);
+                 case 3:
+                	 var target= Y.allList.filter(function(tr){
+                         return tr.getAttribute('rq') == data
+                     });
+                	 target.show(sel);
+                	 break;
+                 case 4:
+                	 var target= Y.allList.filter(function(tr){
+                         return tr.getAttribute('pendtime') == data
+                     });
+                	 target.show(sel);
+                	 break;
+                 case 5://全选
+                     Y.allList.hide(sel);
+                     break;
+                 case 6://反选
+                     Y.allList.each(function (tr){
+                         var show = data[tr.getAttribute('rq')];
+                         this.get(tr).show(show);
+                         if (Y.isbf && !show){
+                             var next=document.getElementById('pltr_'+tr.getAttribute('mid'));
+                             if (next && next.style.display != 'none') {
+                                 Y.get('a.bf_btn', tr).swapClass('public_Dora', 'public_Lblue').html('<b>展开选项<s class="c_down"></s></b>');
+//                                 next.style.display='none';
+                             }
+                         }
+                     }, this);
+                     break;
                  }
                  this.getHideCount();
              });
@@ -795,49 +848,19 @@
     	},
     	spf:function(data){
     		 var html = [];
-    		 var tableTpl=['<table width="100%" border="0" cellspacing="0" cellpadding="0" class="dc_table" onselectstart="return false">'+
-		           '<colgroup>'+
-		           '<col width="9%"><col width="8%"><col width="8%"><col width="20%"><col width="8%"><col width="19%"><col width="4%"><col width="15%">'+
-		           '<col width="8%"><col/>'+
-		           '</colgroup>'+
-		           '<tbody>'+
-		           '<tr>'+
-		           '<th>赛事编号</th>'+
-		           '<th>赛事类型</th>'+
-		           '<th><select id="select_time">'+
-		           '<option value="0">截止</option>'+
-		           '<option value="1">开赛</option></select></th>'+
-		           '<th>主队</th><th>平局</th><th>客队</th>'+
-		           '<th class="last_th">包</th>'+
-		           '<th id="oddstype"><div class="dz_plv" ><em data="0" id="oddstype_v">平均欧指</em><div class="plv_set" style="display:none;">'+
-		           '<a href="javascript:void(0);" name="0">平均欧指</a>'+
-		           '<a href="javascript:void(0);" name="1">威廉希尔</a>'+
-		           '<a href="javascript:void(0);" name="2">澳门</a>'+
-		           '<a href="javascript:void(0);" name="3">立博</a>'+
-		           '<a href="javascript:void(0);" name="4">Bet365</a>'+
-		           '<a href="javascript:void(0);" name="5">SNAI</a>'+
-		           '<a href="javascript:void(0);" name="6">易胜博</a>'+
-		           '<a href="javascript:void(0);" name="7">伟德</a>'+
-		           '<a href="javascript:void(0);" name="8">Bwin</a>'+
-		           '<a href="javascript:void(0);" name="9">Coral</a>'+
-		           '<a href="javascript:void(0);" name="10">oddset</a>'+
-		           '</div></div></th>'+
-		           '<th>数据</th>'+
-		           '</tr>'+
-		           '</tbody>'+
-		           '</table>',//0对阵头
+    		 var tableTpl=['',//0对阵头
 		           '<div class=dc_hs style="text-align: left; padding-left: 10px;"><strong>{$enddate} {$weekday} </strong>[12:00 -- 次日 12:00] <b><span id=num{$num} class="red">num{$num}</span>场比赛可投注</b> <a href="javascript:void 0">隐藏<s class=c_up></s></a> </div>',//1按天分类
 		           '<table id=d_{$enddate} class=dc_table border=0 cellspacing=0 cellpadding=0 width="100%" onselectstart="return false">'+
 		           '<colgroup>'+
-		           '<col width="9%"><col width="8%"><col width="8%"><col width="20%"><col width="8%"><col width="19%"><col width="4%"><col width="15%">'+
-		           '<col width="8%">'+
+		           '<col width="45"><col width="64"><col width="64"><col width="154"><col width="62"><col width="154"><col width="32"><col width="118">'+
+		           '<col width=""><col/>'+
 		           '</colgroup>',//table
 		           '<tbody>'+
 		           '<tr class="{$classname}" style="display: none" lg="{$mname}" isend="1" lost="{$sp0}" draw="{$sp1}" win="{$sp3}" pendtime="{$et}" rq="{$close}" pdate="{$itemid}" pname="{$itemid}" mid="{$mid}" zid="{$itemid}" title="已截止场次">'+
 		           '<td style="cursor: pointer"><label for=m{$itemid}><input id=m{$itemid} value={$itemid}  checked type=checkbox name=m{$itemid}>{$name}</label></td>'+
 		           '<td style="background:{$cl}; color: #fff" class=league><a title="{$lmname}" href="" target="_blank" id="mn{$itemid}" style="color: #fff">{$mname}</a></td>'+
 		           '<td><span class="eng end_time" title="开赛时间：{$mt}">{$short_et}</span><span style="display: none" class="eng match_time" title="截止时间：{$et}">{$short_mt}</span></td>'+
-		           '<td style="text-align: right; padding-right: 10px;" class=h_br><div class="dz_dv" title={$hn}><s class="s_left">&nbsp;</s><span class="eng b span_left"><em class="em_left" id="htid_{$itemid}">{$hn}</em><b class="b_left"> {$sp3}</b></span></div></td>'+
+		           '<td style="text-align: right; padding-right: 10px;border-left:1px solid #62A3D0" class=h_br><div class="dz_dv" title={$hn}><s class="s_left">&nbsp;</s><span class="eng b span_left"><em class="em_left" id="htid_{$itemid}">{$hn}</em><b class="b_left"> {$sp3}</b></span></div></td>'+
 		           '<td style="text-align: center;" class=h_br><span class="eng b">{$sp1}</span></td>'+
 		           '<td style="text-align: left; padding-left: 10px;" class=h_br><div class="dz_dv" title={$gn}><span class="eng b span_left"><b class="b_left">{$sp0}<b> <em class="em_left" id="gtid_{$itemid}">{$gn}</em></span><s class="s_right"></s></div></td><td></td>'+
 		           '<td>'+
@@ -851,7 +874,7 @@
 		           '<td style="cursor: pointer"><label for=m{$itemid}><input id=m{$itemid} value={$itemid}  checked type=checkbox name=m{$itemid}>{$name}</label></td>'+
 		           '<td style="background:{$cl}; color: #fff" class=league><a title="{$lmname}" href="" target="_blank" id="mn{$itemid}" style="color: #fff">{$mname}</a></td>'+
 		           '<td><span class="eng end_time" title="开赛时间：{$mt}">{$short_et}</span><span style="display: none" class="eng match_time" title="截止时间：{$et}">{$short_mt}</span></td>'+
-		           '<td style="text-align: right; padding-right: 10px; cursor: pointer" class=h_br ><div class="dz_dv" title={$hn}><input class=chbox value=3 type=checkbox style="display: none"><s class="s_left">&nbsp;</s><span class="eng b span_left"><em id="htid_{$itemid}" class="em_left">{$hn}</em> <b class="b_left">{$sp3}</b></span></div></td>'+
+		           '<td style="text-align: right; padding-right: 10px; cursor: pointer;border-left:1px solid #62A3D0" class=h_br ><div class="dz_dv" title={$hn}><input class=chbox value=3 type=checkbox style="display: none"><s class="s_left">&nbsp;</s><span class="eng b span_left"><em id="htid_{$itemid}" class="em_left">{$hn}</em> <b class="b_left">{$sp3}</b></span></div></td>'+
 		           '<td style="text-align: center; cursor: pointer" class=h_br><input class=chbox value=1 type=checkbox style="display: none" ><span class="eng b" >{$sp1}</span></td>'+
 		           '<td style="text-align: left; padding-left: 10px; cursor: pointer" class=h_br ><div class="dz_dv" title={$gn}><input class=chbox value=0 type=checkbox style="display: none"><span class="eng b span_right"><b class="b_right">{$sp0}</b> <em id="gtid_{$itemid}" class="em_right" >{$gn}</em></span><s class="s_right">&nbsp;</s></div></td><td style="cursor: pointer;border-right:1px solid #ddd"><a href="javascript:void(0);" class="jcq_q">全</a><input style="display: none" type="checkbox" all="0" value = "all"/></td>'+
 		           '<td>'+
@@ -867,11 +890,13 @@
     		
     		var stop_sale="no";
     		var all_matches=0;
+    		var dateweek =[];
     		var out_of_date_matches=0;
-    		var rangqiu_matches=0;
+    		var rangqiu_matches=[];
     		var no_rangqiu_matches=0;
     		var odds_issuc=false;
     		var numstr=[];
+    		var lgname=[];
     		var num=0;
     		var lgstr="";
     		
@@ -888,7 +913,7 @@
     				num=0;
     				row.num=numstr.length;
     				mathdate[mathdate.length]=row.enddate;
-    				row.weekday='周'+wk[Y.getDate(row.enddate).getDay()];
+//    				row.weekday='周'+wk[Y.getDate(row.enddate).getDay()];
     				html[html.length] = mathdate.length>1?(tableTpl[5]+tableTpl[1].tpl(row)+tableTpl[2]):tableTpl[1].tpl(row)+tableTpl[2];
     			};
     			row.index=row.mid;
@@ -917,7 +942,7 @@
     			row.lhn=row.hn;
     			row.lgn=row.gn;
     			row.mname=row.mname.substr(0,4);
-    			row.name=row.name.trim();
+    			row.name=row.name.substr(2.5).trim();
     			if (Y.getDate(data.date)>Y.getDate(row.et)){//已经过期的场次
     				out_of_date_matches++;
     					row.shuju='<a href="#">析</a> <a href="#">亚</a> <a href="#">欧</a>';
@@ -926,22 +951,78 @@
     					row.sp0str='<span class="sp_value eng red">'+row.sp0+'</span>';
     				html[html.length] = tableTpl[3].tpl(row);
     			}else{//未过期的场次
-    				num++;    				
+    				num++;    
+    				lgname.push(row.mname);
+    				dateweek.push('星期'+wk[Y.getDate(row.enddate).getDay()]+"_"+row.enddate);
     				html[html.length] = tableTpl[4].tpl(row);
     				if (lgstr.indexOf(row.mname)<0){	
     		            lgstr+='<LI><INPUT id="lg'+row.mname+'" CHECKED type="checkbox" m="'+row.mname+'"><LABEL for="lg'+row.mname+'">'+row.mname.substr(0,4)+'</LABEL></LI>';
     		    		}
     			};
     		});
-    		this.get("#lgList").html(lgstr);
+			this.get("#isend").html(out_of_date_matches);
+    		this.get("#vsTable").html(tableTpl[0]+html.join('')+ tableTpl[5]);
+    		$("[mark=lgList]").html(lgstr);
     		numstr[numstr.length]=num;
 
-    		this.get("#isend").html(out_of_date_matches);
-    		this.get("#vsTable").html(tableTpl[0]+html.join('')+ tableTpl[5]);
+    		
     		for(ii=0;ii<numstr.length;ii++){
     			this.get("#num"+ii).html(numstr[ii]);
     		}
-    		this.get("#vsTable").show();	
+    		this.get("#vsTable").show();
+    
+       	
+       		
+       		
+       		//生成联赛列表
+       		var arr_league = [];
+       		var league_list_html = '';
+       		var match_num_of_league = {};
+       		lgname.each( function(item) {
+       			var league_name = item;
+       				if ($_sys.getSub(arr_league,league_name) == -1 ) {
+       					arr_league.push(league_name);
+       					league_list_html += '<li><label for="' + league_name + '"><input name="lg" type="checkbox" value="' + league_name + '" checked="checked"/><span>' + league_name + '</span>[<i>'+league_name +'_num</i>]</label></li>';
+      				}
+       				if (typeof match_num_of_league[league_name] == 'undefined') {
+       					match_num_of_league[league_name] = 1;
+       				} else {
+       					match_num_of_league[league_name]++;
+       				}
+       				
+       		} );
+       		for (var league_name in match_num_of_league) {
+       			league_list_html = league_list_html.replace(league_name + '_num', match_num_of_league[league_name]);
+       		}
+       		$("#lglist").html(league_list_html);
+       		
+       		//生成星期列表
+       		var newday=Y.getDate(data.date).format('YY-MM-DD');
+       		var arr_week = [];
+       		var week_list_html = '';
+       		var match_num_of_week = {};
+       		dateweek.each( function(item) {
+       			var week_name = item.split("_")[0];
+       				if (arr_week.join('|').indexOf(week_name) == -1 ) {
+       					arr_week.push(week_name);
+       					var wd='';
+       					if((Y.getDate(newday)-Y.getDate(item.split("_")[1]))==0){
+       						wd='(今天)';
+       					}
+       					week_list_html+='<li style="width:145px"><label for=' + week_name + wd+'><input class="radio" type="checkbox" value="'+item.split("_")[1]+'" checked="checked"/><span>' + week_name + wd+'赛程</span>[<i>'+week_name + '_num</i>]</label></li>';
+      				}
+      				if (typeof match_num_of_week[week_name] == 'undefined') {
+      					match_num_of_week[week_name] = 1;
+      				} else {
+      					match_num_of_week[week_name]++;
+      				}
+      				
+      		} );
+      		for (var week_name in match_num_of_week) {
+      			week_list_html = week_list_html.replace(week_name + '_num', match_num_of_week[week_name]);
+      		}
+      		$("#datachoose").html(week_list_html);
+    		
     		this.postMsg('load_duizhen_succ');			
     	}	
     });
@@ -1452,6 +1533,8 @@ Class('ScrollStill', {
            	                         tip: '#odds_tip',
            	                         fleft: 260
            	                     }); 
+                        	     $("#sssx").sssx_select_name();
+                        	     $("#jztime").jztime_select_name();
         	                     $("#oddstype").odds_select_name();
         	                     // load_odds_sp();
         	                     ozOdds({
@@ -1899,3 +1982,66 @@ Class.fn.setFixed = function (opt){
    } 
    return this;
 };
+
+$.fn.jztime_select_name=function(){
+	$self=$(this);
+	$self.each(function(){
+		var $div1=$self.find("div.matchxz");
+		var $div2=$self.find("div.jcslt");
+		$div1.mouseover(function(){
+			$div2.show();
+			$div1.addClass("matchxzc");
+			return false;	
+		});
+		$div1.mouseout(function(){
+			$div2.hide();
+			$div1.removeClass("matchxzc");
+		});
+		$div2.mouseover(function(){
+			$div2.show();
+			$div1.addClass("matchxzc");
+			return false;	
+		});
+		$div2.mouseout(function(){
+			$div2.hide();
+			$div1.removeClass("matchxzc");
+		});
+		$div2.find("a").click(function(){
+			$(this).blur();  
+			var txt=$(this).text();
+			var ctxt=$(this).attr("value");
+			 Y.postMsg('msg_change_time', ctxt);
+			$div1.find("em").attr("value", ctxt);
+			$div1.find("em").text(txt);
+			$div2.hide();
+			$div1.removeClass("matchxzc");
+			return false;	
+		});
+	});
+}
+$.fn.sssx_select_name=function(){
+	$self=$(this);
+	$self.each(function(){
+		var $div1=$self.find("div.matchxz");
+		var $div2=$self.find("div.jcslt");
+		$div1.mouseover(function(){
+			$div2.show();
+			$div1.addClass("matchxzc");
+			return false;	
+		});
+		$div1.mouseout(function(){
+			$div2.hide();
+			$div1.removeClass("matchxzc");
+		});
+		$div2.mouseover(function(){
+			$div2.show();
+			$div1.addClass("matchxzc");
+			return false;	
+		});
+		$div2.mouseout(function(){
+			$div2.hide();
+			$div1.removeClass("matchxzc");
+		});
+	
+	});
+}
