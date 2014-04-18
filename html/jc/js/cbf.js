@@ -896,7 +896,7 @@
                '<COL></COLGROUP>'+
                '<TBODY>'+
                '<TR class=sheng>'+
-               '<TD style="CURSOR: pointer" class=h_br><LABEL class=eng for=sheng1><INPUT class=chbox  value=3A type=checkbox style="display: none"><SPAN class="eng f_bf">胜其它</SPAN><BR><SPAN>{$sp90}</SPAN></LABEL></TD>'+
+               '<TD style="CURSOR: pointer;border-left:1px solid #62A3D0" class=h_br><LABEL class=eng for=sheng1><INPUT class=chbox  value=3A type=checkbox style="display: none"><SPAN class="eng f_bf">胜其它</SPAN><BR><SPAN>{$sp90}</SPAN></LABEL></TD>'+
                '<TD style="CURSOR: pointer" class=h_br><LABEL class=eng for=sheng1><INPUT class=chbox  value=10 type=checkbox style="display: none"><SPAN class="eng f_bf">1:0</SPAN><BR><SPAN>{$sp10}</SPAN></LABEL></TD>'+
                '<TD style="CURSOR: pointer" class=h_br><LABEL class=eng for=sheng1><INPUT class=chbox  value=20 type=checkbox style="display: none"><SPAN class="eng f_bf">2:0</SPAN><BR><SPAN>{$sp20}</SPAN></LABEL></TD>'+
                '<TD style="CURSOR: pointer" class=h_br><LABEL class=eng for=sheng1><INPUT class=chbox  value=21 type=checkbox style="display: none"><SPAN class="eng f_bf">2:1</SPAN><BR><SPAN>{$sp21}</SPAN></LABEL></TD>'+
@@ -911,7 +911,7 @@
                '<TD style="CURSOR: pointer" class=h_br><LABEL class=eng for=sheng1><INPUT class=chbox  value=52 type=checkbox style="display: none"><SPAN class="eng f_bf">5:2</SPAN><BR><SPAN>{$sp52}</SPAN></LABEL></TD>'+
                '</TR>'+
                '<TR class=ping>'+
-               '<TD style="CURSOR: pointer" class=h_br><LABEL class=eng for=sheng1><INPUT class=chbox  value=1A type=checkbox style="display: none"><SPAN class="eng f_bf">平其它</SPAN><BR><SPAN>{$sp99}</SPAN></LABEL></TD>'+
+               '<TD style="CURSOR: pointer;border-left:1px solid #62A3D0" class=h_br><LABEL class=eng for=sheng1><INPUT class=chbox  value=1A type=checkbox style="display: none"><SPAN class="eng f_bf">平其它</SPAN><BR><SPAN>{$sp99}</SPAN></LABEL></TD>'+
                '<TD style="CURSOR: pointer" class=h_br><LABEL class=eng for=sheng1><INPUT class=chbox  value=00 type=checkbox style="display: none"><SPAN class="eng f_bf">0:0</SPAN><BR><SPAN>{$sp00}</SPAN></LABEL></TD>'+
                '<TD style="CURSOR: pointer" class=h_br><LABEL class=eng for=sheng1><INPUT class=chbox  value=11 type=checkbox style="display: none"><SPAN class="eng f_bf">1:1</SPAN><BR><SPAN>{$sp11}</SPAN></LABEL></TD>'+
                '<TD style="CURSOR: pointer" class=h_br><LABEL class=eng for=sheng1><INPUT class=chbox  value=22 type=checkbox style="display: none"><SPAN class="eng f_bf">2:2</SPAN><BR><SPAN>{$sp22}</SPAN></LABEL></TD>'+
@@ -919,7 +919,7 @@
                '<TD colSpan=8>&nbsp;</TD>'+
                '</TR>'+
                '<TR class=fu>'+
-               '<TD style="CURSOR: pointer" class=h_br><LABEL class=eng for=sheng1><INPUT class=chbox  value=0A type=checkbox style="display: none"><SPAN class="eng f_bf">负其它</SPAN><BR><SPAN>{$sp09}</SPAN></LABEL></TD>'+
+               '<TD style="CURSOR: pointer;border-left:1px solid #62A3D0" class=h_br><LABEL class=eng for=sheng1><INPUT class=chbox  value=0A type=checkbox style="display: none"><SPAN class="eng f_bf">负其它</SPAN><BR><SPAN>{$sp09}</SPAN></LABEL></TD>'+
                '<TD style="CURSOR: pointer" class=h_br><LABEL class=eng for=sheng1><INPUT class=chbox  value=01 type=checkbox style="display: none"><SPAN class="eng f_bf">0:1</SPAN><BR><SPAN>{$sp01}</SPAN></LABEL></TD>'+
                '<TD style="CURSOR: pointer" class=h_br><LABEL class=eng for=sheng1><INPUT class=chbox  value=02 type=checkbox style="display: none"><SPAN class="eng f_bf">0:2</SPAN><BR><SPAN>{$sp02}</SPAN></LABEL></TD>'+
                '<TD style="CURSOR: pointer" class=h_br><LABEL class=eng for=sheng1><INPUT class=chbox  value=12 type=checkbox style="display: none"><SPAN class="eng f_bf">1:2</SPAN><BR><SPAN>{$sp12}</SPAN></LABEL></TD>'+
