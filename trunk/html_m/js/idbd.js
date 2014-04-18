@@ -68,26 +68,10 @@ function setdata(){
 	}
 		if (!(isCrad.test(idnumber))&&!(isCrad2.test(idnumber)))
 	   {  
-			showTips('身份证必须为15或18位');  
+			showTips('请输入正确的身份证号码');  
 	       return  false;  
 	   }  
-		if ($.trim($("#password").val())==""){
-			showTips('请输入您的登录密码以确认您的身份');
-			return false;
-		}
-	
-//		if ($.trim($("#truename").val())==""){
-//			showTips('请输入您的真实姓名');
-//			return false;
-//		}
-//		if ($.trim($("#idnumber").val())==""){
-//			showTips('请输入你的身份证号码');
-//			return false;
-//		}
-//		if ($.trim($("#password").val())==""){
-//			showTips('请输入您的登录密码以确认您的身份');
-//			return false;
-//		}
+
 		$.ajax({
 			url : $_user.modify.name,
 			type : "POST",
