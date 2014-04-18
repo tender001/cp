@@ -32,7 +32,7 @@
            
         },
        
-        addMenu: function (){//比赛菜单
+        addMenu: function (){
            var Y = this,
                lg  = Y.get('#lglist :checkbox'),
                rq = Y.get('#rqlist :checkbox'), //让球
@@ -62,7 +62,7 @@
                Y.postMsg('msg_select_list', false, 2,  rq.attr('checked'));
            }).get('#unrqBtn').click(function (){
         	   rq.prop('checked', false);//全清
-               Y.postMsg('msg_select_list', true, 6,  rq.attr('checked'));
+               Y.postMsg('msg_select_list', true, 5,  rq.attr('checked'));
            }).get('#selectOrqBtn').click(function (){
                var data = {};//反选
                rq.prop('checked', function (old){
@@ -70,7 +70,7 @@
                    data[this.getAttribute('value')] = ed;
                    return ed;
                });
-               Y.postMsg('msg_select_list', data, 7);
+               Y.postMsg('msg_select_list', data, 6);
            });
            
             rqc.click(function(){
@@ -321,11 +321,7 @@
                  case 5://全选
                      Y.allList.hide(sel);
                      break;
-                 case 6:
-                	 
-                	 Y.allList.hide(sel);
-                	 break;
-                 case 7://反选
+                 case 6://反选
                      Y.allList.each(function (tr){
                          var show = data[tr.getAttribute('rq')];
                          this.get(tr).show(show);
@@ -1636,7 +1632,7 @@ Class('ScrollStill', {
                 offset:0,
                 init: function(){
                     var This = this,
-                        title = this.area.find('table').one(0),
+                        title = this.area.parent().find('table').one(0),
                         floatTitle = title.cloneNode(true);
                     this.get(floatTitle).insert(this);
                     this.floatTitle = floatTitle;
@@ -2012,7 +2008,7 @@ Class.fn.setFixed = function (opt){
 $.fn.jztime_select_name=function(){
 	$self=$(this);
 	$self.each(function(){
-		var $div1=$self.children("div");
+		var $div1=$self.find("div.matchxz");
 		var $div2=$self.find("div.jcslt");
 		$div1.mouseover(function(){
 			$div2.show();
@@ -2020,6 +2016,15 @@ $.fn.jztime_select_name=function(){
 			return false;	
 		});
 		$div1.mouseout(function(){
+			$div2.hide();
+			$div1.removeClass("matchxzc");
+		});
+		$div2.mouseover(function(){
+			$div2.show();
+			$div1.addClass("matchxzc");
+			return false;	
+		});
+		$div2.mouseout(function(){
 			$div2.hide();
 			$div1.removeClass("matchxzc");
 		});
@@ -2039,7 +2044,7 @@ $.fn.jztime_select_name=function(){
 $.fn.sssx_select_name=function(){
 	$self=$(this);
 	$self.each(function(){
-		var $div1=$self.children("div");
+		var $div1=$self.find("div.matchxz");
 		var $div2=$self.find("div.jcslt");
 		$div1.mouseover(function(){
 			$div2.show();
@@ -2047,6 +2052,15 @@ $.fn.sssx_select_name=function(){
 			return false;	
 		});
 		$div1.mouseout(function(){
+			$div2.hide();
+			$div1.removeClass("matchxzc");
+		});
+		$div2.mouseover(function(){
+			$div2.show();
+			$div1.addClass("matchxzc");
+			return false;	
+		});
+		$div2.mouseout(function(){
 			$div2.hide();
 			$div1.removeClass("matchxzc");
 		});
