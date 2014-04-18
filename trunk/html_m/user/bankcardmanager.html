@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+<head id="Head1">
+<title>绑定银行账户-手机159彩</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta
+	content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=1;'
+	name='viewport' />
+<meta content='yes' name='apple-mobile-web-app-capable' />
+<meta content='black' name='apple-mobile-web-app-status-bar-style' />
+<meta content='telephone=no' name='format-detection' />
+<script src='/js/jquery.js'></script>
+<script src='/js/159cp.js'></script>
+<script src='/js/base.js'></script>
+<script src='/js/login.js'></script>
+<script src='/js/bankcardmanager.js'></script>
+<link rel='stylesheet' href='/style/main.css' />
+<link href="/images/apple-touch-icon.png"
+	rel="apple-touch-icon-precomposed" />
+<link rel='stylesheet' href='/style/user.css' />
+<body>
+	<!--#include virtual="/cc/login.html"-->
+	<div class="header-panel" id="Login_Panel" style="display: none;">
+		<div style="color: #fff; background: #579DD7; line-height: 30px;">
+			<div class="closeR" onclick="closeLogin()">关闭</div>
+			<span style='margin-left: 15px;'>用户登录</span>
+		</div>
+		<form autocomplete="off" action="/users/login.html" method="post"
+			onsubmit="return false;">
+			<div class="loginContent">加载中..</div>
+		</form>
+	</div>
+	<script>
+		function loginHdl() {
+			$('#Filter_Panel').slideUp('fast');
+			if ($('#Login_Panel').is(':hidden'))
+				showLogin(true);
+			else
+				closeLogin()
+			return false;
+		}
+		$(document).ready(function() {
+			chklogin(1);
+			ckinfo();
+			$("#btnSumit").click(function() {
+				bdyh();
+			});
+		});
+		 
+	</script>
+	<ul class="usernav">
+		<li><a href="/">首页</a></li>
+		<li><a href="myaccount.html">用户中心</a></li>
+		<li><b>绑定银行账户</b></li>
+	</ul>
+	<div class="topround" id="div3" style="display: none;">
+		<font color="#F18D8D"><b>您好 请先登录！</b></font>
+	</div>
+	<div id="div1">
+		<div class="topround">
+			【您已绑定提款账号】
+			
+		</div>
+		<div class="aread" style="margin-bottom: 8px;">
+			<table>
+				<tr>
+					<td><font color="#181C1F"><b>银行地址：</b></font></td>
+					<td><span id="lbBankAreaV" style="color: #181C1F;"></span></td>
+				</tr>
+				<tr>
+					<td><font color="#181C1F"><b>开户行：</b></font></td>
+					<td><span id="lbBankAddrV" style="color: #181C1F;"></span></td>
+				</tr>
+				<tr>
+					<td><font color="#181C1F"><b>银行账号：</b></font></td>
+					<td><span id="lbBankNumV" style="color: #F34115;"></span></td>
+				</tr>
+			</table>
+		</div>
+		<div class="borderColor">
+			&nbsp;<b>说明：</b><br /> &nbsp;1、显示默认提款账号或银联手机充值账号。<br />
+			&nbsp;2、绑定银行卡后可进行提款。<br /> &nbsp;3、银行卡开户名必须与账号真实姓名一致。<br />
+			&nbsp;4、需准确填写银行资料，否则无法提款。
+		</div>
+	</div>
+	<div id="dvCreate">
+		<div id="div2">
+			<div class="areac">
+				<table>
+					<tr>
+						<td style="color: #181C1F"><b>开户银行：</b></td>
+						<td><select name="selBankName" id="selBankName" width="50%"
+							height="28px;">
+								<option value="">请选择</option>
+								<option value="1">招商银行</option>
+								<option value="2">工商银行</option>
+								<option value="3">建设银行</option>
+								<option value="4">中国银行</option>
+								<option value="6">交通银行</option>
+								<option value="8">中信银行</option>
+								<option value="9">兴业银行</option>
+								<option value="10">光大银行</option>
+								<option value="11">华夏银行</option>
+								<option value="12">中国民生银行</option>
+								<option value="13">中国农业银行</option>
+								<option value="15">农村信用合作社</option>
+								<option value="16">农村商业银行</option>
+								<option value="17">农村合作银行</option>
+								<option value="18">城市商业银行</option>
+								<option value="19">城市信用合作社</option>
+								<option value="22">恒丰银行</option>
+								<option value="23">平安银行</option>
+								<option value="24">渤海银行</option>
+								<option value="25">中国邮政储蓄银行</option>
+								<option value="1000">广东发展银行</option>
+								<option value="1001">深圳发展银行</option>
+								<option value="1002">广州银行</option>
+								<option value="1003">珠海南通银行</option>
+								<option value="2000">北京银行</option>
+								<option value="3000">天津银行</option>
+								<option value="4000">上海浦东发展银行</option>
+								<option value="4001">上海银行</option>
+								<option value="5000">浙商银行</option>
+								<option value="5001">浙江商业银行</option>
+								<option value="5002">宁波国际银行</option>
+								<option value="5003">宁波银行</option>
+								<option value="5004">温州银行</option>
+								<option value="6000">南京银行</option>
+								<option value="6001">常熟农村商业银行</option>
+								<option value="7000">福建亚洲银行</option>
+								<option value="7001">福建兴业银行</option>
+								<option value="7002">徽商银行</option>
+								<option value="7003">厦门国际银行</option>
+								<option value="8000">青岛市商业银行</option>
+								<option value="8001">济南市商业银行</option>
+								<option value="9000">重庆银行</option>
+								<option value="10000">成都市商业银行</option>
+								<option value="11000">哈尔滨银行</option>
+								<option value="12000">包头市商业银行</option>
+								<option value="13000">南昌市商业银行</option>
+								<option value="14000">贵阳商业银行</option>
+								<option value="15000">兰州市商业银行</option>
+						</select></td>
+					</tr>
+					<tr>
+						<td style="color: #181C1F"><b>省份：</b></td>
+						<td><select name="drpProvinceList" id="drpProvinceList"
+							onchange="changeProvince(this.options[this.selectedIndex].value, 'city', 'city')">
+								<option selected="selected" value="" >请选择</option>
+								<option value="北京">北京</option>
+								<option value="上海">上海</option>
+								<option value="天津">天津</option>
+								<option value="重庆">重庆</option>
+								<option value="河北">河北</option>
+								<option value="山西">山西</option>
+								<option value="内蒙古">内蒙古</option>
+								<option value="辽宁">辽宁</option>
+								<option value="吉林">吉林</option>
+								<option value="黑龙江">黑龙江</option>
+								<option value="江苏">江苏</option>
+								<option value="浙江">浙江</option>
+								<option value="安徽">安徽</option>
+								<option value="福建">福建</option>
+								<option value="江西">江西</option>
+								<option value="山东">山东</option>
+								<option value="河南">河南</option>
+								<option value="湖北">湖北</option>
+								<option value="湖南">湖南</option>
+								<option value="广东">广东</option>
+								<option value="广西">广西</option>
+								<option value="海南">海南</option>
+								<option value="四川">四川</option>
+								<option value="贵州">贵州</option>
+								<option value="云南">云南</option>
+								<option value="西藏">西藏</option>
+								<option value="陕西">陕西</option>
+								<option value="甘肃">甘肃</option>
+								<option value="宁夏">宁夏</option>
+								<option value="青海">青海</option>
+								<option value="新疆">新疆</option>
+						</select></td>
+					</tr>
+					<tr>
+						<td style="color: #181C1F"><b>城市：</b></td>
+						<td><select name="city" id="city">
+								<option value="">请选择</option>
+						</select></td>
+					</tr>
+				</table>
+			</div>
+			
+			<div class="topround">
+				<b>开户行：</b><input name="bankname" type="text" id="bankname" /><br />
+				<b>银行账号：</b><input name="cardnumber" type="text" id="cardnumber" /><br />
+				<b>159彩账户密码：</b><input name="password" type="password" id="password" /><br />
+				<a class="btnC" id="btnSumit" href="javascript:void(0);">提&nbsp;交</a>
+			</div>
+			<div class="borderColor">
+				&nbsp;<b>说明：</b><br /> &nbsp;1、绑定银行卡才能进行提款。<br />
+				&nbsp;2、绑定的银行卡只用于提款。<br /> &nbsp;3、购彩资金是从您注册的159彩账户里面扣除！
+			</div>
+		</div>
+	</div>
+	<!--#include virtual="/cc/footer.html"-->
+
+	<div class="clear"></div>
+</body>
+</html>
