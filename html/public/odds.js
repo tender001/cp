@@ -130,7 +130,7 @@ function historyMatchOdds(config) {
 $.fn.odds_select_name=function(){
 	$self=$(this);
 	$self.each(function(){
-		var $div1=$self.children("div");
+		var $div1=$self.find("div.matchxz");
 		var $div2=$self.find("div.jcslt");
 		$div1.mouseover(function(){
 			$div2.show();
@@ -147,7 +147,21 @@ $.fn.odds_select_name=function(){
 			$div2.hide();
 			$div1.removeClass("matchxzc");
 		});
+		$div2.mouseover(function(){
+			$div2.show();
+//			$div1.toggle();
+			$div1.addClass("matchxzc");
+//			$(this).addClass("matchxzc");
+			
+			
 		
+			return false;
+			
+		});
+		$div2.mouseout(function(){
+			$div2.hide();
+			$div1.removeClass("matchxzc");
+		});
 //	
 //		document.onclick = function(){
 //			$div2.hide();
