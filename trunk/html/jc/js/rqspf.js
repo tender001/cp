@@ -5,6 +5,7 @@
         index:function (){
             this.addMenu();
             this.displaySet();
+            Y.get("#show_team").prop("checked",false);
         },
         displaySet: function (){//显隐设置
             var Y = this;

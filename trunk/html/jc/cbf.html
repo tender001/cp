@@ -51,7 +51,7 @@
 <a title="单式投注" href="/jc/jcds.html?lotid=91"><em>单式投注</em></a>
 <a title="参与合买" href="/hemai/index.html?lotid=91" target="_blank"><em>参与合买</em></a>
 </span>
-<p><span>复式截止：提前<em>10</em>分钟    单式截止：提前<em>25</em>分钟</span><b></b></p>
+<p><span>复式截止：提前<em>10</em>分钟    单式截止：提前<em>25</em>分钟</span><b mark="pro_em" data-help="单式方案包含：单式上传、在线过滤、奖金优化。" style="z-index: 1;"></b></p>
 </div>
 </div>
 <div id=main class="main_dc clearfix">
@@ -59,36 +59,67 @@
 
 <div class=box_m>
 <div class="dc_l_t jc_l_t">
-<div class=dc_l_tl><SPAN class=mie7><LABEL for=ck3><INPUT id=ck3 
+<div class=dc_l_tl><SPAN class=mie7><input id="show_team" type="checkbox">
+五大联赛 <LABEL for=ck3><INPUT id=ck3 
 type=checkbox>已截止(<span id="isend">0</span>场)</LABEL>已隐藏 <SPAN id=hide_count class="red eng">0</SPAN> 
 场赛事 <A id=showAll_btn href="javascript:void 0">恢复</A> <SPAN 
 style="MARGIN-LEFT: 240px"><!--赛事回查--></SPAN>&nbsp; <span id="expect_select_div"></span></SPAN></div>
 <div class=dc_l_tr>
 <div class=dc_ls_w>
-<div style="DISPLAY: none" id=listMenu class=dc_ls_n>
-<UL id=lgList class=clearfix></UL>
-</div><A id=listDisplay class=ls_s_btn 
-href="javascript:void 0">联赛选择</A> </div></div></div>
-<div id=vsTable class=dc_l_m>
+</div></div></div>
 <TABLE class=dc_table border=0 cellSpacing=0 cellPadding=0 width="100%">
   <COLGROUP>
-  <COL width=62>
-  <COL width=60>
-  <COL width=50>
-  <COL width=120>
-  <COL width=120>
-  <COL width=110>
-  <COL width=151>
+  <COL width=109>
+  <COL width=64>
+  <col width="232">
+<col width="118">
+<col width="151">
+
   <COL /></COLGROUP>
   <TBODY>
   <TR>
-    <TH>赛事编号</TH>
-    <TH>赛事类型</TH>
-    <TH><SELECT id=select_time> <OPTION selected value=0>截止</OPTION> <OPTION 
-        value=1>开赛</OPTION></SELECT></TH>
+    <th id="sssx"><div class="matchxzk" id="listDisplay">
+										<div class="matchxz">
+											比赛筛选<i></i>
+										</div>
+										<div class="jcslt" style="display: none; overflow: visible; width: 440px">
+											<div class="dc_ls_n">
+											    <h3>赛事选择</h3>
+												<ul id="lglist" class="clearfix" ></ul>
+												<p><a href="javascript:void(0);" id="selectAllBtn">全选</a><a href="javascript:void(0);" id="selectOppBtn">反选</a><a href="javascript:void(0);" id="unAllBtn">全清</a></p>
+												<h3>时间选择</h3>
+												<ul id="datachoose" class="clearfix" ></ul>
+											</div>
+										</div>
+									</div></th>
+    
+    <th id="jztime"><div class="matchxzk">
+										<div class="matchxz">
+											<em id="select_time">截止</em><i></i>
+										</div>
+										<div class="jcslt" style="display: none; overflow: visible; width: 59px">
+											<div class="plv_set">
+												<a href="javascript:void(0);" value="0">截止</a> <a href="javascript:void(0);" value="1">开赛</a>
+											</div>
+										</div>
+									</div></th>
     <TH>主队 VS 客队</TH>
-    <th>平均赔率</th>
+    <th id="oddstype"><div class="matchxzk">
+										<div class="matchxz">
+											<em data="0" id="oddstype_v">平均欧指</em><i></i>
+										</div>
+										<div class="jcslt" style="display: none; overflow: visible">
+											<div class="plv_set">
+												<a href="javascript:void(0);" name="0">平均欧指</a> <a href="javascript:void(0);" name="1">威廉希尔</a> <a href="javascript:void(0);"
+													name="2">澳门</a> <a href="javascript:void(0);" name="3">立博</a> <a href="javascript:void(0);" name="4">Bet365</a> <a
+													href="javascript:void(0);" name="5">SNAI</a> <a href="javascript:void(0);" name="6">易胜博</a> <a href="javascript:void(0);"
+													name="7">伟德</a> <a href="javascript:void(0);" name="8">Bwin</a> <a href="javascript:void(0);" name="9">Coral</a> <a
+													href="javascript:void(0);" name="10">oddset</a>
+											</div>
+										</div></th>
     <TH class=last_th>选择投注</TH><TH>数据</TH></TR></TBODY></TABLE>
+<div id=vsTable class=dc_l_m>
+
 </div></div><A hideFocus 
 class=back_top title=回到顶部 href="#top">回到顶部</A> </div>
 <div class=dc_r>
