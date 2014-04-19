@@ -68,26 +68,14 @@
 	
 	<div class="dc_l_tr">
 		<div class="dc_ls_w">
-			<div class="dc_ls_n" style="display:none" id="league_selector">
-				<ul class="clearfix"></ul>
-				<div class="ls_n_b" style="text-align:center;display:none;">
-					<a href="javascript:void(0)" class="btn_Lblue_s" id="select_all_league">全选</a>
-					<a href="javascript:void(0)" class="btn_Lblue_s" id="select_opposite_league">反选</a>
-				</div>
-			</div>
-			<a href="javascript:void(0)" id="league_show" class="ls_s_btn">联赛选择</a>
+			
 		</div>
 	</div>
 </div>
-
-				<div class="dc_l_m" id="dcvsTable">
-
-					<!--比赛对阵表头 -->
-					<table width="100%" border="0" cellspacing="0" cellpadding="0" class="dc_table" id="vs_table_header">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class="dc_table" id="vs_table_header">
 						<colgroup>
-								<col width="40" />
-								<col width="60" />
-								<col width="50" />
+								<col width="109" />
+								<col width="64" />
 								<col width="179" />
 								<col width="80" />
 								<col width="80" />
@@ -98,11 +86,31 @@
 						</colgroup>
 						<tbody>
 							<tr class="">
-								<th>场次</th>
-								<th>赛事</th>
-								<th><select id="select_time">
-		                        <option value="0">截止</option>
-		                        <option value="1">开赛</option></select></th>
+								<th id="sssx"><div class="matchxzk" id="listDisplay">
+										<div class="matchxz">
+											比赛筛选<i></i>
+										</div>
+										<div class="jcslt" style="display: none; overflow: visible; width: 440px">
+											<div class="dc_ls_n">
+											    <h3>赛事选择</h3>
+												<ul id="lglist" class="clearfix" ></ul>
+												<p><a href="javascript:void(0);" id="selectAllBtn">全选</a><a href="javascript:void(0);" id="selectOppBtn">反选</a><a href="javascript:void(0);" id="unAllBtn">全清</a></p>
+												<h3>时间选择</h3>
+												<ul id="datachoose" class="clearfix" ></ul>
+											</div>
+										</div>
+									</div></th>
+    
+    <th id="jztime"><div class="matchxzk">
+										<div class="matchxz">
+											<em id="select_time">截止</em><i></i>
+										</div>
+										<div class="jcslt" style="display: none; overflow: visible; width: 59px">
+											<div class="plv_set">
+												<a href="javascript:void(0);" value="0">截止</a> <a href="javascript:void(0);" value="1">开赛</a>
+											</div>
+										</div>
+									</div></th>
 								<th>主队 VS 客队</th>
 								<th>上+单</th>
 								<th>上+双</th>
@@ -113,7 +121,8 @@
 							</tr>
 						</tbody>
 					</table>
-					<!--比赛对阵表头 -->
+				<div class="dc_l_m" id="dcvsTable">
+
 					<table width="100%" border="0" cellspacing="0" cellpadding="0" class="dc_table" id="vsTable" style="display:none">
                     </table>
 				</div>
