@@ -5,6 +5,8 @@
         index:function (){
             this.addMenu();
             this.displaySet();
+            Y.get("#show_team").prop("checked",false);
+           
         },
         displaySet: function (){//显隐设置
             var Y = this;
@@ -73,6 +75,21 @@
             });
             Y.postMsg('msg_select_list', data, 6);
         });
+        
+         Y.get("#show_team").click(function(){
+        	if($(this).attr("checked")){
+        		lg.prop("checked",false);
+        		$("input[value='西班牙甲']").attr("checked",true);
+        		$("input[value='德国甲级']").attr("checked",true);
+        		$("input[value='法国甲级']").attr("checked",true);
+        		$("input[value='意大利甲']").attr("checked",true);
+        		$("input[value='英格兰超']").attr("checked",true);
+        	}
+        	else if(!$(this).attr("checked")){
+        		lg.prop("checked",true);
+        	}
+        	Y.postMsg('msg_select_list', "五大联赛", 7,this.checked);
+        })
         
          rqc.click(function(){
          	 Y.postMsg('msg_select_list', this.getAttribute('value'), 4, this.checked);
@@ -338,6 +355,18 @@
                          }
                      }, this);
                      break;
+                 case 7:
+               	   var target= Y.allList.filter(function(tr){
+                          return tr.getAttribute('lg') != "西班牙甲"&&tr.getAttribute('lg') != "德国甲级"&&tr.getAttribute('lg') != "法国甲级"&&tr.getAttribute('lg') != "意大利甲"&&tr.getAttribute('lg') != "英格兰超"
+                      });
+                      if (!sel && Y.isbf){
+                          Y._hideBF(target)
+                      }else{
+                          target.show(!sel);
+
+                      }
+                   
+                       break;
                  }
                  this.getHideCount();
              });

@@ -5,6 +5,7 @@
         index:function (){
             this.addMenu();
             this.displaySet();
+            Y.get("#show_team").prop("checked",false);
         },
         displaySet: function (){//显隐设置
             var Y = this;
@@ -29,43 +30,67 @@
     			Y.get('#dshelp').setStyle('zIndex', 1).tip('data-help', 1, false, 360);// 帮助说明
     		});
         },
-        addMenu: function (){//联赛菜单
-           var Y = this,
-               all = Y.get('#listMenu :checkbox');
-            this.get('#listDisplay').drop( this.get('#listMenu'),{focusCss: 'ls_h_btn', fixed: true, y: -1});
-            all.click(function (){//单个
-                Y.postMsg('msg_select_list', this.getAttribute('m'), 0, this.checked)
-            }).get('#selectAllBtn').click(function (){
-                all.prop('checked', true);//所有
-                Y.postMsg('msg_select_list', false, 2, all.attr('checked'))
-            }).get('#selectOppBtn').click(function (){
-                var data = {};//反选
-                all.prop('checked', function (old){
-                    var ed = !old;
-                    data[this.getAttribute('m')] = ed
-                    return ed
-                });
-                Y.postMsg('msg_select_list', data, 1)
-            });
-            this.onMsg('msg_reset_display', function (){
-                all.prop('checked', true)
-            });
-            var only_lg = this.cookie('jczq_league');//来源于资讯跳转
-            if (only_lg) {
-                var lg = decodeURIComponent(only_lg), has;
-                all.prop('checked', function (){
-                    var zd = this.getAttribute('m') == lg;
-                    if (zd) {
-                        has = true
-                    }
-                    return zd
-                });
-                if (has) {//如果含有才隐藏
-                    Y.postMsg('msg_select_list', this.getObj(lg, true), 1);
-                    this.cookie('jczq_league', '', {timeout:-1, path: '/'})                    
-                }
-            }
-        }
+        addMenu: function (){
+            var Y = this,
+            lg  = Y.get('#lglist :checkbox'),
+            rq = Y.get('#rqlist :checkbox'), //让球
+            rqc = Y.get('#datachoose :checkbox');//日期
+//         this.get('#listDisplay').drop( this.get('#listMenu'),{focusCss: 'ls_h_btn', fixed: true, y: -1});
+         lg.click(function (){//单个
+             Y.postMsg('msg_select_list', this.getAttribute('value'), 0, this.checked);
+         }).get('#selectAllBtn').click(function (){
+             lg.prop('checked', true);//所有
+             Y.postMsg('msg_select_list', true, 2, lg.attr('checked'));
+         }).get('#unAllBtn').click(function (){
+             lg.prop('checked', false);//全清
+             Y.postMsg('msg_select_list', true, 5, lg.attr('checked'));
+         }).get('#selectOppBtn').click(function (){
+             var data = {};//反选
+             lg.prop('checked', function (old){
+                 var ed = !old;
+                 data[this.getAttribute('value')] = ed;
+                 return ed;
+             });
+             Y.postMsg('msg_select_list', data, 1);
+         });
+         
+        Y.get("#show_team").click(function(){
+
+     	   if($(this).attr("checked")){
+     		   lg.prop('checked', false);
+     		   $("input[value='西班牙甲']").attr("checked",true);
+	            	$("input[value='德国甲级']").attr("checked",true);
+	            	$("input[value='法国甲级']").attr("checked",true);
+	            	$("input[value='意大利甲']").attr("checked",true);
+	            	$("input[value='英格兰超']").attr("checked",true);
+     	   }else if(!$(this).attr("checked")){
+     		   lg.prop('checked', true);
+     	   }
+
+     	   Y.postMsg('msg_select_list', "五大联赛", 7,this.checked);
+        })
+         rqc.click(function(){
+         	 Y.postMsg('msg_select_list', this.getAttribute('value'), 4, this.checked);
+         });
+         this.onMsg('msg_reset_display', function (){
+             all.prop('checked', true);
+         });
+         var only_lg = this.cookie('jczq_league');//来源于资讯跳转
+         if (only_lg) {
+             var lg = decodeURIComponent(only_lg), has;
+             all.prop('checked', function (){
+                 var zd = this.getAttribute('m') == lg;
+                 if (zd) {
+                     has = true;
+                 }
+                 return zd;
+             });
+             if (has) {//如果含有才隐藏
+                 Y.postMsg('msg_select_list', this.getObj(lg, true), 1);
+                 this.cookie('jczq_league', '', {timeout:-1, path: '/'});                    
+             }
+         }
+     }
     });
 	//转换为整数输入框
     Class.extend('createIntInput', function (input, fn, max){
@@ -241,32 +266,75 @@
              this.onMsg('msg_select_list', function (data, mode, sel){
                  switch(mode){
                  case 0://显示单个
-                    var target= Y.allList.filter(function(tr){
-                        return tr.getAttribute('lg') == data
-                    });
-                    if (!sel && Y.isbf){
-                        Y._hideBF(target)
-                    }else{
-                        target.show(sel);
-                    }
+                     var target= Y.allList.filter(function(tr){
+                         return tr.getAttribute('lg') == data
+                     });
+                     if (!sel && Y.isbf){
+                         Y._hideBF(target)
+                     }else{
+                         target.show(sel);
+//                         target.find(".dz_dv").show(sel);
+                     }
+                      break;
+                  case 1://反选
+                     Y.allList.each(function (tr){
+                         var show = data[tr.getAttribute('lg')];
+                         this.get(tr).show(show);
+                         if (Y.isbf && !show){
+                             var next=document.getElementById('pltr_'+tr.getAttribute('mid'));
+                             if (next && next.style.display != 'none') {
+                                 Y.get('a.bf_btn', tr).swapClass('public_Dora', 'public_Lblue').html('<b>展开选项<s class="c_down"></s></b>');
+//                                 next.style.display='none';
+                             }
+                         }
+                     }, this);
                      break;
-                 case 1://反选
-                    Y.allList.each(function (tr){
-                        var show = data[tr.getAttribute('lg')];
-                        this.get(tr).show(show);
-                        if (Y.isbf && !show){
-                            var next=document.getElementById('pltr_'+tr.getAttribute('mid'));
-                            if (next && next.style.display != 'none') {
-                                Y.get('a.bf_btn', tr).swapClass('public_Dora', 'public_Lblue').html('<b>展开选项<s class="c_down"></s></b>');
-                                next.style.display='none';
-                            }
+                  case 2://全选
+                     Y.allList.show(sel);
+                     break;
+                  case 3:
+                 	 var target= Y.allList.filter(function(tr){
+                          return tr.getAttribute('rq') == data
+                      });
+                 	 target.show(sel);
+                 	 break;
+                  case 4:
+                 	 var target= Y.allList.filter(function(tr){
+                          return tr.getAttribute('pendtime') == data
+                      });
+                 	 target.show(sel);
+                 	 break;
+                  case 5://全选
+                      Y.allList.hide(sel);
+                      break;
+                  case 6://反选
+                      Y.allList.each(function (tr){
+                          var show = data[tr.getAttribute('rq')];
+                          this.get(tr).show(show);
+                          if (Y.isbf && !show){
+                              var next=document.getElementById('pltr_'+tr.getAttribute('mid'));
+                              if (next && next.style.display != 'none') {
+                                  Y.get('a.bf_btn', tr).swapClass('public_Dora', 'public_Lblue').html('<b>展开选项<s class="c_down"></s></b>');
+//                                  next.style.display='none';
+                              }
+                          }
+                      }, this);
+                      break;
+                  case 7:
+                 	   var target= Y.allList.filter(function(tr){
+                            return tr.getAttribute('lg') != "西班牙甲"&&tr.getAttribute('lg') != "德国甲级"&&tr.getAttribute('lg') != "法国甲级"&&tr.getAttribute('lg') != "意大利甲"&&tr.getAttribute('lg') != "英格兰超"
+                        });
+                        if (!sel && Y.isbf){
+                            Y._hideBF(target)
+                        }else{
+                            target.show(!sel);
+
                         }
-                    }, this);
-                    break;
-                 case 2://全选
-                    Y.allList.show(sel)
-                 }
-                 this.getHideCount()
+                     
+                         break;
+                  
+                  }
+                  this.getHideCount()
              });
              this.onMsg('msg_set_all', function (){
                  this.allList.show();
@@ -771,30 +839,17 @@
     	},
     	jqs:function(data){
    		 var html = [];
-   		 var tableTpl=['<TABLE class=dc_table border=0 cellSpacing=0 cellPadding=0 width="100%" >'+
-              '<COLGROUP><COL width=70><COL width=61><COL width=55><COL width=172><COL width=42>'+
-              '<COL width=42><COL width=42><COL width=42><COL width=42><COL width=42><COL width=42><COL width=42><COL width=39></COLGROUP>'+
-              '<TBODY><TR><TH>赛事编号</TH><TH>赛事类型</TH>'+
-              '<TH><SELECT id=select_time> <OPTION selected value=0>截止</OPTION> <OPTION value=1>开赛</OPTION></SELECT></TH>'+
-              '<TH>主队 VS 客队</TH>'+
-              '<TH><SPAN class=eng>0</SPAN></TH>'+
-              '<TH><SPAN class=eng>1</SPAN></TH>'+
-              '<TH><SPAN class=eng>2</SPAN></TH>'+
-              '<TH><SPAN class=eng>3</SPAN></TH>'+
-              '<TH><SPAN class=eng>4</SPAN></TH>'+
-              '<TH><SPAN class=eng>5</SPAN></TH>'+
-              '<TH><SPAN class=eng>6</SPAN></TH>'+
-              '<TH class=last_th><SPAN class=eng>7+</SPAN></TH><TH>数据</TH></TR></TBODY></TABLE>',//0对阵头
+   		 var tableTpl=['',//0对阵头
               '<DIV class=dc_hs style="text-align: left; padding-left: 10px;"><STRONG>{$enddate} {$weekday} </strong>[12:00 -- 次日 12:00] <b><span id=num{$num} class="red">num{$num}</span>场比赛可投注</b> <A href="javascript:void 0">隐藏<S class=c_up></S></A> </DIV>',//1按天分类
               '<TABLE id=d_{$enddate} class=dc_table border=0 cellSpacing=0 cellPadding=0 width="100%" onselectstart="return false">'+
-              '<COLGROUP><COL width=70><COL width=61><COL width=55><COL width=80><COL width=4><COL width=80><COL width=42>'+
+              '<COLGROUP><COL width=45><COL width=64><COL width=64><COL width=80><COL width=4><COL width=80><COL width=42>'+
               '<COL width=42><COL width=42><COL width=42><COL width=42><COL width=42><COL width=42><COL width=42><COL width=39></COLGROUP>',//2对阵table控制
               '<TBODY>'+
-              '<TR style="DISPLAY: none" isend="1" odds="{$jqs}" lg="{$mname}" pdate="{$itemid}" pendtime="{$et}" pname="{$itemid}" class="{$classname}" mid="{$mid}" zid="{$itemid}">'+
+              '<TR style="DISPLAY: none" isend="1" odds="{$jqs}" lg="{$mname}" pdate="{$itemid}" pendtime="{$enddate}" pname="{$itemid}" class="{$classname}" mid="{$mid}" zid="{$itemid}">'+
               '<TD style="CURSOR: pointer"><LABEL for=m{$itemid}><INPUT id=m{$itemid} class=i-cr value={$itemid} CHECKED type=checkbox name=m{$itemid}>{$name}</LABEL></TD>'+
               '<TD style="BACKGROUND:{$cl}; COLOR: #fff" class=league><A title={$lmname} href="" target="_blank" id="mn{$itemid}" style="color: #fff">{$mname}</A></TD>'+
               '<TD><SPAN class="eng end_time" title="开赛时间：{$mt}">{$short_et}</SPAN><SPAN style="DISPLAY: none" class="eng match_time" title="截止时间：{$et}">{$short_mt}</SPAN> </TD>'+
-              '<TD style="text-align: right; padding-right:2px;"><A title={$lhn} href="" target="_blank" id="hn{$itemid}"><em id="htid{$itemid}" class="ew_e">{$hn}</em></A></TD>'+
+              '<TD style="text-align: right; padding-right:2px;"><A title={$lhn} href="" target="_blank" id="hn{$itemid}"><em id="htid{$itemid}" class="ew_e ew_eright">{$hn}</em></A></TD>'+
               '<TD style="text-align: center;">VS</TD>'+
               '<TD style="text-align: left; padding-left:2px;"><A title={$lgn} href="" target="_blank" id="gn{$itemid}"><em id="gtid{$itemid}" class="ew_e">{$gn}</em></A></TD>'+
               '<TD class=h_br style="border-left:1px solid #62A3D0">{$sp0}</TD>'+
@@ -808,11 +863,11 @@
               '<TD><a href="" target="_blank" id="ox{$itemid}">析</a> <a href="" target="_blank" id="oz{$itemid}">欧</a></TD>'+
               '</TR></TBODY>',//3隐藏对阵
               '<TBODY>'+
-              '<TR isend="0" class="{$classname}" odds="{$jqs}" lg="{$mname}" pdate="{$itemid}" pendtime="{$et}" pname="{$itemid}" mid="{$mid}" zid="{$itemid}">'+
+              '<TR isend="0" class="{$classname}" odds="{$jqs}" lg="{$mname}" pdate="{$itemid}" pendtime="{$enddate}" pname="{$itemid}" mid="{$mid}" zid="{$itemid}">'+
               '<TD style="CURSOR: pointer"><LABEL for=m{$itemid}><INPUT id=m{$itemid} class=i-cr value={$itemid} CHECKED type=checkbox name=m{$itemid}>{$name}</LABEL></TD>'+
               '<TD style="BACKGROUND:{$cl}; COLOR: #fff" class=league><A title={$lmname} href="" target="_blank" id="mn{$itemid}" style="color: #fff">{$mname}</A></TD>'+
               '<TD><SPAN class="eng end_time" title="开赛时间：{$mt}">{$short_et}</SPAN><SPAN style="DISPLAY: none" class="eng match_time" title="截止时间：{$et}">{$short_mt}</SPAN> </TD>'+
-              '<TD style="text-align: right; padding-right:2px;"><A title={$lhn} href="" target="_blank" id="hn{$itemid}"><em id="htid{$itemid}" class="ew_e">{$hn}</em></A></TD>'+
+              '<TD style="text-align: right; padding-right:2px;"><A title={$lhn} href="" target="_blank" id="hn{$itemid}"><em id="htid{$itemid}" class="ew_e ew_eright">{$hn}</em></A></TD>'+
               '<TD style="text-align: center;">VS</TD>'+
               '<TD style="text-align: left; padding-left:2px;"><A title={$lgn} href="" target="_blank" id="gn{$itemid}"><em id="gtid{$itemid}" class="ew_e">{$gn}</em></A></TD>'+
               '<TD style="CURSOR: pointer;border-left:1px solid #62A3D0" class=h_br><DIV class=label_br><INPUT class=chbox value=0 type=checkbox style="display: none"><SPAN class=eng>{$sp0}</SPAN></DIV></TD>'+
@@ -832,13 +887,16 @@
    		var wk=["日","一","二","三","四","五","六"];
    	
    		var stop_sale="no";
-   		var all_matches=0;
-   		var out_of_date_matches=0;
-   	
-   		var odds_issuc=false;
-   		var numstr=[];
-   		var num=0;
-   		var lgstr="";
+		var all_matches=0;
+		var dateweek =[];
+		var out_of_date_matches=0;
+		var rangqiu_matches=[];
+		var no_rangqiu_matches=0;
+		var odds_issuc=false;
+		var numstr=[];
+		var lgname=[];
+		var num=0;
+		var lgstr="";
 
    		
    		var obj = eval("(" + data.text + ")");
@@ -875,7 +933,7 @@
    			row.lhn=row.hn;
    			row.lgn=row.gn;
    			row.mname=row.mname.substr(0,4);
-   			row.name=row.name.trim();
+   			row.name=row.name.trim().substr(2,5);
    			if (Y.getDate(data.date)>Y.getDate(row.et)){//已经过期的场次
    				out_of_date_matches++;
 				row.shuju='<a href="http://odds.159cai.com/fenxi/shuju.php?id=318510&show=2" target="_blank">析</a> <a href="http://odds.159cai.com/fenxi/ouzhi.php?id=318510&show=2" target="_blank">欧</a>';
@@ -891,6 +949,9 @@
    			}else{//未过期的场次
    				num++;    				
    				html[html.length] = tableTpl[4].tpl(row);
+   				rangqiu_matches.push(row.close);
+				lgname.push(row.mname);
+				dateweek.push('星期'+wk[Y.getDate(row.enddate).getDay()]+"_"+row.enddate);
    				if (lgstr.indexOf(row.mname)<0){	
    		            lgstr+='<LI><INPUT id="lg'+row.mname+'" CHECKED type="checkbox" m="'+row.mname+'"><LABEL for="lg'+row.mname+'">'+row.mname.substr(0,4)+'</LABEL></LI>';
    		    		}
@@ -906,7 +967,58 @@
    		for(ii=0;ii<numstr.length;ii++){
    			this.get("#num"+ii).html(numstr[ii]);
    		}
-   		this.get("#vsTable").show();	
+   		this.get("#vsTable").show();
+
+   	
+   		
+   		//生成联赛列表
+   		var arr_league = [];
+   		var league_list_html = '';
+   		var match_num_of_league = {};
+   		lgname.each( function(item) {
+   			var league_name = item;
+   				if ($_sys.getSub(arr_league,league_name) == -1 ) {
+   					arr_league.push(league_name);
+   					league_list_html += '<li><label for="' + league_name + '"><input name="lg" type="checkbox" value="' + league_name + '" checked="checked"/><span>' + league_name + '</span>[<i>'+league_name +'_num</i>]</label></li>';
+  				}
+   				if (typeof match_num_of_league[league_name] == 'undefined') {
+   					match_num_of_league[league_name] = 1;
+   				} else {
+   					match_num_of_league[league_name]++;
+   				}
+   				
+   		} );
+   		for (var league_name in match_num_of_league) {
+   			league_list_html = league_list_html.replace(league_name + '_num', match_num_of_league[league_name]);
+   		}
+   		$("#lglist").html(league_list_html);
+   		
+   		//生成星期列表
+   		var newday=Y.getDate(data.date).format('YY-MM-DD');
+   		var arr_week = [];
+   		var week_list_html = '';
+   		var match_num_of_week = {};
+   		dateweek.each( function(item) {
+   			var week_name = item.split("_")[0];
+   				if (arr_week.join('|').indexOf(week_name) == -1 ) {
+   					arr_week.push(week_name);
+   					var wd='';
+   					if((Y.getDate(newday)-Y.getDate(item.split("_")[1]))==0){
+   						wd='(今天)';
+   					}
+   					week_list_html+='<li style="width:145px"><label for=' + week_name + wd+'><input class="radio" type="checkbox" value="'+item.split("_")[1]+'" checked="checked"/><span>' + week_name + wd+'赛程</span>[<i>'+week_name + '_num</i>]</label></li>';
+  				}
+  				if (typeof match_num_of_week[week_name] == 'undefined') {
+  					match_num_of_week[week_name] = 1;
+  				} else {
+  					match_num_of_week[week_name]++;
+  				}
+  				
+  		} );
+  		for (var week_name in match_num_of_week) {
+  			week_list_html = week_list_html.replace(week_name + '_num', match_num_of_week[week_name]);
+  		}
+  		$("#datachoose").html(week_list_html);
    		this.postMsg('load_duizhen_succ');
       }	
     });
@@ -1430,6 +1542,8 @@ Class('ScrollStill', {
            	                         tip: '#odds_tip',
            	                         fleft: 260
            	                     }); 
+                        	     $("#sssx").sssx_select_name();
+                        	     $("#jztime").jztime_select_name();
         	                     $("#oddstype").odds_select_name();
         	                     // load_odds_sp();
         	                     ozOdds({
@@ -1505,7 +1619,7 @@ Class('ScrollStill', {
                 offset:0,
                 init: function(){
                     var This = this,
-                        title = this.area.find('table').one(0),
+                        title = this.area.parent().find('table').one(0),
                         floatTitle = title.cloneNode(true);
                     this.get(floatTitle).insert(this);
                     this.floatTitle = floatTitle;
@@ -1878,3 +1992,65 @@ Class.fn.setFixed = function (opt){
    } 
    return this
 };
+$.fn.jztime_select_name=function(){
+	$self=$(this);
+	$self.each(function(){
+		var $div1=$self.find("div.matchxz");
+		var $div2=$self.find("div.jcslt");
+		$div1.mouseover(function(){
+			$div2.show();
+			$div1.addClass("matchxzc");
+			return false;	
+		});
+		$div1.mouseout(function(){
+			$div2.hide();
+			$div1.removeClass("matchxzc");
+		});
+		$div2.mouseover(function(){
+			$div2.show();
+			$div1.addClass("matchxzc");
+			return false;	
+		});
+		$div2.mouseout(function(){
+			$div2.hide();
+			$div1.removeClass("matchxzc");
+		});
+		$div2.find("a").click(function(){
+			$(this).blur();  
+			var txt=$(this).text();
+			var ctxt=$(this).attr("value");
+			 Y.postMsg('msg_change_time', ctxt);
+			$div1.find("em").attr("value", ctxt);
+			$div1.find("em").text(txt);
+			$div2.hide();
+			$div1.removeClass("matchxzc");
+			return false;	
+		});
+	});
+}
+$.fn.sssx_select_name=function(){
+	$self=$(this);
+	$self.each(function(){
+		var $div1=$self.find("div.matchxz");
+		var $div2=$self.find("div.jcslt");
+		$div1.mouseover(function(){
+			$div2.show();
+			$div1.addClass("matchxzc");
+			return false;	
+		});
+		$div1.mouseout(function(){
+			$div2.hide();
+			$div1.removeClass("matchxzc");
+		});
+		$div2.mouseover(function(){
+			$div2.show();
+			$div1.addClass("matchxzc");
+			return false;	
+		});
+		$div2.mouseout(function(){
+			$div2.hide();
+			$div1.removeClass("matchxzc");
+		});
+	
+	});
+}
