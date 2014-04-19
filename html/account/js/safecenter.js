@@ -89,7 +89,7 @@ Class({
 								
 								$("#bank s").html('已绑定，不可修改').removeClass("cur");
 								$("#bank_i").addClass("bankcur");
-								$("#bk").html('银行卡号：<em id="bank">'+bank+'</em>'+'&nbsp;&nbsp;&nbsp;&nbsp;支行名称：<em id="name"></em>'+name);
+								$("#bk").html('银行卡号：<em id="bank">'+bank+'</em>'+'&nbsp;&nbsp;&nbsp;&nbsp;支行名称：<em id="name">'+name+'</em>');
 								safe += 1;
 							} else {
 							
