@@ -345,8 +345,7 @@ Class('Loginer', {// 登陆器
 				                     });
 		                     }
                              if(r.isagent=="1" && (r.vlevel>0)){
-                            	 $("#tuiguang").show();
-                            	 $("#parent").show();
+                            	
                             	 $("#myfanli").show();
                             	 Y.get("#fzurl").click(function(){	
  	        							copyurl(Y.get(".tgdiv > input").val());
