@@ -1365,3 +1365,7 @@ a.buyfa:hover{background:#ff6600}
 .buyfimvs tr.tr1 td{background:#f5f5f5}
 em.ew_e {display: inline-block;float: left;height: 38px;line-height: 38px;overflow: hidden;text-align: left;width: 62px;}
 em.ew_eright{text-align:right;float:right}
+.dc_r em.ew_e{float:none;clear:both}
+.ddc_table td s{line-height:38px}
+.dc_l_tr{margin:0}
+#title_folat{overflow:visible}
