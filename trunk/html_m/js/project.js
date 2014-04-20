@@ -451,8 +451,12 @@ showjccode=function(option){
 						var ps = cc[f].split("=");
 						var gg = getJcPlay(gid, ps[0]);
 						lose = lls.length > 1 ? (gg == 95 ? lls[0] : lls[2]) : r.lose;
+//						if(gg==97){
+//							lose = lls.length > 1?lls[3]: r.lose;
+//						}
 						if(rst){
-							mrs = mrs == "*" ? mrs : getjcrs(gg, r.hs, r.vs, r.hhs, r.hvs, lose);
+							mrs = mrs == "*" ? mrs : getjcrs(gg, r.hs, r.vs, r.hhs, r.hvs, (gg==97?lls[3]:lose));
+							
 						}
 						html += "玩法:<span style='color:green'>" + $_sys.getlotname(gg,2) + "</span>";
 						if(gg == 72 || gg == 95 || gg == 97){
