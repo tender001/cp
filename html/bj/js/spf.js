@@ -240,6 +240,7 @@ Class( 'TableSelector', {
 			this.ckRangqiu   = this.need(config.ckRangqiu);
 			this.ckNoRangqiu = this.need(config.ckNoRangqiu);
 		}
+		this.wdls =this.need(config.wdls);
 		this.ckOutOfDate = this.need(config.ckOutOfDate);
 		this.hiddenMatchesNumTag = this.need(config.hiddenMatchesNumTag);
 		this.matchShowTag = this.need(config.matchShowTag);
@@ -247,6 +248,7 @@ Class( 'TableSelector', {
 		this.leagueShowTag  = this.need(config.leagueShowTag);
 		this.leagueSelector = this.need(config.leagueSelector);
 		this.selectAllLeague      = this.need(config.selectAllLeague);
+		this.removeAllLeague =this.need(config.removeAllLeague);
 		this.selectOppositeLeague = this.need(config.selectOppositeLeague);
 
 		this.stopSale = Class.config('stopSale');
@@ -384,7 +386,9 @@ Class( 'TableSelector', {
 			this.get('#rangqiu_tag').html(this.get('#rangqiu_matches').val());
 			this.ckNoRangqiu.prop('checked', true);
 			this.get('#no_rangqiu_tag').html(this.get('#no_rangqiu_matches').val());
+			
 		}
+		this.wdls.prop('checked', false);
 		this.ckOutOfDate.prop('checked', false);
 		this.get('#out_of_date_tag').html(this.get('#out_of_date_matches').val() + '场');
 
@@ -504,32 +508,32 @@ Class( 'TableSelector', {
 		// 显示或隐藏联赛选择区域
 		var timeout_id;
 		this.leagueShowTag.mouseover( function() {
-			if (Y.leagueSelector.one().getElementsByTagName('ul')[0].innerHTML == '') {
+			if (Y.get("#lglist").innerHTML == '') {
 				Y.createLeagueList();  //生成联赛选择列表
 			}
 			clearTimeout(timeout_id);
 			Y.leagueSelector.show();
-			Y.leagueShowTag.addClass('ls_h_btn');
+			Y.leagueShowTag.find("div.matchxz").addClass('matchxzc');
 		} );
 		this.leagueShowTag.mouseout( function() {
 			timeout_id = setTimeout( function() {
 				Y.leagueSelector.hide();
-				Y.leagueShowTag.removeClass('ls_h_btn');
+				Y.leagueShowTag.find("div.matchxz").removeClass('matchxzc');
 			}, 100);
 		} );
 		this.leagueSelector.mouseover( function() {
 			clearTimeout(timeout_id);
 			Y.leagueSelector.show();
 		} );
-		this.leagueSelector.mouseout( function() {
-			timeout_id = setTimeout( function() {
-				Y.leagueSelector.hide();
-				Y.leagueShowTag.removeClass('ls_h_btn');
-			}, 100);
-		} );
+//		this.leagueSelector.mouseout( function() {
+//			timeout_id = setTimeout( function() {
+//				Y.leagueSelector.hide();
+//				Y.leagueShowTag.removeClass('ls_h_btn');
+//			}, 100);
+//		} );
 
 		// 选择或隐藏某个指定的联赛
-		this.leagueSelector.live('ul input', 'click', function(e, ns) {
+		this.leagueSelector.live('#lglist input', 'click', function(e, ns) {
 			Y.vsTrs.each( function(item) {
 				if (Y.vsInfo[item.index].leagueName == this.value && 
 				        (!item.disabled || Y.stopSale || Y.ckOutOfDate.prop('checked'))) {
@@ -537,12 +541,34 @@ Class( 'TableSelector', {
 				}
 			}, this );
 		} );
-
+		//显示五大联赛
+		this.wdls.click(function(){
+			if($(this).attr("checked")){
+				 Y.get("#lglist input").prop('checked', false);
+     		   $("input[value='西甲']").attr("checked",true);
+	            	$("input[value='德甲']").attr("checked",true);
+	            	$("input[value='法甲']").attr("checked",true);
+	            	$("input[value='意甲']").attr("checked",true);
+	            	$("input[value='英超']").attr("checked",true);
+     	   }else if(!$(this).attr("checked")){
+     		   Y.get("#lglist input").prop('checked', true);
+     	   }
+			Y.vsTrs.each( function(item) {
+				if ((Y.vsInfo[item.index].leagueName !="西甲"&&Y.vsInfo[item.index].leagueName !="德甲"&&Y.vsInfo[item.index].leagueName !="法甲"&&Y.vsInfo[item.index].leagueName !="意甲"&&Y.vsInfo[item.index].leagueName !="英超") && (!item.disabled )) {
+					this.checked ?item.hideLine() : Y.showAllMatches();
+				}else{
+//					item.showLine()
+				}
+			}, this );
+		
+		});
 		// 全选所有联赛
 		this.selectAllLeague.click( function() {
 			Y.showAllMatches();
 		} );
-
+		this.removeAllLeague.click(function(){
+			Y.removeAllMatches();
+		})
 		// 反选所有联赛
 		this.selectOppositeLeague.click( function() {
 			Y.leagueSelector.find('ul input').each( function(item) {
@@ -609,6 +635,21 @@ Class( 'TableSelector', {
 			this.ckNoRangqiu.prop('checked', true);
 		}
 	},
+	removeAllMatches:function(){
+		this.vsTrs.each( function(item) {
+			if (!item.disabled || this.stopSale || this.ckOutOfDate.prop('checked')) {
+				item.hideLine();
+			}
+		}, this );
+		this.leagueSelector.find('ul input').each( function(item) {
+			item.checked && (item.checked = false);
+		},this );
+		this.matchShowTag.html('全部比赛' + this.matchShowTag.html().substr(4));
+		if (Class.config('playName') == 'rqspf') {
+			this.ckRangqiu.prop('checked', false);
+			this.ckNoRangqiu.prop('checked', false);
+		}
+	},
 
 	// 只显示某个特定的联赛(用于资讯区的跳转)
 	showCertainLeague : function(league_name) {
@@ -664,27 +705,7 @@ Class( 'TableSelector', {
 	},
 
 	// 生成联赛选择列表
-	createLeagueList : function() {
-		var Y = this;
-		var arr_league = [];
-		var league_list_html = '';
-		var match_num_of_league = {};
-		Y.vsTrs.each( function(item) {
-			var league_name = Y.vsInfo[item.index].leagueName;
-			if ( !item.disabled || Y.stopSale || Y.allEnd ) {
-				if ( arr_league.join('|').indexOf(league_name) == -1 ) {
-					arr_league.push(league_name);
-					league_list_html += '<li><label><input type="checkbox" class="chbox" checked="checked" value="' + league_name + '" />' + league_name + '</label></li>';
-				}
-				if (typeof match_num_of_league[league_name] == 'undefined') {
-					match_num_of_league[league_name] = 1;
-				} else {
-					match_num_of_league[league_name]++;
-				}
-			}
-		} );
-		Y.get(league_list_html).insert(Y.leagueSelector.find('ul'));
-	}
+	createLeagueList : function() {}
 });
 
 
@@ -1429,7 +1450,7 @@ Class('LoadExpect',{
 	},	
 	spf:function(data){
 		 var html = [];
-		 var tableTpl=['<colgroup><col width="6%"><col width="9%"><col width="10%"><col width="22%"><col width="8%"><col width="19%"><col width="4%"><col width="15%"><col></colgroup>',//0
+		 var tableTpl=['<colgroup><col width="45"><col width="64"><col width="64"><col width="154"><col width="62"><col width="154"><col width="32"><col width="118"><col width=""><col></colgroup>',//0
 		'<tr id="switch_for_{$enddate}">'+
 		'<td colspan="12" class="dc_hstd" style="height:32px"><div class=dc_hs style="text-align: left; padding-left: 10px;">'+
 		'<strong>{$enddate} {$weekday} (10：00--次日10：00)</strong>&nbsp;'+
@@ -1507,10 +1528,12 @@ Class('LoadExpect',{
 		var stop_sale="no";
 		var all_matches=0;
 		var out_of_date_matches=0;
-		var rangqiu_matches=0;
+	
 		var no_rangqiu_matches=0;
 		var odds_issuc=false;
-		
+		var dateweek =[];
+		var rangqiu_matches=[];
+		var lgname=[];
 		var obj = eval("(" + data.text + ")");
 		var code = obj.match.code;
 		var desc = obj.match.desc;
@@ -1578,6 +1601,10 @@ Class('LoadExpect',{
 				}else{
 					no_rangqiu_matches++;
 				}
+//				rangqiu_matches.push(row.close);
+				lgname.push(row.mname);
+				dateweek.push('星期'+wk[Y.getDate(row.enddate).getDay()]+"_"+row.enddate);
+	
 				html[html.length] = tableTpl[3].tpl(row);
 			};	
 
@@ -1596,6 +1623,87 @@ Class('LoadExpect',{
 			$(".vs_lines").show();
 		}
 		$("#vsTable").show();	
+		
+		//生成让球列表
+//   		var arrrangqiu_matches = [];
+//   		var rangqiu_matcheshtml = '';
+//   		var arrrangqiu_matchesnum = {};
+//   		rangqiu_matches.each( function(item) {
+//   			var rangqiunum = item;
+//   				if ( $_sys.getSub(arrrangqiu_matches,rangqiunum) == -1 ) {
+//   					arrrangqiu_matches.push(rangqiunum);
+//   					var rqname='';
+//   					if(parseInt(rangqiunum)==0){
+//   						rqname='非让球';
+//   					}else if(parseInt(rangqiunum)>0){
+//   						rqname='客让'+rangqiunum+'球';
+//   					}else if(parseInt(rangqiunum)<0){
+//   						rqname='主让'+Math.abs(rangqiunum)+'球';
+//   					}
+////   					<li><label for="rd主让1球"><input type="checkbox"  id="rd主让1球" class="radio"><span>主让1球</span>[<i>56</i>]</label></li>
+//   					rangqiu_matcheshtml += '<li><label for='+rqname+'><input class="radio" type="checkbox" value="'+rangqiunum+'" checked="checked"/><span>'+rqname+'</span>[<i id='+rangqiunum + '_num></i>]</label></li>';
+//   				}
+//   				if (typeof arrrangqiu_matchesnum[rangqiunum] == 'undefined') {
+//   					arrrangqiu_matchesnum[rangqiunum] = 1;
+//   				} else {
+//   					arrrangqiu_matchesnum[rangqiunum]++;
+//   				}
+//   				
+//   		} );
+//   		$("#rqlist").html(rangqiu_matcheshtml);
+//   		for (var rangqiunum in arrrangqiu_matchesnum) {
+//   			$('#'+rangqiunum+'_num').html(arrrangqiu_matchesnum[rangqiunum]);
+//   		}
+   		
+   		
+   		//生成联赛列表
+   		var arr_league = [];
+   		var league_list_html = '';
+   		var match_num_of_league = {};
+   		lgname.each( function(item) {
+   			var league_name = item;
+   				if ($_sys.getSub(arr_league,league_name) == -1 ) {
+   					arr_league.push(league_name);
+   					league_list_html += '<li><label for="' + league_name + '"><input name="lg" type="checkbox" value="' + league_name + '" checked="checked"/><span>' + league_name + '</span>[<i>'+league_name +'_num</i>]</label></li>';
+  				}
+   				if (typeof match_num_of_league[league_name] == 'undefined') {
+   					match_num_of_league[league_name] = 1;
+   				} else {
+   					match_num_of_league[league_name]++;
+   				}
+   				
+   		} );
+   		for (var league_name in match_num_of_league) {
+   			league_list_html = league_list_html.replace(league_name + '_num', match_num_of_league[league_name]);
+   		}
+   		$("#lglist").html(league_list_html);
+   		
+   		//生成星期列表
+   		var newday=Y.getDate(data.date).format('YY-MM-DD');
+   		var arr_week = [];
+   		var week_list_html = '';
+   		var match_num_of_week = {};
+   		dateweek.each( function(item) {
+   			var week_name = item.split("_")[0];
+   				if (arr_week.join('|').indexOf(week_name) == -1 ) {
+   					arr_week.push(week_name);
+   					var wd='';
+   					if((Y.getDate(newday)-Y.getDate(item.split("_")[1]))==0){
+   						wd='(今天)';
+   					}
+   					week_list_html+='<li style="width:145px"><label for=' + week_name + wd+'><input class="radio" type="checkbox" value="'+item.split("_")[1]+'" checked="checked"/><span>' + week_name + wd+'赛程</span>[<i>'+week_name + '_num</i>]</label></li>';
+  				}
+  				if (typeof match_num_of_week[week_name] == 'undefined') {
+  					match_num_of_week[week_name] = 1;
+  				} else {
+  					match_num_of_week[week_name]++;
+  				}
+  				
+  		} );
+  		for (var week_name in match_num_of_week) {
+  			week_list_html = week_list_html.replace(week_name + '_num', match_num_of_week[week_name]);
+  		}
+  		$("#datachoose").html(week_list_html);
 		this.postMsg('load_duizhen_succ');			
 	}
 });
@@ -1606,15 +1714,32 @@ Class( {
 	ready : true,	
 	index : function(){		
 		this.lib.LoadExpect();
+		this.goTotop();//返回顶部
 		this.oneodds=true;
 		 Class.C('lot_id', 85);
 		 Class.C('odds_t','bjdc/');
 		this.onMsg('load_duizhen_succ', function () {
 			this.sethref();
 			this._index();
-			this.get('#select_time').change(function (){
-	            Y.postMsg('msg_change_time', this.value);
-	        });
+//			this.get('#select_time').change(function (){
+//	            Y.postMsg('msg_change_time', this.value);
+//	        });
+			$('div[mark=endtime]').mouseover(function(){
+				$("div[mark=showend]").show();
+				$(this).find(".matchxz").addClass("matchxzc");
+			});
+			$('div[mark=endtime]').mouseout(function(){
+				$("div[mark=showend]").hide();
+				$(this).find(".matchxz").removeClass("matchxzc");
+			});
+			$("div[mark=showend] a").click(function(){
+				var endvalue=$(this).attr("value");
+				$("#select_time").html($(this).text());
+				$("div[mark=showend]").hide();
+				$('div[mark=endtime]').find(".matchxz").removeClass("matchxzc");
+				 Y.postMsg('msg_change_time', endvalue);
+			})
+			
 			this.onMsg('msg_change_time', function (index){
 	            this._getPvs();
 	            this.endTimeList.show(index == '0');
@@ -1681,6 +1806,65 @@ Class( {
         		}
 				});
 	},
+	goTotop:function (){
+        var isIE=!!window.ActiveXObject;
+        var isIE6 = isIE&&!window.XMLHttpRequest;
+        var btn = $("#goTotop");
+        var right = 0;
+        var top = $(window).height()-247;
+        var ietop = $(window).height()-247+$(window).scrollTop();
+        var flag = true;
+        $(window).resize(function(){
+            btn.css({"position":"fixed",top:top,right:right});
+            if(isIE6)btn.css({"position":"absolute",top:ietop,right:right});
+        })
+        btn.css({"position":"fixed",top:top,right:right});
+        var areaTop = Y.get("#right_area").getXY().y;
+        
+        $(window).scroll(function(){
+        	 if ($(this).scrollTop() > areaTop){//跟踪对齐当滚动条超过右侧区域则开始滚动
+	            	var V = $('#titleTable_r');
+	        		if (V[0]) {
+	        			var T = $(document),
+	        			H = $("#main").eq(0),
+	        			M = H.offset().top + H.outerHeight(),
+	        			F = V.innerWidth(),
+	        			B = V.offset().top,
+	        			L = V.outerHeight(), 
+	        			u = T.scrollTop();
+	        			Z = Math.min(0, M - (L + u));
+	        			
+	        			if (B == Z) {
+	        				V.css({left: "auto", top: "auto",width: F, position: "static"});
+	        			} else {
+	        				if(isIE6){
+	        					V.css({left: "auto",top: Z+$(window).scrollTop(), width: F,position: "absolute"});
+	        				}else{
+	        				V.css({left: "auto",top: Z, width: F, position: "fixed"});
+	        				}
+	        			}
+	        			Y.get("#titleTable_r").setStyle('z-index: 1;');
+	        		}
+	            	
+	             }else{//停止浮动对齐
+            	 Y.get("#titleTable_r").setStyle('z-index: 1; top:0;  left: auto;position: static;');
+            }
+        	
+            if(flag)
+            {
+                btn.show();
+                flag = false;
+            }
+            if($(this).scrollTop() == 0)
+            {
+                btn.hide();
+                flag = true;
+            }
+            btn.css({"position":"fixed",top:top,right:right});
+            ietop = $(window).height()-247+$(window).scrollTop();
+            if(isIE6)btn.css({"position":"absolute",top:ietop,right:right});
+        })
+    },
 	
 	_index : function () {
 		var Y = this, d = new Date();
@@ -1760,7 +1944,7 @@ Class( {
 			vsTable : '#vsTable',
 			vsLines : 'tr.vs_lines',
 			spLines : 'tr.sp_lines',
-
+			wdls : '#wdls',
 			ckRangqiu   : '#ck_rangqiu',
 			ckNoRangqiu : '#ck_no_rangqiu',
 			ckOutOfDate : '#ck_out_of_date',
@@ -1768,9 +1952,10 @@ Class( {
 			matchShowTag : '#match_show',
 			matchFilter  : '#match_filter',
 			leagueShowTag  : '#league_show',
-			leagueSelector : '#league_selector',
-			selectAllLeague      : '#select_all_league',
-			selectOppositeLeague : '#select_opposite_league'
+			leagueSelector : '#leagueSelector',
+			selectAllLeague      : '#selectAllBtn',
+			removeAllLeague :'#unAllBtn',
+			selectOppositeLeague : '#selectOppBtn'
 		} );
 
 		this.lib.TouzhuInfo( {
@@ -1854,12 +2039,12 @@ Class( {
 		} );
 
 		//设置表头浮动
-        Y.get('<div id="#title_folat" style="z-index:9;"></div>').insert().setFixed({
+        Y.get('<div id="title_folats" style="z-index:9;"></div>').insert().setFixed({
             area: '#dcvsTable',
             offset:0,
             init: function(){
                 var This = this,
-                    title = this.area.find('table').one(0),
+                    title = this.area.parent().find('#tabletop').one(0),
                     floatTitle = title.cloneNode(true);
                 this.get(floatTitle).insert(this);
                 this.floatTitle = floatTitle;
@@ -1868,6 +2053,7 @@ Class( {
                 Y.get(window).resize(function(){
                     This.setStyle('left:'+(This.area.getXY().x)+'px;width:'+(This.area.prop('offsetWidth'))+'px')
                 });
+                Yobj.get('div.jcslt').remove();
             },
             onin: function (){
                 this.show();
@@ -1880,6 +2066,8 @@ Class( {
                 this.title.swapNode(this.floatTitle);
             }
         });
+        
+
 	},
 
 	scrollStill : function() {

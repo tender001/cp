@@ -1343,25 +1343,8 @@ Class('LoadExpect',{
 	},	
 	bqc:function(data){
 		 var html = [];
-		 var tableTpl=['<colgroup>'+
-          '<col width="40" />'+
-          '<col width="60" />'+
-          '<col width="50" />'+
-          '<col width="80" />'+
-          '<col width="4" />'+
-          '<col width="80" />'+
-          '<col width="38" />'+
-          '<col width="38" />'+
-          '<col width="38" />'+
-          '<col width="38" />'+
-          '<col width="38" />'+
-          '<col width="38" />'+
-          '<col width="38" />'+
-          '<col width="38" />'+
-          '<col width="38" />'+
-          '<col width="25" />'+
-          '<col/>'+
-          '</colgroup>',//0
+		 var tableTpl=['  <COLGROUP><COL width=45><COL width=64><COL width=64><COL width=86><COL width=4><COL width=><COL width=38>'+
+         '<COL width=38><COL width=38><COL width=38><COL width=38><COL width=38><COL width=38><COL width=38><COL width=38><COL width=38></COLGROUP>',//0
 	       '<tbody>'+
 	       '<tr  id="switch_for_{$enddate}">'+
 	       '<td colspan="17" class="dc_hs dc_hstd" style="text-align:left; padding-left:10px;line-height:16px;height:16px;background-color:#ECEFF5">'+
@@ -1439,7 +1422,7 @@ Class('LoadExpect',{
 	       '{$sp00str}'+
 	       '</label>'+
 	       '</td>'+
-	       '<td style="cursor: pointer;border-right:1px solid #ddd"><a href="javascript:void(0);" class="jcq_q">全</a><input style="display: none" type="checkbox" all="0" value = "all"/></td>'+
+//	       '<td style="cursor: pointer;border-right:1px solid #ddd"><a href="javascript:void(0);" class="jcq_q">全</a><input style="display: none" type="checkbox" all="0" value = "all"/></td>'+
 	       '<td>'+
 	       '{$shuju}'+
 	       '</td>'+
