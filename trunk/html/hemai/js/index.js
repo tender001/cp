@@ -167,7 +167,7 @@ $(document).ready(function(){
 			        });   
 		    	});
 			};
-			Y.confirm("您好，本次认金额为"+buynum+"元，请确认！",dobuy,''); 
+			Y.confirm("您好，本次认购金额为"+buynum+"元，请确认！",dobuy,''); 
 		});
 	};
 	gopage = function(){
