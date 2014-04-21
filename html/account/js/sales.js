@@ -171,7 +171,7 @@ var showInfo = function(stime,etime,pn,ps,tp,tr,owner){
 					});
 				}
 				
-				$("#atj").html("当前页总销量："+sumsales+" 元");
+				$("#atj").html("当前页总销量：<em>"+sumsales+"</em> 元");
 			} else {
 				if (code=="1"){
 					parent.window.Y.postMsg('msg_login', function() {						
