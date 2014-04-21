@@ -857,10 +857,10 @@
                '<COLGROUP>'+
                '<COL width=45>'+
                '<COL width=64>'+
-               '<COL width=64>'+
-               '<COL width=114>'+
+               '<COL width=68>'+
+               '<COL width=105>'+
                '<COL width=4>'+
-               '<COL width=114>'+
+               '<COL width=105>'+
                '<COL width=110>'+
                '<COL width=151><COL></COLGROUP>',//2对阵table控制
                '<TBODY>'+
@@ -868,9 +868,9 @@
                '<TD style="CURSOR: pointer"><LABEL for=m{$itemid}><INPUT id=m{$itemid} value={$itemid} CHECKED type=checkbox name=m{$itemid}>{$name}</LABEL></TD>'+
                '<TD style="BACKGROUND:{$cl}; COLOR: #fff" class=league><A title={$lmname} href="" target="_blank" id="mn{$itemid}" style="color: #fff">{$mname}</A></TD>'+
                '<TD><SPAN class="eng end_time" title="开赛时间：{$mt}">{$short_et}</SPAN> <SPAN style="DISPLAY: none" class="eng match_time" title="截止时间：{$et}">{$short_mt}</SPAN> </TD>'+
-               '<TD style="text-align: right; padding-right:2px;"><s></s><A title={$lhn} href="" target="_blank" id="hn{$itemid}"><em id="htid{$itemid}" class="ew_e ew_eright">{$hn}</em></A></TD>'+
+               '<TD style="text-align: right; padding-right:2px;"><s style="float:left"></s><A title={$lhn} href="" target="_blank" id="hn{$itemid}"><em id="htid{$itemid}" class="ew_e ew_eright">{$hn}</em></A></TD>'+
                '<TD style="text-align: center;">VS</TD>'+
-               '<TD style="text-align: left; padding-left:2px;"><A title={$lgn} href="" target="_blank" id="gn{$itemid}"><em id="gtid{$itemid}" class="ew_e">{$gn}</em></A><s></s></TD>'+
+               '<TD style="text-align: left; padding-left:2px;"><A title={$lgn} href="" target="_blank" id="gn{$itemid}"><em id="gtid{$itemid}" class="ew_e">{$gn}</em></A><s style="float:right"></s></TD>'+
                '<TD><DIV class=pjpl id="odds{$itemid}"><SPAN class="sp_w35 eng" id="oh{$itemid}">{$b3}</SPAN><SPAN class="sp_w35 eng" id="od{$itemid}">{$b1}</SPAN><SPAN class="sp_w35 eng" id="oa{$itemid}">{$b0}</SPAN></DIV>'+
                '</TD>'+
                '<TD><A class="{$pubone} bf_btn" href="javascript:void 0"><B><SPAN>{$IShide}</SPAN><S class={$pubtwo}></S></B></A>'+
