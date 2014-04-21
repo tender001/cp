@@ -50,6 +50,7 @@
 <div class="dc_l">
 	<a name="top"></a>
 <div class="box_m">
+<div style="overflow:visible;background:#fff" id="tabletop">
 <div class="dc_l_t jc_l_t">
 	<div class="dc_l_tl">
 	<div class="dc_all_w" style="display:none">
@@ -63,7 +64,7 @@
 				</ul>
 			</div>
 		</div>
-		<span class="mie7">
+		<span class="mie7"><label><input type="checkbox"  id="wdls" />五大联赛</label>
 			<label><input type="checkbox" checked="checked" id="ck_rangqiu" />让球</label>
 			<label><input type="checkbox" checked="checked" id="ck_no_rangqiu" />非让球</label>
 			<label><input type="checkbox" id="ck_out_of_date" />已截止[<span class="red" id="out_of_date_tag">0场</span>]</label>&nbsp;
@@ -92,26 +93,25 @@
 						</colgroup>
 						<tbody>
 							<tr>
-								<th id="sssx"><div class="matchxzk" id="listDisplay">
+								<th id="sssx"><div class="matchxzk" id="league_show">
 										<div class="matchxz">
 											比赛筛选<i></i>
 										</div>
-										<div class="jcslt" style="display: none; overflow: visible; width: 440px">
+										<div class="jcslt" style="display: none; overflow: visible; width: 440px" id="leagueSelector">
 											<div class="dc_ls_n">
 											    <h3>赛事选择</h3>
 												<ul id="lglist" class="clearfix" ></ul>
 												<p><a href="javascript:void(0);" id="selectAllBtn">全选</a><a href="javascript:void(0);" id="selectOppBtn">反选</a><a href="javascript:void(0);" id="unAllBtn">全清</a></p>
-												<h3>时间选择</h3>
-												<ul id="datachoose" class="clearfix" ></ul>
+											
 											</div>
 										</div>
 									</div></th>
     
-    <th id="jztime"><div class="matchxzk">
+    <th id="jztime"><div class="matchxzk" mark="endtime">
 										<div class="matchxz">
 											<em id="select_time">截止</em><i></i>
 										</div>
-										<div class="jcslt" style="display: none; overflow: visible; width: 59px">
+										<div class="jcslt" style="display: none; overflow: visible; width: 59px" mark="showend">
 											<div class="plv_set">
 												<a href="javascript:void(0);" value="0">截止</a> <a href="javascript:void(0);" value="1">开赛</a>
 											</div>
@@ -121,11 +121,20 @@
 						        <th>平局</th>
 						        <th>客队</th>
 						        <th>包</th>
-						       <th id="oddstype"><div class="dz_plv"><em id="oddstype_v" data="0">平均欧指</em><div style="display:none;" class="plv_set"><a name="0" href="javascript:void(0);">平均欧指</a><a name="1" href="javascript:void(0);">威廉希尔</a><a name="2" href="javascript:void(0);">澳门</a><a name="3" href="javascript:void(0);">立博</a><a name="4" href="javascript:void(0);">Bet365</a><a name="5" href="javascript:void(0);">SNAI</a><a name="6" href="javascript:void(0);">易胜博</a><a name="7" href="javascript:void(0);">伟德</a><a name="8" href="javascript:void(0);">Bwin</a><a name="9" href="javascript:void(0);">Coral</a><a name="10" href="javascript:void(0);">oddset</a></div></div></th>
+						        <th id="oddstype"><div class="matchxzk">
+										<div class="matchxz">
+											<em id="oddstype_v" data="0">平均欧指</em><i></i>
+										</div>
+										<div style="overflow: visible; display: none;" class="jcslt">
+											<div class="plv_set">
+												<a name="0" href="javascript:void(0);">平均欧指</a> <a name="1" href="javascript:void(0);">威廉希尔</a> <a name="2" href="javascript:void(0);">澳门</a> <a name="3" href="javascript:void(0);">立博</a> <a name="4" href="javascript:void(0);">Bet365</a> <a name="5" href="javascript:void(0);">SNAI</a> <a name="6" href="javascript:void(0);">易胜博</a> <a name="7" href="javascript:void(0);">伟德</a> <a name="8" href="javascript:void(0);">Bwin</a> <a name="9" href="javascript:void(0);">Coral</a> <a name="10" href="javascript:void(0);">oddset</a>
+											</div>
+										</div></div></th>
 						        <th class="last_th">数据</th>
 							</tr>
 						</tbody>
 					</table>
+					</div>
 				<div class="dc_l_m" id="dcvsTable">
 					
 					<!--对阵表头 -->
@@ -147,7 +156,7 @@
 <div class="dc_r" id="right_area">
 	
 
-	<div class="box_m">
+	<div class="box_m" id="titleTable_r">
 		<div class="dc_r_m">
 		<H2 class="h_2"><a href="javascript:void(0);" id="checkbox_clear" class="jcq_k" ></a></H2>
 			<table width="100%" border="0" cellspacing="0" cellpadding="0" class="dcr_table">
