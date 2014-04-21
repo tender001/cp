@@ -247,7 +247,7 @@ $(document).ready(function(){
 						pagehtml += '<a class="a2" style="margin-right:5px" title="上一页 " onclick="page('+(Class.C("pn")-1>0?(Class.C("pn")-1):1)+');" href="javascript:void(0)">上一页</A>';
 						var min=0;
 						var max=0;
-						var pn=Class.C("pn");
+						var pn=Class.C("pn")*1;
 						if ( _pagei.tp > maxshow){
 						var pageTemp=parseInt(pn*1/maxshow);
 						max = pageTemp*maxshow+maxshow;
@@ -274,7 +274,7 @@ $(document).ready(function(){
 							pagehtml+='<a href="javascript:void(0);" id="tp'+i+'" class="a3" onclick="page('+i+');">' + i + '</a>';
 						}
 						}
-						pagehtml+='<span class="ac">第<INPUT onkeydown="if(event.keyCode==13){page(Y.getInt(this.value));return false;}" id=govalue class="ac" onkeyup="this.value=this.value.replace(/[^\\d]/g,\'\');if(this.value>'+_pagei.tp+')this.value='+_pagei.tp+';if(this.value<=0)this.value=1"  name=page>页</span><a class="go" href="#" onclick="page(Y.getInt($(\'#govalue\').val()));"></a><span class="gy">共'+_pagei.tp+'页，'+_pagei.records+'条记录</span><a class="a2" style="margin-left:10px" onclick="page('+(pn+1>pn?_pagei.tp:(pn+1))+');"  href="javascript:void(0)">下一页</a><a class="a1" style="margin-left:5px" onclick="page('+_pagei.tp+');" href="javascript:void(0)">尾页</a>';
+						pagehtml+='<span class="ac">第<INPUT onkeydown="if(event.keyCode==13){page(Y.getInt(this.value));return false;}" id=govalue class="ac" onkeyup="this.value=this.value.replace(/[^\\d]/g,\'\');if(this.value>'+_pagei.tp+')this.value='+_pagei.tp+';if(this.value<=0)this.value=1"  name=page>页</span><a class="go" href="#" onclick="page(Y.getInt($(\'#govalue\').val()));"></a><span class="gy">共'+_pagei.tp+'页，'+_pagei.records+'条记录</span><a class="a2" style="margin-left:10px" onclick="page('+(pn+1>_pagei.tp?_pagei.tp:(pn+1))+');"  href="javascript:void(0)">下一页</a><a class="a1" style="margin-left:5px" onclick="page('+_pagei.tp+');" href="javascript:void(0)">尾页</a>';
 					    $('.pagination').html(pagehtml);
 						
 					  
@@ -368,7 +368,7 @@ $(document).ready(function(){
 						pagehtml += '<a class="a2" style="margin-right:5px" title="上一页 " onclick="page('+(Class.C("pn")-1>0?(Class.C("pn")-1):1)+');" href="javascript:void(0)">上一页</A>';
 						var min=0;
 						var max=0;
-						var pn=Class.C("pn");
+						var pn=Class.C("pn")*1;
 						if ( _pagei.tp > maxshow){
 						var pageTemp=parseInt(pn*1/maxshow);
 						max = pageTemp*maxshow+maxshow;
@@ -395,7 +395,7 @@ $(document).ready(function(){
 							pagehtml+='<a href="javascript:void(0);" id="tp'+i+'" class="a3" onclick="page('+i+');">' + i + '</a>';
 						}
 						}
-						pagehtml+='<span class="ac">第<INPUT onkeydown="if(event.keyCode==13){page(Y.getInt(this.value));return false;}" id=govalue class="ac" onkeyup="this.value=this.value.replace(/[^\\d]/g,\'\');if(this.value>'+_pagei.tp+')this.value='+_pagei.tp+';if(this.value<=0)this.value=1"  name=page>页</span><a class="go" href="#" onclick="page(Y.getInt($(\'#govalue\').val()));"></a><span class="gy">共'+_pagei.tp+'页，'+_pagei.records+'条记录</span><a class="a2" style="margin-left:10px" onclick="page('+(pn+1>pn?_pagei.tp:(pn+1))+');"  href="javascript:void(0)">下一页</a><a class="a1" style="margin-left:5px" onclick="page('+_pagei.tp+');" href="javascript:void(0)">尾页</a>';
+						pagehtml+='<span class="ac">第<INPUT onkeydown="if(event.keyCode==13){page(Y.getInt(this.value));return false;}" id=govalue class="ac" onkeyup="this.value=this.value.replace(/[^\\d]/g,\'\');if(this.value>'+_pagei.tp+')this.value='+_pagei.tp+';if(this.value<=0)this.value=1"  name=page>页</span><a class="go" href="#" onclick="page(Y.getInt($(\'#govalue\').val()));"></a><span class="gy">共'+_pagei.tp+'页，'+_pagei.records+'条记录</span><a class="a2" style="margin-left:10px" onclick="page('+(pn+1>_pagei.tp?_pagei.tp:(pn+1))+');"  href="javascript:void(0)">下一页</a><a class="a1" style="margin-left:5px" onclick="page('+_pagei.tp+');" href="javascript:void(0)">尾页</a>';
 					    $('.pagination').html(pagehtml);
 						
 					    $("#govalue").val(pn);
@@ -468,7 +468,7 @@ $(document).ready(function(){
 						pagehtml += '<a class="a2" style="margin-right:5px" title="上一页 " onclick="page('+(Class.C("pn")-1>0?(Class.C("pn")-1):1)+');" href="javascript:void(0)">上一页</A>';
 						var min=0;
 						var max=0;
-						var pn=Class.C("pn");
+						var pn=Class.C("pn")*1;
 						if ( _pagei.tp > maxshow){
 						var pageTemp=parseInt(pn*1/maxshow);
 						max = pageTemp*maxshow+maxshow;
@@ -495,7 +495,7 @@ $(document).ready(function(){
 							pagehtml+='<a href="javascript:void(0);" id="tp'+i+'" class="a3" onclick="page('+i+');">' + i + '</a>';
 						}
 						}
-						pagehtml+='<span class="ac">第<INPUT onkeydown="if(event.keyCode==13){page(Y.getInt(this.value));return false;}" id=govalue class="ac" onkeyup="this.value=this.value.replace(/[^\\d]/g,\'\');if(this.value>'+_pagei.tp+')this.value='+_pagei.tp+';if(this.value<=0)this.value=1"  name=page>页</span><a class="go" href="#" onclick="page(Y.getInt($(\'#govalue\').val()));"></a><span class="gy">共'+_pagei.tp+'页，'+_pagei.records+'条记录</span><a class="a2" style="margin-left:10px" onclick="page('+(pn+1>pn?_pagei.tp:(pn+1))+');"  href="javascript:void(0)">下一页</a><a class="a1" style="margin-left:5px" onclick="page('+_pagei.tp+');" href="javascript:void(0)">尾页</a>';
+						pagehtml+='<span class="ac">第<INPUT onkeydown="if(event.keyCode==13){page(Y.getInt(this.value));return false;}" id=govalue class="ac" onkeyup="this.value=this.value.replace(/[^\\d]/g,\'\');if(this.value>'+_pagei.tp+')this.value='+_pagei.tp+';if(this.value<=0)this.value=1"  name=page>页</span><a class="go" href="#" onclick="page(Y.getInt($(\'#govalue\').val()));"></a><span class="gy">共'+_pagei.tp+'页，'+_pagei.records+'条记录</span><a class="a2" style="margin-left:10px" onclick="page('+(pn+1>_pagei.tp?_pagei.tp:(pn+1))+');"  href="javascript:void(0)">下一页</a><a class="a1" style="margin-left:5px" onclick="page('+_pagei.tp+');" href="javascript:void(0)">尾页</a>';
 					    $('.pagination').html(pagehtml);
 						
 					    $("#govalue").val(pn);
