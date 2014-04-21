@@ -717,7 +717,8 @@ var showview = function(lotid,projid){
 				}else{
 				    qihao = $_sys.getlotname(gameid) + "&nbsp;第<b>" + periodid + "</b>期&nbsp;";	
 				}
-				$("#cp_beishu , [mark=cp_beishu]").html(mulity);
+				$(" [mark=cp_beishu]").html('<em>'+mulity+'</em>');
+				$("#cp_beishu").html(mulity);
 				$("#buy_qh").html(periodid);
 				if((gameid=="03" || gameid=="53")&&ifile == 1){
 					qihao += play == 1 ? "直选" : play == 2 ? "组三" : play == 3 ? "组六" : "";
@@ -2051,7 +2052,7 @@ showduizhen =function (lotid,expect,projid,type,codes,cp){
 							var arr_bet;
 							arr_bet=codes.split("|");
 							bet_str=arr_bet[1];//得到投注选项
-							ggstr=arr_bet[2].replaceAll("\\*","串");
+							ggstr='<font  class="cm_red">'+arr_bet[2].replaceAll("\\*","串")+'</font>';
 							
 							if(bet_str.indexOf("$")!=-1){
 								dan=bet_str.split("$")[0];
@@ -2635,7 +2636,7 @@ showlancai =function (lotid,expect,projid,type,codes,cp){
 					}
 					var gg = codes.split("|")[2].replaceAll("\\*","串");
 					hhhtml += '</tbody>';
-					ggstr= gg;
+					ggstr= '<font  class="cm_red">'+gg+'</font>';
 					$("#cp_guoguan").html(ggstr);
 					$("#buy_info").html(hhhtml);
 			}else{
@@ -2770,13 +2771,13 @@ showlancai =function (lotid,expect,projid,type,codes,cp){
 							
 							if(codes.split(";").length>1){
 								bet_str="";//得到投注选项
-								ggstr=codes.split(";")[0].split("|")[2].replaceAll("\\*","串");
+								ggstr='<font  class="cm_red">'+codes.split(";")[0].split("|")[2].replaceAll("\\*","串")+'</font>';
 							}else{
 								
 							var arr_bet;
 							arr_bet=codes.split("|");
 							bet_str=arr_bet[1];//得到投注选项
-							ggstr=arr_bet[2].replaceAll("\\*","串");
+							ggstr='<font  class="cm_red">'+arr_bet[2].replaceAll("\\*","串")+'</font>';
 							
 							if(bet_str.indexOf("$")!=-1){
 								dan=bet_str.split("$")[0];
