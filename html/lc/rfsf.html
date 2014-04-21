@@ -62,35 +62,63 @@ class="red eng">0</SPAN> 场赛事 <A id=showAll_btn href="javascript:void(0)">�
 <SPAN style="MARGIN-LEFT: 249px"></SPAN></SPAN></DIV>
 <DIV class=dc_l_tr>
 <DIV class=dc_ls_w>
-<DIV style="DISPLAY: none" id=listMenu class=dc_ls_n>
-<UL id=lgList class=clearfix>
-  <LI><INPUT id=lgNBA class=chbox CHECKED type=checkbox m="NBA"><LABEL 
-  for=lgNBA>NBA</LABEL> </LI></UL>
-</DIV><A id=listDisplay class=ls_s_btn 
-href="javascript:void(0)">联赛选择</A> </DIV></DIV></DIV>
-<DIV id=vsTable class=dc_l_m>
-<TABLE class=dc_table border=0 cellSpacing=0 cellPadding=0 width="100%">
+ </DIV></DIV></DIV>
+ <TABLE class=dc_table border=0 cellSpacing=0 cellPadding=0 width="100%">
   <COLGROUP>
-  <COL width="10%">
-  <COL width="8%">
-  <COL width="10%">
-  <COL width="20%">
-  <COL width="9%">
-  <COL width="20%">
-  <COL width="12%">
-  <COL width="8%">
+  <COL width="109">
+  <COL width="110">
+  <COL width="150">
+  <COL width="80">
+  <COL width="150">
+  <COL width="110">
+  <COL width="">
   </COLGROUP>
   <TBODY>
   <TR>
-    <TH>赛事编号</TH>
-    <TH>赛事类型</TH>
-    <TH><SELECT style="WIDTH: 72px; FONT-SIZE: 12px" id=select_time> <OPTION 
-        selected value=0>截止时间</OPTION> <OPTION value=1>开赛时间</OPTION></SELECT></TH>
+    <th id="sssx"><div class="matchxzk" id="listDisplay">
+										<div class="matchxz">
+											比赛筛选<i></i>
+										</div>
+										<div class="jcslt" style="display: none; overflow: visible; width: 335px">
+											<div class="dc_ls_n" id="listMenu">
+											    <h3>赛事选择</h3>
+												<ul id="lglist" class="clearfix" ></ul>
+												<p><a href="javascript:void(0);" id="selectAllBtn">全选</a><a href="javascript:void(0);" id="selectOppBtn">反选</a><a href="javascript:void(0);" id="unAllBtn">全清</a></p>
+												
+												<h3>时间选择</h3>
+												<ul id="datachoose" class="clearfix" ></ul>
+											</div>
+										</div>
+									</div></th>
+								<th id="jztime"><div class="matchxzk">
+										<div class="matchxz" style="width:59px">
+											<em id="select_time">截止</em><i></i>
+										</div>
+										<div class="jcslt" style="display: none; overflow: visible; width: 59px">
+											<div class="plv_set">
+												<a href="javascript:void(0);" value="0">截止</a> <a href="javascript:void(0);" value="1">开赛</a>
+											</div>
+										</div>
+									</div></th>
     <TH>客队(主队负)</TH>
     <TH>预设让分</TH>
     <TH>主队(主队胜)</TH>
-    <TH>平均欧赔</TH>
+    <th id="oddstype"><div class="matchxzk">
+										<div class="matchxz" style="width:113px">
+											<em data="0" id="oddstype_v">平均欧指</em><i></i>
+										</div>
+										<div class="jcslt" style="display: none;">
+											<div class="plv_set">
+												<a href="javascript:void(0);" name="0">平均欧指</a> <a href="javascript:void(0);" name="1">威廉希尔</a> <a href="javascript:void(0);"
+													name="2">澳门</a> <a href="javascript:void(0);" name="3">立博</a> <a href="javascript:void(0);" name="4">Bet365</a> <a
+													href="javascript:void(0);" name="5">SNAI</a> <a href="javascript:void(0);" name="6">易胜博</a> <a href="javascript:void(0);"
+													name="7">伟德</a> <a href="javascript:void(0);" name="8">Bwin</a> <a href="javascript:void(0);" name="9">Coral</a> <a
+													href="javascript:void(0);" name="10">oddset</a>
+											</div>
+										</div></th>
     <TH>数 据</TH></TR></TBODY></TABLE>
+<DIV id=vsTable class=dc_l_m>
+
 </DIV></DIV>
 </DIV>
 <DIV class=dc_r>
