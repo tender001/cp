@@ -2651,7 +2651,7 @@ table.co1 tbody td  em{color:#888}
 .dz_dv label span{padding-left:0;float:left;line-height:38px}
 .dz_dv label span.b_left1{margin-left:9px;float:left}
 .dz_dv span b.b_right{margin-right:4px;margin-left:0}
-.dz_dv{float:left;height:38px;line-height:38px;width:100%}
+.dz_dv{height:38px;line-height:38px;}
 .dz_dv label.span_left,.dz_dv span.span_left{margin-left:0px;}
 .dz_dv  strong{float:left;width:23px;display:block;line-height:38px}
 .dz_dv span b.b_left1{margin-left:6px;float:right}

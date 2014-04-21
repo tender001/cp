@@ -292,9 +292,7 @@ p.fotpp{line-height:24px;text-align:center;padding:16px 0;color:#666;}
 .news_l_list ul li a:hover{color:#ff6600}
 .all_kj_main{border:3px solid #e62e04;border-top:none}
 .kj_left_cm{border:1px solid #ddd;border-top:none}
-a.jcq_kcur {
-    background: url(../images/njc/jcy_17.jpg) no-repeat scroll 0 0 ;
-}
+
 a.gofilter {
     background: url(../images/njc/jcy_38.jpg) repeat scroll -1px -1px ;
     display: block;
@@ -1258,9 +1256,9 @@ table.bk_yd  p{text-align:left;padding-left:10px}
 .kj_yctj{margin-top:0}
 .dc_table tr.odd td{background-color:#fff}
 .dc_table tr:hover td,.dc_table tr.odd td:hover{background-color:#fffee6}
-.dc_table td.h_br,table.co1 tbody td.btn_a{background:url(/images/cai888/ban1.jpg) no-repeat scroll 100% bottom;border-right:1px solid #62a3d0 }
-.dc_table td.h_br:hover{background:url(/images/cai888/ban3.jpg) 0 0 no-repeat}
-.dc_table td.h_brx{background: url(/images/cai888/ban2.jpg) 0 0 no-repeat;}
+.dc_table td.h_br,table.co1 tbody td.btn_a{background:url(/images/cai888/ban1.jpg) no-repeat scroll 100% bottom;border-right:1px solid #E0E2E1}
+.dc_table td.h_br:hover{background:url(/images/cai888/ban3.jpg) 100% bottom no-repeat}
+.dc_table td.h_brx{background: url(/images/cai888/ban2.jpg) 100% bottom no-repeat;}
 .dc_table td.label_cd,.dc_table td.label_cd:hover,table.co1 tbody td.btn_b,table.co1 tbody td.btn_b:hover{background:url(../images/cai888/ban4.jpg) 0 bottom no-repeat;cursor:pointer}
 .jc_l_t {padding-left: 6px;overflow: visible;background: url("/images/cai888/lc_25.jpg") left center no-repeat;border-top:none
 }
@@ -1299,11 +1297,10 @@ a.jc_mtz:hover, a.jc_mhm:hover{background-position:-110px 0}
 .tzsontab p em{color:#e52e04;font-weight:bold;font-family:Arial;margin:0 2px}
 .tzsontab p b{background:url("/images/cai888/jctop_06.jpg") 0 0 ;height:15px;width:15px;cursor:pointer;display:block;float:left;margin:5px 0 0 3px}
 .matchxzk{ cursor: pointer;height: 32px;line-height: 32px;position: relative;z-index: 2;overflow:visible}
-.matchxz{}
+.matchxz{margin:0 auto}
 .matchxz i{background:url("/images/cai888/jtdown_11.jpg") 0 0;transition: all 0.2s ease-in 0s;height: 4px;margin-left: 5px;vertical-align: middle;width: 7px;display:inline-block}
 .jcslt{position:absolute;z-index:9;top:30px;left:0;background:#fff;width:113px;border:2px solid #444;padding-bottom:10px}
 .matchxzc{border:2px solid #444;border-bottom:none; background:#fff;height:30px;line-height:28px;position:relative;z-index:99}
-.plv_set a{padding-left:6px}
 .matchxzc i{transform:rotate(180deg)}
 .dc_l_tl{float:left;padding-left:102px}
 .tdaa td{line-height:34px;height:34px;}
@@ -1369,3 +1366,11 @@ em.ew_eright{text-align:right;float:right}
 .ddc_table td s{line-height:38px}
 .dc_l_tr{margin:0}
 #title_folats{overflow:visible}
+.ddc_table td s.lests{float:right}
+a.jcq_kcur {
+    background: url(../images/njc/jcy_17.jpg) no-repeat scroll 0 0 ;
+}
+.hide_table{border:none; border-top: 1px solid #62A3D0;}
+.hide_table tr.ping td{background-position:100% 0px;height:38px;}
+.hide_table tr.fu td{border-top:1px solid #62A3D0}
+.dz_dv{padding-right:6px}
