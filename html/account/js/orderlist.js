@@ -158,7 +158,7 @@ Class({
 								/*html +="<td>"+(lx++)+"</td>";*/
 								html +="<td>"+$_sys.getlotname(gid)+"</td>";
 								html +="<td>"+pid+"</td>";
-								html +="<td><span>￥"+parseFloat(money).rmb(false)+"</span></td>";
+								html +="<td><span>"+parseFloat(money).rmb()+"</span></td>";
 								if (cancel==0){
 									if (ireturn==2){
 										if (rmoney>0){
@@ -177,7 +177,7 @@ Class({
 									html +=" <td>系统撤单</td>";
 								}
 								if (rmoney > 0) {
-									html +=" <td><span>￥"+parseFloat(rmoney).rmb(false)+"</span></td>";
+									html +=" <td><span>"+parseFloat(rmoney).rmb()+"</span></td>";
 								} else {
 									html +=" <td>-</td>";
 								}

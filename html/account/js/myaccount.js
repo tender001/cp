@@ -231,7 +231,7 @@ var showtouzhu = function(stime, etime, gid,qtype, pn, ps, tp, tr){  // 页码 �
 							html += "<tr class="+cl+">";
 						html += "<td>"+$_sys.getlotname(gid)+"</td>";
 						html += "<td>"+pid+"</td>";
-						html += "<td><span>￥"+ parseFloat(money).rmb(false)+ "</span></td>";
+						html += "<td><span>"+ parseFloat(money).rmb()+ "</span></td>";
 						
 						if (cancel==0){
 							if (ireturn==2){
@@ -251,7 +251,7 @@ var showtouzhu = function(stime, etime, gid,qtype, pn, ps, tp, tr){  // 页码 �
 							html +=" <td>系统撤单</td>";
 						}
 						if (rmoney > 0) {
-							html += "<td><span>￥"+parseFloat(rmoney).rmb(false)+"</span></td>";
+							html += "<td><span>"+parseFloat(rmoney).rmb()+"</span></td>";
 						} else {
 							html += "<td>-</td>";
 						}
