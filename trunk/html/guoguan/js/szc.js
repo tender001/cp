@@ -290,9 +290,10 @@ var myguoguan = function(lotid,expect,pn,ps,tp,tr){
 };
 
 var showmypageno=function(lotid, expect, pn, ps, tp , tr){
-	var pagehtml='<ul><li class="disabled PagedList-skipToFirst"  onclick="myguoguan(\''+lotid+'\', \''+expect+'\',1,'+ps+','+tp+','+ tr+');"><a>首页</a></li>';
+	var pagehtml='<ul><li style="line-height:27px;color:#444;padding-right:10px">共'+tr+'条</li><li class="disabled PagedList-skipToFirst"  onclick="myguoguan(\''+lotid+'\', \''+expect+'\',1,'+ps+','+tp+','+ tr+');"><a>首页</a></li>';
 	pagehtml += '<li class="PagedList-skipToNext"><a  onclick="myguoguan(\''+lotid+'\', \''+expect+'\','+(pn-1>0?(pn-1):1)+','+ps+','+tp+','+ tr+');" href="javascript:void(0)">上一页</a></li>';
-	pagehtml+='<li class="PagedList-skipToNext"><a onclick="myguoguan(\''+lotid+'\', \''+expect+'\','+(pn+1>tp?tp:(pn+1))+','+ps+','+tp+','+ tr+');"  href="javascript:void(0)">下一页</a></li><ul>';
+	pagehtml+='<li class="PagedList-skipToNext"><a onclick="myguoguan(\''+lotid+'\', \''+expect+'\','+(pn+1>tp?tp:(pn+1))+','+ps+','+tp+','+ tr+');"  href="javascript:void(0)">下一页</a></li>';
+	pagehtml+='<li class="disabled PagedList-skipToNext"><a onclick="loadpage(\''+lotid+'\', \''+expect+'\','+tp+','+ps+','+tp+','+ tr+');" href="javascript:void(0)"> 末页</a></li><ul>';
     $('#pagediv').html(pagehtml);	
 };
 
@@ -540,8 +541,8 @@ var showOpenCode = function(lotid, code){
 };
 var showpageno=function(lotid,expect,pn,ps,tp,tr){	
 	var maxshow=5;
-	var pagehtml='<ul><li class="disabled PagedList-skipToFirst"  onclick="loadpage(\''+lotid+'\', \''+expect+'\',1,'+ps+','+tp+','+ tr+');"><a>首页</a></li>';
-	pagehtml += '<li class="PagedList-skipToNext"><a  onclick="loadpage(\''+lotid+'\', \''+expect+'\','+(pn-1>0?(pn-1):1)+','+ps+','+tp+','+ tr+');" href="javascript:void(0)">上一页</a></li>';
+	var pagehtml='<ul><li style="line-height:27px;color:#444;padding-right:10px">共'+tr+'条</li><li class="disabled PagedList-skipToFirst"  onclick="loadpage(\''+lotid+'\', \''+expect+'\',1,'+ps+','+tp+','+ tr+');"><a>首页</a></li>';
+	pagehtml += '<li class="disabled PagedList-skipToNext"><a  onclick="loadpage(\''+lotid+'\', \''+expect+'\','+(pn-1>0?(pn-1):1)+','+ps+','+tp+','+ tr+');" href="javascript:void(0)">上一页</a></li>';
 	var min=0;
 	var max=0;
 	
@@ -571,7 +572,8 @@ var showpageno=function(lotid,expect,pn,ps,tp,tr){
 	}
 	}
 	
-	pagehtml+='<li class="PagedList-skipToNext"><a onclick="loadpage(\''+lotid+'\', \''+expect+'\','+(pn+1>tp?tp:(pn+1))+','+ps+','+tp+','+ tr+');"  href="javascript:void(0)">下一页</a></li><ul>';
+	pagehtml+='<li class="PagedList-skipToNext"><a onclick="loadpage(\''+lotid+'\', \''+expect+'\','+(pn+1>tp?tp:(pn+1))+','+ps+','+tp+','+ tr+');"  href="javascript:void(0)">下一页</a></li>';
+	pagehtml+='<li class="disabled PagedList-skipToNext"><a onclick="loadpage(\''+lotid+'\', \''+expect+'\','+tp+','+ps+','+tp+','+ tr+');" href="javascript:void(0)"> 末页</a></li><ul>';
     $('#pagediv').html(pagehtml);	
     if(pn==min&&min-maxshow>0){
 		$("#"+pn+"").click(function(){
