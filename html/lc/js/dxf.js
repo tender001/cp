@@ -23,27 +23,37 @@
                 Y.postMsg('msg_set_stop', this.checked)//所有截止
             }).prop('checked', false).get('#select_pv').change(function (){
                 Y.postMsg('msg_change_val', this.value)
-            }).get('#select_time').change(function (){//切换开赛时间与截止时间
-                Y.postMsg('msg_change_time', this.value)
-            })
+            });
+            Y.get("div[mark=showend] a").click(function(){
+				var endvalue=Y.get(this).attr("value");
+				Y.get("#select_time").html(Y.get(this).html());
+				Y.get("div[mark=showend]").hide();
+				Y.get('div[mark=endtime]').find(".matchxz").removeClass("matchxzc");
+				 Y.postMsg('msg_change_time', endvalue);
+			});
         },
         addMenu: function (){//联赛菜单
-           var Y = this,
-               all = Y.get('#listMenu :checkbox');
-            this.get('#listDisplay').drop( this.get('#listMenu'),{focusCss: 'ls_h_btn', fixed: true, y: -1});
-            all.click(function (){//单个
-                Y.postMsg('msg_select_list', this.getAttribute('m'), 0, this.checked)
+            lg  = Y.get('#lglist :checkbox');
+            
+            
+            this.get('#listDisplay div.matchxz').drop( this.get('#leagueSelector'),{focusCss: 'matchxzc', fixed: true, y: -1});
+            this.get('#jztime div.matchxz').drop( this.get('#jztime div.jcslt'),{focusCss: 'matchxzc', fixed: true, y: -1});
+            lg.click(function (){//单个
+                Y.postMsg('msg_select_list', this.getAttribute('value'), 0, this.checked);
             }).get('#selectAllBtn').click(function (){
-                all.prop('checked', true);//所有
-                Y.postMsg('msg_select_list', false, 2, all.attr('checked'))
+                lg.prop('checked', true);//所有
+                Y.postMsg('msg_select_list', true, 2, lg.attr('checked'));
+            }).get('#unAllBtn').click(function (){
+                lg.prop('checked', false);//全清
+                Y.postMsg('msg_select_list', true, 5, lg.attr('checked'));
             }).get('#selectOppBtn').click(function (){
                 var data = {};//反选
-                all.prop('checked', function (old){
+                lg.prop('checked', function (old){
                     var ed = !old;
-                    data[this.getAttribute('m')] = ed
-                    return ed
+                    data[this.getAttribute('value')] = ed;
+                    return ed;
                 });
-                Y.postMsg('msg_select_list', data, 1)
+                Y.postMsg('msg_select_list', data, 1);
             });
             var only_lg = this.cookie('jczq_league');//来源于资讯跳转
             if (only_lg) {
@@ -223,7 +233,20 @@
                     }, this);
                     break;
                  case 2://全选
-                    Y.list.show(sel)
+                     Y.list.show(sel)
+                       break; 
+                 case 3://全选
+                           Y.list.show(sel)
+                           break;
+                 case 4:
+                	 var target= Y.allList.filter(function(tr){
+                         return tr.getAttribute('pendtime') == data
+                     });
+                	 target.show(sel);
+                	 break;
+                 case 5://全选
+                     Y.list.hide(sel);
+                     break;
                  }
                  this.getHideCount()
              });
@@ -760,26 +783,7 @@
     	},
     	dxf:function(data){
      		 var html = [];
-   		 var tableTpl=['<TABLE class=dc_table border=0 cellSpacing=0 cellPadding=0 width="100%">'+
-                  '<COLGROUP>'+
-                  '<COL width="10%">'+
-                  '<COL width="8%">'+
-                  '<COL width="10%">'+
-                  '<COL width="20%">'+
-                  '<COL width="9%">'+
-                  '<COL width="20%">'+
-                  '<COL width="12%">'+
-                  '<COL width="8%">'+
-                  '</COLGROUP>'+
-                  '<TBODY>'+
-                  '<TR>'+
-                    '<TH>赛事编号</TH>'+
-                    '<TH>赛事类型</TH>'+
-                    '<TH><SELECT style="WIDTH: 72px; FONT-SIZE: 12px" id=select_time> <OPTION selected value=0>截止时间</OPTION> <OPTION value=1>开赛时间</OPTION></SELECT> </TH>'+
-                    '<TH>客队(<b class="red">大分</b>)</TH>'+
-                    '<TH>预设总分</TH>'+
-                    '<TH>主队(<b style="color:blue">小分</b>)</TH>'+
-                    '<TH>平均欧赔</TH><TH>数据</TH></TR></TBODY></TABLE>',//0对阵头
+   		 var tableTpl=['',//0对阵头
    	           '<div class=dc_hs style="text-align: left; padding-left: 10px;"><strong>{$enddate} {$weekday} </strong>[12:00 -- 次日 12:00] <strong><span id=num{$num} class="red">num{$num}</span>场比赛可投注</strong> <a href="javascript:void 0">隐藏<s class=c_up></s></a> </div>',//1按天分类
    	           '<table id=d_{$enddate} class=dc_table border=0 cellspacing=0 cellpadding=0 width="100%" onselectstart="return false">'+
    	           '<COLGROUP>'+
@@ -832,7 +836,7 @@
    		var numstr=[];
    		var num=0;
    		var lgstr="";
-   		
+   		var lgname=[];
    		var obj = eval("(" + data.text + ")");
 			var code = obj.match.code;
 			var desc = obj.match.desc;
@@ -878,9 +882,7 @@
    			}else{//未过期的场次
    				num++;    				
    				html[html.length] = tableTpl[4].tpl(row);
-   				if (lgstr.indexOf(row.mname)<0){	
-   		            lgstr+='<LI><INPUT id="lg'+row.mname+'" CHECKED type="checkbox" m="'+row.mname+'"><LABEL for="lg'+row.mname+'">'+row.mname.substr(0,4)+'</LABEL></LI>';
-   		    		}
+   				lgname.push(row.mname);
    			};
    		});
    		this.get("#lgList").html(lgstr);
@@ -892,6 +894,27 @@
    			this.get("#num"+ii).html(numstr[ii]);
    		}
    		this.get("#vsTable").show();	
+   		//生成联赛列表
+   		var arr_league = [];
+   		var league_list_html = '';
+   		var match_num_of_league = {};
+   		lgname.each( function(item) {
+   			var league_name = item;
+   				if ($_sys.getSub(arr_league,league_name) == -1 ) {
+   					arr_league.push(league_name);
+   					league_list_html += '<li><label for="' + league_name + '"><input name="lg" type="checkbox" value="' + league_name + '" checked="checked"/><span>' + league_name + '</span>[<i>'+league_name +'_num</i>]</label></li>';
+  				}
+   				if (typeof match_num_of_league[league_name] == 'undefined') {
+   					match_num_of_league[league_name] = 1;
+   				} else {
+   					match_num_of_league[league_name]++;
+   				}
+   				
+   		} );
+   		for (var league_name in match_num_of_league) {
+   			league_list_html = league_list_html.replace(league_name + '_num', match_num_of_league[league_name]);
+   		}
+   		Y.get("#lglist").html(league_list_html);
    		this.postMsg('load_duizhen_succ');			
    	}	
     });

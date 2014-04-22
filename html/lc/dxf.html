@@ -75,11 +75,11 @@ class="red eng">0</SPAN> 场赛事 <A id=showAll_btn href="javascript:void(0)">�
   </COLGROUP>
   <TBODY>
   <TR>
-    <th id="sssx"><div class="matchxzk" id="listDisplay">
+     <th id="sssx"><div class="matchxzk" id="listDisplay">
 										<div class="matchxz">
 											比赛筛选<i></i>
 										</div>
-										<div class="jcslt" style="display: none; overflow: visible; width: 335px">
+										<div class="jcslt" style="display: none; overflow: visible; width: 335px" id="leagueSelector">
 											<div class="dc_ls_n" id="listMenu">
 											    <h3>赛事选择</h3>
 												<ul id="lglist" class="clearfix" ></ul>
@@ -90,125 +90,68 @@ class="red eng">0</SPAN> 场赛事 <A id=showAll_btn href="javascript:void(0)">�
 											</div>
 										</div>
 									</div></th>
-								<th id="jztime"><div class="matchxzk">
-										<div class="matchxz" style="width:59px">
-											<em id="select_time">截止</em><i></i>
+								<th id="jztime"><div mark="endtime" class="matchxzk">
+										<div class="matchxz">
+											<em id="select_time">截止时间</em><i></i>
 										</div>
-										<div class="jcslt" style="display: none; overflow: visible; width: 59px">
+										<div mark="showend" style="overflow: visible; width: 110px; display: none;" class="jcslt">
 											<div class="plv_set">
-												<a href="javascript:void(0);" value="0">截止</a> <a href="javascript:void(0);" value="1">开赛</a>
+												<a value="0" href="javascript:void(0);">截止时间</a> <a value="1" href="javascript:void(0);">开赛时间</a>
 											</div>
 										</div>
 									</div></th>
     
-    <TH>客队(大分)</TH>
+  <TH>客队(<b style="color:blue">大分</b>)</TH>
     <TH>预设总分</TH>
-    <TH>主队(小分)</TH>
-     <th id="oddstype"><div class="matchxzk">
-										<div class="matchxz" style="width:113px">
-											<em data="0" id="oddstype_v">平均欧指</em><i></i>
-										</div>
-										<div class="jcslt" style="display: none;">
-											<div class="plv_set">
-												<a href="javascript:void(0);" name="0">平均欧指</a> <a href="javascript:void(0);" name="1">威廉希尔</a> <a href="javascript:void(0);"
-													name="2">澳门</a> <a href="javascript:void(0);" name="3">立博</a> <a href="javascript:void(0);" name="4">Bet365</a> <a
-													href="javascript:void(0);" name="5">SNAI</a> <a href="javascript:void(0);" name="6">易胜博</a> <a href="javascript:void(0);"
-													name="7">伟德</a> <a href="javascript:void(0);" name="8">Bwin</a> <a href="javascript:void(0);" name="9">Coral</a> <a
-													href="javascript:void(0);" name="10">oddset</a>
-											</div>
-										</div></th>
+   <TH>主队(<b class="red">小分</b>)</TH>
+    <th >平均欧指</th>
     <TH>数 据</TH></TR></TBODY></TABLE>
 <DIV id=vsTable class=dc_l_m>
 
 </DIV></DIV></DIV>
-<DIV class=dc_r>
+<div class="dc_r">
 
-<DIV class=box_m>
-<DIV class=dc_r_m>
-<H2 class="h_2"><a class="jcq_k" id="checkbox_clear" href="javascript:void(0);"></a></H2>
-</DIV>
-<DIV class=dc_r_t>共<SPAN id=cs class="eng red">0</SPAN>场比赛,方案截止时间：<SPAN id=end_time class="eng red"></SPAN></DIV>
-<DIV class=dc_r_m>
-<H2 class="h_3"></H2>
-<DIV class=an_title>
-<UL id=ggTabsNav>
-  <LI id=a1 class=an_cur>自由过关 </LI>
-  <LI id=a2>多串过关 </LI></UL></DIV>
-<DIV id=ggListFree class="ggtypelist clearfix"><LABEL style="DISPLAY: none" 
-for=r1c1><INPUT id=r1c1 value=单关 type=checkbox name=ggtype_checkbox>单关</LABEL> 
-<LABEL style="DISPLAY: none" for=r2c1><INPUT id=r2c1 value=2串1 type=checkbox 
-name=ggtype_checkbox>2串1</LABEL> <LABEL style="DISPLAY: none" for=r3c1><INPUT 
-id=r3c1 value=3串1 type=checkbox name=ggtype_checkbox>3串1</LABEL> <LABEL 
-style="DISPLAY: none" for=r4c1><INPUT id=r4c1 value=4串1 type=checkbox 
-name=ggtype_checkbox>4串1</LABEL> <LABEL style="DISPLAY: none" for=r5c1><INPUT 
-id=r5c1 value=5串1 type=checkbox name=ggtype_checkbox>5串1</LABEL> <LABEL 
-style="DISPLAY: none" for=r6c1><INPUT id=r6c1 value=6串1 type=checkbox 
-name=ggtype_checkbox>6串1</LABEL> <LABEL style="DISPLAY: none" for=r7c1><INPUT 
-id=r7c1 value=7串1 type=checkbox name=ggtype_checkbox>7串1</LABEL> <LABEL 
-style="DISPLAY: none" for=r8c1><INPUT id=r8c1 value=8串1 type=checkbox 
-name=ggtype_checkbox>8串1</LABEL> </DIV></DIV>
-<DIV style="DISPLAY: none" id=ggList class="ggtypelist clearfix"><LABEL 
-style="DISPLAY: none" for=r3c3><INPUT id=r3c3 value=3串3 type=radio 
-name=ggtype_radio>3串3</LABEL> <LABEL style="DISPLAY: none" for=r3c4><INPUT 
-id=r3c4 value=3串4 type=radio name=ggtype_radio>3串4</LABEL> <LABEL 
-style="DISPLAY: none" for=r4c4><INPUT id=r4c4 value=4串4 type=radio 
-name=ggtype_radio>4串4</LABEL> <LABEL style="DISPLAY: none" for=r4c5><INPUT 
-id=r4c5 value=4串5 type=radio name=ggtype_radio>4串5</LABEL> <LABEL 
-style="DISPLAY: none" for=r4c6><INPUT id=r4c6 value=4串6 type=radio 
-name=ggtype_radio>4串6</LABEL> <LABEL style="DISPLAY: none" for=r4c11><INPUT 
-id=r4c11 value=4串11 type=radio name=ggtype_radio>4串11</LABEL> <LABEL 
-style="DISPLAY: none" for=r5c5><INPUT id=r5c5 value=5串5 type=radio 
-name=ggtype_radio>5串5</LABEL> <LABEL style="DISPLAY: none" for=r5c6><INPUT 
-id=r5c6 value=5串6 type=radio name=ggtype_radio>5串6</LABEL> <LABEL 
-style="DISPLAY: none" for=r5c10><INPUT id=r5c10 value=5串10 type=radio 
-name=ggtype_radio>5串10</LABEL> <LABEL style="DISPLAY: none" for=r5c16><INPUT 
-id=r5c16 value=5串16 type=radio name=ggtype_radio>5串16</LABEL> <LABEL 
-style="DISPLAY: none" for=r5c20><INPUT id=r5c20 value=5串20 type=radio 
-name=ggtype_radio>5串20</LABEL> <LABEL style="DISPLAY: none" for=r5c26><INPUT 
-id=r5c26 value=5串26 type=radio name=ggtype_radio>5串26</LABEL> <LABEL 
-style="DISPLAY: none" for=r6c6><INPUT id=r6c6 value=6串6 type=radio 
-name=ggtype_radio>6串6</LABEL> <LABEL style="DISPLAY: none" for=r6c7><INPUT 
-id=r6c7 value=6串7 type=radio name=ggtype_radio>6串7</LABEL> <LABEL 
-style="DISPLAY: none" for=r6c15><INPUT id=r6c15 value=6串15 type=radio 
-name=ggtype_radio>6串15</LABEL> <LABEL style="DISPLAY: none" for=r6c20><INPUT 
-id=r6c20 value=6串20 type=radio name=ggtype_radio>6串20</LABEL> <LABEL 
-style="DISPLAY: none" for=r6c22><INPUT id=r6c22 value=6串22 type=radio 
-name=ggtype_radio>6串22</LABEL> <LABEL style="DISPLAY: none" for=r6c35><INPUT 
-id=r6c35 value=6串35 type=radio name=ggtype_radio>6串35</LABEL> <LABEL 
-style="DISPLAY: none" for=r6c42><INPUT id=r6c42 value=6串42 type=radio 
-name=ggtype_radio>6串42</LABEL> <LABEL style="DISPLAY: none" for=r6c50><INPUT 
-id=r6c50 value=6串50 type=radio name=ggtype_radio>6串50</LABEL> <LABEL 
-style="DISPLAY: none" for=r6c57><INPUT id=r6c57 value=6串57 type=radio 
-name=ggtype_radio>6串57</LABEL> <LABEL style="DISPLAY: none" for=r7c7><INPUT 
-id=r7c7 value=7串7 type=radio name=ggtype_radio>7串7</LABEL> <LABEL 
-style="DISPLAY: none" for=r7c8><INPUT id=r7c8 value=7串8 type=radio 
-name=ggtype_radio>7串8</LABEL> <LABEL style="DISPLAY: none" for=r7c21><INPUT 
-id=r7c21 value=7串21 type=radio name=ggtype_radio>7串21</LABEL> <LABEL 
-style="DISPLAY: none" for=r7c35><INPUT id=r7c35 value=7串35 type=radio 
-name=ggtype_radio>7串35</LABEL> <LABEL style="DISPLAY: none" for=r7c120><INPUT 
-id=r7c120 value=7串120 type=radio name=ggtype_radio>7串120</LABEL> <LABEL 
-style="DISPLAY: none" for=r8c8><INPUT id=r8c8 value=8串8 type=radio 
-name=ggtype_radio>8串8</LABEL> <LABEL style="DISPLAY: none" for=r8c9><INPUT 
-id=r8c9 value=8串9 type=radio name=ggtype_radio>8串9</LABEL> <LABEL 
-style="DISPLAY: none" for=r8c28><INPUT id=r8c28 value=8串28 type=radio 
-name=ggtype_radio>8串28</LABEL> <LABEL style="DISPLAY: none" for=r8c56><INPUT 
-id=r8c56 value=8串56 type=radio name=ggtype_radio>8串56</LABEL> <LABEL 
-style="DISPLAY: none" for=r8c70><INPUT id=r8c70 value=8串70 type=radio 
-name=ggtype_radio>8串70</LABEL> <LABEL style="DISPLAY: none" for=r8c247><INPUT 
-id=r8c247 value=8串247 type=radio name=ggtype_radio>8串247</LABEL> </DIV>
-<DIV class=dc_r_m>
-<H2 class="h_4"></H2>
-<P class=dc_qr>投注&nbsp;<INPUT style="WIDTH: 50px" id=bs class=mul 
-value=1>倍(最高100000倍)<BR>共<SPAN 
-id=zs class="eng red">0</SPAN>注,总金额 <STRONG id=buy_money 
-class="eng red">￥0.00</STRONG>元<BR>预测最高奖金：<SPAN id=maxmoney 
-class="eng red">￥0.00</SPAN><BR><A id=seemore href="javascript:void(0)" class="eng red">详细奖金预算</A> 
-</P>
-<P class=dc_r_btn><A id=gobuy class="jc_mtz" onClick="return false" 
-href="javascript:void 0" >确认代购</A><A id=gohm class="jc_mhm" 
-onclick="return false" href="javascript:void 0" >发起合买</A></P>
-<P></P>
-<P class="gray dc_qr p-t0 x_c9">过关投注奖金以方案最终出票时刻的奖金为准。</P></DIV></DIV></DIV></DIV>
+<div class="box_m">
+<div class="dc_r_m">
+<h2 class="h_2">
+<a href="javascript:void(0);" id="checkbox_clear" class="jcq_k"></a>
+</h2>
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class="dcr_table">
+  <colgroup>
+  <col width="33%">
+  <col width="20%">
+  <col width="35%">
+  <col width="12%"></colgroup>
+  <tbody>
+  <tr>
+    <th>编号</th>
+    <th>主队</th>
+    <th>投注</th>
+    <th>胆</th></tr>
+  <tr id="choose_tpl" style="DISPLAY: none">
+    <td><input type="checkbox" view="1" checked="" class="chbox"><span>周三001</span></td>
+    <td class="tl">凯尔特人</td>
+    <td class="tl"><span data-sg="0" class="x_s yl">主负</span><span data-sg="3" class="x_s sl">主胜</span></td>
+    <td><span><input type="checkbox" dan="1" class="chbox"></span></td></tr></tbody>
+  <tbody id="choose_list"></tbody></table></div>
+<div class="dc_r_t">共<span class="eng red" id="cs">0</span>场比赛,方案截止时间：<span class="eng red" id="end_time"></span></div>
+<div class="dc_r_m">
+<h2 class="h_3"></h2>
+<div class="an_title">
+<ul id="ggTabsNav">
+  <li class="an_cur" id="a1">自由过关 </li>
+  <li id="a2">多串过关 </li></ul></div>
+<div id="vslt2" style="text-align: center;padding-top: 10px;color: red;">请至少选择2场比赛进行投注。</div><div class="ggtypelist clearfix" id="ggListFree"><label for="r1c1" style="DISPLAY: none"><input type="checkbox" name="ggtype_checkbox" value="单关" id="r1c1">单关</label> 
+<label for="r2c1" style="DISPLAY: none"><input type="checkbox" name="ggtype_checkbox" value="2串1" id="r2c1">2串1</label> <label for="r3c1" style="DISPLAY: none"><input type="checkbox" name="ggtype_checkbox" value="3串1" id="r3c1">3串1</label> <label for="r4c1" style="DISPLAY: none"><input type="checkbox" name="ggtype_checkbox" value="4串1" id="r4c1">4串1</label> <label for="r5c1" style="DISPLAY: none"><input type="checkbox" name="ggtype_checkbox" value="5串1" id="r5c1">5串1</label> <label for="r6c1" style="DISPLAY: none"><input type="checkbox" name="ggtype_checkbox" value="6串1" id="r6c1">6串1</label> <label for="r7c1" style="DISPLAY: none"><input type="checkbox" name="ggtype_checkbox" value="7串1" id="r7c1">7串1</label> <label for="r8c1" style="DISPLAY: none"><input type="checkbox" name="ggtype_checkbox" value="8串1" id="r8c1">8串1</label> </div></div>
+<div class="ggtypelist clearfix" id="ggList" style="DISPLAY: none"><label for="r3c3" style="DISPLAY: none"><input type="radio" name="ggtype_radio" value="3串3" id="r3c3">3串3</label> <label for="r3c4" style="DISPLAY: none"><input type="radio" name="ggtype_radio" value="3串4" id="r3c4">3串4</label> <label for="r4c4" style="DISPLAY: none"><input type="radio" name="ggtype_radio" value="4串4" id="r4c4">4串4</label> <label for="r4c5" style="DISPLAY: none"><input type="radio" name="ggtype_radio" value="4串5" id="r4c5">4串5</label> <label for="r4c6" style="DISPLAY: none"><input type="radio" name="ggtype_radio" value="4串6" id="r4c6">4串6</label> <label for="r4c11" style="DISPLAY: none"><input type="radio" name="ggtype_radio" value="4串11" id="r4c11">4串11</label> <label for="r5c5" style="DISPLAY: none"><input type="radio" name="ggtype_radio" value="5串5" id="r5c5">5串5</label> <label for="r5c6" style="DISPLAY: none"><input type="radio" name="ggtype_radio" value="5串6" id="r5c6">5串6</label> <label for="r5c10" style="DISPLAY: none"><input type="radio" name="ggtype_radio" value="5串10" id="r5c10">5串10</label> <label for="r5c16" style="DISPLAY: none"><input type="radio" name="ggtype_radio" value="5串16" id="r5c16">5串16</label> <label for="r5c20" style="DISPLAY: none"><input type="radio" name="ggtype_radio" value="5串20" id="r5c20">5串20</label> <label for="r5c26" style="DISPLAY: none"><input type="radio" name="ggtype_radio" value="5串26" id="r5c26">5串26</label> <label for="r6c6" style="DISPLAY: none"><input type="radio" name="ggtype_radio" value="6串6" id="r6c6">6串6</label> <label for="r6c7" style="DISPLAY: none"><input type="radio" name="ggtype_radio" value="6串7" id="r6c7">6串7</label> <label for="r6c15" style="DISPLAY: none"><input type="radio" name="ggtype_radio" value="6串15" id="r6c15">6串15</label> <label for="r6c20" style="DISPLAY: none"><input type="radio" name="ggtype_radio" value="6串20" id="r6c20">6串20</label> <label for="r6c22" style="DISPLAY: none"><input type="radio" name="ggtype_radio" value="6串22" id="r6c22">6串22</label> <label for="r6c35" style="DISPLAY: none"><input type="radio" name="ggtype_radio" value="6串35" id="r6c35">6串35</label> <label for="r6c42" style="DISPLAY: none"><input type="radio" name="ggtype_radio" value="6串42" id="r6c42">6串42</label> <label for="r6c50" style="DISPLAY: none"><input type="radio" name="ggtype_radio" value="6串50" id="r6c50">6串50</label> <label for="r6c57" style="DISPLAY: none"><input type="radio" name="ggtype_radio" value="6串57" id="r6c57">6串57</label> <label for="r7c7" style="DISPLAY: none"><input type="radio" name="ggtype_radio" value="7串7" id="r7c7">7串7</label> <label for="r7c8" style="DISPLAY: none"><input type="radio" name="ggtype_radio" value="7串8" id="r7c8">7串8</label> <label for="r7c21" style="DISPLAY: none"><input type="radio" name="ggtype_radio" value="7串21" id="r7c21">7串21</label> <label for="r7c35" style="DISPLAY: none"><input type="radio" name="ggtype_radio" value="7串35" id="r7c35">7串35</label> <label for="r7c120" style="DISPLAY: none"><input type="radio" name="ggtype_radio" value="7串120" id="r7c120">7串120</label> <label for="r8c8" style="DISPLAY: none"><input type="radio" name="ggtype_radio" value="8串8" id="r8c8">8串8</label> <label for="r8c9" style="DISPLAY: none"><input type="radio" name="ggtype_radio" value="8串9" id="r8c9">8串9</label> <label for="r8c28" style="DISPLAY: none"><input type="radio" name="ggtype_radio" value="8串28" id="r8c28">8串28</label> <label for="r8c56" style="DISPLAY: none"><input type="radio" name="ggtype_radio" value="8串56" id="r8c56">8串56</label> <label for="r8c70" style="DISPLAY: none"><input type="radio" name="ggtype_radio" value="8串70" id="r8c70">8串70</label> <label for="r8c247" style="DISPLAY: none"><input type="radio" name="ggtype_radio" value="8串247" id="r8c247">8串247</label> </div>
+<div class="dc_r_m">
+<h2 class="h_4"></h2>
+<p class="dc_qr">投注&nbsp;<input value="1" class="mul" id="bs" style="WIDTH: 50px">倍(最高100000倍)<br>共<span class="eng red" id="zs">0</span>注,总金额 <strong class="eng red" id="buy_money">￥0.00</strong>元<br>预测最高奖金：<span class="eng red" id="maxmoney">￥0.00</span><br><a class="eng red" href="javascript:void(0)" id="seemore">详细奖金预算</a> 
+</p>
+
+<p class="dc_r_btn"><a href="javascript:void 0" onclick="return false" class="jc_mtz" id="gobuy">确认代购</a><a href="javascript:void 0" onclick="return false" class="jc_mhm" id="gohm">发起合买</a></p>
+<p></p>
+<p class="gray dc_qr p-t0 x_c9">过关投注奖金以方案最终出票时刻的奖金为准。</p></div></div></div></DIV>
 <DIV class=dc_e>
 <P><STRONG>竞彩篮球投注提示：</STRONG></P>
 <UL>
