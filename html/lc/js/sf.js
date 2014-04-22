@@ -757,25 +757,7 @@
     	},
     	sf:function(data){
     		 var html = [];
-    		 var tableTpl=['<TABLE class=dc_table border=0 cellSpacing=0 cellPadding=0 width="100%">'+
-    		               '<COLGROUP>'+
-    			           '<COL width="10%">'+
-    		               '<COL width="9%">'+
-    		               '<COL width="15%">'+
-    		               '<COL width="20%">'+
-    		               '<COL width="20%">'+
-    		               '<COL width="15%">'+
-    		               '<COL >'+
-	               '</COLGROUP>'+
-	               '<TBODY>'+
-	               '<TR>'+
-	                 '<TH>赛事编号</TH>'+
-	                 '<TH>赛事类型</TH>'+
-	                 '<TH><SELECT style="WIDTH: 72px; FONT-SIZE: 12px" id=select_time> <OPTION selected value=0>截止时间</OPTION> <OPTION value=1>开赛时间</OPTION></SELECT> </TH>'+
-	                 '<TH>客队(<b style="color:blue">主队负</b>)</TH>'+
-	                 '<TH>主队(<b class="red">主队胜</b>)</TH>'+
-	                 '<TH>平均欧赔</TH>'+
-	                 '<TH>数 据</TH></TR></TBODY></TABLE>',//0对阵头
+    		 var tableTpl=['',//0对阵头
 		           '<div class="dc_hs" style="text-align: left; padding-left: 10px;"><strong>{$enddate} {$weekday} </strong>[12:00 -- 次日 12:00] <strong><span id=num{$num} class="red">num{$num}</span>场比赛可投注</strong> <a href="javascript:void 0">隐藏<s class=c_up></s></a> </div>',//1按天分类
 		           '<table id=d_{$enddate} class=dc_table border=0 cellspacing=0 cellpadding=0 width="100%" onselectstart="return false">'+
 		           '<COLGROUP>'+
