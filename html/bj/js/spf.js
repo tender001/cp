@@ -1738,7 +1738,7 @@ Class( {
 				$("div[mark=showend]").hide();
 				$('div[mark=endtime]').find(".matchxz").removeClass("matchxzc");
 				 Y.postMsg('msg_change_time', endvalue);
-			})
+			});
 			
 			this.onMsg('msg_change_time', function (index){
 	            this._getPvs();

@@ -50,6 +50,7 @@
 <div class="dc_l">
 	<a name="top"></a>
 <div class="box_m">
+<div style="overflow: visible; background: #fff" id="tabletop">
 <div class="dc_l_t jc_l_t">
 	<div class="dc_l_tl">
 	<div class="dc_all_w" style="display:none">
@@ -60,67 +61,72 @@
 				</ul>
 			</div>
 		</div>
-		<span class="mie7">
+		<span class="mie7"><input type="checkbox" id="wdls" />五大联赛</label>&nbsp; 
 						<label><input type="checkbox" id="ck_out_of_date" />已截止[<span class="red" id="out_of_date_tag">0场</span>]</label>&nbsp;
 			已隐藏 <span class="eng"><a href="javascript:void(0)" class="a_num" id="hidden_matches_num">0</a></span> 场<span style="margin-left:180px"></span>&nbsp;<span></span>
 		</span>
 	</div>
 	
-	<div class="dc_l_tr">
-		<div class="dc_ls_w">
-			<div class="dc_ls_n" style="display:none" id="league_selector">
-				<ul class="clearfix"></ul>
-				<div class="ls_n_b" style="text-align:center;display:none">
-					<a href="javascript:void(0)" class="btn_Lblue_s" id="select_all_league">全选</a>
-					<a href="javascript:void(0)" class="btn_Lblue_s" id="select_opposite_league">反选</a>
-				</div>
-			</div>
-			<a href="javascript:void(0)" id="league_show" class="ls_s_btn">联赛选择</a>
-		</div>
-	</div>
-</div>
+
+</div><table width="100%" border="0" cellspacing="0" cellpadding="0" class="dc_table">
+  <colgroup>
+  <col width="109">
+  <col width="64">
+  <col width="180">
+  <col width="42">
+  <col width="42">
+  <col width="42">
+  <col width="42">
+  <col width="42">
+  <col width="42">
+  <col width="42">
+  <col width="42"><col width="39"></colgroup>
+  <tbody>
+  <tr>
+	<th id="sssx"><div class="matchxzk" id="league_show">
+											<div class="matchxz">
+												比赛筛选<i></i>
+											</div>
+											<div class="jcslt" style="display: none; overflow: visible; width: 440px" id="leagueSelector">
+												<div id="listMenu" class="dc_ls_n">
+													<h3>赛事选择</h3>
+													<ul class="clearfix" id="lglist">
+											
+													</ul>
+													<p>
+														<a id="selectAllBtn" href="javascript:void(0);">全选</a><a id="selectOppBtn" href="javascript:void(0);">反选</a><a id="unAllBtn"
+															href="javascript:void(0);">全清</a>
+													</p>
+
+												
+												</div>
+											</div>
+										</div></th>
+    
+	<th id="jztime"><div class="matchxzk" mark="endtime">
+											<div class="matchxz">
+												<em id="select_time">截止</em><i></i>
+											</div>
+											<div class="jcslt" style="display: none; overflow: visible; width: 59px" mark="showend">
+												<div class="plv_set">
+													<a href="javascript:void(0);" value="0">截止</a> <a href="javascript:void(0);" value="1">开赛</a>
+												</div>
+											</div>
+										</div></th>
+    <th>主队 VS 客队</th>
+    <th><span class="eng">0</span></th>
+    <th><span class="eng">1</span></th>
+    <th><span class="eng">2</span></th>
+    <th><span class="eng">3</span></th>
+    <th><span class="eng">4</span></th>
+    <th><span class="eng">5</span></th>
+    <th><span class="eng">6</span></th>
+    <th class="last_th"><span class="eng">7+</span></th><th>数据</th></tr></tbody></table></div>
 
 				<div class="dc_l_m" id="dcvsTable">
 
 					<!-- bof 比赛对阵表头 -->
-					<table width="100%" border="0" cellspacing="0" cellpadding="0" class="dc_table" id="vs_table_header">
-						<colgroup>
-								<col width="40" />
-								<col width="75" />
-								<col width="50" />
-								<col width="165" />
-								<col width="42" />
-								<col width="42" />
-                                <col width="42" />
-                                <col width="42" />
-                                <col width="42" />
-                                <col width="42" />
-                                <col width="42" />
-                                <col width="42" />
-                                <col width="25" />
-                                <col/>
-						</colgroup>
-						<tbody>
-							<tr class="">
-								<th>场次</th>
-								<th>赛事</th>
-								<th><select id="select_time">
-		                        <option value="0">截止</option>
-		                        <option value="1">开赛</option></select></th>
-								<th>主队 VS 客队</th>
-								<th><span class="eng">0</span></th>
-								<th><span class="eng">1</span></th>
-								<th><span class="eng">2</span></th>
-								<th><span class="eng">3</span></th>
-								<th><span class="eng">4</span></th>
-								<th><span class="eng">5</span></th>
-								<th><span class="eng">6</span></th>
-								<th><span class="eng">7+</span></th>
-								<th>包</th>
-								<th class="last_th">数据</th>
-							</tr>
-						</tbody>
-					</table>
+		
 					<!--比赛对阵表头 -->
 
 					<table width="100%" border="0" cellspacing="0" cellpadding="0" class="dc_table" id="vsTable" style="display:none">
@@ -137,7 +143,7 @@
 <div class="dc_r" id="right_area">
 	
 
-	<div class="box_m">
+	<div class="box_m" id="titleTable_r">
 		<div class="dc_r_m">
 			<H2 class="h_2"><a href="javascript:void(0);" id="checkbox_clear" class="jcq_k" ></a></H2>
 			<table width="100%" border="0" cellspacing="0" cellpadding="0" class="dcr_table">
