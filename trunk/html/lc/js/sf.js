@@ -23,28 +23,40 @@
                 Y.postMsg('msg_set_stop', this.checked)//所有截止
             }).prop('checked', false).get('#select_pv').change(function (){
                 Y.postMsg('msg_change_val', this.value)
-            }).get('#select_time').change(function (){//切换开赛时间与截止时间
-                Y.postMsg('msg_change_time', this.value)
-            })
+            });
+			Y.get("div[mark=showend] a").click(function(){
+				var endvalue=Y.get(this).attr("value");
+				Y.get("#select_time").html(Y.get(this).html());
+				Y.get("div[mark=showend]").hide();
+				Y.get('div[mark=endtime]').find(".matchxz").removeClass("matchxzc");
+				 Y.postMsg('msg_change_time', endvalue);
+			});
         },
         addMenu: function (){//联赛菜单
            var Y = this,
-               all = Y.get('#listMenu :checkbox');
-            this.get('#listDisplay').drop( this.get('#listMenu'),{focusCss: 'ls_h_btn', fixed: true, y: -1});
-            all.click(function (){//单个
-                Y.postMsg('msg_select_list', this.getAttribute('m'), 0, this.checked)
+           lg  = Y.get('#lglist :checkbox');
+       
+      
+            this.get('#listDisplay div.matchxz').drop( this.get('#leagueSelector'),{focusCss: 'matchxzc', fixed: true, y: -1});
+            this.get('#jztime div.matchxz').drop( this.get('#jztime div.jcslt'),{focusCss: 'matchxzc', fixed: true, y: -1});
+            lg.click(function (){//单个
+                Y.postMsg('msg_select_list', this.getAttribute('value'), 0, this.checked);
             }).get('#selectAllBtn').click(function (){
-                all.prop('checked', true);//所有
-                Y.postMsg('msg_select_list', false, 2, all.attr('checked'))
+                lg.prop('checked', true);//所有
+                Y.postMsg('msg_select_list', true, 2, lg.attr('checked'));
+            }).get('#unAllBtn').click(function (){
+                lg.prop('checked', false);//全清
+                Y.postMsg('msg_select_list', true, 5, lg.attr('checked'));
             }).get('#selectOppBtn').click(function (){
                 var data = {};//反选
-                all.prop('checked', function (old){
+                lg.prop('checked', function (old){
                     var ed = !old;
-                    data[this.getAttribute('m')] = ed
-                    return ed
+                    data[this.getAttribute('value')] = ed;
+                    return ed;
                 });
-                Y.postMsg('msg_select_list', data, 1)
+                Y.postMsg('msg_select_list', data, 1);
             });
+         
             var only_lg = this.cookie('jczq_league');//来源于资讯跳转
             if (only_lg) {
                 var lg = decodeURIComponent(only_lg), has;
@@ -220,7 +232,20 @@
                     }, this);
                     break;
                  case 2://全选
-                    Y.list.show(sel)
+                     Y.list.show(sel)
+                       break; 
+                 case 3://全选
+                           Y.list.show(sel)
+                           break;
+                 case 4:
+                	 var target= Y.allList.filter(function(tr){
+                         return tr.getAttribute('pendtime') == data
+                     });
+                	 target.show(sel);
+                	 break;
+                 case 5://全选
+                     Y.list.hide(sel);
+                     break;
                  }
                  this.getHideCount()
              });
@@ -807,6 +832,7 @@
     		var numstr=[];
     		var num=0;
     		var lgstr="";
+    		var lgname=[];
     		
     		var obj = eval("(" + data.text + ")");
 			var code = obj.match.code;
@@ -854,12 +880,10 @@
 
     				num++;    				
     				html[html.length] = tableTpl[4].tpl(row);
-    				if (lgstr.indexOf(row.mname)<0){	
-    		            lgstr+='<LI><INPUT id="lg'+row.mname+'" CHECKED type="checkbox" m="'+row.mname+'"><LABEL for="lg'+row.mname+'">'+row.mname.substr(0,4)+'</LABEL></LI>';
-    		    		}
+    				lgname.push(row.mname);
     			};
     		});
-			this.get("#lgList").html(lgstr);
+		
     		numstr[numstr.length]=num;
 
     		this.get("#isend").html(out_of_date_matches);
@@ -868,6 +892,27 @@
     			this.get("#num"+ii).html(numstr[ii]);
     		}
     		this.get("#vsTable").show();	
+    		//生成联赛列表
+       		var arr_league = [];
+       		var league_list_html = '';
+       		var match_num_of_league = {};
+       		lgname.each( function(item) {
+       			var league_name = item;
+       				if ($_sys.getSub(arr_league,league_name) == -1 ) {
+       					arr_league.push(league_name);
+       					league_list_html += '<li><label for="' + league_name + '"><input name="lg" type="checkbox" value="' + league_name + '" checked="checked"/><span>' + league_name + '</span>[<i>'+league_name +'_num</i>]</label></li>';
+      				}
+       				if (typeof match_num_of_league[league_name] == 'undefined') {
+       					match_num_of_league[league_name] = 1;
+       				} else {
+       					match_num_of_league[league_name]++;
+       				}
+       				
+       		} );
+       		for (var league_name in match_num_of_league) {
+       			league_list_html = league_list_html.replace(league_name + '_num', match_num_of_league[league_name]);
+       		}
+       		Y.get("#lglist").html(league_list_html);
     		this.postMsg('load_duizhen_succ');			
     	}	
     });
@@ -1206,7 +1251,7 @@
             });
 			//少于两场的提示
 			if (!issfc) {//胜分差不显示
-				this.lt2_info = this.get('<div style="text-align: center;padding-top: 10px;color: red;" id="vslt2">请至少选择2场比赛进行投注。</div>').insert('#ggListFree', 'prev');
+				this.lt2_info = this.get('#vslt2').insert('#ggListFree', 'prev');
 			}
         },
         getCurrentType: function (){//取得过关方式
