@@ -117,8 +117,10 @@ div,ul,li{ list-style-type:none;overflow:hidden}
 .ad_p1{padding:71px 0 0 393px;}
 .ad_p1 p{line-height:24px;color:#fff;height:24px;padding-bottom:65px}
 .ad_p1 p a{color:#fff; text-decoration:underline;height:auto}
-.foot{text-align:Center;color:#fff;line-height:24px;padding:17px 0; background:#4872a1}
-.foot a{color:#fff}
+.foot{text-align:Center;color:#333;line-height:24px;padding:17px 0;}
+.foot a{color:#333}
 .foot a:hover{ text-decoration:underline}
-.ad_a2{padding:188px 0 0 305px}
-.ad_a2 a{display:block;float:left;margin-right:20px;width:185px;height:51px;}
+.ad_a2{padding:316px 0 0 347px}
+.ad_a2 a{display:block;float:left;width:233px;height:71px;}
+.ad_a1 span{float:right;padding:25px 13px 0 0 }
+.ad_a1 span a{float:left;width:130px;height:50px;display:block;margin-left:2px}
