@@ -1720,9 +1720,9 @@ Class('LoadExpect',{
 	cbf:function(data){
 		 var html = [];
 		 var tableTpl=['<colgroup>'+
-	       '<col width="40" />'+
-	       '<col width="75" />'+
-	       '<col width="50" />'+
+	       '<col width="45" />'+
+	       '<col width="64" />'+
+	       '<col width="64" />'+
 	       '<col width="120" />'+
 	       '<col width="4" />'+
 	       '<col width="120" />'+
@@ -1746,11 +1746,11 @@ Class('LoadExpect',{
 	       '<a  href="" target="_blank" id="match{$mid}" style="color:#fff;">{$mname}</a>'+
 	       '</td>'+
 	       '<td><span class="eng end_time" title="截止时间：{$et}">{$short_et}</span><span style="display: none" class="eng match_time" title="开赛时间：{$bt}">{$short_bt}</span></td>'+
-	       '<td style="text-align: right; padding-right:2px;">'+
-	       '<a title="{$hn}"  href="" target="_blank" id="hn{$mid}"><em id="htid{$mid}" class="ew_e">{$hn}</em></a>'+	      
+	       '<td style="text-align: right; ">'+
+	       '<a title="{$hn}"  href="" target="_blank" id="hn{$mid}"><em id="htid{$mid}" class="ew_e ew_eright">{$hn}</em></a>'+	      
 	       '</td>'+
 	       '<td style="text-align: center;">VS</td>'+
-	       '<td style="text-align: left; padding-left:2px;">'+
+	       '<td style="text-align: left; ">'+
 	       '<a title="{$gn}"  href="" target="_blank" id="gn{$mid}"><em id="gtid{$mid}" class="ew_e">{$gn}</em></a>'+	       
 	       '</td>'+
 	       '<td value="{\'index\':{$mid},\'disabled\':{$disabledint}}">'+

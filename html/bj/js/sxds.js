@@ -1370,7 +1370,7 @@ Class('LoadExpect',{
 	},	
 	sxds:function(data){
 		 var html = [];
-		 var tableTpl=['<colgroup><col width="40"><col width="60"><col width="50"><col width="77"><col width="4"><col width="85"><col width="80"><col width="80"><col width="80"><col width="80"><col width="25"><col></colgroup>',//0
+		 var tableTpl=['<colgroup><col width="45"><col width="64"><col width="64"><col width="77"><col width="4"><col width="85"><col width="80"><col width="80"><col width="80"><col width="80"><col width="25"><col></colgroup>',//0
 	       '<tbody >'+
 	       '<tr id="switch_for_{$enddate}">'+
 	       '<td colspan="15" class="dc_hs dc_hstd" style="text-align:left; padding-left:10px;line-height:16px;height:16px;background-color:#ECEFF5">'+
@@ -1386,12 +1386,12 @@ Class('LoadExpect',{
 	       '<td style="background:{$bgColor};color:#fff;" class="league">'+
 	       '<a  href="" target="_blank" id="match{$mid}" style="color:#fff;">{$mname}</a>'+
 	       '</td>'+
-	       '<td><span class="eng end_time" title="截止时间：{$et}">{$short_et}</span><span style="display: none" class="eng match_time" title="开赛时间：{$bt}">{$short_bt}</span></td>'+
-	       '<td style="text-align: right; padding-right:2px;">'+
-	       '<a title="{$hn}"  href="" target="_blank" id="hn{$mid}"><em id="gtid{$mid}" class="ew_e">{$short_hn}</em></a>'+	      
+	       '<td style="border-left:1px solid #fff"><span class="eng end_time" title="截止时间：{$et}">{$short_et}</span><span style="display: none" class="eng match_time" title="开赛时间：{$bt}">{$short_bt}</span></td>'+
+	       '<td style="text-align: right;border-left:1px solid #fff ">'+
+	       '<a title="{$hn}"  href="" target="_blank" id="hn{$mid}"><em id="gtid{$mid}" class="ew_e ew_eright">{$short_hn}</em></a>'+	      
 	       '</td>'+
 	       '<td style="text-align: center;">VS</td>'+
-	       '<td style="text-align: left; padding-left:2px;">'+
+	       '<td style="text-align: left; ">'+
 	       '<a title="{$gn}"  href="" target="_blank" id="gn{$mid}"><em id="gtid{$mid}" class="ew_e">{$short_gn}</em></a>'+	       
 	       '</td>'+
 	       '<td style="CURSOR: pointer;border-left:1px solid #62A3D0;" class="h_br">'+
