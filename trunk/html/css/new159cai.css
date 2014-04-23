@@ -1296,11 +1296,11 @@ a.jc_mtz:hover, a.jc_mhm:hover{background-position:-110px 0}
 .tzsontab p{float:right;margin-right:20px;line-height:26px;color:#333}
 .tzsontab p em{color:#e52e04;font-weight:bold;font-family:Arial;margin:0 2px}
 .tzsontab p b{background:url("/images/cai888/jctop_06.jpg") 0 0 ;height:15px;width:15px;cursor:pointer;display:block;float:left;margin:5px 0 0 3px}
-.matchxzk{ cursor: pointer;height: 32px;line-height: 32px;position: relative;z-index: 2;overflow:visible}
-.matchxz{margin:0 auto}
+.matchxzk{ cursor: pointer;height: 32px;line-height: 30px;position: relative;z-index: 2;overflow:visible}
+.matchxz{float:left;width:100%}
 .matchxz i{background:url("/images/cai888/jtdown_11.jpg") 0 0;transition: all 0.2s ease-in 0s;height: 4px;margin-left: 5px;vertical-align: middle;width: 7px;display:inline-block}
 .jcslt{position:absolute;z-index:9;top:30px;left:0;background:#fff;width:113px;border:2px solid #444;padding-bottom:10px}
-.matchxzc{border:2px solid #444;border-bottom:none; background:#fff;height:30px;line-height:28px;position:relative;z-index:99}
+.matchxzc{border:2px solid #444;border-bottom:none; background:#fff;height:30px;line-height:28px;position:relative;z-index:99;}
 .matchxzc i{transform:rotate(180deg)}
 .dc_l_tl{float:left;padding-left:102px}
 .tdaa td{line-height:34px;height:34px;}

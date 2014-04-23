@@ -1460,14 +1460,14 @@ Class('LoadExpect',{
 		//'<colgroup><col width="7%"><col width="10%"><col width="8%"><col width="20%"><col width="8%"><col width="20%"><col width="4%"><col width="15%"><col width="8%"><col width="2%"></colgroup>'+
 		'<tbody id="{$enddate}" onselectstart="return false">',//1
 		'<tr class="{$classname}" style="display:none" value="{index:\'{$mid}\',leagueName:\'{$mname}\',homeTeam:\'{$hn}\',guestTeam:\'{$gn}\',endTime:\'{$et}\',rangqiuNum:\'{$close}\',scheduleDate:\'{$enddate}\',disabled:\'yes\',homeTeamRank:2,guestTeamRank:7,bgColor:\'{$bgColor}\'}">'+
-		'<td style="text-align:left; padding-left:5px;">'+
+		'<td style="text-align:left;">'+
 		'<input type="checkbox" checked="checked" class="chbox" style="cursor:default" /><span class="chnum">{$mid}</span>'+
 		'</td>'+
 		'<td style="background:{$bgColor};" class="league">'+
 		'<a  href="" target="_blank" id="match{$mid}" style="color:#fff;">{$mname}</a>'+
 		'</td>'+
-		'<td><span class="eng end_time" title="截止时间：{$et}">{$short_et}</span><span style="display: none" class="eng match_time" title="开赛时间：{$bt}">{$short_bt}</span></td>'+
-		'<td class="h_br" style="text-align: right; padding-right: 10px;border-left:1px solid #62A3D0;"><div class="dz_dv"><s class="s_left">&nbsp;</s>'+
+		'<td style="border-left:1px solid #fff"><span class="eng end_time" title="截止时间：{$et}">{$short_et}</span><span style="display: none" class="eng match_time" title="开赛时间：{$bt}">{$short_bt}</span></td>'+
+		'<td class="h_br" style="text-align: right; border-left:1px solid #62A3D0;"><div class="dz_dv"><s class="s_left">&nbsp;</s>'+
 		'<label class="label_n span_left">'+
 		'<input type="checkbox" class="chbox" value="胜" onclick="return false"  disabled="disabled" style="display: none"/><em id="htid_{$mid}" class="em_left">{$hn}</em>{$closestr} {$sp3str}</label>'+
 		'</div></td>'+
@@ -1475,7 +1475,7 @@ Class('LoadExpect',{
 		'<label class="label_n">'+
 		'<input type="checkbox" class="chbox" value="平" onclick="return false"  disabled="disabled" style="display: none"/>{$sp1str}</label>'+
 		'</div></td>'+
-		'<td class="h_br" style="text-align: left; padding-left: 10px;"><div class="dz_dv">'+
+		'<td class="h_br" style="text-align: left; "><div class="dz_dv">'+
 		'<label class="label_n span_rihgt">'+
 		'<input type="checkbox" class="chbox" value="负" onclick="return false"  disabled="disabled" style="display: none"/>{$sp0str}</label> <em id="gtid_{$mid}" class="em_right">{$gn}</em>'+
 		'<s class="s_right">&nbsp;</s></div></td>'+
@@ -1490,14 +1490,14 @@ Class('LoadExpect',{
 		'</td>'+
 		'</tr>',//2 已经过期
 		'<tr onselectstart="return false" class="{$classname}" style="display:" value="{index:\'{$mid}\',leagueName:\'{$mname}\',homeTeam:\'{$hn}\',guestTeam:\'{$gn}\',endTime:\'{$et}\',rangqiuNum:\'{$close}\',scheduleDate:\'{$enddate}\',disabled:\'no\',homeTeamRank:8,guestTeamRank:11,bgColor:\'{$bgColor}\'}">'+
-		'<td style="text-align:left; padding-left:5px;">'+
+		'<td style="text-align:left; ">'+
 		'<input type="checkbox" checked="checked" class="chbox" style="cursor:default" /><span class="chnum">{$mid}</span>'+
 		'</td>'+
 		'<td style="background:{$bgColor};color:#fff;" class="league">'+
 		'<a  href="" target="_blank" id="match{$mid}" style="color:#fff;">{$mname}</a>'+
 		'</td>'+
-		'<td><span class="eng end_time" title="截止时间：{$et}">{$short_et}</span><span style="display: none" class="eng match_time" title="开赛时间：{$bt}">{$short_bt}</span></td>'+
-		'<td class="h_br" style="text-align: right; padding-right: 10px; cursor: pointer;border-left:1px solid #62A3D0" title="{$hn}"><div class="dz_dv"><s class="s_left">&nbsp;</s>'+
+		'<td style="border-left:1px solid #fff"><span class="eng end_time" title="截止时间：{$et}">{$short_et}</span><span style="display: none" class="eng match_time" title="开赛时间：{$bt}">{$short_bt}</span></td>'+
+		'<td class="h_br" style="text-align: right;  cursor: pointer;border-left:1px solid #62A3D0" title="{$hn}"><div class="dz_dv"><s class="s_left">&nbsp;</s>'+
 		'<label class="label_n span_left" >'+
 		'<input type="checkbox" class="chbox" value="胜" onclick="return false" style="display: none"/><em id="htid_{$mid}" class="em_left">{$hn}</em>{$closestr} <span class="sp_value eng b_left1">{$sp3}</span>'+
 		'</label>'+
@@ -1507,7 +1507,7 @@ Class('LoadExpect',{
 		'<input type="checkbox" class="chbox" value="平" onclick="return false" style="display: none"/><span class="sp_value eng">{$sp1}</span>'+
 		'</label>'+
 		'</div></td>'+
-		'<td class="h_br" style="text-align: left; padding-left: 10px; cursor: pointer" title="{$gn}"><div class="dz_dv">'+
+		'<td class="h_br" style="text-align: left;  cursor: pointer" title="{$gn}"><div class="dz_dv">'+
 		'<label class="label_n span_right" >'+
 		'<input type="checkbox" class="chbox" value="负" onclick="return false" style="display: none"/><span class="sp_value eng b_rihgt1">{$sp0}</span> <em id="gtid_{$mid}" class="em_right">{$gn}</em>'+
 		'</label>'+
