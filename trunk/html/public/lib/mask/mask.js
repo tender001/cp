@@ -436,7 +436,7 @@
                 eqx = pos.z == 1 || pos.z == 4 ? -1 : 1;
                 eqy = pos.z > 2 ? 1 : -1;
                 pos = pos.offset(ini.x*eqx, ini.y*eqy);
-                ns.get(menu).setXY(pos);
+//                ns.get(menu).setXY(pos);
                 _mask.show(menu);//ie6 添加mask
                 ini.onshow.call(ns, menu, btn, _mask)
             }
