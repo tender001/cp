@@ -45,11 +45,11 @@ function changeProvince(province, spanid, selectname){
 		}catch(e){}
 	}
 	var ret = '';
-//	ret += '<select id="'+selectname+'" name="'+selectname+'">';
+	ret += '<select id="'+selectname+'" name="'+selectname+'">';
 	ret += '<option value="">==请选择==</option>';
 	for(var i=0;i<len;i++){
 		ret += '<option value="'+city[i]+'">'+city[i]+'</option>';
 	}
-//	ret += '</select>';
+	ret += '</select>';
 	$("#"+spanid).html(ret);
 }
