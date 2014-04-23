@@ -1381,7 +1381,7 @@ Class('LoadExpect',{
 	},	
 	bqc:function(data){
 		 var html = [];
-		 var tableTpl=['  <colgroup><col width="24"><col width="64"><col width="45"><col width="62"><col width="16"><col width="62"><col width="50"><col width="50"><col width="50"><col width="50"><col width="50"><col width="50"><col width="50"><col width="50"><col width="50"><col width=""></colgroup>',//0
+		 var tableTpl=['  <colgroup><col width="45"><col width="64"><col width="45"><col width="62"><col width="16"><col width="62"><col width="50"><col width="50"><col width="50"><col width="50"><col width="50"><col width="50"><col width="50"><col width="50"><col width="50"><col width=""></colgroup>',//0
 	       '<tbody>'+
 	       '<tr  id="switch_for_{$enddate}">'+
 	       '<td colspan="17" class="dc_hs dc_hstd" style="text-align:left; padding-left:10px;line-height:16px;height:16px;background-color:#ECEFF5">'+
@@ -1392,7 +1392,7 @@ Class('LoadExpect',{
 	       '</tbody><tbody id="{$enddate}" onselectstart="return false">',//1
 	       '<tr class="{$classname}" {$displaystyle} value="{index:\'{$mid}\',leagueName:\'{$mname}\',homeTeam:\'{$hn}\',guestTeam:\'{$gn}\',rangqiuNum:\'{$close}\',endTime:\'{$et}\',scheduleDate:\'{$enddate}\',disabled:\'{$yesorno}\',homeTeamRank:0,guestTeamRank:0,bgColor:\'{$bgColor}\'}">'+
 	       '<td>'+
-	       '<input type="checkbox" checked="checked" class="chbox" style="cursor:default;display:none" /><span class="chnum">{$mid}</span>'+
+	       '<input type="checkbox" checked="checked" class="chbox" style="cursor:default;" /><span class="chnum">{$mid}</span>'+
 	       '</td>'+
 	       '<td style="background:{$bgColor};color:#fff;" class="league">'+
 	       '<a  href="" target="_blank" id="match{$mid}" style="color:#fff;">{$mname}</a>'+
