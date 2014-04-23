@@ -794,37 +794,7 @@
     	},
     	spf:function(data){
     		 var html = [];
-    		 var tableTpl=['<table width="100%" border="0" cellspacing="0" cellpadding="0" class="dc_table" onselectstart="return false">'+
-		           '<colgroup>'+
-		           '<col width="9%"><col width="8%"><col width="8%"><col width="24%"><col width="24%"><col width="4%"><col width="15%">'+
-		           '<col width="8%"><col width="2%">'+
-		           '</colgroup>'+
-		           '<tbody>'+
-		           '<tr>'+
-		           '<th>赛事编号</th>'+
-		           '<th>赛事类型</th>'+
-		           '<th><select id="select_time">'+
-		           '<option value="0">截止</option>'+
-		           '<option value="1">开赛</option></select></th>'+
-		           '<th>主队</th><th>客队</th>'+
-		           '<th class="last_th">包</th>'+
-		           '<th id="oddstype"><div class="dz_plv" ><em data="0" id="oddstype_v">平均欧指</em><div class="plv_set" style="display:none;">'+
-		           '<a href="javascript:void(0);" name="0">平均欧指</a>'+
-		           '<a href="javascript:void(0);" name="1">威廉希尔</a>'+
-		           '<a href="javascript:void(0);" name="2">澳门</a>'+
-		           '<a href="javascript:void(0);" name="3">立博</a>'+
-		           '<a href="javascript:void(0);" name="4">Bet365</a>'+
-		           '<a href="javascript:void(0);" name="5">SNAI</a>'+
-		           '<a href="javascript:void(0);" name="6">易胜博</a>'+
-		           '<a href="javascript:void(0);" name="7">伟德</a>'+
-		           '<a href="javascript:void(0);" name="8">Bwin</a>'+
-		           '<a href="javascript:void(0);" name="9">Coral</a>'+
-		           '<a href="javascript:void(0);" name="10">oddset</a>'+
-		           '</div></div></th>'+
-		           '<th>数据</th>'+
-		           '</tr>'+
-		           '</tbody>'+
-		           '</table>',//0对阵头
+    		 var tableTpl=['',//0对阵头
 		           '<div class=dc_hs style="text-align: left; padding-left: 10px;"><strong>{$enddate} {$weekday} </strong>[12:00 -- 次日 12:00] <b><span id=num{$num} class="red">num{$num}</span>场比赛可投注</b> <a href="javascript:void 0">隐藏<s class=c_up></s></a> </div>',//1按天分类
 		           '<table id=d_{$enddate} class=dc_table border=0 cellspacing=0 cellpadding=0 width="100%" onselectstart="return false">'+
 		           '<colgroup>'+
