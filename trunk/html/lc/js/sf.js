@@ -786,12 +786,12 @@
 		           '<div class="dc_hs" style="text-align: left; padding-left: 10px;"><strong>{$enddate} {$weekday} </strong>[12:00 -- 次日 12:00] <strong><span id=num{$num} class="red">num{$num}</span>场比赛可投注</strong> <a href="javascript:void 0">隐藏<s class=c_up></s></a> </div>',//1按天分类
 		           '<table id=d_{$enddate} class=dc_table border=0 cellspacing=0 cellpadding=0 width="100%" onselectstart="return false">'+
 		           '<COLGROUP>'+
-		           '<COL width="10%">'+
-	               '<COL width="9%">'+
-	               '<COL width="15%">'+
-	               '<COL width="20%">'+
-	               '<COL width="20%">'+
-	               '<COL width="15%">'+
+		           '<COL width="75">'+
+	               '<COL width="70">'+
+	               '<COL width="115">'+
+	               '<COL width="160">'+
+	               '<COL width="160">'+
+	               '<COL width="117">'+
 	               '<COL >'+
 		           '</COLGROUP>',//2对阵table控制
 		           '<tbody>'+
