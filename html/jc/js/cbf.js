@@ -288,6 +288,7 @@
                      });
                      if (!sel && Y.isbf){
                          Y._hideBF(target)
+                         target.show(false);
                      }else{
                          target.show(sel);
 //                         target.find(".dz_dv").show(sel);
@@ -341,11 +342,16 @@
                  	   var target= Y.allList.filter(function(tr){
                             return tr.getAttribute('lg') != "西班牙甲"&&tr.getAttribute('lg') != "德国甲级"&&tr.getAttribute('lg') != "法国甲级"&&tr.getAttribute('lg') != "意大利甲"&&tr.getAttribute('lg') != "英格兰超"
                         });
-                        if (!sel && Y.isbf){
-                            Y._hideBF(target)
+//                        if (!sel && Y.isbf){
+//                            Y._hideBF(target)
+//                        }else{
+//                        	Y._showBF()
+//
+//                        }
+                        if(sel){
+                        	 Y._hideBF(target)
                         }else{
-                            target.show(!sel);
-
+                        	target.show(true);
                         }
                      
                          break;
