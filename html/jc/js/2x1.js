@@ -7,49 +7,95 @@
             this.displaySet();
         },
         displaySet: function (){//显隐设置
-            var Y = this;
-            this.get('#ck1,#ck2,#ck3,#showAll_btn').prop('checked', true);
-            this.get('#ck1').click(function (){
-                Y.postMsg('msg_set_rq', this.checked);//让球
-            }).get('#ck2').click(function (){
-                Y.postMsg('msg_set_nrq', this.checked);//非让球     
-            }).get('#showAll_btn').click(function (){
-                Y.get(this).parent('.mie7').find(':checkbox').filter(function (c){
-                    return c.id != 'ck3';
-                }).prop('checked', true);
-
-                Y.postMsg('msg_set_all');//显示所有
-            }).get('#ck3').click(function (){
-                Y.postMsg('msg_set_stop', this.checked);//所有截止
-            }).prop('checked', false).get('#select_pv').change(function (){
-                Y.postMsg('msg_change_val', this.value);
-            }).get('#select_time').change(function (){
-                Y.postMsg('msg_change_time', this.value);
+        	   var Y = this;
+               this.get('#ck1,#ck2,#ck3,#showAll_btn').prop('checked', true);
+               this.get('#ck1').click(function (){
+                   Y.postMsg('msg_set_rq', this.checked)//让球
+               }).get('#ck2').click(function (){
+                   Y.postMsg('msg_set_nrq', this.checked)//非让球     
+               }).get('#showAll_btn').click(function (){
+                   Y.get(this).parent('.mie7').find(':checkbox').filter(function (c){
+                       return c.id != 'ck3'
+                   }).prop('checked', true);
+                   Y.postMsg('msg_set_all')//显示所有
+               }).get('#ck3').click(function (){
+                   Y.postMsg('msg_set_stop', this.checked)//所有截止
+               }).prop('checked', false).get('#select_pv').change(function (){
+                   Y.postMsg('msg_change_val', this.value)
             });
+            Y.get("div[mark=showend] a").click(function(){
+				var endvalue=Y.get(this).attr("value");
+				Y.get("#select_time").html(Y.get(this).html());
+				Y.get("div[mark=showend]").hide();
+				Y.get('div[mark=endtime]').find(".matchxz").removeClass("matchxzc");
+				 Y.postMsg('msg_change_time', endvalue);
+			});
+           
             Y.use('mask', function (){
     			Y.get('#dshelp').setStyle('zIndex', 1).tip('data-help', 1, false, 360);// 帮助说明
     		});
         },
         addMenu: function (){//联赛菜单
-           var Y = this,
-               all = Y.get('#listMenu :checkbox');
-            this.get('#listDisplay').drop( this.get('#listMenu'),{focusCss: 'ls_h_btn', fixed: true, y: -1});
-            all.click(function (){//单个
-                Y.postMsg('msg_select_list', this.getAttribute('m'), 0, this.checked);
-            }).get('#selectAllBtn').click(function (){
-                all.prop('checked', true);//所有
-                Y.postMsg('msg_select_list', false, 2, all.attr('checked'));
-            }).get('#selectOppBtn').click(function (){
-                var data = {};//反选
-                all.prop('checked', function (old){
-                    var ed = !old;
-                    data[this.getAttribute('m')] = ed;
-                    return ed;
-                });
-                Y.postMsg('msg_select_list', data, 1);
+        	var Y = this,
+            lg  = Y.get('#lglist :checkbox'),
+            rq = Y.get('#rqlist :checkbox'), //让球
+            rqc = Y.get('#datachoose :checkbox');//日期
+        	this.get('#listDisplay div.matchxz').drop( this.get('#leagueSelector'),{focusCss: 'matchxzc', fixed: true, y: -1});
+            this.get('#jztime div.matchxz').drop( this.get('#jztime div.jcslt'),{focusCss: 'matchxzc', fixed: true, y: -1});
+         lg.click(function (){//单个
+             Y.postMsg('msg_select_list', this.getAttribute('value'), 0, this.checked);
+         }).get('#selectAllBtn').click(function (){
+             lg.prop('checked', true);//所有
+             Y.postMsg('msg_select_list', true, 2, lg.attr('checked'));
+         }).get('#unAllBtn').click(function (){
+             lg.prop('checked', false);//全清
+             Y.postMsg('msg_select_list', true, 5, lg.attr('checked'));
+         }).get('#selectOppBtn').click(function (){
+             var data = {};//反选
+             lg.prop('checked', function (old){
+                 var ed = !old;
+                 data[this.getAttribute('value')] = ed;
+                 return ed;
+             });
+             Y.postMsg('msg_select_list', data, 1);
+         });
+         rq.click(function(){
+        	 Y.postMsg('msg_select_list', this.getAttribute('value'), 3, this.checked);
+        }).get('#selectrqBtn').click(function (){
+     	   rq.prop('checked', true);//所有
+            Y.postMsg('msg_select_list', false, 2,  rq.attr('checked'));
+        }).get('#unrqBtn').click(function (){
+     	   rq.prop('checked', false);//全清
+            Y.postMsg('msg_select_list', true, 5,  rq.attr('checked'));
+        }).get('#selectOrqBtn').click(function (){
+            var data = {};//反选
+            rq.prop('checked', function (old){
+                var ed = !old;
+                data[this.getAttribute('value')] = ed;
+                return ed;
             });
+            Y.postMsg('msg_select_list', data, 6);
+        });
+         rqc.click(function(){
+         	 Y.postMsg('msg_select_list', this.getAttribute('value'), 4, this.checked);
+         });
+         Y.get("#show_team").click(function(){
+
+        	   if($(this).attr("checked")){
+        		   lg.prop('checked', false);
+        		   $("input[value='西班牙甲']").attr("checked",true);
+   	            	$("input[value='德国甲级']").attr("checked",true);
+   	            	$("input[value='法国甲级']").attr("checked",true);
+   	            	$("input[value='意大利甲']").attr("checked",true);
+   	            	$("input[value='英格兰超']").attr("checked",true);
+        	   }else if(!$(this).attr("checked")){
+        		   lg.prop('checked', true);
+        	   }
+
+        	   Y.postMsg('msg_select_list', "五大联赛", 7,this.checked);
+           })
             this.onMsg('msg_reset_display', function (){
-                all.prop('checked', true);
+                lg.prop('checked', true);
             });
             var only_lg = this.cookie('jczq_league');//来源于资讯跳转
             if (only_lg) {
@@ -254,36 +300,74 @@
              this.onMsg('msg_select_list', function (data, mode, sel){
                  switch(mode){
                  case 0://显示单个
-                    var target= Y.allList.filter(function(tr){
-                        return tr.getAttribute('lg') == data;
-                    });
-                    var target= Y.allList.filter(function(tr){
-                        return tr.getAttribute('lg') == data;
-                    });
-                    if (!sel && Y.isbf){
-                        Y._hideBF(target);
-                    }else{
-                        target.show(sel);
-//                        target.find(".dz_dv").show(sel);
-                    }
+                     var target= Y.allList.filter(function(tr){
+                         return tr.getAttribute('lg') == data
+                     });
+                     if (!sel && Y.isbf){
+                         Y._hideBF(target)
+                     }else{
+                         target.show(sel);
+//                         target.find(".dz_dv").show(sel);
+                     }
+                      break;
+                  case 1://反选
+                     Y.allList.each(function (tr){
+                         var show = data[tr.getAttribute('lg')];
+                         this.get(tr).show(show);
+                         if (Y.isbf && !show){
+                             var next=document.getElementById('pltr_'+tr.getAttribute('mid'));
+                             if (next && next.style.display != 'none') {
+                                 Y.get('a.bf_btn', tr).swapClass('public_Dora', 'public_Lblue').html('<b>展开选项<s class="c_down"></s></b>');
+//                                 next.style.display='none';
+                             }
+                         }
+                     }, this);
                      break;
-                 case 1://反选
-                    Y.allList.each(function (tr){
-                        var show = data[tr.getAttribute('lg')];
-                        this.get(tr).show(show);
-                        if (Y.isbf && !show){
-                            var next=document.getElementById('pltr_'+tr.getAttribute('mid'));
-                            if (next && next.style.display != 'none') {
-                                Y.get('a.bf_btn', tr).swapClass('public_Dora', 'public_Lblue').html('<b>展开选项<s class="c_down"></s></b>');
-                                next.style.display='none';
-                            }
+                  case 2://全选
+                     Y.allList.show(sel);
+                     break;
+                  case 3:
+                 	 var target= Y.allList.filter(function(tr){
+                          return tr.getAttribute('rq') == data
+                      });
+                 	 target.show(sel);
+                 	 break;
+                  case 4:
+                 	 var target= Y.allList.filter(function(tr){
+                          return tr.getAttribute('pendtime') == data
+                      });
+                 	 target.show(sel);
+                 	 break;
+                  case 5://全选
+                      Y.allList.hide(sel);
+                      break;
+                  case 6://反选
+                      Y.allList.each(function (tr){
+                          var show = data[tr.getAttribute('rq')];
+                          this.get(tr).show(show);
+                          if (Y.isbf && !show){
+                              var next=document.getElementById('pltr_'+tr.getAttribute('mid'));
+                              if (next && next.style.display != 'none') {
+                                  Y.get('a.bf_btn', tr).swapClass('public_Dora', 'public_Lblue').html('<b>展开选项<s class="c_down"></s></b>');
+//                                  next.style.display='none';
+                              }
+                          }
+                      }, this);
+                      break;
+                  case 7:
+                 	   var target= Y.allList.filter(function(tr){
+                            return tr.getAttribute('lg') != "西班牙甲"&&tr.getAttribute('lg') != "德国甲级"&&tr.getAttribute('lg') != "法国甲级"&&tr.getAttribute('lg') != "意大利甲"&&tr.getAttribute('lg') != "英格兰超"
+                        });
+                        if (!sel && Y.isbf){
+                            Y._hideBF(target)
+                        }else{
+                            target.show(!sel);
+
                         }
-                    }, this);
-                    break;
-                 case 2://全选
-                    Y.allList.show(sel);
+                     
+                         break;
                  }
-                 this.getHideCount();
+                 this.getHideCount()
              });
              this.onMsg('msg_set_all', function (){
                  this.allList.show();
@@ -802,7 +886,7 @@
 		           '<col width="8%">'+
 		           '</colgroup>',//table
 		           '<tbody>'+
-		           '<tr class="{$classname}" style="display: none" lg="{$mname}" isend="1" lost="{$sp0}" draw="{$sp1}" win="{$sp3}" pendtime="{$et}" rq="{$close}" pdate="{$itemid}" pname="{$itemid}" mid="{$mid}" zid="{$itemid}" title="已截止场次">'+
+		           '<tr class="{$classname}" style="display: none" lg="{$mname}" isend="1" lost="{$sp0}" draw="{$sp1}" win="{$sp3}" pendtime="{$enddate}" rq="{$close}" pdate="{$itemid}" pname="{$itemid}" mid="{$mid}" zid="{$itemid}" title="已截止场次">'+
 		           '<td style="cursor: pointer"><label for=m{$itemid}><input id=m{$itemid} value={$itemid}  checked type=checkbox name=m{$itemid}>{$name}</label></td>'+
 		           '<td style="background:{$cl}; color: #fff" class=league><a title="{$lmname}" href="" target="_blank" id="mn{$itemid}" style="color: #fff">{$mname}</a></td>'+
 		           '<td><span class="eng end_time" title="开赛时间：{$mt}">{$short_et}</span><span style="display: none" class="eng match_time" title="截止时间：{$et}">{$short_mt}</span></td>'+
@@ -816,7 +900,7 @@
 		           '</tr>'+
 		           '</tbody>',//已结束对阵
 		           '<tbody>'+
-		           '<tr class="{$classname}" lg="{$mname}" isend="0"  sp0="{$sp0}" sp3="{$sp3}" rsp0="{$rsp0}" rsp3="{$rsp3}" pendtime="{$et}" rq="{$close}" pdate="{$itemid}" pname="{$itemid}" mid="{$mid}" zid="{$itemid}">'+
+		           '<tr class="{$classname}" lg="{$mname}" isend="0"  sp0="{$sp0}" sp3="{$sp3}" rsp0="{$rsp0}" rsp3="{$rsp3}" pendtime="{$enddate}" rq="{$close}" pdate="{$itemid}" pname="{$itemid}" mid="{$mid}" zid="{$itemid}">'+
 		           '<td style="cursor: pointer"><label for=m{$itemid}><input id=m{$itemid} value={$itemid}  checked type=checkbox name=m{$itemid}>{$name}</label></td>'+
 		           '<td style="background:{$cl}; color: #fff" class=league><a title="{$lmname}" href="" target="_blank" id="mn{$itemid}" style="color: #fff">{$mname}</a></td>'+
 		           '<td><span class="eng end_time" title="开赛时间：{$mt}">{$short_et}</span><span style="display: none" class="eng match_time" title="截止时间：{$et}">{$short_mt}</span></td>'+
@@ -843,7 +927,8 @@
     		var numstr=[];
     		var num=0;
     		var lgstr="";
-    		
+    		var dateweek =[];
+    		var lgname=[];
     		var obj = eval("(" + data.text + ")");
 			var code = obj.match.code;
 			var desc = obj.match.desc;
@@ -903,7 +988,7 @@
     			row.lhn=row.hn;
     			row.lgn=row.gn;
     			row.mname=row.mname.substr(0,4);
-    			row.name=row.name.trim();
+    			row.name=row.name.trim().substr(2,5);
     			if (Y.getDate(data.date)>Y.getDate(row.et)){//已经过期的场次
     				out_of_date_matches++;
     					row.shuju='<a href="#">析</a> <a href="#">亚</a> <a href="#">欧</a>';
@@ -914,9 +999,8 @@
     			}else{//未过期的场次
     				num++;    				
     				html[html.length] = tableTpl[4].tpl(row);
-    				if (lgstr.indexOf(row.mname)<0){	
-    		            lgstr+='<LI><INPUT id="lg'+row.mname+'" CHECKED type="checkbox" m="'+row.mname+'"><LABEL for="lg'+row.mname+'">'+row.mname.substr(0,4)+'</LABEL></LI>';
-    		    		}
+    				lgname.push(row.mname);
+    				dateweek.push('星期'+wk[Y.getDate(row.enddate).getDay()]+"_"+row.enddate);
     			};
     		});
     		this.get("#lgList").html(lgstr);
@@ -928,6 +1012,54 @@
     			this.get("#num"+ii).html(numstr[ii]);
     		}
     		this.get("#vsTable").show();	
+    		//生成联赛列表
+       		var arr_league = [];
+       		var league_list_html = '';
+       		var match_num_of_league = {};
+       		lgname.each( function(item) {
+       			var league_name = item;
+       				if ($_sys.getSub(arr_league,league_name) == -1 ) {
+       					arr_league.push(league_name);
+       					league_list_html += '<li><label for="' + league_name + '"><input name="lg" type="checkbox" value="' + league_name + '" checked="checked"/><span>' + league_name + '</span>[<i>'+league_name +'_num</i>]</label></li>';
+      				}
+       				if (typeof match_num_of_league[league_name] == 'undefined') {
+       					match_num_of_league[league_name] = 1;
+       				} else {
+       					match_num_of_league[league_name]++;
+       				}
+       				
+       		} );
+       		for (var league_name in match_num_of_league) {
+       			league_list_html = league_list_html.replace(league_name + '_num', match_num_of_league[league_name]);
+       		}
+       		$("#lglist").html(league_list_html);
+       		
+       		//生成星期列表
+       		var newday=Y.getDate(data.date).format('YY-MM-DD');
+       		var arr_week = [];
+       		var week_list_html = '';
+       		var match_num_of_week = {};
+       		dateweek.each( function(item) {
+       			var week_name = item.split("_")[0];
+       				if (arr_week.join('|').indexOf(week_name) == -1 ) {
+       					arr_week.push(week_name);
+       					var wd='';
+       					if((Y.getDate(newday)-Y.getDate(item.split("_")[1]))==0){
+       						wd='(今天)';
+       					}
+       					week_list_html+='<li style="width:145px"><label for=' + week_name + wd+'><input class="radio" type="checkbox" value="'+item.split("_")[1]+'" checked="checked"/><span>' + week_name + wd+'赛程</span>[<i>'+week_name + '_num</i>]</label></li>';
+      				}
+      				if (typeof match_num_of_week[week_name] == 'undefined') {
+      					match_num_of_week[week_name] = 1;
+      				} else {
+      					match_num_of_week[week_name]++;
+      				}
+      				
+      		} );
+      		for (var week_name in match_num_of_week) {
+      			week_list_html = week_list_html.replace(week_name + '_num', match_num_of_week[week_name]);
+      		}
+      		$("#datachoose").html(week_list_html);
     		this.postMsg('load_duizhen_succ');			
     	}	
     });
@@ -1482,6 +1614,7 @@ Class('ScrollStill', {
 			 Class.C('lot_id', 90);
 			 Class.C('odds_t','jczq/odds'); 
 			 this.lib.LoadExpect();
+			 this.goTotop();
     		this.onMsg('load_duizhen_succ', function () {
     			this._index();
     			this.sethref();

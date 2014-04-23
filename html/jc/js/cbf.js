@@ -89,7 +89,7 @@
          	 Y.postMsg('msg_select_list', this.getAttribute('value'), 4, this.checked);
          });
             this.onMsg('msg_reset_display', function (){
-                all.prop('checked', true)
+                lg.prop('checked', true)
             });
             var only_lg = this.cookie('jczq_league');//来源于资讯跳转
             if (only_lg) {
@@ -1000,12 +1000,13 @@
     		var stop_sale="no";
     		var all_matches=0;
     		var dateweek =[];
+    		var lgname=[];
     		var out_of_date_matches=0;
     		var rangqiu_matches=[];
     		var no_rangqiu_matches=0;
     		var odds_issuc=false;
     		var numstr=[];
-    		var lgname=[];
+    		
     		var num=0;
     		var lgstr="";
     		var nowfirst=0;
@@ -1116,15 +1117,13 @@
     				rangqiu_matches.push(row.close);
     				lgname.push(row.mname);
     				dateweek.push('星期'+wk[Y.getDate(row.enddate).getDay()]+"_"+row.enddate);
-    				if (lgstr.indexOf(row.mname)<0){	
-    		            lgstr+='<LI><INPUT id="lg'+row.mname+'" CHECKED type="checkbox" m="'+row.mname+'"><LABEL for="lg'+row.mname+'">'+row.mname.substr(0,4)+'</LABEL></LI>';
-    		    		}
+    			
 
     			}
     			
     		}); 
 
-    		this.get("#lgList").html(lgstr);
+    		
     		numstr[numstr.length]=num;
 
     		this.get("#isend").html(out_of_date_matches);
