@@ -1380,7 +1380,7 @@ Class('LoadExpect',{
 	},	
 	jqs:function(data){
 		 var html = [];
-		 var tableTpl=['<colgroup><col width="45"><col width="64"><col width="64"><col width="80"><col width="4"><col width="80"><col width="42"><col width="42"><col width="42"><col width="42"><col width="42"><col width="42"><col width="42"><col width="42"><col width="24"><col width=""></colgroup>',//0
+		 var tableTpl=['<colgroup><col width="45"><col width="64"><col width="64"><col width="74"><col width="16"><col width="74"><col width="42"><col width="42"><col width="42"><col width="42"><col width="42"><col width="42"><col width="42"><col width="50"><col width="24"><col width=""></colgroup>',//0
 	        '<tbody>'+
 	       '<tr id="switch_for_{$enddate}" >'+
 	       '<td  colspan="17" class="dc_hs dc_hstd" style="text-align:left;line-height:16px;height:16px;background-color:#ECEFF5">'+
@@ -1396,7 +1396,7 @@ Class('LoadExpect',{
 	       '<td style="background:{$bgColor};color:#fff;" class="league">'+
 	       '<a   href="" target="_blank" id="match{$mid}" style="color:#fff;">{$mname}</a>'+
 	       '</td>'+
-	       '<td><span class="eng end_time" title="截止时间：{$et}">{$short_et}</span><span style="display: none" class="eng match_time" title="开赛时间：{$bt}">{$short_bt}</span></td>'+
+	       '<td style="border-left:1px solid #fff;border-right:1px solid #fff"><span class="eng end_time" title="截止时间：{$et}">{$short_et}</span><span style="display: none" class="eng match_time" title="开赛时间：{$bt}">{$short_bt}</span></td>'+
 	       '<td style="text-align: right; ">'+
 	       '<a title="{$hn}"  href="" target="_blank" id="hn{$mid}"><em id="htid{$mid}" class="ew_e ew_eright">{$short_hn}</em></a>'+	      
 	       '</td>'+
