@@ -59,9 +59,10 @@
 <DIV id=main class="main_dc clearfix">
 <DIV class=dc_l><a name="top"></a>
 
-<DIV class=box_m>
+<DIV class=box_m><div style="overflow: visible; background: #fff" id="tabletop">
 <DIV class="dc_l_t jc_l_t">
-<DIV class=dc_l_tl><SPAN class=mie7><LABEL for=ck1 style="DISPLAY: none"><INPUT id=ck1 CHECKED 
+<DIV class=dc_l_tl><SPAN class=mie7><input id="show_team" type="checkbox">
+五大联赛&nbsp;&nbsp; <LABEL for=ck1 style="DISPLAY: none"><INPUT id=ck1 CHECKED 
 type=checkbox>让球</LABEL><LABEL for=ck2 style="DISPLAY: none"><INPUT id=ck2 CHECKED 
 type=checkbox>非让球</LABEL> <LABEL for=ck3><INPUT id=ck3 
 type=checkbox>已截止(<span id="isend">0</span>场)</LABEL>已隐藏 <SPAN id=hide_count class="red eng">0</SPAN> 
@@ -87,7 +88,7 @@ style="MARGIN-LEFT: 180px"><!--赛事回查--></SPAN>&nbsp; <span id="expect_sel
 										<div class="matchxz">
 											比赛筛选<i></i>
 										</div>
-										<div class="jcslt" style="display: none;width: 335px">
+										<div class="jcslt" style="display: none; overflow: visible; width: 335px" id="leagueSelector">
 											<div class="dc_ls_n" id="listMenu">
 											    <h3>赛事选择</h3>
 												<ul id="lglist" class="clearfix" ></ul>
@@ -98,13 +99,13 @@ style="MARGIN-LEFT: 180px"><!--赛事回查--></SPAN>&nbsp; <span id="expect_sel
 											</div>
 										</div>
 									</div></th>
-								<th id="jztime"><div class="matchxzk">
-										<div class="matchxz" style="width:59px">
+								<th id="jztime"><div mark="endtime" class="matchxzk">
+										<div class="matchxz">
 											<em id="select_time">截止</em><i></i>
 										</div>
-										<div class="jcslt" style="display: none; width: 59px">
+										<div mark="showend" style="overflow: visible; width: 110px; display: none;" class="jcslt">
 											<div class="plv_set">
-												<a href="javascript:void(0);" value="0">截止</a> <a href="javascript:void(0);" value="1">开赛</a>
+												<a value="0" href="javascript:void(0);">截止</a> <a value="1" href="javascript:void(0);">开赛</a>
 											</div>
 										</div>
 									</div></th>
@@ -128,13 +129,12 @@ style="MARGIN-LEFT: 180px"><!--赛事回查--></SPAN>&nbsp; <span id="expect_sel
       <th>数据</th>
     </tr>
 </tbody>
-</table>
+</table></div>
 <DIV id=vsTable class=dc_l_m>
 
 </DIV></DIV><A hideFocus="true" class=back_top title=回到顶部 href="#top">回到顶部</A> </DIV>
-<DIV class=dc_r>
-
-<DIV class=box_m>
+<div class="dc_r" id="right_area">
+	<div class="box_m" id="titleTable_r">
 
 <DIV class=dc_r_m>
 <H2 class="h_2"><a href="javascript:void(0);" id="checkbox_clear" class="jcq_k" ></a></H2>

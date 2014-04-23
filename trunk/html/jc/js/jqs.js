@@ -73,7 +73,7 @@
          	 Y.postMsg('msg_select_list', this.getAttribute('value'), 4, this.checked);
          });
          this.onMsg('msg_reset_display', function (){
-             all.prop('checked', true);
+             lg.prop('checked', true);
          });
          var only_lg = this.cookie('jczq_league');//来源于资讯跳转
          if (only_lg) {
