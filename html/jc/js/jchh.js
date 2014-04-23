@@ -1377,32 +1377,33 @@ Class('Main', {
 	},
 	setTableHeadFixed: function (){
 		//设置表头浮动
-		Yobj.get('<div id="title_folat" style="z-index:9;"></div>').insert().setFixed({
-			area: '#vsTable',
-			offset:0,
-			init: function(){
-				var This = this,
-					title = this.area.find('table').one(0),
-					floatTitle = title.cloneNode(true);
-				this.get(floatTitle).insert(this);
-				this.floatTitle = floatTitle;
-				this.title = title;
-				this.hide();
-				Y.get(window).resize(function(){
-					This.setStyle('left:'+(This.area.getXY().x)+'px;width:'+(This.area.prop('offsetWidth'))+'px')
-				});
-			},
-			onin: function (){
-				this.show();
-				this.setStyle('zIndex', 999);
-				this.title.swapNode(this.floatTitle);
-				var offset = this.ns.ie == 6 ? 2 : 0;
-				this.setStyle('left:'+(this.area.getXY().x+offset)+'px;width:'+this.area.prop('offsetWidth')+'px')
-			},
-			onout: function (){
-				this.hide();
-				this.title.swapNode(this.floatTitle);
-			}
-		});		
+
+		Yobj.get('<div id="title_folats" style="z-index:9;"></div>').insert().setFixed({
+	            area: '#vsTable',
+	            offset:0,
+	            init: function(){
+	                var This = this,
+	                    title = this.area.parent().find('#tabletop').one(0),
+	                    floatTitle = title.cloneNode(true);
+	                this.get(floatTitle).insert(this);
+	                this.floatTitle = floatTitle;
+	                this.title = title;
+	                this.hide();
+	                Y.get(window).resize(function(){
+	                    This.setStyle('left:'+(This.area.getXY().x)+'px;width:'+(This.area.prop('offsetWidth'))+'px')
+	                });
+	                Yobj.get('div.jcslt').remove();
+	            },
+	            onin: function (){
+	                this.show();
+	                this.title.swapNode(this.floatTitle);
+	                var offset = this.ns.ie == 6 ? 2 : 0;
+	                this.setStyle('left:'+(this.area.getXY().x+offset)+'px;width:'+this.area.prop('offsetWidth')+'px')
+	            },
+	            onout: function (){
+	                this.hide();
+	                this.title.swapNode(this.floatTitle);
+	            }
+	        });
 	}
 });
