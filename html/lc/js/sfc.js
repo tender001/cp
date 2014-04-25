@@ -1403,32 +1403,32 @@
                 this.parseBackEdit();
             }
             //设置表头浮动
-            Y.get('<div id="#title_folat" style="z-index:9;"></div>').insert().setFixed({
-                area: '#vsTable',
-                offset:0,
-                init: function(){
-                    var This = this,
-                        title = this.area.find('table').one(0),
-                        floatTitle = title.cloneNode(true);
-                    this.get(floatTitle).insert(this);
-                    this.floatTitle = floatTitle;
-                    this.title = title;
-                    this.hide();
-                    Y.get(window).resize(function(){
-                        This.setStyle('left:'+(This.area.getXY().x)+'px;width:'+(This.area.prop('offsetWidth'))+'px')
-                    });
-                },
-                onin: function (){
-                    this.show();
-                    this.title.swapNode(this.floatTitle);
-                    var offset = this.ns.ie == 6 ? 2 : 0;
-                    this.setStyle('left:'+(this.area.getXY().x+offset)+'px;width:'+this.area.prop('offsetWidth')+'px')
-                },
-                onout: function (){
-                    this.hide();
-                    this.title.swapNode(this.floatTitle);
-                }
-            });
+//            Y.get('<div id="#title_folat" style="z-index:9;"></div>').insert().setFixed({
+//                area: '#vsTable',
+//                offset:0,
+//                init: function(){
+//                    var This = this,
+//                        title = this.area.find('table').one(0),
+//                        floatTitle = title.cloneNode(true);
+//                    this.get(floatTitle).insert(this);
+//                    this.floatTitle = floatTitle;
+//                    this.title = title;
+//                    this.hide();
+//                    Y.get(window).resize(function(){
+//                        This.setStyle('left:'+(This.area.getXY().x)+'px;width:'+(This.area.prop('offsetWidth'))+'px')
+//                    });
+//                },
+//                onin: function (){
+//                    this.show();
+//                    this.title.swapNode(this.floatTitle);
+//                    var offset = this.ns.ie == 6 ? 2 : 0;
+//                    this.setStyle('left:'+(this.area.getXY().x+offset)+'px;width:'+this.area.prop('offsetWidth')+'px')
+//                },
+//                onout: function (){
+//                    this.hide();
+//                    this.title.swapNode(this.floatTitle);
+//                }
+//            });
         },
         parseBackEdit: function (codes){
             var backData = Y.dejson(Y.cookie('jczq_back_edit')),
