@@ -621,7 +621,7 @@ $(document).ready(function(){
 		Class.C("pn","1");
 		Class.C("ps","30");
 		loadPeriod();
-		if(Class.C('lotid') == 30||Class.C('lotid') ==50||Class.C('lotid')== 1||Class.C('lotid')== 80||Class.C('lotid')== 81||Class.C("lotid") == '00'){
+		if(Class.C('lotid') == 30||Class.C('lotid') == 31||Class.C('lotid') == 32||Class.C('lotid') ==50||Class.C('lotid')== 1||Class.C('lotid')== 80||Class.C('lotid')== 81||Class.C("lotid") == '00'){
 		viewHotUser('list_hotuser');
 		}
 		var glist = $(".nhmleft a[id]");
