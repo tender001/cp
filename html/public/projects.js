@@ -1693,7 +1693,9 @@ showduizhen =function (lotid,expect,projid,type,codes,cp){
 								}
 					   
 								ncode=bet.replace(/(\d+)\+(\d+)/g,'$1,$2');
-
+								if(ncode.charAt(ncode.length-1)=="+"){
+									ncode=ncode.substr(0,ncode.length-1)+"";
+								}
 //							      "ccodes": "HH|140422004>RSPF=3,140422009>RSPF=0+JQS=0/1/2+CBF=1:0/0:0/1:1/0:1|2*1",
 						
 							}else{
@@ -2556,7 +2558,7 @@ showlancai =function (lotid,expect,projid,type,codes,cp){
 				   hhhtml += '<td>彩果</td>';
 //				   hhhtml += '<th class="sp">计奖SP</td>';
 				   hhhtml += '</tr></thead>';
-				   hhhtml += '<colgroup><col width="60"><col width="200"><col width="80"><col width="80"><col/><col width="55">';
+				   hhhtml += '<colgroup><col width="60"><col width="200"><col width="80"><col width="80"><col/><col width="60">';
 				   hhhtml += '</colgroup><tbody>';
 					var odd="";
 					var r = obj.items.item;
@@ -2589,7 +2591,78 @@ showlancai =function (lotid,expect,projid,type,codes,cp){
 						}
 						var hsstr =  rt.hs+"";
 //						HH|130326303>DXF=3,130326302>RFSF=0/3+SFC=01/02/03/04/05/06/11/12/13/14/16,130326301>SF=0+RFSF=3+DXF=0/3|3*4
-						var ncode = codes.split("|")[1];
+						var ncode = "";
+						var codestr="";
+						if(codes.split(";").length>1){
+							 ncode = codes.split(";");
+							 var bet_match=[];
+							 ncode.each(function(n,m){
+								 var s=m;
+								 var bet =n.split(",");
+								 bet.each(function(b,i){
+									 if(i==0){
+										 bet_match.push(b.split("|")[1]);
+									 }else{
+										 bet_match.push(b.split("|")[0]);
+									 }
+									
+								 })
+							 })
+//			
+						     var m=[],f;
+						     for(var i=0;i<bet_match.length;i++){
+						     f=true;
+						     for(var j=0;j<m.length;j++)
+						     if(bet_match[i]===m[j]){f=false;break;};
+						     if(f)m.push(bet_match[i])}
+						    m.sort(function(a,b){return a-b});
+						    
+
+							
+						var array=m,bet ="";
+						
+							var i = 1;
+							var ii =1;
+							while(true){
+								var a=b=cc=d="";
+								a = array[i-1];
+								b= a.split(">")[0];
+							
+									array.each(function(arr,t){
+									cc = arr;
+									if(cc){
+										if(cc.indexOf(b)!=-1){
+											
+									
+												d += cc.split(">")[1];
+												ii++;
+											if(cc.split(">").length)
+											arr = "";
+											d+="+"
+										}
+								
+									
+									}
+								})
+								d!=""?bet += b+">"+d:"";
+								
+								i++;
+								if(i>array.length){
+									break;
+								}
+							}
+				   
+							ncode=bet.replace(/(\d+)\+(\d+)/g,'$1,$2');
+							if(ncode.charAt(ncode.length-1)=="+"){
+								ncode=ncode.substr(0,ncode.length-1)+"";
+							}
+							
+//						      "ccodes": "HH|140422004>RSPF=3,140422009>RSPF=0+JQS=0/1/2+CBF=1:0/0:0/1:1/0:1|2*1",
+					
+						}else{
+							ncode = codes.split("|")[1];
+					
+						}
 						var codestr=ncode.split(",");
 						var itemcodes ="";
 						F:for(var n=0;n<codestr.length;n++){
@@ -2614,6 +2687,7 @@ showlancai =function (lotid,expect,projid,type,codes,cp){
 								var codarr = [];
 								var i=0;
 								itemcode.each(function(onecode){
+									if(onecode){
 									var playty = onecode.split("=")[0];
 									var cod = onecode.split("=")[1].split("/");
 									if(playty == "SF"){
@@ -2730,6 +2804,7 @@ showlancai =function (lotid,expect,projid,type,codes,cp){
 										hhhtml += '</tr>';
 									}
 									i++;
+								}
 								});
 								break F;
 							}
@@ -2741,7 +2816,7 @@ showlancai =function (lotid,expect,projid,type,codes,cp){
 					}else{
 						isdystr = "允许单一玩法串投注";
 					}
-					var gg = codes.split("|")[2].replaceAll("\\*","串");
+					var gg = codes.split(";")[0].split("|")[2].replaceAll("\\*","串");
 					hhhtml += '</tbody>';
 					ggstr= '<font  class="cm_red">'+gg+'</font>';
 					$("#cp_guoguan").html(ggstr);
