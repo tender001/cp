@@ -16,37 +16,51 @@ Class({
 	,show:function(){
 		P.showinfo();
     	P.setinfo();
+    	$("#cimno").keyup(function(){
+    		this.value=this.value.replace(/\D/g,''); //只能输数字
+    	});
+    	$("#ctelephone").keyup(function(){
+    		this.value=this.value.replace(/\D/g,''); //只能输数字
+    	});
 	}
 	,setinfo:function(){
 		 p = this;
+		
 		 this.get('#submit').click(function (){
-			var city = $.trim($("#city").val());
+			 var city = $.trim($("#city").val());
 			var province = $.trim($("#province").val());
+				
+			var cimno = ($("#cimno").val()).replace(/\s+/g,"");
+			var ctelephone = ($("#ctelephone").val()).replace(/\s+/g,"");
 			Y.ajax({
 				url: $_user.modify.info,
 				type : "POST",
 				dataType : "json",
+				
 				data : $_user.key.gender + "=" + encodeURIComponent($.trim($("input[name='sex']:checked").val()))
 				+ "&" + $_user.key.provid + "=" + encodeURIComponent(province.replace(/\-/g,""))
 				+ "&" + $_user.key.cityid + "=" + encodeURIComponent(city.replace(/\-/g,""))				
-				+ "&" + $_user.key.imNo + "=" + encodeURIComponent($.trim($("#cimno").val()))					
-				+ "&" + $_user.key.mobileNo + "=" + encodeURIComponent($.trim($("#ctelephone").val()))
+				+ "&" + $_user.key.imNo + "=" + encodeURIComponent(cimno)					
+				+ "&" + $_user.key.mobileNo + "=" + encodeURIComponent(ctelephone)
 				+ "&rnd=" + Math.random(),	
 				end  : function (d){
 					var obj = eval("(" + d.text + ")");
 		   		    var code = obj.Resp.code;
 		   		    var desc = obj.Resp.desc;
-					if (code == "0") {
-						Y.alert(desc);	
-					} else {
-						if (code=="1"){
-							Y.postMsg('msg_login', function() {						
-								window.location.reload();			
-							});
-						}else{
-							Y.alert(desc);
-						}
-					}
+			   		
+				    		if (code == "0") {
+								Y.alert(desc);	
+							} else {
+								if (code=="1"){
+									Y.postMsg('msg_login', function() {						
+										window.location.reload();			
+									});
+								}else{
+									Y.alert(desc);
+								}
+							
+				    	}
+					
 					p.showinfo();
 				},
 				error : function() {
