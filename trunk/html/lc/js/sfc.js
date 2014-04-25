@@ -785,8 +785,8 @@
    		 var tableTpl=['',//0对阵头
               '<DIV class=dc_hs style="text-align: left; padding-left: 10px;"><STRONG>{$enddate} {$weekday} </strong>[12:00 -- 次日 12:00] <strong><span id=num{$num} class="red">num{$num}</span>场比赛可投注</STRONG> <A href="javascript:void 0">隐藏<S class=c_up></S></A> </DIV>',//1按天分类
               '<TABLE id=d_{$enddate} class=dc_table border=0 cellSpacing=0 cellPadding=0 width="100%" onselectstart="return false">'+
-              '<COLGROUP><COL width="10%"><COL width="8%"><COL width="10%"><COL width="12%"><COL width="9%">'+
-              '<COL width="7%"><COL width="7%"><COL width="7%"><COL width="8%"><COL width="8%"><COL width="8%"><COL width="5%"></COLGROUP>',//2对阵table控制
+              '<COLGROUP><COL width="70"><COL width="60"><COL width="75"><COL width="95"><COL width="65">'+
+              '<COL width="50"><COL width="50"><COL width="50"><COL width="60"><COL width="60"><COL width="60"><COL width=""></COLGROUP>',//2对阵table控制
               '<TBODY>'+
               '<TR style="DISPLAY: none" class="{$classname}" lg="{$mname}" isend="1" odds="{$nsfc}" pdate="{$itemid}" pendtime="{$et}" pname="{$itemid}" mid="{$mid}" zid="{$itemid}"  homeTeam="*{$shn}" guestTeam="*{$sgn}">'+
               '<TD rowSpan=2><LABEL for=m{$itemid}><INPUT id=m{$itemid} class=i-cr value={$itemid} CHECKED type=checkbox name=m{$itemid}>{$name}</LABEL></TD>'+

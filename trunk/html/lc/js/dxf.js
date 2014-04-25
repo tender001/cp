@@ -787,23 +787,23 @@
    	           '<div class=dc_hs style="text-align: left; padding-left: 10px;"><strong>{$enddate} {$weekday} </strong>[12:00 -- 次日 12:00] <strong><span id=num{$num} class="red">num{$num}</span>场比赛可投注</strong> <a href="javascript:void 0">隐藏<s class=c_up></s></a> </div>',//1按天分类
    	           '<table id=d_{$enddate} class=dc_table border=0 cellspacing=0 cellpadding=0 width="100%" onselectstart="return false">'+
    	           '<COLGROUP>'+
-	   	        '<COL width="10%">'+
-	            '<COL width="8%">'+
-	            '<COL width="10%">'+
-	            '<COL width="20%">'+
-	            '<COL width="9%">'+
-	            '<COL width="20%">'+
-	            '<COL width="12%">'+
-	            '<COL width="8%">'+
+	   	        '<COL width="70">'+
+	            '<COL width="60">'+
+	            '<COL width="88">'+
+	            '<COL width="160">'+
+	            '<COL width="60">'+
+	            '<COL width="160">'+
+	            '<COL width="100">'+
+	            '<COL width="">'+
    	           '</COLGROUP>',//2对阵table控制
    	           '<tbody>'+
    	           '<tr class="{$classname}" style="display: none" lg="{$mname}" isend="1" small="{$sp0}" big="{$sp3}" pendtime="{$et}" pdate="{$itemid}" pname="{$itemid}" mid="{$mid}" zid="{$itemid}">'+
    	           '<td style="cursor: pointer"><label for=m{$itemid}><input id=m{$itemid} value={$itemid}  checked type=checkbox name=m{$itemid}>{$name}</label></td>'+
 	           '<td style="background:{$cl}; color: #fff" class=league><a title="{$lmname}" href="" target="_blank" id="mn{$itemid}" style="color: #fff">{$mname}</a></td>'+
 	           '<td><span class="eng end_time" title="开赛时间：{$mt}">{$short_et}</span><span style="display: none" class="eng match_time" title="截止时间：{$et}">{$short_mt}</span></td>'+
-	           '<td style="text-align: right; padding-right: 10px;border-left:1px solid #62A3D0;" class=h_br><div class="dz_dv" title={$gn}><s class="s_left">&nbsp;</s><span class="eng b span_left"><em class="em_left" id="htid_{$itemid}">{$gn}</em><b class="b_left"> {$sp0}</b></span></div></td>'+
+	           '<td style="text-align: right; border-left:1px solid #62A3D0;" class=h_br><div class="dz_dv" title={$gn}><s class="s_left" style="padding-left:10px">&nbsp;</s><span class="eng b span_left"><em class="em_left" id="htid_{$itemid}">{$gn}</em><b class="b_left"> {$sp0}</b></span></div></td>'+
 	           '<td><STRONG class="red">{$zclose}</STRONG></td>'+
-	           '<td style="text-align: left; padding-left: 18px;border-left:1px solid #62A3D0;" class=h_br><div class="dz_dv" title={$hn}><span class="eng b span_left"><b class="b_left">{$sp3}<b> <em class="em_left" id="gtid_{$itemid}">{$hn}</em></span><s class="s_right"></s></div></td>'+
+	           '<td style="text-align: left; border-left:1px solid #62A3D0;" class=h_br><div class="dz_dv" title={$hn}><span class="eng b span_left"><b class="b_left">{$sp3}<b> <em class="em_left" id="gtid_{$itemid}">{$hn}</em></span><s class="s_right"></s></div></td>'+
 	           '<td>'+
 	           '<div class=pjpl><span class="sp_value eng red">已截止场次</span></div></td>'+
 	           '<td><a href="" target="_blank" id="ox{$itemid}">析</a> <a href="" target="_blank" id="oz{$itemid}">欧</a></td>'+
@@ -814,9 +814,9 @@
    	           '<td style="cursor: pointer"><label for=m{$itemid}><input id=m{$itemid} value={$itemid}  checked type=checkbox name=m{$itemid}>{$name}</label></td>'+
    	           '<td style="background:{$cl}; color: #fff" class=league><a title="{$lmname}" href="" target="_blank" id="mn{$itemid}" style="color: #fff">{$mname}</a></td>'+
    	           '<td><span class="eng end_time" title="开赛时间：{$mt}">{$short_et}</span><span style="display: none" class="eng match_time" title="截止时间：{$et}">{$short_mt}</span></td>'+
-   	           '<td style="text-align: left; padding-left: 18px; cursor: pointer;border-left:1px solid #62A3D0" class=h_br><div class="dz_dv" title={$gn}><input class=chbox value=3 type=checkbox style="display: none"><span class="eng b span_right"><b class="b_right">{$sp3}</b> <em id="gtid_{$itemid}" class="em_right">{$gn}</em></span><s class="s_right"></s></div></td>'+
+   	           '<td style="text-align: left;  cursor: pointer;border-left:1px solid #62A3D0" class=h_br><div class="dz_dv" style="padding-left:10px" title={$gn}><input class=chbox value=3 type=checkbox style="display: none"><span class="eng b span_right"><b class="b_right" style="margin-right:15px">{$sp3}</b> <em id="gtid_{$itemid}" class="em_right">{$gn}</em></span><s class="s_right"></s></div></td>'+
    	           '<td><STRONG class="red">{$zclose}</STRONG></td>'+  
-	        	'<td style="text-align: right; padding-right: 18px; cursor: pointer;border-left:1px solid #62A3D0" class=h_br><div class="dz_dv" title={$hn}><input class=chbox value=0 type=checkbox style="display: none"><s class="s_left">&nbsp;</s><span class="eng b span_left"><em id="htid_{$itemid}" class="em_left">{$hn}</em> <b class="b_left">{$sp0}</b></span></div></td>'+
+	        	'<td style="text-align: right;  cursor: pointer;border-left:1px solid #62A3D0" class=h_br><div class="dz_dv" title={$hn}><input class=chbox value=0 type=checkbox style="display: none"><s class="s_left">&nbsp;</s><span class="eng b span_left"><em id="htid_{$itemid}" class="em_left">{$hn}</em> <b class="b_left">{$sp0}</b></span></div></td>'+
    	           '<td>'+
    	           '<div class=pjpl><span class="sp_w35 eng" id="oh{$itemid}">{$b3}</span><span class="sp_w35 eng" id="oa{$itemid}">{$b0}</span></div></td>'+
    	           '<td><a href="" target="_blank" id="ox{$itemid}">析</a> <a href="" target="_blank" id="oz{$itemid}">欧</a></td>'+
