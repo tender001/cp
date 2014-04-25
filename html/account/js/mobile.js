@@ -6,12 +6,25 @@ Class({
 	ready: true,
     index:function (config){
         P =this;
-    	Y.C('logininfo',this.showinfo);
+    	Y.C('logininfo',this.show);
     	Y.C('logoutinfo',this.logoutinfo);
     	this.LoginAcc();
     }
 	,logoutinfo:function(){
 		location="/";
+	}
+	,show:function(){
+		P.showinfo();
+    	
+    	$("#Phone").keyup(function(){
+    		this.value=this.value.replace(/\D/g,''); //只能输数字
+    	});
+    	$("#oldPhone").keyup(function(){
+    		this.value=this.value.replace(/\D/g,''); //只能输数字
+    	});
+    	$("#newPhone").keyup(function(){
+    		this.value=this.value.replace(/\D/g,''); //只能输数字
+    	});
 	}
 	,showinfo:function(){
 		Y.ajax({
@@ -61,14 +74,15 @@ Class({
 		 * 第一次绑定按钮绑定提交事件
 		 */
    	 	this.get('#conform_btn').click(function (){
+   	 		
 			if ($.trim($("#Phone").val())==""){
 				Y.alert("请输入您的手机号码");
 				return false;
 			}
-			
+			var Phone = ($("#Phone").val()).replace(/\s+/g,"");
 			$("#phoneNumber").val($.trim($("#Phone").val()));
 			
-			var data ="flag=1&newValue=" + $.trim($("#Phone").val())+ "&rnd=" + Math.random();
+			var data ="flag=1&newValue=" + Phone+ "&rnd=" + Math.random();
 								
 			Y.ajax({
 				url : $_user.url.bind,
@@ -102,6 +116,7 @@ Class({
    	 	});
    	 	
    	 	this.get('#again').click(function (){
+   	 	var Phone = ($("#Phone").val()).replace(/\s+/g,"");
 			$("#again").attr("disabled", true);
 			if ($.trim($("#phoneNumber").val())==""){
 				P.sentYZM(1);
@@ -226,6 +241,8 @@ Class({
 	 	});
    	 
    	 	this.get('#conform_b').click(function (){
+   	 	var oldPhone = ($("#oldPhone").val()).replace(/\s+/g,"");
+   	 	var newPhone = ($("#newPhone").val()).replace(/\s+/g,"");
 			if ($.trim($("#oldPhone").val())==""){
 				Y.alert("请输入您的原手机号码");
 				return false;
@@ -242,7 +259,7 @@ Class({
 			
 			$("#phoneNumber").val($.trim($("#newPhone").val()));
 			
-			var data ="flag=1&mobileNo=" + $.trim($("#oldPhone").val())+ "&newValue=" + $.trim($("#newPhone").val())+ "&rnd=" + Math.random();
+			var data ="flag=1&mobileNo=" + oldPhone+ "&newValue=" + newPhone+ "&rnd=" + Math.random();
 								
 			Y.ajax({
 				url : $_user.url.bind,
