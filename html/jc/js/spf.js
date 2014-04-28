@@ -1584,7 +1584,7 @@ Class('ScrollStill', {
     	goTotop:function (){
             var isIE=!!window.ActiveXObject;
             var isIE6 = isIE&&!window.XMLHttpRequest;
-            var btn = $("#goTotop");
+            var btn = $("a.back_top");
             var right = 0;
             var top = $(window).height()-247;
             var ietop = $(window).height()-247+$(window).scrollTop();
@@ -1670,14 +1670,14 @@ Class('ScrollStill', {
                 ini.focusCss = 'x_s';
             }
             if (isgg) {
-                this.C('maxSelectVs', 60);  //最多选择60场
+                this.C('maxSelectVs', 15);  //最多选择60场
             }
             this.lib.Choose(ini);
             this.lib.ToolSet();//用户工具初始化
             this.vs = this.lib.Vs();//对阵
             this.lib.Buy();//购买类
 			this.lib.Clock('#sysTime');
-			this.lib.ScrollStill();
+//			this.lib.ScrollStill();
             if (isgg) {
                 this.lib.GgType();//过关方式
                 this.C('_isgg', true, true);

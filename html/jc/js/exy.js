@@ -1596,7 +1596,7 @@ Class('ScrollStill', {
                 ini.focusCss = 'x_s';
             }
             if (isgg) {
-                this.C('maxSelectVs', 60);  //最多选择60场
+                this.C('maxSelectVs', 15);  //最多选择60场
             }
             this.lib.Choose(ini);
             this.lib.ToolSet();//用户工具初始化
