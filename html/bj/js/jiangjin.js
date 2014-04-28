@@ -88,7 +88,12 @@ Class( 'PrizePredict', {
 		for (var i=0; i<this.count; i++){
 			var oo = this.nb[i];
 			var end =this.get('#out_of_date_matches').val()
-			var o = this.data[oo.index-1];
+				var o = "";
+			this.data.each(function(d){
+				if(d.serialNumber==oo.index){
+					o=d;
+				}
+			})
 			var spHTML = '', a = [];
 			oo.arr.each( function(item) {
 				var sp_tmp = o.sp[this.getIndex(Class.config('codeValue'), item)];
