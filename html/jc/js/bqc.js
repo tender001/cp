@@ -1516,7 +1516,7 @@ Class('ScrollStill', {
     				end:function(data,i){
            			 var htid =1;
                         this.qXml('//row', data.xml, function (u, i){
-                       	 $("#mm"+u.items.xid).attr("href","http://info.159cai.com/league/index/"+u.items.lid);
+                       	 $("#mn"+u.items.xid).attr("href","http://info.159cai.com/league/index/"+u.items.lid);
                     	 Y.get("#hn"+u.items.xid).attr("href","http://info.159cai.com/team/index/"+u.items.htid);
                     	 	Y.get("#gn"+u.items.xid).attr("href","http://info.159cai.com/team/index/"+u.items.gtid);
                  	 	$("#ox"+u.items.xid).attr("href","http://odds.159cai.com/match/analysis/"+u.items.oddsmid+"?lotyid=6");
