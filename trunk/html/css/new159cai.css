@@ -270,11 +270,13 @@ p.fotpp{line-height:24px;text-align:center;padding:16px 0;color:#666;}
 .zc_da{padding-left:335px;padding-top:7px}
 .ov_main span b.cur{background-color:#006633}
 .breadcrumb p font{color:#ff6600}
-.news_left{width:645px;border:none;border-top:1px solid #ccc;}
-.news_left p{padding:0 20px 15px}
+.news_left{width:695px;border:1px solid #ccc;padding:10px 16px}
+.news_left p{padding:0 5px 15px;line-height:24px}
 .newsr{width:260px;float:right;}
-.news_left h2{border:none; background-color:none;border-top:2px solid #ff6600}
-.newsr1{border:1px solid #ccc;}
+.news_left h2{border:none; background:none;border-bottom:1px solid #ddd;height:30px;padding:0;width:440px}
+.news_left h2 a{color:#ff6600;font-weight:bold;height:30px;border-bottom:1px solid #ff6600;display:block;float:left;padding:0 4px}
+.newsr1{border:1px solid #ccc;margin-top:12px;clear:both}
+.fxgj{margin-top:12px}
 .newsr1 h2{height:26px;line-height:26px;padding-left:12px;background:url(../images/159/new_03.jpg);border-bottom:1px solid #ddd}
 .newsr1 h2 span{float:left;font-size:14px;color:#444;weight:bold;}
 .newsr1 h2 a{float:right;color:#444;float:right;margin-right:15px;font-size:12px;font-weight:100}
@@ -292,6 +294,7 @@ p.fotpp{line-height:24px;text-align:center;padding:16px 0;color:#666;}
 .news_l_list ul li a:hover{color:#ff6600}
 .all_kj_main{border:3px solid #e62e04;border-top:none}
 .kj_left_cm{border:1px solid #ddd;border-top:none}
+
 
 a.gofilter {
     background: url(../images/njc/jcy_38.jpg) repeat scroll -1px -1px ;
@@ -476,9 +479,9 @@ em.uf{ background-image:url(../images/159/uf.gif)}
 .pagination li strong{color:#ff6600}
 .nhmrtop{border-left:1px solid #ddd;border-right:1px solid #ddd;;margin-left:7px}
 .hm_right_t{height:auto;}
-.pagina{width:100%;}
 .hm_left_t2{background:url(../images/159/nhm_06.jpg)}
 .hm_left_tcur,.hm_left_t2:hover{background:url(../images/159/nhm_05.jpg) }
+.pagina{padding-top:10px}
 .pagina select{margin-top:0px;}
 .pagination span{line-height:18px;padding-left:0}
 .rig_hm_main table p.x_jdt em{background-color:#ff6600}
@@ -794,7 +797,7 @@ border-radius: 3px;-moz-border-radius:3px;}
 
 .paginachange {float: right;font-family: Tahoma;height: 34px;margin: 5px 0; width: auto;}
 .paginachange ul {height: auto;margin: 4px 10px 0 0;overflow: hidden;}
-.paginachange li {box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);float: left;height: 27px;}
+.paginachange li {box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);float: left;height: 27px;line-height:27px}
 .paginachange li a{display:block;padding:0 10px;color:#1e50a2;line-height:25px;border:1px solid #ddd;border-left:none}
 .paginachange .disabled span, .paginachange .disabled a, .paginachange .disabled a:hover {
     background-color: rgba(0, 0, 0, 0);
@@ -809,11 +812,13 @@ border-radius: 3px;-moz-border-radius:3px;}
 .paginachange li.PagedList-skipToFirst a {
     border-left: 1px solid #DDDDDD;
 }
-.paginachange a:hover, .paginachange .active a {
+.paginachange a:hover, .paginachange .active a,.paginachange .thisclass{
     background-color: #ECECEC;
     text-decoration: none;
 }
-
+.paginachange .thisclass{padding:0 10px;border:1px solid #ddd;height:25px}
+.pagina select{margin:1px 5px}
+.pagina strong{color:#ff0000}
 .paginachange .active a {
     color: #7C7C7C;
     cursor: default;
@@ -996,7 +1001,7 @@ table.co1 tbody td.last a.red_b{color:#fff;background:#ff6600;display:inline-blo
 .news_left h4 a.a1{color:#145fab;text-decoration:underline}
 .news_left p a.a1{color:#145fab;text-decoration:underline}
 .news_left  a.a1:hover{color:#ff6600}
-.newpag{padding:0 20px 10px;margin:0}
+.newpag{padding:0 20px 10px;margin:0;clear:both}
 .newpag li{display:block;float:left;width:250px;font-size:14px;color:#444;line-height:30px;height:30px}
 .newpag li a{color:#145fab;font-size:14px}
 .newpag li.li1{float:right;text-align:right}
@@ -1327,7 +1332,6 @@ a.jc_mtz:hover, a.jc_mhm:hover{background-position:-110px 0}
 .dc_ls_n p{padding:2px 0 2px 6px}
 .dc_ls_n p a{display:block;float:left;width:45px;height:20px;background:#ff6600;margin-left:4px;text-align:center;color:#fff;line-height:20px}
 .dc_ls_n p a:hover{color:#fff}
-.pagina{width:630px}
 .jckj_tb table.co1 thead td{background: none repeat scroll 0 0 #F5F5F5;border-bottom: 1px solid #CCCCCC;border-right: 1px solid #CCCCCC;height: 32px;}
 .jc_ds_col_1{background:#f5f5f5;border:1px solid #ddd;}
 .buyfimsg{border-left:1px solid #ddd;border-bottom:1px solid #ddd;}
@@ -1395,3 +1399,48 @@ a.jcq_kcur {
 .hhtdtk table span{display:block;float:left;width:64px;float:left;border-left:1px solid #ccc;color:#444;text-align:center;line-height:28px;height:28px}
 .dc_r_m{clear:both}
 .dc_table td{height:34px;line-height:34px}
+.news_left table td{height:35px;line-height:35px;}
+.news_left thead td,.news_left thead th{background:#f5f5f5;}
+.news_left table a:hover{color:#ff0000}
+.todaykj{width:195px;height:61px;background:url(../images/cai888/news_03.jpg);padding:12px 10px 10px 55px;}
+.todaykj p{line-height:20px;}
+.todaykj p a{color:#145fab;width:65px;float:left;display:block}
+.todaykj p a.a1{color:#ff6600}
+.todaykj p a:hover{text-decoration:underline}
+.sjdownload{border:1px solid #ddd;clear:both;margin-top:12px;zoom:1}
+.sjdownload h3{border-bottom:1px solid #ddd;height:30px;line-height:30px;padding-left:20px;font-weight:bold;font-size:12px;background:#ececec}
+.sjdownload p{background:url(../images/cai888/news_07.jpg) no-repeat 0 0 ;margin:10px;height:83px;padding-left:107px;padding-top:3px}
+.sjdownload p a{display:block;width:114px;height:34px;background:url(../images/cai888/news_10.jpg)}
+.sjdownload p a.a1{background:url(../images/cai888/news_13.jpg);margin-top:12px}
+.news_left h4{border-bottom:1px solid #e5e5e5;padding: 0;margin-bottom:15px}
+.news_left p.pbtp{text-indent:0;padding:0;float:left}
+.newpag{padding:0}
+.newpag ul{display:block;padding:0 20px;}
+.newpag li{line-height:32px;font-size:12px;}
+.newpag li a{font-size:12px}
+.newpag li a:hover{color:#ff0000;text-decoration:underline}
+.news_l_list{padding-left:15px;background: url(../images/cai888/news2_07.jpg) 502px 0px no-repeat}
+.news_l_list ul li{background: url(../images/cai888/news2_03.jpg) no-repeat scroll left center ;padding-left:15px}
+.news_l_list ul li a{color:#333}
+.news_l_list ul li span{color:#999;padding-left:10px;font-size:14px}
+.newsrc h3  a{float:left}
+.onlkjp{padding-top:5px}
+.onlkj{border:1px solid #ddd;clear:both;zoom:1}
+.onlkj h3{border-bottom:1px solid #ddd;height:32px;line-height:32px;padding-left:10px;font-weight:bold;font-size:12px;background:#ececec}
+.onlkj h3 span{float:left;font-size:14px}
+.onlkj h3 a{float:right;color:#145fab;margin-right:12px;font-weight:100;font-size:12px}
+.onlkj h3 a:hover{color:#ff0000}
+.onlkj p{padding:5px 0 0 12px;line-height:24px;color:#333;clear:both;height:24px}
+.onlkj p span{float:left}
+.onlkj select{border:1px solid #aaa;margin-right:2px}
+.onlkj p em{color:#ff0000;}
+.onlkj p b{display:block;float:left; background:url(../images/159/new_07.jpg);width:20px;height:20px;color:#fff;font-weight:bold;font-size:12px;line-height:20px;text-align:center;margin-right:2px}
+.onlkj p b.cur{background:url(../images/159/new_10.jpg)}
+.onlkj .jc_xqy{margin:0;width:238px;padding:10px 10px 20px}
+.onlkj .jc_xqy span{position:relative;float:left;height:72px;height:72px;left:0;top:0}
+.onlkj .jc_xqy div{float:left;padding-left:5px;line-height:24px;color:#333;font-size:12px;_padding-left:2px}
+.onlkj .jc_xqy div strong{font-weight:bold}
+.onlkj .jc_xqy div a{display:block;float:left;color:#fff;background:#ff6600;padding:0 7px;float:left;margin-right:10px;height:22px;line-height:22px}
+.onlkjplist{padding:7px 0 10px 10px}
+.onlkjplist a{line-height:24px;color:#333;background: url(../images/cai888/news2_03.jpg) left 10px no-repeat;display:block;height:24px;padding-left:13px}
+.onlkjplist a:hover{color:#ff6600;text-decoration:underline}
