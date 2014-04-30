@@ -899,9 +899,11 @@
 										this.get("#expect").val(expectlist[i][0]);
 									}
 									html = '<label for="exp' + expectlist[i][0] + '" value="' + expectlist[i][0] + '"><input type="radio" name="radio1" id="exp' + expectlist[i][0] + '"/>当前期(第' + expectlist[i][0] + '期)</label>';
-								} else {
+									} 
+								else {
 									html += '<label for="exp' + expectlist[i][0] + '" value="' + expectlist[i][0] + '"><input type="radio" name="radio1" id="exp' + expectlist[i][0] + '"/>预售期(第' + expectlist[i][0] + '期)</label>';
 								}
+								    html +='<p style="float:right;font-size:12px;padding-right:10px"><span> 单注最高奖金<em style="color:#E52E04;font-family: Arial;font-size:12px">5,000,000元</em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;单式截至:<s id="endTimeSpan">05-01 22:25</s>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;复式截至:<s id="fs_endTimeSpan">05-01 22:45</s></span><b style="z-index: 1;" data-help="单式方案包含：单式上传、在线过滤、奖金优化。" mark="pro_em"></b></p>'
 							}		
 						}	
 						var find = false;

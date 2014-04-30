@@ -1301,6 +1301,9 @@ a.jc_mtz:hover, a.jc_mhm:hover{background-position:-110px 0}
 .tzsontab p{float:right;margin-right:20px;line-height:26px;color:#333}
 .tzsontab p em{color:#e52e04;font-weight:bold;font-family:Arial;margin:0 2px}
 .tzsontab p b{background:url("/images/cai888/jctop_06.jpg") 0 0 ;height:15px;width:15px;cursor:pointer;display:block;float:left;margin:5px 0 0 3px}
+.jckj_tb p span{float:left}
+.jckj_tb p b{background:url("/images/cai888/jctop_06.jpg") 0 0 ;height:15px;width:15px;cursor:pointer;display:block;float:left;margin:5px 0 0 3px}
+.jckj_tb label{float:left}
 .matchxzk{ cursor: pointer;height: 32px;line-height: 30px;position: relative;z-index: 2;overflow:visible}
 .matchxz{float:left;width:100%}
 .matchxz i{background:url("/images/cai888/jtdown_11.jpg") 0 0;transition: all 0.2s ease-in 0s;height: 4px;margin-left: 5px;vertical-align: middle;width: 7px;display:inline-block}
@@ -1445,3 +1448,4 @@ a.jcq_kcur {
 .onlkjplist a{line-height:24px;color:#333;background: url(../images/cai888/news2_03.jpg) left 10px no-repeat;display:block;height:24px;padding-left:13px}
 .onlkjplist a:hover{color:#ff6600;text-decoration:underline}
 .dc_table td label{}
+.dc_r{background:#fff}
