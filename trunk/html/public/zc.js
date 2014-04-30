@@ -1083,7 +1083,7 @@
 												+ '<td class="btn_a">1</td>'
 												+ '<td class="btn_a">0</td>'
 												+'<td><a href="javascript:void(0);" class="jcq_q">全</a></td>'
-												+ '<td colspan=3 ><div class="pjpl" id="odds'+mid+'" ><span class="sp_w35 eng" id="oh'+mid+'">'+b3+'</span><span class="sp_w35 eng" id="od'+mid+'">'+b1+'</span><span class="sp_w35 eng" id="oa'+mid+'">'+b0+'</span></div></td>'
+												+ '<td><div class="pjpl" id="odds'+mid+'" ><span class="sp_w35 eng" id="oh'+mid+'">'+b3+'</span><span class="sp_w35 eng" id="od'+mid+'">'+b1+'</span><span class="sp_w35 eng" id="oa'+mid+'">'+b0+'</span></div></td>'
 												+ '<td><a href="" target="_blank" id="ox'+mid+'" class="mtc_name">析</a> <a href="" target="_blank" id="oy'+mid+'" class="mtc_name">亚</a> '
 												+ '<a href="" target="_blank" id="oz'+mid+'" class="mtc_name">欧</a></td>'
 												+ '</tr>';
