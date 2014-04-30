@@ -245,14 +245,14 @@
             });
             Y.get('#vsTable tr[mid]').hover(function (e, Y){//鼠标滑入滑出效果
                
-                this.childNodes[0].style.backgroundColor = '#FEE6AD';
-                this.childNodes[2].style.backgroundColor = '#FEE6AD';
+                this.childNodes[0].style.backgroundColor = '#FEFECB';
+                this.childNodes[2].style.backgroundColor = '#FEFECB';
                 this.childNodes[3].className=this.childNodes[3].childNodes[0].childNodes[0].checked==true?"h_br label_cd":"h_br h_brx";
                
                 this.childNodes[4].className=this.childNodes[4].childNodes[0].childNodes[0].checked==true?"h_br label_cd":"h_br h_brx";
-                this.childNodes[5].style.backgroundColor = '#FEE6AD';
-                this.childNodes[6].style.backgroundColor = '#FEE6AD';
-                this.childNodes[7].style.backgroundColor = '#FEE6AD';
+                this.childNodes[5].style.backgroundColor = '#FEFECB';
+                this.childNodes[6].style.backgroundColor = '#FEFECB';
+                this.childNodes[7].style.backgroundColor = '#FEFECB';
                 
             }, function (e, Y){
             	this.childNodes[0].style.backgroundColor = '';
@@ -882,17 +882,17 @@
 		           '<div class=dc_hs style="text-align: left; padding-left: 10px;"><strong>{$enddate} {$weekday} </strong>[12:00 -- 次日 12:00] <b><span id=num{$num} class="red">num{$num}</span>场比赛可投注</b> <a href="javascript:void 0">隐藏<s class=c_up></s></a> </div>',//1按天分类
 		           '<table id=d_{$enddate} class=dc_table border=0 cellspacing=0 cellpadding=0 width="100%" onselectstart="return false">'+
 		           '<colgroup>'+
-		           '<col width="9%"><col width="8%"><col width="8%"><col width="24%"><col width="24%"><col width="4%"><col width="15%">'+
-		           '<col width="8%">'+
+		           '<col width="45"><col width="64"><col width="64"><col width="178"><col width="178"><col width="32"><col width="113">'+
+		           '<col width="">'+
 		           '</colgroup>',//table
 		           '<tbody>'+
 		           '<tr class="{$classname}" style="display: none" lg="{$mname}" isend="1" lost="{$sp0}" draw="{$sp1}" win="{$sp3}" pendtime="{$enddate}" rq="{$close}" pdate="{$itemid}" pname="{$itemid}" mid="{$mid}" zid="{$itemid}" title="已截止场次">'+
 		           '<td style="cursor: pointer"><label for=m{$itemid}><input id=m{$itemid} value={$itemid}  checked type=checkbox name=m{$itemid}>{$name}</label></td>'+
-		           '<td style="background:{$cl}; color: #fff" class=league><a title="{$lmname}" href="" target="_blank" id="mn{$itemid}" style="color: #fff">{$mname}</a></td>'+
+		           '<td style="background:{$cl}; color: #fff;border-right:1px solid #fff" class=league><a title="{$lmname}" href="" target="_blank" id="mn{$itemid}" style="color: #fff">{$mname}</a></td>'+
 		           '<td><span class="eng end_time" title="开赛时间：{$mt}">{$short_et}</span><span style="display: none" class="eng match_time" title="截止时间：{$et}">{$short_mt}</span></td>'+
-		           '<td style="text-align: right; padding-right: 10px;" class=h_br><div class="dz_dv" title={$hn}><s class="s_left">&nbsp;</s><span class="eng b span_left"><em class="em_left" id="htid_{$itemid}">{$hn}</em><b class="b_left"> {$sp3}</b></span></div></td>'+
+		           '<td style="text-align: right;boredr-left:1px solid #ddd " class=h_br><div class="dz_dv" title={$hn}><s class="s_left">&nbsp;</s><span class="eng b span_left"><em class="em_left" id="htid_{$itemid}">{$hn}</em><b class="b_left"> {$sp3}</b></span></div></td>'+
 //		           '<td style="text-align: center;" class=h_br><span class="eng b">{$sp1}</span></td>'+
-		           '<td style="text-align: left; padding-left: 10px;" class=h_br><div class="dz_dv" title={$gn}><span class="eng b span_left"><b class="b_left">{$sp0}<b> <em class="em_left" id="gtid_{$itemid}">{$gn}</em></span><s class="s_right"></s></div></td><td></td>'+
+		           '<td style="text-align: left; " class=h_br><div class="dz_dv" title={$gn}><span class="eng b span_left"><b class="b_left">{$sp0}<b> <em class="em_left" id="gtid_{$itemid}">{$gn}</em></span><s class="s_right"></s></div></td><td></td>'+
 		           '<td>'+
 		           '<div class=pjpl id="odds{$itemid}"><span class="sp_value eng red">已截止场次</span></div>'+
 		           '<div style="display: none" class=tzbl><span class="sp_w35 eng">12%</span><span class="sp_w35 eng">23%</span><span class="sp_w35 eng">65%</span></div></td>'+
@@ -902,11 +902,11 @@
 		           '<tbody>'+
 		           '<tr class="{$classname}" lg="{$mname}" isend="0"  sp0="{$sp0}" sp3="{$sp3}" rsp0="{$rsp0}" rsp3="{$rsp3}" pendtime="{$enddate}" rq="{$close}" pdate="{$itemid}" pname="{$itemid}" mid="{$mid}" zid="{$itemid}">'+
 		           '<td style="cursor: pointer"><label for=m{$itemid}><input id=m{$itemid} value={$itemid}  checked type=checkbox name=m{$itemid}>{$name}</label></td>'+
-		           '<td style="background:{$cl}; color: #fff" class=league><a title="{$lmname}" href="" target="_blank" id="mn{$itemid}" style="color: #fff">{$mname}</a></td>'+
+		           '<td style="background:{$cl}; color: #fff;border-right:1px solid #fff" class=league><a title="{$lmname}" href="" target="_blank" id="mn{$itemid}" style="color: #fff">{$mname}</a></td>'+
 		           '<td><span class="eng end_time" title="开赛时间：{$mt}">{$short_et}</span><span style="display: none" class="eng match_time" title="截止时间：{$et}">{$short_mt}</span></td>'+
-		           '<td style="text-align: right; padding-right: 10px; cursor: pointer" class=h_br ><div class="dz_dv" title={$hn}><input class=chbox value={$leftvalue} data-type={$lefttype} type=checkbox style="display: none"><s class="s_left">&nbsp;</s><span class="eng b span_left"><em id="htid_{$itemid}" class="em_left">{$hn}</em> {$leftstr}</span></div></td>'+
+		           '<td style="text-align: right;  cursor: pointer;border-left:1px solid #ddd" class=h_br ><div class="dz_dv" title={$hn}><input class=chbox value={$leftvalue} data-type={$lefttype} type=checkbox style="display: none"><s class="s_left">&nbsp;</s><span class="eng b span_left"><em id="htid_{$itemid}" class="em_left">{$hn}</em> {$leftstr}</span></div></td>'+
 //		           '<td style="text-align: center; cursor: pointer" class=h_br><input class=chbox value=1 type=checkbox style="display: none" ><span class="eng b" >{$sp1}</span></td>'+
-		           '<td style="text-align: left; padding-left: 10px; cursor: pointer" class=h_br ><div class="dz_dv" title={$gn}><input class=chbox value={$rightvalue} data-type={$righttype} type=checkbox style="display: none"><span class="eng b span_right">{$rightsp} <em id="gtid_{$itemid}" class="em_right" >{$gn}</em>{$rightstr}</span><s class="s_right">&nbsp;</s></div></td><td style="cursor: pointer;border-right:1px solid #ddd"><a href="javascript:void(0);" class="jcq_q">全</a><input style="display: none" type="checkbox" all="0" value = "all"/></td>'+
+		           '<td style="text-align: left;  cursor: pointer" class=h_br ><div class="dz_dv" title={$gn}><input class=chbox value={$rightvalue} data-type={$righttype} type=checkbox style="display: none"><span class="eng b span_right" style="padding-left:5px">{$rightsp} <em id="gtid_{$itemid}" class="em_right" >{$gn}</em>{$rightstr}</span><s class="s_right">&nbsp;</s></div></td><td style="cursor: pointer;border-right:1px solid #ddd"><a href="javascript:void(0);" class="jcq_q">全</a><input style="display: none" type="checkbox" all="0" value = "all"/></td>'+
 		           '<td>'+
 		           '<div class=pjpl id="odds{$itemid}"><span class="sp_w35 eng" id="oh{$itemid}">{$b3}</span><span class="sp_w35 eng" id="od{$itemid}">{$b1}</span><span class="sp_w35 eng" id="oa{$itemid}">{$b0}</span></div>'+
 		           '<div style="display: none" class=tzbl><span class="sp_w35 eng">12%</span><span class="sp_w35 eng">23%</span><span class="sp_w35 eng">65%</span></div></td>'+

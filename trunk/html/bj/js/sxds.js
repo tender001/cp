@@ -1394,7 +1394,7 @@ Class('LoadExpect',{
 	       '<td style="text-align: left; ">'+
 	       '<a title="{$gn}"  href="" target="_blank" id="gn{$mid}"><em id="gtid{$mid}" class="ew_e">{$short_gn}</em></a>'+	       
 	       '</td>'+
-	       '<td style="CURSOR: pointer;border-left:1px solid #62A3D0;" class="h_br">'+
+	       '<td style="CURSOR: pointer;border-left:1px solid #ddd;" class="h_br">'+
 	       '<label class="label_br">'+
 	       '<input type="checkbox" class="chbox" value="上+单" onclick="return false" {$disabled}  style="display: none"/>'+
 	       '{$sxp0str}'+

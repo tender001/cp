@@ -818,7 +818,7 @@
 	             '<TD rowSpan=2><SPAN class="eng end_time" title="开赛时间：{$mt}">{$short_et}</SPAN><SPAN style="display:none" class="eng match_time" title="截止时间：{$et}">{$short_mt}</SPAN> </TD>'+
 	             '<TD style="border-left:1px solid #ddd"><A title={$gn} href="" target="_blank" id="gn{$itemid}">{$gn}</A></TD>'+
 	             '<TD style="color:blue;border-left:1px solid #ddd">客胜</TD>'+
-	             '<TD style="CURSOR: pointer;border-left:1px solid #62A3D0" class=h_br><INPUT style="display: none" value=11 type=checkbox><SPAN>{$sp11}</SPAN></TD>'+
+	             '<TD style="CURSOR: pointer;border-left:1px solid #ddd" class=h_br><INPUT style="display: none" value=11 type=checkbox><SPAN>{$sp11}</SPAN></TD>'+
 	             '<TD style="CURSOR: pointer" class=h_br><INPUT style="display: none" value=12 type=checkbox><SPAN>{$sp12}</SPAN></TD>'+
 	             '<TD style="CURSOR: pointer" class=h_br><INPUT style="display: none" value=13 type=checkbox><SPAN>{$sp13}</SPAN></TD>'+
 	             '<TD style="CURSOR: pointer" class=h_br><INPUT style="display: none" value=14 type=checkbox><SPAN>{$sp14}</SPAN></TD>'+

@@ -212,12 +212,12 @@
                 }
             });
             Y.get('#vsTable tr[mid]').hover(function (e, Y){//鼠标滑入滑出效果
-            	this.children[0].style.backgroundColor = '#fee6ad';
-    			this.children[2].style.backgroundColor = '#fee6ad';
-    			this.children[3].style.backgroundColor = '#fee6ad';
-    			this.children[4].style.backgroundColor = '#fee6ad';
-    			this.children[5].style.backgroundColor = '#fee6ad';
-    			this.children[15].style.backgroundColor = '#fee6ad';
+            	this.children[0].style.backgroundColor = '#FEFECB';
+    			this.children[2].style.backgroundColor = '#FEFECB';
+    			this.children[3].style.backgroundColor = '#FEFECB';
+    			this.children[4].style.backgroundColor = '#FEFECB';
+    			this.children[5].style.backgroundColor = '#FEFECB';
+    			this.children[15].style.backgroundColor = '#FEFECB';
             	Y.get(this).find(".h_br").addClass("h_brx");
    	             Y.get(this).find("td").addClass("h_bry");
    	           	 Y.get(this).find(".label_cd").removeClass("h_brx");
@@ -867,7 +867,7 @@
               '<TD style="text-align: right; padding-right:2px;"><A title={$lhn} href="" target="_blank" id="hn{$itemid}"><em id="htid{$itemid}" class="ew_e ew_eright">{$hn}</em></A></TD>'+
               '<TD style="text-align: center;">VS</TD>'+
               '<TD style="text-align: left; padding-left:2px;"><A title={$lgn} href="" target="_blank" id="gn{$itemid}"><em id="gtid{$itemid}" class="ew_e">{$gn}</em></A></TD>'+
-              '<TD style="CURSOR: pointer;border-left:1px solid #62A3D0" class=h_br  ><DIV class=label_br><INPUT class=chbox value=33 type=checkbox style="display: none"><SPAN class=eng>{$sp0}</SPAN></DIV></TD>'+
+              '<TD style="CURSOR: pointer;border-left:1px solid #ddd" class=h_br  ><DIV class=label_br><INPUT class=chbox value=33 type=checkbox style="display: none"><SPAN class=eng>{$sp0}</SPAN></DIV></TD>'+
               '<TD style="CURSOR: pointer" class=h_br ><DIV class=label_br><INPUT class=chbox value=31 type=checkbox style="display: none"><SPAN class=eng>{$sp1}</SPAN></DIV></TD>'+
               '<TD style="CURSOR: pointer" class=h_br ><DIV class=label_br><INPUT class=chbox value=30 type=checkbox style="display: none"><SPAN class=eng>{$sp2}</SPAN></DIV></TD>'+
               '<TD style="CURSOR: pointer" class=h_br ><DIV class=label_br><INPUT class=chbox value=13 type=checkbox style="display: none"><SPAN class=eng>{$sp3}</SPAN></DIV></TD>'+
