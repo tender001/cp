@@ -90,63 +90,90 @@
 <table width="100%" border="0" class="co1" cellpadding="0" cellspacing="0">
 <tr><td class="last">您选了：<font id="zsSpan">0</font>注，<input type="text"  value="1" id="bsInput"/> 倍，金额：<font id="moneySpan">0</font>元</td></tr>
 </table>
-<div class="b_th_top" style="width:950px" id="b_form"><span>购买方式</span><b class="cur"><label for="dg"><input type="radio" name="radio_r" id="dg" value="0" checked="checked"/>代购</label></b><b><label for="hm"><input type="radio" name="radio_r" id="hm" value="1"/>发起合买</label></b></div>
-<div style="width:100%;display:;" id="dgdiv">
-<div class="b_th_co2" style="width:100%">
- <table width="760" border="0" class="col_2" style="margin-left:130px">
-  <tr>
-    <th>投注信息</th>
-    <td>总金额<font id="buyMoneySpan">0</font>元</td>
-  </tr>
-</table>
-</div>
-<a class="d_c_p" href="javascript:void(0);" id="buy_dg">立即投注</a>
-</div>
-<div style="width:100%;display:none;" id="hmdiv">
-<div class="b_th_co2" style="width:100%">
- <table width="760" border="0" class="col_2" style="margin-left:130px">
-  <tr>
-    <th>方案信息</th>
-    <td>总金额<font id="buyMoneySpan2">0</font>元</td>
-  </tr>
-  <tr>
-    <th>我要分成</th>
-    <td><p>每份<font id="fsMoney">1</font>元，共<font id="fsInput">0</font>份</p><font id="rgErr" style="display: none">至少需要认购1份</font></td>
-  </tr>
-  <tr>
-    <th>我要认购</th>
-    <td><input type="text" class="text" id="rgInput" value="1"/>份，<font id="rgMoney">0</font>元，约<font id="rgScale">0.00%</font><font id="rgErr" style="display:none">至少需要认购3份</font></td>
-  </tr>
-  <tr>
-    <th></th>
-    <td><input type="checkbox" name="isbaodi" id="isbaodi" />我要保底 <input type="text" class="text" value="0" disabled="disabled" id="bdInput"/>份，<font id="bdMoney">0</font>元，约<font id="bdScale">0.00%</font><font id="bdErr" style="display:none">最低保底20%</font></td>
-  </tr>
-  <tr>
-    <th>提成比例</th>
-    <td id="tc"><b class="first" value="0">无</b><b value="1">1%</b><b class="cur" value="2">2%</b><b value="3">3%</b><b value="4">4%</b><b value="5">5%</b><b value="6">6%</b><b value="7">7%</b><b value="8">8%</b><b value="9">9%</b><b value="10">10%</b></td>
-  </tr>
-  <tr>
-    <th>保密设置</th>
-    <td id="gkfs"><em value="0">完全公开</em><em class="cur" value="1">截止后公开</em><em value="2">仅对跟单者公开</em><em value="3">截止后对跟单者公开</em></td>
-  </tr>
-  <tr>
-    <th>可选选项</th>
-    <td><input type="checkbox"  class="box"  id="moreCheckbox"/>方案宣传选填信息</td>
-  </tr>
-</table>
-<div class="conduct_msg" style="padding-left:160px;display:none" id="case_ad">
-<span class="fa">方案标题</span><input type="text" class="bt"  id="caseTitle" value="六场半全复式合买，欢迎跟单。"/><span class="fa_play">最多可输入<font>20</font>个字符。</span>
-<span class="fa" style="clear:both">方案描述</span><textarea id="caseInfo">说点什么吧，让您的方案被彩民认可．．．</textarea><span class="fa_play">最多可输入<font>200</font>个字符。</span>
-</div>
-</div>
-<a class="d_c_b" href="javascript:void(0);" id="buy_hm">发起合买</a>
-</div>
-<p class="xytk" id="userMoneyInfo">
-您尚未登录，请先<a href="javascript:void 0" onclick="Yobj.postMsg('msg_login')">登录</a>!
-</p>
-<p class="xytk">
-<input type="checkbox" checked="checked" id="agreement">我已阅读并同意《<a href="/help/helpxy.html" target="_blank">用户合买代购协议</a>》
-</p>
+	<div class="b_th_top" style="width: 950px" id="b_form">
+				<span>购买方式</span><b class="cur"><label for="dg"><input type="radio" name="radio_r" id="dg" value="0" checked="checked" />代购</label></b><b><label
+					for="hm"><input type="radio" name="radio_r" id="hm" value="1" />发起合买</label></b>
+			</div>
+			<div style="width: 100%; display:;" id="dgdiv">
+				<div class="b_th_co2" style="width: 100%">
+					<table width="760" border="0" class="col_2" style="margin-left: 130px">
+						<tr>
+							<th>投注信息</th>
+							<td>总金额<font id="buyMoneySpan">0</font>元
+							</td>
+						</tr>
+					</table>
+				</div>
+				<a class="d_c_b" href="javascript:void(0);" id="buy_dg">立即投注</a>
+				<p class="xytk">
+					<input type="checkbox" id="agreement" checked="checked">我已阅读并同意《<a target="_blank" href="/help/helpxy.html">用户合买代购协议</a>》 
+				</p>
+			</div>
+			<div style="width: 100%; display: none;" id="hmdiv">
+				<div class="b_th_co2 buyfimsg" style="width: 100%">
+					<table width="100%" border="0" cellspacing="0" cellpadding="0">
+						<colgroup>
+							<col width="110">
+								<col width="">
+						</colgroup>
+						<tbody>
+							<tr>
+								<td class="td1">方案金额</td>
+								<td>总金额<font id="buyMoneySpan2"></font>元</span>&nbsp;&nbsp;&nbsp;每份<font id="fsMoney">1</font>元，共<font id="fsInput"></font>份
+								</td>
+							</tr>
+							<tr>
+								<td class="td1">我要认购</td>
+								<td><p class="p2" id="userMoneyInfo">
+										您尚未登录，请先<a onclick="Yobj.postMsg('msg_login')">登录</a>-!
+									</p> <input type="text" class="text" id="rgInput" maxlength="6">份，<font id="rgMoney">￥0.00</font>元，约<font id="rgScale">0.00%</font><font
+										id="rgErr" style="display: none">您需认购<span>x</span>份~<span>x</span>份
+									</font></td>
+							</tr>
+							<tr>
+								<td class="td1">方案保底</td>
+								<td><input type="checkbox" class="box" id="isbaodi">我要保底 <input type="text" class="text" value="1" id="bdInput"
+										disabled="" maxlength="6">份，<font id="bdMoney">0</font>元，约<font id="bdScale">10%</font><font id="bdErr"
+											style="display: none">！最低保底5%</font></td>
+							</tr>
+							<tr>
+								<td class="td1">提成比例</td>
+								<td id="tc"><b class="first" value="0">无</b><b value="1">1%</b><b class="cur" value="2">2%</b><b value="3">3%</b><b value="4">4%</b><b
+									value="5">5%</b><b value="6">6%</b><b value="7">7%</b><b value="8">8%</b><b value="9">9%</b><b value="10">10%</b></td>
+							</tr>
+							<tr>
+								<td class="td1">保密设置</td>
+								<td id="gkfs"><em value="0">完全公开</em><em class="cur" value="1">截止后公开</em><em value="2">仅对跟单者公开</em><em value="3">截止后对跟单者公开</em></td>
+							</tr>
+							<tr>
+								<td class="td1">方案宣传</td>
+								<td><input type="checkbox" class="box" id="moreCheckbox">方案宣传选填信息</td>
+							</tr>
+						</tbody>
+						<tbody id="case_ad" style="display: none;">
+
+							<tr>
+								<td class="td1">方案标题</td>
+								<td><input type="text" maxlength="20" value="半全场复式合买，欢迎跟单。" class="bt" id="caseTitle"><span class="fa_play">已输入<font
+										id="title_word_count">0</font>个字符。
+								</span></td>
+							</tr>
+							<tr>
+								<td class="td1">方案描述</td>
+								<td><textarea id="caseInfo" default="随缘,买彩票讲的是运气、缘分和坚持。">随缘！买彩票讲的是运气、缘分和坚持。</textarea><span class="fa_play">已输入<font
+										id="content_word_count">0</font>个字符。
+								</span></td>
+							</tr>
+
+
+						</tbody>
+					</table>
+				</div>
+				<a class="d_c_b" href="javascript:void(0);" id="buy_hm">发起合买</a>
+				<p class="xytk">
+					<input type="checkbox" id="agreement" checked="checked">我已阅读并同意《<a target="_blank" href="/help/helpxy.html">用户合买代购协议</a>》 
+				</p>
+			</div>
 </div>
 </div>
 <!--配置信息-->
