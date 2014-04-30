@@ -1318,7 +1318,7 @@ a.jc_mtz:hover, a.jc_mhm:hover{background-position:-110px 0}
 .tdaa a.a1{background: url(/images/cai888/ban2.jpg) 100% bottom no-repeat;}
 .tdaa a.a2,.tdaa a.a2:hover{background:url(../images/cai888/ban4.jpg) 0 0 no-repeat;cursor:pointer}
 .tdaa a:hover{color:#333}
-.unselect{background:#EBF5FF;display:block;height:68px;width:60px;display:block;line-height:68px;color:#444}
+.unselect a{background:#EBF5FF;display:block;height:68px;width:60px;display:block;line-height:68px;color:#444}
 .tdaa a em{color: #1F5BA9;display: block;line-height: 16px;text-align: center;}
 .tdaa a i{ color: #999999;display: block;line-height: 16px;text-align: center;}
 .hhtdtk{padding:5px}
@@ -1329,7 +1329,7 @@ a.jc_mtz:hover, a.jc_mhm:hover{background-position:-110px 0}
 .unselect{cursor:pointer;}
 .unselect font{color:#ff0000;font-weight:100;font-size:12px}
 .unselectcur{background:#fffeed}
-dc_table a.unselect:hover{color:#ff0000}
+.dc_table .unselect a:hover{color:#ff0000}
 .dc_ls_n ul.clearfix li{width:95px;text-align:left;padding-left:10px}
 .dc_ls_n ul.clearfix li input{margin-right:2px}
 .dc_ls_n h3{line-height:24px;color:#333;padding-left:10px;font-weight:100;text-align:left;padding-top:5px;font-size:12px;font-weight:bold;clear:both}
