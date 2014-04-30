@@ -1329,7 +1329,7 @@ a.jc_mtz:hover, a.jc_mhm:hover{background-position:-110px 0}
 .unselect{cursor:pointer;}
 .unselect font{color:#ff0000;font-weight:100;font-size:12px}
 .unselectcur{background:#fffeed}
-.dc_table .unselect a:hover{color:#ff0000}
+.dc_table .unselect a:hover{color:#ff6600}
 .dc_ls_n ul.clearfix li{width:95px;text-align:left;padding-left:10px}
 .dc_ls_n ul.clearfix li input{margin-right:2px}
 .dc_ls_n h3{line-height:24px;color:#333;padding-left:10px;font-weight:100;text-align:left;padding-top:5px;font-size:12px;font-weight:bold;clear:both}
