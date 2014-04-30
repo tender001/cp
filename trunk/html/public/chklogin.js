@@ -310,8 +310,8 @@ Class('Loginer', {// 登陆器
 		                     this.get('#money').html(parseFloat(r.usermoeny).rmb());// 下拉菜单中
 		                     this.get(".c_username").html(r.nickid);//用户中心
 		                     this.get("#zhanghu").html(parseFloat(r.usermoeny).rmb());//首页
-                             showText = '<span>“'+r.nickid+// 购买表单中
-	                         '”</span>，您的账户余额为<strong class="red eng">'+(parseFloat(r.usermoeny)||0).rmb()+'</strong>元【<b class="i-jb"></b><a href="'+$_user.daohang.addmoney+'" target="_blank">账户充值</a>】';
+                             showText = '<a target="_blank" href="/account/myaccount.html">'+r.nickid+// 购买表单中
+	                         '</a>，您的账户余额为<strong class="red eng">'+(parseFloat(r.usermoeny)||0).rmb()+'</strong>元【<a href="'+$_user.daohang.addmoney+'" target="_blank">账户充值</a>】';
 //                             <p class="p1"><a style="font-size:16px" href="#">战神120</a>，<br>账户余额<em>4.14</em>元，   <a href="#">充值</a></p>
                              cpshowText ='<a style="font-size:16px" href="/account/myaccount.html" target="_blank">'+r.nickid+'</a>，<br>账户余额<em>'+(parseFloat(r.usermoeny)||0).rmb()+'</em>元，<a href="'+$_user.daohang.addmoney+'" target="_blank">充值</a>';
                              if(this.get('#top_username').html()!=""){ 
