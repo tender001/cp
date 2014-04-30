@@ -1190,19 +1190,16 @@
 					url:ourl,
 	        		end:function(data,i){
 	        			 var htid =1;
-	                     this.qXml('//row', data.xml, function (u, i){
+	        			 this.qXml('//row', data.xml, function (u, i){
 	                    	 if(Class.C('lot_gid')==3){//半全场
 	                    		 htid=(u.items.xid)/2;
 	                    		 $("#mn"+htid).attr("href","http://info.159cai.com/index.php?controller=main&lid="+u.items.lid+"&sid="+u.items.sid+"&cid="+u.items.cid+"&t=2");
-//	                    		 if((u.items.xid)%2==0){
-	                    			
-//	                    			 $("#mn"+htid).attr("href","http://info.159cai.com/index.php?controller=main&lid="+u.items.lid+"&sid="+u.items.sid+"&cid="+u.items.cid+"&t=1");
-	                    			 $("#hteam"+htid).attr("href","http://info.159cai.com/index.php?controller=teaminfo&lid="+u.items.lid+"&sid="+u.items.sid+"&tid="+u.items.htid);
-	 	            				 $("#vteam"+htid).attr("href","http://info.159cai.com/index.php?controller=teaminfo&lid="+u.items.lid+"&sid="+u.items.sid+"&tid="+u.items.gtid);
-	 	            				 $("#ox"+htid).attr("href","http://info.159cai.com/index.php?controller=analysis&action=index&mid="+u.items.oddsmid+"&sit=4");
-	 	            				 $("#oz"+htid).attr("href","http://odds.159cai.com/index.php?controller=detail&action=index&mid="+u.items.oddsmid+"&sit=1");
-	 	            				 $("#oy"+htid).attr("href","http://odds.159cai.com/index.php?controller=detail&action=index&mid="+u.items.oddsmid+"&sit=2");
-//	                    		 }
+	 	            				$("#mn"+htid).attr("href","http://info.159cai.com/league/index/"+u.items.lid);
+		             				$("#hteam"+htid).attr("href","http://info.159cai.com/team/index/"+u.items.htid);
+		                        	$("#vteam"+htid).attr("href","http://info.159cai.com/team/index/"+u.items.gtid);
+	 	            				 $("#ox"+htid).attr("href","http://odds.159cai.com/match/analysis/"+u.items.oddsmid+"?lotyid=1");
+	 	            				 $("#oz"+htid).attr("href","http://odds.159cai.com/match/odds/"+u.items.oddsmid+"?lotyid=1");
+	 	            				 $("#oy"+htid).attr("href","http://odds.159cai.com/match/asia/"+u.items.oddsmid+"?lotyid=1");
 	 	            				var hm=isNaN(u.items.hm)||u.items.hm==""?"":u.items.hm<10?'0'+u.items.hm:u.items.hm;
 		            				var am=isNaN(u.items.am)||u.items.hm==""?"":u.items.am<10?'0'+u.items.am:u.items.am;
 		            				$("#htid"+u.items.xid).attr("data",u.items.htid).parent().next().html(hm==""?"":'['+hm+']');
@@ -1215,12 +1212,14 @@
 	            				 if($("#b1"+u.items.xid).html()=="0.00"){$("#b1"+u.items.xid).html(parseFloat(u.items.od).rmb(false,2));}
 	            				 if($("#b0"+u.items.xid).html()=="0.00"){$("#b0"+u.items.xid).html(parseFloat(u.items.oa).rmb(false,2));}
 	             			 }else{
-	             				 $("#mn"+u.items.xid).attr("href","http://info.159cai.com/index.php?controller=main&lid="+u.items.lid+"&sid="+u.items.sid+"&cid="+u.items.cid+"&t=2");
-	             				 $("#hteam"+u.items.xid).attr("href","http://info.159cai.com/index.php?controller=teaminfo&lid="+u.items.lid+"&sid="+u.items.sid+"&tid="+u.items.htid);
-	            				$("#vteam"+u.items.xid).attr("href","http://info.159cai.com/index.php?controller=teaminfo&lid="+u.items.lid+"&sid="+u.items.sid+"&tid="+u.items.gtid);
-	            				$("#ox"+u.items.xid).attr("href","http://info.159cai.com/index.php?controller=analysis&action=index&mid="+u.items.oddsmid+"&sit=4");
-	            				$("#oz"+u.items.xid).attr("href","http://odds.159cai.com/index.php?controller=detail&action=index&mid="+u.items.oddsmid+"&sit=1");
-	            				$("#oy"+u.items.xid).attr("href","http://odds.159cai.com/index.php?controller=detail&action=index&mid="+u.items.oddsmid+"&sit=2");
+	             			
+	            				
+	            				$("#mn"+u.items.xid).attr("href","http://info.159cai.com/league/index/"+u.items.lid);
+	             				$("#hteam"+u.items.xid).attr("href","http://info.159cai.com/team/index/"+u.items.htid);
+	                        	$("#vteam"+u.items.xid).attr("href","http://info.159cai.com/team/index/"+u.items.gtid);
+ 	            				 $("#ox"+u.items.xid).attr("href","http://odds.159cai.com/match/analysis/"+u.items.oddsmid+"?lotyid=1");
+ 	            				 $("#oz"+u.items.xid).attr("href","http://odds.159cai.com/match/odds/"+u.items.oddsmid+"?lotyid=1");
+ 	            				 $("#oy"+u.items.xid).attr("href","http://odds.159cai.com/match/asia/"+u.items.oddsmid+"?lotyid=1");
 	            				//if(Class.C('lot_gid')==1){
 	            				//if($("#oh"+u.items.xid).html()=="--"){$("#b3"+u.items.xid).html(u.items.oh==""?"--":parseFloat(u.items.oh).rmb(false,2));}
 	            				//if($("#od"+u.items.xid).html()=="--"){$("#b1"+u.items.xid).html(u.items.od==""?"--":parseFloat(u.items.od).rmb(false,2));}
