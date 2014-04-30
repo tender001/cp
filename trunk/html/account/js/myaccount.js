@@ -229,6 +229,7 @@ var showtouzhu = function(stime, etime, gid,qtype, pn, ps, tp, tr){  // 页码 �
 						if(gid<10){gid="0"+parseInt(gid);}
 						var cl=o%2==0?"":"odd"
 							html += "<tr class="+cl+">";
+						html += "<td>"+projid+"</td>";
 						html += "<td>"+$_sys.getlotname(gid)+"</td>";
 						html += "<td>"+pid+"</td>";
 						html += "<td><span>"+ parseFloat(money).rmb()+ "</span></td>";
