@@ -156,6 +156,7 @@ Class({
 							var cl=o%2==0?"":"odd"
 								html += "<tr class="+cl+">";
 								/*html +="<td>"+(lx++)+"</td>";*/
+							html +="<td>"+projid+"</td>";
 								html +="<td>"+$_sys.getlotname(gid)+"</td>";
 								html +="<td>"+pid+"</td>";
 								html +="<td><span>"+parseFloat(money).rmb()+"</span></td>";
@@ -181,7 +182,7 @@ Class({
 								} else {
 									html +=" <td>-</td>";
 								}
-								html +="<td>" + buydate + "</td>";
+								html +="<td>" +  Y.getDate(buydate).format('MM-DD hh:mm') + "</td>";
 								html +="<td><a href=\""+$_sys.getlotdir(gid)+$_sys.url.viewpath+"?lotid="+gid+"&projid="+projid+"\" target=_blank>详情</a>";
 								if((gid==1&&(fqnickid==nickid))||(gid==50 &&(fqnickid==nickid))){
 									html +="&nbsp;<a href=\""+$_sys.getlotdir(gid)+"?projid="+projid+"\" target=_blank>再次购买</a>";
