@@ -190,7 +190,7 @@ load_odds_sp = function(){
 		var expect = $("#expect").val();
 		
 		load_odds_sp_data("/odds/bjdc/oz/" + expect + "/");
-	}else if(Class.C('lot_id')==90){
+	}else if(Class.C('lot_id')==90 || Y.get("#lotid").val()==70){
 		load_odds_sp_data("/odds/jczq/oz/");
 	}else if(Class.C('lot_gid')==1 || Class.C('lot_gid')==2 || Class.C('lot_gid')==3){
 		var expect = $("#expect").val();
@@ -255,96 +255,96 @@ if(Class.C('lot_id')==85 ){
 	}else if(Class.C('lot_gid')==1 || Class.C('lot_gid')==2 || Class.C('lot_gid')==3){
 		path +=$("#expect").val();
 	}
-    $(config.items).each(function(index) {
-        $(this).parent().hover(function() {
-            var _self = this;
-            delayTime[index] = setTimeout(function() {
-				$(config.tip).remove();
-				var mid = $(_self).children().attr("data");
-				var ot = Class.config('odds_t');
-				if(ot>0){
-					var oz_id= $(_self);
-					var otext = $("#oddstype div em").html();
-					var odds_div = "<div class=\"plv_tk\" id=\"" + config.tipid +"\"><table width=\"100%\" border=\"0\" cellpadding=\"0\"\ cellspacing=\"0\">" +
-					"<colgroup><col width=\"\"><col width=\"46\"><col width=\"46\"><col width=\"46\"></colgroup><thead>"+
-					"<tr><td colspan=\"4\">"+otext+" 指数变化</td></tr></thead><tbody id=\"oddslist\">" +
-					"<tr><td colspan=\"4\">正在载入...</td></tr></tbody></table></div>";
-					$.ajax({
-						url:path+"/"+ot+"/"+mid+".xml",
-						dataType : "xml",
-						success : function(data) {
-							$("body").append(odds_div);
-							$(config.tip).css({
-								"top" : (oz_id.offset().top + oz_id.height() + 20) + "px",
-								"left" : (oz_id.offset().left - 130) + "px"
-							}).show();
-							var r = $(data).find("row");
-							var oddslist = "";
-							oddslist +="<tr><td>变化时间</td><td>胜</td><td>平</td><td>负</td></tr>";
-							var ln = r.length;
-							if(ln>5){
-								ln = 5;
-							}
-							for ( var i = 0; i < ln; i++) {
-								var oh = r.eq(i).attr("oh");
-								var od = r.eq(i).attr("od");
-								var oa = r.eq(i).attr("oa");
-								var tp = r.eq(i).attr("tp");
-								var gtime = r.eq(i).attr("gtime");
-								var mydate=new Date(gtime*1000);
-								var cp = "";
-								if(tp==0){
-									cp = "初";
-								}
-								var oh_j = oh - parseFloat(r.eq(i + 1).attr("oh"));
-								var od_j = od - parseFloat(r.eq(i + 1).attr("od"));
-								var oa_j = oa - parseFloat(r.eq(i + 1).attr("oa"));
-								
-								if (oh_j > 0) {
-									oh = "<em style='color：red'>" + oh + "</em>";
-								} else if (oh_j < 0) {
-									oh = "<em style='color:green'>" + oh + "</em>";
-								}
-								if (od_j > 0) {
-									od = "<em style='color:red'>" + od + "</em>";
-								} else if (od_j < 0) {
-									od = "<em style='color:green'>" + od + "</em>";
-								}
-								if (oa_j > 0) {
-									oa = "<em style='color:red'>" + oa + "</em>";
-								} else if (oa_j < 0) {
-									oa = "<em style='color:green'>" + oa + "</em>";
-								}
-								
-								
-								
-								
-								oddslist +="<tr>";
-								oddslist +="<td >" + mydate.format("MM-DD hh:mm") + cp + "</td>";
-								oddslist +="<td >" + oh + "</td>";
-								oddslist +="<td >" + od + "</td>";
-								oddslist +="<td >" + oa + "</td>";
-								oddslist +="</tr>";
-
-							}
-								if(oddslist==""){
-									oddslist = "<div style=\"text-align:center; color:#CCCCCC;\">暂无数据</div>";
-								}
-								$("#oddslist").html(oddslist);
-						},
-						error : function() {
-							return false;
-						}
-					});
-				}
-            },
-            300);
-        },
-        function() {
-            clearTimeout(delayTime[index]);
-            $(config.tip).remove();
-        });
-    });
+//    $(config.items).each(function(index) {
+//        $(this).parent().hover(function() {
+//            var _self = this;
+//            delayTime[index] = setTimeout(function() {
+//				$(config.tip).remove();
+//				var mid = $(_self).children().attr("data");
+//				var ot = Class.config('odds_t');
+//				if(ot>0){
+//					var oz_id= $(_self);
+//					var otext = $("#oddstype div em").html();
+//					var odds_div = "<div class=\"plv_tk\" id=\"" + config.tipid +"\"><table width=\"100%\" border=\"0\" cellpadding=\"0\"\ cellspacing=\"0\">" +
+//					"<colgroup><col width=\"\"><col width=\"46\"><col width=\"46\"><col width=\"46\"></colgroup><thead>"+
+//					"<tr><td colspan=\"4\">"+otext+" 指数变化</td></tr></thead><tbody id=\"oddslist\">" +
+//					"<tr><td colspan=\"4\">正在载入...</td></tr></tbody></table></div>";
+//					$.ajax({
+//						url:path+"/"+ot+"/"+mid+".xml",
+//						dataType : "xml",
+//						success : function(data) {
+//							$("body").append(odds_div);
+//							$(config.tip).css({
+//								"top" : (oz_id.offset().top + oz_id.height() + 20) + "px",
+//								"left" : (oz_id.offset().left - 130) + "px"
+//							}).show();
+//							var r = $(data).find("row");
+//							var oddslist = "";
+//							oddslist +="<tr><td>变化时间</td><td>胜</td><td>平</td><td>负</td></tr>";
+//							var ln = r.length;
+//							if(ln>5){
+//								ln = 5;
+//							}
+//							for ( var i = 0; i < ln; i++) {
+//								var oh = r.eq(i).attr("oh");
+//								var od = r.eq(i).attr("od");
+//								var oa = r.eq(i).attr("oa");
+//								var tp = r.eq(i).attr("tp");
+//								var gtime = r.eq(i).attr("gtime");
+//								var mydate=new Date(gtime*1000);
+//								var cp = "";
+//								if(tp==0){
+//									cp = "初";
+//								}
+//								var oh_j = oh - parseFloat(r.eq(i + 1).attr("oh"));
+//								var od_j = od - parseFloat(r.eq(i + 1).attr("od"));
+//								var oa_j = oa - parseFloat(r.eq(i + 1).attr("oa"));
+//								
+//								if (oh_j > 0) {
+//									oh = "<em style='color：red'>" + oh + "</em>";
+//								} else if (oh_j < 0) {
+//									oh = "<em style='color:green'>" + oh + "</em>";
+//								}
+//								if (od_j > 0) {
+//									od = "<em style='color:red'>" + od + "</em>";
+//								} else if (od_j < 0) {
+//									od = "<em style='color:green'>" + od + "</em>";
+//								}
+//								if (oa_j > 0) {
+//									oa = "<em style='color:red'>" + oa + "</em>";
+//								} else if (oa_j < 0) {
+//									oa = "<em style='color:green'>" + oa + "</em>";
+//								}
+//								
+//								
+//								
+//								
+//								oddslist +="<tr>";
+//								oddslist +="<td >" + mydate.format("MM-DD hh:mm") + cp + "</td>";
+//								oddslist +="<td >" + oh + "</td>";
+//								oddslist +="<td >" + od + "</td>";
+//								oddslist +="<td >" + oa + "</td>";
+//								oddslist +="</tr>";
+//
+//							}
+//								if(oddslist==""){
+//									oddslist = "<div style=\"text-align:center; color:#CCCCCC;\">暂无数据</div>";
+//								}
+//								$("#oddslist").html(oddslist);
+//						},
+//						error : function() {
+//							return false;
+//						}
+//					});
+//				}
+//            },
+//            300);
+//        },
+//        function() {
+//            clearTimeout(delayTime[index]);
+//            $(config.tip).remove();
+//        });
+//    });
 }
 
 
