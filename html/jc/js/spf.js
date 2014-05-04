@@ -1568,7 +1568,7 @@ Class('ScrollStill', {
         	                     $("#oddstype").odds_select_name();
         	                     // load_odds_sp();
         	                     ozOdds({
-           	                         items: '.even td .pjpl',
+           	                         items: 'div.pjpl',
            	                         tipid: 'odds_tip',
            	                         tip: '#odds_tip',
            	                         path: '/cpdata/omi/odds/jczq/oz'
