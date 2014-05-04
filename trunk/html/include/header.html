@@ -3,18 +3,19 @@
 <meta name="keywords" content="福利彩票，福彩，体育彩票，体彩，足彩，网上买彩票，彩票合买，彩票开奖，彩票走势图，彩票预测" /> <meta name="description"
 	content="159彩票网为彩民提供专业的彩票网上投注、合买、开奖结果、走势分析、比分直播等服务，覆盖福彩、体彩、足彩、竞彩、快频等彩种。159—彩票网上投注最佳选择！" /> <link href="/css/159cai.css" rel="stylesheet"
 	type="text/css" /> <link href="/css/new159cai.css" rel="stylesheet" type="text/css" /> <script type="text/javascript" src="/public/jq.js"></script>
-<script type="text/javascript" src="/public/menu.js"></script> <script type="text/javascript" src="/public/159cp.js"></script> <script
-	type="text/javascript" src="/public/chklogin.js"></script> <style type="text/css">
+	<script type="text/javascript" src="/public/jq2.js"></script>
+<script type="text/javascript" src="/public/menu.js"></script> <script type="text/javascript" src="/public/159cp.js"></script> 
+ <style type="text/css">
 .nav{padding-left:50px}
 </style> </head> <body> <div class="header"> <a href="http://www.159cai.com" target="_blank">
-<img src="/images/logo.png" class="logo" /></a> <div class="inacout"> <p class="p1">
+<img src="/images/logo.png" class="logo" /></a> <div class="inacout"> <p class="p1" id="sjand">
 <span>您好,欢迎您</span>
 <a href="http://www.159cai.com/user/login.html" id="top_login_btn" target="_blank">登录</a>
 <a href="http://www.159cai.com/user/reg.html" target="_blank">注册</a><!--<a id="CooperationLogin" href="javascript:void(0);" class="ab">合作账户登录</a>--></p> <p
-	id="top_user_info" style="display:none;">
+	id="top_user_info" style="display:none;" class="p3">
 <span>您好</span>
 <a href="http://www.159cai.com/account/myaccount.html" target="_blank" id="top_username"></a>
-<a href="javascript:void(0);" class="cm_quit" id="logoutLink">退出</a>
+<a href="javascript:void(0);" class="cm_quit" id="logoutLink" onclick="loginout()">退出</a>
 <em id="user_rz"></em></p> <p class="p2">
 <a id="tp1" rel="nofollow" target="_blank"
 	onclick="Y.get('#tp1').attr('href',Y.get('#top_username').html()==''?'http://www.159cai.com/user/login.html':'http://www.159cai.com/account/myaccount.html')">
@@ -71,4 +72,63 @@
 
 				
 
-</ul> </div> </div> </div> </body> </html>
+</ul> </div> </div> </div> 
+<script>
+$(document).ready(function(){
+		Y.ajax({
+       url:Class.C("url-login-user")+"&rnd=" + Math.random(),
+       end:function (data){
+           var Y;
+           Y = this;
+           if (data.error) {
+         	  return false;
+           }else{
+				   var obj = eval("(" + data.text + ")");
+        		   var code = obj.Resp.code;
+        		 
+					   if (code=="0"){
+						     var u = obj.Resp.row;
+							   this.get("#top_username").html(u.nickid);
+							   $("#top_user_info").show();
+	 	  						   $("#sjand").hide();
+							  
+							  
+					   }else{
+						  	$("#top_user_info").hide();
+								$("#sjand").show();
+					   }      
+           }
+       }
+});
+});
+loginout = function (fn){ 
+
+Y.ajax({
+url: Class.C('url-login-out'),
+end:function (data){
+    var Y;
+    Y = this;
+    if (data.error) {
+  	  return false;
+    }else{
+			   var obj = eval("(" + data.text + ")");
+ 		   var code = obj.Resp.code;
+				   if (code=="-1"){
+					     var u = obj.Resp.row;
+						   this.get("#top_username").html("");
+							$("#top_user_info").hide();
+							$("#sjand").show();
+				   }else{
+					  
+						 $("#top_user_info").show();
+  						   $("#sjand").hide();
+				   }      
+    	}
+	}
+}); 
+};
+
+</script>
+</body>
+
+ </html>
