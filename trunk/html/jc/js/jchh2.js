@@ -14,7 +14,7 @@ Class.extend('getTeamisExist', function (mode, data){//数组是否包含
 });
 Class.C('chuan',0);
 Class.C('chuanlength',0);
-/*
+/*w
 *  竞彩足球混串玩法
 *  2012-12-15
 */
@@ -141,7 +141,7 @@ Class('Selector', {
 		this.setClickFx(box);
 		this.otherSet(box);
 		this.oninit();
-		this.hotCss="cm_jcbg_hover";
+		this.hotCss="a2";
 		this.hotCss2 = "a2";
 //		this._getList();
 		if(this.allTr) this.allTr = undefined;
@@ -149,7 +149,7 @@ Class('Selector', {
 	
 	_getList: function (){
         if (!this.allTr) {//缓存
-            this.allList = Y.get('#vsTable tr[mid]');
+            this.allList = Y.get('#vsTable tr[fid]');
             this.allTr = this.allList.filter(function (tr){
                if (tr.getAttribute('isend') == '1') {
                    this.endList[this.endList.length] = tr;
@@ -167,29 +167,26 @@ Class('Selector', {
 		if(tye.indexOf('spf')>-1){
 			this.allTr.each(function (tr){
 				if(checked){
-					Yobj.get(tr).find('td[dat_tye='+tye+']>a').addClass('cm_hhgg_bg').addClass('sh_xh_tag');
-					Yobj.get(tr).find('td[dat_tye='+tye+']>a').removeClass('sh_f_left');
+				
+					Yobj.get(tr).find('td[dat_tye='+tye+']>a').removeClass('tdhui');
 				}else{
-					Yobj.get(tr).find('td[dat_tye='+tye+']>a').removeClass('cm_hhgg_bg').removeClass('sh_xh_tag');
-					Yobj.get(tr).find('td[dat_tye='+tye+']>a').addClass('sh_f_left');
+				
+					Yobj.get(tr).find('td[dat_tye='+tye+']>a').addClass('tdhui');
 				}
 			});
 		}else{
 			this.allTr.each(function (tr){
 				Yobj.get(tr).next('tr').find('tr[dat_tye='+tye+']').show(checked);
 				sel = Yobj.get(tr).next('tr').find('tr[dat_tye]:visited');
-				a = Yobj.get(tr).find('td.cm_hhgg_xl3>a');
+				a = Yobj.get(tr).find('td[mark=unselect]>a');
 				if(sel.size() == 0){
-					if (a.one().className.indexOf('cm_hhgg_bg_hover') > -1) {
-		            	a.addClass('cm_hhgg_bg_hover').find('i').html('展开');
-		            	a.removeClass('cm_hhgg_bg_hover').find('em').prop('className', 'cm_jsbf_down');
+					if (a.one().className.indexOf('unselectcur') > -1) {
+		            	a.removeClass('unselectcur').html('展开');
 		            	Yobj.get(tr).next('tr').hide(); 
 		            }
 				}else{
-					a.addClass('cm_hhgg_bg_hover').find('i').html('收起');
-	            	a.addClass('cm_hhgg_bg_hover').find('em').prop('className', 'cm_jsbf_up');
+					a.addClass('unselectcur').html('收起');
 	            	Yobj.get(tr).next('tr').show();
-//	                tr.find('tr[dat_tye]').show();
 				}
 			});
 		}
@@ -211,16 +208,24 @@ Class('Selector', {
 	filterOneLg: function (lg, checked){
 		this._getList();
 		var _self = this;
-		this.allTr.each(function (tr){
-			if (lg.indexOf(tr.getAttribute('lg'))>-1) {
-				if (checked) {
-					Yobj.get(tr).show();
+		if(lg==""){
+			this.allTr.each(function (tr){
+				Yobj.get(tr).show();
+			});
+		}else{
+			this.allTr.each(function (tr){
+				if (lg.indexOf(tr.getAttribute('lg'))>-1) {
+					if (checked) {
+						Yobj.get(tr).show();
+					}else{
+						_self._hideHH(tr);
+					}
 				}else{
-					_self._hideHH(tr);
-//					Yobj.get(tr).hide();
+					Yobj.get(tr).show(!checked);
 				}
-			}
-		});
+			});
+		}
+
 		this.updateHideCount();
 	},
 	fileterDayLg: function(day, checked){
@@ -277,7 +282,7 @@ Class('Selector', {
            	 }
             }else{
            	 tag.removeClass('a2');
-           	 tag.html('<i class="cm_left">展开</i><em class="cm_jsbf_down"></em>');
+           	 Y.get("td[mark=unselect]").html("<a>未选</a>").removeClass("unselectcur"); 
             }
         }
 	},
@@ -289,7 +294,7 @@ Class('Selector', {
 	counthidenmu:function(itemid){
   		var Y=this;
   		var num =0;//统计隐藏场数
-  		Y.need('tr[zid^='+itemid+']').each(function(o,n){
+  		Y.need('tr[pname^='+itemid+']').each(function(o,n){
   				if(o.style.display=="none"){
   					num++;
   				}
@@ -300,7 +305,7 @@ Class('Selector', {
   	isshowall:function(itemid){
   		var Y=this;
   		$("a[id^=showall_"+itemid+"]").click(function(){//显示所有已隐藏的赛事
-  			Y.need('tr[zid^='+itemid+']').show();
+  			Y.need('tr[pname^='+itemid+']').show();
   			$("#yccs_"+itemid).html(0);
   		});	
   		
@@ -310,15 +315,15 @@ Class('Selector', {
 	otherSet: function (box){
 		var _self = this;
 		//显隐周赛
-		box.find('div.date_area>div.cm_rfsf_xl>span').click(function(e,Y){
+		box.find('a[mark=hidetable]').click(function(e,Y){
 			var s = Y.get(this).one();
-            Y.get(this).parent('div').next('div.cm_border').show(!Y.hasClass(s.lastChild ,'cm_jsbf_up'));
-            if(Y.hasClass(s.lastChild ,'cm_jsbf_up')){
-           	 Y.get(s.firstChild).html('显示');
-           	 Y.get(s.lastChild).removeClass('cm_jsbf_up');
+//            Y.get(this).parent('div').next('div.cm_border').show(!Y.hasClass(s.lastChild ,'cm_jsbf_up'));
+            if(Y.get(s).html()=="隐藏"){
+            	Y.get(s).html('显示').parent('div').next('table').hide();
             }else{
-	          	 Y.get(s.firstChild).html('收起');
-	          	 Y.get(s.lastChild).addClass('cm_jsbf_up');
+	          	 
+	          	 Y.get(s).html('隐藏').parent('div').next('table').show();
+	          	 
             }
 		});
 	},
@@ -346,12 +351,12 @@ Class('Selector', {
 		}).live('td.sh_quanxuan','click', function(e){//全选
 			_self.allTr = undefined;
 			_self.clickCallBack(this);
-		}).live('tr[mid]', 'mouseover', function(e){
+		}).live('tr[fid]', 'mouseover', function(e){
 			_self.allTr = undefined;
 			_self.get(this).addClass('cm_hhgg_hover');
 //			_self.get(this).find('div.cm_jc_sc').show();
 			$(this).find('div.cm_jc_sc').css('display','block');
-		}).live('tr[mid]', 'mouseout', function(e){
+		}).live('tr[fid]', 'mouseout', function(e){
 			_self.allTr = undefined;
 			_self.get(this).removeClass('cm_hhgg_hover');
 			$(this).find('div.cm_jc_sc').css('display','none');
@@ -363,19 +368,19 @@ Class('Selector', {
 			_self.hideNum++;
 			_self.setHideNum();
 			 var itemid;
-             itemid = _self.get(this).parent('tr').attr("zid").substring(0, 6);//130607
+             itemid = _self.get(this).parent('tr').attr("pname").substring(0, 6);//130607
              _self.counthidenmu(itemid);
              
-		}).live('td.unselect', 'click', function (e){
+		}).live('td[mark=unselect]', 'click', function (e){
 			_self.allTr = undefined;
 			var tr = _self.get(this).parent('tr').next('tr');
 			var a = _self.get(this);
             if ($(this).hasClass("unselectcur")) {
-            	a.removeClass('unselectcur').html('未选');
+            	a.removeClass('unselectcur').find("a").html('未选');
 //            	a.removeClass('cm_hhgg_bg_hover').find('em').prop('className', 'cm_jsbf_down');
                 tr.hide(); 
             }else{
-            	a.addClass('unselectcur').html('收起');
+            	a.addClass('unselectcur').find("a").html('收起');
 //            	a.addClass('cm_hhgg_bg_hover').find('em').prop('className', 'cm_jsbf_up');
                 tr.show();
                 tr.find('tr[dat_tye]').show();
@@ -391,9 +396,9 @@ Class('Selector', {
 	optionChange: function (chk){
 		var s = this;
 		var bid  = chk.className.indexOf("sh_quanxuan")>-1? s.get(chk).prev('td').child('a').attr('data-id'):chk.getAttribute('data-id');
-		var tr = Y.get('tr[mid='+bid+']');
+		var tr = Y.get('#vs'+bid);
 		
-	    var trpanel = tr.find('a').slice(-1);
+	    var trpanel = tr.find('td.unselect ');
 		if (!tr.data('xhtag')) {
             tr.data('xhtag', []);
         }
@@ -426,7 +431,7 @@ Class('Selector', {
 //			if(isq) chk.firstChild.innerHTML='清'; else chk.firstChild.innerHTML='全';
 		}else{
 			Y.get(chk).toggleClass(isspf? s.hotCss2:s.hotCss);
-			var checked = chk.className.indexOf(isspf? s.hotCss2:s.hotCss)>0? true: false;
+			var checked = chk.className.indexOf(isspf? s.hotCss2:s.hotCss)>-1? true: false;
 			if(!isspf){
 				if(checked){
 					xtag.push(chk.firstChild.innerHTML);
@@ -468,7 +473,7 @@ Class('Selector', {
 		}
 		if(scm.length>0)
 		{
-			$('tr[mid='+bid+']').removeAttr("baoliu");
+			$('#vs'+bid).removeAttr("baoliu");
 			if($("#lotid") && "70" == $("#lotid").val())
 			{
 				$(chk).parent().parent().removeAttr("baoliu");
@@ -508,10 +513,10 @@ Class('Selector', {
 		}
 	},
 	getTrs: function (bid){
-		return Yobj.get('tr[mid='+bid+']');
+		return Yobj.get('#vs' + bid);
 	},
 	getTr1: function (bid){
-		return Yobj.get('tr[mid='+bid+']');
+		return Yobj.get('#vs'+bid);
 	},
 	setTdBg: function (chk){
 		var td = Yobj.get(chk).parent('li');
@@ -538,8 +543,8 @@ Class('Selector', {
 	//用号码来选择一个对阵
 	setCode: function (bid, sel){//
 		var arr = new Array();
-        arr[0] = this.one('tr[mid='+bid+']');
-        arr[1] = this.get('tr[mid='+bid+']').next().one();
+        arr[0] = this.one('#vs'+bid);
+        arr[1] = this.get('#vs'+bid).next().one();
         var trs = arr, trpanel = this.getTrs(bid).find('td').slice(-1).find('a'),xtag = this.getTrs(bid).data('xhtag'),
 			opts = this.get(trs).find('a[data-type]');//找到对应的inputs组
         
@@ -581,11 +586,11 @@ Class('CodeList', {
 	onchange: Yobj.getNoop(),//选择的时候, 用于绑定 选择器方法
 	ondatachange: Yobj.getNoop(), //用于输出号码， 绑定过关方式方法
 	playids: {
-		spf: 269,
-		rqspf: 354,
-		jqs: 270, 
-		bf: 271,
-		bqc: 272 
+		spf: "SPF>",
+		rqspf: "RSPF>",
+		jqs: "JQS>", 
+		bf: "CBF>",
+		bqc: "BQC>" 
 	},
 	__getGroup: function (type, bid, mp){
 		return {
@@ -676,7 +681,7 @@ Class('CodeList', {
 				bf: 0,
 				bqc: 0
 			};
-			endtime = 0,
+			 endtime= 0,
 			_self = this;
 		//查找号码列表中所有可见号码区的号码;
 		var visiTr=this.box.find('tr.code_area:visited');
@@ -685,7 +690,7 @@ Class('CodeList', {
 			var bid = tr.getAttribute('data-id');
 			var mp = tr.getAttribute('data-mp');
 			var m_endtime = tr.getAttribute('data-endtime');
-			var span = Yobj.get(tr).find('p>a:visited');
+			var span = Yobj.get(tr).find('span.x_s:visited');
 			var codes = [];
 			var dan = tr.getAttribute('dan') == '1' ? 1 : 0;
 			var rq = tr.getAttribute('data-rq');
@@ -798,11 +803,11 @@ Class('CodeList', {
 	
 	getSp: function(bid,type){
 		var _self = this,len,arrs = [],
-		spf = _self.get('tr[mid='+bid+']').find('td>a[data-type=spf]').nodes,
-		rqspf = _self.get('tr[mid='+bid+']').find('td>a[data-type=rqspf]').nodes;
-		jqs = _self.get('tr[mid='+bid+']').next('tr').find('td>a[data-type=jqs]').nodes;
-		bqc = _self.get('tr[mid='+bid+']').next('tr').find('td>a[data-type=bqc]').nodes;
-		bf = _self.get('tr[mid='+bid+']').next('tr').find('td>a[data-type=bf]').nodes;
+		spf = _self.get('#vs'+bid).find('td>a[data-type=spf]').nodes,
+		rqspf = _self.get('#vs'+bid).find('td>a[data-type=rqspf]').nodes;
+		jqs = _self.get('#vs'+bid).next('tr').find('td>a[data-type=jqs]').nodes;
+		bqc = _self.get('#vs'+bid).next('tr').find('td>a[data-type=bqc]').nodes;
+		bf = _self.get('#vs'+bid).next('tr').find('td>a[data-type=bf]').nodes;
 		
 		if(type.indexOf('rqspf')>-1){
 			len = rqspf.length;
@@ -884,6 +889,9 @@ Class('CodeList', {
 		});
 		return c.join('/');
 	},
+//	55077|140430001|SPF>[3,1]/55077|140430001|RSPF>[3]/55077|140430001|JQS>[0]/55078|140430002|RSPF>[3,1]
+	
+
 	getdanCodeString: function (){
 		var c = [];
 		this.codes.each(function (m){
@@ -930,11 +938,11 @@ Class('CodeList', {
 	     });
 		
 		//点击选项
-		this.box.live('p>a', 'mousedown', function (e, Y){
+		this.box.live(' span.x_s', 'mousedown', function (e, Y){
 			Yobj.get(this).hide();
 			var bid = Yobj.get(this).parent('tr').attr('data-id'),
 				tr = _self.getTr2(bid),
-				sel = tr.find('p>a:visited').nodes.filter(function(c){
+				sel = tr.find('span.x_s:visited').nodes.filter(function(c){
 					return $(c).is(":visible");
 				}).map(function(c){
 					return Y.get(c).attr('data-sg');
@@ -963,28 +971,28 @@ Class('CodeList', {
 		doc.appendChild(tr2);
 		tr.id = 'code' + vsInfo.id + '_a';
 		tr2.id = 'code' + vsInfo.id + '_b';	
-		tr2.className += ' code_area';
+		tr2.className = ' code_area';
 		Yobj.get([tr, tr2]).attr('data-id', vsInfo.id)
 			.attr('data-mp', vsInfo.mid_pname)
 			.attr('data-index', vsInfo.game_time)
 			.attr('data-vs', vsInfo.title)
-			.attr('data-endtime', vsInfo.end_time)
+			.attr('data- endtime', vsInfo.end_time)
 			.find('p>a').attr('data-id', vsInfo.id).hide();
 	},
 	//同步选择器, 选择器触发
 	syncSelector: function (bid){
-		var tr1 = this.get('tr[mid='+bid+']'),vstr = this.one('tr[mid='+bid+']'), id="code"+bid+"_a", 
+		var tr1 = this.get("#vs"+bid),vstr = this.one("#vs"+bid), id="code"+bid+"_a", 
 		sum = 0,tr2 = tr1.next(), tr = this.get('#'+id),trn,
 		rq,A,B,date,chk;
 		rq = vstr.cells[0].getElementsByTagName('label')[0].innerHTML;
-		rq2 = this.get('tr[mid='+bid+']').find('td strong[mark=close]').html();
+		rq2 = this.get("#vs"+bid).find('td strong[mark=close]').html();
 		A = vstr.getAttribute('hometeam');
 		B = vstr.getAttribute('guestteam');
 		date = vstr.getAttribute('pendtime');
 		chk = tr1.data('scm');
 		if (tr.size() == 0) {
 			tr = this.get(this.tmpl_1.cloneNode(true)).insert(this.box);
-			tr.prop('id', id).attr('data-id', vstr.getAttribute('mid')).attr('data-mp', vstr.getAttribute('mid')+"|"+vstr.getAttribute('zid'))
+			tr.prop('id', id).attr('data-id', vstr.getAttribute('fid')).attr('data-mp', vstr.getAttribute('fid')+"|"+vstr.getAttribute('pname'))
 			  .attr('data-index',rq)
 			  .attr('data-vs', A+"vs"+B)
 			  .attr('data-endtime', this.getDate(date));
@@ -993,8 +1001,8 @@ Class('CodeList', {
 
 	        trn = this.get(this.tmpl_2.cloneNode(true)).insert(tr, 'next');
 	        trn.addClass('code_area');
-	        trn.attr('id', "code"+bid+"_b").attr('data-id', vstr.getAttribute('mid'))
-	           .attr('data-mp', vstr.getAttribute('mid')+"|"+vstr.getAttribute('zid'))
+	        trn.attr('id', "code"+bid+"_b").attr('data-id', vstr.getAttribute('fid'))
+	           .attr('data-mp', vstr.getAttribute('fid')+"|"+vstr.getAttribute('pname'))
 	           .attr('data-index',rq)
 	           .attr('data-rq',rq2)
 			   .attr('data-vs', A+"vs"+B)
@@ -1010,7 +1018,7 @@ Class('CodeList', {
 	
 	_showChoose: function (tr, chk, vstr){
         var tr2 = tr.data('linkTR');
-        tr2.find('p>a').each(function (span, i){
+        tr2.find(' span.x_s').each(function (span, i){
             span.style.display = chk.indexOf(span.getAttribute('data-sg')) == -1 ?  'none' : '';
         }, this);
         tr2.show(chk.length > 0);
@@ -1292,81 +1300,15 @@ Class('GgType', {
 		Yobj.get('#cs').html(this.codes.length);
 		
 		if(this.codes.length>0){
-       	 	this.get('#x_match_style').addClass('cm_jclq_red');
+       	 	this.get('#delMatch').addClass('jcq_kcur');
         }else{
-       	 	this.get('#x_match_style').removeClass('cm_jclq_red');
+       	 	this.get('#delMatch').removeClass('jcq_kcur');
         }
 	}
 });
 Class.C('Max-BeiShu', 5*10000);
-/*
-var tpl_isure =  '<table width="100%" border="0" cellspacing="0" cellpadding="0" class="faTable" style="border-left:1px solid #E0E2E1; border-top:1px solid #E0E2E1;">'+
-'<tbody><tr><th style="width:60px;">方案信息</th><td><table width="100%" border="0" cellspacing="0" cellpadding="0">'+
-'<tbody><tr class="tr1"><td>玩法</td><td>注数</td><td>倍数</td><td>总金额</td></tr><tr>'+
-'<td>{$play}</td>'+
-'<td>{$zhushu}</td>'+
-'<td>{$beishu}</td>'+
-'<td>{$allmoney}元</td>'+
-'</tr></tbody></table></td></tr><tr><th style="width:60px;">认购信息</th>'+
-'<td class="t2">您本次购买需消费<strong class="eng red">{$buymoney}</strong>元</td></tr></tbody></table>';
-*/
-var tpl_isure = '<table width="100%" cellspacing="0" cellpadding="0" border="0" class="x_xl_ta">'+
-				'<tr height="30" class="x_tr"><td width="80" rowspan="2">方案信息</td><td>玩法</td><td>注数</td><td>倍数</td><td>方案金额</td>'+
-				'</tr>'+
-				'<tr height="30"> <td>{$play}</td> <td>{$zhushu}</td> <td>{$beishu}</td><td>{$allmoney}</td> </tr>'+
-				'<tr height="40">'+
-					'<td class="x_tr">认购金额</td>'+
-				'<td colspan="4"><span class="cm_left" style="padding-left:10px;">需支付<em id="tmmoney" >{$allmoney}</em>元</span></td>'+
-				'</tr>'+
-				'<tr height="40" id="web_alip_disp">'+
-					'<td class="x_tr">红包支付</td>'+
-				'<td colspan="4" valign="top">'+
-					'<div class="xl_hbgg2">'+
-				       '<div class="xl_hbgg xl_hbgg1" id="rp_chk_div">'+
-					       '<input type="checkbox" name="isrp" id="isrp" value="0" u_rpid=""/>'+
-				           '<label>使用红包支付<em class="eng red" name="rpmy" style="">0.00</em>元</label>'+
-				       '</div>'+
-				        '<ul class="xl_hbgg cm_border" id="rp_ul" style="display:none;"></ul>'+
-				         '<span class="xl_jt" id="dis_span" style="display:none;"></span>'+
-				       '<div class="x_tr_di cm_border" style="display:none;" id="no_rp"><span>您本次无红包可以使用</span><i></i></div>'+
-				    '</div>'+
-				    	'<a href="/help/hb.html" target="_blank" class="x_tr_a">什么是红包？</a>'+
-				    '</td>'+
-				'</tr>'+
-				'<tr height="40">'+
-					'<td class="x_tr">账户支付</td>'+
-				'<td colspan="4">'+
-					'<span class="cm_left" style="padding-left:10px;" id="yemmoney">使用账户余额支付<em class="eng red">{$allmoney}</em>元</span>'+
-				'</td>'+
-				'</tr>'+
-				'</table>';
 
-var ishmTpl = '<table width="100%" cellspacing="0" cellpadding="0" border="0" class="x_xl_ta">'+
-			'<tr height="30" class="x_tr"> <td width="80" rowspan="2">方案信息</td> <td>玩法</td> <td>注数</td> <td>倍数</td><td>方案金额</td> <td>保底</td> <td>提成</td></tr>'+
-			'<tr height="30"><td>{$play}</td> <td>{$zhushu}</td><td>{$beishu}</td><td>{$allmoney}</td> <td>{$baodi}</td> <td>{$tc}%</td> </tr>'+
-			'<tr height="40">'+
-				'<td class="x_tr">认购金额</td>'+
-			    '<td colspan="6"><span class="cm_left" style="padding-left:10px;">认购<em id="tmmoney">{$buymun}</em>元+保底<em>{$baodi}</em>元，共需支付<em id="tmmoney2">{$ttmoney}</em>元</span></td>'+
-			'</tr>'+
-			'<tr height="40" id="web_alip_disp">'+
-				'<td class="x_tr">红包支付</td>'+
-			'<td colspan="6" valign="top">'+
-				'<div class="xl_hbgg2">'+
-			        '<div class="xl_hbgg xl_hbgg1"  id="rp_chk_div"><input type="checkbox" name="isrp" id="isrp" value="0" u_rpid=""/><label>使用红包支付<em class="eng red" name="rpmy" style="">0.00</em>元（保底部分不能使用红包）</label></div>'+
-			        '<ul class="xl_hbgg cm_border" id="rp_ul" style="display:none" ></ul>'+
-			         '<span class="xl_jt" id="dis_span" style="display:none;"></span>'+
-			        '<div class="x_tr_di cm_border" style="display:none;" id="no_rp"><span>您本次无红包可以使用</span><i></i></div>'+
-			        '</div>'+
-			    	'<a href="/help/hb.html" target="_blank" class="x_tr_a">什么是红包？</a>'+
-			    '</td>'+
-			'</tr>'+
-			'<tr height="40">'+
-			'<td class="x_tr">账户支付</td>'+
-			  '<td colspan="6">'+
-			   '<span class="cm_left" style="padding-left:10px;" id="yemmoney">使用账户余额支付<em class="eng red">{$ttmoney}</em>元</span>'+
-			   '</td>'+
-			'</tr>'+
-			'</table>';
+
 
 /*发起购买类 
 *************************************************************************/
@@ -1381,8 +1323,8 @@ Class('Buy', {
  		
  	
 
- 		Yobj.get('#gobuy,.dc-btn-bet-jctj').click(function (){
- 			_self.ishm = this.value == '合买' ? 1 : 0,
+ 		Yobj.get('#gobuy,#gohm').click(function (){
+ 			_self.ishm = this.id == 'gohm' ? 1 : 0;
  			 Y.get('#ishm').val(_self.ishm);//合买与代购
  			Y.get('#beishu').val(Y.get('#bsInput').val());
  			if (_self.ishm){
@@ -1519,130 +1461,76 @@ Class('LgFilter', {
    		   $this.onchange(this.value, this.checked, 3);
    	   });
    	    
-   	   all.live('#list_ss>span>a','click',function(e,Y){//赛事
+   		Yobj.get('#lglist input').click(function(e){
    		 clearcur(1);
-   		 if(this.getAttribute('value') == 'all'){
-   			 if(Y.hasClass(this, 'cm_cur')) return;
-   			 Y.get(this).parent('span').next('span').find('a').each(function(el){
-   				 if(Y.hasClass(el, 'cm_cur')) Y.get(el).removeClass('cm_cur');
-   			 });
-   			 Y.get(this).addClass('cm_cur');
-   			$this.onchange(false, true, 2);//全部
-   		 }else{
-   			 Y.get(this).toggleClass('cm_cur');
-   			 var lege = Y.get(this).parent('span').find('a');
-   			 var alllege = Y.get(this).parent('span').prev('span').find('a');
-   			 var cur_size = lege.filter(function(a){
-   				 return Y.hasClass(a, 'cm_cur');
-   			 });
-   			 if(ss_size.size() == cur_size.size()){
-   				 alllege.addClass('cm_cur');
-   				 lege.each(function(e){
-   					 Y.get(e).removeClass('cm_cur');
-   				 });
-   				$this.onchange(false, true, 2);//全部
-   			 }else if(cur_size.size() == 0){
-   				 alllege.removeClass('cm_cur');
-   				 $this.onchange([this.getAttribute('m')], Y.hasClass(this, 'cm_cur'), 0);
-   			 }else{//
-   				 alllege.removeClass('cm_cur');
-   				 sel_lg.splice(0,sel_lg.length);
-   				 unsel_lg.splice(0,unsel_lg.length);
-   				 lege.each(function(e){
-   					if(Y.hasClass(e, 'cm_cur')) sel_lg.push(e.getAttribute('m'));
-   					else unsel_lg.push(e.getAttribute('m'));
-   				 });
-   				 $this.onchange(unsel_lg, false, 0);
-   				 $this.onchange(sel_lg, true, 0);
-   			 }
+   		var lgarr=[];
+   		 if(!$(this).attr("checked")){
+   			 $this.onchange(Y.get(this).attr('m'), false, 0);
+   			var lgarr=[];
+  			 Yobj.get('#lglist input').each(function(a){
+  	   			if(($(a).attr("checked"))){
+  	   				lgarr.push(a.getAttribute('m'))
+  	   			}
+  	   	
+  	   		})
+  	   	$this.onchange(lgarr, true, 0);
+   		 }else if($(this).attr("checked")){
+   			
+   			 Yobj.get('#lglist input').each(function(a){
+   	   			if(($(a).attr("checked"))){
+   	   				lgarr.push(a.getAttribute('m'))
+   	   			}
+   	   	
+   	   		})
+   	 	$this.onchange(lgarr, true, 0);
    		 }
-   	 }).live('#list_riqi>span>a', 'click', function(e, Y){//日期
-		 clearcur(3);
-		 var riqi_size = Y.get('#weekList>a');
-		 if(this.getAttribute('value')=='all'){
-			 if(Y.hasClass(this, 'cm_cur')) return;
-			 Y.get(this).addClass('cm_cur');
-			 Y.get(this).parent('span').next('span').find('a').each(function(el){
-				 if(!Y.hasClass(el, 'cm_cur')){ 
-				 }else{
-					 Y.get(el).removeClass('cm_cur');
-				 }
-			 });
-			 $this.onchange(false, true, 2);//全部
-		 }else{
-			 Y.get(this).toggleClass('cm_cur');
-			 var lege = Y.get(this).parent('span').find('a');
-			 var alllege = Y.get(this).parent('span').prev('span').find('a');
-			 var cur_size = lege.filter(function(a){
-				 return Y.hasClass(a, 'cm_cur');
-			 });
-			 if(riqi_size.size() == cur_size.size()){
-				 alllege.addClass('cm_cur');
-				 lege.each(function(e){
-					 Y.get(e).removeClass('cm_cur');
-				 });
-				 $this.onchange(false, true, 2);//全部
-			 }else if(cur_size.size() == 0){
-				 alllege.removeClass('cm_cur');
-				 $this.onchange([('d_'+this.getAttribute('value'))], Y.hasClass(this, 'cm_cur'), 1);
-			 }else{//
-				 alllege.removeClass('cm_cur');
-				 sel_lg.splice(0,sel_lg.length);
-   				 unsel_lg.splice(0,unsel_lg.length);
-   				 lege.each(function(e){
-   					if(Y.hasClass(e, 'cm_cur')) sel_lg.push(('d_'+e.getAttribute('value')));
-   					else unsel_lg.push(('d_'+e.getAttribute('value')));
-   				 });
-   				 $this.onchange(unsel_lg, false, 1);
-   				 $this.onchange(sel_lg, true, 1);
-			 }
-		 }
-	 }).live('#list_kjsx>span>a', 'click', function(e, Y){//五大联赛和热门赛事
-		 var q=this,val = this.getAttribute('value'),tag = this.getAttribute('data-val');
-		 clearcur(0,(tag==''||tag==undefined));
-		 Y.get('#list_kjsx>span>a').each(function(a){
-			 if(a.getAttribute('value')!=val){a.className = ''}
-		 })
-		 Y.get(this).toggleClass('cm_cur');
-	     sel_lg.splice(0,sel_lg.length);
-		 unsel_lg.splice(0,unsel_lg.length);
-		 
-		 if(tag){//五大联赛|热门赛事
-		 	 Y.get("#list_ss").find('a[value=all]').removeClass("cm_cur");
-			 Y.get("#lgList>a").each(function(z){//循环联赛列表
-				 z.className = '';
-				 if(Y.hasClass(q, 'cm_cur')){
-	    			 if(Y.getTeamisExist(tag,z.getAttribute('m'))){//存在
-	    				 z.className = "cm_cur";
-	    				 sel_lg[sel_lg.length] = z.getAttribute('m');
-	    			 }else{//不存在
-	    				 unsel_lg[unsel_lg.length] = z.getAttribute('m')
-	    			 }
-				 }else{
-					 if(Y.getTeamisExist(tag,z.getAttribute('m'))){
-						 z.className = "";
-					 }
-					 
-					 $this.onchange(false, true, 2);//全部
-				 }
-			 });
-			 
-			 $this.onchange(unsel_lg, false, 0);//不存在五大联赛或热门赛事
-			 $this.onchange(sel_lg, true, 0);  //存在五大联赛或热门赛事
-		 }
+   
+   		
+
+   	 })
+   	Yobj.get('#wdls').click(function(){
+   		var lg=Y.get('#lglist input');
+	   	if($(this).attr("checked")){
+			lg.prop("checked",false);
+			$("input[m='西班牙甲']").attr("checked",true);
+			$("input[m='德国甲级']").attr("checked",true);
+			$("input[m='法国甲级']").attr("checked",true);
+			$("input[m='意大利甲']").attr("checked",true);
+			$("input[m='英格兰超']").attr("checked",true);
+			  $this.onchange( ["西班牙甲","德国甲级","法国甲级","意大利甲","英格兰超"], true, 0);  //存在五大联赛或热门赛事
+		}
+	  
+		else if(!$(this).attr("checked")){
+			lg.prop("checked",true);
+			  $this.onchange("", true, 0);  //存在五大联赛或热门赛事
+		}
+    
+	 
+
+	
+		
+
+   	});
+   	Yobj.get('#showAll_btn,#selectAllBtn').click(function(){
+   		$this.onchange(false, true, 2);//全选
+   		Y.get("#lglist input").prop("checked",true);
 	 });
-   	   
-   	Yobj.get('#showall').click(function(){
-   		$this.onchange(false, true, 2);//全部
-			Yobj.get('#list_riqi,#list_ss,#list_kjsx').find('span>a').each(function(a, n){
-				if(a.getAttribute('value')=='all'){
-					Yobj.get(a).addClass('cm_cur');
-				}else{
-					Yobj.get(a).removeClass('cm_cur');
-				}
-			});
+	Yobj.get('#unAllBtn').click(function(){
+   		$this.onchange(false, false, 2);//全清
+   		Y.get("#lglist input").prop("checked",false);
 	 });
-   	 
+	Yobj.get('#selectOppBtn').click(function(){
+   		var lg=Y.get("#lglist input:checkbox");
+   		var lgarr=[]
+   		lg.each(function(a){
+   			if(!($(a).attr("checked"))){
+   				lgarr.push(a.getAttribute('m'))
+   			}
+   			Y.get(a).prop("checked",!($(a).attr("checked")));
+   		 
+   		})
+   		$this.onchange(lgarr, true, 0);
+	 });
    	 
    	function clearcur(val,isp){
   		 switch(val){
@@ -1710,12 +1598,18 @@ Class('Main', {
 	use: 'mask',
 	index: function (){
 		this.createClass();
+		this.sethref();
+		
+//		 http://local.159cai.com/cpdata/omi/odds/jczq/oz/1.xml?rnd=0.8910419419263784
 		this.otherEvents();
 		this.lib.Clock('#sysTimeDisplay');
 		this.setTableHeadFixed();
 	},
 	otherEvents: function (){
 		//切换平均欧赔
+		this.get('#sssx div.matchxz').drop( this.get('#sssx div.jcslt'),{focusCss: 'matchxzc', fixed: true, y: -1});
+        this.get('#jztime div.matchxz').drop( this.get('#jztime div.jcslt'),{focusCss: 'matchxzc', fixed: true, y: -1});
+        this.get('#oddstype div.matchxz').drop( this.get('#oddstype div.jcslt'),{focusCss: 'matchxzc', fixed: true, y: -1});
 		var pjpl = Yobj.get('#vsTable ul.pjpl'),
 			tzbl = Yobj.get('#vsTable ul.tzbl');
 		Yobj.get('#select_pv').change(function (){
@@ -1728,8 +1622,8 @@ Class('Main', {
 			}
 		});
 		//显示截止时间或者开赛时间
-		var endTime = Yobj.get('#vsTable i.end_time'),
-			matchTime = Yobj.get('#vsTable i.match_time');
+		var endTime = Yobj.get('#vsTable span.end_time'),
+			matchTime = Yobj.get('#vsTable span.match_time');
 		
 		Yobj.get('#tzts span').click(function(){
         	if($(this).hasClass("cm_jc_tztsdown")){
@@ -1741,30 +1635,68 @@ Class('Main', {
         	}
         }); 
 		
-		this.get('#select_time').live('p','click', function(){
-	       	  Y.get(this).parent('li').find('p').removeClass('cm_bqs_cur cm_png_ico');
-	       	  Y.get(this).addClass('cm_bqs_cur cm_png_ico');
-	       	  endTime.show(this.getAttribute('value') == '0');
-	       	  matchTime.show(this.getAttribute('value') == '1');
+		this.get('#jztime div.plv_set').live('a','click', function(){
+	       	
+	       	 Y.get("#select_time").html(Y.get(this).html());
+//	       	 Y.get("#jztime div.jcslt").hide();
+	       	  Yobj.get('#vsTable span.end_time').show(this.getAttribute('value') == '0');
+	          Yobj.get('#vsTable span.match_time').show(this.getAttribute('value') == '1');
         });
 		//察看往期
-//		Yobj.get('#seldate').change(function (){
-//			location.href = location.href.replace(/\?.*$/, '?playid='+Yobj.get('#playid').val()+'&date=' + this.value);
-//		});
-//		Yobj.use('mask', function (){
-//			Yobj.get('span.dcr_table_help').setStyle('zIndex', 1).tip('data-help', 1, false, 360);// 帮助说明
-//		});
-		//解决右边的小图标浮在选择层上的bug
-//		Yobj.get('#main > div.dc_l').setStyle('zIndex', 5);
-//		
-//		Yobj.JczqHhzd = Y.lib.MaskLay('#jczq_hh_zd','#btn_hh_wrap', '#gb_hh_zd');
-//        Yobj.JczqHhzd.addClose('#gb_hh_zd');
+
         
 
         
 
         
         this.goTotop();//返回顶部
+	},
+    sethref:function() {
+    	var Y = this;
+    	var lottype=parseInt(Y.get('#playid').val());
+		this.ajax({
+			    url:"/cpdata/omi/jczq/odds/odds.xml",
+        		end:function(data,i){
+        			 var htid =1;
+                     this.qXml('//row', data.xml, function (u, i){
+                    	    $("#mn"+u.items.xid).attr("href","http://info.159cai.com/league/index/"+u.items.lid);
+                    	    $("#hn"+u.items.xid+" em").attr("data",u.items.htid);
+            				$("#gn"+u.items.xid+" em").attr("data",u.items.gtid);		
+//            				http://info.159cai.com/league/index/34/4647
+            				Y.get("#hn"+u.items.xid).attr("href","http://info.159cai.com/team/index/"+u.items.htid);
+                        	 Y.get("#gn"+u.items.xid).attr("href","http://info.159cai.com/team/index/"+u.items.gtid);
+                        		$("#ox"+u.items.xid).attr("href","http://odds.159cai.com/match/analysis/"+u.items.oddsmid+"?lotyid=6");
+                 				$("#oz"+u.items.xid).attr("href","http://odds.159cai.com/match/odds/"+u.items.oddsmid+"?lotyid=6");
+                 				$("#oy"+u.items.xid).attr("href","http://odds.159cai.com/match/asia/"+u.items.oddsmid+"?lotyid=6");
+            				var hm=isNaN(u.items.hm)||u.items.hm==""?"":u.items.hm<10?'0'+u.items.hm:u.items.hm;
+	            				var am=isNaN(u.items.am)||u.items.hm==""?"":u.items.am<10?'0'+u.items.am:u.items.am;
+	            				$("#hn"+u.items.xid).parent().find("i").html(hm==""|| typeof hm == undefined?"&nbsp;":'['+hm+']');
+	            				$("#gn"+u.items.xid).parent().find("i").html(am=="" || typeof am == undefined?"&nbsp;":'['+am+']');	
+	            				   Y.get("#oh"+u.items.xid).html(u.items.oh);
+	           					Y.get("#od"+u.items.xid).html(u.items.od);
+	           					Y.get("#oa"+u.items.xid).html(u.items.oa);
+                     });                     
+                     var xhhistory = "";
+             			 xhhistory=".btnoption span";
+             			 Class.C('exy',"yes")	;
+             			 Class.config('odds_t',0);
+                	     historyMatchOdds({
+   	                         items: xhhistory,
+   	                         tipid: 'odds_tip',
+   	                         tip: '#odds_tip',
+   	                         fleft: 260
+   	                     }); 
+	                     $("#oddstype").odds_select_name();
+	                     load_odds_sp();
+	                     ozOdds({
+	                    	 items: 'div.pjpl',
+   	                         tipid: 'odds_tip',
+   	                         tip: '#datachange',
+   	                         path: '/cpdata/omi/odds/jczq/oz'
+   	                     });    			 
+             			 
+        		}
+				});
 	},
 	goTotop:function (){
         var isIE=!!window.ActiveXObject;
@@ -1779,36 +1711,37 @@ Class('Main', {
             if(isIE6)btn.css({"position":"absolute",top:ietop,right:right});
         })
         btn.css({"position":"fixed",top:top,right:right});
+        var areaTop = Y.get("#right_area").getXY().y;
         
-        var areaTop = Y.get("#vsTable_r").getXY().y;
         $(window).scroll(function(){
-        	if ($(this).scrollTop() > areaTop){//跟踪对齐当滚动条超过右侧区域则开始滚动
-            	var V = $('#titleTable_r');
-        		if (V[0]) {
-        			var T = $(document),
-        			H = $(".cm_padding_top10").eq(0),
-        			M = H.offset().top + H.outerHeight(),
-        			F = V.innerWidth(),
-        			B = V.offset().top,
-        			L = V.outerHeight(), 
-        			u = T.scrollTop();
-        			Z = Math.min(0, M - (L + u));
-        			
-        			if (B == Z) {
-        				V.css({left: "auto", top: "auto",width: F, position: "static"});
-        			} else {
-        				if(isIE6){
-        					V.css({left: "auto",top: Z+$(window).scrollTop(), width: F,position: "absolute"});
-        				}else{
-        				V.css({left: "auto",top: Z, width: F, position: "fixed"});
-        				}
-        			}
-        			Y.get("#titleTable_r").setStyle('z-index: 1;');
-        		}
-            	
-             }else{//停止浮动对齐
-        	 Y.get("#titleTable_r").setStyle('z-index: 1; top:auto; width: 256px; left: auto;position: static;');
-        }
+        	 if ($(this).scrollTop() > areaTop){//跟踪对齐当滚动条超过右侧区域则开始滚动
+	            	var V = $('#titleTable_r');
+	        		if (V[0]) {
+	        			var T = $(document),
+	        			H = $("#main").eq(0),
+	        			M = H.offset().top + H.outerHeight(),
+	        			F = V.innerWidth(),
+	        			B = V.offset().top,
+	        			L = V.outerHeight(), 
+	        			u = T.scrollTop();
+	        			Z = Math.min(0, M - (L + u));
+	        			
+	        			if (B == Z) {
+	        				V.css({left: "auto", top: "auto",width: F, position: "static"});
+	        			} else {
+	        				if(isIE6){
+	        					V.css({left: "auto",top: Z+$(window).scrollTop(), width: F,position: "absolute"});
+	        				}else{
+	        				V.css({left: "auto",top: Z, width: F, position: "fixed"});
+	        				}
+	        			}
+	        			Y.get("#titleTable_r").setStyle('z-index: 1;');
+	        		}
+	            	
+	             }else{//停止浮动对齐
+            	 Y.get("#titleTable_r").setStyle('z-index: 1; top:0;  left: auto;position: static;');
+            }
+        	
             if(flag)
             {
                 btn.show();
@@ -1855,10 +1788,7 @@ Class('Main', {
 			//方案截止时间显示
 			var showtime = '';
 			if (this.endtime) {//没有选择时为0
-				var endTime = new Date(parseInt(this.endtime));
-			    if (endTime) {
-					showtime = endTime.format('YY-MM-DD hh:mm');
-			    }
+					showtime = new Date(this.endtime).format('MM-DD hh:mm');
 			}
 			Yobj.get('#end_time').html(showtime);			
 		};
@@ -1942,9 +1872,10 @@ Class('Main', {
 			
 			this.setVals({
 				'#codes': codeList.getCodeString(),
-				'#danma': codeList.getdanCodeString(),
+//				'#danma': codeList.getdanCodeString(),
+				'#danma': "",
 				'#ggtypeid': ggTypeBox.ggTypeIds.join(','),
-				'#sgtypename': ggTypeBox.ggtype.join(','),
+				'#ggtypename': ggTypeBox.ggtype.join(','),
 				'#zhushu': algo.zs,
 				'#gggroup': ggTypeBox.mode === 'multi' ? 2 : 3,
 				'#beishu': this.bs,
@@ -2053,5 +1984,5 @@ return !(i==this.length);
 }
 
 Class.C('min-rengou', .05);//最低认购
-Class.C('fsfq', "/trade/jcast.go");
+
 Class.C('paytype', 0);
