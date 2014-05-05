@@ -1411,7 +1411,7 @@ a.jcq_kcur {
 .todaykj p a{color:#145fab;width:65px;float:left;display:block}
 .todaykj p a.a1{color:#ff6600}
 .todaykj p a:hover{text-decoration:underline}
-.sjdownload{border:1px solid #ddd;clear:both;margin-top:12px;zoom:1}
+.sjdownload{border:1px solid #ddd;clear:both;margin-top:10px;zoom:1}
 .sjdownload h3{border-bottom:1px solid #ddd;height:30px;line-height:30px;padding-left:20px;font-weight:bold;font-size:12px;background:#ececec}
 .sjdownload p{background:url(../images/cai888/news_07.jpg) no-repeat 0 0 ;margin:10px;height:83px;padding-left:107px;padding-top:3px}
 .sjdownload p a{display:block;width:114px;height:34px;background:url(../images/cai888/news_10.jpg)}
@@ -1446,7 +1446,145 @@ a.jcq_kcur {
 .onlkj .jc_xqy div strong{font-weight:bold}
 .onlkj .jc_xqy div a{display:block;float:left;color:#fff;background:#ff6600;padding:0 7px;float:left;margin-right:10px;height:22px;line-height:22px}
 .onlkjplist{padding:7px 0 10px 10px}
-.onlkjplist a{line-height:24px;color:#333;background: url(../images/cai888/news2_03.jpg) left 10px no-repeat;display:block;height:24px;padding-left:13px}
+.onlkjplist a{line-height:24px;color:#333;background: url(../images/cai888/news2_03.jpg) left 10px no-repeat;display:block;height:24px;padding-left:16px}
 .onlkjplist a:hover{color:#ff6600;text-decoration:underline}
 .dc_table td label{}
 .dc_r{background:#fff}
+.newsco1{float:left;width:688px;height:520px;padding:20px;border:1px solid #ddd;}
+.newsco2{float:right;width:260px;}
+.newsc2c{border:1px solid #ddd;margin-top:10px}
+.newsco2 h3{border-bottom:1px solid #ddd;height:30px;line-height:30px;padding-left:12px;font-weight:bold;font-size:14px;background:#ececec}
+.newsco2 h3 span{float:left}
+.newsco2 h3 a{float:right;margin-right:10px;color:#444;font-size:12px;font-weight:100}
+.newsco2 h3 a:hover{color:#ff0000;text-decoration:underline}
+.newsc2list{padding:7px 0 10px 10px}
+.newsc2list a{line-height:24px;color:#333;background: url(../images/cai888/news2_03.jpg) left 10px no-repeat;display:block;height:24px;padding-left:16px}
+.newsc2list a:hover{color:#ff6600;text-decoration:underline}
+.newscrlist a{line-height:24px;color:#555;background: url(../images/cai888/news1_11.jpg) left 9px no-repeat;display:block;height:24px;padding-left:16px}
+.newscrlist h5{font-weight:100;color:#000;font-size:12px;line-height:22px;background:#f2f2f2;margin:8px 10px 8px 0;padding-left:10px}
+.newscrlist a.aimg1{width:auto;height:auto;background:none;padding:0}
+.newscrlist img{margin:6px 0 0 15px;display:block}
+.newsc1c{height:265px;width:330px;float:left;float:left}
+.newsc1c h3{border-bottom:1px solid #ccc;height:34px;line-height:34px;padding-left:14px;font-weight:100;font-size:14px;background:#ececec}
+.newsc1c h3 span{float:left;font-size:18px;font-family:"微软雅黑"}
+.newsc1c h3 a{float:right;margin-right:10px;color:#444;font-size:12px;font-weight:100}
+.newsc1c h3 a:hover{color:#ff0000;text-decoration:underline}
+.newsc1list{padding:12px 0 0px 0px}
+.newsc1list a{font-size:14px;line-height:29px;color:#333;background: url(../images/cai888/news1_03.jpg) left 10px no-repeat;display:block;height:29px;padding-left:16px}
+.newsc1list a:hover{color:#ff6600;text-decoration:underline}
+.newsbanner{margin:10px 0;clear:both;height:80px}
+.newsc2list1 b{float:left;font-family:arial;font-weight:100;text-align:center;margin-top:7px;*margin-top:4px;display:block;width:12px;height:12px;margin-right:10px;color:#fff;line-height:12px;background: url(../images/cai888/news1_22.jpg)}
+.newsc2list1 a{background:none;padding:0;float:left;line-height:26px;height:26px;*line-height:18px;*height:18px}
+.newsc2list1 p{clear:both;line-height:26px;*line-height:18px}
+.backtime{padding:226px 0 152px 588px;height:34px}
+.backtime span{padding-right:20px;display:block;float:left;height:34px;width:56px}
+.backtime b{display:block;float:left;width:26px;height:34px;line-height:34px;color:#ffd800;font-weight:bold;font-size:30px;font-family:arial;margin-right:2px;text-align:Center}
+.cubm{width:980px;padding:0 10px;background:#fff;}
+.vstop{background: url(../images/cai888/worcub_03.jpg) no-repeat 0 0 ;width:977px;}
+.vsbottom{background: url(../images/cai888/worcub_05.jpg) no-repeat 0 bottom ;width:977px;height:11px}
+.vscd{width:110px;float:left;border-right:2px solid #d3b39a;padding-top:30px;padding-left:10px}
+.vsbottom .vscd{height:9px;padding:0 0 0 10px}
+.vscd a{display:block;border:1px solid #d3b39a;background:#fff;border-right:none;height:25px;line-height:25px;margin-top:4px}
+.vscd a img{display:block;height:25px;width:25px;float:left}
+.vscd a span{display:block;height:25px;line-height:25px;float:left;padding-left:10px;color:#111}
+.vscd a:hover{background:#f1f1f1}
+.vstaim .vscd{padding-left:0;padding-right:4px;width:116px}
+.vscd div{height:32px;margin:0 auto;padding-left:10px}
+.vscd div img{display:block;float:left;width:25px;height:25px;margin-top:4px}
+.cubfo{padding:20px 0 15px}
+.cubbanner{width:669px;height:270px;float:left;}
+.cubtt{float:right;width:295px;}
+.rTabTit{ color: #bbb;  height: 35px; line-height: 35px;}
+.rTabTit a{ color: #333; font-size: 14px;  padding: 0 10px;}
+.rTabTit a:hover, .rTabTit .on{ color: #289403; font-weight: bold; text-decoration: none;}
+.rTbTit{ background-color: #f4f4f4; border-top:1px solid #289403; border-bottom: 1px solid #ccc;}
+.rTbTit a{ display: block; height: 28px; line-height: 28px; color: #666;  text-align: center;}
+.rTbTit a:hover, .rTbTit a.on{ color: #fff;  background-color: #289403; text-decoration: none;}
+.font14 {font-size: 14px;}
+.mt10 {margin-top: 10px;}
+.rTbConTable{ overflow: hidden; line-height:30px;}
+.rTbConTable td{ padding: 0 5px;}
+.rTbConTable .on td{ background-color: #f8f8f8;}
+.cGrey {color: #999999;}
+.cubzx h2{height:50px;border-bottom:2px solid #000;font-size:20px;font-family:"微软雅黑";line-height:50px;margin-bottom:10px}
+.cubzx h2 span{float:left}
+.cubzx h2 a{float:right;display:block;height:20px;width:65px;background:#2f6b15;color:#fff;text-align:center;line-height:20px;font-size:12px;font-weight:100;margin-top:20px;margin-right:4px}
+.cubzx h4 span{float:left}
+.cubzx h4 a{float:right;display:block;height:20px;width:65px;background:#2f6b15;color:#fff;text-align:center;line-height:20px;font-size:12px;font-weight:100;margin-top:6px;margin-right:4px}
+.cubleft{width:670px;float:left;}
+.cubright{width:296px;float:right;}
+.cubctt{width:325px;float:left;}
+.cubctt img{display:block;margin:0 0 10px 0 }
+.cubctt p{line-height:25px;color:#888;background: url(../images/cai888/worcub_14.jpg) no-repeat left 5px;padding-left:25px}
+.cubctt p a{color:#666}
+.cubctt p{line-height:24px;color:#888;background: url(../images/cai888/worcub_14.jpg) no-repeat left 5px;padding-left:25px}
+.cubctt p a:hover,.cubcc a:hover,.gswin a:hover{color:#ff0000;text-decoration:underline}
+.cubcc{width:325px;float:left;}
+.cubcc a{color:#444;font-size:14px;background: url(../images/cai888/news1_03.jpg) no-repeat 0px 9px;padding-left:15px;line-height:29px;display:block;height:29px}
+.cubright h4{height:32px;line-height:32px;border-bottom:2px solid #000;padding-left:5px;color:#289403;font-weight:bold;font-size:14px}
+.cubright h4 b{display:block;width:3px;height:16px;background:#289403;margin-right:10px;margin-top:8px;float:left}
+.cubright h4 span{float:left;}
+.gswin td{text-align:center;color:#444;line-height:30px}
+.gswin tr.tr1 td{line-height:32px;height:32px;background:#f4f4f4}
+.gswin td.td1{text-align:right;padding-right:5px}
+.gswin td.td2{text-align:left;padding-left:5px}
+.gswin td.td3{text-align:right;padding-right:25px;color:#666;font-family:"微软雅黑"}
+.gswin a{color:#145fab;}
+.gswin tr.tr2 td{padding-top:10px}
+.gswin b{display:block;margin:3px auto;width:18px;height:18px;background:#cdcec9;color:#fff;text-align:center;line-height:18px;font-size:14px;font-weight:100}
+.gswin b.cur{background:#c30009}
+.gswin td.td1 img{width:30px;height:30px}
+.ewmph{background:#f4f4f4;margin-top:15px}
+.ewmph .sjdownload{border:none;margin:0}
+.ewmph .sjdownload p{background:url(../images/cai888/worcub_18.jpg) no-repeat scroll 0 0 ;height:95px;padding-left:145px;padding-top:20px}
+.ewmph .sjdownload p.p1{background:url(../images/cai888/worcub_21.jpg) no-repeat scroll 0 0 ;height:85px;padding-left:145px;padding-top:30px;color:#333;line-height:26px;}
+.ewmph .sjdownload p.p1 strong{display:block;font-weight:bold;font-size:14px;color:#289403}
+.cubonline{clear:both;padding-top:5px;padding-bottom:12px}
+.coneleft{width:400px;float:left}
+.coneright{width:565px;float:right}
+.sstitle{background:#203b92;height:35px;margin:0px 0 8px}
+.sstitle .p1{float:left;width:81%}
+.sstitle span{float:left;line-height:35px;color:#fff}
+.sstitle .span1{width:50px;padding-left:5px}
+.sstitle .span2{width:185px;text-align:Center;display:block;height:35px}
+.sstitle .span3{width:70px}
+.sstitle .p2{float:right;width:19%}
+.sstitle .p2 em{display:block;float:left;text-align:center;line-height:18px;height:18px;width:18px;margin-left:3px;background:#fff;border:1px solid #ddd;color:#ff0000;font-weight:bold;margin-top:8px;cursor:pointer}
+.sstitle .p2 em:hover{color:#fff;background:#ff6600}
+.sstext{clear:both;}
+.sstext div{margin-bottom:2px;float:left;background:#264fac;margin-right:2px}
+.dtx1{width:185px;height:160px}
+.dtx1 table{width:150px;margin:12px auto;text-align:center;}
+.dtx1 img{width:52px;height:60px;}
+.dtx1 td{color:#fff;font-size:12px;color:#fff;line-height:24px;vertical-align:middle;padding:6px 0}
+.sstext p{text-align:center;color:#fff;font-size:12px;line-height:26px;padding-top:13px}
+.sstext strong,.sstext p strong{font-weight:bold;font-size:16px;}
+.dtx2,.dtx3,.dtx4,.dtx5{width:104px;height:79px}
+.dtx6{width:18px;height:88px;color:#fff;line-height:20px;padding:25px 5px;text-align:center}
+.dtx7{width:269px;height:138px;color:#fff;line-height:24px}
+.dtx7 p{padding-top:23px}
+.dtx8{width:96px;height:68px;color:#fff;line-height:24px}
+.dtx9{width:96px;height:68px;color:#fff;line-height:24px}
+.dtx8 p,.dtx9 p{padding-top:5px}
+.sstext .dtx3,.sstext .dtx5{background:#163178}
+.sstext .dtx4,.sstext .dtx6,.sstext .dtx9{background:#203b92}
+.cublc{width:568px;height:346px;background:url(../images/cai888/worcub_24.jpg)}
+.cublc td{vertical-align:top;}
+.ctoone{padding-top:59px}
+.ctoonec{height:54px;margin-bottom:13px}
+.ctoonec b{height:18px;line-height:18px;text-align:Center;color:#eb5403;font-weight:100;display:block;}
+.ctoonec p{color:#fff;background:#ba9054;text-align:Center;line-height:18px;}
+.ctotwo{padding-top:91px}
+.ctotwo .ctoonec p{background:#2eab03}
+.ctotre{padding-top:164px}
+.ctofor .ctoonec p{background:#f20000}
+.ctofor .ctoonec p.p1{background:#2eab03}
+.cubaimg{clear;both;}
+.cubaimg div{float:left;margin-right:11px;margin-bottom:14px;width:234px;height:160px;position:relative}
+.cubaimg img{width:235px;height:160px;}
+.cubaimg .cubimgc1{width:478px;height:335px}
+.cubaimg .cubimgc1 img{width:478px;height:335px}
+.cubaimg p{background:#000;text-align:center;color:#fff;font-size:16px;font-family:"微软雅黑";font-weight:100;height:45px;line-height:45px;bottom:0;left:0;width:100%;position:absolute;filter:alpha(opacity=50);-moz-opacity:0.5;-khtml-opacity: 0.5;opacity: 0.5;}
+.cubfot{border-top:8px solid #ececec;padding:15px 0;*margin-top:12px}
+.cubfot p{text-align:Center;color:#333;line-height:24px;}
+.cubfot p a{color:#333;}
