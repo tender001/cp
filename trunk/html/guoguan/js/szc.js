@@ -7,6 +7,7 @@ $_sys.win_level.push([ 07, "一等奖,二等奖,三等奖,四等奖,五等奖,�
 $_sys.win_level.push([ 20, "五星奖,四星一等奖,四星二等奖,三星奖,二星奖,一星奖,大小单双,二星组选,五星通选一等奖,五星通选二等奖,五星通选三等奖,任选一,任选二,三星组三,三星组六" ]);
 
 $_sys.win_level.push([ 50, "一等奖,二等奖,三等奖,四等奖,五等奖,六等奖,七等奖,八等奖,追加一等奖,追加二等奖,追加三等奖,追加四等奖,追加五等奖,追加六等奖,追加七等奖,,宝钻一等奖,宝钻二等奖,宝钻三等奖,宝钻四等奖"]);
+$_sys.win_level.push([500, "一等奖,二等奖,三等奖,四等奖,五等奖,六等奖,七等奖,八等奖,生肖乐,追加一等奖,追加二等奖,追加三等奖,追加四等奖,追加五等奖,追加六等奖,追加七等奖,,宝钻一等奖,宝钻二等奖,宝钻三等奖,宝钻四等奖" ]);
 $_sys.win_level.push([ 51, "一等奖,二等奖,三等奖,四等奖,五等奖,六等奖" ]);
 $_sys.win_level.push([ 52, "一等奖" ]);
 $_sys.win_level.push([ 53, "直选,组三,组六" ]);
@@ -22,6 +23,12 @@ $_sys.grade_def2.push([01,'<font color="red">6</font>+<font color="blue">1</font
 		'<font color="red">4</font>+<font color="blue">0</font>/<font color="red">3</font>+<font color="blue">1</font>,' +
 		'<font color="red">2</font>+<font color="blue">1</font>/<font color="red">1</font>+<font color="blue">1</font>/<font color="red">0</font>+<font color="blue">1</font>']);
 $_sys.grade_def2.push([50,'<font color="red">5</font>+<font color="blue">2</font>,'+
+                       '<font color="red">5</font>+<font color="blue">1</font>,'+
+                       '<font color="red">5</font>+<font color="blue">0</font>/<font color="red">4</font>+<font color="blue">2</font>,'+
+                       '<font color="red">4</font>+<font color="blue">1</font>/<font color="red">4</font>+<font color="blue">0</font>/<font color="red">3</font>+<font color="blue">2</font>,'+
+                       '<font color="red">3</font>+<font color="blue">1</font>/<font color="red">2</font>+<font color="blue">2</font>/<font color="red">3</font>+<font color="blue">0</font>,'+
+                       '<font color="red">2</font>+<font color="blue">1</font>/<font color="red">1</font>+<font color="blue">2</font>/<font color="red">0</font>+<font color="blue">2</font>']);
+$_sys.grade_def2.push([500,'<font color="red">5</font>+<font color="blue">2</font>,'+
                        '<font color="red">5</font>+<font color="blue">1</font>,'+
                        '<font color="red">5</font>+<font color="blue">0</font>,'+
                        '<font color="red">4</font>+<font color="blue">2</font>,'+
@@ -367,6 +374,49 @@ var loadmain = function(lotid, expect,type) {
 					 html +='<tr><td>'+getLevel(lotid)[i]+'</td><td>'+getLevelms(lotid)[i]+'</td><td>'+ninfo[i]+'</td><td><em>'+ginfo[i]+'</em></td></tr>';
 				}
 				$("#kaijianginfo").html(html);
+			}
+			if(lotid=="50"){
+				var kjdengji=""
+				
+					var gname=[];
+    			var gname2=[];
+					if(expect>2014050){
+		    			 gname=getLevel("50");
+		    			 gname2=getLevelms("50");
+						kjdengji += ' <tr><td rowspan="2">'+gname[0]+'</td><td rowspan="2">'+gname2[0]+'</td><td>基本</td><td>'+ninfo[0]+'</td><td>'+parseFloat(ginfo[0]).rmb(false, 0)+'</td></tr>';
+		    			kjdengji += ' <tr><td>追加</td><td>'+ninfo[7]+'</td><td>'+parseFloat(ginfo[9]).rmb(false, 0)+'</td></tr>';
+		    			kjdengji += ' <tr><td rowspan="2">'+gname[1]+'</td><td rowspan="2">'+gname2[1]+'</td><td>基本</td><td>'+ninfo[1]+'</td><td>'+parseFloat(ginfo[1]).rmb(false, 0)+'</td></tr>';
+		    			kjdengji += ' <tr><td>追加</td><td>'+ninfo[8]+'</td><td>'+parseFloat(ginfo[10]).rmb(false, 0)+'</td></tr>';			    			
+		    			kjdengji += ' <tr><td rowspan="2">'+gname[2]+'</td><td rowspan="2">'+gname2[2]+'</td><td>基本</td><td>'+ninfo[2]+'</td><td>'+parseFloat(ginfo[2]).rmb(false, 0)+'</td></tr>';
+		    			kjdengji += ' <tr mark="showtr" style="display: none;"><td>追加</td><td>'+ninfo[9]+'</td><td>'+parseFloat(ginfo[11]).rmb(false, 0)+'</td></tr>';	
+		    			kjdengji += ' <tr mark="showtr" style="display: none;"><td rowspan="2">'+gname[3]+'</td><td rowspan="2">'+gname2[3]+'</td><td>基本</td><td>'+ninfo[3]+'</td><td>'+parseFloat(ginfo[3]).rmb(false, 0)+'</td></tr>';
+		    			kjdengji += ' <tr mark="showtr" style="display: none;"><td>追加</td><td>'+ninfo[10]+'</td><td>'+parseFloat(ginfo[12]).rmb(false, 0)+'</td></tr>';	
+		    			kjdengji += ' <tr mark="showtr" style="display: none;"><td rowspan="2">'+gname[4]+'</td><td rowspan="2">'+gname2[4]+'</td><td>基本</td><td>'+ninfo[4]+'</td><td>'+parseFloat(ginfo[4]).rmb(false, 0)+'</td></tr>';
+		    			kjdengji += ' <tr mark="showtr" style="display: none;"><td>追加</td><td>'+ninfo[11]+'</td><td>'+parseFloat(ginfo[13]).rmb(false, 0)+'</td></tr>';	
+		    			kjdengji += ' <tr mark="showtr" style="display: none;"><td rowspan="2">'+gname[5]+'</td><td rowspan="2">'+gname2[5]+'</td><td>基本</td><td>'+ninfo[5]+'</td><td>'+parseFloat(ginfo[5]).rmb(false, 0)+'</td></tr>';
+		    			kjdengji += ' <tr mark="showtr" style="display: none;"></tr>';	
+		    		}else{
+		    			 gname=getLevel(500);
+		    			 gname2=getLevelms(500);
+		    			kjdengji += ' <tr><td rowspan="2">'+gname[0]+'</td><td rowspan="2">'+gname2[0]+'</td><td>基本</td><td>'+ninfo[0]+'</td><td>'+parseFloat(ginfo[0]).rmb(false, 0)+'</td></tr>';
+		    			kjdengji += ' <tr><td>追加</td><td>'+ninfo[9]+'</td><td>'+parseFloat(ginfo[9]).rmb(false, 0)+'</td></tr>';
+		    			kjdengji += ' <tr><td rowspan="2">'+gname[1]+'</td><td rowspan="2">'+gname2[1]+'</td><td>基本</td><td>'+ninfo[1]+'</td><td>'+parseFloat(ginfo[1]).rmb(false, 0)+'</td></tr>';
+		    			kjdengji += ' <tr><td>追加</td><td>'+ninfo[10]+'</td><td>'+parseFloat(ginfo[10]).rmb(false, 0)+'</td></tr>';			    			
+		    			kjdengji += ' <tr><td rowspan="2">'+gname[2]+'</td><td rowspan="2">'+gname2[2]+'</td><td>基本</td><td>'+ninfo[2]+'</td><td>'+parseFloat(ginfo[2]).rmb(false, 0)+'</td></tr>';
+		    			kjdengji += ' <tr><td>追加</td><td>'+ninfo[11]+'</td><td>'+parseFloat(ginfo[11]).rmb(false, 0)+'</td></tr>';	
+		    			kjdengji += ' <tr mark="showtr" style="display: none;"><td rowspan="2">'+gname[3]+'</td><td rowspan="2">'+gname2[3]+'</td><td>基本</td><td>'+ninfo[3]+'</td><td>'+parseFloat(ginfo[3]).rmb(false, 0)+'</td></tr>';
+		    			kjdengji += ' <tr mark="showtr" style="display: none;"><td>追加</td><td>'+ninfo[12]+'</td><td>'+parseFloat(ginfo[12]).rmb(false, 0)+'</td></tr>';	
+		    			kjdengji += ' <tr mark="showtr" style="display: none;"><td rowspan="2">'+gname[4]+'</td><td rowspan="2">'+gname2[4]+'</td><td>基本</td><td>'+ninfo[4]+'</td><td>'+parseFloat(ginfo[4]).rmb(false, 0)+'</td></tr>';
+		    			kjdengji += ' <tr mark="showtr" style="display: none;"><td>追加</td><td>'+ninfo[13]+'</td><td>'+parseFloat(ginfo[13]).rmb(false, 0)+'</td></tr>';	
+		    			kjdengji += ' <tr mark="showtr" style="display: none;"><td rowspan="2">'+gname[5]+'</td><td rowspan="2">'+gname2[5]+'</td><td>基本</td><td>'+ninfo[5]+'</td><td>'+parseFloat(ginfo[5]).rmb(false, 0)+'</td></tr>';
+		    			kjdengji += ' <tr mark="showtr" style="display: none;"><td>追加</td><td>'+ninfo[14]+'</td><td>'+parseFloat(ginfo[14]).rmb(false, 0)+'</td></tr>';	
+		    			kjdengji += ' <tr mark="showtr" style="display: none;"><td rowspan="2">'+gname[6]+'</td><td rowspan="2">'+gname2[6]+'</td><td>基本</td><td>'+ninfo[6]+'</td><td>'+parseFloat(ginfo[6]).rmb(false, 0)+'</td></tr>';
+		    			kjdengji += ' <tr mark="showtr" style="display: none;"><td>追加</td><td>'+ninfo[15]+'</td><td>'+parseFloat(ginfo[15]).rmb(false, 0)+'</td></tr>';	
+		    			kjdengji += ' <tr mark="showtr" style="display: none;"><td>'+gname[7]+'</td><td colspan="2">'+gname2[7]+'</td><td>'+ninfo[7]+'</td><td>'+parseFloat(ginfo[7]).rmb(false, 0)+'</td></tr>';
+		    		}
+					
+					
+				$("#kaijianginfo").html(kjdengji);
 			}
 			if(lotid =="50" || lotid =="07" || lotid =="51"){
 				var html=""
