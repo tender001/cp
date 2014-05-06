@@ -172,7 +172,7 @@ Class('Selector', {
 			_self.clickCallBack(this);
 		});
 		//设置点击在li上也可以选
-		box.live('li', 'click', function (e){
+		box.live('td.h_br', 'click', function (e){
 			if (e.srcElement === this || e.target === this) {
 				var input = Yobj.get('input[data-type]', this);
 				if (input.size()) {
@@ -305,7 +305,7 @@ Class('Selector', {
 		//查找头复选框, 位于在奇行中
 		function getHeadInput(tr){
 			var td = tr.cells[0];
-			return td.getElementsByTagName('input')[0];
+			return td.getElementsByTagName('span')[0];
 		}
 		//点击隐藏对阵
 		function onclick_head(){
@@ -332,7 +332,7 @@ Class('Selector', {
 				tr.find('div.sel_view').hide();
 				Yobj.get('div.dc_tb_sfc,div.tb_sfc_s').setStyle('zIndex', 1);
 				tr.find('div.dc_tb_sfc,div.tb_sfc_s').setStyle('zIndex', 3);
-				tr.find('div.tb_sfc_s').show();
+				tr.next('tr[mark=sfc]').show();
 				curPopLay = this;
 				this.isopen = true;
 				_self.marginTR.show().insert(tr, 'next');
@@ -340,7 +340,7 @@ Class('Selector', {
 				this.isopen = false;
 				curPopLay = null;
 				tr.find('div.sel_view').show();
-				tr.find('div.tb_sfc_s').hide(); 
+				tr.next('tr[mark=sfc]').hide(); 
 				span.show();
 				tr.find('p.tb_sfc_on').hide();
 				_self.marginTR.hide();
@@ -372,11 +372,9 @@ Class('Selector', {
 		}
 		
 		if (chk.checked) {
-//			td.addClass('label_cd');
-			td.addClass('h_brb');
+			td.addClass('label_cd');
 		}else{
-//			td.removeClass('label_cd');
-			td.removeClass('h_brb');
+			td.removeClass('label_cd');
 		}
 	},
 	//用号码来选择一个对阵
