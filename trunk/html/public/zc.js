@@ -892,6 +892,7 @@
 						});
 						
 						var html;	
+						var find = false;
 						if (expectlist.length>0){
 							for ( var i =  0; i < (expectlist.length>3?3:expectlist.length); i++) {
 								if (i == 0) {
@@ -903,20 +904,20 @@
 								else {
 									html += '<label for="exp' + expectlist[i][0] + '" value="' + expectlist[i][0] + '"><input type="radio" name="radio1" id="exp' + expectlist[i][0] + '"/>预售期(第' + expectlist[i][0] + '期)</label>';
 								}
-								    html +='<p style="float:right;font-size:12px;padding-right:10px"><span> 单注最高奖金<em style="color:#E52E04;font-family: Arial;font-size:12px">5,000,000元</em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;单式截至:<s id="endTimeSpan">05-01 22:25</s>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;复式截至:<s id="fs_endTimeSpan">05-01 22:45</s></span><b style="z-index: 1;" data-help="单式方案包含：单式上传、在线过滤、奖金优化。" mark="pro_em"></b></p>'
-							}		
-						}	
-						var find = false;
-						for ( var i =  0; i < (expectlist.length>3?3:expectlist.length); i++) {
-							if (expectlist[i][0] == this.get("#expect").val()) {
-								find = true;
-								$("#fs_endTimeSpan").html(Y.getDate(expectlist[i][1]).format('MM-DD hh:mm'));
-								$("#endTimeSpan").html(Y.getDate(expectlist[i][2]).format('MM-DD hh:mm'));
-								this.get("#responseJson #serverTime").val(Y.getDate(data.date).format('YY-MM-DD hh:mm:ss'));
-								this.get("#responseJson #endTime").val((Class.C('isds')?Y.getDate(expectlist[i][2]):Y.getDate(expectlist[i][1])).format('YY-MM-DD hh:mm:ss'));
-								this.postMsg('msg_show_endtime_CountDown');
+								if (expectlist[i][0] == this.get("#expect").val()) {
+									find = true;
+									 html +='<p style="float:right;font-size:12px;padding-right:10px"><span> 单注最高奖金<em style="color:#E52E04;font-family: Arial;font-size:12px">5,000,000元</em>'
+										 +'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;单式截至:<s >'+Y.getDate(expectlist[i][1]).format('MM-DD hh:mm')+'</s>'
+										 +'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;复式截至:<s >'+Y.getDate(expectlist[i][2]).format('MM-DD hh:mm')+'</s></span>'
+										 +'<b style="z-index: 1;" data-help="单式方案包含：单式上传、在线过滤、奖金优化。" mark="pro_em"></b></p>'
+								}
+								 
 							}
-						}
+					
+							 
+						}	
+					
+
 						if (!find) {
 							alert('对不起，该期暂未开售或者已经截止!');
 							if (history.length == 0) {
