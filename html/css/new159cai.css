@@ -1340,7 +1340,7 @@ a.jc_mtz:hover, a.jc_mhm:hover{background-position:-110px 0}
 .jckj_tb table.co1 thead td{background: none repeat scroll 0 0 #F5F5F5;border-bottom: 1px solid #CCCCCC;border-right: 1px solid #CCCCCC;height: 32px;}
 .jc_ds_col_1{background:#f5f5f5;border:1px solid #ddd;}
 .buyfimsg{border-left:1px solid #ddd;border-bottom:1px solid #ddd;}
-.buyfimsg td{border-right:1px solid #ddd;border-top:1px solid #ddd;padding:7px 0;color:#444;font-size:12px;text-align:left;padding-left:13px;valign:middle;font-size:14px}
+.buyfimsg td{border-right:1px solid #ddd;border-bottom:1px solid #ddd;padding:7px 0;color:#444;font-size:12px;text-align:left;padding-left:13px;valign:middle;font-size:14px}
 .buyfimsg td.td1{background:#f5f5f5;line-height:28px;color:#222;padding-left:30px;font-size:12px}
 .buyfimsg td font {color: #E62E04;font-size: 14px;font-weight: bold;padding: 0 5px;font-family:arial}
 .buyfimsg td input.text {border: 1px solid #DDDDDD;height: 22px;margin-right: 5px;text-align: center;width: 45px;}
@@ -1605,6 +1605,16 @@ a.a_catha:hover, a.a_hm_buya:hover{background-position:-110px 0}
 .tdlh:hover{background:#fffee6}
 .tdlh table span{display:block;float:left;width:64px;float:left;border-right:1px solid #ccc;color:#444;text-align:center;height:34px;line-height:34px}
 .tdlh table a{width:65px;height:34px;line-height:34px;background: url(/images/cai888/ban1.jpg) no-repeat scroll 100% bottom ;display:block;float:left;color:#444;font-weight:bold;}
+.tdlh table a:hover{background:url(/images/cai888/ban3.jpg) 100% bottom no-repeat}
+.tdlh table a.a1{background: url(/images/cai888/ban2.jpg) 100% bottom no-repeat;}
+.tdlh table a.a2,.tdlh table a.a2:hover{background:url(../images/cai888/ban4.jpg) 0 0 no-repeat;cursor:pointer}
 .tdlh td:hover{background:#fff}
 .tdlh table a:hover{color:#444}
 .tdlh font{font-size:12px}
+table.co1 tbody td em.ew_em{color:#444}
+table.co1 tbody td em.ew_em:hover{color:#ff0000}
+.b_th_top{}
+.b_th_top b{background:none;color:#444;display:block;float:left;padding:0 18px;line-height:30px;height:30px;width:auto;margin-top:4px}
+.b_th_top b.cur{border:1px solid #ccc;border-bottom:none;background:#fff}
+.b_th_co2{background:none;border:1px solid #ddd;border-top:none;}
+.b_th_co2
