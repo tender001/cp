@@ -6,7 +6,7 @@ Class( 'LineSelector', {
 		this.vsLine       = config.tr;
 		this.vsIndex      = config.vsIndex;
 		this.vsOptions    = config.vsOptions;
-		this.vsCheckAll   = config.vsCheckAll;
+//		this.vsCheckAll   = config.vsCheckAll;
 		this.spTag        = config.spTag;
 		this.vsInfo       = config.vsInfo;
 		this.a      	  = config.a;
@@ -48,7 +48,6 @@ Class( 'LineSelector', {
 			this.children[4].style.backgroundColor = '#fee6ad';
 			this.children[5].style.backgroundColor = '#fee6ad';
 			this.children[14].style.backgroundColor = '#fee6ad';
-			this.children[15].style.backgroundColor = '#fee6ad';
 			Y.get(this).find(".h_br").addClass("h_brx");
           	 Y.get(this).find(".label_cd").removeClass("h_brx");
 		}, function() {
@@ -58,7 +57,6 @@ Class( 'LineSelector', {
 			this.children[4].style.backgroundColor = '';
 			this.children[5].style.backgroundColor = '';
 			this.children[14].style.backgroundColor = '';
-			this.children[15].style.backgroundColor = '';
              Y.get(this).find(".h_br").removeClass("h_brx");
              Y.get(this).find(".label_cd").removeClass("h_brx");
 		} );
@@ -86,11 +84,12 @@ Class( 'LineSelector', {
 		}
 
 		// 全选/全不选
-		this.vsCheckAll.parentNode.onmousedown = function() {
-			var ck = this.getElementsByTagName('input')[0];
-			ck.checked = !ck.checked;
-			ck.checked ? Y.checkAll() : Y.clearAll();
-		};
+//		this.vsCheckAll.parentNode.onmousedown = function() {
+//			var ck = this.getElementsByTagName('input')[0];
+//			ck.checked = !ck.checked;
+////			ck.checked ? Y.checkAll() : Y.clearAll();
+//			ck.checked ? Y.unCheck(ck) : Y.check(ck);
+//		};
 	},
 
 	check : function(ck) {
@@ -99,7 +98,7 @@ Class( 'LineSelector', {
 		//ck.parentNode.parentNode.style.backgroundColor = '#FFDAA4';
 		Y.removeClass(ck.parentNode.parentNode, 'h_brx');
 		Y.addClass(ck.parentNode.parentNode, 'label_cd');
-		this.vsCheckAll.checked = this.getData().length == this.vsOptions.length;
+//		this.vsCheckAll.checked = this.getData().length == this.vsOptions.length;
 		if(this.getData().length==8){
 			this.a.innerHTML="清";
 		}
@@ -111,7 +110,7 @@ Class( 'LineSelector', {
 		ck.checked = false;
 		//ck.parentNode.parentNode.style.backgroundColor = '';
 		Y.removeClass(ck.parentNode.parentNode, 'label_cd');
-		this.vsCheckAll.checked && (this.vsCheckAll.checked = false);
+//		this.vsCheckAll.checked && (this.vsCheckAll.checked = false);
 		if(this.getData().length!=8){
 			this.a.innerHTML="全";
 		}
@@ -287,7 +286,7 @@ Class( 'TableSelector', {
 				tr           : tr,
 				vsIndex      : tr.getElementsByTagName('input')[0],
 				vsOptions    : tr.getElementsByTagName('label'),
-				vsCheckAll   : tr.getElementsByTagName('input')[input_length - 1],
+//				vsCheckAll   : tr.getElementsByTagName('input')[input_length - 1],
 				a            : tr.getElementsByTagName('a')[3],
 				spTag        : Y.get('span.sp_value', tr),
 				vsInfo       : vs_info
@@ -1380,7 +1379,7 @@ Class('LoadExpect',{
 	},	
 	jqs:function(data){
 		 var html = [];
-		 var tableTpl=['<colgroup><col width="45"><col width="64"><col width="64"><col width="74"><col width="16"><col width="74"><col width="42"><col width="42"><col width="42"><col width="42"><col width="42"><col width="42"><col width="42"><col width="50"><col width="24"><col width=""></colgroup>',//0
+		 var tableTpl=['<colgroup><col width="45"><col width="64"><col width="64"><col width="74"><col width="16"><col width="74"><col width="42"><col width="42"><col width="42"><col width="42"><col width="42"><col width="42"><col width="42"><col width="50"><col width=""></colgroup>',//0
 	        '<tbody>'+
 	       '<tr id="switch_for_{$enddate}" >'+
 	       '<td  colspan="17" class="dc_hs dc_hstd" style="text-align:left;line-height:16px;height:16px;background-color:#ECEFF5">'+
@@ -1452,7 +1451,7 @@ Class('LoadExpect',{
 	       '{$jqs7str}'+
 	       '</label>'+
 	       '</td>'+
-	       '<td style="cursor: pointer;border-right:1px solid #ddd"><a href="javascript:void(0);" class="jcq_q">全</a><input style="display: none" type="checkbox" all="0" value = "all"/></td>'+
+//	       '<td style="cursor: pointer;border-right:1px solid #ddd"><a href="javascript:void(0);" class="jcq_q">全</a><input style="display: none" type="checkbox" all="0" value = "all"/></td>'+
 	       '<td>'+
 	       '{$shuju}'+
 	       '</td>'+
@@ -1521,7 +1520,8 @@ Class('LoadExpect',{
 				if(row.bf=="-1:-1"){row.bf="延";}
 				row.shuju='<span class="red eng">'+row.bf+'</span>';
 			}else{
-				row.shuju='<a href="" target="_blank" id="ox'+row.mid+'">析</a> <a href="" target="_blank" id="oz'+row.mid+'">欧</a>';
+//				row.shuju='<a href="" target="_blank" id="ox'+row.mid+'">析</a> <a href="" target="_blank" id="oz'+row.mid+'">欧</a>';
+				row.shuju='<a href="" target="_blank" id="ox'+row.mid+'">析</a> ';
 			}
 			
 			if (out_of_date&&row.rz!=''&&(parseFloat(row.rs)>0)){//已经开出赛果的//&&row.bf!=''				
