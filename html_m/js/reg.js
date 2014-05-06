@@ -2,6 +2,16 @@ rad = function(){
 	$("#rad").attr("src","/rand.phpx?_="+(+new Date));
 	return true;
 },
+getStrLen = function(str) {// 含中文的字符串长度
+	var len = 0;
+	var cnstrCount = 0;
+	for ( var i = 0; i < str.length; i++) {
+		if (str.charCodeAt(i) > 255)
+			cnstrCount = cnstrCount + 1;
+	}
+	len = str.length + cnstrCount;
+	return len;
+},
 reg = function(){
 	var uname = $("#uname").val();
 	var pwd = $("#pwd").val();
@@ -15,7 +25,7 @@ reg = function(){
    	    showTips('请确认您已成年,非成年不能购彩');
         return;
     }
-	if(uname.length<4 || uname.length>16){
+	if(getStrLen(uname)<4 || getStrLen(uname)>16){
     	$("#uname").focus();
     	showTips('请填写您的用户名,4-16个字符');
         return;
@@ -72,6 +82,7 @@ reg = function(){
  		}
      });
 };
+
 $(document).ready(function(){
 	$("#tomail").click(function(){
 		$("#tphone").hide();
