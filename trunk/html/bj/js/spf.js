@@ -1477,7 +1477,7 @@ Class('LoadExpect',{
 		'</div></td>'+
 		'<td class="h_br" style="text-align: left; "><div class="dz_dv">'+
 		'<label class="label_n span_rihgt">'+
-		'<input type="checkbox" class="chbox" value="负" onclick="return false"  disabled="disabled" style="display: none"/>{$sp0str}</label> <em id="gtid_{$mid}" class="em_right">{$gn}</em>'+
+		'<input type="checkbox" class="chbox" value="负" onclick="return false"  disabled="disabled" style="display: none"/>{$sp0str}<em id="gtid_{$mid}" class="em_right">{$gn}</em></label> '+
 		'<s class="s_right">&nbsp;</s></div></td>'+
 		'<td style="cursor:pointer">'+
 		'<input type="checkbox" class="vs_check_all"  disabled="disabled"/>'+
@@ -1585,9 +1585,9 @@ Class('LoadExpect',{
 				}
 				
 				if (parseFloat(row.rs)>0){//赛果SP//if (parseFloat(this.getsp(row.spf,"rs"))>0){//赛果SP
-					row.sp3str=(row.rz==3?('<span class="sp_value eng red">'+row.rs+'</span>'):'--');
-					row.sp1str=(row.rz==1?('<span class="sp_value eng red">'+row.rs+'</span>'):'--');
-					row.sp0str=(row.rz==0?('<span class="sp_value eng red">'+row.rs+'</span>'):'--');					
+					row.sp3str=(row.rz==3?('<span class="sp_value eng red">'+row.rs+'</span>'):'<span class="sp_value eng red">--</span>');
+					row.sp1str=(row.rz==1?('<span class="sp_value eng red">'+row.rs+'</span>'):'<span class="sp_value eng red">--</span>');
+					row.sp0str=(row.rz==0?('<span class="sp_value eng red">'+row.rs+'</span>'):'<span class="sp_value eng red">--</span>');					
 				}else{
 					row.sp3str='<span class="sp_value eng red">'+row.sp3+'</span>';
 					row.sp1str='<span class="sp_value eng red">'+row.sp1+'</span>';

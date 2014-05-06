@@ -1327,9 +1327,9 @@ a.jc_mtz:hover, a.jc_mhm:hover{background-position:-110px 0}
 .tdaa .hhtdtk td{height:34px}
 .tdaa .hhtdtk td a{height:32px;padding-top:2px}
 .hhtdtk table{width:705px;border:1px solid #ddd;background:#fafafa;margin:0 auto;_width:710px}
-.unselect{cursor:pointer;}
+.unselecttd{cursor:pointer;}
 .unselect font{color:#ff0000;font-weight:100;font-size:12px}
-.unselectcur{background:#fffeed}
+.unselecttdcur{background:#fffeed}
 .dc_table .unselect a:hover{color:#ff6600}
 .dc_ls_n ul.clearfix li{width:95px;text-align:left;padding-left:10px}
 .dc_ls_n ul.clearfix li input{margin-right:2px}
@@ -1579,6 +1579,7 @@ a.jcq_kcur {
 .ctotwo .ctoonec p{background:#2eab03}
 .ctotre{padding-top:164px}
 .ctofor .ctoonec p{background:#f20000}
+.h_br{cursor:pointer}
 .ctofor .ctoonec p.p1{background:#2eab03}
 .cubaimg{clear;both;}
 .cubaimg div{float:left;margin-right:11px;margin-bottom:14px;width:234px;height:160px;position:relative}
@@ -1593,3 +1594,17 @@ a.jcq_kcur {
 .deltr{width:100%;background:#fefecb;height:34px;position:relative;z-index:1000}
 .deltr div{position:ablosute;}
 .deltr a{display:block;background:url(../images/cai888/del.png);width:16px;height:16px;margin:8px auto}
+a.a_catha, a.a_hm_buya{background: url("/images/cai888/jcbtn_03.jpg") no-repeat scroll 0 0;height:36px;line-height:36px;width:104px}
+a.a_catha:hover, a.a_hm_buya:hover{background-position:-110px 0}
+.tdlh{width:64px;position:relative;overflow:visible;z-index:9}
+.tdlh p{line-height:34px;}
+.tdab{position:absolute;left:-638px;top:34px;padding:5px 0px 5px 265px}
+.tdab td{border-left:1px solid #ddd}
+.tdab table{border-top:1px solid #ddd;}
+.dc_l_m{overflow:visible}
+.tdlh:hover{background:#fffee6}
+.tdlh table span{display:block;float:left;width:64px;float:left;border-right:1px solid #ccc;color:#444;text-align:center;height:34px;line-height:34px}
+.tdlh table a{width:65px;height:34px;line-height:34px;background: url(/images/cai888/ban1.jpg) no-repeat scroll 100% bottom ;display:block;float:left;color:#444;font-weight:bold;}
+.tdlh td:hover{background:#fff}
+.tdlh table a:hover{color:#444}
+.tdlh font{font-size:12px}
