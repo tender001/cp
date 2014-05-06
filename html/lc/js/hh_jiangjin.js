@@ -476,7 +476,7 @@ Class('SplitView', {
 	createDlg: function (){
 		this.dlg = this.lib.MaskLay('#blk1');
         this.dlg.addClose('#close1');
-		Yobj.get('#blk1 div.tan_top').drag(this.get('#blk1'));
+		Yobj.get('#blk1 div.tantop').drag(this.get('#blk1'));
         this.dlg.panel.find('div.tan_mid').setStyle('height:470px; overflow-y:auto; overflow-x:hidden; _width:632px');
 	},
 	splitSort: function (a, b){
