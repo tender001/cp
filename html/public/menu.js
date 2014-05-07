@@ -4,7 +4,7 @@
 Class({
 	ready: true,
     index:function (config){
-    	$("#nav_main").css({
+    	$("#nav_main,#zq_xl,#bf_xl").css({
     		"height":0,
     		"overflow":"hidden"
     		});
