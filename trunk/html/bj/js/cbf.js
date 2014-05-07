@@ -1875,7 +1875,7 @@ Class('LoadExpect',{
 	       '{$sp33str}'+
 	       '</label>'+
 	       '</td>'+
-	       '<td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>'+
+	       '<td colspan="5">&nbsp;</td>'+
 	       '<td class="last_td" style="cursor:pointer"><input type="checkbox" style="display:none" class="chbox vs_check_all_draw" onclick="return false"  {$disabled} /><a href="javascript:void(0);" class="jcq_q">全</a></td>'+
 	       '</tr>'+
 	       '<tr>'+
