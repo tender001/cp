@@ -119,7 +119,7 @@ Class( 'LineSelector', {
 
 	checkAll : function() {
 		this.data = Class.config('codeValue').slice();
-		this.vsCheckAll.checked = true;
+//		this.vsCheckAll.checked = true;
 		for (var i = 0, l = this.vsOptions.length; i < l; i++) {
 			this.vsOptions[i].getElementsByTagName('input')[0].checked = true;
 			//this.vsOptions[i].parentNode.style.backgroundColor = '#FFDAA4';
@@ -132,7 +132,7 @@ Class( 'LineSelector', {
 
 	clearAll : function() {
 		this.data = [];
-		this.vsCheckAll.checked = false;
+//		this.vsCheckAll.checked = false;
 		for (var i = 0, l = this.vsOptions.length; i < l; i++) {
 			this.vsOptions[i].getElementsByTagName('input')[0].checked = false;
 			//this.vsOptions[i].parentNode.style.backgroundColor = '';
@@ -472,12 +472,12 @@ Class( 'TableSelector', {
 			clearTimeout(timeout_id);
 			Y.leagueSelector.show();
 		} );
-		this.leagueSelector.mouseout( function() {
-			timeout_id = setTimeout( function() {
-				Y.leagueSelector.hide();
-				Y.leagueShowTag.removeClass('ls_h_btn');
-			}, 100);
-		} );
+//		this.leagueSelector.mouseout( function() {
+//			timeout_id = setTimeout( function() {
+//				Y.leagueSelector.hide();
+//				Y.leagueShowTag.removeClass('ls_h_btn');
+//			}, 100);
+//		} );
 
 		// 选择或隐藏某个指定的联赛
 		this.leagueSelector.live('#lglist input', 'click', function(e, ns) {
