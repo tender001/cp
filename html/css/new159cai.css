@@ -14,11 +14,11 @@ a.d_c_p,a.d_c_b,.tan_mid a.but2,a.start_hm{ background:url(../images/cdbg/tn_ad.
 a.d_c_p:hover{ background-position:0 -40px}
 a.d_c_b,.tan_mid a.but2,a.start_hm{ background-position:0 -80px}
 a.d_c_b:hover,.tan_mid a.but2:hover,a.start_hm:hover{ background-position:0 -120px}
-#zq_xl{width:95px;border:1px solid #b60a02; position:absolute;top:10px;border-top:none;display:none;padding-top:35px;z-index:999;cursor:pointer;left:795px}
+#zq_xl{width:95px;border:1px solid #b60a02; position:absolute;top:10px;border-top:none;display:block;padding-top:35px;z-index:999;cursor:pointer;left:795px}
 #zq_xl ul li{line-height:30px;color:#ba1f24;text-align:center;font-size:14px;border-bottom:1px solid #ddd; background-color:#fff}
 #zq_xl ul li.last{border:none}
 #zq_xl ul li:hover{ background-color:#E62E04;color:#fff}
-#bf_xl{width:95px;border:1px solid #b60a02; position:absolute;top:10px;border-top:none;display:none;padding-top:35px;z-index:999;cursor:pointer;left:891px}
+#bf_xl{width:95px;border:1px solid #b60a02; position:absolute;top:10px;border-top:none;display:block;padding-top:35px;z-index:999;cursor:pointer;left:891px}
 #bf_xl ul li{line-height:30px;color:#ba1f24;text-align:center;font-size:14px;border-bottom:1px solid #ddd; background-color:#fff}
 #bf_xl ul li.last{border:none}
 #bf_xl ul li:hover{ background-color:#E62E04;color:#fff}
