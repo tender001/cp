@@ -165,8 +165,8 @@ table.log_tab td a.aa:hover{color:#790500; text-decoration:underline}
 
 .nav_main{border:1px solid #ff6600;border-top:none}
 .hz_d_t{z-index:99;left:272px;width:120px}
-#bf_xl{border:1px solid #ff6600;border-top:none;left:864px;top:5px}
-#zq_xl{left:768px;border:1px solid #ff6600;top:4px;}
+#bf_xl{border:1px solid #ff6600;border-top:none;left:864px;top:4px}
+#zq_xl{left:768px;border:1px solid #ff6600;top:3px;}
 
 #naver{z-index:50; position:relative}
 .hz_d_t{top:22px;left:297px;width:113px;border:1px solid #ddd;-webkit-border-radius:6px;   
