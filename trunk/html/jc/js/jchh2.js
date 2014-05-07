@@ -545,7 +545,7 @@ Class('Selector', {
 		var arr = new Array();
         arr[0] = this.one('#vs'+bid);
         arr[1] = this.get('#vs'+bid).next().one();
-        var trs = arr, trpanel = this.getTrs(bid).find('td').slice(-1).find('a'),xtag = this.getTrs(bid).data('xhtag'),
+        var trs = arr, trpanel = this.getTrs(bid).find('td[mark=unselect]'),xtag = this.getTrs(bid).data('xhtag'),
 			opts = this.get(trs).find('a[data-type]');//找到对应的inputs组
         
 		this.synState(opts, sel, xtag, arr[0]);//同步简单显示的checkbox
