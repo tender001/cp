@@ -163,7 +163,7 @@ table.log_tab td a.aa:hover{color:#790500; text-decoration:underline}
 .friend_link p{padding:8px 0 0;line-height:24px}
 .friend_link{padding-bottom:8px}
 
-.nav_main{border:1px solid #ff6600;border-top:none}
+.nav_main{border:1px solid #ff6600;border-top:none;display:block}
 .hz_d_t{z-index:99;left:272px;width:120px}
 #bf_xl{border:1px solid #ff6600;border-top:none;left:864px;top:5px}
 #zq_xl{left:768px;border:1px solid #ff6600;top:4px;}
