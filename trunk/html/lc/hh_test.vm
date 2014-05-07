@@ -22,7 +22,7 @@
 	 </COLGROUP> 
 	#foreach ($match in $daymatch.matchs)
 	<tr fid="${match.mid}" isend="0" pendtime="${match.et}" homeTeam="${match.hn}" guestTeam="${match.gn}" win="" lost="" lg="${match.short_mname}" pdate="${match.itemid}" pname="${match.itemid}" mid="${match.mid}" zid="${match.itemid}">
-		<td><SPAN mark="name" >${match.name.substring(2,5)}</SPAN></td>
+		<td><SPAN mark="name" ><INPUT class=i-cr name="m${match.itemid}" id="m${match.itemid}" type="checkbox" value="${match.itemid}" checked="checked"><em title="${match.name}">${match.name.substring(2,5)}</em></SPAN></td>
 		<td style="BACKGROUND: ${match.cl}; COLOR: #fff"><A style="COLOR:white" href="" target="_blank" id="mn${match.itemid}" title="${match.mname}">${match.short_mname}</A></td>
 		<td style="border-right:1px solid #ccc">
 			<SPAN class="eng endtime" title="截止时间：${match.et}">${match.short_wet.substring(5,11)}</SPAN>
@@ -67,57 +67,51 @@
 		#else
 			<td colspan="3">未开玩法</td>
 		#end
-		
-		
-		
-		
-		
+		<td class="unselecttd" style="border-right:1px solid #ccc">
+	
+			<div class="tdlh" >
+      		<div class="sel_view" style="display: block;"></div>
+    	    <p class="tb_sfc_on" style="display: none;"><span class="s_more_hide"><a class="yc">隐藏</a></span></p>
+	    	<span class="s_more_show" style="display: inline;"><a class="xs">显示</a></span>
+      		<div class="tdab" style="display: none; ">
 
-		<td class="unselect" style="border-right:1px solid #ccc">
-			<div class="dc_tb_sfc" style="z-index: 3;">
-      <div class="sel_view" style="display: block;"></div>
-      <p class="tb_sfc_on" style="display: none;"><span class="s_more_hide">收起</span></p><span class="s_more_show" style="display: inline;">未选</span>
- </div>
+ 				<table width="100%" cellspacing="0" cellpadding="0" style="width:438px;float:right" class="lchhtab">
+ 						<colgroup><col width="45"><col></colgroup>
+ 						<tbody>
+								#if($match.sfcSale > 0)
+											<tr class="tr2"><td>&nbsp;</td><td><span>胜1-5</span><span>胜6-10</span><span>胜11-15</span><span>胜16-20</span><span>胜21-25</span><span>胜26+</span></td></tr>
+											<tr>
+												<td>客胜</td>
+												<td style="border-left:1px solid #ccc">
+													<a><INPUT id=g${match.itemid}_sfc_8 style="display:none;" value=11 type=checkbox data-sp="${match.g1}" data-type="sfc">${match.g1}</a>
+													<a><INPUT id=g${match.itemid}_sfc_9 style="display:none;" value=12 type=checkbox data-sp="${match.g2}" data-type="sfc">${match.g2}</a>
+													<a><INPUT id=g${match.itemid}_sfc_10 style="display:none;" value=13 type=checkbox data-sp="${match.g3}" data-type="sfc">${match.g3}</a>
+													<a><INPUT id=g${match.itemid}_sfc_11 style="display:none;" value=14 type=checkbox data-sp="${match.g4}" data-type="sfc">${match.g4}</a>
+													<a><INPUT id=g${match.itemid}_sfc_12 style="display:none;" value=15 type=checkbox data-sp="${match.g5}" data-type="sfc">${match.g5}</a>
+													<a><INPUT id=g${match.itemid}_sfc_13 style="display:none;" value=16 type=checkbox data-sp="${match.g6}" data-type="sfc">${match.g6}</a>
+												</td>
+											</tr>
+											<tr>
+												<td>主胜</td>
+												<td style="border-left:1px solid #ccc">
+													<a><INPUT id=g${match.itemid}_sfc_14 style="display:none;" value=01 type=checkbox data-sp="${match.h1}" data-type="sfc">${match.h1}</a>
+													<a><INPUT id=g${match.itemid}_sfc_15 style="display:none;" value=02 type=checkbox data-sp="${match.h2}" data-type="sfc">${match.h2}</a>
+													<a><INPUT id=g${match.itemid}_sfc_16 style="display:none;" value=03 type=checkbox data-sp="${match.h3}" data-type="sfc">${match.h3}</a>
+													<a><INPUT id=g${match.itemid}_sfc_17 style="display:none;" value=04 type=checkbox data-sp="${match.h4}" data-type="sfc">${match.h4}</a>
+													<a><INPUT id=g${match.itemid}_sfc_18 style="display:none;" value=05 type=checkbox data-sp="${match.h5}" data-type="sfc">${match.h5}</a>
+													<a><INPUT id=g${match.itemid}_sfc_19 style="display:none;" value=06 type=checkbox data-sp="${match.h6}" data-type="sfc">${match.h6}</a>
+												</td>
+											</tr>
+										#else
+											<tr></tr><tr></tr>
+										#end
+						 </tbody></table> </div> </div>
 		</td>
 		<td style="">
 			<a  target="_blank" id="ox${match.itemid}">析</a>
 			<a  target="_blank" id="oz${match.itemid}">欧</a>
 		</td>
-	</tr>	
-	<tr style="display:none;" mark="sfc" class="tdaa">
-		<td style="padding-right:48px" colspan="14" class="hhtdtk">
-			<table width="100%" cellspacing="0" cellpadding="0" class="lchhtab" style="width:438px;float:right">
-			<colgroup><col width="45"><col></colgroup>
-			<tbody>
-				#if($match.sfcSale > 0)
-					<tr class="tr2"><td>&nbsp;</td><td><span>胜1-5</span><span>胜6-10</span><span>胜11-15</span><span>胜16-20</span><span>胜21-25</span><span>胜26+</span></td></tr>
-					<tr>
-						<td>客胜</td>
-						<td style="border-left:1px solid #ccc">
-							<a><INPUT id=g${match.itemid}_sfc_8 style="display:none;" value=11 type=checkbox data-sp="${match.g1}" data-type="sfc">${match.g1}</a>
-							<a><INPUT id=g${match.itemid}_sfc_9 style="display:none;" value=12 type=checkbox data-sp="${match.g2}" data-type="sfc">${match.g2}</a>
-							<a><INPUT id=g${match.itemid}_sfc_10 style="display:none;" value=13 type=checkbox data-sp="${match.g3}" data-type="sfc">${match.g3}</a>
-							<a><INPUT id=g${match.itemid}_sfc_11 style="display:none;" value=14 type=checkbox data-sp="${match.g4}" data-type="sfc">${match.g4}</a>
-							<a><INPUT id=g${match.itemid}_sfc_12 style="display:none;" value=15 type=checkbox data-sp="${match.g5}" data-type="sfc">${match.g5}</a>
-							<a><INPUT id=g${match.itemid}_sfc_13 style="display:none;" value=16 type=checkbox data-sp="${match.g6}" data-type="sfc">${match.g6}</a>
-						</td>
-					</tr>
-					<tr>
-						<td>主胜</td>
-						<td style="border-left:1px solid #ccc">
-							<a><INPUT id=g${match.itemid}_sfc_14 style="display:none;" value=01 type=checkbox data-sp="${match.h1}" data-type="sfc">${match.h1}</a>
-							<a><INPUT id=g${match.itemid}_sfc_15 style="display:none;" value=02 type=checkbox data-sp="${match.h2}" data-type="sfc">${match.h2}</a>
-							<a><INPUT id=g${match.itemid}_sfc_16 style="display:none;" value=03 type=checkbox data-sp="${match.h3}" data-type="sfc">${match.h3}</a>
-							<a><INPUT id=g${match.itemid}_sfc_17 style="display:none;" value=04 type=checkbox data-sp="${match.h4}" data-type="sfc">${match.h4}</a>
-							<a><INPUT id=g${match.itemid}_sfc_18 style="display:none;" value=05 type=checkbox data-sp="${match.h5}" data-type="sfc">${match.h5}</a>
-							<a><INPUT id=g${match.itemid}_sfc_19 style="display:none;" value=06 type=checkbox data-sp="${match.h6}" data-type="sfc">${match.h6}</a>
-						</td>
-					</tr>
-				#else
-					<tr></tr><tr></tr>
-				#end
-			</tbody></table>
-		</td>
+		
 	</tr>
 	#end
 </table>
