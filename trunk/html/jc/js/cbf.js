@@ -881,7 +881,7 @@
                '</TD>'+
                '<TD><A class="{$pubone} bf_btn" href="javascript:void 0"><B><SPAN>{$IShide}</SPAN><S class={$pubtwo}></S></B></A>'+
                '</TD>'+
-               '<TD><a href="" target="_blank" id="ox{$itemid}">析</a> <a href="" target="_blank" id="oz{$itemid}">欧</a></TD></TR>',//3比赛场次
+               '<TD style="border-right:1px solid #ddd"><a href="" target="_blank" id="ox{$itemid}">析</a> <a href="" target="_blank" id="oz{$itemid}">欧</a></TD></TR>',//3比赛场次
                '<TR style="DISPLAY:{$display2}" id=pltr_{$mid} class="hide_b">'+
                '<TD colSpan=10>'+
                '<TABLE class=hide_table border=0 cellSpacing=0 cellPadding=0 width="100%"><COLGROUP>'+
