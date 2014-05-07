@@ -1268,13 +1268,13 @@ table.bk_yd  p{text-align:left;padding-left:10px}
 .dc_table td.tdhui,.dc_table td.tdhui:hover{background:url(/images/cai888/ban11.jpg) no-repeat scroll 100% bottom;}
 .jc_l_t {padding-left: 6px;overflow: visible;background: url("/images/cai888/lc_25.jpg") left center no-repeat;border-top:none
 }
-.dc_r_m h2.h_2{ background: url("/images/cai888/lc_28.jpg") 5px 2px transparent no-repeat;padding:7px 10px 0 0;height:28px;border-bottom:1px solid #ddd}
+.dc_r_m h2.h_2{ background: url("/images/cai888/lc_28.jpg") 5px 2px transparent no-repeat;padding:7px 0px 0 0;height:28px;border-bottom:1px solid #ddd}
 .dc_r_m h2.h_3{ background: url("/images/cai888/lc_51.jpg") 5px 2px transparent no-repeat;}
 .dc_r_m h2.h_4{ background: url("/images/cai888/lc_54.jpg") 5px 2px transparent no-repeat;border-top:1px solid #ccc}
 .dc_r_t{background:none;border-bottom:1px solid #ddd}
 .dcr_table th{ background: #f5f5f5;border-bottom:1px solid #ddd}
 .dc_r_m .an_title{ background: #f5f5f5}
-a.jcq_k{margin-top:2px;background:url("/images/njc/jcy_15.jpg")   no-repeat scroll 0 0 ;height:22px}
+a.jcq_k{margin-top:2px;background:url("/images/njc/jcy_15.jpg")   no-repeat scroll 0 0 ;height:22px;margin-right:0}
 .an_title ul li{border-bottom:1px solid #ddd}
 .an_title ul li.cur{border:none}
 table.dcr_table{border:none}
@@ -1375,7 +1375,7 @@ em.ew_eright{text-align:right;float:right}
 .dc_r em.ew_e{float:none;clear:both}
 .ddc_table td s{line-height:38px}
 .dc_l_tr{margin:0}
-#title_folats{overflow:visible}
+#title_folats,#title_folat{overflow:visible}
 .ddc_table td s.lests{float:right}
 a.jcq_kcur {
     background: url(../images/njc/jcy_17.jpg) no-repeat scroll 0 0 ;
