@@ -70,11 +70,9 @@ div{zoom:1}
 .xqtab1 b{height:30px;display:block;line-height:30px;border:1px solid #ccc; background:#fde9d9;padding:0 15px;color:#444;cursor:pointer;font-size:14px;z-index:9; position:absolute;bottom:-1px;_bottom:-2px}
 .xqtab1 b.cur{ background:#fff;border-bottom:1px solid #fff}
 .xqtabm{padding-top:14px;clear:both}
-.xqtabm td{line-height:30px;height:30px;text-align:center;color:#444}
+.xqtabm td{line-height:35px;height:35px;text-align:center;color:#444}
 .xqtabm tr.odd td{ background:#f5f5f5;}
-.xqtabm tr.tr1 td{color:#666; background:#ececec;}
-.xqtabm tr td{border-bottom:1px solid #ddd}
-.xqtabm table{border:1px solid #ddd;border-bottom:none}
+.xqtabm tr.tr1 td{height:27px;line-height:27px;color:#666; background:#ececec;border-bottom:1px solid #ccc;border-right:1px solid #fff}
 .xqtabm tr.tr2 td{color:#e52e04}
 .xqtabm a{color:#145fab;}
 .xqtabm a:hover{color:#e52e04; text-decoration:underline}
@@ -421,7 +419,7 @@ a.czbtn{display:block;height:32px;width:98px;line-height:32px;text-align:center;
 .logtb{width:252px;float:right;margin:59px 29px 0 0;_margin-right:15px}
 .logtb td{height:66px;text-align:left;color:#444; vertical-align:top}
 .logtb td.td1{height:40px;line-height:40px;color:#ff0000}
-.logtb td input{border:none; background:none;display:block;width:236px;height:44px;font-size:16px;color:#444;padding:14px 0 0 5px\9;height:28px\9;}
+.logtb td input{border:none; background:none;display:block;width:245px;height:44px;font-size:16px;color:#444;padding:14px 0 0 5px\9;height:28px\9;}
 :root .logtb td input{padding:0 0 0 5px;height:44px;}
 .logtb td a.btn{width:252px;height:45px;display:block;line-height:44px;color:#fff;font-size:20px; font-family:"微软雅黑";text-align:Center;background:url(../images/cai888/loginbtn.jpg)}
 .logtb td a.btn:hover{ background-position:0 -50px}
