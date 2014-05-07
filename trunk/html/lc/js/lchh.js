@@ -226,7 +226,7 @@ Class('Selector', {
 					var html = '<span class="x_s sl" onmouseover="this.className=\'x_s sl nx_s\'" onmouseout="this.className=\'x_s sl\'" data-type="'+link.attr('data-type')+'" value="'+link.attr('value')+'" data-bid="'+bid+'">'+so.html()+'</span>';
 				}				
 			}
-			tr.find('div.sel_view').html(html);
+//			tr.find('div.sel_view').html(html);
 			var more = tr.find('span.s_more_show'),
 				more2 = tr.find('span.s_more_hide'),
 				txt = '<a class="xs">显示</a>';
