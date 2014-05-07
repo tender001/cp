@@ -12,33 +12,35 @@
 <script type="text/javascript" src="/public/menu.js"></script>
 <script type="text/javascript" src="/public/159cp.js"></script>
 <script type="text/javascript" src="/public/chklogin.js"></script>
-
-<script type="text/javascript" src="/htmltest/js/ssq_kj.js"></script>
+<script type="text/javascript" src="/htmltest/js/szc_kj.js"></script>
 </head>
 <body>
 	<div class="onlkj">
 		<h3>
-			<span>双色球开奖公告</span><a href="/">更多</a>
+			<span>双色球开奖信息</span><a href="/">更多</a>
 		</h3>
+		<input id="lotid" type="hidden" value="01" name="gid">
 		<div class="onlkjp">
 			<p style="font-size: 14px">
-				<select id="expectlist"><option>0156</option></select>期开奖号码
+				第    <select id="elist1"><option></option></select>  期
 			</p>
 			<p>
-				<span id="">开奖号码：</span><b>02</b><b>10</b><b>11</b><b>17</b><b>18</b><b>22</b><b
-					class="cur">10</b>
+				<em style="margin-left: -215px;color: #333333;">开奖号码 ：</em><span style="margin-left: 60px;" id="kj_info"></span>
 			</p>
-			<p style="padding-bottom:10px">
-				奖池奖金：<em>1599885224元</em>
+			<p style="padding-bottom: 10px" id="kj_mess">
+			
 			</p>
-			<div class="jc_xqy" style="border-top:1px dashed #bbb;padding:7px 0 12px;margin:0 10px">
-				
+			<div class="jc_xqy"
+				style="border-top: 1px dashed #bbb; padding: 7px 0 12px; margin: 0 10px">
+
 				<div>
-					第<strong id="buy_qihao">1044</strong>期&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<s id="countDownSpan">剩余1天1时1分1秒</s><br>
+					第<strong id="buy_qihao"></strong>期&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<s id="endTimeSpan"></s>
+							<s id="countDownSpan"></s><br>
 					<a href="/shuangseqiu">选号投注</a><a href="/hemai/index.html?lotid=01">参与合买</a>
 				</div>
 			</div>
 		</div>
+		<div style="display:none" id="responseJson"><input type="hidden" id="serverTime" name="serverTime" value=""><input type="hidden" id="endTime" name="endTime" value=""></div>
 	</div>
 </body>
 </html>
