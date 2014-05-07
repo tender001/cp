@@ -672,7 +672,7 @@
                 tr.attr('mid', vstr.getAttribute('mid')).attr('pname', vstr.getAttribute('pname')).attr('lasttime', vstr.getAttribute('gdate'));
                 var A = vstr.cells[3].getElementsByTagName('A')[0].innerHTML,
                     B = vstr.cells[5+offset].getElementsByTagName('A')[0].innerHTML,
-                    date = vstr.cells[0].innerHTML.replace(/<[^>]+>/g,'');
+                    date = vstr.cells[0].getElementsByTagName('label')[0].title;
                 tr.data('vsInfo', {
                     vs: [A, B],
                     vss: A + 'VS' + B,
@@ -871,7 +871,7 @@
                '<COL width=151><COL></COLGROUP>',//2对阵table控制
                '<TBODY>'+
                '<TR style="DISPLAY:{$display}" class="{$classname}" lg="{$mname}" isend="{$end}" odds="{$ccbf}" pdate="{$itemid}" pendtime="{$enddate}" pname="{$itemid}" mid="{$mid}" zid="{$itemid}">'+
-               '<TD style="CURSOR: pointer"><LABEL for=m{$itemid}><INPUT id=m{$itemid} value={$itemid} CHECKED type=checkbox name=m{$itemid}>{$name}</LABEL></TD>'+
+               '<TD style="CURSOR: pointer"><LABEL for=m{$itemid} title="{$name}"><INPUT id=m{$itemid} value={$itemid} CHECKED type=checkbox name=m{$itemid}>{$newname}</LABEL></TD>'+
                '<TD style="BACKGROUND:{$cl}; COLOR: #fff" class=league><A title={$lmname} href="" target="_blank" id="mn{$itemid}" style="color: #fff">{$mname}</A></TD>'+
                '<TD><SPAN class="eng end_time" title="开赛时间：{$mt}">{$short_et}</SPAN> <SPAN style="DISPLAY: none" class="eng match_time" title="截止时间：{$et}">{$short_mt}</SPAN> </TD>'+
                '<TD style="text-align: right; padding-right:2px;"><s style="float:left"></s><A title={$lhn} href="" target="_blank" id="hn{$itemid}"><em id="htid{$itemid}" class="ew_e ew_eright">{$hn}</em></A></TD>'+
@@ -1084,7 +1084,8 @@
     			row.lhn=row.hn;
     			row.lgn=row.gn;
     			row.mname=row.mname.substr(0,4);
-    			row.name=row.name.trim().substr(2,5);
+    			row.name=row.name;
+    			row.newname=row.name.substr(2.5).trim();
     			
     			row.display="";//style="display:none"
     			row.display2="";//style="display:none"

@@ -181,7 +181,7 @@ Class('Selector', {
 				a = Yobj.get(tr).find('td[mark=unselect]>a');
 				if(sel.size() == 0){
 					if (a.one().className.indexOf('unselectcur') > -1) {
-		            	a.removeClass('unselectcur').html('展开');
+		            	a.removeClass('unselectcur').html('未选');
 		            	Yobj.get(tr).next('tr').hide(); 
 		            }
 				}else{
@@ -278,7 +278,7 @@ Class('Selector', {
            	 if(vals.length==1){
            		 tag.html(vals[0]);
            	 }else{
-           		 tag.html('已选'+vals.length+'项');
+           		 tag.html('已选<font>'+vals.length+'</font>项');
            	 }
             }else{
            	 tag.removeClass('a2');
@@ -360,7 +360,7 @@ Class('Selector', {
 			_self.allTr = undefined;
 			_self.get(this).removeClass('cm_hhgg_hover');
 			$(this).find('div.cm_jc_sc').css('display','none');
-		}).live('div.cm_jc_sc', 'click', function(e){
+		}).live('label[mark=name]', 'click', function(e){
 			_self.allTr = undefined;
 			var tr = Yobj.get(this).parent('tr').eq(0);
 			tr.hide();
@@ -914,7 +914,7 @@ Class('CodeList', {
 			Y.get(this).addClass("cm_jchover");
 		}).live('tr.cm_hhgg_xztt', 'mouseout', function(e,Y){
 			Y.get(this).removeClass("cm_jchover");
-	    }).live('td.dele_style', 'click', function(e){
+	    }).live('input[view=hh]', 'click', function(e){
 	    	var tr = Yobj.get(this).parent('tr').hide(),
 			bid = tr.attr('data-id');
 			tr.next().hide();
@@ -965,7 +965,8 @@ Class('CodeList', {
 		var tr = this.tmpl_1.cloneNode(true);
 		var tr2 = this.tmpl_2.cloneNode(true);
 		var tds = Yobj.get('td', tr);
-		tds.nodes[0].innerHTML = vsInfo.game_time;
+//		tds.nodes[0].innerHTML = vsInfo.game_time;
+		tds.nodes[0].getElementsByTagName('span')[0].innerHTML= vsInfo.game_time;
 		tds.nodes[1].innerHTML = vsInfo.title.replace('vs', '<span class="sp_vs">VS</span>');
 		doc.appendChild(tr);
 		doc.appendChild(tr2);
@@ -984,7 +985,7 @@ Class('CodeList', {
 		var tr1 = this.get("#vs"+bid),vstr = this.one("#vs"+bid), id="code"+bid+"_a", 
 		sum = 0,tr2 = tr1.next(), tr = this.get('#'+id),trn,
 		rq,A,B,date,chk;
-		rq = vstr.cells[0].getElementsByTagName('label')[0].innerHTML;
+		rq = vstr.cells[0].getElementsByTagName('em')[0].title;
 		rq2 = this.get("#vs"+bid).find('td strong[mark=close]').html();
 		A = vstr.getAttribute('hometeam');
 		B = vstr.getAttribute('guestteam');
@@ -997,7 +998,7 @@ Class('CodeList', {
 			  .attr('data-vs', A+"vs"+B)
 			  .attr('data-endtime', this.getDate(date));
 			tr.one().cells[1].innerHTML = A+"<span class=\"sp_vs\">VS</span>"+B;
-	        tr.one().cells[0].innerHTML = rq;
+	        tr.one().cells[0].innerHTML ='<input type="checkbox" view="hh" checked="" class="chbox">'+ rq;
 
 	        trn = this.get(this.tmpl_2.cloneNode(true)).insert(tr, 'next');
 	        trn.addClass('code_area');
@@ -1514,6 +1515,8 @@ Class('LgFilter', {
    	Yobj.get('#showAll_btn,#selectAllBtn').click(function(){
    		$this.onchange(false, true, 2);//全选
    		Y.get("#lglist input").prop("checked",true);
+   		Y.get("label[mark=name] input").prop("checked",true);
+   		
 	 });
 	Yobj.get('#unAllBtn').click(function(){
    		$this.onchange(false, false, 2);//全清
