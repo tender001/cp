@@ -683,7 +683,7 @@
                 //alert(vstr);
                 var A = vstr.cells[3].getElementsByTagName('em')[0].innerHTML,
                     B = vstr.cells[4+offset].getElementsByTagName('em')[0].innerHTML,
-                    date = vstr.cells[0].innerHTML.replace(/<[^>]+>/g,'');
+                    date = vstr.cells[0].getElementsByTagName('label')[0].title;
                 tr.data('vsInfo', {
                     vs: [A, B],
                     vss: A + 'VS' + B,
@@ -877,7 +877,7 @@
 		           '</colgroup>',//table
 		           '<tbody>'+
 		           '<tr class="{$classname}" style="display: none" lg="{$mname}" isend="1" lost="{$sp0}" draw="{$sp1}" win="{$sp3}" pendtime="{$enddate}" rq="{$close}" pdate="{$itemid}" pname="{$itemid}" mid="{$mid}" zid="{$itemid}" title="已截止场次">'+
-		           '<td style="cursor: pointer"><label for=m{$itemid}><input id=m{$itemid} value={$itemid}  checked type=checkbox name=m{$itemid}>{$name}</label></td>'+
+		           '<td style="cursor: pointer"><label for=m{$itemid} title="{$name}"><input id=m{$itemid} value={$itemid}  checked type=checkbox name=m{$itemid}>{$newname}</label></td>'+
 		           '<td style="background:{$cl}; color: #fff" class=league><a title="{$lmname}" href="" target="_blank" id="mn{$itemid}" style="color: #fff">{$mname}</a></td>'+
 		           '<td style="border-left:1px solid #fff"><span class="eng end_time" title="开赛时间：{$mt}">{$short_et}</span><span style="display: none" class="eng match_time" title="截止时间：{$et}">{$short_mt}</span></td>'+
 		           '<td style="text-align: right; border-left:1px solid #ddd;" class=h_br><div class="dz_dv" title="{$hn}"><s class="s_left"></s><span class="eng b span_left"><em class="em_left" id="htid_{$itemid}">{$hn}</em>{$closestr} <b class="b_left1">{$sp3}</b></span></div></td>'+
@@ -891,7 +891,7 @@
 		           '</tbody>',//已结束对阵
 		           '<tbody>'+
 		           '<tr class="{$classname}" lg="{$mname}" isend="0" lost="{$sp0}" draw="{$sp1}" win="{$sp3}" pendtime="{$enddate}" rq="{$close}" pdate="{$itemid}" pname="{$itemid}" mid="{$mid}" zid="{$itemid}">'+
-		           '<td style="cursor: pointer"><label for=m{$itemid}><input id=m{$itemid} value={$itemid}  checked type=checkbox name=m{$itemid}>{$name}</label></td>'+
+		           '<td style="cursor: pointer"><label for=m{$itemid} title="{$name}"><input id=m{$itemid} value={$itemid}  checked type=checkbox name=m{$itemid}>{$newname}</label></td>'+
 		           '<td style="background:{$cl}; color: #fff" class=league><a title="{$lmname}" href="" target="_blank" id="mn{$itemid}" style="color: #fff">{$mname}</a></td>'+
 		           '<td style="border-left:1px solid #fff"><span class="eng end_time" title="开赛时间：{$mt}">{$short_et}</span><span style="display: none" class="eng match_time" title="截止时间：{$et}">{$short_mt}</span></td>'+
 		           '<td style="text-align: right;  cursor: pointer;border-left:1px solid #ddd" class=h_br><div class="dz_dv" title="{$hn}"><input class=chbox value=3 type=checkbox style="display: none"><s class="s_left">&nbsp;</s><span class="eng b span_left"><em class="em_left" id="htid_{$itemid}">{$hn}</em>{$closestr} <b class="b_left1">{$sp3}</span></div></td>'+
@@ -962,7 +962,8 @@
     			row.lgn=row.gn;
 //    			row.pendtime=row.enddate.substr(2,5);
     			row.mname=row.mname.substr(0,4);
-    			row.name=row.name.trim().substr(2,5);
+    			row.name=row.name;
+    			row.newname=row.name.substr(2.5).trim();
     			if (Y.getDate(data.date)>Y.getDate(row.et)){//已经过期的场次
     				out_of_date_matches++;
     					row.shuju='<a href="#">析</a> <a href="#">亚</a> <a href="#">欧</a>';
