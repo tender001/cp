@@ -893,7 +893,7 @@
 		           '<td style="text-align: right;boredr-left:1px solid #ddd " class=h_br><div class="dz_dv" title={$hn}><s class="s_left">&nbsp;</s><span class="eng b span_left"><em class="em_left" id="htid_{$itemid}">{$hn}</em><b class="b_left"> {$sp3}</b></span></div></td>'+
 //		           '<td style="text-align: center;" class=h_br><span class="eng b">{$sp1}</span></td>'+
 		           '<td style="text-align: left; " class=h_br><div class="dz_dv" title={$gn}><span class="eng b span_left"><b class="b_left">{$sp0}<b> <em class="em_left" id="gtid_{$itemid}">{$gn}</em></span><s class="s_right"></s></div></td><td></td>'+
-		           '<td>'+
+		           '<td  style="border-right:1px solid #ddd">'+
 		           '<div class=pjpl id="odds{$itemid}"><span class="sp_value eng red">已截止场次</span></div>'+
 		           '<div style="display: none" class=tzbl><span class="sp_w35 eng">12%</span><span class="sp_w35 eng">23%</span><span class="sp_w35 eng">65%</span></div></td>'+
 		           '<td style="border-right:1px solid #ddd"><a href="" target="_blank" id="ox{$itemid}">析</a> <a href="" target="_blank" id="oz{$itemid}">欧</a></td>'+
@@ -907,7 +907,7 @@
 		           '<td style="text-align: right;  cursor: pointer;border-left:1px solid #ddd" class=h_br ><div class="dz_dv" title={$hn}><input class=chbox value={$leftvalue} data-type={$lefttype} type=checkbox style="display: none"><s class="s_left">&nbsp;</s><span class="eng b span_left"><em id="htid_{$itemid}" class="em_left">{$hn}</em> {$leftstr}</span></div></td>'+
 //		           '<td style="text-align: center; cursor: pointer" class=h_br><input class=chbox value=1 type=checkbox style="display: none" ><span class="eng b" >{$sp1}</span></td>'+
 		           '<td style="text-align: left;  cursor: pointer" class=h_br ><div class="dz_dv" title={$gn}><input class=chbox value={$rightvalue} data-type={$righttype} type=checkbox style="display: none"><span class="eng b span_right" style="padding-left:5px">{$rightsp} <em id="gtid_{$itemid}" class="em_right" >{$gn}</em>{$rightstr}</span><s class="s_right">&nbsp;</s></div></td><td style="cursor: pointer;border-right:1px solid #ddd"><a href="javascript:void(0);" class="jcq_q">全</a><input style="display: none" type="checkbox" all="0" value = "all"/></td>'+
-		           '<td>'+
+		           '<td  style="border-right:1px solid #ddd">'+
 		           '<div class=pjpl id="odds{$itemid}"><span class="sp_w35 eng" id="oh{$itemid}">{$b3}</span><span class="sp_w35 eng" id="od{$itemid}">{$b1}</span><span class="sp_w35 eng" id="oa{$itemid}">{$b0}</span></div>'+
 		           '<div style="display: none" class=tzbl><span class="sp_w35 eng">12%</span><span class="sp_w35 eng">23%</span><span class="sp_w35 eng">65%</span></div></td>'+
 		           '<td style="border-right:1px solid #ddd"><a href="" target="_blank" id="ox{$itemid}">析</a> <a href="" target="_blank" id="oz{$itemid}">欧</a></td>'+
