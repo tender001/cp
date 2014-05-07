@@ -1,0 +1,191 @@
+#foreach ($daymatch in $list)
+<div class="dc_hs" style="text-align: left; padding-left: 10px;">
+	<strong>${daymatch.day} ${daymatch.week} ${daymatch.num}场比赛可投注</strong> <a href="javascript:void 0" mark="hidetable">隐藏</a>
+</div>
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class="dc_table" id="d_${daymatch.day}">
+	<colgroup><col width="45"><col width="64"><col width="64"><col width="165"><col width="190"><col width="60"><col width="120"><col width=""><col></colgroup>
+	
+	
+#foreach ($match in $daymatch.matchs)
+		<tr zid="${match.itemid}" id="vs${match.mid}" pname="${match.itemid}" pdate="${match.itemid}" lg="${match.short_mname}" rq="${match.close}" pendtime="${match.et}" win="${match.sp3}" draw="${match.sp1}" lost="${match.sp0}" guestTeam="${match.gn}" homeTeam="${match.hn}" isend="0" gdate="${daymatch.day}" fid="${match.mid}">
+			
+			<td>
+				<label mark="name"><input type="checkbox" checked="checked" value="${match.itemid}" id="m${match.itemid}" name="m${match.itemid}" class="i-cr"><em title="${match.name}">${match.name.substring(2,5)}</em></label>
+			</td>
+			<td style="background:${match.cl};"><a style="color: #fff" id="mn${match.itemid}" title="${match.mname}">${match.short_mname}</a></td>
+			<td style="border-right:1px solid #ccc"><span class="eng end_time" title="截止时间：${match.et}" style="line-height: 30px;">${match.short_et}</span>
+				<span class="eng match_time" title="开赛时间：${match.mt}" style="display: none; line-height: 30px;">${match.short_mt}</span></td>
+			
+			<td style="border-right:1px solid #ccc">
+				<A title="${match.hn}" href="" target="_blank" id="hn${match.itemid}" >
+					#if ($match.hn.length()>5)
+					${match.hn.substring(0,5)}
+					#else
+						${match.hn}
+					#end
+				</A> 
+				VS
+				<A title="${match.gn}" href="" target="_blank" id="gn${match.itemid}" >
+					#if ($match.gn.length()>5)
+					${match.gn.substring(0,5)}
+					#else
+						${match.gn}
+					#end
+				</A> 
+			</td>
+			<td class="tdaa">
+				<table width="100%" border="0" cellspacing="0" cellpadding="0">
+				<colgroup><col width="38"><col width="150"></colgroup>
+				<tbody>
+				#if($match.spfSale > 0)
+				<tr><td>0</td>
+					<td style="border-left:1px solid #62A3D0" dat_tye="spf">
+						<a data-sp="${match.sp3}" data-type="spf" data-id="${match.mid}" data_val="胜" value="3" href="javascript:void(0);">${match.sp3}</a>
+						<a data-sp="${match.sp1}" data-type="spf" data-id="${match.mid}" data_val="平" value="1" href="javascript:void(0);">${match.sp1}</a>
+						<a data-sp="${match.sp0}" data-type="spf" data-id="${match.mid}" data_val="负" value="0" href="javascript:void(0);">${match.sp0}</a>
+					</td>
+				</tr>
+
+
+				#else
+						<tr ><td colspan="2">未开玩法</td></tr>		
+				#end
+				#if($match.rspfSale > 0)
+				
+				<tr><td>
+						#if($match.close>0)
+							<strong class="eng red" mark="close">+${match.close}</strong>
+						#else
+							<strong class="eng green" mark="close">${match.close}</strong>
+						#end
+					</td>
+					<td style="border-left:1px solid #62A3D0" dat-type="rqspf">
+						<a data-sp="${match.rsp3}" data-type="rqspf" data-id="${match.mid}" data_val="胜" value="3" href="javascript:void(0);">${match.rsp3}</a>
+						<a data-sp="${match.rsp1}" data-type="rqspf" data-id="${match.mid}" data_val="平" value="1" href="javascript:void(0);">${match.rsp1}</a>
+						<a data-sp="${match.rsp0}" data-type="rqspf" data-id="${match.mid}" data_val="负" value="0" href="javascript:void(0);">${match.rsp0}</a>
+					</td>
+				</tr>
+
+
+				#else
+						<tr ><td colspan="2">未开玩法</td></tr>		
+				#end
+
+				</tbody></table>
+			</td>
+
+
+
+
+			<td style="border-right:1px solid #ccc" mark='unselect' class="unselect"><a >未选</a></td>
+			<td style="border-right:1px solid #ccc">
+				<div class="pjpl">
+					<span id="oh${match.itemid}" class="sp_w35 eng">${match.b3}</span>
+					<span id="od${match.itemid}" class="sp_w35 eng">${match.b1}</span>
+					<span id="oa${match.itemid}" class="sp_w35 eng">${match.b0}</span>
+				</div>
+			</td>
+			<td style="">
+			<a id="ox${match.itemid}" target="_blank" >析</a> 
+			<a id="oz${match.itemid}" target="_blank" >欧</a>
+			</td>
+		</tr>
+
+		<tr  class="tdaa" style="DISPLAY: none">
+			<td colspan="9" class="hhtdtk" >
+				<table width="100%" cellspacing="0" cellpadding="0">
+					<colgroup><col width="45"><col></colgroup>
+					<tbody>
+						
+						<tr  dat_tye="zjq" style="display:none;"><td>总进球</td>
+							#if($match.jqsSale > 0)
+								<td>
+									<a data-sp="${match.jqs0}" data-id="${match.mid}" data-type="jqs" value="0" href="javascript:void(0);"><em>0球</em><i>${match.jqs0}</i></a>
+									<a data-sp="${match.jqs1}" data-id="${match.mid}" data-type="jqs" value="1" href="javascript:void(0);"><em>1球</em><i>${match.jqs1}</i></a>
+									<a data-sp="${match.jqs2}" data-id="${match.mid}" data-type="jqs" value="2" href="javascript:void(0);"><em>2球</em><i>${match.jqs2}</i></a>
+									<a data-sp="${match.jqs3}" data-id="${match.mid}" data-type="jqs" value="3" href="javascript:void(0);"><em>3球</em><i>${match.jqs3}</i></a>
+									<a data-sp="${match.jqs4}" data-id="${match.mid}" data-type="jqs" value="4" href="javascript:void(0);"><em>4球</em><i>${match.jqs4}</i></a>
+									<a data-sp="${match.jqs5}" data-id="${match.mid}" data-type="jqs" value="5" href="javascript:void(0);"><em>5球</em><i>${match.jqs5}</i></a>
+									<a data-sp="${match.jqs6}" data-id="${match.mid}" data-type="jqs" value="6" href="javascript:void(0);"><em>6球</em><i>${match.jqs6}</i></a>
+									<a data-sp="${match.jqs7}" data-id="${match.mid}" data-type="jqs" value="7" href="javascript:void(0);"><em>7球</em><i>${match.jqs7}</i></a>
+								</td>
+							#else
+								<td>未开玩法</td>
+							#end
+						</tr>
+						<tr dat_tye="bqc"  style="display:none;"><td>半全场</td>
+							#if($match.bqcSale > 0)
+								<td>
+									<a data-sp="${match.bqc33}" data-id="${match.mid}" data-type="bqc" value="33" href="javascript:void(0);"><em>胜-胜</em><i>${match.bqc33}</i></a>
+									<a data-sp="${match.bqc31}" data-id="${match.mid}" data-type="bqc" value="31" href="javascript:void(0);"><em>胜-平</em><i>${match.bqc31}</i></a>
+									<a data-sp="${match.bqc30}" data-id="${match.mid}" data-type="bqc" value="30" href="javascript:void(0);"><em>胜-负</em><i>${match.bqc30}</i></a>
+									<a data-sp="${match.bqc13}" data-id="${match.mid}" data-type="bqc" value="13" href="javascript:void(0);"><em>平-胜</em><i>${match.bqc13}</i></a>
+									<a data-sp="${match.bqc11}" data-id="${match.mid}" data-type="bqc" value="11" href="javascript:void(0);"><em>平-平</em><i>${match.bqc11}</i></a>
+									<a data-sp="${match.bqc10}" data-id="${match.mid}" data-type="bqc" value="10" href="javascript:void(0);"><em>平-负</em><i>${match.bqc10}</i></a>
+									<a data-sp="${match.bqc03}" data-id="${match.mid}" data-type="bqc" value="03" href="javascript:void(0);"><em>负-胜</em><i>${match.bqc03}</i></a>
+									<a data-sp="${match.bqc01}" data-id="${match.mid}" data-type="bqc" value="01" href="javascript:void(0);"><em>负-平</em><i>${match.bqc01}</i></a>
+									<a data-sp="${match.bqc00}" data-id="${match.mid}" data-type="bqc" value="00" href="javascript:void(0);"><em>负-负</em><i>${match.bqc00}</i></a>
+								</td>
+							#else
+							#end
+						
+						</tr>
+						#if($match.bfSale > 0)
+							<tr class="" style="display:none;" baoliu="1" clik_flg="cbf1" dat_tye="cbf">
+								<td style="_width:42px;" class="cm_bg_gray2 cm_w45" rowspan="3">比分</td>
+								<td class="cm_hhgg_zd">
+									<a data-sp="${match.bf10}" data-id="${match.mid}" data-type="bf" value="10" href="javascript:void(0);"><em>1:0</em><i>${match.bf10}</i></a>
+									<a data-sp="${match.bf20}" data-id="${match.mid}" data-type="bf" value="20" href="javascript:void(0);"><em>2:0</em><i>${match.bf20}</i></a>
+									<a data-sp="${match.bf21}" data-id="${match.mid}" data-type="bf" value="21" href="javascript:void(0);"><em>2:1</em><i>${match.bf21}</i></a>
+									<a data-sp="${match.bf30}" data-id="${match.mid}" data-type="bf" value="30" href="javascript:void(0);"><em>3:0</em><i>${match.bf30}</i></a>
+									<a data-sp="${match.bf31}" data-id="${match.mid}" data-type="bf" value="31" href="javascript:void(0);"><em>3:1</em><i>${match.bf31}</i></a>
+									<a data-sp="${match.bf32}" data-id="${match.mid}" data-type="bf" value="32" href="javascript:void(0);"><em>3:2</em><i>${match.bf32}</i></a>
+									<a data-sp="${match.bf40}" data-id="${match.mid}" data-type="bf" value="40" href="javascript:void(0);"><em>4:0</em><i>${match.bf40}</i></a>
+									<a data-sp="${match.bf41}" data-id="${match.mid}" data-type="bf" value="41" href="javascript:void(0);"><em>4:1</em><i>${match.bf41}</i></a>
+									<a data-sp="${match.bf42}" data-id="${match.mid}" data-type="bf" value="42" href="javascript:void(0);"><em>4:2</em><i>${match.bf42}</i></a>
+									<a data-sp="${match.bf50}" data-id="${match.mid}" data-type="bf" value="50" href="javascript:void(0);"><em>5:0</em><i>${match.bf50}</i></a>
+									<a data-sp="${match.bf51}" data-id="${match.mid}" data-type="bf" value="51" href="javascript:void(0);"><em>5:1</em><i>${match.bf51}</i></a>
+									<a data-sp="${match.bf52}" data-id="${match.mid}" data-type="bf" value="52" href="javascript:void(0);"><em>5:2</em><i>${match.bf52}</i></a>
+									<a data-sp="${match.bf3A}" data-id="${match.mid}" data-type="bf" value="3A" href="javascript:void(0);"><em>胜其它</em><i>${match.bf3A}</i></a>
+								</td>
+							</tr>
+							<tr style="display:none;" baoliu="1" clik_flg="cbf2" dat_tye="cbf">
+								<td class="cm_hhgg_zd">
+									<a data-sp="${match.bf00}" data-id="${match.mid}" data-type="bf" value="00" href="javascript:void(0);"><em>0:0</em><i>${match.bf00}</i></a>
+									<a data-sp="${match.bf11}" data-id="${match.mid}" data-type="bf" value="11" href="javascript:void(0);"><em>1:1</em><i>${match.bf11}</i></a>
+									<a data-sp="${match.bf22}" data-id="${match.mid}" data-type="bf" value="22" href="javascript:void(0);"><em>2:2</em><i>${match.bf22}</i></a>
+									<a data-sp="${match.bf33}" data-id="${match.mid}" data-type="bf" value="33" href="javascript:void(0);"><em>3:3</em><i>${match.bf33}</i></a>
+									<a data-sp="${match.bf1A}" data-id="${match.mid}" data-type="bf" value="1A" href="javascript:void(0);"><em>平其它</em><i>${match.bf1A}</i></a>
+								</td>
+							</tr>
+							<tr style="display:none;" baoliu="1" clik_flg="cbf3" dat_tye="cbf">
+								<td class="cm_hhgg_zd">
+									<a data-sp="${match.bf01}" data-id="${match.mid}" data-type="bf" value="01" href="javascript:void(0);"><em>0:1</em><i>${match.bf01}</i></a>
+									<a data-sp="${match.bf02}" data-id="${match.mid}" data-type="bf" value="02" href="javascript:void(0);"><em>0:2</em><i>${match.bf02}</i></a>
+									<a data-sp="${match.bf12}" data-id="${match.mid}" data-type="bf" value="12" href="javascript:void(0);"><em>1:2</em><i>${match.bf12}</i></a>
+									<a data-sp="${match.bf03}" data-id="${match.mid}" data-type="bf" value="03" href="javascript:void(0);"><em>0:3</em><i>${match.bf03}</i></a>
+									<a data-sp="${match.bf13}" data-id="${match.mid}" data-type="bf" value="13" href="javascript:void(0);"><em>1:3</em><i>${match.bf13}</i></a>
+									<a data-sp="${match.bf23}" data-id="${match.mid}" data-type="bf" value="23" href="javascript:void(0);"><em>2:3</em><i>${match.bf23}</i></a>
+									<a data-sp="${match.bf04}" data-id="${match.mid}" data-type="bf" value="04" href="javascript:void(0);"><em>0:4</em><i>${match.bf04}</i></a>
+									<a data-sp="${match.bf14}" data-id="${match.mid}" data-type="bf" value="14" href="javascript:void(0);"><em>1:4</em><i>${match.bf14}</i></a>
+									<a data-sp="${match.bf24}" data-id="${match.mid}" data-type="bf" value="24" href="javascript:void(0);"><em>2:4</em><i>${match.bf24}</i></a>
+									<a data-sp="${match.bf05}" data-id="${match.mid}" data-type="bf" value="05" href="javascript:void(0);"><em>0:5</em><i>${match.bf05}</i></a>
+									<a data-sp="${match.bf15}" data-id="${match.mid}" data-type="bf" value="15" href="javascript:void(0);"><em>1:5</em><i>${match.bf15}</i></a>
+									<a data-sp="${match.bf25}" data-id="${match.mid}" data-type="bf" value="25" href="javascript:void(0);"><em>2:5</em><i>${match.bf25}</i></a>
+									<a data-sp="${match.bf0A}" data-id="${match.mid}" data-type="bf" value="0A" href="javascript:void(0);"><em>负其它</em><i>${match.bf0A}</i></a>
+								</td>
+							</tr>
+						#else
+						
+						#end
+						
+					</tbody>
+				</table>
+		 
+	
+			</td>
+		</tr>
+#end
+	
+</table>
+#end
