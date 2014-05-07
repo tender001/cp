@@ -792,24 +792,24 @@
               '<TD rowSpan=2><LABEL for=m{$itemid}><INPUT id=m{$itemid} class=i-cr value={$itemid} CHECKED type=checkbox name=m{$itemid}>{$name}</LABEL></TD>'+
 	             '<TD style="BACKGROUND: {$cl}; COLOR: #fff" class=league rowSpan=2><A title={$lmname} href="" target="_blank" id="mn{$itemid}" style="color: #fff">{$mname}</A></TD>'+
 	             '<TD rowSpan=2><SPAN class="eng end_time" title="开赛时间：{$mt}">{$short_et}</SPAN><SPAN style="display:none" class="eng match_time" title="截止时间：{$et}">{$short_mt}</SPAN> </TD>'+
-	             '<TD><A title={$gn} href="" target="_blank" id="gn{$itemid}">{$gn}</A></TD>'+
-	             '<TD style="color:blue">客胜</TD>'+
-	             '<TD>{$sp11}</TD>'+
-	             '<TD>{$sp12}</TD>'+
-	             '<TD>{$sp13}</TD>'+
-	             '<TD>{$sp14}</TD>'+
-	             '<TD>{$sp15}</TD>'+
-	             '<TD>{$sp16}</TD>'+
+	             '<TD style="border-left:1px solid #ddd"><A title={$gn} href="" target="_blank" id="gn{$itemid}">{$gn}</A></TD>'+
+	             '<TD style="color:blue;border-left:1px solid #ddd">客胜</TD>'+
+	             '<TD class="tdhui" style="border-left:1px solid #ddd">{$sp11}</TD>'+
+	             '<TD class="tdhui">{$sp12}</TD>'+
+	             '<TD class="tdhui">{$sp13}</TD>'+
+	             '<TD class="tdhui">{$sp14}</TD>'+
+	             '<TD class="tdhui">{$sp15}</TD>'+
+	             '<TD class="tdhui">{$sp16}</TD>'+
 	             '<TD rowSpan=2><a href="" target="_blank" id="ox{$itemid}">析</a> <a href="" target="_blank" id="oz{$itemid}">欧</a></TD></TR>'+
 	             '<TR style="DISPLAY: none" isend="1" lg="{$mname}" mid="{$mid}" zid="{$itemid}" subrow="true">'+
-	             '<TD><A title={$hn} href="" target="_blank" id="hn{$itemid}">{$hn}</A></TD>'+
-	             '<TD style="color:red">主胜</TD>'+
-	             '<TD>{$sp01}</TD>'+
-	             '<TD>{$sp02}</TD>'+
-	             '<TD>{$sp03}</TD>'+
-	             '<TD>{$sp04}</TD>'+
-	             '<TD>{$sp05}</TD>'+
-	             '<TD>{$sp06}</TD></TR>'+
+	             '<TD style="border-left:1px solid #ddd"><A title={$hn} href="" target="_blank" id="hn{$itemid}">{$hn}</A></TD>'+
+	             '<TD style="color:red;border-left:1px solid #ddd">主胜</TD>'+
+	             '<TD class="tdhui"  style="border-left:1px solid #ddd">{$sp01}</TD>'+
+	             '<TD class="tdhui">{$sp02}</TD>'+
+	             '<TD class="tdhui">{$sp03}</TD>'+
+	             '<TD class="tdhui">{$sp04}</TD>'+
+	             '<TD class="tdhui">{$sp05}</TD>'+
+	             '<TD class="tdhui">{$sp06}</TD></TR>'+
               '</TBODY>',//3隐藏对阵
               '<TBODY>'+
               '<TR lg="{$mname}" isend="0" odds="{$nsfc}" pdate="{$itemid}" pendtime="{$et}" class="{$classname}" pname="{$itemid}" mid="{$mid}" zid="{$itemid}"  homeTeam="{$hn}" guestTeam="{$gn}">'+
@@ -828,7 +828,7 @@
 	             '<TR isend="0" lg="{$mname}" mid="{$mid}" zid="{$itemid}" subrow="true">'+
 	             '<TD style="border-left:1px solid #ddd"><A title={$hn} href="" target="_blank" id="hn{$itemid}">{$hn}</A></TD>'+
 	             '<TD style="color:red;border-left:1px solid #ddd">主胜</TD>'+
-	             '<TD style="CURSOR: pointer;border-left:1px solid #62A3D0" class=h_br><INPUT style="display: none" value=01 type=checkbox><SPAN>{$sp01}</SPAN></TD>'+
+	             '<TD style="CURSOR: pointer;border-left:1px solid #ddd" class=h_br><INPUT style="display: none" value=01 type=checkbox><SPAN>{$sp01}</SPAN></TD>'+
 	             '<TD style="CURSOR: pointer" class=h_br><INPUT style="display: none" value=02 type=checkbox><SPAN>{$sp02}</SPAN></TD>'+
 	             '<TD style="CURSOR: pointer" class=h_br><INPUT style="display: none" value=03 type=checkbox><SPAN>{$sp03}</SPAN></TD>'+
 	             '<TD style="CURSOR: pointer" class=h_br><INPUT style="display: none" value=04 type=checkbox><SPAN>{$sp04}</SPAN></TD>'+

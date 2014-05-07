@@ -1319,7 +1319,7 @@ a.jc_mtz:hover, a.jc_mhm:hover{background-position:-110px 0}
 .tdaa a.a1{background: url(/images/cai888/ban2.jpg) 100% bottom no-repeat;}
 .tdaa a.a2,.tdaa a.a2:hover{background:url(../images/cai888/ban4.jpg) 0 0 no-repeat;cursor:pointer}
 .tdaa a:hover{color:#333}
-.unselect a{background:#EBF5FF;display:block;height:68px;width:60px;display:block;line-height:68px;color:#444}
+.unselect a{display:block;height:68px;width:60px;display:block;line-height:68px;color:#444}
 .tdaa a em{color: #1F5BA9;display: block;line-height: 16px;text-align: center;}
 .tdaa a i{ color: #999999;display: block;line-height: 16px;text-align: center;}
 .hhtdtk{padding:5px}
@@ -1329,6 +1329,7 @@ a.jc_mtz:hover, a.jc_mhm:hover{background-position:-110px 0}
 .hhtdtk table{width:705px;border:1px solid #ddd;background:#fafafa;margin:0 auto;_width:710px}
 .unselecttd{cursor:pointer;}
 .unselect font{color:#ff0000;font-weight:100;font-size:12px}
+.unselect{background:#EBF5FF;}
 .unselecttdcur{background:#fffeed}
 .dc_table .unselect a:hover{color:#ff6600}
 .dc_ls_n ul.clearfix li{width:95px;text-align:left;padding-left:10px}
@@ -1380,7 +1381,7 @@ a.jcq_kcur {
     background: url(../images/njc/jcy_17.jpg) no-repeat scroll 0 0 ;
 }
 .hide_table{border:none; border-top: 1px solid #62A3D0;}
-.hide_table tr.ping td{background-position:100% 0px;height:38px;}
+.hide_table tr.ping td{background-position:100% 0px;}
 .hide_table tr.fu td{border-top:1px solid #62A3D0}
 .dz_dv{padding-right:6px}
 .bank_zj ul li em.jthpd{background-position:-28px -269px}

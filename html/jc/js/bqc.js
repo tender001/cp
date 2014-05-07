@@ -848,7 +848,7 @@
               '<TD style="text-align: right; padding-right:2px;"><A title={$lhn} href="" target="_blank" id="hn{$itemid}">{$hn}</A></TD>'+
               '<TD style="text-align: center;">VS</TD>'+
               '<TD style="text-align: left; padding-left:2px;"><A title={$lgn} href="" target="_blank" id="gn{$itemid}">{$gn}</A></TD>'+
-              '<TD class=h_br style="border-left:1px solid #62A3D0">{$sp0}</TD>'+
+              '<TD class=h_br style="border-left:1px solid #ddd">{$sp0}</TD>'+
               '<TD class=h_br >{$sp1}</TD>'+
               '<TD class=h_br>{$sp2}</TD>'+
               '<TD class=h_br >{$sp3}</TD>'+

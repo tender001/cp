@@ -901,42 +901,42 @@
                '<COL></COLGROUP>'+
                '<TBODY>'+
                '<TR class=sheng>'+
-               '<TD style="CURSOR: pointer"><LABEL class=eng for=sheng1><SPAN class="eng f_bf">胜其它</SPAN><BR><SPAN>{$sp90}</SPAN></LABEL></TD>'+
-               '<TD style="CURSOR: pointer"><LABEL class=eng for=sheng1><SPAN class="eng f_bf">1:0</SPAN><BR><SPAN>{$sp10}</SPAN></LABEL></TD>'+
-               '<TD style="CURSOR: pointer"><LABEL class=eng for=sheng1><SPAN class="eng f_bf">2:0</SPAN><BR><SPAN>{$sp20}</SPAN></LABEL></TD>'+
-               '<TD style="CURSOR: pointer"><LABEL class=eng for=sheng1><SPAN class="eng f_bf">2:1</SPAN><BR><SPAN>{$sp21}</SPAN></LABEL></TD>'+
-               '<TD style="CURSOR: pointer"><LABEL class=eng for=sheng1><SPAN class="eng f_bf">3:0</SPAN><BR><SPAN>{$sp30}</SPAN></LABEL></TD>'+
-               '<TD style="CURSOR: pointer"><LABEL class=eng for=sheng1><SPAN class="eng f_bf">3:1</SPAN><BR><SPAN>{$sp31}</SPAN></LABEL></TD>'+
-               '<TD style="CURSOR: pointer"><LABEL class=eng for=sheng1><SPAN class="eng f_bf">3:2</SPAN><BR><SPAN>{$sp32}</SPAN></LABEL></TD>'+
-               '<TD style="CURSOR: pointer"><LABEL class=eng for=sheng1><SPAN class="eng f_bf">4:0</SPAN><BR><SPAN>{$sp40}</SPAN></LABEL></TD>'+
-               '<TD style="CURSOR: pointer"><LABEL class=eng for=sheng1><SPAN class="eng f_bf">4:1</SPAN><BR><SPAN>{$sp41}</SPAN></LABEL></TD>'+
-               '<TD style="CURSOR: pointer"><LABEL class=eng for=sheng1><SPAN class="eng f_bf">4:2</SPAN><BR><SPAN>{$sp42}</SPAN></LABEL></TD>'+
-               '<TD style="CURSOR: pointer"><LABEL class=eng for=sheng1><SPAN class="eng f_bf">5:0</SPAN><BR><SPAN>{$sp50}</SPAN></LABEL></TD>'+
-               '<TD style="CURSOR: pointer"><LABEL class=eng for=sheng1><SPAN class="eng f_bf">5:1</SPAN><BR><SPAN>{$sp51}</SPAN></LABEL></TD>'+
-               '<TD style="CURSOR: pointer"><LABEL class=eng for=sheng1><SPAN class="eng f_bf">5:2</SPAN><BR><SPAN>{$sp52}</SPAN></LABEL></TD>'+
+               '<TD class="tdhui" style="CURSOR: pointer"><LABEL class=eng for=sheng1><SPAN class="eng f_bf">胜其它</SPAN><BR><SPAN>{$sp90}</SPAN></LABEL></TD>'+
+               '<TD class="tdhui" style="CURSOR: pointer"><LABEL class=eng for=sheng1><SPAN class="eng f_bf">1:0</SPAN><BR><SPAN>{$sp10}</SPAN></LABEL></TD>'+
+               '<TD class="tdhui" style="CURSOR: pointer"><LABEL class=eng for=sheng1><SPAN class="eng f_bf">2:0</SPAN><BR><SPAN>{$sp20}</SPAN></LABEL></TD>'+
+               '<TD class="tdhui" style="CURSOR: pointer"><LABEL class=eng for=sheng1><SPAN class="eng f_bf">2:1</SPAN><BR><SPAN>{$sp21}</SPAN></LABEL></TD>'+
+               '<TD class="tdhui" style="CURSOR: pointer"><LABEL class=eng for=sheng1><SPAN class="eng f_bf">3:0</SPAN><BR><SPAN>{$sp30}</SPAN></LABEL></TD>'+
+               '<TD class="tdhui" style="CURSOR: pointer"><LABEL class=eng for=sheng1><SPAN class="eng f_bf">3:1</SPAN><BR><SPAN>{$sp31}</SPAN></LABEL></TD>'+
+               '<TD class="tdhui" style="CURSOR: pointer"><LABEL class=eng for=sheng1><SPAN class="eng f_bf">3:2</SPAN><BR><SPAN>{$sp32}</SPAN></LABEL></TD>'+
+               '<TD class="tdhui" style="CURSOR: pointer"><LABEL class=eng for=sheng1><SPAN class="eng f_bf">4:0</SPAN><BR><SPAN>{$sp40}</SPAN></LABEL></TD>'+
+               '<TD class="tdhui" style="CURSOR: pointer"><LABEL class=eng for=sheng1><SPAN class="eng f_bf">4:1</SPAN><BR><SPAN>{$sp41}</SPAN></LABEL></TD>'+
+               '<TD class="tdhui" style="CURSOR: pointer"><LABEL class=eng for=sheng1><SPAN class="eng f_bf">4:2</SPAN><BR><SPAN>{$sp42}</SPAN></LABEL></TD>'+
+               '<TD class="tdhui" style="CURSOR: pointer"><LABEL class=eng for=sheng1><SPAN class="eng f_bf">5:0</SPAN><BR><SPAN>{$sp50}</SPAN></LABEL></TD>'+
+               '<TD class="tdhui" style="CURSOR: pointer"><LABEL class=eng for=sheng1><SPAN class="eng f_bf">5:1</SPAN><BR><SPAN>{$sp51}</SPAN></LABEL></TD>'+
+               '<TD class="tdhui" style="CURSOR: pointer"><LABEL class=eng for=sheng1><SPAN class="eng f_bf">5:2</SPAN><BR><SPAN>{$sp52}</SPAN></LABEL></TD>'+
                '</TR>'+
                '<TR class=ping>'+
-               '<TD style="CURSOR: pointer"><LABEL class=eng for=sheng1><SPAN class="eng f_bf">平其它</SPAN><BR><SPAN>{$sp99}</SPAN></LABEL></TD>'+
-               '<TD style="CURSOR: pointer"><LABEL class=eng for=sheng1><SPAN class="eng f_bf">0:0</SPAN><BR><SPAN>{$sp00}</SPAN></LABEL></TD>'+
-               '<TD style="CURSOR: pointer"><LABEL class=eng for=sheng1><SPAN class="eng f_bf">1:1</SPAN><BR><SPAN>{$sp11}</SPAN></LABEL></TD>'+
-               '<TD style="CURSOR: pointer"><LABEL class=eng for=sheng1><SPAN class="eng f_bf">2:2</SPAN><BR><SPAN>{$sp22}</SPAN></LABEL></TD>'+
-               '<TD style="CURSOR: pointer"><LABEL class=eng for=sheng1><SPAN class="eng f_bf">3:3</SPAN><BR><SPAN>{$sp33}</SPAN></LABEL></TD>'+
+               '<TD class="tdhui" style="CURSOR: pointer"><LABEL class=eng for=sheng1><SPAN class="eng f_bf">平其它</SPAN><BR><SPAN>{$sp99}</SPAN></LABEL></TD>'+
+               '<TD class="tdhui" style="CURSOR: pointer"><LABEL class=eng for=sheng1><SPAN class="eng f_bf">0:0</SPAN><BR><SPAN>{$sp00}</SPAN></LABEL></TD>'+
+               '<TD class="tdhui" style="CURSOR: pointer"><LABEL class=eng for=sheng1><SPAN class="eng f_bf">1:1</SPAN><BR><SPAN>{$sp11}</SPAN></LABEL></TD>'+
+               '<TD class="tdhui" style="CURSOR: pointer"><LABEL class=eng for=sheng1><SPAN class="eng f_bf">2:2</SPAN><BR><SPAN>{$sp22}</SPAN></LABEL></TD>'+
+               '<TD class="tdhui" style="CURSOR: pointer"><LABEL class=eng for=sheng1><SPAN class="eng f_bf">3:3</SPAN><BR><SPAN>{$sp33}</SPAN></LABEL></TD>'+
                '<TD colSpan=8>&nbsp;</TD>'+
                '</TR>'+
                '<TR class=fu>'+
-               '<TD style="CURSOR: pointer"><LABEL class=eng for=sheng1><SPAN class="eng f_bf">负其它</SPAN><BR><SPAN>{$sp09}</SPAN></LABEL></TD>'+
-               '<TD style="CURSOR: pointer"><LABEL class=eng for=sheng1><SPAN class="eng f_bf">0:1</SPAN><BR><SPAN>{$sp01}</SPAN></LABEL></TD>'+
-               '<TD style="CURSOR: pointer"><LABEL class=eng for=sheng1><SPAN class="eng f_bf">0:2</SPAN><BR><SPAN>{$sp02}</SPAN></LABEL></TD>'+
-               '<TD style="CURSOR: pointer"><LABEL class=eng for=sheng1><SPAN class="eng f_bf">1:2</SPAN><BR><SPAN>{$sp12}</SPAN></LABEL></TD>'+
-               '<TD style="CURSOR: pointer"><LABEL class=eng for=sheng1><SPAN class="eng f_bf">0:3</SPAN><BR><SPAN>{$sp03}</SPAN></LABEL></TD>'+
-               '<TD style="CURSOR: pointer"><LABEL class=eng for=sheng1><SPAN class="eng f_bf">1:3</SPAN><BR><SPAN>{$sp13}</SPAN></LABEL></TD>'+
-               '<TD style="CURSOR: pointer"><LABEL class=eng for=sheng1><SPAN class="eng f_bf">2:3</SPAN><BR><SPAN>{$sp23}</SPAN></LABEL></TD>'+
-               '<TD style="CURSOR: pointer"><LABEL class=eng for=sheng1><SPAN class="eng f_bf">0:4</SPAN><BR><SPAN>{$sp04}</SPAN></LABEL></TD>'+
-               '<TD style="CURSOR: pointer"><LABEL class=eng for=sheng1><SPAN class="eng f_bf">1:4</SPAN><BR><SPAN>{$sp14}</SPAN></LABEL></TD>'+
-               '<TD style="CURSOR: pointer"><LABEL class=eng for=sheng1><SPAN class="eng f_bf">2:4</SPAN><BR><SPAN>{$sp24}</SPAN></LABEL></TD>'+
-               '<TD style="CURSOR: pointer"><LABEL class=eng for=sheng1><SPAN class="eng f_bf">0:5</SPAN><BR><SPAN>{$sp05}</SPAN></LABEL></TD>'+
-               '<TD style="CURSOR: pointer"><LABEL class=eng for=sheng1><SPAN class="eng f_bf">1:5</SPAN><BR><SPAN>{$sp15}</SPAN></LABEL></TD>'+
-               '<TD style="CURSOR: pointer"><LABEL class=eng for=sheng1><SPAN class="eng f_bf">2:5</SPAN><BR><SPAN>{$sp25}</SPAN></LABEL></TD>'+
+               '<TD class="tdhui" style="CURSOR: pointer"><LABEL class=eng for=sheng1><SPAN class="eng f_bf">负其它</SPAN><BR><SPAN>{$sp09}</SPAN></LABEL></TD>'+
+               '<TD class="tdhui" style="CURSOR: pointer"><LABEL class=eng for=sheng1><SPAN class="eng f_bf">0:1</SPAN><BR><SPAN>{$sp01}</SPAN></LABEL></TD>'+
+               '<TD class="tdhui" style="CURSOR: pointer"><LABEL class=eng for=sheng1><SPAN class="eng f_bf">0:2</SPAN><BR><SPAN>{$sp02}</SPAN></LABEL></TD>'+
+               '<TD class="tdhui" style="CURSOR: pointer"><LABEL class=eng for=sheng1><SPAN class="eng f_bf">1:2</SPAN><BR><SPAN>{$sp12}</SPAN></LABEL></TD>'+
+               '<TD class="tdhui" style="CURSOR: pointer"><LABEL class=eng for=sheng1><SPAN class="eng f_bf">0:3</SPAN><BR><SPAN>{$sp03}</SPAN></LABEL></TD>'+
+               '<TD class="tdhui" style="CURSOR: pointer"><LABEL class=eng for=sheng1><SPAN class="eng f_bf">1:3</SPAN><BR><SPAN>{$sp13}</SPAN></LABEL></TD>'+
+               '<TD class="tdhui" style="CURSOR: pointer"><LABEL class=eng for=sheng1><SPAN class="eng f_bf">2:3</SPAN><BR><SPAN>{$sp23}</SPAN></LABEL></TD>'+
+               '<TD class="tdhui" style="CURSOR: pointer"><LABEL class=eng for=sheng1><SPAN class="eng f_bf">0:4</SPAN><BR><SPAN>{$sp04}</SPAN></LABEL></TD>'+
+               '<TD class="tdhui" style="CURSOR: pointer"><LABEL class=eng for=sheng1><SPAN class="eng f_bf">1:4</SPAN><BR><SPAN>{$sp14}</SPAN></LABEL></TD>'+
+               '<TD class="tdhui" style="CURSOR: pointer"><LABEL class=eng for=sheng1><SPAN class="eng f_bf">2:4</SPAN><BR><SPAN>{$sp24}</SPAN></LABEL></TD>'+
+               '<TD class="tdhui" style="CURSOR: pointer"><LABEL class=eng for=sheng1><SPAN class="eng f_bf">0:5</SPAN><BR><SPAN>{$sp05}</SPAN></LABEL></TD>'+
+               '<TD class="tdhui" style="CURSOR: pointer"><LABEL class=eng for=sheng1><SPAN class="eng f_bf">1:5</SPAN><BR><SPAN>{$sp15}</SPAN></LABEL></TD>'+
+               '<TD class="tdhui" style="CURSOR: pointer"><LABEL class=eng for=sheng1><SPAN class="eng f_bf">2:5</SPAN><BR><SPAN>{$sp25}</SPAN></LABEL></TD>'+
                '</TR>'+
                '</TBODY></TABLE></TD></TR></TBODY>',//4已截至
                '<TR style="DISPLAY:{$display2}" id="pltr_{$mid}" class="hide_b">'+
