@@ -895,7 +895,7 @@
 		           '<td>'+
 		           '<div class=pjpl id="odds{$itemid}"><span class="sp_value eng red">已截止场次</span></div>'+
 		           '<div style="display: none" class=tzbl><span class="sp_w35 eng">12%</span><span class="sp_w35 eng">23%</span><span class="sp_w35 eng">65%</span></div></td>'+
-		           '<td><a href="" target="_blank" id="ox{$itemid}">析</a> <a href="" target="_blank" id="oz{$itemid}">欧</a></td>'+
+		           '<td style="border-right:1px solid #ddd"><a href="" target="_blank" id="ox{$itemid}">析</a> <a href="" target="_blank" id="oz{$itemid}">欧</a></td>'+
 		           '</tr>'+
 		           '</tbody>',//已结束对阵
 		           '<tbody>'+
@@ -906,10 +906,10 @@
 		           '<td style="text-align: right;  cursor: pointer;border-left:1px solid #ddd" class=h_br ><div class="dz_dv" title={$hn}><input class=chbox value=3 type=checkbox style="display: none"><s class="s_left">&nbsp;</s><span class="eng b span_left"><em id="htid_{$itemid}" class="em_left">{$hn}</em> <b class="b_left">{$sp3}</b></span></div></td>'+
 		           '<td style="text-align: center; cursor: pointer" class=h_br><input class=chbox value=1 type=checkbox style="display: none" ><span class="eng b" >{$sp1}</span></td>'+
 		           '<td style="text-align: left;  cursor: pointer" class=h_br ><div class="dz_dv" title={$gn} style="padding-left:10px"><input class=chbox value=0 type=checkbox style="display: none"><span class="eng b span_right"><b class="b_right">{$sp0}</b> <em id="gtid_{$itemid}" class="em_right" >{$gn}</em></span><s class="s_right">&nbsp;</s></div></td><td style="cursor: pointer;border-right:1px solid #ddd"><a href="javascript:void(0);" class="jcq_q">全</a><input style="display: none" type="checkbox" all="0" value = "all"/></td>'+
-		           '<td>'+
+		           '<td style="border-right:1px solid #ddd">'+
 		           '<div class=pjpl id="odds{$itemid}"><span class="sp_w35 eng" id="oh{$itemid}">{$b3}</span><span class="sp_w35 eng" id="od{$itemid}">{$b1}</span><span class="sp_w35 eng" id="oa{$itemid}">{$b0}</span></div>'+
 		           '<div style="display: none" class=tzbl><span class="sp_w35 eng">12%</span><span class="sp_w35 eng">23%</span><span class="sp_w35 eng">65%</span></div></td>'+
-		           '<td><a href="" target="_blank" id="ox{$itemid}">析</a> <a href="" target="_blank" id="oz{$itemid}">欧</a></td>'+
+		           '<td ><a href="" target="_blank" id="ox{$itemid}">析</a> <a href="" target="_blank" id="oz{$itemid}">欧</a></td>'+
 		           '</tr>'+
 		           '</tbody>',//未结束对阵
 		           '</table>'//5

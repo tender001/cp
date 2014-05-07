@@ -857,7 +857,7 @@
               '<TD class=h_br >{$sp6}</TD>'+
               '<TD class=h_br >{$sp7}</TD>'+
               '<TD class=h_br>{$sp8}</TD>'+
-              '<TD><a href="" target="_blank" id="ox{$itemid}">析</a> <a href="" target="_blank" id="oz{$itemid}">欧</a></TD></TR>'+
+              '<TD style="border-right:1px solid #ddd"><a href="" target="_blank" id="ox{$itemid}">析</a> <a href="" target="_blank" id="oz{$itemid}">欧</a></TD></TR>'+
               '</TBODY>',//3隐藏对阵
               '<TBODY>'+
               '<TR lg="{$mname}" class="{$classname}" isend="0" odds="{$bqc}" pdate="{$itemid}" pendtime="{$enddate}" pname="{$itemid}" mid="{$mid}" zid="{$itemid}">'+
@@ -876,7 +876,7 @@
               '<TD style="CURSOR: pointer" class=h_br ><DIV class=label_br><INPUT class=chbox value=03 type=checkbox style="display: none"><SPAN class=eng>{$sp6}</SPAN></DIV></TD>'+
               '<TD style="CURSOR: pointer" class=h_br ><DIV class=label_br><INPUT class=chbox value=01 type=checkbox style="display: none"><SPAN class=eng>{$sp7}</SPAN></DIV></TD>'+
               '<TD style="CURSOR: pointer" class=h_br ><DIV class=label_br><INPUT class=chbox value=00 type=checkbox style="display: none"><SPAN class=eng>{$sp8}</SPAN></DIV></TD>'+
-              '<TD><a href="" target="_blank" id="ox{$itemid}">析</a> <a href="" target="_blank" id="oz{$itemid}">欧</a></TD></TR>'+
+              '<TD style="border-right:1px solid #ddd"><a href="" target="_blank" id="ox{$itemid}">析</a> <a href="" target="_blank" id="oz{$itemid}">欧</a></TD></TR>'+
               '</TBODY>',//4显示对阵
               '</TABLE>'//5
    		];

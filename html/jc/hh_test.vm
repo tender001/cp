@@ -48,7 +48,7 @@
 
 
 				#else
-						<tr ><td colspan="2">未开玩法</td></tr>		
+						<tr ><td colspan="2" style="background:#f5f5f5">未开玩法</td></tr>		
 				#end
 				#if($match.rspfSale > 0)
 				
@@ -68,7 +68,7 @@
 
 
 				#else
-						<tr ><td colspan="2">未开玩法</td></tr>		
+							<tr ><td colspan="2" style="background:#f5f5f5">未开玩法</td></tr>		
 				#end
 
 				</tbody></table>
@@ -110,7 +110,7 @@
 									<a data-sp="${match.jqs7}" data-id="${match.mid}" data-type="jqs" value="7" href="javascript:void(0);"><em>7球</em><i>${match.jqs7}</i></a>
 								</td>
 							#else
-								<td>未开玩法</td>
+								<td style="background:#f5f5f5">未开玩法</td>
 							#end
 						</tr>
 						<tr dat_tye="bqc"  style="display:none;"><td>半全场</td>
@@ -127,6 +127,7 @@
 									<a data-sp="${match.bqc00}" data-id="${match.mid}" data-type="bqc" value="00" href="javascript:void(0);"><em>负-负</em><i>${match.bqc00}</i></a>
 								</td>
 							#else
+									<td style="background:#f5f5f5">未开玩法</td>
 							#end
 						
 						</tr>
