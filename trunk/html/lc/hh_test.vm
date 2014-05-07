@@ -5,21 +5,20 @@
 
 <table class="dc_table dc_tb_lq" border=0 cellSpacing=0 cellPadding=0 width="100%" id="d_${daymatch.day}">
 	<COLGROUP>
-	  <COL width="30">
-	  <COL width="60">
-	  <COL width="79">
-	  <COL width="114">
-	  <COL width="44">
-	  <COL width="44">
-	  <COL width="44">
-	  <COL width="44">
-	  <COL width="44">
-	  <COL width="44">
-	  <COL width="44">
-	  <COL width="44">
-	  <COL width="64">
-	  <COL width="">
-	 </COLGROUP> 
+	  <COL width="50">
+  <COL width="60">
+  <COL width="64">
+  <COL width="114">
+  <COL width="44">
+  <COL width="44">
+  <COL width="44">
+  <COL width="44">
+  <COL width="44">
+  <COL width="44">
+  <COL width="44">
+  <COL width="44">
+  <COL width="64">
+	  <COL width=""></COLGROUP>  
 	#foreach ($match in $daymatch.matchs)
 	<tr fid="${match.mid}" isend="0" pendtime="${match.et}" homeTeam="${match.hn}" guestTeam="${match.gn}" win="" lost="" lg="${match.short_mname}" pdate="${match.itemid}" pname="${match.itemid}" mid="${match.mid}" zid="${match.itemid}">
 		<td><SPAN mark="name" ><INPUT class=i-cr name="m${match.itemid}" id="m${match.itemid}" type="checkbox" value="${match.itemid}" checked="checked"><em title="${match.name}">${match.name.substring(2,5)}</em></SPAN></td>
