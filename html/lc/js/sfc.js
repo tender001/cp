@@ -1293,7 +1293,7 @@
             });
 			//少于两场的提示
 			//if (!issfc) {//胜分差不显示
-				this.lt2_info = this.get('<div style="text-align: center;padding-top: 10px;color: red;" id="vslt2">请至少选择2场比赛进行投注。</div>').insert('#ggListFree', 'prev');
+            this.lt2_info = this.get('#vslt2').insert('#ggListFree', 'prev');
 			//}
         },
         getCurrentType: function (){//取得过关方式
