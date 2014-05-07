@@ -4,45 +4,44 @@
 Class({
 	ready: true,
     index:function (config){
-
-    	this.get(".nav h2").mouseover(function(){
-    		Y.get("#nav_main").show();
-        });
-    	this.get(".nav h2").mouseout(function(){
-    		Y.get("#nav_main").hide();
-        });
-    	this.get("#nav_main").mouseover(function(){
-    		Y.get("#nav_main").show();
-        });
-    	this.get("#nav_main").mouseout(function(){
-    		Y.get("#nav_main").hide();
-        });
+    	$("#nav_main").css({
+    		"height":0,
+    		"overflow":"hidden"
+    		});
+    	$(".nav_re h2,#nav_main").hover(function(){
+    		$("#nav_main").find("#nav_main").show();
+			$("#nav_main").clearQueue().animate({
+				height:640
+				})
+		},function(){
+			$("#nav_main").animate({
+				height:0
+				})
+		});
+    	$("li.zqzx,#zq_xl").hover(function(){
+    		$("#zq_xl").find("#zq_xl").show();
+			$("#zq_xl").clearQueue().animate({
+				height:90
+				})
+		},function(){
+			$("#zq_xl").animate({
+				height:0
+				})
+		});
+    	$("li.bfzb,#bf_xl").hover(function(){
+    		$("#bf_xl").find("#bf_xl").show();
+			$("#bf_xl").clearQueue().animate({
+				height:125
+				})
+		},function(){
+			$("#bf_xl").animate({
+				height:0
+				})
+		});
+		 
+   
 		
-    	this.get("li.zqzx").mouseover(function(){
-    		Y.get("#zq_xl").show();
-        });
-    	this.get("li.zqzx").mouseout(function(){
-    		Y.get("#zq_xl").hide();
-        });
-    	this.get("#zq_xl").mouseover(function(){
-    		Y.get("#zq_xl").show();
-        });
-    	this.get("#zq_xl").mouseout(function(){
-    		Y.get("#zq_xl").hide();
-        });
-    	
-    	this.get("li.bfzb").mouseover(function(){
-    		Y.get("#bf_xl").show();
-        });
-    	this.get("li.bfzb").mouseout(function(){
-    		Y.get("#bf_xl").hide();
-        });
-    	this.get("#bf_xl").mouseover(function(){
-    		Y.get("#bf_xl").show();
-        });
-    	this.get("#bf_xl").mouseout(function(){
-    		Y.get("#bf_xl").hide();
-        });
+
     }
 
 });
