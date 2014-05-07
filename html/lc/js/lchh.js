@@ -73,7 +73,7 @@ Class('Selector', {
 		this.setHoverBg(box);
 		this.oninit();
 		//Yobj.get('tr td .dc_tdul label li').addClass('h_bra');
-		Yobj.get('.tb_sfc_s tr .h_bb_1px').addClass('h_bra');
+		Yobj.get('.tdab tr .h_bb_1px').addClass('h_bra');
 	},
 	filterLg: function (lgs_str){
 		this.allTr.each(function (tr){
@@ -129,6 +129,7 @@ Class('Selector', {
 		var _self = this;
 		Yobj.get('#showAll_btn').click(function (){
 			Yobj.get(_self.allTrs).removeClass('hide_row');
+			Y.get("label[span=name] input").prop("checked",true);
 			_self.hideNum = 0;
 			_self.setHideNum();
 			_self.onshowAll();
@@ -181,7 +182,7 @@ Class('Selector', {
 			}
 		});
 		//弹出层的td
-		box.find('div.tb_sfc_s').live('td', 'click', function (e){
+		box.live('table.lchhtab a', 'click', function (e){
 			if (e.srcElement === this || e.target === this) {
 				var input = Yobj.get('input[data-type]', this);
 				if (input.size()) {
@@ -212,7 +213,7 @@ Class('Selector', {
 	//统计隐藏项选中数
 	updateSelectNum: function (bid){
 		var tr = this.getTr1(bid),
-			div = tr.find('div.tb_sfc_s'),
+			div = tr.find('div.tdab'),
 			html = '',
 			tag = div.prev('span').nodes[0];
 		if (tag) {
@@ -255,26 +256,29 @@ Class('Selector', {
  
 		var MTR = document.createElement('TR');
 		var MTD = document.createElement('TD').appendChild(MTR);
-		MTD.setAttribute('colspan','5');
-		MTD.style.height = '80px';
+		MTD.setAttribute('colspan','8');
+		MTD.style.height = '118px';
 		this.marginTR = Yobj.get(MTR);
 		box.childs('table').each(function (table){
 			if (table.innerHTML.indexOf('赛事编号') == -1) {//跳过表头
 				var trs = table.rows,//tr里面包含一个显示剩分差的选项table
 					chk, other, id, data, A;
 				for (var i = 0, j = trs.length; i < j; i++) {
-					A = trs[i];
+					
+						A = trs[i];
+					
+					
 					chk = getHeadInput(A);//头标签
 					chk.onclick = onclick_head;
 					other = Yobj.get(A).find('input').size() > 1;
 					all.push(A);
 					allTr.push(A);
 					if (other) {//截止后不再存在
-						var sfcDiv = Yobj.get('span.s_more_show,p', A);
+						var sfcDiv = Yobj.get('td.unselecttd', A);
 						sfcDiv.click(onclick_other);//切换隐藏项
-						Yobj.get('div.tb_sfc_s', A).mousedown(function (e){
-							e.stop();
-						});
+//						Yobj.get('div.tdab', A).mousedown(function (e){
+//							e.stop();
+//						});
 						id = A.getAttribute('mid');
 						idArr.push(id);
 						A.id = 'vs'+id + '_a';
@@ -282,7 +286,7 @@ Class('Selector', {
 						var rf_inputs = Yobj.get('input[data-rf]', A);
 						data = {
 							mid_pname: A.getAttribute('mid') + '|' + A.getAttribute('pname'),
-							game_time: A.cells[0].getElementsByTagName('span')[0].innerHTML,
+							game_time: A.cells[0].getElementsByTagName('em')[0].title,
 							end_time: Yobj.getDate(A.getAttribute('pendtime')).getTime(),
 							title: A.getAttribute('guestteam') + 'vs' + A.getAttribute('hometeam'),
 							id: id,
@@ -330,9 +334,9 @@ Class('Selector', {
 				span.hide();
 				tr.find('p.tb_sfc_on').show();
 				tr.find('div.sel_view').hide();
-				Yobj.get('div.dc_tb_sfc,div.tb_sfc_s').setStyle('zIndex', 1);
-				tr.find('div.dc_tb_sfc,div.tb_sfc_s').setStyle('zIndex', 3);
-				tr.next('tr[mark=sfc]').show();
+				Yobj.get('div.tdlh,div.tdab').setStyle('zIndex', 1);
+				tr.find('div.tdlh,div.tdab').setStyle('zIndex', 3);
+				tr.find('div.tdab').show();
 				curPopLay = this;
 				this.isopen = true;
 				_self.marginTR.show().insert(tr, 'next');
@@ -340,18 +344,18 @@ Class('Selector', {
 				this.isopen = false;
 				curPopLay = null;
 				tr.find('div.sel_view').show();
-				tr.next('tr[mark=sfc]').hide(); 
+				tr.find('div.tdab').hide(); 
 				span.show();
 				tr.find('p.tb_sfc_on').hide();
 				_self.marginTR.hide();
 			}
 		}
-		Yobj.get(document).mousedown(function (){
-			if (curPopLay) {
-				onclick_other.call(curPopLay);
-				curPopLay = null;
-			}
-		});
+//		Yobj.get(document).mousedown(function (){
+//			if (curPopLay) {
+//				onclick_other.call(curPopLay);
+//				curPopLay = null;
+//			}
+//		});
 		this.vsTr = vsTr;
 		this.vsList = vs;
 		this.vs_hash = vs_hash;
@@ -366,16 +370,27 @@ Class('Selector', {
 		return Yobj.get('#vs'+bid+ '_a');
 	},
 	setTdBg: function (chk){
-		var td = Yobj.get(chk).parent('li');
-		if (!td.size()) {
-			td = Yobj.get(chk).parent('td');
+		var td ="";
+		if(chk.id.indexOf("sfc")>1){
+			td = Yobj.get(chk).parent('a');
+			if (chk.checked) {
+				td.addClass('a2');
+			}else{
+				td.removeClass('a2');
+			}
+		}else{
+			td = Yobj.get(chk).parent('li');
+			if (!td.size()) {
+				td = Yobj.get(chk).parent('td');
+			}
+			if (chk.checked) {
+				td.addClass('label_cd');
+			}else{
+				td.removeClass('label_cd');
+			}
 		}
 		
-		if (chk.checked) {
-			td.addClass('label_cd');
-		}else{
-			td.removeClass('label_cd');
-		}
+		
 	},
 	//用号码来选择一个对阵
 	setCode: function (bid, code){//['fs2','dxf1']
@@ -852,16 +867,16 @@ Class('LgFilter', {
 			all = Yobj.get('#listMenu,#listDisplay'),
 			tid;
 		this.setOptionsEvent(menu);
-		all.hover(function (){
-			clearTimeout(tid);
-			$this.open();
-			btn.addClass('ls_h_btn');
-		}, function (){
-			tid = setTimeout(function() {
-				$this.close();
-				btn.removeClass('ls_h_btn');				
-			}, 100);
-		});
+//		all.hover(function (){
+//			clearTimeout(tid);
+//			$this.open();
+//			btn.addClass('ls_h_btn');
+//		}, function (){
+//			tid = setTimeout(function() {
+//				$this.close();
+//				btn.removeClass('ls_h_btn');				
+//			}, 100);
+//		});
 		this.menu = menu;
 	},
 	reset: function (){
@@ -879,6 +894,16 @@ Class('LgFilter', {
 			all_chks.each(function (chk){
 				chk.checked = true;
 				str += chk.getAttribute('m');
+			});
+			$this.onchange(str);
+		});
+		Yobj.get('#unAllBtn').click(function (){
+			var str = '';
+			all_chks.each(function (chk){
+				chk.checked = false;
+				if (chk.checked) {
+					str += chk.getAttribute('m');
+				}
 			});
 			$this.onchange(str);
 		});
@@ -906,11 +931,71 @@ Class('Main', {
 	ready: true,
 	index: function (){
 		this.createClass();
+		this.goTotop();
 		this.otherEvents();
 		this.lib.Clock('#sysTime');//时间
 		this.setTableHeadFixed();
 		this.sethref();
 	},
+	goTotop:function (){
+        var isIE=!!window.ActiveXObject;
+        var isIE6 = isIE&&!window.XMLHttpRequest;
+        var btn = $("#goTotop");
+        var right = 0;
+        var top = $(window).height()-247;
+        var ietop = $(window).height()-247+$(window).scrollTop();
+        var flag = true;
+        $(window).resize(function(){
+            btn.css({"position":"fixed",top:top,right:right});
+            if(isIE6)btn.css({"position":"absolute",top:ietop,right:right});
+        })
+        btn.css({"position":"fixed",top:top,right:right});
+        var areaTop = Y.get("#right_area").getXY().y;
+        
+        $(window).scroll(function(){
+        	 if ($(this).scrollTop() > areaTop){//跟踪对齐当滚动条超过右侧区域则开始滚动
+	            	var V = $('#titleTable_r');
+	        		if (V[0]) {
+	        			var T = $(document),
+	        			H = $("#main").eq(0),
+	        			M = H.offset().top + H.outerHeight(),
+	        			F = V.innerWidth(),
+	        			B = V.offset().top,
+	        			L = V.outerHeight(), 
+	        			u = T.scrollTop();
+	        			Z = Math.min(0, M - (L + u));
+	        			
+	        			if (B == Z) {
+	        				V.css({left: "auto", top: "auto",width: F, position: "static"});
+	        			} else {
+	        				if(isIE6){
+	        					V.css({left: "auto",top: Z+$(window).scrollTop(), width: F,position: "absolute"});
+	        				}else{
+	        				V.css({left: "auto",top: Z, width: F, position: "fixed"});
+	        				}
+	        			}
+	        			Y.get("#titleTable_r").setStyle('z-index: 1;');
+	        		}
+	            	
+	             }else{//停止浮动对齐
+            	 Y.get("#titleTable_r").setStyle('z-index: 1; top:0;  left: auto;position: static;');
+            }
+        	
+            if(flag)
+            {
+                btn.show();
+                flag = false;
+            }
+            if($(this).scrollTop() == 0)
+            {
+                btn.hide();
+                flag = true;
+            }
+            btn.css({"position":"fixed",top:top,right:right});
+            ietop = $(window).height()-247+$(window).scrollTop();
+            if(isIE6)btn.css({"position":"absolute",top:ietop,right:right});
+        })
+    },
 	sethref:function() {
     	this.ajax({
 				url:"/cpdata/omi/jclq/odds/odds.xml",
@@ -930,17 +1015,90 @@ Class('Main', {
 	},
 	otherEvents: function (){
 		//显示截止时间或者开赛时间
-		var endTime = Yobj.get('#vsTable span.endtime'),
-			matchTime = Yobj.get('#vsTable span.matchtime');
-		Yobj.get('#select_time').change(function (){
-			if (this.value == 0) {
-				endTime.show();
-				matchTime.hide();
-			}else{
-				matchTime.show();
-				endTime.hide();
-			}
-		});
+//		this.get('#sssx div.matchxz').drop( this.get('#sssx div.jcslt'),{focusCss: 'matchxzc', fixed: true, y: -1});
+//        this.get('#jztime div.matchxz').drop( this.get('#jztime div.jcslt'),{focusCss: 'matchxzc', fixed: true, y: -1});
+        $(".dc_tablehh th[rowspan]").hover(function(a,b){
+        	var cur=$(this).find("div.matchxz");
+        	if(cur.hasClass("matchxzc")){
+        		
+        	}else{
+        		$(this).find("div.jcslt").show();
+        		cur.addClass("matchxzc")
+        	}
+        }, function (e, Y){
+        	
+        	$(this).find("div.jcslt").hide();
+        	$(this).find("div.matchxz").removeClass("matchxzc");
+        })
+//        $.fn.jztime_select_name=function(){
+//        	$self=$(this);
+//        	$self.each(function(){
+//        		var $div1=$self.find("div.matchxz");
+//        		var $div2=$self.find("div.jcslt");
+//        		$div1.mouseover(function(){
+//        			$div2.show();
+//        			$div1.addClass("matchxzc");
+//        			return false;	
+//        		});
+//        		$div1.mouseout(function(){
+//        			$div2.hide();
+//        			$div1.removeClass("matchxzc");
+//        		});
+//        		$div2.mouseover(function(){
+//        			$div2.show();
+//        			$div1.addClass("matchxzc");
+//        			return false;	
+//        		});
+//        		$div2.mouseout(function(){
+//        			$div2.hide();
+//        			$div1.removeClass("matchxzc");
+//        		});
+//        		$div2.find("a").click(function(){
+//        			$(this).blur();  
+//        			var txt=$(this).text();
+//        			var ctxt=$(this).attr("value");
+//        			 Y.postMsg('msg_change_time', ctxt);
+//        			$div1.find("em").attr("value", ctxt);
+//        			$div1.find("em").text(txt);
+//        			$div2.hide();
+//        			$div1.removeClass("matchxzc");
+//        			return false;	
+//        		});
+//        	});
+//        }
+//        $.fn.sssx_select_name=function(){
+//        	$self=$(this);
+//        	$self.each(function(){
+//        		var $div1=$self.find("div.matchxz");
+//        		var $div2=$self.find("div.jcslt");
+//        		$div1.mouseover(function(){
+//        			$div2.show();
+//        			$div1.addClass("matchxzc");
+//        			return false;	
+//        		});
+//        		$div1.mouseout(function(){
+//        			$div2.hide();
+//        			$div1.removeClass("matchxzc");
+//        		});
+//        		$div2.mouseover(function(){
+//        			$div2.show();
+//        			$div1.addClass("matchxzc");
+//        			return false;	
+//        		});
+//        		$div2.mouseout(function(){
+//        			$div2.hide();
+//        			$div1.removeClass("matchxzc");
+//        		});
+//        	
+//        	});
+//        }
+		this.get('#jztime div.plv_set').live('a','click', function(){
+	       	
+	       	 Y.get("#select_time").html(Y.get(this).html());
+//	       	 Y.get("#jztime div.jcslt").hide();
+	       	  Yobj.get('#vsTable span.endtime').show(this.getAttribute('value') == '0');
+	          Yobj.get('#vsTable span.matchtime').show(this.getAttribute('value') == '1');
+       });
 		Yobj.use('mask', function (){
 			Yobj.get('span.dcr_table_help').setStyle('zIndex', 1).tip('data-help', 1, false, 360);// 帮助说明
 		});
@@ -1066,32 +1224,33 @@ Class('Main', {
 	},
 	setTableHeadFixed: function (){
 		//设置表头浮动
-		Yobj.get('<div id="title_folat" style="z-index:9;"></div>').insert().setFixed({
-			area: '#vsTable',
-			offset:0,
-			init: function(){
-				var This = this,
-					title = this.area.find('table').one(0),
-					floatTitle = title.cloneNode(true);
-				this.get(floatTitle).insert(this);
-				this.floatTitle = floatTitle;
-				this.title = title;
-				this.hide();
-				Y.get(window).resize(function(){
-					This.setStyle('left:'+(This.area.getXY().x)+'px;width:'+(This.area.prop('offsetWidth'))+'px')
-				});
-			},
-			onin: function (){
-				this.show();
-				this.setStyle('zIndex', 999);
-				this.title.swapNode(this.floatTitle);
-				var offset = this.ns.ie == 6 ? 2 : 0;
-				this.setStyle('left:'+(this.area.getXY().x+offset)+'px;width:'+this.area.prop('offsetWidth')+'px')
-			},
-			onout: function (){
-				this.hide();
-				this.title.swapNode(this.floatTitle);
-			}
-		});		
+
+		Yobj.get('<div id="title_folats" style="z-index:9;"></div>').insert().setFixed({
+	            area: '#vsTable',
+	            offset:0,
+	            init: function(){
+	                var This = this,
+	                    title = this.area.parent().find('#tabletop').one(0),
+	                    floatTitle = title.cloneNode(true);
+	                this.get(floatTitle).insert(this);
+	                this.floatTitle = floatTitle;
+	                this.title = title;
+	                this.hide();
+	                Y.get(window).resize(function(){
+	                    This.setStyle('left:'+(This.area.getXY().x)+'px;width:'+(This.area.prop('offsetWidth'))+'px')
+	                });
+	                Yobj.get('div.jcslt').remove();
+	            },
+	            onin: function (){
+	                this.show();
+	                this.title.swapNode(this.floatTitle);
+	                var offset = this.ns.ie == 6 ? 2 : 0;
+	                this.setStyle('left:'+(this.area.getXY().x+offset)+'px;width:'+this.area.prop('offsetWidth')+'px')
+	            },
+	            onout: function (){
+	                this.hide();
+	                this.title.swapNode(this.floatTitle);
+	            }
+	        });
 	}
 });
