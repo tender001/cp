@@ -1387,7 +1387,7 @@ Class('LoadExpect',{
 	       '<a  href="" target="_blank" id="match{$mid}" style="color:#fff;">{$mname}</a>'+
 	       '</td>'+
 	       '<td style="border-left:1px solid #fff"><span class="eng end_time" title="截止时间：{$et}">{$short_et}</span><span style="display: none" class="eng match_time" title="开赛时间：{$bt}">{$short_bt}</span></td>'+
-	       '<td style="text-align: right;border-left:1px solid #fff ">'+
+	       '<td style="text-align: right;border-left:1px solid #ddd ">'+
 	       '<a title="{$hn}"  href="" target="_blank" id="hn{$mid}"><em id="gtid{$mid}" class="ew_e ew_eright">{$short_hn}</em></a>'+	      
 	       '</td>'+
 	       '<td style="text-align: center;">VS</td>'+

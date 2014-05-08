@@ -1482,7 +1482,7 @@ Class('LoadExpect',{
 		'<td style="cursor:pointer">'+
 		'<input type="checkbox" class="vs_check_all"  disabled="disabled"/>'+
 		'</td>'+
-		'<td><div class=pjpl id="odds{$mid}">'+
+		'<td style="border-right:1px solid #ddd"><div class=pjpl id="odds{$mid}">'+
 		'<span class="sp_w35 eng pjoz" id="oh{$mid}">{$b3}</span><span class="sp_w35 eng pjoz" id="od{$mid}">{$b1}</span><span class="sp_w35 eng pjoz" id="oa{$mid}">{$b0}</span>'+
 		'</div></td>'+
 		'<td>'+
@@ -1513,7 +1513,7 @@ Class('LoadExpect',{
 		'</label>'+
 		'<s class="s_right">&nbsp;</s></div></td>'+
 		'<td style="cursor: pointer;border-right:1px solid #ddd"><a href="javascript:void(0);" class="jcq_q">全</a><input style="display: none" type="checkbox" all="0" value = "all"/></td>'+
-		'<td><DIV class=pjpl id="odds{$mid}">'+
+		'<td style="border-right:1px solid #ddd"><DIV class=pjpl id="odds{$mid}">'+
 		'<span class="sp_w35 eng pjoz" id="oh{$mid}">{$b3}</span><span class="sp_w35 eng pjoz" id="od{$mid}">{$b1}</span><span class="sp_w35 eng pjoz" id="oa{$mid}">{$b0}</span>'+
 		'</div></td>'+
 		'<td>'+
