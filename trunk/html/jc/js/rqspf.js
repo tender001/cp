@@ -238,7 +238,7 @@
                     }
                 }
             });
-            Y.get('#vsTable tr[mid]').hover(function (e, Y){//鼠标滑入滑出效果
+            Y.get('#vsTable tr[isend=0]').hover(function (e, Y){//鼠标滑入滑出效果
                 
                 this.childNodes[0].style.backgroundColor = '#FEFECB';
                 this.childNodes[2].style.backgroundColor = '#FEFECB';
@@ -260,7 +260,7 @@
                 this.childNodes[7].style.backgroundColor = '';
                 this.childNodes[8].style.backgroundColor = '';
             });
-            $('#vsTable  tr[mid] .h_br').mouseout(function (e, Y){//鼠标滑入滑出效果
+            $('#vsTable  tr[isend=0] .h_br').mouseout(function (e, Y){//鼠标滑入滑出效果
                 
                 
                 var tdCSS=$(this).find('.chbox').attr("checked")==true?"h_br label_cd":"h_br h_brx";
@@ -880,9 +880,9 @@
 		           '<td style="cursor: pointer"><label for=m{$itemid} title="{$name}"><input id=m{$itemid} value={$itemid}  checked type=checkbox name=m{$itemid}>{$newname}</label></td>'+
 		           '<td style="background:{$cl}; color: #fff" class=league><a title="{$lmname}" href="" target="_blank" id="mn{$itemid}" style="color: #fff">{$mname}</a></td>'+
 		           '<td style="border-left:1px solid #fff"><span class="eng end_time" title="开赛时间：{$mt}">{$short_et}</span><span style="display: none" class="eng match_time" title="截止时间：{$et}">{$short_mt}</span></td>'+
-		           '<td style="text-align: right; border-left:1px solid #ddd;" class=h_br><div class="dz_dv" title="{$hn}"><s class="s_left"></s><span class="eng b span_left"><em class="em_left" id="htid_{$itemid}">{$hn}</em>{$closestr} <b class="b_left1">{$sp3}</b></span></div></td>'+
-		           '<td style="text-align: center;" class=h_br><span class="eng b">{$sp1}</span></td>'+
-		           '<td style="text-align: left; " class=h_br><div class="dz_dv" title="{$gn}" style="padding-left:10px"><span class="eng b span_right"><b class="b_right1">{$sp0}</b> <em class="em_right" id="gtid_{$itemid}">{$gn}</em></span><s class="s_right"></s></div></td><td></td>'+
+		           '<td style="text-align: right; border-left:1px solid #ddd;" class="h_br tdhui"><div class="dz_dv" title="{$hn}"><s class="s_left"></s><span class="eng b span_left"><em class="em_left" id="htid_{$itemid}">{$hn}</em>{$closestr} <b class="b_left1">{$sp3}</b></span></div></td>'+
+		           '<td style="text-align: center;" class="h_br tdhui"><span class="eng b">{$sp1}</span></td>'+
+		           '<td style="text-align: left; " class="h_br tdhui"><div class="dz_dv" title="{$gn}" style="padding-left:10px"><span class="eng b span_right"><b class="b_right1">{$sp0}</b> <em class="em_right" id="gtid_{$itemid}">{$gn}</em></span><s class="s_right"></s></div></td><td></td>'+
 		           '<td>'+
 		           '<div class=pjpl id="odds{$itemid}"><span class="sp_value eng red">已截止场次</span></div>'+
 		           '<div style="display: none" class=tzbl><span class="sp_w35 eng">12%</span><span class="sp_w35 eng">23%</span><span class="sp_w35 eng">65%</span></div></td>'+
