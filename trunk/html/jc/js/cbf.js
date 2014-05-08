@@ -1826,7 +1826,7 @@ Class('ScrollStill', {
             this.lib.Buy();//购买类
             //this.lib.SPUpdate(isgg);//自动更新SP
             this.lib.Clock('#sysTime');//时间
-			this.lib.ScrollStill();
+//			this.lib.ScrollStill();
             if (isgg) {
                 this.lib.GgType();//过关方式
                 this.C('_isgg', true, true);
