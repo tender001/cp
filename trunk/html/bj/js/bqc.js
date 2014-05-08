@@ -1405,55 +1405,55 @@ Class('LoadExpect',{
 	       '<td style="text-align: left; ">'+
 	       '<a title="{$gn}"  href="" target="_blank" id="gn{$mid}"><em id="gtid{$mid}" class="ew_e">{$short_gn}</em></a>'+	       
 	       '</td>'+
-	       '<td class="h_br" style="cursor:pointer;border-left:1px solid #ddd">'+
+	       '<td class="{$tdclass}" style="cursor:pointer;border-left:1px solid #ddd">'+
 	       '<label class="label_br">'+	      
 	       '<input type="checkbox" class="chbox" value="胜-胜" onclick="return false" {$disabled}  style="display: none"/>'+
 	       '{$sp33str}'+
 	       '</label>'+
 	       '</td>'+
-	       '<td class="h_br" style="cursor:pointer">'+
+	       '<td class="{$tdclass}" style="cursor:pointer">'+
 	       '<label class="label_br">'+
 	       '<input type="checkbox" class="chbox" value="胜-平" onclick="return false" {$disabled}  style="display: none"/>'+
 	       '{$sp31str}'+
 	       '</label>'+
 	       '</td>'+
-	       '<td class="h_br" style="cursor:pointer">'+
+	       '<td class="{$tdclass}" style="cursor:pointer">'+
 	       '<label class="label_br">'+
 	       '<input type="checkbox" class="chbox" value="胜-负" onclick="return false" {$disabled}  style="display: none"/>'+
 	       '{$sp30str}'+
 	       '</label>'+
 	       '</td>'+
-	       '<td class="h_br" style="cursor:pointer">'+
+	       '<td class="{$tdclass}" style="cursor:pointer">'+
 	       '<label class="label_br">'+	      
 	       '<input type="checkbox" class="chbox" value="平-胜" onclick="return false" {$disabled}  style="display: none"/>'+
 	       '{$sp13str}'+
 	       '</label>'+
 	       '</td>'+
-	       '<td class="h_br" style="cursor:pointer">'+
+	       '<td class="{$tdclass}" style="cursor:pointer">'+
 	       '<label class="label_br">'+
 	       '<input type="checkbox" class="chbox" value="平-平" onclick="return false" {$disabled}  style="display: none"/>'+
 	       '{$sp11str}'+
 	       '</label>'+
 	       '</td>'+
-	       '<td class="h_br" style="cursor:pointer">'+
+	       '<td class="{$tdclass}" style="cursor:pointer">'+
 	       '<label class="label_br">'+
 	       '<input type="checkbox" class="chbox" value="平-负" onclick="return false" {$disabled}  style="display: none"/>'+
 	       '{$sp10str}'+
 	       '</label>'+
 	       '</td>'+
-	       '<td class="h_br" style="cursor:pointer">'+
+	       '<td class="{$tdclass}" style="cursor:pointer">'+
 	       '<label class="label_br">'+	      
 	       '<input type="checkbox" class="chbox" value="负-胜" onclick="return false" {$disabled}  style="display: none"/>'+
 	       '{$sp03str}'+
 	       '</label>'+
 	       '</td>'+
-	       '<td class="h_br" style="cursor:pointer">'+
+	       '<td class="{$tdclass}" style="cursor:pointer">'+
 	       '<label class="label_br">'+
 	       '<input type="checkbox" class="chbox" value="负-平" onclick="return false" {$disabled}  style="display: none"/>'+
 	       '{$sp01str}'+
 	       '</label>'+
 	       '</td>'+
-	       '<td class="h_br" style="cursor:pointer">'+
+	       '<td class="{$tdclass}" style="cursor:pointer">'+
 	       '<label class="label_br">'+
 	       '<input type="checkbox" class="chbox" value="负-负" onclick="return false" {$disabled}  style="display: none"/>'+
 	       '{$sp00str}'+
@@ -1517,6 +1517,7 @@ Class('LoadExpect',{
 			
 			row.yesorno="no";
 			row.disabled="";
+			row.tdclass="h_br";
 			var out_of_date=false;
 			if (Y.getDate(data.date)>Y.getDate(row.et) || row.icancel=="1"){//已经过期的场次
 				out_of_date_matches++;
@@ -1524,6 +1525,7 @@ Class('LoadExpect',{
 				row.yesorno="yes";
 				row.disabled='disabled="disabled"';
 				row.displaystyle='style="display:none"';
+				row.tdclass="h_br tdhui";
 			}
 			
 			if (out_of_date&&row.bf!=''){//抓到比分
@@ -1548,17 +1550,17 @@ Class('LoadExpect',{
 				
 				
 			}else{//未出结果
-				row.sp33str='<span class="sp_value eng '+(out_of_date?'red':'')+'">'+row.sp33+'</span>';
-				row.sp31str='<span class="sp_value eng '+(out_of_date?'red':'')+'">'+row.sp31+'</span>';
-				row.sp30str='<span class="sp_value eng '+(out_of_date?'red':'')+'">'+row.sp30+'</span>';
+				row.sp33str='<span class="sp_value eng '+(out_of_date?'':'')+'">'+row.sp33+'</span>';
+				row.sp31str='<span class="sp_value eng '+(out_of_date?'':'')+'">'+row.sp31+'</span>';
+				row.sp30str='<span class="sp_value eng '+(out_of_date?'':'')+'">'+row.sp30+'</span>';
 				
-				row.sp13str='<span class="sp_value eng '+(out_of_date?'red':'')+'">'+row.sp13+'</span>';
-				row.sp11str='<span class="sp_value eng '+(out_of_date?'red':'')+'">'+row.sp11+'</span>';
-				row.sp10str='<span class="sp_value eng '+(out_of_date?'red':'')+'">'+row.sp10+'</span>';
+				row.sp13str='<span class="sp_value eng '+(out_of_date?'':'')+'">'+row.sp13+'</span>';
+				row.sp11str='<span class="sp_value eng '+(out_of_date?'':'')+'">'+row.sp11+'</span>';
+				row.sp10str='<span class="sp_value eng '+(out_of_date?'':'')+'">'+row.sp10+'</span>';
 				
-				row.sp03str='<span class="sp_value eng '+(out_of_date?'red':'')+'">'+row.sp03+'</span>';
-				row.sp01str='<span class="sp_value eng '+(out_of_date?'red':'')+'">'+row.sp01+'</span>';
-				row.sp00str='<span class="sp_value eng '+(out_of_date?'red':'')+'">'+row.sp00+'</span>';
+				row.sp03str='<span class="sp_value eng '+(out_of_date?'':'')+'">'+row.sp03+'</span>';
+				row.sp01str='<span class="sp_value eng '+(out_of_date?'':'')+'">'+row.sp01+'</span>';
+				row.sp00str='<span class="sp_value eng '+(out_of_date?'':'')+'">'+row.sp00+'</span>';
 
 			
 								
