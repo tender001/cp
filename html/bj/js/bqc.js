@@ -1532,7 +1532,7 @@ Class('LoadExpect',{
 				if(row.bf=="-1:-1"){row.bf="延";}
 				row.shuju='<span class="red eng">'+row.bf+'</span>';
 			}else{
-				row.shuju='<a href="" target="_blank" id="ox'+row.mid+'">析</a> <a href="" target="_blank" id="oz'+row.mid+'">欧</a>';
+				row.shuju='<a href="" target="_blank" id="ox'+row.mid+'">析</a> ';
 			}
 			
 			if (out_of_date&&row.rz!=''){//已经开出赛果的&&row.bf!=''
