@@ -804,7 +804,7 @@
 	           '<td style="text-align: right; border-left:1px solid #ddd;" class="h_br tdhui"><div class="dz_dv" title={$gn}><s class="s_left" style="padding-left:10px">&nbsp;</s><span class="eng b span_left"><em class="em_left" id="htid_{$itemid}">{$gn}</em><b class="b_left"> {$sp0}</b></span></div></td>'+
 	           '<td><STRONG class="red">{$zclose}</STRONG></td>'+
 	           '<td style="text-align: left; border-left:1px solid #62A3D0;" class="h_br tdhui"><div class="dz_dv" title={$hn}><span class="eng b span_left"><b class="b_left">{$sp3}<b> <em class="em_left" id="gtid_{$itemid}">{$hn}</em></span><s class="s_right"></s></div></td>'+
-	           '<td>'+
+	           '<td style="border-right:1px solid #ddd">'+
 	           '<div class=pjpl><span class="sp_value eng red">已截止场次</span></div></td>'+
 	           '<td><a href="" target="_blank" id="ox{$itemid}">析</a> <a href="" target="_blank" id="oz{$itemid}">欧</a></td>'+
 	           '</tr>'+
@@ -817,7 +817,7 @@
    	           '<td style="text-align: left;  cursor: pointer;border-left:1px solid #ddd" class=h_br><div class="dz_dv" style="padding-left:10px" title={$gn}><input class=chbox value=3 type=checkbox style="display: none"><span class="eng b span_right"><b class="b_right" style="margin-right:15px">{$sp3}</b> <em id="gtid_{$itemid}" class="em_right">{$gn}</em></span><s class="s_right"></s></div></td>'+
    	           '<td><STRONG class="red">{$zclose}</STRONG></td>'+  
 	        	'<td style="text-align: right;  cursor: pointer;border-left:1px solid #62A3D0" class=h_br><div class="dz_dv" title={$hn}><input class=chbox value=0 type=checkbox style="display: none"><s class="s_left">&nbsp;</s><span class="eng b span_left"><em id="htid_{$itemid}" class="em_left">{$hn}</em> <b class="b_left">{$sp0}</b></span></div></td>'+
-   	           '<td>'+
+   	           '<td style="border-right:1px solid #ddd">'+
    	           '<div class=pjpl><span class="sp_w35 eng" id="oh{$itemid}">{$b3}</span><span class="sp_w35 eng" id="oa{$itemid}">{$b0}</span></div></td>'+
    	           '<td><a href="" target="_blank" id="ox{$itemid}">析</a> <a href="" target="_blank" id="oz{$itemid}">欧</a></td>'+
    	           '</tr>'+
