@@ -1377,7 +1377,7 @@
 					$("#infopool").html(''+Math.ceil(pools/5000000)+'倍清空奖池<font>'+Math.round(pools/10000)+'万</font>');
 				}
 				$("#kjopcode").html(html);
-				var rmoney = row.money == '' ? "-,-,3000,200,10,5" : row.money;
+				var rmoney = row.money == '' ? "-,-,-,200,10,5,-,-,-,-,100,5" : row.money;
 				var rnums = row.nums == '' ? "-,-,-,-,-,-" : row.nums;
 				
 				var mlen = rmoney.split(",");
