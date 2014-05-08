@@ -380,7 +380,7 @@ var mark=function(isc, awa, isre, istat,adddate,castdate,awarddate,retdate,proce
 	case 2://出票中2
 		
 		$("#process").html("出票中<i></i>").css("left",process+"px");
-		if(istate==2){
+		if(istate=="2"){
 			$("#cp_full").addClass("fq").removeClass("liubiao");
 		}
 		$("#cm_sfc_context").next().hide();
@@ -388,11 +388,19 @@ var mark=function(isc, awa, isre, istat,adddate,castdate,awarddate,retdate,proce
 	case 3://等待出票3
 			if(upload==0){
 			$("#process").html("等待上传方案<i></i>").css("left",process+"px");
-			if(istate==2){
+			if(istate=="2"){
 				$("#cp_full").addClass("fq").removeClass("liubiao");
 			}
 		}else{
-			$("#process").html("还差"+processmoney+"元即达出票要求<i></i>").css("left",process+"px");
+			if(processmoney>0){
+				$("#process").html("还差"+processmoney+"元即达出票要求<i></i>").css("left",process+"px");
+			}else{
+				if(istate=="2"){
+					$("#cp_full").addClass("fq").removeClass("liubiao");
+					$("#process").html("等待出票<i></i>").css("left",process+"px");
+				}
+			}
+			
 		}
 		
 		break;
