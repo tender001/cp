@@ -211,7 +211,7 @@
                     }
                 }
             });
-            Y.get('#vsTable tr[mid]').hover(function (e, Y){//鼠标滑入滑出效果
+            Y.get('#vsTable tr[isend=0]').hover(function (e, Y){//鼠标滑入滑出效果
             	this.children[0].style.backgroundColor = '#FEFECB';
     			this.children[2].style.backgroundColor = '#FEFECB';
     			this.children[3].style.backgroundColor = '#FEFECB';
@@ -231,7 +231,7 @@
             	  Y.get(this).find(".h_br").removeClass("h_brx");
                    Y.get(this).find("td").removeClass("h_bry");
               });
-            $('#vsTable  tr[mid] .h_br').mouseout(function (e, Y){//鼠标滑入滑出效果
+            $('#vsTable  tr[isend=0] .h_br').mouseout(function (e, Y){//鼠标滑入滑出效果
                 var tdCSS=$(this).find('.chbox').attr("checked")==true?"h_br label_cd":"h_br h_brx";
                 $(this).attr("class",tdCSS);
             });
@@ -848,16 +848,16 @@
               '<TD style="text-align: right; padding-right:2px;"><A title={$lhn} href="" target="_blank" id="hn{$itemid}">{$hn}</A></TD>'+
               '<TD style="text-align: center;">VS</TD>'+
               '<TD style="text-align: left; padding-left:2px;"><A title={$lgn} href="" target="_blank" id="gn{$itemid}">{$gn}</A></TD>'+
-              '<TD class=h_br style="border-left:1px solid #ddd">{$sp0}</TD>'+
-              '<TD class=h_br >{$sp1}</TD>'+
-              '<TD class=h_br>{$sp2}</TD>'+
-              '<TD class=h_br >{$sp3}</TD>'+
-              '<TD class=h_br>{$sp4}</TD>'+
-              '<TD class=h_br >{$sp5}</TD>'+
-              '<TD class=h_br >{$sp6}</TD>'+
-              '<TD class=h_br >{$sp7}</TD>'+
-              '<TD class=h_br>{$sp8}</TD>'+
-              '<TD style="border-right:1px solid #ddd"><a href="" target="_blank" id="ox{$itemid}">析</a> <a href="" target="_blank" id="oz{$itemid}">欧</a></TD></TR>'+
+              '<TD class="h_br tdhui"  style="border-left:1px solid #ddd">{$sp0}</TD>'+
+              '<TD class="h_br tdhui" >{$sp1}</TD>'+
+              '<TD class="h_br tdhui">{$sp2}</TD>'+
+              '<TD class="h_br tdhui" >{$sp3}</TD>'+
+              '<TD class="h_br tdhui">{$sp4}</TD>'+
+              '<TD class="h_br tdhui" >{$sp5}</TD>'+
+              '<TD class="h_br tdhui" >{$sp6}</TD>'+
+              '<TD class="h_br tdhui">{$sp7}</TD>'+
+              '<TD class="h_br tdhui">{$sp8}</TD>'+
+              '<TD style="border-right:1px solid #ddd">已截止</TD></TR>'+
               '</TBODY>',//3隐藏对阵
               '<TBODY>'+
               '<TR lg="{$mname}" class="{$classname}" isend="0" odds="{$bqc}" pdate="{$itemid}" pendtime="{$enddate}" pname="{$itemid}" mid="{$mid}" zid="{$itemid}">'+
@@ -936,7 +936,6 @@
    			
    			if (Y.getDate(data.date)>Y.getDate(row.et)){//已经过期的场次
    				out_of_date_matches++;
-   				row.shuju='<a href="http://odds.159cai.com/fenxi/shuju.php?id=318510&show=2" target="_blank">析</a> <a href="http://odds.159cai.com/fenxi/yazhi.php?id=318510&show=2" target="_blank">亚</a> <a href="http://odds.159cai.com/fenxi/ouzhi.php?id=318510&show=2" target="_blank">欧</a>';
    				row.sp0='<span class="sp_value eng ">'+row.sp0+'</span>';
    				row.sp1='<span class="sp_value eng ">'+row.sp1+'</span>';
    				row.sp2='<span class="sp_value eng ">'+row.sp2+'</span>';

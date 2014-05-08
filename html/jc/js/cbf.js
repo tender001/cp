@@ -226,7 +226,7 @@
                     }
                 }
             });
-            Y.get('#vsTable tr[mid]').hover(function (e, Y){//鼠标滑入滑出效果
+            Y.get('#vsTable tr[isend=0]').hover(function (e, Y){//鼠标滑入滑出效果
             	this.children[0].style.backgroundColor = '#FEFECB';
     			this.children[2].style.backgroundColor = '#FEFECB';
     			this.children[3].style.backgroundColor = '#FEFECB';
@@ -251,7 +251,7 @@
                 Y.get(this).find("td").removeClass("h_bry");
                 Y.get(this).find(".label_cd").removeClass("h_brx");
            });
-            $('#vsTable  tr[mid] .h_br').mouseout(function (e, Y){//鼠标滑入滑出效果
+            $('#vsTable  tr[isend=0] .h_br').mouseout(function (e, Y){//鼠标滑入滑出效果
                 var tdCSS=$(this).find('.chbox').attr("checked")==true?"h_br label_cd":"h_br h_brx";
                 $(this).attr("class",tdCSS);
             });
