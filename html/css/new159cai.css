@@ -1304,7 +1304,7 @@ a.jc_mtz:hover, a.jc_mhm:hover{background-position:-110px 0}
 .tzsontab p b{background:url("/images/cai888/jctop_06.jpg") 0 0 ;height:15px;width:15px;cursor:pointer;display:block;float:left;margin:5px 0 0 3px}
 .jckj_tb p span{float:left}
 .jckj_tb p b{background:url("/images/cai888/jctop_06.jpg") 0 0 ;height:15px;width:15px;cursor:pointer;display:block;float:left;margin:5px 0 0 3px}
-.jckj_tb label{float:left}
+.jckj_tb label{float:left;cursor:pointer}
 .matchxzk{ cursor: pointer;height: 32px;line-height: 30px;position: relative;z-index: 2;overflow:visible}
 .matchxz{float:left;width:100%}
 .matchxz i{background:url("/images/cai888/jtdown_11.jpg") 0 0;transition: all 0.2s ease-in 0s;height: 4px;margin-left: 5px;vertical-align: middle;width: 7px;display:inline-block}
@@ -1339,7 +1339,7 @@ a.jc_mtz:hover, a.jc_mhm:hover{background-position:-110px 0}
 .dc_ls_n p a{display:block;float:left;width:45px;height:20px;background:#ff6600;margin-left:4px;text-align:center;color:#fff;line-height:20px}
 .dc_ls_n p a:hover{color:#fff}
 .jckj_tb table.co1 thead td{background: none repeat scroll 0 0 #F5F5F5;border-bottom: 1px solid #CCCCCC;border-right: 1px solid #CCCCCC;height: 32px;}
-.jc_ds_col_1{background:#f5f5f5;border:1px solid #ddd;}
+.jc_ds_col_1{background:#f5f5f5;border:1px solid #ddd;width:971px}
 .buyfimsg{border-left:1px solid #ddd;border-bottom:1px solid #ddd;}
 .buyfimsg td{border-right:1px solid #ddd;border-bottom:1px solid #ddd;padding:7px 0;color:#444;font-size:12px;text-align:left;padding-left:13px;valign:middle;font-size:14px}
 .buyfimsg td.td1{background:#f5f5f5;line-height:28px;color:#222;padding-left:30px;font-size:12px}
@@ -1615,7 +1615,7 @@ a.a_catha:hover, a.a_hm_buya:hover{background-position:-110px 0}
 table.co1 tbody td em.ew_em{color:#444}
 table.co1 tbody td em.ew_em:hover{color:#ff0000}
 .b_th_top{}
-.b_th_top b{background:none;color:#444;display:block;float:left;padding:0 18px;line-height:30px;height:30px;width:auto;margin-top:4px}
+.b_th_top b{cursor:pointer;background:none;color:#444;display:block;float:left;padding:0 18px;line-height:30px;height:30px;width:auto;margin-top:4px}
 .b_th_top b.cur{border:1px solid #ccc;border-bottom:none;background:#fff}
 .b_th_co2{background:none;border:1px solid #ddd;border-top:none;}
 .dc_table tr td.tdhui{color:#999}
