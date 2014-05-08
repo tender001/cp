@@ -1504,7 +1504,7 @@ Class('LoadExpect',{
 		'</div></td>'+
 		'<td class="h_br" style="text-align: center; cursor: pointer"><div class="dz_dv">'+
 		'<label class="label_n label_x">'+
-		'<input type="checkbox" class="chbox" value="平" onclick="return false" style="display: none"/><span class="sp_value eng">{$sp1}</span>'+
+		'<input type="checkbox" class="chbox" value="平" onclick="return false" style="display: none"/><span class="sp_value eng" style="width:45px">{$sp1}</span>'+
 		'</label>'+
 		'</div></td>'+
 		'<td class="h_br" style="text-align: left;  cursor: pointer" title="{$gn}"><div class="dz_dv">'+
