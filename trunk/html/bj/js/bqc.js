@@ -6,7 +6,7 @@ Class( 'LineSelector', {
 		this.vsLine       = config.tr;
 		this.vsIndex      = config.vsIndex;
 		this.vsOptions    = config.vsOptions;
-		this.vsCheckAll   = config.vsCheckAll;
+//		this.vsCheckAll   = config.vsCheckAll;
 		this.spTag        = config.spTag;
 		this.vsInfo       = config.vsInfo;
 		this.a      	  = config.a;
@@ -86,11 +86,11 @@ Class( 'LineSelector', {
 		}
 
 		// 全选/全不选
-		this.vsCheckAll.parentNode.onmousedown = function() {
-			var ck = this.getElementsByTagName('input')[0];
-			ck.checked = !ck.checked;
-			ck.checked ? Y.checkAll() : Y.clearAll();
-		}
+//		this.vsCheckAll.parentNode.onmousedown = function() {
+//			var ck = this.getElementsByTagName('input')[0];
+//			ck.checked = !ck.checked;
+//			ck.checked ? Y.checkAll() : Y.clearAll();
+//		}
 	},
 
 	check : function(ck) {
@@ -99,10 +99,10 @@ Class( 'LineSelector', {
 		//ck.parentNode.parentNode.style.backgroundColor = '#FFDAA4';
 		Y.removeClass(ck.parentNode.parentNode, "h_brx");
 		Y.addClass(ck.parentNode.parentNode, 'label_cd');
-		this.vsCheckAll.checked = this.getData().length == this.vsOptions.length;
-		if(this.getData().length==9){
-			this.a.innerHTML="清";
-		}
+//		this.vsCheckAll.checked = this.getData().length == this.vsOptions.length;
+//		if(this.getData().length==9){
+//			this.a.innerHTML="清";
+//		}
 		this.changed();
 	},
 
@@ -111,29 +111,29 @@ Class( 'LineSelector', {
 		ck.checked = false;
 		//ck.parentNode.parentNode.style.backgroundColor = '';
 		Y.removeClass(ck.parentNode.parentNode, 'label_cd');
-		this.vsCheckAll.checked && (this.vsCheckAll.checked = false);
-		if(this.getData().length!=9){
-			this.a.innerHTML="全";
-		}
+//		this.vsCheckAll.checked && (this.vsCheckAll.checked = false);
+//		if(this.getData().length!=9){
+//			this.a.innerHTML="全";
+//		}
 		this.changed();
 	},
 
 	checkAll : function() {
 		this.data = Class.config('codeValue').slice();
-		this.vsCheckAll.checked = true;
+//		this.vsCheckAll.checked = true;
 		for (var i = 0, l = this.vsOptions.length; i < l; i++) {
 			this.vsOptions[i].getElementsByTagName('input')[0].checked = true;
 			//this.vsOptions[i].parentNode.style.backgroundColor = '#FFDAA4';
 			Y.removeClass(this.vsOptions[i].parentNode, "h_brx");
 			Y.addClass(this.vsOptions[i].parentNode, 'label_cd');
 		}
-		this.a.innerHTML="清";
+//		this.a.innerHTML="清";
 		this.changed();
 	},
 
 	clearAll : function() {
 		this.data = [];
-		this.vsCheckAll.checked = false;
+//		this.vsCheckAll.checked = false;
 		for (var i = 0, l = this.vsOptions.length; i < l; i++) {
 			this.vsOptions[i].getElementsByTagName('input')[0].checked = false;
 			//this.vsOptions[i].parentNode.style.backgroundColor = '';
@@ -289,7 +289,7 @@ Class( 'TableSelector', {
 				vsIndex      : tr.getElementsByTagName('input')[0],
 				vsOptions    : tr.getElementsByTagName('label'),
 				a            : tr.getElementsByTagName('a')[3],
-				vsCheckAll   : tr.getElementsByTagName('input')[input_length - 1],
+//				vsCheckAll   : tr.getElementsByTagName('input')[input_length - 1],
 				spTag        : Y.get('span.sp_value', tr),
 				vsInfo       : vs_info
 			} );
