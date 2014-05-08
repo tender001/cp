@@ -1732,7 +1732,7 @@ Class('LoadExpect',{
 	       '</colgroup>',//0
 	       '<tbody>'+
 	       '<tr id="switch_for_{$enddate}">'+
-	       '<td colspan="9" class="dc_hs dc_hstd" style="text-align:left; padding-left:10px;line-height:16px;height:16px;background-color:#ECEFF5">'+
+	       '<td colspan="9" class="dc_hs dc_hstd" style="text-align:left; padding-left:10px;line-height:16px;height:16px">'+
 	       '<strong>{$enddate} {$weekday} (10：00--次日10：00)</strong>&nbsp;'+
 	       '<a href="javascript:void(0)" onclick="Yobj.postMsg(\'msg_show_or_hide_matches\', \'{$enddate}\', this)">隐藏</a>'+
 	       '</td>'+
