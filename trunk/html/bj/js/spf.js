@@ -2029,14 +2029,14 @@ Class( {
 				Y.goTop.style.left = Y.rightArea.getXY().x + 'px';
 			}, 500 );
 		}
-		this.get(window).scroll( function () {
-			clearTimeout(Class.C('scrollTimer'));
-			if (Y.ie && Y.ie == 6) {
-				Class.C('scrollTimer', setTimeout(Y.scrollStillIE6.proxy(Y), 100));
-			} else {
-				Class.C('scrollTimer', setTimeout(Y.scrollStill.proxy(Y), 100));
-			}
-		} );
+//		this.get(window).scroll( function () {
+//			clearTimeout(Class.C('scrollTimer'));
+//			if (Y.ie && Y.ie == 6) {
+//				Class.C('scrollTimer', setTimeout(Y.scrollStillIE6.proxy(Y), 100));
+//			} else {
+//				Class.C('scrollTimer', setTimeout(Y.scrollStill.proxy(Y), 100));
+//			}
+//		} );
 
 		//设置表头浮动
         Y.get('<div id="title_folats" style="z-index:9;"></div>').insert().setFixed({
