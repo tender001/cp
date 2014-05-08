@@ -882,7 +882,7 @@
 		           '<td style="border-left:1px solid #fff"><span class="eng end_time" title="开赛时间：{$mt}">{$short_et}</span><span style="display: none" class="eng match_time" title="截止时间：{$et}">{$short_mt}</span></td>'+
 		           '<td style="text-align: right; border-left:1px solid #ddd;" class="h_br tdhui"><div class="dz_dv" title="{$hn}"><s class="s_left"></s><span class="eng b span_left"><em class="em_left" id="htid_{$itemid}">{$hn}</em>{$closestr} <b class="b_left1">{$sp3}</b></span></div></td>'+
 		           '<td style="text-align: center;" class="h_br tdhui"><span class="eng b">{$sp1}</span></td>'+
-		           '<td style="text-align: left; " class="h_br tdhui"><div class="dz_dv" title="{$gn}" style="padding-left:10px"><span class="eng b span_right"><b class="b_right1">{$sp0}</b> <em class="em_right" id="gtid_{$itemid}">{$gn}</em></span><s class="s_right"></s></div></td><td></td>'+
+		           '<td style="text-align: left; " class="h_br tdhui"><div class="dz_dv" title="{$gn}" style="padding-left:10px"><span class="eng b span_right"><b class="b_right1">{$sp0}</b> <em class="em_right" id="gtid_{$itemid}">{$gn}</em></span><s class="s_right"></s></div></td><td>&nbsp;</td>'+
 		           '<td>'+
 		           '<div class=pjpl id="odds{$itemid}"><span class="sp_value eng red">已截止场次</span></div>'+
 		           '<div style="display: none" class=tzbl><span class="sp_w35 eng">12%</span><span class="sp_w35 eng">23%</span><span class="sp_w35 eng">65%</span></div></td>'+
@@ -1636,7 +1636,7 @@ Class('ScrollStill', {
     	        				if(isIE6){
     	        					V.css({left: "auto",top: Z+$(window).scrollTop(), width: F,position: "absolute"});
     	        				}else{
-    	        				V.css({left: "auto",top: Z, width: F, position: "fixed"});
+    	        					V.css({left: "auto",top: Z-9, width: F, position: "fixed"});
     	        				}
     	        			}
     	        			Y.get("#titleTable_r").setStyle('z-index: 1;');
