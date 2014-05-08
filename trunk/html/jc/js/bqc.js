@@ -845,7 +845,7 @@
               '<TD style="CURSOR: pointer"><LABEL for=m{$itemid} title="{$name}"><INPUT id=m{$itemid} class=chbox value={$itemid} CHECKED type=checkbox name=m{$itemid}>{$newname}</LABEL></TD>'+
               '<TD style="BACKGROUND:{$cl}; COLOR: #fff" class=league><A title={$lmname} href="" target="_blank" id="mn{$itemid}" style="color: #fff">{$mname}</A></TD>'+
               '<TD><SPAN class="eng end_time" title="开赛时间：{$mt}">{$short_et}</SPAN><SPAN style="DISPLAY: none" class="eng match_time" title="截止时间：{$et}">{$short_mt}</SPAN> </TD>'+
-              '<TD style="text-align: right; padding-right:2px;"><A title={$lhn} href="" target="_blank" id="hn{$itemid}">{$hn}</A></TD>'+
+              '<TD style="text-align: right; padding-right:2px;border-left:1px solid #ddd"><A title={$lhn} href="" target="_blank" id="hn{$itemid}">{$hn}</A></TD>'+
               '<TD style="text-align: center;">VS</TD>'+
               '<TD style="text-align: left; padding-left:2px;"><A title={$lgn} href="" target="_blank" id="gn{$itemid}">{$gn}</A></TD>'+
               '<TD class="h_br tdhui"  style="border-left:1px solid #ddd">{$sp0}</TD>'+
@@ -864,7 +864,7 @@
               '<TD style="CURSOR: pointer"><LABEL for=m{$itemid} title="{$name}"><INPUT id=m{$itemid} class=chbox value={$itemid} CHECKED type=checkbox name=m{$itemid}>{$newname}</LABEL></TD>'+
               '<TD style="BACKGROUND:{$cl}; COLOR: #fff" class=league><A title={$lmname} href="" target="_blank" id="mn{$itemid}" style="color: #fff">{$mname}</A></TD>'+
               '<TD><SPAN class="eng end_time" title="开赛时间：{$mt}">{$short_et}</SPAN><SPAN style="DISPLAY: none" class="eng match_time" title="截止时间：{$et}">{$short_mt}</SPAN> </TD>'+
-              '<TD style="text-align: right; padding-right:2px;"><A title={$lhn} href="" target="_blank" id="hn{$itemid}"><em id="htid{$itemid}" class="ew_e ew_eright">{$hn}</em></A></TD>'+
+              '<TD style="text-align: right; padding-right:2px;border-left:1px solid #ddd"><A title={$lhn} href="" target="_blank" id="hn{$itemid}"><em id="htid{$itemid}" class="ew_e ew_eright">{$hn}</em></A></TD>'+
               '<TD style="text-align: center;">VS</TD>'+
               '<TD style="text-align: left; padding-left:2px;"><A title={$lgn} href="" target="_blank" id="gn{$itemid}"><em id="gtid{$itemid}" class="ew_e">{$gn}</em></A></TD>'+
               '<TD style="CURSOR: pointer;border-left:1px solid #ddd" class=h_br  ><DIV class=label_br><INPUT class=chbox value=33 type=checkbox style="display: none"><SPAN class=eng>{$sp0}</SPAN></DIV></TD>'+
