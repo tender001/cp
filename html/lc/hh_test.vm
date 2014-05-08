@@ -49,14 +49,14 @@
 			<td class="h_br" style="border-left:1px solid #ccc"><input id=g${match.itemid}_t1 style="display:none;" value=0 type=checkbox data-sp="${match.sf0}" data-type="sf">${match.sf0}</td>
 			<td class="h_br"><input id=g${match.itemid}_t2 style="display:none;" value=3 type=checkbox data-sp="${match.sf3}" data-type="sf">${match.sf3}</td>
 		#else
-			<td colspan="2">未开玩法</td>
+			<td colspan="2" style="background:#f5f5f5">未开玩法</td>
 		#end
 		#if($match.rfsfSale > 0)
 			<td class="h_br"><input id=g${match.itemid}_t3 style="display:none;" value=0 type=checkbox data-sp="${match.rf0}" data-type="rfsf" data-rf="${match.gclose}">${match.rf0}</td>
 			<td >${match.close}</td>
 			<td  style="border-left:1px solid #ccc" class="h_br"><input id=g${match.itemid}_t4 style="display:none;" value=3 type=checkbox data-sp="${match.rf3}" data-type="rfsf" data-rf="${match.close}">${match.rf3}</td>
 		#else
-			<td colspan="3">未开玩法</td>
+			<td colspan="3" style="background:#f5f5f5">未开玩法</td>
 		#end
 		
 		#if($match.dxfSale > 0)
@@ -64,7 +64,7 @@
 			<td >${match.zclose}</td>
 			<td  style="border-left:1px solid #ccc" class="h_br"><input id=g${match.itemid}_t6  style="display:none;" value=0 type=checkbox data-sp="${match.dxf0}" data-type="dxf">${match.rf3}</td>
 		#else
-			<td colspan="3">未开玩法</td>
+			<td colspan="3" style="background:#f5f5f5">未开玩法</td>
 		#end
 		<td class="unselecttd" style="border-right:1px solid #ccc">
 	
