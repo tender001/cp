@@ -274,14 +274,12 @@ Class('Selector', {
 	tagChange: function(tag, vals){
 		if(tag){
             if(vals.length>0){
-           	 tag.addClass('a2');
            	 if(vals.length==1){
            		 tag.html(vals[0]);
            	 }else{
-           		 tag.html('已选<font>'+vals.length+'</font>项');
+           		tag.html('<em  style="cursor:pointer">已选<font>'+vals.length+'</font>项</em>').addClass("unselecttdcur"); 
            	 }
             }else{
-           	 tag.removeClass('a2');
            	 Y.get("td[mark=unselect]").html("<a>未选</a>").removeClass("unselecttdcur"); 
             }
         }
