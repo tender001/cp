@@ -1382,7 +1382,7 @@ Class('LoadExpect',{
 		 var tableTpl=['<colgroup><col width="45"><col width="64"><col width="64"><col width="74"><col width="16"><col width="74"><col width="42"><col width="42"><col width="42"><col width="42"><col width="42"><col width="42"><col width="42"><col width="50"><col width=""></colgroup>',//0
 	        '<tbody>'+
 	       '<tr id="switch_for_{$enddate}" >'+
-	       '<td  colspan="17" class="dc_hs dc_hstd" style="text-align:left;line-height:16px;height:16px;background-color:#ECEFF5">'+
+	       '<td  colspan="17" class="dc_hs dc_hstd" style="text-align:left;line-height:16px;height:16px;">'+
 	       '<strong>{$enddate} {$weekday} (10：00--次日10：00)</strong>&nbsp;'+
 	       '<a href="javascript:void(0)" onclick="Yobj.postMsg(\'msg_show_or_hide_matches\', \'{$enddate}\', this)">隐藏</a>'+
 	       '</td>'+
@@ -1522,8 +1522,7 @@ Class('LoadExpect',{
 				if(row.bf=="-1:-1"){row.bf="延";}
 				row.shuju='<span class="red eng">'+row.bf+'</span>';
 			}else{
-//				row.shuju='<a href="" target="_blank" id="ox'+row.mid+'">析</a> <a href="" target="_blank" id="oz'+row.mid+'">欧</a>';
-				row.shuju='<a href="" target="_blank" id="ox'+row.mid+'">析</a> ';
+				row.shuju='<a href="" target="_blank" id="ox'+row.mid+'">析</a> <a href="" target="_blank" id="oz'+row.mid+'">欧</a>';
 			}
 			
 			if (out_of_date&&row.rz!=''&&(parseFloat(row.rs)>0)){//已经开出赛果的//&&row.bf!=''				
@@ -1889,7 +1888,7 @@ Class( {
 			}
 		} );
 
-//		this.goTop = this.one('a.back_top');
+		this.goTop = this.one('a.back_top');
 		this.rightArea = this.get('#right_area');
 		this.mainArea = this.get('#main');
 		if (this.ie && this.ie == 6) {
@@ -1932,9 +1931,9 @@ Class( {
 	        });
 	},
 
-	scrollStill : function() {},
-
-	scrollStillIE6 : function() {}
+//	scrollStill : function() {},
+//
+//	scrollStillIE6 : function() {}
 
 });
 //设置某个标签在某个区域内是静止的
