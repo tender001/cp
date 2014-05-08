@@ -1432,72 +1432,7 @@ Class('SPUpdate', {
 });
 
 //回到顶部链接
-Class('ScrollStill', {
-	index : function() {
-		var Y = this;
-		this.goTop = this.one('a.back_top');
-		this.rightArea = this.get('div.dc_r');
-		this.mainArea = this.get('#main');
-		if (this.ie && this.ie == 6) {
-			this.goTop.style.position = 'absolute';
-			this.goTop.style.left = '750px';
-		} else {
-			setTimeout( function() {
-				Y.goTop.style.left = (Y.rightArea.getXY().x-10) + 'px';
-			}, 500 );
-		}
-		this.get(window).scroll( function () {
-			clearTimeout(Class.C('scrollTimer'));
-			if (Y.ie && Y.ie == 6) {
-				Class.C('scrollTimer', setTimeout(Y.scrollStillIE6.proxy(Y), 100));
-			} else {
-				Class.C('scrollTimer', setTimeout(Y.scrollStillOthers.proxy(Y), 100));
-			}
-		});
-	},
-	scrollStillOthers : function() {
-		var window_size = Y.getSize();
-		Y.goTop = Y.get('a.back_top');
-		Y.mainArea = Y.get('#main');
-		Y.leftArea = Y.get('#main div.dc_l');
-		Y.rightArea = Y.get('#main div.dc_r');
-		var right_xy = Y.rightArea.getXY();
-		var right_size = Y.rightArea.getSize();
-		if (window_size.scrollTop + window_size.offsetHeight > Y.mainArea.getXY().y + Y.mainArea.getSize().offsetHeight + 10) {
-			Y.goTop.setStyle('position', 'absolute').setStyle('bottom', 10).setStyle('left', '750px');
-		} else {
-			Y.goTop.setStyle('position', 'fixed').setStyle('bottom', '10px').setStyle('left', (right_xy.x-10) + 'px');
-		}
-		if (window_size.scrollTop <= right_xy.y || 
-				right_xy.y + right_size.offsetHeight + 90 > window_size.scrollTop + window_size.offsetHeight ||
-				Y.leftArea.getSize().offsetHeight - 90 < right_size.offsetHeight) {
-			Y.goTop.hide();
-		} else {
-			Y.goTop.show();
-		}
-	},
-	scrollStillIE6 : function() {
-		var window_size = Y.getSize();
-		Y.goTop = Y.get('a.back_top');
-		Y.mainArea = Y.get('#main');
-		Y.leftArea = Y.get('#main div.dc_l');
-		Y.rightArea = Y.get('#main div.dc_r');
-		var right_xy = Y.rightArea.getXY();
-		var right_size = Y.rightArea.getSize();
-		if (window_size.scrollTop + window_size.offsetHeight > Y.mainArea.getXY().y + Y.mainArea.getSize().offsetHeight + 10) {
-			Y.goTop.setStyle('top', '').setStyle('bottom', 0);
-		} else {
-			Y.goTop.setStyle('top', window_size.scrollTop + window_size.offsetHeight - 310 + 'px');
-		}
-		if (window_size.scrollTop <= right_xy.y || 
-				right_xy.y + right_size.offsetHeight + 90 > window_size.scrollTop + window_size.offsetHeight || 
-				Y.leftArea.getSize().offsetHeight - 90 < right_size.offsetHeight) {
-			Y.goTop.hide();
-		} else {
-			Y.goTop.show();
-		}
-	}
-});
+Class('ScrollStill', {});
 
 //引导启动类
     Class({
@@ -1659,7 +1594,6 @@ Class('ScrollStill', {
             this.lib.Buy();//购买类
             //this.lib.SPUpdate(isgg);//自动更新SP
         	this.lib.Clock('#sysTime');
-			this.lib.ScrollStill();
             if (isgg) {
                 this.lib.GgType();//过关方式
                 this.C('_isgg', true, true);
