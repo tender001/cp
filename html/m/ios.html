@@ -23,14 +23,27 @@ function redirect(){
 	var ua = navigator.userAgent.toLowerCase();
 
 	if (/iphone|ipad|ipod/.test(ua)) {
-		location.href = 'http://www.159cai.com/m/ios.html';
+	href = 'https://itunes.apple.com/cn/app/id639087967?mt=8';
+// 	__ga('set', 'page', '/download/ios' + query);
+	__ga('set', 'page', '/hemai/');
+	__ga('send', 'pageview');
+	__ga('send', 'event', 'app', 'download-via-qrcode', 'ios', {'hitCallback': redirect});
+	setTimeout(redirect, 2000);
 	} else if (/android/.test(ua)) {
-		location.href = 'http://www.159cai.com/m/';
+	href = 'http://www.159cai.com/download/159cai_shouji.apk';
+// 	__ga('set', 'page', '/download/android' + query);
+	__ga('set', 'page', '/dating');
+	__ga('send', 'pageview');
+	__ga('send', 'event', 'app', 'download-via-qrcode', 'android-local', {'hitCallback': redirect});
+	setTimeout(redirect, 2000);
 	} else if (/windows phone|blackberry/.test(ua)) {
-	Y.alert('抱歉，暂不支持您的系统');
+	__ga('set', 'page', '/download/other' + query);
+	__ga('send', 'pageview');
+	alert('抱歉，暂不支持您的系统');
 	location.href = '/';
 	} else {
-// 	location.href = '/';
+	__ga('send', 'pageview');
+	location.href = '/';
 	}
 	
 
