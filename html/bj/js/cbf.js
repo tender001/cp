@@ -1782,61 +1782,61 @@ Class('LoadExpect',{
 	       '</colgroup>'+
 	       '<tbody>'+
 	       '<tr>'+
-	       '<td class="h_br">'+
+	       '<td class="{$tdclass}">'+
 	       '<label class="eng">'+
 	       '<input type="checkbox" class="chbox" value="胜其他" onclick="return false"  {$disabled} style="display:none"/><span class="f_bf">胜其他</span><br/>'+
 	       '{$sp90str}'+
 	       '</label>'+
 	       '</td>'+
-	       '<td class="h_br" style="CURSOR: pointer">'+
+	       '<td class="{$tdclass}" style="CURSOR: pointer">'+
 	       '<label class="eng">'+
 	       '<input type="checkbox" class="chbox" value="1:0" onclick="return false"  {$disabled} style="display:none"/><span class="f_bf">1:0</span><br/>'+
 	       '{$sp10str}'+
 	       '</label>'+
 	       '</td>'+
-	       '<td class="h_br" style="CURSOR: pointer">'+
+	       '<td class="{$tdclass}" style="CURSOR: pointer">'+
 	       '<label class="eng">'+
 	       '<input type="checkbox" class="chbox" value="2:0" onclick="return false"  {$disabled} style="display:none"/><span class="f_bf">2:0</span><br/>'+
 	       '{$sp20str}'+
 	       '</label>'+
 	       '</td>'+
-	       '<td class="h_br" style="CURSOR: pointer">'+
+	       '<td class="{$tdclass}" style="CURSOR: pointer">'+
 	       '<label class="eng">'+
 	       '<input type="checkbox" class="chbox" value="2:1" onclick="return false"  {$disabled} style="display:none"/><span class="f_bf">2:1</span><br/>'+
 	       '{$sp21str}'+
 	       '</label>'+
 	       '</td>'+
-	       '<td class="h_br" style="CURSOR: pointer">'+
+	       '<td class="{$tdclass}" style="CURSOR: pointer">'+
 	       '<label class="eng">'+
 	       '<input type="checkbox" class="chbox" value="3:0" onclick="return false"  {$disabled} style="display:none"/><span class="f_bf">3:0</span><br/>'+
 	       '{$sp30str}'+
 	       '</label>'+
 	       '</td>'+
-	       '<td class="h_br" style="CURSOR: pointer">'+
+	       '<td class="{$tdclass}" style="CURSOR: pointer">'+
 	       '<label class="eng">'+
 	       '<input type="checkbox" class="chbox" value="3:1" onclick="return false"  {$disabled} style="display:none"/><span class="f_bf">3:1</span><br/>'+
 	       '{$sp31str}'+
 	       '</label>'+
 	       '</td>'+
-	       '<td class="h_br" style="CURSOR: pointer">'+
+	       '<td class="{$tdclass}" style="CURSOR: pointer">'+
 	       '<label class="eng">'+
 	       '<input type="checkbox" class="chbox" value="3:2" onclick="return false"  {$disabled} style="display:none"/><span class="f_bf">3:2</span><br/>'+
 	       '{$sp32str}'+
 	       '</label>'+
 	       '</td>'+
-	       '<td class="h_br" style="CURSOR: pointer">'+
+	       '<td class="{$tdclass}" style="CURSOR: pointer">'+
 	       '<label class="eng">'+
 	       '<input type="checkbox" class="chbox" value="4:0" onclick="return false"  {$disabled} style="display:none"/><span class="f_bf">4:0</span><br/>'+
 	       '{$sp40str}'+
 	       '</label>'+
 	       '</td>'+
-	       '<td class="h_br" style="CURSOR: pointer">'+
+	       '<td class="{$tdclass}" style="CURSOR: pointer">'+
 	       '<label class="eng">'+
 	       '<input type="checkbox" class="chbox" value="4:1" onclick="return false"  {$disabled} style="display:none"/><span class="f_bf">4:1</span><br/>'+
 	       '{$sp41str}'+
 	       '</label>'+
 	       '</td>'+
-	       '<td class="h_br" style="CURSOR: pointer">'+
+	       '<td class="{$tdclass}" style="CURSOR: pointer">'+
 	       '<label class="eng">'+
 	       '<input type="checkbox" class="chbox" value="4:2" onclick="return false"  {$disabled} style="display:none"/><span class="f_bf">4:2</span><br/>'+
 	       '{$sp42str}'+
@@ -1845,31 +1845,31 @@ Class('LoadExpect',{
 	       '<td class="last_td" style="cursor:pointer"><input type="checkbox" style="display:none" class="chbox vs_check_all_win" onclick="return false"  {$disabled} /><a href="javascript:void(0);" class="jcq_q">全</a></td>'+
 	       '</tr>'+
 	       '<tr>'+
-	       '<td class="h_br" style="CURSOR: pointer">'+
+	       '<td class="{$tdclass}" style="CURSOR: pointer">'+
 	       '<label class="eng">'+
 	       '<input type="checkbox" class="chbox" value="平其他" onclick="return false"  {$disabled} style="display:none"/><span class="f_bf">平其他</span><br/>'+
 	       '{$sp99str}'+
 	       '</label>'+
 	       '</td>'+
-	       '<td class="h_br" style="CURSOR: pointer">'+
+	       '<td class="{$tdclass}" style="CURSOR: pointer">'+
 	       '<label class="eng">'+
 	       '<input type="checkbox" class="chbox" value="0:0" onclick="return false"  {$disabled} style="display:none"/><span class="f_bf">0:0</span><br/>'+
 	       '{$sp00str}'+
 	       '</label>'+
 	       '</td>'+
-	       '<td class="h_br" style="CURSOR: pointer">'+
+	       '<td class="{$tdclass}" style="CURSOR: pointer">'+
 	       '<label class="eng">'+
 	       '<input type="checkbox" class="chbox" value="1:1" onclick="return false"  {$disabled} style="display:none"/><span class="f_bf">1:1</span><br/>'+
 	       '{$sp11str}'+
 	       '</label>'+
 	       '</td>'+
-	       '<td class="h_br" style="CURSOR: pointer">'+
+	       '<td class="{$tdclass}" style="CURSOR: pointer">'+
 	       '<label class="eng">'+
 	       '<input type="checkbox" class="chbox" value="2:2" onclick="return false"  {$disabled} style="display:none"/><span class="f_bf">2:2</span><br/>'+
 	       '{$sp22str}'+
 	       '</label>'+
 	       '</td>'+
-	       '<td class="h_br" style="CURSOR: pointer">'+
+	       '<td class="{$tdclass}" style="CURSOR: pointer">'+
 	       '<label class="eng">'+
 	       '<input type="checkbox" class="chbox" value="3:3" onclick="return false"  {$disabled} style="display:none"/><span class="f_bf">3:3</span><br/>'+
 	       '{$sp33str}'+
@@ -1879,61 +1879,61 @@ Class('LoadExpect',{
 	       '<td class="last_td" style="cursor:pointer"><input type="checkbox" style="display:none" class="chbox vs_check_all_draw" onclick="return false"  {$disabled} /><a href="javascript:void(0);" class="jcq_q">全</a></td>'+
 	       '</tr>'+
 	       '<tr>'+
-	       '<td class="h_br" style="CURSOR: pointer">'+
+	       '<td class="{$tdclass}" style="CURSOR: pointer">'+
 	       '<label class="eng">'+
 	       '<input type="checkbox" class="chbox" value="负其他" onclick="return false"  {$disabled} style="display:none"/><span class="f_bf">负其他</span><br/>'+
 	       '{$sp09str}'+
 	       '</label>'+
 	       '</td>'+
-	       '<td class="h_br" style="CURSOR: pointer">'+
+	       '<td class="{$tdclass}" style="CURSOR: pointer">'+
 	       '<label class="eng">'+
 	       '<input type="checkbox" class="chbox" value="0:1" onclick="return false"  {$disabled} style="display:none"/><span class="f_bf">0:1</span><br/>'+
 	       '{$sp01str}'+
 	       '</label>'+
 	       '</td>'+
-	       '<td class="h_br" style="CURSOR: pointer">'+
+	       '<td class="{$tdclass}" style="CURSOR: pointer">'+
 	       '<label class="eng">'+
 	       '<input type="checkbox" class="chbox" value="0:2" onclick="return false"  {$disabled} style="display:none"/><span class="f_bf">0:2</span><br/>'+
 	       '{$sp02str}'+
 	       '</label>'+
 	       '</td>'+
-	       '<td class="h_br" style="CURSOR: pointer">'+
+	       '<td class="{$tdclass}" style="CURSOR: pointer">'+
 	       '<label class="eng">'+
 	       '<input type="checkbox" class="chbox" value="1:2" onclick="return false"  {$disabled} style="display:none"/><span class="f_bf">1:2</span><br/>'+
 	       '{$sp12str}'+
 	       '</label>'+
 	       '</td>'+
-	       '<td class="h_br" style="CURSOR: pointer">'+
+	       '<td class="{$tdclass}" style="CURSOR: pointer">'+
 	       '<label class="eng">'+
 	       '<input type="checkbox" class="chbox" value="0:3" onclick="return false"  {$disabled} style="display:none"/><span class="f_bf">0:3</span><br/>'+
 	       '{$sp03str}'+
 	       '</label>'+
 	       '</td>'+
-	       '<td class="h_br" style="CURSOR: pointer">'+
+	       '<td class="{$tdclass}" style="CURSOR: pointer">'+
 	       '<label class="eng">'+
 	       '<input type="checkbox" class="chbox" value="1:3" onclick="return false"  {$disabled} style="display:none"/><span class="f_bf">1:3</span><br/>'+
 	       '{$sp13str}'+
 	       '</label>'+
 	       '</td>'+
-	       '<td class="h_br" style="CURSOR: pointer">'+
+	       '<td class="{$tdclass}" style="CURSOR: pointer">'+
 	       '<label class="eng">'+
 	       '<input type="checkbox" class="chbox" value="2:3" onclick="return false"  {$disabled} style="display:none"/><span class="f_bf">2:3</span><br/>'+
 	       '{$sp23str}'+
 	       '</label>'+
 	       '</td>'+
-	       '<td class="h_br" style="CURSOR: pointer">'+
+	       '<td class="{$tdclass}" style="CURSOR: pointer">'+
 	       '<label class="eng">'+
 	       '<input type="checkbox" class="chbox" value="0:4" onclick="return false"  {$disabled} style="display:none"/><span class="f_bf">0:4</span><br/>'+
 	       '{$sp04str}'+
 	       '</label>'+
 	       '</td>'+
-	       '<td class="h_br" style="CURSOR: pointer">'+
+	       '<td class="{$tdclass}" style="CURSOR: pointer">'+
 	       '<label class="eng">'+
 	       '<input type="checkbox" class="chbox" value="1:4" onclick="return false"  {$disabled} style="display:none"/><span class="f_bf">1:4</span><br/>'+
 	       '{$sp14str}'+
 	       '</label>'+
 	       '</td>'+
-	       '<td class="h_br" style="CURSOR: pointer">'+
+	       '<td class="{$tdclass}" style="CURSOR: pointer">'+
 	       '<label class="eng">'+
 	       '<input type="checkbox" class="chbox" value="2:4" onclick="return false"  {$disabled} style="display:none"/><span class="f_bf">2:4</span><br/>'+
 	       '{$sp24str}'+
@@ -2015,6 +2015,7 @@ Class('LoadExpect',{
 			row.displaystyle="";//style="display:none"
 			row.displaystyle2="";//style="display:none"
 			row.updownstr='';
+			row.tdclass=" h_br";
 			var out_of_date=false;
 			if (Y.getDate(data.date)>Y.getDate(row.et) || row.icancel=="1"){//已经过期的场次
 				out_of_date_matches++;
@@ -2023,6 +2024,7 @@ Class('LoadExpect',{
 				row.disabled='disabled="disabled"';
 				row.displaystyle='style="display:none"'; //style="display:none"
 				row.displaystyle2='style="display:none"';//style="display:none"
+				row.tdclass="h_br tdhui";
 				row.updownstr='<a class="public_Lblue bf_btn expand_sp" href="javascript:void(0)"><b>展开SP值<s class="c_down"></s></b></a>';
 			}else{	
 				if (nowfirst==0){

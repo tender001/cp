@@ -1394,25 +1394,25 @@ Class('LoadExpect',{
 	       '<td style="text-align: left; ">'+
 	       '<a title="{$gn}"  href="" target="_blank" id="gn{$mid}"><em id="gtid{$mid}" class="ew_e">{$short_gn}</em></a>'+	       
 	       '</td>'+
-	       '<td style="CURSOR: pointer;border-left:1px solid #ddd;" class="h_br">'+
+	       '<td style="CURSOR: pointer;border-left:1px solid #ddd;" class="{$tdclass}">'+
 	       '<label class="label_br">'+
 	       '<input type="checkbox" class="chbox" value="上+单" onclick="return false" {$disabled}  style="display: none"/>'+
 	       '{$sxp0str}'+
 	       '</label>'+
 	       '</td>'+
-	       '<td style="CURSOR: pointer" class="h_br">'+
+	       '<td style="CURSOR: pointer" class="{$tdclass}">'+
 	       '<label class="label_br">'+
 	       '<input type="checkbox" class="chbox" value="上+双" onclick="return false" {$disabled}  style="display: none"/>'+
 	       '{$sxp1str}'+
 	       '</label>'+
 	       '</td>'+
-	       '<td style="CURSOR: pointer" class="h_br">'+
+	       '<td style="CURSOR: pointer" class="{$tdclass}">'+
 	       '<label class="label_br">'+
 	       '<input type="checkbox" class="chbox" value="下+单" onclick="return false" {$disabled}  style="display: none"/>'+
 	       '{$sxp2str}'+
 	       '</label>'+
 	       '</td>'+
-	       '<td style="CURSOR: pointer" class="h_br">'+
+	       '<td style="CURSOR: pointer" class="{$tdclass}">'+
 	       '<label class="label_br">'+
 	       '<input type="checkbox" class="chbox" value="下+双" onclick="return false" {$disabled}  style="display: none"/>'+
 	       '{$sxp3str}'+
@@ -1470,6 +1470,7 @@ Class('LoadExpect',{
 			
 			row.yesorno="no";
 			row.disabled="";
+			row.tdclass="h_br";
 			var out_of_date=false;
 			if (Y.getDate(data.date)>Y.getDate(row.et) || row.icancel=="1"){//已经过期的场次
 				out_of_date_matches++;
@@ -1477,6 +1478,7 @@ Class('LoadExpect',{
 				row.yesorno="yes";
 				row.disabled='disabled="disabled"';
 				row.displaystyle='style="display:none"';
+				row.tdclass="h_br tdhui";
 			}
 			
 			
@@ -1496,10 +1498,10 @@ Class('LoadExpect',{
 				
 			}else{//未出结果
 				row.shuju='<a href="" target="_blank" id="ox'+row.mid+'">析</a> <a href="" target="_blank" id="oz'+row.mid+'">欧</a>';
-				row.sxp0str='<span class="sp_value eng '+(out_of_date?'red':'')+'">'+row.sxp0+'</span>';
-				row.sxp1str='<span class="sp_value eng '+(out_of_date?'red':'')+'">'+row.sxp1+'</span>';
-				row.sxp2str='<span class="sp_value eng '+(out_of_date?'red':'')+'">'+row.sxp2+'</span>';
-				row.sxp3str='<span class="sp_value eng '+(out_of_date?'red':'')+'">'+row.sxp3+'</span>';
+				row.sxp0str='<span class="sp_value eng">'+row.sxp0+'</span>';
+				row.sxp1str='<span class="sp_value eng">'+row.sxp1+'</span>';
+				row.sxp2str='<span class="sp_value eng">'+row.sxp2+'</span>';
+				row.sxp3str='<span class="sp_value eng">'+row.sxp3+'</span>';
 								
 			}
 			html[html.length] = tableTpl[2].tpl(row);

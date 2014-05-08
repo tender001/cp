@@ -1403,49 +1403,49 @@ Class('LoadExpect',{
 	       '<td style="text-align: left; ">'+
 	       '<a title="{$gn}"  href="" target="_blank" id="gn{$mid}"><em id="gtid{$mid}" class="ew_e">{$short_gn}</em></a>'+	       
 	       '</td>'+
-	       '<td style="CURSOR: pointer;border-left:1px solid #ddd" class="h_br" >'+
+	       '<td style="CURSOR: pointer;border-left:1px solid #ddd" class="{$tdclass}" >'+
 	       '<label class="label_br">'+
 	       '<input type="checkbox" class="chbox" value="0" onclick="return false" {$disabled} style="display: none"/>'+
 	       '{$jqs0str}'+
 	       '</label>'+
 	       '</td>'+
-	       '<td style="CURSOR: pointer" class="h_br">'+
+	       '<td style="CURSOR: pointer" class="{$tdclass}">'+
 	       '<label class="label_br">'+
 	       '<input type="checkbox" class="chbox" value="1" onclick="return false" {$disabled} style="display: none"/>'+
 	       '{$jqs1str}'+
 	       '</label>'+
 	       '</td>'+
-	       '<td style="CURSOR: pointer" class="h_br">'+
+	       '<td style="CURSOR: pointer" class="{$tdclass}">'+
 	       '<label class="label_br">'+
 	       '<input type="checkbox" class="chbox" value="2" onclick="return false" {$disabled} style="display: none"/>'+
 	       '{$jqs2str}'+
 	       '</label>'+
 	       '</td>'+
-	       '<td style="CURSOR: pointer" class="h_br">'+
+	       '<td style="CURSOR: pointer" class="{$tdclass}">'+
 	       '<label class="label_br">'+
 	       '<input type="checkbox" class="chbox" value="3" onclick="return false" {$disabled} style="display: none"/>'+
 	       '{$jqs3str}'+
 	       '</label>'+
 	       '</td>'+
-	       '<td style="CURSOR: pointer" class="h_br">'+
+	       '<td style="CURSOR: pointer" class="{$tdclass}">'+
 	       '<label class="label_br">'+
 	       '<input type="checkbox" class="chbox" value="4" onclick="return false" {$disabled} style="display: none"/>'+
 	       '{$jqs4str}'+
 	       '</label>'+
 	       '</td>'+
-	       '<td style="CURSOR: pointer" class="h_br">'+
+	       '<td style="CURSOR: pointer" class="{$tdclass}">'+
 	       '<label class="label_br">'+
 	       '<input type="checkbox" class="chbox" value="5" onclick="return false" {$disabled} style="display: none"/>'+
 	       '{$jqs5str}'+
 	       '</label>'+
 	       '</td>'+
-	       '<td style="CURSOR: pointer" class="h_br">'+
+	       '<td style="CURSOR: pointer" class="{$tdclass}">'+
 	       '<label class="label_br">'+
 	       '<input type="checkbox" class="chbox" value="6" onclick="return false" {$disabled} style="display: none"/>'+
 	       '{$jqs6str}'+
 	       '</label>'+
 	       '</td>'+
-	       '<td style="CURSOR: pointer" class="h_br">'+
+	       '<td style="CURSOR: pointer" class="{$tdclass}">'+
 	       '<label class="label_br">'+
 	       '<input type="checkbox" class="chbox" value="7+" onclick="return false" {$disabled} style="display: none"/>'+
 	       '{$jqs7str}'+
@@ -1507,6 +1507,7 @@ Class('LoadExpect',{
 			
 			row.yesorno="no";
 			row.disabled="";
+			row.tdclass="h_br";
 			var out_of_date=false;
 			if (Y.getDate(data.date)>Y.getDate(row.et) || row.icancel=="1"){//已经过期的场次
 				out_of_date_matches++;
@@ -1514,6 +1515,7 @@ Class('LoadExpect',{
 				row.yesorno="yes";
 				row.disabled='disabled="disabled"';
 				row.displaystyle='style="display:none"';
+				row.tdclass="h_br tdhui";
 			}
 			
 			if (out_of_date&&row.bf!=''){
@@ -1535,14 +1537,14 @@ Class('LoadExpect',{
 				row.jqs7str=(row.rz==7?('<span class="red">'+row.rs+'</span>'):'--');
 				
 			}else{//未出结果
-				row.jqs0str='<span class="sp_value eng '+(out_of_date?'red':'')+'">'+row.jqs0+'</span>';
-				row.jqs1str='<span class="sp_value eng '+(out_of_date?'red':'')+'">'+row.jqs1+'</span>';
-				row.jqs2str='<span class="sp_value eng '+(out_of_date?'red':'')+'">'+row.jqs2+'</span>';
-				row.jqs3str='<span class="sp_value eng '+(out_of_date?'red':'')+'">'+row.jqs3+'</span>';
-				row.jqs4str='<span class="sp_value eng '+(out_of_date?'red':'')+'">'+row.jqs4+'</span>';
-				row.jqs5str='<span class="sp_value eng '+(out_of_date?'red':'')+'">'+row.jqs5+'</span>';
-				row.jqs6str='<span class="sp_value eng '+(out_of_date?'red':'')+'">'+row.jqs6+'</span>';
-				row.jqs7str='<span class="sp_value eng '+(out_of_date?'red':'')+'">'+row.jqs7+'</span>';				
+				row.jqs0str='<span class="sp_value eng">'+row.jqs0+'</span>';
+				row.jqs1str='<span class="sp_value eng">'+row.jqs1+'</span>';
+				row.jqs2str='<span class="sp_value eng">'+row.jqs2+'</span>';
+				row.jqs3str='<span class="sp_value eng ">'+row.jqs3+'</span>';
+				row.jqs4str='<span class="sp_value eng ">'+row.jqs4+'</span>';
+				row.jqs5str='<span class="sp_value eng ">'+row.jqs5+'</span>';
+				row.jqs6str='<span class="sp_value eng ">'+row.jqs6+'</span>';
+				row.jqs7str='<span class="sp_value eng ">'+row.jqs7+'</span>';				
 			}
 			html[html.length] = tableTpl[2].tpl(row);
 			lgname.push(row.mname);
