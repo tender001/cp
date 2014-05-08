@@ -74,7 +74,7 @@ $(function() {
 	
 //								tophtml +='<td>排序</td><td>发起人</td><td>战绩</td><td>方案金额</td><td>一等奖</td><td>二等奖</td><td>三等奖</td><td>四等奖</td><td>五等奖</td><td>六等奖</td><td>税前奖金</td><td>详情</td><td>定制跟单</td></tr>';
 	}else if(lotid==03){
-	tophtml='<colgroup><col width="90" /><col width="105" /><col width="97" /><col width="100" /><col width="110" /><col width="100" /><col width="100" /><col width="100" /><col width="100" /><col width="100" /><tr class="tr1">';
+	tophtml='<colgroup><col width="90" /><col width="110" /><col width="97" /><col width="100" /><col width="110" /><col width="100" /><col width="100" /><col width="100" /><col width="100" /><col width="100" /><tr class="tr1">';
 
 	tophtml +='<td align="center">排序</td><td>发起人</td align="center"><td>战绩</td><td align="right">方案金额</td><td align="center">直选</td><td align="center">组三</td><td align="center">组六</td><td align="right">税前奖金</td><td align="center">详情</td><td align="center">定制跟单</td></tr>';
 	
@@ -84,11 +84,11 @@ $(function() {
 	tophtml +='<td align="center">排序</td><td >发起人</td><td align="center">战绩</td><td align="right">方案金额</td><td align="center">一等奖</td><td align="center">二等奖</td><td align="center">三等奖</td><td align="center">四等奖</td><td align="center">五等奖</td><td align="center">六等奖</td><td align="center">七等奖</td><td align="right">税前奖金</td><td align="center">详情</td><td align="center">定制跟单</td></tr>';
 	
 	}else if(lotid==50){
-	tophtml='<colgroup><col width="40" /><col width="105" /><col width="97" /><col width="55" /><col width="55" /><col width="60" /><col width="60" /><col width="60" /><col width="60" /><col width="60" /><col width="60" /><col width="60" /><col width="60" /><col width="80" /><col  /><tr class="tr1">';
+	tophtml='<colgroup><col width="40" /><col width="110" /><col width="97" /><col width="55" /><col width="55" /><col width="60" /><col width="60" /><col width="60" /><col width="60" /><col width="60" /><col width="60" /><col width="60" /><col width="60" /><col width="80" /><col  /><tr class="tr1">';
 	tophtml +='<td align="center">排序</td><td >发起人</td><td align="center">战绩</td><td align="right">方案金额</td><td align="center">一等奖</td><td align="center">二等奖</td><td align="center">三等奖</td><td align="center">四等奖</td><td align="center">五等奖</td><td align="center">六等奖</td><td align="center">七等奖</td><td align="center">八等奖</td><td align="right">税前奖金</td><td align="center">详情</td><td align="center">定制跟单</td></tr>';
 	
 	}else if(lotid==51){
-	tophtml='<colgroup><col width="60" /><col width="105" /><col width="97" /><col width="90" /><col width="70" /><col width="65" /><col width="65" /><col width="65" /><col width="65" /><col width="65" /><col width="80" /><col width="80" /><col width="100" /><tr class="tr1">';
+	tophtml='<colgroup><col width="60" /><col width="110" /><col width="97" /><col width="90" /><col width="70" /><col width="65" /><col width="65" /><col width="65" /><col width="65" /><col width="65" /><col width="80" /><col width="80" /><col width="100" /><tr class="tr1">';
 
 	tophtml +='<td align="center">排序</td><td >发起人</td><td align="center">战绩</td><td align="right">方案金额</td><td align="center">一等奖</td><td align="center">二等奖</td><td align="center">三等奖</td><td align="center">四等奖</td><td align="center">五等奖</td><td align="center">六等奖</td><td align="right">税前奖金</td><td align="center">详情</td><td align="center">定制跟单</td><tr class="tr1">';
 	
@@ -98,12 +98,12 @@ $(function() {
 	tophtml +='<td align="center">排序</td><td >发起人</td><td align="center">战绩</td><td align="right">方案金额</td><td align="center">一等奖</td><td align="right">税前奖金</td><td align="center">详情</td><td align="center">定制跟单</td></tr>';
 	
 	}else if(lotid==53){
-	tophtml='<colgroup><col width="90" /><col width="105" /><col width="97" /><col width="100" /><col width="100" /><col width="110" /><col width="100" /><col width="100" /><col width="100" /><col width="100" /><tr class="tr1">';
+	tophtml='<colgroup><col width="90" /><col width="110" /><col width="97" /><col width="100" /><col width="100" /><col width="110" /><col width="100" /><col width="100" /><col width="100" /><col width="100" /><tr class="tr1">';
 	
 	tophtml +='<td align="center">排序</td><td >发起人</td><td align="center">战绩</td><td align="right">方案金额</td><td align="center">直选</td><td align="center">组三</td><td align="center">组六</td><td align="right">税前奖金</td><td align="center">详情</td><td align="center">定制跟单</td></tr>';
 	
 	}else{
-	tophtml='<colgroup><col width="60" /><col width="100" /><col width="135" /><col width="100" /><col width="300" /><col width="60" /><col width="60" /><col width="60" /><tr class="tr1">';
+	tophtml='<colgroup><col width="60" /><col width="110" /><col width="135" /><col width="100" /><col width="300" /><col width="60" /><col width="60" /><col width="60" /><tr class="tr1">';
 	tophtml +='<td align="center">排序</td><td >发起人</td><td align="center">战绩</td><td align="right">方案金额</td><td class="x_jc">中奖情况</td><td align="right">税前奖金</td><td align="center">详情</td><td align="center">定制跟单</td></tr>';
 	}
 	showinfo(lotid,expect);
@@ -377,23 +377,26 @@ var loadmain = function(lotid, expect,type) {
 			}
 			if(lotid=="50"){
 				var kjdengji=""
-				
+					if(ninfo.length<3){
+						ninfo=["-","-","-","-","-","-","-","-","-","-","-","-","-"];
+						ginfo=["-","-","-",200,10,5,"-","-","-","-",100,5]
+					}
 					var gname=[];
     			var gname2=[];
-					if(expect>2014050){
+					if(expect>2014051){
 		    			 gname=getLevel("50");
 		    			 gname2=getLevelms("50");
-						kjdengji += ' <tr><td rowspan="2">'+gname[0]+'</td><td rowspan="2">'+gname2[0]+'</td><td>基本</td><td>'+ninfo[0]+'</td><td>'+parseFloat(ginfo[0]).rmb(false, 0)+'</td></tr>';
-		    			kjdengji += ' <tr><td>追加</td><td>'+ninfo[7]+'</td><td>'+parseFloat(ginfo[9]).rmb(false, 0)+'</td></tr>';
-		    			kjdengji += ' <tr><td rowspan="2">'+gname[1]+'</td><td rowspan="2">'+gname2[1]+'</td><td>基本</td><td>'+ninfo[1]+'</td><td>'+parseFloat(ginfo[1]).rmb(false, 0)+'</td></tr>';
-		    			kjdengji += ' <tr><td>追加</td><td>'+ninfo[8]+'</td><td>'+parseFloat(ginfo[10]).rmb(false, 0)+'</td></tr>';			    			
-		    			kjdengji += ' <tr><td rowspan="2">'+gname[2]+'</td><td rowspan="2">'+gname2[2]+'</td><td>基本</td><td>'+ninfo[2]+'</td><td>'+parseFloat(ginfo[2]).rmb(false, 0)+'</td></tr>';
-		    			kjdengji += ' <tr mark="showtr" style="display: none;"><td>追加</td><td>'+ninfo[9]+'</td><td>'+parseFloat(ginfo[11]).rmb(false, 0)+'</td></tr>';	
-		    			kjdengji += ' <tr mark="showtr" style="display: none;"><td rowspan="2">'+gname[3]+'</td><td rowspan="2">'+gname2[3]+'</td><td>基本</td><td>'+ninfo[3]+'</td><td>'+parseFloat(ginfo[3]).rmb(false, 0)+'</td></tr>';
-		    			kjdengji += ' <tr mark="showtr" style="display: none;"><td>追加</td><td>'+ninfo[10]+'</td><td>'+parseFloat(ginfo[12]).rmb(false, 0)+'</td></tr>';	
-		    			kjdengji += ' <tr mark="showtr" style="display: none;"><td rowspan="2">'+gname[4]+'</td><td rowspan="2">'+gname2[4]+'</td><td>基本</td><td>'+ninfo[4]+'</td><td>'+parseFloat(ginfo[4]).rmb(false, 0)+'</td></tr>';
-		    			kjdengji += ' <tr mark="showtr" style="display: none;"><td>追加</td><td>'+ninfo[11]+'</td><td>'+parseFloat(ginfo[13]).rmb(false, 0)+'</td></tr>';	
-		    			kjdengji += ' <tr mark="showtr" style="display: none;"><td rowspan="2">'+gname[5]+'</td><td rowspan="2">'+gname2[5]+'</td><td>基本</td><td>'+ninfo[5]+'</td><td>'+parseFloat(ginfo[5]).rmb(false, 0)+'</td></tr>';
+						kjdengji += ' <tr><td rowspan="2">'+gname[0]+'</td><td rowspan="2">'+gname2[0]+'</td><td>基本</td><td>'+ninfo[0]+'</td><td>'+(ginfo[0]=="-"?"-":parseFloat(ginfo[0]).rmb(false, 0))+'</td></tr>';
+		    			kjdengji += ' <tr><td>追加</td><td>'+ninfo[7]+'</td><td>'+(ginfo[7]=="-"?"-":parseFloat(ginfo[7]).rmb(false, 0))+'</td></tr>';
+		    			kjdengji += ' <tr><td rowspan="2">'+gname[1]+'</td><td rowspan="2">'+gname2[1]+'</td><td>基本</td><td>'+ninfo[1]+'</td><td>'+(ginfo[1]=="-"?"-":parseFloat(ginfo[1]).rmb(false, 0))+'</td></tr>';
+		    			kjdengji += ' <tr><td>追加</td><td>'+ninfo[8]+'</td><td>'+(ginfo[8]=="-"?"-":parseFloat(ginfo[8]).rmb(false, 0))+'</td></tr>';			    			
+		    			kjdengji += ' <tr><td rowspan="2">'+gname[2]+'</td><td rowspan="2">'+gname2[2]+'</td><td>基本</td><td>'+ninfo[2]+'</td><td>'+(ginfo[2]=="-"?"-":parseFloat(ginfo[2]).rmb(false, 0))+'</td></tr>';
+		    			kjdengji += ' <tr mark="showtr" style="display: none;"><td>追加</td><td>'+ninfo[9]+'</td><td>'+(ginfo[9]=="-"?"-":parseFloat(ginfo[9]).rmb(false, 0))+'</td></tr>';	
+		    			kjdengji += ' <tr mark="showtr" style="display: none;"><td rowspan="2">'+gname[3]+'</td><td rowspan="2">'+gname2[3]+'</td><td>基本</td><td>'+ninfo[3]+'</td><td>'+(ginfo[3]=="-"?"-":parseFloat(ginfo[3]).rmb(false, 0))+'</td></tr>';
+		    			kjdengji += ' <tr mark="showtr" style="display: none;"><td>追加</td><td>'+ninfo[10]+'</td><td>'+(ginfo[10]=="-"?"-":parseFloat(ginfo[10]).rmb(false, 0))+'</td></tr>';	
+		    			kjdengji += ' <tr mark="showtr" style="display: none;"><td rowspan="2">'+gname[4]+'</td><td rowspan="2">'+gname2[4]+'</td><td>基本</td><td>'+ninfo[4]+'</td><td>'+(ginfo[4]=="-"?"-":parseFloat(ginfo[4]).rmb(false, 0))+'</td></tr>';
+		    			kjdengji += ' <tr mark="showtr" style="display: none;"><td>追加</td><td>'+ninfo[11]+'</td><td>'+(ginfo[11]=="-"?"-":parseFloat(ginfo[11]).rmb(false, 0))+'</td></tr>';	
+		    			kjdengji += ' <tr mark="showtr" style="display: none;"><td rowspan="2">'+gname[5]+'</td><td rowspan="2">'+gname2[5]+'</td><td>基本</td><td>'+ninfo[5]+'</td><td>'+(ginfo[5]=="-"?"-":parseFloat(ginfo[5]).rmb(false, 0))+'</td></tr>';
 		    			kjdengji += ' <tr mark="showtr" style="display: none;"></tr>';	
 		    		}else{
 		    			 gname=getLevel(500);
