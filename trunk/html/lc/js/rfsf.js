@@ -815,9 +815,9 @@
    	           '<td style="cursor: pointer"><label for=m{$itemid}><input id=m{$itemid} value={$itemid}  checked type=checkbox name=m{$itemid}>{$name}</label></td>'+
 	           '<td style="background:{$cl}; color: #fff" class=league><a title="{$lmname}" href="" target="_blank" id="mn{$itemid}" style="color: #fff">{$mname}</a></td>'+
 	           '<td><span class="eng end_time" title="开赛时间：{$mt}">{$short_et}</span><span style="display: none" class="eng match_time" title="截止时间：{$et}">{$short_mt}</span></td>'+
-	           '<td style="text-align: right; border-left:1px solid #ddd;" class=h_br><div class="dz_dv" style="padding-left:10px" title={$gn}><s class="s_left">&nbsp;</s><span class="eng b span_left"><em class="em_left" id="htid_{$itemid}">{$gn}</em><b class="b_left"> {$sp0}</b></span></div></td>'+
+	           '<td style="text-align: right; border-left:1px solid #ddd;" class="h_br tdhui"><div class="dz_dv" style="padding-left:10px" title={$gn}><s class="s_left">&nbsp;</s><span class="eng b span_left"><em class="em_left" id="htid_{$itemid}">{$gn}</em><b class="b_left"> {$sp0}</b></span></div></td>'+
 	           '<td>{$closestr}</td>'+
-	           '<td style="text-align: left; border-left:1px solid #62A3D0;" class=h_br><div class="dz_dv" title={$hn}><span class="eng b span_left"><b class="b_left">{$sp3}<b> <em class="em_left" id="gtid_{$itemid}">{$hn}</em></span><s class="s_right"></s></div></td>'+
+	           '<td style="text-align: left; border-left:1px solid #62A3D0;" class="h_br tdhui"><div class="dz_dv" title={$hn}><span class="eng b span_left"><b class="b_left">{$sp3}<b> <em class="em_left" id="gtid_{$itemid}">{$hn}</em></span><s class="s_right"></s></div></td>'+
 	           '<td>'+
 	           '<div class=pjpl><span class="sp_value eng red">已截止场次</span></div></td>'+
 	           '<td><a href="" target="_blank" id="ox{$itemid}">析</a> <a href="" target="_blank" id="oz{$itemid}">欧</a></td>'+
@@ -1301,12 +1301,71 @@
         ready: true,
         index:function (){
         	this.lib.LoadExpect();
+        	this.goTotop();
     		this.onMsg('load_duizhen_succ', function () {
     			this._index();
     			this.sethref();
     		});            
         },
-        
+        goTotop:function (){
+            var isIE=!!window.ActiveXObject;
+            var isIE6 = isIE&&!window.XMLHttpRequest;
+            var btn = $("#goTotop");
+            var right = 0;
+            var top = $(window).height()-247;
+            var ietop = $(window).height()-247+$(window).scrollTop();
+            var flag = true;
+            $(window).resize(function(){
+                btn.css({"position":"fixed",top:top,right:right});
+                if(isIE6)btn.css({"position":"absolute",top:ietop,right:right});
+            })
+            btn.css({"position":"fixed",top:top,right:right});
+            var areaTop = Y.get("#right_area").getXY().y;
+            
+            $(window).scroll(function(){
+            	 if ($(this).scrollTop() > areaTop){//跟踪对齐当滚动条超过右侧区域则开始滚动
+    	            	var V = $('#titleTable_r');
+    	        		if (V[0]) {
+    	        			var T = $(document),
+    	        			H = $("#main").eq(0),
+    	        			M = H.offset().top + H.outerHeight(),
+    	        			F = V.innerWidth(),
+    	        			B = V.offset().top,
+    	        			L = V.outerHeight(), 
+    	        			u = T.scrollTop();
+    	        			Z = Math.min(0, M - (L + u));
+    	        			
+    	        			if (B == Z) {
+    	        				V.css({left: "auto", top: "auto",width: F, position: "static"});
+    	        			} else {
+    	        				if(isIE6){
+    	        					V.css({left: "auto",top: Z+$(window).scrollTop(), width: F,position: "absolute"});
+    	        				}else{
+    	        					V.css({left: "auto",top: Z-9, width: F, position: "fixed"});
+    	        				}
+    	        			}
+    	        			Y.get("#titleTable_r").setStyle('z-index: 1;');
+    	        		}
+    	            	
+    	             }else{//停止浮动对齐
+                	 Y.get("#titleTable_r").setStyle('z-index: 1; top:0;  left: auto;position: static;');
+                }
+            	
+                if(flag)
+                {
+                    btn.show();
+                    flag = false;
+                }
+                if($(this).scrollTop() == 0)
+                {
+                    btn.hide();
+                    flag = true;
+                }
+                btn.css({"position":"fixed",top:top,right:right});
+                ietop = $(window).height()-247+$(window).scrollTop();
+                if(isIE6)btn.css({"position":"absolute",top:ietop,right:right});
+            })
+        },
         sethref:function() {
         	var lottype=parseInt(this.need('#playid').val());
     		this.ajax({
