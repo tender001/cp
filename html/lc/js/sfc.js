@@ -900,21 +900,21 @@
    			
    			if (Y.getDate(data.date)>Y.getDate(row.et)){//已经过期的场次
    				out_of_date_matches++;
-   				row.sp01='<span class="red">'+row.sp01+'</span>';
-   				row.sp02='<span class="red">'+row.sp02+'</span>';
-   				row.sp03='<span class="red">'+row.sp03+'</span>';
+   				row.sp01='<span class="">'+row.sp01+'</span>';
+   				row.sp02='<span class="">'+row.sp02+'</span>';
+   				row.sp03='<span class="">'+row.sp03+'</span>';
    				
-   				row.sp04='<span class="red">'+row.sp04+'</span>';
-   				row.sp05='<span class="red">'+row.sp05+'</span>';
-   				row.sp06='<span class="red">'+row.sp06+'</span>';
+   				row.sp04='<span class="">'+row.sp04+'</span>';
+   				row.sp05='<span class="">'+row.sp05+'</span>';
+   				row.sp06='<span class="">'+row.sp06+'</span>';
    				
-   				row.sp11='<span class="red">'+row.sp11+'</span>';
-   				row.sp12='<span class="red">'+row.sp12+'</span>';
-   				row.sp13='<span class="red">'+row.sp13+'</span>';
+   				row.sp11='<span class="">'+row.sp11+'</span>';
+   				row.sp12='<span class="">'+row.sp12+'</span>';
+   				row.sp13='<span class="">'+row.sp13+'</span>';
    				
-   				row.sp14='<span class="red">'+row.sp14+'</span>';
-   				row.sp15='<span class="red">'+row.sp15+'</span>';
-   				row.sp16='<span class="red">'+row.sp16+'</span>';
+   				row.sp14='<span class="">'+row.sp14+'</span>';
+   				row.sp15='<span class="">'+row.sp15+'</span>';
+   				row.sp16='<span class="">'+row.sp16+'</span>';
    				
 
    				html[html.length] = tableTpl[3].tpl(row);
@@ -1324,12 +1324,71 @@
         ready: true,
         index:function (){
         	this.lib.LoadExpect();
+        	this.goTotop();
     		this.onMsg('load_duizhen_succ', function () {
     			this._index();
     			this.sethref();
     		});            
         },
-        
+        goTotop:function (){
+            var isIE=!!window.ActiveXObject;
+            var isIE6 = isIE&&!window.XMLHttpRequest;
+            var btn = $("#goTotop");
+            var right = 0;
+            var top = $(window).height()-247;
+            var ietop = $(window).height()-247+$(window).scrollTop();
+            var flag = true;
+            $(window).resize(function(){
+                btn.css({"position":"fixed",top:top,right:right});
+                if(isIE6)btn.css({"position":"absolute",top:ietop,right:right});
+            })
+            btn.css({"position":"fixed",top:top,right:right});
+            var areaTop = Y.get("#right_area").getXY().y;
+            
+            $(window).scroll(function(){
+            	 if ($(this).scrollTop() > areaTop){//跟踪对齐当滚动条超过右侧区域则开始滚动
+    	            	var V = $('#titleTable_r');
+    	        		if (V[0]) {
+    	        			var T = $(document),
+    	        			H = $("#main").eq(0),
+    	        			M = H.offset().top + H.outerHeight(),
+    	        			F = V.innerWidth(),
+    	        			B = V.offset().top,
+    	        			L = V.outerHeight(), 
+    	        			u = T.scrollTop();
+    	        			Z = Math.min(0, M - (L + u));
+    	        			
+    	        			if (B == Z) {
+    	        				V.css({left: "auto", top: "auto",width: F, position: "static"});
+    	        			} else {
+    	        				if(isIE6){
+    	        					V.css({left: "auto",top: Z+$(window).scrollTop(), width: F,position: "absolute"});
+    	        				}else{
+    	        					V.css({left: "auto",top: Z-9, width: F, position: "fixed"});
+    	        				}
+    	        			}
+    	        			Y.get("#titleTable_r").setStyle('z-index: 1;');
+    	        		}
+    	            	
+    	             }else{//停止浮动对齐
+                	 Y.get("#titleTable_r").setStyle('z-index: 1; top:0;  left: auto;position: static;');
+                }
+            	
+                if(flag)
+                {
+                    btn.show();
+                    flag = false;
+                }
+                if($(this).scrollTop() == 0)
+                {
+                    btn.hide();
+                    flag = true;
+                }
+                btn.css({"position":"fixed",top:top,right:right});
+                ietop = $(window).height()-247+$(window).scrollTop();
+                if(isIE6)btn.css({"position":"absolute",top:ietop,right:right});
+            })
+        },
         sethref:function() {
         	var lottype=parseInt(this.need('#playid').val());
     		this.ajax({
