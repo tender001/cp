@@ -28,7 +28,7 @@
 <body style="background:url(images/zcsbg.jpg) 50% 0 no-repeat">
 
  <div class="main">
-   <div class="topa"><a href="/account/myaccount.html"></a><a href="/user/reg.html"></a></div>
+   <div class="topa"><a href="javascript:void(0)" id="getcp2"></a><a href="/user/reg.html"></a></div>
    <h2>活动从2014年5月9日起，凡在我站首次注册，并绑定身份证、真实姓名、手机号码的新用户，我站将赠送您3元彩金.</h2>
   <p>一、本次活动仅限新会员（以身份证号和手机号共同作为判断依据）参与，每位会员仅限参与一次；所谓新会       </br>
        员，即本次活动填写的身份证号和手机号均在本站没有过消费记录的用户。<br>
@@ -37,37 +37,15 @@
 四、如有疑问，咨询24小时客服热线：400-0696-159；本次活动最终解释权归159彩票网所有。</p>
 
  </div>
- <script type="text/javascript">
-var textDiv = document.getElementById("rollText");
-var textList = textDiv.getElementsByTagName("div");
-if(textList.length > 2){
-var textDat = textDiv.innerHTML;
-var br = textDat.toLowerCase().indexOf("<div",textDat.toLowerCase().indexOf("<div")+5);
-textDiv.innerHTML = textDat+textDat+textDat.substr(0,br);
-textDiv.style.cssText = "position:absolute; top:0";
-var textDatH = textDiv.offsetHeight;MaxRoll();
-}
-var minTime,maxTime,divTop,newTop=0;
-function MinRoll(){
-newTop++;
-if(newTop<=divTop+80){
-textDiv.style.top = "-" + newTop + "px";
-}else{
-clearInterval(minTime);
-maxTime = setTimeout(MaxRoll,100);
-}
-}
-function MaxRoll(){
-divTop = Math.abs(parseInt(textDiv.style.top));
-if(divTop>=0 && divTop<textDatH-80){
-minTime = setInterval(MinRoll,80);
-}else{
-textDiv.style.top = 0;divTop = 0;newTop=0;MaxRoll();
-}
-}
-</script>
+ 
   <div id="foot">
  <div class="foot"><a href="/">159彩票网</a> | 客服热线：400-0696-159 | 客服邮箱：kf@159cai.com | 沪ICP备13044715号-1 <br />
 159彩票网郑重提示：彩票有风险，投注需谨慎 不向未满18周岁的青少年出售彩票</div></div>
+<div class="ssqt" id="alertdiv" style="display:none;position:absolute;z-index:500022" >
+<a href="javascript:void(0);" class="a1" onclick="javascript:$('#alertdiv').hide();$('.yclass_mask_panel').hide()"></a>
+<p id="alertInfo">实名认证后，才能领取<br />
+<em>谢谢您的支持！</em></p>
+<a href="javascript:void(0);" id="alertok" class="a2"></a>
+</div>
 </body>
 </html>
