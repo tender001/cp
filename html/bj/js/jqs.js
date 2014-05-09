@@ -1929,7 +1929,7 @@ Class( {
 	                this.title.swapNode(this.floatTitle);
 	            }
 	        });
-	},
+	}
 
 //	scrollStill : function() {},
 //
