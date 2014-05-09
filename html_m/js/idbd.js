@@ -23,6 +23,7 @@ function showinfo(){
 						$("#div3").hide();
 						$("#idcard").html(idcard);
 						$("#idname").html(rname);
+						
 					}
 				}else if(code == "1"){
 					$("#div1").hide();
@@ -71,7 +72,7 @@ function setdata(){
 			showTips('请输入正确的身份证号码');  
 	       return  false;  
 	   }  
-
+		
 		$.ajax({
 			url : $_user.modify.name,
 			type : "POST",
@@ -86,11 +87,39 @@ function setdata(){
 				var desc = R.desc;
 				
 				if (code == "0") {
-					var result="idcard"
-					location.href="/user/showresult.html?result="+result;
+					$.ajax({
+					     url:'/phpu/p.phpx?fid=u_hdssq',
+					     type : "POST",
+							dataType : "json",
+					     success :function (xml){
+					    	 var R = xml.Resp;
+								var code = R.code;
+								var desc = R.desc;
+					    	
+					    	  
+				 		       if(code== "0"){
+				 		    	 var result = "idcard"
+					  					location.href = "/user/showresult.html?result=" + result +"&code=" + R.code;
+				 		      }else if(code=="2"){
+				 		    	 var result = "idcard"
+					  					location.href = "/user/showresult.html?result=" + result +"&code=" + R.code;
+				 		    	
+				 		       }else{
+				 		    	  var result = "idcard"
+					  					location.href = "/user/showresult.html?result=" + result +"&code=" + R.code;
+				 		       }
+				 		       
+					     }
+					   });
 //					成功
 				} else {
+					if (code=="1"){
+						$.postMsg('msg_login', function() {						
+							window.location.reload();			
+						});
+					}else{
 					showTips(desc);
+					}
 				}
 			},
 			error : function() {
