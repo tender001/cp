@@ -184,10 +184,10 @@
 //			});
             Y.get('#vsTable tr[mid]').hover(function (e, Y){//鼠标滑入滑出效果
                 
-                this.childNodes[0].style.backgroundColor = '#fee6ad';
-                this.childNodes[2].style.backgroundColor = '#fee6ad';
-                this.childNodes[5].style.backgroundColor = '#fee6ad';
-                this.childNodes[4].style.backgroundColor = '#fee6ad';
+//                this.childNodes[0].style.backgroundColor = '#fee6ad';
+//                this.childNodes[2].style.backgroundColor = '#fee6ad';
+//                this.childNodes[5].style.backgroundColor = '#fee6ad';
+//                this.childNodes[4].style.backgroundColor = '#fee6ad';
                 Y.get(this).find(".h_br").addClass("h_brx");
              	 Y.get(this).find(".label_cd").removeClass("h_brx");
                 this.childNodes[6].style.backgroundColor = '#fee6ad';

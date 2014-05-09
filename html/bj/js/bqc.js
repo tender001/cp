@@ -42,12 +42,12 @@ Class( 'LineSelector', {
 
 		// 鼠标经过每一行时改变样式
 		this.get(this.vsLine).hover( function() {
-			this.children[0].style.backgroundColor = '#fee6ad';
-			this.children[2].style.backgroundColor = '#fee6ad';
-			this.children[3].style.backgroundColor = '#fee6ad';
-			this.children[4].style.backgroundColor = '#fee6ad';
-			this.children[5].style.backgroundColor = '#fee6ad';
-			this.children[15].style.backgroundColor = '#fee6ad';
+			THIS.CHILDREN[0].STYLE.BACKGROUNDCOLOR = '#FEE6AD';
+			THIS.CHILDREN[2].STYLE.BACKGROUNDCOLOR = '#FEE6AD';
+			THIS.CHILDREN[3].STYLE.BACKGROUNDCOLOR = '#FEE6AD';
+			THIS.CHILDREN[4].STYLE.BACKGROUNDCOLOR = '#FEE6AD';
+			THIS.CHILDREN[5].STYLE.BACKGROUNDCOLOR = '#FEE6AD';
+			THIS.CHILDREN[15].STYLE.BACKGROUNDCOLOR = '#FEE6AD';
 //			this.children[16].style.backgroundColor = '#fee6ad';
 			Y.get(this).find(".h_br").addClass("h_brx");
           	 Y.get(this).find(".label_cd").removeClass("h_brx");

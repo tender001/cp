@@ -169,14 +169,13 @@
                 isChkClick = false
             });
             Y.get('#vsTable tr[mid]').hover(function (e, Y){//鼠标滑入滑出效果
-            	this.style.backgroundColor = '#fee6ad';
-            	Y.get(this).find("td").addClass("h_bry");
+             	Y.get(this).find("td").addClass("h_bry");
             	 Y.get(this).find(".h_br").addClass("h_brx");
             	 Y.get(this).find(".label_cd").removeClass("h_brx");
             	 Y.get(this).find(".label_cd").removeClass("h_bry");
 				if (Y.C('issfc')) {
 					var tr2 = this.getAttribute('subrow') != null ? Y.get(this).prev().one() : Y.get(this).next().one();
-					tr2.style.backgroundColor = '#fee6ad';
+					tr2.style.backgroundColor = '#fffee6';
 					 Y.get(tr2).find("td").addClass("h_bry");
 					Y.get(tr2).find(".h_br").addClass("h_brx");
 					Y.get(tr2).find(".label_cd").removeClass("h_brx");
