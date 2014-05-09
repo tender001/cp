@@ -1,0 +1,93 @@
+﻿.ksget{height:122px;padding:4px;border:1px solid #ddd;margin-top:10px; background-color:#fff;}
+.ksgtab{height:25px;line-height:25px;border-bottom:3px solid #ff6600}
+.ksgtab b{float:left;display:block;float:left;height:25px;cursor:pointer;padding:0 14px;color:#444;font-size:12px;font-weight:100}
+.ksgtab b.cur{color:#fff; background-color:#ff6600}
+.ksgtab a{float:right;color:#444;padding:0 3px}
+.ksgtab a:hover{color:#ff6600; text-decoration:underline}
+.kstlog{width:62px;float:left;padding:15px 10px 0 5px;line-height:24px;color:#444;text-align:Center}
+.kstlog img{display:block;margin:0 auto;width:52px;height:52px;margin-bottom:0px}
+.kstball{width:258px;float:left;padding-top:20px}
+.kstball b{background: url(../images/newimg/newsq_31.jpg) repeat scroll 0 0 ;
+    color: #FFFFFF;
+    display: block;
+    float: left;
+    font-family: Arial;
+    font-weight: 100;
+    text-align: center;}
+.kstball b {
+    background-position: -283px -10px;
+    font-size: 16px;
+    height: 35px;
+    line-height: 36px;
+    margin-right: 3px;
+    text-align: center;
+    width: 32px;
+}
+.kstball b input{height:16px;width:18px;text-align:Center;color:#ff0000;background-color:#fff;border:none 0;display:block;margin:9px auto 0;font-weight:bold}
+.kstball b.blue {
+    background-position: -242px -10px;
+}
+.kstball b.blue input{color:#145fab}
+.kstball span{height:36px;}
+.kstball p{text-align:center;line-height:24px;padding-top:10px;color:#444;clear:both}
+.kstball  em{color:#ff6600}
+.kstbtn{width:173px;float:left;padding-top:23px}
+.kstbtn a{display:block;float:left;height:32px;line-height:32px;text-align:center;font-size:16px}
+.kstbtn a.a1{float:left;background: url(../images/159/dw_10.jpg);width:52px;color:#444;font-weight:bold}
+.kstbtn a.a2{float:right;background:#e52e04;width:114px;color:#fff;font-weight:bold}
+.kstbtn a:hover{ text-decoration:underline}
+.kstbtn p{line-height:24px;color:#888;text-align:right;clear:both;padding-top:10px}
+.kjantou{height:349px;border:1px solid #ddd; background-color:#fff; position:relative}
+.kjantou h3{height:30px; background:#FFFDF3;line-height:30px}
+.kjantou h3 b{display:block;width:75px;border-bottom:1px solid #ddd;cursor:pointer;float:left;text-align:center;font-size:14px;font-weight:bold;color:#444}
+.kjantou h3 b.cur{border-bottom:none; background-color:#fff}
+
+.jrkjm{clear:both}
+.jrkjcc{
+    border-bottom: 1px dashed #DBDBDB;
+    padding: 10px 8px 10px 10px;
+}
+
+.jrkjcc p {
+    height: 15px;
+    line-height: 15px;color:#444
+}
+.jrkjcc a {
+    color: #1F5BA9;
+    display: block;
+    font-weight: 100;
+    width: 68px;float:left
+}
+.jrkjcc  em {
+    display:block;
+    font-style: normal;
+    width: 66px;float:left
+}
+
+.jrkjcc i {
+    float: right;
+    width: 66px;display:block
+}
+.jrkjcc p.p1{padding-top:10px;height:18px;line-height:18px}
+.jrkjcc p.p1 em{color:#999}
+.jrkjcc p.p1 a{float:right;width:38px;height:18px;text-align:center;line-height:18px;color:#ff6600;background: url(../images/159/dw_15.jpg)}
+.jrkjcc p.p2{padding-top:5px;}
+.jrkjcc p.p2 span{color:#ff6600}
+.jrkjcc p.p3{padding-top:8px;}
+.jrkjcc p.p3 b{color:#ff6600;font-weight:bold;font-size:12px; font-family:Arial;margin-right:7px;display:block;float:left;}
+.jrkjcc p.p3 b.blue{color:#145fab}
+.jrkjcc p.p4{padding-top:5px}
+.jrkjcc p.p4 span{float:left}
+.jrkjcc p.p4 a,.jrkjcc p.p3 a{float:right;width:auto;color:#145fab}
+.jrkjcc a:hover{color:#ff6600; text-decoration:underline}
+.jrkjab{position:absolute;bottom:0;left:0;border-top:1px solid #ddd;}
+.jrkjab span{background: none repeat scroll 0 0 #eee;border-right: 1px solid #FFFFFF;cursor: pointer;display: block;float: left; height: 20px;opacity: 0.8;width: 113px;}
+.jrkjab img{display:block;margin:4px auto;width:16px;height:12px}
+
+.header img.logo {
+    height: 56px;
+    width: 241px;
+}
+.hz_d_t{left:393px;}
+#zq_xl{width:674px}
+#bf_xl{left:770px}
