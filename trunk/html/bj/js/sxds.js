@@ -1900,7 +1900,7 @@ Class( {
 	                this.title.swapNode(this.floatTitle);
 	            }
 	        });
-	},
+	}
 
 //	scrollStill : function() {
 //		var window_size = Y.getSize();
