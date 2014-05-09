@@ -42,13 +42,13 @@ Class( 'LineSelector', {
 
 		// 鼠标经过每一行时改变样式
 		this.get(this.vsLine).hover( function() {
-			this.children[0].style.backgroundColor = '#fee6ad';
-			this.children[2].style.backgroundColor = '#fee6ad';
-			this.children[3].style.backgroundColor = '#fee6ad';
-			this.children[4].style.backgroundColor = '#fee6ad';
-			this.children[5].style.backgroundColor = '#fee6ad';
-			this.children[14].style.backgroundColor = '#fee6ad';
-			Y.get(this).find(".h_br").addClass("h_brx");
+//			this.children[0].style.backgroundColor = '#fee6ad';
+//			this.children[2].style.backgroundColor = '#fee6ad';
+//			this.children[3].style.backgroundColor = '#fee6ad';
+//			this.children[4].style.backgroundColor = '#fee6ad';
+//			this.children[5].style.backgroundColor = '#fee6ad';
+//			this.children[14].style.backgroundColor = '#fee6ad';
+//			Y.get(this).find(".h_br").addClass("h_brx");
           	 Y.get(this).find(".label_cd").removeClass("h_brx");
 		}, function() {
 			this.children[0].style.backgroundColor = '';

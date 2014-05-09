@@ -1460,7 +1460,7 @@ Class('LoadExpect',{
 		//'<colgroup><col width="7%"><col width="10%"><col width="8%"><col width="20%"><col width="8%"><col width="20%"><col width="4%"><col width="15%"><col width="8%"><col width="2%"></colgroup>'+
 		'<tbody id="{$enddate}" onselectstart="return false">',//1
 		'<tr class="{$classname}" style="display:none" value="{index:\'{$mid}\',leagueName:\'{$mname}\',homeTeam:\'{$hn}\',guestTeam:\'{$gn}\',endTime:\'{$et}\',rangqiuNum:\'{$close}\',scheduleDate:\'{$enddate}\',disabled:\'yes\',homeTeamRank:2,guestTeamRank:7,bgColor:\'{$bgColor}\'}">'+
-		'<td style="text-align:left;">'+
+		'<td style="">'+
 		'<input type="checkbox" checked="checked" class="chbox" style="cursor:default" /><span class="chnum">{$mid}</span>'+
 		'</td>'+
 		'<td style="background:{$bgColor};" class="league">'+
@@ -1490,7 +1490,7 @@ Class('LoadExpect',{
 		'</td>'+
 		'</tr>',//2 已经过期
 		'<tr onselectstart="return false" class="{$classname}" style="display:" value="{index:\'{$mid}\',leagueName:\'{$mname}\',homeTeam:\'{$hn}\',guestTeam:\'{$gn}\',endTime:\'{$et}\',rangqiuNum:\'{$close}\',scheduleDate:\'{$enddate}\',disabled:\'no\',homeTeamRank:8,guestTeamRank:11,bgColor:\'{$bgColor}\'}">'+
-		'<td style="text-align:left; ">'+
+		'<td style="">'+
 		'<input type="checkbox" checked="checked" class="chbox" style="cursor:default" /><span class="chnum">{$mid}</span>'+
 		'</td>'+
 		'<td style="background:{$bgColor};color:#fff;" class="league">'+
