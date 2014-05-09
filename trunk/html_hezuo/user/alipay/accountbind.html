@@ -1,0 +1,142 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="/css/159cai.css" rel="stylesheet" type="text/css" />
+<link href="/css/newcai.css" rel="stylesheet" type="text/css" />
+<link href="/css/new159cai.css" rel="stylesheet" type="text/css" />
+<title>首页</title>
+<script type="text/javascript" src="/public/jq2.js"></script>
+<script type="text/javascript" src="/public/jq.js"></script>
+<script type="text/javascript" src="/public/159cp.js"></script>
+<script type="text/javascript" src="/user/js/alipaybind.js"></script>
+</head>
+<body style="background-color:#fff">
+	<div class="acctong">
+		<div class="actng_top">
+			<div class="actng_1">
+				<img src="/images/newimg/zht_02.jpg" /> <a href="#">帮助中心</a>
+			</div>
+		</div>
+		<div class="acctong_m"
+			style="width:1002px; position:relative;margin:0 auto">
+			<div class="actng_2">
+				<div class="actng_left">
+					<img src="/images/newimg/zht_06.jpg" />
+				</div>
+				<div class="actng_right">
+					<form id="alipyBindFrom" name="alipyBindFrom"
+						action="/phpu/login.phpx" onsubmit="return CheckKey()"
+						method="post">
+						<h1>请输入您的股城网彩票账户信息</h1>
+						<table width="100%" border="0" cellpadding="0" cellspacing="0">
+							<colgroup>
+								<col width="56" />
+								<col width="" />
+							</colgroup>
+							<tr>
+								<td colspan="2" id="dis"></td>
+							</tr>
+							<tr>
+								<td>用户名：</td>
+								<td><input type="text" class="text" name="uid" id="uid" /></td>
+							</tr>
+							<tr>
+								<td>密&nbsp;&nbsp;&nbsp;码：</td>
+								<td><input class="text" name="pwd" id="pwd" type="password" /></td>
+							</tr>
+							<tr>
+								<td>验证码：</td>
+								<td><input type="text" class="text text1" name="yzm"
+									id="yzm" maxlength="4" /><img id="yzmimg" src="/rand.phpx" /><span><a
+										id="yzmup" title="看不清，换一张" href="javascript:void()">换一张</a></span></td>
+							</tr>
+							<tr class="tr1">
+								<td>&nbsp;</td>
+								<td><a href="#" class="cactbn" id="loginbtn"></a></td>
+							</tr>
+							<tr>
+								<td>&nbsp;<input id="referer" type="hidden"
+									value="/phpu/alipaybind.phpx" /></td>
+								<td><p>
+										<input type="checkbox" id="isagree" checked />我同意<a
+											id="_strHref" href="javascript:show_hiddendiv();">《支付宝账户通绑定协议》</a>
+									</p></td>
+							</tr>
+						</table>
+					</form>
+					<div class="actng_rbtm">
+						<p>
+							<span>其他登录方式：</span><a href="#" id="kjlogin"
+								onclick="javascript:goAlipay()"></a>
+						</p>
+					</div>
+				</div>
+			</div>
+			<div class="actng_3">
+				<a href="#">股城网彩票</a>&nbsp;&nbsp;&nbsp;版权所有
+			</div>
+			<div style="display: none;" id="pop" class="pop">
+				<div class="poptou">
+					<h2 class="poph2">支付宝账户通绑定协议</h2>
+					<a class="close" href="javascript:hidden_showdiv();">关闭</a>
+				</div>
+				<div class="neirong">
+					<p class="suojin">
+						鉴于支付宝（中国）网络技术有限公司（以下简称"支付宝"）为支付宝会员（以下简称"会员"或"您"）提供账户通服务，会员在开启此功能之前，均应仔细阅读本协议（特别是以<b>粗体下划线</b>标注的内容），会员通过网络页面点击确认或以其他方式选择接受本协议，即表示会员同意接受本协议的全部内容。
+					</p>
+					<p class="suojin">如果您对本协议的条款有疑问，请通过支付宝客服渠道进行咨询，支付宝将向您解释条款内容。如果您不同意本协议的任意内容，或者无法准确理解支付宝对条款的解释，请不要进行后续操作。</p>
+					<ol class="tiaokuan">
+						<li>因您开通账户通功能的电子商务网站会员账户所属的商家(以下简称"商家")与支付宝存在合作关系,<b>您在此授权</b><br>
+								<b>1）支付宝将您的支付宝账户与您的商家会员账户进行绑定；<br>
+										2）商家向支付宝传递您在商家会员账户内的积分、优惠券、抵用券以及商家会员账户内资金余额等相关"资产"信息（以下简称"信息"），<br>
+											3）支付宝将部分或全部信息展示在您的支付宝账户相关页面。</b></li>
+						<li>
+							您理解并认可，支付宝获取的您的信息来自商家，支付宝仅对获取的信息进行展示，如您对展示的信息内容有疑问的，请联系商家，并以商家告知的信息内容为准。<b>支付宝不保证信息的真实性、完整性、准确性、及时性，如您因使用展示的信息而导致了任何损失，支付宝不承担责任。</b>
+						</li>
+						<li><b>您需妥善保管您的支付宝账户及密码等信息，因支付宝账户信息泄漏导致您信息的泄漏或给您造成其他损失的，支付宝不承担责任。</b></li>
+						<li>支付宝不会将您的信息挪作他用。如您开通账户通功能后，不愿继续使用的，可随时通过相关途径关闭此功能，支付宝将不再获取您的信息，并不再做任何展示。</li>
+						<li><b>您理解并确认，因支付宝业务发展或与商家的合作关系中止或终止等原因，可能导致支付宝无法继续向您提供账户通服务，对此支付宝不承担违约责任。</b></li>
+						<li>本协议适用中华人民共和国大陆地区法律。因支付宝与用户就本协议的确认、履行或解释发生争议，双方应努力友好协商解决。如协商不成，支付宝和用户同意由<b>支付宝住所地法院</b>管辖审理双方的纠纷或争议。本协议未尽事宜，用户需遵守支付宝网站上公布的《支付宝服务协议》及相关规则。
+						</li>
+					</ol>
+				</div>
+				<div class="btnBox">
+					<input type="button" value="已阅读并同意该协议" onclick="Iagree();"
+						class="newloginBtn">
+				</div>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript">
+		function goAlipay() {
+			if (document.getElementById('isagree').checked) {
+				window.location.href = '/phpu/allylogin.phpx?type=1&r=/phpu/alipayGoBind.phpx';
+			}
+		}
+		function Iagree() {
+			document.getElementById("pop").style.display = 'none';
+			document.getElementById("_strHref").href = 'javascript:show_hiddendiv();';
+			document.getElementById('isagree').checked = 'checked';
+			document.getElementById('kjlogin').className = "";
+		}
+		function show_hiddendiv() {
+			document.getElementById("pop").style.display = 'block';
+			document.getElementById("_strHref").href = 'javascript:hidden_showdiv();';
+		}
+		function hidden_showdiv() {
+			document.getElementById("pop").style.display = 'none';
+			document.getElementById("_strHref").href = 'javascript:show_hiddendiv();';
+		}
+		document.getElementById('isagree').onclick = function(e) {
+			e = e || window.event;
+			var tar = e.target || e.srcElement;
+			if (tar.checked) {
+				document.getElementById('kjlogin').className = "";
+			} else {
+				document.getElementById('kjlogin').className = "cur";
+			}
+		}
+	</script>
+</body>
+</html>

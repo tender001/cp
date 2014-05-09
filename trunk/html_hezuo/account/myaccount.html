@@ -1,0 +1,114 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>网上买彩票_账户中心_我的账户_159彩票</title>
+<meta name="keywords"
+	content="福利彩票，福彩，体育彩票，体彩，足彩，网上买彩票，彩票合买，彩票开奖，彩票走势图，彩票预测" />
+<meta name="description"
+	content="股城网彩票为彩民提供专业的彩票网上投注、合买、开奖结果、走势分析、比分直播等服务，覆盖福彩、体彩、足彩、竞彩、快频等彩种。股城网彩票上投注最佳选择！" />
+<link href="/css/159cai.css" rel="stylesheet" type="text/css" />
+<link href="/css/new159cai.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="/public/jq2.js"></script>
+<script type="text/javascript" src="/public/jq.js"></script>
+<script type="text/javascript" src="/public/menu.js"></script>
+<script type="text/javascript" src="/public/159cp.js"></script>
+<script type="text/javascript" src="/public/chklogin.js"></script>
+<script type="text/javascript" src="/account/js/myaccount.js"></script>
+</head>
+<body>
+	<!--#include virtual="/cc/header.html"-->
+	<!--#include virtual="/cc/nav.html"-->
+	<div id="container">
+		<div class="breadcrumb">
+			<p>
+				您现在的位置：<a href="/" title="网上买彩票"><font>股城网彩票</font></a> > 我的账户
+			</p>
+		</div>
+		<div class="accoutmain">
+			<!--#include virtual="/cc/account/account_left.html"-->
+			<div class="accout_right">
+				<div class="acct_rig_1">
+					<h2>
+						欢迎，<b id="acc_userinfo"></b>
+						<!--   &nbsp;&nbsp;<em id="bind_ali">|&nbsp;&nbsp; <a href="http://www.159cai.com/phpu/webalipaybind.phpx" target="_blank">绑定支付宝账户通</a></em> -->
+					</h2>
+					<p>
+						上次登录时间：<span id="acc_lasttime"></span>
+					</p>
+				</div>
+				<div class="acct_rig_2">
+					<div class="act_rig_2_let">
+						<span class="acc_ye">可用余额：<font id="acc_usermoney"></font>元
+						</span><a href="chongzhi.html" title="充值" class="cz"></a><a
+							href="tikuan.html" title="提现" class="tx"></a><span
+							class="acc_aqdj"><b>安全等级：</b><span class="aq_line"><em
+								style="width:10%" id="acc_style"></em></span><span class="dj_txt"><font
+								id="acc_dengji">低</font><a href="safecenter.html" id="acc_link">升级</a></span></span>
+						<div class="bind">
+							<ul>
+								<li class="sfz l2" id="acc_truename" title="尚未绑定身份证"><a
+									href="trueinfo.html" id="acc_truename_css">未绑定</a></li>
+								<li class="bank l1" id="acc_bank" title="尚未绑定银行卡"><a
+									href="bankinfo.html" id="acc_bank_css">未绑定</a></li>
+								<li class="sj l3" id="acc_mobile" title="尚未绑定手机号"><a
+									href="mobile.html" id="acc_mobile_css">未绑定</a></li>
+								<li class="yx l4" id="acc_email" title="尚未绑定邮箱"><a
+									href="emailinfo.html" id="acc_email_css">未绑定</a></li>
+								<li class="mm l5" id="acc_que" title="尚未绑定密码保护"><a
+									href="mibao.html" id="acc_que_css">未绑定</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="act_rig_2_rig">
+						<div class="z_k"></div>
+						<div class="y_p">
+							<p>
+								<a target="_blank" href="/huodong/zcs.html">新用户注册送2元彩金</a>
+							</p>
+							<p>
+								<a target="_blank" href="/huodong/czs.html">新用户绑定充值送彩金</a>
+							</p>
+							<!--     <p><a target="_blank" href="/ssc/">快频彩：时时彩提前上线了</a></p> -->
+						</div>
+					</div>
+				</div>
+				<div class="acct_rig_3">
+					<h3>最近投注记录</h3>
+					<a href="orderlist.html">更多记录 >></a>
+				</div>
+				<div class="acct_rig_4">
+					<table width="100%" border="0" cellpadding="0" cellspacing="0">
+						<colgroup>
+							<col width="150"/>
+								<col width="150"/>
+									<col width="90"/>
+										<col width="90"/>
+											<col width="90"/>
+												<col width="130"/>
+													<col width="90"/>
+						</colgroup>
+						<thead>
+							<tr>
+								<th>彩种</th>
+								<td>期号</td>
+								<td>认购金额</td>
+								<td>结算状态</td>
+								<td>您的奖金</td>
+								<td>认购时间</td>
+								<td>操作</td>
+							</tr>
+						</thead>
+						<tbody id="touzhulist">
+						</tbody>
+					</table>
+					<p id="nocount" style="display:none;">
+						您最近还没有购买过彩票，现在就去购彩大厅买第一注彩票吧! <a href="/dating/" target=_blank>去购彩大厅>></a>
+					</p>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--#include virtual="/cc/footer.html"-->
+</body>
+</html>

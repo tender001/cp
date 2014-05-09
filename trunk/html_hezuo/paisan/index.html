@@ -1,0 +1,678 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>体彩排列三投注_排列三合买_排列三开奖结果_排列三走势图_股城网彩票</title>
+<meta name="keywords" content="排列三，排列三投注" />
+<meta name="description"
+	content="股城网彩票排列3频道为您提供体彩排列三投注和合买、排列3开奖结果、排列3走势图、排列3专家预测推荐和玩法等信息。股城网彩票上投注最佳选择！" />
+<link href="/css/159cai.css" type="text/css" rel="stylesheet" />
+<link href="/css/new159cai.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="/public/jq2.js"></script>
+<script type="text/javascript" src="/public/jq.js"></script>
+<script type="text/javascript" src="/public/menu.js"></script>
+<script type="text/javascript" src="/public/159cp.js"></script>
+<script type="text/javascript" src="/public/chklogin.js"></script>
+</head>
+<body>
+	<!-- 头部内容 -->
+	<!--#include virtual="/cc/header.html"-->
+	<!--#include virtual="/cc/nav.html"-->
+	<!-- 头部内容 -->
+	<div id="container">
+		<div class=breadcrumb>
+			<p>
+				您现在的位置：<a href="/" title="网上买彩票"><font>股城网彩票</font></a> &gt; <a
+					href="/dating/" title="购彩大厅"><font>购彩大厅</font></a> &gt; 排列三
+			</p>
+		</div>
+		<div class=b-top style="height:147px">
+			<div class="b-top-inner"
+				style="background-image:url(/images/cdbg/sz_03.gif)">
+				<h2 class="p3-logo" title="股城网彩票_排列三">排列三</h2>
+				<div class="b-top-info">
+					<div class="dc_w">
+						<b>排列三</b>&nbsp;&nbsp;第<select id="expect_tab" name="expect_tab"
+							style="width:100px"></select>期
+						<p>
+							单式截至:<span id="ds_endTimeSpan"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;复式截至:<span
+								id="fs_endTimeSpan"></span>
+						</p>
+					</div>
+					<div class="dc_q">
+						<strong>2元赢取1000元</strong> 每晚<strong>20：30</strong>开奖，固定奖金，玩法简单！
+					</div>
+				</div>
+				<div class="b-top-nav">
+					<ul class="b-top-mainNav">
+						<li class="cur"><a href="#"><span>选号投注</span></a></li>
+						<li><a href="/hemai/index.html?lotid=53" target="_blank"><span>参与合买</span></a></li>
+						<li><a href="/account/orderlist.html" target="_blank"><span>我的方案</span></a></li>
+					</ul>
+					<div class="b-top-links">
+						<a href="/guoguan/p3.html" target="_blank">过关统计</a>&nbsp;|&nbsp;<a
+							href="http://zst.gucheng.159cai.com/cjwpl3/" target="_blank">走势图</a>&nbsp;|&nbsp;<a
+							href="/help/help_pl3js.html" target="_blank">玩法介绍</a>
+					</div>
+				</div>
+				<div class="szc_ds">
+					<ul id="playTabsDd">
+						<li class="cur">直选</li>
+						<li>组六</li>
+						<li>组三</li>
+					</ul>
+					<div class="dc_q">
+						<p>
+							<span>截止时间：</span><span id="countDownSpan"></span>
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="dlt_m">
+			<div class="dlt_m_left">
+				<div class="sd_tb_m">
+					<div class="sd_tb" onselectstart="return false">
+						<span class="sd_box" id="subplay_tabs"> <label for="pttz"><input
+								type="radio" checked="checked" name="gjwf" />普通投注</label> <label
+							for="dssc"><input type="radio" name="gjwf" />单式上传</label> <label
+							for="hz"><input type="radio" name="gjwf" /><i id="zxhz">和值</i></label></span>
+						<div id="sd_tips">
+							<h4 id="zhxpt_tips">
+								<em>玩法提示：</em>所选号码与开奖号码按位数全部相同即中<font>1,000</font>元。
+							</h4>
+							<h4 id="z6pt_tips" style="display:none">
+								<em>玩法提示：</em>所选号码与开奖号码相同（顺序不限）即中<font>160</font>元。
+							</h4>
+							<h4 id="z3pt_tips" style="display:none">
+								<em>玩法提示：</em>所选号码与开奖号码一致(顺序不限)，且开奖号码有任意两位相同，奖金<font>320</font>元。
+							</h4>
+							<h4 id="zhxhz_tips" style="display:none">
+								<em>玩法提示：</em>所选的和值与开奖号码和值相同即中<font>1,000</font>元。
+							</h4>
+							<h4 id="z6hz_tips" style="display:none">
+								<em>玩法提示：</em>所选的和值与开奖号码和值相同即中<font>160</font>元。
+							</h4>
+							<h4 id="z3hz_tips" style="display:none">
+								<em>玩法提示：</em>所选的和值与开奖号码和值相同即中<font>320</font>元。
+							</h4>
+							<h4 id="zxhz_tips" style="display:none">
+								<em>玩法提示：</em>所选的和值与开奖号码和值相同即中，组三奖金<font>320</font>元，组六奖金<font>160</font>元。
+							</h4>
+						</div>
+						<div id='pttz' style="display:">
+							<div class="qx_xuh" id='pttz1'>
+								<ul>
+									<li class="sub">百位</li>
+									<li class="sup"><b>0</b><b>1</b><b>2</b><b>3</b><b>4</b><b>5</b><b>6</b><b>7</b><b>8</b><b>9</b></li>
+									<li class="suq"><em>全</em><em>大</em><em>小</em><em>奇</em><em>偶</em><em>清</em></li>
+									<li class="sul">遗漏>></li>
+									<li class="sun"><i>0</i><i>0</i><i>0</i><i>0</i><i>0</i><i>0</i><i>0</i><i>0</i><i>0</i><i>0</i></li>
+									<li class="sum">&nbsp;</li>
+								</ul>
+								<ul>
+									<li class="sub">十位</li>
+									<li class="sup"><b>0</b><b>1</b><b>2</b><b>3</b><b>4</b><b>5</b><b>6</b><b>7</b><b>8</b><b>9</b></li>
+									<li class="suq"><em>全</em><em>大</em><em>小</em><em>奇</em><em>偶</em><em>清</em></li>
+									<li class="sul">遗漏>></li>
+									<li class="sun"><i>0</i><i>0</i><i>0</i><i>0</i><i>0</i><i>0</i><i>0</i><i>0</i><i>0</i><i>0</i></li>
+									<li class="sum">&nbsp;</li>
+								</ul>
+								<ul>
+									<li class="sub">个位</li>
+									<li class="sup"><b>0</b><b>1</b><b>2</b><b>3</b><b>4</b><b>5</b><b>6</b><b>7</b><b>8</b><b>9</b></li>
+									<li class="suq"><em>全</em><em>大</em><em>小</em><em>奇</em><em>偶</em><em>清</em></li>
+									<li class="sul">遗漏>></li>
+									<li class="sun"><i>0</i><i>0</i><i>0</i><i>0</i><i>0</i><i>0</i><i>0</i><i>0</i><i>0</i><i>0</i></li>
+									<li class="sum">&nbsp;</li>
+								</ul>
+							</div>
+							<p class="xh_text" id="zhx_showbar">
+								[ 您选择了<font>0</font>注，共<font>0</font>元 ]
+							</p>
+							<span class="sz_a_l"><a class="sz_cmt" id="zhx_pt_put"></a><a
+								class="qc_xh" id="zhx_pt_clear">清除当前选号</a></span>
+							<div class="sz_line"></div>
+							<div class="reson_area">
+								<ul id="zhx_pt_list"></ul>
+							</div>
+							<div class="sz_sz">
+								<span class="jx_text"><input type="text"
+									id="zhx_pt_jx_opts" value="5" /><a href="javascript:void(0);"
+									id="zhx_pt_jx">机选</a></span> <a href="javascript:void(0);"
+									class="jx5z" id="zhx_dd_jx">定胆机选</a> <a
+									href="javascript:void(0);" class="qkjx" id="zhx_pt_list_clear">清空列表</a>
+							</div>
+							<p class="zj_bt" style="height:20px;">
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;您选择了<font
+									id="zhx_pt_zs">0</font>注， 倍投:<input type="text" class="text"
+									value="1" id="zhx_pt_bs" maxlength="6" />倍，共<font
+									id="zhx_pt_money">￥0.00 </font>元
+							</p>
+						</div>
+
+						<div id="z3pttz" style="display:none">
+							<div class="qx_xuh">
+								<ul>
+									<li class="suk"></li>
+									<li class="sus"></li>
+									<li class="sup">请至少选择<font>2</font>个号码
+									</li>
+									<li class="suk"></li>
+									<li class="sub">选择号</li>
+									<li class="sup"><b>0</b><b>1</b><b>2</b><b>3</b><b>4</b><b>5</b><b>6</b><b>7</b><b>8</b><b>9</b></li>
+								</ul>
+							</div>
+							<p class="xh_text" id="z3pt_showbar">
+								[ 您选择了<font>0</font>注，共<font>0</font>元 ]
+							</p>
+							<span class="sz_a_l"><a class="sz_cmt" id="z3pt_put"></a><a
+								class="qc_xh" id="z3pt_clear">清除当前选号</a></span>
+							<div class="sz_line"></div>
+							<div class="reson_area">
+								<ul id="z3pt_list"></ul>
+							</div>
+							<div class="sz_sz">
+								<span class="jx_text"><input type="text"
+									id="z3pt_jx_opts" value="5" /><a href="javascript:void(0);"
+									id="z3pt_jx">机选</a></span> <a href="javascript:void(0);" class="qkjx"
+									id="z3pt_list_clear">清空列表</a>
+							</div>
+							<p class="zj_bt" style="height:20px;">
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;您选择了<font
+									id="z3pt_zs">0</font>注， 倍投:<input type="text" class="text"
+									value="1" id="z3pt_bs" maxlength="6" />倍，共<font
+									id="z3pt_money">￥0.00 </font>元
+							</p>
+						</div>
+
+						<div id="z6pttz" style="display:none">
+							<div class="qx_xuh">
+								<ul>
+									<li class="suk"></li>
+									<li class="sus"></li>
+									<li class="sup">至少选择<font>3</font>个号码
+									</li>
+									<li class="suk"></li>
+									<li class="sub">选择号</li>
+									<li class="sup" id="z6pt_ball"><b>0</b><b>1</b><b>2</b><b>3</b><b>4</b><b>5</b><b>6</b><b>7</b><b>8</b><b>9</b></li>
+								</ul>
+							</div>
+							<p class="xh_text" id="z6pt_showbar">
+								[ 您选择了<font>0</font>注，共<font>0</font>元 ]
+							</p>
+							<span class="sz_a_l"><a class="sz_cmt" id="z6pt_put"></a><a
+								class="qc_xh" id="z6pt_clear">清除当前选号</a></span>
+							<div class="sz_line"></div>
+							<div class="reson_area">
+								<ul id="z6pt_list"></ul>
+							</div>
+							<div class="sz_sz">
+								<span class="jx_text"><input type="text"
+									id="z6pt_jx_opts" value="5" /><a href="javascript:void(0);"
+									id="z6pt_jx">机选</a></span> <a href="javascript:void(0);" class="qkjx"
+									id="z6pt_list_clear">清空列表</a>
+							</div>
+							<p class="zj_bt" style="height:20px;">
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;您选择了<font
+									id="z6pt_zs">0</font>注， 倍投:<input type="text" class="text"
+									value="1" id="z6pt_bs" maxlength="6" />倍，共<font
+									id="z6pt_money">￥0.00 </font>元
+							</p>
+						</div>
+
+						<div id="zhxhz" style="display:none">
+							<div class="qx_xuh">
+								<ul>
+									<li class="sub">选择和值</li>
+									<li class="suf"><b>0</b><b>1</b><b>2</b><b>3</b><b>4</b><b>5</b><b>6</b><b>7</b><b>8</b><b>9</b><b>10</b><b>11</b><b>12</b><b>13</b></li>
+									<li class="sul">本期遗漏>></li>
+									<li class="sud bqyl"><i>0</i><i>0</i><i>0</i><i>0</i><i>0</i><i>0</i><i>0</i><i>0</i><i>0</i><i>0</i><i>0</i><i>0</i><i>0</i><i>0</i></li>
+									<li class="sul">理论遗漏>></li>
+									<li class="sud llyl"><i>0</i><i>0</i><i>0</i><i>0</i><i>0</i><i>0</i><i>0</i><i>0</i><i>0</i><i>0</i><i>0</i><i>0</i><i>0</i><i>0</i></li>
+								</ul>
+								<ul>
+									<li class="sul"></li>
+									<li class="sud"></li>
+									<li class="sub">选择和值</li>
+									<li class="suf"><b>14</b><b>15</b><b>16</b><b>17</b><b>18</b><b>19</b><b>20</b><b>21</b><b>22</b><b>23</b><b>24</b><b>25</b><b>26</b><b>27</b></li>
+									<li class="sul">本期遗漏>></li>
+									<li class="sud bqyl"><i>0</i><i>0</i><i>0</i><i>0</i><i>0</i><i>0</i><i>0</i><i>0</i><i>0</i><i>0</i><i>0</i><i>0</i><i>0</i><i>0</i></li>
+									<li class="sul">理论遗漏>></li>
+									<li class="sud llyl"><i>0</i><i>0</i><i>0</i><i>0</i><i>0</i><i>0</i><i>0</i><i>0</i><i>0</i><i>0</i><i>0</i><i>0</i><i>0</i><i>0</i></li>
+								</ul>
+							</div>
+							<p class="xh_text" id="zhxhz_showbar">
+								[ 您选择了<font>0</font>注，共<font>0</font>元 ]
+							</p>
+							<span class="sz_a_l"><a class="sz_cmt" id="zhxhz_put"></a><a
+								class="qc_xh" id="zhxhz_clear">清除当前选号</a></span>
+							<div class="sz_line"></div>
+							<div class="reson_area">
+								<ul id="zhxhz_list"></ul>
+							</div>
+							<div class="sz_sz">
+								<a href="javascript:void(0);" class="qkjx" id="zhxhz_list_clear">清空列表</a>
+							</div>
+							<p class="zj_bt" style="height:20px;">
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;您选择了<font
+									id="zhxhz_zs">0</font>注， 倍投:<input type="text" class="text"
+									value="1" id="zhxhz_bs" maxlength="6" />倍，共<font
+									id="zhxhz_money">￥0.00 </font>元
+							</p>
+						</div>
+
+						<div id="z6hz" style="display:none">
+							<div class="qx_xuh">
+								<ul>
+									<li class="sub">选择和值</li>
+									<li class="suf"><b>1</b><b>2</b><b>3</b><b>4</b><b>5</b><b>6</b><b>7</b><b>8</b><b>9</b><b>10</b><b>11</b><b>12</b><b>13</b></li>
+									<li class="sul">本期遗漏>></li>
+									<li class="sud bqyl"><i>0</i><i>0</i><i>0</i><i>0</i><i>0</i><i>0</i><i>0</i><i>0</i><i>0</i><i>0</i><i>0</i><i>0</i><i>0</i></li>
+									<li class="sul">理论遗漏>></li>
+									<li class="sud llyl"><i>0</i><i>0</i><i>0</i><i>0</i><i>0</i><i>0</i><i>0</i><i>0</i><i>0</i><i>0</i><i>0</i><i>0</i><i>0</i></li>
+								</ul>
+								<ul>
+									<li class="sul"></li>
+									<li class="sud"></li>
+									<li class="sub">选择和值</li>
+									<li class="suf"><b>14</b><b>15</b><b>16</b><b>17</b><b>18</b><b>19</b><b>20</b><b>21</b><b>22</b><b>23</b><b>24</b><b>25</b><b>26</b></li>
+									<li class="sul">本期遗漏>></li>
+									<li class="sud bqyl"><i>0</i><i>0</i><i>0</i><i>0</i><i>0</i><i>0</i><i>0</i><i>0</i><i>0</i><i>0</i><i>0</i><i>0</i><i>0</i></li>
+									<li class="sul">理论遗漏>></li>
+									<li class="sud llyl"><i>0</i><i>0</i><i>0</i><i>0</i><i>0</i><i>0</i><i>0</i><i>0</i><i>0</i><i>0</i><i>0</i><i>0</i><i>0</i></li>
+								</ul>
+							</div>
+							<p class="xh_text" id="z6hz_showbar">
+								[ 您选择了<font>0</font>注，共<font>0</font>元 ]
+							</p>
+							<span class="sz_a_l"><a class="sz_cmt" id="z6hz_put"></a><a
+								class="qc_xh" id="z6hz_clear">清除当前选号</a></span>
+							<div class="sz_line"></div>
+							<div class="reson_area">
+								<ul id="z6hz_list"></ul>
+							</div>
+							<div class="sz_sz">
+								<a href="javascript:void(0);" class="qkjx" id="z6hz_list_clear">清空列表</a>
+							</div>
+							<p class="zj_bt" style="height:20px;">
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;您选择了<font
+									id="z6hz_zs">0</font>注， 倍投:<input type="text" class="text"
+									value="1" id="z6hz_bs" maxlength="6" />倍，共<font
+									id="z6hz_money">￥0.00 </font>元
+							</p>
+						</div>
+
+						<div id="z3hz" style="display:none">
+							<div class="qx_xuh">
+								<ul>
+									<li class="sub">选择和值</li>
+									<li class="suf"><b>1</b><b>2</b><b>3</b><b>4</b><b>5</b><b>6</b><b>7</b><b>8</b><b>9</b><b>10</b><b>11</b><b>12</b><b>13</b></li>
+									<li class="sul">本期遗漏>></li>
+									<li class="sud bqyl"><i>0</i><i>0</i><i>0</i><i>0</i><i>0</i><i>0</i><i>0</i><i>0</i><i>0</i><i>0</i><i>0</i><i>0</i><i>0</i></li>
+									<li class="sul">理论遗漏>></li>
+									<li class="sud llyl"><i>0</i><i>0</i><i>0</i><i>0</i><i>0</i><i>0</i><i>0</i><i>0</i><i>0</i><i>0</i><i>0</i><i>0</i><i>0</i></li>
+								</ul>
+								<ul>
+									<li class="sul"></li>
+									<li class="sud"></li>
+									<li class="sub">选择和值</li>
+									<li class="suf"><b>14</b><b>15</b><b>16</b><b>17</b><b>18</b><b>19</b><b>20</b><b>21</b><b>22</b><b>23</b><b>24</b><b>25</b><b>26</b></li>
+									<li class="sul">本期遗漏>></li>
+									<li class="sud bqyl"><i>0</i><i>0</i><i>0</i><i>0</i><i>0</i><i>0</i><i>0</i><i>0</i><i>0</i><i>0</i><i>0</i><i>0</i><i>0</i></li>
+									<li class="sul">理论遗漏>></li>
+									<li class="sud llyl"><i>0</i><i>0</i><i>0</i><i>0</i><i>0</i><i>0</i><i>0</i><i>0</i><i>0</i><i>0</i><i>0</i><i>0</i><i>0</i></li>
+								</ul>
+							</div>
+							<p class="xh_text" id="z3hz_showbar">
+								[ 您选择了<font>0</font>注，共<font>0</font>元 ]
+							</p>
+							<span class="sz_a_l"><a class="sz_cmt" id="z3hz_put"></a><a
+								class="qc_xh" id="z3hz_clear">清除当前选号</a></span>
+							<div class="sz_line"></div>
+							<div class="reson_area">
+								<ul id="z3hz_list"></ul>
+							</div>
+							<div class="sz_sz">
+								<a href="javascript:void(0);" class="qkjx" id="z3hz_list_clear">清空列表</a>
+							</div>
+							<p class="zj_bt" style="height:20px;">
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;您选择了<font
+									id="z3hz_zs">0</font>注， 倍投:<input type="text" class="text"
+									value="1" id="z3hz_bs" maxlength="6" />倍，共<font
+									id="z3hz_money">￥0.00 </font>元
+							</p>
+						</div>
+
+						<!--单式投注-->
+						<div class="jc_ds" id="dssc" style="display:none;border:0px">
+							<form name="project_form" id="suc_form" action="/fupload.phpx"
+								method="post" enctype="multipart/form-data">
+								<p class="step_3_m" style="padding-left:60px;">
+									发起方案： <input type="text" class="text" id="sc_zs_input"
+										maxlength="5" />注，<input type="text" class="text"
+										id="sc_bs_input" value="1" maxlength="2" />倍，共<font
+										id="sc_money">0</font>元。 <input type="checkbox" class="box"
+										id="scChk" /> <label for="scChk">发起后再上传</label><br /> <input
+										type="file" name="upfile" id="upfile" /> <br />单式投注说明: <br />1、选择倍投注时只需上传单倍方案；上传的方案注数必须跟填写的一致，否则可能无法出票。
+									<br /> 2、请严格参照“<a href="javascript:void(0);"
+										onclick="Yobj.openUrl('/paisan/bzgs.html',250,387)">标准格式示例</a>”格式上传方案，否则网站不保证为您做过关统计以及历史战绩统计。
+									<br /> 3、文件格式必须是文本文件(.txt)。 <br />
+									4、上传的文件较大时，会导致上传时间及在本页停留时间较长，请耐心等待。
+								</p>
+							</form>
+						</div>
+					</div>
+				</div>
+				<div class="b_th_top1" id="all_form">
+					<span>购买方式</span><b class="cur"><input type="radio"
+						name="radio_r" />我要代购</b><b><input type="radio" name="radio_r" />发起合买</b><b><input
+						type="radio" name="radio_r" />我要追号</b>
+					<p>有购买人自行全额购买彩票</p>
+				</div>
+				<div id="dg_form" style="display:;">
+					<div class="b_th_cosz">
+						<table width="760" border="0" class="col_2"
+							style="margin:10px 0 0 5px">
+							<tr>
+								<th>投注信息</th>
+								<td>总金额<font id="buyMoneySpan">0</font>元
+								</td>
+							</tr>
+						</table>
+					</div>
+					<div class="sz_line"></div>
+					<a href="javascript:void(0);" class="asz_tz" id="buy_dg">立即代购</a>
+				</div>
+
+				<div id="hm_form" style="display:none">
+					<div class="b_th_cosz">
+						<table width="760" border="0" class="col_2"
+							style="margin:10px 0 0 5px">
+							<tr>
+								<th>投注信息</th>
+								<td>总金额<font id="buyMoneySpan3">0</font>元
+								</td>
+							</tr>
+							<tr>
+								<th>我要分成</th>
+								<td><p>
+										每份<font id="fsMoney">1</font>元，共<font id="fsInput">0</font>份
+									</p></td>
+							</tr>
+							<tr>
+								<th>我要认购</th>
+								<td><input type="text" class="text" id="rgInput" value="1" />份，<font
+									id="rgMoney">0</font>元，约<font id="rgScale">0.00%</font><font
+									id="rgErr" style="display:none">至少需要认购3份</font></td>
+							</tr>
+							<tr>
+								<th></th>
+								<td><input type="checkbox" name="isbaodi" id="isbaodi" />
+									我要保底 <input type="text" class="text" value="0"
+									disabled="disabled" id="bdInput" />份，<font id="bdMoney">0</font>元，约<font
+									id="bdScale">0.00%</font><font id="bdErr" style="display:none">最低保底20%</font></td>
+							</tr>
+							<tr>
+								<th>提成比例</th>
+								<td id="tc"><b class="first" value="0">无</b><b value="1">1%</b><b
+									class="cur" value="2">2%</b><b value="3">3%</b><b value="4">4%</b><b
+									value="5">5%</b><b value="6">6%</b><b value="7">7%</b><b
+									value="8">8%</b><b value="9">9%</b><b value="10">10%</b></td>
+							</tr>
+							<tr>
+								<th>保密设置</th>
+								<td id="gkfs"><em value="0">完全公开</em><em class="cur"
+									value="1">截止后公开</em><em value="2">仅对跟单者公开</em><em value="3">截止后对跟单者公开</em></td>
+							</tr>
+							<tr>
+								<th>可选选项</th>
+								<td><input type="checkbox" class="box" id="moreCheckbox" />方案宣传选填信息</td>
+							</tr>
+						</table>
+						<div class="conduct_msg"
+							style="padding-left:20px;_padding-left:10px;display:none;"
+							id="case_ad">
+							<span class="fa">方案标题</span><input type="text" class="bt"
+								id="caseTitle" value="双色球合买，欢迎跟单。" /><span class="fa_play">您还可以输入<font>20</font>个字符。
+							</span> <span class="fa" style="clear:both">方案描述</span>
+							<textarea id="caseInfo">说点什么吧，让您的方案被彩民认可．．．</textarea>
+							<span class="fa_play">您还可以输入<font>20</font>个字符。
+							</span>
+						</div>
+					</div>
+					<div class="sz_line"></div>
+					<a href="javascript:void(0);" class="asz_tz" id="buy_hm">发起合买</a>
+				</div>
+
+				<div class="b_th_cosz" id="zh_form" style="display:none;">
+					<p class="p_z_qs">
+						追号期数<select name="zh_opts" id="zh_opts">
+							<option value="10" checked>追10期</option>
+							<option value="20">追20期</option>
+							<option value="30">追30期</option>
+							<option value="100">追更多期</option>
+						</select>
+					</p>
+					<p class="p_z_tz">
+						追号设置 <select name="zhflag" id="tzzh">
+							<option value="0" selected>中奖后不停止</option>
+							<option value="1">中奖后停止</option>
+							<option value="2">盈利后停止</option>
+						</select>
+					</p>
+					<table width="100%" border="0" cellpadding="0" cellspacing="0"
+						class="zh_tb_c">
+						<colgroup>
+							<col width="70" />
+							<col width="150" />
+							<col width="150" />
+							<col width="150" />
+							<col />
+						</colgroup>
+						<thead>
+							<tr>
+								<td>序号</td>
+								<td class="tld">期号</td>
+								<td>倍数</td>
+								<td>金额</td>
+								<td>开奖日期</td>
+							</tr>
+						</thead>
+						<tbody id="zh_list">
+						</tbody>
+					</table>
+					<div class="sz_line"></div>
+					<p class="red_pay">
+						本次投注金额为<font id="buyMoneySpan2">￥0.00</font>元
+					</p>
+					<a href="javascript:void(0);" class="asz_tz" id="buy_zh">我要追号</a>
+				</div>
+				<p class="xytk" id="userMoneyInfo">
+					您尚未登录，请先<a href="javascript:void(0);"
+						onclick="Yobj.postMsg('msg_login')">登录</a>!
+				</p>
+				<p class="xytk">
+					<input type="checkbox" checked="checked" id="agreement">我已阅读同意《<a
+						href="/help/helpxy.html" target="_blank">用户委托投注协议</a>》 
+				</p>
+			</div>
+			<div class="dlt_m_right">
+				<h2>开奖公告</h2>
+				<div class="sz_r_kj">
+					<p>
+						<strong>第<font id="ex">20133003</font>期
+						</strong> <i id="rq">13-01-08</i><a href="/paisan/kaijiang.html"
+							target="_blank">详情</a>
+					</p>
+					<span id="kjopcode"><b>8</b><b>8</b><b>8</b></span>
+					<p class="x_kjq">
+						<span>近10期开奖结果</span><a href="javascript:void(0);" id="show_info">展开</a>
+					</p>
+					<ul id="kjhis" style="display: none;">
+						<li>期次</li>
+						<li class="sup">开奖号码</li>
+					</ul>
+				</div>
+				<h2 class="sec_h">号码统计</h2>
+				<div class="lr_tb" id="coolhot">
+					<a href="javascript:void(0);" class="cur" style="borderleft:none">热号
+					</a><a href="javascript:void(0);">冷号</a><a href="javascript:void(0);">
+						高人气</a><a href="javascript:void(0);"> 低人气</a>
+				</div>
+				<div class="lr_m" id="hot">
+					<table width="230" border="0" cellpadding="0" cellspacing="0">
+						<tr>
+							<td width="30">百位</td>
+							<td width="30"><b>0</b></td>
+							<td width="120"><span><em style="width:50%"></em></span></td>
+							<td><i>0次</i></td>
+						</tr>
+						<tr>
+							<td width="30">十位</td>
+							<td width="30"><b>0</b></td>
+							<td width="120"><span><em style="width:50%"></em></span></td>
+							<td><i>0次</i></td>
+						</tr>
+						<tr>
+							<td width="30">个位</td>
+							<td width="30"><b>0</b></td>
+							<td width="120"><span><em style="width:50%"></em></span></td>
+							<td><i>0次</i></td>
+						</tr>
+					</table>
+				</div>
+				<div class="lr_m" id="cold" style="display:none;">
+					<table width="230" border="0" cellpadding="0" cellspacing="0">
+						<tr>
+							<td width="30">百位</td>
+							<td width="30"><b>0</b></td>
+							<td width="120"><span><em style="width:50%"></em></span></td>
+							<td><i>0次</i></td>
+						</tr>
+						<tr>
+							<td width="30">十位</td>
+							<td width="30"><b>0</b></td>
+							<td width="120"><span><em style="width:50%"></em></span></td>
+							<td><i>0次</i></td>
+						</tr>
+						<tr>
+							<td width="30">个位</td>
+							<td width="30"><b>0</b></td>
+							<td width="120"><span><em style="width:50%"></em></span></td>
+							<td><i>0次</i></td>
+						</tr>
+					</table>
+				</div>
+				<div class="lr_m" id="grq" style="display:none;">
+					<table width="230" border="0" cellpadding="0" cellspacing="0">
+						<tr>
+							<td width="30">百位</td>
+							<td width="30"><b>0</b></td>
+							<td width="120"><span><em style="width:50%"></em></span></td>
+							<td><i>0次</i></td>
+						</tr>
+						<tr>
+							<td width="30">十位</td>
+							<td width="30"><b>0</b></td>
+							<td width="120"><span><em style="width:50%"></em></span></td>
+							<td><i>0次</i></td>
+						</tr>
+						<tr>
+							<td width="30">个位</td>
+							<td width="30"><b>0</b></td>
+							<td width="120"><span><em style="width:50%"></em></span></td>
+							<td><i>0次</i></td>
+						</tr>
+					</table>
+				</div>
+				<div class="lr_m" id="drq" style="display:none;">
+					<table width="230" border="0" cellpadding="0" cellspacing="0">
+						<tr>
+							<td width="30">百位</td>
+							<td width="30"><b>0</b></td>
+							<td width="120"><span><em style="width:50%"></em></span></td>
+							<td><i>0次</i></td>
+						</tr>
+						<tr>
+							<td width="30">十位</td>
+							<td width="30"><b>0</b></td>
+							<td width="120"><span><em style="width:50%"></em></span></td>
+							<td><i>0次</i></td>
+						</tr>
+						<tr>
+							<td width="30">个位</td>
+							<td width="30"><b>0</b></td>
+							<td width="120"><span><em style="width:50%"></em></span></td>
+							<td><i>0次</i></td>
+						</tr>
+					</table>
+				</div>
+				<h2>数据图表</h2>
+				<div class="sz_r_tb">
+					<a href="http://zst.gucheng.159cai.com/cjwpl3/view/pl3_danxuan.php"
+						target="_blank">号码分布</a><a
+						href="http://zst.gucheng.159cai.com/cjwpl3/view/pl3_wannengma.php?typeId=wannengqm"
+						target="_blank">万能组选复式</a><a
+						href="http://zst.gucheng.159cai.com/cjwpl3/view/pl3_hezhi.php"
+						target="_blank">常用指标</a><a
+						href="http://zst.gucheng.159cai.com/cjwpl3/view/pl3_liangweihe.php?typeId=bsh"
+						target="_blank">两数位和</a> <a
+						href="http://zst.gucheng.159cai.com/cjwpl3/view/pl3_weishu.php?typeId=bsc"
+						target="_blank">两数位差</a><a
+						href="http://zst.gucheng.159cai.com/cjwpl3/view/pl3_2numzxblz.php?typeId=dx"
+						target="_blank">型态</a><a
+						href="http://zst.gucheng.159cai.com/cjwpl3/view/pl3_szqjzh.php?typeId=danzh"
+						target="_blank">数字区间</a><a
+						href="http://zst.gucheng.159cai.com/cjwpl3/view/pl3_xuandan.php"
+						target="_blank">选胆杀号</a> <a
+						href="http://zst.gucheng.159cai.com/cjwpl3/view/9gongge.php"
+						target="_blank">排列三九宫图</a>
+				</div>
+				<h2>
+					<span>预测推荐</span><a href="/p3/yuce/" target="_blank">更多>></a>
+				</h2>
+				<div class="sz_r_tj">
+					<!--#include virtual="/dedeinc/paisan_right.html"-->
+				</div>
+
+			</div>
+
+		</div>
+	</div>
+	<input name="codes" id="codes" type="hidden" value='' />
+	<!--号码-->
+	<input name="zhushu" id="zhushu" type="hidden" value="1" />
+	<!--注数-->
+	<input name="beishu" id="beishu" type="hidden" value="1" />
+	<!--注数-->
+	<input name="totalmoney" id="totalmoney" type="hidden" value="0" />
+	<!--方案金额-->
+	<input name="beishu_list" id="beishu_list" type="hidden" value="" />
+	<!--投注了的倍数列表-->
+	<input name="expect_list" id="expect_list" type="hidden" value="" />
+	<!--投注了的期号列表-->
+	<input name="lotid" id="lotid" type="hidden" value="53" />
+	<!--彩种Id-->
+	<input name="playid" id="playid" type="hidden" value="1" />
+	<!--玩法Id-->
+	<input name="playid2" id="playid2" type="hidden" value="1" />
+	<!--用于图表玩法-->
+	<input name="expect" id="expect" type="hidden" value="" />
+	<!--期号-->
+	<input name="isupload" id="isupload" type="hidden" value="1" />
+	<input name="msgmode" id="msgmode" type="hidden" value="1" />
+	<input name="ishm" id="ishm" type="hidden" value="0" />
+	<input name="ischase" id="ischase" type="hidden" value="0" />
+	<input name="isshow" id="isshow" type="hidden" value="0" />
+	<input name="isbaodi" id="isBaodi" type="hidden" value="0" />
+	<input name="tc_bili" id="tc_bili" type="hidden" value="0" />
+	<input name="lastexpect" id="lastexpect" type="hidden" value="2013358" />
+	<input name="money_limit" id="money_limit" type="hidden"
+		value="2,10000000,," />
+	<input type="hidden" name="gk" id="gk" value="1"> <input
+		type="hidden" name="tcSelect" id="tcSelect" value="2"> <!--#include virtual="/cc/footer.html"-->
+			<script type="text/javascript" src="/public/szc.js"></script> <script
+				type="text/javascript" src="/paisan/js/index.js"></script>
+</body>
+</html>

@@ -1,0 +1,176 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="/css/159cai.css" rel="stylesheet" type="text/css" />
+<link href="/css/new159cai.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="/public/jq2.js"></script>
+<script type="text/javascript" src="/public/jq.js"></script>
+<script type="text/javascript" src="/public/menu.js"></script>
+<script type="text/javascript" src="/public/159cp.js"></script>
+<script type="text/javascript" src="/public/chklogin.js"></script>
+<script type="text/javascript" src="/public/riqi.js"></script>
+<script type="text/javascript" src="/account/js/shezhi.js"></script>
+</head>
+<body>
+
+	<div class="main_tan_1">
+		<div class="tan_top">
+			<div class="tan_top_l"></div>
+			<div class="tan_top_m1">
+				<h3>推广佣金比率设置</h3>
+			</div>
+			<div class="tan_top_r" id="flclose">
+				<a href="javascript:void(0);" onclick="top.Y.closeUrl()"></a>
+			</div>
+		</div>
+		<div class="tan_mid">
+			<table width="760" class="col_1" border="0" cellspacing="0"
+				cellpadding="0">
+				<colgroup>
+					<col width="127" />
+					<col width="125" />
+					<col width="125" />
+					<col width="125" />
+					<col width="125" />
+					<col width="125" />
+				</colgroup>
+				<tbody>
+					<tr>
+						<td><label for="zctype"><input class="box"
+								type="checkbox" name="zctype" id="zctype" /><strong>足彩</strong></label><input
+							id="zcall" type="text" value="0" class="text" disabled="disabled" />%</td>
+						<td>胜负彩<input id="zc_sfc" class="text" type="text" value="0" />%
+						</td>
+						<td>任选九<input id="zc_rj" class="text" type="text" value="0" />%
+						</td>
+						<td>半全<input id="zc_bq" class="text" type="text" value="0" />%
+						</td>
+						<td>进球<input id="zc_jq" class="text" type="text" value="0" />%
+						</td>
+						<td>&nbsp;</td>
+					</tr>
+					<tr>
+						<td><label for="dctype"><input class="box"
+								type="checkbox" name="dctype" id="dctype" /><strong>单场</strong></label><input
+							id="dcall" type="text" value="0" class="text" disabled="disabled" />%</td>
+						<td>胜平负<input id="dc_spf" class="text" type="text" value="0" />%
+						</td>
+						<td>总进球<input id="dc_jqs" class="text" type="text" value="0" />%
+						</td>
+						<td>比分<input id="dc_cbf" class="text" type="text" value="0" />%
+						</td>
+						<td>半全场<input id="dc_bqc" class="text" type="text" value="0" />%
+						</td>
+						<td>上下单双<input id="dc_sx" class="text" type="text" value="0" />%
+						</td>
+					</tr>
+
+					<tr>
+						<td><label for="jctype"><input class="box"
+								type="checkbox" name="jctype" id="jctype" /><strong>竞彩</strong></strong></label><input
+							id="jcall" type="text" value="0" class="text" disabled="disabled" />%</td>
+						<td>胜平负<input id="jc_spf" type="text" value="0" class="text" />%
+						</td>
+						<td>让球胜平负<input id="jc_rspf" type="text" value="0"
+							class="text" />%
+						</td>
+						<td>总进球<input id="jc_jqs" type="text" value="0" class="text" />%
+						</td>
+						<td>比分<input id="jc_cbf" type="text" value="0" class="text" />%
+						</td>
+						<td>半全场<input id="jc_bqc" type="text" value="0" class="text" />%
+						</td>
+					</tr>
+					<tr>
+						<td>&nbsp;</td>
+						<td>混合过关<input id="jc_hh" type="text" value="0" class="text" />%
+						</td>
+						<td>&nbsp;</td>
+						<td>&nbsp;</td>
+						<td>&nbsp;</td>
+						<td>&nbsp;</td>
+					</tr>
+
+
+					<tr>
+						<td><label for="lctype"><input class="box"
+								type="checkbox" name="lctype" id="lctype" /><strong>篮彩</strong></strong></label><input
+							id="lcall" type="text" value="0" class="text" disabled="disabled" />%</td>
+						<td>胜负<input id="lc_sf" type="text" value="0" class="text" />%
+						</td>
+						<td>让分胜负<input id="lc_rfsf" type="text" value="0"
+							class="text" />%
+						</td>
+						<td>大小分<input id="lc_dxf" type="text" value="0" class="text" />%
+						</td>
+						<td>胜分差<input id="lc_sfc" type="text" value="0" class="text" />%
+						</td>
+						<td>混合过关<input id="lc_hh" type="text" value="0" class="text" />%
+						</td>
+
+					</tr>
+
+					<tr>
+						<td><label for="fctype"><input type="checkbox"
+								name="fctype" id="fctype" class="box" /><strong>福彩</strong></label><input
+							id="fcall" type="text" value="0" class="text" disabled="disabled" />%</td>
+						<td>双色球<input id="fc_ssq" type="text" value="0" class="text" />%
+						</td>
+						<td>3D<input id="fc_sd" type="text" value="0" class="text" />%
+						</td>
+						<td>七乐彩<input id="fc_qlc" type="text" value="0" class="text" />%
+						</td>
+						<td>&nbsp;</td>
+						<td>&nbsp;</td>
+					</tr>
+
+					<tr>
+						<td><label for="tctype"><input type="checkbox"
+								name="tctype" id="tctype" class="box" /><strong>体彩</strong></label><input
+							id="tcall" type="text" value="0" class="text" disabled="disabled" />%</td>
+						<td>大乐透<input id="tc_dlt" type="text" value="0" class="text" />%
+						</td>
+						<td>七星彩<input id="tc_qxc" type="text" value="0" class="text" />%
+						</td>
+						<td>排列三<input id="tc_ps" type="text" value="0" class="text" />%
+						</td>
+						<td>排列五<input id="tc_pw" type="text" value="0" class="text" />%
+						</td>
+						<td>&nbsp;</td>
+					</tr>
+
+					<tr>
+						<td><label for="kptype"><input type="checkbox"
+								name="kptype" id="kptype" class="box" /><strong>快频</strong></label><input
+							id="kpall" type="text" value="0" class="text" disabled="disabled" />%</td>
+						<td>11选5<input name="kp_xw" id="kp_xw" type="text" value="0"
+							class="text" />%
+						</td>
+						<td>11运夺金<input name="kp_ydj" id="kp_ydj" type="text"
+							value="0" class="text" />%
+						</td>
+						<td>时时彩<input name="kp_ssc" id="kp_ssc" type="text" value="0"
+							class="text" />%
+						</td>
+						<td>新时时彩<input name="kp_nssc" id="kp_nssc" type="text"
+							value="0" class="text" />%
+						</td>
+						<td>&nbsp;</td>
+						<td>&nbsp;</td>
+					</tr>
+
+
+
+				</tbody>
+			</table>
+			<p>
+				设置-输入数值（推广比例3%只需设定为3即可）<br /> <a href="javascript:void(0);"
+					class="but1" id="tj_btn">提交</a>
+			</p>
+		</div>
+
+	</div>
+
+</body>
+</html>

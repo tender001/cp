@@ -1,0 +1,165 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>网上买彩票_账户中心_用户充值_股城网彩票</title>
+<meta name="keywords"
+	content="福利彩票，福彩，体育彩票，体彩，足彩，网上买彩票，彩票合买，彩票开奖，彩票走势图，彩票预测" />
+<meta name="description"
+	content="股城网彩票为彩民提供专业的彩票网上投注、合买、开奖结果、走势分析、比分直播等服务，覆盖福彩、体彩、足彩、竞彩、快频等彩种。股城网彩票上投注最佳选择！" />
+<link href="/css/159cai.css" rel="stylesheet" type="text/css" />
+<link href="/css/new159cai.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="/public/jq2.js"></script>
+<script type="text/javascript" src="/public/jq.js"></script>
+<script type="text/javascript" src="/public/menu.js"></script>
+<script type="text/javascript" src="/public/159cp.js"></script>
+<script type="text/javascript" src="/public/chklogin.js"></script>
+<script type="text/javascript" src="/account/js/creditCard.js"></script>
+
+</head>
+<body>
+
+	<!--#include virtual="/cc/header.html"-->
+	<!--#include virtual="/cc/nav.html"-->
+	<div id="container">
+		<div class="breadcrumb">
+			<p>
+				您现在的位置：<a href="/" title="网上买彩票"><font>股城网彩票</font></a> > <a
+					href="/account/myaccount.html" title="我的账户"><font>我的账户</font></a> >
+				信用卡快捷支付
+			</p>
+		</div>
+		<div class="accoutmain">
+			<!--#include virtual="/cc/account/account_left.html"-->
+			<div class="accout_right">
+				<div class="acct_rig_1" style="border-bottom-width:3px">
+					<h2>
+						<strong>充值中心</strong>
+					</h2>
+					<div class="record_u record_tbx">
+						<ul>
+							<li><a href="chongzhi.html" title="网银充值">网银充值</a>
+							<div class="nofy">0手续费</div></li>
+							<li class="cur"><a href="javascript:void(0);"
+								title="信用卡快捷支付">信用卡快捷支付</a>
+							<div class="nofy nofy2">无需开通网银</div></li>
+							<li><a href="card.html" title="手机充值卡充值">手机充值卡充值</a></li>
+						</ul>
+					</div>
+					<div class="rech_help">
+						
+					</div>
+					<div class="bank_main">
+
+
+						<div class="unline_bank  recharge">
+							<div style="color:#444;line-height:30px;padding:15px 0 0 31px">
+								<font style="font-weight:bold">信用卡快捷支付说明：</font>1、每次充值最高限额1000。
+								2、每日充值累计最高限额3000元。3、每日充值累计最多3笔
+							</div>
+							<!--   <div class="on_b_1" style="margin-top:10px"> -->
+							<!--    <span>选择银行</span><div id="bankc" class="bank_select"> -->
+							<!-- </div><s>即日起本充值方式由银联收取0.60%的手续费，最低0.01元/笔</s> -->
+							<!--    </div> -->
+							<div class="czje">
+								<p>
+									<form name="bankform" id="bankform"
+										action="/phpu/addmoney.apsx" method="post" target="_blank">
+										充值金额<input name="addmoney" type="text" id="addmoney"
+											onkeyup="this.value=this.value.replace(/^\D*(\d*(?:\.\d{0,2})?).*$/g, '$1');"
+											onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/^\D*(\d*(?:\.\d{0,2})?).*$/g, '$1'));" />
+										<span id="remind">(至少<em>10</em>元，限整数)
+										</span>为了防止套现和洗钱，充值后需消费30%，剩余金额才可以提款 <label id="xixun2"
+											style="display: none;color:red;">绑定身份证和手机之后即可获得充10送10元，每人限1次。</label>
+										<input type="hidden" value="HXB" id="banktype" name="banktype">
+											<input type="hidden" value="11" id="bankid" name="bankid">
+												<input type="hidden" value="CREDITCARD" id="payType"
+												name="payType">
+									</form>
+								</p>
+							</div>
+							<div class="un_b_1" id="bankdiv" style="display:block;">
+								<div class="un_b_main bank_zj">
+									<p>
+										<strong>发卡银行</strong><a href="javascript:void(0);"
+											style="display: none;  id="closeBankdiv"><img
+											src="/images/njc/bankk_06.jpg" /></a>
+									</p>
+									<div class="ae_card">
+										<ul>
+											<li style="cursor: pointer" onclick="changdiv(1);"
+												id="bank_div_1"><em class="gh"></em></li>
+											<li style="cursor: pointer" onclick="changdiv(2);"
+												id="bank_div_2"><em class="jh"></em></li>
+											<li style="cursor: pointer" onclick="changdiv(3);"
+												id="bank_div_3"><em class="nh"></em></li>
+											<li style="cursor: pointer" onclick="changdiv(5);"
+												id="bank_div_5"><em class="cx"></em></li>
+											<li style="cursor: pointer" onclick="changdiv(11);"
+												id="bank_div_11"><em class="zh"></em></li>
+											<!-- <li style="cursor: pointer" onclick="changdiv(6);" id="bank_div_6"> -->
+											<!--  <em class="jth"></em> -->
+											<!-- </li> -->
+											<li style="cursor: pointer" onclick="changdiv(7);"
+												id="bank_div_7"><em class="zxh"></em></li>
+											<li style="cursor: pointer" onclick="changdiv(18);"
+												id="bank_div_18"><em class="gfh"></em></li>
+											<li style="cursor: pointer" onclick="changdiv(4);"
+												id="bank_div_4"><em class="zgh"></em></li>
+											<li style="cursor: pointer" onclick="changdiv(17);"
+												id="bank_div_17"><em class="pfh"></em></li>
+											<li style="cursor: pointer" onclick="changdiv(8);"
+												id="bank_div_8"><em class="gdh"></em></li>
+											<!-- <li style="cursor: pointer">
+<input type="radio" name="bank_type" style="display: none; onclick="changdiv(9);" id="bank_div_9">
+<label for="bank_div_9">
+<span id="bank_for_9">
+ <em class="sfh"></em>
+</span>
+</label>
+</li> -->
+											<li style="cursor: pointer" onclick="changdiv(15);"
+												id="bank_div_15"><em class="xyh"></em></li>
+											<li style="cursor: pointer" onclick="changdiv(10);"
+												id="bank_div_10"><em class="msh"></em></li>
+											<li style="cursor: pointer" onclick="changdiv(19);"
+												id="bank_div_19"><em class="pah"></em></li>
+										</ul>
+									</div>
+									<div class="sm_bk" id="showmore">选择更多银行</div>
+									<div class="sm_bkm" id="otherbank" style="display:none;">
+										<a name="9">华夏银行 </a><a name="12">上海银行 </a> <a name="13">北京银行
+										</a><a name="37">杭州银行 </a> <a name="14">东亚银行 </a><a name="21">长沙银行
+										</a><a name="22">承德银行 </a><a name="23">成都农商银行 </a> <a name="20">包商银行
+										</a><a name="30">贵阳银行 </a> <a name="25">重庆银行 </a><a name="31">广州银行
+										</a><a name="33">哈尔滨银行 </a> <a name="26">大连银行 </a><a name="40">江苏银行
+										</a> <a name="16">宁波银行 </a><a name="42">九江银行 </a><a name="46">上海农商银行
+										</a> <a name="47">上饶银行 </a><a name="60">南京银行 </a><a name="61">南昌银行
+										</a>
+
+									</div>
+								</div>
+							</div>
+
+
+							<a href="javascript:void(0);" id="submit" name="submit"
+								class="cz_but"></a>
+
+						</div>
+
+
+					</div>
+					<div class="reg_pro">
+						<h4>充值遇到问题：</h4>
+						1、充值后什么时间可以到账？<br /> 答：一般在您充值成功后1到5分钟资金会到账。未及时到帐的用户可以通过联系 在线客服 或
+						拨打热线：400-0696-159反馈给我们，财务核实后会及时处理。 <br /> 2、银行页面打不开，怎么办？<br />
+						答：为确保充值成功，建议您使用IE内核浏览器进行充值操作（如IE、QQ浏览器、遨游、世界之窗等）。
+					</div>
+
+
+				</div>
+			</div>
+		</div>
+		<!--#include virtual="/cc/footer.html"-->
+</body>
+</html>
