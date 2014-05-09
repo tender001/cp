@@ -50,6 +50,7 @@
         }
         return true
     });
+   
     Class.extend('moveToBuy', function (fn){//购买按钮可见
         var h, ph, a, b;
         h = this.getXY(this.one('#b_form'));
@@ -178,6 +179,7 @@
     	            this.addMoneyDlg.addClose('#addMoneyClose','#addMoneyYes');
     	            this.get('#addMoneyLay div.tantop').drag('#addMoneyLay');
     	            this.bindMsg();
+    	            
         },
         bindMsg: function (){
 	       	 var Y = this;
@@ -930,6 +932,8 @@
 							}
 						}
 						$("#expect_tab").html(html);
+						
+						this.get('[data-help]').tip('data-help', 1, false, 360);// 帮助说明
 //						for ( var i = 0; i < expectlist.length; i++) {
 //							$("#e" + expectlist[expectlist.length - i-1][0]).removeClass();
 //						}
