@@ -138,7 +138,7 @@ function count_down(){
 	  // 显示倒计时效果       
 	 
 	  document.getElementById("LiveClock1").innerHTML ='<b>'+int_day+'</b>';
-	  setTimeout("count_down()",1000);
+	  setTimeout("count_down()",1000*60*60);
 	}else{
 	  time_day.innerHTML = "00";
 	  time_hour.innerHTML = "00"; 
