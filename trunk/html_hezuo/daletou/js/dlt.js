@@ -392,7 +392,42 @@ Class('CodeList>Dlt_CodeList_dt', {
             return isds ? (isadd ? 99 : 3) : ( isadd ? ( isdt ? 2 : 98) : (isdt ? 135 : 1 ))//加注id=98/99
         }        
     });
-
+    Class.extend('exportCode', function (){
+        // 传入号码
+    	var showid =location.search.getParam('codes');
+    	
+    	if(showid!=""&&typeof(showid) != 'undefined'){
+    		Yobj.get('#codes').val(showid);
+    		location.href='#page_buy';
+    	}
+        var import_code, arrCodes, short_code;
+        if (import_code = Yobj.get('#codes').val()) {
+			if (typeof this.dejson(import_code) == 'object') return;
+            if (/\b0\b/.test(import_code)) {
+                return
+            }
+            arrCodes = import_code.split(';').map(function (c){
+                var rb = c.split('|'),
+                    r = rb[0] ? rb[0].split(',') : [],
+                    b = rb[1] ? rb[1].split(":")[0].split(",") : [],
+        		zs = Math.c(r.length, 5) * Math.c(b.length, 2);
+                return [r, b, zs]
+            }).filter(function (c){
+                if (c[c.length - 1] == 0) {//zs
+                    short_code = c//残缺号码
+                }else{
+                    return true
+                }
+            });
+            if (arrCodes.length) {//完整号码显示到列表
+                 this.postMsg('msg_put_code', arrCodes);
+                 this.moveToBuy()
+            }
+            if (short_code && short_code.length) {// 残缺号码显示到球区
+                this.postMsg('msg_redraw_code', short_code)
+            }
+        }
+    });
 //    Class.extend('exportCode', function (){});
 
     /*
@@ -487,7 +522,8 @@ Class('CodeList>Dlt_CodeList_dt', {
                   zsSpan: '#pt_zs',
                   clearBtn: '#pt_list_clear'
             });
-
+         
+            Y.exportCode(); // 导入号码
             Y.lib.Dlg();
             //追加注数联动
            
@@ -739,7 +775,7 @@ Class('CodeList>Dlt_CodeList_dt', {
         				   			    	                var rb = c.split('|'),
         				   			    	                    r = rb[0] ? rb[0].split(',') : [],
         				   			    	                    b = rb[1] ? rb[1].split(":")[0].split(",") : [],
-        				   			    	                    zs = Math.c(r.length, 6) * Math.c(b.length, 1);
+				   			    	                    		zs = Math.c(r.length, 5) * Math.c(b.length, 2);
         				   			    	                return [r, b, zs]
         				   			    	            }).filter(function (c){
         				   			    	                if (c[c.length - 1] == 0) {//zs
@@ -853,37 +889,7 @@ Class('CodeList>Dlt_CodeList_dt', {
         	}
         	
         	
-        	if(showid!=""&&typeof(showid) != 'undefined'){
-        		Yobj.get('#codes').val(showid);
-        		location.href='#page_buy';
-      		  var import_code, arrCodes, short_code;
-    	        if (import_code = Yobj.get('#codes').val()) {
-    				if (typeof this.dejson(import_code) == 'object') return;
-    	            if (/\b0\b/.test(import_code)) {
-    	                return
-    	            }
-    	            arrCodes = import_code.split('$').map(function (c){
-    	                var rb = c.split('|'),
-    	                    r = rb[0] ? rb[0].split(',') : [],
-    	                    b = rb[1] ? rb[1].split(',') : [],
-    	                    zs = Math.c(r.length, 6) * Math.c(b.length, 1);
-    	                return [r, b, zs]
-    	            }).filter(function (c){
-    	                if (c[c.length - 1] == 0) {//zs
-    	                    short_code = c//残缺号码
-    	                }else{
-    	                    return true
-    	                }
-    	            });
-    	            if (arrCodes.length) {//完整号码显示到列表
-    	                 this.postMsg('msg_put_code', arrCodes);
-    	                 this.moveToBuy();
-    	            }
-    	            if (short_code && short_code.length) {// 残缺号码显示到球区
-    	                this.postMsg('msg_redraw_code', short_code);
-    	            }
-    	        }
-        	}
+        	if(showid!=""&&typeof(showid) != 'undefined'){}
         	
         
             this.onMsg('msg_toogle_nosc', function (isnosc){
