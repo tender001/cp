@@ -1,0 +1,48 @@
+
+<div class="accout_left">
+	<h1>
+		<a href="/account/myaccount.html" page=",myaccount,">我的帐户</a>
+	</h1>
+	<h2 class="tz">投注管理</h2>
+	<ul>
+		<li><a href="/account/orderlist.html" page=",orderlist,">投注记录</a></li>
+		<li><a href="/account/chase.html" page=",chase,">追号记录</a></li>
+		<li><a href="/account/gendan.html" page=",gendan,followme,">定制跟单</a></li>
+	</ul>
+	<h2 class="zj">资金管理</h2>
+	<ul>
+		<li><a href="/account/chongzhi.html" page=",chongzhi,">充值</a></li>
+		<li><a href="/account/tikuan.html" page=",tikuan,">提现</a></li>
+		<li><a href="/account/jiaoyi.html" page=",jiaoyi,">交易记录</a></li>
+	</ul>
+	<h2 class="zh">账户管理</h2>
+	<ul>
+
+		<li><a href="/account/baseinfo.html" page=",baseinfo,">基础资料</a></li>
+		<li><a href="/account/safecenter.html" page=",safecenter,">安全中心</a></li>
+		<li><a href="/account/password.html" page=",password,">密码修改</a></li>
+	</ul>
+	<h2 class="fw">服&nbsp;&nbsp;&nbsp;务</h2>
+	<ul>
+		<li><a href="/account/mibao.html" page=",mibao,">密保服务</a></li>
+		<li><a href="/account/mobile.html" page=",mobile,">手机服务</a></li>
+		<li><a href="/account/emailinfo.html" page=",emailinfo,">邮箱服务</a></li>
+	</ul>
+	<h2 class="fw" style="display:none" id="tuiguang">合作查询</h2>
+	<ul style="display:none" id="parent">
+		<li><a href="/account/myfanli.html" page=",myfanli,">佣金查询</a></li>
+		<li><a href="/account/parent.html" page=",parent,">用户查询</a></li>
+		<li><a href="/account/tuiguang.html" page=",tuiguang,">推广说明</a></li>
+	</ul>
+</div>
+<script language="javascript">
+	//by jack 2013-01-16
+	var filename = location.pathname;
+	filename = filename.replace(/(.*\/)*([^.]+).*/ig, "$2");
+	$(".accout_left a").each(function(i) {
+		var page = $(this).attr("page");
+		if (page.indexOf("," + filename + ",") > -1) {
+			$(this).attr("class", "cur");
+		}
+	});
+</script>

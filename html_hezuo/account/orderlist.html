@@ -1,0 +1,102 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>网上买彩票_账户中心_投注记录_股城网彩票</title>
+<meta name="keywords"
+	content="福利彩票，福彩，体育彩票，体彩，足彩，网上买彩票，彩票合买，彩票开奖，彩票走势图，彩票预测" />
+<meta name="description"
+	content="股城网彩票为彩民提供专业的彩票网上投注、合买、开奖结果、走势分析、比分直播等服务，覆盖福彩、体彩、足彩、竞彩、快频等彩种。股城网彩票上投注最佳选择！" />
+<link href="/css/159cai.css" rel="stylesheet" type="text/css" />
+<link href="/css/new159cai.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="/public/jq2.js"></script>
+<script type="text/javascript" src="/public/jq.js"></script>
+<script type="text/javascript" src="/public/menu.js"></script>
+<script type="text/javascript" src="/public/159cp.js"></script>
+<script type="text/javascript" src="/public/chklogin.js"></script>
+<script type="text/javascript" src="/public/riqi.js"></script>
+<script type="text/javascript" src="/account/js/orderlist.js"></script>
+
+</head>
+<body>
+	<!--#include virtual="/cc/header.html"-->
+	<!--#include virtual="/cc/nav.html"-->
+	<div id="container">
+		<div class="breadcrumb">
+			<p>
+				您现在的位置：<a href="/" title="网上买彩票"><font>股城网彩票</font></a> > <a
+					href="/account/myaccount.html" title="我的账户"><font>我的账户</font></a> >
+				投注记录
+			</p>
+		</div>
+		<div class="accoutmain">
+			<!--#include virtual="/cc/account/account_left.html"-->
+			<div class="accout_right">
+				<div class="acct_rig_1">
+					<h2>
+						<strong>投注记录</strong>
+					</h2>
+				</div>
+				<div class="my_reco">
+					<div class="my_reco_top">
+						<span>起始日期<input type="text" name="begintime"
+							id="begintime" />-<input type="text" name="endtime" id="endtime" />
+							<SELECT name="lotid" id="lotid">
+								<OPTION value=0 selected>全部彩种</OPTION>
+						</SELECT> <SELECT name="seltype" id="seltype">
+								<OPTION value="-1">全部</OPTION>
+								<OPTION value=0>未结投注</OPTION>
+								<OPTION value=2>已结投注</OPTION>
+						</SELECT>
+						</span> <a href="javascript:void(0);" id="submit"></a>
+					</div>
+					<div class="my_reco_main">
+						<table width="100%" border="0" cellpadding="0" cellspacing="0">
+							<colgroup>
+								<col width="80"/>
+									<col width="120"/>
+										<col width="100"/>
+											<col width="90"/>
+												<col width="80"/>
+													<col width="110"/>
+														<col width="125"/>
+															<col/>
+							</colgroup>
+							<thead>
+								<tr>
+									<td>序号</td>
+									<td>彩种</td>
+									<td>期号</td>
+									<td>认购金额</td>
+									<td>结算状态</td>
+									<td>我的奖金</td>
+									<td>认购时间</td>
+									<td>详情</td>
+								</tr>
+							</thead>
+							<tbody id="div2">
+							</tbody>
+						</table>
+					</div>
+					<div class="ac_try" id="div1" style="display:none;">
+						<p>
+							您最近暂没有投注记录，<font>立即</font>
+						</p>
+						<a href="/dating/"></a>
+					</div>
+					<div class="pagination" id="page_div" style="display:none;">
+					</div>
+					<div class="remind">
+						<p>
+							温馨提示：<br /> 1.当前页认购金额总计<em id="rg">0.00</em>元。当前页中奖金额总计<em
+								id="zj">0.00</em>元。<br />
+							2.提高查询速度，本页面只提供3个月内已完成的购彩记录。如需要查询3个月前已完成的购彩，请联系网站客服。
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--#include virtual="/cc/footer.html"-->
+</body>
+</html>

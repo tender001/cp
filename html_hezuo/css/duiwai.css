@@ -1,0 +1,121 @@
+﻿@charset "utf-8";
+{margin:0;padding:0}
+body,h3,h4,h2,h1,h5,table,td,th,ul,li,ol,dd,dt,dl,div,span,p,b,i,s,em,thead,tbody,font,select,input,option{margin:0;padding:0;font-style:normal;font-weight:100;font-family: Arial,simsun;}
+body{font-size:12px}
+em,i,s,b{ font-style:normal; text-decoration:none;}
+img{border:none;}
+body a{outline:none;blr:expression(this.onFocus=this.blur());text-decoration:none;color:#444;outline:none;cursor:pointer}
+div,ul,li{ list-style-type:none;overflow:hidden}
+.dwjj{width:922px;height:342px;margin:0 auto;padding:14px}
+.jjleft{width:662px;float:left;}
+.jjlefttab{height:38px; background:url(../images/duiwai/jj_03.jpg);line-height:38px;}
+.jjlefttab span{float:left;padding-left:14px;font-size:16px;color:#333;font-weight:bold}
+.jjlefttab p{float:right;padding-right:3px;padding-top:5px;line-height:33px;}
+.jjlefttab p a{display:bloxk;float:left;width:101px;height:33px;text-align:Center;color:#444;font-size:14px;margin-right:5px;background:url(../images/duiwai/jj_06.jpg)}
+.jjlefttab p a.cur{background:url(../images/duiwai/jj_08.jpg);font-weight:bold;color:#a6231d}
+.jjleftc{border:1px solid #daa5a5;border-top:none;height:180px}
+.jjlog{width:102px;float:left;padding-top:24px;}
+.jjlog b{width:66px;height:66px;display:block;margin:0 auto}
+.jjlog b img{display:block;width:64px;height:64px}
+.jjlog p{line-height:20px;font-size:14px;color:#444;text-align:center;padding-top:6px}
+.jjlog p strong{display:block;margin:0 auto;}
+.jjlog p a{color:#145fab;font-size:12px;text-decoration:underline}
+.jjlog p a:hover{color:#e52e06}
+.jjkjp{padding-top:18px;float:left;width:542px;}
+.jjkjp p{display:block;clear:both}
+.jjkjp p span{float:left}
+.jjkjp p em{float:right}
+.jjkjp p.p1{line-height:24px;color:#444;font-size:14px;height:24px;}
+.jjkjp p.p1 s{color:#e52e06;font-weight:bold}
+.jjkjp p.p1 font{color:#e52e06}
+.jjkjp p.p2 a{display:block;float:left; background-color:#dddddd;margin-right:2px;margin-left:2px;height:22px;line-height:22px;width:64px;text-align:center;font-size:12px}
+.jjkjp p.p2{padding-top:9px;height:22px}
+.jjkjp p.p2 a.cur,.jjkjp p.p2 a:hover{ background-color:#ff6600;color:#fff}
+.jjkjp p.p2 em{font-weight:bold;color:#ff3300;font-size:18px}
+.jjkjp p.p3{padding-top:14px;height:38px}
+.jjkjp p.p3 em font{color:#ff3300;font-weight:bold;font-size:18px;padding:0 1px}
+.jjkjp p.p3 b{display:block;float:left;margin-right:3px;width:38px;height:38px;background:url(../images/duiwai/jj_14.jpg);}
+.jjkjp p.p3 b.blue{background:url(../images/duiwai/jjlq.jpg)}
+.jjkjp p.p3 b input{width:22px;height:22px;color:#444;font-weight:bold;font-size:14px; text-align:center;margin:9px auto 0;border:0; background-color:transparent;display:block;padding:4px 0 0 0\9;height:18px\9}
+:root .jjkjp p.p3 b input{padding:0;height:22px;}
+.jjkjp p.p3 a,.jjkjp a.a2{display:block; float:left;width:52px;height:32px;line-height:32px; text-align:center;color:#444;font-size:16px;font-weight:bold;background:url(../images/duiwai/jj_20.jpg);margin-top:2px}
+.jjkjp p.p3 a.a1{margin-left:8px}
+.jjkjp a.a2,.jjkjp p.p3 a.a2{float:right;background:url(../images/duiwai/jj_17.jpg);height:35px;line-height:35px;color:#fff;width:105px;margin:0}
+.jjkjp p.p3 a:hover{ text-decoration:underline}
+.jjkjp p.p4{color:#999;padding:12px 0 0px;line-height:20px;font-size:12px;font-weight:100;height:20px}
+.jjkjp p.p5{padding-top:15px;color:#444;font-size:14px;line-height:20px;height:20px;float:left}
+.jjkjp p.p5 a{margin-left:25px;color:#145fab}
+.jjkjp p.p5 a:hover{color:#e52e06; text-decoration:underline}
+.jjkjp p.p5 font{color:#e52e06}
+.jjleftbm{margin-top:10px;}
+.jjleftbmc{border:1px solid #daa5a5;width:212px;height:114px;float:left;margin-left:10px;}
+.jjleftbmc .jjlog{padding-top:12px;width:82px}
+.jjleftbmc .jjlog p{font-weight:bold;padding-top:3px}
+.jjleftbmcm{width:125px;float:left}
+.jjleftbmcm p{line-height:20px;color:#444;text-align:left;padding-top:15px;font-size:12px;display:block;}
+.jjleftbmcm p a{color:#145fab; text-decoration:underline}
+.jjleftbmcm p a:hover{color:#e52e06}
+.jjleftbmcm a.btn{display:block;color:#fff;text-align:Center;width:68px;height:24px;line-height:24px;background:url(../images/duiwai/jj_26.jpg);font-size:12px;margin-top:4px}
+.jjleftbmcm a.btn:hover{ text-decoration: underline}
+.jjright{width:246px;float:right}
+.kjantou{height:343px;border:1px solid #daa5a5; background-color:#fff; position:relative}
+.kjantou h3{height:35px; background:#f3f3f3;line-height:35px}
+.kjantou h3 b{display:block;width:80px;border-bottom:1px solid #daa5a5;cursor:pointer;float:left;text-align:center;font-size:14px;font-weight:bold;color:#444}
+.kjantou h3 b.cur{border-bottom:none; background-color:#fff}
+
+.jrkjm{clear:both}
+.jrkjcc{
+    border-bottom: 1px dashed #DBDBDB;
+    padding: 10px 8px 10px 10px;
+}
+
+.jrkjcc p {
+    height: 15px;
+    line-height: 15px;color:#444
+}
+.jrkjcc a {
+    color: #145fab;
+    display: block;
+    font-weight: 100;
+    width: 68px;float:left
+}
+.jrkjcc  em {
+    display:block;
+    font-style: normal;
+    width: 66px;float:left
+}
+
+.jrkjcc i {
+    float: right;
+    width: 66px;display:block
+}
+.jrkjcc p.p1{padding-top:10px;height:18px;line-height:18px}
+.jrkjcc p.p1 em{color:#999}
+.jrkjcc p.p1 a{float:right;width:38px;height:18px;text-align:center;line-height:18px;color:#145fab;background: url(../images/159/dw_15.jpg)}
+.jrkjcc p.p2{padding-top:5px;}
+.jrkjcc p.p2 span{color:#e52e06}
+.jrkjcc p.p3{padding-top:8px;}
+.jrkjcc p.p3 b{color:#ff6600;font-weight:bold;font-size:12px; font-family:Arial;margin-right:7px;display:block;float:left;}
+.jrkjcc p.p3 b.blue{color:#145fab}
+.jrkjcc p.p4{padding-top:5px}
+.jrkjcc p.p4 span{float:left}
+.jrkjcc p.p4 a,.jrkjcc p.p3 a{float:right;width:auto;color:#145fab}
+.jrkjcc a:hover{color:#ff6600; text-decoration:underline}
+.jrkjab{position:absolute;bottom:0;left:0;border-top:1px solid #ddd;}
+.jrkjab span{background: none repeat scroll 0 0 #eee;border-right: 1px solid #FFFFFF;cursor: pointer;display: block;float: left; height: 20px;opacity: 0.8;width: 121px;}
+.jrkjab img{display:block;margin:4px auto;width:16px;height:12px}
+.ad_nav{height:27px;line-height:27px;margin:0 auto;width:1005px}
+.ad_nav span{float:left;color:#888}
+.ad_nav span a{color:#444;margin:0 5px;}
+.ad_nav p{float:right;color:#888}
+.ad_nav p a{color:#444;margin:0 5px;}
+.ad_nav a:hover{color:#ff3300; text-decoration:underline}
+.android{width:1005px;height:2142px;margin:0px auto; background:url(../images/duiwai/ad_04.jpg)} 
+.android a{display:block;float:left;width:180px;height:75px;}
+.android a.a1{width:275px;height:55px;margin-top:12px;float:right}
+.ad_p1{padding:372px 0 0 440px;}
+.ad_p1 p{line-height:24px;color:#fff;height:24px;padding-bottom:65px}
+.ad_p1 p a{color:#fff; text-decoration:underline;height:auto}
+.foot{text-align:Center;color:#fff;line-height:24px;padding-top:17px}
+.foot a{color:#fff}
+.foot a:hover{ text-decoration:underline}

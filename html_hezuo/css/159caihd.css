@@ -1,0 +1,36 @@
+﻿@charset "utf-8";
+{margin:0;padding:0}
+body,h3,h4,h2,h1,h5,table,td,th,ul,li,ol,dd,dt,dl,div,span,p,b,i,s,em,thead,tbody,font,select,input,option{margin:0;padding:0}
+body{font-size:12px; font-family: Arial,simsun; background-color:#6f0100}
+a{text-decoration:none;color:#333333;outline:none;cursor:pointer} 
+em,i,s,b{ font-style:normal; text-decoration:none}
+img{border:none;}
+body a{outline:none;blr:expression(this.onFocus=this.blur());}
+div,ul,li{ list-style-type:none;overflow:hidden}
+.ac_tv{width:1003px;margin:0 auto; background-image:url(../images/cdbg/zd_bg.png);height:1293px}
+.ac_top{padding:5px 0 0 47px;height:40px}
+.z_t_lg,.ac_zc a,.ac_cj a{background: url(../images/cdbg/zc_ac.png) 0 0 no-repeat transparent;display:block}
+.z_t_lg{width:92px;height:40px;float:left; background-position:0 -8px}
+.ac_top p{line-height:40px;color:#fff;font-size:12px}
+.ac_top p a{color:#fff; font-family:"微软雅黑";margin:0 5px}
+.ac_top p a:hover,.ac_ft p a:hover{ text-decoration:underline}
+.ac_zc{padding:486px 0 0 681px;clear:both;height:60px}
+.ac_zc a{width:160px;height:60px; background-position:-16px -66px}
+.ac_zc a:hover{background-position:-198px -66px}
+.ac_p1{height:160px}
+.ac_p1 p{line-height:25px;color:#fff;padding:35px 0 0 296px;}
+.ac_p1 p.p2{padding-top:22px}
+.ac_p1 p.p3{padding-top:24px}
+.ac_cj{padding:110px 0 0 300px}
+.ac_p2{width:350px;float:left;padding-top:33px}
+.ac_p2 p{color:#fff;line-height:17px;}
+.ac_p2 p.p1,.ac_p2 p.p3{color:#000d14; font-family:"微软雅黑";padding-top:14px;font-size:14px}
+.ac_cj a{width:160px;height:60px; background-position:-12px -150px;float:left;margin-left:32px}
+.ac_cj a:hover{ background-position:-12px -227px}
+.ac_xz{clear:both;padding:20px 0 0 260px;width:900px;margin:0 auto}
+.ac_xz span{color:#fff;font-weight:bold;float:left; font-family:"微软雅黑";line-height:28px;font-weight:bold;font-size:14px}
+.ac_xz p{line-height:28px;color:#be8c8c;float:left;padding-left:15px}
+.ac_ft{height:100px; background-color:#9f0100;width:100%;margin-top:45px}
+.ac_ft p{padding-top:25px;line-height:25px;color:#ff490f;text-align:center}
+.ac_ft p a{color:#ff490f}
+#rollText{width:300px}

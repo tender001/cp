@@ -1,0 +1,541 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="/css/159cai3.css" rel="stylesheet" type="text/css" />
+<link href="/css/newcai.css" rel="stylesheet" type="text/css" />
+<link href="/css/new159cai.css" rel="stylesheet" type="text/css" />
+<title>股城网彩票-专业安全的网上购彩网站_彩票投注_彩票合买平台</title>
+<meta name="keywords"
+	content="福利彩票，福彩，体育彩票，体彩，足彩，网上买彩票，彩票合买，彩票开奖，彩票走势图，彩票预测" />
+<meta name="description"
+	content="股城网彩票为彩民提供专业的彩票网上投注、合买、开奖结果、走势分析、比分直播等服务，覆盖福彩、体彩、足彩、竞彩、快频等彩种。股城网彩票上投注最佳选择" />
+<script type="text/javascript" src="/public/jq.js"></script>
+<script type="text/javascript" src="/public/menu.js"></script>
+<script type="text/javascript" src="/public/159cp.js"></script>
+<script type="text/javascript" src="/public/chklogin.js"></script>
+<script type="text/javascript" src="/public/jq2.js"></script>
+<script type="text/javascript" src="/public/tab.js"></script>
+<script type="text/javascript" src="/index/index.js"></script>
+<style type="text/css">
+.focus {
+	width: 520px;
+	height: 220px;
+	margin-bottom: 10px;
+	position: relative;
+}
+
+.frame {
+	position: relative;
+	width: 520px;
+	height: 220px;
+	overflow: hidden;
+}
+
+.controls {
+	bottom: 5px;
+	float: right;
+	height: 20px;
+	overflow: hidden;
+	position: absolute;
+	right: 5px;
+	z-index: 9999;
+}
+
+.off {
+	text-align: center;
+	float: left;
+	width: 105px;
+}
+
+.off .dot_list {
+	display: inline-block;
+	width: 14px;
+	height: 14px;
+	margin: 2px;
+	overflow: hidden;
+	border: 1px solid #CCCCCC;
+	background: #FFFFFF;
+	color: #333333;
+	cursor: pointer;
+}
+
+.off .current {
+	border-color: #EE0000;
+	background: #EE0000;
+	color: #FFFFFF;
+}
+
+#btn_prev,#btn_next {
+	display: none;
+}
+
+.btn_prevOff2,.btn_prevOn2,.btn_nextOff2,.btn_nextOn2 {
+	width: 20px;
+	height: 20px;
+	float: left;
+	display: block;
+	cursor: pointer;
+}
+
+.btn_prevOff2 {
+	background-position: 0 -188px;
+	margin-right: 11px;
+}
+
+.btn_nextOff2 {
+	background-position: -27px -188px;
+	margin-left: 8px;
+}
+
+.btn_prevOn2 {
+	background-position: 0 -188px;
+	margin-right: 11px;
+}
+
+.btn_nextOn2 {
+	background-position: -27px -188px;
+	margin-left: 8px;
+}
+
+ul {
+	list-style: none;
+	margin: 0px;
+	padding: 0px
+}
+
+.click_out {
+	margin-left: 5px;
+	float: left;
+	text-align: center;
+	height: 16px;
+	line-height: 16px;
+	width: 16px;
+	background: #fff;
+	color: #444;
+	font-weight: bold;
+	font-size: 12px;
+	cursor: pointer;
+	_display: inline-block;
+}
+
+.click_over {
+	margin-left: 5px;
+	float: left;
+	text-align: center;
+	height: 16px;
+	line-height: 16px;
+	width: 16px;
+	background: #cc0000;
+	color: #fff;
+	font-weight: bold;
+	font-size: 12px;
+	cursor: pointer;
+	_display: inline-block;
+}
+
+#header {
+	background-color: #FFFDF3;
+	padding-bottom: 5px
+}
+
+.index_ta {
+	display: block;
+	margin: 0 auto;
+	width: 1590px;
+	height: 155px;
+}
+
+#footer {
+	margin-top: 0
+}
+</style>
+</head>
+<body>
+	<!-- 头部内容 -->
+	<!--#include virtual="/ee/gucheng/header.html"-->
+	<!-- 头部内容 -->
+	<div id="naver">
+		<div class="nav_re">
+			<div class="nav">
+				<h2>
+					选择彩种<a href="/"></a>
+				</h2>
+				<ul>
+					<li><a href="/dating/" target="_blank">购彩大厅</a></li>
+					<li class="sup_x"></li>
+					<li><a href="/hemai/" target="_blank">合买中心</a></li>
+					<li class="sup_x"></li>
+					<li><a href="/guoguan/" target="_blank">过关统计</a></li>
+					<li class="sup_x"></li>
+					<li><a href="/kaijiang/" target="_blank">全国开奖</a></li>
+					<li class="sup_x"></li>
+					<li class="li_a"><a href="http://zst.159cai.com/"
+						target="_blank">走势图</a></li>
+					<li class="sup_x"></li>
+					<li class="zqzx"><a href="http://odds.159cai.com/"
+						target="_blank" class="a1">足球中心</a></li>
+					<li class="sup_x"></li>
+					<li class="bfzb"><a href="http://bf.159cai.com/"
+						target="_blank" class="a1">比分直播</a></li>
+				</ul>
+			</div>
+			<div id="zq_xl">
+				<ul>
+					<a href="http://odds.159cai.com/" target="_blank"><li>即时赔率</li></a>
+					<a href="http://info.159cai.com/" target="_blank"><li>足球资料</li></a>
+					<a href="http://info.159cai.com/index.php?controller=lqindex"
+						target="_blank"><li class="last">篮球资料</li></a>
+				</ul>
+			</div>
+			<div id="bf_xl">
+				<ul>
+					<a href="http://bf.159cai.com/jingcai" target="_blank"><li>竞彩足球</li></a>
+					<a href="http://bf.159cai.com/danchang" target="_blank"><li>北京单场</li></a>
+					<a href="http://bf.159cai.com/zucai" target="_blank"><li>(老)足彩</li></a>
+					<a href="http://bf.159cai.com/basketball" target="_blank"><li
+						class="last">竞彩篮球</li></a>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+	<div id="container" style="background:#FFFDF3">
+		<div class="lefter">
+			<!-- 彩种列表开始 -->
+			<!--#include virtual="/cc/lot_nav.html"-->
+			<!-- 彩种列表结束 -->
+		</div>
+
+		<div class="righter">
+			<div class="rig_t">
+				<div class="rig_t_left">
+					<div class="news_img">
+						<div class="focus cm_left">
+							<div style="height:220px;  background:#EBEBEB; position:relative"
+								id="flash_outer">
+								<!--首页广告图-->
+								<!--#include virtual="/dedeinc/index_imglist.html"-->
+								<!--首页广告图结束-->
+							</div>
+
+							<script>
+								$(document)
+										.ready(
+												function() {
+													var len = $("#flash_num>li").length;
+													var index = 1;
+													var int;
+													$("#flash_num>li")
+															.removeClass()
+															.addClass(
+																	"click_out")
+															.eq(0)
+															.toggleClass(
+																	"click_out")
+															.addClass(
+																	"click_over");
+													$("#codes b input")
+															.keyup(
+																	function() {
+
+																		if (isNaN($(
+																				this)
+																				.val())) {
+																			$(
+																					this)
+																					.val(
+																							"");
+																		} else if ($(
+																				this)
+																				.val() > 33
+																				|| $(
+																						this)
+																						.val() < 1) {
+																			$(
+																					this)
+																					.val(
+																							"");
+																		}
+																	})
+													$("#red_code")
+															.keyup(
+																	function() {
+																		if ($(
+																				this)
+																				.val() > 16
+																				|| $(
+																						this)
+																						.val() < 1) {
+																			$(
+																					this)
+																					.val(
+																							"");
+																		}
+																	})
+													function showSys(num) //图片切换函数
+													{
+														$("#flash_num>li")
+																.removeClass()
+																.addClass(
+																		"click_out")
+																.eq(num)
+																.toggleClass(
+																		"click_out")
+																.addClass(
+																		"click_over");
+														$("#flash_pic>a")
+																.fadeOut().eq(
+																		num)
+																.fadeIn();
+													}
+													function ziDong() //自动切换
+													{
+														if (index == len) {
+															index = 0;
+														}
+														showSys(index);
+														index = index + 1;
+													}
+													int = setInterval(ziDong,
+															5000);
+													$("#flash_num>li")
+															.mouseover(
+																	function() //点击切换
+																	{
+																		var index_num = $(
+																				"#flash_num>li")
+																				.index(
+																						this);
+																		showSys(index_num);
+																		index = index_num + 1; //改变全局变量的值，以便鼠标移开的时候能够衔接上
+																		//$(".click_out").removeClass("click_over").eq(index).addClass("click_over");
+																		//$(".click_out").eq(index).removeClass().addClass("click_over");
+																		//alert(index);
+																	});
+													$("#flash_outer")
+															.mouseover(
+																	function() //移动到上面时停止自动切换
+																	{
+																		clearInterval(int);
+																	});
+													$("#flash_outer")
+															.mouseout(
+																	function() //移开时继续自动切换
+																	{
+																		int = setInterval(
+																				ziDong,
+																				5000);
+																	});
+												});
+							</script>
+						</div>
+					</div>
+					<!-- 快速购彩开始 -->
+					<div class="ksget">
+						<div class="ksgtab">
+							<b class="cur">双色球</b><b>大乐透</b><a href="#">玩法说明</a>
+						</div>
+						<div class="kstbm" style="display:none">
+							<div class="kstlog">
+								<img src="/images/159/dw_06.jpg" />2013142期
+							</div>
+							<div class="kstball">
+								<span><b>07</b><b>09</b><b>13</b><b>17</b><b>21</b><b>22</b><b
+									class="blue">10</b></span>
+								<p>
+									3000万滚存，<em>2元可中1500万</em>
+								</p>
+							</div>
+							<div class="kstbtn">
+								<a href="#" class="a1">机选</a><a href="#" class="a2">立即投注</a>
+								<p>11小时02分55秒后截止</p>
+							</div>
+						</div>
+						<div class="kstbm">
+							<div class="kstlog">
+								<img src="/images/159/dw_01.jpg" />2013142期
+							</div>
+							<div class="kstball">
+								<span><b>07</b><b>09</b><b>13</b><b>17</b><b>21</b><b
+									class="blue">22</b><b class="blue">10</b></span>
+								<p>3元可赢1600万</p>
+							</div>
+							<div class="kstbtn">
+								<a href="#" class="a1">机选</a><a href="#" class="a2">立即投注</a>
+								<p>11小时02分55秒后截止</p>
+							</div>
+						</div>
+					</div>
+					<!-- 快速购彩结束 -->
+					<!--首页资讯-->
+					<!--#include virtual="/dedeinc/index_cpzx.html"-->
+					<!--首页资讯结束-->
+
+				</div>
+				<div class="rig_t_right">
+					<div class="sy_gg">
+						<ul>
+							<li class="cur">网站公告</li>
+							<li style="border-right:none">赛事公告</li>
+						</ul>
+						<div class="gg_main">
+							<div>
+								<!--#include virtual="/dedeinc/index_gonggao.html"-->
+								<a href="/gonggao/" target="_blank" class="last">更多>></a>
+							</div>
+							<div style="display:none">
+								<!--#include virtual="/dedeinc/match_gonggao.html"-->
+								<a href="/matchgonggao/" target="_blank" class="last">更多>></a>
+							</div>
+						</div>
+					</div>
+					<div class="kjantou">
+						<h3>
+							<b class="cur" style="width:76px">今日开奖</b><b
+								style="border-left:1px solid #ddd;border-right:1px solid #ddd">竞技彩</b><b>数字彩</b>
+						</h3>
+						<div class="jrkjm">
+							<div class="jrkjc" style="display:none">
+								<div class="jrkjcc">
+									<p>
+										<a target="_blank" href="/ssq/kaijiang/">双色球</a><em>2014024期</em><i>开奖:21:30</i>
+									</p>
+									<p class="p1">
+										<em>销售中</em><a target="_blank" href="/ssq/">投注</a>
+									</p>
+									<p class="p2">
+										当前奖池奖金：<span>192,597,457</span>元
+									</p>
+								</div>
+								<div class="jrkjcc">
+									<p>
+										<a target="_blank" href="/3d/kaijiang/">福彩3D</a><em>2014057期</em><i>开奖:20:30</i>
+									</p>
+									<p class="p1">
+										<em>销售中</em><a target="_blank" href="/3d/">投注</a>
+									</p>
+								</div>
+								<div class="jrkjcc">
+									<p>
+										<a target="_blank" href="/p3/kaijiang/">排列三</a><em>2014057期</em><i>开奖:20:30</i>
+									</p>
+									<p class="p1">
+										<em>销售中</em><a target="_blank" href="/p3/">投注</a>
+									</p>
+								</div>
+								<div class="jrkjcc">
+									<p>
+										<a target="_blank" href="/p5/kaijiang/">排列五</a><em>2014057期</em><i>开奖:20:30</i>
+									</p>
+									<p class="p1">
+										<em>销售中</em><a target="_blank" href="/p5/">投注</a>
+									</p>
+								</div>
+							</div>
+							<div class="jrkjc" style="display:none">
+								<div class="jrkjcc">
+									<p>
+										<a target="_blank" href="/ssq/kaijiang/">胜负/任九</a><em>2014024期</em><i>03-05
+											23:10</i>
+									</p>
+									<p class="p3">
+										<b>1</b><b>1</b><b>1</b><b>1</b><b>1</b><b>1</b><b>1</b><b>1</b><b>1</b><b>1</b><b>1</b><b>1</b><b>1</b>
+									</p>
+									<p class="p4">
+										<span>一等奖：32注 254,567元</span><a href="#">详情</a>
+									</p>
+									<p class="p4">
+										<span>任选九：11119注 1,080元 </span><a href="#">详情</a>
+									</p>
+								</div>
+								<div class="jrkjcc">
+									<p>
+										<a target="_blank" href="/ssq/kaijiang/">进球彩</a><em>2014024期</em><i>03-05
+											23:10</i>
+									</p>
+									<p class="p3">
+										<b>1</b><b>1</b><b>1</b><b>1</b><b>1</b><b>1</b><b>1</b><b>1</b><b>1</b>
+									</p>
+									<p class="p4">
+										<span>一等奖：32注 254,567元</span><a href="#">详情</a>
+									</p>
+								</div>
+								<div class="jrkjcc">
+									<p>
+										<a target="_blank" href="/ssq/kaijiang/">半全场</a><em>2014024期</em><i>03-05
+											23:10</i>
+									</p>
+									<p class="p3">
+										<b>1</b><b>1</b><b>1</b><b>1</b><b>1</b><b>1</b><b>1</b><b>1</b><b>1</b>
+									</p>
+									<p class="p4">
+										<span>一等奖：32注 254,567元</span><a href="#">详情</a>
+									</p>
+								</div>
+
+							</div>
+							<div class="jrkjc">
+								<div class="jrkjcc">
+									<p>
+										<a target="_blank" href="/ssq/kaijiang/">双色球</a><em>2014024期</em><i>03-05
+											23:10</i>
+									</p>
+									<p class="p3">
+										<b>1</b><b>1</b><b>1</b><b>1</b><b>1</b><b>1</b><b
+											class="blue">1</b><a href="#">详情</a>
+									</p>
+									<p class="p2">每周二、四、日21:30开奖</p>
+								</div>
+								<div class="jrkjcc">
+									<p>
+										<a target="_blank" href="/3d/kaijiang/">福彩3D</a><em>2014057期</em><i>03-05
+											23:10</i>
+									</p>
+									<p class="p3">
+										<b>1</b><b>1</b><b>1</b><b>1</b><b>1</b><b>1</b><b
+											class="blue">1</b><a href="#">详情</a>
+									</p>
+									<p class="p2">每周二、四、日21:30开奖</p>
+								</div>
+								<div class="jrkjcc">
+									<p>
+										<a target="_blank" href="/p3/kaijiang/">排列三</a><em>2014057期</em><i>03-05
+											23:10</i>
+									</p>
+									<p class="p3">
+										<b>1</b><b>1</b><b>1</b><b>1</b><b>1</b><b>1</b><b
+											class="blue">1</b><a href="#">详情</a>
+									</p>
+									<p class="p2">每周二、四、日21:30开奖</p>
+								</div>
+								<div class="jrkjcc">
+									<p>
+										<a target="_blank" href="/p5/kaijiang/">排列五</a><em>2014057期</em><i>03-05
+											23:10</i>
+									</p>
+									<p class="p3">
+										<b>1</b><b>1</b><b>1</b><b>1</b><b>1</b><b>1</b><b
+											class="blue">1</b><a href="#">详情</a>
+									</p>
+									<p class="p2">每周二、四、日21:30开奖</p>
+								</div>
+							</div>
+							<div class="jrkjab">
+								<span><em><img src="/images/159/dw_03.jpg" /></em></span><span
+									style="border-right:1px solid #ddd"><em><img
+										src="/images/159/dw_18.jpg" /></em></span>
+							</div>
+						</div>
+					</div>
+
+				</div>
+			</div>
+
+		</div>
+	</div>
+
+	<!--#include virtual="/cc/homefooter.html"-->
+
+</body>
+</html>

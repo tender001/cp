@@ -1,0 +1,121 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>网上买彩票_账户中心_真实姓名绑定_股城网彩票</title>
+<meta name="keywords"
+	content="福利彩票，福彩，体育彩票，体彩，足彩，网上买彩票，彩票合买，彩票开奖，彩票走势图，************" />
+<meta name="description"
+	content="股城网彩票为彩民提供专业的彩票网上投注、合买、开奖结果、走势分析、比分直播等服务，覆盖福彩、体彩、足彩、竞彩、快频等彩种。股城网彩票上投注最佳选择！" />
+<link href="/css/159cai.css" rel="stylesheet" type="text/css" />
+<link href="/css/new159cai.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="/public/jq2.js"></script>
+<script type="text/javascript" src="/public/jq.js"></script>
+<script type="text/javascript" src="/public/menu.js"></script>
+<script type="text/javascript" src="/public/159cp.js"></script>
+<script type="text/javascript" src="/public/chklogin.js"></script>
+<script type="text/javascript" src="/account/js/trueinfo.js"></script>
+<style type="text/css">
+.card_bg table.acd_tb1 th {
+	line-height: 55px
+}
+
+.card_bg table.acd_tb1 {
+	margin-left: 20px;
+	_margin-left: 10px
+}
+
+.card_bg table.acd_tb1 td {
+	font-size: 12px;
+	color: #999;
+}
+
+.card_bg table.acd_tb1 td.tdv {
+	padding-left: 0px;
+	line-height: 18px;
+}
+</style>
+</head>
+<body>
+
+	<!--#include virtual="/cc/header.html"-->
+	<!--#include virtual="/cc/nav.html"-->
+
+
+	<div id="container">
+		<div class="breadcrumb">
+			<p>
+				您现在的位置：<a href="/" title="网上买彩票"><font>股城网彩票</font></a> > <a
+					href="/account/myaccount.html" title="我的账户"><font>我的账户</font></a> >
+				身份绑定
+			</p>
+		</div>
+		<div class="accoutmain">
+			<!--#include virtual="/cc/account/account_left.html"-->
+			<div class="accout_right">
+				<div class="card_bg" style="display:none;" id="info0">
+					<h1>身份证绑定</h1>
+					<table width="600" border="0" class="acd_tb1">
+						<colgroup>
+							<col width="90"/>
+								<col width="270"/>
+									<col width="240"/>
+						</colgroup>
+						<tr>
+							<th>真实姓名</th>
+							<td><input type="text" class="cur" value="" name="truename"
+								id="truename" /></td>
+							<td class="tdv">身份证是中奖提款的唯一凭证，注册后不可修改，请如实填写</td>
+						</tr>
+						<tr>
+							<th>身份证</th>
+							<td><input type="text" class="cur" value="" name="idnumber"
+								id="idnumber" /></td>
+							<td class="tdv">非常重要，注册后不可修改，提款时银行卡开户名必须是此处所填姓名。</td>
+						</tr>
+						<tr style="display: none;">
+							<th>登录密码</th>
+							<td><input name="password" class="cur" id="password"
+								type="password" value="" /></td>
+							<td></td>
+						</tr>
+						<tr>
+							<th>验证码</th>
+							<td><input type="text" class="text2" id="verifycode"
+								name="verifycode" maxlength="4" style="width:100px;" /><img
+								src="/rand.phpx" class="code-img" id="CheckCode" alt="点击刷新"
+								onclick="refreshVerify()" width="60" height="25" /></td>
+							<td></td>
+						</tr>
+						<tr>
+							<th>&nbsp;</th>
+							<td><a href="#" class="but" id="submit"></a></td>
+							<td></td>
+						</tr>
+					</table>
+				</div>
+				<div class="card_bg" style="display:none;" id="info1">
+					<h1>身份证已绑定</h1>
+					<table width="360" border="0">
+						<tr>
+							<th>真实姓名</th>
+							<td><span id="rname"></span></td>
+						</tr>
+						<tr>
+							<th>身份证</th>
+							<td><span id="idcard"></span></td>
+						</tr>
+						<tr>
+							<th>&nbsp;</th>
+							<td>(如需修改，请联系客服热线400-0696-159)</td>
+						</tr>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!--#include virtual="/cc/footer.html"-->
+
+</body>
+</html>
