@@ -21,7 +21,6 @@ function showinfo() {
 					$("#div2").hide();
 					$("#div3").show();
 					  $("#ybdphone").html(mobile);
-					
 				} else {
 					$("#div1").show();
 					$("#div3").hide();
@@ -68,6 +67,7 @@ function btnbind() {
 					$("#div2").show();
 					$("#div3").hide();
 					$("#sendphone").html($.trim($("#Phone").val()));
+					
 				} else {
 					showTips(desc);
 					$("#Phone").val("");
@@ -90,6 +90,7 @@ function sub() {
 	}
 	var data = "flag=1&yzm=" + $.trim($("#YZM").val()) + "&rnd="
 			+ Math.random();
+	
 	$.ajax({
 		url : $_user.url.bindyz,
 		type : "POST",
@@ -100,12 +101,44 @@ function sub() {
 			var code = R.code;
 			var desc = R.desc;
 			if (code == "0") {
-				var result = "phone"
-				location.href = "/user/showresult.html?result=" + result;
-			} else {
-				$("#conform").attr("disabled", false);
-				showTips(desc);
-			}
+				$("#phoneend").html($.trim($("#phoneNumber").val()));
+										$.ajax({
+									     url:'/phpu/p.phpx?fid=u_hdssq',
+									     type : "POST",
+											dataType : "json",
+									     success :function (xml){
+									    	 var R = xml.Resp;
+												var code = R.code;
+												var desc = R.desc;
+									    	
+									    	  
+								 		       if(code== "0"){
+								 		    	 var result = "phone"
+									  					location.href = "/user/showresult.html?result=" + result +"&code=" + R.code;
+								 		      }else if(code=="3"){
+									 		    	 var result = "phone"
+										  					location.href = "/user/showresult.html?result=" + result +"&code=" + R.code;
+									 		    	
+									 		       
+								 		       }else if(code=="4"){
+								 		    	 var result = "phone"
+									  					location.href = "/user/showresult.html?result=" + result +"&code=" + R.code;
+								 		    	
+								 		       }
+								 		       
+									     }
+									   });
+										
+									} else {
+										$("#conform").attr("disabled", false);
+										if (code=="1"){
+											$.postMsg('msg_login', function() {						
+												window.location.reload();			
+											});
+										}else{
+											showTips(desc);
+										}
+									}
 		},
 		error : function() {
 			$("#conform").attr("disabled", false);
