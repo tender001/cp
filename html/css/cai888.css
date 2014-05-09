@@ -655,7 +655,9 @@ a.t_a_dz:hover{background-image: url(../images/hm/hmt_05.gif)}
 .hdlist img{display:block;float:left;width:465px;height:170px}
 .hdlist p{line-height:18px;color:#777;width:388px;float:right}
 .hdlist p strong{display:block;height:36px;line-height:24px; font-family:"微软雅黑";color:#333;font-size:20px;}
-.hdlist a{display:block;color:#fff;text-align:Center;height:40px;line-height:40px;font-size:18px;width:118px;background:url(../images/cai888/acts_06.jpg);font-family:"微软雅黑"; position:absolute;right:0;bottom:25px}
+.hdlist p a{color:#145fab}
+.hdlist p a:hover{color:#ff0000}
+.hdlist a.a3{display:block;color:#fff;text-align:Center;height:40px;line-height:40px;font-size:18px;width:118px;background:url(../images/cai888/acts_06.jpg);font-family:"微软雅黑"; position:absolute;right:0;bottom:25px}
 .hdlist a.a1{background:url(../images/cai888/acta_03.jpg)}
 .hdlist a.a2{background:url(../images/cai888/acta_07.jpg)}
 .hdbom{background:url(../images/cai888/act_07.jpg) 0 0;height:78px}
