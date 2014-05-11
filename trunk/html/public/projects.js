@@ -2243,7 +2243,7 @@ showduizhen =function (lotid,expect,projid,type,codes,cp){
 								bet_str=bet_str.replaceAll("四","4("+spvalue.split(",")[4]+")");
 								bet_str=bet_str.replaceAll("五","5("+spvalue.split(",")[5]+")");
 								bet_str=bet_str.replaceAll("六","6("+spvalue.split(",")[6]+")");
-								bet_str=bet_str.replaceAll("七","7("+spvalue.split(",")[6]+")");
+								bet_str=bet_str.replaceAll("七","7("+spvalue.split(",")[7]+")");
 							}
 						}else{
 //							ggstr='<a href="/cpdata/pupload/'+lotid+'/'+expect+'/'+codes+'" target="_blank" class="a1">下载</a>';
