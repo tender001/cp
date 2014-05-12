@@ -62,11 +62,11 @@ Class( 'LineSelector', {
              Y.get(this).find(".h_br").removeClass("h_brx");
              Y.get(this).find(".label_cd").removeClass("h_brx");
 		} );
-		
-        $('#vsTable  tr[value] .h_br').mouseout(function (e, Y){//鼠标滑入滑出效果
-            var tdCSS=$(this).find('.chbox').attr("checked")==true?"h_br label_cd":"h_br h_brx";
-            $(this).attr("class",tdCSS);
-        });
+//		
+//        $('#vsTable  tr.vs_lines td.h_br').mouseout(function (e, Y){//鼠标滑入滑出效果
+//            var tdCSS=$(this).find('.chbox').attr("checked")==true?"h_br label_cd":"h_br h_brx";
+//            $(this).attr("class",tdCSS);
+//        });
 		// 点击隐藏某场比赛
 		this.vsIndex.onclick = function() {
 			Y.hideLine();
