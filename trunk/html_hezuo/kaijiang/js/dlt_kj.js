@@ -12,7 +12,9 @@ $_sys.grade_def.push([ 03, "直选,组三,组六" ]);
 $_sys.grade_def.push([ 04, "五星奖,三星奖,二星奖,一星奖,大小单双,二星组选,五星通选一等奖,五星通选二等奖,五星通选三等奖" ]);
 $_sys.grade_def.push([ 07, "一等奖,二等奖,三等奖,四等奖,五等奖,六等奖,七等奖" ]);
 
-$_sys.grade_def.push([ 50, "一等奖,二等奖,三等奖,四等奖,五等奖,六等奖,七等奖,八等奖,生肖乐,追加一等奖,追加二等奖,追加三等奖,追加四等奖,追加五等奖,追加六等奖,追加七等奖,,宝钻一等奖,宝钻二等奖,宝钻三等奖,宝钻四等奖" ]);
+
+$_sys.grade_def.push([ "50", "一等奖,二等奖,三等奖,四等奖,五等奖,六等奖,生肖乐,追加一等奖,追加二等奖,追加三等奖,追加四等奖,追加五等奖,,宝钻一等奖,宝钻二等奖,宝钻三等奖,宝钻四等奖" ]);
+$_sys.grade_def.push(["new50", "一等奖,二等奖,三等奖,四等奖,五等奖,六等奖,七等奖,八等奖,生肖乐,追加一等奖,追加二等奖,追加三等奖,追加四等奖,追加五等奖,追加六等奖,追加七等奖,,宝钻一等奖,宝钻二等奖,宝钻三等奖,宝钻四等奖" ]);
 $_sys.grade_def.push([ 51, "一等奖,二等奖,三等奖,四等奖,五等奖,六等奖" ]);
 $_sys.grade_def.push([ 52, "一等奖" ]);
 $_sys.grade_def.push([ 53, "直选,组三,组六" ]);
@@ -29,22 +31,23 @@ $_sys.grade_def2.push([01,'<font color="red">6</font>+<font color="blue">1</font
 		'<font color="red">2</font>+<font color="blue">1</font>/<font color="red">1</font>+<font color="blue">1</font>/<font color="red">0</font>+<font color="blue">1</font>']);
 $_sys.grade_def2.push([50,'<font color="red">5</font>+<font color="blue">2</font>,'+
                        '<font color="red">5</font>+<font color="blue">1</font>,'+
+                       '<font color="red">5</font>+<font color="blue">0</font>/<font color="red">4</font>+<font color="blue">2</font>,'+
+                       '<font color="red">4</font>+<font color="blue">1</font>/<font color="red">4</font>+<font color="blue">0</font>/<font color="red">3</font>+<font color="blue">2</font>,'+
+                       '<font color="red">3</font>+<font color="blue">1</font>/<font color="red">2</font>+<font color="blue">2</font>/<font color="red">3</font>+<font color="blue">0</font>,'+
+                       '<font color="red">2</font>+<font color="blue">1</font>/<font color="red">1</font>+<font color="blue">2</font>/<font color="red">0</font>+<font color="blue">2</font>']);
+$_sys.grade_def2.push(["new50",'<font color="red">5</font>+<font color="blue">2</font>,'+
+                       '<font color="red">5</font>+<font color="blue">1</font>,'+
                        '<font color="red">5</font>+<font color="blue">0</font>,'+
                        '<font color="red">4</font>+<font color="blue">2</font>,'+
                        '<font color="red">4</font>+<font color="blue">1</font>,'+
                        '<font color="red">4</font>+<font color="blue">0</font>/<font color="red">3</font>+<font color="blue">2</font>,'+
                        '<font color="red">3</font>+<font color="blue">1</font>/<font color="red">2</font>+<font color="blue">2</font>,'+
                        '<font color="red">3</font>+<font color="blue">0</font>/<font color="red">2</font>+<font color="blue">1</font>/<font color="red">1</font>+<font color="blue">2</font>/<font color="red">0</font>+<font color="blue">2</font>']);
-
 $_sys.zst_def = [];
-$_sys.zst_def.push([ 01, "http://zst.gucheng.159cai.com/" ]);
-$_sys.zst_def.push([ 03, "http://zst.gucheng.159cai.com/" ]);
-$_sys.zst_def.push([ 07, "http://zst.gucheng.159cai.com/" ]);
 
-$_sys.zst_def.push([ 50, "http://zst.gucheng.159cai.com/" ]);
-$_sys.zst_def.push([ 51, "http://zst.gucheng.159cai.com/" ]);
-$_sys.zst_def.push([ 52, "http://zst.gucheng.159cai.com/" ]);
-$_sys.zst_def.push([ 53, "http://zst.gucheng.159cai.com/" ]);
+
+$_sys.zst_def.push([ 50, "http://zst.159cai.com/" ]);
+
 Class({
 	ready: true,
     index:function (config){
@@ -307,31 +310,63 @@ var loadmain = function(lotid, expect) {
 
 					var html ='<ul><li>开奖时间：	<strong>'+atime.substr(0,10)+'</strong></li><li>兑奖截至：	<strong>'+etime.substr(0,10)+'</strong></li><li>奖池：	<font>'+ parseFloat(gpool).rmb(false, 0) +'</font>元</li><li>全国销量：	<font>'+ parseFloat(gsale).rmb(false, 0) +'</font>元</li></ul>';
 				    var kjdengji="";
-					var gname = $_sys.getgrade(lotid);
-					var gname2 = $_sys.getgrade2(lotid);
+				    
+					var gname = [];
+					var gname2 =[];
+					if(pid>2014051){
+						gname = $_sys.getgrade(lotid);
+					
+						gname2 = $_sys.getgrade2(lotid);
+					}else{
+						gname = $_sys.getgrade("new50");
+						gname2 = $_sys.getgrade2("new50");
+					}
 					var aginfo = ginfo.split(",");
 					var aninfo = ninfo.split(",");
+					if(aginfo.length<3){
+						aninfo=["-","-","-","-","-","-","-","-","-","-","-","-","-"];
+						aginfo=["-","-","-",200,10,5,"-","-","-","-",100,5]
+					}
+					
 					kjdengji='<table width="100%" border="0" cellpadding="0" cellspacing="0"> <thead><tr> <td colspan="3">奖项</td> <td>中奖注数(注)</td><td>每注奖金(元)</td> </tr>  </thead>';
 				    for (var i=0;i<aginfo.length && i < gname.length ;i++) {
 			    	
 				    	if(gname[i].length > 0){
+				    		if(pid>2014051){
+				    			kjdengji += ' <tr><td rowspan="2">'+gname[0]+'</td><td rowspan="2">'+gname2[0]+'</td><td>基本</td><td>'+aninfo[0]+'</td><td>'+(aginfo[0]=="-"?"-":parseFloat(aginfo[0]).rmb(false, 0))+'</td></tr>';
+				    			kjdengji += ' <tr><td>追加</td><td>'+aninfo[7]+'</td><td>'+(aginfo[7]=="-"?"-":parseFloat(aginfo[7]).rmb(false, 0))+'</td></tr>';
+				    			kjdengji += ' <tr><td rowspan="2">'+gname[1]+'</td><td rowspan="2">'+gname2[1]+'</td><td>基本</td><td>'+aninfo[1]+'</td><td>'+(aginfo[1]=="-"?"-":parseFloat(aginfo[1]).rmb(false, 0))+'</td></tr>';
+				    			kjdengji += ' <tr><td>追加</td><td>'+aninfo[8]+'</td><td>'+(aginfo[8]=="-"?"-":parseFloat(aginfo[8]).rmb(false, 0))+'</td></tr>';			    			
+				    			kjdengji += ' <tr><td rowspan="2">'+gname[2]+'</td><td rowspan="2">'+gname2[2]+'</td><td>基本</td><td>'+aninfo[2]+'</td><td>'+(aginfo[2]=="-"?"-":parseFloat(aginfo[2]).rmb(false, 0))+'</td></tr>';
+				    			kjdengji += ' <tr><td>追加</td><td>'+aninfo[9]+'</td><td>'+(aginfo[9]=="-"?"-":parseFloat(aginfo[9]).rmb(false, 0))+'</td></tr>';	
+				    			kjdengji += ' <tr><td rowspan="2">'+gname[3]+'</td><td rowspan="2">'+gname2[3]+'</td><td>基本</td><td>'+aninfo[3]+'</td><td>'+parseFloat(aginfo[3]).rmb(false, 0)+'</td></tr>';
+				    			kjdengji += ' <tr><td>追加</td><td>'+aninfo[10]+'</td><td>'+parseFloat(aginfo[10]).rmb(false, 0)+'</td></tr>';	
+				    			kjdengji += ' <tr><td rowspan="2">'+gname[4]+'</td><td rowspan="2">'+gname2[4]+'</td><td>基本</td><td>'+aninfo[4]+'</td><td>'+parseFloat(aginfo[4]).rmb(false, 0)+'</td></tr>';
+				    			kjdengji += ' <tr><td>追加</td><td>'+aninfo[11]+'</td><td>'+parseFloat(aginfo[11]).rmb(false, 0)+'</td></tr>';	
+				    			kjdengji += ' <tr><td rowspan="2">'+gname[5]+'</td><td rowspan="2">'+gname2[5]+'</td><td>基本</td><td>'+aninfo[5]+'</td><td>'+parseFloat(aginfo[5]).rmb(false, 0)+'</td></tr>';
+				    			kjdengji += ' <tr></tr>';	
+				    			break;
+				    		}else{
+				    			kjdengji += ' <tr><td rowspan="2">'+gname[0]+'</td><td rowspan="2">'+gname2[0]+'</td><td>基本</td><td>'+aninfo[0]+'</td><td>'+parseFloat(aginfo[0]).rmb(false, 0)+'</td></tr>';
+				    			kjdengji += ' <tr><td>追加</td><td>'+aninfo[9]+'</td><td>'+parseFloat(aginfo[9]).rmb(false, 0)+'</td></tr>';
+				    			kjdengji += ' <tr><td rowspan="2">'+gname[1]+'</td><td rowspan="2">'+gname2[1]+'</td><td>基本</td><td>'+aninfo[1]+'</td><td>'+parseFloat(aginfo[1]).rmb(false, 0)+'</td></tr>';
+				    			kjdengji += ' <tr><td>追加</td><td>'+aninfo[10]+'</td><td>'+parseFloat(aginfo[10]).rmb(false, 0)+'</td></tr>';			    			
+				    			kjdengji += ' <tr><td rowspan="2">'+gname[2]+'</td><td rowspan="2">'+gname2[2]+'</td><td>基本</td><td>'+aninfo[2]+'</td><td>'+parseFloat(aginfo[2]).rmb(false, 0)+'</td></tr>';
+				    			kjdengji += ' <tr><td>追加</td><td>'+aninfo[11]+'</td><td>'+parseFloat(aginfo[11]).rmb(false, 0)+'</td></tr>';	
+				    			kjdengji += ' <tr><td rowspan="2">'+gname[3]+'</td><td rowspan="2">'+gname2[3]+'</td><td>基本</td><td>'+aninfo[3]+'</td><td>'+parseFloat(aginfo[3]).rmb(false, 0)+'</td></tr>';
+				    			kjdengji += ' <tr><td>追加</td><td>'+aninfo[12]+'</td><td>'+parseFloat(aginfo[12]).rmb(false, 0)+'</td></tr>';	
+				    			kjdengji += ' <tr><td rowspan="2">'+gname[4]+'</td><td rowspan="2">'+gname2[4]+'</td><td>基本</td><td>'+aninfo[4]+'</td><td>'+parseFloat(aginfo[4]).rmb(false, 0)+'</td></tr>';
+				    			kjdengji += ' <tr><td>追加</td><td>'+aninfo[13]+'</td><td>'+parseFloat(aginfo[13]).rmb(false, 0)+'</td></tr>';	
+				    			kjdengji += ' <tr><td rowspan="2">'+gname[5]+'</td><td rowspan="2">'+gname2[5]+'</td><td>基本</td><td>'+aninfo[5]+'</td><td>'+parseFloat(aginfo[5]).rmb(false, 0)+'</td></tr>';
+				    			kjdengji += ' <tr><td>追加</td><td>'+aninfo[14]+'</td><td>'+parseFloat(aginfo[14]).rmb(false, 0)+'</td></tr>';	
+				    			kjdengji += ' <tr><td rowspan="2">'+gname[6]+'</td><td rowspan="2">'+gname2[6]+'</td><td>基本</td><td>'+aninfo[6]+'</td><td>'+parseFloat(aginfo[6]).rmb(false, 0)+'</td></tr>';
+				    			kjdengji += ' <tr><td>追加</td><td>'+aninfo[15]+'</td><td>'+parseFloat(aginfo[15]).rmb(false, 0)+'</td></tr>';	
+				    			kjdengji += ' <tr><td>'+gname[7]+'</td><td colspan="2">'+gname2[7]+'</td><td>'+aninfo[7]+'</td><td>'+parseFloat(aginfo[7]).rmb(false, 0)+'</td></tr>';
+				    			break;
+				    		}
+			    			
 			    	
-			    			kjdengji += ' <tr><td rowspan="2">'+gname[0]+'</td><td rowspan="2">'+gname2[0]+'</td><td>基本</td><td>'+aninfo[0]+'</td><td>'+parseFloat(aginfo[0]).rmb(false, 0)+'</td></tr>';
-			    			kjdengji += ' <tr><td>追加</td><td>'+aninfo[9]+'</td><td>'+parseFloat(aginfo[9]).rmb(false, 0)+'</td></tr>';
-			    			kjdengji += ' <tr><td rowspan="2">'+gname[1]+'</td><td rowspan="2">'+gname2[1]+'</td><td>基本</td><td>'+aninfo[1]+'</td><td>'+parseFloat(aginfo[1]).rmb(false, 0)+'</td></tr>';
-			    			kjdengji += ' <tr><td>追加</td><td>'+aninfo[10]+'</td><td>'+parseFloat(aginfo[10]).rmb(false, 0)+'</td></tr>';			    			
-			    			kjdengji += ' <tr><td rowspan="2">'+gname[2]+'</td><td rowspan="2">'+gname2[2]+'</td><td>基本</td><td>'+aninfo[2]+'</td><td>'+parseFloat(aginfo[2]).rmb(false, 0)+'</td></tr>';
-			    			kjdengji += ' <tr><td>追加</td><td>'+aninfo[11]+'</td><td>'+parseFloat(aginfo[11]).rmb(false, 0)+'</td></tr>';	
-			    			kjdengji += ' <tr><td rowspan="2">'+gname[3]+'</td><td rowspan="2">'+gname2[3]+'</td><td>基本</td><td>'+aninfo[3]+'</td><td>'+parseFloat(aginfo[3]).rmb(false, 0)+'</td></tr>';
-			    			kjdengji += ' <tr><td>追加</td><td>'+aninfo[12]+'</td><td>'+parseFloat(aginfo[12]).rmb(false, 0)+'</td></tr>';	
-			    			kjdengji += ' <tr><td rowspan="2">'+gname[4]+'</td><td rowspan="2">'+gname2[4]+'</td><td>基本</td><td>'+aninfo[4]+'</td><td>'+parseFloat(aginfo[4]).rmb(false, 0)+'</td></tr>';
-			    			kjdengji += ' <tr><td>追加</td><td>'+aninfo[13]+'</td><td>'+parseFloat(aginfo[13]).rmb(false, 0)+'</td></tr>';	
-			    			kjdengji += ' <tr><td rowspan="2">'+gname[5]+'</td><td rowspan="2">'+gname2[5]+'</td><td>基本</td><td>'+aninfo[5]+'</td><td>'+parseFloat(aginfo[5]).rmb(false, 0)+'</td></tr>';
-			    			kjdengji += ' <tr><td>追加</td><td>'+aninfo[14]+'</td><td>'+parseFloat(aginfo[14]).rmb(false, 0)+'</td></tr>';	
-			    			kjdengji += ' <tr><td rowspan="2">'+gname[6]+'</td><td rowspan="2">'+gname2[6]+'</td><td>基本</td><td>'+aninfo[6]+'</td><td>'+parseFloat(aginfo[6]).rmb(false, 0)+'</td></tr>';
-			    			kjdengji += ' <tr><td>追加</td><td>'+aninfo[15]+'</td><td>'+parseFloat(aginfo[15]).rmb(false, 0)+'</td></tr>';	
-			    			kjdengji += ' <tr><td>'+gname[7]+'</td><td colspan="2">'+gname2[7]+'</td><td>'+aninfo[7]+'</td><td>'+parseFloat(aginfo[7]).rmb(false, 0)+'</td></tr>';
-			    			break;
+			    		
 			    			}
 				    	}
 			
@@ -344,29 +379,29 @@ var loadmain = function(lotid, expect) {
 				    if(lotid==50){
 						
 						
-						$("title").text("大乐透"+expect+"期开奖结果-大乐透开奖公告-全国彩票开奖-159彩票网");
+						$("title").text("大乐透"+expect+"期开奖结果-大乐透开奖公告-全国彩票开奖-古城网彩票");
 						$("meta[name='keywords']").attr("content","大乐透"+expect+"大乐透"+expect+"期，大乐透"+expect+"开奖结果，大乐透"+expect+"期");
-						$("meta[name='description']").attr("content","159彩票网大乐透开奖频道为您提供半全场"+expect+"，大乐透"+expect+"期，大乐透"+expect+"期，大乐透"+expect+"开奖结果")
+						$("meta[name='description']").attr("content","古城网彩票大乐透开奖频道为您提供半全场"+expect+"，大乐透"+expect+"期，大乐透"+expect+"期，大乐透"+expect+"开奖结果")
 						
 					}else if(lotid==07){
-						$("title").text("七乐彩"+expect+"期开奖结果-七乐彩开奖公告-全国彩票开奖-159彩票网");
+						$("title").text("七乐彩"+expect+"期开奖结果-七乐彩开奖公告-全国彩票开奖-古城网彩票");
 						$("meta[name='keywords']").attr("content","七乐彩"+expect+"七乐彩"+expect+"期，七乐彩"+expect+"开奖结果，七乐彩"+expect+"期");
 						$("meta[name='description']").attr("content","七乐彩"+expect+"，七乐彩"+expect+"期，七乐彩"+expect+"期，七乐彩"+expect+"开奖结果")
 					}
 						
 					else if(lotid==01){
-							$("title").text("双色球"+expect+"期开奖结果-双色球开奖公告-全国彩票开奖-159彩票网");
+							$("title").text("双色球"+expect+"期开奖结果-双色球开奖公告-全国彩票开奖-古城网彩票");
 							$("meta[name='keywords']").attr("content","双色球"+expect+"双色球"+expect+"期，双色球"+expect+"开奖结果，双色球"+expect+"期");
 							$("meta[name='description']").attr("content","双色球"+expect+"，双色球"+expect+"期，双色球"+expect+"期，双色球"+expect+"开奖结果")
 						
 					}else if(lotid==03){
-						$("title").text("3D"+expect+"期开奖结果-3D开奖公告-全国彩票开奖-159彩票网");
+						$("title").text("3D"+expect+"期开奖结果-3D开奖公告-全国彩票开奖-古城网彩票");
 						$("meta[name='keywords']").attr("content","3D"+expect+"3D"+expect+"期，3D"+expect+"开奖结果，3D"+expect+"期");
 						$("meta[name='description']").attr("content","3D"+expect+"，3D"+expect+"期，3D"+expect+"期，3D"+expect+"开奖结果")
 						
 						
 					}else if(lotid==51){
-						$("title").text("七星彩"+expect+"期开奖结果-七星彩开奖公告-全国彩票开奖-159彩票网");
+						$("title").text("七星彩"+expect+"期开奖结果-七星彩开奖公告-全国彩票开奖-古城网彩票");
 						$("meta[name='keywords']").attr("content","七星彩"+expect+"七星彩"+expect+"期，七星彩"+expect+"开奖结果，七星彩"+expect+"期");
 						$("meta[name='description']").attr("content","七星彩"+expect+"，七星彩"+expect+"期，七星彩"+expect+"期，七星彩"+expect+"开奖结果")
 						$("#kj_logo").html('<span class="qxc-logo"></span>');
@@ -374,13 +409,13 @@ var loadmain = function(lotid, expect) {
 						
 						
 					}else if(lotid==53){
-						$("title").text("排列三"+expect+"期开奖结果-排列三开奖公告-全国彩票开奖-159彩票网");
+						$("title").text("排列三"+expect+"期开奖结果-排列三开奖公告-全国彩票开奖-古城网彩票");
 						$("meta[name='keywords']").attr("content","排列三"+expect+"排列三"+expect+"期，排列三"+expect+"开奖结果，排列三"+expect+"期");
 						$("meta[name='description']").attr("content","排列三"+expect+"，排列三"+expect+"期，排列三"+expect+"期，排列三"+expect+"开奖结果")
 						
 					}
 					else if(lotid==52){
-						$("title").text("排列五"+expect+"期开奖结果-排列五开奖公告-全国彩票开奖-159彩票网");
+						$("title").text("排列五"+expect+"期开奖结果-排列五开奖公告-全国彩票开奖-古城网彩票");
 						$("meta[name='keywords']").attr("content","排列五"+expect+"排列五"+expect+"期，排列五"+expect+"开奖结果，排列五"+expect+"期");
 						$("meta[name='description']").attr("content","排列五"+expect+"，排列五"+expect+"期，排列五"+expect+"期，排列五"+expect+"开奖结果")
 						
