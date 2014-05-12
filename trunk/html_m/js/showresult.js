@@ -2,13 +2,18 @@ function sresult(){
 	var result = location.search.getParam('result');
 	var code = location.search.getParam('code');
 	if(result == "idcard"){
-		$("#div2").hide();
+		if(code == "5"){
+			$("#div2").show();
+		}
 	}else if(result =="code"){
 		$("#div1").show();
 	}else if(result =="zhuce"){
 		$("#div3").show();
 	}else if(result =="phone"){
-		$("#div4").show();
+		if(code == "0"){
+			$("#div4").show();
+		}
+		
 	}else if(result =="bdbank"){
 		$("#div5").show();
 	}else if(result =="tikuan"){
