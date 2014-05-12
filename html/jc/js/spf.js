@@ -878,7 +878,7 @@
     	spf:function(data){
     		 var html = [];
     		 var tableTpl=['',//0对阵头
-		           '<div class=dc_hs style="text-align: left; padding-left: 10px;"><strong>{$enddate} {$weekday} </strong>[12:00 -- 次日 12:00] <b><span id=num{$num} class="red">num{$num}</span>场比赛可投注</b> <a href="javascript:void 0">隐藏<s class=c_up></s></a> </div>',//1按天分类
+		           '<div class=dc_hs style="text-align: left; padding-left: 10px;"><strong>{$enddate} {$weekday}</strong>[12:00 -- 次日 12:00] <b><span id=num{$num} class="red">num{$num}</span>场比赛可投注</b> <a href="javascript:void 0">隐藏<s class=c_up></s></a> </div>',//1按天分类
 		           '<table id=d_{$enddate} class=dc_table border=0 cellspacing=0 cellpadding=0 width="100%" onselectstart="return false">'+
 		           '<colgroup>'+
 		           '<col width="45"><col width="64"><col width="64"><col width="154"><col width="62"><col width="156"><col width="32"><col width="118">'+
@@ -942,7 +942,7 @@
     				num=0;
     				row.num=numstr.length;
     				mathdate[mathdate.length]=row.enddate;
-//    				row.weekday='周'+wk[Y.getDate(row.enddate).getDay()];
+    				row.weekday='周'+wk[Y.getDate(row.enddate).getDay()];
     				html[html.length] = mathdate.length>1?(tableTpl[5]+tableTpl[1].tpl(row)+tableTpl[2]):tableTpl[1].tpl(row)+tableTpl[2];
     			};
     			row.index=row.mid;
