@@ -101,7 +101,7 @@ function sub() {
 			var code = R.code;
 			var desc = R.desc;
 			if (code == "0") {
-				$("#phoneend").html($.trim($("#phoneNumber").val()));
+				//$("#phoneend").html($.trim($("#phoneNumber").val()));
 										$.ajax({
 									     url:'/phpu/p.phpx?fid=u_hdssq',
 									     type : "POST",
