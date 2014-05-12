@@ -77,7 +77,7 @@
 
 
 
-			<td style="border-right:1px solid #ccc" mark='unselect' class="unselect"><a >未选</a></td>
+			<td style="border-right:1px solid #ccc;cursor:pointer"" mark='unselect' class="unselect"><a >展开</a></td>
 			<td style="border-right:1px solid #ccc">
 				<div class="pjpl">
 					<span id="oh${match.itemid}" class="sp_w35 eng">${match.b3}</span>
