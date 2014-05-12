@@ -1315,10 +1315,12 @@ a.jc_mtz:hover, a.jc_mhm:hover{background-position:-110px 0}
 .dc_l_tl{float:left;padding-left:102px}
 .tdaa td{line-height:34px;height:34px;}
 .tdaa a{float:left;height:34px;width:50px;color:#333;}
+.tdaa .hhtdtk td a{height:32px;padding-top:2px}
 .tdaa a{background:url(/images/cai888/ban1.jpg) no-repeat scroll 100% bottom; }
 .tdaa a:hover{background:url(/images/cai888/ban3.jpg) 100% bottom no-repeat}
 .tdaa a.a1{background: url(/images/cai888/ban2.jpg) 100% bottom no-repeat;}
-.tdaa a.a2,.tdaa a.a2:hover{background:url(../images/cai888/ban4.jpg) 0 0 no-repeat;cursor:pointer;border-right:1px solid #7CBEBE;border-bottom:1px solid #7CBEBE;width:49px;height:33px}
+.tdaa  a.a2,.tdaa a.a2:hover{background:url(../images/cai888/ban4.jpg) 0 0 no-repeat;cursor:pointer;border-right:1px solid #7CBEBE;border-bottom:1px solid #7CBEBE;width:49px;height:33px}
+.tdaa .hhtdtk td a.a2,.tdaa .hhtdtk td a.a2:hover{background:url(../images/cai888/ban4.jpg) 0 0 no-repeat;cursor:pointer;border-right:1px solid #7CBEBE;border-bottom:1px solid #7CBEBE;width:49px;height:31px}
 .tdaa a:hover{color:#333}
 .unselect a{display:block;height:68px;width:60px;display:block;line-height:68px;color:#444}
 .tdaa a em{color: #1F5BA9;display: block;line-height: 16px;text-align: center;}
@@ -1326,7 +1328,7 @@ a.jc_mtz:hover, a.jc_mhm:hover{background-position:-110px 0}
 .hhtdtk{padding:5px}
 .tdaa td.hhtdtk{background:#fffeed}
 .tdaa .hhtdtk td{height:34px}
-.tdaa .hhtdtk td a{height:32px;padding-top:2px}
+
 .hhtdtk table{width:705px;border:1px solid #ddd;background:#fafafa;margin:0 auto;_width:710px}
 .unselecttd{cursor:pointer;}
 .unselect font{color:#ff0000;font-weight:100;font-size:12px}
