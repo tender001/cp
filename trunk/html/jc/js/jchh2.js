@@ -181,7 +181,7 @@ Class('Selector', {
 				a = Yobj.get(tr).find('td[mark=unselect]>a');
 				if(sel.size() == 0){
 					if (a.one().className.indexOf('unselecttdcur') > -1) {
-		            	a.removeClass('unselecttdcur').html('未选');
+		            	a.removeClass('unselecttdcur').html('展开');
 		            	Yobj.get(tr).next('tr').hide(); 
 		            }
 				}else{
@@ -1325,7 +1325,7 @@ Class('Buy', {
  		Yobj.get('#gobuy,#gohm').click(function (){
  			_self.ishm = this.id == 'gohm' ? 1 : 0;
  			 Y.get('#ishm').val(_self.ishm);//合买与代购
- 			Y.get('#beishu').val(Y.get('#bsInput').val());
+ 			Y.get('#beishu').val(Y.get('#bs').val());
  			if (_self.ishm){
              	Y.get("#project_form").attr("action", "/phpt/jc/step_11.phpx");
              }else{
@@ -1336,13 +1336,16 @@ Class('Buy', {
  				Y.get('#project_form').doProp('submit');
  			}
  		});
- 		
+ 		Yobj.createIntInput('#bs', function (e){//修改倍数
+            _self.bs = parseInt(this.value);
+			   _self.bschange();
+      }, Class.C('Max-BeiShu'));
  		this.get('#jjyh').click(function (){
  			_self.ishm = this.id == 'jjyh' ? 1 : 0;
  			if (_self.ishm){
              	//Y.get("#jjyh_form").attr("action", "jjyh_hh.html");
              }
- 			Y.get('#beishu').val(Y.get('#bsInput').val());
+ 			Y.get('#beishu').val(Y.get('#bs').val());
  			if (true === _self.check()) {
  				var ty=Y.get('#ggtypename').val().split('\串');
  				if(Y.get('#ggtypename').val().split(',').length>1){
