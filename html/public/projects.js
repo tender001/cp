@@ -1258,7 +1258,7 @@ var showview = function(lotid,projid){
 						
 					}else if (istate=="2" && bonus ==0 ){					
 						if(itype==0){
-							$("#cp_status").html(award ==0?'<div style=""><div class="hm_rpxq"><p class="hmreson"><strong>待开奖</strong><br>('+Y.getDate(castdate).format('MM-DD hh:mm:ss')+')</p> </div></div>':'<div style=""><div class="hm_rpxq"><p class="hmreson"><strong>未中奖</strong><br>('+Y.getDate(awarddate).format('MM-DD hh:mm:ss')+')</p> </div></div>');
+							$("#cp_status").html(award ==0?'<div style=""><div class="hm_rpxq"><p class="hmreson"><strong>待开奖</strong><br>('+(castdate==""?"":Y.getDate(castdate).format('MM-DD hh:mm:ss'))+')</p> </div></div>':'<div style=""><div class="hm_rpxq"><p class="hmreson"><strong>未中奖</strong><br>('+Y.getDate(awarddate).format('MM-DD hh:mm:ss')+')</p> </div></div>');
 						}else{
 							if(castdate==""||castdate===undefined){
 								$("#cp_status").html(award ==0?'<div style=""><div class="hm_rpxq"><p class="hmreson"><strong>已满员</strong><br></p> </div></div>':'<div style=""><div class="hm_rpxq"><p class="hmreson"><strong>未中奖</strong><br>('+Y.getDate(awarddate).format('MM-DD hh:mm:ss')+')</p> </div></div>');
