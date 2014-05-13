@@ -1603,7 +1603,7 @@ a.jcq_kcur {
 .deltr a{display:block;background:url(../images/cai888/del.png);width:16px;height:16px;margin:8px auto}
 a.a_catha, a.a_hm_buya{background: url("/images/cai888/jcbtn_03.jpg") no-repeat scroll 0 0;height:36px;line-height:36px;width:104px}
 a.a_catha:hover, a.a_hm_buya:hover{background-position:-110px 0}
-.tdlh{width:64px;position:relative;overflow:visible;z-index:9;height:34px}
+.tdlh{width:64px;position:relative;overflow:visible;z-index:9;height:34px;line-height:34px}
 .tdlh p{line-height:34px;}
 .tdab{position:absolute;left:-638px;top:34px;padding:5px 0px 5px 265px}
 .tdab td{border-left:1px solid #ddd}
