@@ -300,7 +300,7 @@ Class({
 		$("#div"+a).show();
 		
 		if(a==2){
-			var wait = 30; //设置秒数(单位秒) 
+			var wait = 60; //设置秒数(单位秒) 
 			for(var i=1;i<=wait;i++) { 
 			 window.setTimeout("P.sTimer("+i+")",i*1000); 
 			}
@@ -308,7 +308,7 @@ Class({
 	}
 	
 	,sTimer:function(num) { 
-		var wait = 30; //设置秒数(单位秒) 
+		var wait = 60; //设置秒数(单位秒) 
 		var secs = 0;
 		 if(num==wait)  { 
 		  $("#again").val("重新发送");
