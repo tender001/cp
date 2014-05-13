@@ -181,7 +181,7 @@ Class('Selector', {
 				a = Yobj.get(tr).find('td[mark=unselect]>a');
 				if(sel.size() == 0){
 					if (a.one().className.indexOf('unselecttdcur') > -1) {
-		            	a.removeClass('unselecttdcur').html('展开');
+		            	a.removeClass('unselecttdcur').html('收起');
 		            	Yobj.get(tr).next('tr').hide(); 
 		            }
 				}else{
@@ -280,7 +280,7 @@ Class('Selector', {
            		tag.html('<em  style="cursor:pointer">已选<font>'+vals.length+'</font>项</em>').addClass("unselecttdcur"); 
            	 }
             }else{
-           	 Y.get("td[mark=unselect]").html("<a>未选</a>").removeClass("unselecttdcur"); 
+           	 Y.get("td[mark=unselect]").html("<a>展开</a>").removeClass("unselecttdcur"); 
             }
         }
 	},
@@ -374,7 +374,7 @@ Class('Selector', {
 			var tr = _self.get(this).parent('tr').next('tr');
 			var a = _self.get(this);
             if ($(this).hasClass("unselecttdcur")) {
-            	a.removeClass('unselecttdcur').find("a").html('未选');
+            	a.removeClass('unselecttdcur').find("a").html('展开');
 //            	a.removeClass('cm_hhgg_bg_hover').find('em').prop('className', 'cm_jsbf_down');
                 tr.hide(); 
             }else{
