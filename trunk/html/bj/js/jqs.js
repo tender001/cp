@@ -48,7 +48,7 @@ Class( 'LineSelector', {
 //			this.children[4].style.backgroundColor = '#fee6ad';
 //			this.children[5].style.backgroundColor = '#fee6ad';
 //			this.children[14].style.backgroundColor = '#fee6ad';
-//			Y.get(this).find(".h_br").addClass("h_brx");
+			Y.get(this).find(".h_br").addClass("h_brx");
           	 Y.get(this).find(".label_cd").removeClass("h_brx");
 		}, function() {
 			this.children[0].style.backgroundColor = '';
