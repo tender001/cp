@@ -20,7 +20,8 @@ Class({
 				if (code == "0") {
 					var r = obj.Resp.row;
 					if(r.cagentseq == "") Y.alert("您还不是代理，没有推广链接");
-					$(".tgdiv > input").val("http://www.159cai.com/"+r.cagentseq);
+					$("#pcurl").val("http://www.159cai.com/"+r.cagentseq);
+					$("#murl").val("http://m.159cai.com/"+r.cagentseq);
 				} else {
 					if (code=="1"){
 						Y.postMsg('msg_login', function() {						
