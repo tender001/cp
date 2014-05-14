@@ -665,7 +665,7 @@ span.sz_a_l a.cur{background:url(../images/159/nx5s_11.jpg) repeat scroll 0 0 }
 }
 
 .mch_c_rc{
-    width: 140px;float:right
+    width: 152px;float:right
 }
 
 
@@ -755,7 +755,7 @@ span.suc_reg a.a3{color:#145fab;text-decoration:underline;margin-left:1px}
 .pagination .thisclass{background-color:#aaa;text-decoration:none;border:1px solid #999;color:#fff}
 .pagination .thisclass{color:#fff;cursor:default;padding:0 7px;border:1px solid #ddd;line-height:18px;height:18px;}
 .pagination span { line-height: 20px;padding-left:4px;}
-.pagina{width:450px}
+.pagina{width:auto}
 .lr_m{padding-left:8px}
 .pagina select{margin-top:1px}
 .cpxq_tan_1 a{top:12px;right:20px;}
