@@ -142,6 +142,17 @@ Class('Selector', {
 				stoper.hide();
 			}
 		});
+        this.get('#vsTable tr[mid]').hover( function() {
+			 Y.get(this).find(".h_br").addClass("h_brx");
+         	 Y.get(this).find(".label_cd").removeClass("h_brx");
+		}, function() {
+            Y.get(this).find(".h_br").removeClass("h_brx");
+            Y.get(this).find(".label_cd").removeClass("h_brx");
+		} );
+		
+       Y.get('#vsTable  tr[mid] .h_br').mouseout(function (e, Y){//鼠标滑入滑出效果
+       	Y.get(this).find(".label_cd").removeClass("h_brx");
+       });
 		//显隐周赛
 		box.find('div.dc_hs a').click(function (){
 			var html = '',
