@@ -348,10 +348,13 @@ Class('Loginer', {// 登陆器
                             	
                             	 $("#myfanli").show();
                             	 Y.get("#fzurl").click(function(){	
- 	        							copyurl(Y.get(".tgdiv > input").val());
+ 	        							copyurl(Y.get("#pcurl").val());
  	        						}
  	        					);
-                            	 
+                            	 Y.get("#fzurl2").click(function(){	
+	        							copyurl2(Y.get("#murl").val());
+	        						}
+	        					);
  	                    	 }
                              
 		                     this.setUserInfo(showText);
@@ -886,6 +889,18 @@ function copyurl(url){
     }else{
         window.getSelection();
         Y.getTip().show('#fzurl','<h5>您好，请选中地址用ctrl+c复制!</h5> <div id="fzurl_url">'+url+'</div>').setIco(7);
+        var sel=document.createRange();
+        sel.selectNode(Y.one('#fzurl_url'));
+        window.getSelection().addRange(sel);
+    }
+};
+function copyurl2(url){
+    if(window.clipboardData){
+        window.clipboardData.setData('Text',url);
+        Y.getTip().show('#fzurl2','<h5>复制成功</h5>',1200).setIco(6);
+    }else{
+        window.getSelection();
+        Y.getTip().show('#fzurl2','<h5>您好，请选中地址用ctrl+c复制!</h5> <div id="fzurl_url">'+url+'</div>').setIco(7);
         var sel=document.createRange();
         sel.selectNode(Y.one('#fzurl_url'));
         window.getSelection().addRange(sel);
