@@ -304,8 +304,8 @@ Class( 'shezhi', {
 			var len1 = inputs1.length;
 			for ( var i = 0; i < len1; i++) {
 				
-				if(Y.get("#" + inputs1[i]).val()>num){
-				
+				if(Y.get("#" + inputs1[i]).val()*1>num){
+					Y.get("#" + inputs1[i]).val(num);
 				}else{
 					Y.get("#" + inputs1[i]).val(num);
 				}
@@ -317,8 +317,8 @@ Class( 'shezhi', {
 			var len2 = inputs2.length;
 			for ( var i = 0; i < len2; i++) {
 				
-				if(Y.get("#" + inputs2[i]).val()>num){
-				
+				if(Y.get("#" + inputs2[i]).val()*1>num){
+					Y.get("#" + inputs2[i]).val(num);
 				}else{
 					Y.get("#" + inputs2[i]).val(num);
 				}
@@ -330,8 +330,8 @@ Class( 'shezhi', {
 			var len3 = inputs3.length;
 			for ( var i = 0; i < len3; i++) {
 				
-				if(Y.get("#" + inputs3[i]).val()>num){
-				
+				if(Y.get("#" + inputs3[i]).val()*1>num){
+					Y.get("#" + inputs3[i]).val(num);
 				}else{
 					Y.get("#" + inputs3[i]).val(num);
 				}
@@ -342,8 +342,8 @@ Class( 'shezhi', {
 			var len4 = inputs4.length;
 			for ( var i = 0; i < len4; i++) {
 				
-				if(Y.get("#" + inputs4[i]).val()>num){
-				
+				if(Y.get("#" + inputs4[i]).val()*1>num){
+					Y.get("#" + inputs4[i]).val(num);
 				}else{
 					Y.get("#" + inputs4[i]).val(num);
 				}
@@ -354,8 +354,8 @@ Class( 'shezhi', {
 			var len5 = inputs5.length;
 			for ( var i = 0; i < len5; i++) {
 				
-				if(Y.get("#" + inputs5[i]).val()>num){
-				
+				if(Y.get("#" + inputs5[i]).val()*1>num){
+					Y.get("#" + inputs5[i]).val(num);
 				}else{
 					Y.get("#" + inputs5[i]).val(num);
 				}
@@ -366,8 +366,8 @@ Class( 'shezhi', {
 			var len6 = inputs6.length;
 			for ( var i = 0; i < len6; i++) {
 				
-				if(Y.get("#" + inputs6[i]).val()>num){
-				
+				if(Y.get("#" + inputs6[i]).val()*1>num){
+					Y.get("#" + inputs6[i]).val(num);
 				}else{
 					Y.get("#" + inputs6[i]).val(num);
 				}
@@ -378,8 +378,8 @@ Class( 'shezhi', {
 			var len7 = inputs7.length;
 			for ( var i = 0; i < len7; i++) {
 				
-				if(Y.get("#" + inputs7[i]).val()>num){
-				
+				if(Y.get("#" + inputs7[i]).val()*1>num){
+					Y.get("#" + inputs7[i]).val(num);
 				}else{
 					Y.get("#" + inputs7[i]).val(num);
 				}
