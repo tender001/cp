@@ -40,14 +40,14 @@ reg = function(){
     	 showTips('两次输入的密码不一致,请确认');
          return;
      }
-	 if(!isPhone($.trim(phone)) && type == 0){
-    	 showTips('对不起，请输入正确的手机号码');
-         return;
-     }
-	 if(!isEmail($.trim(email)) && type == 1){
-    	 showTips('对不起，请输入正确的邮箱地址');
-         return;
-     }
+//	 if(!isPhone($.trim(phone)) && type == 0){
+//    	 showTips('对不起，请输入正确的手机号码');
+//         return;
+//     }
+//	 if(!isEmail($.trim(email)) && type == 1){
+//    	 showTips('对不起，请输入正确的邮箱地址');
+//         return;
+//     }
 	 if(rand.length != 4){
     	 $("#rand").focus();
     	 showTips('请输入正确的验证码!');
@@ -55,7 +55,7 @@ reg = function(){
      }
 	 var data = $_user.key.uid + "=" + encodeURIComponent($.trim(uname)) + "&"
 		+ $_user.key.pwd + "=" + encodeURIComponent($.trim(pwd)) + "&"
-		+ $_user.key.mobileNo + "=" + encodeURIComponent($.trim(phone)) + "&"
+//		+ $_user.key.mobileNo + "=" + encodeURIComponent($.trim(phone)) + "&"
 		+ $_user.key.mailAddr + "=" + encodeURIComponent($.trim(email)) + "&"
 		+ "yzm=" + rand;
      $.ajax({
