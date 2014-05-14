@@ -668,7 +668,7 @@ span.sz_a_l a.cur{background:url(../images/159/nx5s_11.jpg) repeat scroll 0 0 }
     width: 152px;float:right
 }
 
-
+.dc_l_tl .mie7{float:left}
 
 .vs_mchc p {
     clear: both;
@@ -1630,4 +1630,4 @@ a.jcq_q{background:none}
 .dc_r .box_m{background:#fff}
 table.co1 tbody td{padding:9px 0 8px}
 #main{position:relative}
-.dc_qq{display:inline;padding-left:120px}
+.dc_qq{float:right}
