@@ -29,16 +29,16 @@
 		</td>
 		<td>
 			<a class="black" title="${match.gn}" href="" target="_blank" id="gn${match.itemid}">
-				#if ($match.gn.length()>5)
-					${match.gn.substring(0,5)}
+				#if ($match.gn.length()>4)
+					${match.gn.substring(0,4)}
 				#else
 					${match.gn}
 				#end
 			</a> 
 			vs 
 			<a class="black" title="${match.hn}" href="" target="_blank" id="hn${match.itemid}">
-				#if ($match.hn.length()>5)
-					${match.hn.substring(0,5)}
+				#if ($match.hn.length()>4)
+					${match.hn.substring(0,4)}
 				#else
 					${match.hn}
 				#end
