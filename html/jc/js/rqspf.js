@@ -240,14 +240,14 @@
             });
             Y.get('#vsTable tr[isend=0]').hover(function (e, Y){//鼠标滑入滑出效果
                 
-                this.childNodes[0].style.backgroundColor = '#FEFECB';
-                this.childNodes[2].style.backgroundColor = '#FEFECB';
+                this.childNodes[0].style.backgroundColor = '#fffee6';
+                this.childNodes[2].style.backgroundColor = '#fffee6';
                 this.childNodes[3].className=this.childNodes[3].childNodes[0].childNodes[0].checked==true?"h_br label_cd":"h_br h_brx";
                 this.childNodes[4].className=this.childNodes[4].childNodes[0].checked==true?"h_br label_cd":"h_br h_brx";
                 this.childNodes[5].className=this.childNodes[5].childNodes[0].childNodes[0].checked==true?"h_br label_cd":"h_br h_brx";
-                this.childNodes[6].style.backgroundColor = '#FEFECB';
-                this.childNodes[7].style.backgroundColor = '#FEFECB';
-                this.childNodes[8].style.backgroundColor = '#FEFECB';
+                this.childNodes[6].style.backgroundColor = '#fffee6';
+                this.childNodes[7].style.backgroundColor = '#fffee6';
+                this.childNodes[8].style.backgroundColor = '#fffee6';
                 
             }, function (e, Y){
             	this.childNodes[0].style.backgroundColor = '';

@@ -212,13 +212,13 @@
                 }
             });
             Y.get('#vsTable tr[isend=0]').hover(function (e, Y){//鼠标滑入滑出效果
-            	this.children[0].style.backgroundColor = '#FEFECB';
-    			this.children[2].style.backgroundColor = '#FEFECB';
-    			this.children[3].style.backgroundColor = '#FEFECB';
-    			this.children[4].style.backgroundColor = '#FEFECB';
-    			this.children[5].style.backgroundColor = '#FEFECB';
-    			this.children[13].style.backgroundColor = '#FEFECB';
-    			this.children[14].style.backgroundColor = '#FEFECB';
+            	this.children[0].style.backgroundColor = '#fffee6';
+    			this.children[2].style.backgroundColor = '#fffee6';
+    			this.children[3].style.backgroundColor = '#fffee6';
+    			this.children[4].style.backgroundColor = '#fffee6';
+    			this.children[5].style.backgroundColor = '#fffee6';
+    			this.children[13].style.backgroundColor = '#fffee6';
+    			this.children[14].style.backgroundColor = '#fffee6';
             	 Y.get(this).find("td").addClass("h_bry");
 	           	 Y.get(this).find(".h_br").addClass("h_brx");
 	           	 Y.get(this).find(".label_cd").removeClass("h_brx");
