@@ -190,7 +190,6 @@
 //                this.childNodes[4].style.backgroundColor = '#fee6ad';
                 Y.get(this).find(".h_br").addClass("h_brx");
              	 Y.get(this).find(".label_cd").removeClass("h_brx");
-                this.childNodes[6].style.backgroundColor = '#fee6ad';
                
                 
             }, function (e, Y){
@@ -198,7 +197,6 @@
                 this.childNodes[2].style.backgroundColor = '';
                  this.childNodes[4].style.backgroundColor = '';
                  this.childNodes[5].style.backgroundColor = '';
-                this.childNodes[6].style.backgroundColor = '';
                 Y.get(this).find(".h_br").removeClass("h_brx");
                 Y.get(this).find(".label_cd").removeClass("h_brx");
                
