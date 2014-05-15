@@ -31,7 +31,7 @@ a.t_a_qc b{background-image: url(../images/cdbg/reg_07.gif);
     line-height: 34px;
     text-align: center;
     width: 115px;margin:10px auto;font-weight:100}
-
+.dc_qr{padding-top:3px}
 .inacout{float:left;padding-left:18px}
 .inacout p{line-height:24px;color:#333;}
 .inacout span{float:left;}
