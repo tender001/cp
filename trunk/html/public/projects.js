@@ -884,9 +884,9 @@ var showview = function(lotid,projid){
 		
 				var baodistat="";
 				if(onum+pnum==tmoney){
-						baodistat=jindu+"%"+"+"+(pnum!=0 ? ((100-parseInt(onum*100/tmoney))+'%(保)'+(iclear=='2' ? '&nbsp;&nbsp;已清' : '')) : '&nbsp;无保底');
+						baodistat=jindu+"%"+"+"+(+"+"+pnum!=0 ? ((100-parseInt(onum*100/tmoney))+'%(保)'+(iclear=='2' ? '&nbsp;&nbsp;已清' : '')) : '&nbsp;');
 					}else{
-						baodistat=jindu+"%"+"+"+(pnum!=0 ? ((parseInt(pnum*100/tmoney))+'%(保)'+(iclear=='2' ? '&nbsp;&nbsp;已清' : '')) : '&nbsp;无保底');
+						baodistat=jindu+"%"+(pnum!=0 ? "+"+((parseInt(pnum*100/tmoney))+'%(保)'+(iclear=='2' ? '&nbsp;&nbsp;已清' : '')) : '&nbsp;');
 					}
 				$("#cp_ticheng").html((wrate==0?'无提成':wrate+'%'))
 //				var cp_info =' <tr class="tr1"><td colspan="3">'+$_sys.showzhanjiname(gameid,cnickid,'award')+'</td>'
@@ -897,6 +897,7 @@ var showview = function(lotid,projid){
 //				$("#cpinfo").html(cp_info);
 				$("#username").html($_sys.showzhanjiname(gameid,cnickid,'award'));
 				$("span[mark=cp_baodi]").html(baodistat);
+				$("span[mark=cp_jindu]").html(pnum!=0 ?'￥'+pnum+"("+ ((parseInt(pnum*100/tmoney))+'%)') : '&nbsp;无保底');
 				$("span[mark=cp_rengou]").html('￥'+onum +'('+parseInt(onum*100/tmoney)+'%) ');
 				if(isself ){
 					$("#cm_u_set").remove();
