@@ -1,5 +1,6 @@
 $(function(){
 
+	//焦点赛事切换
 	$("p[markp=1]").show();
 	$("div[markdiv=1]").show();
 	$("p.p2 em").eq(0).addClass("cur");
@@ -11,7 +12,48 @@ $(function(){
 			$(this).addClass("cur");
 			$("p[markp="+num+"],div[markdiv="+num+"]").show();
 		}
+	});
+	
+//导航经过事件
+	$("#vstain").css({
+		"height":0,
+		"overflow":"hidden"
+		});
+    	$("div.vsteam").hover(function(){
+    		$("#vstain").show();
+			$("#vstain").clearQueue().animate({
+				height:154
+				})
+		},function(){
+			$("#vstain").animate({
+				height:0
+				});
+		});
+	//淘汰赛小组赛事件
+	$("tr.group_list td").hover(function(){
+		var td=$(this).find("a");
+		$("tr.group_list td a").removeClass("on");
+		td.addClass("on");
+		$("div.group_list_match ").hide();
+		$("#"+td.html()+"").show();
+	});
+	
+	$("div.rTabTit  a").click(function(){
+		var a=$(this).attr("id");
+		$(this).addClass("on").siblings().removeClass("on");
+		$("div.rTabCon").hide();
+		$("#"+a+"div").show();
+		
+		
 	})
+	
+	$("tr.final_list td").hover(function(){
+		var td=$(this).find("a");
+		$("tr.final_list td a").removeClass("on");
+		td.addClass("on");
+		$("div.final_list_match ").hide();
+		$("div[mark='"+td.attr("mark")+"']").show();
+	});
 });
 
 
