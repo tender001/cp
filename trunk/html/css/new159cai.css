@@ -1500,7 +1500,8 @@ a.jcq_kcur {
 .vscd div{height:32px;margin:0 auto;padding-left:10px}
 .vscd div img{display:block;float:left;width:25px;height:25px;margin-top:4px}
 .cubfo{padding:20px 0 15px}
-.cubbanner{width:669px;height:300px;float:left;}
+.cubbanner{width:669px;height:300px;float:left;position:relative}
+.cubbanner p{background:#000;text-align:center;color:#fff;font-size:16px;font-family:"微软雅黑";font-weight:100;height:45px;line-height:45px;bottom:0;left:0;width:100%;position:absolute;filter:alpha(opacity=50);-moz-opacity:0.5;-khtml-opacity: 0.5;opacity: 0.5;}
 .cubtt{float:right;width:295px;}
 .rTabTit{ color: #bbb;  height: 35px; line-height: 35px;}
 .rTabTit a{ color: #333; font-size: 14px;  padding: 0 10px;}
