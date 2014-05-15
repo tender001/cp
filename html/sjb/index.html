@@ -10,8 +10,39 @@
 <link href="/css/zc3.css" type="text/css" rel="stylesheet" />
 <link href="/css/159cai3.css"  rel="stylesheet" type="text/css" />
 <link href="/css/new159cai.css"  rel="stylesheet" type="text/css" />
+<style type="text/css">
+ .focus {width:520px;height:220px;margin-bottom:10px;  position: relative;}
+.frame{position:relative;width:520px;height:220px; overflow:hidden; }
+.controls{  bottom: 5px;
+    float: right;
+    height: 20px;
+    overflow: hidden;
+    position: absolute;
+    right: 5px;
+    z-index: 9999;}
+
+.off{ text-align:center; float:left; width:105px;}
+.off .dot_list{ display:inline-block;width:14px; height:14px;margin:2px;overflow:hidden;border:1px solid #CCCCCC;background:#FFFFFF;color:#333333;cursor:pointer;}
+.off .current{border-color:#EE0000;background:#EE0000;color:#FFFFFF;}
+#btn_prev,#btn_next {display:none;}
+
+.btn_prevOff2,.btn_prevOn2,.btn_nextOff2,.btn_nextOn2{ width:20px; height:20px; float:left; display:block; cursor:pointer;}
+.btn_prevOff2{ background-position:0 -188px; margin-right:11px;}
+.btn_nextOff2{ background-position:-27px -188px; margin-left:8px;}
+.btn_prevOn2{ background-position:0 -188px; margin-right:11px;}
+.btn_nextOn2{ background-position:-27px -188px; margin-left:8px;}
+ 
+
+ul{list-style:none;margin:0px;padding:0px}
+.click_out{margin-left:5px; float:left; text-align:center; height:16px; line-height:16px; width:16px; background:#fff; color:#444; font-weight:bold; font-size:12px; cursor:pointer;_display:inline-block; }
+.click_over{margin-left:5px; float:left;text-align:center; height:16px; line-height:16px; width:16px; background:#cc0000; color:#fff; font-weight:bold; font-size:12px; cursor:pointer; _display:inline-block; }
+#header{background-color:#FFFDF3;padding-bottom:5px}
+.index_ta{display:block;margin:0 auto;width:1590px;height:155px;}
+#footer{margin-top:0}
+</style>
 <script type="text/javascript" src="/public/jq2.js"></script>
 <script type="text/javascript" src="js/world_cup.js"></script>
+<script type="text/javascript" src="/sjb/js/index.js"></script>
 </HEAD>
 <BODY  class="xuanhao_nav" style="background:url(/images/cai888/cubbg.jpg) no-repeat 50% 0 #8bb658" >
 <div id="container">
@@ -19,9 +50,9 @@
 
 
 <div class="cubm">
-<div class="vsteam">
- <div class="vstop">
- <div class="vstaim">
+<div class="vsteam" >
+ <div class="vstop" id="vstops">
+ <div class="vstaim" id="vstaims">
  <div class="vscd"><div><img src="/images/rteam/Brazil.png"><img src="/images/rteam/Croatia.png"><img src="/images/rteam/Mexico.png"><img src="/images/rteam/Cameroon.png"></div></div>
  <div class="vscd"><div><img src="/images/rteam/29_SPA.png"><img src="/images/rteam/Holland.png"><img src="/images/rteam/Chile.png"><img src="/images/rteam/Australia.png"></div></div>
  <div class="vscd"><div><img src="/images/rteam/Columbia.png"><img src="/images/rteam/Greece.png"><img src="/images/rteam/IvoryCoast.png"><img src="/images/rteam/Japan.png"></div></div>
@@ -32,7 +63,7 @@
  <div class="vscd" style="border:none"><div><img src="/images/rteam/Belgium.png"><img src="/images/rteam/Algeria.png"><img src="/images/rteam/Russia.png"><img src="/images/rteam/SouthKorea.png"></div></div>
  
  </div>
-  <div class="vstain" style="display:none">
+  <div class="vstain" style="display:none" id="vstain">
  <div class="vscd">
  <a href="#"><img src="/images/team/20140228112909.jpg"><span>巴西</span></a>
  <a href="#"><img src="/images/team/20140225155850.jpg"><span>克罗地亚</span></a>
@@ -88,25 +119,83 @@
  
 
 <div class="cubfo">
-<div class="cubbanner"><img src="/images/cai888/worcub_08.jpg"></div>
+<div class="cubbanner" id="flash_outer" style=" position:relative">
+	<!--     世界杯广告图片-->
+			<!--#include virtual="/brazil/shijiebei_imglist.html"-->
+			<!--     世界杯广告图片结束-->
+</div>
+<script>
+   	$(document).ready(function(){
+   var len=$("#flash_num>li").length;
+   var index=1;
+   var int;
+   $("#flash_num>li").removeClass().addClass("click_out").eq(0).toggleClass("click_out").addClass("click_over");
+   $("#codes b input").keyup(function() {
+	
+	if(isNaN($(this).val())){
+	$(this).val("");
+	}
+	else if($(this).val()>33||$(this).val()<1){
+		$(this).val("");
+	}
+}) 
+$("#red_code").keyup(function() {
+	if($(this).val()>16||$(this).val()<1){
+		$(this).val("");
+	}
+})
+   function showSys(num)  //图片切换函数
+   {
+    $("#flash_num>li").removeClass().addClass("click_out").eq(num).toggleClass("click_out").addClass("click_over");
+    $("#flash_pic>a").fadeOut().eq(num).fadeIn();
+   }
+   function ziDong()  //自动切换
+   {
+    if(index==len)
+    {
+     index=0;
+    }
+    showSys(index);
+    index=index+1;
+   }
+   int=setInterval(ziDong,5000);
+   $("#flash_num>li").mouseover(function() //点击切换
+   {
+    var index_num=$("#flash_num>li").index(this);
+    showSys(index_num);
+    index=index_num+1;  //改变全局变量的值，以便鼠标移开的时候能够衔接上
+    
+   });
+   $("#flash_outer").mouseover(function()  //移动到上面时停止自动切换
+       {
+        clearInterval(int);
+       });
+   $("#flash_outer").mouseout(function()  //移开时继续自动切换
+       {
+        int=setInterval(ziDong,5000);
+       });
+       
+});
+
+    </script> 
 <div class="cubtt">
-<div class="rTabTit cup_list"><a class="on">小组赛</a>|<a>淘汰赛</a></div>
-<div style="display: block;" class="rTabCon group_round">
-							<div class="rTbTit font14">
+<div class="rTabTit cup_list"><a class="on" id="xiaozu">小组赛</a>|<a id="taotai" >淘汰赛</a></div>
+<div style="display: block;" class="rTabCon group_round" id="xiaozudiv">
+							<div class="rTbTit font14" id="mousediv">
 								<table  cellspacing="0" cellpadding="0" width="100%">
 									<tbody><tr class="group_list">
-										<td><a href="####" class="">A</a></td>
-										<td><a href="####" class="">B</a></td>
-										<td><a href="####" class="">C</a></td>
-										<td><a href="####" class="">D</a></td>
-										<td><a href="####" class="">E</a></td>
-										<td><a href="####" class="">F</a></td>
-										<td><a href="####" class="">G</a></td>
-										<td><a href="####" class="on">H</a></td>
+										<td><a href="####" class="on" id="A1">A</a></td>
+										<td><a href="####" class="" id="B1">B</a></td>
+										<td><a href="####" class="" id="C1">C</a></td>
+										<td><a href="####" class="" id="D1">D</a></td>
+										<td><a href="####" class="" id="E1">E</a></td>
+										<td><a href="####" class="" id="F1">F</a></td>
+										<td><a href="####" class="" id="G1">G</a></td>
+										<td><a href="####" class="" id="H1">H</a></td>
 									</tr>
 								</tbody></table>
 							</div>
-							<div style="display: none;" class="rTbCon group_list_match">
+							<div style="display: block;" class="rTbCon group_list_match" id="A">
 								
 								<div class="rTbConTable mt10">
 									<table  cellspacing="0" cellpadding="0" width="100%">
@@ -154,7 +243,7 @@
 									</table>
 								</div>
 							</div>
-							<div style="display: none;" class="rTbCon group_list_match">
+							<div style="display: none;" class="rTbCon group_list_match" id="B">
 								
 								<div class="rTbConTable mt10">
 									<table  cellspacing="0" cellpadding="0" width="100%">
@@ -202,7 +291,7 @@
 									</table>
 								</div>
 							</div>
-							<div style="display: none;" class="rTbCon group_list_match">
+							<div style="display: none;" class="rTbCon group_list_match" id="C">
 								
 								<div class="rTbConTable mt10">
 									<table  cellspacing="0" cellpadding="0" width="100%">
@@ -250,7 +339,7 @@
 									</table>
 								</div>
 							</div>
-							<div style="display: none;" class="rTbCon group_list_match">
+							<div style="display: none;" class="rTbCon group_list_match" id="D">
 								
 								<div class="rTbConTable mt10">
 									<table  cellspacing="0" cellpadding="0" width="100%">
@@ -298,7 +387,7 @@
 									</table>
 								</div>
 							</div>
-							<div style="display: none;" class="rTbCon group_list_match">
+							<div style="display: none;" class="rTbCon group_list_match" id="E">
 								
 								<div class="rTbConTable mt10">
 									<table  cellspacing="0" cellpadding="0" width="100%">
@@ -346,7 +435,7 @@
 									</table>
 								</div>
 							</div>
-							<div style="display: none;" class="rTbCon group_list_match">
+							<div style="display: none;" class="rTbCon group_list_match" id="F">
 								
 								<div class="rTbConTable mt10">
 									<table  cellspacing="0" cellpadding="0" width="100%">
@@ -394,7 +483,7 @@
 									</table>
 								</div>
 							</div>
-							<div style="display: none;" class="rTbCon group_list_match">
+							<div style="display: none;" class="rTbCon group_list_match" id="G">
 								
 								<div class="rTbConTable mt10">
 									<table  cellspacing="0" cellpadding="0" width="100%">
@@ -442,7 +531,7 @@
 									</table>
 								</div>
 							</div>
-							<div style="display: block;" class="rTbCon group_list_match">
+							<div style="display: none;" class="rTbCon group_list_match" id="H">
 								
 								<div class="rTbConTable mt10">
 									<table  cellspacing="0" cellpadding="0" width="100%">
@@ -491,7 +580,7 @@
 								</div>
 							</div>
 						</div>
-						<div style="display: none;" class="rTabCon final_round">
+						<div style="display: none;" class="rTabCon final_round" id="taotaidiv">
 							<div class="rTbTit">
 								<table width="100%"  cellspacing="0" cellpadding="0">
 								<colgroup>
@@ -644,50 +733,11 @@
 <div class="cubzx">
 
  <div class="cubleft">
- 
- <div>
- <div class="cubctt">
- <h2>今日头条</h2>
-  <a href="#"><img src="/images/cai888/worcub_11.jpg"></a>
-  <p><a href="#">双色球第14046期预测：关注胆码06 14 31</a></p>
-  <p><a href="#">双色球第14046期预测：关注胆码06 14 31</a></p>
+ <!--     世界杯今日头条 -->
+			<!--#include virtual="/brazil/newsjinri.html"-->
+			<!--     世界杯今日头条 -->
  </div>
- <div class="cubcc" style="float:right">
- <h2>今日头条</h2>
- <a href="#">双色球第14046期预测：关注胆码06 14 31</a>
- <a href="#">双色球第14046期预测：关注胆码06 14 31</a>
- <a href="#">双色球第14046期预测：关注胆码06 14 31</a>
- <a href="#">双色球第14046期预测：关注胆码06 14 31</a>
- <a href="#">双色球第14046期预测：关注胆码06 14 31</a>
- <a href="#">双色球第14046期预测：关注胆码06 14 31</a>
- <a href="#">双色球第14046期预测：关注胆码06 14 31</a>
- <a href="#">双色球第14046期预测：关注胆码06 14 31</a>
-
- </div></div><div style="clear:both">
-  <div class="cubcc">
-  <h2>赛事推荐</h2>
- <a href="#">双色球第14046期预测：关注胆码06 14 31</a>
- <a href="#">双色球第14046期预测：关注胆码06 14 31</a>
- <a href="#">双色球第14046期预测：关注胆码06 14 31</a>
- <a href="#">双色球第14046期预测：关注胆码06 14 31</a>
- <a href="#">双色球第14046期预测：关注胆码06 14 31</a>
- <a href="#">双色球第14046期预测：关注胆码06 14 31</a>
- <a href="#">双色球第14046期预测：关注胆码06 14 31</a>
-  <a href="#">双色球第14046期预测：关注胆码06 14 31</a>
- </div>
-  <div class="cubcc" style="float:right">
-  <h2>新闻速递</h2>
- <a href="#">双色球第14046期预测：关注胆码06 14 31</a>
- <a href="#">双色球第14046期预测：关注胆码06 14 31</a>
- <a href="#">双色球第14046期预测：关注胆码06 14 31</a>
- <a href="#">双色球第14046期预测：关注胆码06 14 31</a>
- <a href="#">双色球第14046期预测：关注胆码06 14 31</a>
- <a href="#">双色球第14046期预测：关注胆码06 14 31</a>
- <a href="#">双色球第14046期预测：关注胆码06 14 31</a>
- <a href="#">双色球第14046期预测：关注胆码06 14 31</a>
- </div></div>
- </div>
- <div class="cubright">
+ <div class="cubright" >
 			<!--     世界杯猜冠军 -->
 			<!--#include virtual="/brazil/caiguanjun.html"-->
 			<!--     世界杯猜冠军 -->
@@ -702,7 +752,7 @@
    </div>
  </div>
  </div>
- <div class="cubonline">
+ <div class="cubonline">  
    <div class="coneleft">
     <h2><span>焦点赛事</span><a href="#">立即投注</a></h2>
 			<!--     世界杯焦点赛事 -->
@@ -711,163 +761,17 @@
 
    </div>
    <div class="coneright">
-  <h2><span>世界杯淘汰赛程</span></h2>
-  <div class="cublc">
-   <table width="100%" border="0" cellspacing="0" cellpadding="0">
-   <colgroup><col width="9"><col width="66"><col width="16"><col width="66"><col width="14"><col width="66"><col width="15"><col width="66"><col width="17"><col width="66"><col width="12"><col width="66"><col width="14"><col width="66"><col width=""></colgroup>
-   <tr>
-    <td>&nbsp;</td>
-    <td>
-    <div class="ctoone">
-    <div class="ctoonec">
-    <b>A组第一</b>
-    <p>06/28 23:59</p>
-    <b>B组第一</b>
-    </div>
-    <div class="ctoonec">
-    
-    <b>C组第一</b>
-    <p>06/29 04:00</p>
-    <b>D组第一</b>
-    </div>
-    <div class="ctoonec" style="padding-top:11px">
-    
-    <b>E组第一</b>
-    <p>06/30 23:59</p>
-    <b>F组第一</b>
-    </div>
-    <div class="ctoonec">
-    
-    <b>G组第一</b>
-    <p>07/01 04:00</p>
-    <b>H组第一</b>
-    </div>
-    </div></td>
-     <td>&nbsp;</td>
-    <td>
-    <div class="ctotwo">
-    <div class="ctoonec">
-    <b>上轮胜者</b>
-    <p>07/05 4:00</p>
-    <b>上轮胜者</b>
-    </div>
-    <div class="ctoonec" style="padding-top:79px">
-    
-    <b>上轮胜者</b>
-    <p>07/05 0:00</p>
-    <b>上轮胜者</b>
-    </div>
-    
-    </div></td>
-    <td>&nbsp;</td>
-    <td>
-    <div class="ctotwo ctotre">
-    <div class="ctoonec">
-    <b>上轮胜者</b>
-    <p>07/05 4:00</p>
-    <b>上轮胜者</b>
-    </div>
-    
-    </div></td>
-     <td>&nbsp;</td>
-    <td>
-    <div class="ctotwo ctofor" style="padding-top:163px">
-    <div class="ctoonec">
-    <b>半决赛胜者</b>
-    <p>07/05 4:00</p>
-    <b>半决赛胜者</b>
-    </div>
-    <div class="ctoonec" style="padding-top:38px">
-    
-    <b>半决赛负者</b>
-    <p class="p1">07/05 0:00</p>
-    <b>半决赛负者</b>
-    </div>
-    
-    </div></td>
-    <td>&nbsp;</td>
-    <td>
-    <div class="ctotwo ctotre">
-    <div class="ctoonec">
-    <b>上轮胜者</b>
-    <p>07/05 4:00</p>
-    <b>上轮胜者</b>
-    </div>
-    
-    </div></td>
-    <td>&nbsp;</td>
-    <td>
-    <div class="ctotwo">
-    <div class="ctoonec">
-    <b>上轮胜者</b>
-    <p>07/05 4:00</p>
-    <b>上轮胜者</b>
-    </div>
-    <div class="ctoonec" style="padding-top:79px">
-    
-    <b>上轮胜者</b>
-    <p>07/05 0:00</p>
-    <b>上轮胜者</b>
-    </div>
-    
-    </div></td>
-    <td>&nbsp;</td>
-    <td>
-    <div class="ctoone">
-    <div class="ctoonec">
-    <b>A组第一</b>
-    <p>06/28 23:59</p>
-    <b>B组第一</b>
-    </div>
-    <div class="ctoonec">
-    
-    <b>C组第一</b>
-    <p>06/29 04:00</p>
-    <b>D组第一</b>
-    </div>
-    <div class="ctoonec" style="padding-top:11px">
-    
-    <b>E组第一</b>
-    <p>06/30 23:59</p>
-    <b>F组第一</b>
-    </div>
-    <div class="ctoonec">
-    
-    <b>G组第一</b>
-    <p>07/01 04:00</p>
-    <b>H组第一</b>
-    </div>
-    </div></td>
-    <td>&nbsp;</td>
-   </tr>
-   </table>
-  </div>
+   <h2><span>世界杯淘汰赛程</span></h2>
+  		<!--     世界杯淘汰赛程-->
+			<!--#include virtual="/brazil/taotai.html"-->
+			<!--     世界杯淘汰赛事 -->
+  		
    </div>
  </div>
- <h2><span>世界杯精彩图集</span></h2>
- <div class="cubaimg">
-  <div class="cubimgc1">
-   <a href="#"><img src="/images/cai888/cubbg.jpg"></a>
-   <p>巴西：一个为足球疯狂的国度</p>
-  </div>
-  <div>
-   <a href="#"><img src="/images/cai888/cubbg.jpg"></a>
-   <p>巴西：一个为足球疯狂的国度</p>
-  </div>
-  <div>
-   <a href="#"><img src="/images/cai888/cubbg.jpg"></a>
-   <p>巴西：一个为足球疯狂的国度</p>
-  </div>
-  <div>
-   <a href="#"><img src="/images/cai888/cubbg.jpg"></a>
-   <p>巴西：一个为足球疯狂的国度</p>
-  </div>
-  <div>
-   <a href="#"><img src="/images/cai888/cubbg.jpg"></a>
-   <p>巴西：一个为足球疯狂的国度</p>
-  </div>
-  
  </div>
+ <!--     世界杯精彩图集-->
+			<!--#include virtual="/brazil/jingcai.html"-->
+			<!--     世界杯精彩图集 -->
  <div class="cubfot"><p><a href="#">159彩票网</a>   |   客服热线：400-0696-159   |   客服邮箱：kf@159cai.com   |   沪ICP备13044715号-1 <br>
 159彩票网郑重提示：彩票有风险，投注需谨慎 不向未满18周岁的青少年出售彩票</p></div>
 </div>
