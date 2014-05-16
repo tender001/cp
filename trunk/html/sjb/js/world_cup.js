@@ -21,6 +21,7 @@ $(function(){
 		});
     	$("div.vsteam").hover(function(){
     		$("#vstain").show();
+    		$("#vscd").hide();
 			$("#vstain").clearQueue().animate({
 				height:154
 				})
