@@ -24,10 +24,16 @@ $(function(){
 			$("#vstain").clearQueue().animate({
 				height:154
 				})
+				$("#vstaims").animate({
+					height:0
+					});
 		},function(){
 			$("#vstain").animate({
 				height:0
 				});
+			$("#vstaims").clearQueue().animate({
+				height:60
+				})
 		});
 	//淘汰赛小组赛事件
 	$("tr.group_list td").hover(function(){
