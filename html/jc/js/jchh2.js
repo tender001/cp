@@ -1664,8 +1664,8 @@ Class('Main', {
         			 var htid =1;
                      this.qXml('//row', data.xml, function (u, i){
                     	    $("#mn"+u.items.xid).attr("href","http://info.159cai.com/league/index/"+u.items.lid);
-                    	    $("#hn"+u.items.xid+" em").attr("data",u.items.htid);
-            				$("#gn"+u.items.xid+" em").attr("data",u.items.gtid);		
+                    	    $("#hn"+u.items.xid).attr("data",u.items.htid);
+            				$("#gn"+u.items.xid).attr("data",u.items.gtid);		
 //            				http://info.159cai.com/league/index/34/4647
             				Y.get("#hn"+u.items.xid).attr("href","http://info.159cai.com/team/index/"+u.items.htid);
                         	 Y.get("#gn"+u.items.xid).attr("href","http://info.159cai.com/team/index/"+u.items.gtid);
@@ -1681,15 +1681,18 @@ Class('Main', {
 	           					Y.get("#oa"+u.items.xid).html(u.items.oa);
                      });                     
                      var xhhistory = "";
-             			 xhhistory=".btnoption span";
-             			 Class.C('exy',"yes")	;
+             			 xhhistory="tr[isend=0] a[data]";
+             			 Class.C('lot_id',90)	;
              			 Class.config('odds_t',0);
+             			 Class.config('jchh',0);
                 	     historyMatchOdds({
    	                         items: xhhistory,
    	                         tipid: 'odds_tip',
    	                         tip: '#odds_tip',
    	                         fleft: 260
    	                     }); 
+//                	     http://local.159cai.com/cpdata/omi/jczq/odds/historymatch/218.xml
+//                	     http://local.159cai.com/cpdata/omi/0/historymatch/1506.xml
 	                     $("#oddstype").odds_select_name();
 	                     load_odds_sp();
 	                     ozOdds({

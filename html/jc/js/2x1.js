@@ -1564,7 +1564,7 @@
             			 var htid =1;
                          this.qXml('//row', data.xml, function (u, i){
                         	  
-                        	    $("#mm"+u.items.xid).attr("href","http://info.159cai.com/league/index/"+u.items.lid);
+                        	    $("#mn"+u.items.xid).attr("href","http://info.159cai.com/league/index/"+u.items.lid);
 	                        	 	$("#ox"+u.items.xid).attr("href","http://odds.159cai.com/match/analysis/"+u.items.oddsmid+"?lotyid=6");
 	                 				$("#oz"+u.items.xid).attr("href","http://odds.159cai.com/match/odds/"+u.items.oddsmid+"?lotyid=6");
 	                 				$("#oy"+u.items.xid).attr("href","http://odds.159cai.com/match/asia/"+u.items.oddsmid+"?lotyid=6");
@@ -1580,8 +1580,7 @@
                          });  
 						   if(this.oneodds){
                              var xhhistory = "";
-                     		 if(Class.config('playId')=="34" || Class.config('playId')=="44"){
-                     			 xhhistory=".even span em";
+                     			 xhhistory="tr.even em[data]";
                         	     historyMatchOdds({
            	                         items: xhhistory,
            	                         tipid: 'odds_tip',
@@ -1597,7 +1596,6 @@
            	                         path: '/cpdata/omi/odds/jczq/oz'
            	                     });    			 
                      			 
-                     		 }
 
     	                     this.oneodds = false;
                          }
