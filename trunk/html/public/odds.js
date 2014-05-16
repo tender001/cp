@@ -37,12 +37,18 @@ function historyMatchOdds(config) {
 					url:"/cpdata/omi/"+path+"/historymatch/"+mid+".xml",
 					dataType : "xml",
 					success : function(data) {
-						$("body").append(odds_div);
-						$(config.tip).css({
-							"top" : (oz_id.offset().top + oz_id.height() + 20) + "px",
-							"left" : (oz_id.offset().left + oz_id.width() - config.fleft) + "px"
-						}).show();
+						
+						
 						var r = $(data).find("r");
+						if(r.length==0){
+							return false;
+						}else{
+							$("body").append(odds_div);
+							$(config.tip).css({
+								"top" : (oz_id.offset().top + oz_id.height() + 20) + "px",
+								"left" : (oz_id.offset().left + oz_id.width() - config.fleft) + "px"
+							}).show();
+						}
 						var oddslist = ""
 						r.each(function(){
 							var ln = $(this).attr("ln")==""?'-':$(this).attr("ln");
