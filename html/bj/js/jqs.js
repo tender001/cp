@@ -1703,7 +1703,7 @@ Class( {
 	            	var V = $('#titleTable_r');
 	        		if (V[0]) {
 	        			var T = $(document),
-	        			H = $("#main").eq(0),
+	        			H = $("#main div.box_m").eq(0),
 	        			M = H.offset().top + H.outerHeight(),
 	        			F = V.innerWidth(),
 	        			B = V.offset().top,
@@ -1717,7 +1717,7 @@ Class( {
 	        				if(isIE6){
 	        					V.css({left: "auto",top: Z+$(window).scrollTop(), width: F,position: "absolute"});
 	        				}else{
-	        					V.css({left: "auto",top: Z-9, width: F, position: "fixed"});
+	        					V.css({left: "auto",top: Z, width: F, position: "fixed"});
 	        				}
 	        			}
 	        			Y.get("#titleTable_r").setStyle('z-index: 1;');
