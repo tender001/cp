@@ -15,6 +15,8 @@ function historyMatchOdds(config) {
 	}if(Class.C('lot_gid')==3 ){
 		
 		path ='83/'+$("#expect").val();
+	}if( Class.config('jchh')==0){
+		path ="jczq/odds"
 	}
     $(config.items).each(function(index) {
         $(this).hover(function() {
