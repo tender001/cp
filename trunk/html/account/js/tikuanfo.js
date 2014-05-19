@@ -97,8 +97,11 @@ Class({
 				var obj = eval("(" + d.text + ")");
 	   		    var code = obj.Resp.code;
 	   		    var desc = obj.Resp.desc;
-				var innum = incount = outnum = outcount = tkallmy = 0;
-				rows = "";
+				var innum =0;
+				var incount = 0;
+				var outnum = 0;
+				var outcount = 0;
+				var tkallmy = 0;
 				if (code == "0") {
 					var r = obj.Resp.row;
 					
@@ -150,7 +153,7 @@ Class({
 								else{
 									html +="<td>" +"失败"+ "</td>";
 								}
-								html +="<td style='line-height:15px;'>" + memo + "</td>";
+								html +="<td style='line-height:15px;'>" +( memo=""?"&nbsp":memo )+ "</td>";
 								html +="</tr>";
 							
 							outcount++;
