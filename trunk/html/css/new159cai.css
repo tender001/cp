@@ -1308,7 +1308,7 @@ a.jc_mtz:hover, a.jc_mhm:hover{background-position:-110px 0}
 .jckj_tb label{float:left;cursor:pointer}
 .matchxzk{ cursor: pointer;height: 32px;line-height: 30px;position: relative;z-index: 2;overflow:visible}
 .matchxz{float:left;width:100%}
-.matchxz i{background:url("/images/cai888/jtdown_11.jpg") 0 0;transition: all 0.2s ease-in 0s;height: 4px;margin-left: 5px;vertical-align: middle;width: 7px;display:inline-block}
+.matchxz i{background:url("/images/cai888/jtdown_11.jpg") 0 0 no-repeat;transition: all 0.2s ease-in 0s;height: 4px;margin-left: 5px;vertical-align: middle;width: 7px;display:inline-block}
 .jcslt{position:absolute;z-index:9;top:30px;left:0;background:#fff;width:113px;border:2px solid #444;padding-bottom:10px}
 .matchxzc{border:2px solid #444;border-bottom:none; background:#fff;height:30px;line-height:28px;position:relative;z-index:99;}
 .matchxzc i{transform:rotate(180deg)}
