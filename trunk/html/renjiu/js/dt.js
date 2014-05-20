@@ -1,12 +1,13 @@
 Class.C('buy_type', 0);
-Class.C('lot-ch-name', '任九');
+Class.C('lot-ch-name', '任选9场');
 Class.C('isEnd', false);
 Class.C('price', 2);
+Class.C('isdt', true);
 Class.C('play_name', 'pt');
 Class.C('min-rengou', .05);
 Class.extend('getPlayText', function (){
-    return '复式' + ['代购','合买'][Class.C('buy_type')];
-});
+return '胆拖' + ['代购','合买'][Class.C('buy_type')];
+}); 
 // 自动生成playid
 Class.extend('getPlayId', function (play_name){
     var lotid = this.getInt(this.get('#lotid').val());
