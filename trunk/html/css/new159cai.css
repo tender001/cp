@@ -1559,12 +1559,12 @@ a.jcq_kcur {
 .sstitle .span3{width:70px}
 .sstitle .p2{float:right;width:19%}
 .sstitle .p2 em{display:block;float:left;text-align:center;line-height:18px;height:18px;width:18px;margin-left:3px;background:#fff;border:1px solid #ddd;color:#ff0000;font-weight:bold;margin-top:8px;cursor:pointer}
-.sstitle .p2 em:hover{color:#fff;background:#ff6600}
+.sstitle .p2 em:hover,.sstitle .p2 em.cur{color:#fff;background:#ff6600}
 .sstext{clear:both;}
 .sstext div{margin-bottom:2px;float:left;background:#264fac;margin-right:2px}
 .dtx1{width:185px;height:160px}
 .dtx1 table{width:150px;margin:12px auto;text-align:center;}
-.dtx1 img{width:52px;height:60px;}
+.dtx1 img{width:60px;height:60px;}
 .dtx1 td{color:#fff;font-size:12px;color:#fff;line-height:24px;vertical-align:middle;padding:6px 0}
 .sstext p{text-align:center;color:#fff;font-size:12px;line-height:26px;padding-top:13px}
 .sstext strong,.sstext p strong{font-weight:bold;font-size:16px;}
