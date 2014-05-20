@@ -938,7 +938,7 @@ table.dcr_table{border-top:1px solid #ddd}
 .pl:hover,.yl:hover,.sl:hover{background: none repeat scroll 0 0 #fff;text-decoration:line-through;}
 a#seemore{color:#145fab;}
 a#seemore:hover{color:#990000;text-decoration:underline}
-.dc_r_m p.dc_qr{position:relative}
+.dc_r_m p.dc_qr{}
 .dc_r_m p.dc_qr img{display:block;width:89px;height:33px;position:absulote;bottom:5px;right:25px}
 
 
