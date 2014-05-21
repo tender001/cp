@@ -1,0 +1,10 @@
+<div  id="flash_pic">
+{dede:arclist  addfields='imgur,imgtitle,bannerurl' orderby='id' row='7' typeid='45' channelid='18'}
+<a href="[field:bannerurl/]" target="_blank" title="[field:imgtitle/]"><img src="[field:imgur/]" alt="[field:imgtitle/]"  /><p> [field:imgtitle/]</p></a>
+{/dede:arclist}
+</div>
+   <ul class="cubbanner" style="position:absolute; left:571px; bottom:0px; height:28px" id="flash_num">
+	{dede:arclist  addfields='imgur,imgtitle,bannerurl' orderby='id' row='7' typeid='45' channelid='18'}
+	<li class="click_out">[field:global name=autoindex/]</li>
+	{/dede:arclist}
+  </ul>
