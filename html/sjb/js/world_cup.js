@@ -41,7 +41,7 @@ Class({
 //			showPics(index);
 //		});
 
-		$("#flash_pic").css("width",sWidth * (len));
+		$("#flash_pic").css("width",(sWidth) * (len));
 		$("#flash_pic").css("position","absolute");
 		$("#flash_outer").hover(function() {
 			clearInterval(picTimer);
