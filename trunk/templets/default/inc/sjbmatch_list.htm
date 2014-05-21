@@ -1,0 +1,86 @@
+<div class="sstitle">
+
+
+	{dede:arclist addfields='teamname,teamtime,hometeam,hostteam,ao,homesituation,hostsituation,homesituation2,hostsituation2,matchviews,vsjq,vszjq'
+	orderby='id' row='7' typeid='40' channelid='19'}
+
+	<p class="p1" style="display: none;" markp="[field:global name=autoindex/]">
+		<span class="span2">[field:teamname/]</span>
+	</p>
+	{/dede:arclist}
+	<p class="p2">
+			{dede:arclist addfields='teamname,teamtime,hometeam,hostteam,ao,homesituation,hostsituation,homesituation2,hostsituation2,matchviews,vsjq,vszjq'
+	orderby='id' row='7' typeid='40' channelid='19'}
+		<em>[field:global name=autoindex/]</em>
+		{/dede:arclist}
+	</p>
+</div>
+	{dede:arclist addfields='teamname,teamtime,hometeam,hostteam,ao,homesituation,hostsituation,homesituation2,hostsituation2,matchviews,vsjq,vszjq'
+	orderby='id' row='7' typeid='40' channelid='19'}
+<div class="sstext" style="display: none;" markdiv="[field:global name=autoindex/]">
+	<div class="dtx1">
+		<table width="150" border="0" cellspacing="0" cellpadding="0">
+			<colgroup>
+				<col width="52">
+				<col width="">
+				<col width="52">
+			</colgroup>
+			<tbody>
+				<tr>
+					<td colspan="3">比赛时间[field:teamtime/]</td>
+				</tr>
+				<tr>
+					<td><img src="[field:hometeam/]"></td>
+					<td><strong>VS</strong></td>
+					<td><img src="[field:hostteam/]"></td>
+				</tr>
+				<tr>
+					<td colspan="3">亚盘<strong>[field:ao/]</strong></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<div class="dtx2">
+		<p>
+			主队近况<br>
+			<strong>[field:homesituation/]</strong>
+		</p>
+	</div>
+	<div class="dtx3">
+		<p>
+			客队近况<br>
+			<strong>[field:hostsituation/]</strong>
+		</p>
+	</div>
+	<div class="dtx4">
+		<p>
+			主队主场近况<br>
+			<strong>[field:homesituation2/]</strong>
+		</p>
+	</div>
+	<div class="dtx5">
+		<p>
+			客队客场近况<br>
+			<strong>[field:hostsituation2/]</strong>
+		</p>
+	</div>
+	<div class="dtx6">双方交锋</div>
+	<div class="dtx7">
+		<p>
+		[field:matchviews/]
+		</p>
+	</div>
+	<div class="dtx8">
+		<p>
+			客队客场近况<br>
+			<strong>[field:vsjq/]</strong>
+		</p>
+	</div>
+	<div class="dtx9">
+		<p>
+			客队客场近况<br>
+			<strong>[field:vszjq/]</strong>
+		</p>
+	</div>
+</div>
+{/dede:arclist}
