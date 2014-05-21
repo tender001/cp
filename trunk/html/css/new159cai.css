@@ -1501,7 +1501,7 @@ a.jcq_kcur {
 .vscd div img{display:block;float:left;width:25px;height:25px;margin-top:4px}
 .cubfo{padding:20px 0 15px}
 .cubbanner{width:669px;height:300px;float:left;position:relative}
-.cubbanner p{background:#000;text-align:center;color:#fff;font-size:18px;font-weight:bold;font-family:"微软雅黑";font-weight:100;height:45px;line-height:45px;bottom:0;left:0;width:100%;position:absolute;filter:alpha(opacity=80);-moz-opacity:0.8;-khtml-opacity: 0.8;opacity: 0.8;}
+.cubbanner p{background:#000;text-align:center;color:#fff;font-size:18px;font-weight:bold;font-family:"微软雅黑";height:45px;line-height:45px;bottom:0;left:0;width:100%;position:absolute;filter:alpha(opacity=80);-moz-opacity:0.8;-khtml-opacity: 0.8;opacity: 0.8;}
 .cubtt{float:right;width:295px;}
 .rTabTit{ color: #bbb;  height: 35px; line-height: 35px;}
 .rTabTit a{ color: #333; font-size: 14px;  padding: 0 10px;}
@@ -1596,7 +1596,7 @@ a.jcq_kcur {
 .cubaimg img{width:235px;height:160px;}
 .cubaimg .cubimgc1{width:478px;height:335px}
 .cubaimg .cubimgc1 img{width:478px;height:335px}
-.cubaimg p{background:#000;text-align:center;color:#fff;font-size:16px;font-family:"微软雅黑";font-weight:100;height:45px;line-height:45px;bottom:0;left:0;width:100%;position:absolute;filter:alpha(opacity=50);-moz-opacity:0.5;-khtml-opacity: 0.5;opacity: 0.5;}
+.cubaimg p{background:#000;text-align:center;color:#fff;font-size:18px;font-family:"微软雅黑";font-weight:bold;height:45px;line-height:45px;bottom:0;left:0;width:100%;position:absolute;filter:alpha(opacity=80);-moz-opacity:0.8;-khtml-opacity: 0.8;opacity: 0.8;}
 .cubfot{border-top:8px solid #ececec;padding:15px 0;*margin-top:12px}
 .cubfot p{text-align:Center;color:#333;line-height:24px;}
 .cubfot p a{color:#333;}
@@ -1615,6 +1615,7 @@ a.a_catha:hover, a.a_hm_buya:hover{background-position:-110px 0}
 .tdlh:hover{background:#fffee6}
 .tdlh table span{display:block;float:left;width:64px;float:left;border-right:1px solid #ccc;color:#444;text-align:center;height:34px;line-height:34px}
 .tdlh table a{width:65px;height:34px;line-height:34px;background: url(/images/cai888/ban1.jpg) no-repeat scroll 100% bottom ;display:block;float:left;color:#444;font-weight:bold;}
+.group_list_match .rTbConTable{line-height:40px}
 .tdlh table a:hover{background:url(/images/cai888/ban3.jpg) 100% bottom no-repeat}
 .tdlh table a.a1{background: url(/images/cai888/ban2.jpg) 100% bottom no-repeat;}
 .tdlh table a.a2,.tdlh table a.a2:hover{background:url(../images/cai888/ban4.jpg) 0 0 no-repeat;cursor:pointer}
