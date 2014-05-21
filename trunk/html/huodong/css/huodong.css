@@ -18,18 +18,46 @@ div,ul,li{ list-style-type:none;overflow:hidden}
 .tp p a:hover{ text-decoration:underline;color:#ff6600}
 .topa{padding:267px 0 0 497px;}
 .topa a{display:block;float:left;width:167px;height:52px;}
-.main{background:url(../images/19jc_07.jpg) 0px 0px ;width:1494px;height:951px;margin:0 auto}
-.jcm{padding:266px 0 0 285px;height:545px}
-.jcm2{float:left;width:385px;}
+.main{background:url(../images/19jc_07.jpg) 0px 0px ;width:1494px;height:1275px;margin:0 auto}
+.jcm{padding:266px 0 0 285px;}
+.jcm2{float:left;width:585px;}
 .jcm2 table{border:1px solid #ddd;}
 .jcm2 td{text-align:left;color:#444;font-size:14px; font-family:Arial;padding-left:30px;height:40px;line-height:40px;}
 .jcm2 tr.tr1{color:#fff;font-weight:bold;background:url(../images/fg_03.jpg) 0px 0 ;border:none}
 .jcm2 tr.odd{ background-color:#ffebe0}
 .jcm2 tr.tr1 td{color:#fff}
-.jcm3{float:left;width:485px;margin-left:63px}
-.jcm3 p{display:block;font-family:"微软雅黑";clear:both;line-height:22px;padding:10px 0;}
-.jcm3 b{display:block;height:20px;width:20px;text-align:Center;line-height:20px;color:#fff;font-size:14px;float:left;margin-right:12px;background:url(../images/ico_06.jpg);font-weight:100}
-.jcm3 span{float:left;color:#666;font-size:16px;line-height:22px;width:430px;}
+.jcm2 tr.odd1 td{color:#d15714;font-weight:bold}
+.jcm4{float:left;width:295px;margin-left:40px}
+.jcm4 p {
+    border-bottom: 1px dashed #b48f68;
+    clear: both;
+    height: 30px;
+    line-height:30px;width:275px;padding:0 10px
+  
+}
+
+.jcm4 p span {
+    color: #444;
+    display: block;
+    float: left;
+    font-size: 14px;
+    
+}
+
+.jcm4 p b {
+    color: #444;
+    display: block;
+    float:right;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 100;
+   
+}
+.jcm3{clear:both;width:920px;padding-top:75px}
+.jcm3 p{display:block;font-family:"微软雅黑";clear:both;line-height:30px;}
+.jcm3 b{display:block;margin-top:8px;height:20px;width:20px;text-align:Center;line-height:20px;color:#fff;font-size:14px;float:left;margin-right:12px;background:url(../images/ico_06.jpg);font-weight:100}
+.jcm3 span{float:left;color:#555;font-size:16px;line-height:30px;width:880px;}
+.jcm3 strong{font-weight:bold;color:#d15714}
 .foot{width:1000px;line-height:26px;text-align:center;margin:0 auto;font-size:12px;color:#fff;padding-top:10px}
 .foot a{color:#fff}
 .foot a:hover{ text-decoration:underline}

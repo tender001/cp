@@ -1515,7 +1515,7 @@ a.jcq_kcur {
 .rTbConTable td{ padding: 0 5px;}
 .rTbConTable .on td{ background-color: #f8f8f8;}
 .cGrey {color: #999999;}
-.cubzx h2{height:50px;border-bottom:2px solid #000;font-size:20px;font-family:"微软雅黑";line-height:50px;margin-bottom:10px}
+.cubzx h2{height:50px;margin-right:8px;border-bottom:2px solid #000;font-size:20px;font-family:"微软雅黑";line-height:50px;margin-bottom:10px}
 .cubzx h2 span{float:left}
 .cubzx h2 a{float:right;display:block;height:20px;width:65px;background:#2f6b15;color:#fff;text-align:center;line-height:20px;font-size:12px;font-weight:100;margin-top:20px;margin-right:4px}
 .cubzx h4 span{float:left}
@@ -1533,6 +1533,7 @@ a.jcq_kcur {
 .cubright h4{height:32px;line-height:32px;border-bottom:2px solid #000;padding-left:5px;color:#289403;font-weight:bold;font-size:14px}
 .cubright h4 b{display:block;width:3px;height:16px;background:#289403;margin-right:10px;margin-top:8px;float:left}
 .cubright h4 span{float:left;}
+.newactbr{padding-bottom:10px}
 .gswin td{text-align:center;color:#444;line-height:30px}
 .gswin tr.tr1 td{line-height:32px;height:32px;background:#f4f4f4}
 .gswin td.td1{text-align:right;padding-right:5px}

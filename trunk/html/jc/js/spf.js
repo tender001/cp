@@ -1698,7 +1698,7 @@ Class('ScrollStill', {
 	            offset:0,
 	            init: function(){
 	                var This = this,
-	                    title = this.area.parent().find('#tabletop').one(0),
+	                    title =area.parent().find('#tabletop').one(0),
 	                    floatTitle = title.cloneNode(true);
 	                this.get(floatTitle).insert(this);
 	                this.floatTitle = floatTitle;
