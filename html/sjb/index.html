@@ -40,7 +40,11 @@ ul{list-style:none;margin:0px;padding:0px}
 .index_ta{display:block;margin:0 auto;width:1590px;height:155px;}
 #footer{margin-top:0}
 </style>
+<script type="text/javascript" src="/public/jq.js"></script>
+<script type="text/javascript" src="/public/159cp.js"></script>
+
 <script type="text/javascript" src="/public/jq2.js"></script>
+<script type="text/javascript" src="/public/checklogin.js"></script> 
 <script type="text/javascript" src="js/world_cup.js"></script>
 </HEAD>
 <BODY  class="xuanhao_nav" style="background:url(/images/cai888/cubbg.jpg) no-repeat 50% 0 #8bb658" >
@@ -123,60 +127,7 @@ ul{list-style:none;margin:0px;padding:0px}
 			<!--#include virtual="/brazil/shijiebei_imglist.html"-->
 			<!--     世界杯广告图片结束-->
 </div>
-<script>
-   	$(document).ready(function(){
-   var len=$("#flash_num>li").length;
-   var index=1;
-   var int;
-   $("#flash_num>li").removeClass().addClass("click_out").eq(0).toggleClass("click_out").addClass("click_over");
-   $("#codes b input").keyup(function() {
-	
-	if(isNaN($(this).val())){
-	$(this).val("");
-	}
-	else if($(this).val()>33||$(this).val()<1){
-		$(this).val("");
-	}
-}) 
-$("#red_code").keyup(function() {
-	if($(this).val()>16||$(this).val()<1){
-		$(this).val("");
-	}
-})
-   function showSys(num)  //图片切换函数
-   {
-    $("#flash_num>li").removeClass().addClass("click_out").eq(num).toggleClass("click_out").addClass("click_over");
-    $("#flash_pic>a").fadeOut().eq(num).fadeIn();
-   }
-   function ziDong()  //自动切换
-   {
-    if(index==len)
-    {
-     index=0;
-    }
-    showSys(index);
-    index=index+1;
-   }
-   int=setInterval(ziDong,5000);
-   $("#flash_num>li").mouseover(function() //点击切换
-   {
-    var index_num=$("#flash_num>li").index(this);
-    showSys(index_num);
-    index=index_num+1;  //改变全局变量的值，以便鼠标移开的时候能够衔接上
-    
-   });
-   $("#flash_outer").mouseover(function()  //移动到上面时停止自动切换
-       {
-        clearInterval(int);
-       });
-   $("#flash_outer").mouseout(function()  //移开时继续自动切换
-       {
-        int=setInterval(ziDong,5000);
-       });
-       
-});
 
-    </script> 
 <div class="cubtt">
 <div class="rTabTit cup_list"><a class="on" id="xiaozu">小组赛</a>|<a id="taotai" >淘汰赛</a></div>
 
