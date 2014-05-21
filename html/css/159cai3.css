@@ -1185,11 +1185,11 @@ a.a_auto{margin:0 auto 20px auto}
 .news_left{width:605px;float:left;border:1px solid #ddd;padding:40px}
 .news_left h1{line-height:50px;font-size:24px; font-family:"微软雅黑";text-align:center;color:#444;font-weight:100}
 .news_left h4{color:#999;font-size:12px;text-align:center;font-weight:100;line-height:35px;padding-bottom:10px}
-.news_left h2{color:#444;font-size:14px;text-align:left;padding-left:10px;font-weight:bold;line-height:30px;border:1px solid #DDD; background-color:#fff4ef;margin: 0 15px}
+.news_left h2{color:#444;font-size:14px;text-align:left;padding-left:10px;font-weight:bold;line-height:30px;border:1px solid #DDD; background-color:#fff4ef;margin: 0 5px}
 .news_left p{line-height:28px;font-size:14px;color:#444; text-indent:24px;padding-bottom:25px}
 .news_l_list{padding:10px 0 0 30px}
-.news_l_list ul li{ background:url(../images/cdbg/news_list.gif) left center no-repeat;padding-left:10px;line-height:30px}
-.news_l_list ul li a{color:#145fab;font-size:14px}
+.news_l_list ul li{ background:url(../images/cdbg/news_list.gif) left center no-repeat;padding-left:10px;line-height:27px}
+.news_l_list ul li a{color:#145fab;font-size:12px}
 .news_l_list ul li a:hover{color:#790500; text-decoration:underline}
 .news_right{width:300px;float:left;margin-left:8px}
 .news_right_1{height:38px;background-image: url("../images/gccn.gif");border:1px solid #ddd;border-bottom:1px solid #a91e24}
