@@ -1,3 +1,72 @@
+Class({
+	ready: true,
+
+    index:function (config){
+    	
+    	this.carousel();//焦点图滚动
+    
+    	
+
+    },
+    carousel:function(){
+		var sWidth = $("#flash_outer").width(); 
+		var len = $("#flash_num li").length; 
+		var index = 0;
+		var picTimer;
+		
+	
+//		$("#focus").append(btn);
+		$("#focus .btnBg").css("opacity",0.5);
+
+		$("#flash_num li").css("opacity",0.4).mouseover(function() {
+			index = $("#flash_num li").index(this);
+			showPics(index);
+		}).eq(0).trigger("mouseover");
+
+		$("#focus .preNext").css("opacity",0.2).hover(function() {
+			$(this).stop(true,false).animate({"opacity":"0.5"},300);
+		},function() {
+			$(this).stop(true,false).animate({"opacity":"0.2"},300);
+		});
+
+//		$("#focus .pre").click(function() {
+//			index -= 1;
+//			if(index == -1) {index = len - 1;}
+//			showPics(index);
+//		});
+//
+//		$("#focus .next").click(function() {
+//			index += 1;
+//			if(index == len) {index = 0;}
+//			showPics(index);
+//		});
+
+		$("#flash_pic").css("width",sWidth * (len));
+		$("#flash_pic").css("position","absolute");
+		$("#flash_outer").hover(function() {
+			clearInterval(picTimer);
+		},function() {
+			picTimer = setInterval(function() {
+				showPics(index);
+				index++;
+				if(index == len) {index = 0;}
+			},3000); //自动播放的间隔
+		}).trigger("mouseleave");
+		function showPics(index) { 
+			var nowLeft = -index*sWidth; 
+			$("#flash_pic").stop(true,false).animate({"left":nowLeft},300); 
+			$("#flash_num li").stop(true,false).animate({"opacity":"0.4"},300).eq(index).stop(true,false).animate({"opacity":"1"},300); 
+		}
+    },
+   
+
+
+    	
+    	
+});
+
+
+
 $(function(){
 
 	//焦点赛事切换
