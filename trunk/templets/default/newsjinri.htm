@@ -1,0 +1,28 @@
+{dede:global runphp="yes"}
+global $dsql;
+$row=$dsql->getOne("select body from #@__addonarticle where aid=1830");
+@me=$row["body"];
+{/dede:global}
+
+	<div class="cubcc" style="float:right">
+			<h2>
+				竞彩推荐</h2>
+		{dede:arclist titlelen='45' row='7' typeid='15'}
+<a href="[field:arcurl/]" target="_blank">[field:title/]</a>
+  {/dede:arclist}
+</div>
+	</div>
+	<div style="clear:both">
+		<div class="cubcc">
+			<h2>
+				新闻速递</h2>
+			{dede:arclist titlelen='45' row='7' typeid='39'}
+<a href="[field:arcurl/]" target="_blank">[field:title/]</a>
+  {/dede:arclist}</div>
+		<div class="cubcc" style="float:right">
+			<h2>
+				北单推荐</h2>
+			{dede:arclist titlelen='45' row='7' typeid='14'}
+<a href="[field:arcurl/]" target="_blank">[field:title/]</a>
+  {/dede:arclist}</div>
+	</div>

@@ -1,0 +1,5 @@
+{dede:global runphp="yes"}
+global $dsql;
+$row=$dsql->getOne("select body from #@__addonarticle where aid=1921");
+@me=$row["body"];
+{/dede:global}
