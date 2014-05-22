@@ -1433,6 +1433,7 @@ a.jcq_kcur {
 .news_l_list ul li span{color:#999;padding-left:10px;font-size:12px}
 .newsrc h3  a{float:left}
 .onlkjp{padding-top:5px}
+.fxgj h2{background:#f5f5f5;height:30px;line-height:30px}
 .onlkj{border:1px solid #ddd;clear:both;zoom:1}
 .onlkj h3{border-bottom:1px solid #ddd;height:32px;line-height:32px;padding-left:10px;font-weight:bold;font-size:12px;background:#ececec}
 .onlkj h3 span{float:left;font-size:14px}
@@ -1444,7 +1445,7 @@ a.jcq_kcur {
 .onlkj p em{color:#ff0000;}
 .onlkj p b{display:block;float:left; background:url(../images/159/new_07.jpg);width:20px;height:20px;color:#fff;font-weight:bold;font-size:12px;line-height:20px;text-align:center;margin-right:2px}
 .onlkj p b.cur{background:url(../images/159/new_10.jpg)}
-.onlkj .jc_xqy{margin:0;width:238px;padding:10px 10px 20px}
+.onlkj .jc_xqy{margin:0;width:215px;padding:10px 10px 20px}
 .onlkj .jc_xqy span{position:relative;float:left;height:72px;height:72px;left:0;top:0}
 .onlkj .jc_xqy div{float:left;padding-left:5px;line-height:24px;color:#333;font-size:12px;_padding-left:2px}
 .onlkj .jc_xqy div strong{font-weight:bold}
@@ -1592,7 +1593,7 @@ a.jcq_kcur {
 .cubaimg img{width:235px;height:160px;}
 .cubaimg .cubimgc1{width:478px;height:335px}
 .cubaimg .cubimgc1 img{width:478px;height:335px}
-.cubaimg p{background:#000;text-align:center;color:#fff;font-size:18px;font-family:"微软雅黑";font-weight:bold;height:45px;line-height:45px;bottom:0;left:0;width:100%;position:absolute;filter:alpha(opacity=80);-moz-opacity:0.8;-khtml-opacity: 0.8;opacity: 0.8;}
+.cubaimg p{background:#000;text-align:center;color:#fff;font-size:18px;font-family:"微软雅黑";font-weight:100;height:45px;line-height:45px;bottom:0;left:0;width:100%;position:absolute;filter:alpha(opacity=80);-moz-opacity:0.8;-khtml-opacity: 0.8;opacity: 0.8;}
 .cubfot{border-top:8px solid #ececec;padding:15px 0;*margin-top:12px}
 .cubfot p{text-align:Center;color:#333;line-height:24px;}
 .cubfot p a{color:#333;}
