@@ -98,7 +98,8 @@ var myguoguan = function(lotid,expect,pn,ps,tp,tr){
 							
 							html+='<td align="center">'+info[1]+'</td>';			
 							
-							html+='<td align="center" title="'+info[2].replaceAll("\\*","串")+'">'+info[2].split(",")[0].replaceAll("\\*","串")+'</td>';
+					
+							html+='<td align="center" title="'+info[2].replaceAll("\\*","串").replaceAll("^1串1|,1串1","单关")+'">'+info[2].replaceAll("^1串1|,1串1","单关")+'</td>';
 
 							if(info[0]>0){
 								html+='<td align="center">'+info[0]+'</td>';
@@ -309,8 +310,7 @@ var loadpage = function(lotid,expect,pn,ps,tp,tr) {
 						}else{
 							gstr=gnames.replaceAll("\\*","串");
 						}
-						html+='<td align="center" title="'+gnames.replaceAll("\\*","串")+'">'+gstr+'</td>';
-
+						html+='<td align="center" title="'+gnames.replaceAll("\\*","串").replaceAll("^1串1|,1串1","单关")+'">'+gstr.replaceAll("^1串1|,1串1","单关")+'</td>';
 						if(zhushu>0){
 							html+='<td align="center"><em>'+zhushu+'</em></td>';
 						}else{
