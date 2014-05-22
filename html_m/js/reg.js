@@ -21,6 +21,8 @@ reg = function(){
 	var rand = $("#rand").val();
 	var check = $("#pbig").attr("checked");
 	var type = $("#type").val();
+	var rn = uname.replace(/[\d\w\\u4e00-\u9fa5]/gi,"");
+	
 	if(!check){
    	    showTips('请确认您已成年,非成年不能购彩');
         return;
@@ -28,6 +30,10 @@ reg = function(){
 	if(getStrLen(uname)<4 || getStrLen(uname)>16){
     	$("#uname").focus();
     	showTips('请填写您的用户名,4-16个字符');
+        return;
+    }
+	if (rn != "") {
+		showTips('用户名含有非法字符');
         return;
     }
 	 if(pwd.length<6 || pwd.length>20){
