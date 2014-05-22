@@ -40,6 +40,12 @@ reg = function(){
     	 showTips('两次输入的密码不一致,请确认');
          return;
      }
+	 
+	 var rn = uname.replace(/[\d\w\\u4e00-\u9fa5]/gi, "");
+	 if (rn != "") {
+		 showTips( '用户名含有非法字符');
+		 return;
+	 } 
 //	 if(!isPhone($.trim(phone)) && type == 0){
 //    	 showTips('对不起，请输入正确的手机号码');
 //         return;
