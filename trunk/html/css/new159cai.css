@@ -1415,7 +1415,7 @@ a.jcq_kcur {
 .news_left table td{height:35px;line-height:35px;}
 .news_left thead td,.news_left thead th{background:#f5f5f5;}
 .news_left table a:hover{color:#ff0000}
-.todaykj{width:195px;height:61px;background:url(../images/cai888/news_03.jpg);padding:12px 10px 10px 55px;}
+.todaykj{width:195px;height:61px;background:url(../images/cai888/news_03.jpg);padding:12px 10px 10px 55px;margin-bottom:10px}
 .todaykj p{line-height:20px;}
 .todaykj p a{color:#145fab;width:65px;float:left;display:block}
 .todaykj p a.a1{color:#ff6600}
