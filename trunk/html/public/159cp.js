@@ -1448,7 +1448,14 @@ Class({
 				})
 		});
 		 
-   
+    	var tmpUPage =(document.URL).split( "/" );
+    	var thisUPage = tmpUPage[tmpUPage.length-2 ];
+    	$("#naver li a").each(function(){
+    	var Url=($(this).attr("href")).split( "/" )[1];
+    	if(thisUPage==Url){
+    	$(this).parent().addClass('cur').siblings().removeClass("cur");
+    	}
+    	}); 
 		
 
     }
