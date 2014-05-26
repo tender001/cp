@@ -802,7 +802,7 @@ border-radius: 3px;-moz-border-radius:3px;}
 .paginachange .disabled span, .paginachange .disabled a, .paginachange .disabled a:hover {
     background-color: rgba(0, 0, 0, 0);
     color: #7C7C7C;
-    cursor: default;
+  
 }
 .all_km_2 table thead td,.zn_gg_4 table tr.tr1 td{ background: none repeat scroll 0 0 #EcEcEc;}
 .all_km_2 table tr.odd td{ background: none repeat scroll 0 0 #f5f5f5}
