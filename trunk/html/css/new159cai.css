@@ -1635,3 +1635,5 @@ table.co1 tbody td{padding:9px 0 8px}
 .dc_qq{float:right}
 .cubaimg .cubimgc3,.cubaimg .cubimgc5{float:right;margin-right:0}
 .cubbanner a{display:block;float:left;width:669px;height:300px;position:relative}
+#cp_status p:first-child{line-height:22px;color:#444;margin:5px 0 -10px 0}
+#cp_status p:first-child em{color:#e52e04;font-weight:bold}
