@@ -1241,6 +1241,7 @@ var showview = function(lotid,projid){
 						}
 					
 						$("#cp_lnum , #cp_lnum2").html(lnum);
+						
 //						$("#money_rate").html((lnum/tmoney).toFixed(2)*100);
 						$("#show_res").show();
 						$("#cm_sumb").show();
@@ -1491,6 +1492,7 @@ showduizhen =function (lotid,expect,projid,type,codes,cp){
 		end : function(d) {
 			var obj = eval("(" + d.text + ")");
 			var ggstr="";
+			var ggstr2="";
 			
 			if(lotid == 70){//混投
 				var spfstr=["3","1","0"];
@@ -1967,6 +1969,10 @@ showduizhen =function (lotid,expect,projid,type,codes,cp){
 					var wk=["日","一","二","三","四","五","六"];
 					$("#cp_changci").html(r.length);
 					if(!this.isArray(r)){r=new Array(r);}
+					var  arrmaxSp=[];
+					var arrminSp=[];
+					var maxSp="";
+					var minSp="";
 					r.each(function(rt,o) {
 						odd="";
 						var id = rt.id;// 场次编号
@@ -2130,14 +2136,15 @@ showduizhen =function (lotid,expect,projid,type,codes,cp){
 							
 							if(codes.split(";").length>1){
 								bet_str="";//得到投注选项
-								ggstr=codes.split(";")[0].split("|")[2].replaceAll("\\*","串");
+								ggstr2=ggstr=codes.split(";")[0].split("|")[2].replaceAll("\\*","串");
+								
 							}else{
 								
 							var arr_bet;
 							arr_bet=codes.split("|");
 							bet_str=arr_bet[1];//得到投注选项
 							ggstr='<font  class="cm_red">'+arr_bet[2].replaceAll("\\*","串")+'</font>';
-							
+							ggstr2=arr_bet[2].replaceAll("\\*","串");
 							if(bet_str.indexOf("$")!=-1){
 								dan=bet_str.split("$")[0];
 								bet_str=bet_str.replace("$",",");
@@ -2186,7 +2193,7 @@ showduizhen =function (lotid,expect,projid,type,codes,cp){
 								bet_str=bet_str.replaceAll("9:0","胜其它");
 							}
 							if(result!=null &&bet_str.indexOf(result)!=-1 &&lotid !=91){
-									bet_str=bet_str.replace(result,"<font   class='cm_red'><b>"+result+"</b></font>");
+//									bet_str=bet_str.replace(result,"<font   class='cm_red'><b>"+result+"</b></font>");
 							}else{
 								cls="";
 							}
@@ -2196,9 +2203,15 @@ showduizhen =function (lotid,expect,projid,type,codes,cp){
 								bet3=cksp[0];
 								bet1=cksp[1];
 								bet0=cksp[2];
+							
+								
 								result=result.replaceAll("3", "胜").replaceAll("1", "平").replaceAll("0", "负");
 								bet_str=bet_str.replaceAll("3", "胜").replaceAll("1", "平").replaceAll("0", "负");
+								maxsp=bet_str.replaceAll("胜", spvalue.split(",")[0]).replaceAll("平", spvalue.split(",")[1]).replaceAll("负", spvalue.split(",")[2]);
 								bet_str=bet_str.replaceAll("胜", "胜("+spvalue.split(",")[0]+")").replaceAll("平", "平("+spvalue.split(",")[1]+")").replaceAll("负", "负("+spvalue.split(",")[2]+")");
+								
+								maxsp=maxsp.split(" ");
+								arrmaxSp.push(Math.max.apply(null,maxsp));
 							}
 							if(lotid==92){
 								bet_str=bet_str.replaceAll("3-3","胜-胜("+spvalue.split(",")[0]+")");
@@ -2458,7 +2471,10 @@ showduizhen =function (lotid,expect,projid,type,codes,cp){
 					
 				}
 				html +=ggstr;
-				
+//				var  max_pl=[10,20,30];
+//				var gg_name=arr_bet[2].replaceAll("\\*","串");
+				var d=[];
+				$("#predictPrize").html( this.postMsg('msg_predict_max_prize', arrmaxSp, ggstr2, d).data);
 				$("#cp_guoguan").html(html);
 				if(lotid>=90 || lotid==70 || lotid==72 ){
 //					html += Class.C("caststate") == 3 ? "&nbsp;&nbsp;<a href='javascript:void(0);' onclick=\'billcode(\""+lotid+"\",\""+projid+"\")\'>出票明细</a>" : "";
