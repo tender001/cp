@@ -25,9 +25,9 @@ $_sys.grade_def2.push([01,'<font color="red">6</font>+<font color="blue">1</font
 $_sys.grade_def2.push([50,'<font color="red">5</font>+<font color="blue">2</font>,'+
                        '<font color="red">5</font>+<font color="blue">1</font>,'+
                        '<font color="red">5</font>+<font color="blue">0</font>/<font color="red">4</font>+<font color="blue">2</font>,'+
-                       '<font color="red">4</font>+<font color="blue">1</font>/<font color="red">4</font>+<font color="blue">0</font>/<font color="red">3</font>+<font color="blue">2</font>,'+
-                       '<font color="red">3</font>+<font color="blue">1</font>/<font color="red">2</font>+<font color="blue">2</font>/<font color="red">3</font>+<font color="blue">0</font>,'+
-                       '<font color="red">2</font>+<font color="blue">1</font>/<font color="red">1</font>+<font color="blue">2</font>/<font color="red">0</font>+<font color="blue">2</font>']);
+                       '<font color="red">4</font>+<font color="blue">1</font>/<font color="red">3</font>+<font color="blue">2</font>,'+
+                       '<font color="red">4</font>+<font color="blue">0</font>/<font color="red">3</font>+<font color="blue">1</font>/<font color="red">2</font>+<font color="blue">2</font>,'+
+                       '<font color="red">3</font>+<font color="blue">0</font>/<font color="red">1</font>+<font color="blue">2</font>/<font color="red">2</font>+<font color="blue">1</font>/<font color="red">0</font>+<font color="blue">2</font>']);
 $_sys.grade_def2.push([500,'<font color="red">5</font>+<font color="blue">2</font>,'+
                        '<font color="red">5</font>+<font color="blue">1</font>,'+
                        '<font color="red">5</font>+<font color="blue">0</font>,'+
