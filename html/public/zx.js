@@ -108,6 +108,36 @@
     		
 
         
-        }
+        },
+    	loadPeriod = function(){
+			Y.ajax({				
+				url : "/cpdata/game/aopencode.json?rnd=" + Math.random(),
+				type : "get",
+				cache:false,
+				dataType : "json",
+				end : function(data) {
+					var obj = eval("(" + data.text + ")");
+					var r = obj.rows.rownow;
+					var d = Y.getDate(data.date).format('YY-MM-DD');
+					r.each(function(rt,o) {
+						var nd = Y.getDate(rt.nowendtime).format('YY-MM-DD');
+						if(nd==d){
+							
+							$('.todaykj a[id='+rt.gid+']').show().addClass("a1");
+						}else{
+							
+							$('.todaykj a[id='+rt.gid+']').hide();
+						}
+						if(Class.C('lotid') == rt.gid){
+							Class.C('nowpid', rt.nowpid);
+						}
+					});
+				},
+				error : function() {
+					this.alert("�������!");
+					return false;
+				}
+			});
+	}
      
     }); 
