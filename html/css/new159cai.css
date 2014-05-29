@@ -1641,9 +1641,10 @@ table.co1 tbody td{padding:9px 0 8px}
 .cubbanner a{display:block;float:left;width:669px;height:300px;position:relative}
 #cp_status p:first-child{line-height:22px;color:#444;margin:5px 0 -10px 0}
 #cp_status p:first-child em{color:#e52e04;font-weight:bold}
-.five_wrong{width:753px;height:263px; background-image:url(../images/50.jpg);margin:150px auto; position:relative}
-.five_wrong p.wr1{color:#111;font-size:12px;font-weight:100;padding:92px 0 0 450px;line-height:30px}
-.five_wrong p.wr2{color:#111;font-size:12px;padding:20px 0 0 390px;line-height:25px}
-.five_wrong p.wr2 a{color:#145fab;padding:0 10px;font-size:14px}
-.five_wrong p.wr2 a:hover{color:#ff6600; text-decoration:underline;}
-.five_wrong p.wr2 em{font-size:12px;color:#888 }
+
+.error500 {
+    background: url(../images/newimg/error500.jpg) repeat scroll 0 0 ;
+    height: 457px;
+    margin: 0 auto;
+    width: 1152px;
+}
