@@ -1735,7 +1735,7 @@ Class( {
 	        				V.css({left: "auto", top: "auto",width: F, position: "static"});
 	        			} else {
 	        				if(isIE6){
-	        					V.css({left: "auto",top: Z+$(window).scrollTop(), width: F,position: "absolute"});
+	        					V.css({left: "auto",top: Z+$(window).scrollTop()-140, width: F,position: "absolute"});
 	        				}else{
 	        					V.css({left: "auto",top: Z, width: F, position: "fixed"});
 	        				}
