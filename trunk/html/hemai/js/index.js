@@ -27,8 +27,11 @@ $(document).ready(function(){
 	
 	
 	searchUser = function(){
+		if(selectProject($("#findstr").val())==null){
+			Y.alert("请输入用户名");
+		}else{
 		selectProject($("#findstr").val());
-
+		}
 	}
 	
 	
