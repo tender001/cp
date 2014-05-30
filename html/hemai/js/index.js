@@ -23,6 +23,16 @@ $(document).ready(function(){
 			});
 		});
 	}); 
+	
+	
+	
+	searchUser = function(){
+		selectProject($("#findstr").val());
+
+	}
+	
+	
+	
 	viewHotUser = function(htmlid){
 		$("#" + htmlid).html();
 		var _lotid="00";
