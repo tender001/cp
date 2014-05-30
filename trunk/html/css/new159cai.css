@@ -1311,11 +1311,11 @@ a.jc_mtz:hover, a.jc_mhm:hover{background-position:-110px 0}
 .jckj_tb p span{float:left}
 .jckj_tb p b{background:url("/images/cai888/jctop_06.jpg") 0 0 ;height:15px;width:15px;cursor:pointer;display:block;float:left;margin:5px 0 0 3px}
 .jckj_tb label{float:left;cursor:pointer}
-.matchxzk{ cursor: pointer;height: 32px;line-height: 30px;position: relative;z-index: 2;overflow:visible}
-.matchxz{float:left;width:100%}
+.matchxzk{ cursor: pointer;height: 32px;line-height: 30px;position: relative;z-index: 2;overflow:visible;_height:22px}
+.matchxz{float:left;width:100%;_height:22px;_padding-top:10px}
 .matchxz i{background:url("/images/cai888/jtdown_11.jpg") 0 0 no-repeat;transition: all 0.2s ease-in 0s;height: 4px;margin-left: 5px;vertical-align: middle;width: 7px;display:inline-block}
 .jcslt{position:absolute;z-index:9;top:30px;left:0;background:#fff;width:113px;border:2px solid #444;padding-bottom:10px}
-.matchxzc{border:2px solid #444;border-bottom:none; background:#fff;height:30px;line-height:28px;position:relative;z-index:99;}
+.matchxzc{border:2px solid #444;border-bottom:none; background:#fff;height:30px;line-height:20px;position:relative;z-index:99;_height:20px}
 .matchxzc i{transform:rotate(180deg)}
 .dc_l_tl{float:left;padding-left:102px}
 .tdaa td{line-height:34px;height:34px;}
@@ -1635,7 +1635,7 @@ a.jcq_q{background:none}
 .tdaa a.a2 i{color:#333}
 .dc_r .box_m{background:#fff}
 table.co1 tbody td{padding:9px 0 8px}
-#main{position:relative}
+
 .dc_qq{float:right}
 .cubaimg .cubimgc3,.cubaimg .cubimgc5{float:right;margin-right:0}
 .cubbanner a{display:block;float:left;width:669px;height:300px;position:relative}
