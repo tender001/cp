@@ -791,9 +791,9 @@ span.suc_reg a.a3{color:#145fab;text-decoration:underline;margin-left:1px}
 .newgg span{color:#e52e04;font-weight:bold;padding-left:12px;}
 .newgg a{margin-left:10px;color:#333}
 .newgg a:hover{color:#ff6600; text-decoration:underline}
-.nngg_a{height:36px;background:url(../images/cai888/ggnav_03.jpg)}
-.nngg_a a{ display:block;float:left;padding:0 13px;height:35px;line-height:34px;text-align:center;font-size:14px;color:#000;float:left;border-bottom:1px solid #ccc;border-right:1px solid #ccc;}
-.nngg_a a.cur{ background:#fff;color:#333;font-weight:bold;border-bottom:none}
+.nngg_a{height:36px;border-bottom:3px solid #ff6600}
+.nngg_a a{ display:block;float:left;padding:0 25px;height:36px;line-height:36px;text-align:center;font-size:14px;font-weight:bold;color:#333;float:left;border-right:1px solid #ccc;}
+.nngg_a a.cur{ background:#ff6600;color:#fff;font-weight:bold;border-bottom:none}
 a.g_a_t{ background:#e52e04;font-size:14px;font-weight:bold;color:#fff;line-height:32px; text-align:center;-webkit-border-radius:3px;   
 border-radius: 3px;-moz-border-radius:3px;}
 .g_5_right td b{display:block;float:right;margin-right:5px;border:1px solid #ddd; background: url(../images/159/nng_07.jpg) right center #efefef no-repeat;padding:0 20px 0 5px;font-weight:100;color:#333;height:18px; line-height:18px;margin:3px 5px 3px ;cursor:pointer}
@@ -834,8 +834,9 @@ border-radius: 3px;-moz-border-radius:3px;}
     position: absolute;}
 .g_5_rightx{height:150px;padding-top:40px}
 .kj_dzxq table td.tdx{ background-color:#f0f0f0}
-.zn_gg_1x{}
-.zn_gg_1x p{float:right;padding-right:15px;line-height:30px;color:#666}
+.zn_gg_1x{height:45px}
+.zn_gg_1 p{padding-top:10px;line-height:25px}
+.zn_gg_1x p{float:right;padding-right:15px;line-height:30px;color:#666;padding-top:10px}
 .kj_dzxq table td.td_shu {
     font-size: 12px;
     letter-spacing: 1px;
@@ -894,9 +895,9 @@ border-radius: 3px;-moz-border-radius:3px;}
 .teamnum p{display:block;width:25%;float:left;text-align:Center;color:#aaa;font-weight:bold;background: url(../images/159/win_03.jpg) center 0 no-repeat;line-height:14px;padding-top:8px;}
 .cupteamlist{margin-bottom:15px;*zoom:1}
 .cupteamlist td{border:none;height:38px;width:185px}
-.cupteamlist a{display:block;height:38px;width:185px;background:url(../images/jczq/lc_48.jpg) no-repeat scroll 100% -2px ;line-height:38px}
-.cupteamlist a:hover{background:url(../images/njc/jcy_29.jpg) 100% 0 no-repeat}
-.cupteamlist a.cur,.cupteamlist a.cur:hover{background:url(../images/jczq/lc_40.jpg) repeat scroll 0 0 }
+.cupteamlist a{display:block;height:38px;width:185px;background:url(../images/cai888/ban1.jpg) no-repeat scroll 100% -2px ;line-height:38px}
+.cupteamlist a:hover{background:url(../images/cai888/ban3.jpg) 100% bottom no-repeat}
+.cupteamlist a.cur,.cupteamlist a.cur:hover{background:url(../images/cai888/ban4.jpg) repeat scroll 0 0 }
 .cupteamlist a img{display:block;float: left;height: 25px;margin: 7px 0 0 10px;width: 25px;_margin-left:5px}
 .cupteamlist a span{color:#111;font-size:14px;padding-left:10px;float:left}
 .cupteamlist a em{color:#145fab;font-size:12px;padding-right:10px;float:right}
@@ -1648,3 +1649,13 @@ table.co1 tbody td{padding:9px 0 8px}
     margin: 0 auto;
     width: 1152px;
 }
+a.n_gz{color:#fff}
+.zn_gg_main{border:none}
+.guogd1{border:1px solid #ddd;margin-bottom:14px}
+.s_select{padding:15px 0 0 20px;font-weight:100}
+.zn_gg_3{border-left:1px solid #ddd;border-right:1px solid #ddd}
+.zn_gg_4{border:1px solid #ddd;border-top:none}
+.ggzcnav{height:33px;padding:20px 0 5px 25px;background: url(../images/cai888/cjt_01.jpg) 0 37px repeat-x;}
+.ggzcnav a{display:block;width:58px;height:33px;line-height:28px;color:#333;float:left;margin-right:6px;text-align:center;}
+.ggzcnav a.cur,.ggzcnav a:hover{color:#fff;background: url(../images/cai888/cjt_03.jpg)}
+.zn_gg_5{padding:0 10px 10px}
