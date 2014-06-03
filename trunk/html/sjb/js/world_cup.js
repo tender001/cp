@@ -57,7 +57,7 @@ Class({
 			$("#flash_pic").stop(true,false).animate({"left":nowLeft},300); 
 			$("#flash_num li").stop(true,false).animate({"opacity":"0.4"},300).eq(index).stop(true,false).animate({"opacity":"1"},300); 
 		}
-    },
+    }
    
 
 
@@ -165,7 +165,8 @@ function count_down(){
    
 	  if(int_hour < 10) 
 	  int_hour = "0" + int_hour;  
-		
+	  if(int_day < 10) 
+		  int_day = "0" + int_day;  
 	  if(int_minute < 10)    
 	  int_minute = "0" + int_minute;  
         
