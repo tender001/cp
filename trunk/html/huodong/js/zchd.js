@@ -130,7 +130,8 @@ function count_down(){
    
 	  if(int_hour < 10) 
 	  int_hour = "0" + int_hour;  
-		
+	  if(int_day < 10) 
+		  int_day = "0" + int_day;  
 	  if(int_minute < 10)    
 	  int_minute = "0" + int_minute;  
         
