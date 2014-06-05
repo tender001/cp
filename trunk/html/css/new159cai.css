@@ -432,9 +432,9 @@ span.kj_reson b.blue{background-position: -190px -43px;}
 .hm_left_t2 p a{padding-left:48px;color:#ff6600}
 .nhmleft{background:url(../images/159/nhm_07.jpg)}
 .hm_left_t2{border-bottom:none}
-.nhmleft{border-bottom:1px solid #d6be91;margin-bottom:12px}
-.nhmleft h2{padding-left:47px;color:#ff6600;font-weight:bold;border:1px solid #d6be91;height:30px;line-height:30px; background-color:#f8edd8;width:123px;font-size:14px}
-.nhmleft a{display:block;height:32px;padding-left:47px;width:123px;color:#ff6600;font-size:14px;line-height:32px; position:relative;background:#f8f8f8;margin-left:1px}
+.nhmleft{border-bottom:1px solid #ddd;margin-bottom:12px}
+.nhmleft h2{padding-left:47px;color:#444;font-weight:bold;border:1px solid #ddd;height:30px;line-height:30px; background-color:#f3f3f3;width:123px;font-size:14px}
+.nhmleft a{display:block;height:32px;padding-left:47px;width:123px;color:#444;font-size:14px;line-height:32px; position:relative;background:#f8f8f8;margin-left:1px}
 .nhmleft a:hover,.nhmleft a.cur{ background:url(../images/159/nhm_09.jpg);margin:0;width:125px}
 .nhmleft a img{display:block; position:absolute;right:5px;top:7px}
 .hm_left{ background:none}
@@ -894,13 +894,15 @@ border-radius: 3px;-moz-border-radius:3px;}
 .teamnum{height:27px;border-top:1px solid #bbb}
 .teamnum p{display:block;width:25%;float:left;text-align:Center;color:#aaa;font-weight:bold;background: url(../images/159/win_03.jpg) center 0 no-repeat;line-height:14px;padding-top:8px;}
 .cupteamlist{margin-bottom:15px;*zoom:1}
-.cupteamlist td{border:none;height:38px;width:185px}
+.cupteamlist td{border:none;height:38px;}
 .cupteamlist a{display:block;height:38px;width:185px;background:url(../images/cai888/ban1.jpg) no-repeat scroll 100% -2px ;line-height:38px}
 .cupteamlist a:hover{background:url(../images/cai888/ban3.jpg) 100% bottom no-repeat}
 .cupteamlist a.cur,.cupteamlist a.cur:hover{background:url(../images/cai888/ban4.jpg) repeat scroll 0 0 }
+.cupteamlist a.hui{background:url(../images/cai888/ban11.jpg) 100% bottom no-repeat;}
 .cupteamlist a img{display:block;float: left;height: 25px;margin: 7px 0 0 10px;width: 25px;_margin-left:5px}
 .cupteamlist a span{color:#111;font-size:14px;padding-left:10px;float:left}
 .cupteamlist a em{color:#145fab;font-size:12px;padding-right:10px;float:right}
+.cupteamlist a.hui span,.cupteamlist a.hui em{color:#999}
 .wdcupleft h2{height:32px;border-bottom:2px solid #ff6600;background-color:#f0f0f0;line-height:32px;font-size:14px;padding-left:20px;color:#444;}
 .cupvs{width:750px;height:368px;background: url(../images/159/win_07.jpg) 3px 0 no-repeat;margin:20px -3px 5px;}
 .wdcupright{width:230px;float:right;border:1px solid #ccc;border-top:none;margin-top:34px;padding-bottom:20px}
@@ -912,7 +914,7 @@ border-radius: 3px;-moz-border-radius:3px;}
 .wdcupright p.p1 em{color:#ff6600;font-weight:bold;padding:0 2px}
 .wdcupright p.p1 input{width:40px;padding-left:3px;height:18px;margin: 0 8px 0 2px;border:1px solid #ddd;border-top:1px solid #bbb;border-left:1px solid #bbb;color:#444}
 .wdcupright  a.jc_mtz{margin:10px 0 0px 55px;_margin-left:28px}
-.cupteamlist .cuptab1 a{width:100%;_width:316px}
+.cupteamlist .cuptab1 a{width:315px;border:1px solid #ddd;border-top:none}
 .cuptab1{float:left}
 .cuptab1 tr.tr1 td,.cuptab1 tr.tr1 th{height:30px;line-height:30px; background-color:#e9e9e9;text-align:Center;border-bottom:none;border-right:1px solid #fff;color:#444;font-size:12px}
 .cuptab1 tr td{ text-align:center;color:#444;}
@@ -1659,3 +1661,5 @@ a.n_gz{color:#fff}
 .ggzcnav a{display:block;width:58px;height:33px;line-height:28px;color:#333;float:left;margin-right:6px;text-align:center;}
 .ggzcnav a.cur,.ggzcnav a:hover{color:#fff;background: url(../images/cai888/cjt_03.jpg)}
 .zn_gg_5{padding:0 10px 10px}
+.hm_right .rig_hm_main table thead{background:#f5f5f5}
+.hm_right .rig_hm_main table thead td,.hm_right .rig_hm_main table thead th{border-bottom:1px solid #ddd}
