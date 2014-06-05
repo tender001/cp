@@ -191,7 +191,9 @@ border-radius: 10px;-moz-border-radius:10px;text-align:left;_overflow:hidden }
 .rig_hm_main table img.gm{float:left;width:33px;height:23px}
 .rig_hm_main table a{color:#3970b6}
 .rig_hm_main table  a:hover{color:#ff6600; text-decoration:underline}
-.rig_hm_main table tbody tr:hover{ background-color:#f3efe5}
+
+.rig_hm_main table tbody tr.odd{ background-color:#fefecb}
+.rig_hm_main table tbody tr:hover,.rig_hm_main table tbody tr.odd:hover{ background-color:#fefecb}
 .rig_hm_main table  th{font-weight:100;text-align:left;color:#4b4a4b;border-bottom:1px solid #ddd;line-height:32px}
 .rig_hm_main table thead th{border:none;line-height:30px;}
 .rig_hm_main table thead th.t_zj{text-align:center}
