@@ -209,7 +209,8 @@ $(document).ready(function(){
 						if(!this.isArray(r)){r=new Array(r);}
 						r.each(function(rt,o){
 							var gameid = rt.gid;
-							var html = '<tr id='+rt.nid+'>';
+							var cl=o%2==0?"":"odd";
+							var html = '<tr id='+rt.nid+' class = '+cl+'  >';
 							html += '<td>';
 							if(rt.iorder > 0 && rt.jindu != 100){
 								html += '<img src="/images/index_93.gif" />';
@@ -333,7 +334,8 @@ $(document).ready(function(){
 						r.each(function(rt,o){
 							var gameid = rt.gid;
 							var idx = (o+1) + (Class.C("pn")-1)*Class.C("ps");
-							var html = '<tr id='+idx+'>';
+							var cl=o%2==0?"":"odd";
+							var html = '<tr id='+idx+' class = '+cl+'>';
 							html += '<td>';
 							if(rt.iorder > 0 && rt.jindu != 100){
 								html += '<img src="/images/index_93.gif" />';
@@ -437,7 +439,8 @@ $(document).ready(function(){
 						r.each(function(rt,o){
 							var gameid = rt.gid;
 							var idx = (o+1) + (Class.C("pn")-1)*Class.C("ps");
-							var html = '<tr id='+idx+'>';
+							var cl=o%2==0?"":"odd";
+							var html = '<tr id = '+idx+' class='+cl+'>';
 							html += '<td>';
 							if(rt.iorder > 0 && rt.jindu != 100){
 								html += '<img src="/images/index_93.gif" />';
