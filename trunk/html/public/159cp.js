@@ -63,6 +63,36 @@ var $_trade = {}; // ---交易
 var $_sys = {}; // 系统相关
 var $_cache ={};//缓存相关
 
+$_base_s.getXMLNodes=function(xdc,n,idx){
+	var l=n.length,itm=[];
+	if(typeof(idx)=="undefined"){
+		for(var i=0;i<l;i++){itm.push(0)}
+	}else{itm=idx}
+	var o=xdc,l=n.length;
+	try{
+		for(var i=0;i<l-1;i++){
+			o=o.getElementsByTagName(n[i])[itm[i]];
+		}
+		o=o.getElementsByTagName(n[l-1]);
+	}catch(e){
+		return false;
+		//$_bf_w.getXmlError();
+	}
+	return o;
+};
+$_base_s.hasNodes=function(xdc,n,idx){
+	var l=n.length,itm=[];
+	if(typeof(idx)=="undefined"){
+		for(var i=0;i<l;i++){itm.push(0)}
+	}else{itm=idx}
+	var o=xdc;
+	for(var i=0;i<l;i++){
+		o=o.getElementsByTagName(n[i])[itm[i]];
+		if(!o.hasChildNodes()){return false;}
+	}
+	return true;
+};
+
 $_base_s.getStrLen = function(str) {// 含中文的字符串长度
 	var len = 0;
 	var cnstrCount = 0;
