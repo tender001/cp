@@ -5,8 +5,10 @@ $(function() {
 		lotid = "80";
 	}
 	$(".nngg_a a").each(function(o,rt){
-		if($(rt).attr("mark") == $("#lotid").val()){
+		if($(rt).attr("mark") == "80"){
+			if($("#lotid").val()=="80" || $("#lotid").val()=="81" || $("#lotid").val()=="83" || $("#lotid").val()=="82"){
 			$(rt).addClass("cur").siblings().removeClass("cur");
+			}
 		}
 	});
 	$("#show_info").click(function(o,rt){

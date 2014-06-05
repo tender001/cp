@@ -54,6 +54,13 @@ $(function() {
 		if($(rt).attr("mark") == $("#lotid").val()){
 			$(rt).addClass("cur").siblings().removeClass("cur");
 		}
+		if($(rt).attr("mark") == "53"){
+			if($("#lotid").val()  == "53" || $("#lotid").val()  == "52" || $("#lotid").val()  == "51" || $("#lotid").val()  == "07" ){
+				
+				$(rt).addClass("cur").siblings().removeClass("cur");
+			}
+			
+		}
 	});
 	$("#showtr").click(function(){
 		
