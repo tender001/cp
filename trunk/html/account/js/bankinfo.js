@@ -50,6 +50,7 @@ Class({
 					Y.get("#cardnumber").val(card);
 					if (card!=""){
 						Y.get("#cardnumber").attr("disabled",true);
+						Y.get("#bankType").attr("disabled",true);
 						Y.get("#cardnumber").attr("hide","yes");
 					}
 					if (card==""){

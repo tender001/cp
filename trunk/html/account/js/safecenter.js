@@ -87,7 +87,8 @@ Class({
 							
 							if (bank.length > 10) {
 								
-								$("#bank s").html('已绑定，不可修改').removeClass("cur");
+								//$("#bank s").html('').removeClass("cur");
+								$("#bank s").html('已绑定,<a id="div4" name="bank" class="s"  href="/account/bankinfo.html">查看</a>').removeClass("cur");;
 								$("#bank_i").addClass("bankcur");
 								$("#bk").html('银行卡号：<em id="bank">'+bank+'</em>'+'&nbsp;&nbsp;&nbsp;&nbsp;支行名称：<em id="name">'+name+'</em>');
 								safe += 1;
