@@ -7,6 +7,7 @@
 <meta content='black' name='apple-mobile-web-app-status-bar-style' />
 <meta content='telephone=no' name='format-detection' />
 <title>Andriod客户端下载</title>
+
 <style type="text/css">
 {margin:0;padding:0}
 body,h3,h4,h2,h1,h5,table,td,th,ul,li,ol,dd,dt,dl,div,span,p,b,i,s,em,thead,tbody,font,select,input,option{margin:0;padding:0}
@@ -20,6 +21,7 @@ div,ul,li{ list-style-type:none;overflow:hidden}
 h1,h2,h3,h4,h5,h6,em,i,s,b{font-style:normal; text-decoration:none;font-size:0.8em;font-weight:100;color:#333} 
 
 </style>
+ <script type="text/javascript" src="/public/jq2.js"></script>
 </head>
 <body>
 <h1 style="background: none repeat scroll 0 0 #A10A23;
@@ -32,9 +34,31 @@ h1,h2,h3,h4,h5,h6,em,i,s,b{font-style:normal; text-decoration:none;font-size:0.8
     text-align: center;">159彩票网android客户端</h1>
 <div  style="width:100%;max-width:640px;margin:0 auto; position:relative">
 <img src="adrbg.jpg"  style="width:100%">
-<a href="http://www.159cai.com/download/159cai_shouji.apk" target="_blank" ><img src="adr_03.jpg"  style=" position:absolute;bottom:2.3cm;right:0.7cm;width:50%"/></a>
+<a href="http://www.159cai.com/download/159cai_shouji.apk" target="_blank"  id="download"><img src="adr_03.jpg"  style=" position:absolute;bottom:2.3cm;right:0.7cm;width:50%"/></a>
 <p   style=" position:absolute;bottom:0.8cm;right:1.1cm;width:40%;text-align:center;font-size:12px;color:#444;line-height:18px;"><a href="http://m.159cai.com" style="font-size:12px;color:#444; text-decoration:underline">手机访问159彩票网</a><br />(http://m.159cai.com)</p>
 </div>
-
+<script>
+$(document).ready(function() {
+	var regfrom=getCookie("regfrom");
+	if(regfrom=="11983"){
+		$("#download").attr("href","http://www.159cai.com/download/vip/"+regfrom+"/159cai_shouji.apk");
+	}else{
+		$("#download").attr("href","http://www.159cai.com/download/159cai_shouji.apk");
+	}
+})
+function getCookie(c_name)
+{
+if(document.cookie.length>0){
+   c_start=document.cookie.indexOf(c_name + "=")
+   if(c_start!=-1){ 
+     c_start=c_start + c_name.length+1 
+     c_end=document.cookie.indexOf(";",c_start)
+     if(c_end==-1) c_end=document.cookie.length
+     return unescape(document.cookie.substring(c_start,c_end))
+   }
+}
+return ""
+}
+</script>
 </body>
 </html>
