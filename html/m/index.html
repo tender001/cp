@@ -8,11 +8,12 @@
 <link href="/css/duiwai.css"  rel="stylesheet" type="text/css" />
  <script type="text/javascript" src="/public/jq2.js"></script>
 <script type="text/javascript" src="/public/jq.js"></script>
-<script type="text/javascript" src="/public/menu.js"></script>
+
 <script type="text/javascript" src="/public/159cp.js"></script>
 <script type="text/javascript" src="/public/checklogin.js"></script> 
 </head>
 <script >
+$(document).ready(function() {
 function redirect(){
 	location.href = href;
 	}
@@ -32,7 +33,13 @@ function redirect(){
 	} else {
 // 	location.href = '/';
 	}
-	
+	var regfrom=getcookie("regfrom");
+	if(regfrom=="11983"){
+		$(".ad_a2 a").attr("href","http://www.159cai.com/download/vip/"+regfrom+"/159cai_shouji.apk");
+	}else{
+		$(".ad_a2 a").attr("href","http://www.159cai.com/download/159cai_shouji.apk");
+	}
+});
 
 </script>
 <body style="background: url(/images/duiwai/adr.jpg) 50% 0 no-repeat">
