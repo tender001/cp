@@ -522,12 +522,12 @@ Class({
    },
    bindEvent: function (config){
 	   var that = this;
-	   $("[mark=chkno]").click(function(){
-    		that.sortTable("mid",this,"[mark=chkno]");
-     });
-	   $("[mark=chksp]").click(function(){
-		    that.sortTable("sp",this,"[mark=chkno]");
-	   });
+//	   $("[mark=chkno]").click(function(){
+//    		that.sortTable("mid",this,"[mark=chkno]");
+//     });
+//	   $("[mark=chksp]").click(function(){
+//		    that.sortTable("sp",this,"[mark=chkno]");
+//	   });
 	   Y.get("#groupTab").click(function(g){
 		  $("#groupbet,#vs_box").toggle();
 		  $("input.chbox").click();
