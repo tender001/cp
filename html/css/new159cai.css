@@ -503,16 +503,16 @@ em.uf{ background-image:url(../images/159/uf.gif)}
 .nxtab .cur {background-position: 0 -350px;height:35px;margin-top:2px}
 .nxtab .cur a{background-position: 100% -385px;color: #FFFFFF;font-weight: bold;height:35px;line-height:35px}
 .nxtable tr td{text-align:Center;color:#666;font-size:12px; font-family:Arial;height:32px;line-height:30px; background:url(../images/159/nx_10.jpg)}
-.nxtable tr.tr1 td{font-size:15px; font-family:Arial;font-weight:bold;color:#333;line-height:32px; background:#fee6b1;border-bottom:1px solid #fdcd5e}
+.nxtable tr.tr1 td{font-size:15px; font-family:Arial;font-weight:bold;color:#333;line-height:32px; background:#fde8d8;border-bottom:1px solid #fdcd5e}
 .nxtable tr b{display:inline-block;width:23px;height:23px; background:url(../images/159/nx_14.jpg);text-algin:center;color:#fff;font-weight:bold;line-height:24px}
 .nxtable tr.last td{height:30px;line-height:30px}
 .nxtable p{float:left;text-align:left;color:#333;font-size:14px;font-weight:bold;line-height:18px;padding-left:13px}
 .nxtable span{display:block;width:314px;height:5px; background-color:#cccccc;overflow:hidden}
 .nxtable span em{display:block;width:100%;height:5px;overflow:hidden;background-color:#c95b06;}
-.nxmiddle{ background: url(../images/159/nx_48.jpg) bottom no-repeat ;padding-bottom:39px; position:relative}
+.nxmiddle{position:relative;padding-bottom:15px}
 .nxmiddle h2{line-height:30px;height:30px;padding-top:20px;}
 .nxmiddle h2 span{float:left;display:block;width:140px;height:30px;padding-left:10px;color:#ff3300;font-size:18px; background:url(../images/159/nx_26.jpg) no-repeat right 0; }
-.nxmiddle h2 p{float:left;padding-left:20px;color:#555;font-weight:100;font-size:12px}
+.nxmiddle h2 p{float:left;padding-left:70px;color:#555;font-weight:100;font-size:12px}
 .nxmiddle h2 p em{color:#e52e04;font-weight:bold}
 .head_tel img{width:auto;height:auto}
 .head_r ul{float:right;padding-right:23px}
@@ -525,7 +525,7 @@ em.uf{ background-image:url(../images/159/uf.gif)}
 .nstime b{display:inline-block;background: url(../images/159/nx_38.jpg);width:22px;height:20px;text-align:Center;line-height:20px;font-size:16px;color:#333; font-family:Arial;margin:0 2px}
 .nsbool b{ background:url(../images/159/nx_33.jpg);width:37px;height:38px;line-height:38px;text-align:center;margin-right:10px;float:left;color:#000;font-size:22px;font-family:Arial;cursor:pointer}
 .nsbool b.cur{ background:url(../images/159/nx_30.jpg);color:#fff}
-.nsopr{ background:url(../images/159/nx_36.jpg) no-repeat;width:205px;height:32px;margin-left:30px;padding-left:24px;overflow:hidden}
+.nsopr{ background:url(../images/159/nx_36.jpg) no-repeat;width:205px;height:32px;margin-left:90px;padding-left:24px;overflow:hidden}
 .nsopr b{ background:url(../images/159/nx5s_03.jpg);width:25px;height:25px;line-height:25px;text-align:center;color:#e52e04;float:left;margin-left:5px;margin-top:4px;font-weight:100; cursor:pointer}
 .nsopr b:hover{background:url(../images/159/nx5s_06.jpg)}
 .nsopr b.bem{color:#e52e04;float:left;margin-left:10px;cursor:pointer;width:24px;background:none}
@@ -538,7 +538,7 @@ em.uf{ background-image:url(../images/159/uf.gif)}
 a.sz_cmt{background:url(../images/159/nx5s_09.jpg);width:137px;height:34px;}
 a.sz_cmtcur{background:url(../images/159/nx5s_11.jpg);}
 a.qc_xh:hover{color:#145fab;}
-p.xh_text{padding:15px 0}
+p.xh_text{padding:10px 0;font-size:12px}
 .jxxk{height:47px}
 .kc_zj3{height:30px}
 p.red_pay{font-size:15px; font-family:Arial;padding-bottom:2px}
@@ -553,7 +553,7 @@ a.asz_tz{margin:0 auto}
 .kc_td_kj table thead td.td1{border-right:none;font-size:12px;color:#888; font-family: Arial}
 .kc_td_kj table tbody td{font-size:12px;color:#444}
 .kc_td_kj table thead td{font-size:12px}
-.nx3span{zoom:1;padding:8px 0 30px 150px;}
+.nx3span{zoom:1;padding:8px 0 0px 70px;}
 .nxhm span.nsbools{height:auto;width:295px;padding-bottom:15px;padding-right:20px}
 .nxhm span.nsbools b{margin-bottom:6px}
 .nxhm span.nsboolss{padding-right:0;width:275px;height:auto}
@@ -565,7 +565,7 @@ a.asz_tz{margin:0 auto}
 .b_gg_lgg span.jc_spf{background: url(../images/159/jc_icon.png)no-repeat scroll 0 0 ;}
 .b_gg_lgg span.dc_spf{background: url(../images/159/dcjc_icon.png) no-repeat scroll 0 0 ;}
 .b_gg_lgg span.lc_sf{background: url(../images/159/lc_icon.png) no-repeat scroll 0 0 ;}
-.nxszop{background-color:#F3EFEF;clear:both}
+.nxszop{clear:both;width:660px}
 .nxtable tr td.tdd{padding-left:15px}
 .bank_zj ul li em.shh{background-position:-6px -801px}
 .bank_zj ul li em.hxh{background-position:-6px -1022px}
@@ -890,7 +890,7 @@ border-radius: 3px;-moz-border-radius:3px;}
 .winc_top p{float:right;color:#666}
 .winc_top p em{color:#e52e04;font-weight:bold;padding-right:15px}
 .winmain{padding:8px;border:1px solid #ccc;border-top:none; background:#fff;*zoom:1;}
-.wdcupleft h4{line-height:14px;color:#444;font-size:12px;text-align:right;padding:10px 0 10px 0;font-weight:100; _padding:7px 0 7px}
+.wdcupleft h4{line-height:14px;height:14px;color:#444;font-size:12px;text-align:right;padding:10px 0 10px 0;font-weight:100; _padding:7px 0 7px}
 .wdcupleft h4 input{vertical-align: -2px;_vertical-align: -1px;margin-right: 2px;}
 .wdcupleft{width:740px;float:left; overflow:visible}
 .teamnum{height:27px;border-top:1px solid #bbb}
@@ -1665,3 +1665,76 @@ a.n_gz{color:#fff}
 .zn_gg_5{padding:0 10px 10px}
 .hm_right .rig_hm_main table thead{background:#f5f5f5}
 .hm_right .rig_hm_main table thead td,.hm_right .rig_hm_main table thead th{border-bottom:1px solid #ddd}
+.nwx5{border:1px solid #ccc;border-top:4px solid #ff6600}
+.nwx5top{height:60px;background: url(../images/cai888/nwx5_03.jpg)}
+.nwx5top a{display:block;float:left;height:60px;padding:0 15px;;border-right:1px solid #ccc}
+.nwx5top a:hover,.nwx5top a.cur{background:#ff6600}
+.nwx5top a b{color:#333;font-weight:bold;text-align:Center;display:block;font-size:14px;line-height:22px;height:22px;padding-top:2px}
+.nwx5top a span{color:#999;text-align:Center;display:block;font-size:12px;line-height:16px;}
+.nwx5top a.cur b,.nwx5top a.cur span,.nwx5top a:hover b,.nwx5top a:hover span{color:#fff}
+.nwx5top em{float:left;width:125px;float:left;text-align:center;display:block;padding:12px 0 0 5px;line-height:18px;color:#333}
+.nwx5top em font{color:#e52e04;font-weight:100}
+.nwx5time{border-bottom:1px solid #ccc;padding:20px 0 0 25px}
+.nwx5time font{color:#ff6600;font-weight:bold}
+.nwx5time span{display:block;float: left;color:#333;line-height:30px;}
+.nwx5time span.span2{padding:0 60px 0 10px}
+.nwx5time span.span4{padding:0 75px 0 20px}
+.nwx5time span.span2 b{font-size:30px;font-family:"微软雅黑"}
+.nwx5time span.span5{width:78px;line-height:30px;hieght:30px;border:1px solid #ccc;border-bottom:none;padding-left:10px;background:#fde8d8  url(../images/cai888/nwx5_07.jpg) 66px 10px no-repeat;cursor:pointer;margin-top:5px}
+.nwx5time em{display:block;text-align:center;width:29px;height:29px;line-height:29px;background: url(../images/cai888/nwx5q.png);float:left;margin-right:5px;color:#444;font-weight:bold;font-size:16px}
+a.sz_cmt{background: url(../images/cai888/nwx5_11.jpg);width:137px;height:33px}
+.ncath{padding:17px;background:#f5f5f5;zoom:1;border-top:1px solid #ccc}
+.ncathleft{float:left;width:470px;}
+.ncatharea{overflow-y:auto;background:#fff3ea;width:356px;float:left;height:124px;border:1px solid #bbb;border-radius:3px;padding:2px;line-height:20px;color:#444}
+.ncatharea em{display:inline-block}
+.cm_w80{width:65px}
+.cm_w59{width:50px}
+.ncaltbn{width:98px;float:left;padding-left:9px;height:130px;padding-bottom:15px}
+.ncaltbn a{display:block;background: url(../images/cai888/nwx5_15.jpg);width:98px;height:28px;line-height:28px;text-align:center;color:#222;margin-bottom:6px}
+.ncaltbn span{display:block;height:29px}
+.ncaltbn span input{display:block;float:left;border:1px solid #ccc;height:26px;width:38px;text-align:center;color:#333}
+.ncaltbn span a{display:block;background: url(../images/cai888/nwx5_23.jpg);width:48px;float:right;margin:0}
+.ncaltbn a.a1{color:#888;clear:both;margin:5px 0 0 0 }
+.ncathleft p{clear:both;height:17px;line-height:17px;color:#222;font-size:14px;text-align:Center;padding:4px 0;background:#fff;}
+.ncathleft p span{display:inline-block;height:14px;padding-left:5px}
+.ncathleft p input{width:42px;height:15px;border:1px solid #ccc;float:left;;text-align:center}
+.ncathleft p em{color:#ff0000;font-weight:bold;padding:0 2px}
+.ncathleft p s{font-size:12px;color:#999}
+.ncathleft p img{border:1px solid #ccc;height:15px;float:left;cursor:pointer}
+.cm_left{float:left}
+.cm_right{float:right;}
+.cm_ssq_yx_num ul li s{margin-top:3px}
+.ncathright{float:left;width:475px;padding-left:18px;}
+.ncathtype{height:34px;border:1px solid #ccc;border-radius:3px 3px 0 0 ;background:#fff}
+.ncathtype span{display:block;float:left;width:78px;line-height:34px;color:#333;text-align:center;background:#fde8d8;}
+.ncathtype label{display:block;float:left;padding:0 5px 0 20px;color:#444;height:34px;line-height:34px}
+.ncathtype label input{vertical-align: -2px;_vertical-align: -1px;margin-right: 4px;}
+.ncathtype label em{position:absolute;}
+.ncathtype b{margin-top:9px}
+.ncathgm{padding-top:5px}
+.ncathgm p{color:#444;line-height:24px;padding:6px 0;text-align:center}
+.ncathgm p a{color:#145fab}
+.ncathgm p a:hover{ text-decoration:underline;color:#ff6600}
+.ncathgm p input{vertical-align: -2px;_vertical-align: -1px;margin-right:3px;}
+.ncathgm a.a1{display:block;background-image: url(../images/cdbg/gm_11.gif);color: #FFFFFF;font-family: "微软雅黑";font-size: 16px;height: 42px;line-height: 42px;margin:7px auto;text-align: center;width: 190px;}
+.nwx5kj{border:1px solid #ccc;margin-top:12px;border-right:none}
+.nwx5kj h1{padding-left:20px;font-size:14px;color:#444; background:#f5f5f5;height:35px;line-height:35px;clear:both;border-bottom:1px solid #ccc;border-right:1px solid #ccc;}
+.nwx5kj h1 span{float:left;}
+.nwx5kj h1 a{float:right; background:url(../images/159/nx_55.jpg) -24px 10px no-repeat;padding-right:20px;margin-right:15px;color:#e52e04;font-size:12px}
+.nwx5kj h1 a.cur{ background-position:31px 10px}
+.kc_zjz{border:1px solid #ccc;border-top:none;background:#fff}
+.kc_zj2{background:#fff}
+.kc_zj2 p {color:#333}
+.kc_zj2 p span{color:#333}
+.kc_zjz label input{vertical-align: -2px;_vertical-align: -1px;margin-right:2px}
+.kc_zj2 p input{height:14px;border:1px  solid #ccc}
+.kc_zj3{width:auto;height:26px}
+.kc_zjz ul{background:#f1f1f1;border-bottom:1px solid #ccc;height:26px}
+.kc_zjz ul.cm_bg_gray{background:#fff}
+.kc_zj3 thead td{background:#ececec;border-top:1px solid #ccc;height:24px;line-height:24px}
+.kc_zj4 p{padding-left:8px}
+.kc_zj4 p input.text{width:27px;height:15px;margin:0 3px}
+:root .kc_zj4 input.text{width:27px;height:15px;margin:0 3px}
+.kc_zj4 a{background:url(../images/cai888/heizhbn.jpg);width:137px;height:33px}
+.kc_zj4 a:hover{background:url(../images/cai888/heizhbn.jpg)}
+.kc_td_kj table tbody th{border-right:1px solid #ddd}
