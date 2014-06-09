@@ -207,7 +207,7 @@ a.a_auto{margin:0 auto 20px auto}
 .hm_right_t {
     background:#fff;width: 815px;border:1px solid #ddd;margin-left:7px;margin-bottom:12px
 }
-.hm_right_t h3{background:#f5f5f5;;line-height:40px;color:#333;font-size:16px;font-weight:bold;height:40px;margin-bottom:10px;border-bottom:1px solid #ddd}
+.hm_right_t h3{background:#ececec;;line-height:40px;color:#333;font-size:16px;font-weight:bold;height:40px;margin-bottom:10px;border-bottom:1px solid #ddd}
 .hm_right_t h3 span{float:left;padding-left:15px;;padding-right:10px;padding-left:25px}
 .hm_right_t h3 span.hrsou{float:right;padding-top:5px}
 .hm_right_t h3 input{float:left;height:27px;border:1px solid #ccc;background:#fff;width:220px;padding:6px 0 0 5px\9;height:22px\9;font-size:16px;color:#444}
@@ -901,8 +901,8 @@ border-radius: 3px;-moz-border-radius:3px;}
 .cupteamlist a:hover{background:url(../images/cai888/ban3.jpg) 100% bottom no-repeat}
 .cupteamlist a.cur,.cupteamlist a.cur:hover{background:url(../images/cai888/ban4.jpg) repeat scroll 0 0 }
 .cupteamlist a.hui{background:url(../images/cai888/ban11.jpg) 100% bottom no-repeat;}
-.cupteamlist a img{display:block;float: left;height: 25px;margin: 7px 0 0 10px;width: 25px;_margin-left:5px}
-.cupteamlist a span{color:#111;font-size:14px;padding-left:10px;float:left}
+.cupteamlist a img{display:block;float: left;height: 25px;margin: 7px 3px 0 3px;width: 25px;_margin-left:1px}
+.cupteamlist a span{color:#111;font-size:14px;padding-left:6px;float:left;padding-right:6px}
 .cupteamlist a em{color:#145fab;font-size:12px;padding-right:10px;float:right}
 .cupteamlist a.hui span,.cupteamlist a.hui em{color:#999}
 .wdcupleft h2{height:32px;border-bottom:2px solid #ff6600;background-color:#f0f0f0;line-height:32px;font-size:14px;padding-left:20px;color:#444;}
@@ -1663,10 +1663,10 @@ a.n_gz{color:#fff}
 .ggzcnav a{display:block;width:58px;height:33px;line-height:28px;color:#333;float:left;margin-right:6px;text-align:center;}
 .ggzcnav a.cur,.ggzcnav a:hover{color:#fff;background: url(../images/cai888/cjt_03.jpg)}
 .zn_gg_5{padding:0 10px 10px}
-.hm_right .rig_hm_main table thead{background:#f5f5f5}
+.hm_right .rig_hm_main table thead{background:#ececec}
 .hm_right .rig_hm_main table thead td,.hm_right .rig_hm_main table thead th{border-bottom:1px solid #ddd}
 .nwx5{border:1px solid #ccc;border-top:4px solid #ff6600}
-.nwx5top{height:60px;background: url(../images/cai888/nwx5_03.jpg)}
+.nwx5top{height:60px;background: url(../images/cai888/nwx5_03.jpg);border-bottom:1px solid #ccc}
 .nwx5top a{display:block;float:left;height:60px;padding:0 15px;;border-right:1px solid #ccc}
 .nwx5top a:hover,.nwx5top a.cur{background:#ff6600}
 .nwx5top a b{color:#333;font-weight:bold;text-align:Center;display:block;font-size:14px;line-height:22px;height:22px;padding-top:2px}
@@ -1679,7 +1679,7 @@ a.n_gz{color:#fff}
 .nwx5time span{display:block;float: left;color:#333;line-height:30px;}
 .nwx5time span.span2{padding:0 60px 0 10px}
 .nwx5time span.span4{padding:0 75px 0 20px}
-.nwx5time span.span2 b{font-size:30px;font-family:"微软雅黑"}
+.nwx5time span.span2 b{font-size:30px;font-family:"helvetica"}
 .nwx5time span.span5{width:78px;line-height:30px;hieght:30px;border:1px solid #ccc;border-bottom:none;padding-left:10px;background:#fde8d8  url(../images/cai888/nwx5_07.jpg) 66px 10px no-repeat;cursor:pointer;margin-top:5px}
 .nwx5time em{display:block;text-align:center;width:29px;height:29px;line-height:29px;background: url(../images/cai888/nwx5q.png);float:left;margin-right:5px;color:#444;font-weight:bold;font-size:16px}
 a.sz_cmt{background: url(../images/cai888/nwx5_11.jpg);width:137px;height:33px}
@@ -1695,7 +1695,7 @@ a.sz_cmt{background: url(../images/cai888/nwx5_11.jpg);width:137px;height:33px}
 .ncaltbn span input{display:block;float:left;border:1px solid #ccc;height:26px;width:38px;text-align:center;color:#333}
 .ncaltbn span a{display:block;background: url(../images/cai888/nwx5_23.jpg);width:48px;float:right;margin:0}
 .ncaltbn a.a1{color:#888;clear:both;margin:5px 0 0 0 }
-.ncathleft p{clear:both;height:17px;line-height:17px;color:#222;font-size:14px;text-align:Center;padding:4px 0;background:#fff;}
+.ncathleft p{clear:both;height:17px;line-height:17px;color:#222;font-size:14px;text-align:Center;padding:4px 0;}
 .ncathleft p span{display:inline-block;height:14px;padding-left:5px}
 .ncathleft p input{width:42px;height:15px;border:1px solid #ccc;float:left;;text-align:center}
 .ncathleft p em{color:#ff0000;font-weight:bold;padding:0 2px}
@@ -1706,7 +1706,7 @@ a.sz_cmt{background: url(../images/cai888/nwx5_11.jpg);width:137px;height:33px}
 .cm_ssq_yx_num ul li s{margin-top:3px}
 .ncathright{float:left;width:475px;padding-left:18px;}
 .ncathtype{height:34px;border:1px solid #ccc;border-radius:3px 3px 0 0 ;background:#fff}
-.ncathtype span{display:block;float:left;width:78px;line-height:34px;color:#333;text-align:center;background:#fde8d8;}
+.ncathtype span{display:block;float:left;width:78px;line-height:34px;color:#333;text-align:center;background:#fde8d8;margin-right:30px}
 .ncathtype label{display:block;float:left;padding:0 5px 0 20px;color:#444;height:34px;line-height:34px}
 .ncathtype label input{vertical-align: -2px;_vertical-align: -1px;margin-right: 4px;}
 .ncathtype label em{position:absolute;}
@@ -1738,3 +1738,19 @@ a.sz_cmt{background: url(../images/cai888/nwx5_11.jpg);width:137px;height:33px}
 .kc_zj4 a{background:url(../images/cai888/heizhbn.jpg);width:137px;height:33px}
 .kc_zj4 a:hover{background:url(../images/cai888/heizhbn.jpg)}
 .kc_td_kj table tbody th{border-right:1px solid #ddd}
+.hm_right .rig_hm_main table thead th{height:34px;line-height:34px}
+.cuptab1 tr.tr2 th{line-height:35px;text-align:left;color:#444;font-size:12px;padding-left:15px;height:35px}
+.cuptab1 tr.tr2:hover th{background:none}
+.cuptab1 tr.tr2 s{display:block;float:right;height:22px;line-height:22px;cursor: pointer;margin-right:10px;color:#145fab;}
+.cuptab1 tr.tr2 s:hover{text-decoration:underline;}
+.cuptab1 tr.tr2 s.scu{padding-left:8px;text-decoration:none;overflow:visible}
+.cuptab1 tr.tr2 s.scu,.cuptab1 tr.tr2 s.scu b{background: url(/images/extbtn_bg.png) no-repeat scroll  left -22px;}
+.cuptab1 tr.tr2 s.scu b{background-position: right -22px;height: 22px;line-height: 22px;padding-right:15px;display:block}
+.cuptab1 tr.tr2 s.scur{background-position: left -44px;}
+.cuptab1 tr.tr2 s.scur b{background-position: right -44px;color:#fff}
+.cupteamlist{position:relative}
+.cubsx{position:absolute;top:58px;right:0;padding:10px 18px;border:1px solid #999;background:#fff;z-index:9;width:340px;left:350px}
+.cubsx label{display:block;float:left;width:85px;height:20px;line-height:20px;color:#333}
+.cubsx label input{vertical-align: -2px;_vertical-align: -1px;margin-right: 4px;}
+.cupteamlist a span.spandm{width:80px;text-align:right}
+.cupteamlist a s{float:left;width:10px;text-align:center;display:block}
