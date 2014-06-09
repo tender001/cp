@@ -1741,7 +1741,7 @@ a.sz_cmt{background: url(../images/cai888/nwx5_11.jpg);width:137px;height:33px}
 .hm_right .rig_hm_main table thead th{height:34px;line-height:34px}
 .cuptab1 tr.tr2 th{line-height:35px;text-align:left;color:#444;font-size:12px;padding-left:15px;height:35px}
 .cuptab1 tr.tr2:hover th{background:none}
-.cuptab1 tr.tr2 s{display:block;float:right;height:22px;line-height:22px;cursor: pointer;margin-right:10px;color:#145fab;}
+.cuptab1 tr.tr2 s{display:block;float:right;height:22px;line-height:22px;cursor: pointer;margin-left:10px;color:#145fab;}
 .cuptab1 tr.tr2 s:hover{text-decoration:underline;}
 .cuptab1 tr.tr2 s.scu{padding-left:8px;text-decoration:none;overflow:visible}
 .cuptab1 tr.tr2 s.scu,.cuptab1 tr.tr2 s.scu b{background: url(/images/extbtn_bg.png) no-repeat scroll  left -22px;}
@@ -1749,7 +1749,7 @@ a.sz_cmt{background: url(../images/cai888/nwx5_11.jpg);width:137px;height:33px}
 .cuptab1 tr.tr2 s.scur{background-position: left -44px;}
 .cuptab1 tr.tr2 s.scur b{background-position: right -44px;color:#fff}
 .cupteamlist{position:relative}
-.cubsx{position:absolute;top:58px;right:0;padding:10px 18px;border:1px solid #999;background:#fff;z-index:9;width:340px;left:350px}
+.cubsx{position:absolute;top:58px;right:0;padding:10px 18px;border:1px solid #999;background:#fff;z-index:9;width:700px;left:0px}
 .cubsx label{display:block;float:left;width:85px;height:20px;line-height:20px;color:#333}
 .cubsx label input{vertical-align: -2px;_vertical-align: -1px;margin-right: 4px;}
 .cupteamlist a span.spandm{width:80px;text-align:right}
