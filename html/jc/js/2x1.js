@@ -1048,7 +1048,7 @@
        					if((Y.getDate(newday)-Y.getDate(item.split("_")[1]))==0){
        						wd='(今天)';
        					}
-       					week_list_html+='<li style="width:145px"><label for=' + week_name + wd+'><input class="radio" type="checkbox" value="'+item.split("_")[1]+'" checked="checked"/><span>' + week_name + wd+'赛程</span>[<i>'+week_name + '_num</i>]</label></li>';
+       					week_list_html+='<li style="width:135px"><label for=' + week_name + wd+'><input class="radio" type="checkbox" value="'+item.split("_")[1]+'" checked="checked"/><span>' + week_name + wd+'赛程</span>[<i>'+week_name + '_num</i>]</label></li>';
       				}
       				if (typeof match_num_of_week[week_name] == 'undefined') {
       					match_num_of_week[week_name] = 1;
