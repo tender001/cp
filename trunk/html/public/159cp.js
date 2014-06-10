@@ -713,6 +713,8 @@ $_sys.lot.push([ 95, "篮彩让分胜负","lc_rfsf", "" ]);
 $_sys.lot.push([ 96, "篮彩胜分差","lc_sfc", "" ]);
 $_sys.lot.push([ 97, "篮彩大小分","lc_dxf", "" ]);
 
+$_sys.lot.push([ 98, "猜冠军","worldcup", "" ]);
+$_sys.lot.push([ 99, "猜冠亚军","worldcup", "" ]);
 
 $_sys.lottype = [];
 $_sys.lottype.push([ "足 彩", "zc", "80,81,82,83" ]);
@@ -737,7 +739,81 @@ $_sys.lottype.istype = function (lotid,type){
 	}
 	return false;
 };
-
+$_sys.worldcup = [];
+$_sys.worldcup.push([ 1, "巴西"]);
+$_sys.worldcup.push([ 2, "德国"]);
+$_sys.worldcup.push([ 3, "阿根廷"]);
+$_sys.worldcup.push([ 4, "西班牙"]);
+$_sys.worldcup.push([ 5, "比利时"]);
+$_sys.worldcup.push([ 6, "荷兰"]);
+$_sys.worldcup.push([ 7, "意大利"]);
+$_sys.worldcup.push([ 8, "法国"]);
+$_sys.worldcup.push([ 9, "葡萄牙"]);
+$_sys.worldcup.push([ 10, "哥伦比亚"]);
+$_sys.worldcup.push([ 11, "乌拉圭"]);
+$_sys.worldcup.push([ 12, "英格兰"]);
+$_sys.worldcup.push([ 13, "智利"]);
+$_sys.worldcup.push([ 14, "俄罗斯"]);
+$_sys.worldcup.push([ 15, "科特迪瓦"]);
+$_sys.worldcup.push([ 16, "瑞士"]);
+$_sys.worldcup.push([ 17, "日本"]);
+$_sys.worldcup.push([ 18, "波黑"]);
+$_sys.worldcup.push([ 19, "克罗地亚"]);
+$_sys.worldcup.push([ 20, "厄瓜多尔"]);
+$_sys.worldcup.push([ 21, "墨西哥"]);
+$_sys.worldcup.push([ 22, "美国"]);
+$_sys.worldcup.push([ 23, "加纳"]);
+$_sys.worldcup.push([ 24, "尼日利亚"]);
+$_sys.worldcup.push([ 25, "希腊"]);
+$_sys.worldcup.push([ 26, "韩国"]);
+$_sys.worldcup.push([ 27, "喀麦隆"]);
+$_sys.worldcup.push([ 28, "澳大利亚"]);
+$_sys.worldcup.push([ 29, "哥斯达黎加"]);
+$_sys.worldcup.push([ 30, "洪都拉斯"]);
+$_sys.worldcup.push([ 31, "伊朗"]);
+$_sys.worldcup.push([ 32, "阿尔及利亚"]);
+$_sys.getteamname = function(f,n) {
+if (typeof(n)=='undefined'){n=1;};
+for ( var i = 0; i < $_sys.worldcup.length; i++) {
+if ($_sys.worldcup[i][0] == f) {
+return $_sys.worldcup[i][n];
+}
+}
+};
+$_sys.getteamnum = function(f,n) {
+if (typeof(n)=='undefined'){n=0;};
+for ( var i = 0; i < $_sys.worldcup.length; i++) {
+if ($_sys.worldcup[i][1] == f) {
+return $_sys.worldcup[i][n];
+}
+}
+};
+$_sys.worldcupgyj = [];
+$_sys.worldcupgyj.push([ 1, "巴西—阿根廷"]);$_sys.worldcupgyj.push([ 2, "德国—阿根廷"]);$_sys.worldcupgyj.push([ 3, "巴西—西班牙"]);
+$_sys.worldcupgyj.push([ 4, "巴西—德国"]);$_sys.worldcupgyj.push([ 5, "阿根廷—西班牙"]);$_sys.worldcupgyj.push([ 6, "巴西—荷兰"]);
+$_sys.worldcupgyj.push([ 7, "巴西—葡萄牙"]);$_sys.worldcupgyj.push([ 8, "德国—西班牙"]);$_sys.worldcupgyj.push([ 9, "德国—葡萄牙"]);
+$_sys.worldcupgyj.push([ 10, "西班牙—荷兰"]);$_sys.worldcupgyj.push([ 11, "巴西—意大利"]);$_sys.worldcupgyj.push([ 12, "巴西—智利"]);
+$_sys.worldcupgyj.push([ 13, "德国—荷兰"]);$_sys.worldcupgyj.push([ 14, "西班牙—葡萄牙"]);$_sys.worldcupgyj.push([ 15, "西班牙—智利"]);
+$_sys.worldcupgyj.push([ 16, "巴西—乌拉圭"]);$_sys.worldcupgyj.push([ 17, "阿根廷—法国"]);$_sys.worldcupgyj.push([ 18, "巴西—哥伦比亚"]);
+$_sys.worldcupgyj.push([ 19, "巴西—法国"]);$_sys.worldcupgyj.push([ 20, "巴西—英格兰"]);$_sys.worldcupgyj.push([ 21, "德国—意大利"]);
+$_sys.worldcupgyj.push([ 22, "德国—乌拉圭"]);$_sys.worldcupgyj.push([ 23, "德国—智利"]);$_sys.worldcupgyj.push([ 24, "阿根廷—葡萄牙"]);
+$_sys.worldcupgyj.push([ 25, "西班牙—法国"]);$_sys.worldcupgyj.push([ 26, "西班牙—意大利"]);$_sys.worldcupgyj.push([ 27, "德国—哥伦比亚"]);
+$_sys.worldcupgyj.push([ 28, "德国—法国"]);$_sys.worldcupgyj.push([ 29, "阿根廷—哥伦比亚"]);$_sys.worldcupgyj.push([ 30, "阿根廷—荷兰"]);
+$_sys.worldcupgyj.push([ 31, "西班牙—乌拉圭"]);$_sys.worldcupgyj.push([ 32, "德国—英格兰"]);$_sys.worldcupgyj.push([ 33, "西班牙—哥伦比亚"]);
+$_sys.worldcupgyj.push([ 34, "西班牙—英格兰"]);$_sys.worldcupgyj.push([ 35, "法国—荷兰"]);$_sys.worldcupgyj.push([ 36, "法国—葡萄牙"]);
+$_sys.worldcupgyj.push([ 37, "阿根廷—意大利"]);$_sys.worldcupgyj.push([ 38, "阿根廷—智利"]);$_sys.worldcupgyj.push([ 39, "荷兰—葡萄牙"]);
+$_sys.worldcupgyj.push([ 40, "阿根廷—乌拉圭"]);$_sys.worldcupgyj.push([ 41, "阿根廷—英格兰"]);$_sys.worldcupgyj.push([ 42, "法国—意大利"]);
+$_sys.worldcupgyj.push([ 43, "意大利—荷兰"]);$_sys.worldcupgyj.push([ 44, "意大利—葡萄牙"]);$_sys.worldcupgyj.push([ 45, "葡萄牙—英格兰"]);
+$_sys.worldcupgyj.push([ 46, "哥伦比亚—智利"]);$_sys.worldcupgyj.push([ 47, "法国—英格兰"]);$_sys.worldcupgyj.push([ 48, "乌拉圭—哥伦比亚"]);
+$_sys.worldcupgyj.push([ 49, "乌拉圭—智利"]);$_sys.worldcupgyj.push([ 50, "其它—其它"]);
+$_sys.getteamname2 = function(f,n) {
+if (typeof(n)=='undefined'){n=1;};
+for ( var i = 0; i < $_sys.worldcupgyj.length; i++) {
+if ($_sys.worldcupgyj[i][0] == f) {
+return $_sys.worldcupgyj[i][n];
+}
+}
+}; 
 
 $_sys.lotpath = [];
 $_sys.lotpath.push([ 1, "/shuangseqiu/" ]);
@@ -955,6 +1031,9 @@ $_sys.lotfordetail.push([ 94, "/lc/" ]);
 $_sys.lotfordetail.push([ 95, "/lc/" ]);
 $_sys.lotfordetail.push([ 96, "/lc/" ]);
 $_sys.lotfordetail.push([ 97, "/lc/" ]);
+
+$_sys.lotfordetail.push([ 98, "/worldcup/" ]);
+$_sys.lotfordetail.push([ 99, "/worldcup/" ]);
 
 $_sys.getlotdir = function(f,n) {
 	if (typeof(n)=='undefined'){n=1;};
