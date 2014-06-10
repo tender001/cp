@@ -275,15 +275,15 @@ Class('VSList', {
      			var id = 'item_' + element.val().split(",")[0];
      			cloneElement.css({
      				"position":"absolute",
-     				"left":curentOffset.left-450,
-     				"top":curentOffset.top-166
+     				"left":curentOffset.left,
+     				"top":curentOffset.top
      			})
      			$(cloneElement).find("a.cur").css({"background":"none","border":"none"})
-     			$("#container").append(cloneElement);
-//     			element.parents("tr").find("td").append(cloneElement);
+     			$("#container").after(cloneElement);
+
      			cloneElement.animate({
-     				"left":defaultOffset.left-490,
-     				"top":parseInt($("#"+id).offset().top)-170,
+     				"left":defaultOffset.left-40,
+     				"top":parseInt($("#"+id).offset().top)-10,
      				"opacity":0.3
      			},500,function(){
  					$(this).remove();
