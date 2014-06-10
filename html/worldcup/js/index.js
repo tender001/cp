@@ -289,13 +289,33 @@ Class('VSList', {
             this.setfilter(group.one(), group.find('input:checkbox'));
         }
         chks.click(function (){
-            
-            if($(this).hasClass("hui")){
-            	return;
-            }else{
-            	 that.select(this);
+        	that.select(this);
+       	 if($(this).hasClass("cur")){
+                var element = $(this);
+              //default
+    			var defaultOffset=$("#choose_list").offset();
+    			//curent
+    			var curentOffset=element.parents("td").offset();
+    			//clone
+    			var cloneElement=element.parents("tr").find("div.cupteamdiv").clone();
+    			var id = 'item_' + $(element).attr("val").split(",")[0];
+    			cloneElement.css({
+    				"position":"absolute",
+    				"left":curentOffset.left,
+    				"top":curentOffset.top
+    			})
+    			$(cloneElement).find("a.cur").css({"background":"none","border":"none"})
+    			$("#container").after(cloneElement);
+
+    			cloneElement.animate({
+    				"left":defaultOffset.left-40,
+    				"top":parseInt($("#"+id).offset().top)-10,
+    				"opacity":0.3
+    			},500,function(){
+					$(this).remove();
+				});
             }
-        });
+       });
 //        Y.get('#vs_box tr').each(function (tr){
 //            if (/checkbox/i.test(tr.innerHTML)) {
 //                Y.get(tr).hover(function (){
