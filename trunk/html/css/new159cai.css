@@ -901,7 +901,7 @@ border-radius: 3px;-moz-border-radius:3px;}
 .cupteamdiv a:hover{background:url(../images/cai888/ban3.jpg) 100% bottom no-repeat}
 .cupteamdiv a.cur,.cupteamdiv a.cur:hover{background:url(../images/cai888/ban4.jpg) repeat scroll 0 0 }
 .cupteamdiv a.hui{background:url(../images/cai888/ban11.jpg) 100% bottom no-repeat;}
-.cupteamdiv a img{display:block;float: left;height: 25px;margin: 7px 3px 0 3px;width: 25px;_margin-left:1px}
+.cupteamdiv  img{display:block;float: left;height: 25px;margin: 7px 3px 0 3px;width: 25px;_margin-left:1px}
 .cupteamdiv a span{color:#111;font-size:14px;padding-left:6px;float:left;padding-right:6px}
 .cupteamdiv a em{color:#145fab;font-size:12px;padding-right:10px;float:right}
 .cupteamdiv a.hui span,.cupteamdiv a.hui em{color:#999}
@@ -1757,3 +1757,4 @@ a.sz_cmt{background: url(../images/cai888/nwx5_11.jpg);width:137px;height:33px}
 .cubsx label input{vertical-align: -2px;_vertical-align: -1px;margin-right: 4px;}
 .cupteamdiv a span.spandm{width:80px;text-align:right}
 .cupteamdiv a s{float:left;width:10px;text-align:center;display:block}
+.cuptbgno a.cur{background:none;border:1px solid #ddd}
