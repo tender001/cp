@@ -897,14 +897,14 @@ border-radius: 3px;-moz-border-radius:3px;}
 .teamnum p{display:block;width:25%;float:left;text-align:Center;color:#aaa;font-weight:bold;background: url(../images/159/win_03.jpg) center 0 no-repeat;line-height:14px;padding-top:8px;}
 .cupteamlist{margin-bottom:15px;*zoom:1}
 .cupteamlist td{border:none;height:38px;}
-.cupteamlist a{display:block;height:38px;width:185px;background:url(../images/cai888/ban1.jpg) no-repeat scroll 100% -2px ;line-height:38px}
-.cupteamlist a:hover{background:url(../images/cai888/ban3.jpg) 100% bottom no-repeat}
-.cupteamlist a.cur,.cupteamlist a.cur:hover{background:url(../images/cai888/ban4.jpg) repeat scroll 0 0 }
-.cupteamlist a.hui{background:url(../images/cai888/ban11.jpg) 100% bottom no-repeat;}
-.cupteamlist a img{display:block;float: left;height: 25px;margin: 7px 3px 0 3px;width: 25px;_margin-left:1px}
-.cupteamlist a span{color:#111;font-size:14px;padding-left:6px;float:left;padding-right:6px}
-.cupteamlist a em{color:#145fab;font-size:12px;padding-right:10px;float:right}
-.cupteamlist a.hui span,.cupteamlist a.hui em{color:#999}
+.cupteamdiv a{display:block;height:38px;width:185px;background:url(../images/cai888/ban1.jpg) no-repeat scroll 100% -2px ;line-height:38px}
+.cupteamdiv a:hover{background:url(../images/cai888/ban3.jpg) 100% bottom no-repeat}
+.cupteamdiv a.cur,.cupteamdiv a.cur:hover{background:url(../images/cai888/ban4.jpg) repeat scroll 0 0 }
+.cupteamdiv a.hui{background:url(../images/cai888/ban11.jpg) 100% bottom no-repeat;}
+.cupteamdiv a img{display:block;float: left;height: 25px;margin: 7px 3px 0 3px;width: 25px;_margin-left:1px}
+.cupteamdiv a span{color:#111;font-size:14px;padding-left:6px;float:left;padding-right:6px}
+.cupteamdiv a em{color:#145fab;font-size:12px;padding-right:10px;float:right}
+.cupteamdiv a.hui span,.cupteamdiv a.hui em{color:#999}
 .wdcupleft h2{height:32px;border-bottom:2px solid #ff6600;background-color:#f0f0f0;line-height:32px;font-size:14px;padding-left:20px;color:#444;}
 .cupvs{width:750px;height:368px;background: url(../images/159/win_07.jpg) 3px 0 no-repeat;margin:20px -3px 5px;}
 .wdcupright{width:230px;float:right;border:1px solid #ccc;border-top:none;margin-top:34px;padding-bottom:20px}
@@ -1755,5 +1755,5 @@ a.sz_cmt{background: url(../images/cai888/nwx5_11.jpg);width:137px;height:33px}
 .cubsx h3 s{color:#999}
 .cubsx label{display:block;float:left;width:85px;height:20px;line-height:20px;color:#333}
 .cubsx label input{vertical-align: -2px;_vertical-align: -1px;margin-right: 4px;}
-.cupteamlist a span.spandm{width:80px;text-align:right}
-.cupteamlist a s{float:left;width:10px;text-align:center;display:block}
+.cupteamdiv a span.spandm{width:80px;text-align:right}
+.cupteamdiv a s{float:left;width:10px;text-align:center;display:block}
