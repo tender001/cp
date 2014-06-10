@@ -177,18 +177,23 @@ Class('Selector', {
 			});
 		}else{
 			this.allTr.each(function (tr){
-				Yobj.get(tr).next('tr').find('tr[dat_tye='+tye+']').show(checked);
-				sel = Yobj.get(tr).next('tr').find('tr[dat_tye]:visited');
-				a = Yobj.get(tr).find('td[mark=unselect]>a');
-				if(sel.size() == 0){
-					if (a.one().className.indexOf('unselecttdcur') > -1) {
-		            	a.removeClass('unselecttdcur').html('收起');
-		            	Yobj.get(tr).next('tr').hide(); 
-		            }
+				if($(tr).is(":hidden")){
+					
 				}else{
-					a.addClass('unselecttdcur').html('收起');
-	            	Yobj.get(tr).next('tr').show();
+					Yobj.get(tr).next('tr').find('tr[dat_tye='+tye+']').show(checked);
+					sel = Yobj.get(tr).next('tr').find('tr[dat_tye]:visited');
+					a = Yobj.get(tr).find('td[mark=unselect]>a');
+					if(sel.size() == 0){
+						if (a.one().className.indexOf('unselecttdcur') > -1) {
+			            	a.removeClass('unselecttdcur').html('收起');
+			            	Yobj.get(tr).next('tr').hide(); 
+			            }
+					}else{
+						a.addClass('unselecttdcur').html('收起');
+		            	Yobj.get(tr).next('tr').show();
+					}
 				}
+			
 			});
 		}
 	},
@@ -1493,6 +1498,7 @@ Class('LgFilter', {
    	 })
    	Yobj.get('#wdls').click(function(){
    		var lg=Y.get('#lglist input');
+   		Y.get("#wanfa_chk input").prop("checked",false);
 	   	if($(this).attr("checked")){
 			lg.prop("checked",false);
 			$("input[m='西班牙甲']").attr("checked",true);
