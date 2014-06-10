@@ -20,7 +20,7 @@
 <!--#include virtual="/cc/nav.html"-->
 <!-- 头部内容 --> 
 <div class=breadcrumb><p>您现在的位置：<a href="/" title="网上买彩票"><font>159彩票网</font></a> &gt; <a href="/dating/" title="购彩大厅"><font>购彩大厅</font></a> &gt; 猜冠军</p></div>
-<div id="container">
+<div id="container" style="position:none">
  <div class="winc_top">
   <span><a href="#" >世界杯冠军</a></span><p>停售时间：<em>2014-07-14 03:00</em>      最后一场比赛：<em>07-14 03:00</em></p>
  </div>
@@ -28,10 +28,13 @@
   <div class="wdcupleft">
   <h4>
 <!--  <div  mark="chksp"/>奖金排序↑ </div> -->
-  <input type="checkbox"  id="groupTab"/>按分组查看投注选项</h4>
+ </h4>
   <div class="cupone" id="vs_box">
+  <div class="cubsx">
+  <h3>球队选择：<s>(选择球队后将显示与球队相关的投注组合)</s></h3>
+  <label><input type="checkbox">巴西</label><label><input type="checkbox">阿根廷</label><label><input type="checkbox">德国</label><label><input type="checkbox">西班牙</label><label><input type="checkbox">荷兰</label><label><input type="checkbox">葡萄牙</label><label><input type="checkbox">意大利</label><label><input type="checkbox">智利</label><label><input type="checkbox">乌拉圭</label><label><input type="checkbox">法国</label><label><input type="checkbox">哥伦比亚</label><label><input type="checkbox">英格兰</label></div>
   <div class="cupteamlist" style="border:1px solid #ccc;border-bottom:none">
-  <div class="cubsx"><label><input type="checkbox">巴西</label><label><input type="checkbox">阿根廷</label><label><input type="checkbox">德国</label><label><input type="checkbox">西班牙</label><label><input type="checkbox">荷兰</label><label><input type="checkbox">葡萄牙</label><label><input type="checkbox">意大利</label><label><input type="checkbox">智利</label><label><input type="checkbox">乌拉圭</label><label><input type="checkbox">法国</label><label><input type="checkbox">哥伦比亚</label><label><input type="checkbox">英格兰</label></div>
+  
    <table width="50%" border="0" cellpadding="0" cellspacing="0" class="cuptab1">
     <colgroup>
     <col width="52" /> <col width="316" />
@@ -53,7 +56,7 @@
     <colgroup>
     <col width="52" /> <col width="316" />
     </colgroup>
- <thead><tr  class="tr2">
+ <thead><tr  class="tr1">
     <td>编号</td>
     <td>选择球队</td>
   </tr></thead>
@@ -63,25 +66,31 @@
  
  
 </table>
-  </div></div>
+  </div></div></div>
 
  
- </div>
+
  <div class="wdcupright">
- 
   <table width="100%" border="0" cellpadding="0" cellspacing="0"> 
   <tr class="tr1">
-    <td colspan="2">确认投注信息</td>
+    <td colspan="3">确认投注信息</td>
   </tr>
-  
-<thead><tr  class="tr1">
+  <tr  class="tr2">
     <td>编号</td>
     <td>选择球队</td>
-  </tr></thead>
-  	<tbody id="choose_list">
+    <td>奖金</td>
+  </tr>
+ <tr style="display:none" id="list_tmpl">
+									<td class="center"></td>
+									<td class="w_cuntry w_cuntryc"><div class="cuntry_box"><span>德国</span></div></td>
+									<td class="center">4.1</td>
+								 </tr>
+  	<tbody id="choose_list"><tr >
+<!--     <td colspan="3" style="text-align: center;position:relative;top:8px;color: red;">请选择球队</td> -->
+  </tr>
 			</tbody>
   <tr class="tr1">
-   <td colspan="2">确认投注结果</td>
+   <td colspan="3">确认投注结果</td>
   </tr>
 </table>
 <p class="p1">投注&nbsp;<input type="text" id="buybs" value="1" />倍(最高50000倍)<br>您选择了<em id="sel_num">0</em> 支球队，共<em id="sel_zs">0</em> 注，<br>总金额 <em id="sel_money">￥0.00元</em><br>理论最高奖金：<em id="sel_yc">0</em>元 </p>

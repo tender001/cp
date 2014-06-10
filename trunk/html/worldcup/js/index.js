@@ -75,6 +75,7 @@ Class('VSChoose', {
             var matchno=((data[0]*1<10)?("0"+data[0]):data[0]);
             Y.get(item).find('span').html(matchno);
             Y.get(item).find('td').eq(1).html(data[1]);
+            Y.get(item).find('td').eq(2).html(data[2]);
             this.box.appendChild(item); 
             this.update();
             this.sort();
@@ -258,7 +259,7 @@ Class('VSChoose', {
      	   		if(code==0){
      	   		$("#yclass_confirm_ok").html("立即查看");
      	   		$("#yclass_confirm_no").html("继续投注");
-     	   			Y.confirm("恭喜您，投注成功！",function(){window.location.href='../worldcup/myproject.html';},'','',function(){window.location.href='../worldcup/index.html';});
+     	   			Y.confirm("恭喜您，投注成功！",function(){window.location.href='../account/orderlist.html';},'','',function(){window.location.href='../worldcup/index.html';});
      	   		}if(code==19999){
      	   		$("#yclass_confirm_ok").html("立即充值");
      	   		 Y.confirm(desc,function(){window.location.href='../account/chongzhi.html';});
@@ -659,53 +660,53 @@ Class({
 							mid=((mid*1<10)?("0"+mid):mid);
 							if(mid=="01"||mid=="05"||mid=="09"||mid=="13"){
 									 if(temp[i].value.getAttribute('sale')==0){
-							            	trA +=	 '<td><a  mark="btn" val="'+temp[i].value.getAttribute('mid')+','+temp[i].value.getAttribute('teamname')+','+temp[i].value.getAttribute('sp')+','+temp[i].value.getAttribute('sale')+'"><img src="/images/team/'+mid+'.jpg" alt='+mid+'><span>'+temp[i].value.getAttribute('teamname')+'</span><em>'+temp[i].value.getAttribute('sp')+'</em></a><td>'
+							            	trA +=	 '<td><div class="cupteamdiv "><a  mark="btn" val="'+temp[i].value.getAttribute('mid')+','+temp[i].value.getAttribute('teamname')+','+temp[i].value.getAttribute('sp')+','+temp[i].value.getAttribute('sale')+'"><img src="/images/team/'+mid+'.jpg" alt='+mid+'><span>'+temp[i].value.getAttribute('teamname')+'</span><em>'+temp[i].value.getAttribute('sp')+'</em></a><td>'
 							            }else{
-							            	trA +=	 '<td><a class="hui" title="停售中"><img src="/images/team/'+mid+'.jpg" alt='+mid+'><span>'+temp[i].value.getAttribute('teamname')+'</span><em>'+temp[i].value.getAttribute('sp')+'</em></a><td>'
+							            	trA +=	 '<td><div class="cupteamdiv "><a class="hui" title="停售中"><img src="/images/team/'+mid+'.jpg" alt='+mid+'><span>'+temp[i].value.getAttribute('teamname')+'</span><em>'+temp[i].value.getAttribute('sp')+'</em></a><td>'
 							            }
 //									 <td><a href="#"><img src="/images/team/20140228112909.jpg"><span>巴西</span><em>2.65</em></a></td>
 							
 							}else if(mid=="02"||mid=="06"||mid=="10"||mid=="14"){
 								 if(temp[i].value.getAttribute('sale')==0){
-						            	trB +=	 '<td><a  mark="btn" val="'+temp[i].value.getAttribute('mid')+','+temp[i].value.getAttribute('teamname')+','+temp[i].value.getAttribute('sp')+','+temp[i].value.getAttribute('sale')+'"><img src="/images/team/'+mid+'.jpg" alt='+mid+'><span>'+temp[i].value.getAttribute('teamname')+'</span><em>'+temp[i].value.getAttribute('sp')+'</em></a><td>'
+						            	trB +=	 '<td><div class="cupteamdiv "><a  mark="btn" val="'+temp[i].value.getAttribute('mid')+','+temp[i].value.getAttribute('teamname')+','+temp[i].value.getAttribute('sp')+','+temp[i].value.getAttribute('sale')+'"><img src="/images/team/'+mid+'.jpg" alt='+mid+'><span>'+temp[i].value.getAttribute('teamname')+'</span><em>'+temp[i].value.getAttribute('sp')+'</em></a><td>'
 						            }else{
-						            	trB +=	 '<td><a class="hui" title="停售中"><img src="/images/team/'+mid+'.jpg" alt='+mid+'><span>'+temp[i].value.getAttribute('teamname')+'</span><em>'+temp[i].value.getAttribute('sp')+'</em></a><td>'
+						            	trB +=	 '<td><div class="cupteamdiv "><a class="hui" title="停售中"><img src="/images/team/'+mid+'.jpg" alt='+mid+'><span>'+temp[i].value.getAttribute('teamname')+'</span><em>'+temp[i].value.getAttribute('sp')+'</em></a></div><td>'
 						            }
 							}else if(mid=="03"||mid=="07"||mid=="11"||mid=="15"){
 								 if(temp[i].value.getAttribute('sale')==0){
-						            	trC +=	 '<td><a  mark="btn" val="'+temp[i].value.getAttribute('mid')+','+temp[i].value.getAttribute('teamname')+','+temp[i].value.getAttribute('sp')+','+temp[i].value.getAttribute('sale')+'"><img src="/images/team/'+mid+'.jpg" alt='+mid+'><span>'+temp[i].value.getAttribute('teamname')+'</span><em>'+temp[i].value.getAttribute('sp')+'</em></a><td>'
+						            	trC +=	 '<td><div class="cupteamdiv "><a  mark="btn" val="'+temp[i].value.getAttribute('mid')+','+temp[i].value.getAttribute('teamname')+','+temp[i].value.getAttribute('sp')+','+temp[i].value.getAttribute('sale')+'"><img src="/images/team/'+mid+'.jpg" alt='+mid+'><span>'+temp[i].value.getAttribute('teamname')+'</span><em>'+temp[i].value.getAttribute('sp')+'</em></a></div><td>'
 						            }else{
-						            	trC +=	 '<td><a class="hui" title="停售中"><img src="/images/team/'+mid+'.jpg" alt='+mid+'><span>'+temp[i].value.getAttribute('teamname')+'</span><em>'+temp[i].value.getAttribute('sp')+'</em></a><td>'
+						            	trC +=	 '<td><div class="cupteamdiv "><a class="hui" title="停售中"><img src="/images/team/'+mid+'.jpg" alt='+mid+'><span>'+temp[i].value.getAttribute('teamname')+'</span><em>'+temp[i].value.getAttribute('sp')+'</em></a></div><td>'
 						            }
 							}else if(mid=="04"||mid=="08"||mid=="12"||mid=="16"){
 								 if(temp[i].value.getAttribute('sale')==0){
-						            	trD +=	 '<td><a  mark="btn" val="'+temp[i].value.getAttribute('mid')+','+temp[i].value.getAttribute('teamname')+','+temp[i].value.getAttribute('sp')+','+temp[i].value.getAttribute('sale')+'"><img src="/images/team/'+mid+'.jpg" alt='+mid+'><span>'+temp[i].value.getAttribute('teamname')+'</span><em>'+temp[i].value.getAttribute('sp')+'</em></a><td>'
+						            	trD +=	 '<td><div class="cupteamdiv "><a  mark="btn" val="'+temp[i].value.getAttribute('mid')+','+temp[i].value.getAttribute('teamname')+','+temp[i].value.getAttribute('sp')+','+temp[i].value.getAttribute('sale')+'"><img src="/images/team/'+mid+'.jpg" alt='+mid+'><span>'+temp[i].value.getAttribute('teamname')+'</span><em>'+temp[i].value.getAttribute('sp')+'</em></a></div><td>'
 						            }else{
-						            	trD +=	 '<td><a class="hui" title="停售中"><img src="/images/team/'+mid+'.jpg" alt='+mid+'><span>'+temp[i].value.getAttribute('teamname')+'</span><em>'+temp[i].value.getAttribute('sp')+'</em></a><td>'
+						            	trD +=	 '<td><div class="cupteamdiv "><a class="hui" title="停售中"><img src="/images/team/'+mid+'.jpg" alt='+mid+'><span>'+temp[i].value.getAttribute('teamname')+'</span><em>'+temp[i].value.getAttribute('sp')+'</em></a></div><td>'
 						            }
 							}else if(mid=="17"||mid=="21"||mid=="25"||mid=="29"){
 								 if(temp[i].value.getAttribute('sale')==0){
-						            	trE +=	 '<td><a  mark="btn" val="'+temp[i].value.getAttribute('mid')+','+temp[i].value.getAttribute('teamname')+','+temp[i].value.getAttribute('sp')+','+temp[i].value.getAttribute('sale')+'"><img src="/images/team/'+mid+'.jpg" alt='+mid+'><span>'+temp[i].value.getAttribute('teamname')+'</span><em>'+temp[i].value.getAttribute('sp')+'</em></a><td>'
+						            	trE +=	 '<td><div class="cupteamdiv "><a  mark="btn" val="'+temp[i].value.getAttribute('mid')+','+temp[i].value.getAttribute('teamname')+','+temp[i].value.getAttribute('sp')+','+temp[i].value.getAttribute('sale')+'"><img src="/images/team/'+mid+'.jpg" alt='+mid+'><span>'+temp[i].value.getAttribute('teamname')+'</span><em>'+temp[i].value.getAttribute('sp')+'</em></a></div><td>'
 						            }else{
-						            	trE +=	 '<td><a class="hui" title="停售中"><img src="/images/team/'+mid+'.jpg" alt='+mid+'><span>'+temp[i].value.getAttribute('teamname')+'</span><em>'+temp[i].value.getAttribute('sp')+'</em></a><td>'
+						            	trE +=	 '<td><div class="cupteamdiv "><a class="hui" title="停售中"><img src="/images/team/'+mid+'.jpg" alt='+mid+'><span>'+temp[i].value.getAttribute('teamname')+'</span><em>'+temp[i].value.getAttribute('sp')+'</em></a></div><td>'
 						            }
 							}else if(mid=="18"||mid=="22"||mid=="26"||mid=="30"){
 								 if(temp[i].value.getAttribute('sale')==0){
-						            	trF +=	 '<td><a  mark="btn" val="'+temp[i].value.getAttribute('mid')+','+temp[i].value.getAttribute('teamname')+','+temp[i].value.getAttribute('sp')+','+temp[i].value.getAttribute('sale')+'"><img src="/images/team/'+mid+'.jpg" alt='+mid+'><span>'+temp[i].value.getAttribute('teamname')+'</span><em>'+temp[i].value.getAttribute('sp')+'</em></a><td>'
+						            	trF +=	 '<td><div class="cupteamdiv "><a  mark="btn" val="'+temp[i].value.getAttribute('mid')+','+temp[i].value.getAttribute('teamname')+','+temp[i].value.getAttribute('sp')+','+temp[i].value.getAttribute('sale')+'"><img src="/images/team/'+mid+'.jpg" alt='+mid+'><span>'+temp[i].value.getAttribute('teamname')+'</span><em>'+temp[i].value.getAttribute('sp')+'</em></a></div><td>'
 						            }else{
-						            	trF +=	 '<td><a class="hui" title="停售中"><img src="/images/team/'+mid+'.jpg" alt='+mid+'><span>'+temp[i].value.getAttribute('teamname')+'</span><em>'+temp[i].value.getAttribute('sp')+'</em></a><td>'
+						            	trF +=	 '<td><div class="cupteamdiv "><a class="hui" title="停售中"><img src="/images/team/'+mid+'.jpg" alt='+mid+'><span>'+temp[i].value.getAttribute('teamname')+'</span><em>'+temp[i].value.getAttribute('sp')+'</em></a></div><td>'
 						            }
 							}else if(mid=="19"||mid=="23"||mid=="27"||mid=="31"){
 								 if(temp[i].value.getAttribute('sale')==0){
-						            	trG +=	 '<td><a  mark="btn" val="'+temp[i].value.getAttribute('mid')+','+temp[i].value.getAttribute('teamname')+','+temp[i].value.getAttribute('sp')+','+temp[i].value.getAttribute('sale')+'"><img src="/images/team/'+mid+'.jpg" alt='+mid+'><span>'+temp[i].value.getAttribute('teamname')+'</span><em>'+temp[i].value.getAttribute('sp')+'</em></a><td>'
+						            	trG +=	 '<td><div class="cupteamdiv "><a  mark="btn" val="'+temp[i].value.getAttribute('mid')+','+temp[i].value.getAttribute('teamname')+','+temp[i].value.getAttribute('sp')+','+temp[i].value.getAttribute('sale')+'"><img src="/images/team/'+mid+'.jpg" alt='+mid+'><span>'+temp[i].value.getAttribute('teamname')+'</span><em>'+temp[i].value.getAttribute('sp')+'</em></a></div><td>'
 						            }else{
-						            	trG +=	 '<td><a class="hui" title="停售中"><img src="/images/team/'+mid+'.jpg" alt='+mid+'><span>'+temp[i].value.getAttribute('teamname')+'</span><em>'+temp[i].value.getAttribute('sp')+'</em></a><td>'
+						            	trG +=	 '<td><div class="cupteamdiv "><a class="hui" title="停售中"><img src="/images/team/'+mid+'.jpg" alt='+mid+'><span>'+temp[i].value.getAttribute('teamname')+'</span><em>'+temp[i].value.getAttribute('sp')+'</em></a></div><td>'
 						            }
 							}else if(mid=="20"||mid=="24"||mid=="28"||mid=="32"){
 								 if(temp[i].value.getAttribute('sale')==0){
-						            	trH +=	 '<td><a  mark="btn" val="'+temp[i].value.getAttribute('mid')+','+temp[i].value.getAttribute('teamname')+','+temp[i].value.getAttribute('sp')+','+temp[i].value.getAttribute('sale')+'"><img src="/images/team/'+mid+'.jpg" alt='+mid+'><span>'+temp[i].value.getAttribute('teamname')+'</span><em>'+temp[i].value.getAttribute('sp')+'</em></a><td>'
+						            	trH +=	 '<td><div class="cupteamdiv "><a  mark="btn" val="'+temp[i].value.getAttribute('mid')+','+temp[i].value.getAttribute('teamname')+','+temp[i].value.getAttribute('sp')+','+temp[i].value.getAttribute('sale')+'"><img src="/images/team/'+mid+'.jpg" alt='+mid+'><span>'+temp[i].value.getAttribute('teamname')+'</span><em>'+temp[i].value.getAttribute('sp')+'</em></a></div><td>'
 						            }else{
-						            	trH +=	 '<td><a class="hui" title="停售中"><img src="/images/team/'+mid+'.jpg" alt='+mid+'><span>'+temp[i].value.getAttribute('teamname')+'</span><em>'+temp[i].value.getAttribute('sp')+'</em></a><td>'
+						            	trH +=	 '<td><div class="cupteamdiv "><a class="hui" title="停售中"><img src="/images/team/'+mid+'.jpg" alt='+mid+'><span>'+temp[i].value.getAttribute('teamname')+'</span><em>'+temp[i].value.getAttribute('sp')+'</em></a></div><td>'
 						            }
 							}
 							
@@ -717,22 +718,22 @@ Class({
 					            
 					            +'<td colspan="2">';
 					            if(temp[i].value.getAttribute('sale')==0){
-					            	html_left +='<a  mark="btn" val="'+temp[i].value.getAttribute('mid')+','+temp[i].value.getAttribute('teamname')+','+temp[i].value.getAttribute('sp')+','+temp[i].value.getAttribute('sale')+'">'
+					            	html_left +='<div class="cupteamdiv "><a  mark="btn" val="'+temp[i].value.getAttribute('mid')+','+temp[i].value.getAttribute('teamname')+','+temp[i].value.getAttribute('sp')+','+temp[i].value.getAttribute('sale')+'">'
 					            }else{
-					            	html_left +='<a class="hui" title="停售中">'
+					            	html_left +='<div class="cupteamdiv "><a class="hui" title="停售中">'
 					            }
-					            html_left +='<img src="/images/team/'+mid+'.jpg" class="nameimg" alt='+mid+'><span>'+temp[i].value.getAttribute('teamname')+'</span><em mark="sp">'+temp[i].value.getAttribute('sp')+'</em></a></td>'
+					            html_left +='<img src="/images/team/'+mid+'.jpg" class="nameimg" alt='+mid+'><span>'+temp[i].value.getAttribute('teamname')+'</span><em mark="sp">'+temp[i].value.getAttribute('sp')+'</em></a></div></td>'
 					            +'</tr>';
 							}else{
 								html_right += '<tr class='+(temp[i].value.getAttribute('mid')%2==0?"odds":"")+'>'
 								   +'<th>'+mid+'</th>'
 						            +' <td colspan="2">';
 						            if(temp[i].value.getAttribute('sale')==0){
-						            	html_right +='<a  mark="btn" val="'+temp[i].value.getAttribute('mid')+','+temp[i].value.getAttribute('teamname')+','+temp[i].value.getAttribute('sp')+','+temp[i].value.getAttribute('sale')+'">'
+						            	html_right +='<div class="cupteamdiv "><a  mark="btn" val="'+temp[i].value.getAttribute('mid')+','+temp[i].value.getAttribute('teamname')+','+temp[i].value.getAttribute('sp')+','+temp[i].value.getAttribute('sale')+'">'
 						            }else{
-						            	html_right +='<a class="hui" title="停售中">'
+						            	html_right +='<div class="cupteamdiv "><a class="hui" title="停售中">'
 						            }
-						            html_right +='<img src="/images/team/'+mid+'.jpg" class="nameimg" alt='+mid+'><span>'+temp[i].value.getAttribute('teamname')+'</span><em>'+temp[i].value.getAttribute('sp')+'</em></a></td>'
+						            html_right +='<img src="/images/team/'+mid+'.jpg" class="nameimg" alt='+mid+'><span>'+temp[i].value.getAttribute('teamname')+'</span><em>'+temp[i].value.getAttribute('sp')+'</em></a></div></td>'
 						            +'</tr>';
 							}
 							

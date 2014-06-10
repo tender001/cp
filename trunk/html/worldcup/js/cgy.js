@@ -181,6 +181,7 @@ Class('VSChoose', {
         }else{
         	Y.postMsg('msg_login', function() {	
         		$("#yclass_confirm_ok").html("确认投注");
+        		$("#yclass_confirm_content").css("line-height","26px")
         		Y.confirm('请确认您的方案信息！<br><strong class="pmarb f_nor f12" >投注信息：共<strong class="red_thick padd4">'+$("#tnum").val()+'</strong>注<strong class="red_thick padd4">'+$("#muli").val()+'</strong>倍<strong class="red_thick padd4">'+$("#money").val()+'</strong>元（世界杯冠军第<strong class=red_thick>14001</strong>期）</strong></strong>', function (){
         			that.doBuy();
                 }); 
@@ -220,7 +221,7 @@ Class('VSChoose', {
      	   		if(code==0){
      	   		$("#yclass_confirm_ok").html("立即查看");
      	   		$("#yclass_confirm_no").html("继续投注");
-     	   			Y.confirm("恭喜您，投注成功！",function(){window.location.href='../worldcup/myproject.html';},'','',function(){window.location.href='../worldcup/final.html';});
+     	   			Y.confirm("恭喜您，投注成功！",function(){window.location.href='../account/orderlist.html';},'','',function(){window.location.href='../worldcup/cgy.html';});
      	   		}if(code==19999){
      	   		$("#yclass_confirm_ok").html("立即充值");
      	   		 Y.confirm(desc,function(){window.location.href='../user/chzh.html';});
@@ -266,23 +267,25 @@ Class('VSList', {
         	 if(this.checked){
                  var element = $(this);
                //default
-     			var defaultOffset=$(".w_ctrselect").offset();
+     			var defaultOffset=$("#choose_list").offset();
      			//curent
-     			var curentOffset=element.parents("tr").find("td.w_cuntry div.cuntry_box").offset();
+     			var curentOffset=element.parents("td").offset();
      			//clone
-     			var cloneElement=element.parents("tr").find("td.w_cuntry div.cuntry_box div").clone();
+     			var cloneElement=element.parents("tr").find("div.cupteamdiv").clone();
      			var id = 'item_' + element.val().split(",")[0];
      			cloneElement.css({
      				"position":"absolute",
-     				"left":curentOffset.left,
-     				"top":curentOffset.top
+     				"left":curentOffset.left-450,
+     				"top":curentOffset.top-166
      			})
-     			element.parents("tr").find("td.w_cuntry").append(cloneElement);
+     			$(cloneElement).find("a.cur").css({"background":"none","border":"none"})
+     			$("#container").append(cloneElement);
+//     			element.parents("tr").find("td").append(cloneElement);
      			cloneElement.animate({
-     				"left":defaultOffset.left+40,
-     				"top":parseInt($("#"+id).offset().top)-10,
-     				"opacity":0.8
-     			},800,function(){
+     				"left":defaultOffset.left-490,
+     				"top":parseInt($("#"+id).offset().top)-170,
+     				"opacity":0.3
+     			},500,function(){
  					$(this).remove();
  				});
              }
@@ -301,8 +304,8 @@ Class('VSList', {
         Y.postMsg('msg-choose-change', chk.checked, chk.value);
     },
     updateItemView: function (chk){
-        var tr_hit = 'select';
-        var tr = Y.get(chk).parent('td').parent('tr');
+        var tr_hit = 'cur';
+        var tr = Y.get(chk).parent('td').find("a");
         if (!chk.id) {
             chk.id = 'vschk_' + chk.value.split(',')[0];
         }        
@@ -571,10 +574,10 @@ Class({
 							
 							  if(temp[i].value.getAttribute('sale')==0){
 									html_left +=' <td><input type="checkbox" mark="chkbet" style="display:none;" value="'+temp[i].value.getAttribute('mid')+','+temp[i].value.getAttribute('teamname')+','+temp[i].value.getAttribute('sp')+','+temp[i].value.getAttribute('sale')+'" />';
-									html_left +=' <a ><span class="spandm">'+teams[0]+'</span><img src="/images/team/'+img+'.jpg" class="nameimg"><s>-</s><img src="/images/team/'+img2+'.jpg" class="nameimg"><span>'+teams[1]+'</span><em>'+temp[i].value.getAttribute('sp')+'</em></a></td>';
+									html_left +=' <div class="cupteamdiv "><a ><span class="spandm">'+teams[0]+'</span><img src="/images/team/'+img+'.jpg" class="nameimg"><s>-</s><img src="/images/team/'+img2+'.jpg" class="nameimg"><span>'+teams[1]+'</span><em>'+temp[i].value.getAttribute('sp')+'</em></a></div></td>';
 							  }else{
 								  html_left +=' <td>';
-									html_left +=' <a  class="hui" title="停售中"><span class="spandm">'+teams[0]+'</span><img src="/images/team/'+img+'.jpg" class="nameimg"><s>-</s><img src="/images/team/'+mid+'.jpg" class="nameimg"><span>'+teams[1]+'</span><em>'+temp[i].value.getAttribute('sp')+'</em></a></td>';
+									html_left +=' <div class="cupteamdiv "><a  class="hui" title="停售中"><span class="spandm">'+teams[0]+'</span><img src="/images/team/'+img+'.jpg" class="nameimg"><s>-</s><img src="/images/team/'+mid+'.jpg" class="nameimg"><span>'+teams[1]+'</span><em>'+temp[i].value.getAttribute('sp')+'</em></a></td>';
 								  
 							  }
 					
@@ -586,17 +589,17 @@ Class({
 							  if(temp[i].value.getAttribute('sale')==0){
 								  html_right +=' <td><input type="checkbox" mark="chkbet" style="display:none;" value="'+temp[i].value.getAttribute('mid')+','+temp[i].value.getAttribute('teamname')+','+temp[i].value.getAttribute('sp')+','+temp[i].value.getAttribute('sale')+'" />';
 								  if($_sys.getteamnum(teams[0])!=undefined){
-									  html_right +=' <a ><span class="spandm">'+teams[0]+'</span><img src="/images/team/'+img+'.jpg" class="nameimg"><s>-</s><img src="/images/team/'+img2+'.jpg" class="nameimg"><span>'+teams[1]+'</span><em>'+temp[i].value.getAttribute('sp')+'</em></a></td>';
+									  html_right +=' <div class="cupteamdiv "><a ><span class="spandm">'+teams[0]+'</span><img src="/images/team/'+img+'.jpg" class="nameimg"><s>-</s><img src="/images/team/'+img2+'.jpg" class="nameimg"><span>'+teams[1]+'</span><em>'+temp[i].value.getAttribute('sp')+'</em></a></div></td>';
 								  }else{
-									  html_right +=' <a ><span class="spandm">'+teams[0]+'</span><s>-</s><span>'+teams[1]+'</span><em>'+temp[i].value.getAttribute('sp')+'</em></a></td>';
+									  html_right +=' <div class="cupteamdiv "><a ><span class="spandm">'+teams[0]+'</span><s>-</s><span>'+teams[1]+'</span><em>'+temp[i].value.getAttribute('sp')+'</em></a></div></td>';
 								  }
 								
 							  }else{
 								  html_right +=' <td>';
 								  if($_sys.getteamnum(teams[0])!=undefined){
-									  html_right +=' <a  class="hui" title="停售中"><span class="spandm">'+teams[0]+'</span><img src="/images/team/'+img+'.jpg" class="nameimg"><s>-</s><img src="/images/team/'+img2+'.jpg" class="nameimg"><span>'+teams[1]+'</span><em>'+temp[i].value.getAttribute('sp')+'</em></a></td>';
+									  html_right +=' <div class="cupteamdiv "><a  class="hui" title="停售中"><span class="spandm">'+teams[0]+'</span><img src="/images/team/'+img+'.jpg" class="nameimg"><s>-</s><img src="/images/team/'+img2+'.jpg" class="nameimg"><span>'+teams[1]+'</span><em>'+temp[i].value.getAttribute('sp')+'</em></a></td>';
 									  }else{
-										  html_right +=' <a  class="hui" title="停售中"><span class="spandm">'+teams[0]+'</span><s>-</s><span>'+teams[1]+'</span><em>'+temp[i].value.getAttribute('sp')+'</em></a></td>';
+										  html_right +=' <div class="cupteamdiv "><a  class="hui" title="停售中"><span class="spandm">'+teams[0]+'</span><s>-</s><span>'+teams[1]+'</span><em>'+temp[i].value.getAttribute('sp')+'</em></a></div></td>';
 									  } 
 								
 								  
