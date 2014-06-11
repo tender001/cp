@@ -883,9 +883,9 @@ border-radius: 3px;-moz-border-radius:3px;}
 .navmlist a.sre {
     background: url(../images/159/re.gif) no-repeat scroll 96px 5px ;
 }
-.winc_top{height:34px;border-bottom:2px solid #ff6600;background-color:#f0f0f0;line-height:34px;}
+.winc_top{height:34px;border-bottom:2px solid #ff6600;line-height:34px;background:#f0f0f0 url(/images/cai888/33.png) no-repeat 16px 3px;padding-left:50px}
 .winc_top span{float:left}
-.winc_top span a{width:116px;text-align:Center;font-size:14px;font-weight:bold;color:#222;display:block;float:left}
+.winc_top span a{width:120px;text-align:Center;font-size:14px;font-weight:bold;color:#222;display:block;float:left}
 .winc_top span a.cur{ background-color:#ff6600;color:#fff}
 .winc_top p{float:right;color:#666}
 .winc_top p em{color:#e52e04;font-weight:bold;padding-right:15px}
