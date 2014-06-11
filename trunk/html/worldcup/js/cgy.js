@@ -466,6 +466,7 @@ Class({
 	  var that = this;
 	  that.bindEvent(config);
 	  that.loadView();
+	  that.goTotop();
    },
    bindEvent: function (config){
 	   var that = this;
@@ -655,11 +656,11 @@ Class({
 	        				if(isIE6){
 	        					V.css({left: "auto",top: Z+$(window).scrollTop()-140, width: F,position: "absolute"});
 	        				}else{
-	        					V.css({left: "auto",top: Z-33, width: 230, position: "fixed"});
+	        					V.css({left: "auto",top: Z, width: 230, position: "fixed"});
 	        				}
 	        			}
 	        			$("#titleTable_r").addClass("wdcupright");
-	        			Y.get("#titleTable_r").setStyle('z-index: 1;');
+	        			Y.get("#titleTable_r").setStyle('margin: 0');
 	        		}
 	            	
 	             }else{//停止浮动对齐
