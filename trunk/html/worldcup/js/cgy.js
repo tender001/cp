@@ -592,7 +592,7 @@ Class({
 								  if($_sys.getteamnum(teams[0])!=undefined){
 									  html_right +=' <div class="cupteamdiv "><a ><span class="spandm">'+teams[0]+'</span><img src="/images/team/'+img+'.jpg" class="nameimg"><s>-</s><img src="/images/team/'+img2+'.jpg" class="nameimg"><span>'+teams[1]+'</span><em>'+temp[i].value.getAttribute('sp')+'</em></a></div></td>';
 								  }else{
-									  html_right +=' <div class="cupteamdiv "><a ><span class="spandm">'+teams[0]+'</span><s>-</s><span>'+teams[1]+'</span><em>'+temp[i].value.getAttribute('sp')+'</em></a></div></td>';
+									  html_right +=' <div class="cupteamdiv "><a ><span class="spandm" style="width:125px">'+teams[0]+'</span><s>-</s><span>'+teams[1]+'</span><em>'+temp[i].value.getAttribute('sp')+'</em></a></div></td>';
 								  }
 								
 							  }else{
