@@ -207,7 +207,6 @@ Class('VSChoose', {
      	data += "&wrate="+$("#wrate").val();	
      	data += "&comeFrom="+$("#comeFrom").val();	
      	data += "&source="+$("#source").val();
-     	//alert(data);
      	Y.ajax({
      		url : "/phpt/t.phpx",
      		type : "POST",
@@ -217,14 +216,16 @@ Class('VSChoose', {
      			var obj= eval("(" + d.text + ")");
      			var code = obj.Resp.code;
      	   		var desc = obj.Resp.desc;
+     	   		
      	   		//code为0代表成功，为19999代表余额不足
      	   		if(code==0){
-     	   		$("#yclass_confirm_ok").html("立即查看");
+     	   		var projid=obj.Resp.result.projid;
+     	   			$("#yclass_confirm_ok").html("立即查看");
      	   		$("#yclass_confirm_no").html("继续投注");
-     	   			Y.confirm("恭喜您，投注成功！",function(){window.location.href='../account/orderlist.html';},'','',function(){window.location.href='../worldcup/cgy.html';});
+     	   			Y.confirm("恭喜您，投注成功！",function(){window.location.href='../worldcup/project.html?lotid=99&projid='+projid+'';},'','',function(){window.location.href='../worldcup/cgy.html';});
      	   		}if(code==19999){
      	   		$("#yclass_confirm_ok").html("立即充值");
-     	   		 Y.confirm(desc,function(){window.location.href='../user/chzh.html';});
+     	   		 Y.confirm(desc,function(){window.location.href='../account/chongzhi.html';});
      	   		}   	   		
      		},
 			error : function() {
@@ -246,7 +247,7 @@ Class('VSList', {
         var hit = 'th_on';
         var stop = 'team_outed';
         var that = this;
-        var group = Y.get('#vs_filter');
+        var group = Y.get('div[mark=matchfilter]');
         if (group.size()) {
             Y.lib.VSList.iszh = true;
             this.setfilter(group.one(), group.find('input:checkbox'));
@@ -360,7 +361,7 @@ Class('VSList', {
             var tr = Y.get(chk).parent('tr');
             tr.removeClass('filter-hit');
             if (that.inGroups(names, chk.value)) {
-                tr.removeClass(css);
+                tr.removeClass(css).show();
                 tr.setStyle('opacity', 1);
                 if (hasFilter) {
                     tr.addClass('filter-hit');
@@ -368,7 +369,7 @@ Class('VSList', {
                 chk.disabled = false;
                 len++;
             }else{
-                tr.addClass(css);
+                tr.addClass(css).hide();
                 tr.setStyle('opacity', 0.7);
                 if (chk.checked) {
                     chk.checked = false;
@@ -620,5 +621,65 @@ Class({
 			    	}
 		 		}
 		 });
-	}
+	},goTotop:function (){
+        var isIE=!!window.ActiveXObject;
+        var isIE6 = isIE&&!window.XMLHttpRequest;
+        var btn = $("#goTotop");
+        var right = 0;
+        var top = $(window).height()-247;
+        var ietop = $(window).height()-247+$(window).scrollTop();
+        var flag = true;
+        $(window).resize(function(){
+            btn.css({"position":"fixed",top:top,right:right});
+            if(isIE6)btn.css({"position":"absolute",top:ietop,right:right});
+        })
+        btn.css({"position":"fixed",top:top,right:right});
+        var areaTop = Y.get("#right_area").getXY().y;
+        
+        $(window).scroll(function(){
+        	 if ($(this).scrollTop() > areaTop){//跟踪对齐当滚动条超过右侧区域则开始滚动
+	            	var V = $('#titleTable_r');
+	        		if (V[0]) {
+	        			var T = $(document),
+	        			H = $("#vs_box").eq(0),
+	        			M = H.offset().top + H.outerHeight(),
+	        			F = V.innerWidth(),
+	        			B = V.offset().top,
+	        			L = V.outerHeight(), 
+	        			u = T.scrollTop();
+	        			Z = Math.min(0, M - (L + u+15));
+	        			
+	        			if (B == Z) {
+	        				V.css({left: "auto", top: "auto",width: F, position: "static"});
+	        			} else {
+	        				if(isIE6){
+	        					V.css({left: "auto",top: Z+$(window).scrollTop()-140, width: F,position: "absolute"});
+	        				}else{
+	        					V.css({left: "auto",top: Z-33, width: 230, position: "fixed"});
+	        				}
+	        			}
+	        			$("#titleTable_r").addClass("wdcupright");
+	        			Y.get("#titleTable_r").setStyle('z-index: 1;');
+	        		}
+	            	
+	             }else{//停止浮动对齐
+            	 Y.get("#titleTable_r").setStyle('z-index: 1; top:0;  left: auto;position: static;');
+            	 $("#titleTable_r").removeClass("wdcupright");
+            }
+        	
+            if(flag)
+            {
+                btn.show();
+                flag = false;
+            }
+            if($(this).scrollTop() == 0)
+            {
+                btn.hide();
+                flag = true;
+            }
+            btn.css({"position":"fixed",top:top,right:right});
+            ietop = $(window).height()-260+$(window).scrollTop();
+            if(isIE6)btn.css({"position":"absolute",top:ietop,right:right});
+        })
+    }
 })
