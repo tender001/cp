@@ -6,8 +6,8 @@
 <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
 <meta name="Keywords" content="2014世界杯冠军竞猜,竞彩冠军投注,竞彩冠军单关投注" />
 <meta name="Description" content="159彩票网竞彩冠亚军竞彩冠军投注栏目为您提供2014世界杯冠军竞猜，竞彩冠军赔率信息及竞彩冠军购买、投注等服务！" />
-<link href="/css/159cai.css"  rel="stylesheet" type="text/css" />
-<link href="/css/new159cai.css"  rel="stylesheet" type="text/css" />
+<link href="/css/159cai.css" rel="stylesheet" type="text/css" />
+<link href="/css/new159cai.css" rel="stylesheet" type="text/css" />
 <script type="text/javascript" src="/public/jq.js"></script>
 <script type="text/javascript" src="/public/159cp.js"></script>
 <script type="text/javascript" src="/public/chklogin.js"></script>
@@ -21,130 +21,160 @@ body{background:url(/images/cai888/cub2014.png) 50% 0 no-repeat;padding-top:60px
 </head>
 <body>
 
-<!-- 头部内容 -->  
-<!--#include virtual="/cc/header.html"-->
-<!--#include virtual="/cc/nav.html"-->
-<!-- 头部内容 --> 
-<div class=breadcrumb><p>您现在的位置：<a href="/" title="网上买彩票"><font>159彩票网</font></a> &gt; <a href="/dating/" title="购彩大厅"><font>购彩大厅</font></a> &gt; 猜冠军</p></div>
-<div id="container" style="position:none">
- <div class="winc_top">
-  <span><a  class="cur">世界杯冠军</a><a  href="/worldcup/cgy.html">世界杯冠亚军</a></span><p>停售时间：<em>2014-07-14 02:55</em>      最后一场比赛：<em>07-14 03:00</em></p>
- </div>
- <div class="winmain">
-  <div class="wdcupleft">
-  <h4>
-<!--  <div  mark="chksp"/>奖金排序↑ </div> -->
-  <input type="checkbox"  id="groupTab"/>按分组查看投注选项</h4>
-  <div class="cupone" id="vs_box">
-  <div class="cupteamlist" style="border:1px solid #ccc;border-bottom:none">
-   <table width="50%" border="0" cellpadding="0" cellspacing="0" class="cuptab1">
-    <colgroup>
-    <col width="52" /> <col width="316" />
-    </colgroup>
-  <tr class="tr1">
-    <th  mark="chkno">编号</th>
-    <td>选择球队</td>
-  </tr>
-  <tbody id="matchdata_left">
-<!--    <tr class="odd"> -->
-<!--     <th>32</th> -->
-<!--    <td><a href="#"><img src="/images/team/20140228133248.jpg" class="nameimg"><span>阿尔及利亚</span><em>1000.00</em></a></td> -->
-<!--   </tr> -->
-  </tbody >
-</table><table width="50%" border="0" cellpadding="0" cellspacing="0" class="cuptab1">
-    <colgroup>
-    <col width="52" /> <col width="316" />
-    </colgroup>
-  <tr class="tr1">
-    <th  mark="chkno">编号</th>
-    <td>选择球队</td>
-  </tr>
-  <tbody id="matchdata_right">
-<!--    <tr class="odd"> -->
-<!--     <th>32</th> -->
-<!--    <td><a href="#"><img src="/images/team/20140228133248.jpg" class="nameimg"><span>阿尔及利亚</span><em>1000.00</em></a></td> -->
-<!--   </tr> -->
-  </tbody>
- 
- 
-</table>
-  </div></div>
-  <div class="cupone" style="display:none" id="groupbet">
-  <div class="teamnum"><p>A组</p><p>B组</p><p>C组</p><p>D组</p></div>
-  <div class="cupteamlist">
-   <table width="100%" border="0" cellpadding="0" cellspacing="0">
-  <tr id="trA"></tr>
-  <tr id="trB"></tr>
-  <tr id="trC"></tr>
-  <tr id="trD"></tr>
-</table>
-  </div>
-  <div class="teamnum"><p>E组</p><p>F组</p><p>G组</p><p>H组</p></div>
-  <div class="cupteamlist">
-   <table width="100%" border="0" cellpadding="0" cellspacing="0">
- <tr id="trE"></tr>
- <tr id="trF"></tr>
- <tr id="trG"></tr>
- <tr id="trH"></tr>
-</table>
-  </div></div>
-  <h2>淘汰赛</h2>
-  
-  <!--#include virtual="/brazil/taotainews.html"-->
- </div><div id="right_area" class="wdcupright">
- <div id="titleTable_r">
-  <table width="100%" border="0" cellpadding="0" cellspacing="0"> 
-  <tr class="tr1">
-    <td colspan="3">确认投注信息</td>
-  </tr>
-  <tr  class="tr2">
-     <tr  class="tr2">
-    <td>编号</td>
-    <td>选择球队</td>
-    <td>奖金</td>
-  </tr>
-  </tr>
-  <tr id="list_tmpl" style="display:none">
-  <td><input type="checkbox" checked="checked" class="chbox" /><span class="gray">03</span></td>
-				<td>荷兰</td>
-  <td class="center">4.1</td>
-<!--     <td><input type="checkbox"  />01</td> -->
-<!--     <td>巴西</td> -->
-  </tr>
-  	<tbody id="choose_list">
-<!--   	<td colspan="2" style="text-align: center;position:relative;top:8px;color: red;">请选择球队</td> -->
-			</tbody>
-  <tr class="tr1">
-   <td colspan="3">确认投注结果</td>
-  </tr>
-</table>
-<p class="p1">投注&nbsp;<input type="text" id="buybs" value="1" />倍(最高50000倍)<br>您选择了<em id="sel_num">0</em> 支球队，共<em id="sel_zs">0</em> 注，<br>总金额 <em id="sel_money">￥0.00元</em><br>理论最高奖金：<em id="sel_yc">0</em>元 </p>
- <a id="buydg"  class="jc_mtz">确认代购</a>
- </div>
- </div> </div>
-</div>
-<form method="post" action="/phpt/t.phpx" name="project_form" id="project_form" style="display:none">
-	<input type="hidden" value="mcast" name="fid">
-	<input type="hidden" id="gid" name="gid" value="98" title="彩种编号"><br/>
-	<input type="hidden" id="pid" name="pid" value="14001" title="期数"><br/>
-	<input type="hidden" id="play" name="play" value="" title="玩法"><br/>
-	<input type="hidden" id="codes" name="codes" value="GJ|14001=1/2/4/5/7" title="投注号码"><br/>
-	<input type="hidden" id="muli" name="muli" value="1" title="倍数"><br/>
-	<input type="hidden" id="fflag" name="fflag" value="0" title="文件标识"><br/>
-	<input type="hidden" id="type" name="type" value="0" title="方案类型"><br/>
-	<input type="hidden" id="name" name="name" value="欢迎跟单" title="方案标题"><br/>
-	<input type="hidden" id="desc" name="desc" value="跟单吧" title="方案描述"><br/>
-	<input type="hidden" id="money" name="money" value="10" title="投注金额"><br/>
-	<input type="hidden" id="tnum" name="tnum" value="10" title="份数"><br/>
-	<input type="hidden" id="bnum" name="bnum" value="10" title="认购份数"><br/>
-	<input type="hidden" id="pnum" name="pnum" value="0" title="保底份数"><br/>
-	<input type="hidden" id="oflag" name="oflag" value="0" title="公开标识"><br/>
-	<input type="hidden" id="wrate" name="wrate" value="0" title="提成比率"><br/>
-	<input type="hidden" id="comeFrom" name="comeFrom" value="test" title="来源"><br/>
-	<input id="source" name="source" value="normal" type="hidden" title="源头"><br/>
-</form>
-<input id="price" name="price" value="" type="hidden"/>
-<script type="text/javascript" src="/worldcup/js/index.js"></script>
-<!--#include virtual="/cc/footer.html"-->
+	<!-- 头部内容 -->
+	<!--#include virtual="/cc/header.html"-->
+	<!--#include virtual="/cc/nav.html"-->
+	<!-- 头部内容 -->
+	<div class=breadcrumb>
+		<p>
+			您现在的位置：<a href="/" title="网上买彩票"><font>159彩票网</font></a> &gt; <a href="/dating/" title="购彩大厅"><font>购彩大厅</font></a> &gt; 猜冠军
+		</p>
+	</div>
+	<div id="container" style="position: none">
+		<div class="winc_top">
+			<span><a class="cur">世界杯冠军</a><a href="/worldcup/cgy.html">世界杯冠亚军</a></span>
+			<p>
+				停售时间：<em>2014-07-14 02:55</em> 最后一场比赛：<em>07-14 03:00</em>
+			</p>
+		</div>
+		<div class="winmain">
+			<div class="wdcupleft">
+				<h4>
+					<!--  <div  mark="chksp"/>奖金排序↑ </div> -->
+					<input type="checkbox" id="groupTab"  />按分组查看投注选项
+				</h4>
+				<div class="cupone" id="vs_box">
+					<div class="cupteamlist" style="border: 1px solid #ccc; border-bottom: none">
+						<table width="50%" border="0" cellpadding="0" cellspacing="0" class="cuptab1">
+							<colgroup>
+								<col width="52" />
+								<col width="316" />
+							</colgroup>
+							<tr class="tr1">
+								<th mark="chkno">编号</th>
+								<td>选择球队</td>
+							</tr>
+							<tbody id="matchdata_left">
+								<!--    <tr class="odd"> -->
+								<!--     <th>32</th> -->
+								<!--    <td><a href="#"><img src="/images/team/20140228133248.jpg" class="nameimg"><span>阿尔及利亚</span><em>1000.00</em></a></td> -->
+								<!--   </tr> -->
+							</tbody>
+						</table>
+						<table width="50%" border="0" cellpadding="0" cellspacing="0" class="cuptab1">
+							<colgroup>
+								<col width="52" />
+								<col width="316" />
+							</colgroup>
+							<tr class="tr1">
+								<th mark="chkno">编号</th>
+								<td>选择球队</td>
+							</tr>
+							<tbody id="matchdata_right">
+								<!--    <tr class="odd"> -->
+								<!--     <th>32</th> -->
+								<!--    <td><a href="#"><img src="/images/team/20140228133248.jpg" class="nameimg"><span>阿尔及利亚</span><em>1000.00</em></a></td> -->
+								<!--   </tr> -->
+							</tbody>
+
+
+						</table>
+					</div>
+				</div>
+				<div class="cupone" style="display: none" id="groupbet">
+					<div class="teamnum">
+						<p>A组</p>
+						<p>B组</p>
+						<p>C组</p>
+						<p>D组</p>
+					</div>
+					<div class="cupteamlist">
+						<table width="100%" cellspacing="0" cellpadding="0" border="0">
+							<tbody>
+								<tr>
+									<td id="trA"></td>
+									<td id="trB"></td>
+									<td id="trC"></td>
+									<td id="trD"></td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					<div class="teamnum">
+						<p>E组</p>
+						<p>F组</p>
+						<p>G组</p>
+						<p>H组</p>
+					</div>
+					<div class="cupteamlist">
+						<table width="100%" cellspacing="0" cellpadding="0" border="0">
+							<tbody>
+								<tr>
+									<td id="trE"></td>
+									<td id="trF"></td>
+									<td id="trH"></td>
+									<td id="trG"></td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+				<h2>淘汰赛</h2>
+
+				<!--#include virtual="/brazil/taotainews.html"-->
+			</div>
+			<div id="right_area" class="wdcupright">
+				<div id="titleTable_r">
+					<table width="100%" border="0" cellpadding="0" cellspacing="0">
+						<tr class="tr1">
+							<td colspan="3">确认投注信息</td>
+						</tr>
+						<tr class="tr2">
+							<tr class="tr2">
+								<td>编号</td>
+								<td>选择球队</td>
+								<td>奖金</td>
+							</tr>
+						</tr>
+						<tr id="list_tmpl" style="display: none">
+							<td><input type="checkbox" checked="checked" class="chbox" /><span class="gray">03</span></td>
+							<td>荷兰</td>
+							<td class="center">4.1</td>
+							<!--     <td><input type="checkbox"  />01</td> -->
+							<!--     <td>巴西</td> -->
+						</tr>
+						<tbody id="choose_list">
+							<!--   	<td colspan="2" style="text-align: center;position:relative;top:8px;color: red;">请选择球队</td> -->
+						</tbody>
+						<tr class="tr1">
+							<td colspan="3">确认投注结果</td>
+						</tr>
+					</table>
+					<p class="p1">
+						投注&nbsp;<input type="text" id="buybs" value="1" />倍(最高50000倍)<br>您选择了<em id="sel_num">0</em> 支球队，共<em id="sel_zs">0</em> 注，<br>总金额
+								<em id="sel_money">￥0.00元</em><br>理论最高奖金：<em id="sel_yc">0</em>元 
+					</p>
+					<a id="buydg" class="jc_mtz">确认代购</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<form method="post" action="/phpt/t.phpx" name="project_form" id="project_form" style="display: none">
+		<input type="hidden" value="mcast" name="fid"> <input type="hidden" id="gid" name="gid" value="98" title="彩种编号"><br /> <input
+				type="hidden" id="pid" name="pid" value="14001" title="期数"><br /> <input type="hidden" id="play" name="play" value="" title="玩法"><br />
+						<input type="hidden" id="codes" name="codes" value="GJ|14001=1/2/4/5/7" title="投注号码"><br /> <input type="hidden" id="muli"
+							name="muli" value="1" title="倍数"><br /> <input type="hidden" id="fflag" name="fflag" value="0" title="文件标识"><br /> <input
+									type="hidden" id="type" name="type" value="0" title="方案类型"><br /> <input type="hidden" id="name" name="name" value="欢迎跟单"
+										title="方案标题"><br /> <input type="hidden" id="desc" name="desc" value="跟单吧" title="方案描述"><br /> <input
+												type="hidden" id="money" name="money" value="10" title="投注金额"><br /> <input type="hidden" id="tnum" name="tnum"
+													value="10" title="份数"><br /> <input type="hidden" id="bnum" name="bnum" value="10" title="认购份数"><br /> <input
+															type="hidden" id="pnum" name="pnum" value="0" title="保底份数"><br /> <input type="hidden" id="oflag" name="oflag"
+																value="0" title="公开标识"><br /> <input type="hidden" id="wrate" name="wrate" value="0" title="提成比率"><br /> <input
+																		type="hidden" id="comeFrom" name="comeFrom" value="test" title="来源"><br /> <input id="source" name="source"
+																			value="normal" type="hidden" title="源头"><br />
+	</form>
+	<input id="price" name="price" value="" type="hidden" />
+	<script type="text/javascript" src="/worldcup/js/index.js"></script>
+	<!--#include virtual="/cc/footer.html"-->
 </body>
 </html>
