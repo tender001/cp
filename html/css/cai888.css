@@ -7,7 +7,7 @@ img{border:none;}
 body a{outline:none;blr:expression(this.onFocus=this.blur());text-decoration:none;color:#444;outline:none;cursor:pointer}
 div,ul,li{ list-style-type:none;overflow:hidden}
 div{zoom:1}
-#container{width:1000px;margin:0 auto}
+#container{width:1000px;margin:0 auto;background:#fff}
 .hm_main{border:1px solid #ccc;*zoom:1;background:#fff;}
 .hm_top_1{width:100%;height:79px;background:url(../images/cai888/cai8_03.jpg); position:relative;border-bottom:1px solid #ccc;z-index:10}
 .pxc a, .hm_fh, .time_bg b.tim, .x_g_b, .hm_ms_main ul li.mr a.dz, .x_xq_t1 em, .hm_col_5_top, .hm_col_5_top ul li, .x_f_b b, .a_ss1, .x_f_a span, .x_g_d b, .x_f_a a.a_zcz{ background: url(../images/cdbg/x_xq.png) 0 0 no-repeat;display:block}
