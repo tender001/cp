@@ -897,7 +897,8 @@ border-radius: 3px;-moz-border-radius:3px;}
 .teamnum p{display:block;width:25%;float:left;text-align:Center;color:#aaa;font-weight:bold;background: url(../images/159/win_03.jpg) center 0 no-repeat;line-height:14px;padding-top:8px;}
 .cupteamlist{margin-bottom:15px;*zoom:1}
 .cupteamlist td{border:none;height:38px;}
-.cupteamdiv a{display:block;height:38px;width:185px;background:url(../images/cai888/ban1.jpg) no-repeat scroll 100% -2px ;line-height:38px}
+.cupteamdiv{clear:both}
+.cupteamdiv a{display:block;height:38px;width:315px;background:url(../images/cai888/ban1.jpg) no-repeat scroll 100% -2px ;line-height:38px}
 .cupteamdiv a:hover{background:url(../images/cai888/ban3.jpg) 100% bottom no-repeat}
 .cupteamdiv a.cur,.cupteamdiv a.cur:hover{background:url(../images/cai888/ban4.jpg) repeat scroll 0 0 }
 .cupteamdiv a.hui{background:url(../images/cai888/ban11.jpg) 100% bottom no-repeat;}
@@ -1644,7 +1645,7 @@ table.co1 tbody td{padding:9px 0 8px}
 .dc_qq{float:right}
 .cubaimg .cubimgc3,.cubaimg .cubimgc5{float:right;margin-right:0}
 .cubbanner a{display:block;float:left;width:669px;height:300px;position:relative}
-#cp_status p:first-child{line-height:22px;color:#444;margin:5px 0 -10px 0}
+#cp_status p:first-child{line-height:26px;color:#444;margin:7px 0}
 #cp_status p:first-child em{color:#e52e04;font-weight:bold}
 
 .error500 {
@@ -1759,3 +1760,6 @@ a.sz_cmt{background: url(../images/cai888/nwx5_11.jpg);width:137px;height:33px}
 .cupteamdiv a s{float:left;width:10px;text-align:center;display:block}
 .cupteamdiv2 a{width:183px}
 .jc_xqy span.worldc-logo{background: url(../images/cai888/worldc.png) 25px 0 no-repeat}
+body{background:url(../images/cai888/cub2014.png) 50% 0 no-repeat;padding-top:25px}
+.header{padding-top:0;background:#fff;padding:5px 10px 20px ;width:980px}
+#naver{margin:0;}
