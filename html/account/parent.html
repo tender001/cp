@@ -29,7 +29,9 @@
 			  <div class="user_right">
 			<div class="usertitle usertitgd">
 				<h2>网站推广</h2>
-				<span class="usertitab"> <b ><a title="佣金查询" href="myfanli.html">佣金查询</a></b> <b  class="cur"><a title="用户查询" href="parent.html">用户查询</a></b> <b><a title="销量查询" href="sales.html">销量查询</a></b><b><a title="推广说明" href="tgsay.html">推广说明</a></b><b><a title="推广链接" href="tuiguang.html">推广链接</a></b>
+				<span class="usertitab"> <b ><a title="佣金查询" href="myfanli.html">佣金查询</a></b> <b  class="cur"><a title="用户查询" href="parent.html">用户查询</a></b> 
+				<b><a title="销量查询" href="sales.html">销量查询</a></b>
+				<b><a title="会员转账" href="transfer.html">会员转账</a></b><b><a title="推广说明" href="tgsay.html">推广说明</a></b><b><a title="推广链接" href="tuiguang.html">推广链接</a></b>
 					</span>
 			</div>
 			<div class="usertitle">
@@ -50,7 +52,7 @@
     <th  id="atj"  colspan="2"></th>
   </tr>
   <tr>
-    <th>当前时间段总销量：</th>
+    <th>当页总销量：</th>
     <td><em id="totalxl" >￥0.00</em>元</td>
   </tr>
 </table>
@@ -60,6 +62,7 @@
    <table width="100%" border="0" cellspacing="0" cellpadding="0">
 <colgroup>
 <col width="50">
+<col width="100">
 <col width="100">
 <col width="120">
 <col width="120">
@@ -71,6 +74,7 @@
 <thead><tr>
     <td>编号</td>
     <td>用户名</td>
+     <td>上级用户</td>
     <td>注册时间</td>
     <td>活动日期</td>
     <td>身份</td>
@@ -86,6 +90,7 @@
 <colgroup>
 <col width="50">
 <col width="100">
+<col width="100">
 <col width="120">
 <col width="120">
 <col width="65">
@@ -96,17 +101,18 @@
   <tbody id="showdatalist">
     </tbody>
 </table>
-<div class="paginachange" id="pagediv"></div>
-</div>	
+
+</div>	<div class="paginachange" id="pagediv"></div>
 <p class="userp1"><strong>温馨提示：</strong>1.您可以查询您的账户最近3个月内的账户明细。<br />
 2.如果您添加了预付款，银行账户钱扣了，网站账户还没有加上，请及时与我们联系，我们将第一时间为您处理！<br />
 3.如需要查询全部明细，请联系网站客服：<em>400-0696-159</em>。联系网站客服。</p>
     </div>
-  </div>
-</div>
+  </div></div>
+
 			
 
-		<input name="caid" id="caid" type="hidden" value="0" /> <input name="nid" id="nid" type="hidden" value="0" />
+		<input id="nid" type="hidden" name="nid" value="">
+<input id="caid" type="hidden" name="caid" value="">
 	<!--#include virtual="/cc/footer.html"-->
 </body>
 </html>

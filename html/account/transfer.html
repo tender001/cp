@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>网上买彩票_用户资料_用户中心_159彩票网</title>
+<title>网上买彩票_账户中心_我的账户_159彩票网</title>
 <meta name="keywords"
 	content="福利彩票，福彩，体育彩票，体彩，足彩，网上买彩票，彩票合买，彩票开奖，彩票走势图，彩票预测" />
 <meta name="description"
@@ -14,8 +14,8 @@
 
 <script type="text/javascript" src="/public/159cp.js"></script>
 <script type="text/javascript" src="/public/chklogin.js"></script>
-<script type="text/javascript" src="/public/area.js"></script>
-<script type="text/javascript" src="/account/js/baseinfo.js"></script>
+<script type="text/javascript" src="/public/riqi.js"></script>
+<script type="text/javascript" src="/account/js/transfer.js"></script>
 </head>
 <body>
 	<!--#include virtual="/cc/header.html"-->
@@ -24,17 +24,21 @@
 		<div class="breadcrumb">
 			<p>
 				您现在的位置：<a href="/" title="网上买彩票"><font>159彩票网</font></a> > <a
-					href="/account/myaccount.html" title="我的账户"><font>我的账户</font></a> > 个人资料
+					href="/account/myaccount.html" title="我的账户"><font>我的账户</font></a> > 会员转账
 			</p>
 		</div>
 		<div class="user">
 			<!--#include virtual="/cc/account/account_left.html"-->
 			<div class="user_right">
-				<div class="usertitle usertitgd">
-					<h2>会员转账</h2>
-					
+					<div class="usertitle usertitgd">
+					<h2>网站推广</h2>
+					<span class="usertitab"> <b ><a title="佣金查询" href="myfanli.html">佣金查询</a></b> <b><a title="用户查询"
+							href="parent.html">用户查询</a></b> <b><a title="销量查询" href="sales.html">销量查询</a></b>
+							 <b class="cur"><a title="会员转账" href="transfer.html" >会员转账</a></b><b><a title="推广说明" href="tgsay.html">推广说明</a></b><b><a
+							title="推广链接" href="tuiguang.html">推广链接</a></b>
+					</span>
 				</div>
-				<div class="rztab">
+				<div class="rztab rztabx">
 
 					<table width="100%" border="0" cellpadding="0" cellspacing="0">
 						<colgroup>
@@ -44,30 +48,30 @@
 						</colgroup>
 						<tr>
 							<td>账户余额：</td>
-							<td><font style="float:left;color:#ff0000;font-size:16px;font-weight:bold">￥80.00</font></td>
+							<td><font style="float:left;color:#ff0000;font-size:16px;font-weight:bold"  id="td_fanmoney">￥0.00</font></td>
 						    <td></td>
 						</tr>
 						<tr>
 							<td>转账给（用户名）：</td>
-							<td ><input type="text" class="text" id="cimno" name="cimno" value=""
+							<td ><input type="text" class="text" id="newValue" name="cimno" value=""
 								maxlength="11"/></td>
 								<td style="text-align:left">(只能给自己下面已实名制的购彩账户转款)</td>
 						</tr>
 						<tr>
 							<td>转账金额：</td>
-							<td><input type="text" class="text" id="cimno" name="cimno" value=""
+							<td><input type="text" class="text"  id="amountMoney" name="cimno" onfocus="this.value='';" onkeyup="this.value=this.value.replace(/^\D*(\d*(?:\.\d{0,2})?).*$/g, '$1');" onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/^\D*(\d*(?:\.\d{0,2})?).*$/g, '$1'));" 
 								maxlength="11"/></td>
 								<td style="text-align:left">元</td>
 						</tr>
 						<tr>
 							<td>备注：</td>
-							<td><input type="text" class="text" id="ctelephone" name="ctelephone"
+							<td><input type="text" class="text"  id="yzm" name="ctelephone"
 								value="" maxlength="11"/></td>
 								<td></td>
 						</tr>
 						<tr>
 							<td>&nbsp;</td>
-							<td><a href="#" class="czbtn" style="margin:0" name="submit" id="submit">转款</a></td>
+							<td><a href="#" class="czbtn" style="margin:0" name="submit" id="td_zhuangkuan">转款</a></td>
 							<td></td>
 						</tr>
 					</table>
@@ -76,8 +80,8 @@
 				<div class="usertitle">
 					<h2>最近转款记录</h2>
 					<p>
-						<span>起始时间：</span><input type="text" id="begintime" name="begintime" value=""> <span>-</span><input type="text" id="endtime" name="endtime" value="">
-						 <a class="chaxun" id="submit" href="javascript:void(0);">查询</a>
+						<span>起始时间：</span><input type="text"  id="begintime"  name="begintime" value=""> <span>-</span><input type="text" id="endtime" name="endtime" value="">
+						 <a class="chaxun" id="td_submit" href="javascript:void(0);">查询</a>
 					</p>
 				</div>
 				<div class="usercod">
@@ -109,15 +113,16 @@
 							<col width="150">
 							<col>
 						</colgroup>
-<tr class=""><td><a target="_blank">6266614</a></td><td>2014-06-12 13:04:30</td><td><s style="color:red;">￥16.00</s></td><td>哈尼</td><td title="竞彩让球保底冻结">竞彩让球保底冻结 </td> </tr>
+						 <tbody id="showdatalist">
+    </tbody>
+
 						
                           </table>
-					<p style="display: none; font-size: 13px; color: rgb(68, 68, 68); text-align: center; border-bottom: 1px solid rgb(221, 221, 221); padding: 198px 0px;" id="nocount">您还没有追号记录 ，去<a target="_blank" href="/account/chongzhi.html">充值</a>或<a target="_blank" href="/dating/">购彩大厅</a>试试手气吧！</p>
+					<p style="display: none; font-size: 13px; color: rgb(68, 68, 68); text-align: center; border-bottom: 1px solid rgb(221, 221, 221); padding: 198px 0px;" id="nocount">您还没有转账记录 ，去<a target="_blank" href="/account/chongzhi.html">充值</a>或<a target="_blank" href="/dating/">购彩大厅</a>试试手气吧！</p>
 				</div>
-				<div id="page_div" class="paginachange"><ul><li style="line-height:25px;color:#666;padding-right:5px">共191条</li><li class="disabled PagedList-skipToFirst"><a href="javascript:void(0)" onclick="takeShow(1,10,20,191);">首页</a></li><li class="active"><a onclick="takeShow(1,10,20,191);" class="a4" id="1" href="javascript:void(0);">1</a></li><li><a onclick="takeShow(2,10,20,191);" class="a3" id="2" href="javascript:void(0);">2</a></li><li><a onclick="takeShow(3,10,20,191);" class="a3" id="3" href="javascript:void(0);">3</a></li><li><a onclick="takeShow(4,10,20,191);" class="a3" id="4" href="javascript:void(0);">4</a></li><li><a onclick="takeShow(5,10,20,191);" class="a3" id="5" href="javascript:void(0);">5</a></li><li class="PagedList-skipToNext"><a href="javascript:void(0)" onclick="takeShow(2,10,20,191);">下一页</a></li><li class="disabled PagedList-skipToNext"><a href="javascript:void(0)" onclick="takeShow(20,10,20,191);"> 末页</a></li><ul></ul></ul></div>
-			</div>
+				<div id="page_div" class="paginachange"></div>
 		</div>
-	</div>
+	</div></div>
 	<!--#include virtual="/cc/footer.html"-->
 </body>
 </html>
