@@ -1,15 +1,19 @@
 var iopertypes=["","购彩返点","认购返点","追号返点","转出","提款"];
 $(function(){
 	loadSI();	
-	
+	$("#td_myrate").click(function(){		
+		Y.postMsg('msg_login', function (){
+			Y.openUrl('/account/myrate.html',807,580);
+		});
+	});
 	//查询
 	$("#td_submit").click(function(){
 		var pn=1;//页码
-		var ps=$("input[name='pages']:checked").val();//页面大小
+		var ps=10;//页面大小
 		var tp = 0;//总页数
 		var tr = 0;//总记录数
 		
-		showInfo($("#begintime").val(),$("#endtime").val(),$("#cname").val(),pn,ps,tp,tr);		
+		showInfo($("#begintime").val(),$("#endtime").val(),"",pn,ps,tp,tr);		
 		 yongjin(Y.getDate($("#begintime").val()).format("YY-MM-DD"),Y.getDate($("#endtime").val()).format("YY-MM-DD"));
 	});
 });
@@ -29,56 +33,14 @@ var loadSI = function(){
 			$("#begintime").val(d_s.format("YY-M-D"));
 			$("#endtime").val(d_e.format("YY-M-D"));
 			ESONCalendar.init().bind("begintime").bind("endtime").splitChar="-";
-			agVerify(pn,ps,tp,tr);
+			showInfo($("#begintime").val(),$("#endtime").val(),"",pn,ps,tp,tr);		
 			yongjin(Y.getDate($("#begintime").val()).format("YY-MM-DD"),Y.getDate($("#endtime").val()).format("YY-MM-DD"));
 		}
 	});
 };
 
 
-var agVerify = function(pn,ps,tp,tr){
-	Y.ajax({
-		url : $_user.url.base,
-		type : "POST",
-		dataType : "json",
-		end : function(d) {		
-			var obj = eval("(" + d.text + ")");
-			var code = obj.Resp.code;
-			var desc = obj.Resp.desc;		
-			if (code == "0") {			
-				var r = obj.Resp.row;
-				var vlevel=Y.getInt(r.vlevel);
-				var isagent=Y.getInt(r.isagent);		
-				var vmoney=parseFloat(r.vmoney).rmb();
-				
-				if(isagent==1){
-					$("#td_fanmoney").html(vmoney);
-					$("#td_zhuangkuan").click(function(){
-						Y.confirm("代理商账户余额将全部转入购彩账户，确定要转款吗？",function(){gozk();},'',1);
-					});
-					
-					showInfo($("#begintime").val(),$("#endtime").val(),$("#cname").val(),pn,ps,tp,tr);					
-				}else{
-					Y.alert("您的用户类型错误！",0,0,1);
-					return false;
-				}
-			}else{
-				if (code=="1"){
-					parent.window.Y.postMsg('msg_login', function() {						
-						window.location.reload();			
-					});
-				}else{
-					Y.alert("您所请求的页面有异常！",0,0,1);
-					return false;
-				}
-			}
-		},
-		error : function() {
-			Y.alert("您所请求的页面有异常！",0,0,1);
-			return false;
-		}
-	});
-};
+
 
 
 var showInfo = function(stime,etime,tid,pn,ps,tp,tr){
@@ -189,25 +151,7 @@ function takeShow(pn,ps,tp,tr){
 };
 
 //转款
-var gozk = function() {
-	Y.ajax({
-		url : "/phpu/vtf.phpx",
-		type : "POST",
-		dataType : "json",
-		end : function(d) {
-			var obj = eval("(" + d.text + ")");			
-   		    var code = obj.Resp.code;
-   		    var desc = obj.Resp.desc;   
-			Y.alert(desc, function() {
-				location.reload();
-			}, false, true);
-		},
-		error : function() {
-			Y.alert("您所请求的页面有异常！", 0, 0, 1);
-			return false;
-		}
-	});
-};
+
 var yongjin = function(stime,etime){
 	var data = $_user.key.stime+"=" + stime + "&"+$_user.key.etime+"=" + etime;
 	Y.ajax({

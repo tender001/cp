@@ -7,7 +7,7 @@ $(function(){
 	}	
 	$("#outm").empty();
 	for ( var i = 0; i < $_sys.outm.length-1; i++) {
-			$("#outm").append("<option value=\""+$_sys.outm[i][0]+"\">"+$_sys.outm[i][1]+"</option>");
+		$("#outm").append("<option value=\""+$_sys.outm[i][0]+"\">"+$_sys.outm[i][1]+"</option>");
 	}
 	
 	//查询
@@ -58,7 +58,7 @@ var loadSUM = function(stime,etime,tid){
 	}else{
 		data = $_user.key.stime+"=" + stime + "&"+$_user.key.etime+"=" + etime+"&tid="+tid; 
 	}
-	gcsum=fksum=zksum=jjsum=czsum=tksum=tkshibai=0;
+	gcsum=fksum=zksum=jjsum=czsum=tksum=tkshibai=fandian=0;
 		Y.ajax({
 		url : $_user.url.account,
 		type : "POST",
@@ -106,12 +106,17 @@ var loadSUM = function(stime,etime,tid){
 							}
 						}else if(ibiztype=='300'||ibiztype=='214'){
 							zksum += parseFloat(imoney);
+							if(ibiztype=='300'){
+								fandian+=parseFloat(imoney);
+							}
 						}else if(ibiztype=='201' || ibiztype=='202' || ibiztype=='203' || ibiztype=='204' ){
 							jjsum += parseFloat(imoney);
 						}else if(ibiztype=='200'){
 							czsum += parseFloat(imoney);
 						}else if (ibiztype=='104'){
 							tksum += parseFloat(imoney);
+						}else if(ibiztype=='300'){
+							fandian+=parseFloat(imoney);
 						}
 							
 					});
@@ -119,6 +124,7 @@ var loadSUM = function(stime,etime,tid){
 					$("#czsum").html(czsum.toFixed(2));
 					$("#fksum").html(fksum.toFixed(2));
 					$("#jjsum").html((jjsum).toFixed(2));
+					$("#fandian").html((fandian).toFixed(2));
 					$("#tksum").html(tksum==0?0:tksum.toFixed(2)- tkshibai.toFixed(2));
 					//gcsum=fksum=zksum=jjsum=czsum=tksum=0;
 				}

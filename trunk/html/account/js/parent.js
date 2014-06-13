@@ -126,80 +126,82 @@ var showInfo = function(stime,etime,pn,ps,tp,tr,owner){
 	var html = "";
 	
 	Y.ajax({
-		url : $_user.url.agent,
-		type : "POST",
-		dataType : "json",
-		data : data,
-		end : function(d) {
-			var obj = eval("(" + d.text + ")");
-   		    var code = obj.Resp.code;
-   		    var desc = obj.Resp.desc;
-   		    
-			var innum=incount=outnum=outcount=0;
-			rows = "";
-			if (code == "0") {
-				var r = obj.Resp.row;
-				var rs = obj.Resp.count;
-				tr=Y.getInt(rs.rc);
-				tp=Y.getInt(rs.tp);
-				ps=Y.getInt(rs.ps);
-				pn=Y.getInt(rs.pn);
-				
-				if (tr%ps==0){tp=tr/ps;}else{tp=Math.ceil(tr/ps);}
-
-				var i=j=d=0;
-				
-				if(tr==0){
-					html+="<tr><td colspan='7'>暂时没有您的信息！</td></tr>";
-				}else{
-					if(!this.isArray(r)){r=new Array(r);}
-					r.each(function(rt,o){
-						var rec = rt.rec;
-						var cnickid = rt.cnickid;
-						var cadddate = rt.cadddate;
-						var cactivedate = rt.cactivedate;
-						var cagentid = rt.cagentid;
-						var idaigou = Y.getInt(rt.idaigou);
-						var ihemai = Y.getInt(rt.ihemai);
-						var izhuihao = Y.getInt(rt.izhuihao);
-						var ijoin = Y.getInt(rt.ijoin);
-						var ibalance = rt.ibalance;
-						var daili = rt.daili;
-						var cidcard = rt.cidcard;
-						var ty="用户";
-						var shezhi="<a href=\"javascript:void(0);\" class=\"a1\" onclick=\"fandian('" + cnickid + "')\">设置</a>";
-						if($("#caid").val()!=cagentid){
-							i++;
-							if(daili=="1"){ty="代理";d++;}else{ty="VIP";}
-						}else if($("#nid").val()==cnickid){
-							ty="自己";
-							shezhi="--";
-						}else{
-							j++;
-							if(cidcard==""){shezhi="未实名";}
-						}
-						var cl=o%2==0?"":"odd"
-							html += "<tr class="+cl+">";
-						html += "<td>" + rec + "</td>";
-						html += "<td>" + cnickid + "</td>";
-						html += "<td>" + cadddate + "</td>";
-						html += "<td>" + cactivedate + "</td>";
-						html += "<td>" + ty + "</td>";
-						html += "<td>" + Y.getInt(idaigou+ihemai+izhuihao+ijoin) + "</td>";
-						html += "<td>" + ibalance + "</td>";
-						html += "<td>" + shezhi + "</td>";
-						html += "</tr>";
-					});
-				}
-				
-				$("#atj").html("当前页代理："+d+" 人&nbsp;&nbsp;&nbsp;&nbsp;当前页VIP："+i+" 人&nbsp;&nbsp;&nbsp;&nbsp;当前页普通用户："+j+" 人");
-			} else {
-				if (code=="1"){
-					parent.window.Y.postMsg('msg_login', function() {						
-						window.location.reload();			
-					});
-				}else{
-					html+="<tr><td colspan='7'>暂时没有您的信息！</td></tr>";
+		 url : $_user.url.agent,
+		 type : "POST",
+		 dataType : "json",
+		 data : data,
+		 end : function(d) {
+		 var obj = eval("(" + d.text + ")");
+		 var code = obj.Resp.code;
+		 var desc = obj.Resp.desc;
+		 var innum=incount=outnum=outcount=0;
+		 rows = "";
+		 var total=0;
+		 if (code == "0") {
+		 var r = obj.Resp.row;
+		 var rs = obj.Resp.count;
+		 tr=Y.getInt(rs.rc);
+		 tp=Y.getInt(rs.tp);
+		 ps=Y.getInt(rs.ps);
+		 pn=Y.getInt(rs.pn);
+		 if (tr%ps==0){tp=tr/ps;}else{tp=Math.ceil(tr/ps);}
+		 var i=j=d=0;
+		 if(tr==0){
+		 $("#pagedivs").hide();
+		 html+="<tr><td colspan='9'>暂时没有您的信息！</td></tr>";
+		 $("#totalxl").html(0);
+		 }else{
+		 if(!this.isArray(r)){r=new Array(r);}
+		 r.each(function(rt,o){
+		 var rec = rt.rec;
+		 var cnickid = rt.cnickid;
+		 var cparentid = rt.cparentid;
+		 var cadddate = rt.cadddate;
+		 var cactivedate = rt.cactivedate;
+		 var cagentid = rt.cagentid;
+		 var idaigou = Y.getInt(rt.idaigou);//代购金额
+		 var ihemai = Y.getInt(rt.ihemai);//合买金额
+		 var izhuihao = Y.getInt(rt.izhuihao);//追号金额
+		 var ijoin = Y.getInt(rt.ijoin);
+		 var ibalance = rt.ibalance;//余额
+		 var daili = rt.daili;
+		 var cidcard = rt.cidcard;
+		 var ty="用户";
+		 var shezhi="<a href=\"javascript:void(0);\" class=\"a1 blue_thick\" onclick=\"fandian('" + cnickid + "')\">设置</a>";
+		 if($("#caid").val()!=cagentid){
+		 //i++;
+		 if(daili=="1" && cidcard != ""){ty="代理";d++;}if(daili=="0" && cidcard != "") {ty="VIP";i++}
+		 }else if($("#nid").val()==cnickid){
+		 ty="自己";
+		 shezhi="--";
+		 }
+		 if($("#caid").val()!=cparentid){
+		 shezhi="--";
+		 }
+		 if(cidcard==""){shezhi="未实名";ty="普通用户";j++}
+		 html += "<tr>";
+		 html += "<td>" + rec + "</td>";
+		 html += "<td>" + cnickid + "</td>";
+		 html += "<td>" + cparentid + "</td>";
+		 html += "<td>" + cadddate + "</td>";
+		 html += "<td>" + cactivedate + "</td>";
+		 html += "<td>" + ty + "</td>";
+		 html += "<td>" + Y.getInt(idaigou+ihemai+izhuihao+ijoin) + "</td>";
+		 html += "<td class='red_thick'>" + parseFloat(ibalance).rmb(false) + "</td>";
+		 html += "<td>" + shezhi + "</td>";
+		 html += "</tr>";
+		 total +=Y.getInt(idaigou+ihemai+izhuihao+ijoin);
+		 $("#totalxl").html(total);
+		 });
+		 }
+		 $("#atj").html("当前页代理："+d+" 人&nbsp;&nbsp;&nbsp;&nbsp;当前页VIP："+i+" 人&nbsp;&nbsp;&nbsp;&nbsp;当前页普通用户："+j+" 人");
+		 } else {
+		 if (code=="1"){
+		 parent.window.Y.postMsg('msg_login', function() {
+		 window.location.reload();
+		 });
+		 }else{
+		 html+="<tr><td colspan='8'>暂时没有您的信息！</td></tr>"; 
 				}
 			}
 			

@@ -29,49 +29,38 @@
 			  <div class="user_right">
 			<div class="usertitle usertitgd">
 				<h2>网站推广</h2>
-				<span class="usertitab"> <b ><a title="佣金查询" href="myfanli.html">佣金查询</a></b> <b><a title="用户查询" href="parent.html">用户查询</a></b> <b   class="cur"><a title="销量查询" href="sales.html">销量查询</a></b><b><a title="推广说明" href="tgsay.html">推广说明</a></b><b><a title="推广链接" href="tuiguang.html">推广链接</a></b>
+				<span class="usertitab"> <b ><a title="佣金查询" href="myfanli.html">佣金查询</a></b> <b><a title="用户查询" href="parent.html">用户查询</a></b>
+				 <b   class="cur"><a title="销量查询" href="sales.html">销量查询</a></b>
+				  <b><a title="会员转账" href="transfer.html">会员转账</a></b><b><a title="推广说明" href="tgsay.html">推广说明</a></b><b><a title="推广链接" href="tuiguang.html">推广链接</a></b>
 					</span>
 			</div>
 			<div class="usertitle">
-				
+
 				<p style="float:left;padding-left:15px">
-					<span>用户名：</span><input type="text" name="cname" id="cname" /><span>起始时间：</span><input type="text" name="begintime" id="begintime" /><span>-</span>
+					<span>当前时间段总销量：<em id="totalxls" >￥0.00</em></span><span>起始时间：</span><input type="text" name="begintime" id="begintime" /><span>-</span>
 					<input type="text" name="endtime" id="endtime" /><a id="td_submit">查询</a>
 				</p>
 				<a id="td_myrate" class="a1">查看自己推广比例</a>
 			</div>
-			<div class="userzhmx">
-      <table width="100%" border="0" cellpadding="0" cellspacing="0">
-       <colgroup>
-<col width="150">
-<col width="">
-  </colgroup>
-  <tr>
-    <th  id="atj"  colspan="2"></th>
-  </tr>
-<!--   <tr> -->
-<!--     <th>当前时间段总销量：</th> -->
-<!--     <td><em id="totalxl" >￥0.00</em>元</td> -->
-<!--   </tr> -->
-</table>
 
-     </div>
      <div class="usercod" style="border-top:1px solid #ddd">
    <table width="100%" border="0" cellspacing="0" cellpadding="0">
 <colgroup>
 <col width="50">
 <col width="200">
-
 <col width="200">
+<col width="150">
 <col >
  </colgroup>
 <thead><tr>
+
     <td>编号</td>
     <td>用户名</td>
  
-    <td>销量</td>
+    <td>上级用户</td>
    
-    <td>代理层级</td>
+    <td>交易时间</td>
+    <td>销量</td>
   </tr></thead>
 
    
@@ -81,15 +70,15 @@
 <colgroup>
 <col width="50">
 <col width="200">
-
 <col width="200">
-<col>
+<col width="150">
+<col >
  </colgroup>
   <tbody id="showdatalist">
     </tbody>
 </table>
-<div class="paginachange" id="pagediv"></div>
-</div>	
+
+</div>	<div class="paginachange" id="pagedivs"></div>
 <p class="userp1"><strong>温馨提示：</strong>1.您可以查询您的账户最近3个月内的账户明细。<br />
 2.如果您添加了预付款，银行账户钱扣了，网站账户还没有加上，请及时与我们联系，我们将第一时间为您处理！<br />
 3.如需要查询全部明细，请联系网站客服：<em>400-0696-159</em>。联系网站客服。</p>

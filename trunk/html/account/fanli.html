@@ -13,7 +13,7 @@
 <script type="text/javascript" src="/public/159cp.js"></script>
 <script type="text/javascript" src="/public/chklogin.js"></script>
 <script type="text/javascript" src="/public/riqi.js"></script>
-<script type="text/javascript" src="/account/js/myfanli.js"></script>
+<script type="text/javascript" src="/account/js/fanli.js"></script>
 </head>
 <body>
 	<!--#include virtual="/cc/header.html"-->
@@ -28,19 +28,17 @@
 			<!--#include virtual="/cc/account/account_left.html"-->
 			<div class="user_right">
 				<div class="usertitle usertitgd">
-					<h2>网站推广</h2>
-					<span class="usertitab"> <b class="cur"><a title="佣金查询" href="myfanli.html">佣金查询</a></b> <b><a title="用户查询"
-							href="parent.html">用户查询</a></b> <b><a title="销量查询" href="sales.html">销量查询</a></b>
-							 <b><a title="会员转账" href="transfer.html">会员转账</a></b><b><a title="推广说明" href="tgsay.html">推广说明</a></b><b><a
-							title="推广链接" href="tuiguang.html">推广链接</a></b>
+					<h2>我的返利</h2>
+					<span class="usertitab"> <b class="cur"><a title="佣金查询" href="fanli.html">佣金查询</a></b>
 					</span>
 				</div>
 				<div class="usertitle">
 
 					<p style="float: left; padding-left: 15px">
-						<span>用户名：</span><input type="text" name="cname" id="cname" /><span>起始时间：</span><input type="text" name="begintime" id="begintime" /><span>-</span>
+						<span>起始时间：</span><input type="text" name="begintime" id="begintime" /><span>-</span>
 						<input type="text" name="endtime" id="endtime" /><a id="td_submit">查询</a>
 					</p>
+<!-- 					<a id="td_myrate" class="a1">查看我的返点比例</a> -->
 				</div>
 				<div class="userzhmx">
 					<table width="100%" border="0" cellspacing="0" cellpadding="0">
@@ -51,16 +49,7 @@
 										<col width="">
 						</colgroup>
 						<tbody>
-							<tr>
-								<th style="padding: 10px 0">推广账户余额：<em id="td_fanmoney">￥0.00</em>元
-								</th>
-								<td></td>
-								<td><a
-									style="display: block; width: 54px; color: #fff; height: 22px; line-height: 22px; text-align: center; background-color: #FF6600"
-									id="td_zhuangkuan">转款</a></td>
-								<td>（说明：转款是指将推广账户余额全部转为购彩账户预付款。）</td>
-
-							</tr>
+						
 							<tr>
 								<th style="padding: 10px 0">当前时间段总佣金：<em id="totalyj">￥0.00</em>元
 								</th>
@@ -111,8 +100,8 @@
 						<tbody id="showdatalist">
 						</tbody>
 					</table>
-					<div class="paginachange" id="pagediv"></div>
-				</div>
+					
+				</div><div class="paginachange" id="pagediv"></div>
 				<p class="userp1">
 					<strong>温馨提示：</strong>1.您可以查询您的账户最近3个月内的账户明细。<br> 2.如果您添加了预付款，银行账户钱扣了，网站账户还没有加上，请及时与我们联系，我们将第一时间为您处理！<br>
 							3.如需要查询全部明细，请联系网站客服：<em>400-0696-159</em>。联系网站客服。
