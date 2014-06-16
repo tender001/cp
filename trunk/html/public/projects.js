@@ -395,10 +395,10 @@ var mark=function(isc, awa, isre, istat,adddate,castdate,awarddate,retdate,proce
 			if(processmoney>0){
 				$("#process").html("还差"+processmoney+"元即达出票要求<i></i>").css("left",process+"px");
 			}else{
-				if(istate=="2"){
+//				if(istate=="2"){
 					$("#cp_full").addClass("fq").removeClass("liubiao");
 					$("#process").html("等待出票<i></i>").css("left",process+"px");
-				}
+//				}
 			}
 			
 		}
@@ -1077,10 +1077,44 @@ var showview = function(lotid,projid){
 						}else if(lotid =="54" ||lotid =="04" || lotid =="56"){
 							var rb=award=="2"?bonus >0?'<em>已中奖</em>':'未中奖':'未开奖';
 							prohtml +='<tr><td>1</td><td>'+ccodehtml+'</td><td>'+fs+'</td><td>'+mulity+'</td><td>'+rb+'</td></tr>';
-						}else{
-//						prohtml += '<tr><td>1</td><td id="buy_codes"><div class="buy_codes"><div id="max_height">'+ccodehtml+'</div></div></td><td>'+fs+'</td><td>'+mulity+'</td><td>'+parseInt(nums/smoney/2)+'</td><td>'+tmoney+'</td><td>'+buy_zj+'</td><td><a style="display:none" class="a_zcz" >再次认购</a></td></tr>';
+					}else{
+						if(lotid==98){
+							prohtml='<colgroup><col width="100" /><col width="120" /><col width="100" /><col width="100" /></colgroup><thead><tr class="tr1">';
+							prohtml += '<td>第<strong >'+periodid+'</strong>期</td><td>球队</td><td>倍投</td><td>中奖情况</td></tr></thead><tbody class="buy_codes"><div id="max_height">';
+							var teams = ccodes.replace("GJ|"+periodid+"=","").split("/");
+							var str = award=="2"?bonus >0?tax:'未中奖':'未开奖';
+							for(var i=1;i<=teams.length;i++){
+							if(i==1){
+							prohtml +='<tr ><td>'+i+'</td><td>'+$_sys.getteamname(teams[i-1])+'</td><td>'+mulity+'</td><td rowspan='+teams.length+'>'+str+'</td></tr>';
+							}else{
+							prohtml +='<tr '+(i%2==0?"class=odds":"")+'><td>'+i+'</td><td>'+$_sys.getteamname(teams[i-1])+'</td><td>'+mulity+'</td></tr>';
+							}
+							}
+							}
+							if(lotid==99){
+							prohtml='<colgroup><col width="100" /><col width="120" /><col width="100" /><col width="100" /></colgroup><thead><tr class="tr1">';
+							prohtml += '<td>第<strong >'+periodid+'</strong>期<td>球队</td><td>倍投</td><td>中奖情况</td></tr></thead><tbody class="buy_codes"><div id="max_height">';
+							var teams = ccodes.replace("GYJ|"+periodid+"=","").split("/");
+							var str = award=="2"?bonus >0?tax:'未中奖':'未开奖';
+							for(var i=1;i<=teams.length;i++){
+							if(i==1){
+							prohtml +='<tr><td>'+i+'</td><td>'+$_sys.getteamname2(teams[i-1])+'</td><td>'+mulity+'</td><td rowspan='+teams.length+'>'+str+'</td></tr>';
+							}else{
+							prohtml +='<tr '+(i%2==0?"class=odds":"")+'><td>'+i+'</td><td>'+$_sys.getteamname2(teams[i-1])+'</td><td>'+mulity+'</td></tr>';
+							}
+							}
+							} 
 					}
-					
+					if(lotid>=88 || lotid==70 || lotid==72 ){
+//						html += Class.C("caststate") == 3 ? "&nbsp;&nbsp;<a href='javascript:void(0);' onclick=\'billcode(\""+lotid+"\",\""+projid+"\")\'>出票明细</a>" : "";
+						if(Class.C("caststate") == 3){
+						$("#operate3").click(function(){
+						billcode(lotid,projid);
+						}).show();
+						//.html("<a href='javascript:void(0);'class='f_a_d' onclick=\'billcode(\""+lotid+"\",\""+projid+"\")\'>出票明细<a>").show();
+						
+						}
+					}
 					prohtml +='</div></tbody>';
 					if(lotid==50 &&ccodes.split(';')[0].split(':')[1]==2)
 					{
@@ -1260,7 +1294,7 @@ var showview = function(lotid,projid){
 						
 					}else if (istate=="2" && bonus ==0 ){					
 						if(itype==0){
-							$("#cp_status").html(award ==0?'<div style=""><div class="hm_rpxq"><p class="hmreson"><strong>待开奖</strong><br>('+(castdate==""?"":Y.getDate(castdate).format('MM-DD hh:mm:ss'))+')</p> </div></div>':'<div style=""><div class="hm_rpxq"><p class="hmreson"><strong>未中奖</strong><br>('+Y.getDate(awarddate).format('MM-DD hh:mm:ss')+')</p> </div></div>');
+							$("#cp_status").html(award ==0?'<div style=""><div class="hm_rpxq"><p class="hmreson"><strong>待开奖</strong><br>'+(castdate==""?"":"("+Y.getDate(castdate).format('MM-DD hh:mm:ss')+")")+'</p> </div></div>':'<div style=""><div class="hm_rpxq"><p class="hmreson"><strong>未中奖</strong><br>('+Y.getDate(awarddate).format('MM-DD hh:mm:ss')+')</p> </div></div>');
 						}else{
 							if(castdate==""||castdate===undefined){
 								$("#cp_status").html(award ==0?'<div style=""><div class="hm_rpxq"><p class="hmreson"><strong>已满员</strong><br></p> </div></div>':'<div style=""><div class="hm_rpxq"><p class="hmreson"><strong>未中奖</strong><br>('+Y.getDate(awarddate).format('MM-DD hh:mm:ss')+')</p> </div></div>');
@@ -2213,6 +2247,12 @@ showduizhen =function (lotid,expect,projid,type,codes,cp){
 								maxsp=maxsp.split(" ");
 								arrmaxSp.push(Math.max.apply(null,maxsp));
 							}
+							if(lotid==89){
+								if(result!=""&&bet_str.indexOf(result)!=-1){
+									bet_str=bet_str.replace(result,"<font   class='cm_red'><b>"+result+"</b></font>");
+									}
+							}
+							
 							if(lotid==92){
 								bet_str=bet_str.replaceAll("3-3","胜-胜("+spvalue.split(",")[0]+")");
 								bet_str=bet_str.replaceAll("3-1","胜-平("+spvalue.split(",")[1]+")");
@@ -2245,9 +2285,7 @@ showduizhen =function (lotid,expect,projid,type,codes,cp){
 								}}else{
 									bet_str=bet_str.replaceAll(bfstr[ii[0]],bfstr[ii[0]]+"("+spvalue.split(",")[ii[0]]+")");
 								}
-								if(result!=""&&bet_str.indexOf(result)!=-1){
-								bet_str=bet_str.replace(result+"("+sp+")","<font   class='cm_red'><b>"+result+"("+sp+")"+"</b></font>");
-								}
+								
 							}else if(lotid==93){
 								bet_str=bet_str.replaceAll("0","零").replaceAll("1","一").replaceAll("2","二").replaceAll("3","三").replaceAll("4","四").replaceAll("5","五").replaceAll("6","六").replaceAll("7","七")
 								bet_str=bet_str.replaceAll("零","0("+spvalue.split(",")[0]+")");
@@ -2258,6 +2296,8 @@ showduizhen =function (lotid,expect,projid,type,codes,cp){
 								bet_str=bet_str.replaceAll("五","5("+spvalue.split(",")[5]+")");
 								bet_str=bet_str.replaceAll("六","6("+spvalue.split(",")[6]+")");
 								bet_str=bet_str.replaceAll("七","7("+spvalue.split(",")[7]+")");
+							}else{
+								
 							}
 						}else{
 //							ggstr='<a href="/cpdata/pupload/'+lotid+'/'+expect+'/'+codes+'" target="_blank" class="a1">下载</a>';
@@ -2476,7 +2516,7 @@ showduizhen =function (lotid,expect,projid,type,codes,cp){
 				var d=[];
 				$("#predictPrize").html( this.postMsg('msg_predict_max_prize', arrmaxSp, ggstr2, d).data);
 				$("#cp_guoguan").html(html);
-				if(lotid>=90 || lotid==70 || lotid==72 ){
+				if(lotid>=88 || lotid==70 || lotid==72 ){
 //					html += Class.C("caststate") == 3 ? "&nbsp;&nbsp;<a href='javascript:void(0);' onclick=\'billcode(\""+lotid+"\",\""+projid+"\")\'>出票明细</a>" : "";
 					if(Class.C("caststate") == 3){
 					$("#operate3").click(function(){
