@@ -346,7 +346,8 @@ Class('Loginer', {// 登陆器
 		                     }
                              if(r.isagent=="1" && (r.vlevel>0)){
                             	
-                            	 $("#myfanli").show();
+                            	 $("#tuiguang").show();
+                            	 $("[mark=fandian]").show();
                             	 Y.get("#fzurl").click(function(){	
  	        							copyurl(Y.get("#pcurl").val());
  	        						}
@@ -355,6 +356,8 @@ Class('Loginer', {// 登陆器
 	        							copyurl2(Y.get("#murl").val());
 	        						}
 	        					);
+ 	                    	 }else if(r.isagent=="0" && (r.vlevel>0)){
+ 	                    		 $("#fanli").show();
  	                    	 }
                              
 		                     this.setUserInfo(showText);
@@ -369,25 +372,25 @@ Class('Loginer', {// 登陆器
               }
           }
         });
-        this.ajax({
-            url:"/phpu/allyinfo.phpx?rnd=" + Math.random(),
-            end:function (data){
-                if (data.error) {
-                	this.get("#qqcaibei").hide();
-                }else{
-              	     var obj = eval("(" + data.text + ")");
-	              	 var code = obj.type;
-	              	 var memo = obj.memo;
-		     			if (code == "2" &&memo=="qqcaibei") {	
-		     				var showmsg= obj.showmsg;
-		     				var headshow= obj.headshow;
-		     				this.get("#cb_info").html(headshow);
-		     				this.get("#cb_jf").html(showmsg+'，你好！|<a href="http://cb.qq.com/my/my_jifen_source.html" target="_blank">我的彩贝积分</a>');
-		     				this.get("#qqcaibei").show();
-		     			}
-                }
-            }
-        });
+//        this.ajax({
+//            url:"/phpu/allyinfo.phpx?rnd=" + Math.random(),
+//            end:function (data){
+//                if (data.error) {
+//                	this.get("#qqcaibei").hide();
+//                }else{
+//              	     var obj = eval("(" + data.text + ")");
+//	              	 var code = obj.type;
+//	              	 var memo = obj.memo;
+//		     			if (code == "2" &&memo=="qqcaibei") {	
+//		     				var showmsg= obj.showmsg;
+//		     				var headshow= obj.headshow;
+//		     				this.get("#cb_info").html(headshow);
+//		     				this.get("#cb_jf").html(showmsg+'，你好！|<a href="http://cb.qq.com/my/my_jifen_source.html" target="_blank">我的彩贝积分</a>');
+//		     				this.get("#qqcaibei").show();
+//		     			}
+//                }
+//            }
+//        });
     },
     
     setUserInfo: function (x){
