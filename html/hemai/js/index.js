@@ -258,7 +258,7 @@ $(document).ready(function(){
 						var maxshow=5;
 						
 						var pagehtml='<ul><li style="line-height:27px;color:#444;padding-right:10px">共'+_pagei.records+'条</li><li class="disabled PagedList-skipToFirst"  ><a onclick="page(1)"  href="javascript:void(0)" >首页</a></li>';
-						pagehtml += '<li class="PagedList-skipToNext"><a class="PagedList-skipToNext" style="margin-right:5px" title="上一页 " onclick="page('+(Class.C("pn")-1>0?(Class.C("pn")-1):1)+');" href="javascript:void(0)">上一页</a></li>';
+						pagehtml += '<li class="PagedList-skipToNext"><a class="PagedList-skipToNext" title="上一页 " onclick="page('+(Class.C("pn")-1>0?(Class.C("pn")-1):1)+');" href="javascript:void(0)">上一页</a></li>';
 						
 						/*var pagehtml='<a class="disabled PagedList-skipToFirst" style="margin-right:5px" onclick="page(1)"  href="javascript:void(0)"">首页</A>';
 						pagehtml += '<a class="PagedList-skipToNext" style="margin-right:5px" title="上一页 " onclick="page('+(Class.C("pn")-1>0?(Class.C("pn")-1):1)+');" href="javascript:void(0)">上一页</A>';*/
@@ -307,8 +307,8 @@ $(document).ready(function(){
 			/*							pagehtml+='<a href="javascript:void(0);" id="tp'+i+'" class="a3" onclick="page('+i+');">' + i + '</a>';
 			*/						}
 									}
-						pagehtml+='<li class="PagedList-skipToNext"><a style="margin-left:10px" onclick="page('+(pn+1>_pagei.tp?_pagei.tp:(pn+1))+');"  href="javascript:void(0)">下一页</a></li>';
-						pagehtml+='<li class="disabled PagedList-skipToNext"><a style="margin-left:5px" onclick="page('+_pagei.tp+');" href="javascript:void(0)"> 尾页</a></li></ul>';
+						pagehtml+='<li class="PagedList-skipToNext"><a onclick="page('+(pn+1>_pagei.tp?_pagei.tp:(pn+1))+');"  href="javascript:void(0)">下一页</a></li>';
+						pagehtml+='<li class="disabled PagedList-skipToNext"><a onclick="page('+_pagei.tp+');" href="javascript:void(0)"> 尾页</a></li></ul>';
 						
 /*						pagehtml+='<span class="gy">共'+_pagei.records+'条</span><a class="PagedList-skipToNext" style="margin-left:10px" onclick="page('+(pn+1>_pagei.tp?_pagei.tp:(pn+1))+');"  href="javascript:void(0)">下一页</a><a class="disabled PagedList-skipToFirst" style="margin-left:5px" onclick="page('+_pagei.tp+');" href="javascript:void(0)">尾页</a>';
 */					    $('.paginachange').html(pagehtml);
@@ -402,7 +402,7 @@ $(document).ready(function(){
 						var maxshow=5;
 						
 						var pagehtml='<ul><li style="line-height:27px;color:#444;padding-right:10px">共'+_pagei.records+'条</li><li class="disabled PagedList-skipToFirst"  ><a onclick="page(1)"  href="javascript:void(0)" >首页</a></li>';
-						pagehtml += '<li class="PagedList-skipToNext"><a class="PagedList-skipToNext" style="margin-right:5px" title="上一页 " onclick="page('+(Class.C("pn")-1>0?(Class.C("pn")-1):1)+');" href="javascript:void(0)">上一页</a></li>';
+						pagehtml += '<li class="PagedList-skipToNext"><a class="PagedList-skipToNext" title="上一页 " onclick="page('+(Class.C("pn")-1>0?(Class.C("pn")-1):1)+');" href="javascript:void(0)">上一页</a></li>';
 						
 						/*var pagehtml='<a class="disabled PagedList-skipToFirst" style="margin-right:5px" onclick="page(1)"  href="javascript:void(0)"">首页</A>';
 						pagehtml += '<a class="PagedList-skipToNext" style="margin-right:5px" title="上一页 " onclick="page('+(Class.C("pn")-1>0?(Class.C("pn")-1):1)+');" href="javascript:void(0)">上一页</A>';*/
@@ -441,8 +441,8 @@ $(document).ready(function(){
 /*							pagehtml+='<a href="javascript:void(0);" id="tp'+i+'" class="a3" onclick="page('+i+');">' + i + '</a>';
 */						}
 						}
-						pagehtml+='<li class="PagedList-skipToNext"><a style="margin-left:10px" onclick="page('+(pn+1>_pagei.tp?_pagei.tp:(pn+1))+');"  href="javascript:void(0)">下一页</a></li>';
-						pagehtml+='<li class="disabled PagedList-skipToNext"><a style="margin-left:5px" onclick="page('+_pagei.tp+');" href="javascript:void(0)"> 尾页</a></li></ul>';
+						pagehtml+='<li class="PagedList-skipToNext"><a onclick="page('+(pn+1>_pagei.tp?_pagei.tp:(pn+1))+');"  href="javascript:void(0)">下一页</a></li>';
+						pagehtml+='<li class="disabled PagedList-skipToNext"><a onclick="page('+_pagei.tp+');" href="javascript:void(0)"> 尾页</a></li></ul>';
 						
 						
 /*						pagehtml+='<span class="gy">共'+_pagei.records+'条</span><a class="PagedList-skipToNext" style="margin-left:10px" onclick="page('+(pn+1>_pagei.tp?_pagei.tp:(pn+1))+');"  href="javascript:void(0)">下一页</a><a class="disabled PagedList-skipToFirst" style="margin-left:5px" onclick="page('+_pagei.tp+');" href="javascript:void(0)">尾页</a>';
@@ -516,7 +516,7 @@ $(document).ready(function(){
 						
 						var maxshow=5;
 						var pagehtml='<ul><li style="line-height:27px;color:#444;padding-right:10px">共'+_pagei.records+'条</li><li class="disabled PagedList-skipToFirst"  ><a onclick="page(1)"  href="javascript:void(0)" >首页</a></li>';
-						pagehtml += '<li class="PagedList-skipToNext"><a class="PagedList-skipToNext" style="margin-right:5px" title="上一页 " onclick="page('+(Class.C("pn")-1>0?(Class.C("pn")-1):1)+');" href="javascript:void(0)">上一页</a></li>';
+						pagehtml += '<li class="PagedList-skipToNext"><a class="PagedList-skipToNext" title="上一页 " onclick="page('+(Class.C("pn")-1>0?(Class.C("pn")-1):1)+');" href="javascript:void(0)">上一页</a></li>';
 						
 /*						var pagehtml='<a class="disabled PagedList-skipToFirst" style="margin-right:5px" onclick="page(1)"  href="javascript:void(0)"">首页</A>';
 						pagehtml += '<a class="PagedList-skipToNext" style="margin-right:5px" title="上一页 " onclick="page('+(Class.C("pn")-1>0?(Class.C("pn")-1):1)+');" href="javascript:void(0)">上一页</A>';*/
@@ -565,8 +565,8 @@ $(document).ready(function(){
 						}
 						}*/
 						
-						pagehtml+='<li class="PagedList-skipToNext"><a style="margin-left:10px" onclick="page('+(pn+1>_pagei.tp?_pagei.tp:(pn+1))+');"  href="javascript:void(0)">下一页</a></li>';
-						pagehtml+='<li class="disabled PagedList-skipToNext"><a style="margin-left:5px" onclick="page('+_pagei.tp+');" href="javascript:void(0)"> 尾页</a></li></ul>';
+						pagehtml+='<li class="PagedList-skipToNext"><a onclick="page('+(pn+1>_pagei.tp?_pagei.tp:(pn+1))+');"  href="javascript:void(0)">下一页</a></li>';
+						pagehtml+='<li class="disabled PagedList-skipToNext"><a onclick="page('+_pagei.tp+');" href="javascript:void(0)"> 尾页</a></li></ul>';
 						
 /*						pagehtml+='<span class="gy">共'+_pagei.records+'条</span><a class="PagedList-skipToNext" style="margin-left:10px" onclick="page('+(pn+1>_pagei.tp?_pagei.tp:(pn+1))+');"  href="javascript:void(0)">下一页</a><a class="disabled PagedList-skipToFirst" style="margin-left:5px" onclick="page('+_pagei.tp+');" href="javascript:void(0)">尾页</a>';
 */					    $('.paginachange').html(pagehtml);
