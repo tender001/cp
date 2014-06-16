@@ -713,14 +713,18 @@ $_sys.lot.push([ 95, "篮彩让分胜负","lc_rfsf", "" ]);
 $_sys.lot.push([ 96, "篮彩胜分差","lc_sfc", "" ]);
 $_sys.lot.push([ 97, "篮彩大小分","lc_dxf", "" ]);
 
-$_sys.lot.push([ 98, "猜冠军","worldcup", "" ]);
-$_sys.lot.push([ 99, "猜冠亚军","worldcup", "" ]);
+$_sys.lot.push([ 98, "世界杯猜冠军","worldcup", "" ]);
+$_sys.lot.push([ 99, "世界杯猜冠亚军","worldcup", "" ]);
 
 $_sys.lottype = [];
-$_sys.lottype.push([ "足 彩", "zc", "80,81,82,83" ]);
-$_sys.lottype.push([ "北京单场", "bjdc", "85,86,87,88,89" ]);
+$_sys.lottype.push([ "世界杯", "worldcup", "98,99" ]);
 $_sys.lottype.push([ "竞彩足球", "jczq", "90,72,91,92,93,70" ]);
+$_sys.lottype.push([ "北京单场", "bjdc", "85,86,87,88,89" ]);
 $_sys.lottype.push([ "竞彩篮球", "jclq", "94,95,96,97,71" ]);
+$_sys.lottype.push([ "足 彩", "zc", "80,81,82,83" ]);
+
+
+
 $_sys.lottype.push([ "高频彩", "gpc", "4,20,54,56" ]);
 $_sys.lottype.push([ "数字彩", "szc", "1,3,7,50,51,52,53" ]);
 
