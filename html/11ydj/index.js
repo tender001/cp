@@ -962,29 +962,7 @@ Class('App', {
 			}
 			
 		})
-		$("#num_header_1").css({
-    		"height":0,
-    		"overflow":"hidden"
-    		});
-		
-		$("#span5").click(function(){
-			$("#span5").toggleClass("span5c");
-			$("#num_header_1").show();
-			if($("#span5").hasClass("span5c")){
-				$("#num_header_1").clearQueue().animate({
-					height:350
-					});
-				
-			}else{
-				
-				$("#num_header_1").animate({
-					height:0
-					
-					});
-			}
-			
-		});
-			/*this.get("#span5").click(function(){
+			this.get("#span5").click(function(){
 			$("#num_header_1").toggle();
 			$("#span5").toggleClass("span5c");
 			if($("#num_header_1").html()=="近期开奖"){
@@ -993,7 +971,7 @@ Class('App', {
 				$("#span5").html("近期开奖");
 			}
 			
-		});*/
+		});
 		$("#input_ok").click(function(){
 			var codevalue=$("#inputtext").val().replaceAll(" ",",");
 			
@@ -1075,11 +1053,14 @@ Class('App', {
 		$("#zh_bs_big").focus(function(){
 			var zh_bs_big  = $("#zh_bs_big").val();
 			if(zh_bs_big != ""){
-				$("#zh_bs_big").val("");
+				$("#zh_bs_big").val();
 			}
 			
 			$("#zh_bs_big").keyup(function(){
 	    		this.value=this.value.replace(/\D/g,''); //只能输数字
+	    		this.onMsg('msg_load_expect_list', function (a){
+    	            this.createHTML(a);// 倒计时下载期号后构建
+    	        });
 	    	});
 		});
     },
@@ -1303,7 +1284,14 @@ Class('App', {
                 	return false;
                 }  	 	
             }
-
+            if(b==1){
+            	$("input[mark=chkexp]").each(function(x,y){
+            		if($(y).attr("checked")){
+            			$(y).click();
+            			$(y).click();
+            		}
+            	})	
+            }
         }; 
 		/* inputTabs = this.lib.Tabs({
              items: '#input_tabs b',
@@ -1409,6 +1397,7 @@ Class('CodeList', {
 			zh_bs_big == zh_bs_big++;
 			 $("#zh_bs_big").val(zh_bs_big);
         	Y.bschangess($("#zh_bs_big").val());
+        	Y.postMsg('msg_get_list_data').data;// 倒计时下载期号后构建
 		});
         Y.get("#zh_bs_reduce").click(function(){
         	var zh_bs_big = $("#zh_bs_big").val();
@@ -1478,13 +1467,22 @@ Class('CodeList', {
     bschangess: function (beishu){//变化
 //      this.zsSpan.html(zhushu);
 //      this.zhushu = zhushu;
+    	Y.get("#zh_bs").val(beishu);
+    	this.beishu=beishu;
       this.totalmoney = this.zhushu*beishu*Class.config('price');
       this.moneySpan.html(this.totalmoney.rmb(false,0));
+      this.beishulistsuc=beishu;
       this.postMsg('msg_list_change', {
           zhushu: this.zhushu,
           beishu: beishu,
           totalmoney: this.totalmoney
       });// 广播注数变化消息, 购买选项类应该监听这个消息
+      $("input[mark=chkexp]").each(function(x,y){
+  		if($(y).attr("checked")){
+  			$(y).click();
+  			$(y).click();
+  		}
+  	});
   },
     getCount: function (){//计算总注数
         var Y = this;
@@ -1656,7 +1654,9 @@ Class('ExpectList', {
                 if (t.disabled) {
                     t.disabled = false;
                     t.value = bs;
-                    t.parentNode.previousSibling.getElementsByTagName('input')[0].checked = true;
+                    if(t.parentNode.previousSibling.getElementsByTagName('input')[0].checked = true){
+                    	t.parentNode.nextSibling.getElementsByTagName('em')[0].innerHTML = this.getInt(bs)*m;
+                    }
                  }
                  t.parentNode.nextSibling.getElementsByTagName('em')[0].innerHTML = this.getInt(bs)*m;
                  n--;
@@ -1679,7 +1679,7 @@ Class('ExpectList', {
         listdata = this.postMsg('msg_get_list_data').data;
         m = listdata.totalmoney;
         this.get('#expectListBox ul').each(function (tr){
-            var bs, obs, ochk, em;
+            var bs = $("zh_qs").val(), obs, ochk, em;
             obs = tr.getElementsByTagName('li')[2].getElementsByTagName('input')[0];
             ochk =  tr.getElementsByTagName('li')[1].getElementsByTagName('input')[0];
             em = tr.getElementsByTagName('li')[3].getElementsByTagName('em')[0];
@@ -1845,7 +1845,7 @@ Class('ExpectList', {
     },
     tableTpl:['<ul class="cm_11ydj_zhtext clear {$bg}" expect="{$expect}" endtime="{$endtime}" >'+
               '<li class="cm_w35 cm_align_center"><span>{$index}</span></li>'+
-              '<li class="cm_w148"><label class="{$curCss}" for="exp_{$id}"><input type="checkbox" class="i-cr" {$chk} value="{$expect}" id="exp_{$id}"/>{$expect}期{$cur}</label></li>'+
+              '<li class="cm_w148"><label class="{$curCss}" for="exp_{$id}"><input mark="chkexp" type="checkbox" class="i-cr" {$chk} value="{$expect}" id="exp_{$id}"/>{$expect}期{$cur}</label></li>'+
               '<li class="cm_w83"><input type="text"  value="{$bs}" class="cm_dz_input cm_zhxg_input" name="zh" maxlength="4" id ="id_{$id}" disabled={$disabl}/>倍</li>'+
               '<li class="cm_w80"><em class="cm_red">{$m}</em>元&nbsp;<i class="cm_gray">|</i>&nbsp;<em>--</em></li>'+
               '<li class="cm_w81 cm_align_center"><em>--</em> </li>'+
@@ -1877,7 +1877,7 @@ Class('ExpectList', {
                 g.cur = iscur ? '[当前期]' : '';
                 g.chk = iscur ? 'checked="checked"' : '';
                 g.disabl = iscur? true:false;
-                g.bs = iscur ? $('#zh_bs_big').val() : 0;
+                g.bs = iscur ? 1 : 0;
                 g.m = money*g.bs;
                 g.index = n++;
                 g.id = nt+'_'+g.index;
@@ -1996,7 +1996,10 @@ Class('BuyProject', {
         var opts = sel.one().options;
         var startIndex = sel.prop('selectedIndex');
         if (this.sumIncomeBtn.checked){
-        	   
+        	if(this.sumIncomeBtn.value == "on"){
+        		Y.alert("生成倍数参数有误");
+        		return false;
+        	}
         		base1=false;
        			bs =1;
        			m1 = buyMoney * bs;
