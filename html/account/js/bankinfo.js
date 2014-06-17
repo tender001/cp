@@ -100,14 +100,14 @@ Class({
 				return false;
 			}
 			if (Y.get("#bankname").val().trim()==""){
-				if(Y.get("#bankname").val().trim().match(/[^\u4e00-\u9fa5]/g)){
-					Y.alert("开户银行支行名称只能是汉字");
-					return false;
-				}
+				
 				Y.alert("请填写开户银行支行名称");
 				return false;
 			}
-			
+			if(Y.get("#bankname").val().trim().match(/[^\u4e00-\u9fa5]/g)){
+				Y.alert("开户银行支行名称只能是汉字");
+				return false;
+			}
 			
 			if (Y.get("#cardnumber").val().trim()==""){
 				Y.alert("请填写银行卡号码");
