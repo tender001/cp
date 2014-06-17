@@ -514,10 +514,10 @@ Class('Ball>Single', {
         	Y.random(shuzi);
         });
         
-       this.get("#zh_bs_big").keyup(function(){
+      /* this.get("#zh_bs_big").keyup(function(){
     	   
     	  // Y.random($("#zh_bs_big").val());
-       });
+       });*/
         this.need(ini.setdan).click(function (){
         	if($(ini.danma).is( ":hidden ")){
         		$(ini.danma).show();
@@ -917,16 +917,38 @@ Class('App', {
 			}
 			
 		});
-		this.get("#span5").click(function(){
-			$("#num_header_1").toggle();
+		$("#num_header_1").css({
+    		"height":0,
+    		"overflow":"hidden"
+    		});
+		
+		$("#span5").click(function(){
 			$("#span5").toggleClass("span5c");
-			if($("#num_header_1").html()=="近期开奖"){
-				$("#num_header_1").html("近期开奖");
+			$("#num_header_1").show();
+			if($("#span5").hasClass("span5c")){
+				$("#num_header_1").clearQueue().animate({
+					height:350
+					});
+				
 			}else{
-				$("#span5").html("近期开奖");
+				
+				$("#num_header_1").animate({
+					height:0
+					
+					});
 			}
 			
 		});
+		/*$("#bf_xl").click(function(){
+    		$("#bf_xl").find("#bf_xl").show();
+			$("#bf_xl").clearQueue().animate({
+				height:125
+				})
+		},function(){
+			$("#bf_xl").animate({
+				height:0
+				})
+		});*/
 		$("#input_ok").click(function(){
 			var codevalue=$("#inputtext").val().replaceAll(" ",",");
 			
@@ -1140,7 +1162,9 @@ Class('App', {
         });
 //        alert('addTabs_1');
         playTabs.onchange= function (a, b){
-        	$("#num_header_1").hide();
+        	//$("#num_header_1").hide();
+        	$("#num_header_1").css('height','0');
+        	$("#span5").removeClass("span5c");
         	var ol = Y.getopencodelength(Class.C('playid'));//上一个的
         	var pid = this.get('#play_tabs a').slice(b, b+1).attr("value");
         	var nl = Y.getopencodelength(pid);//当前的
@@ -1155,7 +1179,7 @@ Class('App', {
             	Y.postMsg('show_opencodelist', 2);
             }
             if(nl == 6){
-            	$("#num_header_1").hide();
+//            	$("#num_header_1").hide();
             	$("#opencodelist").hide();
             	$("#num_header_2").show();
             	$("#opencodelist_2").show();
@@ -1172,7 +1196,7 @@ Class('App', {
 //	        	$("#11x5_hd").show();
 	        	
             }else if(nl ==7){
-            	$("#num_header_1").hide();
+//            	$("#num_header_1").hide();
 	        	$("#opencodelist").hide();
 	        	$("#num_header_2").hide();
 	        	$("#opencodelist_2").hide();
@@ -1188,7 +1212,7 @@ Class('App', {
 	        	$("#haoma_3").show();
 //	        	$("#11x5_hd").hide();
             }else{
-            	$("#num_header_1").hide();
+//            	$("#num_header_1").hide();
 	        	$("#opencodelist").show();
 	        	$("#num_header_2").hide();
 	        	$("#opencodelist_2").hide();
@@ -1822,8 +1846,8 @@ Class('ExpectList', {
               '<li class="cm_w82 cm_align_center"><em>--</em></li>'+
               '</ul>'],
     setZhChk: function (iszh){
-       // this.get('#zh,#tzzh').prop('checked', !!iszh);
-       // this.get('#tzzh').prop('disabled', !iszh);
+        this.get('#zh,#tzzh').prop('checked', !!iszh);
+        this.get('#tzzh').prop('disabled', !iszh);
     },
 
     createHTML: function (list1){
@@ -1847,7 +1871,7 @@ Class('ExpectList', {
                 g.cur = iscur ? '[当前期]' : '';
                 g.chk = iscur ? 'checked="checked"' : '';
                 g.disabl = iscur? true:false;
-                g.bs = iscur ? $('#zh_bs_big').val() : 0;
+                g.bs = iscur ? 1 : 0;
                 g.m = money*g.bs;
                 g.index = n++;
                 g.id = nt+'_'+g.index;
@@ -2805,15 +2829,7 @@ Class('openCodeList', {
 				});
 			}
 		});
-    }
-   /* checkshuzi:function(){
-    	var shuzi  = $("#shuzi").val();
-    	alert(shuzi);
-    	this.setIntInput('#shuzi', function (){
-            Y.selectMulti(Y.getInt(this.value));
-        }, 0);
-    }*/
-   
+    }   
 });
 
  
