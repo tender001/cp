@@ -962,7 +962,29 @@ Class('App', {
 			}
 			
 		})
-			this.get("#span5").click(function(){
+		$("#num_header_1").css({
+    		"height":0,
+    		"overflow":"hidden"
+    		});
+		
+		$("#span5").click(function(){
+			$("#span5").toggleClass("span5c");
+			$("#num_header_1").show();
+			if($("#span5").hasClass("span5c")){
+				$("#num_header_1").clearQueue().animate({
+					height:350
+					});
+				
+			}else{
+				
+				$("#num_header_1").animate({
+					height:0
+					
+					});
+			}
+			
+		});
+			/*this.get("#span5").click(function(){
 			$("#num_header_1").toggle();
 			$("#span5").toggleClass("span5c");
 			if($("#num_header_1").html()=="近期开奖"){
@@ -971,7 +993,7 @@ Class('App', {
 				$("#span5").html("近期开奖");
 			}
 			
-		});
+		});*/
 		$("#input_ok").click(function(){
 			var codevalue=$("#inputtext").val().replaceAll(" ",",");
 			
