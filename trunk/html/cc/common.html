@@ -5,12 +5,12 @@
 <table width="100%" border="0" cellpadding="0" cellspacing="0">
 <colgroup>
 </colgroup>
-  <tbody>
+  <tbody autocomplete="on">
   <tr>
     <td class="td2" id="error_user" ></td>
    
   </tr><tr>
-    <td><input type="text" id="uid" placeholder="请输入用户名"/></td>
+    <td><input type="text" id="uid" placeholder="请输入用户名" autocomplete="on"/></td>
   </tr>
   <tr>
     <td><input type="password" id="pwd" placeholder="请输入登录密码"/></td> 
@@ -24,7 +24,47 @@
 </div>
 
 
+<!-- 实名认证层 -->
+<div class="caitan" style="width:460px;display:none" id="smrz">
+<div class="tantop">
+<span>实名认证</span><a id="smrzclose"></a>
+</div>
+<div class="caitain">
+ <div class="caibdk"><div style="padding:0" class="rztab" id="smrzcontent">
 
+					<table width="100%" cellspacing="0" cellpadding="0" border="0">
+						<colgroup>
+							<col width="110">
+							<col width="">
+						</colgroup>
+						<tbody><tr>
+							<td style="text-align:left" colspan="2">温馨提示：实名信息是您领大奖和提款的唯一凭证，提交后不可修改</td>
+						</tr>
+						<tr style="display: none;">
+						  <td style="height:20px;line-height:20px">&nbsp;</td>
+							<td  style="text-align:left;color:#ff0000;height:20px;line-height:20px;font-size:12px" id="smerror"></td>
+						</tr>
+						<tr>
+							<td>真实姓名：</td>
+							<td><input type="text" class="text" id="smname" name="cimno" value="" ></td>
+						</tr>
+						<tr>
+							<td>身份证号：</td>
+							<td><input type="text" class="text" id="smno" name="cimno" value="" onselectstart="return false;" onpaste="return false;"></td>
+						</tr>
+						<tr>
+							<td>确认身份证：</td>
+							<td><input type="text" class="text" id="smpwd" name="cimno" value=""  onselectstart="return false;" onpaste="return false;"></td>
+						</tr>
+						
+					</tbody></table>
+
+				</div></div>
+<div class="tandiva"><a id="smsub" class="btn">提交</a><a id="smreturn" class="a1">以后再说</a></div></div>
+<div class="caitanbm">
+<div class="caitanbm1"></div>
+<div class="caitanbm2"></div>
+</div></div>
 
 
 <!--默认提示层-->
