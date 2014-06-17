@@ -497,7 +497,7 @@ Class('Ball>Single', {
         this.need(ini.rnd1).click(function (){
             Y.random("1");
         });
-        this.need(ini.rnd5).click(function (){
+       /* this.need(ini.rnd5).click(function (){
             Y.random("5");
         });
         this.need(ini.rnd10).click(function (){
@@ -505,6 +505,16 @@ Class('Ball>Single', {
         });
         this.need(ini.rnd15).click(function (){
             Y.random("15");
+        });*/
+        this.need(ini.input_tabs1).click(function (){
+        	var shuzi = $("#shuzi").val();
+        	shuzi=$("#shuzi").val().replace(/\D/g,'');
+        	Y.random(shuzi);
+        	/*var clear_list = $("#clear_list").val();
+        	if(clear_list != null){
+        		$("#clear_list").toggleClass("a1");
+        	}*/
+        		
         });
         this.need(ini.setdan).click(function (){
         	if($(ini.danma).is( ":hidden ")){
@@ -887,13 +897,54 @@ Class('App', {
         	$(this).removeClass("b_r");
         });
 		
-	
+        $(document).ready(function(){
+       		Y.ajax({
+    	       url:Class.C("url-login-user")+"&rnd=" + Math.random(),
+    	       end:function (data){
+    	           var Y;
+    	           Y = this;
+    	           if (data.error) {
+    	         	  return false;
+    	           }else{
+    					   var obj = eval("(" + data.text + ")");
+    	        		   var code = obj.Resp.code;
+    	        		 
+    						   if (code=="0"){
+    							     var u = obj.Resp.row;
+    								   this.get("#acc_userinfo").html(u.nickid);	  
+    						   }  else{
+    							   logoutLink = function (fn){ 
+    							    	
+    							    	Y.ajax({
+    							        url: Class.C('url-login-out'),
+    							        end:function (data){
+    							            var Y;
+    							            Y = this;
+    							            if (data.error) {
+    							          	  return false;
+    							            }else{
+    							    				   var obj = eval("(" + data.text + ")");
+    							         		   var code = obj.Resp.code;
+    							    					   if (code=="-1"){
+    							    						     var u = obj.Resp.row;
+    							    							   this.get("#acc_userinfo").html("");
+    							    					   }    
+    							            	}
+    							        	}
+    							    	}); 
+    							    };
+    						   }   
+    	           }
+    	       }
+    	});
+    	});
+       
 		
-		this.get("#sdinput").show();
+		Y.get("#sdinput").show().removeClass("cur");
 		var sdinput =  this.lib.MaskLay('#inputalert','#inputtext');
 		sdinput.addClose('#input_close');
-		this.get('#inputalert div.tantop').drag('#inputalert');
-		this.get("#sdinput").click(function(){
+		Y.get('#inputalert div.tantop').drag('#inputalert');
+		Y.get("#sdinput").click(function(){
 			if(Y.getPlayId()>256&& Y.getPlayId()<246){
 				Y.alert("改玩法暂不支持手工录入")
 			}else{
@@ -911,6 +962,16 @@ Class('App', {
 			}
 			
 		})
+			this.get("#span5").click(function(){
+			$("#num_header_1").toggle();
+			$("#span5").toggleClass("span5c");
+			if($("#num_header_1").html()=="近期开奖"){
+				$("#num_header_1").html("近期开奖");
+			}else{
+				$("#span5").html("近期开奖");
+			}
+			
+		});
 		$("#input_ok").click(function(){
 			var codevalue=$("#inputtext").val().replaceAll(" ",",");
 			
@@ -972,8 +1033,33 @@ Class('App', {
 		})
 	
 	
-
-        
+		$("#shuzi").focus(function(){
+			var shuzi  = $("#shuzi").val();
+			if(shuzi != ""){
+				shuzi=$("#shuzi").val().replace(/\D/g,'')
+				$("#shuzi").val(shuzi);
+			}
+			
+			$("#shuzi").keyup(function(){
+	    		this.value=this.value.replace(/\D/g,''); //只能输数字
+	    	});
+		});
+		$("#shuzi").blur(function(){
+			var shuzi  = $("#shuzi").val();
+			if(shuzi=shuzi.replace(/\D/g,'')){
+				$("#shuzi").val(shuzi+"注");
+		}
+		});
+		$("#zh_bs_big").focus(function(){
+			var zh_bs_big  = $("#zh_bs_big").val();
+			if(zh_bs_big != ""){
+				$("#zh_bs_big").val("");
+			}
+			
+			$("#zh_bs_big").keyup(function(){
+	    		this.value=this.value.replace(/\D/g,''); //只能输数字
+	    	});
+		});
     },
 	checksdinput:function(num){
 		var codevalue=$("#inputtext").val().replaceAll(" ",",");
@@ -1029,10 +1115,11 @@ Class('App', {
             showbar: '#single_bar',
             put: '#s1_put',
             clear:'#s1_clear',
+            input_tabs1: '#input_tabs1',
             rnd1: '#s1_jx1',
-            rnd5: '#s1_jx5',
+            /*rnd5: '#s1_jx5',
             rnd10: '#s1_jx10',
-            rnd15: '#s1_jx15',
+            rnd15: '#s1_jx15',*/
             setdan: '#setdanma',
             setdan_i: '#setdanma_i',
             danma:'#danma',
@@ -1048,9 +1135,10 @@ Class('App', {
             put: '#s2_put',//选好了
             clear:'#s2_clear',
             rnd1: '#s1_jx1',
-            rnd5: '#s1_jx5',
+            input_tabs1: '#input_tabs1'
+           /* rnd5: '#s1_jx5',
             rnd10: '#s1_jx10',
-            rnd15: '#s1_jx15'
+            rnd15: '#s1_jx15'*/
         });
         this.lib.Multi({
             items: '#q3zx span.nsbool',
@@ -1061,9 +1149,10 @@ Class('App', {
             put: '#s3_put',
             clear:'#s3_clear',
             rnd1: '#s1_jx1',
-            rnd5: '#s1_jx5',
+            input_tabs1: '#input_tabs1'
+           /* rnd5: '#s1_jx5',
             rnd10: '#s1_jx10',
-            rnd15: '#s1_jx15'
+            rnd15: '#s1_jx15'*/
         });
         this.lib.CodeList({
             panel: '#code_list',
@@ -1086,18 +1175,18 @@ Class('App', {
         Y =this;
         //玩法标签切换
         playTabs = this.lib.Tabs({
-            items: '#play_tabs li',
+            items: '#play_tabs a',
             focusCss: 'cur'
         });
 		//手工录入切换
-		sdinputTabs = this.lib.Tabs({
-            items: '#input_tabs b',
+		/*sdinputTabs = this.lib.Tabs({
+            items: '#input_tabs a',
             focusCss: 'cur'
-        });
+        });*/
 //        alert('addTabs_1');
         playTabs.onchange= function (a, b){
         	var ol = Y.getopencodelength(Class.C('playid'));//上一个的
-        	var pid = this.get('#play_tabs li').slice(b, b+1).attr("value");
+        	var pid = this.get('#play_tabs a').slice(b, b+1).attr("value");
         	var nl = Y.getopencodelength(pid);//当前的
             Class.C('playid', pid);
 //            Y.get("#shili").attr("data-help",Class.C('lot_data_dome')[pid]);
@@ -1144,7 +1233,7 @@ Class('App', {
 	        	$("#haoma_3").show();
 //	        	$("#11x5_hd").hide();
             }else{
-            	$("#num_header_1").show();
+            	$("#num_header_1").hide();
 	        	$("#opencodelist").show();
 	        	$("#num_header_2").hide();
 	        	$("#opencodelist_2").hide();
@@ -1168,18 +1257,19 @@ Class('App', {
         
         //追号标签切换
         zhTabs = this.lib.Tabs({
-            items: '#zh_tabs b',
+            items: 'div.ncathtype label',
             focusCss: 'cur',
-            contents: '#zh_tabs1,#zh_tabs2'
+            contents: '#ss,#zh_tabs1,#zh_tabs2'
         });
 //        alert('addTabs_4');
         zhTabs.onchange= function (a, b){     
-//        	alert("zhTabs.onchange="+a);
-        	var zid = this.get('#zh_tabs li').slice(b, b+1).attr("value");
-            Class.C('zhid', zid);
-//            alert("zid="+zid);
-            var listdata = Y.postMsg('msg_get_list_data').data;
-            if(b==1){
+        	var listdata = Y.postMsg('msg_get_list_data').data;
+            if(b!=0){
+            	Y.get("#expectListBox").show();
+            }else{
+            	Y.get("#expectListBox").hide();
+            }
+            if(b==2){
             	Y.postMsg('gjzh_cs_change');
                 if(listdata.zhushu>1){
                 	Y.alert("您好，高级追号功能只支持单注投注方案!");
@@ -1189,15 +1279,15 @@ Class('App', {
                 	Y.alert("请选择投注内容或机选号码后，再使用高级追号功能!");
                 	zhTabs.focus(0);
                 	return false;
-                }  	
+                }  	 	
             }
 
         }; 
-		// inputTabs = this.lib.Tabs({
-            // items: '#input_tabs b',
-            // focusCss: 'cur',
-            // contents: '#input_tabs1,#inputalert'
-        // });
+		/* inputTabs = this.lib.Tabs({
+             items: '#input_tabs b',
+             focusCss: 'cur',
+            contents: '#input_tabs1,#inputalert'
+         });*/
 
 
     },
@@ -1272,11 +1362,12 @@ Class('CodeList', {
         this.clearBtn = this.need(config.clearBtn);
         this.clearBtn.click(function (e, Y){
             Y.clearLine();
+            $("#zh_bs_big").val(1);
         });
-        this.clearBtn1 = this.need(config.clearBtn1);
+       /* this.clearBtn1 = this.need(config.clearBtn1);
         this.clearBtn1.click(function (e, Y){
             Y.clearLine();
-        });
+        });*/
         //选中行
         this.prevSelectedLine = null;
         this.panel.live('li', 'click', function (e, y){
@@ -1288,6 +1379,26 @@ Class('CodeList', {
                 Y.postMsg('msg_redraw_code', Y.get(this).data('code'));
             }            
         });
+        Y.get("#zh_bs_big").keyup(function(){
+        	Y.bschangess(Y.get(this).val());
+        });
+        Y.get("#zh_bs_add").click(function(){
+        	var zh_bs_big = $("#zh_bs_big").val();
+			zh_bs_big == zh_bs_big++;
+			 $("#zh_bs_big").val(zh_bs_big);
+        	Y.bschangess($("#zh_bs_big").val());
+		});
+        Y.get("#zh_bs_reduce").click(function(){
+        	var zh_bs_big = $("#zh_bs_big").val();
+			zh_bs_big == zh_bs_big--;
+			if(zh_bs_big > 1){
+				 $("#zh_bs_big").val(zh_bs_big);
+			}else if(zh_bs_big == 1){
+				 $("#zh_bs_big").val(1);
+			}
+			
+        	Y.bschangess($("#zh_bs_big").val());
+		});
     },
     addCode: function (code){
         var one, li;
@@ -1342,6 +1453,17 @@ Class('CodeList', {
             totalmoney: this.totalmoney
         });// 广播注数变化消息, 购买选项类应该监听这个消息
     },
+    bschangess: function (beishu){//变化
+//      this.zsSpan.html(zhushu);
+//      this.zhushu = zhushu;
+      this.totalmoney = this.zhushu*beishu*Class.config('price');
+      this.moneySpan.html(this.totalmoney.rmb(false,0));
+      this.postMsg('msg_list_change', {
+          zhushu: this.zhushu,
+          beishu: beishu,
+          totalmoney: this.totalmoney
+      });// 广播注数变化消息, 购买选项类应该监听这个消息
+  },
     getCount: function (){//计算总注数
         var Y = this;
         return this.get('li', this.panel).nodes.reduce(function (a, b){
@@ -1457,7 +1579,7 @@ Class('ExpectList', {
 
         this._reset(true);
         this.allmoney = 0;
-        this.beishulistsuc = '';
+        this.beishulistsuc = $("#zh_bs_big").val();
         this.buymode=1;
         this.expectlistsuc='';
         this.ZjCut = 0;
@@ -1616,9 +1738,14 @@ Class('ExpectList', {
              }          
          });
          this.setZhChk(bslist.length > 1);
-         this.allmoney = bs*2*listdata.zhushu;
          this.expectlistsuc = exlist.join(',');
-         this.beishulistsuc = bslist.join(',');
+         if($("#zh_bs_big").val()>1){
+        	 this.beishulistsuc = $("#zh_bs_big").val();
+        	 this.allmoney = $("#zh_bs_big").val()*2*listdata.zhushu;
+         }else{
+        	 this.beishulistsuc = bslist.join(',');
+        	 this.allmoney = bs*2*listdata.zhushu;
+         }
          this.get('#expect_num').html(exp_sum);
          this.get('#zh_qs').val(exp_sum).attr('data-prev', exp_sum);
          this.get('#sum_m').html(this.allmoney.rmb(false,0));
@@ -1728,7 +1855,7 @@ Class('ExpectList', {
                 g.cur = iscur ? '[当前期]' : '';
                 g.chk = iscur ? 'checked="checked"' : '';
                 g.disabl = iscur? true:false;
-                g.bs = iscur ? 1 : 0;
+                g.bs = iscur ? $('#zh_bs_big').val() : 0;
                 g.m = money*g.bs;
                 g.index = n++;
                 g.id = nt+'_'+g.index;
@@ -1764,7 +1891,7 @@ Class('BuyProject', {
             var opts = this.one('#jh_opts').options;
             opts.length = 0;
             list1.each(function (item){
-                opts.add(new Option(item.pid + (item.iscurrent ? '[当前期]' : ''), item.pid, 0, 0))
+                opts.add(new Option(item.pid + (item.iscurrent ? '' : ''), item.pid, 0, 0))
             });
             this.get('#maxJhZh').html(opts.length);
             this.get('#maxJhZh2').html(opts.length);
@@ -2048,7 +2175,7 @@ Class('openCodeList', {
     	var pid = this.getPlayId();
     	var dl = this.listdata.length;
     	var lpid = this.listdata[dl-1];// 获取listdata里面的最后一个的（ 遗漏） 
-    	var llpid = this.listdata[dl-2];// 获取listdata里面的最后一个的（ 遗漏） 
+    	var llpid = this.listdata[dl-1];// 获取listdata里面的最后一个的（ 遗漏） 
     	var npid = this.getnextpid(lpid.p);//准备开奖的期次	2013022608
     	var net;
     	if((npid+"").substr(8,2)=="01"){
@@ -2057,17 +2184,18 @@ Class('openCodeList', {
     		net = (Y.getDate(Date.parse(Y.getDate(lpid.t))+1000*60*10).format('YY-MM-DD hh:mm:ss'));//2013-02-26 10:20:00
     	}
     	
-    	
-		this.get('#lastopenexpect').html('<em>{1}</em> 期开奖号码'.format(llpid.p));    		
-		var ctpl = ' <b class="es1 es">{1}</b><b class="es2 es">{2}</b><b class="es3 es">{3}</b><b class="es4 es">{4}</b><b class="es5 es">{5}</b>';
+    
+		this.get('#lastopenexpect').html('{1}'.format(llpid.p));  
+		this.get('#lastopendata').html('（{1}）'.format(llpid.t));
+		var ctpl = ' <em class="es1 es">{1}</em><em class="es2 es">{2}</em><em class="es3 es">{3}</em><em class="es4 es">{4}</em><em class="es5 es">{5}</em>';
 		var llcc=llpid.c.split(",");
 		this.get('#lastopencode').html(ctpl.format(llcc[0],llcc[1],llcc[2],llcc[3],llcc[4]));  
 //    	alert("npid="+npid+" \r\n this.C('currentExpect')"+this.C('currentExpect'));
     	var st = 0; //开奖倒计时
     	if(npid!=this.C('currentExpect')){
     		st = 1; //开奖倒计时
-    		this.get('#lastopenexpect').html('<em>{1}</em> 期开奖号码'.format(lpid.p));    		
-    		var ctpl = ' <b class="es1 es">{1}</b><b class="es2 es">{2}</b><b class="es3 es">{3}</b><b class="es4 es">{4}</b><b class="es5 es">{5}</b>';
+    		this.get('#lastopenexpect').html('{1}'.format(lpid.p));    		
+    		var ctpl = ' <em class="es1 es">{1}</em><em class="es2 es">{2}</em><em class="es3 es">{3}</em><em class="es4 es">{4}</em><em class="es5 es">{5}</em>';
     		var llcc=lpid.c.split(",");
     		this.get('#lastopencode').html(ctpl.format(llcc[0],llcc[1],llcc[2],llcc[3],llcc[4]));  
     	}
