@@ -895,7 +895,7 @@ Class('App', {
 		
 	
 		
-		Y.get("#sdinput").show().removeClass("cur");
+		$("#sdinput").show().removeClass("cur");
 		var sdinput =  this.lib.MaskLay('#inputalert','#inputtext');
 		sdinput.addClose('#input_close');
 		Y.get('#inputalert div.tantop').drag('#inputalert');
@@ -1174,7 +1174,7 @@ Class('App', {
             Y.postMsg('danma_onchange');
             Y.postMsg('msg_buy_succeed');
 			Y.get("#inputtext").val("");
-			Y.get("#sdinput").show();
+			$("#sdinput").show();
             if(ol!=nl){
             	Y.postMsg('show_opencodelist', 2);
             }
