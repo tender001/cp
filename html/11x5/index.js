@@ -260,16 +260,16 @@ Class.extend('setIntInput', function (input, change, def, max){
         fix.call(this);
     });
     function fix(){
-        var val = Math.min(max, parseInt(this.value, 10) || 0);
-        if (val != this.value) {
-            this.value = val
-        }else if(/^0+/.test(this.value)){
-            this.value = this.value.replace(/^0+/g,'');
-        }
-        if (this.getAttribute('data-prev') != val) {
-            this.setAttribute('data-prev', val);
-            change instanceof Function ? change.call(this) : null;
-        }
+    	 var val = Math.min(max, parseInt(this.value, 10) || 0);
+         if (val != this.value) {
+             this.value = val
+         }else if(/^0+/.test(this.value)){
+             this.value = this.value.replace(/^0+/g,'');
+         }
+         if (this.getAttribute('data-prev') != val) {
+             this.setAttribute('data-prev', val);
+             change instanceof Function ? change.call(this) : null;
+         }
     }
 });
 
@@ -312,7 +312,7 @@ Class('SendBuy', {
 	                        currentexpect: $(':checkbox:checked').val(),
 	                        expectnum: elist.beishulistsuc.split(',').length,
 	                        money: list.totalmoney.rmb(),
-	                        //stop: $_sys.zhflag[Y.get('#tzzh').val()],
+	                        stop: $_sys.zhflag[Y.get('#tzzh').val()],
 	                        totalmoney: elist.allmoney.rmb()
 	                    }), function (){
 	                        Y.send(elist);
@@ -566,7 +566,7 @@ Class('Ball>Single', {
                 }
             }
             Y.get("#allselect").html("全选");
-//            Y.postMsg('danma_onchange');
+            Y.postMsg('danma_onchange');
         })
     },
     clearCode: function (){
@@ -939,16 +939,7 @@ Class('App', {
 			}
 			
 		});
-		/*$("#bf_xl").click(function(){
-    		$("#bf_xl").find("#bf_xl").show();
-			$("#bf_xl").clearQueue().animate({
-				height:125
-				})
-		},function(){
-			$("#bf_xl").animate({
-				height:0
-				})
-		});*/
+	
 		$("#input_ok").click(function(){
 			var codevalue=$("#inputtext").val().replaceAll(" ",",");
 			
@@ -1613,7 +1604,7 @@ Class('ExpectList', {
     setAllBs: function (bs){
         var n=0;
         var listdata = this.postMsg('msg_get_list_data').data;
-        this.get('#expectListBox:text').each(function (t){
+        this.get('#expectListBox :text').each(function (t){
             if (!t.disabled) {
                 t.value = bs  ;
                 t.parentNode.nextSibling.getElementsByTagName('em')[0].innerHTML = this.getInt(t.value)*listdata.totalmoney;
@@ -1626,7 +1617,7 @@ Class('ExpectList', {
     },
     setAllMoney: function (m){
     	var tm = 0;
-        this.get('#expectListBox:text').each(function (t){
+        this.get('#expectListBox :text').each(function (t){
             if (!t.disabled) {
                 t.parentNode.nextSibling.getElementsByTagName('em')[0].innerHTML = this.getInt(t.value, 0)*m;
                 tm = tm + this.getInt(t.value, 0)*m;
@@ -1639,7 +1630,7 @@ Class('ExpectList', {
         var listdata = this.postMsg('msg_get_list_data').data;
         var m = listdata.totalmoney;
         var n = count;
-        this.get('#expectListBox:text').each(function (t){
+        this.get('#expectListBox :text').each(function (t){
             if (n) {//选中前N期
                 if (t.disabled) {
                     t.disabled = false;
@@ -1671,7 +1662,7 @@ Class('ExpectList', {
         listdata = this.postMsg('msg_get_list_data').data;
         m = listdata.totalmoney;
         this.get('#expectListBox ul').each(function (tr){
-            var bs = $("zh_qs").val(), obs, ochk, em;
+            var bs, obs, ochk, em;
             obs = tr.getElementsByTagName('li')[2].getElementsByTagName('input')[0];
             ochk =  tr.getElementsByTagName('li')[1].getElementsByTagName('input')[0];
             em = tr.getElementsByTagName('li')[3].getElementsByTagName('em')[0];

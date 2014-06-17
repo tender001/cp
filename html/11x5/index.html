@@ -1237,14 +1237,14 @@
 
 						<!-- 常规追号开始 -->
 						<div id="ss"></div>
-						<div id="zh_tabs1" style="display: none;" class="kc_zja">
+						<div class="kc_zja" style="display: none;" id="zh_tabs1">
 							<div class="kc_zj2">
 								<p>
-									追<input type="text" maxlength="3" name="zh" value="1"
-										id="zh_qs" data-prev="1">期&nbsp;&nbsp;&nbsp;&nbsp;每期倍投<input
-										type="text" value="1" id="zh_bs" name="zh_bs">倍 
+									追<input type="text" data-prev="1" id="zh_qs" value="1"
+										name="zh" maxlength="3">期&nbsp;&nbsp;&nbsp;&nbsp;每期倍投<input
+										type="text" name="zh_bs" id="zh_bs" value="1">倍
 								</p>
-								<span>（最多可追号<span id="maxJhZh2">157</span>期）
+								<span>（最多可追号<span id="maxJhZh2">156</span>期）
 								</span>
 							</div>
 							<div class="kc_zj3">
@@ -1414,29 +1414,22 @@
 
 
 		<div class="caitan" style="width:422px;display:none" id="inputalert">
-			<div class="tantop">
-				<span>温馨提示</span><a id="input_close"></a>
-			</div>
-			<div class="caitain">
-				<div class="caix5k">
-					<h5
-						style="line-height:30px;color:#444;font-size:12px;padding:5px 0 0 20px;font-weight:100">
-						请将文件的内容粘贴到文本框里,一行一注.号码格式为:<br /> <span
-							style="color:#cc0000;font-weight:bold;line-height:15px;padding-bottom:5px;display:block">01
-							02 03 04<br /> 01,02,03,04<s style="color:#888;font-weight:100">(最多400注.)</s>
-						</span>
-					</h5>
-					<textarea
-						style="width:320px;height:140px;margin:0px 0 0 20px;border:1px solid #ccc;color:#444;padding:2px;line-height:16px;display:block;font-size:12px;overflow-y:auto;"
-						id="inputtext"></textarea>
-				</div>
-				<a class="btn" id="input_ok">确定填写</a>
-			</div>
-			<div class="caitanbm">
-				<div class="caitanbm1"></div>
-				<div class="caitanbm2"></div>
-			</div>
-		</div>
-		<input name="codes" id="codes" type="hidden" value='' />
+<div class="tantop">
+<span>温馨提示</span><a  id="input_close"></a>
+</div>
+<div class="caitain">
+ <div class="caix5k">
+<h5 style="line-height:30px;color:#444;font-size:12px;padding:5px 0 0 20px;font-weight:100">请将文件的内容粘贴到文本框里,一行一注.号码格式为:<br />
+<span style="color:#cc0000;font-weight:bold;line-height:15px;padding-bottom:5px;display:block">01 02 03 04<br />
+01,02,03,04<s style="color:#888;font-weight:100">(最多400注.)</s></span></h5>
+ <textarea style="width:320px;height:140px;margin:0px 0 0 20px;border:1px solid #ccc;color:#444;padding:2px;line-height:16px;display:block;font-size:12px;overflow-y:auto;" id="inputtext"></textarea>
+ </div>
+ <a class="btn"  id="input_ok">确定填写</a>
+</div>
+<div class="caitanbm">
+<div class="caitanbm1"></div>
+<div class="caitanbm2"></div>
+</div></div>
+<input name="codes" id="codes" type="hidden" value='' />
 </body>
 </html>
