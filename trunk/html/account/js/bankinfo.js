@@ -16,7 +16,7 @@ Class({
 		P.editbank();
 		$("#cardnumber").keyup(function(){
     		this.value=this.value.replace(/\D/g,''); //只能输数字
-            this.value =this.value.replace(/\s/g,'').replace(/(\d{4})(?=\d)/g,"$1 ");//四位数字一空格
+            this.value =this.value.replace(/\s/g,'').replace(/(\d{})(?=\d)/g,"$1 ");//四位数字一空格
     	});
 	}
 	,editbank:function(){
@@ -100,14 +100,14 @@ Class({
 				return false;
 			}
 			if (Y.get("#bankname").val().trim()==""){
-				
+				if(Y.get("#bankname").val().trim().match(/[^\u4e00-\u9fa5]/g)){
+					Y.alert("开户银行支行名称只能是汉字");
+					return false;
+				}
 				Y.alert("请填写开户银行支行名称");
 				return false;
 			}
-			if(Y.get("#bankname").val().trim().match(/[^\u4e00-\u9fa5]/g)){
-				Y.alert("开户银行支行名称只能是汉字");
-				return false;
-			}
+			
 			
 			if (Y.get("#cardnumber").val().trim()==""){
 				Y.alert("请填写银行卡号码");
