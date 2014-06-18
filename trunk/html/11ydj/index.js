@@ -940,11 +940,11 @@ Class('App', {
     	});
        
 		
-		Y.get("#sdinput").show().removeClass("cur");
+		$("#sdinput").show().removeClass("cur");
 		var sdinput =  this.lib.MaskLay('#inputalert','#inputtext');
 		sdinput.addClose('#input_close');
 		Y.get('#inputalert div.tantop').drag('#inputalert');
-		Y.get("#sdinput").click(function(){
+		$("#sdinput").click(function(){
 			if(Y.getPlayId()>256&& Y.getPlayId()<246){
 				Y.alert("改玩法暂不支持手工录入")
 			}else{
@@ -1224,7 +1224,7 @@ Class('App', {
             Y.postMsg('danma_onchange');
             Y.postMsg('msg_buy_succeed');
 			Y.get("#inputtext").val("");
-			Y.get("#sdinput").show();
+			$("#sdinput").show();
 			// if(pid>248&&pid<256){
 				// Y.get("#sdinput").show();
 			// }else{
