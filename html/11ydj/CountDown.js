@@ -3,7 +3,7 @@ Class('CountDownGp', {
 	use : 'countDown',
 	tpl : '<b class="cm_11ydj_time">{1}</b>:<b class="cm_11ydj_time">{2}</b>:<b class="cm_11ydj_time">{3}</b> 后截止',
 	tpl3 : ' <em>{1}</em><em>{2}</em>  <em class="em_2"></em>  <em>{3}</em><em>{4}</em>   <em class="em_2"></em> <em>{5}</em><em>{6}</em> ',
-	tpl4 : ' <b>{1}{2}</b><b>：</b><b>{3}{4}</b>',
+	tpl4 : ' <b>{1}{2}</b><b>:</b><b>{3}{4}</b>',
 	tpl2 : '{2}分{3}秒',
 	xml_date : '/cpdata/sys/{1}.xml',
 	curXml : '/tdata/{1}/activeexpect.xml',
