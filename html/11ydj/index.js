@@ -1211,6 +1211,9 @@ Class('App', {
         });*/
 //        alert('addTabs_1');
         playTabs.onchange= function (a, b){
+        	
+        	$("#num_header_1").css('height','0');
+        	$("#span5").removeClass("span5c");
         	var ol = Y.getopencodelength(Class.C('playid'));//上一个的
         	var pid = this.get('#play_tabs a').slice(b, b+1).attr("value");
         	var nl = Y.getopencodelength(pid);//当前的
