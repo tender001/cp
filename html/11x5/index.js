@@ -513,11 +513,6 @@ Class('Ball>Single', {
         	shuzi=$("#shuzi").val().replace(/\D/g,'');
         	Y.random(shuzi);
         });
-        
-      /* this.get("#zh_bs_big").keyup(function(){
-    	   
-    	  // Y.random($("#zh_bs_big").val());
-       });*/
         this.need(ini.setdan).click(function (){
         	if($(ini.danma).is( ":hidden ")){
         		$(ini.danma).show();
@@ -927,7 +922,7 @@ Class('App', {
 			$("#num_header_1").show();
 			if($("#span5").hasClass("span5c")){
 				$("#num_header_1").clearQueue().animate({
-					height:350
+					height:362
 					});
 				
 			}else{
@@ -1018,9 +1013,9 @@ Class('App', {
 			
 			$("#zh_bs_big").keyup(function(){
 	    		this.value=this.value.replace(/\D/g,''); //只能输数字
-	    		 this.onMsg('msg_load_expect_list', function (a){
+	    		/* this.onMsg('msg_load_expect_list', function (a){
 	    	            this.createHTML(a);// 倒计时下载期号后构建
-	    	        });  
+	    	        });  */
 	    	});
 		});
 		$("#shuzi").blur(function(){
@@ -1367,6 +1362,11 @@ Class('CodeList', {
         Y.get("#zh_bs_add").click(function(){
         	var zh_bs_big = $("#zh_bs_big").val();
 			zh_bs_big == zh_bs_big++;
+			if(zh_bs_big < 2000){
+				 $("#zh_bs_big").val(zh_bs_big);
+			}else if(zh_bs_big >= 2000){
+				 $("#zh_bs_big").val(2000);
+			}
 			 $("#zh_bs_big").val(zh_bs_big);
         	Y.bschangess($("#zh_bs_big").val());
 //        	Y.onMsg('msg_load_expect_list', function (a){
@@ -1445,16 +1445,17 @@ Class('CodeList', {
 //        this.zsSpan.html(zhushu);
 //        this.zhushu = zhushu;
     	
+    	
     	Y.get("#zh_bs").val(beishu);
     	this.beishu=beishu;
-        this.totalmoney = this.zhushu*beishu*Class.config('price');
+    	 this.totalmoney = this.zhushu*beishu*Class.config('price');
         this.moneySpan.html(this.totalmoney.rmb(false,0));
         this.beishulistsuc=beishu;
-        this.postMsg('msg_list_change', {
-            zhushu: this.zhushu,
-            beishu: beishu,
-            totalmoney: this.totalmoney
-        });// 广播注数变化消息, 购买选项类应该监听这个消息
+//        this.postMsg('msg_list_change', {
+//            zhushu: this.zhushu,
+//            beishu: beishu,
+//            totalmoney: this.totalmoney
+//        });// 广播注数变化消息, 购买选项类应该监听这个消息
         $("input[mark=chkexp]").each(function(x,y){
     		if($(y).attr("checked")){
     			$(y).click();
@@ -1573,6 +1574,9 @@ Class('ExpectList', {
         this.setIntInput('#zh_bs', function (){
             Y.setAllBs(Y.getInt(this.value));
         }, 1, 2000);
+        this.setIntInput('#zh_bs_big', function (){
+            Y.setAllBs(Y.getInt(this.value));
+        }, 1, 2000);
         this.setIntInput('#zh_qs', function (){
             Y.selectMulti(Y.getInt(this.value));
         }, 0);
@@ -1597,6 +1601,12 @@ Class('ExpectList', {
             	 $("#exp_"+id[1]+"_"+id[2]).attr("checked","");
              } 
          }
+         var qishu = $("#zh_qs").val(); 
+         if(qishu == 1){
+    		 this.totalmoney = this.zhushu*this.beishu*Class.config('price');
+    	}else{
+    		this.totalmoney = qishu*this.zhushu*this.beishu*Class.config('price');
+    	}
          tagM = input.parentNode.nextSibling.getElementsByTagName('em')[0];
          tagM.innerHTML = this.getInt(input.value)*listdata.totalmoney;
          this.setTotalData(listdata);
@@ -1654,6 +1664,7 @@ Class('ExpectList', {
         }, this);
         var val = Math.min(this.get('#expectListBox ul').size(), count);
         this.get('#zh_qs').val(val).attr('data-prev', val);
+        this.get('#zh_qs_big').val(val).attr('data-prev', val);
         this.setTotalData(listdata);
     },
     formParam: function (obj){//使用参数批量设置 {expect: bs}
@@ -1682,6 +1693,7 @@ Class('ExpectList', {
             }
         }, this);
         this.get('#zh_qs').val(n).attr('data-prev', n);
+        this.get('#zh_qs_big').val(n).attr('data-prev', n);
         this.setTotalData(listdata);
     },
     setTotalData: function (listdata){//更新总期数与金额
@@ -1747,15 +1759,20 @@ Class('ExpectList', {
          this.expectlistsuc = exlist.join(',');
          if($("#zh_bs_big").val()>1){
         	 this.beishulistsuc = $("#zh_bs_big").val();
-        	 this.allmoney = $("#zh_bs_big").val()*2*listdata.zhushu;
+        	 this.allmoney = $("#zh_bs_big").val()*2*listdata.zhushu*exp_sum;
          }else{
         	 this.beishulistsuc = bslist.join(',');
-        	 this.allmoney = bs*2*listdata.zhushu;
+        	 this.allmoney = bs*2*listdata.zhushu*exp_sum;
          }
-         
-         this.get('#expect_num').html(exp_sum);
+         this.setZhChk(bslist.length > 1);
+         this.allmoney = bs*2*listdata.zhushu;
+         this.expectlistsuc = exlist.join(',');
+         this.beishulistsuc = bslist.join(',');
+
+        // this.get('#zh_qs').val(n).attr('data-prev', n);
+         /*this.get('#expect_num').html(exp_sum);
          this.get('#zh_qs').val(exp_sum).attr('data-prev', exp_sum);
-         this.get('#sum_m').html(this.allmoney.rmb(false,0));
+         this.get('#sum_m').html(this.allmoney.rmb(false,0));*/
      },
     setCurTopmost: function (expect, now, endtime){//当期至顶
          var n, trp;
@@ -2233,7 +2250,14 @@ Class('openCodeList', {
     		}else{
     			ul = this.get('.opencodebox', "#opencodelist").slice(i);
     		}
-        	ul.attr("expect",ld[i].p).attr("endtime",ld[i].t).attr("ol",0).attr("codes","");
+    		ul.attr("expect",ld[i].p).attr("endtime",ld[i].t).attr("ol",0).attr("codes","");
+        	
+        	if(i%1==0){
+        		ul.attr("expect",ld[i].p).attr("endtime",ld[i].t).attr("ol",0).attr("codes","").toggleClass("odd");
+        	}else{
+        		ul.attr("expect",ld[i].p).attr("endtime",ld[i].t).attr("ol",0).attr("codes","");
+        	}
+        	
         	//ul.removeClass("cm_11ydj_text_hover").addClass("cm_11ydj_text_text");
         	//var castinfolist = this.get('.cm_11ydj_text_xlhover div', ul);
         	//castinfolist.html("");
@@ -2651,6 +2675,7 @@ Class('openCodeList', {
     	var opencode_n = "";
     	if(id == 245){
     		opencode_n = this.get('.opencodebox[ol=1]', "#opencodelist_2");
+    		
     	}else if(id == 246){
     		opencode_n = this.get('.opencodebox[ol=1]', "#opencodelist_3");
     	}else{
