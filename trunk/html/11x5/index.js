@@ -1237,6 +1237,7 @@ Class('App', {
             	Y.get("#expectListBox").show();
             }else{
             	Y.get("#expectListBox").hide();
+            	$("#tzzh").hide();
             }
             if(b==2){
             	$("#tzzh").show();
@@ -1259,10 +1260,6 @@ Class('App', {
             		}
             	})	
             }
-           if(b == 0){
-        	   $("#tzzh").hide();
-           }
-
         }; 
 		// inputTabs = this.lib.Tabs({
             // items: '#input_tabs b',
