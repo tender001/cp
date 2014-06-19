@@ -1602,7 +1602,7 @@ Class('ScrollStill', {
     	            	var V = $('#titleTable_r');
     	        		if (V[0]) {
     	        			var T = $(document),
-    	        			H = $("div[mark=boxm]").eq(0),
+    	        			H = $("#main div.box_m").eq(0),
     	        			M = H.offset().top + H.outerHeight(),
     	        			F = V.innerWidth(),
     	        			B = V.offset().top,
@@ -1614,12 +1614,12 @@ Class('ScrollStill', {
     	        				V.css({left: "auto", top: "auto",width: F, position: "static"});
     	        			} else {
     	        				if(isIE6){
-    	        					V.css({left: "auto",top: Z+$(window).scrollTop(), width: F,position: "absolute"});
+    	        					V.css({left: "auto",top: Z+$(window).scrollTop()-140, width: F,position: "absolute"});
     	        				}else{
     	        				V.css({left: "auto",top: Z, width: F, position: "fixed"});
     	        				}
     	        			}
-    	        			Y.get("#titleTable_r").setStyle('z-index: 1;');
+    	        			Y.get("#titleTable_r").setStyle('z-index: 10000;');
     	        		}
     	            	
     	             }else{//停止浮动对齐
@@ -1698,7 +1698,7 @@ Class('ScrollStill', {
 	            offset:0,
 	            init: function(){
 	                var This = this,
-	                    title =area.parent().find('#tabletop').one(0),
+	                    title = this.area.parent().find('#tabletop').one(0),
 	                    floatTitle = title.cloneNode(true);
 	                this.get(floatTitle).insert(this);
 	                this.floatTitle = floatTitle;
