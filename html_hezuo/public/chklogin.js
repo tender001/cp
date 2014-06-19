@@ -58,75 +58,30 @@ Class('Loginer', {// 登陆器
     		 var linkdiv = document.getElementById("linkInfo");
     		 linkdiv.style.display = "none"; 
     	 });
+    	   this.get("#tp1").click(function(){
+           	Y.postMsg('msg_login', function (){
+           		 window.open('/account/myaccount.html','_self');
+           	});
 
-        this.get("#tp1").click(function(){
-         	
-         	Y.ajax({
-             url:Class.C('url-login-user')+"&rnd=" + Math.random(),
-             end:function (data){
-                 Y = this;
-                 if (data.error) {
-                     this.setUserInfo('拉取用户信息失败, 请刷新重试!');
-                 }else{
-               	   var obj = eval("(" + data.text + ")");
-         		       var code = obj.Resp.code;
-         			  window.open(code=="0"?'/account/myaccount.html':'/user/login.html','_self');
-    					  
-                 }
-             }
-           });
-         });
-         this.get("#tp2").click(function(){
-     	
-     	Y.ajax({
-         url:Class.C('url-login-user')+"&rnd=" + Math.random(),
-         end:function (data){
-             Y = this;
-             if (data.error) {
-                 this.setUserInfo('拉取用户信息失败, 请刷新重试!');
-             }else{
-           	   var obj = eval("(" + data.text + ")");
-     		       var code = obj.Resp.code;
-     				
-     			  window.open(code=="0"?'/account/chongzhi.html':'/user/login.html','_self');
-             }
-         }
-       });
-     });
-     this.get("#tp3").click(function(){
-     	
-     	Y.ajax({
-         url:Class.C('url-login-user')+"&rnd=" + Math.random(),
-         end:function (data){
-             Y = this;
-             if (data.error) {
-                 this.setUserInfo('拉取用户信息失败, 请刷新重试!');
-             }else{
-           	   var obj = eval("(" + data.text + ")");
-     		       var code = obj.Resp.code;
-     				
-     			  window.open(code=="0"?'/account/tikuan.html':'/user/login.html','_self');
-             }
-         }
-       });
-     });
-	 this.get("#tp4").click(function(){
-	     	
-	     	Y.ajax({
-	         url:Class.C('url-login-user')+"&rnd=" + Math.random(),
-	         end:function (data){
-	             Y = this;
-	             if (data.error) {
-	                 this.setUserInfo('拉取用户信息失败, 请刷新重试!');
-	             }else{
-	           	   var obj = eval("(" + data.text + ")");
-	     		       var code = obj.Resp.code;
-	     				
-	     			  window.open(code=="0"?'/account/orderlist.html':'/user/login.html','_self');
-	             }
-	         }
-	       });
-	     });
+            });
+            this.get("#tp2").click(function(){
+           	 Y.postMsg('msg_login', function (){
+           		 window.open('/account/chongzhi.html','_self');
+           	});
+        
+        });
+        this.get("#tp3").click(function(){
+       		Y.postMsg('msg_login', function (){
+          		 window.open('/account/tikuan.html','_self');
+          	});
+        
+        });
+   	 this.get("#tp4").click(function(){
+   			Y.postMsg('msg_login', function (){
+   	       		 window.open('/account/orderlist.html','_self');
+   	       	});
+   	     
+   	     });
     },
 
     bindEvent: function (config){
