@@ -1099,7 +1099,7 @@ Class('App', {
             clear:'#s2_clear',
             rnd1: '#s1_jx1',
             //rnd5: '#s1_jx5',
-            jixuan: '#jixuan',
+            jixuan: '#jixuan'
             //rnd15: '#s1_jx15'
         });
         this.lib.Multi({
@@ -1112,7 +1112,7 @@ Class('App', {
             clear:'#s3_clear',
             rnd1: '#s1_jx1',
            // rnd5: '#s1_jx5',
-            jixuan: '#jixuan',
+            jixuan: '#jixuan'
             //rnd15: '#s1_jx15'
         });
         this.lib.CodeList({
@@ -1138,12 +1138,12 @@ Class('App', {
         //玩法标签切换
         playTabs = this.lib.Tabs({
             items: '#play_tabs a',
-            focusCss: 'cur',
+            focusCss: 'cur'
             
         });
 		//手工录入切换
 		sdinputTabs = this.lib.Tabs({
-            items: '#sdinput',
+            items: '#sdinput'
            // focusCss: 'cur'
         });
 //        alert('addTabs_1');
@@ -1167,9 +1167,9 @@ Class('App', {
             if(nl == 6){
 //            	$("#num_header_1").hide();
             	$("#opencodelist").hide();
-            	$("#num_header_2").show();
+            	//$("#num_header_2").show();
             	$("#opencodelist_2").show();
-            	$("#num_header_3").hide();
+            	//$("#num_header_3").hide();
 	        	$("#opencodelist_3").hide();
 	        	$("#win_today").show();
 	        	$("#setdanma_i").hide();
@@ -1184,9 +1184,9 @@ Class('App', {
             }else if(nl ==7){
 //            	$("#num_header_1").hide();
 	        	$("#opencodelist").hide();
-	        	$("#num_header_2").hide();
+	        	//$("#num_header_2").hide();
 	        	$("#opencodelist_2").hide();
-	        	$("#num_header_3").show();
+	        	//$("#num_header_3").show();
 	        	$("#opencodelist_3").show();
 //	        	$("#win_today").hide();
 	        	$("#setdanma_i").hide();
@@ -1200,9 +1200,9 @@ Class('App', {
             }else{
 //            	$("#num_header_1").hide();
 	        	$("#opencodelist").show();
-	        	$("#num_header_2").hide();
+	        	//$("#num_header_2").hide();
 	        	$("#opencodelist_2").hide();
-	        	$("#num_header_3").hide();
+	        	//$("#num_header_3").hide();
 	        	$("#opencodelist_3").hide();
 //	        	$("#win_today").show();
 	        	$("#renxuan").show();
@@ -1228,8 +1228,6 @@ Class('App', {
             
         });
         zhTabs.onchange= function (a, b){     
-
-
             var listdata = Y.postMsg('msg_get_list_data').data;
 //            this
             
@@ -1261,13 +1259,6 @@ Class('App', {
             	})	
             }
         }; 
-		// inputTabs = this.lib.Tabs({
-            // items: '#input_tabs b',
-            // focusCss: 'cur',
-            // contents: '#input_tabs1,#inputalert'
-        // });
-
-
     },
     getopencodelength: function(pid){
     	var pl = 5;
