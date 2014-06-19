@@ -896,48 +896,6 @@ Class('App', {
         }).mouseout(function(){
         	$(this).removeClass("b_r");
         });
-		
-        $(document).ready(function(){
-       		Y.ajax({
-    	       url:Class.C("url-login-user")+"&rnd=" + Math.random(),
-    	       end:function (data){
-    	           var Y;
-    	           Y = this;
-    	           if (data.error) {
-    	         	  return false;
-    	           }else{
-    					   var obj = eval("(" + data.text + ")");
-    	        		   var code = obj.Resp.code;
-    	        		 
-    						   if (code=="0"){
-    							     var u = obj.Resp.row;
-    								   this.get("#acc_userinfo").html(u.nickid);	  
-    						   }  else{
-    							   logoutLink = function (fn){ 
-    							    	
-    							    	Y.ajax({
-    							        url: Class.C('url-login-out'),
-    							        end:function (data){
-    							            var Y;
-    							            Y = this;
-    							            if (data.error) {
-    							          	  return false;
-    							            }else{
-    							    				   var obj = eval("(" + data.text + ")");
-    							         		   var code = obj.Resp.code;
-    							    					   if (code=="-1"){
-    							    						     var u = obj.Resp.row;
-    							    							   this.get("#acc_userinfo").html("");
-    							    					   }    
-    							            	}
-    							        	}
-    							    	}); 
-    							    };
-    						   }   
-    	           }
-    	       }
-    	});
-    	});
        
 		
 		$("#sdinput").show().removeClass("cur");
@@ -972,7 +930,7 @@ Class('App', {
 			$("#num_header_1").show();
 			if($("#span5").hasClass("span5c")){
 				$("#num_header_1").clearQueue().animate({
-					height:350
+					height:362
 					});
 				
 			}else{
@@ -1081,9 +1039,9 @@ Class('App', {
 			
 			$("#zh_bs_big").keyup(function(){
 	    		this.value=this.value.replace(/\D/g,''); //只能输数字
-	    		this.onMsg('msg_load_expect_list', function (a){
+	    		/*this.onMsg('msg_load_expect_list', function (a){
     	            this.createHTML(a);// 倒计时下载期号后构建
-    	        });
+    	        });*/
 	    	});
 		});
     },
@@ -1619,6 +1577,9 @@ Class('ExpectList', {
         this.setIntInput('#zh_bs', function (){
             Y.setAllBs(Y.getInt(this.value));
         }, 1, 2000);
+        this.setIntInput('#zh_bs_big', function (){
+            Y.setAllBs(Y.getInt(this.value));
+        }, 1, 2000);
         this.setIntInput('#zh_qs', function (){
             Y.selectMulti(Y.getInt(this.value));
         }, 0);
@@ -1789,11 +1750,15 @@ Class('ExpectList', {
          this.expectlistsuc = exlist.join(',');
          if($("#zh_bs_big").val()>1){
         	 this.beishulistsuc = $("#zh_bs_big").val();
-        	 this.allmoney = $("#zh_bs_big").val()*2*listdata.zhushu;
+        	 this.allmoney = $("#zh_bs_big").val()*2*listdata.zhushu*exp_sum;
          }else{
         	 this.beishulistsuc = bslist.join(',');
         	 this.allmoney = bs*2*listdata.zhushu;
          }
+         this.setZhChk(bslist.length > 1);
+         this.allmoney = bs*2*listdata.zhushu;
+         this.expectlistsuc = exlist.join(',');
+         this.beishulistsuc = bslist.join(',');
          this.get('#expect_num').html(exp_sum);
          this.get('#zh_qs').val(exp_sum).attr('data-prev', exp_sum);
          this.get('#sum_m').html(this.allmoney.rmb(false,0));
