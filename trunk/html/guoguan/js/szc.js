@@ -91,8 +91,8 @@ $(function() {
 	tophtml +='<td align="center">排序</td><td >发起人</td><td align="center">战绩</td><td align="right">方案金额</td><td align="center">一等奖</td><td align="center">二等奖</td><td align="center">三等奖</td><td align="center">四等奖</td><td align="center">五等奖</td><td align="center">六等奖</td><td align="center">七等奖</td><td align="right">税前奖金</td><td align="center">详情</td><td align="center">定制跟单</td></tr>';
 	
 	}else if(lotid==50){
-	tophtml='<colgroup><col width="40" /><col width="110" /><col width="97" /><col width="55" /><col width="55" /><col width="60" /><col width="60" /><col width="60" /><col width="60" /><col width="60" /><col width="60" /><col width="60" /><col width="60" /><col width="80" /><col  /><tr class="tr1">';
-	tophtml +='<td align="center">排序</td><td >发起人</td><td align="center">战绩</td><td align="right">方案金额</td><td align="center">一等奖</td><td align="center">二等奖</td><td align="center">三等奖</td><td align="center">四等奖</td><td align="center">五等奖</td><td align="center">六等奖</td><td align="center">七等奖</td><td align="center">八等奖</td><td align="right">税前奖金</td><td align="center">详情</td><td align="center">定制跟单</td></tr>';
+	tophtml='<colgroup><col width="40" /><col width="110" /><col width="97" /><col width="60" /><col width="60" /><col width="60" /><col width="60" /><col width="60" /><col width="60" /><col width="60" /><col width="60" /><col width="60" /><col width="60" /><col  /><tr class="tr1">';
+	tophtml +='<td align="center">排序</td><td >发起人</td><td align="center">战绩</td><td align="right">方案金额</td><td align="center">一等奖</td><td align="center">二等奖</td><td align="center">三等奖</td><td align="center">四等奖</td><td align="center">五等奖</td><td align="center">六等奖</td><td align="right">税前奖金</td><td align="center">详情</td><td align="center">定制跟单</td></tr>';
 	
 	}else if(lotid==51){
 	tophtml='<colgroup><col width="60" /><col width="110" /><col width="97" /><col width="90" /><col width="70" /><col width="65" /><col width="65" /><col width="65" /><col width="65" /><col width="65" /><col width="80" /><col width="80" /><col width="100" /><tr class="tr1">';
@@ -257,7 +257,7 @@ var myguoguan = function(lotid,expect,pn,ps,tp,tr){
 						}else if(lotid==07){
 						html+='<td align="center">0</td><td align="center">0</td><td align="center">0</td><td align="center">0</td><td align="center">0</td><td align="center">0</td><td align="center">0</td>';
 						}else if(lotid==50){
-						html+='<td align="center">0</td><td align="center">0</td><td align="center">0</td><td align="center">0</td><td align="center">0</td><td align="center">0</td><td align="center">0</td><td align="center">0</td>';
+						html+='<td align="center">0</td><td align="center">0</td><td align="center">0</td><td align="center">0</td><td align="center">0</td><td align="center">0</td>';
 						}else if(lotid==51){
 						html+='<td align="center">0</td><td align="center">0</td><td align="center">0</td><td align="center">0</td><td align="center">0</td><td align="center">0</td>';
 						}else if(lotid==52){
@@ -547,7 +547,15 @@ var loadpage = function(lotid,expect,pn,ps,tp,tr) {
 						html+='</td>';
 						html+=isdg?'<td align="right">***</td>':'<td align="right"><a class="a1" href="' + $_sys.getlotpath(lotid) + $_sys.url.viewpath+'?lotid='+lotid+'&projid='+hid+'" target="_blank">'+betnum+'</a></td>';
 						if(info !=""){
-						if(ws.length>9)ws.length=8;
+						
+						if(ws.length>9){
+							if(lotid==50){
+								ws.length=6;
+							}else{
+								ws.length=8;
+							}
+							
+						}
 						for(var i=0;i<ws.length;i++){
 						html+='<td align="center">'+(parseInt(ws[i])>0?('<em>'+ws[i]+'</em>'):ws[i])+'</td>';
 						}
@@ -559,7 +567,7 @@ var loadpage = function(lotid,expect,pn,ps,tp,tr) {
 						}else if(lotid==07){
 						html+='<td align="center">0</td><td align="center">0</td><td align="center">0</td><td align="center">0</td><td align="center">0</td><td align="center">0</td><td align="center">0</td>';
 						}else if(lotid==50){
-						html+='<td align="center">0</td><td align="center">0</td><td align="center">0</td><td align="center">0</td><td align="center">0</td><td align="center">0</td><td align="center">0</td><td align="center">0</td>';
+						html+='<td align="center">0</td><td align="center">0</td><td align="center">0</td><td align="center">0</td><td align="center">0</td><td align="center">0</td>';
 						}else if(lotid==51){
 						html+='<td align="center">0</td><td align="center">0</td><td align="center">0</td><td align="center">0</td><td align="center">0</td><td align="center">0</td>';
 						}else if(lotid==52){
