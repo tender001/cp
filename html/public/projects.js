@@ -2122,7 +2122,7 @@ showduizhen =function (lotid,expect,projid,type,codes,cp){
 								sp=spstr[result*1];
 							}else if(lotid==85){//北单胜平负
 								result=ststr[0].split(":")[0];
-								sp = spvalue;
+								sp = (spvalue*1).toFixed(4);
 							}else if(lotid==86){//北单比分
 								result=ststr[1].split(":")[0];
 								if(result=="90"){
@@ -2134,11 +2134,11 @@ showduizhen =function (lotid,expect,projid,type,codes,cp){
 								}else {
 									result=result.substr(0,1)+":"+result.substr(1,1);
 								}
-								sp=spvalue;
+								sp = (spvalue*1).toFixed(4);
 							}else if(lotid==87){//北单半全场
 								result=ststr[2].split(":")[0];
 								result=result.substr(0,1)+"-"+result.substr(1,1);
-								sp=spvalue;
+								sp = (spvalue*1).toFixed(4);
 							}else if(lotid==88){//北单上下单双
 								var sx=[];
 								  sx[0]="下+双";
@@ -2147,10 +2147,10 @@ showduizhen =function (lotid,expect,projid,type,codes,cp){
 								  sx[3]="上+单";
 								result=ststr[3].split(":")[0];
 								result=sx[result*1];
-								sp=spvalue;
+								sp = (spvalue*1).toFixed(4);
 							}else if(lotid==89){//北单总进球数
 								result=ststr[4].split(":")[0];
-								sp=spvalue;
+								sp = (spvalue*1).toFixed(4);
 							}
 							
 							if(new String(rt.hs).length==0 || new String(rt.vs).length==0){
