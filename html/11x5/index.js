@@ -1239,6 +1239,7 @@ Class('App', {
             	Y.get("#expectListBox").hide();
             }
             if(b==2){
+            	$("#tzzh").show();
             	Y.postMsg('gjzh_cs_change');
                 if(listdata.zhushu>1){
                 	Y.alert("您好，高级追号功能只支持单注投注方案!");
@@ -1250,6 +1251,7 @@ Class('App', {
                 	return false;
                 }  	
             }if(b==1){
+            	$("#tzzh").show();
             	$("input[mark=chkexp]").each(function(x,y){
             		if($(y).attr("checked")){
             			$(y).click();
@@ -1257,6 +1259,9 @@ Class('App', {
             		}
             	})	
             }
+           if(b == 0){
+        	   $("#tzzh").hide();
+           }
 
         }; 
 		// inputTabs = this.lib.Tabs({
@@ -2250,7 +2255,7 @@ Class('openCodeList', {
     		}else{
     			ul = this.get('.opencodebox', "#opencodelist").slice(i);
     		}
-    		ul.attr("expect",ld[i].p).attr("endtime",ld[i].t).attr("ol",0).attr("codes","");
+    		//ul.attr("expect",ld[i].p).attr("endtime",ld[i].t).attr("ol",0).attr("codes","");
         	
         	if(i%1==0){
         		ul.attr("expect",ld[i].p).attr("endtime",ld[i].t).attr("ol",0).attr("codes","").toggleClass("odd");
