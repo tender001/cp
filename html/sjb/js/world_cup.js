@@ -4,10 +4,58 @@ Class({
     index:function (config){
     	
     	this.carousel();//焦点图滚动
-    
+    	this.loadView();//猜冠军赔率
     	
 
     },
+    loadView:function(){
+		var that = this;
+		 $.ajax({
+				url:"/cpdata/match/jcmc/gj.xml",
+				type:"GET",
+				dataType:"xml",
+				data : {},
+				success:function(xmlDoc){
+				 	var n=$_base_s.getXMLNodes(xmlDoc,["match"]);
+					var code=n[0].getAttribute("code");
+					var desc=n[0].getAttribute("desc");
+					if(code==0){
+						var html_cgj = '';
+					
+				
+						
+						var items = $_base_s.getXMLNodes(xmlDoc,["row"]);
+						
+//						for(var i = 0;i<items.length;i++){
+//							temp.push(new map(parseInt(items[i].getAttribute('mid')),items[i]));
+//						}
+//						temp = that.mapSort(temp);
+//						if(items.length<1){
+//							return 
+//						}
+						for(var i = 0;i<items.length;i++){
+							var mid=items[i].getAttribute('mid');
+							mid=((mid*1<10)?("0"+mid):mid);
+		
+		
+				            if(items[i].getAttribute('mid')*1<4){
+				            	html_cgj +='<tr ><td><b class="cur">'+mid+'</b></td><td class="td1"><img src="/images/rteam/'+mid+'.png"  alt='+mid+'></td>';
+				            	html_cgj +='<td class="td2"><a href="/worldcup/" target="_blank">'+items[i].getAttribute('teamname')+'</a></td><td class="td3">'+items[i].getAttribute('sp')+'</td></tr>';
+				            	
+				            }else if(items[i].getAttribute('mid')*1<7){
+				            	html_cgj +='<tr ><td><b>'+mid+'</b></td><td class="td1"><img src="/images/rteam/'+mid+'.png"  alt='+mid+'></td>';
+				            	html_cgj +='<td class="td2"><a href="/worldcup/" target="_blank">'+items[i].getAttribute('teamname')+'</a></td><td class="td3">'+items[i].getAttribute('sp')+'</td></tr>';
+				            }
+						}
+						$("[mark=sjbcgj]").html(html_cgj);
+						
+					
+			    	}else{
+			    		alert('数据获取失败！');
+			    	}
+		 		}
+		 });
+	},
     carousel:function(){
 		var sWidth = $("#flash_outer").width(); 
 		var len = $("#flash_num li").length; 
@@ -29,17 +77,6 @@ Class({
 			$(this).stop(true,false).animate({"opacity":"0.2"},300);
 		});
 
-//		$("#focus .pre").click(function() {
-//			index -= 1;
-//			if(index == -1) {index = len - 1;}
-//			showPics(index);
-//		});
-//
-//		$("#focus .next").click(function() {
-//			index += 1;
-//			if(index == len) {index = 0;}
-//			showPics(index);
-//		});
 
 		$("#flash_pic").css("width",(sWidth) * (len));
 		$("#flash_pic").css("position","absolute");
@@ -176,9 +213,7 @@ function count_down(){
 	  document.getElementById("LiveClock1").innerHTML ='<span><b>'+int_day+'</b></span><span><b>'+int_hour+'</b></span><span><b>'+int_minute+'</b></span>';
 	  setTimeout("count_down()",1000);
 	}else{
-	  time_day.innerHTML = "00";
-	  time_hour.innerHTML = "00"; 
-	  time_minute.innerHTML = "00"; 
+		
 	  $(".djs_title").html("活动进行时")
 	}
 }
