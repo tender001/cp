@@ -66,7 +66,7 @@ Class.C('lot_data_wanfa',{
     104: '五星直选玩法：每位至少选1个号码，与开奖号的全部5个号码按位相符即中奖100,000元。 ',
     124: '五星通选玩法：每位至少选1个号码,与开奖号全部按位相符中20440元；与前三或后三位按位相符中220元；与前二或后二位按位相符中20元,兼中兼得。',// r4
     118: '二星和值玩法：至少选择1个和值，猜中开奖号最后2位数字之和，奖金50元（对子奖金100元）。',// r5
-    111: '大小单双玩法：大小单双：每位选择1个属性，同时猜中开奖号十位和个位的大小单双属性即中奖4元。',// r6
+    111: '大小单双玩法：大小单双：每位选择1个属性，同时猜中开奖号十位和个位的大小单双属性即中奖4元。'// r6
 });
 Class.C('lot_sub',{// 
 	124: ['_add124', '#xs_5xtx', '#wxtx_area', '5xtx',4,14],    //五星通选
@@ -286,7 +286,164 @@ Class('App', {
 				$("#showkaijiang").html("展开");
 			}
 			
-		})
+		});
+    	$("#num_header_1").css({
+    		"height":0,
+    		"overflow":"hidden"
+    		});
+		
+		$("#span5").click(function(){
+			$("#span5").toggleClass("span5c");
+			$("#num_header_1").show();
+			if($("#span5").hasClass("span5c")){
+				$("#num_header_1").clearQueue().animate({
+					height:330
+					});
+				
+			}else{
+				
+				$("#num_header_1").animate({
+					height:0
+					
+					});
+			}
+			
+		});
+		$("#input_ok").click(function(){
+			var codevalue=$("#inputtext").val().replaceAll(" ",",");
+			
+			var a, b, code, id, len, ini,sp;
+			id = Y.getPlayId();
+			ini = Class.C('lot_data')[id];
+			sp = ini[3] || ',';
+			n=codevalue.split("\n").length;
+			
+			if(id>248&&id<256){
+				if(!(Y.checksdinput(id-247))){
+					return;
+				}
+			}else if(id==244){
+				if(!(Y.checksdinput(1))){
+					return;
+				}
+			}else if(id==247||id==245){
+				if(!(Y.checksdinput(2))){
+					return;
+				}
+			}else if(id==248||id==246){
+				if(!(Y.checksdinput(3))){
+					return;
+				}
+			}
+			 
+			code =[]
+			var m=0;
+			for(var i=0;i<n;i++){
+				if(codevalue.split("\n")[i]!=""){
+				code[m++] =[codevalue.split("\n")[i].split(","),Y.getPlayId(),1];
+				}
+				
+				
+				
+				if (!ini[3]) {
+					var zxcode=codevalue.split("\n")[i];
+					
+				}
+				
+			}
+			
+			
+			code.each(function (arr){
+				if(arr!=""){
+					if (sp==='|') {//直选修饰
+					arr[0] = arr[0].concat('-', '-', '-', '-', '-').slice(0, 5);
+					}
+				   arr[0] = String.zero(arr[0].join(sp));
+				
+				}
+				
+			});
+		
+			sdinput.close();
+			Y.postMsg('msg_put_code', code);
+		
+		});
+		$("#shuzi").focus(function(){
+			var shuzi  = $("#shuzi").val();
+			if(shuzi != ""){
+				shuzi=$("#shuzi").val().replace(/\D/g,'')
+				$("#shuzi").val(shuzi);
+			}
+			
+			$("#shuzi").keyup(function(){
+	    		this.value=this.value.replace(/\D/g,''); //只能输数字
+	    	});
+		});
+		$("#zh_bs_big").focus(function(){
+			var zh_bs_big  = $("#zh_bs_big").val();
+			if(zh_bs_big != ""){
+				$("#zh_bs_big").val();
+			}
+			
+			$("#zh_bs_big").keyup(function(){
+	    		this.value=this.value.replace(/\D/g,''); //只能输数字
+	    		/* this.onMsg('msg_load_expect_list', function (a){
+	    	            this.createHTML(a);// 倒计时下载期号后构建
+	    	        });  */
+	    	});
+		});
+		$("#shuzi").blur(function(){
+			var shuzi  = $("#shuzi").val();
+			if(shuzi=shuzi.replace(/\D/g,'')){
+					$("#shuzi").val(shuzi+"注");
+			}
+		});
+    },
+    checksdinput:function(num){
+		var codevalue=$("#inputtext").val().replaceAll(" ",",");
+		var rest;
+		var code=[];
+		if(codevalue.split("\n").length>400){
+		   Y.alert("录入号码太多，超过400注无法投注");  
+		   return false;
+		
+		}
+		for(var i=0;i<codevalue.split("\n").length;i++){
+				
+				var sdvalue=codevalue.split("\n")[i];
+				if(sdvalue !=""){
+			
+					for(var m=0;m<num;m++){
+					if(typeof sdvalue.split(",")[num] != "undefined"){
+						Y.alert("第"+(i+1)+"行号码格式不正确,请检查!");
+						return false;
+					
+					}
+					 if(sdvalue.split(",")[m]<12&&sdvalue.split(",")[m]>0){
+						rest=true;
+						code[m]=sdvalue.split(",")[m];
+					}else{
+						Y.alert("第"+(i+1)+"行号码格式不正确,请检查!");
+						return false;
+					}
+					
+					
+				}
+			}
+			
+				
+		}
+		if(code.length>1){
+				code.sort();  
+				for(var i=0;i<code.length;i++){  
+				if (code[i]==code[i+1]){  
+				   Y.alert("重复号码："+code[i]);  
+				   return false;
+				}  
+			}
+			}  
+		return rest;
+	/*}*/
     	$("#yxzx_area b").mouseover(function(){
     	  	$(this).addClass("b_r").siblings().removeClass("b_r");
     	  }).mouseout(function(){
@@ -301,7 +458,11 @@ Class('App', {
             panel: '#code_list',
             clearBtn: '#clear_list,clear_list1',
             zsSpan: '#single_zs',
-            moneySpan: '#single_m'
+            moneySpan: '#single_m',
+            setdan: '#setdanma',
+            setdan_i: '#setdanma_i',
+            danma:'#danma',
+            danmas:'#danma input'
         });
         this.addChoose = this.getNoop();
     },
@@ -318,10 +479,8 @@ Class('App', {
             put: '#put_107',
             clear:'#clear_107',
             rnd1: '#s1_jx1',
-            rnd5: '#s1_jx5',
-            rnd10: '#s1_jx10',
-            rnd15: '#s1_jx15',
-            rndhz: '#hz_jx'
+            jixuan: '#jixuan'
+           // rndhz: '#hz_jx'
         });
         this._add107 = this.getNoop();
     },
@@ -459,7 +618,7 @@ Class('App', {
         Y =this;
         //玩法切换
         playTabs = this.lib.Tabs({
-            items: '#play_tabs li',
+            items: '#play_tabs a',
             contents:
             Class.C('lot_sub')[116][1]+','+Class.C('lot_sub')[145][1]+','+Class.C('lot_sub')[146][1]+','+
             Class.C('lot_sub')[107][1]+','+Class.C('lot_sub')[106][1]+','+Class.C('lot_sub')[105][1]+','+
@@ -469,8 +628,10 @@ Class('App', {
         });
         var z=0;
         playTabs.onchange= function (a, b){
+        	$("#num_header_1").css('height','0');
+        	$("#span5").removeClass("span5c");
         	Y.get('#xuanhao .nxhm , #dxds_area').hide();
-        	var pid = this.get('#play_tabs li').slice(b, b+1).attr("value");
+        	var pid = this.get('#play_tabs a').slice(b, b+1).attr("value");
         	Y.get("#wanfatishi").html(Class.C('lot_data_wanfa')[pid]);
         	switch(b){
         		case 0:
@@ -524,13 +685,11 @@ Class('App', {
 //        			$("#hezhijx").hide();
         			break;
         	}
-        	var pid = this.get('#play_tabs li').slice(b, b+1).attr("value");
+        	var pid = this.get('#play_tabs a').slice(b, b+1).attr("value");
         	Class.C('playid', pid);
-        	//z==0? '':this.postMsg("opencodelist_getlistdata");
         	z==0? '':this.postMsg("show_opencodelist");
         	z++;
         	Y[Class.C('lot_sub')[pid][0]]();
-        	//Y.postMsg('msg_lottery_stop');
         };
         
         playTabs.focus(3);
@@ -540,16 +699,24 @@ Class('App', {
         
         //追号切换
         zhTabs = this.lib.Tabs({
-            items: '#zh_tabs b',
+            items: 'div.ncathtype label',
             focusCss: 'cm_cur',
-            contents: '#zh_tabs1,#zh_tabs2'
+            contents: '#ss,#zh_tabs1,#zh_tabs2'
         });
-        
         zhTabs.onchange= function (a, b){
-        	var zid = this.get('#zh_tabs li').slice(b, b+1).attr("value");
+        	$("#num_header_1").css('height','0');
+        	$("#span5").removeClass("span5c");
+        	var zid = this.get('#zh_tabs a').slice(b, b+1).attr("value");
             Class.C('zhid', zid);
             var listdata = Y.postMsg('msg_get_list_data').data;
-            if(b==1){
+            if(b!=0){
+            	Y.get("#expectListBox").show();
+            }else{
+            	Y.get("#expectListBox").hide();
+            	$("#tzzh").hide();
+            }
+            if(b==2){
+            	$("#tzzh").show();
             	Y.postMsg('gjzh_cs_change');
                 if(listdata.zhushu>1){
                 	Y.alert("您好，高级追号功能只支持单注投注方案!");
@@ -560,8 +727,16 @@ Class('App', {
                 	zhTabs.focus(0);
                 	return false;
                 }  	
+            }if(b==1){
+            	$("#tzzh").show();
+            	$("input[mark=chkexp]").each(function(x,y){
+            		if($(y).attr("checked")){
+            			$(y).click();
+            			$(y).click();
+            		}
+            	})	
             }
-        }; 
+        };
     },
     getopencodelength: function(pid){
     	var pl = 5;
@@ -675,7 +850,7 @@ Class('BuyProject', {
             var opts = this.one('#jh_opts').options;
             opts.length = 0;
             list1.each(function (item){
-                opts.add(new Option(item.pid + (item.iscurrent ? '[当前期]' : ''), item.pid, 0, 0))
+                opts.add(new Option(item.pid, item.pid, 0, 0))
             });
             this.get('#maxJhZh').html(opts.length);
             this.get('#maxJhZh2').html(opts.length);
@@ -972,6 +1147,9 @@ Class('ExpectList', {
         this.setIntInput('#zh_bs,#jh_bs', function (){
             Y.setAllBs(Y.getInt(this.value));
         }, 1, 999);
+        this.setIntInput('#zh_bs_big,#jh_bs', function (){
+            Y.setAllBs(Y.getInt(this.value));
+        }, 1, 999);
         this.setIntInput('#zh_qs', function (){
             Y.selectMulti(Y.getInt(this.value));
         }, 0);
@@ -1217,7 +1395,7 @@ Class('ExpectList', {
     },
   tableTpl:['<ul class="cm_11ydj_zhtext clear {$bg}" expect="{$expect}" endtime="{$endtime}" >'+
             '<li class="cm_w35 cm_align_center"><span>{$index}</span></li>'+
-            '<li class="cm_w148"><label class="{$curCss}" for="exp_{$id}"><input type="checkbox" class="i-cr" {$chk} value="{$expect}" id="exp_{$id}"/>{$expect}期{$cur}</label></li>'+
+            '<li class="cm_w148"><label class="{$curCss}" for="exp_{$id}"><input type="checkbox" mark="chkexp" class="i-cr" {$chk} value="{$expect}" id="exp_{$id}"/>{$expect}期{$cur}</label></li>'+
             '<li class="cm_w83"><input type="text"  value="{$bs}" class="cm_dz_input cm_zhxg_input" name="zh" maxlength="4" id ="id_{$id}" disabled={$disabl}/>倍</li>'+
             '<li class="cm_w80"><em class="cm_red">{$m}</em>元&nbsp;<i class="cm_gray">|</i>&nbsp;<em>--</em></li>'+
             '<li class="cm_w81 cm_align_center"><em>--</em> </li>'+
@@ -1392,26 +1570,18 @@ Class('Ball>Single', {
 	            Y.random("1");
 	        });
        }
-       if(ini.rnd5!='' && ini.rnd5!=undefined){
-	        this.need(ini.rnd5).click(function (){
-	            Y.random("5");
-	        });
+       if(ini.jixuan!='' && ini.jixuan!=undefined){
+	       this.need(ini.jixuan).click(function (){
+	          	var shuzi = $("#shuzi").val();
+	          	shuzi=$("#shuzi").val().replace(/\D/g,'');
+	          	Y.random(shuzi);
+	          });
        }
-       if(ini.rnd10!='' && ini.rnd10!=undefined){
-	        this.need(ini.rnd10).click(function (){
-	            Y.random("10");
-	        });
-       }
-       if(ini.rnd15!='' && ini.rnd15!=undefined){
-	        this.need(ini.rnd15).click(function (){
-	            Y.random("15");
-	        });
-       }
-       if(ini.rndhz!='' && ini.rndhz!=undefined){
+      /* if(ini.rndhz!='' && ini.rndhz!=undefined){
 	        this.need(ini.rndhz).click(function (){
 	            Y.random("1");
 	        });
-      }
+      }*/
         this.need(ini.put).click(function (){
             var code, count, min;
             count = Y.getCount();
@@ -1639,9 +1809,56 @@ Class('CodeList', {
         this.clearBtn = this.need(config.clearBtn);
         this.bsid =config.beishu;
         this.clearBtn.click(function (e, Y){
-            Y.clearLine()
+            Y.clearLine();
+            $("#zh_bs_big").val(1);
         });
+        /*this.clearBtn1 = this.need(config.clearBtn1);
+        this.clearBtn1.click(function (e, Y){
+            Y.clearLine();
+        });
+        //选中行
+        this.prevSelectedLine = null;
+        this.panel.live('li', 'click', function (e, y){
+            if (!Y.prevSelectedLine || Y.prevSelectedLine != this) {
+                Y.get(Y.prevSelectedLine).removeClass('list-Selected').get(this).addClass('list-Selected');
+                Y.prevSelectedLine = this;
+            }
+            if (!Y.stopRedraw) {
+                Y.postMsg('msg_redraw_code', Y.get(this).data('code'));
+            }            
+        });*/
+        Y.get("#zh_bs_big").keyup(function(){
+        	Y.bschangess(Y.get(this).val());
+        });
+        Y.get("#zh_bs_add").click(function(){
+        	var zh_bs_big = $("#zh_bs_big").val();
+			zh_bs_big == zh_bs_big++;
+			if(zh_bs_big < 999){
+				 $("#zh_bs_big").val(zh_bs_big);
+			}else if(zh_bs_big >= 999){
+				 $("#zh_bs_big").val(999);
+			}
+			 $("#zh_bs_big").val(zh_bs_big);
+        	Y.bschangess($("#zh_bs_big").val());
+//        	Y.onMsg('msg_load_expect_list', function (a){
+//                
+//            }); 
+        	Y.postMsg('msg_get_list_data').data;// 倒计时下载期号后构建
+		});
+        Y.get("#zh_bs_reduce").click(function(){
+        	var zh_bs_big = $("#zh_bs_big").val();
+			zh_bs_big == zh_bs_big--;
+			if(zh_bs_big > 1){
+				 $("#zh_bs_big").val(zh_bs_big);
+			}else if(zh_bs_big == 1){
+				 $("#zh_bs_big").val(1);
+			}
+			
+        	Y.bschangess($("#zh_bs_big").val());
+        	
+		});
     },
+    
 addCode: function (code){
     var one, li;
     if (code.length) {
@@ -1655,7 +1872,7 @@ addCode: function (code){
             li.setStyle('cursor:pointer');
             this.need('s', li).click(function (e, Y){
                 Y.removeLine(Y.get(this).parent(function (el){
-                    return el.nodeName.toLowerCase() == 'li'
+                    return el.nodeName.toLowerCase() == 'li';
                 }))
             })
         }
@@ -1693,6 +1910,28 @@ change: function (zhushu){// 变化
         beishu: this.beishu,
         totalmoney: this.totalmoney
     })//注数变化消息, 购买选项类应该监听这个消息
+},
+bschangess: function (beishu){//变化
+//  this.zsSpan.html(zhushu);
+//  this.zhushu = zhushu;
+	
+	
+	Y.get("#zh_bs").val(beishu);
+	this.beishu=beishu;
+	 this.totalmoney = this.zhushu*beishu*Class.config('price');
+  this.moneySpan.html(this.totalmoney.rmb(false,0));
+  this.beishulistsuc=beishu;
+//  this.postMsg('msg_list_change', {
+//      zhushu: this.zhushu,
+//      beishu: beishu,
+//      totalmoney: this.totalmoney
+//  });// 广播注数变化消息, 购买选项类应该监听这个消息
+  $("input[mark=chkexp]").each(function(x,y){
+		if($(y).attr("checked")){
+			$(y).click();
+			$(y).click();
+		}
+	});
 },
 getCount: function (){// 计算总注数
     var Y = this;
@@ -1781,7 +2020,7 @@ Class('openCodeList', {
     	var pid = this.getPlayId();
     	var dl = this.listdata.length;
     	var lpid = this.listdata[dl-1];
-    	var llpid = this.listdata[dl-2];
+    	var llpid = this.listdata[dl-1];
     	var npid = this.getnextpid(lpid.p);
     	var net;
     	if((npid+"").substr(6,3)=="001"){
@@ -1797,15 +2036,16 @@ Class('openCodeList', {
     		}
     	}
     	
-    	this.get('#lastopenexpect').html(llpid.p);    		
-		var ctpl = '<b class="ssb1">{1}</b><b class="ssb2">{2}</b><b class="ssb3">{3}</b><b class="ssb4">{4}</b><b class="ssb5">{5}</b>';
+    	this.get('#lastopenexpect').html(llpid.p);  
+    	this.get('#lastopendata').html('（{1}）'.format(llpid.t));
+		var ctpl = '<em class="ssb1">{1}</em><em class="ssb2">{2}</em><em class="ssb3">{3}</em><em class="ssb4">{4}</em><em class="ssb5">{5}</em>';
 		var llcc=llpid.c.split(",");
 		this.get('#lastopencode').html(ctpl.format(llcc[0],llcc[1],llcc[2],llcc[3],llcc[4]));
     	var st = 0; //开奖倒计时
     	if(npid!=this.C('currentExpect')){
     		st = 1; //开奖倒计时
     		this.get('#lastopenexpect').html(lpid.p);    		
-    		var ctpl = '<b class="ssb1">{1}</b><b class="ssb2">{2}</b><b class="ssb3">{3}</b><b class="ssb4">{4}</b><b class="ssb5">{5}</b>';
+    		var ctpl = '<em class="ssb1">{1}</em><em class="ssb2">{2}</em><em class="ssb3">{3}</em><em class="ssb4">{4}</em><em class="ssb5">{5}</em>';
     		var llcc=lpid.c.split(",");
     		this.get('#lastopencode').html(ctpl.format(llcc[0],llcc[1],llcc[2],llcc[3],llcc[4]));  
     	}
@@ -1832,7 +2072,12 @@ Class('openCodeList', {
     	var ld = this.listdata.slice(dl-8, dl);
     	for(var i=0; i<ld.length; i++){
         	var ul = this.get('.opencodebox',Class.C('lot_sub')[this.getPlayId()][1]).slice(i);
-        	ul.attr("expect",ld[i].p).attr("endtime",ld[i].t).attr("ol",0).attr("codes","");
+        	if(i%1==0){
+        		ul.attr("expect",ld[i].p).attr("endtime",ld[i].t).attr("ol",0).attr("codes","").toggleClass("odd");
+        	}else{
+        		ul.attr("expect",ld[i].p).attr("endtime",ld[i].t).attr("ol",0).attr("codes","");
+        	}
+        	/*ul.attr("expect",ld[i].p).attr("endtime",ld[i].t).attr("ol",0).attr("codes","");*/
         	var opencode = ld[i].c;
         	var opencodelen = 5;
         	if(opencode!=""){
