@@ -277,6 +277,7 @@ Class('App', {
         
         this.addChoose();
     	this.addTabs();
+    	 Y.get("#zh_bs_big").val(1);
     	this.get("#showkaijiang").click(function(){
 			$("#kaijianginfo").toggle();
 			$("#showkaijiang").toggleClass("cur");
