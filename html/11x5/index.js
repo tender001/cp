@@ -285,7 +285,8 @@ Class('SendBuy', {
                 return Y.alert('您好，' + Y.C('lot_name_ch') + '暂时停售, 请选择其它彩种投注。');
             }
             Y.chkBuy();
-        })
+           
+        });
     },
     chkBuy: function (){
         var elist, list, Y;
@@ -313,7 +314,7 @@ Class('SendBuy', {
 	                        expectnum: elist.beishulistsuc.split(',').length,
 	                        money: list.totalmoney.rmb(),
 	                        stop: $_sys.zhflag[Y.get('#tzzh').val()],
-	                        totalmoney: elist.allmoney.rmb()
+	                        totalmoney: elist.allmoney.rmb(),
 	                    }), function (){
 	                        Y.send(elist);
 	                    });
@@ -881,6 +882,7 @@ Class('App', {
         this.addChoose();
         this.addTabs();
         Y.exportCode();
+        Y.get("#zh_bs_big").val(1);
         $("#renxuan b").mouseover(function(){
         	$(this).addClass("b_r").siblings().removeClass("b_r");
         	//$(this).addClass("style='display: none;'");
@@ -1006,6 +1008,7 @@ Class('App', {
 	    	});
 		});
 		$("#zh_bs_big").focus(function(){
+			//this.value(1);
 			var zh_bs_big  = $("#zh_bs_big").val();
 			if(zh_bs_big != ""){
 				$("#zh_bs_big").val();

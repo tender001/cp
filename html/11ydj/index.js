@@ -891,6 +891,7 @@ Class('App', {
         this.addChoose();
         this.addTabs();
         Y.exportCode();
+        Y.get("#zh_bs_big").val(1);
         $("#renxuan b").mouseover(function(){
         	$(this).addClass("b_r").siblings().removeClass("b_r");
         }).mouseout(function(){
