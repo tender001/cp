@@ -2170,8 +2170,47 @@ showduizhen =function (lotid,expect,projid,type,codes,cp){
 							
 							if(codes.split(";").length>1){
 								bet_str="";//得到投注选项
-								ggstr2=ggstr=codes.split(";")[0].split("|")[2].replaceAll("\\*","串");
+								arr_bet=codes.split("|");
+								bet_str=arr_bet[1];//得到投注选项
+								if(bet_str.indexOf("$")!=-1){
+									dan=bet_str.split("$")[0];
+									bet_str=bet_str.replace("$",",");
+									
+									dan_bet=dan.split(",");
+									var dan_len=dan_bet.length;
+									for(var c=0;c<dan_len;c++){
+										var darr=dan_bet[c].split("=");
+											if(darr[0]*1==id*1){
+												dan='<s style="color:red">√</s>';
+												dstr='(胆)';
+												break;
+											}else{
+												dan='×';
+												dstr='';
+											}
+									}
+								}
+								bet_str=bet_str.replaceAll("/"," ");
+								arr_bet=bet_str.split(",");
 								
+								var bet_len=arr_bet.length;
+								
+								for(var b=0;b<bet_len;b++){
+									var barr=arr_bet[b].split("=");
+									if(barr[0]*1==id*1){
+										bet_str=barr[1];
+										break;
+									}else{
+										bet_str=barr[1];
+									}
+								}
+//								ggstr2=ggstr=codes.split(";")[0].split("|")[2].replaceAll("\\*","串");
+								var ggs=[];
+								codes.split(";").each(function(cd){
+										ggs.push(cd.split("|")[2].replaceAll("\\*","串"));
+								});
+								
+								ggstr2=ggstr=$_base_s.uniq(ggs);
 							}else{
 								
 							var arr_bet;
@@ -2232,6 +2271,9 @@ showduizhen =function (lotid,expect,projid,type,codes,cp){
 								cls="";
 							}
 						  }	
+							
+							
+							
 							if(lotid==90||lotid==72){
 								var cksp=spvalue.split(",");
 								bet3=cksp[0];
