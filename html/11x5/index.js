@@ -314,7 +314,7 @@ Class('SendBuy', {
 	                        expectnum: elist.beishulistsuc.split(',').length,
 	                        money: list.totalmoney.rmb(),
 	                        stop: $_sys.zhflag[Y.get('#tzzh').val()],
-	                        totalmoney: elist.allmoney.rmb(),
+	                        totalmoney: elist.allmoney.rmb()
 	                    }), function (){
 	                        Y.send(elist);
 	                    });
