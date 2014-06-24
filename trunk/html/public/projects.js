@@ -3385,7 +3385,7 @@ zcduizhen =function (lotid,expect,projid,type){
 						bet_strarray.push(arr_bet[i*2+1]);
 						
 						resultarray.push(result[0]);
-						resultarray.push(result[1]);
+						resultarray.push(result[1]===undefined?"*":result[1]);
 					}else{
 						bet_strarray.push((bet_str)+dan);
 						resultarray.push(result);
