@@ -1765,10 +1765,10 @@ Class('ExpectList', {
          this.expectlistsuc = exlist.join(',');
          this.beishulistsuc = bslist.join(',');
 
-        // this.get('#zh_qs').val(n).attr('data-prev', n);
-         /*this.get('#expect_num').html(exp_sum);
+         this.get('#zh_qs').val(n).attr('data-prev', n);
+         this.get('#expect_num').html(exp_sum);
          this.get('#zh_qs').val(exp_sum).attr('data-prev', exp_sum);
-         this.get('#sum_m').html(this.allmoney.rmb(false,0));*/
+         this.get('#sum_m').html(this.allmoney.rmb(false,0));
      },
     setCurTopmost: function (expect, now, endtime){//当期至顶
          var n, trp;
