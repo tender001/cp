@@ -491,8 +491,9 @@ Class({
             ctpl = Class.C('time_style_ctpl');
             ctpl2 = Class.C('time_style_ctp2');
         }else{
-            ctpl = '<em style="width:50px;"><b class="cm_red arial">{1}</b>天</em><em><b class="cm_red arial">{2}</b>小时</em><em><b class="cm_red arial">{3}</b>分</em>';
-            ctpl2 = '<em style="width:50px;"><b class="cm_red arial">{2}</b>小时</em><em><b class="cm_red arial">{3}</b>分</em><em><b class="cm_red arial">{4}</b>秒</em>';
+        
+        	ctpl = '<em >{1}</em><i>天</i><em>{2}</em><i>时</i><em>{3}</em><i>分</i>';
+            ctpl2 = '<em >{2}</em><i>时</i><em>{3}</em><i>分</i><em>{4}</em><i>秒</i>';
         }
         timebar = this.get('#countDownSpan');// 显示板
         if (info&&$("#responseJson #endTime").val()!='') {
