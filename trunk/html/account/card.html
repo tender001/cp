@@ -15,7 +15,7 @@
 <script type="text/javascript" src="/public/menu.js"></script>
 <script type="text/javascript" src="/public/159cp.js"></script>
 <script type="text/javascript" src="/public/chklogin.js"></script>
-<script type="text/javascript" src="/account/js/card.js?m=20140617"></script>
+<script type="text/javascript" src="/account/js/card.js?m=20140625"></script>
 </head>
 <body>
 	<!--#include virtual="/cc/header.html"-->
@@ -51,7 +51,7 @@
 									第一步： 选择充值卡类型<em>(服务商收取4%手续费用)</em>
 								</p>
 							</div>
-							<div class="phone_pp" id="mobilecard">
+							<div class="phone_pp" id="cardtypeid">
 								<ul>
 									<li style="cursor: pointer" onclick="setType(1,3)" name="cardtype" value="CMJFK" class="cur"><img
 										src="/images/cai888/sjczbj_03.jpg"
@@ -157,6 +157,44 @@
 		</div>
 	</div>
 	<!--#include virtual="/cc/footer.html"-->
+<div class="caitan" style="width:420px" id="ccts">
+<div class="tantop">
+<span>充值提示</span><a mark="cctsclose"></a>
+</div>
+<div class="caitain" id="cctsdiv">
+<div class="gs_stp">
+<p >充值金额：充值卡面额<font id="cardmoney"></font>元，实际到账<font id="czmoney"></font>元<br>
+充值卡卡号：<font id="cardno"></font><br>
+充值卡密码：<font id="cardpwd"></font><a mark="cctsclose">&gt;返回重填</a><br>
+请确认卡密、面额填写无误，若填写不正确就会导致充值失败</p>
+</div>
+<a class="btn" id="surecc">确认充值</a>
+</div>
+<div class="caitanbm">
+<div class="caitanbm1"></div>
+<div class="caitanbm2"></div>
+</div></div>
+
+<div class="caitan" style="width:420px" id="sdcg">
+<div class="tantop">
+<span>温馨提示</span><a mark="sdcgclose"></a>
+</div>
+<div class="caitain" id="sdcgdiv">
+<div style="padding-top:15px" class="gs_stp">
+<h3 style="color:#444;text-align:center;font-size:12px;line-height:26px;padding:0;height:26px;overflow:hidden;font-weight:bold">收单成功</h3>
+<p>  
+    注意：1.<font>收单成功不代表充值成功</font>。<br>
+     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2.收单成功但没有及时到账，请确认卡号，密码再重新充值。<br>
+     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3.如多次充值均未成功，请查询充值卡里的资金是否被扣<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;除（<a target="_blank" href="http://change.19ego.cn/page/orderQuery.do?way=toPayOrderInfo">立即查询</a>），如被扣除，
+      请联系<a onclick="this.newWindow = window.open('http://chat.live800.com/live800/chatClient/chatbox.jsp?companyID=331528&jid=4618724443&configID=123978', '159彩在线客服', 'toolbar=0,scrollbars=0,location=0,menubar=0,resizable=1,width=710,height=480');this.newWindow.focus();this.newWindow.opener=window;return false;" target="_blank" href="javascript:void(0);">在线客服</a>。</p>
+</div>
+<a class="btn" mark="sdcgclose">确定</a>
+</div>
+<div class="caitanbm">
+<div class="caitanbm1"></div>
+<div class="caitanbm2"></div>
+</div></div>
 
 </body>
 </html>

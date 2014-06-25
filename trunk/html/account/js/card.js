@@ -163,20 +163,29 @@ var setType=function(cursel,n){
 			$("#face_type" + i).show();
 		}
 	}
-	var ty=$("#mobilecard li");
+	var ty=$("#cardtypeid li");
 //	$("#mobilecard li").addClass("cur");
 //	$("#cardm").addClass("cur");
 //	ty[cursel-1].checked="checked";
+//	$("#face_type" + cursel+" li").eq(0).addClass("cur").siblings().removeClass("cur");
 	$(ty[cursel-1]).addClass("cur").siblings().removeClass("cur");
 }
 
 var subform =function (){
 	var tempvalue="";
-	$("li[name=facevalue]").each(function(){
-		if($(this).hasClass("cur")){
-			tempvalue=$(this).attr("value");
+//	if(!$("div.cz_mz").is(":hidden")){
+//	
+//		
+//	}
+	$("div.cz_mz").each(function(){
+		if(!$(this).is(":hidden")){
+			$(this).find("li[name=facevalue]").each(function(){
+				if($(this).hasClass("cur")){
+					tempvalue=$(this).attr("value");
+				}
+			});
 		}
-	});
+	})
 	
 	var typevalue="";
 	$("li[name=cardtype]").each(function(){
@@ -209,7 +218,19 @@ var subform =function (){
 		Y.alert('充值卡密码不能为空');
 		return false;		
 	}
-	Y.ajax({
+	var ccts = Y.lib.MaskLay('#ccts', '#cctsdiv');
+	ccts.addClose('[mark=cctsclose]');//'#smreturn'
+    Y.get('#ccts  div.tantop').drag('#ccts');
+    Y.get("#cardtype").html(typevalue)
+    Y.get("#cardmoney").html(tempvalue);
+    Y.get("#czmoney").html(tempvalue*0.96);
+    Y.get("#cardno").html(cardid);
+    Y.get("#cardpwd").html(passid);
+    ccts.pop();
+	
+	$("#surecc").click(function(){
+		ccts.close();
+		Y.ajax({
 		url :$_user.url.addmoney,
 		type :"POST",
 		dataType :"json",
@@ -219,12 +240,34 @@ var subform =function (){
    		    var code = obj.Resp.code;
    		    var desc = obj.Resp.desc;
 			if (code == "0") {
-				Y.alert('收单成功');
+				var sdcg = Y.lib.MaskLay('#sdcg', '#sdcgdiv');
+				sdcg.addClose('[mark=sdcgclose]');//'#smreturn'
+			    Y.get('#sdcg  div.tantop').drag('#sdcg');
+				
+			    sdcg.pop();
 			} else {
 				//收单失败
 				Y.alert(desc);
 			}
 		}
 	});
+	})
+//	Y.ajax({
+//		url :$_user.url.addmoney,
+//		type :"POST",
+//		dataType :"json",
+//		data :"bankid=9&addmoney="+tempvalue+"&tkMoney="+tempvalue+"&cardnum="+cardid+"&cardpass="+passid+"&dealid="+typevalue+"&v="+Math.random(),
+//		end  : function (d){
+//			var obj = eval("(" + d.text + ")");
+//   		    var code = obj.Resp.code;
+//   		    var desc = obj.Resp.desc;
+//			if (code == "0") {
+//				Y.alert('收单成功');
+//			} else {
+//				//收单失败
+//				Y.alert(desc);
+//			}
+//		}
+//	});
 	
 }
