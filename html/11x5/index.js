@@ -1235,10 +1235,10 @@ Class('App', {
 //            this
             
             if(b!=0){
-            	Y.get("#expectListBox").show();
+            	Y.get("#expectListBox,#tzzh").show();
             }else{
-            	Y.get("#expectListBox").hide();
-            	$("#tzzh").hide();
+            	Y.get("#expectListBox,#tzzh").hide();
+        
             }
             if(b==2){
             	$("#tzzh").show();
