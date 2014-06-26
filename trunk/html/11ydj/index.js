@@ -1252,10 +1252,12 @@ Class('App', {
 //        alert('addTabs_4');
         zhTabs.onchange= function (a, b){     
         	var listdata = Y.postMsg('msg_get_list_data').data;
+        	  
             if(b!=0){
-            	Y.get("#expectListBox").show();
+            	Y.get("#expectListBox,#tzzh").show();
             }else{
-            	Y.get("#expectListBox").hide();
+            	Y.get("#expectListBox,#tzzh").hide();
+        
             }
             if(b==2){
             	Y.postMsg('gjzh_cs_change');
