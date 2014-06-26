@@ -1498,6 +1498,12 @@ Class('LgFilter', {
    	 })
    	Yobj.get('#wdls').click(function(){
    		var lg=Y.get('#lglist input');
+   		$("#wanfa_chk input").each(function(){
+   			if($(this).attr("checked")){
+   			  $this.onchange(this.value, false, 3);
+   			}
+   			
+   		})
    		Y.get("#wanfa_chk input").prop("checked",false);
 	   	if($(this).attr("checked")){
 			lg.prop("checked",false);
