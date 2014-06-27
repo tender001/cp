@@ -73,6 +73,28 @@
                 rqXml: '/cpdata/omi/51/yilou/omission.xml',
                 type: 'qxc'
             });
+            this.bindEvent();
+        },
+        bindEvent:function(){
+        	$("#codeCount").click(function(o){
+
+    			$(this).toggleClass("span5c");
+    			$("#divCount").show();
+    			if($(this).hasClass("span5c")){
+    				$("#divCount").clearQueue().animate({
+    					height:249
+    					});
+    				
+    			}else{
+    				
+    				$("#divCount").animate({
+    					height:0
+    					
+    					});
+    			}
+    			
+    		
+        	})
         },
 
         createSub: function (){
@@ -105,25 +127,28 @@
             //直选
             Y.lib.PLChoose({
                 msgId: 'pt',
-                balls: '#pttz1 ul',
-                showbar: '#pt_showbar',
-                putBtn: '#pt_put',
-                rndOpts:'#pt_jx_opts',
-                clearBtn:'#pt_clear',
-                rnd: '#pt_jx',
+                balls: '#pttz1 div.nx3span',
+                showbar: '#single_bar',
+                putBtn: '#s1_put',
+                rndOpts:'#shuzi',
+                clearBtn:'#s1_clear',
+                rnd: '#jixuan',
+                s1:"#s1_jx1",
 				ddRnd: '#dd_jx',
                 yl:[{
                     width: 10,
                     xml: '/cpdata/omi/51/yilou/wzyl_all.xml',
-                    dom: '#pttz1 ul i'
+                    dom: '#pttz1 div.nxyl i'
                 }]
             });
             // 直选列表
             Y.lib.PLCodeList({
                 msgId: 'pt',
-                panel:'#pt_list',
-                bsInput:'#pt_bs',
+                panel:'#code_list',
+                bsInput:'#zh_bs_big',
                 moneySpan: '#pt_money',
+                addbs:'#pt_addbs',
+                lessbs:'#pt_lessbs',
                 zsSpan: '#pt_zs',
                 clearBtn: '#pt_list_clear'
             });
@@ -197,41 +222,41 @@
 
             //主玩法
             playTabs = this.lib.Tabs({// zx / z6 / z3
-                items:'#playTabsDd li',
+                items:'#playTabsDd [bet]',
                 contents: '#pttz,#dssc',
                 focusCss: 'cur'
             });
 
             //购买方式
             buyTabs = this.lib.Tabs({
-                items:'#all_form b',
+                items:'#all_form label',
                 focusCss:'cur',
-                contents: '#dg_form,#hm_form,#zh_form'
+                contents: '#ptdiv,#hmdiv,#zhdiv'
             });
 
             pn = 'pt,sc'.split(',');
 
             //top3玩法
-            playTabs.onchange = function (a, b){
-                Class.config('play_name', pn[b]);
-                Class.config('playid', 1);
-                this.postMsg('msg_clear_code');//通知清除选择
-                this.get('#all_form').hide(b==2);
-                this.get('#dssc').hide();
-                if (b==1) {
-                    Y.createDs();
-                    this.get('#dssc').show();
-                    Class.config('play_name', 'sc' );
-                    this.postMsg('msg_clear_code');
-                }else{
-                    Y.createZhOptions(this.btns.nodes[b])
-                }
-                buyTabs.btns.show();
-                buyTabs.btns.slice(-1).hide(b==1);
-                buyTabs.focus(b==2?2:0);
-                this.loadEndTime();//同步变换截止时间
-            };
-            playTabs.focus(0);
+//            playTabs.onchange = function (a, b){
+//                Class.config('play_name', pn[b]);
+//                Class.config('playid', 1);
+//                this.postMsg('msg_clear_code');//通知清除选择
+//                this.get('#all_form').hide(b==2);
+//                this.get('#dssc').hide();
+//                if (b==1) {
+//                    Y.createDs();
+//                    this.get('#dssc').show();
+//                    Class.config('play_name', 'sc' );
+//                    this.postMsg('msg_clear_code');
+//                }else{
+//                    Y.createZhOptions(this.btns.nodes[b])
+//                }
+//                buyTabs.btns.show();
+//                buyTabs.btns.slice(-1).hide(b==1);
+//                buyTabs.focus(b==2?2:0);
+//                this.loadEndTime();//同步变换截止时间
+//            };
+//            playTabs.focus(0);
 
             this.onMsg('msg_toogle_nosc', function (isnosc){
                 buyTabs.btns.slice(0, 1).hide(isnosc);//稍后上传只能合买
@@ -250,7 +275,7 @@
                  }else{
                      !c && this.moveToBuy()
                  }
-                 this.get('#all_form p').html(['由购买人自行全额购买彩票','由多人共同出资购买彩票','连续多期购买同一个（组）号码'][b]);
+//                 this.get('#all_form p').html(['由购买人自行全额购买彩票','由多人共同出资购买彩票','连续多期购买同一个（组）号码'][b]);
             };
 		}
     });  
