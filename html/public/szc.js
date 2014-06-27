@@ -1747,6 +1747,16 @@
         },
         bindEvent: function (config){
             var Y = this;
+            this.need(config.addbs).click(function (){
+            	Y.zsInput.val((parseInt(Y.zsInput.val())+1)>99?99:(parseInt(Y.zsInput.val())+1))
+            	 Y.beishu = Y.zsInput.val();
+                Y.change(Y.zhushu)
+            })
+            this.need(config.lessbs).click(function (){
+            	Y.zsInput.val((Y.zsInput.val()-1)>1?(Y.zsInput.val()-1):1)
+            	 Y.beishu = Y.zsInput.val();
+                Y.change(Y.zhushu)
+            })
             this.zsInput = new this.lib.DataInput({
                 input: config.bsInput,
                 min: 1,
@@ -2245,7 +2255,7 @@
     });
 //排列直选选择器
     Class('Choose_base>PLChoose',{
-        showTxt: '[您选择了<font> {$zhushu} </font>注，共<font> {$totalmoney} 元</font> ]',
+        showTxt: '【您选择了<em> {$zhushu} </em>注，共<em> {$totalmoney} 元</em>】',
         maxZs: 10000,
         index:function (ini){
             var hoverCss, focusCss, Y, showbar, startNum;
@@ -2258,8 +2268,8 @@
             startNum = ini.startNum || 0;
             this.get(ini.balls).each(function (ul, i){
                 var tmp = new this.lib.Choose({
-                    items: this.get('li.sup>b', ul),
-                    group: this.get('li.suq em', ul),
+                    items: this.get('span.nsbool b', ul),
+                    group: this.get('span.nsopr b', ul),
                     startNum: startNum,
                     focusCss: focusCss,
                     hoverCss: hoverCss
@@ -2323,7 +2333,12 @@
         // 随机选取
             this.rndOpts = opts = this.need(ini.rndOpts);
             Y.need(ini.rnd).click(function (){
-                Y.random(opts.val());
+                Y.random(opts.val().replace("注","")*1);
+                return false
+            });
+//            机选一注
+            Y.need(ini.s1).click(function (){
+                Y.random(1);
                 return false
             });
 			//定胆机选
@@ -2637,12 +2652,12 @@
             if (ini.hzXml) {
                 this.loadHz(ini.hzXml)
             }
-            this.lib.Tabs({
-                items: '#coolhot a',
-                contents: '#hot,#cold,#grq,#drq',
-                focusCss: 'cur',
-                delay:100
-            });
+//            this.lib.Tabs({
+//                items: '#coolhot a',
+//                contents: '#hot,#cold,#grq,#drq',
+//                focusCss: 'cur',
+//                delay:100
+//            });
         },
         loadSingleXml: function (){// 非排列, eexw, plc
         	red = {};
