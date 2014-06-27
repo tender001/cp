@@ -1879,7 +1879,8 @@
             this.putBtn = this.get(config.putBtn).concat(this.get(config.aiBtn).nodes);
         //接收随机选号命令
             this.onMsg('msg_rnd_code_'+config.msgId, function (){
-                this.random(this.rndOpts.val());
+                this.random($("#jx_dlg_list li").length);
+               
             });
              this.onMsg('msg_clear_code_'+config.msgId, function (){
                  this.clearCode();
