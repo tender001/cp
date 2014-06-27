@@ -6,7 +6,7 @@ Class('Loginer', {// 登陆器
         this.loginDlg.addClose('#flclose','#fclosebtn');// 关闭元素
         this.get('#loginLay div.logtop').drag('#loginLay');
         this.loginDlg.esc = true;
-        this.userMoneys = '#userMoneyInfo,#userMoneyInfo2,#userMoneyInfo3,#userBuyMoneyInfo,#cp_checklogin';// 用户信息显示面板
+        this.userMoneys = '#userMoneyInfo,#userMoneyInfo2,#userMoneyInfo3,#userBuyMoneyInfo,#cp_checklogin,[mark=userMoneyInfo]';// 用户信息显示面板
         this.userBuyMoneys = '#userBuyMoneyInfo,#userBuyMoneyInfo1';// 用户信息显示面板
 		this.addNoop('onlogin,onlogout');
         this.bindEvent(config);
