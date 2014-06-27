@@ -523,9 +523,9 @@ em.uf{ background-image:url(../images/159/uf.gif)}
 .nxhm span{float:left;display:block;height:38px;line-height:38px}
 .nstime{width:130px;padding:0 15px 0 10px;color:#333;font-size:12px;color:#000;padding-top:5px;_padding-top:8px;display:block;height:38px;line-height:38px ; position:absolute;top:51px;left:0px}
 .nstime b{display:inline-block;background: url(../images/159/nx_38.jpg);width:22px;height:20px;text-align:Center;line-height:20px;font-size:16px;color:#333; font-family:Arial;margin:0 2px}
-.nsbool b{ background:url(../images/159/nx_33.jpg);width:37px;height:38px;line-height:38px;text-align:center;margin-right:10px;float:left;color:#000;font-size:22px;font-family:Arial;cursor:pointer}
+.nsbool b{ background:url(../images/159/nx_33.jpg);width:37px;height:38px;line-height:38px;text-align:center;margin-right:13px;float:left;color:#000;font-size:22px;font-family:Arial;cursor:pointer}
 .nsbool b.cur{ background:url(../images/159/nx_30.jpg);color:#fff}
-.nsopr{ background:url(../images/159/nx_36.jpg) 0 3px no-repeat;width:205px;height:32px;margin-left:90px;padding-left:24px;padding-top:3px;overflow:hidden}
+.nsopr{ background:url(../images/159/nx_36.jpg) 0 3px no-repeat;width:205px;height:32px;margin-left:40px;padding-left:24px;padding-top:3px;overflow:hidden}
 .nsopr b{ background:url(../images/159/nx5s_03.jpg);width:25px;height:25px;line-height:25px;text-align:center;color:#e52e04;float:left;margin-left:5px;margin-top:4px;font-weight:100; cursor:pointer}
 .nsopr b:hover{background:url(../images/159/nx5s_06.jpg)}
 .nsopr b.bem{color:#e52e04;float:left;margin-left:10px;cursor:pointer;width:24px;background:none}
@@ -553,9 +553,9 @@ a.asz_tz{margin:0 auto}
 .kc_td_kj table thead td.td1{border-right:none;font-size:12px;color:#888; font-family: Arial}
 .kc_td_kj table tbody td{font-size:12px;color:#444}
 .kc_td_kj table thead td{font-size:12px}
-.nx3span{zoom:1;padding:8px 0 0px 70px;clear:both}
+.nx3span{zoom:1;padding:8px 0 0px 137px;clear:both}
 .nxhm span.nsbools{height:auto;width:295px;padding-bottom:15px;padding-right:20px}
-.nxhm span.nsbools b{margin-bottom:6px}
+.nxhm span.nsbools b{margin-bottom:6px;margin-right:11px;}
 .nxhm span.nsboolss{padding-right:0;width:275px;height:auto}
 .nxhm span.nsboolss b{margin-right:7px;}
 .nav{height:40px}
@@ -605,7 +605,7 @@ span.sz_a_l a.cur{background:url(../images/cai888/nwx5_11.jpg) repeat scroll 0 0
 .nxdsc b.cur,.nxdsc b:hover{ background:url(../images/159/nsc1_13.jpg);color:#fff}
 .nxtable tr td.td3{padding-left:15px}
 .nxhm span.sscbool{padding:0 50px 10px 20px;height:auto}
-.sscbool b{margin-bottom:5px;}
+.sscbool b{margin-bottom:5px;margin-right:10px}
 .nxhm span.nsws{width:49px;height:24px; background:url(../images/159/nxws_03.jpg);text-align:Center;line-height:24px;color:#ff6600;margin-top:8px;margin-right:15px}
 .ns3span{padding-bottom:0}
 .nxtable tr td.tde{padding-left:65px}
@@ -1669,6 +1669,7 @@ a.n_gz{color:#fff}
 .nwx5{border:1px solid #ccc;border-top:4px solid #ff6600}
 .nwx5top{height:60px;background: url(../images/cai888/nwx5_03.jpg);border-bottom:1px solid #ccc}
 .nwx5top a{display:block;float:left;height:60px;padding:0 15px;border-right:1px solid #ccc;_width:34px;_padding:0 13px}
+.nwssctop a{padding:0 22px}
 .nwx5top a:hover,.nwx5top a.cur{background:#ff6600}
 .nwx5top a b{color:#333;font-weight:bold;text-align:Center;display:block;font-size:14px;line-height:22px;height:22px;padding-top:2px}
 .nwx5top a span{color:#999;text-align:Center;display:block;font-size:12px;line-height:16px;}
@@ -1683,7 +1684,7 @@ a.n_gz{color:#fff}
 .nwx5time span.span2 b{font-size:30px;font-family:"helvetica"}
 .nwx5time span.span5{width:78px;line-height:30px;hieght:30px;border:1px solid #ccc;border-bottom:none;padding-left:10px;background:#fde8d8  url(../images/cai888/nwx5_07.jpg) 66px 10px no-repeat;cursor:pointer;margin-top:5px}
 .nwx5time span.span5c{background:#fde8d8  url(../images/cai888/nwx5_07c.jpg) 66px 10px no-repeat;}
-.nwx5time em{display:block;text-align:center;width:29px;height:29px;line-height:29px;background: url(../images/cai888/nwx5q.png);float:left;margin-right:5px;color:#444;font-weight:bold;font-size:16px}
+.nwx5time em{display:block;text-align:center;width:23px;height:23px;line-height:23px;background: url(../images/cai888/nwx5q.png);float:left;margin-right:5px;color:#fff;font-weight:bold;font-size:14px}
 a.sz_cmt{background: url(../images/cai888/nwx5_112.jpg);width:137px;height:33px}
 .ncath{padding:17px;background:#f5f5f5;zoom:1;border-top:1px solid #ccc}
 .ncathleft{float:left;width:470px;}
@@ -1779,7 +1780,7 @@ a.sz_cmt{background: url(../images/cai888/nwx5_112.jpg);width:137px;height:33px}
 .nxyl{clear:both;height:18px;}
 .nxhm .nxyl span{line-height:18px;height:18px;width:49px;text-align:Center;color:#555;margin:0px 30px 0 0}
 .nxhm .nxyl div{float:left}
-.nxhm .nxyl i{ width:37px;height:18px;line-height:18px;text-align:center;margin-right:10px;float:left;color:#888;font-size:12px;font-family:Arial;}
+.nxhm .nxyl i{ width:37px;height:18px;line-height:18px;text-align:center;margin-right:13px;float:left;color:#888;font-size:12px;font-family:Arial;}
 .numcai .buyfimsg td.td1{padding-left:14px;line-height:24px;}
 .numcai .buyfimsg td b{padding:0 6px}
 .numcai .buyfimsg td em{padding:0 7px;font-size:12px;margin-right:4px}
