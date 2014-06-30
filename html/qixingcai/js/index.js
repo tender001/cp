@@ -59,7 +59,24 @@
     /*
     begin
     */
-    
+    $("#zh_bs_big").val(1);
+    $("#shuzi").focus(function(){
+		var shuzi  = $("#shuzi").val();
+		if(shuzi != ""){
+			shuzi=$("#shuzi").val().replace(/\D/g,'');
+			$("#shuzi").val(shuzi);
+		}
+		
+		$("#shuzi").keyup(function(){
+    		this.value=this.value.replace(/\D/g,''); //只能输数字
+    	});
+	});
+    $("#shuzi").blur(function(){
+		var shuzi  = $("#shuzi").val();
+		if(shuzi=shuzi.replace(/\D/g,'')){
+				$("#shuzi").val(shuzi+"注");
+		}
+	});
     Class({
         use: 'tabs,dataInput,mask',
         ready: true,
