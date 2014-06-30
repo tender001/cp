@@ -6,7 +6,7 @@
 <meta name="keywords" content="排列五，排列五投注"/>
 <meta name="description" content="159彩票网排列5频道为您提供体彩排列五投注和合买、排列5开奖结果、排列5走势图、排列5专家预测推荐和玩法等信息。159—彩票网上投注最佳选择！"/>
 <link href="/css/159cai.css" type="text/css" rel="stylesheet" />
-<link href="/css/new159cai.css"  rel="stylesheet" type="text/css" />
+<link href="/css/new159cai.css" rel="stylesheet" type="text/css" />
 <script type="text/javascript" src="/public/jq2.js"></script>
 <script type="text/javascript" src="/public/jq.js"></script>
 <script type="text/javascript" src="/public/menu.js"></script>
@@ -14,360 +14,825 @@
 <script type="text/javascript" src="/public/chklogin.js"></script>
 </head>
 <body>
-<!-- 头部内容 -->  
-<!--#include virtual="/cc/header.html"-->
-<!--#include virtual="/cc/nav.html"-->
-<!-- 头部内容 -->
-<div id="container">
-<div class=breadcrumb><p>您现在的位置：<a href="/" title="网上买彩票"><font>159彩票网</font></a> &gt; <a href="/dating/" title="购彩大厅"><font>购彩大厅</font></a> &gt; 排列五</p></div>
-<div class=b-top style="height:147px">
-<div class="b-top-inner"  style="background-image:url(/images/cdbg/sz_03.gif)">
-<h2 class="p5-logo" title="159彩票网_排列五">排列五</h2>
-<div class="b-top-info">
-<div  class="dc_w"><b>排列五</b>&nbsp;&nbsp;第<select id="expect_tab" name="expect_tab" style="width:100px"></select>期<p>单式截至:<span id="ds_endTimeSpan"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;复式截至:<span id="fs_endTimeSpan"></span></p></div>
-<div class="dc_q"><strong>2元赢取10万</strong> 每晚<strong>20：30</strong>开奖，固定奖金，玩法简单！</div></div>
-<div class="b-top-nav">
-  <ul class="b-top-mainNav">
-    <li class="cur"><a href="#"><span>选号投注</span></a></li>
-    <li><a href="/hemai/index.html?lotid=52" target="_blank"><span>参与合买</span></a></li>
-    <li><a href="/account/orderlist.html" target="_blank"><span>我的方案</span></a></li>
-  </ul>
-  <div class="b-top-links"><a href="/guoguan/p5.html" target="_blank">过关统计</a>&nbsp;|&nbsp;<a href="http://zst.159cai.com/cjwpl5/" target="_blank">走势图</a>&nbsp;|&nbsp;<a href="/help/help_pl5js.html" target="_blank">玩法介绍</a></div></div>
-  <div class="szc_ds">
-  <ul id="playTabsDd"><li class="cur">普通投注</li><li>单式上传</li></ul>
- <div class="dc_q"><p><span>截止时间：</span><span id="countDownSpan"></span></p></div></div>
-</div></div>
-<div class="dlt_m">
- <div class="dlt_m_left">
- <div id='pttz' style="display:">
- <div class="sd_tb_m">
- <div class="sd_tb">
- <h4><em>玩法提示：</em>所选号码与开奖号码相同（且顺序一致）即中100,000元</h4>
- <div class="qx_xuh" id='pttz1' onselectstart="return false"> 
-  <ul>
-   <li class="sus"></li><li class="sup">每位至少选择<font>1</font>个号码</li><li class="suq">快速选号</li>
-   <li class="sub">万位</li><li class="sup"><b>0</b><b>1</b><b>2</b><b>3</b><b>4</b><b>5</b><b>6</b><b>7</b><b>8</b><b>9</b></li><li class="suq"><em>全</em><em>大</em><em>小</em><em>奇</em><em>偶</em><em>清</em></li>
-   <li class="sul">遗漏>></li><li class="sun"><i>0</i><i>0</i><i>0</i><i>0</i><i>0</i><i>0</i><i>0</i><i>0</i><i>0</i><i>0</i></li><li class="sum">&nbsp;</li>
-  </ul>
-  <ul>
-   <li class="sub">千位</li><li class="sup"><b>0</b><b>1</b><b>2</b><b>3</b><b>4</b><b>5</b><b>6</b><b>7</b><b>8</b><b>9</b></li><li class="suq"><em>全</em><em>大</em><em>小</em><em>奇</em><em>偶</em><em>清</em></li>
-   <li class="sul">遗漏>></li><li class="sun"><i>0</i><i>0</i><i>0</i><i>0</i><i>0</i><i>0</i><i>0</i><i>0</i><i>0</i><i>0</i></li><li class="sum">&nbsp;</li>
-  </ul>
-  <ul>
-   <li class="sub">百位</li><li class="sup"><b>0</b><b>1</b><b>2</b><b>3</b><b>4</b><b>5</b><b>6</b><b>7</b><b>8</b><b>9</b></li><li class="suq"><em>全</em><em>大</em><em>小</em><em>奇</em><em>偶</em><em>清</em></li>
-   <li class="sul">遗漏>></li><li class="sun"><i>0</i><i>0</i><i>0</i><i>0</i><i>0</i><i>0</i><i>0</i><i>0</i><i>0</i><i>0</i></li><li class="sum">&nbsp;</li>
-  </ul>
-  <ul>
-   <li class="sub">十位</li><li class="sup"><b>0</b><b>1</b><b>2</b><b>3</b><b>4</b><b>5</b><b>6</b><b>7</b><b>8</b><b>9</b></li><li class="suq"><em>全</em><em>大</em><em>小</em><em>奇</em><em>偶</em><em>清</em></li>
-   <li class="sul">遗漏>></li><li class="sun"><i>0</i><i>0</i><i>0</i><i>0</i><i>0</i><i>0</i><i>0</i><i>0</i><i>0</i><i>0</i></li><li class="sum">&nbsp;</li>
-  </ul>
-  <ul>
-   <li class="sub">个位</li><li class="sup"><b>0</b><b>1</b><b>2</b><b>3</b><b>4</b><b>5</b><b>6</b><b>7</b><b>8</b><b>9</b></li><li class="suq"><em>全</em><em>大</em><em>小</em><em>奇</em><em>偶</em><em>清</em></li>
-   <li class="sul">遗漏>></li><li class="sun"><i>0</i><i>0</i><i>0</i><i>0</i><i>0</i><i>0</i><i>0</i><i>0</i><i>0</i><i>0</i></li><li class="sum">&nbsp;</li>
-  </ul>
- </div>
- </div>
- </div>
- <p class="xh_text" id="pt_showbar">[ 您选择了<font>0</font>注，共<font>0</font>元 ]</p>
- <span class="sz_a_l"><a class="sz_cmt" id="pt_put"></a><a class="qc_xh" id="pt_clear">清除当前选号</a></span>
- <div class="sz_line"></div>
- <div class="reson_area">
-  <ul id="pt_list"></ul>
- </div>
- <div class="sz_sz">
-  <span class="jx_text"><input type="text" value="5" id="pt_jx_opts"/><a href="javascript:void(0);" id="pt_jx">机选</a></span>
-  <a href="javascript:void(0);" class="jx5z" id="dd_jx">定胆机选</a>
-  <a href="javascript:void(0);" class="qkjx" id="pt_list_clear">清空列表</a>
- </div>
- <p class="zj_bt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;您选择了<font id="pt_zs">0</font>注 <input type="text" name="tzbs" class="text" value="1" id="pt_bs" maxlength="2"/>倍，共<font id="pt_money">￥0.00</font>元</p>
- </div>
- 
- <!--单式投注-->
-<div class="jc_ds" id="dssc" style="display:none;border:0px">
-<form name="project_form" id="suc_form" action="/fupload.phpx" method="post" enctype="multipart/form-data">
-<p class="step_3_m" style="padding-left:60px;">发起方案：  <input type="text"  class="text" id="sc_zs_input" maxlength="5"/>注，<input type="text"  class="text" id="sc_bs_input" value="1" maxlength="2"/>倍，共<font  id="sc_money">0</font>元。 <input type="checkbox"  class="box" id="scChk" /> <label for="scChk">发起后再上传</label><br />
-<input  type="file" name="upfile" id="upfile"/>
-<br />单式投注说明:
-<br />1、选择倍投注时只需上传单倍方案；上传的方案注数必须跟填写的一致，否则可能无法出票。 <br />
-2、请严格参照“<a href="javascript:void(0);" onclick="Yobj.openUrl('/paiwu/bzgs.html',250,387)">标准格式示例</a>”格式上传方案，否则网站不保证为您做过关统计以及历史战绩统计。 <br />
-3、文件格式必须是文本文件(.txt)。 <br />
-4、上传的文件较大时，会导致上传时间及在本页停留时间较长，请耐心等待。</p></form>
-</div>
+	<!-- 头部内容 -->
+	<!--#include virtual="/cc/header.html"-->
+	<!--#include virtual="/cc/nav.html"-->
+	<!-- 头部内容 -->
+	<div id="container">
+		<div class=breadcrumb>
+			<p>
+				您现在的位置：<a href="/" title="网上买彩票"><font>159彩票网</font></a> &gt; <a
+					href="/dating/" title="购彩大厅"><font>购彩大厅</font></a> &gt; 排列五
+			</p>
+		</div>
 
-<div class="b_th_top1" id="all_form"><span>购买方式</span><b class="cur"><input type="radio" name="radio_r"/>我要代购</b><b><input type="radio" name="radio_r"/>发起合买</b><b><input type="radio" name="radio_r"/>我要追号</b><p>有购买人自行全额购买彩票</p></div>
-<div id="dg_form" style="display:;">
-<div class="b_th_cosz">
- <table width="760" border="0" class="col_2" style="margin:10px 0 0 5px">
-  <tr>
-    <th>投注信息</th>
-    <td>总金额<font id="buyMoneySpan">0</font>元</td>
-  </tr>
-</table>
-</div>
-<div class="sz_line"></div>
-<a href="javascript:void(0);" class="asz_tz" id="buy_dg">立即代购</a>
-</div>
+		<div class="touztop" style="margin-bottom: 0">
+			<div class="touzcm">
+				<h1>排列五</h1>
+				<span> <a class="cur" >选号投注</a><a  href="/hemai/index.html?lotid=52" target="_blank">参与合买</a><a href="/account/orderlist.html" target="_blank">我的方案</a>
+				</span>
+				<p>
+					<a href="/paiwu/kaijiang.html" target="_blank">历史开奖</a>|<a href="/p5/yuce/" target="_blank">预测推荐</a>|<a href="/guoguan/p5.html" target="_blank">过关统计</a>|<a
+						href="http://zst.159cai.com/cjwpl5/" target="_blank">走势图</a>
+				</p>
+			</div>
+			<div class="tzsontab">
+				<span id="playTabsDd"> <a class="cur" ><em>普通投注</em></a> <a><em>单式上传</em></a></span>
+				<p>
+					<span><em>2</em>元赢取<em>10万</em>元 每晚<em>20：30</em>开奖，固定奖金，玩法简单！
+					</span><b style="z-index: 1;" data-help="单式方案包含：单式上传、在线过滤、奖金优化。"
+						mark="pro_em"></b>
+				</p>
+			</div>
+		</div>
+		<div class="numcai">
+			<div class="nwx5time">
+				<span class="span1">第 <select id="expect_tab" name="expect_tab"><!-- <option>021355(在售)</option> --></select>期截止时间：
+				</span> <span class="span2" id="countDownSpan"><!-- <em></em><i>时</i><em>04</em><i>分</i><em>30</em><i>秒</i></font>--></span> 
+				<i style="display: inline;" id="setdanma_i"></i> <span  class="span3">单式截至:<i id="ds_endTimeSpan"></i>
+					 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;复式截至：<i id="fs_endTimeSpan"></i> </span><span class="span5 spanab" id="span5">号码统计</span> <span class="span5 spanab spanabc" id="span5s">近期开奖</span>
+			</div>
+			<div class="numcount" style="height: 0;" >
+				<table width="100%" border="0" cellspacing="0" cellpadding="0" id="kjhis" >
+					<colgroup>
+						<col width="12%">
+							<col width="13%">
+								<col width="12%">
+									<col width="13%">
+									<col width="12%">
+							<col width="13%">
+								<col width="12%">
+									<col width="13%">
+					</colgroup>
+					<!-- <tr class="tr1 tr3">
+						<td>期次</td><td class="tdi">开奖号码</td><td>期次</td><td class="tdi">开奖号码</td><td>期次</td><td class="tdi">开奖号码</td><td>期次</td><td>开奖号码</td>
+					</tr>
+					<tr class="tr2 tr4">
+						<td>2014160</td><td class="tdi"><i>9</i><i>9</i><i>9</i></td><td>2014160</td><td class="tdi"><i>9</i><i>9</i><i>9</i></td><td>2014160</td><td class="tdi"><i>9</i><i>9</i><i>9</i></td><td>2014160</td><td><i>9</i><i>9</i><i>9</i></td>
+					</tr>
+<tr class="tr2 tr4">
+						<td>2014160</td><td class="tdi"><i>9</i><i>9</i><i>9</i></td><td>2014160</td><td class="tdi"><i>9</i><i>9</i><i>9</i></td><td>2014160</td><td class="tdi"><i>9</i><i>9</i><i>9</i></td><td>2014160</td><td><i>9</i><i>9</i><i>9</i></td>
+					</tr><tr class="tr2 tr4">
+						<td>2014160</td><td class="tdi"><i>9</i><i>9</i><i>9</i></td><td>2014160</td><td class="tdi"><i>9</i><i>9</i><i>9</i></td><td>2014160</td><td class="tdi"><i>9</i><i>9</i><i>9</i></td><td>2014160</td><td><i>9</i><i>9</i><i>9</i></td>
+					</tr>
+  <tr class="tr2 tr4">
+						<td>2014160</td><td class="tdi"><i>9</i><i>9</i><i>9</i></td><td>2014160</td><td class="tdi"><i>9</i><i>9</i><i>9</i></td><td>2014160</td><td class="tdi"><i>9</i><i>9</i><i>9</i></td><td>2014160</td><td><i>9</i><i>9</i><i>9</i></td>
+					</tr> -->
+				</table>
+			</div>
+			<div class="numcount" id="numcount" style="height: 0;">
+				<table width="100%" border="0" cellspacing="0" cellpadding="0">
+					
+					<tr class="tr1">
+						<td>热号</td><td>冷号</td><td>高人气</td><td>低人气</td>
+					</tr>
+					<tr  class="tr2">
+						 <td> 
+							<div class="ncdcol" id="hot">
+								<table width="230" border="0" cellspacing="0" cellpadding="0">
+									<col width="38"/>
+									<col width="26"/>
+									<col width="110"/>
+									<col width=""/>
+									
+									  <tr>
+										    <td>万位</td>
+										    <td><b>0</b></td>
+										    <td><span><em style="width: 14%;"></em></span></td>
+										    <td><i>0次</i></td>
+									  </tr>
+									  <tr>
+										    <td>千位</td>
+										    <td><b>0</b></td>
+										    <td><span><em style="width: 14%;"></em></span></td>
+										    <td><i>0次</i></td>
+									  </tr>
+									  <tr>
+										    <td>百位</td>
+										    <td><b>0</b></td>
+										    <td><span><em style="width:14%"></em></span></td>
+										    <td><i>0次</i></td>
+									  </tr>
+									  <tr>
+										    <td>十位</td>
+										    <td><b>0</b></td>
+										    <td><span><em style="width: 14%;"></em></span></td>
+										    <td><i>0次</i></td>
+									  </tr>
+									  <tr>
+										    <td width="30">个位</td>
+										    <td width="30"><b>0</b></td>
+										    <td><span><em style="width: 19%;"></em></span></td>
+										    <td><i>0次</i></td>
+									  </tr>
+									</table>
+								</div></td><td>
+									<div class="ncdcol" id="cold" >
+										  <table width="210" border="0" cellpadding="0" cellspacing="0">
+										  <tr>
+										    <td>万位</td>
+										    <td><b>0</b></td>
+										    <td><span><em style="width:16%"></em></span></td>
+										    <td><i>0次</i></td>
+										  </tr>
+										  <tr>
+										    <td>千位</td>
+										    <td><b>0</b></td>
+										    <td><span><em style="width:14%"></em></span></td>
+										    <td><i>0次</i></td>
+										  </tr>
+										  <tr>
+										    <td>百位</td>
+										    <td><b>0</b></td>
+										    <td><span><em style="width:14%"></em></span></td>
+										    <td><i>0次</i></td>
+										  </tr>
+										  <tr>
+										    <td>十位</td>
+										    <td><b>0</b></td>
+										    <td><span><em style="width:14%"></em></span></td>
+										    <td><i>0次</i></td>
+										  </tr>
+										  <tr>
+										    <td>个位</td>
+										    <td><b>0</b></td>
+										    <td><span><em style="width:19%"></em></span></td>
+										    <td><i>0次</i>
+										    </td>
+										  </tr>
+										</table>
+									</div></td><td>
+									<div class="ncdcol" id="grq" >
+									  <table width="210" border="0" cellpadding="0" cellspacing="0">
+									  <tr>
+									    <td>万位</td>
+									    <td><b>0</b></td>
+									    <td><span><em style="width:16%"></em></span></td>
+									    <td><i>0次</i></td>
+									  </tr>
+									  <tr>
+									    <td>千位</td>
+									    <td><b>0</b></td>
+									    <td><span><em style="width:14%"></em></span></td>
+									    <td><i>0次</i></td>
+									  </tr>
+									  <tr>
+									    <td>百位</td>
+									    <td><b>0</b></td>
+									    <td><span><em style="width:14%"></em></span></td>
+									    <td><i>0次</i></td>
+									  </tr>
+									  <tr>
+									    <td>十位</td>
+									    <td><b>0</b></td>
+									    <td><span><em style="width:14%"></em></span></td>
+									    <td><i>0次</i></td>
+									  </tr>
+									  <tr>
+									    <td>个位</td>
+									    <td><b>0</b></td>
+									    <td><span><em style="width:19%"></em></span></td>
+									    <td><i>0次</i></td>
+									  </tr>
+									</table>
+									</div></td><td>
+									<div class="ncdcol" id="drq" >
+									  <table width="210" border="0" cellpadding="0" cellspacing="0">
+									  <tr>
+									    <td>万位</td>
+									    <td><b>0</b></td>
+									    <td><span><em style="width:16%"></em></span></td>
+									    <td><i>0次</i></td>
+									  </tr>
+									  <tr>
+									    <td>千位</td>
+									    <td><b>0</b></td>
+									    <td><span><em style="width:16%"></em></span></td>
+									    <td><i>0次</i></td>
+									  </tr>
+									  <tr>
+									    <td>百位</td>
+									    <td><b>0</b></td>
+									    <td><span><em style="width:14%"></em></span></td>
+									    <td><i>0次</i></td>
+									  </tr>
+									  <tr>
+									    <td>十位</td>
+									    <td><b>0</b></td>
+									    <td><span><em style="width:14%"></em></span></td>
+									    <td><i>0次</i></td>
+									  </tr>
+									  <tr>
+									    <td>个位</td>
+									    <td><b>0</b></td>
+									    <td><span><em style="width:19%"></em></span></td>
+									    <td><i>0次</i></td>
+									  </tr>
+									</table>
+								</div>	</td>	
+					
+					</tr>
+				</table>
+			</div>
 
-<div id="hm_form" style="display:none">
-<div class="b_th_cosz">
- <table width="760" border="0" class="col_2" style="margin:10px 0 0 5px">
-  <tr>
-    <th>投注信息</th>
-    <td>总金额<font id="buyMoneySpan3">0</font>元</td>
-  </tr>
-  <tr>
-    <th>我要分成</th>
-    <td><p>每份<font id="fsMoney">1</font>元，共<font id="fsInput">0</font>份</p></td>
-  </tr>
-  <tr>
-    <th>我要认购</th>
-    <td><input type="text" class="text" id="rgInput" value="1"/>份，<font id="rgMoney">0</font>元，约<font id="rgScale">0.00%</font><font id="rgErr" style="display:none">至少需要认购3份</font></td>
-  </tr>
-  <tr>
-    <th></th>
-    <td><input type="checkbox" name="isbaodi" id="isbaodi" /> 我要保底 <input type="text" class="text" value="0" disabled="disabled" id="bdInput"/>份，<font id="bdMoney">0</font>元，约<font id="bdScale">0.00%</font><font id="bdErr" style="display:none">最低保底20%</font></td>
-  </tr>
-  <tr>
-    <th>提成比例</th>
-    <td id="tc"><b class="first" value="0">无</b><b value="1">1%</b><b class="cur" value="2">2%</b><b value="3">3%</b><b value="4">4%</b><b value="5">5%</b><b value="6">6%</b><b value="7">7%</b><b value="8">8%</b><b value="9">9%</b><b value="10">10%</b></td>
-  </tr>
-  <tr>
-    <th>保密设置</th>
-    <td id="gkfs"><em value="0">完全公开</em><em class="cur" value="1">截止后公开</em><em value="2">仅对跟单者公开</em><em value="3">截止后对跟单者公开</em></td>
-  </tr>
-  <tr>
-    <th>可选选项</th>
-    <td><input type="checkbox"  class="box"  id="moreCheckbox"/>方案宣传选填信息</td>
-  </tr>
-</table>
-<div class="conduct_msg" style="padding-left:20px;_padding-left:10px;display:none;" id="case_ad">
-<span class="fa">方案标题</span><input type="text" class="bt"  id="caseTitle" value="排五合买，欢迎跟单。"/><span class="fa_play">最多可以输入<font>20</font>个字符。</span>
-<span class="fa" style="clear:both">方案描述</span><textarea id="caseInfo">说点什么吧，让您的方案被彩民认可．．．</textarea><span class="fa_play">最多可以输入<font>200</font>个字符。</span>
-</div>
-</div>
-<div class="sz_line"></div>
-<a href="javascript:void(0);" class="asz_tz" id="buy_hm">发起合买</a>
-</div>
+			<div class="nxmiddle" id="pttz">
+				<h2>
+					<p id="wanfatishi">
+						玩法提示：所选号码与开奖号码相同（且顺序一致）即中100,000元
+					</p>
+				</h2>
+				<!-- pttz1 -->
+				<div id="pttz1" class="nxhm" onselectstart="return false">
+					<div class="nx3span">
+						<div class="numyl">万位</div>
+						<span id="renxuan" class="nsbool"><b class="">0</b><b
+							class="">1</b><b class="">2</b><b>3</b><b>4</b><b class="">5</b><b
+							class="">6</b><b class="">7</b><b class="">8</b><b>9</b></span> <span
+							id="ballsingle" class="nsopr"><b>全</b><b>大</b><b>小</b><b>奇</b><b>偶</b><b
+							class="bem">清除</b></span>
+						<div class="nxyl">
+							<span>遗漏>></span>
+							<div>
+								<i>0</i><i>0</i><i>0</i><i>0</i><i>0</i><i>0</i><i>0</i><i>0</i><i>0</i><i>0</i>
+							</div>
+						</div>
+					</div>
+					<div class="nx3span" >
+						<div class="numyl">千位</div>
+						<span class="nsbool" id="renxuan"><b class="">0</b><b
+							class="">1</b><b class="">2</b><b>3</b><b>4</b><b class="">5</b><b
+							class="">6</b><b class="">7</b><b class="">8</b><b>9</b></span> <span
+							class="nsopr" id="ballsingle"><b>全</b><b>大</b><b>小</b><b>奇</b><b>偶</b><b
+							class="bem">清除</b></span>
+						<div class="nxyl">
+							<span>遗漏&gt;&gt;</span>
+							<div class="i">
+								<i>0</i><i>0</i><i>0</i><i>0</i><i>0</i><i>0</i><i>0</i><i>0</i><i>0</i><i>0</i>
+							</div>
+						</div>
+					</div>
+					<div class="nx3span">
+						<div class="numyl">百位</div>
+						<span class="nsbool" id="renxuan"><b class="">0</b><b
+							class="">1</b><b class="">2</b><b>3</b><b>4</b><b class="">5</b><b
+							class="">6</b><b class="">7</b><b class="">8</b><b>9</b></span> <span
+							class="nsopr" id="ballsingle"><b>全</b><b>大</b><b>小</b><b>奇</b><b>偶</b><b
+							class="bem">清除</b></span>
+						<div class="nxyl">
+							<span>遗漏&gt;&gt;</span>
+							<div>
+								<i>0</i><i>0</i><i>0</i><i>0</i><i>0</i><i>0</i><i>0</i><i>0</i><i>0</i><i>0</i>
+							</div>
+						</div>
+					</div>
+					<div class="nx3span">
+						<div class="numyl">十位</div>
+						<span class="nsbool" id="renxuan"><b class="">0</b><b
+							class="">1</b><b class="">2</b><b>3</b><b>4</b><b class="">5</b><b
+							class="">6</b><b class="">7</b><b class="">8</b><b>9</b></span> <span
+							class="nsopr" id="ballsingle"><b>全</b><b>大</b><b>小</b><b>奇</b><b>偶</b><b
+							class="bem">清除</b></span>
+						<div class="nxyl">
+							<span>遗漏&gt;&gt;</span>
+							<div>
+								<i>0</i><i>0</i><i>0</i><i>0</i><i>0</i><i>0</i><i>0</i><i>0</i><i>0</i><i>0</i>
+							</div>
+						</div>
+					</div>
+					<div class="nx3span">
+						<div class="numyl">个位</div>
+						<span class="nsbool" id="renxuan"><b class="">0</b><b
+							class="">1</b><b class="">2</b><b>3</b><b>4</b><b class="">5</b><b
+							class="">6</b><b class="">7</b><b class="">8</b><b>9</b></span> <span
+							class="nsopr" id="ballsingle"><b>全</b><b>大</b><b>小</b><b>奇</b><b>偶</b><b
+							class="bem">清除</b></span>
+						<div class="nxyl">
+							<span>遗漏&gt;&gt;</span>
+							<div>
+								<i>0</i><i>0</i><i>0</i><i>0</i><i>0</i><i>0</i><i>0</i><i>0</i><i>0</i><i>0</i>
+							</div>
+						</div>
+					</div>
+					
+				</div>
+				<div class="nxszop">
+					<p id="pt_showbar" class="xh_text">
+						【您选择了<em>0</em>注，共 ￥<em>0</em>元 】
+					</p>
+					<span class="sz_a_l"> <a id="pt_put" class="sz_cmt"
+						style="margin-left: 230px; _margin-left: 170px"></a> <a
+						id="pt_clear" class="qc_xh">清除当前选号</a>
+					</span>
+				</div>
+				<div class="ncath" style="margin-top: 20px;">
+				<div class="ncathleft">
+					<div class="cm_ssq_yx_num ncatharea">
+						<ul id="pt_list"></ul>
 
-<div class="b_th_cosz" id="zh_form" style="display:none;">
- <p class="p_z_qs">追号期数<select name="zh_opts" id="zh_opts">
-							<option value="10" checked>追10期</option>
+					</div>
+
+					<div class="ncaltbn">
+						<a id="dd_jx" href="javascript:void(0);">定胆机选</a> <a href="javascript:void(0);" id="s1_jx1">机选一注</a>
+						<span> <input type="text" value="5注" id="pt_jx_opts"> <a
+								id="pt_jx" href="javascript:void(0);">机选</a></span> <a id="pt_list_clear"
+							class="a1">清空列表</a> 
+					</div>
+					<p>
+						共<em id="pt_zs">0</em>注，我要买<span><input type="text"
+							maxlength="5" id="pt_bs" value="1"><img
+								id="pt_addbs" src="/images/cai888/nwx5_27.jpg"><img
+									id="pt_lessbs" src="/images/cai888/nwx5_29.jpg"></span>倍<s>（最高限投10000倍）</s>，合计金额<em
+							id="pt_money">0</em>元
+					</p>
+				</div>
+
+				<div class="ncathright" id="right">
+					<div class="ncathtype" id="all_form">
+						<span id="zh_tabs">投注方式</span> <label><input type="radio"
+							checked="checked" name="radg">代购</label> <label><input
+							type="radio" name="radg">发起合买</label> <label><input
+							type="radio" name="radg">我要追号</label>
+
+					</div>
+					<div class="kc_zjz">
+						<div id="hmdiv" style="display: none;">
+							<div
+								style="border-bottom: none; padding-bottom: 0; border-left: none"
+								class="b_th_co2 buyfimsg" id="sss">
+								<table width="100%" border="0" cellspacing="0" cellpadding="0">
+									<colgroup>
+										<col width="78">
+											<col width="">
+									</colgroup>
+									<tbody>
+										<tr>
+											<td class="td1">方案金额</td>
+											<td>总金额<font id="buyMoneySpan3"></font>元&nbsp;&nbsp;&nbsp;每份<font
+												id="fsMoney">0</font>元，共<font id="fsInput">0</font>份
+											</td>
+										</tr>
+										<tr>
+											<td class="td1">我要认购</td>
+											<td><input type="text" maxlength="6" id="rgInput"
+												class="text">份，<font id="rgMoney">￥0.00</font>元，约<font
+													id="rgScale">0.00%</font><font style="display: none"
+													id="rgErr">您需认购<span>x</span>份~<span>x</span>份
+												</font></td>
+										</tr>
+										<tr>
+											<td class="td1">方案保底</td>
+											<td><input type="checkbox" id="isbaodi" class="box">我要保底
+													<input type="text" maxlength="6" disabled="" id="bdInput"
+													value="1" class="text">份，<font id="bdMoney">0</font>元，约<font
+														id="bdScale">10%</font><font style="display: none"
+														id="bdErr">！最低保底5%</font></td>
+										</tr>
+										<tr>
+											<td class="td1">提成比例</td>
+											<td id="tc"><b value="0" class="first">无</b><b value="1">1%</b><b
+												value="2" class="cur">2%</b><b value="3">3%</b><b value="4">4%</b><b
+												value="5">5%</b><b value="6">6%</b><b value="7">7%</b><b
+												value="8">8%</b><b value="9">9%</b><b value="10">10%</b></td>
+										</tr>
+										<tr>
+											<td class="td1">保密设置</td>
+											<td id="gkfs"><em value="0">完全公开</em><em value="1"
+												class="cur">截止后公开</em><em value="2">仅对跟单者公开</em><em
+												value="3">截止后对跟单者公开</em></td>
+										</tr>
+										<tr>
+											<td class="td1">方案宣传</td>
+											<td><input type="checkbox" id="moreCheckbox" class="box">方案宣传选填信息</td>
+										</tr>
+									</tbody>
+									<tbody style="display: none;" id="case_ad">
+
+										<tr>
+											<td class="td1">方案标题</td>
+											<td><input type="text" id="caseTitle" class="bt"
+												value="胜负彩复式合买，欢迎跟单。" maxlength="20"><span
+													class="fa_play">已输入<font id="title_word_count">0</font>个字符。
+												</span></td>
+										</tr>
+										<tr>
+											<td class="td1">方案描述</td>
+											<td><textarea default="随缘,买彩票讲的是运气、缘分和坚持。" id="caseInfo">随缘！买彩票讲的是运气、缘分和坚持。</textarea><span
+												class="fa_play">已输入<font id="content_word_count">0</font>个字符。
+											</span></td>
+										</tr>
+
+
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</div>
+					<div class="kc_zjz" >
+						<div id="dg_form" style="display: block;"></div>
+						<div id="zh_form"  style="display: none;" class="kc_zja">
+							<div class="kc_zj2">
+								<p>
+									追<select name="zh_opts" id="zh_opts">
+							 <option value="10" checked>追10期</option>
 							<option value="20">追20期</option>
 							<option value="30">追30期</option>
-							<option value="100">追更多期</option>
-						</select></p><p class="p_z_tz">追号设置
-						<select name="zhflag" id="tzzh" >
-						<option value="0" selected>中奖后不停止</option>
-						<option value="1">中奖后停止</option>
-						<option value="2">盈利后停止</option>
-						</select></p><div class="x_zy">
-<table width="100%" border="0" cellpadding="0" cellspacing="0" class="zh_tb_c">
- <colgroup>
- <col width="70" />
- <col width="150" />
- <col width="150" />
- <col width="150" />
- <col/>
- </colgroup>
-  <thead><tr>
-    <td>序号</td>
-    <td  class="tld">期号</td>
-    <td>倍数</td>
-    <td>金额</td>
-    <td>开奖日期</td>
-  </tr></thead>
-  <tbody id="zh_list">
-  </tbody>
-</table></div>
-<div class="sz_line"></div>
-<p class="red_pay">本次投注金额为<font id="buyMoneySpan2">￥0.00</font>元</p>
-<a href="javascript:void(0);" class="asz_tz" id="buy_zh">我要追号</a>
-</div>
-<p class="xytk" id="userMoneyInfo">
-您尚未登录，请先<a href="javascript:void(0);" onclick="Yobj.postMsg('msg_login')">登录</a>!
-</p>
-<p class="xytk">
-<input type="checkbox" checked="checked" id="agreement">我已阅读同意《<a href="/help/helpxy.html" target="_blank">用户委托投注协议</a>》
-</p>
- </div>
- <div class="dlt_m_right">
-  <h2>开奖公告</h2>
-  <div class="sz_r_kj"><p><strong>第<font id="ex">20133003</font>期</strong> <i id="rq">13-01-08</i><a href="/paiwu/kaijiang.html" target="_blank">详情</a></p>
-  <span id="kjopcode"><b>8</b><b>8</b><b>8</b><b>8</b><b>8</b></span>
-  <p class="x_kjq"><span>近10期开奖结果</span><a href="javascript:void(0);" id="show_info">展开</a></p>
-  <ul id="kjhis" style="display: none;"><li>期次</li><li class="sup">开奖号码</li>
-  </ul>
-  </div>
-   <h2 class="sec_h">号码统计</h2>
-   <div class="lr_tb" id="coolhot"><a href="javascript:void(0);" class="cur" style="borderleft:none"> 热号
-</a><a href="javascript:void(0);"> 冷号 </a><a href="javascript:void(0);">高人气</a><a href="javascript:void(0);"> 低人气</a></div>
-  <div class="lr_m" id="hot">
-  <table width="230" border="0" cellpadding="0" cellspacing="0">
-  <tr>
-    <td width="30">万位</td>
-    <td width="30"><b>0</b></td>
-    <td width="120"><span><em style="width:50%"></em></span></td>
-    <td><i>0次</i></td>
-  </tr>
-  <tr>
-    <td width="30">千位</td>
-    <td width="30"><b>0</b></td>
-    <td width="120"><span><em style="width:50%"></em></span></td>
-    <td><i>0次</i></td>
-  </tr>
-  <tr>
-    <td width="30">百位</td>
-    <td width="30"><b>0</b></td>
-    <td width="120"><span><em style="width:50%"></em></span></td>
-    <td><i>0次</i></td>
-  </tr>
-  <tr>
-    <td width="30">十位</td>
-    <td width="30"><b>0</b></td>
-    <td width="120"><span><em style="width:50%"></em></span></td>
-    <td><i>0次</i></td>
-  </tr>
-  <tr>
-    <td width="30">个位</td>
-    <td width="30"><b>0</b></td>
-    <td width="120"><span><em style="width:50%"></em></span></td>
-    <td><i>0次</i></td>
-  </tr>
-</table></div>
-<div class="lr_m" id="cold" style="display:none;">
-  <table width="230" border="0" cellpadding="0" cellspacing="0">
-  <tr>
-    <td width="30">万位</td>
-    <td width="30"><b>0</b></td>
-    <td width="120"><span><em style="width:50%"></em></span></td>
-    <td><i>0次</i></td>
-  </tr>
-  <tr>
-    <td width="30">千位</td>
-    <td width="30"><b>0</b></td>
-    <td width="120"><span><em style="width:50%"></em></span></td>
-    <td><i>0次</i></td>
-  </tr>
-  <tr>
-    <td width="30">百位</td>
-    <td width="30"><b>0</b></td>
-    <td width="120"><span><em style="width:50%"></em></span></td>
-    <td><i>0次</i></td>
-  </tr>
-  <tr>
-    <td width="30">十位</td>
-    <td width="30"><b>0</b></td>
-    <td width="120"><span><em style="width:50%"></em></span></td>
-    <td><i>0次</i></td>
-  </tr>
-  <tr>
-    <td width="30">个位</td>
-    <td width="30"><b>0</b></td>
-    <td width="120"><span><em style="width:50%"></em></span></td>
-    <td><i>0次</i></td>
-  </tr>
-</table></div>
-<div class="lr_m" id="grq" style="display:none;">
-  <table width="230" border="0" cellpadding="0" cellspacing="0">
-  <tr>
-    <td width="30">万位</td>
-    <td width="30"><b>0</b></td>
-    <td width="120"><span><em style="width:50%"></em></span></td>
-    <td><i>0次</i></td>
-  </tr>
-  <tr>
-    <td width="30">千位</td>
-    <td width="30"><b>0</b></td>
-    <td width="120"><span><em style="width:50%"></em></span></td>
-    <td><i>0次</i></td>
-  </tr>
-  <tr>
-    <td width="30">百位</td>
-    <td width="30"><b>0</b></td>
-    <td width="120"><span><em style="width:50%"></em></span></td>
-    <td><i>0次</i></td>
-  </tr>
-  <tr>
-    <td width="30">十位</td>
-    <td width="30"><b>0</b></td>
-    <td width="120"><span><em style="width:50%"></em></span></td>
-    <td><i>0次</i></td>
-  </tr>
-  <tr>
-    <td width="30">个位</td>
-    <td width="30"><b>0</b></td>
-    <td width="120"><span><em style="width:50%"></em></span></td>
-    <td><i>0次</i></td>
-  </tr>
-</table></div>
-<div class="lr_m" id="drq" style="display:none;">
-  <table width="230" border="0" cellpadding="0" cellspacing="0">
-  <tr>
-    <td width="30">万位</td>
-    <td width="30"><b>0</b></td>
-    <td width="120"><span><em style="width:50%"></em></span></td>
-    <td><i>0次</i></td>
-  </tr>
-  <tr>
-    <td width="30">千位</td>
-    <td width="30"><b>0</b></td>
-    <td width="120"><span><em style="width:50%"></em></span></td>
-    <td><i>0次</i></td>
-  </tr>
-  <tr>
-    <td width="30">百位</td>
-    <td width="30"><b>0</b></td>
-    <td width="120"><span><em style="width:50%"></em></span></td>
-    <td><i>0次</i></td>
-  </tr>
-  <tr>
-    <td width="30">十位</td>
-    <td width="30"><b>0</b></td>
-    <td width="120"><span><em style="width:50%"></em></span></td>
-    <td><i>0次</i></td>
-  </tr>
-  <tr>
-    <td width="30">个位</td>
-    <td width="30"><b>0</b></td>
-    <td width="120"><span><em style="width:50%"></em></span></td>
-    <td><i>0次</i></td>
-  </tr>
-</table></div>
-    <h2>数据图表</h2>
-    <div class="sz_r_tb"><a href="http://zst.159cai.com/cjwpl5/view/pl5_zst.php" target="_blank">开奖号码</a><a href="http://zst.159cai.com/cjwpl5/view/pl5_hezhi.php" target="_blank">常用指标</a><a href="http://zst.159cai.com/cjwpl5/view/pl5_leixingjo.php" target="_blank">型态</a><a href="http://zst.159cai.com/cjwpl5/view/pl5_liangweihe.php?typeId=wqhz" target="_blank">两数位和</a>
-<a href="http://zst.159cai.com/cjwpl5/view/pl5_danzhi.php?typeId=wqh" target="_blank">两数和尾</a><a href="http://zst.159cai.com/cjwpl5/view/pl5_danzhi.php?typeId=wqc" target="_blank">两数位差</a><a href="http://zst.159cai.com/cjwpl5/view/pl5_szqjzh.php?typeId=danzh" target="_blank">数字区间</a></div>
-<h2><span>预测推荐</span><a href="/p5/yuce/"target="_blank">更多>></a></h2>
-<div class="sz_r_tj">
- <!--#include virtual="/dedeinc/paiwu_right.html"--> 
-</div>
- 
- </div>
+							<option value="100">追更多期</option> 
+						</select>期
+								</p>
+								<p class="p_z_tz">
+									追号设置 <select id="tzzh" name="zhflag">
+										<option selected="" value="0">中奖后不停止</option>
+										<option value="1">中奖后停止</option>
+										<option value="2">盈利后停止</option>
+									</select>
+								</p>
+							</div>
+							<div class="kc_zj3">
+								<table width="100%" border="0" cellspacing="0" cellpadding="0">
+									<colgroup>
+										<col width="60">
+											<col width="100">
+												<col width="70">
+													<col width="90">
 
+														<col width="">
+									</colgroup>
+									<thead>
+										<tr>
+											<td>序号</td>
+											<td>期号</td>
+											<td>倍数</td>
+											<td>金额</td>
+											<td>开奖日期</td>
+										</tr>
+									</thead>
+									<tbody id="zh_list">
+  									</tbody>
+								</table>
+							</div>
+							<div class="kc_zj3" style="max-height: 180px; overflow: auto">
+								<table width="100%" border="0" cellspacing="0" cellpadding="0">
+									<colgroup>
+										<col width="60">
+											<col width="100">
+												<col width="70">
+													<col width="90">
+
+														<col width="">
+									</colgroup>
+
+									<tbody>
+										<!-- <tr style="display:none">
+											<td>01.</td>
+											<td class="tld"><input type="checkbox" checked=""
+												value="2014162">2014162期</td>
+											<td><input type="text" value="1" class="text"
+												maxlength="2">倍</td>
+											<td><font>￥0.00</font>元</td>
+											<td>2014-06-19 20:30:00</td>
+										</tr>
+										<tr style="display:">
+											<td>01.</td>
+											<td class="tld"><input type="checkbox" checked=""
+												value="2014162">2014162期</td>
+											<td><input type="text" value="1" class="text"
+												maxlength="2">倍</td>
+											<td><font>￥0.00</font>元</td>
+											<td>2014-06-19 20:30:00</td>
+										</tr>
+										<tr style="display:">
+											<td>01.</td>
+											<td class="tld"><input type="checkbox" checked=""
+												value="2014162">2014162期</td>
+											<td><input type="text" value="1" class="text"
+												maxlength="2">倍</td>
+											<td><font>￥0.00</font>元</td>
+											<td>2014-06-19 20:30:00</td>
+										</tr>
+										<tr style="display:">
+											<td>01.</td>
+											<td class="tld"><input type="checkbox" checked=""
+												value="2014162">2014162期</td>
+											<td><input type="text" value="1" class="text"
+												maxlength="2">倍</td>
+											<td><font>￥0.00</font>元</td>
+											<td>2014-06-19 20:30:00</td>
+										</tr>
+										<tr style="display:">
+											<td>01.</td>
+											<td class="tld"><input type="checkbox" checked=""
+												value="2014162">2014162期</td>
+											<td><input type="text" value="1" class="text"
+												maxlength="2">倍</td>
+											<td><font>￥0.00</font>元</td>
+											<td>2014-06-19 20:30:00</td>
+										</tr>
+										<tr style="display:">
+											<td>01.</td>
+											<td class="tld"><input type="checkbox" checked=""
+												value="2014162">2014162期</td>
+											<td><input type="text" value="1" class="text"
+												maxlength="2">倍</td>
+											<td><font>￥0.00</font>元</td>
+											<td>2014-06-19 20:30:00</td>
+										</tr>
+										<tr style="display:">
+											<td>01.</td>
+											<td class="tld"><input type="checkbox" checked=""
+												value="2014162">2014162期</td>
+											<td><input type="text" value="1" class="text"
+												maxlength="2">倍</td>
+											<td><font>￥0.00</font>元</td>
+											<td>2014-06-19 20:30:00</td>
+										</tr>
+										<tr style="display:">
+											<td>01.</td>
+											<td class="tld"><input type="checkbox" checked=""
+												value="2014162">2014162期</td>
+											<td><input type="text" value="1" class="text"
+												maxlength="2">倍</td>
+											<td><font>￥0.00</font>元</td>
+											<td>2014-06-19 20:30:00</td>
+										</tr>
+										<tr style="display:">
+											<td>01.</td>
+											<td class="tld"><input type="checkbox" checked=""
+												value="2014162">2014162期</td>
+											<td><input type="text" value="1" class="text"
+												maxlength="2">倍</td>
+											<td><font>￥0.00</font>元</td>
+											<td>2014-06-19 20:30:00</td>
+										</tr>
+										<tr style="display:">
+											<td>01.</td>
+											<td class="tld"><input type="checkbox" checked=""
+												value="2014162">2014162期</td>
+											<td><input type="text" value="1" class="text"
+												maxlength="2">倍</td>
+											<td><font>￥0.00</font>元</td>
+											<td>2014-06-19 20:30:00</td>
+										</tr>
+										<tr style="display:">
+											<td>01.</td>
+											<td class="tld"><input type="checkbox" checked=""
+												value="2014162">2014162期</td>
+											<td><input type="text" value="1" class="text"
+												maxlength="2">倍</td>
+											<td><font>￥0.00</font>元</td>
+											<td>2014-06-19 20:30:00</td>
+										</tr>
+										<tr style="display:">
+											<td>01.</td>
+											<td class="tld"><input type="checkbox" checked=""
+												value="2014162">2014162期</td>
+											<td><input type="text" value="1" class="text"
+												maxlength="2">倍</td>
+											<td><font>￥0.00</font>元</td>
+											<td>2014-06-19 20:30:00</td>
+										</tr> -->
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</div>
+					<div class="ncathgm">
+						<p id="userMoneyInfo">
+							账户信息：您还没有登录，请先<a>登录</a>后再购买。
+						</p>
+						<!-- <p class="red_pay" style="margin-top:0px;">
+您选择了
+<b id="expect_num">0</b>
+期，金额为
+<font id="sum_m">0</font>
+元
+</p> -->
+						<a class="a1" id="buy_dg" href="javascript:void(0);">立即投注</a>
+						<p>
+							<input type="checkbox" id="agreement" checked="checked">我已阅读同意《<a
+								target="_blank" href="/help/help_yffwxy.html">用户委托投注协议</a>》 
+						</p>
+					</div>
+				</div>
+			</div>
+				</div>
+				<div class="nxmiddle" id="dssc" style="display: none;">
+<div class="jc_ds numds">
+<form enctype="multipart/form-data" method="post" action="/fupload.phpx" id="suc_form" name="project_form">
+<p class="step_3_m">发起方案：  <input type="text" maxlength="5" id="sc_zs_input" class="text">注，<input type="text" maxlength="2" value="1" id="sc_bs_input" class="text">倍，共<font id="sc_money">￥0.00</font>元。 <input type="checkbox" id="scChk" class="box"> <label for="scChk">发起后再上传</label><br>
+<input type="file" id="upfile" name="upfile">
+<br>单式投注说明:
+<br>1、选择倍投注时只需上传单倍方案；上传的方案注数必须跟填写的一致，否则可能无法出票。 <br>
+2、请严格参照“<a onclick="Yobj.openUrl('/paisan/bzgs.html',250,387)" href="javascript:void(0);">标准格式示例</a>”格式上传方案，否则网站不保证为您做过关统计以及历史战绩统计。 <br>
+3、文件格式必须是文本文件(.txt)。 <br>
+4、上传的文件较大时，会导致上传时间及在本页停留时间较长，请耐心等待。</p></form>
 </div>
-</div>
-<input name="codes" id="codes" type="hidden" value=''/><!--号码-->
-<input name="zhushu" id="zhushu" type="hidden" value="1"/><!--注数-->
-<input name="beishu" id="beishu" type="hidden" value="1"/><!--倍数-->
-<input name="totalmoney" id="totalmoney" type="hidden" value="0"/><!--方案金额-->
-<input name="beishu_list" id="beishu_list" type="hidden" value=""/><!--投注了的倍数列表-->
-<input name="expect_list" id="expect_list" type="hidden" value=""/><!--投注了的期号列表-->
-<input name="lotid" id="lotid" type="hidden" value="52"/><!--彩种Id-->
-<input name="playid" id="playid" type="hidden" value="1"/><!--玩法Id-->
-<input name="playid2" id="playid2" type="hidden" value="1"/><!--玩法Id2-->			
-<input name="expect" id="expect" type="hidden" value=""/><!--期号-->
-<input name="isupload" id="isupload" type="hidden" value="1"/>
-<input name="msgmode" id="msgmode" type="hidden" value="1"/>
-<input name="ishm" id="ishm" type="hidden" value="0"/>
-<input name="ischase" id="ischase" type="hidden" value="0"/>
-<input name="isshow" id="isshow" type="hidden" value="0"/>
-<input name="isbaodi" id="isBaodi" type="hidden" value="0"/>
-<input name="tc_bili" id="tc_bili" type="hidden" value="0"/>
-<input name="lastexpect" id="lastexpect" type="hidden" value="2013358"/>
-<input name="money_limit" id="money_limit" type="hidden" value="2,10000000,,">
-<input type="hidden" name="gk" id="gk" value="1">
-<input type="hidden" name="tcSelect" id="tcSelect" value="2">
-<!--#include virtual="/cc/footer.html"-->
-<script type="text/javascript" src="/public/szc.js"></script>
-<script type="text/javascript" src="/paiwu/js/index.js"></script>
+<div class="numhmg">
+   <div id="all_forms" class="b_th_top">
+				<span id="zh_tabs">购买方式</span><b class="cur"><label for="dg" >代购</label></b><b class=""><label for="hm">发起合买</label></b>
+				<div class="kc_zjz">
+				<div id="dg_form" style="display: block;"></div>
+						<div id="hmdiv" style="display: none;">
+							<div
+								style="border-bottom: none; padding-bottom: 0; border-left: none"
+								class="b_th_co2 buyfimsg" id="hm_form">
+								<table width="100%" border="0" cellspacing="0" cellpadding="0">
+									<colgroup>
+										<col width="80">
+											<col width="">
+									</colgroup>
+									<tbody>
+										<tr>
+											<td class="td1">方案金额</td>
+											<td>总金额<font id="buyMoneySpan3"></font>元&nbsp;&nbsp;&nbsp;每份<font
+												id="fsMoney">0</font>元，共<font id="fsInput">0</font>份
+											</td>
+										</tr>
+										<tr>
+											<td class="td1">我要认购</td>
+											<td><input type="text" maxlength="6" id="rgInput"
+												class="text">份，<font id="rgMoney">￥0.00</font>元，约<font
+													id="rgScale">0.00%</font><font style="display: none"
+													id="rgErr">您需认购<span>x</span>份~<span>x</span>份
+												</font></td>
+										</tr>
+										<tr>
+											<td class="td1">方案保底</td>
+											<td><input type="checkbox" id="isbaodi" class="box">我要保底
+													<input type="text" maxlength="6" disabled="" id="bdInput"
+													value="1" class="text">份，<font id="bdMoney">0</font>元，约<font
+														id="bdScale">10%</font><font style="display: none"
+														id="bdErr">！最低保底5%</font></td>
+										</tr>
+										<tr>
+											<td class="td1">提成比例</td>
+											<td id="tc"><b value="0" class="first">无</b><b value="1">1%</b><b
+												value="2" class="cur">2%</b><b value="3">3%</b><b value="4">4%</b><b
+												value="5">5%</b><b value="6">6%</b><b value="7">7%</b><b
+												value="8">8%</b><b value="9">9%</b><b value="10">10%</b></td>
+										</tr>
+										<tr>
+											<td class="td1">保密设置</td>
+											<td id="gkfs"><em value="0">完全公开</em><em value="1"
+												class="cur">截止后公开</em><em value="2">仅对跟单者公开</em><em
+												value="3">截止后对跟单者公开</em></td>
+										</tr>
+										<tr>
+											<td class="td1">方案宣传</td>
+											<td><input type="checkbox" id="moreCheckbox" class="box">方案宣传选填信息</td>
+										</tr>
+									</tbody>
+									<tbody style="display: none;" id="case_ad">
+
+										<tr>
+											<td class="td1">方案标题</td>
+											<td><input type="text" id="caseTitle" class="bt"
+												value="胜负彩复式合买，欢迎跟单。" maxlength="20"><span
+													class="fa_play">已输入<font id="title_word_count">0</font>个字符。
+												</span></td>
+										</tr>
+										<tr>
+											<td class="td1">方案描述</td>
+											<td><textarea default="随缘,买彩票讲的是运气、缘分和坚持。" id="caseInfo">随缘！买彩票讲的是运气、缘分和坚持。</textarea><span
+												class="fa_play">已输入<font id="content_word_count">0</font>个字符。
+											</span></td>
+										</tr>
+
+
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</div>
+			</div>
+			<div>
+				<div class="b_th_co2" id="div">
+					<table width="760" border="0" style="margin-left: 80px" class="col_2">
+						<tbody><tr>
+							<th>投注信息</th>
+							<td>总金额<font id="buyMoneySpan3">0</font>元
+							</td>
+						</tr>
+					</tbody></table>
+				</div>
+				<div id="ww">
+				 <a id="buy_dg" href="javascript:void(0);" class="d_c_b">立即投注</a>
+				<p class="xytk">
+					<input type="checkbox" checked="checked" id="agreement">我已阅读并同意《<a
+								target="_blank" href="/help/help_yffwxy.html">用户委托投注协议</a>》 
+				</p> 
+				</div>
+				<div id="hmdivs" style="width: 800px; display: none;">
+				<div style="width:799px;border-bottom:none;padding-bottom:0" class="b_th_co2 buyfimsg">
+					<table width="100%" border="0" cellspacing="0" cellpadding="0">
+									<colgroup>
+										<col width="80">
+											<col width="">
+									</colgroup>
+									<tbody>
+										<tr>
+											<td class="td1">方案金额</td>
+											<td>总金额<font id="buyMoneySpan3"></font>元&nbsp;&nbsp;&nbsp;每份<font
+												id="fsMoney">0</font>元，共<font id="fsInput">0</font>份
+											</td>
+										</tr>
+										<tr>
+											<td class="td1">我要认购</td>
+											<td><input type="text" maxlength="6" id="rgInput"
+												class="text">份，<font id="rgMoney">￥0.00</font>元，约<font
+													id="rgScale">0.00%</font><font style="display: none"
+													id="rgErr">您需认购<span>x</span>份~<span>x</span>份
+												</font></td>
+										</tr>
+										<tr>
+											<td class="td1">方案保底</td>
+											<td><input type="checkbox" id="isbaodi" class="box">我要保底
+													<input type="text" maxlength="6" disabled="" id="bdInput"
+													value="1" class="text">份，<font id="bdMoney">0</font>元，约<font
+														id="bdScale">10%</font><font style="display: none"
+														id="bdErr">！最低保底5%</font></td>
+										</tr>
+										<tr>
+											<td class="td1">提成比例</td>
+											<td id="tc"><b value="0" class="first">无</b><b value="1">1%</b><b
+												value="2" class="cur">2%</b><b value="3">3%</b><b value="4">4%</b><b
+												value="5">5%</b><b value="6">6%</b><b value="7">7%</b><b
+												value="8">8%</b><b value="9">9%</b><b value="10">10%</b></td>
+										</tr>
+										<tr>
+											<td class="td1">保密设置</td>
+											<td id="gkfs"><em value="0">完全公开</em><em value="1"
+												class="cur">截止后公开</em><em value="2">仅对跟单者公开</em><em
+												value="3">截止后对跟单者公开</em></td>
+										</tr>
+										<tr>
+											<td class="td1">方案宣传</td>
+											<td><input type="checkbox" id="moreCheckbox" class="box">方案宣传选填信息</td>
+										</tr>
+									</tbody>
+									<tbody style="display: none;" id="case_ad">
+
+										<tr>
+											<td class="td1">方案标题</td>
+											<td><input type="text" id="caseTitle" class="bt"
+												value="胜负彩复式合买，欢迎跟单。" maxlength="20"><span
+													class="fa_play">已输入<font id="title_word_count">0</font>个字符。
+												</span></td>
+										</tr>
+										<tr>
+											<td class="td1">方案描述</td>
+											<td><textarea default="随缘,买彩票讲的是运气、缘分和坚持。" id="caseInfo">随缘！买彩票讲的是运气、缘分和坚持。</textarea><span
+												class="fa_play">已输入<font id="content_word_count">0</font>个字符。
+											</span></td>
+										</tr>
+
+
+									</tbody>
+								</table>
+				</div>
+				<a id="buy_hm" href="javascript:void(0);" class="d_c_b">发起合买</a>
+				<p class="xytk">
+					<input type="checkbox" checked="checked" id="agreement"/>我已阅读并同意《<a href="/help/helpxy.html" target="_blank">用户合买代购协议</a>》 
+				</p>
+			</div>
+			</div>
+			
+			</div></div>
+			
+		</div>
+	</div>
+	<input name="codes" id="codes" type="hidden" value='' />
+	<!--号码-->
+	<input name="zhushu" id="zhushu" type="hidden" value="1" />
+	<!--注数-->
+	<input name="beishu" id="beishu" type="hidden" value="1" />
+	<!--注数-->
+	<input name="totalmoney" id="totalmoney" type="hidden" value="0" />
+	<!--方案金额-->
+	<input name="beishu_list" id="beishu_list" type="hidden" value="" />
+	<!--投注了的倍数列表-->
+	<input name="expect_list" id="expect_list" type="hidden" value="" />
+	<!--投注了的期号列表-->
+	<input name="lotid" id="lotid" type="hidden" value="53" />
+	<!--彩种Id-->
+	<input name="playid" id="playid" type="hidden" value="1" />
+	<!--玩法Id-->
+	<input name="playid2" id="playid2" type="hidden" value="1" />
+	<!--用于图表玩法-->
+	<input name="expect" id="expect" type="hidden" value="" />
+	<!--期号-->
+	<input name="isupload" id="isupload" type="hidden" value="1" />
+	<input name="msgmode" id="msgmode" type="hidden" value="1" />
+	<input name="ishm" id="ishm" type="hidden" value="0" />
+	<input name="ischase" id="ischase" type="hidden" value="0" />
+	<input name="isshow" id="isshow" type="hidden" value="0" />
+	<input name="isbaodi" id="isBaodi" type="hidden" value="0" />
+	<input name="tc_bili" id="tc_bili" type="hidden" value="0" />
+	<input name="lastexpect" id="lastexpect" type="hidden" value="2013358" />
+	<input name="money_limit" id="money_limit" type="hidden"
+		value="2,10000000,," />
+	<input type="hidden" name="gk" id="gk" value="1"> <input
+		type="hidden" name="tcSelect" id="tcSelect" value="2"> <!--#include virtual="/cc/footer.html"-->
+			<script type="text/javascript" src="/public/szc.js"></script> <script
+				type="text/javascript" src="/paiwu/js/index.js"></script>
 </body>
 </html>

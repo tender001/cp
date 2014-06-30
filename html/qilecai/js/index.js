@@ -37,19 +37,25 @@ Class('Choose_base>Choose_singe', {
             var code, count;
             count = Y.getCount();
             if (count > Y.maxZs){
-                  Y.postMsg('msg_show_dlg', '您好, 单个方案不能超过'+Y.maxZs+'注！')
+                  Y.postMsg('msg_show_dlg', '您好, 单个方案不能超过'+Y.maxZs+'注！');
             }else if(count > 0) {
                 code = Y.getChooseCode();
                 Y.postMsg('msg_put_code', code);//广播号码输出消息, 列表框应该监听此消息
             }else{
-                Y.postMsg('msg_show_dlg', '请您至少选择一注号码后再添加！')
+                Y.postMsg('msg_show_dlg', '请您至少选择一注号码后再添加！');
             }            
         });
         // 随机选取
         this.rndOpts = all_rnd_sel = this.get(config.rndOpts);
         Y.get(config.rnd).click(function (){
-            Y.random(all_rnd_sel.val());
-            return false            
+            Y.random(all_rnd_sel.val().replace("注","")*1);
+            //opts.val()
+            return false;            
+        });
+        Y.get(config.s1).click(function (){
+            Y.random(1);
+            //opts.val()
+            return false;            
         });
 		// 定胆机选
 		Y.get('#dd_jx').click( function() {
@@ -59,7 +65,7 @@ Class('Choose_base>Choose_singe', {
 			} else if (selected_num > 6) {
 				Y.postMsg('msg_show_dlg', '您好，最多可选6个号码作为胆码！');
 			} else {
-				Y.randomDD(all_rnd_sel.val());
+				Y.randomDD(all_rnd_sel.val().replace("注","")*1);
 			}
 			return false;
 		} );
@@ -119,21 +125,21 @@ Class('Choose_base>Choose_singe', {
         this.ball.importCode(code[0]);
     }
 });
-$(".suf b").mouseover(function(){
+$("span.nsbool b").mouseover(function(){
 	if($(this).attr("class")=="cur"){
 		return false;
 	}else{
 	$(this).addClass("b_r").siblings().removeClass("b_r");
 	}
 });
-$(".suf b").click(function(){
+$("span.nsbool b").click(function(){
 	if($(this).attr("class")=="b_r cur"){
 		$(this).attr("class","cur");
 	}else{
 		$(this).attr("class","b_r");
 	}
 });
-$(".suf b").mouseout(function(){
+$("span.nsbool b").mouseout(function(){
 	$(this).removeClass("b_r");
 });
 Class('CodeList>SingeCodeList', {
@@ -188,10 +194,63 @@ Class('CodeList>SingeCodeList', {
         var pn = Class.config('play_name');
         return pn=='lr' || pn == 'sc' ? 3 : 1
     });
-
+    $("#numcount").css({
+		"height":0,
+		"overflow":"hidden"
+		});
+    $("#span5").click(function(){
+		$("#span5").toggleClass("span5c");
+		$("#numcount").show();
+		if($("#span5").hasClass("span5c")){
+			$("#numcount").clearQueue().animate({
+				height:250
+				});
+			
+		}else{
+			
+			$("#numcount").animate({
+				height:0
+				
+				});
+		}
+		
+	});
+    $("#pt_bs").val(1);
+    $("#pt_jx_opts").focus(function(){
+		var pt_jx_opts  = $("#pt_jx_opts").val();
+		if(pt_jx_opts != ""){
+			pt_jx_opts=$("#pt_jx_opts").val().replace(/\D/g,'')
+			$("#pt_jx_opts").val(pt_jx_opts);
+		}
+		
+		$("#pt_jx_opts").keyup(function(){
+    		this.value=this.value.replace(/\D/g,''); //只能输数字
+    	});
+	});
+	$("#zh_bs_big").focus(function(){
+		//this.value(1);
+		var zh_bs_big  = $("#zh_bs_big").val();
+		if(zh_bs_big != ""){
+			$("#zh_bs_big").val();
+		}
+		
+		$("#zh_bs_big").keyup(function(){
+    		this.value=this.value.replace(/\D/g,''); //只能输数字
+    		/* this.onMsg('msg_load_expect_list', function (a){
+    	            this.createHTML(a);// 倒计时下载期号后构建
+    	        });  */
+    	});
+	});
+	$("#pt_jx_opts").blur(function(){
+		var pt_jx_opts  = $("#pt_jx_opts").val();
+		if(pt_jx_opts=pt_jx_opts.replace(/\D/g,'')){
+				$("#pt_jx_opts").val(pt_jx_opts+"注");
+		}
+	});
     /*
     begin
     */
+    
     Class({
         use: 'tabs,dataInput,mask',
         ready: true,
@@ -238,23 +297,27 @@ Class('CodeList>SingeCodeList', {
             // 直选
             Y.lib.Choose_singe({
                 msgId: 'pt',
-                balls: '#pt_balls li b',
-                showbar: '#pt_showbar',
-                putBtn: '#pt_put',
+                balls: '#pttz1 div.nx3span b',
+                showbar: '#single_bar',
+                putBtn: '#s1_put',
                 rndOpts:'#pt_jx_opts',
-                clearBtn:'#pt_clear',
+                clearBtn:'#s1_clear',
                 rnd: '#pt_jx',
+                s1:"#s1_jx1",
+				ddRnd: '#dd_jx',
                 yl:[{
                     xml: '/cpdata/omi/07/yilou/hmyl_all.xml',
-                    dom: '#pt_balls i'
+                    dom: '#pttz1 div.nxyl i'
                 }]
             });
             // 直选列表
             Y.lib.SingeCodeList({
                 msgId: 'pt',
-                panel:'#pt_list',
-                bsInput:'#pt_bs',
+                panel:'#code_list',
+                bsInput:'#zh_bs_big',
                 moneySpan: '#pt_money',
+                addbs:'#pt_addbs',
+                lessbs:'#pt_lessbs',
                 zsSpan: '#pt_zs',
                 clearBtn: '#pt_list_clear'
             });
@@ -315,7 +378,7 @@ Class('CodeList>SingeCodeList', {
             Y.lib.DsUpload({
                 zsInput: '#sc_zs_input',
                 bsInput: '#sc_bs_input',
-                moneySpan: '#sc_money',
+                //moneySpan: '#sc_money',
                 scChk: '#scChk',
                 upfile:'#upfile'
             });
@@ -328,16 +391,17 @@ Class('CodeList>SingeCodeList', {
 
             //主玩法
             playTabs = this.lib.Tabs({// zx / z6 / z3
-                items:'#playTabsDd li',
+                items:'#playTabsDd [bet]',
                 contents: '#pttz,#dssc',
                 focusCss: 'cur'
             });
 
+
             //购买方式
             buyTabs = this.lib.Tabs({
-                items:'#all_form b',
+                items:'#all_form label',
                 focusCss:'cur',
-                contents: '#dg_form, #hm_form,#zh_form'
+                contents: '#dg_form, #hmdiv,#zh_form'
             });
             pn = 'pt,sc,dq'.split(',');
             //top3玩法
@@ -347,13 +411,20 @@ Class('CodeList>SingeCodeList', {
                 this.postMsg('msg_clear_code');//通知清除选择
                 this.get('#all_form').hide(b==2);
                 this.get('#dssc').hide();
-                if (b==1) {
-                    Y.createDs();
-                    this.get('#dssc').show();
-                    Class.config('play_name','sc' );
-                    this.postMsg('msg_clear_code');
-                }else if(b==2){
-                    Y.createDq()
+                if(b==0){
+               	 $("#hmdiv").hide();
+               	 $("#zh_form").hide();
+                }
+                if(b==1){
+               	 $("#hmdiv").show();
+               	 $("#zh_form").hide();
+               	$("#ptdiv").hide();
+                }
+                if (b==2) {
+                $("#ptdiv").hide();
+               	 $("#hmdiv").hide();
+               	 $("#zh_form").show();
+                    Y.createDq();
                 }else{
                     Y.createZhOptions(this.btns.nodes[b])
                 }
