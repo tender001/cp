@@ -103,7 +103,7 @@ Class('Choose_base>ZhxChoose',{
 				Y.postMsg('msg_show_dlg', '您好，您选择的胆码数可以组成一注，请删减！');
 			} else {
 				
-				Y.randomDD(opts.val(), code);
+				Y.randomDD(opts.val().replace("注","")*1, code);
 			}
 			return false;
 		} );
