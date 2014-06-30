@@ -478,7 +478,59 @@ Class('CodeList>Z6CodeList', {
         }
         return 1
     });
-
+    $("#zhx_pt_jx_opts").focus(function(){
+		var zhx_pt_jx_opts  = $("#zhx_pt_jx_opts").val();
+		if(zhx_pt_jx_opts != ""){
+			zhx_pt_jx_opts=$("#zhx_pt_jx_opts").val().replace(/\D/g,'');
+			$("#zhx_pt_jx_opts").val(zhx_pt_jx_opts);
+		}
+		
+		$("#zhx_pt_jx_opts").keyup(function(){
+    		this.value=this.value.replace(/\D/g,''); //只能输数字
+    	});
+	});
+    $("#zhx_pt_jx_opts").blur(function(){
+		var zhx_pt_jx_opts  = $("#zhx_pt_jx_opts").val();
+		if(zhx_pt_jx_opts=zhx_pt_jx_opts.replace(/\D/g,'')){
+				$("#zhx_pt_jx_opts").val(zhx_pt_jx_opts+"注");
+		}
+	});
+    
+    $("#z6pt_jx_opts").focus(function(){
+		var z6pt_jx_opts  = $("#z6pt_jx_opts").val();
+		if(z6pt_jx_opts != ""){
+			z6pt_jx_opts=$("#z6pt_jx_opts").val().replace(/\D/g,'');
+			$("#z6pt_jx_opts").val(z6pt_jx_opts);
+		}
+		
+		$("#z6pt_jx_opts").keyup(function(){
+    		this.value=this.value.replace(/\D/g,''); //只能输数字
+    	});
+	});
+    $("#z6pt_jx_opts").blur(function(){
+		var z6pt_jx_opts  = $("#z6pt_jx_opts").val();
+		if(z6pt_jx_opts=z6pt_jx_opts.replace(/\D/g,'')){
+				$("#z6pt_jx_opts").val(z6pt_jx_opts+"注");
+		}
+	});
+    
+    $("#z3pt_jx_opts").focus(function(){
+		var z3pt_jx_opts  = $("#z3pt_jx_opts").val();
+		if(z3pt_jx_opts != ""){
+			z3pt_jx_opts=$("#z3pt_jx_opts").val().replace(/\D/g,'');
+			$("#z3pt_jx_opts").val(z3pt_jx_opts);
+		}
+		
+		$("#z3pt_jx_opts").keyup(function(){
+    		this.value=this.value.replace(/\D/g,''); //只能输数字
+    	});
+	});
+    $("#z3pt_jx_opts").blur(function(){
+		var z3pt_jx_opts  = $("#z3pt_jx_opts").val();
+		if(z3pt_jx_opts=z3pt_jx_opts.replace(/\D/g,'')){
+				$("#z3pt_jx_opts").val(z3pt_jx_opts+"注");
+		}
+	});
     Class.extend('exportCode', function (){
         // 传入号码9|8|8$2|5|7
         var import_code, arrCodes, short_code, pid = this.get('#playid2').val() || 1;
