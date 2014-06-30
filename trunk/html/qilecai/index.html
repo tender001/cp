@@ -1,12 +1,12 @@
 ﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>七乐彩投注_七乐彩合买_福彩七乐彩开奖结果_七乐彩走势图_159彩票网</title>
-<meta name="keywords" content="七乐彩，七乐彩投注"/>
-<meta name="description" content="159彩票网七乐彩频道为您提供七乐彩投注和合买、七乐彩开奖结果、七乐彩走势图、七乐彩专家预测推荐和玩法等信息。159彩票网上投注最佳选择"/>
+<meta name="keywords" content="七乐彩，七乐彩投注" />
+<meta name="description"
+	content="159彩票网七乐彩频道为您提供七乐彩投注和合买、七乐彩开奖结果、七乐彩走势图、七乐彩专家预测推荐和玩法等信息。159彩票网上投注最佳选择" />
 <link href="/css/159cai.css" type="text/css" rel="stylesheet" />
-<link href="/css/new159cai.css"  rel="stylesheet" type="text/css" />
+<link href="/css/new159cai.css" rel="stylesheet" type="text/css" />
 <script type="text/javascript" src="/public/jq2.js"></script>
 <script type="text/javascript" src="/public/jq.js"></script>
 <script type="text/javascript" src="/public/menu.js"></script>
@@ -14,342 +14,492 @@
 <script type="text/javascript" src="/public/chklogin.js"></script>
 </head>
 <body>
-<!-- 头部内容 -->  
-<!--#include virtual="/cc/header.html"-->
-<!--#include virtual="/cc/nav.html"-->
-<!-- 头部内容 -->
-<div id="container">
-<div class=breadcrumb><p>您现在的位置：<a href="/" title="网上买彩票"><font>159彩票网</font></a> &gt; <a href="/dating/" title="购彩大厅"><font>购彩大厅</font></a> &gt; 七乐彩</a></p></div>
-<div class=b-top style="height:147px">
-<div class="b-top-inner"  style="background-image:url(/images/cdbg/sz_03.gif)">
-<h2 class="qlc-logo" title="159彩票网_七乐彩">七乐彩</h2>
-<div class="b-top-info">
-<div  class="dc_w"><b>七乐彩</b>第<select id="expect_tab" name="expect_tab" style="width:100px"></select>期<p>单式截至:<span id="ds_endTimeSpan"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;复式截至:<span id="fs_endTimeSpan"></span></p></div>
-<div class="dc_q"><strong>2元赢取500万</strong> 每周一、三、五晚<strong>21：30</strong>开奖</div></div>
-<div class="b-top-nav">
-  <ul class="b-top-mainNav">
-    <li class="cur"><a href="javascript:void(0);"><span>选号投注</span></a></li>
-    <li><a href="/hemai/index.html?lotid=07" target="_blank"><span>参与合买</span></a></li>
-    <li><a href="/account/orderlist.html" target="_blank"><span>我的方案</span></a></li>
-  </ul>
-  <div class="b-top-links"><a href="/guoguan/qlc.html" target="_blank">过关统计</a>&nbsp;|&nbsp;<a href="http://zst.159cai.com/cjwqlc/" target="_blank">走势图</a>&nbsp;|&nbsp;<a href="/help/help_qlcjs.html" target="_blank">玩法介绍</a></div></div>
-  <div class="szc_ds">
-  <ul id="playTabsDd"><li class="cur">普通投注</li><li>单式上传</li></ul>
-   <div class="dc_q"><p><span>截止时间：</span><span id="countDownSpan"></span></p></div></div>
+	<!-- 头部内容 -->
+	<!--#include virtual="/cc/header.html"-->
+	<!--#include virtual="/cc/nav.html"-->
+	<!-- 头部内容 -->
+	<div id="container">
+		<div class=breadcrumb>
+			<p>
+				您现在的位置：<a href="/" title="网上买彩票"><font>159彩票网</font></a> &gt; <a
+					href="/dating/" title="购彩大厅"><font>购彩大厅</font></a> &gt; 七乐彩
+			</p>
+		</div>
+		<div style="height:45px" class="touztop">
+			<div class="touzcm" >
+				<h1>七乐彩</h1>
+				<span id="playTabsDd"> <a class="cur" bet="0">选号投注</a> <a bet="0">单式投注</a>
+					<a href="/hemai/index.html?lotid=07" target="_blank">参与合买</a> <a
+					href="/account/myaccount.html" target="_blank">我的方案</a>
 
-</div></div>
-<div class="dlt_m">
- <div class="dlt_m_left">
- <div id='pttz' style="display:" onselectstart="return false">
-  <div class="sd_tb">
- <div class="qx_xuh"> 
-  <ul id="pt_balls">
-   <li class="sus"></li><li  class="suf">请至少选择<font>7</font>个号码</li>
-   <li class="sub">选择号</li><li  class="suf"><b>1</b><b>2</b><b>3</b><b>4</b><b>5</b><b>6</b><b>7</b><b>8</b><b>9</b><b>10</b><b>11</b><b>12</b><b>13</b><b>14</b><b>15</b></li>
-   <li class="sul">遗漏>></li><li class="sud"><i>0</i><i>0</i><i>0</i><i>0</i><i>0</i><i>0</i><i>0</i><i>0</i><i>0</i><i>0</i><i>0</i><i>0</i><i>0</i><i>0</i><i>0</i></li>
-   <li class="sus"></li><li  class="suf"><b>16</b><b>17</b><b>18</b><b>19</b><b>20</b><b>21</b><b>22</b><b>23</b><b>24</b><b>25</b><b>26</b><b>27</b><b>28</b><b>29</b><b>30</b></li>
-   <li class="sul"></li><li class="sud"><i>0</i><i>0</i><i>0</i><i>0</i><i>0</i><i>0</i><i>0</i><i>0</i><i>0</i><i>0</i><i>0</i><i>0</i><i>0</i><i>0</i><i>0</i></li>
-  </ul>
- </div>
- </div>
- <p class="xh_text" id="pt_showbar">[ 您选择了<font>0</font>注，共计<font>0</font>元 ]</p>
- <span class="sz_a_l"><a class="sz_cmt" id="pt_put"></a><a class="qc_xh" id="pt_clear">清除当前选号</a></span>
- <div class="sz_line"></div>
- <div class="reson_area">
-  <ul id="pt_list"></ul>
- </div>
- <div class="sz_sz">
-  <span class="jx_text"><input type="text"  id="pt_jx_opts" value="5"/><a href="javascript:void(0);" id="pt_jx">机选</a></span>
-  <a href="javascript:void(0);" class="jx5z" id="dd_jx">定胆机选</a>
-  <a href="javascript:void(0);" class="qkjx" id="pt_list_clear">清空列表</a>
- </div>
- <p class="zj_bt"  style="height:20px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;您选择了<font id="pt_zs">0</font>注， 倍投:<input type="text" class="text" value="1" id="pt_bs" maxlength="6"/>倍，共<font id="pt_money">￥0.00 </font>元</p>
- </div>
+				</span>
+				<p>
+					<a href="/help/help_qxcjs.html" target="_blank">玩法介绍</a>|<a
+						href="/qlc/yuce/" target="_blank">预测推荐</a>|<a
+						href="/guoguan/qlc.html" target="_blank">过关统计</a>|<a
+						href="http://zst.159cai.com/cjwqlc/" target="_blank">走势图</a>
+				</p>
+			</div>
+		</div>
 
- <!--单式投注-->
-<div class="jc_ds" id="dssc" style="display:none;border:0px">
-<form name="project_form" id="suc_form" action="/fupload.phpx" method="post" enctype="multipart/form-data">
-<p class="step_3_m" style="padding-left:60px;">发起方案：  <input type="text"  class="text" id="sc_zs_input" maxlength="5"/>注，<input type="text"  class="text" id="sc_bs_input" value="1" maxlength="2"/>倍，共<font  id="sc_money">0</font>元。 <input type="checkbox"  class="box" id="scChk" /> <label for="scChk">发起后再上传</label><br />
-<input  type="file" name="upfile" id="upfile"/>
-<br />单式投注说明:
-<br />1、选择倍投注时只需上传单倍方案；上传的方案注数必须跟填写的一致，否则可能无法出票。 <br />
-2、请严格参照“<a href="javascript:void(0);" onclick="Yobj.openUrl('/qilecai/bzgs.html',250,387)">标准格式示例</a>”格式上传方案，否则网站不保证为您做过关统计以及历史战绩统计。 <br />
-3、文件格式必须是文本文件(.txt)。 <br />
-4、上传的文件较大时，会导致上传时间及在本页停留时间较长，请耐心等待。</p></form>
-</div>
 
-<div class="b_th_top1" id="all_form"><span>购买方式</span><b class="cur"><input type="radio" name="radio_r"/>我要代购</b><b><input type="radio" name="radio_r"/>发起合买</b><b><input type="radio" name="radio_r"/>我要追号</b><p>有购买人自行全额购买彩票</p></div>
-<div id="dg_form" style="display:;">
-<div class="b_th_cosz">
- <table width="760" border="0" class="col_2" style="margin:10px 0 0 5px">
-  <tr>
-    <th>投注信息</th>
-    <td>总金额<font id="buyMoneySpan">0</font>元</td>
-  </tr>
-</table>
-</div>
-<div class="sz_line"></div>
-<a href="javascript:void(0);" class="asz_tz" id="buy_dg">立即代购</a>
-</div>
+		<div class="numcai">
+			<div class="nwx5time">
+				<span class="span1">第 <select id="expect_tab"
+					name="expect_tab"><option></option></select>期
+				</span> <span class="span2"><font id="countDownSpan"><em>00</em><i>时</i><em>00</em><i>分</i><em>00</em><i>秒</i></font></span>
+				<i style="display: inline;"></i> <span class="span3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;单式截至：<i
+					id="ds_endTimeSpan"></i>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;复式截至：<i
+					id="fs_endTimeSpan"></i></span> <span class="span5 spanab" id="span5">号码统计</span>
+				<span class="span5 spanab spanabc">近期开奖</span>
+			</div>
+			<!-- <div class="numcount" id="numcount" style="height: 0; display: none;" >
+				
+								</div></td>
+						</tr>
+						 <tr class="tr2 tr4">
+							<td>2014160</td>
+							<td class="tdi"><i>9</i><i>9</i><i>9</i></td>
+							<td>2014160</td>
+							<td class="tdi"><i>9</i><i>9</i><i>9</i></td>
+							<td>2014160</td>
+							<td class="tdi"><i>9</i><i>9</i><i>9</i></td>
+							<td>2014160</td>
+							<td><i>9</i><i>9</i><i>9</i></td>
+						</tr>
+						<tr class="tr2 tr4">
+							<td>2014160</td>
+							<td class="tdi"><i>9</i><i>9</i><i>9</i></td>
+							<td>2014160</td>
+							<td class="tdi"><i>9</i><i>9</i><i>9</i></td>
+							<td>2014160</td>
+							<td class="tdi"><i>9</i><i>9</i><i>9</i></td>
+							<td>2014160</td>
+							<td><i>9</i><i>9</i><i>9</i></td>
+						</tr>
+				</table>
+			</div> -->
+			<div class="numcount"  id="numcount" style="height: 0;">
+				<table width="100%" cellspacing="0" cellpadding="0" border="0">
+					
+						<tr class="tr1">
+						<td>热号</td><td>冷号</td><td>高人气</td><td>低人气</td>
+					</tr>
+						<tr class="tr2">
+							<td>
+								<div class="ncdcol" id="hot">
+									<table width="230" border="0" cellspacing="0" cellpadding="0">
+										<col width="30"/>
+										<col width="130"/>
+										<col width=""/>
+									  <tr>
+										    <td><b>0</b></td>
+										    <td><span><em style="width: 14%;"></em></span></td>
+										    <td><i>0次</i></td>
+									  </tr>
+									  <tr>
+										    <td><b>0</b></td>
+										    <td><span><em style="width: 14%;"></em></span></td>
+										    <td><i>0次</i></td>
+									  </tr>
+									  <tr>
+										    <td><b>0</b></td>
+										    <td><span><em style="width:14%"></em></span></td>
+										    <td><i>0次</i></td>
+									  </tr>
+									  <tr>
+										    <td><b>0</b></td>
+										    <td><span><em style="width: 14%;"></em></span></td>
+										    <td><i>0次</i></td>
+									  </tr>
+									  <tr>
+										    <td width="30"><b>0</b></td>
+										    <td><span><em style="width: 19%;"></em></span></td>
+										    <td><i>0次</i></td>
+									  </tr>
+									  <tr>
+										    <td><b>0</b></td>
+										    <td><span><em style="width: 19%;"></em></span></td>
+										    <td><i>0次</i></td>
+									  </tr>
+									    <tr>
+										    <td><b>0</b></td>
+										    <td><span><em style="width: 19%;"></em></span></td>
+										    <td><i>0次</i></td>
+									  </tr>
+									</table>
+								</div></td>
+						
+							<td><div class="ncdcol" id="cold">
+								<table width="230" border="0" cellspacing="0" cellpadding="0">
+									  <tr>
+										    <td><b>0</b></td>
+										    <td><span><em style="width: 16%;"></em></span></td>
+										    <td><i>0次</i></td>
+									  </tr>
+									  <tr>
+										    <td><b>0</b></td>
+										    <td><span><em style="width: 14%;"></em></span></td>
+										    <td><i>0次</i></td>
+									  </tr>
+									  <tr>
+										    <td><b>0</b></td>
+										    <td><span><em style="width:14%"></em></span></td>
+										    <td><i>0次</i></td>
+									  </tr>
+									  <tr>
+										    <td><b>0</b></td>
+										    <td><span><em style="width: 14%;"></em></span></td>
+										    <td><i>0次</i></td>
+									  </tr>
+									  <tr>
+										    <td><b>0</b></td>
+										    <td><span><em style="width: 19%;"></em></span></td>
+										    <td><i>0次</i></td>
+									  </tr>
+									  <tr>
+										    <td><b>0</b></td>
+										    <td><span><em style="width: 19%;"></em></span></td>
+										    <td><i>0次</i></td>
+									  </tr>
+									    <tr>
+										    <td><b>0</b></td>
+										    <td><span><em style="width: 19%;"></em></span></td>
+										    <td><i>0次</i></td>
+									  </tr>
+									</table>
+								</div></td>
+								<td><div class="ncdcol" id="grq">
+								<table width="230" border="0" cellspacing="0" cellpadding="0">
+									  <tr>
+										    <td><b>0</b></td>
+										    <td><span><em style="width: 16%;"></em></span></td>
+										    <td><i>0次</i></td>
+									  </tr>
+									  <tr>
+										    <td><b>0</b></td>
+										    <td><span><em style="width: 14%;"></em></span></td>
+										    <td><i>0次</i></td>
+									  </tr>
+									  <tr>
+										    <td><b>0</b></td>
+										    <td><span><em style="width:14%"></em></span></td>
+										    <td><i>0次</i></td>
+									  </tr>
+									  <tr>
+										    <td><b>0</b></td>
+										    <td><span><em style="width: 14%;"></em></span></td>
+										    <td><i>0次</i></td>
+									  </tr>
+									  <tr>
+										    <td><b>0</b></td>
+										    <td><span><em style="width: 19%;"></em></span></td>
+										    <td><i>0次</i></td>
+									  </tr>
+									    <tr>
+										    <td><b>0</b></td>
+										    <td><span><em style="width: 19%;"></em></span></td>
+										    <td><i>0次</i></td>
+									  </tr>
+									    <tr>
+										    <td><b>0</b></td>
+										    <td><span><em style="width: 19%;"></em></span></td>
+										    <td><i>0次</i></td>
+									  </tr>
+									</table>
+								</div></td>
+								<td><div class="ncdcol" id="drq">
+								<table width="230" border="0" cellspacing="0" cellpadding="0">
+									  <tr>
+										    <td><b>0</b></td>
+										    <td><span><em style="width: 16%;"></em></span></td>
+										    <td><i>0次</i></td>
+									  </tr>
+									  <tr>
+										    <td><b>0</b></td>
+										    <td><span><em style="width: 14%;"></em></span></td>
+										    <td><i>0次</i></td>
+									  </tr>
+									  <tr>
+										    <td><b>0</b></td>
+										    <td><span><em style="width:14%"></em></span></td>
+										    <td><i>0次</i></td>
+									  </tr>
+									  <tr>
+										    <td><b>0</b></td>
+										    <td><span><em style="width: 14%;"></em></span></td>
+										    <td><i>0次</i></td>
+									  </tr>
+									  <tr>
+										    <td><b>0</b></td>
+										    <td><span><em style="width: 19%;"></em></span></td>
+										    <td><i>0次</i></td>
+									  </tr>
+									  <tr>
+										    <td><b>0</b></td>
+										    <td><span><em style="width: 19%;"></em></span></td>
+										    <td><i>0次</i></td>
+									  </tr>
+									    <tr>
+										    <td><b>0</b></td>
+										    <td><span><em style="width: 19%;"></em></span></td>
+										    <td><i>0次</i></td>
+									  </tr>
+									</table>
+								</div></td>
+						</tr>
+				</table>
+			</div>
+			<div class="nxmiddle">
+				<h2>
+					<p id="wanfatishi">
+						请至少选择<em class="red">7</em>个号码
+					</p>
+				</h2>
 
-<div id="hm_form" style="display:none">
-<div class="b_th_cosz">
- <table width="760" border="0" class="col_2" style="margin:10px 0 0 5px">
-  <tr>
-    <th>投注信息</th>
-    <td>总金额<font id="buyMoneySpan3">0</font>元</td>
-  </tr>
-  <tr>
-    <th>我要分成</th>
-    <td><p>每份<font id="fsMoney">1</font>元，共<font id="fsInput">0</font>份</p></td>
-  </tr>
-  <tr>
-    <th>我要认购</th>
-    <td><input type="text" class="text" id="rgInput" value="1"/>份，<font id="rgMoney">0</font>元，约<font id="rgScale">0.00%</font><font id="rgErr" style="display:none">至少需要认购3份</font></td>
-  </tr>
-  <tr>
-    <th></th>
-    <td><input type="checkbox" name="isbaodi" id="isbaodi" /> 我要保底 <input type="text" class="text" value="0" disabled="disabled" id="bdInput"/>份，<font id="bdMoney">0</font>元，约<font id="bdScale">0.00%</font><font id="bdErr" style="display:none">最低保底20%</font></td>
-  </tr>
-  <tr>
-    <th>提成比例</th>
-    <td id="tc"><b class="first" value="0">无</b><b value="1">1%</b><b class="cur" value="2">2%</b><b value="3">3%</b><b value="4">4%</b><b value="5">5%</b><b value="6">6%</b><b value="7">7%</b><b value="8">8%</b><b value="9">9%</b><b value="10">10%</b></td>
-  </tr>
-  <tr>
-    <th>保密设置</th>
-    <td id="gkfs"><em value="0">完全公开</em><em class="cur" value="1">截止后公开</em><em value="2">仅对跟单者公开</em><em value="3">截止后对跟单者公开</em></td>
-  </tr>
-  <tr>
-    <th>可选选项</th>
-    <td><input type="checkbox"  class="box"  id="moreCheckbox"/>方案宣传选填信息</td>
-  </tr>
-</table>
-<div class="conduct_msg" style="padding-left:20px;_padding-left:10px;display:none;" id="case_ad">
-<span class="fa">方案标题</span><input type="text" class="bt"  id="caseTitle" value="七乐彩合买，欢迎跟单。"/><span class="fa_play">最多可以输入<font>20</font>个字符。</span>
-<span class="fa" style="clear:both">方案描述</span><textarea id="caseInfo">说点什么吧，让您的方案被彩民认可．．．</textarea><span class="fa_play">最多可以输入<font>200</font>个字符。</span>
-</div>
-</div>
-<div class="sz_line"></div>
-<a href="javascript:void(0);" class="asz_tz" id="buy_hm">发起合买</a>
-</div>
 
-<div class="b_th_cosz" id="zh_form" style="display:none;">
- <p class="p_z_qs">追号期数<select name="zh_opts" id="zh_opts">
-							<option value="10" checked>追10期</option>
+				<div class="nxhm" id="pttz1">
+					<div class="nx3span">
+						<div class="numyl">选号区</div>
+						<span class="nsbool" id="renxuan"><b class="">1</b><b
+							class="">2</b><b>3</b><b>4</b><b class="">5</b><b class="">6</b><b
+							class="">7</b><b class="">8</b><b class="">9</b> 
+						<b class="">10</b><b class="">11</b><b class="">12</b><b class="">13</b><b
+							class="">14</b><b class="">15</b></span> 
+						<div class="nxyl">
+							<span>遗漏</span>
+							<div>
+								<i>2</i>
+								<i>2</i>
+								<i>2</i>
+								<i>2</i>
+								<i>2</i>
+								<i>2</i>
+								<i>2</i>
+								<i>2</i>
+								<i>2</i>
+								<i>2</i>
+								<i>2</i>
+								<i>2</i>
+								<i>2</i>
+								<i>2</i>
+								<i>2</i>
+							</div>
+						</div>
+					</div>
+					<div class="nx3span">
+						<div class="numyl">选号区</div>
+						<span class="nsbool" ><b class="">16</b><b class="">17</b><b
+							class="">18</b>
+						<b class="">19</b><b class="">20</b><b class="">21</b><b class="">22</b><b
+							class="">23</b><b class="">24</b><b class="">25</b><b class="">26</b><b
+							class="">27</b> <b class="">28</b><b class="">29</b><b class="">30</b></span> 
+						<div class="nxyl">
+							<span>遗漏</span>
+							<div>
+								<i>2</i>
+								<i>2</i>
+								<i>2</i>
+								<i>2</i>
+								<i>2</i>
+								<i>2</i>
+								<i>2</i>
+								<i>2</i>
+								<i>2</i>
+								<i>2</i>
+								<i>2</i>
+								<i>2</i>
+								<i>2</i>
+								<i>2</i>
+								<i>2</i>
+							</div>
+						</div>
+					</div>
+				</div>
+
+
+			</div>
+
+			<div class="nxszop" style="margin-bottom: 20px;">
+				<p class="xh_text" id="single_bar">
+					【您选择了<em>0</em>注，共 ￥<em>0</em>元 】如中奖，奖金 <em>0</em>元，盈利<em>0</em>元
+				</p>
+				<span class="sz_a_l"> <a
+					style="margin-left: 230px; _margin-left: 170px" class="sz_cmt"
+					id="s1_put"></a> <a class="qc_xh" id="s1_clear">清除当前选号</a>
+				</span>
+			</div>
+		
+		<div class="ncath">
+			<div class="ncathleft">
+				<div class="cm_ssq_yx_num ncatharea">
+					<ul id="code_list"></ul>
+
+				</div>
+
+				<div class="ncaltbn">
+					<a id="dd_jx">定胆机选</a> <a id="s1_jx1" href="javascript:void(0);">机选一注</a>
+					<span> <input type="text" id="pt_jx_opts" value="5注"> <a
+							href="javascript:void(0);" id="pt_jx">机选</a></span> <a class="a1"
+						id="pt_list_clear">清空列表</a> <a id="clear_list1"
+						href="javascript:void(0);" style="display: none;">全清</a>
+				</div>
+				<p>
+					共<em id="pt_zs">0</em>注，我要买<span><input type="text"
+						value="1" id="zh_bs_big" maxlength="5"><img
+							src="/images/cai888/nwx5_27.jpg" id="pt_addbs"><img
+								src="/images/cai888/nwx5_29.jpg" id="pt_lessbs"></span>倍<s>（最高限投10000倍）</s>，合计金额<em
+						id="pt_money">0</em>元
+				</p>
+			</div>
+
+			<div class="ncathright">
+				<div class="ncathtype" id="all_form">
+					<span>投注方式</span> <label><input type="radio" name="radg"
+						checked="checked"/>代购</label> <label><input type="radio"
+						name="radg"/>发起合买</label> <label><input type="radio"
+						name="radg"/>我要追号</label>
+
+				</div>
+				<div class="kc_zjz" style="display: none;" id="hmdiv">
+					<div>
+						<div class="b_th_co2 buyfimsg"
+							style="border-bottom: none; padding-bottom: 0; border-left: none">
+							<table width="100%" cellspacing="0" cellpadding="0" border="0">
+									<colgroup>
+										<col width="78"/>
+											<col width=""/>
+									</colgroup>
+									<tbody>
+										<tr>
+											<td class="td1">方案金额</td>
+											<td>总金额<font id="buyMoneySpan3"></font>元&nbsp;&nbsp;&nbsp;每份<font id="fsMoney">0</font>元，共<font id="fsInput">0</font>份
+											</td>
+										</tr>
+										<tr>
+											<td class="td1">我要认购</td>
+											<td><input type="text" class="text" id="rgInput" maxlength="6"/>份，<font id="rgMoney">￥0.00</font>元，约<font id="rgScale">0.00%</font><font id="rgErr" style="display: none">您需认购<span>x</span>份~<span>x</span>份
+												</font></td>
+										</tr>
+										<tr>
+											<td class="td1">方案保底</td>
+											<td><input type="checkbox" class="box" id="isbaodi"/>我要保底
+													<input type="text" class="text" value="1" id="bdInput" disabled="" maxlength="6"/>份，<font id="bdMoney">0</font>元，约<font id="bdScale">10%</font><font id="bdErr" style="display: none">！最低保底5%</font></td>
+										</tr>
+										<tr>
+											<td class="td1">提成比例</td>
+											<td id="tc"><b class="first" value="0">无</b><b value="1">1%</b><b class="cur" value="2">2%</b><b value="3">3%</b><b value="4">4%</b><b value="5">5%</b><b value="6">6%</b><b value="7">7%</b><b value="8">8%</b><b value="9">9%</b><b value="10">10%</b></td>
+										</tr>
+										<tr>
+											<td class="td1">保密设置</td>
+											<td id="gkfs"><em value="0">完全公开</em><em class="cur" value="1">截止后公开</em><em value="2">仅对跟单者公开</em><em value="3">截止后对跟单者公开</em></td>
+										</tr>
+										<tr>
+											<td class="td1">方案宣传</td>
+											<td><input type="checkbox" class="box" id="moreCheckbox"/>方案宣传选填信息</td>
+										</tr>
+									</tbody>
+									<tbody id="case_ad" style="display: none;">
+
+										<tr>
+											<td class="td1">方案标题</td>
+											<td><input type="text" maxlength="20" value="胜负彩复式合买，欢迎跟单。" class="bt" id="caseTitle"/><span class="fa_play">已输入<font id="title_word_count">0</font>个字符。
+												</span></td>
+										</tr>
+										<tr>
+											<td class="td1">方案描述</td>
+											<td><textarea id="caseInfo" default="随缘,买彩票讲的是运气、缘分和坚持。">随缘！买彩票讲的是运气、缘分和坚持。</textarea><span class="fa_play">已输入<font id="content_word_count">0</font>个字符。
+											</span></td>
+										</tr>
+
+
+									</tbody>
+								</table>
+						</div>
+					</div>
+				</div>
+				<div class="kc_zjz" id="zhdiv">
+				<div id="dg_form" style="display: block;"></div>
+					<div id="zh_form"  style="display: none;" class="kc_zja">
+							<div class="kc_zj2">
+								<p>
+									<select id="zh_opts" name="zh_opts">
+							<option checked="" value="10">追10期</option>
 							<option value="20">追20期</option>
 							<option value="30">追30期</option>
 							<option value="100">追更多期</option>
-						</select></p><p class="p_z_tz">追号设置
-						<select name="zhflag" id="tzzh" >
-						<option value="0" selected>中奖后不停止</option>
-						<option value="1">中奖后停止</option>
-						<option value="2">盈利后停止</option>
-						</select></p><div class="x_zy">
-<table width="100%" border="0" cellpadding="0" cellspacing="0" class="zh_tb_c">
- <colgroup>
- <col width="70" />
- <col width="150" />
- <col width="150" />
- <col width="150" />
- <col/>
- </colgroup>
-  <thead><tr>
-    <td>序号</td>
-    <td  class="tld">期号</td>
-    <td>倍数</td>
-    <td>金额</td>
-    <td>开奖日期</td>
-  </tr></thead>
-  <tbody id="zh_list">
-  </tbody>
-</table></div>
-<div class="sz_line"></div>
-<p class="red_pay">本次投注金额为<font id="buyMoneySpan2">￥0.00</font>元</p>
-<a href="javascript:void(0);" class="asz_tz" id="buy_zh">我要追号</a>
-</div>
-<p class="xytk" id="userMoneyInfo">
-您尚未登录，请先<a href="javascript:void(0);" onclick="Yobj.postMsg('msg_login')">登录</a>!
-</p>
-<p class="xytk">
-<input type="checkbox" checked="checked" id="agreement">我已阅读同意《<a href="/help/help_yffwxy.html">用户委托投注协议</a>》
-</p>
- </div>
- <div class="dlt_m_right">
-  <h2>开奖公告</h2>
-  <div class="sz_r_kj"><p><strong>第<font id="ex">20133003</font>期</strong> <i id="rq">13-01-08</i><a href="/qilecai/kaijiang.html">详情</a></p>
-  <span id="kjopcode"><b>8</b><b>8</b><b>8</b><b>8</b><b>8</b><b>8</b><b>8</b><b class="blue">8</b></span>
-  <p class="x_kjq"><span>近10期开奖结果</span><a href="javascript:void(0);" id="show_info">展开</a></p>
-  <ul id="kjhis" style="display: none;"><li>期次</li><li class="sup">开奖号码</li>
-  </div>
-   <h2 class="sec_h">号码统计</h2>
-   <div class="lr_tb" id="coolhot"><a href="javascript:void(0);" class="cur" style="borderleft:none">热号</a><a href="javascript:void(0);"> 冷号 </a><a href="javascript:void(0);">高人气 </a><a href="javascript:void(0);">低人气</a></div>
-  <div class="lr_m" id="hot">
-   <table width="230" border="0" cellpadding="0" cellspacing="0">
-  <tr>
-    <td width="30"><b>0</b></td>
-    <td width="120"><span><em style="width:50%"></em></span></td>
-    <td><i>0</i></td>
-  </tr>
-  <tr>
-    <td width="30"><b>0</b></td>
-    <td width="120"><span><em style="width:50%"></em></span></td>
-    <td><i>0</i></td>
-  </tr>
-  <tr>
-    <td width="30"><b>0</b></td>
-    <td width="120"><span><em style="width:50%"></em></span></td>
-    <td><i>0</i></td>
-  </tr>
-  <tr>
-    <td width="30"><b>0</b></td>
-    <td width="120"><span><em style="width:50%"></em></span></td>
-    <td><i>0</i></td>
-  </tr>
-  <tr>
-    <td width="30"><b>0</b></td>
-    <td width="120"><span><em style="width:50%"></em></span></td>
-    <td><i>0</i></td>
-  </tr>
-  <tr>
-    <td width="30"><b>0</b></td>
-    <td width="120"><span><em style="width:50%"></em></span></td>
-    <td><i>0</i></td>
-  </tr>
-  <tr>
-    <td width="30"><b>0</b></td>
-    <td width="120"><span><em style="width:50%"></em></span></td>
-    <td><i>0</i></td>
-  </tr>
-</table></div>
-<div class="lr_m"  id="cold" style="display:none;"><table width="230" border="0" cellpadding="0" cellspacing="0">
-  <tr>
-    <td width="30"><b>0</b></td>
-    <td width="120"><span><em style="width:50%"></em></span></td>
-    <td><i>0</i></td>
-  </tr>
-  <tr>
-    <td width="30"><b>0</b></td>
-    <td width="120"><span><em style="width:50%"></em></span></td>
-    <td><i>0</i></td>
-  </tr>
-  <tr>
-    <td width="30"><b>0</b></td>
-    <td width="120"><span><em style="width:50%"></em></span></td>
-    <td><i>0</i></td>
-  </tr>
-  <tr>
-    <td width="30"><b>0</b></td>
-    <td width="120"><span><em style="width:50%"></em></span></td>
-    <td><i>0</i></td>
-  </tr>
-  <tr>
-    <td width="30"><b>0</b></td>
-    <td width="120"><span><em style="width:50%"></em></span></td>
-    <td><i>0</i></td>
-  </tr>
-  <tr>
-    <td width="30"><b>0</b></td>
-    <td width="120"><span><em style="width:50%"></em></span></td>
-    <td><i>0</i></td>
-  </tr>
-  <tr>
-    <td width="30"><b>0</b></td>
-    <td width="120"><span><em style="width:50%"></em></span></td>
-    <td><i>0</i></td>
-  </tr>
-</table>
-</div>
-<div class="lr_m"  id="grq" style="display:none;"><table width="230" border="0" cellpadding="0" cellspacing="0">
-  <tr>
-    <td width="30"><b>0</b></td>
-    <td width="120"><span><em style="width:50%"></em></span></td>
-    <td><i>0</i></td>
-  </tr>
-  <tr>
-    <td width="30"><b>0</b></td>
-    <td width="120"><span><em style="width:50%"></em></span></td>
-    <td><i>0</i></td>
-  </tr>
-  <tr>
-    <td width="30"><b>0</b></td>
-    <td width="120"><span><em style="width:50%"></em></span></td>
-    <td><i>0</i></td>
-  </tr>
-  <tr>
-    <td width="30"><b>0</b></td>
-    <td width="120"><span><em style="width:50%"></em></span></td>
-    <td><i>0</i></td>
-  </tr>
-  <tr>
-    <td width="30"><b>0</b></td>
-    <td width="120"><span><em style="width:50%"></em></span></td>
-    <td><i>0</i></td>
-  </tr>
-  <tr>
-    <td width="30"><b>0</b></td>
-    <td width="120"><span><em style="width:50%"></em></span></td>
-    <td><i>0</i></td>
-  </tr>
-  <tr>
-    <td width="30"><b>0</b></td>
-    <td width="120"><span><em style="width:50%"></em></span></td>
-    <td><i>0</i></td>
-  </tr>
-</table>
-</div>
-<div class="lr_m"  id="drq" style="display:none;"><table width="230" border="0" cellpadding="0" cellspacing="0">
-  <tr>
-    <td width="30"><b>0</b></td>
-    <td width="120"><span><em style="width:50%"></em></span></td>
-    <td><i>0</i></td>
-  </tr>
-  <tr>
-    <td width="30"><b>0</b></td>
-    <td width="120"><span><em style="width:50%"></em></span></td>
-    <td><i>0</i></td>
-  </tr>
-  <tr>
-    <td width="30"><b>0</b></td>
-    <td width="120"><span><em style="width:50%"></em></span></td>
-    <td><i>0</i></td>
-  </tr>
-  <tr>
-    <td width="30"><b>0</b></td>
-    <td width="120"><span><em style="width:50%"></em></span></td>
-    <td><i>0</i></td>
-  </tr>
-  <tr>
-    <td width="30"><b>0</b></td>
-    <td width="120"><span><em style="width:50%"></em></span></td>
-    <td><i>0</i></td>
-  </tr>
-  <tr>
-    <td width="30"><b>0</b></td>
-    <td width="120"><span><em style="width:50%"></em></span></td>
-    <td><i>0</i></td>
-  </tr>
-  <tr>
-    <td width="30"><b>0</b></td>
-    <td width="120"><span><em style="width:50%"></em></span></td>
-    <td><i>0</i></td>
-  </tr>
-</table>
-</div>
-<h2>数据图表</h2>
-<div class="sz_r_tb"><a href="http://zst.159cai.com/cjwqlc/view/qlctbh.php" target="_blank">特别号分析</a><a href="http://zst.159cai.com/cjwqlc/view/qlczonghe.php"  target="_blank">开奖分布</a><a href="http://zst.159cai.com/cjwqlc/view/qlcyiwei.php"  target="_blank">定位分析</a><a href="http://zst.159cai.com/cjwqlc/view/qlchezhi.php"  target="_blank">和值分析</a>
-<a href="http://zst.159cai.com/cjwqlc/view/qlcdaxiao.php"  target="_blank">型态分析</a><a href="http://zst.159cai.com/cjwqlc/view/qlccsy.php"  target="_blank">余数分析</a><a href="http://zst.159cai.com/cjwqlc/view/qlcyierweihe.php"  target="_blank">两数位和</a><a href="http://zst.159cai.com/cjwqlc/view/qlcyierweicha.php"  target="_blank">两数位差</a>
-<a href="#"  target="_blank">五行走势</a><a href="#"  target="_blank">跨度走势</a><a href="#"  target="_blank">冷热分析</a><a href="#"  target="_blank">行列图</a>
-<a href="http://zst.159cai.com/cjwqlc/view/qlcyiweibj.php"  target="_blank">定位号码比较</a></div>
-<h2><span>预测推荐</span><a href="/qlc/yuce/"target="_blank">更多>></a></h2>
-<div class="sz_r_tj">
- <!--#include virtual="/dedeinc/qilecai_right.html"--> 
-</div>
- 
- </div>
+						</select>期
+								</p>
+								<p class="p_z_tz">
+									追号设置 <select name="zhflag" id="tzzh">
+										<option value="0" selected="">中奖后不停止</option>
+										<option value="1">中奖后停止</option>
+										<option value="2">盈利后停止</option>
+									</select>
+								</p>
+							</div>
+							<div class="kc_zj3">
+								<table width="100%" cellspacing="0" cellpadding="0" border="0">
+									<colgroup>
+										<col width="60"/>
+											<col width="100"/>
+												<col width="70"/>
+													<col width="90"/>
 
+														<col width=""/>
+									</colgroup>
+									<thead>
+										<tr>
+											<td>序号</td>
+											<td>期号</td>
+											<td>倍数</td>
+											<td>金额</td>
+											<td>开奖日期</td>
+										</tr>
+									</thead>
+								</table>
+							</div>
+							<div style="max-height: 180px; overflow: auto" class="kc_zj3">
+								<table width="100%" cellspacing="0" cellpadding="0" border="0">
+									<colgroup>
+										<col width="60"/>
+											<col width="100"/>
+												<col width="70"/>
+													<col width="90"/>
+
+														<col width=""/>
+									</colgroup>
+
+									<tbody id="zh_list">
+										
+									</tbody>
+								</table>
+							</div>
+						</div>
+				</div>
+				<div class="ncathgm">
+						<p id="userMoneyInfo">
+							账户信息：您还没有登录，请先<a>登录</a>后再购买。
+						</p>
+						<!-- <p class="red_pay" style="margin-top:0px;">
+您选择了
+<b id="expect_num">0</b>
+期，金额为
+<font id="sum_m">0</font>
+元
+</p> -->
+						<a class="a1" id="buy_dg" href="javascript:void(0);">立即投注</a>
+						<p>
+							<input type="checkbox" id="agreement" checked="checked"/>我已阅读同意《<a
+								target="_blank" href="/help/help_yffwxy.html">用户委托投注协议</a>》 
+						</p>
+					</div>
+			</div>
+		</div>
 </div>
-</div>
-<input name="codes" id="codes" type="hidden" value=''/><!--号码-->
+	</div>
+	<input name="codes" id="codes" type="hidden" value=''/><!--号码-->
 <input name="zhushu" id="zhushu" type="hidden" value=""/><!--注数-->
 <input name="beishu" id="beishu" type="hidden" value=""/><!--注数-->
 <input name="totalmoney" id="totalmoney" type="hidden" value=""/><!--方案金额-->
@@ -367,9 +517,8 @@
 <input name="tc_bili" id="tc_bili" type="hidden" value="0"/>
 <input name="lastexpect" id="lastexpect" type="hidden" value="2013154"/>
 <input type="hidden" name="gk" id="gk" value="1">
-<input type="hidden" name="tcSelect" id="tcSelect" value="2">
-<!--#include virtual="/cc/footer.html"-->
-<script type="text/javascript" src="/public/szc.js"></script>
-<script type="text/javascript" src="/qilecai/js/index.js"></script>
+<input type="hidden" name="tcSelect" id="tcSelect" value="2"> <!--#include virtual="/cc/footer.html"-->
+			<script type="text/javascript" src="/public/szc.js"></script> <script
+				type="text/javascript" src="/qilecai/js/index.js"></script>
 </body>
 </html>

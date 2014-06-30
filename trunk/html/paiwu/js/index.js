@@ -39,7 +39,38 @@
         var pn = Class.config('play_name');
         return pn=='lr' || pn == 'sc' ? 63 : 23
     });
-
+    $("#pt_bs").val(1);
+    $("#pt_jx_opts").focus(function(){
+		var pt_jx_opts  = $("#pt_jx_opts").val();
+		if(pt_jx_opts != ""){
+			pt_jx_opts=$("#pt_jx_opts").val().replace(/\D/g,'')
+			$("#pt_jx_opts").val(pt_jx_opts);
+		}
+		
+		$("#pt_jx_opts").keyup(function(){
+    		this.value=this.value.replace(/\D/g,''); //只能输数字
+    	});
+	});
+	$("#zh_bs_big").focus(function(){
+		//this.value(1);
+		var zh_bs_big  = $("#zh_bs_big").val();
+		if(zh_bs_big != ""){
+			$("#zh_bs_big").val();
+		}
+		
+		$("#zh_bs_big").keyup(function(){
+    		this.value=this.value.replace(/\D/g,''); //只能输数字
+    		/* this.onMsg('msg_load_expect_list', function (a){
+    	            this.createHTML(a);// 倒计时下载期号后构建
+    	        });  */
+    	});
+	});
+	$("#pt_jx_opts").blur(function(){
+		var pt_jx_opts  = $("#pt_jx_opts").val();
+		if(pt_jx_opts=pt_jx_opts.replace(/\D/g,'')){
+				$("#pt_jx_opts").val(pt_jx_opts+"注");
+		}
+	});
     Class.extend('exportCode', function (){
         // 传入号码
         var import_code, arrCodes, short_code;
@@ -69,25 +100,67 @@
             }
         }
     });
-
+    $("#numcount").css({
+		"height":0,
+		"overflow":"hidden"
+		});
+    $("#span5").click(function(){
+		$("#span5").toggleClass("span5c");
+		$("#numcount").show();
+		if($("#span5").hasClass("span5c")){
+			$("#numcount").clearQueue().animate({
+				height:195
+				});
+			
+		}else{
+			
+			$("#numcount").animate({
+				height:0
+				
+				});
+		}
+		
+	});
+    
+    $("#kjhis").css({
+		"height":0,
+		"overflow":"hidden"
+		});
+    $("#span5s").click(function(){
+		$("#span5s").toggleClass("span5c");
+		$("#kjhis").show();
+		if($("#span5s").hasClass("span5c")){
+			$("#kjhis").clearQueue().animate({
+				height:147
+				});
+			
+		}else{
+			
+			$("#kjhis").animate({
+				height:0
+				
+				});
+		}
+		
+	});
     /*
     begin
     */
-    $(".sup b").mouseover(function(){
+    $("span.nsbool b").mouseover(function(){
     	if($(this).attr("class")=="cur"){
     		return false;
     	}else{
     	$(this).addClass("b_r").siblings().removeClass("b_r");
     	}
     });
-    $(".sup b").click(function(){
+    $("span.nsbool b").click(function(){
     	if($(this).attr("class")=="b_r cur"){
     		$(this).attr("class","cur");
     	}else{
 			$(this).attr("class","b_r");
 		}
     });
-    $(".sup b").mouseout(function(){
+    $("span.nsbool b").mouseout(function(){
     	$(this).removeClass("b_r");
     });
     Class({
@@ -105,7 +178,7 @@
                 type: 'p5'
             });
         },
-
+       
         createSub: function (){
             var Y, choose_pt, list_pt, choose_dt, choose_dd, list_dd;
             Y = this;
@@ -135,26 +208,30 @@
             });
 
             // plw直选
-            Y.lib.PLChoose({
+             Y.lib.PLChoose({
                 msgId: 'pt',
-                balls: '#pttz1 ul',
+                balls: '#pttz1 div.nx3span',
                 showbar: '#pt_showbar',
+                focusCss: 'cur',
                 putBtn: '#pt_put',
                 rndOpts:'#pt_jx_opts',
                 clearBtn:'#pt_clear',
                 rnd: '#pt_jx',
+                s1:'#s1_jx1',
 				ddRnd: '#dd_jx',
                 yl:[{
                     xml: '/cpdata/omi/52/yilou/wzyl_all.xml',
-                    dom: '#pttz1 li i',
+                    dom: '#pttz1 div.nx3span i',
                     width: 10 
                 }]
             });
             // 直选列表
-            Y.lib.PLCodeList({
+             Y.lib.PLCodeList({
                 msgId: 'pt',
                 panel:'#pt_list',
                 bsInput:'#pt_bs',
+                addbs:'#pt_addbs',
+                lessbs:'#pt_lessbs',
                 moneySpan: '#pt_money',
                 zsSpan: '#pt_zs',
                 clearBtn: '#pt_list_clear'
@@ -164,10 +241,11 @@
             Y.lib.HmOptions();
             setTimeout(function() {
                 Y.lib.BuySender();
-                Y.exportCode()
+                Y.exportCode();
             },500);            
 
             this.setBuyFlow();
+            
         },
 
        setBuyFlow: function (){
@@ -225,21 +303,26 @@
         },
         createTabs: function (){
 
-            var playTabs, subPlayTabs,dsTabs, buyTabs, pn, pn2,  playid, runSub, Y, reqiTabs;
+            var playTabs, subPlayTabs,dsTabs, buyTabs,buyTabss, pn, pn2,  playid, runSub, Y, reqiTabs;
             Y = this;
 
             //主玩法
             playTabs = this.lib.Tabs({// zx / z6 / z3
-                items:'#playTabsDd li',
+                items:'#playTabsDd a',
                 contents: '#pttz,#dssc',
                 focusCss: 'cur'
             });
 
             //购买方式
             buyTabs = this.lib.Tabs({
-                items:'#all_form b',
+                items:'#all_form label',
                 focusCss:'cur',
                 contents: '#dg_form, #hm_form,#zh_form'
+            });
+            buyTabss = this.lib.Tabs({
+                items:'#all_forms b',
+                focusCss:'cur',
+                contents: '#dg_form, #hmdiv'
             });
 
             pn = 'pt,sc'.split(',');
@@ -262,29 +345,76 @@
                 buyTabs.btns.show();
                 buyTabs.btns.slice(-1).hide(b==1);
                 buyTabs.focus(b==2?2:0);
-
+                buyTabss.btns.show();
+                buyTabss.btns.slice(-1).hide(b==1);
+                buyTabss.focus(b==2?2:0);
                 this.loadEndTime();//同步变换截止时间
             };
             playTabs.focus(0);
+           // playTabss.focus(0);
             this.onMsg('msg_toogle_nosc', function (isnosc){
                 buyTabs.btns.slice(0, 1).hide(isnosc);//稍后上传只能合买
                 buyTabs.focus(isnosc ? 1 : 0);
+                buyTabss.btns.slice(0, 1).hide(isnosc);//稍后上传只能合买
+                buyTabss.focus(isnosc ? 1 : 0);
             })
             //购买方式
             buyTabs.onchange = function (a, b, c){
                  Class.config('buy_type', b );
                  this.get('#ishm').val(b==1? 1 : 0);
                  this.get('#ischase').val(b==2? 1 : 0);
+                 if(b==0){
+                	 $("#hmdiv").hide();
+                	 $("#zh_form").hide();
+                 }
+                 if(b==1){
+                	 $("#hmdiv").show();
+                	 $("#zh_form").hide();
+                 }
                  if (b==2) {
+                	 $("#hmdiv").hide();
+                	 $("#zh_form").show();
                      !c && this.moveToBuy(function (){
                           Y.createZhOptions(this.btns.nodes[b])
                      });
                      this.postMsg('toggle-zh')// 通知倍数框限制倍数
                  }else{
-                     !c && this.moveToBuy()
+                     !c && this.moveToBuy();
                  }
                  this.get('#all_form p').html(['由购买人自行全额购买彩票','由多人共同出资购买彩票','连续多期购买同一个（组）号码'][b]);
             };
+            buyTabss.onchange = function (a, b, c){
+                Class.config('buy_type', b );
+                this.get('#ishm').val(b==1? 1 : 0);
+                this.get('#ischase').val(b==2? 1 : 0);
+                
+                if(b==0){
+               	 $("#hmdivs").hide();
+               	$("#hmdiv").hide();
+               	 //$("#zh_form").hide();
+               	$("#div").show();
+            	$("#ww").show();
+                }
+                if(b==1){
+               	 $("#sss").show();
+               	 $("#div").hide();
+               	$("#ww").hide();
+               	$("#hmdiv").show();
+               	
+                }
+               /* if (b==2) {
+               	 $("#hmdiv").hide();
+               	 $("#zh_form").show();
+               	$("#ww").show();
+                    !c && this.moveToBuy(function (){
+                         Y.createZhOptions(this.btns.nodes[b])
+                    });
+                    this.postMsg('toggle-zh');// 通知倍数框限制倍数
+                }else{
+                    !c && this.moveToBuy();
+                }*/
+                this.get('#all_forms p').html(['由购买人自行全额购买彩票','由多人共同出资购买彩票','连续多期购买同一个（组）号码'][b]);
+           };
         }
     }); 
 })()
