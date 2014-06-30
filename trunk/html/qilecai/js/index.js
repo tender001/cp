@@ -219,7 +219,7 @@ Class('CodeList>SingeCodeList', {
     $("#pt_jx_opts").focus(function(){
 		var pt_jx_opts  = $("#pt_jx_opts").val();
 		if(pt_jx_opts != ""){
-			pt_jx_opts=$("#pt_jx_opts").val().replace(/\D/g,'')
+			pt_jx_opts=$("#pt_jx_opts").val().replace(/\D/g,'');
 			$("#pt_jx_opts").val(pt_jx_opts);
 		}
 		
@@ -228,7 +228,6 @@ Class('CodeList>SingeCodeList', {
     	});
 	});
 	$("#zh_bs_big").focus(function(){
-		//this.value(1);
 		var zh_bs_big  = $("#zh_bs_big").val();
 		if(zh_bs_big != ""){
 			$("#zh_bs_big").val();
@@ -236,9 +235,6 @@ Class('CodeList>SingeCodeList', {
 		
 		$("#zh_bs_big").keyup(function(){
     		this.value=this.value.replace(/\D/g,''); //只能输数字
-    		/* this.onMsg('msg_load_expect_list', function (a){
-    	            this.createHTML(a);// 倒计时下载期号后构建
-    	        });  */
     	});
 	});
 	$("#pt_jx_opts").blur(function(){
