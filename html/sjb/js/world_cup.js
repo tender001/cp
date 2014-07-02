@@ -33,17 +33,20 @@ Class({
 //						if(items.length<1){
 //							return 
 //						}
+						var ii=0;
 						for(var i = 0;i<items.length;i++){
 							var mid=items[i].getAttribute('mid');
 							mid=((mid*1<10)?("0"+mid):mid);
+							
 		
-		
-				            if(items[i].getAttribute('mid')*1<4){
-				            	html_cgj +='<tr ><td><b class="cur">'+mid+'</b></td><td class="td1"><img src="/images/rteam/'+mid+'.png"  alt='+mid+'></td>';
+				            if(mid==1||mid==2||mid==3){
+				            	ii++;
+				            	html_cgj +='<tr ><td><b class="cur">'+ii+'</b></td><td class="td1"><img src="/images/rteam/'+mid+'.png"  alt='+mid+'></td>';
 				            	html_cgj +='<td class="td2"><a href="/worldcup/" target="_blank">'+items[i].getAttribute('teamname')+'</a></td><td class="td3">'+items[i].getAttribute('sp')+'</td></tr>';
 				            	
-				            }else if(items[i].getAttribute('mid')*1<7){
-				            	html_cgj +='<tr ><td><b>'+mid+'</b></td><td class="td1"><img src="/images/rteam/'+mid+'.png"  alt='+mid+'></td>';
+				            }else if(mid==5||mid==6||mid==8){
+				            	ii++;
+				            	html_cgj +='<tr ><td><b>'+ii+'</b></td><td class="td1"><img src="/images/rteam/'+mid+'.png"  alt='+mid+'></td>';
 				            	html_cgj +='<td class="td2"><a href="/worldcup/" target="_blank">'+items[i].getAttribute('teamname')+'</a></td><td class="td3">'+items[i].getAttribute('sp')+'</td></tr>';
 				            }
 						}
