@@ -12,7 +12,7 @@ Class.config('hzQuery',{
 */
 
 Class('Choose_base>Z6Choose',{
-    showTxt: '[您选择了<font>{$zhushu}</font>注，共<font>{$totalmoney}元</font>]',
+    showTxt: '【您选择了<em>{$zhushu}</em>注，共<em>{$totalmoney}元</em>】',
     rndtpl: '<li><span class="blue">{1}</span></li>',
     index:function (ini){
         var hoverCss, focusCss, Y, showbar, startNum;
@@ -25,6 +25,7 @@ Class('Choose_base>Z6Choose',{
         startNum = ini.startNum || 0;
         this.ball = new this.lib.Choose({
             items: ini.balls,
+            group: ini.group,
             startNum: startNum,
             focusCss: focusCss,
             hoverCss: hoverCss
@@ -69,9 +70,38 @@ Class('Choose_base>Z6Choose',{
         // 随机选取
         this.rndOpts = opts = this.need(ini.rndOpts);
         Y.need(ini.rnd).click(function (){
-            Y.random(opts.val());
+            Y.random(opts.val().replace("注","")*1);
             return false
         });
+        //机选一注
+        Y.need(ini.s1).click(function (){
+            Y.random(1);
+            return false
+        });
+        //定胆机选
+        Y.get(ini.ddRnd).click( function() {
+			var _len, _line, _zs, code, line_tip;
+			_len = 0;
+			_line = [];
+			code = Y.getChooseCode(true)[0];
+			_zs = code[code.length - 1];
+			line_tip = ['百位', '十位', '个位'];
+			for (var i = 0; i < code.length - 1; i++) {
+				_len += code[i].length;
+				code[i].length > 1 && _line.push(line_tip[i]);
+			}
+			if (_len == 0) {
+				Y.postMsg('msg_show_dlg', '您好，请您至少选择一个胆码！')
+			} else if (_line.length > 0) {
+				Y.postMsg('msg_show_dlg', '您好，' + _line.join('、') + '胆码数量超出，每位最多只能选择一个胆码！');
+			} else if (_zs > 0) {
+				Y.postMsg('msg_show_dlg', '您好，您选择的胆码数可以组成一注，请删减！');
+			} else {
+				
+				Y.randomDD(opts.val().replace("注","")*1, code);
+			}
+			return false;
+		} );
        // 清除
         Y.get(ini.clearBtn).click(function (){
             Y.clearCode()
@@ -133,7 +163,7 @@ $(".sup b").mouseout(function(){
 });
 
 Class('Choose_base>HzChoose', {
-    showTxt: '[您选择了<font>{$zhushu}</font>注，共<font>{$totalmoney}元</font> ]',
+    showTxt: '【您选择了<em>{$zhushu}</em>注，共<em>{$totalmoney}元</em>】',
     rndtpl: '<li><span class="blue">{1}</span></li>',
     index:function (ini){
         var hoverCss, focusCss, Y, showbar;
@@ -376,8 +406,70 @@ Main
         }
     });
     /*
-    begin
-    */
+    begin直选
+     */
+     $("#zhx_pt_bs").val(1);
+     $("#zhx_pt_jx_opts").focus(function(){
+ 		var zhx_pt_jx_opts  = $("#zhx_pt_jx_opts").val();
+ 		if(zhx_pt_jx_opts != ""){
+ 			zhx_pt_jx_opts=$("#zhx_pt_jx_opts").val().replace(/\D/g,'');
+ 			$("#zhx_pt_jx_opts").val(zhx_pt_jx_opts);
+ 		}
+ 		
+ 		$("#zhx_pt_jx_opts").keyup(function(){
+     		this.value=this.value.replace(/\D/g,''); //只能输数字
+     	});
+ 	});
+     $("#zhx_pt_jx_opts").blur(function(){
+ 		var zhx_pt_jx_opts  = $("#zhx_pt_jx_opts").val();
+ 		if(zhx_pt_jx_opts=zhx_pt_jx_opts.replace(/\D/g,'')){
+ 				$("#zhx_pt_jx_opts").val(zhx_pt_jx_opts+"注");
+ 		}
+ 	});
+     
+     /*
+      * 组六
+      * */
+     $("#z6pt_bs").val(1);
+     $("#z6pt_jx_opts").focus(function(){
+ 		var z6pt_jx_opts  = $("#z6pt_jx_opts").val();
+ 		if(z6pt_jx_opts != ""){
+ 			z6pt_jx_opts=$("#z6pt_jx_opts").val().replace(/\D/g,'');
+ 			$("#z6pt_jx_opts").val(z6pt_jx_opts);
+ 		}
+ 		
+ 		$("#z6pt_jx_opts").keyup(function(){
+     		this.value=this.value.replace(/\D/g,''); //只能输数字
+     	});
+ 	});
+     $("#z6pt_jx_opts").blur(function(){
+ 		var zhx_pt_jx_opts  = $("#z6pt_jx_opts").val();
+ 		if(zhx_pt_jx_opts=zhx_pt_jx_opts.replace(/\D/g,'')){
+ 				$("#z6pt_jx_opts").val(zhx_pt_jx_opts+"注");
+ 		}
+ 	});
+     /*
+      * 组三
+      * */
+     
+     $("#z3pt_bs").val(1);
+     $("#z3pt_jx_opts").focus(function(){
+ 		var z3pt_jx_opts  = $("#z3pt_jx_opts").val();
+ 		if(z3pt_jx_opts != ""){
+ 			z3pt_jx_opts=$("#z3pt_jx_opts").val().replace(/\D/g,'');
+ 			$("#z3pt_jx_opts").val(z3pt_jx_opts);
+ 		}
+ 		
+ 		$("#z3pt_jx_opts").keyup(function(){
+     		this.value=this.value.replace(/\D/g,''); //只能输数字
+     	});
+ 	});
+     $("#z3pt_jx_opts").blur(function(){
+ 		var z3pt_jx_opts  = $("#z3pt_jx_opts").val();
+ 		if(z3pt_jx_opts=z3pt_jx_opts.replace(/\D/g,'')){
+ 				$("#z3pt_jx_opts").val(z3pt_jx_opts+"注");
+ 		}
+ 	});
     Class({
         use: 'tabs,dataInput,mask',
         ready: true,
@@ -392,7 +484,29 @@ Main
                 rqXml: '/cpdata/omi/53/yilou/omission.xml',
                 type: 'pls'
             });
-        },  
+            this.bindEvent();
+        }, 
+        bindEvent:function(){
+        	$("#codeCount").click(function(o){
+
+    			$(this).toggleClass("span5c");
+    			$("#divCount").show();
+    			if($(this).hasClass("span5c")){
+    				$("#divCount").clearQueue().animate({
+    					height:138
+    					});
+    				
+    			}else{
+    				
+    				$("#divCount").animate({
+    					height:0
+    					
+    					});
+    			}
+    			
+    		
+        	})
+        },
         createSub: function (){
             var Y, choose_pt, list_pt, choose_dt, choose_dd, list_dd;
             Y = this;
@@ -427,28 +541,32 @@ Main
             });
             // 3d直选
             Y.lib.PLChoose({
-                msgId: 'pt_zhx',
-                balls: '#pttz1 ul',
-                showbar: '#zhx_showbar',
-                putBtn: '#zhx_pt_put',
-                rndOpts:'#zhx_pt_jx_opts',
-                clearBtn:'#zhx_pt_clear',
-                rnd: '#zhx_pt_jx',
-				ddRnd: '#zhx_dd_jx',
+            	  msgId: 'pt_zhx',
+                  balls: '#pttz1 div.nx3span',
+                  showbar: '#zhx_showbar',
+                  putBtn: '#zhx_pt_put',
+                  rndOpts:'#zhx_pt_jx_opts',
+                  clearBtn:'#zhx_pt_clear',
+                  rnd: '#zhx_pt_jx',
+                  s1:'#zx_jx1',
+				  ddRnd: '#zhx_dd_jx',
 				yl:[{
                 	xml:'/cpdata/omi/53/yilou/wzyl_all.xml',
-                    dom:'#pttz1 i',
+                	dom:'#pttz1 div.nxyl i',
                     width: 10
                 }]
+            
             });
             // 直选列表
             Y.lib.PLCodeList({
-                msgId: 'pt_zhx',
-                panel:'#zhx_pt_list',
-                bsInput:'#zhx_pt_bs',
-                moneySpan: '#zhx_pt_money',
-                zsSpan: '#zhx_pt_zs',
-                clearBtn: '#zhx_pt_list_clear'
+            	 msgId: 'pt_zhx',
+                 panel:'#zhx_pt_list',
+                 bsInput:'#zhx_pt_bs',
+                 moneySpan: '#zhx_pt_money',
+                 zsSpan: '#zhx_pt_zs',
+                 addbs:'#zhx_addbs',
+                 lessbs:'#zhx_lessbs',
+                 clearBtn: '#zhx_pt_list_clear'
             });
 
             Y.lib.Dlg();
@@ -480,21 +598,21 @@ Main
         },
         // 直选和值
         createZhHz: function (){
-            // pls和值
+            // 3d和值
             Y.lib.HzChoose({
                 msgId: 'hz_zhx',
-                items: '#zhxhz li b',
+                items: '#zhxhz span.nsbool b',
                 showbar: '#zhxhz_showbar',
                 putBtn: '#zhxhz_put',
                 clear: '#zhxhz_clear',
                 yl:[{
-                    xml: '/cpdata/omi/53/yilou/hzyl_hz_all.xml',
+                    xml: '/cpdata/omi/03/yilou/hzyl_hz_all.xml',
                     //sort: 'hezhi',
                     offset: 0,
-                    dom: '#zhxhz li.bqyl i'
+                    dom: '#zhxhz div[mark=bqy] i'
                 },{
-                    xml: '/cpdata/omi/53/yilou/hzyl_hz_all.xml',
-                    dom: '#zhxhz li.llyl i',
+                    xml: '/cpdata/omi/03/yilou/hzyl_hz_all.xml',
+                    dom: '#zhxhz div[mark=lly] i',
                     offset: 0,
                     name: 'cycle'
                 }],
@@ -507,6 +625,8 @@ Main
                 bsInput:'#zhxhz_bs',
                 moneySpan: '#zhxhz_money',
                 zsSpan: '#zhxhz_zs',
+                addbs:'#zhxhz_addbs',
+                lessbs:'#zhxhz_lessbs',
                 clearBtn: '#zhxhz_list_clear'
             });
             this.createZhHz = this.getNoop()
@@ -516,11 +636,13 @@ Main
             // z6直选
             Y.lib.Z6Choose({
                 msgId: 'pt_z6',
-                balls: '#z6pt_ball b',
+                balls: '#z6pttz span.nsbool b',
+                group:'#z6pttz span.nsopr b',
                 showbar: '#z6pt_showbar',
                 putBtn: '#z6pt_put',
                 rndOpts:'#z6pt_jx_opts',
                 clearBtn:'#z6pt_clear',
+                s1:"#z6pt_s1",
                 rnd: '#z6pt_jx'
             });
             // z6直选列表
@@ -530,6 +652,8 @@ Main
                 bsInput:'#z6pt_bs',
                 moneySpan: '#z6pt_money',
                 zsSpan: '#z6pt_zs',
+                addbs:'#z6pt_addbs',
+                lessbs:'#z6pt_lessbs',
                 clearBtn: '#z6pt_list_clear'
             });
            this.createZ6 = this.getNoop() 
@@ -539,22 +663,22 @@ Main
             // z6和值
             Y.lib.HzChoose({
                 msgId: 'hz_z6',
-                items: '#z6hz li b',
+                items: '#z6hz span.nsbool b',
                 showbar: '#z6hz_showbar',
                 putBtn: '#z6hz_put',
                 clear: '#z6hz_clear',
                 yl:[{
-                    xml: '/cpdata/omi/53/yilou/hzyl_hz_all.xml',
+                    xml: '/cpdata/omi/03/yilou/hzyl_hz_all.xml',
                     //sort: 'hezhi',
-                    offset: 1,
-                    dom: '#z6hz li.bqyl i'
+                    offset: 3,
+                    dom: '#z6hz div[mark=bqy] i'
                 },{
-                    xml: '/cpdata/omi/53/yilou/hzyl_hz_all.xml',
-                    dom: '#z6hz li.llyl i',
-                    offset: 1,
+                    xml: '/cpdata/omi/03/yilou/hzyl_hz_all.xml',
+                    dom: '#z6hz div[mark=lly] i',
+                    offset: 3,
                     name: 'cycle'
                 }],
-                startNum: 1
+                startNum: 3
             });
             // 和值列表
             Y.lib.HzCodeList({
@@ -563,6 +687,8 @@ Main
                 bsInput:'#z6hz_bs',
                 moneySpan: '#z6hz_money',
                 zsSpan: '#z6hz_zs',
+                lessbs:'#z6hz_lessbs',
+                addbs:'#z6hz_addbs',
                 clearBtn: '#z6hz_list_clear'
             });
             this.createZ6Hz = this.getNoop()
@@ -572,12 +698,22 @@ Main
             // z3直选
             Y.lib.Z6Choose({
                 msgId: 'pt_z3',
-                balls: '#z3pttz li b',
+                balls: '#z3pttz span.nsbool b',
+                group:'#z3pttz span.nsopr b',
                 showbar: '#z3pt_showbar',
                 putBtn: '#z3pt_put',
                 rndOpts:'#z3pt_jx_opts',
                 clearBtn:'#z3pt_clear',
+                s1:'#z3pt_s1',
                 rnd: '#z3pt_jx'
+//                yl:[{
+//                    xml: '/static/info/sd/omit/hzyl_hz_all.xml',
+//                    dom: '#z3pttz div[mark=bqy] i'
+//                },{
+//                    xml: '/static/info/sd/omit/hzyl_hz_all.xml',
+//                    dom: '#z3pttz div[mark=lly] i',
+//                     name: 'cycle'
+//                }]
             });
             // z3直选列表
             Y.lib.Z6CodeList({
@@ -585,6 +721,8 @@ Main
                 panel:'#z3pt_list',
                 bsInput:'#z3pt_bs',
                 moneySpan: '#z3pt_money',
+                lessbs:'#z3pt_lessbs',
+                addbs:'#z3pt_addbs',
                 zsSpan: '#z3pt_zs',
                 clearBtn: '#z3pt_list_clear'
             });
@@ -595,18 +733,18 @@ Main
             // z3和值
             Y.lib.HzChoose({
                 msgId: 'hz_z3',
-                items: '#z3hz li b',
+                items: '#z3hz span.nsbool b',
                 showbar: '#z3hz_showbar',
                 putBtn: '#z3hz_put',
                 clear: '#z3hz_clear',
                 yl:[{
-                    xml: '/cpdata/omi/53/yilou/hzyl_hz_all.xml',
+                    xml: '/cpdata/omi/03/yilou/hzyl_hz_all.xml',
                     //sort: 'hezhi',
                     offset: 1,
-                    dom: '#z3hz li.bqyl i'
+                    dom: '#z3hz div[mark=bqy] i'
                 },{
-                    xml: '/cpdata/omi/53/yilou/hzyl_hz_all.xml',
-                    dom: '#z3hz li.llyl i',
+                    xml: '/cpdata/omi/03/yilou/hzyl_hz_all.xml',
+                    dom: '#z3hz div[mark=lly] i',
                     offset: 1,
                     name: 'cycle'
                 }],
@@ -618,6 +756,8 @@ Main
                 panel:'#z3hz_list',
                 bsInput:'#z3hz_bs',
                 moneySpan: '#z3hz_money',
+                addbs:'#z3hz_addbs',
+                lessbs:'#z3hz_lessbs',
                 zsSpan: '#z3hz_zs',
                 clearBtn: '#z3hz_list_clear'
             });
@@ -665,23 +805,26 @@ Main
         createTabs: function (){
             var playTabs, subPlayTabs,dsTabs, buyTabs, pn, pn2,  playid, runSub, Y, reqiTabs;
             Y = this;
-           //主玩法
+
+            //主玩法
             playTabs = this.lib.Tabs({// zx / z6 / z3
-                items:'#playTabsDd li',
-                focusCss: 'cur'
+                items:'#playTabsDd [bet]',
+                focusCss: 'cur',
+                hoverCss: ''
             });
             //子玩法
             subPlayTabs = this.lib.Tabs({// 
-                items:'#subplay_tabs label',
-                focusCss: 'b'
+                items:'#subplay_tabs a',
+                focusCss: 'cur',
+                hoverCss: ''
             });
             //购买方式
-            buyTabs = this.lib.Tabs({
-            	items:'#all_form b',
-                focusCss:'cur',
-                contents: '#dg_form,#hm_form,#zh_form'
-            });
 
+            buyTabs = this.lib.Tabs({
+                items:'#all_form label',
+                focusCss:'cur',
+                contents: '#ptdiv,#hmdiv,#zhdiv'
+            });
             pn = 'pt,sc,hz'.split(',');
             pn2 = 'zhx,z6,z3'.split(',');
             playid = {
@@ -693,9 +836,7 @@ Main
 
             //top3玩法
             playTabs.onchange = function (a, b){
-            	this.get('#dssc,#zhxhz,#z3hz,#z6hz').hide();
-            	this.get('#zxhz').html("和值");
-            	if(b>0){this.get('#zxhz').html("组选和值");}
+                this.get('#dssc,#zhxhz,#z3hz,#z6hz').hide();
                 this.get('#pttz').show(b===0);
                 this.get('#z6pttz').show(b===1);
                 this.get('#z3pttz').show(b===2);
@@ -703,7 +844,6 @@ Main
                 Class.config('play_name2', pn2[b]);
                 Class.config('playid', 1);
                 this.postMsg('msg_clear_code');//通知清除选择
-                this.get('#nav_normal label').slice(-5).hide(true).end().slice(-6, -5).hide(b>0)// 共用子玩法栏
                 subPlayTabs.focus(0)//子玩法定位到第一个
             };
             playTabs.focus(0);
@@ -714,11 +854,13 @@ Main
 
             //子玩法 pt/ds/hz
             subPlayTabs.onchange = function (a, b){
-                var tmp;
-                this.get('#dssc').hide();
+            	this.get('#dssc').hide();
+            	buyTabs.btns.show();
+            	buyTabs.btns.slice(-1).hide(b==1);
+                buyTabs.focus(0);
                 switch(Class.config('play_name2')){
                 case 'zhx':
-                	this.get('#pttz').show(b==0);
+                    this.get('#pttz').show(b==0);
                     this.get('#zhxhz').show(b==2);
                     if (b==2) {
                         Y.createZhHz()//直选和值
@@ -735,7 +877,7 @@ Main
                    
                     break;
                 case 'z6':
-                	this.get('#z6pttz').show(b==0);
+                    this.get('#z6pttz').show(b==0);
                     this.get('#z6hz').show(b==2);
                     if (b==0) {
                         Y.createZ6()
@@ -753,7 +895,7 @@ Main
                 
                     break;
                 case 'z3':
-                	this.get('#z3pttz').show(b==0);
+                    this.get('#z3pttz').show(b==0);
                     this.get('#z3hz').show(b==2);
                     if (b==0) {
                         Y.createZ3()
@@ -767,19 +909,17 @@ Main
                    			Y.openUrl('bzgs_z3.html',420,380);   
                    			return false;
                    		}
-                   	});                    
+                   	});
                 }
-                Class.config('play_name', pn[b]);
                 if (b==1) {
                     Y.createDs()//创建单式-共用
                     this.get('#dssc').show();
                 }
-                buyTabs.btns.show();
-                buyTabs.btns.slice(-1).hide(b==1);
-                buyTabs.focus(0);
+                Class.config('play_name', pn[b]);
+                //this.get('#hz_tj').show(b==2);
                 this.postMsg('msg_clear_code');
-                var tipId = ('#'+Class.config('play_name2')+pn[b]+'_tips').replace(/z\dhz/,'zxhz').replace('sc', 'pt');
-                this.get('#sd_tips h4').hide().get(tipId).show();//奖金说明栏
+                var tipId = ('#'+Class.config('play_name2')+pn[b]+'_tips').replace(/z\dzxhz/,'zxhz').replace('sc', 'pt');
+                this.get('#sd_tips div.ncathleft').hide().get(tipId).show();//选号列表栏
                 this.loadEndTime();//同步变换截止时间
             };
             this.onMsg('msg_toogle_nosc', function (isnosc){
@@ -801,6 +941,6 @@ Main
                  }
                  this.get('#all_form p').html(['由购买人自行全额购买彩票','由多人共同出资购买彩票','连续多期购买同一个（组）号码'][b]);
             };
-        }
+		}
     }); 
 })()
