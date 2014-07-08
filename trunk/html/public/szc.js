@@ -1259,14 +1259,15 @@
     		});
     	},
     	showhis:function(info){
-    		var html = '<li>期次</li><li class="sup">开奖号码</li>';
+    		var html = '<tr class="tr1 tr3"><td>期次</td><td class="tdi">开奖号码</td></tr>';
     		$(info).each(function(i){
     			if(i<11){
     			if($(this).attr("rm") != '1'){
 	    			if($(this).attr('cc').indexOf('\|') >= 0){
 	    				html += "<li>" + $(this).attr('cp') + "</li><li class='sup'><font>" + $(this).attr('cc').split('|')[0].replaceAll(',',' ') + "</font><strong>" + $(this).attr('cc').split('|')[1].replaceAll(',',' ') + "</strong></li>";			
 	    			}else{
-	    				html += "<li>" + $(this).attr('cp') + "</li><li class='sup'><font>" + $(this).attr('cc').replaceAll(',', ' ') + "</font></li>";			
+	    				html +='<tr class="tr2 tr4"><td>'+$(this).attr('cp') +'</td><td class="tdi"><i>'+ $(this).attr('cc').split(',').join('</i><i>')+'</i></td></tr>';
+	    			
 	    			}
     			}}
     		});
@@ -1288,20 +1289,52 @@
     		}else if(Class.C('lot_id')==53){
     			$("#more_kj").attr("href","/paisan/kaijiang.html")
     		}
-    		$("#show_info").click(function(){
-    			if($(this).attr("class")=="cur"){
-    				$("#kjhis").hide();
-    				$(this).html("展开")
-    				$(this).removeClass('cur');
+    		
+    		$("#codeCount").hover(function(o){
+
+    			$(this).toggleClass("span5c");
+    			$("#divCount").show();
+    			$("#divRecent").hide();
+    			if($(this).hasClass("span5c")){
+    				$("#divCount").clearQueue().animate({
+    					height:138
+    					});
+    				
     			}else{
-    				$("#kjhis").show();
-    				$(this).addClass('cur');
-    				$(this).html("收起")
+    				
+    				$("#divCount").animate({
+    					height:0
+    					
+    					});
+    				$("#divCount").hide();
     			}
     			
     		
+        	})
+        	
+    		$("#codeRecent").hover(function(){
+
+    			$(this).toggleClass("span5c");
+    			$("#divRecent").show();
+    			$("#divCount").hide();
+    			$("#codeCount").removeClass("span5c");
+    	
+    			if($(this).hasClass("span5c")){
+    				$("#divRecent").clearQueue().animate({
+    					height:325
+    					});
+    				
+    			}else{
+    				
+    				$("#divRecent").animate({
+    					height:0
+    					
+    					});
+    				$("#divRecent").hide();
+    			}
+    			
     		
-    		});
+        	});
     	}
     });
     
