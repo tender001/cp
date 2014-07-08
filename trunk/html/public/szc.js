@@ -1290,7 +1290,7 @@
     			$("#more_kj").attr("href","/paisan/kaijiang.html")
     		}
     		
-    		$("#codeCount").hover(function(o){
+    		$("#codeCount").click(function(o){
 
     			$(this).toggleClass("span5c");
     			$("#divCount").show();
