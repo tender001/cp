@@ -512,7 +512,7 @@ em.uf{ background-image:url(../images/159/uf.gif)}
 .nxmiddle{position:relative;padding-bottom:15px}
 .nxmiddle h2{line-height:30px;height:30px;padding-top:20px;}
 .nxmiddle h2 span{float:left;display:block;width:140px;height:30px;padding-left:10px;color:#ff3300;font-size:18px; background:url(../images/159/nx_26.jpg) no-repeat right 0; }
-.nxmiddle h2 p{float:left;padding-left:70px;color:#555;font-weight:100;font-size:12px}
+.nxmiddle h2 p{float:left;padding-left:136px;color:#888;font-weight:100;font-size:12px}
 .nxmiddle h2 p em{color:#e52e04;font-weight:bold}
 .head_tel img{width:auto;height:auto}
 .head_r ul{float:right;padding-right:23px}
@@ -532,7 +532,7 @@ em.uf{ background-image:url(../images/159/uf.gif)}
 .nsopr b.bem:hover{ text-decoration:underline;color:#000;background:none}
 .nxsd{clear:both;padding-top:4px;padding-bottom:0px;_padding-top:0;height:24px;margin-left:-56px}
 .nxsd span{width:49px;height:24px;float:left; background:url(../images/159/nx_45.jpg);margin-right:18px;_margin-right:13px;cursor:pointer}
-.nxsd input{display:block;float:left;margin-right:34px;margin-top:6px;_margin-top:3px;_margin-right:27px}
+.nxsd input{display:block;float:left;margin-right:37px;margin-top:5px;_margin-top:3px;_margin-right:27px}
 .nxp{padding:}
 .xh_text em{color:#ff6600;font-weight:bold}
 a.sz_cmt{background:url(../images/159/nx5s_09.jpg);width:137px;height:34px;}
@@ -1358,7 +1358,7 @@ span.jckj_tm select{margin-left:5px}
 .jckj_tb table.co1 thead td{background: none repeat scroll 0 0 #F5F5F5;border-bottom: 1px solid #CCCCCC;border-right: 1px solid #CCCCCC;height: 32px;}
 .jc_ds_col_1{background:#f5f5f5;border:1px solid #ddd;width:971px}
 .buyfimsg{border-left:1px solid #ddd;border-bottom:1px solid #ddd;}
-.buyfimsg td{border-right:1px solid #ddd;border-bottom:1px solid #ddd;padding:7px 0;color:#444;font-size:12px;text-align:left;padding-left:13px;valign:middle;font-size:14px}
+.buyfimsg td{border-right:1px solid #ddd;border-bottom:1px solid #ddd;padding:7px 0;color:#444;font-size:12px;text-align:left;padding-left:13px;valign:middle;}
 .buyfimsg td.td1{background:#f5f5f5;line-height:28px;color:#222;padding-left:30px;font-size:12px}
 .buyfimsg td font {color: #E62E04;font-size: 14px;font-weight: bold;padding: 0 5px;font-family:arial}
 .buyfimsg td input.text {border: 1px solid #DDDDDD;height: 22px;margin-right: 5px;text-align: center;width: 45px;}
@@ -1674,7 +1674,7 @@ a.n_gz{color:#fff}
 .nwx5top a b{color:#333;font-weight:bold;text-align:Center;display:block;font-size:14px;line-height:22px;height:22px;padding-top:2px}
 .nwx5top a span{color:#999;text-align:Center;display:block;font-size:12px;line-height:16px;}
 .nwx5top a.cur b,.nwx5top a.cur span,.nwx5top a:hover b,.nwx5top a:hover span{color:#fff}
-.nwx5top em{float:left;width:125px;float:left;text-align:center;display:block;padding:12px 0 0 5px;line-height:18px;color:#333}
+.nwx5top em{float:left;width:134px;float:left;text-align:center;display:block;padding:12px 0 0 5px;line-height:18px;color:#333}
 .nwx5top em font{color:#e52e04;font-weight:100}
 .nwx5time{border-bottom:1px solid #ccc;padding:20px 0 0 25px;height:35px}
 .nwx5time font{color:#ff6600;font-weight:bold}
@@ -1698,7 +1698,7 @@ a.sz_cmt{background: url(../images/cai888/nwx5_112.jpg);width:137px;height:33px}
 .ncaltbn span input{display:block;float:left;border:1px solid #ccc;height:26px;width:38px;text-align:center;color:#333}
 .ncaltbn span a{display:block;background: url(../images/cai888/nwx5_23.jpg);width:48px;float:right;margin:0}
 .ncaltbn a.a1{color:#888;clear:both;margin:5px 0 0 0 }
-.ncathleft p{clear:both;height:17px;line-height:17px;color:#222;font-size:14px;text-align:Center;padding:4px 0;}
+.ncathleft p{clear:both;height:17px;line-height:6px;color:#222;font-size:14px;padding:4px 0;}
 .ncathleft p span{display:inline-block;height:14px;padding-left:5px}
 .ncathleft p input{width:42px;height:15px;border:1px solid #ccc;float:left;;text-align:center}
 .ncathleft p em{color:#ff0000;font-weight:bold;padding:0 2px}
@@ -1798,6 +1798,8 @@ a.sz_cmt{background: url(../images/cai888/nwx5_112.jpg);width:137px;height:33px}
 .numcount{border-bottom:1px solid #ccc}
 .numcount td{text-align:Center;color:#444}
 .numcount tr.tr1 td{background:#fde8d8;height:34px;line-height:34px;border-bottom:1px solid #ccc;font-weight:bold;font-size:14px;}
+.numcount2{width: 209px; float: right;z-index:98;top:167px;left:790px;position:absolute;}
+.numcount2 tr td{border-bottom:1px dotted #ddd}
 .ncdcol{width:210px;margin:0 auto;padding:10px 0}
 .ncdcol td{color:#444;line-height:28px;text-align:left}
 .numcount tr.tr2 td{background:#fdf5e0;}
@@ -1825,3 +1827,10 @@ text-align:left;}
 .numcai .numhmg .buyfimsg td em{padding:0 15px}
 .numcai .numhmg .buyfimsg td input.bt{width:405px;}
 .numcai .numhmg .buyfimsg textarea{width:400px;}
+div.step_3_m{line-height:31px;color:#444;font-size:12px;padding:12px 0 0 200px}
+div.step_3_m input.text{padding:0 ;height:20px;width:40px;text-align:center;font-weight:bold;color: #ff6600;border: 1px solid #ddd;}
+div.step_3_m a{color:#145fab;margin:0 5px}
+div.step_3_m h2{float:left;font-weight:100;font-size:12px}
+div.step_3_m h2 p{color:#888;}
+.ncathleft font{color:#ff6600;font-weight:bold;padding:0 5px;font-size:14px; font-family:Arial}
+.step_3_m .upfilespan{margin: 21px 0 22px}

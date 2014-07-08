@@ -1402,7 +1402,7 @@ td.btn_b{ background-image:url(../images/jc/lc_41.gif);color:#444;font-size:14px
 .xuan_z_k p input{width:45px;text-algin:center;color:#555;font-size:14px;height:23px;paddint-top:6px\9;height:17px\9}
 :root .xuan_z_k p input{padding-top:0;height:23px;margin:0 3ox;text-align:center}
 .xuan_z_k p font{color:#ff6600;font-size:16px;font-weight:bold;padding:0 5px}
-p.xytk{color:#444;font-size:14px;text-align:center;clear:both;line-height:30px;padding-top:10px}
+p.xytk{color:#444;font-size:12px;text-align:center;clear:both;line-height:30px;padding-top:10px}
 p.xytk input{vertical-align: -2px;_vertical-align: -1px;margin-right:5px;}
 .jc_ds h2.step_s1{background:url(../images/jc/sds_03.gif) left center no-repeat;}
 .jc_ds h2.step_s2{background:url(../images/jc/sds_06.gif) left center no-repeat;}
