@@ -93,7 +93,7 @@
             this.bindEvent();
         },
         bindEvent:function(){
-        	$("#codeCount").click(function(o){
+        	/*$("#codeCount").click(function(o){
 
     			$(this).toggleClass("span5c");
     			$("#divCount").show();
@@ -111,7 +111,7 @@
     			}
     			
     		
-        	})
+        	})*/
         },
 
         createSub: function (){
