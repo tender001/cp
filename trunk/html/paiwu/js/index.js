@@ -357,17 +357,9 @@
                  Class.config('buy_type', b );
                  this.get('#ishm').val(b==1? 1 : 0);
                  this.get('#ischase').val(b==2? 1 : 0);
-                 if(b==0){
-                	 $("#hmdiv").hide();
-                	 $("#zh_form").hide();
-                 }
-                 if(b==1){
-                	 $("#hmdiv").show();
-                	 $("#zh_form").hide();
-                 }
+                
                  if (b==2) {
-                	 $("#hmdiv").hide();
-                	 $("#zh_form").show();
+                	
                      !c && this.moveToBuy(function (){
                           Y.createZhOptions(this.btns.nodes[b])
                      });

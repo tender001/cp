@@ -374,7 +374,7 @@ Class('CodeList>SingeCodeList', {
             Y.lib.DsUpload({
                 zsInput: '#sc_zs_input',
                 bsInput: '#sc_bs_input',
-                //moneySpan: '#sc_money',
+                moneySpan: '#sc_money',
                 scChk: '#scChk',
                 upfile:'#upfile'
             });
@@ -387,7 +387,7 @@ Class('CodeList>SingeCodeList', {
 
             //主玩法
             playTabs = this.lib.Tabs({// zx / z6 / z3
-                items:'#playTabsDd [bet]',
+                items:'#playTabsDd a',
                 contents: '#pttz,#dssc',
                 focusCss: 'cur'
             });
@@ -397,7 +397,7 @@ Class('CodeList>SingeCodeList', {
             buyTabs = this.lib.Tabs({
                 items:'#all_form label',
                 focusCss:'cur',
-                contents: '#dg_form, #hmdiv,#zh_form'
+                contents: '#ptdiv,#hmdiv,#zhdiv'
             });
             pn = 'pt,sc,dq'.split(',');
             //top3玩法
@@ -407,26 +407,19 @@ Class('CodeList>SingeCodeList', {
                 this.postMsg('msg_clear_code');//通知清除选择
                 this.get('#all_form').hide(b==2);
                 this.get('#dssc').hide();
-                if(b==0){
-               	 $("#hmdiv").hide();
-               	 $("#zh_form").hide();
-                }
-                if(b==1){
-               	 $("#hmdiv").show();
-               	 $("#zh_form").hide();
-               	$("#ptdiv").hide();
-                }
-                if (b==2) {
-                $("#ptdiv").hide();
-               	 $("#hmdiv").hide();
-               	 $("#zh_form").show();
-                    Y.createDq();
-                }else{
-                    Y.createZhOptions(this.btns.nodes[b])
-                }
+                if (b==1) {
+               	 Y.createDs();//创建单式-共用
+                    this.get('#sd_tips div.ncathleft').hide();
+                   this.get('#dssc').show();
+               }else{
+               	var tipId = ('#'+Class.config('play_name2')+pn[b]+'_tips').replace(/z\dzxhz/,'zxhz').replace('sc', 'pt');
+                   this.get('#sd_tips div.ncathleft').hide().get(tipId).show();//选号列表栏
+                   var tipId = ('#'+Class.config('play_name2')+pn[b]+'_tip').replace(/z\dzxhz/,'zxhz').replace('sc', 'pt');
+               }
+                this.postMsg('msg_clear_code');
                 buyTabs.btns.show();
                 buyTabs.btns.slice(-1).hide(b==1);
-                buyTabs.focus(b==2?2:0);
+               
                 this.loadEndTime();//同步变换截止时间
             };
             playTabs.focus(0);
