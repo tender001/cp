@@ -487,7 +487,7 @@ Main
             this.bindEvent();
         }, 
         bindEvent:function(){
-        	$("#codeCount").click(function(o){
+        	/*$("#codeCount").click(function(o){
 
     			$(this).toggleClass("span5c");
     			$("#divCount").show();
@@ -505,7 +505,7 @@ Main
     			}
     			
     		
-        	})
+        	})*/
         },
         createSub: function (){
             var Y, choose_pt, list_pt, choose_dt, choose_dd, list_dd;
