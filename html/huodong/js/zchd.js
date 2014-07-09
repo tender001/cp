@@ -59,7 +59,7 @@ $("#getcp,#getcp2").click(function(){
 				$("#alertdiv").css("left", d_left + "px");
 				$('.yclass_mask_panel').show();
 				if(code == 0){
-				$("#alertInfo").html('恭喜您：<br />获取2元彩金<a class="a3" href="/account/orderlist.html" target="_blank" id="showClose">点击查看</a>');
+				$("#alertInfo").html('恭喜您：<br />获取3元彩金<a class="a3" href="/account/orderlist.html" target="_blank" id="showClose">点击查看</a>');
 				$("#alertok,#showClose").click(function(){
 					$('#alertdiv').hide();
 					$('.yclass_mask_panel').hide();
@@ -108,7 +108,7 @@ setTimeout("count_down()",1000);//设置每一秒调用一次倒计时函数
 
 //var time_span = document.getElementById("LiveClock1");
 
-var time_end = new Date("2014/6/13 4:00:00");  // 设定活动结束结束时间
+var time_end = new Date("2014/7/13 4:00:00");  // 设定活动结束结束时间
 time_end = time_end.getTime();
  
 //定义倒计时函数
@@ -141,9 +141,7 @@ function count_down(){
 	  document.getElementById("LiveClock1").innerHTML ='<b>'+int_day+'</b>';
 	  setTimeout("count_down()",1000*60*60);
 	}else{
-	  time_day.innerHTML = "00";
-	  time_hour.innerHTML = "00"; 
-	  time_minute.innerHTML = "00"; 
+	 
 	  $(".djs_title").html("活动进行时")
 	}
 }
