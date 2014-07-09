@@ -317,13 +317,9 @@
             buyTabs = this.lib.Tabs({
                 items:'#all_form label',
                 focusCss:'cur',
-                contents: '#dg_form, #hm_form,#zh_form'
+                contents: '#ptdiv,#hmdiv,#zhdiv'
             });
-            buyTabss = this.lib.Tabs({
-                items:'#all_forms b',
-                focusCss:'cur',
-                contents: '#dg_form, #hmdiv'
-            });
+           
 
             pn = 'pt,sc'.split(',');
 
@@ -335,28 +331,26 @@
                 this.get('#all_form').hide(b==2);
                 this.get('#dssc').hide();
                 if (b==1) {
-                    Y.createDs();
-                    Class.config('play_name','sc' );
-                    this.postMsg('msg_clear_code');
+                	 Y.createDs();//创建单式-共用
+                     this.get('#sd_tips div.ncathleft').hide();
                     this.get('#dssc').show();
                 }else{
-                    Y.createZhOptions(this.btns.nodes[b])
+                	var tipId = ('#'+Class.config('play_name2')+pn[b]+'_tips').replace(/z\dzxhz/,'zxhz').replace('sc', 'pt');
+                    this.get('#sd_tips div.ncathleft').hide().get(tipId).show();//选号列表栏
+                    var tipId = ('#'+Class.config('play_name2')+pn[b]+'_tip').replace(/z\dzxhz/,'zxhz').replace('sc', 'pt');
+                    this.get('#ds_tip h2').hide().get(tipId).show();
                 }
+                this.postMsg('msg_clear_code');
                 buyTabs.btns.show();
                 buyTabs.btns.slice(-1).hide(b==1);
-                buyTabs.focus(b==2?2:0);
-                buyTabss.btns.show();
-                buyTabss.btns.slice(-1).hide(b==1);
-                buyTabss.focus(b==2?2:0);
+               
                 this.loadEndTime();//同步变换截止时间
             };
             playTabs.focus(0);
-           // playTabss.focus(0);
             this.onMsg('msg_toogle_nosc', function (isnosc){
                 buyTabs.btns.slice(0, 1).hide(isnosc);//稍后上传只能合买
                 buyTabs.focus(isnosc ? 1 : 0);
-                buyTabss.btns.slice(0, 1).hide(isnosc);//稍后上传只能合买
-                buyTabss.focus(isnosc ? 1 : 0);
+              
             })
             //购买方式
             buyTabs.onchange = function (a, b, c){
@@ -383,38 +377,7 @@
                  }
                  this.get('#all_form p').html(['由购买人自行全额购买彩票','由多人共同出资购买彩票','连续多期购买同一个（组）号码'][b]);
             };
-            buyTabss.onchange = function (a, b, c){
-                Class.config('buy_type', b );
-                this.get('#ishm').val(b==1? 1 : 0);
-                this.get('#ischase').val(b==2? 1 : 0);
-                
-                if(b==0){
-               	 $("#hmdivs").hide();
-               	$("#hmdiv").hide();
-               	 //$("#zh_form").hide();
-               	$("#div").show();
-            	$("#ww").show();
-                }
-                if(b==1){
-               	 $("#sss").show();
-               	 $("#div").hide();
-               	$("#ww").hide();
-               	$("#hmdiv").show();
-               	
-                }
-               /* if (b==2) {
-               	 $("#hmdiv").hide();
-               	 $("#zh_form").show();
-               	$("#ww").show();
-                    !c && this.moveToBuy(function (){
-                         Y.createZhOptions(this.btns.nodes[b])
-                    });
-                    this.postMsg('toggle-zh');// 通知倍数框限制倍数
-                }else{
-                    !c && this.moveToBuy();
-                }*/
-                this.get('#all_forms p').html(['由购买人自行全额购买彩票','由多人共同出资购买彩票','连续多期购买同一个（组）号码'][b]);
-           };
+           
         }
     }); 
 })()
