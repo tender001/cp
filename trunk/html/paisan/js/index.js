@@ -487,25 +487,7 @@ Main
             this.bindEvent();
         }, 
         bindEvent:function(){
-        	/*$("#codeCount").click(function(o){
-
-    			$(this).toggleClass("span5c");
-    			$("#divCount").show();
-    			if($(this).hasClass("span5c")){
-    				$("#divCount").clearQueue().animate({
-    					height:138
-    					});
-    				
-    			}else{
-    				
-    				$("#divCount").animate({
-    					height:0
-    					
-    					});
-    			}
-    			
-    		
-        	})*/
+        	
         },
         createSub: function (){
             var Y, choose_pt, list_pt, choose_dt, choose_dd, list_dd;
@@ -912,14 +894,20 @@ Main
                    	});
                 }
                 if (b==1) {
-                    Y.createDs()//创建单式-共用
+                    Y.createDs()//创建单式-共用 
+                    this.get('#sd_tips div.ncathleft').hide()
                     this.get('#dssc').show();
+                }else{
+                    var tipId = ('#'+Class.config('play_name2')+pn[b]+'_tips').replace(/z\dzxhz/,'zxhz').replace('sc', 'pt');
+                    this.get('#sd_tips div.ncathleft').hide().get(tipId).show();//选号列表栏
+                    var tipId = ('#'+Class.config('play_name2')+pn[b]+'_tip').replace(/z\dzxhz/,'zxhz').replace('sc', 'pt');
+                    this.get('#ds_tip h2').hide().get(tipId).show();//选号列表栏
                 }
                 Class.config('play_name', pn[b]);
-                //this.get('#hz_tj').show(b==2);
+               // this.get('#hz_tj').show(b==2);
                 this.postMsg('msg_clear_code');
-                var tipId = ('#'+Class.config('play_name2')+pn[b]+'_tips').replace(/z\dzxhz/,'zxhz').replace('sc', 'pt');
-                this.get('#sd_tips div.ncathleft').hide().get(tipId).show();//选号列表栏
+               // var tipId = ('#'+Class.config('play_name2')+pn[b]+'_tips').replace(/z\dzxhz/,'zxhz').replace('sc', 'pt');
+               // this.get('#sd_tips div.ncathleft').hide().get(tipId).show();//选号列表栏
                 this.loadEndTime();//同步变换截止时间
             };
             this.onMsg('msg_toogle_nosc', function (isnosc){
