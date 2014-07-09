@@ -1272,12 +1272,15 @@
     			}}
     		});
     		html +="<a href='javascript:void(0);' target='_blank' id='more_kj' class='xu_gd'>更多</a>";
-    		
+    		var ss=0
     		$("#kjhis").html(html);
     		if(Class.C('lot_id')==01){
     			$("#more_kj").attr("href","/shuangseqiu/kaijiang.html")
+    			
+    			
     		}else if(Class.C('lot_id')==03){
     			$("#more_kj").attr("href","/3d/kaijiang.html")
+    			ss = 138;
     		}else if(Class.C('lot_id')==07){
     			$("#more_kj").attr("href","/qilecai/kaijiang.html")
     		}else if(Class.C('lot_id')==50){
@@ -1286,8 +1289,10 @@
     			$("#more_kj").attr("href","/qixingcai/kaijiang.html")
     		}else if(Class.C('lot_id')==52){
     			$("#more_kj").attr("href","/paiwu/kaijiang.html")
+    			ss = 195;
     		}else if(Class.C('lot_id')==53){
     			$("#more_kj").attr("href","/paisan/kaijiang.html")
+    			ss = 138;
     		}
     		
     		$("#codeCount").click(function(o){
@@ -1297,7 +1302,7 @@
     			$("#divRecent").hide();
     			if($(this).hasClass("span5c")){
     				$("#divCount").clearQueue().animate({
-    					height:138
+    					height:ss
     					});
     				
     			}else{
