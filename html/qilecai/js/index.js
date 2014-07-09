@@ -194,7 +194,7 @@ Class('CodeList>SingeCodeList', {
         var pn = Class.config('play_name');
         return pn=='lr' || pn == 'sc' ? 3 : 1
     });
-    $("#numcount").css({
+    /*$("#numcount").css({
 		"height":0,
 		"overflow":"hidden"
 		});
@@ -214,7 +214,7 @@ Class('CodeList>SingeCodeList', {
 				});
 		}
 		
-	});
+	});*/
     $("#pt_bs").val(1);
     $("#pt_jx_opts").focus(function(){
 		var pt_jx_opts  = $("#pt_jx_opts").val();
