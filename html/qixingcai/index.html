@@ -31,15 +31,7 @@
 						href="http://zst.159cai.com/cjwqlc/" target="_blank">走势图</a>
 				</p>
 			</div>
-			<div class="tzsontab">
-				<span> <a class="cur" href="javascript:void(0);">选号投注</a> <a href="/zc/ds.html">单式投注</a>
-				</span>
-				<p>
-					<span><em>2</em>元赢取<em>500万</em>每周二、五、日晚<em>21：30</em>
-					</span><b style="z-index: 1;" data-help="单式方案包含：单式上传、在线过滤、奖金优化。"
-						mark="pro_em"></b>
-				</p>
-			</div>
+			
 		</div>
 
 
@@ -282,7 +274,7 @@
 					</tr>
 				</tbody></table>
 			</div>
-			<div class="nxmiddle">
+			<div class="nxmiddle" id="pttz">
 				<h2>
 					<p id="wanfatishi">
 						每位至少选择<em class="red">1</em>个号码。
@@ -380,8 +372,8 @@
 					</span>
 				</div>
 			</div>
-			<div class="ncath">
-				<div class="ncathleft">
+			<div class="ncath" id="sd_tips">
+				<div class="ncathleft" id="zhxpt_tips">
 					<div class="cm_ssq_yx_num ncatharea">
 						<ul id="code_list"></ul>
 
@@ -396,7 +388,27 @@
 						<s></s>&nbsp;&nbsp;金额<em id="pt_money">￥0.00</em>元
 					</p>
 				</div>
+<div style="margin-top: -32px;display:none;" id="dssc" class="ncathleft">
+<form enctype="multipart/form-data" method="post" action="/fupload.phpx" id="suc_form" name="project_form">
+<div style="padding-left:10px;" class="step_3_m">
+<div class="upfilespan">
+发起方案：  <input type="text" maxlength="5" id="sc_zs_input" class="text"/>注，
+<input type="text" maxlength="2" value="1" id="sc_bs_input" class="text"/>倍，共<font id="sc_money">0</font>元。
+<label for="scChk"><input type="checkbox" id="scChk" class="box"/> 发起后再上传</label>
+</br>
+<input type="file" id="upfile" name="upfile"/></br>
 
+
+
+<!-- <b class="br1" style="z-index: 1;margin: -25px 0 0 348px;" data-help="单式投注说明&lt;br&gt; 1.投注倍数必须与填写的一直。&lt;br&gt; 2.文件格式必须是文本文件(.txt)。&lt;br&gt;3.上传的文件较大时，会导致上传时间及在本页停留时间较长，请耐心等待" mark="pro_em"></b> -->
+
+单式投注说明:</br>
+1.请严格参照“<a onclick="Yobj.openUrl('/qixingcai/bzgs.html',250,387)" href="javascript:void(0);">标准格式示例</a> ”格式上传方案</br>
+2.投注倍数必须与填写的一致。</br>
+3.文件格式必须是文本文件(.txt)。</br>
+4.上传的文件较大时，会导致上传时间及在本页停留时间较长，请耐心等待
+</div></div></form>
+</div>
 				<div class="ncathright">
 					<div class="ncathtype" id="all_form">
 						<span >投注方式</span> <label><input type="radio" name="radg" checked="checked">代购</label> <label><input type="radio" name="radg">发起合买</label> <label><input type="radio" name="radg">我要追号</label>
@@ -544,15 +556,8 @@
 			</div>
 			
 		</div>
-
-
-
-
-
-
-
 </div>
-</div>
+
 <input name="gid" id="lotid" type="hidden" value="51"/> <!--彩种Id--> 
 <input name="pid" id="expect" type="hidden" value=""/> <!--期号-->
 <input name="totalmoney" id="totalmoney" type="hidden" value="0" /> <!--购买总钱数--> 

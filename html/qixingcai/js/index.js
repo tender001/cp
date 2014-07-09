@@ -239,7 +239,7 @@
 
             //主玩法
             playTabs = this.lib.Tabs({// zx / z6 / z3
-                items:'#playTabsDd [bet]',
+                items:'#playTabsDd a',
                 contents: '#pttz,#dssc',
                 focusCss: 'cur'
             });
@@ -254,26 +254,33 @@
             pn = 'pt,sc'.split(',');
 
             //top3玩法
-//            playTabs.onchange = function (a, b){
-//                Class.config('play_name', pn[b]);
-//                Class.config('playid', 1);
-//                this.postMsg('msg_clear_code');//通知清除选择
-//                this.get('#all_form').hide(b==2);
-//                this.get('#dssc').hide();
-//                if (b==1) {
-//                    Y.createDs();
-//                    this.get('#dssc').show();
-//                    Class.config('play_name', 'sc' );
-//                    this.postMsg('msg_clear_code');
-//                }else{
-//                    Y.createZhOptions(this.btns.nodes[b])
-//                }
-//                buyTabs.btns.show();
-//                buyTabs.btns.slice(-1).hide(b==1);
-//                buyTabs.focus(b==2?2:0);
-//                this.loadEndTime();//同步变换截止时间
-//            };
-//            playTabs.focus(0);
+            playTabs.onchange = function (a, b){
+                Class.config('play_name', pn[b]);
+               Class.config('playid', 1);
+               this.postMsg('msg_clear_code');//通知清除选择
+               this.get('#all_form').hide(b==2);
+               this.get('#dssc').hide();
+               if (b==1) {
+            	   Y.createDs()//创建单式-共用
+                   this.get('#sd_tips div.ncathleft').hide()
+                  this.get('#dssc').show();
+                   /* Y.createDs();
+                   this.get('#dssc').show();
+                    Class.config('play_name', 'sc' );
+                   this.postMsg('msg_clear_code');*/
+               }else{
+            	   var tipId = ('#'+Class.config('play_name2')+pn[b]+'_tips').replace(/z\dzxhz/,'zxhz').replace('sc', 'pt');
+                   this.get('#sd_tips div.ncathleft').hide().get(tipId).show();//选号列表栏
+                   var tipId = ('#'+Class.config('play_name2')+pn[b]+'_tip').replace(/z\dzxhz/,'zxhz').replace('sc', 'pt');
+                   //Y.createZhOptions(this.btns.nodes[b])
+                }
+               this.postMsg('msg_clear_code');
+               buyTabs.btns.show();
+               buyTabs.btns.slice(-1).hide(b==1);
+              // buyTabs.focus(b==2?2:0);
+              this.loadEndTime();//同步变换截止时间
+            };
+            playTabs.focus(0);
 
             this.onMsg('msg_toogle_nosc', function (isnosc){
                 buyTabs.btns.slice(0, 1).hide(isnosc);//稍后上传只能合买
