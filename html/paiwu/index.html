@@ -26,24 +26,24 @@
 			</p>
 		</div>
 
-		<div class="touztop" style="margin-bottom: 0">
+		<div class="touztop" style="margin-bottom: 0;height: 45px;">
 			<div class="touzcm">
 				<h1>排列五</h1>
-				<span> <a class="cur" >选号投注</a><a  href="/hemai/index.html?lotid=52" target="_blank">参与合买</a><a href="/account/orderlist.html" target="_blank">我的方案</a>
+				<span id="playTabsDd"> <a class="cur" bet="0">选号投注</a><a bet="0">单式上传</a><a  href="/hemai/index.html?lotid=52" target="_blank">参与合买</a><a href="/account/orderlist.html" target="_blank">我的方案</a>
 				</span>
 				<p>
 					<a href="/paiwu/kaijiang.html" target="_blank">历史开奖</a>|<a href="/p5/yuce/" target="_blank">预测推荐</a>|<a href="/guoguan/p5.html" target="_blank">过关统计</a>|<a
 						href="http://zst.159cai.com/cjwpl5/" target="_blank">走势图</a>
 				</p>
 			</div>
-			<div class="tzsontab">
+			<!-- <div class="tzsontab">
 				<span id="playTabsDd"> <a class="cur" ><em>普通投注</em></a> <a><em>单式上传</em></a></span>
 				<p>
 					<span><em>2</em>元赢取<em>10万</em>元 每晚<em>20：30</em>开奖，固定奖金，玩法简单！
 					</span><b style="z-index: 1;" data-help="单式方案包含：单式上传、在线过滤、奖金优化。"
 						mark="pro_em"></b>
 				</p>
-			</div>
+			</div> -->
 		</div>
 		<div class="numcai">
 			<div class="nwx5time">
@@ -322,8 +322,9 @@
 						id="pt_clear" class="qc_xh">清除当前选号</a>
 					</span>
 				</div>
-				<div class="ncath" style="margin-top: 20px;">
-				<div class="ncathleft">
+				</div>
+				<div class="ncath" style="margin-top: 20px;" id="sd_tips">
+				<div class="ncathleft" id="zhxpt_tips">
 					<div class="cm_ssq_yx_num ncatharea">
 						<ul id="pt_list"></ul>
 
@@ -343,21 +344,49 @@
 							id="pt_money">0</em>元
 					</p>
 				</div>
+				<div style="display:none;margin-top:-32px;" id="dssc" class="ncathleft" >
+<form enctype="multipart/form-data" method="post" action="/fupload.phpx" id="suc_form" name="project_form">
+<div style="padding-left:10px;" class="step_3_m">
+<div class="upfilespan">
+发起方案：  <input type="text" maxlength="5" id="sc_zs_input" class="text"/>注，
+<input type="text" maxlength="2" value="1" id="sc_bs_input" class="text"/>倍，共<font id="sc_money">0</font>元。
+<label for="scChk"><input type="checkbox" id="scChk" class="box"/> 发起后再上传</label>
+</br>
+<input type="file" id="upfile" name="upfile"/></br>
 
-				<div class="ncathright" id="right">
+
+
+<!-- <b class="br1" style="z-index: 1;margin: -25px 0 0 348px;" data-help="单式投注说明&lt;br&gt; 1.投注倍数必须与填写的一直。&lt;br&gt; 2.文件格式必须是文本文件(.txt)。&lt;br&gt;3.上传的文件较大时，会导致上传时间及在本页停留时间较长，请耐心等待" mark="pro_em"></b> -->
+
+单式投注说明:</br>
+1.请严格参照“<a onclick="Yobj.openUrl('/3d/bzgs.html',250,387)" href="javascript:void(0);">标准格式示例</a> ”格式上传方案</br>
+2.投注倍数必须与填写的一致。</br>
+3.文件格式必须是文本文件(.txt)。</br>
+4.上传的文件较大时，会导致上传时间及在本页停留时间较长，请耐心等待
+</div></div></form>
+</div>
+				<div class="ncathright">
 					<div class="ncathtype" id="all_form">
-						<span id="zh_tabs">投注方式</span> <label><input type="radio"
+						<span>投注方式</span> <label><input type="radio"
 							checked="checked" name="radg">代购</label> <label><input
 							type="radio" name="radg">发起合买</label> <label><input
 							type="radio" name="radg">我要追号</label>
 
 					</div>
-					<div class="kc_zjz">
-						<div id="hmdiv" style="display: none;">
-							<div
-								style="border-bottom: none; padding-bottom: 0; border-left: none"
-								class="b_th_co2 buyfimsg" id="sss">
-								<table width="100%" border="0" cellspacing="0" cellpadding="0">
+					<div class="ncathgm" id="ptdiv">
+						<p mark="userMoneyInfo" class="xytk">
+							您尚未登录，请先<a onclick="Yobj.postMsg('msg_login')"
+								href="javascript:void(0);">登录</a>!
+						</p>
+						<a href="javascript:void(0);" id="buy_dg" class="a1">立即投注</a>
+
+					</div>
+					<div class="kc_zjz" style="display:none;"  id="hmdiv">
+						<div>
+							<div class="b_th_co2 buyfimsg"
+								styl
+="border-bottom: none; padding-bottom: 0; border-left: none">
+								<table width="100%" cellspacing="0" cellpadding="0" border="0">
 									<colgroup>
 										<col width="78">
 											<col width="">
@@ -365,56 +394,55 @@
 									<tbody>
 										<tr>
 											<td class="td1">方案金额</td>
-											<td>总金额<font id="buyMoneySpan3"></font>元&nbsp;&nbsp;&nbsp;每份<font
+											<td>总金额<font id="buyMoneySpan2"></font>元&nbsp;&nbsp;&nbsp;每份<font
 												id="fsMoney">0</font>元，共<font id="fsInput">0</font>份
 											</td>
 										</tr>
 										<tr>
 											<td class="td1">我要认购</td>
-											<td><input type="text" maxlength="6" id="rgInput"
-												class="text">份，<font id="rgMoney">￥0.00</font>元，约<font
-													id="rgScale">0.00%</font><font style="display: none"
-													id="rgErr">您需认购<span>x</span>份~<span>x</span>份
+											<td><input type="text" class="text" id="rgInput"
+												maxlength="6">份，<font id="rgMoney">￥0.00</font>元，约<font
+													id="rgScale">0.00%</font><font id="rgErr"
+													style="display: none">您需认购<span>x</span>份~<span>x</span>份
 												</font></td>
 										</tr>
 										<tr>
 											<td class="td1">方案保底</td>
-											<td><input type="checkbox" id="isbaodi" class="box">我要保底
-													<input type="text" maxlength="6" disabled="" id="bdInput"
-													value="1" class="text">份，<font id="bdMoney">0</font>元，约<font
-														id="bdScale">10%</font><font style="display: none"
-														id="bdErr">！最低保底5%</font></td>
+											<td><input type="checkbox" class="box" id="isbaodi">我要保底
+													<input type="text" class="text" value="1" id="bdInput"
+													disabled="" maxlength="6">份，<font id="bdMoney">0</font>元，约<font
+														id="bdScale">10%</font><font id="bdErr"
+														style="display: none">！最低保底5%</font></td>
 										</tr>
 										<tr>
 											<td class="td1">提成比例</td>
-											<td id="tc"><b value="0" class="first">无</b><b value="1">1%</b><b
-												value="2" class="cur">2%</b><b value="3">3%</b><b value="4">4%</b><b
+											<td id="tc"><b class="first" value="0">无</b><b value="1">1%</b><b
+												class="cur" value="2">2%</b><b value="3">3%</b><b value="4">4%</b><b
 												value="5">5%</b><b value="6">6%</b><b value="7">7%</b><b
 												value="8">8%</b><b value="9">9%</b><b value="10">10%</b></td>
 										</tr>
 										<tr>
 											<td class="td1">保密设置</td>
-											<td id="gkfs"><em value="0">完全公开</em><em value="1"
-												class="cur">截止后公开</em><em value="2">仅对跟单者公开</em><em
-												value="3">截止后对跟单者公开</em></td>
+											<td id="gkfs"><em value="0">完全公开</em><em class="cur"
+												value="1">截止后公开</em><em value="2">仅对跟单者公开</em><em value="3">截止后对跟单者公开</em></td>
 										</tr>
 										<tr>
 											<td class="td1">方案宣传</td>
-											<td><input type="checkbox" id="moreCheckbox" class="box">方案宣传选填信息</td>
+											<td><input type="checkbox" class="box" id="moreCheckbox">方案宣传选填信息</td>
 										</tr>
 									</tbody>
-									<tbody style="display: none;" id="case_ad">
+									<tbody id="case_ad" style="display: none;">
 
 										<tr>
 											<td class="td1">方案标题</td>
-											<td><input type="text" id="caseTitle" class="bt"
-												value="胜负彩复式合买，欢迎跟单。" maxlength="20"><span
+											<td><input type="text" maxlength="20"
+												value="胜负彩复式合买，欢迎跟单。" class="bt" id="caseTitle"><span
 													class="fa_play">已输入<font id="title_word_count">0</font>个字符。
 												</span></td>
 										</tr>
 										<tr>
 											<td class="td1">方案描述</td>
-											<td><textarea default="随缘,买彩票讲的是运气、缘分和坚持。" id="caseInfo">随缘！买彩票讲的是运气、缘分和坚持。</textarea><span
+											<td><textarea id="caseInfo" default="随缘,买彩票讲的是运气、缘分和坚持。">随缘！买彩票讲的是运气、缘分和坚持。</textarea><span
 												class="fa_play">已输入<font id="content_word_count">0</font>个字符。
 											</span></td>
 										</tr>
@@ -423,30 +451,38 @@
 									</tbody>
 								</table>
 							</div>
+							<div class="ncathgm">
+								<p mark="userMoneyInfo" class="xytk">
+									您尚未登录，请先<a onclick="Yobj.postMsg('msg_login')"
+										href="javascript:void(0);">登录</a>!
+								</p>
+								<a href="javascript:void(0);" id="buy_hm" class="a1">发起合买</a>
+
+							</div>
 						</div>
 					</div>
-					<div class="kc_zjz" >
-						<div id="dg_form" style="display: block;"></div>
-						<div id="zh_form"  style="display: none;" class="kc_zja">
+					
+					<div class="kc_zjz" style="display:none;"  id="zhdiv">
+						<div class="kc_zja" style="display: block;" id="zh_tabs1">
 							<div class="kc_zj2">
 								<p>
-									追<select name="zh_opts" id="zh_opts">
-							 <option value="10" checked>追10期</option>
-							<option value="20">追20期</option>
-							<option value="30">追30期</option>
-							<option value="100">追更多期</option> 
-						</select>期
+									<select id="zh_opts" name="zh_opts">
+										<option checked="" value="10">追10期</option>
+										<option value="20">追20期</option>
+										<option value="30">追30期</option>
+										<option value="100">追更多期</option>
+									</select>期
 								</p>
 								<p class="p_z_tz">
-									追号设置 <select id="tzzh" name="zhflag">
-										<option selected="" value="0">中奖后不停止</option>
+									追号设置 <select name="zhflag" id="tzzh">
+										<option value="0" selected="">中奖后不停止</option>
 										<option value="1">中奖后停止</option>
 										<option value="2">盈利后停止</option>
 									</select>
 								</p>
 							</div>
 							<div class="kc_zj3">
-								<table width="100%" border="0" cellspacing="0" cellpadding="0">
+								<table width="100%" cellspacing="0" cellpadding="0" border="0">
 									<colgroup>
 										<col width="60">
 											<col width="100">
@@ -464,12 +500,10 @@
 											<td>开奖日期</td>
 										</tr>
 									</thead>
-									<tbody id="zh_list">
-  									</tbody>
 								</table>
 							</div>
-							<div class="kc_zj3" style="max-height: 180px; overflow: auto">
-								<table width="100%" border="0" cellspacing="0" cellpadding="0">
+							<div style="max-height: 180px; overflow: auto" class="kc_zj3">
+								<table width="100%" cellspacing="0" cellpadding="0" border="0">
 									<colgroup>
 										<col width="60">
 											<col width="100">
@@ -479,322 +513,30 @@
 														<col width="">
 									</colgroup>
 
-									<tbody>
-										<!-- <tr style="display:none">
-											<td>01.</td>
-											<td class="tld"><input type="checkbox" checked=""
-												value="2014162">2014162期</td>
-											<td><input type="text" value="1" class="text"
-												maxlength="2">倍</td>
-											<td><font>￥0.00</font>元</td>
-											<td>2014-06-19 20:30:00</td>
-										</tr>
-										<tr style="display:">
-											<td>01.</td>
-											<td class="tld"><input type="checkbox" checked=""
-												value="2014162">2014162期</td>
-											<td><input type="text" value="1" class="text"
-												maxlength="2">倍</td>
-											<td><font>￥0.00</font>元</td>
-											<td>2014-06-19 20:30:00</td>
-										</tr>
-										<tr style="display:">
-											<td>01.</td>
-											<td class="tld"><input type="checkbox" checked=""
-												value="2014162">2014162期</td>
-											<td><input type="text" value="1" class="text"
-												maxlength="2">倍</td>
-											<td><font>￥0.00</font>元</td>
-											<td>2014-06-19 20:30:00</td>
-										</tr>
-										<tr style="display:">
-											<td>01.</td>
-											<td class="tld"><input type="checkbox" checked=""
-												value="2014162">2014162期</td>
-											<td><input type="text" value="1" class="text"
-												maxlength="2">倍</td>
-											<td><font>￥0.00</font>元</td>
-											<td>2014-06-19 20:30:00</td>
-										</tr>
-										<tr style="display:">
-											<td>01.</td>
-											<td class="tld"><input type="checkbox" checked=""
-												value="2014162">2014162期</td>
-											<td><input type="text" value="1" class="text"
-												maxlength="2">倍</td>
-											<td><font>￥0.00</font>元</td>
-											<td>2014-06-19 20:30:00</td>
-										</tr>
-										<tr style="display:">
-											<td>01.</td>
-											<td class="tld"><input type="checkbox" checked=""
-												value="2014162">2014162期</td>
-											<td><input type="text" value="1" class="text"
-												maxlength="2">倍</td>
-											<td><font>￥0.00</font>元</td>
-											<td>2014-06-19 20:30:00</td>
-										</tr>
-										<tr style="display:">
-											<td>01.</td>
-											<td class="tld"><input type="checkbox" checked=""
-												value="2014162">2014162期</td>
-											<td><input type="text" value="1" class="text"
-												maxlength="2">倍</td>
-											<td><font>￥0.00</font>元</td>
-											<td>2014-06-19 20:30:00</td>
-										</tr>
-										<tr style="display:">
-											<td>01.</td>
-											<td class="tld"><input type="checkbox" checked=""
-												value="2014162">2014162期</td>
-											<td><input type="text" value="1" class="text"
-												maxlength="2">倍</td>
-											<td><font>￥0.00</font>元</td>
-											<td>2014-06-19 20:30:00</td>
-										</tr>
-										<tr style="display:">
-											<td>01.</td>
-											<td class="tld"><input type="checkbox" checked=""
-												value="2014162">2014162期</td>
-											<td><input type="text" value="1" class="text"
-												maxlength="2">倍</td>
-											<td><font>￥0.00</font>元</td>
-											<td>2014-06-19 20:30:00</td>
-										</tr>
-										<tr style="display:">
-											<td>01.</td>
-											<td class="tld"><input type="checkbox" checked=""
-												value="2014162">2014162期</td>
-											<td><input type="text" value="1" class="text"
-												maxlength="2">倍</td>
-											<td><font>￥0.00</font>元</td>
-											<td>2014-06-19 20:30:00</td>
-										</tr>
-										<tr style="display:">
-											<td>01.</td>
-											<td class="tld"><input type="checkbox" checked=""
-												value="2014162">2014162期</td>
-											<td><input type="text" value="1" class="text"
-												maxlength="2">倍</td>
-											<td><font>￥0.00</font>元</td>
-											<td>2014-06-19 20:30:00</td>
-										</tr>
-										<tr style="display:">
-											<td>01.</td>
-											<td class="tld"><input type="checkbox" checked=""
-												value="2014162">2014162期</td>
-											<td><input type="text" value="1" class="text"
-												maxlength="2">倍</td>
-											<td><font>￥0.00</font>元</td>
-											<td>2014-06-19 20:30:00</td>
-										</tr> -->
-									</tbody>
-								</table>
-							</div>
-						</div>
-					</div>
-					<div class="ncathgm">
-						<p id="userMoneyInfo">
-							账户信息：您还没有登录，请先<a>登录</a>后再购买。
-						</p>
-						<!-- <p class="red_pay" style="margin-top:0px;">
-您选择了
-<b id="expect_num">0</b>
-期，金额为
-<font id="sum_m">0</font>
-元
-</p> -->
-						<a class="a1" id="buy_dg" href="javascript:void(0);">立即投注</a>
-						<p>
-							<input type="checkbox" id="agreement" checked="checked">我已阅读同意《<a
-								target="_blank" href="/help/help_yffwxy.html">用户委托投注协议</a>》 
-						</p>
-					</div>
-				</div>
-			</div>
-				</div>
-				<div class="nxmiddle" id="dssc" style="display: none;">
-<div class="jc_ds numds">
-<form enctype="multipart/form-data" method="post" action="/fupload.phpx" id="suc_form" name="project_form">
-<p class="step_3_m">发起方案：  <input type="text" maxlength="5" id="sc_zs_input" class="text">注，<input type="text" maxlength="2" value="1" id="sc_bs_input" class="text">倍，共<font id="sc_money">￥0.00</font>元。 <input type="checkbox" id="scChk" class="box"> <label for="scChk">发起后再上传</label><br>
-<input type="file" id="upfile" name="upfile">
-<br>单式投注说明:
-<br>1、选择倍投注时只需上传单倍方案；上传的方案注数必须跟填写的一致，否则可能无法出票。 <br>
-2、请严格参照“<a onclick="Yobj.openUrl('/paisan/bzgs.html',250,387)" href="javascript:void(0);">标准格式示例</a>”格式上传方案，否则网站不保证为您做过关统计以及历史战绩统计。 <br>
-3、文件格式必须是文本文件(.txt)。 <br>
-4、上传的文件较大时，会导致上传时间及在本页停留时间较长，请耐心等待。</p></form>
-</div>
-<div class="numhmg">
-   <div id="all_forms" class="b_th_top">
-				<span id="zh_tabs">购买方式</span><b class="cur"><label for="dg" >代购</label></b><b class=""><label for="hm">发起合买</label></b>
-				<div class="kc_zjz">
-				<div id="dg_form" style="display: block;"></div>
-						<div id="hmdiv" style="display: none;">
-							<div
-								style="border-bottom: none; padding-bottom: 0; border-left: none"
-								class="b_th_co2 buyfimsg" id="hm_form">
-								<table width="100%" border="0" cellspacing="0" cellpadding="0">
-									<colgroup>
-										<col width="80">
-											<col width="">
-									</colgroup>
-									<tbody>
-										<tr>
-											<td class="td1">方案金额</td>
-											<td>总金额<font id="buyMoneySpan3"></font>元&nbsp;&nbsp;&nbsp;每份<font
-												id="fsMoney">0</font>元，共<font id="fsInput">0</font>份
-											</td>
-										</tr>
-										<tr>
-											<td class="td1">我要认购</td>
-											<td><input type="text" maxlength="6" id="rgInput"
-												class="text">份，<font id="rgMoney">￥0.00</font>元，约<font
-													id="rgScale">0.00%</font><font style="display: none"
-													id="rgErr">您需认购<span>x</span>份~<span>x</span>份
-												</font></td>
-										</tr>
-										<tr>
-											<td class="td1">方案保底</td>
-											<td><input type="checkbox" id="isbaodi" class="box">我要保底
-													<input type="text" maxlength="6" disabled="" id="bdInput"
-													value="1" class="text">份，<font id="bdMoney">0</font>元，约<font
-														id="bdScale">10%</font><font style="display: none"
-														id="bdErr">！最低保底5%</font></td>
-										</tr>
-										<tr>
-											<td class="td1">提成比例</td>
-											<td id="tc"><b value="0" class="first">无</b><b value="1">1%</b><b
-												value="2" class="cur">2%</b><b value="3">3%</b><b value="4">4%</b><b
-												value="5">5%</b><b value="6">6%</b><b value="7">7%</b><b
-												value="8">8%</b><b value="9">9%</b><b value="10">10%</b></td>
-										</tr>
-										<tr>
-											<td class="td1">保密设置</td>
-											<td id="gkfs"><em value="0">完全公开</em><em value="1"
-												class="cur">截止后公开</em><em value="2">仅对跟单者公开</em><em
-												value="3">截止后对跟单者公开</em></td>
-										</tr>
-										<tr>
-											<td class="td1">方案宣传</td>
-											<td><input type="checkbox" id="moreCheckbox" class="box">方案宣传选填信息</td>
-										</tr>
-									</tbody>
-									<tbody style="display: none;" id="case_ad">
-
-										<tr>
-											<td class="td1">方案标题</td>
-											<td><input type="text" id="caseTitle" class="bt"
-												value="胜负彩复式合买，欢迎跟单。" maxlength="20"><span
-													class="fa_play">已输入<font id="title_word_count">0</font>个字符。
-												</span></td>
-										</tr>
-										<tr>
-											<td class="td1">方案描述</td>
-											<td><textarea default="随缘,买彩票讲的是运气、缘分和坚持。" id="caseInfo">随缘！买彩票讲的是运气、缘分和坚持。</textarea><span
-												class="fa_play">已输入<font id="content_word_count">0</font>个字符。
-											</span></td>
-										</tr>
-
+									<tbody id="zh_list">
 
 									</tbody>
 								</table>
 							</div>
+							<div class="ncathgm">
+								<p mark="userMoneyInfo" class="xytk">
+									您尚未登录，请先<a onclick="Yobj.postMsg('msg_login')"
+										href="javascript:void(0);">登录</a>!
+								</p>
+								<a class="a1" id="sendbuy" href="javascript:void(0);">立即追号</a>
+
+							</div>
 						</div>
 					</div>
-			</div>
-			<div>
-				<div class="b_th_co2" id="div">
-					<table width="760" border="0" style="margin-left: 80px" class="col_2">
-						<tbody><tr>
-							<th>投注信息</th>
-							<td>总金额<font id="buyMoneySpan3">0</font>元
-							</td>
-						</tr>
-					</tbody></table>
+					<p class="xytk">
+						<input type="checkbox" id="agreement" checked="checked">我已阅读同意《<a
+							href="/help/helpxy.html">用户委托投注协议</a>》 
+					</p>
 				</div>
-				<div id="ww">
-				 <a id="buy_dg" href="javascript:void(0);" class="d_c_b">立即投注</a>
-				<p class="xytk">
-					<input type="checkbox" checked="checked" id="agreement">我已阅读并同意《<a
-								target="_blank" href="/help/help_yffwxy.html">用户委托投注协议</a>》 
-				</p> 
-				</div>
-				<div id="hmdivs" style="width: 800px; display: none;">
-				<div style="width:799px;border-bottom:none;padding-bottom:0" class="b_th_co2 buyfimsg">
-					<table width="100%" border="0" cellspacing="0" cellpadding="0">
-									<colgroup>
-										<col width="80">
-											<col width="">
-									</colgroup>
-									<tbody>
-										<tr>
-											<td class="td1">方案金额</td>
-											<td>总金额<font id="buyMoneySpan3"></font>元&nbsp;&nbsp;&nbsp;每份<font
-												id="fsMoney">0</font>元，共<font id="fsInput">0</font>份
-											</td>
-										</tr>
-										<tr>
-											<td class="td1">我要认购</td>
-											<td><input type="text" maxlength="6" id="rgInput"
-												class="text">份，<font id="rgMoney">￥0.00</font>元，约<font
-													id="rgScale">0.00%</font><font style="display: none"
-													id="rgErr">您需认购<span>x</span>份~<span>x</span>份
-												</font></td>
-										</tr>
-										<tr>
-											<td class="td1">方案保底</td>
-											<td><input type="checkbox" id="isbaodi" class="box">我要保底
-													<input type="text" maxlength="6" disabled="" id="bdInput"
-													value="1" class="text">份，<font id="bdMoney">0</font>元，约<font
-														id="bdScale">10%</font><font style="display: none"
-														id="bdErr">！最低保底5%</font></td>
-										</tr>
-										<tr>
-											<td class="td1">提成比例</td>
-											<td id="tc"><b value="0" class="first">无</b><b value="1">1%</b><b
-												value="2" class="cur">2%</b><b value="3">3%</b><b value="4">4%</b><b
-												value="5">5%</b><b value="6">6%</b><b value="7">7%</b><b
-												value="8">8%</b><b value="9">9%</b><b value="10">10%</b></td>
-										</tr>
-										<tr>
-											<td class="td1">保密设置</td>
-											<td id="gkfs"><em value="0">完全公开</em><em value="1"
-												class="cur">截止后公开</em><em value="2">仅对跟单者公开</em><em
-												value="3">截止后对跟单者公开</em></td>
-										</tr>
-										<tr>
-											<td class="td1">方案宣传</td>
-											<td><input type="checkbox" id="moreCheckbox" class="box">方案宣传选填信息</td>
-										</tr>
-									</tbody>
-									<tbody style="display: none;" id="case_ad">
-
-										<tr>
-											<td class="td1">方案标题</td>
-											<td><input type="text" id="caseTitle" class="bt"
-												value="胜负彩复式合买，欢迎跟单。" maxlength="20"><span
-													class="fa_play">已输入<font id="title_word_count">0</font>个字符。
-												</span></td>
-										</tr>
-										<tr>
-											<td class="td1">方案描述</td>
-											<td><textarea default="随缘,买彩票讲的是运气、缘分和坚持。" id="caseInfo">随缘！买彩票讲的是运气、缘分和坚持。</textarea><span
-												class="fa_play">已输入<font id="content_word_count">0</font>个字符。
-											</span></td>
-										</tr>
-
-
-									</tbody>
-								</table>
-				</div>
-				<a id="buy_hm" href="javascript:void(0);" class="d_c_b">发起合买</a>
-				<p class="xytk">
-					<input type="checkbox" checked="checked" id="agreement"/>我已阅读并同意《<a href="/help/helpxy.html" target="_blank">用户合买代购协议</a>》 
-				</p>
 			</div>
-			</div>
+				
 			
-			</div></div>
+			
 			
 		</div>
 	</div>
