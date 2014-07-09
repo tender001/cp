@@ -1264,7 +1264,9 @@
     			if(i<11){
     			if($(this).attr("rm") != '1'){
 	    			if($(this).attr('cc').indexOf('\|') >= 0){
-	    				html += "<li>" + $(this).attr('cp') + "</li><li class='sup'><font>" + $(this).attr('cc').split('|')[0].replaceAll(',',' ') + "</font><strong>" + $(this).attr('cc').split('|')[1].replaceAll(',',' ') + "</strong></li>";			
+	    				//html += '<tr class="tr2 tr4"><td>' + $(this).attr('cp') + "</td><td class='tdi'><i>" + $(this).attr('cc').split(',').join('</i><i>') + '</i></td></tr>';
+	    				html += '<tr class="tr2 tr4"><td>' + $(this).attr('cp') + "</td><td class='tdi'><i>" + $(this).attr('cc').split('|')[0].replaceAll(',',' ') + '  </i><strong style="color: #145fab;">' + $(this).attr('cc').split('|')[1].replaceAll(',',' ') + '</strong></td></tr>';
+	    				//html += "<li>" + $(this).attr('cp') + "</li><li class='sup'><font>" + $(this).attr('cc').split('|')[0].replaceAll(',',' ') + "</font><strong>" + $(this).attr('cc').split('|')[1].replaceAll(',',' ') + "</strong></li>";			
 	    			}else{
 	    				html +='<tr class="tr2 tr4"><td>'+$(this).attr('cp') +'</td><td class="tdi"><i>'+ $(this).attr('cc').split(',').join('</i><i>')+'</i></td></tr>';
 	    			
@@ -1272,21 +1274,23 @@
     			}}
     		});
     		html +="<a href='javascript:void(0);' target='_blank' id='more_kj' class='xu_gd'>更多</a>";
-    		var ss=0
+    		var ss=0;
     		$("#kjhis").html(html);
     		if(Class.C('lot_id')==01){
     			$("#more_kj").attr("href","/shuangseqiu/kaijiang.html")
     			
     			
     		}else if(Class.C('lot_id')==03){
-    			$("#more_kj").attr("href","/3d/kaijiang.html")
+    			$("#more_kj").attr("href","/3d/kaijiang.html");
     			ss = 138;
     		}else if(Class.C('lot_id')==07){
-    			$("#more_kj").attr("href","/qilecai/kaijiang.html")
+    			$("#more_kj").attr("href","/qilecai/kaijiang.html");
+    			ss = 250;
     		}else if(Class.C('lot_id')==50){
     			$("#more_kj").attr("href","/daletou/kaijiang.html")
     		}else if(Class.C('lot_id')==51){
-    			$("#more_kj").attr("href","/qixingcai/kaijiang.html")
+    			$("#more_kj").attr("href","/qixingcai/kaijiang.html");
+    			ss = 250;
     		}else if(Class.C('lot_id')==52){
     			$("#more_kj").attr("href","/paiwu/kaijiang.html")
     			ss = 195;
