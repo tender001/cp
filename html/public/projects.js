@@ -2165,13 +2165,85 @@ showduizhen =function (lotid,expect,projid,type,codes,cp){
 								lose=lose;
 							
 						}
-					
-						if(type==1){     //复试
+						/*if(codes.split(";").length>1){
+							bet_str="";//得到投注选项
+							ggstr='<font  class="cm_red">'+codes.split(";")[0].split("|")[2].replaceAll("\\*","串")+'</font>';
+						}else{
 							
+						var arr_bet;
+						arr_bet=codes.split("|");
+						bet_str=arr_bet[1];//得到投注选项
+						ggstr='<font  class="cm_red">'+arr_bet[2].replaceAll("\\*","串")+'</font>';*/
+						if(type==1){  
+							//复试
 							if(codes.split(";").length>1){
+								bet_str="";//得到投注选项
+								ggstr=codes.split(";")[0].split("|")[2].replaceAll("\\*","串");
+							}else{
+								
+							var arr_bet;
+							arr_bet=codes.split("|");
+							bet_str=arr_bet[1];//得到投注选项
+							ggstr=arr_bet[2].replaceAll("\\*","串");
+							
+							if(bet_str.indexOf("$")!=-1){
+								dan=bet_str.split("$")[0];
+								bet_str=bet_str.replace("$",",");
+								
+								dan_bet=dan.split(",");
+								var dan_len=dan_bet.length;
+								for(var c=0;c<dan_len;c++){
+									var darr=dan_bet[c].split("=");
+										if(darr[0]*1==id*1){
+											dan='<s style="color:red">√</s>';
+											dstr='(胆)';
+											break;
+										}else{
+											dan='×';
+											dstr='';
+										}
+								}
+							}
+							
+							bet_str=bet_str.replaceAll("/"," ");
+							arr_bet=bet_str.split(",");
+							
+							var bet_len=arr_bet.length;
+							
+							for(var b=0;b<bet_len;b++){
+								var barr=arr_bet[b].split("=");
+								if(barr[0]*1==id*1){
+									bet_str=barr[1];
+									break;
+								}else{
+									bet_str=barr[1];
+								}
+							}
+							
+							//玩法不同 彩果以及SP取值不同
+							if(lotid==88){
+								bet_str=bet_str.replaceAll("0","下+双");
+								bet_str=bet_str.replaceAll("1","下+单");
+								bet_str=bet_str.replaceAll("2","上+双");
+								bet_str=bet_str.replaceAll("3","上+单");
+							}
+							
+							if(lotid==91 || lotid==86){
+								bet_str=bet_str.replaceAll("9:9","平其它");
+								bet_str=bet_str.replaceAll("0:9","负其它");
+								bet_str=bet_str.replaceAll("9:0","胜其它");
+							}
+							if(result!=null &&bet_str.indexOf(result)!=-1 &&lotid !=91){
+									bet_str=bet_str.replace(result,"<font   class='cm_red'><b>"+result+"</b></font>");
+							}else{
+								cls="";
+							}
+						  }	
+							/*if(codes.split(";").length>1){
 								bet_str="";//得到投注选项
 								arr_bet=codes.split("|");
 								bet_str=arr_bet[1];//得到投注选项
+								ggstr='<font  class="cm_red">'+codes.split(";")[0].split("|")[2].replaceAll("\\*","串")+'</font>';
 								if(bet_str.indexOf("$")!=-1){
 									dan=bet_str.split("$")[0];
 									bet_str=bet_str.replace("$",",");
@@ -2204,7 +2276,7 @@ showduizhen =function (lotid,expect,projid,type,codes,cp){
 										bet_str=barr[1];
 									}
 								}
-//								ggstr2=ggstr=codes.split(";")[0].split("|")[2].replaceAll("\\*","串");
+								ggstr2=ggstr=codes.split(";")[0].split("|")[2].replaceAll("\\*","串");
 								var ggs=[];
 								codes.split(";").each(function(cd){
 										ggs.push(cd.split("|")[2].replaceAll("\\*","串"));
@@ -2266,11 +2338,16 @@ showduizhen =function (lotid,expect,projid,type,codes,cp){
 								bet_str=bet_str.replaceAll("9:0","胜其它");
 							}
 							if(result!=null &&bet_str.indexOf(result)!=-1 &&lotid !=91){
+									bet_str=bet_str.replace(result,"<font   class='cm_red'><b>"+result+"</b></font>");
+							}else{
+								cls="";
+							}
+							if(result!=null &&bet_str.indexOf(result)!=-1 &&lotid !=91){
 //									bet_str=bet_str.replace(result,"<font   class='cm_red'><b>"+result+"</b></font>");
 							}else{
 								cls="";
 							}
-						  }	
+						  }	*/
 							
 							
 							
