@@ -2167,7 +2167,7 @@ showduizhen =function (lotid,expect,projid,type,codes,cp){
 						}
 						if(type==1){  
 							//复试
-							if(codes.split(";").length>1){
+							/*if(codes.split(";").length>1){
 								bet_str="";//得到投注选项
 								ggstr=codes.split(";")[0].split("|")[2].replaceAll("\\*","串");
 							}else{
@@ -2224,13 +2224,14 @@ showduizhen =function (lotid,expect,projid,type,codes,cp){
 								bet_str=bet_str.replaceAll("0:9","负其它");
 								bet_str=bet_str.replaceAll("9:0","胜其它");
 							}
-							if(result!=null &&bet_str.indexOf(result)!=-1 &&lotid !=91){
+							// 
+							if(result!=null &&bet_str.indexOf(result)!=-1&&lotid !=91){
 									bet_str=bet_str.replace(result,"<font   class='cm_red'><b>"+result+"</b></font>");
 							}else{
 								cls="";
 							}
-						  }	
-							/*if(codes.split(";").length>1){
+						  }	*/
+							if(codes.split(";").length>1){
 								bet_str="";//得到投注选项
 								arr_bet=codes.split("|");
 								bet_str=arr_bet[1];//得到投注选项
@@ -2334,11 +2335,11 @@ showduizhen =function (lotid,expect,projid,type,codes,cp){
 								cls="";
 							}
 							if(result!=null &&bet_str.indexOf(result)!=-1 &&lotid !=91){
-//									bet_str=bet_str.replace(result,"<font   class='cm_red'><b>"+result+"</b></font>");
+									bet_str=bet_str.replace(result,"<font   class='cm_red'><b>"+result+"</b></font>");
 							}else{
 								cls="";
 							}
-						  }	*/
+						  }	
 							
 							
 							
@@ -2357,8 +2358,7 @@ showduizhen =function (lotid,expect,projid,type,codes,cp){
 								maxsp=maxsp.split(" ");
 								arrmaxSp.push(Math.max.apply(null,maxsp));
 							}
-							if(lotid ==85 || lotid==86|| lotid==87|| lotid==88 || lotid==89){
-//							if(lotid==89){
+							if(lotid==89){
 								if(result!=""&&bet_str.indexOf(result)!=-1){
 									bet_str=bet_str.replace(result,"<font   class='cm_red'><b>"+result+"</b></font>");
 									}
@@ -2396,7 +2396,9 @@ showduizhen =function (lotid,expect,projid,type,codes,cp){
 								}}else{
 									bet_str=bet_str.replaceAll(bfstr[ii[0]],bfstr[ii[0]]+"("+spvalue.split(",")[ii[0]]+")");
 								}
-								
+								if(result!=""&&bet_str.indexOf(result)!=-1){
+									bet_str=bet_str.replace(result,"<font   class='cm_red'><b>"+result+"</b></font>");
+									}
 							}else if(lotid==93){
 								bet_str=bet_str.replaceAll("0","零").replaceAll("1","一").replaceAll("2","二").replaceAll("3","三").replaceAll("4","四").replaceAll("5","五").replaceAll("6","六").replaceAll("7","七")
 								bet_str=bet_str.replaceAll("零","0("+spvalue.split(",")[0]+")");
