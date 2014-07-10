@@ -2270,11 +2270,6 @@ showduizhen =function (lotid,expect,projid,type,codes,cp){
 							}else{
 								cls="";
 							}
-							if(result!=null &&bet_str.indexOf(result)!=-1 &&lotid !=91){
-									bet_str=bet_str.replace(result,"<font   class='cm_red'><b>"+result+"</b></font>");
-							}else{
-								cls="";
-							}
 						  }	
 							
 							
