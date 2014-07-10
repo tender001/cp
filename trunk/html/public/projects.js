@@ -2357,7 +2357,8 @@ showduizhen =function (lotid,expect,projid,type,codes,cp){
 								maxsp=maxsp.split(" ");
 								arrmaxSp.push(Math.max.apply(null,maxsp));
 							}
-							if(lotid==89){
+							if(lotid ==85 || lotid==86|| lotid==87|| lotid==88 || lotid==89){
+//							if(lotid==89){
 								if(result!=""&&bet_str.indexOf(result)!=-1){
 									bet_str=bet_str.replace(result,"<font   class='cm_red'><b>"+result+"</b></font>");
 									}
