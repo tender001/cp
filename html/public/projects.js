@@ -2165,15 +2165,6 @@ showduizhen =function (lotid,expect,projid,type,codes,cp){
 								lose=lose;
 							
 						}
-						/*if(codes.split(";").length>1){
-							bet_str="";//得到投注选项
-							ggstr='<font  class="cm_red">'+codes.split(";")[0].split("|")[2].replaceAll("\\*","串")+'</font>';
-						}else{
-							
-						var arr_bet;
-						arr_bet=codes.split("|");
-						bet_str=arr_bet[1];//得到投注选项
-						ggstr='<font  class="cm_red">'+arr_bet[2].replaceAll("\\*","串")+'</font>';*/
 						if(type==1){  
 							//复试
 							if(codes.split(";").length>1){
