@@ -1696,14 +1696,14 @@ a.sz_cmt{background: url(../images/cai888/nwx5_112.jpg);width:137px;height:33px}
 /* start 2014.7.10*/
 .ncathleft .zhx_pt_list li{width:100%;height:26px;line-height: 26px;border-bottom: 1px dashed #ddd;color: #000;}
 .ncathleft .zhx_pt_list li *{vertical-align: middle;font-size: 12px;}
-.zhx_pt_list li p{width:78px;padding:0 6px 0 0;float:right;height:26px;line-height: 26px;_height:20px;_line-height: 20px;_padding:6px 6px 0;}
+.zhx_pt_list li p{/*width:78px;*/padding:0 6px 0 0;float:right;height:26px;line-height: 26px;_height:20px;_line-height: 20px;_padding:6px 16px 0;}
 .zhx_pt_list li p a{width:16px;height: 16px;display:inline-block;margin-left: 7px;background: url(/images/newimg/xs_03.jpg) no-repeat;vertical-align: middle;}
 .zhx_pt_list li p a.a1{background-position: -5px -29px;}
 .zhx_pt_list li p a.a2{background-position: -29px -29px;}
 .zhx_pt_list li p a.a1:hover{background-position:-5px -1px}
 .zhx_pt_list li p a.a2:hover{background-position:-29px -1px}
 .ncathleft .zhx_pt_list li em{font-style: normal;padding:0 10px;}
-.ncathleft .zhx_pt_list li span{width:188px; display:inline-block;overflow: hidden;white-space: nowrap;text-overflow: ellipsis;font-weight: 700;color: #ba1414;}
+.ncathleft .zhx_pt_list li span{width:178px; display:inline-block;overflow: hidden;white-space: nowrap;text-overflow: ellipsis;font-weight: 700;color: #ba1414;}
 /* end 2014.7.10*/
 
 .ncaltbn{width:98px;float:left;padding-left:9px;height:130px;padding-bottom:15px}
