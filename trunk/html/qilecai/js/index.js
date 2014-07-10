@@ -387,7 +387,7 @@ Class('CodeList>SingeCodeList', {
 
             //主玩法
             playTabs = this.lib.Tabs({// zx / z6 / z3
-                items:'#playTabsDd a',
+                items:'#playTabsDd [bet]',
                 contents: '#pttz,#dssc',
                 focusCss: 'cur'
             });
