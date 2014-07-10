@@ -370,13 +370,14 @@ Class('Choose_base>HzChoose', {
 */
 Class('CodeList>SDCodeList', {
     noZero: true,
-    lineTpl: '<span class="num" style="color:#333">{1} {2}</span> <s></s><i></i>',
+//    lineTpl: '<p>{3}注<a title="修改" class="a1"></a><a title="删除" class="a2" ></a></p><em > {2}</em><span>{1}</span>',
+    lineTpl: '<p>{3}注<a title="删除" class="a2" ></a></p><em > {2}</em><span>{1}</span>',
     createLine: function (code){//创建一行
         var type, fs, wf;
         wf = this.getPlayText();
         switch(this.getType()){
             case 'zhx':
-                return this.createNode('LI', this.panel).html(this.lineTpl.format([code[0].join(''), code[1].join(''), code[2].join('')].join('|'), wf));
+                return this.createNode('LI', this.panel).html(this.lineTpl.format([code[0].join(''), code[1].join(''), code[2].join('')].join('|'), wf,code[3]));
             case 'z6':
                 return this.createNode('LI', this.panel).html(this.lineTpl.format(code.slice(0,-1).join(','), wf));
             default:
@@ -395,9 +396,9 @@ Class('CodeList>SDCodeList', {
 */
 Class('CodeList>HzCodeList', {
     noZero: true,
-    lineTpl: '<span class="num" style="color:#333">{1} {2}</span> <s></s><i></i>',
+    lineTpl: '<p>{3}注<a title="修改" class="a1"></a><a title="删除" class="a2"></a></p><em> {2}</em><span>{1}</span>',
     createLine: function (code){//创建一行
-        return this.createNode('LI', this.panel).html(this.lineTpl.format(code[0].join(','), this.getPlayText()));
+        return this.createNode('LI', this.panel).html(this.lineTpl.format(code[0].join(','), this.getPlayText(),code[1]));
     },
     formatCode: function (d){//用于投注参数
         return '{1}'.format(d[0].join(','))
@@ -408,9 +409,9 @@ Class('CodeList>HzCodeList', {
 */
 Class('CodeList>Z6CodeList', {
     noZero: true,
-    lineTpl: '<span class="num" style="color:#333">{1} {2}</span> <s></s><i></i>',
+    lineTpl: '<p>{3}注<a title="修改" class="a1"></a><a title="删除" class="a2"></a></p><em> {2}</em><span>{1}</span>',
     createLine: function (code){//创建一行
-        return this.createNode('LI', this.panel).html(this.lineTpl.format(code[0].join(','), this.getPlayText()));
+        return this.createNode('LI', this.panel).html(this.lineTpl.format(code[0].join(','), this.getPlayText(),code[1]));
     },
     getType: function (){
        return Class.config('play_name2') 
