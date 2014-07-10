@@ -1321,7 +1321,7 @@
     		
         	})
         	
-    		$("#codeRecent").hover(function(){
+    		$("#codeRecent").click(function(){
 
     			$(this).toggleClass("span5c");
     			$("#divRecent").show();
@@ -1850,7 +1850,7 @@
                     //alert(one+"--"+one.slice());
                     li.data('code', one.slice());
                     li.setStyle('cursor:pointer');
-                    this.need('s', li).click(function (e, Y){
+                    this.need('a.a2', li).click(function (e, Y){
                         Y.removeLine(Y.get(this).parent(function (el){
                             return el.nodeName.toLowerCase() == 'li'
                         }));
