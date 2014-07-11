@@ -597,8 +597,8 @@ span.sz_a_l a.cur{background:url(../images/cai888/nwx5_11.jpg) repeat scroll 0 0
 .nxtable tr em.em5{ background-color:#4cb034;color:#fff;}
 .nxtable tr em.em6{ background-color:#cf6490;color:#fff;}
 .nxtable tr strong{font-weight:bold;font-size:13px; font-family:Arial}
-.nxmiddle h2 p s{color:#145fab;cursor:pointer;padding-right:20px; background:url(../images/159/nsc1_03.jpg) right 5px no-repeat;display:inline-block;height:25px;}
-.nxds{padding:10px 0 30px 190px}
+.nxmiddle h2 p s{color:#145fab;cursor:pointer;padding-right:20px; background:url(../images/cai888/jctop_06.jpg) left 7px no-repeat;display:inline-block;height:25px;padding-left:8px;}
+.nxds{padding:10px 0 30px 190px}/images/cai888/jctop_06.jpg") 0 0;
 .nxdsc{width:350px;float:left;margn-left:50px;}
 .nxdsc em{display:block;width:61px;height:27px;margin-left:100px;line-height:27px;color:#666;text-align:center;background:url(../images/159/nsc1_07.jpg);margin-bottom:15px}
 .nxdsc b{display:block;width:55px;height:55px;line-height:55px;text-align:Center;color:#444; font-family:Arial;float:left;margin-right:14px;background:url(../images/159/nsc1_11.jpg);font-size:32px;cursor:pointer}
@@ -1704,7 +1704,9 @@ a.sz_cmt{background: url(../images/cai888/nwx5_112.jpg);width:137px;height:33px}
 .ncathleft p em{color:#ff0000;font-weight:bold;padding:0 2px}
 .ncathleft p s{font-size:12px;color:#999}
 .ncathleft p img{border:1px solid #ccc;height:15px;float:left;cursor:pointer}
-.cm_left{float:left}
+.cm_left{float:left;}
+.nxmiddle h2 .cm_left{padding-left:0;}
+.nxmiddle h2 s.cm_left{padding-left:4px;}
 .cm_right{float:right;}
 .cm_ssq_yx_num ul li s{margin-top:3px}
 .ncathright{float:left;width:475px;padding-left:18px;}
