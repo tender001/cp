@@ -1273,7 +1273,7 @@
 	    			}
     			}}
     		});
-    		html +="<a href='javascript:void(0);' target='_blank' id='more_kj' class='xu_gd'>更多</a>";
+    		/*html +="<a href='javascript:void(0);' target='_blank' id='more_kj' class='xu_gd'>更多</a>";*/
     		var ss=0;
     		$("#kjhis").html(html);
     		if(Class.C('lot_id')==01){
