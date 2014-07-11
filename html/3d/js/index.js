@@ -26,7 +26,7 @@ Class('Choose_base>ZhxChoose',{
             var tmp = new this.lib.Choose({
                 items: this.get('span.nsbool b', ul),
                 group: this.get('span.nsopr b', ul),
-//                startNum: 0,
+                startNum: startNum,
                 focusCss: focusCss,
                 hoverCss: hoverCss
             });
@@ -174,6 +174,7 @@ Class('Choose_base>ZhxChoose',{
 	},
     redrawCode: function (code){//重现号码
         this.clearCode();
+        
         this.balls[0].importCode(code[0]);
         this.balls[1].importCode(code[1]);
         this.balls[2].importCode(code[2]);
@@ -256,7 +257,7 @@ Class('Choose_base>Z6Choose',{
         }); 
     },
     getChooseCode: function (){
-        var code = [[this.ball.data.slice(), this.getCount()]];
+        var code = [[(this.ball.data.slice())+1, this.getCount()]];
         this.clearCode();
         return code
     },
@@ -368,8 +369,8 @@ Class('Choose_base>HzChoose', {
 */
 Class('CodeList>SDCodeList', {
     noZero: true,
-//    lineTpl: '<p>{3}注<a title="修改" class="a1"></a><a title="删除" class="a2" ></a></p><em > {2}</em><span>{1}</span>',
-    lineTpl: '<p>{3}注<a title="删除" class="a2" ></a></p><em > {2}</em><span>{1}</span>',
+    lineTpl: '<p>{3}注<a title="修改" class="a1"></a><a title="删除" class="a2" ></a></p><em > {2}</em><span>{1}</span>',
+    //lineTpl: '<p>{3}注<a title="删除" class="a2" ></a></p><em > {2}</em><span>{1}</span>',
     createLine: function (code){//创建一行
         var type, fs, wf;
         wf = this.getPlayText();
@@ -383,7 +384,7 @@ Class('CodeList>SDCodeList', {
         }
     },
     getType: function (){
-       return Class.config('play_name2') 
+       return Class.config('play_name2'); 
     },
     formatCode: function (d){//用于投注参数
         return '{1}|{2}|{3}'.format(d[0].join(''), d[1].join(''), d[2].join(''))
@@ -1011,7 +1012,8 @@ Class('CodeList>Z6CodeList', {
                     this.get('#ds_tip h2').hide().get(tipId).show();//选号列表栏
                 }
                 Class.config('play_name', pn[b]);
-                //this.get('#hz_tj').show(b==2);
+                
+                this.get('#hz_tj').show(b==2);
                 this.postMsg('msg_clear_code');
             
                 this.loadEndTime();//同步变换截止时间
