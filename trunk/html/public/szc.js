@@ -2505,7 +2505,7 @@
 //排列号码框
     Class('CodeList>PLCodeList', {
         noZero: true,
-        lineTpl: '<span class="num" style="color:#333">{1}&nbsp;&nbsp;{2}</span> <s></s><i></i>',
+        lineTpl: '<p>{3}注<a title="修改" class="a1"></a><a title="删除" class="a2" ></a></p><em > {2}</em><span>{1}</span>',
         createLine: function (code){//创建一行
             var tc, type, pn;
             tc = [];
@@ -2514,7 +2514,7 @@
             code.slice(0,-1).each(function (d, i){
                 tc[i]=d.join('')
             });
-            return this.createNode('LI', this.panel).html(this.lineTpl.format(tc.join('|'), type));
+            return this.createNode('LI', this.panel).html(this.lineTpl.format(tc.join('|'), type,code[3]));
         },
         formatCode: function (d){//用于投注参数
             return d.slice(0,-1).map(function (a){
