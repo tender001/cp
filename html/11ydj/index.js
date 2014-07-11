@@ -1179,6 +1179,7 @@ Class('App', {
             Class.C('playid', pid);
 //            Y.get("#shili").attr("data-help",Class.C('lot_data_dome')[pid]);
             Y.get("#wanfatishi").html(Class.C('lot_data_wanfa')[pid]);
+            Y.get("#shil s").attr("data-help",Class.C('lot_data_dome')[pid]);
             Y.postMsg('playtabs_onchange'); 
             Y.postMsg('danma_onchange');
             Y.postMsg('msg_buy_succeed');
