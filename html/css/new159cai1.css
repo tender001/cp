@@ -513,7 +513,7 @@ em.uf{ background-image:url(../images/159/uf.gif)}
 .nxmiddle h2{line-height:30px;height:30px;padding-top:20px;}
 .nxmiddle h2 span{float:left;display:block;width:140px;height:30px;padding-left:10px;color:#ff3300;font-size:18px; background:url(../images/159/nx_26.jpg) no-repeat right 0; }
 .nxmiddle h2 p{float:left;padding-left:70px;color:#555;font-weight:100;font-size:12px}
-.nxmiddle h2 p em{color:#145fab;font-weight:400}
+.nxmiddle h2 p em{color:#145fab;font-weight:400;}
 .head_tel img{width:auto;height:auto}
 .head_r ul{float:right;padding-right:23px}
 .head_r ul li{padding:0 3px}
@@ -1701,12 +1701,13 @@ a.sz_cmt{background: url(../images/cai888/nwx5_112.jpg);width:137px;height:33px}
 .ncathleft p{clear:both;height:17px;line-height:17px;color:#222;font-size:14px;text-align:Center;padding:4px 0;}
 .ncathleft p span{display:inline-block;height:14px;padding-left:5px}
 .ncathleft p input{width:42px;height:15px;border:1px solid #ccc;float:left;;text-align:center}
-.ncathleft p em{color:#ff0000;font-weight:bold;padding:0 2px}
+.ncathleft p em{color:#ff0000;font-weight:bold;padding:0 2px;}
 .ncathleft p s{font-size:12px;color:#999}
 .ncathleft p img{border:1px solid #ccc;height:15px;float:left;cursor:pointer}
 .cm_left{float:left;}
 .nxmiddle h2 .cm_left{padding-left:0;}
 .nxmiddle h2 s.cm_left{padding-left:0px;}
+.nxmiddle h2 .cm_left b{font-weight:400;color:#145fab;font-weight:400;float:left;}
 .cm_right{float:right;}
 .cm_ssq_yx_num ul li s{margin-top:3px}
 .ncathright{float:left;width:475px;padding-left:18px;}
