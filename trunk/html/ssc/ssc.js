@@ -68,6 +68,16 @@ Class.C('lot_data_wanfa',{
     118: '二星和值玩法：至少选择<em class="cm_red">1</em>个和值，猜中开奖号<em class="cm_red">最后2位</em>数字之和，奖金<em class="cm_red">50</em>元（对子奖金100元）。',// r5
     111: '大小单双玩法：大小单双：每位选择1个属性，同时猜中开奖号<em class="cm_red">十位</em>和<em class="cm_red">个位</em>的大小单双属性即中奖<em class="cm_red">4</em>元。'// r6
 });
+Class.C('lot_data_shil',{
+    116: "投注方案：2,4<br>开奖号码：7,9,2,4,2<br>中奖金额：<font color='red'>50</font>元",
+    107: "投注方案：7<br>开奖号码：5,7,2,3,7<br>中奖金额：<font color='red'>10</font>元",
+    106: "投注方案：1,8<br>开奖号码：2,1,1,1,8<br>中奖金额：<font color='red'>100</font>元",
+    105: "投注方案：2,1,5<br>开奖号码：9,5,2,1,5<br>中奖金额：<font color='red'>1000</font>元",
+    104: "投注方案：9,5,2,1,5<br>开奖号码：9,5,2,1,5<br>中奖金额：<font color='red'>100000</font>元",
+    124: "投注方案：5,9,1,2,5<br>开奖号码：5,9,1,2,5<br>中奖金额：20000×1+200×2+20×2=<font color='red'>20440</font>元<br />　　　　　(包含一等奖、二等奖、三等奖奖金)",// r4
+    118: "投注方案：14,12<br>开奖号码：8,1,6,9,5<br>中奖金额：<font color='red'>50</font>元",// r5
+    111: "投注方案：双大<br>开奖号码：4,3,3,4,9<br>中奖金额：<font color='red'>4</font>元"// r6
+});
 Class.C('lot_sub',{// 
 	124: ['_add124', '#xs_5xtx', '#wxtx_area', '5xtx',4,14],    //五星通选
 	104: ['_add104', '#xs_5xzx', '#wxzx_area', '5xzx',9,1],     //五星直选
@@ -634,6 +644,8 @@ Class('App', {
         	Y.get('#xuanhao .nxhm , #dxds_area').hide();
         	var pid = this.get('#play_tabs a').slice(b, b+1).attr("value");
         	Y.get("#wanfatishi").html(Class.C('lot_data_wanfa')[pid]);
+//        	
+        	Y.get("#shil s").attr("data-help",Class.C('lot_data_shil')[pid]);
         	switch(b){
         		case 0:
         			Y.get(Class.C('lot_sub')[116][2]).show();
