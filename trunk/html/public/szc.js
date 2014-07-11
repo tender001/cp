@@ -2514,7 +2514,7 @@
             code.slice(0,-1).each(function (d, i){
                 tc[i]=d.join('')
             });
-            return this.createNode('LI', this.panel).html(this.lineTpl.format(tc.join('|'), type,code[1]));
+            return this.createNode('LI', this.panel).html(this.lineTpl.format(tc.join('|'), type,code[code.length-1]));
         },
         formatCode: function (d){//用于投注参数
             return d.slice(0,-1).map(function (a){
