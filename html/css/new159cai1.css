@@ -1706,7 +1706,7 @@ a.sz_cmt{background: url(../images/cai888/nwx5_112.jpg);width:137px;height:33px}
 .ncathleft p img{border:1px solid #ccc;height:15px;float:left;cursor:pointer}
 .cm_left{float:left;}
 .nxmiddle h2 .cm_left{padding-left:0;}
-.nxmiddle h2 s.cm_left{padding-left:4px;}
+.nxmiddle h2 s.cm_left{padding-left:0px;}
 .cm_right{float:right;}
 .cm_ssq_yx_num ul li s{margin-top:3px}
 .ncathright{float:left;width:475px;padding-left:18px;}
