@@ -71,8 +71,7 @@ Class('Choose_base>Z6Choose',{
         this.rndOpts = opts = this.need(ini.rndOpts);
        
         Y.need(ini.rnd).click(function (){
-            Y.random(opts.val().replace("注","")*1);
-            Y.random(opts.val().replace("次","")*1);
+            Y.random((opts.val().replace("注","")).replace("次","")*1);
             return false
         });
       /*  Y.need(ini.rnd).click(function (){
