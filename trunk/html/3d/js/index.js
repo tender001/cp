@@ -76,7 +76,7 @@ Class('Choose_base>ZhxChoose',{
         // 随机选取
         this.rndOpts = opts = this.need(ini.rndOpts);
         Y.need(ini.rnd).click(function (){
-        	Y.random(opts.val().replace("注","")*1);
+        	Y.random((opts.val().replace("注","")).replace("次","")*1);
             return false
         });
         Y.need(ini.s1).click(function (){
@@ -242,9 +242,7 @@ Class('Choose_base>Z6Choose',{
         // 随机选取
         this.rndOpts = opts = this.need(ini.rndOpts);
         Y.need(ini.rnd).click(function (){
-        	
-        	
-        	 Y.random(opts.val().replace("注","")*1);
+        	Y.random((opts.val().replace("注","")).replace("次","")*1);
             return false
         });
 //      机选一注
@@ -529,7 +527,7 @@ Class('CodeList>Z6CodeList', {
     $("#z3pt_jx_opts").blur(function(){
 		var z3pt_jx_opts  = $("#z3pt_jx_opts").val();
 		if(z3pt_jx_opts=z3pt_jx_opts.replace(/\D/g,'')){
-				$("#z3pt_jx_opts").val(z3pt_jx_opts+"注");
+				$("#z3pt_jx_opts").val(z3pt_jx_opts+"次");
 		}
 	});
     Class.extend('exportCode', function (){
