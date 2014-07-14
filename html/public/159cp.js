@@ -973,7 +973,7 @@ $_sys_getnewwininfo = function(lotid, wininfo) {
 			||lotid==90
 			||lotid==91
 			||lotid==92
-			||lotid==93||lotid==94||lotid==95||lotid==96||lotid==97||lotid==70||lotid==71||lotid==72
+			||lotid==93||lotid==94||lotid==95||lotid==96||lotid==97||lotid==98||lotid==99||lotid==70||lotid==71||lotid==72
 			){		
 		wininfo = wininfo.split("|");
 		if (wininfo.length>=3){
