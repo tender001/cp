@@ -147,7 +147,8 @@ Class('CodeList>SingeCodeList', {
     lineTpl: '<span class="num" style="color:#333">{1}&nbsp;&nbsp;{2}</span> <s></s><i></i>',
     createLine: function (code){//创建一行
         var fs = code[0].length > 7;
-        return this.createNode('LI', this.panel).html(this.lineTpl.format(String.zero(code[0].join(','))));
+        return this.createNode('LI', this.panel).html('<p>'+code[1]+'注<a title="修改" class="a1"></a><a title="删除" class="a2"></a></p><em> 普通投注</em><span>'+String.zero(code[0].join('|'))+'</span>');
+        
     },
     formatCode: function (d){//用于投注参数
         return String.zero(d[0].join(','))
