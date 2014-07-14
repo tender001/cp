@@ -1215,7 +1215,7 @@ var showview = function(lotid,projid){
 						}
 						
 						}
-					var zj = $_sys_getnewwininfo(gameid, wininfo);
+					var zj = $_sys_getnewwininfo(lotid, wininfo);
 					if (lotid==85||lotid==86||lotid==87||lotid==88||lotid==89
 							||lotid==90
 							||lotid==91
@@ -1327,7 +1327,7 @@ var showview = function(lotid,projid){
 //						$("p[mark=cp_countDownSpan]").html("<b>方案流产</b>");
 						$("p[mark=cp_countDownSpan]").html("");
 						if(bonus ==0){
-						$("#cp_status").html(award ==0?'<div style=""><div class="hm_rpxq"><p class="hmreson"><strong>系统已撤销</strong><br>('+Y.getDate(clearedate).format('MM-DD hh:mm:ss')+')</p> </div></div>':'awarddate');
+						$("#cp_status").html('<div style=""><div class="hm_rpxq"><p class="hmreson"><strong>系统已撤销</strong><br>('+Y.getDate(clearedate).format('MM-DD hh:mm:ss')+')</p> </div></div>');
 						}else if(award !="2"){
 							$("#cp_status").html('<div style=""><div class="hm_rpxq"><p class="hmreson"><strong>系统已撤销</strong><br>('+Y.getDate(clearedate).format('MM-DD hh:mm:ss')+')</p> </div></div>');
 						}
@@ -2613,7 +2613,8 @@ billcode = function(lotid,projid){
 					htmlstr +=  '<td rowspan="'+items.length+'">'+(o+1)+'</td>';
 					htmlstr +=  '<td rowspan="'+items.length+'">'+playtype(parts[0])+'</td>';
 					htmlstr +=  '<td>'+items[0]+'</td>';
-					htmlstr +=  '<td rowspan="'+items.length+'">'+parts[2]+'</td>';
+					
+					htmlstr +=  '<td rowspan="'+items.length+'">'+(parts[2]===undefined?"单关":parts[2])+'</td>';
 					htmlstr += '<td rowspan="'+items.length+'">'+rt.mul+'</td>';
 					var _bonus = (parseFloat(rt.bonus).toFixed(6));
 					htmlstr += '<td rowspan="'+items.length+'">￥'+_bonus.slice(0,-4)+'</td>';
