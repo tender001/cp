@@ -257,7 +257,7 @@ Class('Choose_base>Z6Choose',{
         }); 
     },
     getChooseCode: function (){
-        var code = [[(this.ball.data.slice())+1, this.getCount()]];
+        var code = [[(this.ball.data.slice()), this.getCount()]];
         this.clearCode();
         return code
     },
