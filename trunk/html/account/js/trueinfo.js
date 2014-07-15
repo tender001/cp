@@ -15,7 +15,7 @@ Class({
     	this.setdata();
     }
 	,logoutinfo:function(){
-		location="/";
+		location="/"; 
 	}
 	,setdata:function(){
 		P = this;
