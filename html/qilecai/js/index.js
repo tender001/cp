@@ -1,5 +1,5 @@
 Class('Choose_base>Choose_singe', {
-    showTxt:'[您选择了<font> {$zhushu} </font>注，共<font> {$totalmoney} </font>元 ]',
+    showTxt:'[您选择了<em> {$zhushu} </em>注，共<em> {$totalmoney} </em>元 ]',
     maxZs: 10000,
     index:function (config){
         var ball, showbar, Y;
