@@ -11,7 +11,10 @@ $(document).ready(function(){
 			dlg_buy_end.pop('您好，'+user+'，恭喜您购买成功!');
 		});
 	});
-
+	$(".sy_gg ul li").mouseover(function(){
+        $(this).addClass("cur").siblings().removeClass("cur");
+        $(".gg_main div").eq($(".sy_gg ul li").index(this)).show().siblings().hide();
+    }); 
     Y.use('tabs',function(){
     	this.lib.Tabs({
             items: '.erwmtab b',
