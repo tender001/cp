@@ -7,10 +7,7 @@ $(function(){
             $(this).addClass("cur").siblings().removeClass("cur");
             $(".zj_main div").eq($(".zj_ph ul li").index(this)).show().siblings().hide();
         }); 
-		$(".sy_gg ul li").mouseover(function(){
-            $(this).addClass("cur").siblings().removeClass("cur");
-            $(".gg_main div").eq($(".sy_gg ul li").index(this)).show().siblings().hide();
-        }); 
+		
 		$(".rig_hm_t ul li").click(function(){
             $(this).addClass("cur").siblings().removeClass("cur");
             $(".rig_hm_main table").eq($(".rig_hm_t ul li").index(this)).show().siblings().hide();
