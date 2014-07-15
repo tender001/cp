@@ -165,7 +165,7 @@
         this.get('#dlg_buysuc div.tantop').drag('#dlg_buysuc');         	
         //通用
         this.dlg = this.lib.MaskLay('#info_dlg','#info_dlg_content');
-        this.dlg.addClose('#info_dlg_close a,#info_dlg_ok');
+        this.dlg.addClose('#info_dlg_close,#info_dlg_ok');
         this.get('#info_dlg div.tantop').drag('#info_dlg');
         //确认
             //this.confirm = this.lib.MaskLay('#b2_dlg','#b2_dlg_content','#b2_dlg_title');
