@@ -1816,7 +1816,7 @@ a.sz_cmt{background: url(../images/cai888/nwx5_112.jpg);width:137px;height:33px}
 .numcount2{width: 209px; float: right;z-index:98;top:130px;left:790px;position:absolute;}
 .numcount3{width: 209px; float: right;z-index:98;top:140px;left:752px;position:absolute;width: 247px;}
 .numcount4{width: 209px; float: right;z-index:98;top:140px;left:752px;position:absolute;width: 247px;}
-.numcount2 tr td{border-bottom:1px dashed #ddd;_border-bottom-style:solid;}
+.numcount2 tr td{border-bottom:1px dashed #ddd;}
 .numcount3 tr td{border-bottom:1px dotted #ddd}
 .ncdcol{width:210px;margin:0 auto;padding:10px 0}
 .ncdcol td{color:#444;line-height:28px;text-align:left}
