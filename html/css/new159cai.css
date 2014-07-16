@@ -1679,7 +1679,7 @@ a.n_gz{color:#fff}
 .nwx5time{border-bottom:1px solid #ccc;padding:20px 0 0 25px;height:35px}
 .nwx5time font{color:#ff6600;font-weight:bold}
 .nwx5time span{display:inline-block;float: left;color:#333;line-height:30px;}
-.nwx5time span.span1{width:135px;}
+/* .nwx5time span.span1{width:135px;} */
 .nwx5time span.span2{padding:0 55px 0 10px;}
 .nwx5time span.span4{padding:0 75px 0 20px}
 .nwx5time span.span2 b{font-size:30px;font-family:"helvetica"}
@@ -1797,6 +1797,8 @@ a.sz_cmt{background: url(../images/cai888/nwx5_112.jpg);width:137px;height:33px}
 .nxhm .nxyl span{line-height:18px;height:18px;width:49px;text-align:Center;color:#555;margin:0px 30px 0 0}
 .nxhm .nxyl div{float:left}
 .nxhm .nxyl i{ width:37px;height:18px;line-height:18px;text-align:center;margin-right:13px;float:left;color:#888;font-size:12px;font-family:Arial;}
+div.iewidth{width:100% !important;}
+col.ie_w{*width:62px;}
 .numcai .buyfimsg td.td1{padding-left:14px;line-height:24px;}
 .numcai .buyfimsg td b{padding:0 6px}
 .numcai .buyfimsg td em{padding:0 7px;font-size:12px;margin-right:4px}
