@@ -523,7 +523,7 @@ em.uf{ background-image:url(../images/159/uf.gif)}
 .nxhm span{float:left;display:block;height:38px;line-height:38px}
 .nstime{width:130px;padding:0 15px 0 10px;color:#333;font-size:12px;color:#000;padding-top:5px;_padding-top:8px;display:block;height:38px;line-height:38px ; position:absolute;top:51px;left:0px}
 .nstime b{display:inline-block;background: url(../images/159/nx_38.jpg);width:22px;height:20px;text-align:Center;line-height:20px;font-size:16px;color:#333; font-family:Arial;margin:0 2px}
-.nsbool b{ background:url(../images/159/nx_33.jpg);width:37px;height:38px;line-height:38px;text-align:center;margin-right:13px;float:left;color:#000;font-size:22px;font-family:Arial;cursor:pointer}
+.nsbool b{ background:url(../images/159/nx_33.jpg);width:37px;height:38px;line-height:38px;text-align:center;margin-right:13px;float:left;color:#000;font-size:22px;font-family:Arial;cursor:pointer;-webkit-user-select: none;-moz-user-select: none;-o-user-select: none;-ms-user-select: none;user-select: none;}
 .nsbool b.cur{ background:url(../images/159/nx_30.jpg);color:#fff}
 .nsopr{ background:url(../images/159/nx_36.jpg) 0 3px no-repeat;width:205px;height:32px;margin-left:40px;padding-left:24px;padding-top:3px;overflow:hidden}
 .nsopr b{ background:url(../images/159/nx5s_03.jpg);width:25px;height:25px;line-height:25px;text-align:center;color:#e52e04;float:left;margin-left:5px;margin-top:4px;font-weight:100; cursor:pointer}
