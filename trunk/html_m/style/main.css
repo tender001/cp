@@ -289,9 +289,9 @@ opacity: .99;
 /* 主页 顶部轮播 */
 .header{width:100%; height: auto; display: block; overflow: hidden; background-color:#F6D8CE; position: relative;}
 .w_header{width:98%;height:100%;margin: 5px auto; display: block; overflow: hidden;}
-.w_header ul{width:200%; height: 100%; overflow: hidden;}
-.w_header ul li{width: 25%; float: left;}
-.w_header ul li img{ width: 100%; vertical-align: middle;}
+.w_header ul{width:200%; height: 100%; overflow: hidden; position: relative; left:0;}
+.w_header ul li{width: 50%; float: left;}
+.w_header ul li img{ width: 100%; min-height: 70px; vertical-align: middle;}
 .jd_bot{ position: absolute; right: 2%; bottom: 10px;}
 .jd_bot span{ display: inline-block; width: 25px; height: 6px; margin-right: 6px; border: 1px solid #aaa; background: #ddd; cursor: pointer;}
 .jd_bot span:hover{border-color: rgba(64,147,191,0.3); background-color:rgba(64,147,191,0.3);}

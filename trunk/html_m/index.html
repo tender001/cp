@@ -181,11 +181,43 @@
  -->
  	<section class="w_header">
  		<ul>
- 			<li><a href=""><img src="images/index_header/4g.png" alt=""></a></li>
- 			<li><a href=""><img src="images/index_header/4g1.png" alt=""></a></li>
+ 			<li><a href="#"><img src="images/index_header/4g.png" alt=""></a></li>
+ 			<li><a href="#"><img src="images/index_header/4g1.png" alt=""></a></li>
  		</ul>
  		<div class="jd_bot"><span class="cur"></span><span></span></div>
  	</section>
+ 	<script type="text/javascript">
+ 		var ul_left=-100;
+ 		var n=0;
+ 		var i=$(".w_header ul li").length;
+ 		$(".w_header ul").css("width",$(".w_header").width()*i+'px').children("li").css("width",$(".w_header").width()+'px');
+ 		$(function(){
+	 		var time=setInterval("lb()",2500);
+	 		$(".w_header").hover(function(){
+	 			clearInterval(time);
+	 		},function(){
+	 			time=setInterval("lb()",2500);
+	 		});
+
+	 		$(".jd_bot span").click(function(){
+	 			$(".w_header ul").animate({
+ 				left: -$(this).index()*100+'%'},300);
+ 				$(this).removeClass().addClass('cur').siblings().removeClass('cur');
+	 		});
+ 		});
+ 		function lb(){
+ 			$(".w_header ul").animate({
+ 				left: ul_left+'%'},300);
+ 			console.log(n);
+ 			ul_left=-100*(n);
+ 			n+=1;
+ 			$(".jd_bot span").eq(n).removeClass().addClass('cur').siblings().removeClass('cur');
+ 			if(n>i-1){n=0;}
+
+ 			//$(".jd_bot span").eq(n).removeClass().addClass('cur').siblings().removeClass('cur');
+
+ 		}
+ 	</script> 
 </div>
 <div class="header-panel" id="Login_Panel" style="display: none;">
 <div style="color:#fff;background:#FF8000;line-height:30px;">
