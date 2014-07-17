@@ -179,42 +179,77 @@
 		<div style="float:right;padding-right:10px;" id="headlogintd">加载中...</div>
 	</div>
  -->
- 	<section class="w_header">
+ 	<section class="w_header" ontouchend="tend(event)" ontouchstart="tstart(event)">
  		<ul>
- 			<li><a href="#"><img src="images/index_header/4g.png" alt=""></a></li>
- 			<li><a href="#"><img src="images/index_header/4g1.png" alt=""></a></li>
+ 					<li><a href="http://www.159cai.com/m/"  target="_blank"><img src="images/index_header/4g.png" alt=""></a></li>
+ 			<li><a href="/user/login.html"  target="_blank"><img src="images/index_header/4g1.png" alt=""></a></li>
  		</ul>
- 		<div class="jd_bot"><span class="cur"></span><span></span></div>
+ 		<div class="jd_bot" ><span class="cur"></span><span></span></div>
  	</section>
  	<script type="text/javascript">
+
  		var ul_left=-100;
  		var n=0;
  		var i=$(".w_header ul li").length;
  		$(".w_header ul").css("width",$(".w_header").width()*i+'px').children("li").css("width",$(".w_header").width()+'px');
  		$(function(){
- 			$(".jd_bot span").click(function(){
+	 		var time=setInterval("lb()",2500); 
+	 		
+
+	 		$(".jd_bot span").click(function(){
 	 			$(".w_header ul").animate({
  				left: -$(this).index()*100+'%'},300);
  				$(this).removeClass().addClass('cur').siblings().removeClass('cur');
 	 		});
-
-	 		var time=setInterval("lb()",2500);
-
-	 		$(".w_header").hover(function(){
-	 			clearInterval(time);
-	 		},function(){
-	 			time=setInterval("lb()",2500);
-	 		});
+			
  		});
  		function lb(){
  			$(".w_header ul").animate({
  				left: ul_left+'%'},300);
- 			//console.log(n);
+ 		
  			ul_left=-100*(n);
  			n+=1;
- 			if(n>i-1){n=0;}
  			$(".jd_bot span").eq(n).removeClass().addClass('cur').siblings().removeClass('cur');
+ 			if(n>i-1){n=0;}
+
+			
+ 			//$(".jd_bot span").eq(n).removeClass().addClass('cur').siblings().removeClass('cur');
+
  		}
+	
+		 var down = 0;
+ var up = 0;
+ var index=0;
+ var w = 64;
+ function tstart(event)
+ {
+  down=event.changedTouches[0].pageX;//获取手指刚触摸时的x坐标
+  }
+ function tend(event)
+ {
+  up=event.changedTouches[0].pageX;//获取手指离开时的x坐标
+  ul_obj = $("#roll");
+  if(down>up)
+   {//向左
+	$(".w_header ul").animate({
+		left: -n*100+'%'
+	},300);
+	n+=1;
+	if(n>i-1){n=0;}
+	$(".jd_bot span").eq(n).removeClass().addClass('cur').siblings().removeClass('cur');
+   }
+  else if(down<up)
+   {//向右
+	n-=1;
+	if(n<0){n=i-1;}
+    $(".w_header ul").animate({
+		
+		left: -n*100+'%'
+	},300);
+	
+	$(".jd_bot span").eq(n).removeClass().addClass('cur').siblings().removeClass('cur');
+  }
+  }
  	</script> 
 </div>
 <div class="header-panel" id="Login_Panel" style="display: none;">
