@@ -127,35 +127,33 @@
 }
 
 .downClient .content {
+    background: url("/images/khdlogo.png") no-repeat scroll 0.625rem 1.125rem / 3.5rem auto rgba(0, 0, 0, 0);
+    color: #CA0C0C;
     display: inline-block;
-text-align: left;
-padding: 1.125rem 0 1.25rem 4.8rem;
-line-height: 1.8rem;
-font-size: 1rem;
-color: #ca0c0c;
-background: url(/images/khdlogo.png) no-repeat .625rem 1.125rem;
-background-size: 3.5rem;
-float: left;
+    float: left;
+    font-size: 1.2rem;
+    line-height: 1.8rem;
+    padding: 1.125rem 0 1.25rem 4.8rem;
+    text-align: left;
 }
 .downClient .content em {
     color: #5F5F5F;
     display: block;
-    font-size: 1rem;
+    font-size: 1.33rem;
 }
 
 .downClient .downBtn {
-    background: -webkit-gradient(linear,0 0,0 100%,from(#fff),to(#e6e6e6));
-background: -moz-linear-gradient(top,#fff,#e6e6e6);
-border: 1px solid #cdcdcd;
-border-radius: .3rem;
-width: 6.6rem;
-line-height: 2.5rem;
-display: block;
-float: right;
-margin: 1.58rem .875rem 0 0;
-color: #5f5f5f;
-text-align: center;
-font-size: 1.32rem;
+    background: -moz-linear-gradient(center top , #FFFFFF, #E6E6E6) repeat scroll 0 0 rgba(0, 0, 0, 0);
+    border: 1px solid #CDCDCD;
+    border-radius: 0.3rem;
+    color: #5F5F5F;
+    display: block;
+    float: right;
+    font-size: 1.32rem;
+    line-height: 2.5rem;
+    margin: 1.58rem 0.875rem 0 0;
+    text-align: center;
+    width: 6.6rem;
 }
 .clearfix:after {
     clear: both;
@@ -169,17 +167,91 @@ font-size: 1.32rem;
 </head>
 <body>
 <noscript><div style="color:Red;padding:5px;line-height:30px;background-color:#FFCBCB;">您的浏览器不支持159彩触屏版<br>请进入使用<a href="http://wap.310win.com">159彩标准版</a>。</div></noscript>
-<header>
-<section style="background-color: #D0EBF9;" id="downClient" class="downClient clearfix">
- <a id="gojoin" class="clearfix" href="http://www.159cai.com/m/">
- <span class="content"><em style="font-style: normal;">客户端购彩</em>随时随地中大奖</span><span class="downBtn">立即下载</span>
- </a>
- </section>
-<div id="webtop">
-<a href="/">&nbsp;<img src="/images/159logo.png" height="35"/></a>
-<div style="float:right;padding-right:10px;" id="headlogintd">加载中...</div>
+<div class="header">
+<!-- 
+	<section style="background-color: #D0EBF9;" id="downClient" class="downClient clearfix">
+	 <a id="gojoin" class="clearfix" href="http://www.159cai.com/m/">
+	 <span class="content"><em style="font-style: normal;">客户端购彩</em>随时随地中大奖</span><span class="downBtn">立即下载</span>
+	 </a>
+	 </section>
+	<div id="webtop">
+		<a href="/">&nbsp;<img src="/images/159logo.png" height="35"/></a>
+		<div style="float:right;padding-right:10px;" id="headlogintd">加载中...</div>
+	</div>
+ -->
+ 	<section class="w_header" ontouchend="tend(event)" ontouchstart="tstart(event)">
+ 		<ul>
+ 					<li><a href="http://www.159cai.com/m/"  target="_blank"><img src="images/index_header/4g.png" alt=""></a></li>
+ 			<li><a href="/user/login.html"  target="_blank"><img src="images/index_header/4g1.png" alt=""></a></li>
+ 		</ul>
+ 		<div class="jd_bot" ><span class="cur"></span><span></span></div>
+ 	</section>
+ 	<script type="text/javascript">
+
+ 		var ul_left=-100;
+ 		var n=0;
+ 		var i=$(".w_header ul li").length;
+ 		$(".w_header ul").css("width",$(".w_header").width()*i+'px').children("li").css("width",$(".w_header").width()+'px');
+ 		$(function(){
+	 		var time=setInterval("lb()",2500); 
+	 		
+
+	 		$(".jd_bot span").click(function(){
+	 			$(".w_header ul").animate({
+ 				left: -$(this).index()*100+'%'},300);
+ 				$(this).removeClass().addClass('cur').siblings().removeClass('cur');
+	 		});
+			
+ 		});
+ 		function lb(){
+ 			$(".w_header ul").animate({
+ 				left: ul_left+'%'},300);
+ 		
+ 			ul_left=-100*(n);
+ 			n+=1;
+ 			$(".jd_bot span").eq(n).removeClass().addClass('cur').siblings().removeClass('cur');
+ 			if(n>i-1){n=0;}
+
+			
+ 			//$(".jd_bot span").eq(n).removeClass().addClass('cur').siblings().removeClass('cur');
+
+ 		}
+	
+		 var down = 0;
+ var up = 0;
+ var index=0;
+ var w = 64;
+ function tstart(event)
+ {
+  down=event.changedTouches[0].pageX;//获取手指刚触摸时的x坐标
+  }
+ function tend(event)
+ {
+  up=event.changedTouches[0].pageX;//获取手指离开时的x坐标
+  ul_obj = $("#roll");
+  if(down>up)
+   {//向左
+	$(".w_header ul").animate({
+		left: -n*100+'%'
+	},300);
+	n+=1;
+	if(n>i-1){n=0;}
+	$(".jd_bot span").eq(n).removeClass().addClass('cur').siblings().removeClass('cur');
+   }
+  else if(down<up)
+   {//向右
+	n-=1;
+	if(n<0){n=i-1;}
+    $(".w_header ul").animate({
+		
+		left: -n*100+'%'
+	},300);
+	
+	$(".jd_bot span").eq(n).removeClass().addClass('cur').siblings().removeClass('cur');
+  }
+  }
+ 	</script> 
 </div>
-</header>
 <div class="header-panel" id="Login_Panel" style="display: none;">
 <div style="color:#fff;background:#FF8000;line-height:30px;">
 <div class="closeR" onclick="closeLogin()">关闭</div>
