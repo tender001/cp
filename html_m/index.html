@@ -199,7 +199,7 @@
 	 		});
 
 	 		var time=setInterval("lb()",2500);
-	 		
+
 	 		$(".w_header").hover(function(){
 	 			clearInterval(time);
 	 		},function(){
@@ -209,11 +209,12 @@
  		function lb(){
  			$(".w_header ul").animate({
  				left: ul_left+'%'},300);
- 			console.log(n);
+ 			//console.log(n);
  			ul_left=-100*(n);
  			n+=1;
- 			$(".jd_bot span").eq(n).removeClass().addClass('cur').siblings().removeClass('cur');
+ 			console.log(n);
  			if(n>i-1){n=0;}
+ 			$(".jd_bot span").eq(n).removeClass().addClass('cur').siblings().removeClass('cur');
  		}
  	</script> 
 </div>
