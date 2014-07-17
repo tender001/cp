@@ -1275,6 +1275,7 @@
     		});
     		/*html +="<a href='javascript:void(0);' target='_blank' id='more_kj' class='xu_gd'>更多</a>";*/
     		var ss=0;
+    		var Recenthigh=325;
     		$("#kjhis").html(html);
     		if(Class.C('lot_id')==01){
     			$("#more_kj").attr("href","/shuangseqiu/kaijiang.html")
@@ -1286,6 +1287,7 @@
     		}else if(Class.C('lot_id')==07){
     			$("#more_kj").attr("href","/qilecai/kaijiang.html");
     			ss = 250;
+    			Recenthigh=335;
     		}else if(Class.C('lot_id')==50){
     			$("#more_kj").attr("href","/daletou/kaijiang.html")
     		}else if(Class.C('lot_id')==51){
@@ -1330,7 +1332,7 @@
     	
     			if($(this).hasClass("span5c")){
     				$("#divRecent").clearQueue().animate({
-    					height:325
+    					height:Recenthigh
     					});
     				
     			}else{
