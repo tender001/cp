@@ -155,9 +155,6 @@ Class( 'GuoguanType', {
 		this.displayFormat();
 		this.formatSwitchDialog = this.lib.MaskLay(config.formatSwitch);
 		this.get('.tantop', this.formatSwitch).drag(this.formatSwitch);
-		if(parseInt(this.need('#playid').val()==70){
-			this.switchLink.hide();
-		}
 		this.switchLink.click( function() { //弹出格式转化窗口
 			Y.popFormatSwitchDialog();
 		} );
@@ -360,13 +357,13 @@ Class( {
     _index : function() {
 		Class.config('playId', parseInt(this.need('#playid').val()));  //玩法id
 		switch (Class.config('playId')) {
-			case 70 :    //混投
-				Class.config('playName', 'hh');
-				Class.config('ggMaxLength', 8);
-				Class.config('formatIndex', [3, 1, 0]);
-				Class.config('formatValue', [3, 1, 0]);
-				break;	
-			case 90 :    //胜平负
+		case 70 :    //混投
+			Class.config('playName', 'hh');
+			Class.config('ggMaxLength', 8);
+			Class.config('formatIndex', [3, 1, 0]);
+			Class.config('formatValue', [3, 1, 0]);
+			break;	
+		case 90 :    //胜平负
 				Class.config('playName', 'spf');
 				Class.config('ggMaxLength', 8);
 				Class.config('formatIndex', [3, 1, 0]);
