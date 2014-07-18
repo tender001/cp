@@ -30,189 +30,15 @@ Class( 'BuyFormsuc', {
 			this.title_word_count.html(this.title.val().length);
 			this.content_word_count.html(this.content.val().length);
 		}
-		var matchdata = [];	
 		var match_len=$("#yhdetail tr[id]").length;
 		for(var i=0;i<match_len;i++){
 			var id=$("#match"+i+" td[title]" ).attr("title");
 			var mid=$("#match"+i+" td[title]" ).html();
 			var sp=$("#match"+i+" td[sp]" ).html();
 			var hn=$("#match"+i+" td[hn]" ).html();
-			matchdata.push([id,mid + "_"+hn+"_"+sp ]);
 		}
 		
-		var yhfslist = ['平均优化', '博热优化', '博冷 优化'];
-						var rand=$("#rand").val();
-						var lotid=$("#lotid").val();
-//						Y.openUrl('/game/yhdetail.html?yhfile='+yhfile+'&lotid='+lotid+'',500,310);
-						Y.ajax({
-							type : 'GET',
-							url : '/cpdata/pupload/temp/'+rand+'_yd.xml',
-							end : function(data) {
-							    Y.qXml("//row", data.xml, function(o,i){
-									var yhcode = o.items.codes;
-									var yhmatchs = o.items.matchs;
-									var yhfs = o.items.type;
-									var jjyhstr = "";
-								
-									jjyhstr += '<table border="0" class="bk_yd" cellpadding="0" cellspacing="0">';
-									if(lotid == 72){
-										jjyhstr += ' <colgroup><col width="90"><col width="240"><col width=""><col width="65"></colgroup><tbody><tr class="odd">';
-										jjyhstr += '<td ><strong>场次</strong></td>';
-										jjyhstr += '<td class="th1">比赛</td>';
-										jjyhstr += '<td class="th1">让球数</td>';
-										jjyhstr += '<td class="th1">您的选择</td>';
-									}else{
-										jjyhstr += ' <colgroup><col width="123"><col width="205"><col width=""></colgroup><tbody><tr class="odd">';
-										jjyhstr += '<td>场次</td>';
-										jjyhstr += '<td class="th1">比赛</td>';
-										jjyhstr += '<td class="th1">您的选择</td>';
-									}
-									
-									jjyhstr += '</tr>';
-									var yhmatchsList = yhmatchs.split(",");
-									for(var i=0;i<yhmatchsList.length;i++){
-										var ms="";
-										var betstr="";
-										if(lotid==70){
-											ms= yhmatchsList[i].split("\>");
-											var mlen=ms[1].split("+");
-											for(var n=0;n<mlen.length;n++){
-												if(mlen[n].split("=")[0]=="RSPF"){
-													betstr +="让球胜平负["+$_sys.getspfsel(mlen[n].split("=")[1])+"]<br/>";
-												}if(mlen[n].split("=")[0]=="SPF"){
-													betstr +="胜平负["+$_sys.getspfsel(mlen[n].split("=")[1])+"]<br/>";
-												}if(mlen[n].split("=")[0]=="CBF"){
-													betstr +="猜比分["+mlen[n].split("=")[1]+"]<br/>";
-												}if(mlen[n].split("=")[0]=="JQS"){
-													betstr +="进球数["+mlen[n].split("=")[1]+"]<br/>";
-												}if(mlen[n].split("=")[0]=="BQC"){
-													betstr +="半全场["+$_sys.getspfsel(mlen[n].split("=")[1])+"]<br/>";
-												}
-											}
-										}else{
-											ms= yhmatchsList[i].replace("]","").split("=");
-											betstr=ms[1];
-										}
-										 
-										var minfo= $_sys.getarryname(matchdata,ms[0]);
-										
-										
-					    	   			
-					    	   			var minfoarr = minfo.split("_");
-										jjyhstr += '<tr>';
-										jjyhstr += '<td>'+minfoarr[0]+'</td>';
-										
-										if(lotid == 72){
-										var lose=/\((-?\d+)\)/.exec(minfoarr[1])[1];
-											
-											jjyhstr += '<td>'+minfoarr[1].replace("("+lose+")","") +'</td>';
-											jjyhstr += '<td>'+lose+'</td>';
-											
-										}else{
-											jjyhstr += '<td>'+minfoarr[1] +'</td>';
-										}
-										if(lotid == 72 || lotid== 90 || lotid== 92){
-											jjyhstr += '<td >'+$_sys.getspfsel(ms[1])+'</td>';
-											var bet_str=ms[1].replaceAll("3", "胜").replaceAll("1", "平").replaceAll("0", "负");
-											if(lotid == 72 || lotid ==90){
-											bet_str=bet_str.replaceAll("胜", "胜("+minfoarr[2]+")").replaceAll("平", "平("+minfoarr[3]+")").replaceAll("负", "负("+minfoarr[4]+")");
-											}
-											 $("#sp"+i+"").html(bet_str);
-										}else{
-											jjyhstr += '<td >'+betstr+'</td>';
-											 $("#sp"+i+"").html(betstr);
-										}
-										jjyhstr += '</tr>';
-									}
-									jjyhstr += '<tr>';
-									jjyhstr += '<td colspan="4" >优化后投注内容<em >(' + yhfslist[yhfs] + ')</em></td>';
-									jjyhstr += '</tr>';	
-									jjyhstr += '<tr class="odd">';
-									if(lotid == 72){
-										jjyhstr += '<td colspan="2" >投注明细</td>';
-									}else{
-										jjyhstr += '<td>投注明细</td>';
-									}
-									jjyhstr += '<td>过关方式</td>';
-									jjyhstr += '<td>投注倍数</td>';
-									jjyhstr += '</tr>';											
-									var yhcodeList = yhcode.split(";");
-									for(var i=0;i<yhcodeList.length;i++){
-										var mcarr = yhcodeList[i].split("|");
-										if(mcarr !=""){
-										
-										var marr = mcarr[1].split(",");
-										var mstr = "";
-										for(var j=0;j<marr.length;j++){
-											var mt="";
-											betstr="";
-											
-											if(lotid==70){
-												mt= marr[j].split(">");
-											}else{
-												mt= marr[j].split("=");
-											}
-						    	   			var minfo= $_sys.getarryname(matchdata,mt[0]);
-						    	   			var minfoarr = minfo.split("_");
-										
-						    	   			if(lotid == 70){
-												var ss=/\((-?\d+)\)/.exec(minfoarr[1])[1];
-												var lose=minfoarr[2]>0?"<em>"+ss+"</em>":"<s>"+ss+"</s>"
-						    	   				var mlen=mt[1].split("+");
-												for(var n=0;n<mlen.length;n++){
-													if(mlen[n].split("=")[0]=="RSPF"){
-														betstr +=lose+"["+$_sys.getspfsel(mlen[n].split("=")[1])+"]</br>";
-													}if(mlen[n].split("=")[0]=="SPF"){
-														betstr +="["+$_sys.getspfsel(mlen[n].split("=")[1])+"]</br>";
-													}if(mlen[n].split("=")[0]=="CBF"){
-														betstr +="["+mlen[n].split("=")[1]+"]</br>";
-													}if(mlen[n].split("=")[0]=="JQS"){
-														betstr +="["+mlen[n].split("=")[1]+"]</br>";
-													}if(mlen[n].split("=")[0]=="BQC"){
-														betstr +="["+$_sys.getspfsel(mlen[n].split("=")[1])+"]</br>";
-													}
-												}
-						    	   			}else{
-						    	   				betstr=mt[1];
-						    	   			}
-						    	   			if( lotid== 90|| lotid== 92){
-												mstr += minfoarr[1].split("VS")[0] + "["+$_sys.getspfsel(betstr)+"]</br>";
-											}else if(lotid == 70){
-												mstr +=  minfoarr[1].split("(")[0] +betstr ;
-											}else if(lotid == 72){
-												mstr += minfoarr[1].split("(")[0] + "["+$_sys.getspfsel(betstr)+"]&nbsp;&nbsp;";
-											}else{
-												mstr +=  minfoarr[1].split("VS")[0] + "["+betstr+"]</br>";
-											}
-											
-										}
-										var yhggbs = mcarr[2].split("_");
-										jjyhstr += '<tr>';
-										if(lotid == 72){
-											jjyhstr += '<td colspan="2" >'+ mstr.replace(")",")<br/>") +'</td>';
-										}else{
-										
-										jjyhstr += '<td><p>'+ mstr.replace(/\)/g,")<br/>") +'</p></td>';
-										}
-										jjyhstr += '<td>'+ yhggbs[0].replace("*","串") +'</td>';
-										jjyhstr += '<td>'+ yhggbs[1] +'</td>';
-										jjyhstr += '</tr>';	
-									}}
-									jjyhstr += '</table>';
-									
-									$("#yhdetailDIV").html(jjyhstr);
-								});
-							}
-						});
-		$("#show_detail").click(function(){
-			var bw = (document.documentElement && document.documentElement.scrollTop) ? document.documentElement : document.body;
-			var d_left = ($(window).width()-$("#yhinfodiv").css("width").replace("px",""))/2;
-			var d_top = 100;
-			$("#yhinfodiv").css("top", d_top + bw.scrollTop + "px");
-			$("#yhinfodiv").css("left", d_left + "px");
-			$('.yclass_mask_panel').show();
-			$("#yhinfodiv").show();
-		});
+
 		
 		$("#gkfs em").each(function(){
 			$(this).click(function(){
@@ -435,7 +261,8 @@ Class( 'BuyFormsuc', {
          				 tcbili:0,// 提成比率
          				 comeFrom:'',// 方案来源
          				 source:param.source,// 投注来源
-         				 endTime:'' // 截止时间
+         				 endTime:'' ,// 截止时间
+     					 danshi:1 
                       };	 
               }else{
              	 param_new={
@@ -460,7 +287,8 @@ Class( 'BuyFormsuc', {
          				 tcbili:param.tcbili,// 提成比率
          				 comeFrom:'',// 方案来源
          				 source:param.source,// 投注来源
-         				 endTime:'' // 截止时间
+         				 endTime:'' ,// 截止时间
+         				 danshi:1 
                       };	 
               }  
         	  this._param = param_new;      

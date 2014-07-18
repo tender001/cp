@@ -155,6 +155,9 @@ Class( 'GuoguanType', {
 		this.displayFormat();
 		this.formatSwitchDialog = this.lib.MaskLay(config.formatSwitch);
 		this.get('.tantop', this.formatSwitch).drag(this.formatSwitch);
+		if(parseInt(this.need('#playid').val()==70){
+			this.switchLink.hide();
+		}
 		this.switchLink.click( function() { //弹出格式转化窗口
 			Y.popFormatSwitchDialog();
 		} );
@@ -357,6 +360,12 @@ Class( {
     _index : function() {
 		Class.config('playId', parseInt(this.need('#playid').val()));  //玩法id
 		switch (Class.config('playId')) {
+			case 70 :    //混投
+				Class.config('playName', 'hh');
+				Class.config('ggMaxLength', 8);
+				Class.config('formatIndex', [3, 1, 0]);
+				Class.config('formatValue', [3, 1, 0]);
+				break;	
 			case 90 :    //胜平负
 				Class.config('playName', 'spf');
 				Class.config('ggMaxLength', 8);
@@ -503,7 +512,7 @@ Class('Loadduizhen',{
 		if (lotid == "") {
 			lotid = "90";
 		}
-		if(lotid!="72" &&lotid!="90" &&lotid!="91" &&lotid!="92" &&lotid!="93"){
+		if(lotid!="72" &&lotid!="90" &&lotid!="91" &&lotid!="92" &&lotid!="93"&&lotid!="70"){
 			lotid = "90";
 		}
 		$("#playid").val(lotid);
@@ -519,7 +528,7 @@ Class('Loadduizhen',{
 		}		
 		Class.config('playId', parseInt(this.need('#playid').val()) );  //玩法id		
 		var url="";
-		if(Class.config("playId")==90){
+		if(Class.config("playId")==90||Class.config("playId")==70){
 			url="/cpdata/match/jczq/jczq_spf.json";
 		}else if(Class.config("playId")==91){
 			url="/cpdata/match/jczq/jczq_cbf.json";
@@ -692,6 +701,13 @@ Class('Loadduizhen',{
 		           
 		               ];	
 		 switch (lotid) {
+			case "70" : //混投
+				$("#format_switch").html(tableTmpl[0]);
+				$("#sr").show();
+				$("#bzgs").click(function(){
+					Yobj.openUrl('/jc/bzgs/HT.html',450,470)
+				});
+				break;	
 			case "90" :    //胜平负
 				$("#format_switch").html(tableTmpl[0]);
 				$("#tzurl").attr('href','/jc/index.html');
