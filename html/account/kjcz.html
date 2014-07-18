@@ -64,13 +64,17 @@
 									</tr>
 									<tr>
 										<td>充值金额:</td>
-										<td><input type="text" id="addmoney" name="addmoney" style="width: 140px;" onfocus="this.value='';" onkeyup="this.value=this.value.replace(/^\D*(\d*(?:\.\d{0,2})?).*$/g, '$1');" onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/^\D*(\d*(?:\.\d{0,2})?).*$/g, '$1'));" placeholder="请输入10-5000的金额"/></td>
-										<td></td>
+										<td colspan="2">
+											<input type="text" id="addmoney" name="addmoney" style="width: 140px;" onfocus="this.value='';" onkeyup="this.value=this.value.replace(/^\D*(\d*(?:\.\d{0,2})?).*$/g, '$1');" onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/^\D*(\d*(?:\.\d{0,2})?).*$/g, '$1'));" placeholder="请输入10-5000的金额"/>
+											<span class="je_out">fdfsdf</span>
+										</td>
 									</tr>
 									<tr>
 										<td>银行卡号:</td>
-										<td><input type="text" id="cardno" name="cardno"/></td>
-										<td></td>
+										<td colspan="2" class="bank_n">
+											<input type="text" id="cardno" name="cardno"/>
+											<s></s>
+										</td>
 									</tr>
 									</tbody>
 								</table>
