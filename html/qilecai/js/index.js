@@ -408,6 +408,7 @@ Class('CodeList>SingeCodeList', {
                 this.postMsg('msg_clear_code');//通知清除选择
                 this.get('#all_form').hide(b==2);
                 this.get('#dssc').hide();
+                buyTabs.focus(0);//子玩法定位到第一个
                 if (b==1) {
                	 Y.createDs();//创建单式-共用
                     this.get('#sd_tips div.ncathleft').hide();
@@ -423,7 +424,7 @@ Class('CodeList>SingeCodeList', {
                
                 this.loadEndTime();//同步变换截止时间
             };
-            playTabs.focus(0);
+            //playTabs.focus(0);
             //单式
             this.onMsg('msg_toogle_nosc', function (isnosc){
                 buyTabs.btns.slice(0, 1).hide(isnosc);//稍后上传只能合买
