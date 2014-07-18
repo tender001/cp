@@ -331,10 +331,11 @@
                 this.postMsg('msg_clear_code');//通知清除选择
                 this.get('#all_form').hide(b==2);
                 this.get('#dssc').hide();
+                buyTabs.focus(0);//子玩法定位到第一个
                 if (b==1) {
                 	 Y.createDs();//创建单式-共用
                      this.get('#sd_tips div.ncathleft').hide();
-                    this.get('#dssc').show();
+                     this.get('#dssc').show();
                 }else{
                 	var tipId = ('#'+Class.config('play_name2')+pn[b]+'_tips').replace(/z\dzxhz/,'zxhz').replace('sc', 'pt');
                     this.get('#sd_tips div.ncathleft').hide().get(tipId).show();//选号列表栏
