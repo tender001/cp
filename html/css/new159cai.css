@@ -1269,7 +1269,7 @@ table.bk_yd em{color:#ff0000}
 table.bk_yd  p{text-align:left;padding-left:10px}
 .predp{line-height:30px;color:#ff0000;font-size:12px;font-weight:bold;text-align:Center;}
 .predpnone{display:none}
-.kj_yctj{margin-top:0}
+.kj_yctj{margin-top:10px;}
 .dc_table tr.odd td{background-color:#fff}
 .dc_table tr:hover td,.dc_table tr.odd td:hover{background-color:#fffee6}
 .dc_table td.h_br,table.co1 tbody td.btn_a{background:url(/images/cai888/ban1.jpg) no-repeat scroll 100% bottom;border-right:1px solid #E0E2E1}
