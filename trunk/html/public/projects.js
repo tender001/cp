@@ -2167,10 +2167,39 @@ showduizhen =function (lotid,expect,projid,type,codes,cp){
 						}
 						if(type==1){  
 							//复试
+							var ncode = "";
+							var codestr="";
 							if(codes.split(";").length>1){
-								bet_str="";//得到投注选项
+								if(codes.split(";").length>2){
+								 var wfname=codes.split("|")[0];
+								 ncode = codes.split(";");
+								 var bet_match=[];
+								 ncode.each(function(n,m){
+									 var s=m;
+									 var bet =n.split(",");
+									 bet.each(function(b,i){
+										 if(i==0){
+											 bet_match.push(b.split("|")[1]);
+										 }else{
+											 bet_match.push(b.split("|")[0]);
+										 }
+										
+									 })
+								 })
+//				
+							    bet_str=$_base_s.uniq(bet_match).join(',');
+								
+							}else{
 								arr_bet=codes.split("|");
 								bet_str=arr_bet[1];//得到投注选项
+							} 
+
+//							      "ccodes": "HH|140422004>RSPF=3,140422009>RSPF=0+JQS=0/1/2+CBF=1:0/0:0/1:1/0:1|2*1",
+						
+							
+								
+							
+								
 								ggstr='<font  class="cm_red">'+codes.split(";")[0].split("|")[2].replaceAll("\\*","串")+'</font>';
 								if(bet_str.indexOf("$")!=-1){
 									dan=bet_str.split("$")[0];
