@@ -677,7 +677,9 @@ filter: gray;/* IE6-9 */
 .cz_khmm table .font_14{font-size:14px;}
 .bank_n span{line-height:40px;}
 .bank_n b{overflow:hidden;float:left; height:40px; line-height:40px;display:inline-block;}
-.bank_n b input{margin-top:4px;}
+.bank_n b input{margin-top:4px;font-family:"Microsoft YaHei";}
+.je_color{color:#444; font-size:14px; padding-left:6px;}
+.je_color em{color:#f60;font-size:14px;}
 .bank_n div{width:257px;height:35px;line-height:35px;padding:0 5px;font-size:18px;font-family: Tahoma,Geneva,sans-serif;overflow:hidden;background-color:#f9fadc;position:absolute; left:0; top:-28px;}
 .bank_n s{width: 161px;height: 40px;margin-left:8px;background: url(../images/159/bank_ico.png);display: inline-block;}
 .bank_n s.zfb{background-position:-2px -5px}
