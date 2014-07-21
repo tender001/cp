@@ -2304,6 +2304,7 @@ showduizhen =function (lotid,expect,projid,type,codes,cp){
 							
 							
 							if(lotid==90||lotid==72){
+							
 								var cksp=spvalue.split(",");
 								bet3=cksp[0];
 								bet1=cksp[1];
@@ -2318,6 +2319,7 @@ showduizhen =function (lotid,expect,projid,type,codes,cp){
 								maxsp=maxsp.split(" ");
 								arrmaxSp.push(Math.max.apply(null,maxsp));
 							}
+							
 							if(lotid==89){
 								if(result!=""&&bet_str.indexOf(result)!=-1){
 									bet_str=bet_str.replace(result,"<font   class='cm_red'><b>"+result+"</b></font>");
@@ -2396,7 +2398,11 @@ showduizhen =function (lotid,expect,projid,type,codes,cp){
 							tmpData.mid = id;
 							
 						}
-					
+						if(lotid==85){
+								result=result.replaceAll("3", "胜").replaceAll("1", "平").replaceAll("0", "负");
+								bet_str=bet_str.replaceAll("3", "胜").replaceAll("1", "平").replaceAll("0", "负");
+								
+						}
 						bf=bf==""?"&nbsp":bf;
 						result=new String(result)==""?"&nbsp":result;
 						bet_str=bet_str==""||typeof(bet_str) == "undefined"?"&nbsp":bet_str;
