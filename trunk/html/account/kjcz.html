@@ -11,10 +11,9 @@
 <link href="/css/cai888.css" rel="stylesheet" type="text/css" />
 <script type="text/javascript" src="/public/jq2.js"></script>
 <script type="text/javascript" src="/public/jq.js"></script>
-<script type="text/javascript" src="/public/menu.js"></script>
 <script type="text/javascript" src="/public/159cp.js"></script>
 <script type="text/javascript" src="/public/chklogin.js"></script>
-<script type="text/javascript" src="/account/js/kjcz.js?m=20140718"></script>
+
 
 </head>
 <body>
@@ -37,13 +36,13 @@
 						<strong>充值中心</strong>
 					</h2>
 					<span class="usertitab">  <b id="kj" class="cur"><a
-							href="chongzhi.html" >快捷充值</a></b><b id="kq" ><a
+							href="kjcz.html" >快捷充值</a></b><b id="kq" ><a
 							href="chongzhi.html" title="网银充值">网银充值</a></b> <b id="creditCard"><a
-							href="creditCard.html" title="信用卡快捷支付">信用卡快捷支付</a></b> <b
+							href="creditCard.html" title="信用卡充值">信用卡充值</a></b> <b
 						id="mobileCard"><a href="card.html" title="手机充值卡充值">手机充值卡充值</a></b>
 					</span>
 				</div>
-				<div class="czsay">为了防止套现和洗钱，充值后需消费30%，剩余金额才可以提款。</div>
+				<div class="czsay">储蓄卡和信用卡均可充值，无须开通网银！</div>
 				<!--   <div class="on_b_1" style="margin-top:10px"> -->
 				<!--    <span>选择银行</span><div id="bankc" class="bank_select"> -->
 				<!-- </div><s>即日起本充值方式由银联收取0.60%的手续费，最低0.01元/笔</s> -->
@@ -66,8 +65,9 @@
 									<tr>
 										<td class="font_14">充值金额：</td>
 										<td colspan="2">
-											<input type="text" id="addmoney" name="addmoney" style="width: 140px;" onfocus="this.value='';" onkeyup="this.value=this.value.replace(/^\D*(\d*(?:\.\d{0,2})?).*$/g, '$1');" onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/^\D*(\d*(?:\.\d{0,2})?).*$/g, '$1'));" placeholder="请输入10-5000的金额"/>
-											<span class="je_out"></span>
+											<input type="text" id="addmoney" name="addmoney" style="width: 100px;" onfocus="this.value='';" onkeyup="this.value=this.value.replace(/^\D*(\d*(?:\.\d{0,2})?).*$/g, '$1');" onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/^\D*(\d*(?:\.\d{0,2})?).*$/g, '$1'));" />
+											<span class="je_out" >(至少<em>10</em>元，限整数)
+							</span>
 										</td>
 									</tr>
 									<tr>
@@ -105,6 +105,8 @@
 <input type="hidden" size="20" id="card" name="cardnum"/>
 <input name="addmoney" id="money" type="hidden" />
 	</form>
+	
 	<!--#include virtual="/cc/footer.html"-->
+	<script type="text/javascript" src="/account/js/kjcz.js?m=20140718"></script>
 </body>
 </html>
