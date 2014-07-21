@@ -674,6 +674,7 @@ filter: gray;/* IE6-9 */
 .je_out{padding-left:10px;color:#f60;}
 .bank_n *{ vertical-align:middle;}
 .bank_n{ position:relative;}
+.cz_khmm table .font_14{font-size:14px;}
 .bank_n span{line-height:40px;}
 .bank_n b{overflow:hidden;float:left; height:40px; line-height:40px;display:inline-block;}
 .bank_n b input{margin-top:4px;}
