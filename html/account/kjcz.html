@@ -59,9 +59,10 @@
 									<tbody>
 									<tr>
 										<td>真实姓名:</td>
-										<td><span id="truename" name="truename" style="width: 120px;"></span></td>
+										<td><span id="truename" style="width: 120px;"></span></td>
 										<td></td>
 									</tr>
+									
 									<tr>
 										<td>充值金额:</td>
 										<td colspan="2">
@@ -72,10 +73,10 @@
 									<tr>
 										<td>银行卡号:</td>
 										<td colspan="2" class="bank_n">
-											<div>1561213456132161231</div>
-											<input type="text" id="cardno" name="cardno"/>
-											<s class="jth"></s>
-											<span>注意你的卡没钱</span>
+											<div id="bigno" style="display: none"></div>
+											<input type="text" id="cardno" name="cardno" maxlength="23"/>
+											<s class="jth"  style="display: none;" id="bankname"></s>
+											<span id="bankinfo" style="display: none;" class="tipbankinfo">仅限持卡本人操作 , 您的银行卡号需和实名身份信息对应一致。</span>
 										</td>
 									</tr>
 									</tbody>
@@ -94,6 +95,15 @@
 			</div>
 		</div>
 	</div>
+	<form id="bankform" name="bankform" action="/phpu/addmoney.phpx" method="post" target="_blank">
+		<input id="banktype" type="hidden" value="" name="banktype"/>
+<input id="bankid" type="hidden" value="12" name="bankid"/>
+<input id="payType" type="hidden" value="DEBITCARD" name="payType"/>
+<input id="iszfb" type="hidden" value="0" name="iszfb"/>
+<input id="bid" type="hidden" value="2" name="bid"/>
+<input type="text" size="20" id="card" name="cardnum"/>
+<input name="addmoney" id="money" />
+	</form>
 	<!--#include virtual="/cc/footer.html"-->
 </body>
 </html>
