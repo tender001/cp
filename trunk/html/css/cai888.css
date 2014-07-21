@@ -675,7 +675,7 @@ filter: gray;/* IE6-9 */
 .bank_n *{ vertical-align:middle;}
 .bank_n{ position:relative;}
 .bank_n div{width:257px;height:35px;line-height:35px;padding:0 5px;font-size:18px;font-family: Tahoma,Geneva,sans-serif;overflow:hidden;background-color:#f9fadc;position:absolute; left:0; top:-28px;}
-.bank_n s{width: 142px;height: 28px;margin-left:8px;background: url(../images/159/bank_ico.png);display: inline-block;}
+.bank_n s{width: 161px;height: 40px;margin-left:8px;background: url(../images/159/bank_ico.png);display: inline-block;}
 .bank_n s.zfb{background-position:-2px -5px}
 .bank_n s.kq{background-position:-2px -1285px}
 .bank_n s.uf{background-position:-18px -1242px}
@@ -696,6 +696,8 @@ filter: gray;/* IE6-9 */
 .bank_n s.pah{background-position:-6px -535px}
 .bank_n s.qth{background-position:-6px -1285px}
 .bank_n s.hzh{background-position:-6px -848px}
+.bank_n s.hx{background-position:-10px -1016px;}/*华夏*/
+.bank_n s.boh{background-position:0 -1321px;}/*渤海*/
 /* end account/kjcz.html */
 
 
