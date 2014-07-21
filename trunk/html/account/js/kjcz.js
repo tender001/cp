@@ -1,12 +1,78 @@
 /**
  * 彩票手机卡充值服务
  */
+$_sys.bank = [];
+$_sys.bank.push([ 1, "工商银行","gh" ]);
+$_sys.bank.push([ 2, "农业银行","nh" ]);
+$_sys.bank.push([ 3, "中国银行","zgh" ]);
+$_sys.bank.push([ 4, "建设银行","jth" ]);
+$_sys.bank.push([ 5, "交通银行","jth" ]);
+$_sys.bank.push([ 6, "邮政储蓄银行","cx" ]);
+$_sys.bank.push([ 7, "中信银行","zxh" ]);
+$_sys.bank.push([ 8, "光大银行","gdh" ]);
+$_sys.bank.push([ 9, "华夏银行","hx" ]); 
+$_sys.bank.push([ 10, "民生银行","msh" ]);
+$_sys.bank.push([ 11, "广发银行","gfh" ]);
+$_sys.bank.push([ 12, "平安银行","pah" ]);
+$_sys.bank.push([ 13, "招商银行","zh" ]);
+$_sys.bank.push([ 14, "兴业银行","xyh"  ]);
+$_sys.bank.push([ 15, "浦发银行","pfh"  ]);
+$_sys.bank.push([ 16, "渤海银行","boh" ]);
+$_sys.getbankinfo = function(f,n) {
+	if (typeof(n)=='undefined'){n=1;};
+	for ( var i = 0; i < $_sys.bank.length; i++) {
+	if ($_sys.bank[i][1] == f) {
+	return $_sys.bank[i][n];
+	}
+	}
+	};
 Class('App', {
     use: ' mask, dataInput',
 	ready: true,
     index:function (config){
-    	var P=this;
-    	var cardno=Y.get("#cardno").val(),bigno=Y.get("#bigno"),bankinfo = Y.get("#bankinfo"),bankname=Y.get("#bankname");
+    	this.LoginAcc();
+    	this.showSafe();
+    	this.btnbind();
+    },
+    getbankinfo : function(){
+
+    	var cardnumber = Y.get("#cardno").val(),bankinfo = Y.get("#bankinfo"),cardok = $("#bankimg");
+    	if(cardnumber.length>5){
+        	Y.ajax({
+        		url:'/phpu/querycard.phpx',
+        	
+                data: {cardnum:cardnumber},
+                end:function (data, i){
+                    if (!data.error) {
+                    	var ret = this.dejson(data.text);
+                    	if(ret.ret_code!=0000){
+                    		bankinfo.addClass('tipbankinfored');
+                    		bankinfo.html(ret.ret_msg);
+                    		
+                    	}else{
+                    		var bankname = ret.bank_name;
+                    		
+                    		bankinfo.hide();
+                    		var bankclass=$_sys.getbankinfo (bankname,2)
+                    		if(bankclass==""){
+                    			bankinfo.html(bankname).show();
+                    		}else{
+                    			cardok.attr("class",bankclass).show();
+                    		}
+                    		
+                    		
+                    		
+                    	}
+                    }
+                }
+            });	
+    	}
+
+  	
+    },
+    btnbind:function(){
+		P = this;
+		var cardno=Y.get("#cardno").val(),bigno=Y.get("#bigno"),bankinfo = Y.get("#bankinfo"),bankname=Y.get("#bankimg");
     	$("#addmoney").keyup(function(){
     		this.value=this.value.replace(/\D/g,''); //只能数字
     	});
@@ -28,51 +94,6 @@ Class('App', {
         	  bankinfo.show().removeClass("tipbankinfored");
         	  bankname.hide();
           })  
-   
-    	
-    	
-    	this.LoginAcc();
-    	this.showSafe();
-    	this.btnbind();
-    },
-    getbankinfo : function(){
-
-    	var cardnumber = Y.get("#cardno").val(),bankinfo = Y.get("#bankinfo"),cardok = Y.get("#banknane");
-    	if(cardnumber.length>5){
-        	Y.ajax({
-        		url:'/phpu/querycard.phpx',
-        	
-                data: {cardnum:cardnumber},
-                end:function (data, i){
-//                    if (!data.error) {
-//                    	var ret = this.dejson(data.text);
-//                    	if(ret.code!=100){
-//                    		bankinfo.addClass('cz_tips cz_tips_err');
-//                    		bankinfo.html(ret.msg);
-//                    		cardok.val(0);
-//                    	}else{
-//                    		var bankname = ret.bankinfo["bank_name"],
-//                    			classname = ret.bankinfo["classname"];
-//                    		Y.get("#bankinfo").removeClass("cz_tips").removeClass("cz_tips_err").addClass('cz_bank_ico');
-//                    		if(classname==""){
-//                    			Y.get("#bankinfo").html(bankname);
-//                    		}
-//                    		else{
-//                    			Y.get("#bankinfo").html("<span class=\"bank_ico "+classname+"\"></span>"+bankname);
-//                    		}
-//                    		cardok.val(1);
-//                    		Y.get("#gopay").one().disabled=false;
-//                    		Y.get("#gopay").removeClass("btn_gray").addClass("btn_orange");
-//                    	}
-//                    }
-                }
-            });	
-    	}
-
-  	
-    },
-    btnbind:function(){
-		P = this;		
    	 	this.get('#submit').click(function (){
 	   	 	if($(this).attr("isChecked")=='false'){
 	   	 		P.isTrueinfo();
@@ -94,7 +115,7 @@ Class('App', {
 	      			$("#card").val($("#cardno").val());
 	      			$("#money").val($("#addmoney").val())
 	           }
-	   	 	Y.openUrl('tishi.html',420,180);
+	   	 Y.openUrl('tishi.html',502,250);
 			Y.get("#bankform").attr("action",$_user.url.addmoney);
 			$("#bankform").submit();
         	
@@ -235,119 +256,5 @@ Class('App', {
     }
 });
 
-var setType=function(cursel,n){
-	for(var i=1;i<=n;i++){
-		if(cursel!=i){
-			$("#face_type" + i).hide();
-		}else{
-			$("#face_type" + i).show();
-		}
-	}
-	var ty=$("#cardtypeid li");
-//	$("#mobilecard li").addClass("cur");
-//	$("#cardm").addClass("cur");
-//	ty[cursel-1].checked="checked";
-//	$("#face_type" + cursel+" li").eq(0).addClass("cur").siblings().removeClass("cur");
-	$(ty[cursel-1]).addClass("cur").siblings().removeClass("cur");
-}
 
-var subform =function (){
-	var tempvalue="";
-//	if(!$("div.cz_mz").is(":hidden")){
-//	
-//		
-//	}
-	$("div.cz_mz").each(function(){
-		if(!$(this).is(":hidden")){
-			$(this).find("li[name=facevalue]").each(function(){
-				if($(this).hasClass("cur")){
-					tempvalue=$(this).attr("value");
-				}
-			});
-		}
-	})
-	
-	var typevalue="";
-	$("li[name=cardtype]").each(function(){
-		if($(this).index()==0){
-			typevalue="CMJFK";
-		}else if($(this).index()==0){
-			typevalue="LTJFK";
-		}else if($(this).index()==0){
-			typevalue="DXJFK";
-		}
-	});
-	var cardid = ($("#cardid").val()).replace(/\s+/g,"");
-	var passid = ($("#passid").val()).replace(/\s+/g,"");
-	if(typevalue==""){
-		Y.alert('请选择充值卡类型');
-		return false;
-	}else if(tempvalue==""){
-		Y.alert('请选择充值面值');
-		return false;
-	}else if($("#cardid").val()==""){
-		Y.alert('充值卡卡号不能为空');
-		return false;		
-	}else if(isNaN(cardid)){
-		Y.alert('卡号请输入数字');
-		return false;		
-	}else if(isNaN(passid)){
-		Y.alert('密码请输入数字');
-		return false;		
-	}else if($("#passid").val()==""){
-		Y.alert('充值卡密码不能为空');
-		return false;		
-	}
-	var ccts = Y.lib.MaskLay('#ccts', '#cctsdiv');
-	ccts.addClose('[mark=cctsclose]');//'#smreturn'
-    Y.get('#ccts  div.tantop').drag('#ccts');
-    Y.get("#cardtype").html(typevalue)
-    Y.get("#cardmoney").html(tempvalue);
-    Y.get("#czmoney").html(tempvalue*0.96);
-    Y.get("#cardno").html(cardid);
-    Y.get("#cardpwd").html(passid);
-    ccts.pop();
-	
-	$("#surecc").click(function(){
-		ccts.close();
-		Y.ajax({
-		url :$_user.url.addmoney,
-		type :"POST",
-		dataType :"json",
-		data :"bankid=9&addmoney="+tempvalue+"&tkMoney="+tempvalue+"&cardnum="+cardid+"&cardpass="+passid+"&dealid="+typevalue+"&v="+Math.random(),
-		end  : function (d){
-			var obj = eval("(" + d.text + ")");
-   		    var code = obj.Resp.code;
-   		    var desc = obj.Resp.desc;
-			if (code == "0") {
-				var sdcg = Y.lib.MaskLay('#sdcg', '#sdcgdiv');
-				sdcg.addClose('[mark=sdcgclose]');//'#smreturn'
-			    Y.get('#sdcg  div.tantop').drag('#sdcg');
-				
-			    sdcg.pop();
-			} else {
-				//收单失败
-				Y.alert(desc);
-			}
-		}
-	});
-	})
-//	Y.ajax({
-//		url :$_user.url.addmoney,
-//		type :"POST",
-//		dataType :"json",
-//		data :"bankid=9&addmoney="+tempvalue+"&tkMoney="+tempvalue+"&cardnum="+cardid+"&cardpass="+passid+"&dealid="+typevalue+"&v="+Math.random(),
-//		end  : function (d){
-//			var obj = eval("(" + d.text + ")");
-//   		    var code = obj.Resp.code;
-//   		    var desc = obj.Resp.desc;
-//			if (code == "0") {
-//				Y.alert('收单成功');
-//			} else {
-//				//收单失败
-//				Y.alert(desc);
-//			}
-//		}
-//	});
-	
-}
+
