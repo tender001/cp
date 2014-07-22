@@ -903,7 +903,7 @@ Class('CodeList', {
 				return obj.dan;
 			}).join('/'));
 		});
-		return c.join('/');
+		return $_base_s.undel(c).join('/');
 	},
 	getTr1: function (bid){
 		return Yobj.get('#code'+bid+ '_a');

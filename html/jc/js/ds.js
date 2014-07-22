@@ -362,6 +362,7 @@ Class( {
 			Class.config('ggMaxLength', 8);
 			Class.config('formatIndex', [3, 1, 0]);
 			Class.config('formatValue', [3, 1, 0]);
+			$("#switch_link").show();
 			break;	
 		case 90 :    //胜平负
 				Class.config('playName', 'spf');
