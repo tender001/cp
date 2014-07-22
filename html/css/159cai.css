@@ -1361,6 +1361,7 @@ a.jckj_tmcx{width:85px;height:25px;display:block;float:left;line-height:25px;tex
 a.jckj_tmcx:hover{ background-image:url(../images/jc/kjcxx_06.gif)}
 .ds p{line-height:25px;font-size:14px;color:#444;width:300px;float:right;padding-right:10px;text-align:right;width:350px}
 .jckj_tb{padding:17px 15px;border:1px solid #ddd;border-top:none;margin-top:-10px;*zoom:1;background:#fff;}
+.jckj-min-h{min-height:350px;}
 .jckj_tb table.co1{border-top:1px solid #ddd;border-left:1px solid #ddd;margin-bottom:15px}
 .jckj_tb table.co1 thead{ background-image:url(../images/jc/sf_07.gif);}
 .jckj_tb table.co1 thead td{border-bottom:1px solid #DDD;border-right:1px solid #ddd;font-size:14px;text-align:center;font-weight:bold;color:#444}
