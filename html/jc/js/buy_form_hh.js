@@ -284,12 +284,52 @@ Class( 'BuyForm', {
 		}			
 		param.codes=codes;	
 	},
-
+	editcode:function(param){
+		//HH|140711051>RSPF=3+SPF=3,140711052>RSPF=3,140712051>SPF=3|2*1
+		var codestr=param.codes.split("|");
+		var playname = codestr[0];
+		var codess = codestr[1];
+		var ggstr = codestr[2];
+		
+		var codes = codess.split(",");
+		var danma=[];
+		var dm=param.danma.split("/");
+		var dmstr="";
+		if(param.danma.length>10){
+			for (var m=0;m<dm.length;m++){
+				dmstr+=dm[m].split("|")[0]+",";
+			}
+		}
+		dm=dmstr.split(",");
+		
+		var tuoma=[];		
+		for(var i=0;i<codes.length;i++){
+			var find=false;
+			for (var j=0;j<dm.length;j++){
+				if (dm[j]!=""&&codes[i].indexOf(dm[j])>-1){
+					danma.push(codes[i]);
+					find=true;
+					break ;
+				}
+			}
+			if (!find){
+				tuoma.push(codes[i]);
+			}
+		}	
+		
+		
+		if (param.danma.length>1){
+			codes=playname+'|'+danma.join(",")+'$'+tuoma.join(",")+'|'+ggstr;
+		}else{
+			codes=playname+'|'+tuoma.join(",")+'|'+ggstr;			
+		}	
+		param.codes=codes;	
+	},
 	submit : function() {		  
 		  var param= this._param;
 		  var swap = true;
           if (swap){
-        	  //this.swapcode(param);
+        	  this.editcode(param);
 	          var param_new ;
         	  if (param.ishm==0){
              	 param_new={

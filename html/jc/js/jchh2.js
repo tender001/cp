@@ -1892,12 +1892,13 @@ Class('Main', {
 			
 			this.setVals({
 				'#codes': codeList.getCodeString(),
-//				'#danma': codeList.getdanCodeString(),
-				'#danma': "",
-				'#ggtypeid': ggTypeBox.ggTypeIds.join(','),
+				'#danma': codeList.getdanCodeString(),
+//				'#danma': "",
+//				'#ggtypeid': ggTypeBox.ggTypeIds.join(','),
+				'#ggtypeid': 40,
 				'#ggtypename': ggTypeBox.ggtype.join(','),
 				'#zhushu': algo.zs,
-				'#gggroup': ggTypeBox.mode === 'multi' ? 2 : 3,
+				'#gggroup': ggTypeBox.mode === 'multi' ? 2 : 1,
 				'#beishu': this.bs,
 				'#totalmoney': algo.zs*this.bs*2,
 				'#ishm': this.ishm,
