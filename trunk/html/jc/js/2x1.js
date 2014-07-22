@@ -301,10 +301,10 @@
                  switch(mode){
                  case 0://显示单个
                      var target= Y.allList.filter(function(tr){
-                         return tr.getAttribute('lg') == data
+                         return tr.getAttribute('lg') == data;
                      });
                      if (!sel && Y.isbf){
-                         Y._hideBF(target)
+                         Y._hideBF(target);
                      }else{
                          target.show(sel);
 //                         target.find(".dz_dv").show(sel);
@@ -318,7 +318,7 @@
                              var next=document.getElementById('pltr_'+tr.getAttribute('mid'));
                              if (next && next.style.display != 'none') {
                                  Y.get('a.bf_btn', tr).swapClass('public_Dora', 'public_Lblue').html('<b>展开选项<s class="c_down"></s></b>');
-//                                 next.style.display='none';
+                                 next.style.display='none';
                              }
                          }
                      }, this);
@@ -328,13 +328,13 @@
                      break;
                   case 3:
                  	 var target= Y.allList.filter(function(tr){
-                          return tr.getAttribute('rq') == data
+                          return tr.getAttribute('rq') == data;
                       });
                  	 target.show(sel);
                  	 break;
                   case 4:
                  	 var target= Y.allList.filter(function(tr){
-                          return tr.getAttribute('pendtime') == data
+                          return tr.getAttribute('pendtime') == data;
                       });
                  	 target.show(sel);
                  	 break;
@@ -367,7 +367,7 @@
                      
                          break;
                  }
-                 this.getHideCount()
+                 this.getHideCount();
              });
              this.onMsg('msg_set_all', function (){
                  this.allList.show();
@@ -768,6 +768,7 @@
                             return Math.max(def, parseFloat(oSP[a])||0);//SP值默认为 def = 1 
                         }),
                         dan:tr.getAttribute('dan') == '1' ? 1 : 0,
+                        //var rq = tr.getAttribute('data-rq'),
                         date: trData.date,
                         vs: trData.vss,
                         choose: trData.choose
@@ -900,13 +901,14 @@
 		           '</tr>'+
 		           '</tbody>',//已结束对阵
 		           '<tbody>'+
-		           '<tr class="{$classname}" lg="{$mname}" isend="0"  sp0="{$sp0}" sp3="{$sp3}" rsp0="{$rsp0}" rsp3="{$rsp3}" pendtime="{$enddate}" rq="{$close}" pdate="{$itemid}" pname="{$itemid}" mid="{$mid}" zid="{$itemid}">'+
-		           '<td style="cursor: pointer"><label for=m{$itemid} title="{$name}"><input id=m{$itemid} value={$itemid}  checked type=checkbox name=m{$itemid}>{$newname}</label></td>'+
+		           '<tr class="{$classname}" lg="{$mname}" isend="0"  lost="{$sp0}" draw="{$sp1}" win="{$sp3}" pendtime="{$enddate}" rq="{$close}" pdate="{$itemid}" pname="{$itemid}" mid="{$mid}" zid="{$itemid}">'+
+		           //'<td style="cursor: pointer"><label for=m{$itemid} title="{$name}"><input id=m{$itemid} value={$itemid}  checked type=checkbox name=m{$itemid}>{$newname}</label></td>'+
+		           '<td style="cursor: pointer"><div class="deltr" style="display:none"><div><a href="#"></a></div></div><label for=m{$itemid}  title="{$name}"><input id=m{$itemid} value={$itemid}  checked type=checkbox name=m{$itemid}>{$newname}</label></td>'+
 		           '<td style="background:{$cl}; color: #fff;border-right:1px solid #fff" class=league><a title="{$lmname}" href="" target="_blank" id="mn{$itemid}" style="color: #fff">{$mname}</a></td>'+
 		           '<td><span class="eng end_time" title="开赛时间：{$mt}">{$short_et}</span><span style="display: none" class="eng match_time" title="截止时间：{$et}">{$short_mt}</span></td>'+
-		           '<td style="text-align: right;  cursor: pointer;border-left:1px solid #ddd" class=h_br ><div class="dz_dv" title={$hn}><input class=chbox value={$leftvalue} data-type={$lefttype} type=checkbox style="display: none"><s class="s_left">&nbsp;</s><span class="eng b span_left"><em id="htid_{$itemid}" class="em_left">{$hn}</em> {$leftstr}</span></div></td>'+
-//		           '<td style="text-align: center; cursor: pointer" class=h_br><input class=chbox value=1 type=checkbox style="display: none" ><span class="eng b" >{$sp1}</span></td>'+
-		           '<td style="text-align: left;  cursor: pointer" class=h_br ><div class="dz_dv" title={$gn}><input class=chbox value={$rightvalue} data-type={$righttype} type=checkbox style="display: none"><span class="eng b span_right" style="padding-left:5px">{$rightsp} <em id="gtid_{$itemid}" class="em_right" >{$gn}</em>{$rightstr}</span><s class="s_right">&nbsp;</s></div></td><td style="cursor: pointer;border-right:1px solid #ddd"><a href="javascript:void(0);" class="jcq_q">全</a><input style="display: none" type="checkbox" all="0" value = "all"/></td>'+
+		           '<td style="text-align: right;  cursor: pointer;border-left:1px solid #ddd" class=h_br ><div class="dz_dv" title={$hn}><input class=chbox value=3  type=checkbox style="display: none"><s class="s_left">&nbsp;</s><span class="eng b span_left"><em id="htid_{$itemid}" class="em_left">{$hn}</em> <b class="b_left">{$sp3}</b></span></div></td>'+
+		           '<td style="text-align: left;  cursor: pointer" class=h_br ><div class="dz_dv" title={$gn}><input class=chbox value=1  type=checkbox style="display: none"><span class="eng b span_right" style="padding-left:5px">{$rightsp} <em id="gtid_{$itemid}" class="em_right" >{$gn}</em>{$rightstr}</span><s class="s_right">&nbsp;</s></div></td><td style="cursor: pointer;border-right:1px solid #ddd"><a href="javascript:void(0);" class="jcq_q">全</a><input style="display: none" type="checkbox" all="0" value = "all"/></td>'+
+		           /*'<td style="text-align: center; cursor: pointer" class=h_br><input class=chbox value=1 type=checkbox style="display: none" ><span class="eng b" >{$sp1}</span></td>'+*/
 		           '<td  style="border-right:1px solid #ddd">'+
 		           '<div class=pjpl id="odds{$itemid}"><span class="sp_w35 eng" id="oh{$itemid}">{$b3}</span><span class="sp_w35 eng" id="od{$itemid}">{$b1}</span><span class="sp_w35 eng" id="oa{$itemid}">{$b0}</span></div>'+
 		           '<div style="display: none" class=tzbl><span class="sp_w35 eng">12%</span><span class="sp_w35 eng">23%</span><span class="sp_w35 eng">65%</span></div></td>'+
@@ -1282,6 +1284,7 @@
                            
                             return c;
                         }).join('/'));
+                        Y.get('#danma').val(danma.join('/'));//胆码
                         Y.get('#zhushu').val(Y.get('#zs').html());
                         var totalmoney = Y.get('#bs').val()*2*Y.get('#zhushu').val();
                         Y.get('#tmoney').val(totalmoney);
