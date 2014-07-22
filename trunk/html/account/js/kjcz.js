@@ -18,6 +18,11 @@ $_sys.bank.push([ 13, "招商银行","zh" ]);
 $_sys.bank.push([ 14, "兴业银行","xyh"  ]);
 $_sys.bank.push([ 15, "浦发银行","pfh"  ]);
 $_sys.bank.push([ 16, "渤海银行","boh" ]);
+//$_sys.bank.push([ 16, "渤海银行","boh" ]);
+//$_sys.bank.push([ 16, "渤海银行","boh" ]);
+//$_sys.bank.push([ 16, "渤海银行","boh" ]);
+//$_sys.bank.push([ 16, "渤海银行","boh" ]);
+//$_sys.bank.push([ 16, "渤海银行","boh" ]);
 $_sys.getbankinfo = function(f,n) {
 	if (typeof(n)=='undefined'){n=1;};
 	for ( var i = 0; i < $_sys.bank.length; i++) {
@@ -36,7 +41,7 @@ Class('App', {
     },
     getbankinfo : function(){
 
-    	var cardnumber = Y.get("#cardno").val(),bankinfo = Y.get("#bankinfo"),cardok = $("#bankimg");
+    	var cardnumber = Y.get("#cardno").val(),bankinfo = $("#bankinfo"),cardok = $("#bankimg");
     	if(cardnumber.length>5){
         	Y.ajax({
         		url:'/phpu/querycard.phpx',
@@ -47,11 +52,15 @@ Class('App', {
                     	var ret = this.dejson(data.text);
                     	if(ret.ret_code!=0000){
                     		bankinfo.addClass('tipbankinfored');
-                    		bankinfo.html(ret.ret_msg);
-                    		
+                    		if(ret.ret_code=="5001"){
+                    			ret.ret_msg="网站暂不支持该卡进行快捷充值";
+//                    			ret.ret_msg="您输入的银行卡号有误，请重新输入";
+                    		}
+                    		bankinfo.html(ret.ret_msg).show();
+                    		$("#submit").addClass("czbtnhui");
                     	}else{
                     		var bankname = ret.bank_name;
-                    		
+                    		$("#submit").removeClass("czbtnhui");
                     		bankinfo.hide();
                     		var bankclass=$_sys.getbankinfo (bankname,2)
                     		if(bankclass==""){
@@ -72,13 +81,14 @@ Class('App', {
     },
     btnbind:function(){
 		P = this;
-		var cardno=Y.get("#cardno").val(),bigno=Y.get("#bigno"),bankinfo = Y.get("#bankinfo"),bankname=Y.get("#bankimg");
+		var cardno=Y.get("#cardno").val(),bigno=Y.get("#bigno"),bankinfo = $("#bankinfo"),bankname=$("#bankimg");
     	$("#addmoney").keyup(function(){
     		this.value=this.value.replace(/\D/g,''); //只能数字
     	});
     	$("#cardno").keyup(function(){
     		this.value=this.value.replace(/\D/g,''); //只能数字
     		bigno.val(this.value.replace(/\s/g,'').replace(/(\d{4})(?=\d)/g,"$1 "));//四位一空格
+    		$("#card").val(cardno);
     		bigno.show();
     	});
     	
@@ -88,17 +98,25 @@ Class('App', {
           }).blur(function(){  
         	  bigno.hide();
         	  bankinfo.hide();
-        	  P.getbankinfo();
+        	  if($(this).val()!=$("#card").val()){
+        		  P.getbankinfo();
+        	  }
+        	 
           });
     	$("#cardno").click(function(){
-        	  bankinfo.show().removeClass("tipbankinfored");
+    		bankinfo.show().removeClass("tipbankinfored").html("仅限持卡本人操作 , 您的银行卡号需和实名身份信息对应一致。");
         	  bankname.hide();
           })  
    	 	this.get('#submit').click(function (){
-	   	 	if($(this).attr("isChecked")=='false'){
-	   	 		P.isTrueinfo();
+	   	 	if($(this).hasClass("czbtnhui")){
+	   	 		
 	           	return false;
 	           }else{
+	        	   if($("#truename").hasClass("nosm")){
+	        		   Y.alert('请先实名再充值');
+	        		   return false;
+
+	        	   }
 	        	   if($("#cardnum").val()==""){
 	        		   Y.alert('请输入您的银行卡号');
 		   				return false;
@@ -107,6 +125,7 @@ Class('App', {
 	   				Y.alert('充值金额最低不能小于10元');
 	   				return false;
 	   				}
+	        	 
 	      			if ($("#addmoney").val()>10000){
 	      				Y.alert('充值金额最高不能超过10000元');
 	      				$("#addmoney").focus();
@@ -133,11 +152,15 @@ Class('App', {
     					   if (code==0){
     						 var u = obj.Resp.row;
     							 var rname = u.rname;
-    							var b=getcookie("smrz_tk"); // cookie
-    							 if(rname==""&&b==""){
-    								var smrz = Y.lib.MaskLay('#smrz', '#smrzcontent');
+//    							var b=getcookie("smrz_tk"); // cookie
+    							 if(rname==""){
+    								 Y.get("#truename").html("请先<a id='smcz' style='color: #145fab;'>实名</a>再充值").addClass("nosm");
+    								 var smrz = Y.lib.MaskLay('#smrz', '#smrzcontent');
     								smrz.addClose('#smrzclose','#wrapLayCloseBtn', '#wrapLayClose');//'#smreturn'
     						        Y.get('#smrz  div.tantop').drag('#smrz');
+    						        $("#smcz").click(function(){
+    						        	  smrz.pop();
+    						        })
     						        smrz.pop();
     						        $("#smno,#smname,#smpwd").click(function(){
     						        	$("#smerror").parent().hide()
@@ -245,7 +268,7 @@ Class('App', {
     									});
     						        });
     							 }else{
-    								 Y.get("#truename").html(rname)
+    								 Y.get("#truename").html(rname);
     							 }
     							 
     							
