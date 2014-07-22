@@ -1111,6 +1111,7 @@ $_sys.addmoneytype.push([ 5, "手机充值卡" ]);
 $_sys.addmoneytype.push([ 6, "银联手机支付" ]);
 $_sys.addmoneytype.push([ 9, "手机充值卡" ]);
 $_sys.addmoneytype.push([ 11, "联动优势" ]);
+$_sys.addmoneytype.push([ 12, "连连支付" ]);
 
 $_sys.getaddmoneyname=function(f){
 	for ( var i = 0; i < $_sys.addmoneytype.length; i++) {
@@ -1127,6 +1128,7 @@ $_sys.bankid_def.push([5,"手机充值卡"]);
 $_sys.bankid_def.push([6,"银联手机支付"]);
 $_sys.bankid_def.push([9,"手机充值卡"]);
 $_sys.bankid_def.push([11,"联动优势支付"]);
+$_sys.bankid_def.push([12,"连连支付"]);
 $_sys.bankid_def.push([97,"提款失败转款"]);
 $_sys.bankid_def.push([98,"代理商转入"]);
 $_sys.bankid_def.push([99,"手工加款"]);
