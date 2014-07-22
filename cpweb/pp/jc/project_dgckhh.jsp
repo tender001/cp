@@ -28,7 +28,7 @@ HashMap<String,String[]> mList = (HashMap<String,String[]>) request.getAttribute
 String playid = (String) request.getAttribute("playid");
 String codes = (String) request.getAttribute("newcodes");
 String from = (String) request.getAttribute("source");
-
+String danma = (String) request.getAttribute("danma");
 System.out.println("codes = " + codes);
 System.out.println("from = " + from);
 %>
@@ -73,9 +73,15 @@ String ratelist = "";
 //newcodes--HH|130316010>SPF=1+CBF=1:0+BQC=3-3,130316008>SPF=3/1,130316009>JQS=0/1+CBF=1:0/9:9/0:9|2*1,3*1|1
 String newcodes=codes.replace("HH|", "");
 newcodes=newcodes.substring(0,newcodes.indexOf("|"));
-
 String[] cs=newcodes.split(",");
-
+String[] dm=danma.split("/");
+String dmstr="";
+if(danma.length()>10){
+	for (int m=0;m<dm.length;m++){
+		dmstr+=dm[m].split("\\|")[1]+",";
+	}
+}
+dm=dmstr.split(",");
 for (int j=0;j<cs.length;j++){
 
 	String[] t1 = new String[2];
@@ -169,6 +175,16 @@ for (int j=0;j<cs.length;j++){
 			 			sb.append(n4+"("+n2+") ");
 			 			tmprate+=n3+"#"+n2+",";
 		 			}
+		 			boolean has=false;
+		 		 	for (int v=0;v<dm.length;v++){
+		 		 		if(dm[v].equalsIgnoreCase(mid)){
+		 		 			has=true;
+		 		 			break;
+		 		 		}
+		 		 	}
+		 			if (has){
+		 		 		sb.append("<label class=\"red\">(胆)</label>");
+		 		 	}
 		 			sb.append("</td>");
 					sb.append("</tr>");
 		 		}else if (pty.equalsIgnoreCase("RSPF")){
@@ -184,6 +200,16 @@ for (int j=0;j<cs.length;j++){
 			 			sb.append(n4+"("+n2+") ");
 			 			tmprate+=n3+"#"+n2+",";
 		 			}
+		 			boolean has=false;
+		 		 	for (int v=0;v<dm.length;v++){
+		 		 		if(dm[v].equalsIgnoreCase(mid)){
+		 		 			has=true;
+		 		 			break;
+		 		 		}
+		 		 	}
+		 			if (has){
+		 		 		sb.append("<label class=\"red\">(胆)</label>");
+		 		 	}
 		 			sb.append("</td>");
 					sb.append("</tr>");
 		 		}else if (pty.equalsIgnoreCase("JQS")){
@@ -198,6 +224,16 @@ for (int j=0;j<cs.length;j++){
 			 			sb.append(n3+"("+n2+") ");
 			 			tmprate+=n3+"#"+n2+",";
 		 			}
+		 			boolean has=false;
+		 		 	for (int v=0;v<dm.length;v++){
+		 		 		if(dm[v].equalsIgnoreCase(mid)){
+		 		 			has=true;
+		 		 			break;
+		 		 		}
+		 		 	}
+		 			if (has){
+		 		 		sb.append("<label class=\"red\">(胆)</label>");
+		 		 	}
 		 			sb.append("</td>");
 					sb.append("</tr>");
 		 		}else if (pty.equalsIgnoreCase("CBF")){
@@ -213,6 +249,16 @@ for (int j=0;j<cs.length;j++){
 			 			sb.append(n3+"("+n2+") ");
 			 			tmprate+=n3+"#"+n2+",";
 		 			}
+		 			boolean has=false;
+		 		 	for (int v=0;v<dm.length;v++){
+		 		 		if(dm[v].equalsIgnoreCase(mid)){
+		 		 			has=true;
+		 		 			break;
+		 		 		}
+		 		 	}
+		 			if (has){
+		 		 		sb.append("<label class=\"red\">(胆)</label>");
+		 		 	}
 		 			sb.append("</td>");
 					sb.append("</tr>");
 				}else if (pty.equalsIgnoreCase("BQC")){
@@ -229,6 +275,16 @@ for (int j=0;j<cs.length;j++){
 						sb.append(n4+"("+n2+") ");
 			 			tmprate+=n3+"#"+n2+",";
 		 			}
+		 			boolean has=false;
+		 		 	for (int v=0;v<dm.length;v++){
+		 		 		if(dm[v].equalsIgnoreCase(mid)){
+		 		 			has=true;
+		 		 			break;
+		 		 		}
+		 		 	}
+		 			if (has){
+		 		 		sb.append("<label class=\"red\">(胆)</label>");
+		 		 	}
 		 			sb.append("</td>");
 					sb.append("</tr>");
 				}

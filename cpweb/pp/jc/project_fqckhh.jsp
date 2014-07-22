@@ -29,6 +29,7 @@ HashMap<String,String[]> mList = (HashMap<String,String[]>) request.getAttribute
 String playid = (String) request.getAttribute("playid");
 String codes = (String) request.getAttribute("newcodes");
 String from = (String) request.getAttribute("source");
+String danma = (String) request.getAttribute("danma");
 %>
 <body>
 <!-- 头部内容 -->  
@@ -73,6 +74,14 @@ String newcodes=codes.replace("HH|", "");
 newcodes=newcodes.substring(0,newcodes.indexOf("|"));
 
 String[] cs=newcodes.split(",");
+String[] dm=danma.split("/");
+String dmstr="";
+if(danma.length()>10){
+	for (int m=0;m<dm.length;m++){
+		dmstr+=dm[m].split("\\|")[1]+",";
+	}
+}
+dm=dmstr.split(",");
 for (int j=0;j<cs.length;j++){
 
 	String[] t1 = new String[2];
@@ -165,6 +174,16 @@ for (int j=0;j<cs.length;j++){
 			 			sb.append(n4+"("+n2+") ");
 			 			tmprate+=n3+"#"+n2+",";
 		 			}
+		 			boolean has=false;
+		 		 	for (int v=0;v<dm.length;v++){
+		 		 		if(dm[v].equalsIgnoreCase(mid)){
+		 		 			has=true;
+		 		 			break;
+		 		 		}
+		 		 	}
+		 			if (has){
+		 		 		sb.append("<label class=\"red\">(胆)</label>");
+		 		 	}
 		 			sb.append("</td>");
 					sb.append("</tr>");
 		 		}else if (pty.equalsIgnoreCase("RSPF")){
@@ -180,6 +199,16 @@ for (int j=0;j<cs.length;j++){
 			 			sb.append(n4+"("+n2+") ");
 			 			tmprate+=n3+"#"+n2+",";
 		 			}
+		 			boolean has=false;
+		 		 	for (int v=0;v<dm.length;v++){
+		 		 		if(dm[v].equalsIgnoreCase(mid)){
+		 		 			has=true;
+		 		 			break;
+		 		 		}
+		 		 	}
+		 			if (has){
+		 		 		sb.append("<label class=\"red\">(胆)</label>");
+		 		 	}
 		 			sb.append("</td>");
 					sb.append("</tr>");
 		 		}else if (pty.equalsIgnoreCase("JQS")){
@@ -194,6 +223,16 @@ for (int j=0;j<cs.length;j++){
 			 			sb.append(n3+"("+n2+") ");
 			 			tmprate+=n3+"#"+n2+",";
 		 			}
+		 			boolean has=false;
+		 		 	for (int v=0;v<dm.length;v++){
+		 		 		if(dm[v].equalsIgnoreCase(mid)){
+		 		 			has=true;
+		 		 			break;
+		 		 		}
+		 		 	}
+		 			if (has){
+		 		 		sb.append("<label class=\"red\">(胆)</label>");
+		 		 	}
 		 			sb.append("</td>");
 					sb.append("</tr>");
 		 		}else if (pty.equalsIgnoreCase("CBF")){
@@ -209,6 +248,16 @@ for (int j=0;j<cs.length;j++){
 			 			sb.append(n3+"("+n2+") ");
 			 			tmprate+=n3+"#"+n2+",";
 		 			}
+		 			boolean has=false;
+		 		 	for (int v=0;v<dm.length;v++){
+		 		 		if(dm[v].equalsIgnoreCase(mid)){
+		 		 			has=true;
+		 		 			break;
+		 		 		}
+		 		 	}
+		 			if (has){
+		 		 		sb.append("<label class=\"red\">(胆)</label>");
+		 		 	}
 		 			sb.append("</td>");
 					sb.append("</tr>");
 				}else if (pty.equalsIgnoreCase("BQC")){
@@ -224,6 +273,16 @@ for (int j=0;j<cs.length;j++){
 						sb.append(n4+"("+n2+") ");
 			 			tmprate+=n3+"#"+n2+",";
 		 			}
+		 			boolean has=false;
+		 		 	for (int v=0;v<dm.length;v++){
+		 		 		if(dm[v].equalsIgnoreCase(mid)){
+		 		 			has=true;
+		 		 			break;
+		 		 		}
+		 		 	}
+		 			if (has){
+		 		 		sb.append("<label class=\"red\">(胆)</label>");
+		 		 	}
 		 			sb.append("</td>");
 					sb.append("</tr>");
 				}
