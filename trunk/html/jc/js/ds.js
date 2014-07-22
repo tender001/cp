@@ -704,9 +704,11 @@ Class('Loadduizhen',{
 				$("#bzgs").click(function(){
 					Yobj.openUrl('/jc/bzgs/HT.html',450,470)
 				});
+				$("#switch_link").parent().hide();
 				break;	
 			case "90" :    //胜平负
 				$("#format_switch").html(tableTmpl[0]);
+				$("#sr").hide();
 				$("#tzurl").attr('href','/jc/index.html');
 				$("#bzgs").click(function(){
 					Yobj.openUrl('/jc/bzgs/SPF.html',450,470)
@@ -714,6 +716,7 @@ Class('Loadduizhen',{
 				break;
 			case "72" :    //让球胜平负
 				$("#format_switch").html(tableTmpl[0]);
+				$("#sr").hide();
 				$("#tzurl").attr('href','/jc/rqspf.html');
 				$("#bzgs").click(function(){
 					Yobj.openUrl('/jc/bzgs/RQSPF.html',450,470)
@@ -721,6 +724,7 @@ Class('Loadduizhen',{
 				break;
 			case "93" :    //总进球数
 				$("#format_switch").html(tableTmpl[1]);
+				$("#sr").hide();
 				$("#tzurl").attr('href','/jc/jqs.html');
 //				$("#bzgs").attr('href','/jc/bzgs/JQS.html');
 				$("#bzgs").click(function(){
@@ -730,6 +734,7 @@ Class('Loadduizhen',{
 				break;
 			case "91" :    //比分
 				$("#tzurl").attr('href','/jc/cbf.html');
+				$("#sr").hide();
 				$("#bzgs").click(function(){
 					Yobj.openUrl('/jc/bzgs/BF.html',450,470)
 				});
