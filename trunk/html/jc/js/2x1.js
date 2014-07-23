@@ -662,12 +662,16 @@
                     if ((type.zy.length>0 && (parseInt(type.zy[0]) -1 == dan.length)) || (isBforBqc && dan.length>2) || dan.length == Math.min(maxGgCount-1, all.size()-1)) {
                         nDan.each(function (el){
                             el.disabled = true;
+                            el.parentNode.parentNode.parentNode.setAttribute('dan',0);
                         });
+                        
                     }else{//去掉所有的禁用
                         nDan.each(function (el){
                             el.disabled = false;
+                            el.parentNode.parentNode.parentNode.setAttribute('dan',0);
                         });                        
                     }
+                   
                 }
             });
         },
@@ -1174,10 +1178,13 @@
                          		betstr2='/'+a.mid+'|'+a.pname+'|SPF>[0]';
                          	}
                     		c=a.mid+'|'+a.pname+'|'+betstr+betstr2;//格式
+                    		
                     	}
                        
 
-                       
+                    	if (a.dan) {
+                            danma.push(c);
+                        }
                         return c;
                     }).join('/'));
                     Y.get('#danma').val(danma.join('/'));//胆码
