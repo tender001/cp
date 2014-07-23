@@ -310,7 +310,7 @@ Class('Loginer', {// 登陆器
 	        							copyurl2(Y.get("#murl").val());
 	        						}
 	        					);
- 	                    	 }else if(r.isagent=="0" && (r.vlevel>0)){
+ 	                    	 }else if(r.isagent=="0" && (r.fandian>0)){
  	                    		 $("#fanli").show();
  	                    	 }
                              
