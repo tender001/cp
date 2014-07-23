@@ -1372,7 +1372,7 @@ var showjoin =function (lotid,projid,ps,pn){
 	Y.ajax({
 		url : $_trade.url.jlist,
 		type : "POST",
-		dataType : "json",
+		data : "json",
 		data : {
 			gid:lotid,
 			hid:projid,
@@ -1529,6 +1529,17 @@ showduizhen =function (lotid,expect,projid,type,codes,cp){
 			var ggstr2="";
 			
 			if(lotid == 70){//混投
+				var oldcodes = codes;
+				codes = codes.replace("$",",");
+				var dancodes="";
+				var danexpect = [];
+				if(oldcodes.indexOf("$")>-1){
+					dancodes = oldcodes.split("$")[0].split("|")[1];
+				}
+				var dancode = dancodes.split(",");
+				for (var int = 0; int < dancode.length; int++) {
+					danexpect.push(dancode[int].split(">")[0]);
+				}
 				var spfstr=["3","1","0"];
 				var jqsstr=["0","1","2","3","4","5","6","7"];
 				var bqcstr=["3-3","3-1","3-0","1-3","1-1","1-0","0-3","0-1","0-0"];
@@ -1595,6 +1606,18 @@ showduizhen =function (lotid,expect,projid,type,codes,cp){
 							sp="1.00";
 						}
 						var hsstr =  rt.hs+"";
+						var uq = "";
+						var cos = "";
+						var hes = ""; // "HH"
+						var dan = ""
+						if(danexpect!=null&&danexpect.length>0){
+							for (var int2 = 0; int2 < danexpect.length; int2++) {
+								if(id==danexpect[int2]){
+									dan = "(胆)";
+									break;
+								}
+							}
+						}
 //						HH|130316020>SPF=3/1+BQC=3-3/3-1/1-1/1-0,130316019>JQS=0/1/7+CBF=1:0/9:9/0:9,130316018>SPF=3/1|2*1,3*1|1
 						if(type !=1){
 							var tDATE="20"+id.substr(0,2)+"-"+id.substr(2,2)+"-"+id.substr(4,2);
@@ -1676,268 +1699,191 @@ showduizhen =function (lotid,expect,projid,type,codes,cp){
 						$("#operate").attr("href","/cpdata/pupload/"+lotid+"/"+expect+"/"+codes+"").show();
 							
 						}else{
-							var ncode = "";
-							var codestr="";
-							if(codes.split(";").length>1){
-								 ncode = codes.split(";");
-								 var bet_match=[];
-								 ncode.each(function(n,m){
-									 var s=m;
-									 var bet =n.split(",");
-									 bet.each(function(b,i){
-										 if(i==0){
-											 bet_match.push(b.split("|")[1]);
-										 }else{
-											 bet_match.push(b.split("|")[0]);
-										 }
-										
-									 })
-								 })
-//				
-							     var m=[],f;
-							     for(var i=0;i<bet_match.length;i++){
-							     f=true;
-							     for(var j=0;j<m.length;j++)
-							     if(bet_match[i]===m[j]){f=false;break;};
-							     if(f)m.push(bet_match[i])}
-							    m.sort(function(a,b){return a-b});
-							    
-
-								
-							var array=m,bet ="";
+						var ncode = codes.split("|")[1];
+						var codestr=ncode.split(",");
+						var itemcodes ="";
+						F:for(var n=0;n<codestr.length;n++){
+							itemcodes=codestr[n];
+							if(itemcodes.indexOf(id+"")>=0){
+								var itemcode = itemcodes.substring(itemcodes.indexOf(">")+1,itemcodes.length).split("+");
+								var ji = itemcode.length;
+								var tDATE="20"+id.substr(0,2)+"-"+id.substr(2,2)+"-"+id.substr(4,2);
+								if(o%2==1){odd="odd";}
+								dzhtml += '<tr class="'+odd+'">';
+								dzhtml += '<td rowspan='+ji+'>周'+wk[Y.getDate(tDATE).getDay()]+''+id.substr(6,3)+'</td>';
+//								dzhtml += '<td rowspan='+ji+'>'+bt+'</td>';
+								dzhtml += '<td rowspan='+ji+'>'+hn+' VS '+gn;
+								if(!jcexy){
+									if(c==0 && hsstr.length>0){
+										dzhtml += '</td><td rowspan='+ji+'><font color="red">'+hhs+':'+hvs+'</font>(半)/<font color="red">'+hs+':'+vs+'</font>(全)</td>';
+									}else{
+										dzhtml += '<td rowspan='+ji+'></td>';
+									}
+								}else{
+									if(c==0 && hsstr.length>0){
+										dzhtml += '<br><font color="red">'+hhs+':'+hvs+'</font>(半)/<font color="red">'+hs+':'+vs+'</font>(全)</td>';
+									}
+								}
 							
-								var i = 1;
-								var ii =1;
-								while(true){
-									var a=b=cc=d="";
-									a = array[i-1];
-									b= a.split(">")[0];
 								
-										array.each(function(arr,t){
-										cc = arr;
-										if(cc){
-											if(cc.indexOf(b)!=-1){
-												
-										
-													d += cc.split(">")[1];
-													ii++;
-												if(cc.split(">").length)
-												arr = "";
-												d+="+"
-											}
+								var spvalues = spvalue.split("|");
+								var codarr = [];
+								var i=0;
+								itemcode.each(function(onecode){
+									var playty = onecode.split("=")[0];
+									var cod = onecode.split("=")[1].split("/");
 									
-										
-										}
-									})
-									d!=""?bet += b+">"+d:"";
-									
-									i++;
-									if(i>array.length){
-										break;
-									}
-								}
-					   
-								ncode=bet.replace(/(\d+)\+(\d+)/g,'$1,$2');
-								if(ncode.charAt(ncode.length-1)=="+"){
-									ncode=ncode.substr(0,ncode.length-1)+"";
-								}
-//							      "ccodes": "HH|140422004>RSPF=3,140422009>RSPF=0+JQS=0/1/2+CBF=1:0/0:0/1:1/0:1|2*1",
-						
-							}else{
-								ncode = codes.split("|")[1];
-						
-							}
-								codestr=ncode.split(",");
-								var itemcodes ="";
-								F:for(var n=0;n<codestr.length;n++){
-									itemcodes=codestr[n];
-									if(itemcodes.indexOf(id+"")>=0){
-										var itemcode = itemcodes.substring(itemcodes.indexOf(">")+1,itemcodes.length).split("+");
-										var ji = itemcode.length;
-										var tDATE="20"+id.substr(0,2)+"-"+id.substr(2,2)+"-"+id.substr(4,2);
-										if(o%2==1){odd="tr1";}
-										dzhtml += '<tr class="'+odd+'">';
-										dzhtml += '<td rowspan='+ji+'>周'+wk[Y.getDate(tDATE).getDay()]+''+id.substr(6,3)+'</td>';
-//										dzhtml += '<td rowspan='+ji+'>'+bt+'</td>';
-										dzhtml += '<td rowspan='+ji+'>'+hn+' VS '+gn;
-										if(!jcexy){
-											if(c==0 && hsstr.length>0){
-//												dzhtml += '</td><td rowspan='+ji+'><font color="red">'+hhs+':'+hvs+'</font>(半)/<font color="red">'+hs+':'+vs+'</font>(全)</td>';
-												dzhtml += '</td><td rowspan='+ji+'>'+hs+':'+vs+'</td>';
+									if(playty == "SPF"){
+										var spvalue = spvalues[0].split(",");
+										if(c==0){
+											if(hsstr.length>0){
+												var rt=(hs-vs)*1;
+												if(rt*1>0){result="3";}else if(rt*1==0){result="1";}else{result="0";}
+												sp = spvalue[$_sys.getSub(spfstr,result)];
 											}else{
-												dzhtml += '<td rowspan='+ji+'></td>';
-											}
-										}else{
-											if(c==0 && hsstr.length>0){
-//												dzhtml += '<br><font color="red">'+hhs+':'+hvs+'</font>(半)/<font color="red">'+hs+':'+vs+'</font>(全)</td>';
-												dzhtml += '<br><font color="red">'+hs+':'+vs+'</font>(全)</td>';
+												result = "&nbsp;";
+												sp = "&nbsp;";
 											}
 										}
-									
+										codarr = [];
 										
-										var spvalues = spvalue.split("|");
-										var codarr = [];
-										var i=0;
-										itemcode.each(function(onecode){
-											var playty = onecode.split("=")[0];
-											var cod = onecode.split("=")[1].split("/");
+										cod.each(function(cd){
+											var cds = cd;
+												codarr.push(cd.replace(result,"<font color=\"red\">"+result+"</font>").replace("3","胜").replace("1","平").replace("0","负")+"("+spvalue[$_sys.getSub(spfstr,cds)]+")");
 											
-											if(playty == "SPF"){
-												var spvalue = spvalues[0].split(",");
-												if(c==0){
-													if(hsstr.length>0){
-														var rt=(hs-vs)*1;
-														if(rt*1>0){result="3";}else if(rt*1==0){result="1";}else{result="0";}
-														sp = spvalue[$_sys.getSub(spfstr,result)];
-													}else{
-														result = "&nbsp;";
-														sp = "&nbsp;";
-													}
-												}
-												codarr = [];
-												
-												cod.each(function(cd){
-													var cds = cd;
-														codarr.push(cd.replace(result,"<font color=\"red\">"+result+"</font>").replace("3","胜").replace("1","平").replace("0","负")+"("+spvalue[$_sys.getSub(spfstr,cds)]+")");
-													
-												});
-												if(i>0){dzhtml += '<tr class="'+odd+'">';}
-													
-													if(jcexy){
-														dzhtml += '<td>'+codarr.join(" ").replace("胜","主胜").replace("负","客胜")+'</td>'
-													}
-													dzhtml += '<td>胜平负</td>';
-													dzhtml += '<td>'+codarr.join(" ")+'</td>';
-													dzhtml += '<td>'+result.replace("3","胜").replace("1","平").replace("0","负")+'</td>';
-												
-												dzhtml += '</tr>';
-											}
-											if(playty == "RSPF"){
-												var spvalue = spvalues[4].split(",");
-												if(c==0){
-													if(hsstr.length>0){
-														var rt=(hs-vs)*1+(lose)*1;
-														if(rt*1>0){result="3";}else if(rt*1==0){result="1";}else{result="0";}
-														sp = spvalue[$_sys.getSub(spfstr,result)];
-													}else{
-														result = "&nbsp;";
-														sp = "&nbsp;";
-													}
-												}
-												codarr = [];
-												cod.each(function(cd){
-													var cds = cd;
-													codarr.push(cd.replace(result,"<font color=\"red\">"+result+"</font>").replace("3","胜").replace("1","平").replace("0","负")+"("+spvalue[$_sys.getSub(spfstr,cds)]+")");
-													
-												});
-												if(i>0){dzhtml += '<tr class="'+odd+'">';}
-												if(jcexy){
-													dzhtml += '<td>'+codarr.join(" ").replace("胜","主不败").replace("负","客不败")+'</td>';
-												}
-												dzhtml += '<td>让球胜平负&nbsp('+lose+')</td>';
-												dzhtml += '<td>'+codarr.join(" ")+'</td>';
-												dzhtml += '<td>'+result.replace("3","胜").replace("1","平").replace("0","负")+'</td>';
-												
-												dzhtml += '</tr>';
-											}
-											if(playty == "CBF"){
-												var spvalue = spvalues[1].split(",");
-												if(c==0){
-													if(hsstr.length>0){
-														result=hs+":"+vs;
-														var ii=100;
-														for(var r=0;r<31;r++){
-															if(cbfstr[r]==result){ii=r;}
-														}
-														if(ii==100){
-															if(hs>vs){result="9:0";}else if(hs==vs){result="9:9";}else{result="0:9";}
-														}
-														sp = spvalue[$_sys.getSub(cbfstr,result)];
-													}else{
-														result = "&nbsp;";
-														sp = "&nbsp;";
-													}
-												}
-												codarr = [];
-												cod.each(function(cd){
-													var cds = cd;
-													codarr.push(cd.replace(result,"<font color=\"red\">"+result+"</font>").replace("9:0","胜其它").replace("9:9","平其它").replace("0:9","负其它")+"("+spvalue[$_sys.getSub(cbfstr,cds)]+")");
-												});
-												if(i>0){dzhtml += '<tr class="'+odd+'">';}
-												dzhtml += '<td>猜比分</td>';
-												dzhtml += '<td>'+codarr.join(" ")+'</td>';
-												dzhtml += '<td>'+result.replace("9:0","胜其它").replace("9:9","平其它").replace("0:9","负其它")+'</td>';
-												
-												dzhtml += '</tr>';
-											}
-											if(playty == "JQS"){
-												var spvalue = spvalues[3].split(",");
-												if(c==0){
-													if(hsstr.length>0){
-														var rt=(hs+vs)*1;
-														if(rt>=7){result=7;}else{result=rt;}
-														sp = spvalue[$_sys.getSub(jqsstr,result)];
-													}else{
-														result = "&nbsp;";
-														sp = "&nbsp;";
-													}
-												}
-												codarr = [];
-												cod.each(function(cd){
-													var cds = cd;
-													codarr.push(cd.replace(result,"<font color=\"red\">"+result+"</font>")+"("+spvalue[$_sys.getSub(jqsstr,cds)]+")");
-												});
-												if(i>0){dzhtml += '<tr class="'+odd+'">';}
-												dzhtml += '<td>总进球</td>';
-												dzhtml += '<td>'+codarr.join(" ")+'</td>';
-												dzhtml += '<td>'+result+'</td>';
-												
-												dzhtml += '</tr>';
-											}
-											if(playty == "BQC"){
-												var spvalue = spvalues[2].split(",");
-												if(c==0){
-													if(hsstr.length>0){
-														var hrt=(hhs-hvs)*1;
-														var rt=(hs-vs)*1;
-														if(hrt*1>0){result="3";}else if(hrt*1==0){result="1";}else{result="0";}
-														if(rt*1>0){result=result+"-3";}else if(rt*1==0){result=result+"-1";}else{result=result+"-0";}
-														sp = spvalue[$_sys.getSub(bqcstr,result)];
-													}else{
-														result = "&nbsp;";
-														sp = "&nbsp;";
-													}
-												}
-												codarr = [];
-												cod.each(function(cd){
-													var cds = cd;
-													codarr.push(cd.replace(result,"<font color=\"red\">"+result+"</font>").replaceAll("3","胜").replaceAll("1","平").replaceAll("0","负")+"("+spvalue[$_sys.getSub(bqcstr,cds)]+")");
-												});
-												if(i>0){dzhtml += '<tr class="'+odd+'">';}
-												dzhtml += '<td>半全场</td>';
-												dzhtml += '<td>'+codarr.join(" ")+'</td>';
-												dzhtml += '<td>'+result.replaceAll("3","胜").replaceAll("1","平").replaceAll("0","负")+'</td>';
-												
-												dzhtml += '</tr>';
-											}
-											i++;
 										});
-										break F;
+										if(i>0){dzhtml += '<tr class="'+odd+'">';}
+											
+											if(jcexy){
+												dzhtml += '<td>'+codarr.join(" ").replace("胜","主胜").replace("负","客胜")+'</td>'
+											}
+											dzhtml += '<td>胜平负</td>';
+											dzhtml += '<td>'+codarr.join(" ")+dan+'</td>';
+											dzhtml += '<td>'+result.replace("3","胜").replace("1","平").replace("0","负")+'</td>';
+										
+										dzhtml += '</tr>';
 									}
-								}
-						
-						
-						
-						
-						
+									if(playty == "RSPF"){
+										var spvalue = spvalues[4].split(",");
+										if(c==0){
+											if(hsstr.length>0){
+												var rt=(hs-vs)*1+(lose)*1;
+												if(rt*1>0){result="3";}else if(rt*1==0){result="1";}else{result="0";}
+												sp = spvalue[$_sys.getSub(spfstr,result)];
+											}else{
+												result = "&nbsp;";
+												sp = "&nbsp;";
+											}
+										}
+										codarr = [];
+										cod.each(function(cd){
+											var cds = cd;
+											codarr.push(cd.replace(result,"<font color=\"red\">"+result+"</font>").replace("3","胜").replace("1","平").replace("0","负")+"("+spvalue[$_sys.getSub(spfstr,cds)]+")");
+											
+										});
+										if(i>0){dzhtml += '<tr class="'+odd+'">';}
+										if(jcexy){
+											dzhtml += '<td>'+codarr.join(" ").replace("胜","主不败").replace("负","客不败")+'</td>';
+										}
+										dzhtml += '<td>让球胜平负&nbsp('+lose+')</td>';
+										dzhtml += '<td>'+codarr.join(" ")+dan+'</td>';
+										dzhtml += '<td>'+result.replace("3","胜").replace("1","平").replace("0","负")+'</td>';
+										
+										dzhtml += '</tr>';
+									}
+									if(playty == "CBF"){
+										var spvalue = spvalues[1].split(",");
+										if(c==0){
+											if(hsstr.length>0){
+												result=hs+":"+vs;
+												var ii=100;
+												for(var r=0;r<31;r++){
+													if(cbfstr[r]==result){ii=r;}
+												}
+												if(ii==100){
+													if(hs>vs){result="9:0";}else if(hs==vs){result="9:9";}else{result="0:9";}
+												}
+												sp = spvalue[$_sys.getSub(cbfstr,result)];
+											}else{
+												result = "&nbsp;";
+												sp = "&nbsp;";
+											}
+										}
+										codarr = [];
+										cod.each(function(cd){
+											var cds = cd;
+											codarr.push(cd.replace(result,"<font color=\"red\">"+result+"</font>").replace("9:0","胜其它").replace("9:9","平其它").replace("0:9","负其它")+"("+spvalue[$_sys.getSub(cbfstr,cds)]+")");
+										});
+										if(i>0){dzhtml += '<tr class="'+odd+'">';}
+										dzhtml += '<td>猜比分</td>';
+										dzhtml += '<td>'+codarr.join(" ")+dan+'</td>';
+										dzhtml += '<td>'+result.replace("9:0","胜其它").replace("9:9","平其它").replace("0:9","负其它")+'</td>';
+										
+										dzhtml += '</tr>';
+									}
+									if(playty == "JQS"){
+										var spvalue = spvalues[3].split(",");
+										if(c==0){
+											if(hsstr.length>0){
+												var rt=(hs+vs)*1;
+												if(rt>=7){result=7;}else{result=rt;}
+												sp = spvalue[$_sys.getSub(jqsstr,result)];
+											}else{
+												result = "&nbsp;";
+												sp = "&nbsp;";
+											}
+										}
+										codarr = [];
+										cod.each(function(cd){
+											var cds = cd;
+											codarr.push(cd.replace(result,"<font color=\"red\">"+result+"</font>")+"("+spvalue[$_sys.getSub(jqsstr,cds)]+")");
+										});
+										if(i>0){dzhtml += '<tr class="'+odd+'">';}
+										dzhtml += '<td>总进球</td>';
+										dzhtml += '<td>'+codarr.join(" ")+dan+'</td>';
+										dzhtml += '<td>'+result+'</td>';
+										
+										dzhtml += '</tr>';
+									}
+									if(playty == "BQC"){
+										var spvalue = spvalues[2].split(",");
+										if(c==0){
+											if(hsstr.length>0){
+												var hrt=(hhs-hvs)*1;
+												var rt=(hs-vs)*1;
+												if(hrt*1>0){result="3";}else if(hrt*1==0){result="1";}else{result="0";}
+												if(rt*1>0){result=result+"-3";}else if(rt*1==0){result=result+"-1";}else{result=result+"-0";}
+												sp = spvalue[$_sys.getSub(bqcstr,result)];
+											}else{
+												result = "&nbsp;";
+												sp = "&nbsp;";
+											}
+										}
+										codarr = [];
+										cod.each(function(cd){
+											var cds = cd;
+											codarr.push(cd.replace(result,"<font color=\"red\">"+result+"</font>").replaceAll("3","胜").replaceAll("1","平").replaceAll("0","负")+"("+spvalue[$_sys.getSub(bqcstr,cds)]+")");
+										});
+										if(i>0){dzhtml += '<tr class="'+odd+'">';}
+										dzhtml += '<td>半全场</td>';
+										dzhtml += '<td>'+codarr.join(" ")+dan+'</td>';
+										dzhtml += '<td>'+result.replaceAll("3","胜").replaceAll("1","平").replaceAll("0","负")+'</td>';
+										
+										dzhtml += '</tr>';
+									}
+									i++;
+								});
+								break F;
+							}
+						}
 								var isdystr = "";
 					if(codes.split("|").length == 4){
 						isdystr = "去除单一玩法串投注";
 					}else{
 						isdystr = "允许单一玩法串投注";
 					}
-					var gg = '<font  class="cm_red">'+codes.split(";")[0].split("|")[2].replaceAll("\\*","串")+'</font>';
-					ggstr= gg+'&nbsp;'+isdystr;
+					var gg = codes.split("|")[2].replaceAll("\\*","串");
+					ggstr= gg+'&nbsp;<font  class="cm_red">'+isdystr+'</font>';
 						}
 					});
 			
