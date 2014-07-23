@@ -118,7 +118,19 @@ $_base_s.uniq= function(arr){//数组去重复
      }  
      return arr;  
 };
-
+$_base_s.undel=function(array) { //数组去空
+	for(var i = 0 ;i<array.length;i++)
+	 {
+	             if(array[i] == "" || typeof(array[i]) == "undefined")
+	             {
+	                      array.splice(i,1);
+	                      i= i-1;
+	                  
+	             }
+	              
+	 }
+	 return array;  
+};
 String.prototype.isDate = function() {
 	var r = this.match(/^(\d{1,4})(-|\/)(\d{1,2})\2(\d{1,2})$/);
 	if (r == null)
