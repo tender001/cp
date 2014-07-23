@@ -512,7 +512,7 @@ em.uf{ background-image:url(../images/159/uf.gif)}
 .nxmiddle{position:relative;padding-bottom:15px}
 .nxmiddle h2{line-height:30px;height:30px;padding-top:20px;}
 .nxmiddle h2 span{float:left;display:block;width:140px;height:30px;padding-left:10px;color:#ff3300;font-size:18px; background:url(../images/159/nx_26.jpg) no-repeat right 0; }
-.nxmiddle h2 p{float:left;padding-left:70px;color:#555;font-weight:100;font-size:12px}
+.nxmiddle h2 p{float:left;padding-left:138px;color:#555;font-weight:100;font-size:12px}
 .nxmiddle h2 p em{color:#145fab;font-weight:400;}
 .head_tel img{width:auto;height:auto}
 .head_r ul{float:right;padding-right:23px}
@@ -1675,13 +1675,13 @@ a.n_gz{color:#fff}
 .nwx5top a span{color:#999;text-align:Center;display:block;font-size:12px;line-height:16px;}
 .nwx5top a.cur b,.nwx5top a.cur span,.nwx5top a:hover b,.nwx5top a:hover span{color:#fff}
 .nwx5top em{float:left;width:134px;float:left;display:block;padding:12px 0 0 5px;line-height:18px;color:#333}
-.nwx5top em font{color:#e52e04;font-weight:100;float:right;}
+.nwx5top em font{color:#e52e04;font-weight:100;float:right;font-size: 12px;}
 .nwx5time{border-bottom:1px solid #ccc;padding:20px 0 0 25px;height:35px}
 .nwx5time font{color:#ff6600;font-weight:bold;}
 .nwx5time span{display:block;float: left;color:#333;line-height:30px;}
 .nwx5time span.span2{padding:0 60px 0 10px}
 .nwx5time span.span4{padding:0 75px 0 20px}
-.nwx5time span.span2 b{font-size:30px;font-family: "Helvetica-Condensed-Black-Se";}
+.nwx5time span.span2 b{font-size:30px;font-family: "Helvetica-Condensed-Black-Se";}/*Helvetica-Condensed-Black-Se*/
 .nwx5time span.span5{width:78px;line-height:30px;hieght:30px;border:1px solid #ccc;border-bottom:none;padding-left:10px;background:#fde8d8  url(../images/cai888/nwx5_07.jpg) 66px 10px no-repeat;cursor:pointer;margin-top:5px}
 .nwx5time span.span5c{background:#fde8d8  url(../images/cai888/nwx5_07c.jpg) 66px 10px no-repeat;}
 .nwx5time em{width:28px;height:28px;line-height:28px;display:block;text-align:center;background: url(../images/cai888/nwx5q.png);float:left;margin-right:5px;color:#fff;font-weight:bold;font-size:15px;_display:inline;}
