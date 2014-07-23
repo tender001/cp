@@ -1351,6 +1351,15 @@ Class('Buy', {
  			if (_self.ishm){
              	//Y.get("#jjyh_form").attr("action", "jjyh_hh.html");
              }
+            var dan = false;
+	    	  Y.get(".dcr_table td input[dan]").each(function(d,i){
+	     			 if(d.checked){
+	     				dan = true;
+	     			 }
+	     		 });
+	    	 if(dan){
+	    		 return Y.alert('奖金优化不支持胆拖！');
+	    	 }
  			Y.get('#beishu').val(Y.get('#bs').val());
  			if (true === _self.check()) {
  				var ty=Y.get('#ggtypename').val().split('\串');
@@ -1360,6 +1369,7 @@ Class('Buy', {
  	            if(ty[1]>1){
  	            	return Y.alert('奖金优化仅支持N串1！');
  	            }
+ 	
  	            Y.get('#pnum').val(ty[0]);
  				Y.get('#code').val(Y.get('#codes').val());
  				Y.get('#tmoney').val(Y.get('#totalmoney').val());
