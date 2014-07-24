@@ -358,8 +358,8 @@ Class('Loginer', {// 登陆器
     },
 
     clearUserInfo: function (){
-        this.setUserInfo('您尚未登录，请先<a href="javascript:void 0" onclick="Yobj.postMsg(\'msg_login\')">&nbsp;&nbsp;登录&nbsp;&nbsp;</a>!');
-        this.setBuyUserInfo('您尚未登录，请先  <a href="javascript:void 0" title="" onclick="Yobj.postMsg(\'msg_login\')"class=\"a1\" >&nbsp;&nbsp;登录&nbsp;&nbsp;</a>！</span>');
+        this.setUserInfo('您还没有登录，请您先&nbsp;&nbsp;<a href="javascript:void 0" onclick="Yobj.postMsg(\'msg_login\')">登录</a>&nbsp;&nbsp;后购买!');
+        this.setBuyUserInfo('您还没有登录，请您先 &nbsp;&nbsp; <a href="javascript:void 0" title="" onclick="Yobj.postMsg(\'msg_login\')"class=\"a1\" >登录</a>&nbsp;&nbsp;后购买！</span>');
         this.get('#buySYSpan,#buySYSpan2').html((0).rmb());
         this.get('span.if_buy_yue').hide();
         this.get("#qqcaibei").hide();
