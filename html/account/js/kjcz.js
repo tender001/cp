@@ -2,22 +2,22 @@
  * 彩票手机卡充值服务
  */
 $_sys.bank = [];
-$_sys.bank.push([ 1, "工商银行","gh" ]);
-$_sys.bank.push([ 2, "农业银行","nh" ]);
-$_sys.bank.push([ 3, "中国银行","zgh" ]);
-$_sys.bank.push([ 4, "建设银行","jth" ]);
-$_sys.bank.push([ 5, "交通银行","jth" ]);
-$_sys.bank.push([ 6, "邮政储蓄银行","cx" ]);
-$_sys.bank.push([ 7, "中信银行","zxh" ]);
-$_sys.bank.push([ 8, "光大银行","gdh" ]);
-$_sys.bank.push([ 9, "华夏银行","hx" ]); 
-$_sys.bank.push([ 10, "民生银行","msh" ]);
-$_sys.bank.push([ 11, "广发银行","gfh" ]);
-$_sys.bank.push([ 12, "平安银行","pah" ]);
-$_sys.bank.push([ 13, "招商银行","zh" ]);
-$_sys.bank.push([ 14, "兴业银行","xyh"  ]);
-$_sys.bank.push([ 15, "浦发银行","pfh"  ]);
-$_sys.bank.push([ 16, "渤海银行","boh" ]);
+$_sys.bank.push([ "01020000", "工商银行","gh" ]);
+$_sys.bank.push([ "01030000", "农业银行","nh" ]);
+$_sys.bank.push([ "01040000", "中国银行","zgh" ]);
+$_sys.bank.push([ "01050000", "建设银行","jh" ]);
+$_sys.bank.push([ "03010000", "交通银行","jth" ]);
+$_sys.bank.push([ "01000000", "邮政储蓄银行","cx" ]);
+$_sys.bank.push([ "03020000", "中信银行","zxh" ]);
+$_sys.bank.push([ "03030000", "光大银行","gdh" ]);
+$_sys.bank.push([ "03040000", "华夏银行","hx" ]); 
+$_sys.bank.push([ "03050000", "民生银行","msh" ]);
+$_sys.bank.push([ "03060000", "广发银行","gfh" ]);
+$_sys.bank.push([ "03070000", "平安银行","pah" ]);
+$_sys.bank.push([ "03080000", "招商银行","zh" ]);
+$_sys.bank.push([ "03090000", "兴业银行","xyh"  ]);
+$_sys.bank.push([ "03100000", "浦发银行","pfh"  ]);
+$_sys.bank.push([ "03170000", "渤海银行","boh" ]);
 //$_sys.bank.push([ 16, "渤海银行","boh" ]);
 //$_sys.bank.push([ 16, "渤海银行","boh" ]);
 //$_sys.bank.push([ 16, "渤海银行","boh" ]);
@@ -26,7 +26,7 @@ $_sys.bank.push([ 16, "渤海银行","boh" ]);
 $_sys.getbankinfo = function(f,n) {
 	if (typeof(n)=='undefined'){n=1;};
 	for ( var i = 0; i < $_sys.bank.length; i++) {
-	if ($_sys.bank[i][1] == f) {
+	if ($_sys.bank[i][0] == f) {
 	return $_sys.bank[i][n];
 	}
 	}
@@ -55,6 +55,7 @@ Class('App', {
                     		if(ret.ret_code=="5001"){
                     			ret.ret_msg="网站暂不支持该卡进行快捷充值";
 //                    			ret.ret_msg="您输入的银行卡号有误，请重新输入";
+                    			cardok.hide().addClass("ss");
                     		}
                     		bankinfo.html(ret.ret_msg).show();
                     		$("#submit").addClass("czbtnhui");
@@ -62,7 +63,7 @@ Class('App', {
                     		var bankname = ret.bank_name;
                     		$("#submit").removeClass("czbtnhui");
                     		bankinfo.hide();
-                    		var bankclass=$_sys.getbankinfo (bankname,2)
+                    		var bankclass=$_sys.getbankinfo (ret.bank_code,2)
                     		if(bankclass==""){
                     			bankinfo.html(bankname).show();
                     		}else{
@@ -85,7 +86,7 @@ Class('App', {
     	$("#addmoney").keyup(function(){
     		this.value=this.value.replace(/\D/g,''); //只能数字
     	});
-    	$("#cardno").keyup(function(){
+    	Y.get("#cardno").keyup(function(){
     		this.value=this.value.replace(/\D/g,''); //只能数字
     		bigno.val(this.value.replace(/\s/g,'').replace(/(\d{4})(?=\d)/g,"$1 "));//四位一空格
     		$("#card").val(cardno);
@@ -98,11 +99,19 @@ Class('App', {
           }).blur(function(){  
         	  bigno.hide();
         	  bankinfo.hide();
-        	  if($(this).val()!=$("#card").val()){
-        		  P.getbankinfo();
-        	  }
+        	  P.getbankinfo();
+//        	  if(!bankname.hasClass("ss")){
+//         		 bankname.show();
+//        	  }else{
+//        		  P.getbankinfo();
+//        	  }
+        	  
         	 
           });
+//    	$("#cardno").change(function(){
+//    		
+//
+//    	});
     	$("#cardno").click(function(){
     		bankinfo.show().removeClass("tipbankinfored").html("仅限持卡本人操作 , 您的银行卡号需和实名身份信息对应一致。");
         	  bankname.hide();
@@ -154,7 +163,7 @@ Class('App', {
     							 var rname = u.rname;
 //    							var b=getcookie("smrz_tk"); // cookie
     							 if(rname==""){
-    								 Y.get("#truename").html("请先<a id='smcz' style='color: #145fab;'>实名</a>再充值").addClass("nosm");
+    								$("#truename").html("请先<a id='smcz' style='color: #145fab;'>实名</a>再充值").addClass("nosm");
     								 var smrz = Y.lib.MaskLay('#smrz', '#smrzcontent');
     								smrz.addClose('#smrzclose','#wrapLayCloseBtn', '#wrapLayClose');//'#smreturn'
     						        Y.get('#smrz  div.tantop').drag('#smrz');
@@ -268,7 +277,7 @@ Class('App', {
     									});
     						        });
     							 }else{
-    								 Y.get("#truename").html(rname);
+    								 $("#truename").html(rname);
     							 }
     							 
     							
