@@ -315,6 +315,13 @@ Class( {
     _index : function() {
 		Class.config('playId', parseInt(this.need('#playid').val()));  //玩法id
 		switch (Class.config('playId')) {
+			case 70 :    //混投
+				Class.config('playName', 'hh');
+				Class.config('ggMaxLength', 8);
+				Class.config('formatIndex', [3, 1, 0]);
+				Class.config('formatValue', [3, 1, 0]);
+				$("#switch_link").show();
+				break;		
 			case 90 :    //胜平负
 				Class.config('playName', 'spf');
 				Class.config('ggMaxLength', 8);
@@ -445,7 +452,7 @@ Class('Loadduizhen',{
 		if (lotid == "") {
 			lotid = "90";
 		}
-		if(lotid!="72" &&lotid!="90" &&lotid!="91" &&lotid!="92" &&lotid!="93"){
+		if(lotid!="72" &&lotid!="90" &&lotid!="91" &&lotid!="92" &&lotid!="93" &&lotid!="70"){
 			lotid = "90";
 		}
 		$("#playid").val(lotid);
@@ -620,13 +627,21 @@ Class('Loadduizhen',{
 		       		           
 		       		               ];	
 		 switch (lotid) {
-			case "90" :    //胜平负
-				$("#format_switch").html(tableTmpl[0]);
-				$("#tzurl").attr('href','/jc/index.html');
-				$("#bzgs").click(function(){
-					Yobj.openUrl('/jc/bzgs/SPF.html',450,470)
-				});	
-				break;
+			 case "70" : //混投
+					$("#format_switch").html(tableTmpl[0]);
+					$("#sr").show();
+					$("#bzgs").click(function(){
+						Yobj.openUrl('/jc/bzgs/HT.html',450,470)
+					});
+					$("#switch_link").parent().hide();
+					break;		
+			 case "90" :    //胜平负
+					$("#format_switch").html(tableTmpl[0]);
+					$("#tzurl").attr('href','/jc/index.html');
+					$("#bzgs").click(function(){
+						Yobj.openUrl('/jc/bzgs/SPF.html',450,470)
+					});	
+					break;
 			case "72" :    //让球胜平负
 				$("#format_switch").html(tableTmpl[0]);
 				$("#tzurl").attr('href','/jc/rqspf.html');
