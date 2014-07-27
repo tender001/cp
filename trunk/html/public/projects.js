@@ -1699,7 +1699,8 @@ showduizhen =function (lotid,expect,projid,type,codes,cp){
 						$("#operate").attr("href","/cpdata/pupload/"+lotid+"/"+expect+"/"+codes+"").show();
 							
 						}else{
-						var ncode = codes.split("|")[1];
+						var ncode = codes.split("|")[codes.split("|").length-2];
+//						var ncode = codes.split("|")[2]
 						var codestr=ncode.split(",");
 						var itemcodes ="";
 						F:for(var n=0;n<codestr.length;n++){
@@ -1882,7 +1883,19 @@ showduizhen =function (lotid,expect,projid,type,codes,cp){
 					}else{
 						isdystr = "允许单一玩法串投注";
 					}
-					var gg = codes.split("|")[2].replaceAll("\\*","串");
+					var gg=""
+					var ccode=codes.split(";");
+					if(ccode.length>1){
+						var codearr=[];
+						ccode.each(function(c){
+							codearr.push(c.split("|")[2]);
+						})
+						codearr=$_base_s.uniq(codearr);
+						gg = (codearr+"").replaceAll("\\*","串");
+					}else{
+						gg = codes.split("|")[2].replaceAll("\\*","串");
+					}
+					
 					ggstr= gg+'&nbsp;<font  class="cm_red">'+isdystr+'</font>';
 						}
 					});
