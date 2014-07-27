@@ -933,7 +933,7 @@ var showview = function(lotid,projid){
 					if (((pnum==0&& (istate=="0" || istate=="1"|| istate=="2"))||(pnum!=0 && (istate=="1"|| istate=="2") )) && isself){
 						$("#scfa").show();
 						$("#cp_infotable").html('<p class="xqtbpa"><a id="scfa" target="_blank">上传方案</a></p>');
-						if(lotid==90 ||lotid==91 ||lotid==92 ||lotid==93||lotid==72){
+						if(lotid==90 ||lotid==91 ||lotid==92 ||lotid==93||lotid==72||lotid==70){
 							$("a#scfa").attr("href",""+$_sys.getlotdir(lotid)+"project_upload.html?lotid="+lotid+"&projid="+projid+"");
 							
 						}else if(lotid==94 ||lotid==95 ||lotid==96 ||lotid==97){
