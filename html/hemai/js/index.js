@@ -208,7 +208,7 @@ $(document).ready(function(){
 						var _pagei = obj.Resp.xml.recordcount;
 						if(!this.isArray(r)){r=new Array(r);}
 						r.each(function(rt,o){
-							var gameid = rt.gid;
+							var gameid =rt.cprojid.substr(2,2);
 							var cl=o%2==0?"":"odd";
 							var html = '<tr id='+rt.nid+' class = '+cl+'  >';
 							html += '<td>';
