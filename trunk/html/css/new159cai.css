@@ -75,7 +75,7 @@ a.t_a_qc b{background-image: url(../images/cdbg/reg_07.gif);
 .nav span{float:left;padding-top:12px}
 #naver{margin-top:15px;height:40px; background:none; background-color:#ff6600;width:100%;margin-top:20px;z-index:1;overflow: visible;}
 .nav h2{ background:none;background-color:#e62e04;}
-.nav ul li.sup_x{height:40px;width:2px}
+.nav ul li.sup_x{height:40px;width:15px}
 .everlog{padding-left:10px;border-bottom:1px solid #FFBC56;margin:0 7px}
 .everlog img.j_jia{left:10px}
 .head_m p a.a_hz,.hz_d_t a{background:url(../images/cdbg/hz_dl.png) 0 0 no-repeat;display:block;}
