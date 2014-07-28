@@ -11,21 +11,17 @@ $(document).ready(function(){
 			dlg_buy_end.pop('您好，'+user+'，恭喜您购买成功!');
 		});
 	});
-	$(".sy_gg ul li").mouseover(function(){
-        $(this).addClass("cur").siblings().removeClass("cur");
-        $(".gg_main div").eq($(".sy_gg ul li").index(this)).show().siblings().hide();
-    }); 
-    Y.use('tabs',function(){
-    	this.lib.Tabs({
-            items: '.erwmtab b',
-            focusCss: 'cur',
-            contents: 'div[mark=mobile],div[mark=weibo]',
-            delay: 300
-        });   
-    })
-    Y.get("a[mark=toolclose]").click(function(){
-    	Y.get(this).parent().hide();
-    })
+	$(".top dl").hover(function(){
+		$(this).addClass("hover");
+	},function(){
+		$(this).removeClass("hover");
+	});
+	$(".tab .title span").mouseover(function() {
+		$(this).removeClass().addClass('hover').siblings().removeClass('hover');
+		var a=$(this).index();//console.log(a);
+		$(this).parent().siblings('.bod').children().removeClass().eq(a).addClass('hover');
+	});
+
 	Y.use('mask', function(){
 		var addMoneyDlg =  this.lib.MaskLay('#addMoneyLay');
 		addMoneyDlg.addClose('#addMoneyClose','#addMoneyYes');
