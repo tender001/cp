@@ -180,17 +180,27 @@ var showinfo = function(lotid, expect,type) {
 				expectlist[expectlist.length] = [pid];
 			}
 			var html='';
+			var expectday=new Date().format("YY-MM-D")+"";
+			expectday=expectday.replaceAll("-","")
 			if (expectlist.length>0){
 				for ( var i = 0; i < expectlist.length; i++) {
-					html+='<option value="'+expectlist[i][0]+'">'+expectlist[i][0].substr(0,4)+'-'+expectlist[i][0].substr(4,2)+'-'+expectlist[i][0].substr(6,2)+'</option>';
+					if(expectday==expectlist[i][0]){
+						html+='<option value="'+expectlist[i][0]+'" selected="selected">'+expectlist[i][0].substr(0,4)+'-'+expectlist[i][0].substr(4,2)+'-'+expectlist[i][0].substr(6,2)+'</option>';
+					}else{
+						html+='<option value="'+expectlist[i][0]+'">'+expectlist[i][0].substr(0,4)+'-'+expectlist[i][0].substr(4,2)+'-'+expectlist[i][0].substr(6,2)+'</option>';
+					}
+					
 				}		
 			}
 
 			$("#expect").html('');
-			$("#expect").append(html);
-			if (expect == "") {
+			if ($("#expect").html()=="") {
+				expect = expectday;
+			}else{
 				expect = expectlist[0][0];
 			}
+			$("#expect").append(html);
+		
 			loadmain(lotid, expect,type);
 		},
 		error : function() {
