@@ -18,7 +18,7 @@ a.d_c_b:hover,.tan_mid a.but2:hover,a.start_hm:hover{ background-position:0 -120
 #zq_xl ul li{line-height:30px;color:#ba1f24;text-align:center;font-size:14px;border-bottom:1px solid #ddd; background-color:#fff}
 #zq_xl ul li.last{border:none}
 #zq_xl ul li:hover{ background-color:#E62E04;color:#fff}
-#bf_xl{width:90px;border:1px solid #b60a02; position:absolute;top:10px;border-top:none;display:block;padding-top:35px;z-index:999;cursor:pointer;left:891px;height:0}
+#bf_xl{width:90px;border:1px solid #b60a02; position:absolute;top:10px;border-top:none;display:block;padding-top:35px;z-index:999;cursor:pointer;left:880px;height:0}
 #bf_xl ul li{line-height:30px;color:#ba1f24;text-align:center;font-size:14px;border-bottom:1px solid #ddd; background-color:#fff}
 #bf_xl ul li.last{border:none}
 #bf_xl ul li:hover{ background-color:#E62E04;color:#fff}
@@ -70,12 +70,12 @@ a.t_a_qc b{background-image: url(../images/cdbg/reg_07.gif);
 .naver{height:40px; background-color:#ff6600;width:100%;margin-top:20px}
 .nav{width:1000px;margin:0 auto}
 .nav h2{ background-color:#e62e04;height:40px;line-height:40px;width:230px;color:#fff;font-size:14px;font-weight:bold;text-align:center;float:left;}
-.nav a{float:left;padding:0 12px;font-size:14px;line-height:40px;height:40px;color:#fff}
+.nav a{float:left;padding:0 18px;font-size:14px;line-height:40px;height:40px;color:#fff}
 .nav a.a1{padding-right:21px; background:url(../images/in_11.jpg) 65px 12px no-repeat}
 .nav span{float:left;padding-top:12px}
 #naver{margin-top:15px;height:40px; background:none; background-color:#ff6600;width:100%;margin-top:20px;z-index:1;overflow: visible;}
 .nav h2{ background:none;background-color:#e62e04;}
-.nav ul li.sup_x{height:40px;width:15px}
+.nav ul li.sup_x{height:40px;width:2px}
 .everlog{padding-left:10px;border-bottom:1px solid #FFBC56;margin:0 7px}
 .everlog img.j_jia{left:10px}
 .head_m p a.a_hz,.hz_d_t a{background:url(../images/cdbg/hz_dl.png) 0 0 no-repeat;display:block;}
@@ -165,8 +165,8 @@ table.log_tab td a.aa:hover{color:#790500; text-decoration:underline}
 
 .nav_main{border:1px solid #ff6600;border-top:none}
 .hz_d_t{z-index:99;left:272px;width:120px}
-#bf_xl{border:1px solid #ff6600;border-top:none;left:799px;top:4px}
-#zq_xl{left:708px;border:1px solid #ff6600;top:3px;}
+#bf_xl{border:1px solid #ff6600;border-top:none;left:880px;top:4px}
+#zq_xl{left:784px;border:1px solid #ff6600;top:3px;}
 
 #naver{z-index:50; position:relative}
 .hz_d_t{top:22px;left:297px;width:113px;border:1px solid #ddd;-webkit-border-radius:6px;   
