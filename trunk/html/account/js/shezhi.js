@@ -6,7 +6,10 @@ Class( 'shezhi', {
 		var Y = this;
 
 		
-	
+		Class.config('zc', 10);  
+		Class.config('jc', 10);  
+		Class.config('dc', 7);  
+		Class.config('szc', 9); 
 		
 		Class.config('fandian', false); 
 		
@@ -61,6 +64,7 @@ Class( 'shezhi', {
 					if(!this.isArray(r)){r=new Array(r);}
 					if(isdaili){
 						this.need('#isdaili').prop("checked","checked");
+						this.need('#isdaili').prop("disabled","disabled");
 					}
 					r.each(function(rt,o){
 //						var cagentid = rt.cagentid;
@@ -359,6 +363,10 @@ Class( 'shezhi', {
 					Y.alert("修改后的数据不能小于原数据的最大数");
 					Class.config('submitting', true);
 					return false;
+				}else if(eval(num)>Class.config('zc')){
+					Y.alert("修改后的数据不能大于"+Class.config('zc'));
+					Class.config('submitting', true);
+					return false;
 				}else{
 					Y.get("#" + inputs1[i]).val(num);
 				}
@@ -372,6 +380,10 @@ Class( 'shezhi', {
 				
 				if(Y.get("#" + inputs2[i]).val() > eval(num)){
 					Y.alert("修改后的数据不能小于原数据的最大数");
+					Class.config('submitting', true);
+					return false;
+				}else if(eval(num)>Class.config('jc')){
+					Y.alert("修改后的数据不能大于"+Class.config('jc'));
 					Class.config('submitting', true);
 					return false;
 				}else{
@@ -390,6 +402,10 @@ Class( 'shezhi', {
 					Class.config('submitting', true);
 					return false;
 				
+				}else if(eval(num)>Class.config('jc')){
+					Y.alert("修改后的数据不能大于"+Class.config('jc'));
+					Class.config('submitting', true);
+					return false;
 				}else{
 					Y.get("#" + inputs3[i]).val(num);
 				}
@@ -402,6 +418,10 @@ Class( 'shezhi', {
 				
 				if(Y.get("#" + inputs4[i]).val() > eval(num)){
 					Y.alert("修改后的数据不能小于原数据的最大数");
+					Class.config('submitting', true);
+					return false;
+				}else if(eval(num)>Class.config('dc')){					
+					Y.alert("修改后的数据不能大于"+Class.config('dc'));
 					Class.config('submitting', true);
 					return false;
 				}else{
@@ -418,6 +438,10 @@ Class( 'shezhi', {
 					Y.alert("修改后的数据不能小于原数据的最大数");
 					Class.config('submitting', true);
 					return false;
+				}else if(eval(num)>Class.config('szc')){
+					Y.alert("修改后的数据不能大于"+Class.config('szc'));
+					Class.config('submitting', true);
+					return false;
 				}else{
 					Y.get("#" + inputs5[i]).val(num);
 				}
@@ -430,6 +454,10 @@ Class( 'shezhi', {
 				//alert(Y.get("#" + inputs6[i]).val()+"num"+num);
 				if(Y.get("#" + inputs6[i]).val() > eval(num)){
 					Y.alert("修改后的数据不能小于原数据的最大数");
+					Class.config('submitting', true);
+					return false;
+				}else if(eval(num)>Class.config('szc')){
+					Y.alert("修改后的数据不能大于"+Class.config('szc'));
 					Class.config('submitting', true);
 					return false;
 				}else{
