@@ -1559,7 +1559,7 @@ Class({
     	$("li.zqzx,#zq_xl").hover(function(){
     		$("#zq_xl").find("#zq_xl").show();
 			$("#zq_xl").clearQueue().animate({
-				height:90
+				height:60
 				})
 		},function(){
 			$("#zq_xl").animate({
