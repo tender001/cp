@@ -37,7 +37,7 @@
 .m_mid .tab .bod b *{vertical-align: middle;font-size: 18px;text-align: center;display: inline-block;}
 .m_mid .tab .bod b s{width: 70px;height: 70px;margin-right: 3px;background-position: -124px -38px;}
 .m_mid .tab .bod b em{width: 38px;height: 38px;line-height: 38px;color: #fff;margin-right: 3px;background-position: -110px -110px;}
-.m_mid .tab .bod b em input{width: 22px;height: 14px;line-height: 14px;padding: 3px 0;}
+.m_mid .tab .bod b em input{width: 22px;height: 14px;line-height: 14px;padding: 3px 0;*margin-top: 5px;}
 .m_mid .tab .bod b s.dal{background-position: 0 -222px;}
 .m_mid .tab .bod b em.blue{background-position: -152px -110px;}
 .m_mid .tab .bod b i{width: 52px;height: 32px;line-height:32px;color: #444;background-position: -1px -152px;cursor: pointer;margin: 0 5px 0 3px;}
