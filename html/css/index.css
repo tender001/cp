@@ -98,7 +98,7 @@
 .mob_buy .body dt,.mob_buy .body dd{float: left;}
 .mob_buy .body dt div{width: 85px;height: 85px;padding-right: 15px;}
 .mob_buy .body dd a{width: 93px;height: 32px;display: block;background-position: -1px -189px;margin-top: 6px;}
-.body dd .android{background-position: -95px -189px;margin-top: 14px;}
+.mob_buy .body dd a.android{background-position: -95px -189px;margin-top: 14px;}
 /**/
 .today,.center{float: left;}
 .kj{width: 1000px;margin: 0 auto;}
