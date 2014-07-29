@@ -24,7 +24,8 @@ img{vertical-align:top;}
 .ba9{color: #1f5ba9 !important;font-weight: bold;}
 .c3{color: #3c3c3c !important;}
 
-
+/*index basic*/
+.top dl dt,.top dl dd li s,.top_logo .fr s,.m_l li span s,.m_mid .tab .bod b s,.m_mid .tab .bod b em,.m_mid .tab .bod b i,.m_mid .tab .bod b strong,.m_r p.user a,.mob_buy .body dd a,.today .bod li p a.fr,.center .body li p span s{background: url(../images/bg/index_bg0.png);_background-image: url(../images/bg/index_ie6.png);}
 /*top*/
 .top{height: 36px; line-height: 36px; background-color: #f7f7f7; border-top: 1px solid #e8ecef; border-bottom: 1px solid #ddd;}
 .top dl{float: left;position: relative;z-index: 999;}
@@ -58,8 +59,7 @@ img{vertical-align:top;}
 .nav ul li{float: left;background: url(../images/bg/nav_li.jpg) right center no-repeat;}
 .nav ul li a{height:38px;display:block;font-size:14px;font-weight:bold;color:#fff;padding:0 22px;float: left;}
 .nav ul li a:hover{background: #e52e04;margin: 0 -2px;padding:0 24px;text-decoration: none;color:#fff;}
-/*index basic*/
-.top dl dt,.top dl dd li s,.top_logo .fr s,.m_l li span s,.m_mid .tab .bod b s,.m_mid .tab .bod b em,.m_mid .tab .bod b i,.m_mid .tab .bod b strong,.m_r p.user a,.mob_buy .body dd a,.today .bod li p a.fr,.center .body li p span s{background: url(../images/bg/index_bg0.png);_background-image: url(../images/bg/index_ie6.png);}
+
 /*title相似*/
 .basic{border:1px solid #ddd;}
 .tit{height:30px;color: #333;font: 700 14px/30px "\5b8b\4f53";overflow: hidden;border-bottom: 1px solid #ddd;background-color: #f6f6f6;}
