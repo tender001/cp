@@ -29,7 +29,7 @@
 .m_mid .tab .title span.hover{color:#ff1616;border-bottom: 1px solid #fff;background-color: #fff;}
 .m_mid .tab .title span i{display:none;width: 100%;height: 3px;overflow:hidden;background-color: #f44545;position: absolute;left: 0;top: -1px;}
 .m_mid .tab .title span.hover i{display: block;}
-.m_mid .tab .bod div{width:510px;margin: 10px auto;display: none;}
+.m_mid .tab .bod div{display: none;width:510px;margin: 10px auto;overflow: hidden;}
 .m_mid .tab .bod div.hover{display: block;}
 .m_mid .tab .bod p{overflow: hidden;}
 .m_mid .tab .bod span{color:#8c8c8c;}
@@ -37,7 +37,7 @@
 .m_mid .tab .bod b *{vertical-align: middle;font-size: 18px;text-align: center;display: inline-block;}
 .m_mid .tab .bod b s{width: 70px;height: 70px;margin-right: 3px;background-position: -124px -38px;}
 .m_mid .tab .bod b em{width: 38px;height: 38px;line-height: 38px;color: #fff;margin-right: 3px;background-position: -110px -110px;}
-.m_mid .tab .bod b em input{width: 29px;height: 23px;line-height: 23px;font-weight: bold;padding: 3px 0;background: none;border: 0;color: #fff;margin: -2px 0 0 -1px;*margin: 4px 0 -1px;}
+.m_mid .tab .bod b em input{width: 29px;height: 23px;line-height: 23px;font-weight: bold;padding: 3px 0;background: none;border: 0;color: #fff;cursor: pointer;margin: -2px 0 0 -1px;*margin: 4px 0 -1px;}
 .m_mid .tab .bod b em input.cur{background: url(../images/bg/focus.png) no-repeat;color: #666;}
 .m_mid .tab .bod b s.dal{background-position: 0 -222px;}
 .m_mid .tab .bod b em.blue{background-position: -152px -110px;}
