@@ -3,35 +3,47 @@ Class(
     use: 'tabs,dataInput,mask,countDown',
 	ready:true,
 	index:function(){
-
-        this.lib.Tabs({
-            items: '#todaykaijiang b',
-            focusCss: 'cur',
-            contents: '#k1,#k2,#k3',
-            delay: 300
-        });           
-    	this.red = [];
-        this.blue = [];
-        var lotid="01";
-        Y.get("div.ksgtab b").click(function(){
-    		var val=Y.get(this).attr("mark");
-    		 lotid=Y.get(this).attr("lotid");
-    		var url="/help/help_ssqjs.html";
-    		if(val=="ssq" || val=="dlt"){
-    			url="/help/help_"+val+"js.html";
-    			$(this).addClass("cur").siblings().removeClass("cur");
-    			$("div.ksget div").slice(1,2).hide();
-        		$("div[mark="+val+"]").show();
-        		$("div.ksgtab a").attr("href",url)
-        	
-    		}
-    	
-    		
-    	});
+		this.bindOther();
+		this.Qbuy();
+       
     
+		
         this.screen();
       
         this._loadcode();
+	},
+	bindOther:function(){
+		$("#scrollDiv").textSlider({
+			line:2,
+			speed:1000,
+			timer:2000
+			})
+	},
+	Qbuy:function(){
+		 this.lib.Tabs({
+	            items: '#todaykaijiang span',
+	            focusCss: 'hover',
+	            contents: '#k1,#k2,#k3',
+	            delay: 300
+	        }); 
+			this.red = [];
+	        this.blue = [];
+	        var lotid="01";
+	        Y.get("div.ksgtab b").click(function(){
+	    		var val=Y.get(this).attr("mark");
+	    		 lotid=Y.get(this).attr("lotid");
+	    		var url="/help/help_ssqjs.html";
+	    		if(val=="ssq" || val=="dlt"){
+	    			url="/help/help_"+val+"js.html";
+	    			$(this).addClass("cur").siblings().removeClass("cur");
+	    			$("div.ksget div").slice(1,2).hide();
+	        		$("div[mark="+val+"]").show();
+	        		$("div.ksgtab a").attr("href",url)
+	        	
+	    		}
+	    	
+	    		
+	    	});
 	},
 	screen:function(){
 		$(".cm_screen1_top li").addClass("cm_zhezhao_hover");
@@ -164,9 +176,9 @@ Class(
     					var nd = Y.getDate(rt.nowendtime).format('YY-MM-DD');
     					if(nd==d){
     						
-    						$("em[expect="+rt.gid+"]").html(rt.nowpid+"期");
+    						$("i[expect="+rt.gid+"]").html(rt.nowpid+"期");
     						$("span[pool="+rt.gid+"]").html(rt.pools);
-    						$("div[today="+rt.gid+"]").show();
+    						$("li[today="+rt.gid+"]").show();
     					}
     					
     				});
@@ -255,4 +267,36 @@ Class(
 	}
 })($.browser, 300, 1, 10, 0);
 
-
+$.fn.textSlider = function(settings){    
+    settings = jQuery.extend({
+        speed : "normal",
+        line : 2,
+        timer : 3000
+    }, settings);
+    return this.each(function() {
+        $.fn.textSlider.scllor( $( this ), settings );
+    });
+};
+$.fn.textSlider.scllor = function($this, settings){
+    var ul = $("table:eq(0)",$this );
+    var timerID;
+    var li = ul.find("tr");
+    var liHight=$(li[0]).height();
+    var upHeight=0-settings.line*liHight;//滚动的高度；
+    var scrollUp=function(){
+        ul.animate({marginTop:upHeight},settings.speed,function(){
+            for(i=0;i<settings.line;i++){
+                ul.find("tr:first",$this).appendTo(ul);
+            }
+            ul.css({marginTop:0});
+        });
+    };
+    var autoPlay=function(){
+        timerID = window.setInterval(scrollUp,settings.timer);
+    };
+    var autoStop = function(){
+        window.clearInterval(timerID);
+    };
+    //事件绑定
+    ul.hover(autoStop,autoPlay).mouseout();
+};
