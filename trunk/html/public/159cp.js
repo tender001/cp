@@ -1542,6 +1542,22 @@ String.prototype.isEmail = function(){
 Class({
 	ready: true,
     index:function (config){
+    	$(".my_account").hover(function(){
+			$(this).find("div").show();
+		},function(){
+			$(this).find("div").hide();
+		})
+			$(".top dl").hover(function(){
+		$(this).addClass("hover");
+	},function(){
+		$(this).removeClass("hover");
+	});
+	$(".tab .title span").mouseover(function() {
+		$(this).removeClass().addClass('hover').siblings().removeClass('hover');
+		var a=$(this).index();//console.log(a);
+		$(this).parent().siblings('.bod').children().removeClass().eq(a).addClass('hover');
+	});
+    	
     	$("#nav_main,#zq_xl,#bf_xl").css({
     		"height":0,
     		"overflow":"hidden"
