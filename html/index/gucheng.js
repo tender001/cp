@@ -117,10 +117,10 @@ Class(
 							html += '<td>' + parseFloat(rt.money).rmb(true) + '</td>';
 							html += '<td><p>' + rt.jindu + '%';
 							if(rt.pnum > 0){
-								html += '<font>(保' + (rt.pnum*100/rt.nums).toFixed(0) + '%)</font>';
+								html += '<i>(保' + (rt.pnum*100/rt.nums).toFixed(0) + '%)</i>';
 							}
 							html += '</p> <p class="x_jdt"><em style="width: ' + rt.jindu + '%"></em></p></td>';
-							html += '<td><font>' + rt.lnum + '</font></td>';
+							html += '<td><i>' + rt.lnum + '</i></td>';
 							if(rt.lnum == 0 || rt.state != 1){
 								if(rt.state > 2){
 									html += '<td>已撤单</td>';
