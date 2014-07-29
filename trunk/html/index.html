@@ -3,11 +3,14 @@
 <head>
 	<meta charset="UTF-8">
 	<title>159彩票网</title>
+<!-- 	<link rel="stylesheet" type="text/css" href="css/159cai.css"> -->
+<!-- 	<link rel="stylesheet" type="text/css" href="css/new159cai.css"> -->
 	<link rel="stylesheet" type="text/css" href="css/basic.css">
 	<link rel="stylesheet" type="text/css" href="css/index.css">
 	<script type="text/javascript" src="/public/jq.js"></script>
 <script type="text/javascript" src="/public/jq2.js"></script>
 <script type="text/javascript" src="/public/159cp.js"></script>
+<script type="text/javascript" src="/public/chklogin.js"></script>
 </head>
 <body>
 <!-- 头部内容 -->  
@@ -17,13 +20,13 @@
 
 
 	<div class="m_mid">
-		<div class="ad">
-			<ul>
+		<div class="ad" style=" position:relative" id="flash_outer">
+			<ul id="flash_pic">
 				<li><a href=""><img src="images/ads.jpg" alt=""></a></li>
-				<li><a href=""><img src="images/ads.jpg" alt=""></a></li>
-				<li><a href=""><img src="images/ads.jpg" alt=""></a></li>
+				<li><a href=""><img src="images/ad/1.jpg" alt=""></a></li>
+				<li><a href=""><img src="images/ad/2.jpg" alt=""></a></li>
 			</ul>
-			<div><span class="cur"></span><span></span><span></span></div>
+			<div id="flash_num"><span class="cur" ></span><span></span><span></span></div>
 		</div>
 		
 		<!-- 快速购彩 -->  
@@ -35,6 +38,7 @@
 							var _interval = setInterval(function() {
 								SsqNum();
 							}, 80);
+							$("#errordlt,#errorssq").hide();
 							setTimeout(function() {
 								clearInterval(_interval);
 							}, 900);
@@ -43,6 +47,7 @@
 							var _interval = setInterval(function() {
 								DltNum();
 							}, 80);
+							$("#errordlt,#errorssq").hide();
 							setTimeout(function() {
 								clearInterval(_interval);
 							}, 900);
@@ -59,7 +64,7 @@
 							}
 							m = c.splice(Math.floor(Math.random() * c.length),
 									1);
-							$("#ssqcodes b input")[6].value = m
+							$("#ssqcodes em input")[6].value = m
 							c.push(m);
 							for ( var i = 1; i < 34; i++) {
 								a.push(i < 10 ? "0" + i : i);
@@ -69,38 +74,40 @@
 										* a.length), 1)
 								b.push(n);
 							}
-							$("#ssqcodes b input")[0].value = b.sort()[0];
-							$("#ssqcodes b input")[1].value = b.sort()[1];
-							$("#ssqcodes b input")[2].value = b.sort()[2];
-							$("#ssqcodes b input")[3].value = b.sort()[3];
-							$("#ssqcodes b input")[4].value = b.sort()[4];
-							$("#ssqcodes b input")[5].value = b.sort()[5];
+							$("#ssqcodes em input")[0].value = b.sort()[0];
+							$("#ssqcodes em input")[1].value = b.sort()[1];
+							$("#ssqcodes em input")[2].value = b.sort()[2];
+							$("#ssqcodes em input")[3].value = b.sort()[3];
+							$("#ssqcodes em input")[4].value = b.sort()[4];
+							$("#ssqcodes em input")[5].value = b.sort()[5];
 						}
 						function SsqBuy() {
 
 							var ary = new Array(
-									$("#ssqcodes b input")[0].value,
-									$("#ssqcodes b input")[1].value,
-									$("#ssqcodes b input")[2].value,
-									$("#ssqcodes b input")[3].value,
-									$("#ssqcodes b input")[4].value,
-									$("#ssqcodes b input")[5].value);
+									$("#ssqcodes em input")[0].value,
+									$("#ssqcodes em input")[1].value,
+									$("#ssqcodes em input")[2].value,
+									$("#ssqcodes em input")[3].value,
+									$("#ssqcodes em input")[4].value,
+									$("#ssqcodes em input")[5].value);
 							var nary = ary.sort();
 							for ( var i = 0; i < nary.length - 1; i++) {
 								if (nary[i] == nary[i + 1]) {
-									alert("出现重复号码：" + nary[i]);
+									$("#errorssq").html("出现重复号码：" + nary[i]).show();
+									
 									return false;
 								} else if (nary[i] > 33 || nary[i] < 1) {
-									alert('投注号码有误');
+									
+									$("#errorssq").html("红球投注号码有误").show();
 									return false;
 								}
 							}
-							if ($("#ssqcodes b input")[6].value > 16
-									|| $("#ssqcodes b input")[6].value < 1) {
-								alert('投注号码有误');
+							if ($("#ssqcodes em input")[6].value > 16
+									|| $("#ssqcodes em input")[6].value < 1) {
+								$("#errorssq").html("篮球投注号码有误").show();
 								return false;
 							}
-							nary = nary + "|" + $("#ssqcodes b input")[6].value;
+							nary = nary + "|" + $("#ssqcodes em input")[6].value;
 							// 	window.open ('/shuangseqiu/index.html?codes='+nary+'');  
 							location.href = '/shuangseqiu/index.html?codes='
 									+ nary + '';
@@ -122,8 +129,8 @@
 										* c.length), 1);
 								d.push(m);
 							}
-							$("#dltcodes b input")[5].value = d.sort()[0];
-							$("#dltcodes b input")[6].value = d.sort()[1];
+							$("#dltcodes em input")[5].value = d.sort()[0];
+							$("#dltcodes em input")[6].value = d.sort()[1];
 
 							for ( var i = 1; i < 36; i++) {
 								a.push(i < 10 ? "0" + i : i);
@@ -133,50 +140,55 @@
 										* a.length), 1)
 								b.push(n);
 							}
-							$("#dltcodes b input")[0].value = b.sort()[0];
-							$("#dltcodes b input")[1].value = b.sort()[1];
-							$("#dltcodes b input")[2].value = b.sort()[2];
-							$("#dltcodes b input")[3].value = b.sort()[3];
-							$("#dltcodes b input")[4].value = b.sort()[4];
+							$("#dltcodes em input")[0].value = b.sort()[0];
+							$("#dltcodes em input")[1].value = b.sort()[1];
+							$("#dltcodes em input")[2].value = b.sort()[2];
+							$("#dltcodes em input")[3].value = b.sort()[3];
+							$("#dltcodes em input")[4].value = b.sort()[4];
 
 						}
 
 						function DltBuy() {
 
 							var ary = new Array(
-									$("#dltcodes b input")[0].value,
-									$("#dltcodes b input")[1].value,
-									$("#dltcodes b input")[2].value,
-									$("#dltcodes b input")[3].value,
-									$("#dltcodes b input")[4].value);
+									$("#dltcodes em input")[0].value,
+									$("#dltcodes em input")[1].value,
+									$("#dltcodes em input")[2].value,
+									$("#dltcodes em input")[3].value,
+									$("#dltcodes em input")[4].value);
 							var nary = ary.sort();
 							for ( var i = 0; i < nary.length - 1; i++) {
 								if (nary[i] == nary[i + 1]) {
-									alert("出现重复号码：" + nary[i]);
+								
+									$("#errordlt").html("出现重复号码：" + nary[i]).show();
 									return false;
 								} else if (nary[i] > 35 || nary[i] < 1) {
-									alert('投注号码有误');
+									$("#errordlt").html("红球投注号码有误").show();
 									return false;
 								}
 							}
-							if ($("#dltcodes b input")[6].value > 12
-									|| $("#dltcodes b input")[6].value < 1) {
-								alert('投注号码有误');
+							if ($("#dltcodes em input")[6].value > 12
+									|| $("#dltcodes em input")[6].value < 1) {
+								$("#errordlt").html("篮球投注号码有误").show();
 								return false;
 							}
-							nary = nary + "|" + $("#dltcodes b input")[5].value
-									+ "," + $("#dltcodes b input")[6].value;
+							nary = nary + "|" + $("#dltcodes em input")[5].value
+									+ "," + $("#dltcodes em input")[6].value;
 							// window.open ('/daletou/index.html?codes='+nary+'');  
 							location.href = '/daletou/index.html?codes=' + nary
 									+ '';
 
 						}
-						$("#dltcodes b input").keydown(function() {
-							return false;
+						$("#dltcodes em input").keydown(function() {
+// 							return false;
 						})
-						$("#ssqcodes b input").keydown(function() {
-							return false;
+						$("#ssqcodes em input").keydown(function() {
+// 							return false;
 						})
+						$("#dltcodes em input,#ssqcodes em input").click(function() {
+							$("#errordlt,#errordlt").hide();
+						})
+						
 						SsqRandom();
 						DltRandom();
 					</script>
@@ -405,29 +417,19 @@
 		<div class="body">
 			<table border="0" cellspacing="0">
 				<tr>
-					<th>彩种</th>
-					<th>发起人</th>
+					<th>序号</th>
+					<th>发单人</th>
 					<th>战绩</th>
-					<th>方案进度</th>
-					<th>方案金额</th>
-					<th>每份金额</th>
-					<th>剩余份数</th>
-					<th>订购份数</th>
+					<th>彩种</th>
+					<th>方案金额(元)</th>
+					<th>进度|保底</th>
+					<th>剩余金额</th>
+					<th>参与合买</th>
 					<th>操作</th>
 				</tr>
 				
-				<tbody>
-<!-- 				<tr> -->
-<!-- 					<td>胜负彩</td> -->
-<!-- 					<td><span>金辰彩业</span></td> -->
-<!-- 					<td></td> -->
-<!-- 					<td>85%+61%(<i>保</i>)</td> -->
-<!-- 					<td>42000元</td> -->
-<!-- 					<td>2元</td> -->
-<!-- 					<td>2952份</td> -->
-<!-- 					<td><input type="text" value="1"></td> -->
-<!-- 					<td><a href="#" class="buy">购买</a></td> -->
-<!-- 				</tr> -->
+				<tbody id="table_hot_project">
+
 			
 				</tbody>
 			</table>
