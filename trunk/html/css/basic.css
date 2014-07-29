@@ -24,8 +24,42 @@ img{vertical-align:top;}
 .ba9{color: #1f5ba9 !important;font-weight: bold;}
 .c3{color: #3c3c3c !important;}
 
+
+/*top*/
+.top{height: 36px; line-height: 36px; background-color: #f7f7f7; border-top: 1px solid #e8ecef; border-bottom: 1px solid #ddd;}
+.top dl{float: left;position: relative;z-index: 999;}
+.top dl dt{height:30px;line-height:30px;margin-top:3px;padding: 0 20px 0 5px; background-position: -13px -4px;position: relative;z-index: 14;border:1px solid transparent;_border:1px solid #f7f7f7;_float: left;}
+.top dl.hover dt{ background-position: -110px -5px;border-color: #ddd;border-bottom-color: #f7f7f7;}
+.top dl dd{width:234px;height: auto;padding:0 8px;display: none;border:1px solid #ddd;border-bottom: 3px solid #f60;background-color: #f7f7f7;position: absolute;right: 0;top: 34px;z-index: 13;}
+.top dl.hover dt{background-color: #fff;}
+.top dl.hover dd{display: block;background-color: #fff;}
+.top dl dd li{padding: 10px 0;border-bottom: 1px solid #ddd;line-height: 26px;overflow: hidden;zoom:1;}
+.top dl dd li.kp{border: 0;}
+.top dl dd li div{width: 40px;padding: 6px 2px 0;float: left;font-weight: bold;color: #333;text-align: center;}
+.top dl dd li s{width: 20px;height: 20px;line-height: 20px;display: block;margin-left: 9px;background-position: -2px -88px;}
+.top dl dd li.dc s{background-position: -63px -88px;}
+.top dl dd li.lc s{background-position: -82px -88px;}
+.top dl dd li.zc s{background-position: -102px -88px;}
+.top dl dd li.sz s{background-position: -23px -88px;}
+.top dl dd li.kp s{background-position: -44px -88px;}
+.top dl dd li p{width: 184px;float: right;}
+.top dl dd li p a{margin:0;margin-right: 8px;}
+
+.top a{margin: 0 8px;color:#6c6c6c;}
+.top .fl a{color: #e62e04;}
+.top .fr{margin-right: -8px}
+.top_logo{padding:10px 0;width: 1000px;margin: 0 auto;overflow: hidden;}
+.top_logo .fl{width:160px;height: 60px;}
+.logo img{width: 160px;height: 60px;}
+.top_logo .fr s{width: 120px;height: 44px;display: inline-block;background-position: 0 -37px;margin-top: 8px;}
+.top_logo .fr a img{width: 120px;height: 52px;margin-top: 4px;}
+/*nav*/
+.nav{height: 38px;line-height: 38px;background: #f60 url(../images/bg/nav.jpg) repeat-x;}
+.nav ul li{float: left;background: url(../images/bg/nav_li.jpg) right center no-repeat;}
+.nav ul li a{height:38px;display:block;font-size:14px;font-weight:bold;color:#fff;padding:0 22px;float: left;}
+.nav ul li a:hover{background: #e52e04;margin: 0 -2px;padding:0 24px;text-decoration: none;color:#fff;}
 /*index basic*/
-.top dl dt,.top dl dd li s,.top_logo .fr s,.m_l li span s,.m_mid .tab .bod b s,.m_mid .tab .bod b em,.m_mid .tab .bod b i,.m_mid .tab .bod b strong,.m_r p.user a,.mob_buy .body dd a,.today .bod li p s,.center .body li p span s{background: url(../images/bg/index_bg0.png);_background-image: url(../images/bg/index_ie6.png);}
+.top dl dt,.top dl dd li s,.top_logo .fr s,.m_l li span s,.m_mid .tab .bod b s,.m_mid .tab .bod b em,.m_mid .tab .bod b i,.m_mid .tab .bod b strong,.m_r p.user a,.mob_buy .body dd a,.today .bod li p a.fr,.center .body li p span s{background: url(../images/bg/index_bg0.png);_background-image: url(../images/bg/index_ie6.png);}
 /*title相似*/
 .basic{border:1px solid #ddd;}
 .tit{height:30px;color: #333;font: 700 14px/30px "\5b8b\4f53";overflow: hidden;border-bottom: 1px solid #ddd;background-color: #f6f6f6;}
@@ -39,7 +73,8 @@ img{vertical-align:top;}
 .today .title span{width: 70px;text-align: center;display: block;float: left;border-left: 1px solid #ddd;border-bottom: 1px solid #ddd;color: #fff; font-weight: bold;background-color: #f60;cursor: pointer;}
 .today .title span.hover{border-color: #fff;background-color: #fff;color: #333;}
 /*.today .bod{padding-top: 18px;}*/
-.today .bod div{display: none;height: 321px;overflow: hidden;position: relative;}
+.today .bod{position: relative;}
+.today .bod div{display: none;height: 321px;overflow: hidden;}
 .today .bod div.hover{display: block;}
 .today .bod ul{overflow: hidden;padding-top: 18px;}
 .today .bod li{height: 70px;border-bottom: 1px solid #ddd;}
@@ -47,10 +82,10 @@ img{vertical-align:top;}
 .today .bod li p span{color: #e52e06;}
 .today .bod li p i{color: #434343;}
 .today .bod li p em{color: #7d7d7d;}
-.today .bod li p s{width: 38px;height: 18px;display: block;background-position: -147px -152px;cursor: pointer;}
+.today .bod li p a.fr{width: 38px;height: 18px;display: block;background-position: -147px -152px;cursor: pointer;}
 .today .bod li p a{color: #145fab}
-.today .bod div b{width:100%;height: 19px;display: block;background: #e8e8e8 url(../images/bg/scro.jpg) no-repeat;position: absolute;left: 0;bottom: 0;}
-.today .bod b span{width: 49%;height:19px;display: block;float:left;cursor: pointer;}
+.today .bod b.scroll{width:100%;height: 19px;display: block;background: #e8e8e8 url(../images/bg/scro.jpg) no-repeat;position: absolute;left: 0;bottom: 0;}
+.today .bod b.scroll span{width: 49%;height:19px;display: block;float:left;cursor: pointer;}
 /*焦点赛事*/
 .foc{width: 213px;float: left;}
 .foc .body{width: 92%;}
