@@ -90,7 +90,7 @@ img{vertical-align:top;}
 .today .bod li p em{color: #7d7d7d;}
 .today .bod li p a.fr{width: 38px;height: 18px;display: block;background-position: -147px -152px;cursor: pointer;}
 .today .bod li p a{color: #145fab}
-.today .bod b{width:100%;height: 19px;display: block;background: #e8e8e8 url(../images/bg/scro.jpg) no-repeat;position: absolute;left: 0;bottom: 0;}
+.today .bod b{width:100%;height: 19px;display: block;background: #e8e8e8 url(../images/bg/scro.jpg) no-repeat;position: absolute;left: 0;bottom: 0;opacity: 0.9;-moz-opacity: 0.9;_filter: alpha(opacity=90);}
 .today .bod b span{width: 49%;height:19px;display: block;float:left;cursor: pointer;}
 /*焦点赛事*/
 .foc{width: 213px;float: left;}
