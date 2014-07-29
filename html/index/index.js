@@ -11,16 +11,11 @@ $(document).ready(function(){
 			dlg_buy_end.pop('您好，'+user+'，恭喜您购买成功!');
 		});
 	});
-	$(".top dl").hover(function(){
-		$(this).addClass("hover");
-	},function(){
-		$(this).removeClass("hover");
-	});
-	$(".tab .title span").mouseover(function() {
-		$(this).removeClass().addClass('hover').siblings().removeClass('hover');
-		var a=$(this).index();//console.log(a);
-		$(this).parent().siblings('.bod').children().removeClass().eq(a).addClass('hover');
-	});
+	$("#scrollDiv").textSlider({
+		line:2,
+		speed:1000,
+		timer:2000
+		})
 
 	Y.use('mask', function(){
 		var addMoneyDlg =  this.lib.MaskLay('#addMoneyLay');
@@ -227,3 +222,36 @@ $(document).ready(function(){
 	//listHotProject(1, 15, "table_hot_project");
 	//listProject("90", "1", 0, "", "jindu", "descending", 15, 1, "table_jjc_project");
 });
+$.fn.textSlider = function(settings){    
+    settings = jQuery.extend({
+        speed : "normal",
+        line : 2,
+        timer : 3000
+    }, settings);
+    return this.each(function() {
+        $.fn.textSlider.scllor( $( this ), settings );
+    });
+};
+$.fn.textSlider.scllor = function($this, settings){
+    var ul = $("table:eq(0)",$this );
+    var timerID;
+    var li = ul.children();
+    var liHight=$(li[0]).height();
+    var upHeight=0-settings.line*liHight;//滚动的高度；
+    var scrollUp=function(){
+        ul.animate({marginTop:upHeight},settings.speed,function(){
+            for(i=0;i<settings.line;i++){
+                ul.find("tr:first",$this).appendTo(ul);
+            }
+            ul.css({marginTop:0});
+        });
+    };
+    var autoPlay=function(){
+        timerID = window.setInterval(scrollUp,settings.timer);
+    };
+    var autoStop = function(){
+        window.clearInterval(timerID);
+    };
+    //事件绑定
+    ul.hover(autoStop,autoPlay).mouseout();
+};
