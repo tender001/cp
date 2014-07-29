@@ -290,7 +290,7 @@ a.czbtn{display:block;height:32px;width:98px;line-height:32px;text-align:center;
 a.czbtnhui{color:#666;background:url(../images/cai888/user_03hui.jpg);border:1px solid #B6B6B6 }
 .userp1 b{color:#333;line-height:25px}
 .user{ background:url(../images/cai888/czbj_03.jpg) repeat-y;border:1px solid #ddd; overflow:visible;}
-.user div{ overflow:visible;}
+/* .user div{ overflow:visible;} */
 .xyksay{  color: #444444;line-height: 30px;padding:5px 0 15px 20px;}
 .sm_bk{ background:url(../images/njc/bk_sz.gif) no-repeat scroll right -29px transparent;cursor:pointer;font-size:14px;font-weight:bold;color:#145fab;width:110px;margin:20px 0 15px;clear:both;margin: 10px 0px 5px 135px;}
 .sm_bkcur{ background-position:right 7px}
@@ -361,7 +361,7 @@ a.czbtnhui{color:#666;background:url(../images/cai888/user_03hui.jpg);border:1px
 .aqcc a:hover{ text-decoration: underline;color:#ff6600}
 .aqcc s.cur a{color:#fff}
 .aqcc s.cur a:hover{ text-decoration: none;color:#fffff}
-.aqcenter{padding:0 20px}
+.aqcenter{padding:0 20px;}
 .aqcc em{color:#ff6600;font-size:16px;font-weight:bold}
 .aqcc b{width:50px;height:50px;margin:23px 10px 0px 20px}
 .aqcc b.cardc{ background:url(../images/cai888/aqtbx_03.jpg) 0 0 no-repeat}
