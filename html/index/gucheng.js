@@ -329,7 +329,7 @@ Class(
 		f -= 5;
 	}
 	$(function() {
-		dl = $('.jrkjm .jrkjc');
+		dl = $('#kjdiv div[mark=kj]');
 		up = $('#scroll_up');
 		dn = $('#scroll_down');
 		dl.css('margin-top', tp = 0);
