@@ -5,6 +5,9 @@
 	<title>159彩票网</title>
 	<link rel="stylesheet" type="text/css" href="css/basic.css">
 	<link rel="stylesheet" type="text/css" href="css/index.css">
+	<script type="text/javascript" src="/public/jq.js"></script>
+<script type="text/javascript" src="/public/jq2.js"></script>
+<script type="text/javascript" src="/public/159cp.js"></script>
 </head>
 <body>
 <!-- 头部内容 -->  
@@ -23,10 +26,159 @@
 		</div>
 		
 		<!-- 快速购彩 -->  
-		<!--#include virtual="/cc/cms/kuaisugoucai.html"-->
+		<!--#include virtual="/cc/module/kuaisugoucai.html"-->
 		<!-- 快速购彩  -->
 		
-		
+			<script type="text/javascript">
+						function SsqRandom() {
+							var _interval = setInterval(function() {
+								SsqNum();
+							}, 80);
+							setTimeout(function() {
+								clearInterval(_interval);
+							}, 900);
+						}
+						function DltRandom() {
+							var _interval = setInterval(function() {
+								DltNum();
+							}, 80);
+							setTimeout(function() {
+								clearInterval(_interval);
+							}, 900);
+						}
+						function SsqNum() {
+
+							var a = [];
+							var b = [];
+							var c = [];
+							var n;
+							var m;
+							for ( var i = 1; i < 17; i++) {
+								c.push(i < 10 ? "0" + i : i);
+							}
+							m = c.splice(Math.floor(Math.random() * c.length),
+									1);
+							$("#ssqcodes b input")[6].value = m
+							c.push(m);
+							for ( var i = 1; i < 34; i++) {
+								a.push(i < 10 ? "0" + i : i);
+							}
+							for ( var i = 0; i < 6; i++) {
+								n = a.splice(Math.floor(Math.random()
+										* a.length), 1)
+								b.push(n);
+							}
+							$("#ssqcodes b input")[0].value = b.sort()[0];
+							$("#ssqcodes b input")[1].value = b.sort()[1];
+							$("#ssqcodes b input")[2].value = b.sort()[2];
+							$("#ssqcodes b input")[3].value = b.sort()[3];
+							$("#ssqcodes b input")[4].value = b.sort()[4];
+							$("#ssqcodes b input")[5].value = b.sort()[5];
+						}
+						function SsqBuy() {
+
+							var ary = new Array(
+									$("#ssqcodes b input")[0].value,
+									$("#ssqcodes b input")[1].value,
+									$("#ssqcodes b input")[2].value,
+									$("#ssqcodes b input")[3].value,
+									$("#ssqcodes b input")[4].value,
+									$("#ssqcodes b input")[5].value);
+							var nary = ary.sort();
+							for ( var i = 0; i < nary.length - 1; i++) {
+								if (nary[i] == nary[i + 1]) {
+									alert("出现重复号码：" + nary[i]);
+									return false;
+								} else if (nary[i] > 33 || nary[i] < 1) {
+									alert('投注号码有误');
+									return false;
+								}
+							}
+							if ($("#ssqcodes b input")[6].value > 16
+									|| $("#ssqcodes b input")[6].value < 1) {
+								alert('投注号码有误');
+								return false;
+							}
+							nary = nary + "|" + $("#ssqcodes b input")[6].value;
+							// 	window.open ('/shuangseqiu/index.html?codes='+nary+'');  
+							location.href = '/shuangseqiu/index.html?codes='
+									+ nary + '';
+
+						}
+						function DltNum() {
+
+							var a = [];
+							var b = [];
+							var c = [];
+							var d = [];
+							var n;
+							var m;
+							for ( var i = 1; i < 13; i++) {
+								c.push(i < 10 ? "0" + i : i);
+							}
+							for ( var i = 0; i < 2; i++) {
+								m = c.splice(Math.floor(Math.random()
+										* c.length), 1);
+								d.push(m);
+							}
+							$("#dltcodes b input")[5].value = d.sort()[0];
+							$("#dltcodes b input")[6].value = d.sort()[1];
+
+							for ( var i = 1; i < 36; i++) {
+								a.push(i < 10 ? "0" + i : i);
+							}
+							for ( var i = 0; i < 6; i++) {
+								n = a.splice(Math.floor(Math.random()
+										* a.length), 1)
+								b.push(n);
+							}
+							$("#dltcodes b input")[0].value = b.sort()[0];
+							$("#dltcodes b input")[1].value = b.sort()[1];
+							$("#dltcodes b input")[2].value = b.sort()[2];
+							$("#dltcodes b input")[3].value = b.sort()[3];
+							$("#dltcodes b input")[4].value = b.sort()[4];
+
+						}
+
+						function DltBuy() {
+
+							var ary = new Array(
+									$("#dltcodes b input")[0].value,
+									$("#dltcodes b input")[1].value,
+									$("#dltcodes b input")[2].value,
+									$("#dltcodes b input")[3].value,
+									$("#dltcodes b input")[4].value);
+							var nary = ary.sort();
+							for ( var i = 0; i < nary.length - 1; i++) {
+								if (nary[i] == nary[i + 1]) {
+									alert("出现重复号码：" + nary[i]);
+									return false;
+								} else if (nary[i] > 35 || nary[i] < 1) {
+									alert('投注号码有误');
+									return false;
+								}
+							}
+							if ($("#dltcodes b input")[6].value > 12
+									|| $("#dltcodes b input")[6].value < 1) {
+								alert('投注号码有误');
+								return false;
+							}
+							nary = nary + "|" + $("#dltcodes b input")[5].value
+									+ "," + $("#dltcodes b input")[6].value;
+							// window.open ('/daletou/index.html?codes='+nary+'');  
+							location.href = '/daletou/index.html?codes=' + nary
+									+ '';
+
+						}
+						$("#dltcodes b input").keydown(function() {
+							return false;
+						})
+						$("#ssqcodes b input").keydown(function() {
+							return false;
+						})
+						SsqRandom();
+						DltRandom();
+					</script>
 	</div>
 	<div class="m_r">
 		<p class="user"><a href="#">用户登录</a><a href="#" class="reg">免费注册</a></p>
@@ -282,9 +434,7 @@
 </div>
 <!--#include virtual="/cc/homefooter.html"-->
 
-<script type="text/javascript" src="/public/jq.js"></script>
-<script type="text/javascript" src="/public/jq2.js"></script>
-<script type="text/javascript" src="/public/159cp.js"></script>
-<script type="text/javascript" src="/index/index.js"></script>
+
+<script type="text/javascript" src="/index/gucheng.js"></script>
 </body>
 </html>
