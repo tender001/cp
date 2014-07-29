@@ -25,15 +25,21 @@ img{vertical-align:top;}
 .c3{color: #3c3c3c !important;}
 
 /*index basic*/
-.top dl dt,.top dl dd li s,.top_logo .fr s,.m_l li span s,.m_mid .tab .bod b s,.m_mid .tab .bod b em,.m_mid .tab .bod b i,.m_mid .tab .bod b strong,.m_r p.user a,.mob_buy .body dd a,.today .bod li p a.fr,.center .body li p span s{background: url(../images/bg/index_bg0.png);_background-image: url(../images/bg/index_ie6.png);}
+.top dl dt,.top dl.ali dd a,.top dl dd li s,.top_logo .fr s,.m_l li span s,.m_mid .tab .bod b s,.m_mid .tab .bod b em,.m_mid .tab .bod b i,.m_mid .tab .bod b strong,.m_r p.user a,.mob_buy .body dd a,.today .bod li p a.fr,.center .body li p span s{background: url(../images/bg/index_bg0.png);_background-image: url(../images/bg/index_ie6.png);}
 /*top*/
 .top{height: 36px; line-height: 36px; background-color: #f7f7f7; border-top: 1px solid #e8ecef; border-bottom: 1px solid #ddd;}
+.top .fl{width: 360px;_width: 362px;}
 .top dl{float: left;position: relative;z-index: 999;}
 .top dl dt{height:30px;line-height:30px;margin-top:3px;padding: 0 20px 0 5px; background-position: -13px -4px;position: relative;z-index: 14;border:1px solid transparent;_border:1px solid #f7f7f7;_float: left;}
 .top dl.hover dt{ background-position: -110px -5px;border-color: #ddd;border-bottom-color: #f7f7f7;}
 .top dl dd{width:234px;height: auto;padding:0 8px;display: none;border:1px solid #ddd;border-bottom: 3px solid #f60;background-color: #f7f7f7;position: absolute;right: 0;top: 34px;z-index: 13;}
 .top dl.hover dt{background-color: #fff;}
 .top dl.hover dd{display: block;background-color: #fff;}
+.top dl.ali{float: right;}
+.top dl.ali dt{background-position: 9px -4px;}
+.top dl.ali.hover dt{background-position: -88px -5px;}
+.top dl.ali dd{width: 97px;_width: 96px;height: 34px;padding: 0;}
+.top dl.ali dd a{width: 100%;height: 100%;display: block;margin: 0;background-position: -266px -224px;}
 .top dl dd li{padding: 10px 0;border-bottom: 1px solid #ddd;line-height: 26px;overflow: hidden;zoom:1;}
 .top dl dd li.kp{border: 0;}
 .top dl dd li div{width: 40px;padding: 6px 2px 0;float: left;font-weight: bold;color: #333;text-align: center;}
@@ -73,8 +79,8 @@ img{vertical-align:top;}
 .today .title span{width: 70px;text-align: center;display: block;float: left;border-left: 1px solid #ddd;border-bottom: 1px solid #ddd;color: #fff; font-weight: bold;background-color: #f60;cursor: pointer;}
 .today .title span.hover{border-color: #fff;background-color: #fff;color: #333;}
 /*.today .bod{padding-top: 18px;}*/
-.today .bod{position: relative;height: 321px;overflow: hidden;}
-.today .bod div{display: none;height: 321px;overflow: hidden;}
+.today .bod{position: relative;height: 321px;overflow: hidden;*height: 328px;}
+.today .bod div{display: none;}
 .today .bod div.hover{display: block;}
 .today .bod ul{overflow: hidden;padding-top: 18px;}
 .today .bod li{height: 70px;border-bottom: 1px solid #ddd;}
@@ -89,8 +95,8 @@ img{vertical-align:top;}
 /*焦点赛事*/
 .foc{width: 213px;float: left;}
 .foc .body{width: 92%;}
-.foc ul{overflow: hidden;margin-top: -1px;}
-.foc li{height: 76px;border-top: 1px dashed #ddd;padding: 7px 0;}
+.foc ul{overflow: hidden;margin-top: -3px;}
+.foc li{height: 76px;border-top: 1px dashed #ddd;padding: 14px 0;}
 .foc li dl dt{float: left;width: 56px; height: 72px;border: 1px solid #a3a3a1;text-align: center;}
 .foc li dl dt img{width: 50px; height: 44px;margin-top: 4px;}
 .foc li dl dt strong{width: 100%;height: 20px;display: block; background-color: #ffe8da;margin-top: 4px;}
