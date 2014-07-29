@@ -21,15 +21,15 @@ reg = function(){
 	var rand = $("#rand").val();
 	var check = $("#pbig").attr("checked");
 	var type = $("#type").val();
-	var ln = $.trim(uname);
-	var rn = ln.replace(/[\d\w\\u4e00-\u9fa5]/gi, "");
+	var ln = uname.trim();
+	var rn = ln.replace(/[\d\w\u4e00-\u9fa5]/gi, "");
 	if(!check){
    	    showTips('请确认您已成年,非成年不能购彩');
         return;
     }
-	if(getStrLen(rn)!=""){
+	if(rn !=""){
 		$("#uname").focus();
-    	showTips('用户名不能含有非法字符');
+    	showTips('用户名含有非法字符或空格');
     	return;
 	}
 	if(getStrLen(uname)<4 || getStrLen(uname)>16){
