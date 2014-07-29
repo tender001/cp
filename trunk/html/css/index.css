@@ -23,7 +23,7 @@
 .m_mid .ad div{position: absolute;bottom: 10px;right: 25px;height: 13px;}
 .m_mid .ad div span{width: 12px;height: 12px;display: inline-block;margin-left: 5px;background: url(../images/bg/page.png) no-repeat;cursor: pointer;opacity: 0.5;-moz-opacity: 0.5;_filter: alpha(opacity=50);}
 .m_mid .ad div span.cur{opacity: 1;-moz-opacity: 1;_filter: alpha(opacity=100);}
-.m_mid .tab{width: 538px;margin:12px auto 0;border:1px solid #eee;}
+.m_mid .tab{width: 538px;margin:12px auto 0;border:1px solid #ddd;}
 .m_mid .tab .title{height:32px;line-height:32px;border-bottom: 1px solid #eee;margin-left: -1px;}
 .m_mid .tab .title span{position: relative;width:80px;height: 32px;display:block;float:left;text-align:center;font-size: 14px;font-weight:bold;color: #3c3c3c;border-left: 1px solid #eee;cursor: pointer;_bottom: -1px;}
 .m_mid .tab .title span.hover{color:#ff1616;border-bottom: 1px solid #fff;}
