@@ -52,7 +52,7 @@ Class(
 		
 	
 //		$("#focus").append(btn);
-		$("#focus .btnBg").css("opacity",0.5);
+		$("#focus .btnBg").css("opacity",0.8);
 
 		$("#flash_num span").css("opacity",0.4).mouseover(function() {
 			index = $("#flash_num span").index(this);
@@ -60,7 +60,7 @@ Class(
 		}).eq(0).trigger("mouseover");
 
 		$("#focus .preNext").css("opacity",0.2).hover(function() {
-			$(this).stop(true,false).animate({"opacity":"0.5"},300);
+			$(this).stop(true,false).animate({"opacity":"0.8"},300);
 		},function() {
 			$(this).stop(true,false).animate({"opacity":"0.2"},300);
 		});
@@ -80,7 +80,7 @@ Class(
 		function showPics(index) { 
 			var nowLeft = -index*sWidth; 
 			$("#flash_pic").stop(true,false).animate({"left":nowLeft},300); 
-			$("#flash_num span").stop(true,false).animate({"opacity":"0.4"},300).eq(index).stop(true,false).animate({"opacity":"1"},300); 
+			$("#flash_num span").stop(true,false).animate({"opacity":"0.3"},300).eq(index).stop(true,false).animate({"opacity":"1"},300); 
 		}
     },
 	listHotProject:function(pn, ps, toId){
@@ -110,8 +110,8 @@ Class(
 								html += (o+1);
 							}
 							html += '</td>';
-							html += '<th>' + $_sys.showzhanjiname(gameid,rt.nickid,'award') + '</th>';
-							html += '<th>' + (($_sys.showzhanji(rt.aunum,rt.agnum)==''?'&nbsp;':$_sys.showzhanjii(gameid,rt.nickid,rt.aunum,rt.agnum)+'&nbsp;&nbsp;')) + '</th>';
+							html += '<td>' + $_sys.showzhanjiname(gameid,rt.nickid,'award') + '</td>';
+							html += '<td>' + (($_sys.showzhanji(rt.aunum,rt.agnum)==''?'&nbsp;':$_sys.showzhanjii(gameid,rt.nickid,rt.aunum,rt.agnum)+'&nbsp;&nbsp;')) + '</td>';
 							
 							html += '<td>' + $_sys.getlotname(gameid).split("-")[0] + '</td>';
 							html += '<td>' + parseFloat(rt.money).rmb(true) + '</td>';
@@ -315,7 +315,7 @@ Class(
     			}   
     		}
     	}); 
-    },
+    }
     
 	
 	   
