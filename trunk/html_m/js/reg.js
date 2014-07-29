@@ -21,10 +21,17 @@ reg = function(){
 	var rand = $("#rand").val();
 	var check = $("#pbig").attr("checked");
 	var type = $("#type").val();
+	var ln = $.trim(uname);
+	var rn = ln.replace(/[\d\w\\u4e00-\u9fa5]/gi, "");
 	if(!check){
    	    showTips('请确认您已成年,非成年不能购彩');
         return;
     }
+	if(getStrLen(rn)!=""){
+		$("#uname").focus();
+    	showTips('用户名不能含有非法字符');
+    	return;
+	}
 	if(getStrLen(uname)<4 || getStrLen(uname)>16){
     	$("#uname").focus();
     	showTips('请填写您的用户名,4-16个字符');
@@ -40,10 +47,10 @@ reg = function(){
     	 showTips('两次输入的密码不一致,请确认');
          return;
      }
-	 if(!isPhone($.trim(phone)) && type == 0){
+	 /*if(!isPhone($.trim(phone)) && type == 0){
     	 showTips('对不起，请输入正确的手机号码');
          return;
-     }
+     }*/
 	 if(!isEmail($.trim(email)) && type == 1){
     	 showTips('对不起，请输入正确的邮箱地址');
          return;
