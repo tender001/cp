@@ -26,7 +26,7 @@
 .m_l1 dt,.m_l1 dd{float: left;line-height: 22px;}
 .m_l1 dt{width:40px;font-weight: bold;color: #f60;}
 .m_l1 dd{width:150px;}
-.m_l1 a{color:#585858;margin-right: 10px; float: left;white-space: nowrap;}
+.m_l1 a{color:#585858;margin-right: 10px; float: left;white-space: nowrap;line-height: 22px;}
 .m_l1 a:hover{color: #e52e04;}
 .m_l1 li p{margin: 10px 0 16px;overflow: hidden;_padding-bottom:16px;}
 .m_mid{width: 559px;overflow: hidden;}
