@@ -55,7 +55,7 @@
 .m_mid .tab .bod b strong{width: 90px;height: 35px;line-height: 35px;color: #fff;background-position: -55px -152px;cursor: pointer;}
 
 .m_r{float: right;width: 222px}
-.m_r p.user{padding-bottom: 13px;}
+.m_r p.user{padding-bottom: 13px;height: 37px;overflow: hidden;}
 .m_r p.user a{width: 104px;height: 37px;font: bold 16px/37px "\5b8b\4f53";display: inline-block;margin-left:5px;text-align: center;color: #eb6003;text-decoration: none;background-position: -1px -110px;}
 .m_r p.user a.reg{margin-left: 8px;}
 .m_r .tab{height: 227px;border: 1px solid #ddd;border-bottom: 0;}
