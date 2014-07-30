@@ -64,6 +64,7 @@ li.bac{background-image: none !important;}
 .top dl dd li.kp s{background-position: -44px -88px;}
 .top dl dd li p{width: 184px;float: right;}
 .top dl dd li p a{margin:0;margin-right: 8px;}
+.top dl dd li p a:hover{color: #e52e04;}
 
 .top a{margin: 0 8px;color:#6c6c6c;}
 .top .fl a{color: #e62e04;}
@@ -91,6 +92,7 @@ li.bac{background-image: none !important;}
 .m_l dt{width:40px;font-weight: bold;color: #f60;}
 .m_l dd{width:150px;}
 .m_l a{color:#585858;margin-right: 10px; float: left;white-space: nowrap;}
+.m_l a:hover{color: #e52e04}
 .m_l li p{margin: 10px 0 16px;overflow: hidden;_padding-bottom:16px;}
 /*end 购买彩票*/
 
@@ -114,7 +116,7 @@ li.bac{background-image: none !important;}
 .updo li.hover .xia{display: block;border: 1px solid #e52f05;border-top: 0;}
 .updo li .xia p{width: 100%;height: 30px;line-height: 30px;text-align: center;border-bottom: 1px solid #ddd;}
 .updo li .xia p a{width: 100%;height: 100%;display: block;padding: 0;color: #e52f05;font-weight: 400;}
-.updo li .xia p a:hover{background: none;margin: 0;}
+.updo li .xia p a:hover{background: none;margin: 0;text-decoration: underline}
 
 /*title相似*/
 .basic{border:1px solid #ddd;}

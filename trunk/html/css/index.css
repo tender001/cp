@@ -3,14 +3,14 @@
 .center .body li p span em{background: url(../images/bg/index_bg0.png);_background-image: url(../images/bg/index_ie6.png);}
 
 .updo li{position: relative;z-index: 99;}
-.updo li s{width: 11px;height: 11px;display: block;position: absolute;right: 4px;top: 12px;background: transparent url(../images/bg/nav_xia.jpg);cursor: pointer;}
+.updo li s{width: 11px;height: 11px;display: block;position: absolute;right: 9px;top: 12px;background: transparent url(../images/bg/nav_xia.jpg);cursor: pointer;}
 .updo li.hover s{background: transparent url(../images/bg/nav_xia1.jpg)}
 .updo li.hover a.a1{background: #e52e04;margin: 0 -2px;padding:0 24px;}
 .updo li .xia{display: none;width: 93px;background: #fff;position: absolute;left: -1px;top: 38px;z-index: 102;}
 .updo li.hover .xia{display: block;border: 1px solid #e52f05;border-top: 0;}
 .updo li .xia p{width: 100%;height: 30px;line-height: 30px;text-align: center;border-bottom: 1px solid #ddd;}
 .updo li .xia p a{width: 100%;height: 100%;display: block;padding: 0;color: #e52f05;font-weight: 400;}
-.updo li .xia p a:hover{background: none;margin: 0;}
+.updo li .xia p a:hover{background: none;margin: 0;text-decoration: underline;}
 .updo1 li .xia{width: 104px;}
 /**/
 .menu{width:998px;margin: 10px auto;border-bottom:1px solid #ddd;overflow: hidden;}
@@ -27,6 +27,7 @@
 .m_l1 dt{width:40px;font-weight: bold;color: #f60;}
 .m_l1 dd{width:150px;}
 .m_l1 a{color:#585858;margin-right: 10px; float: left;white-space: nowrap;}
+.m_l1 a:hover{color: #e52e04;}
 .m_l1 li p{margin: 10px 0 16px;overflow: hidden;_padding-bottom:16px;}
 .m_mid{width: 559px;overflow: hidden;}
 .m_mid .ad{width: 557px;height: 266px;margin: 0 1px;overflow: hidden;position: relative;}
