@@ -6,8 +6,11 @@
 <title>【159彩票网】网上买彩票_竞彩网_足彩_福彩_最安全可靠的网上购彩平台</title>
 <meta name="keywords" content="159彩票网，网上买彩票，竞彩网，彩票合买" />
 <meta name="description" content="159彩票网(www.159cai.com)是一家专业从事网上彩票投注合买的交易平台，提供最新福彩，足彩，体彩，竞技彩，快彩资讯，包括彩票专家分析，彩票开奖，彩票分析预测，投注攻略与技巧，往期彩票信息查询等。159彩票网最安全可靠的网上购彩平台！" />
-<link rel="stylesheet" type="text/css" href="css/basic.css">
-<link rel="stylesheet" type="text/css" href="css/index.css">
+
+<!-- <link rel="stylesheet" type="text/css" href="/css/basic.css"> -->
+
+<link rel="stylesheet" type="text/css" href="/css/new159cai.css">
+<link rel="stylesheet" type="text/css" href="/css/index.css">
 <script type="text/javascript" src="/public/jq.js"></script>
 <script type="text/javascript" src="/public/jq2.js"></script>
 <script type="text/javascript" src="/public/159cp.js"></script>
@@ -17,12 +20,20 @@
 <body>
 <!-- 头部内容 -->  
 <!--#include virtual="/cc/header.html"-->
-<!--#include virtual="/cc/nav.html"-->
+<!--#include virtual="/cc/homenav.html"-->
 <!-- 头部内容 -->
 
 
 	<div class="m_mid">
-		<!--#include virtual="/dedeinc/syimges.html"-->
+		<div class="ad" style=" position:relative" id="flash_outer">
+			<ul id="flash_pic">
+				<li><a href="#"  target="_blank"><img src="images/ads.jpg" alt="dddd" title="000"></a></li>
+				<li><a href=""><img src="images/ad/1.jpg" alt=""></a></li>
+				<li><a href=""><img src="images/ad/2.jpg" alt=""></a></li>
+			</ul>
+			<div id="flash_num"><span class="cur" ></span><span></span><span></span></div>
+		</div>
+		
 		<!-- 快速购彩 -->  
 		<!--#include virtual="/cc/cms/kuaisugoucai.html"-->
 		<!-- 快速购彩  -->
@@ -102,9 +113,9 @@
 								return false;
 							}
 							nary = nary + "|" + $("#ssqcodes em input")[6].value;
-							// 	window.open ('/shuangseqiu/index.html?codes='+nary+'');  
-							location.href = '/shuangseqiu/index.html?codes='
-									+ nary + '';
+								window.open ('/shuangseqiu/index.html?codes='+nary+'');  
+// 							location.href = '/shuangseqiu/index.html?codes='
+// 									+ nary + '';
 
 						}
 						function DltNum() {
@@ -168,10 +179,9 @@
 							}
 							nary = nary + "|" + $("#dltcodes em input")[5].value
 									+ "," + $("#dltcodes em input")[6].value;
-							// window.open ('/daletou/index.html?codes='+nary+'');  
-							location.href = '/daletou/index.html?codes=' + nary
-									+ '';
-
+// 							location.href = '/daletou/index.html?codes=' + nary
+// 									+ '';
+							window.open( '/daletou/index.html?codes=' + nary+ '');
 						}
 						$("#dltcodes em input").keydown(function() {
 // 							return false;
@@ -309,46 +319,46 @@
 			<div id="k3" style="display: none" mark="kj"><!--数字彩-->
 				<ul>
 					<li>
-						<p><a target="_blank" href="/shuangseqiu/kaijiang.html"><span>双色球</span></a>&nbsp;&nbsp;&nbsp;&nbsp;<i id="ssq_pid">888888期</i><i id="ssq_kjdate"></i></p>
+						<p><a target="_blank" href="/shuangseqiu/kaijiang.html"><span>双色球</span></a>&nbsp;&nbsp;&nbsp;&nbsp;<i id="ssq_pid">888888期</i>&nbsp;&nbsp;<i id="ssq_kjdate"></i></p>
 						<p><span class="fl" id="ssq_code"><b></b><b></b><b></b><b></b><b></b><b></b><b
-											class="blue"></b></span><span class="fr"><a target="_blank"
+											class="blue"></b><b class="blue"></b></span><span class="fr"><a target="_blank"
 											href="/shuangseqiu/kaijiang.html">详情</a></span></p>
 						<p><i>每周二、四、日21:30开奖</i></p>
 					</li>
 					<li>
-						<p><a target="_blank" href="/daletou/kaijiang.html"><span>大乐透</span></a>&nbsp;&nbsp;&nbsp;&nbsp;<i id="dlt_pid">888888期</i><i id="dlt_kjdate"></i></p>
+						<p><a target="_blank" href="/daletou/kaijiang.html"><span>大乐透</span></a>&nbsp;&nbsp;&nbsp;&nbsp;<i id="dlt_pid">888888期</i>&nbsp;&nbsp;<i id="dlt_kjdate"></i></p>
 						<p><span class="fl" id="dlt_code"><b></b><b></b><b></b><b></b><b></b><b></b><b
 											class="blue"></b><b class="blue"></b></span><span class="fr"><a target="_blank"
 											href="/daletou/kaijiang.html">详情</a></span></p>
 						<p><i>每周一、三、六22:30开奖</i></p>
 					</li>
 					<li>
-						<p><a target="_blank" href="/3d/kaijiang.html"><span>福彩3D</span></a>&nbsp;&nbsp;&nbsp;&nbsp;<i id="sd_pid">888888期</i><i id="sd_kjdate"></i></p>
+						<p><a target="_blank" href="/3d/kaijiang.html"><span>福彩3D</span></a>&nbsp;&nbsp;&nbsp;&nbsp;<i id="sd_pid">888888期</i>&nbsp;&nbsp;<i id="sd_kjdate"></i></p>
 						<p><span class="fl" id="sd_code"><b></b><b></b><b></b></span><span class="fr"><a target="_blank"
 											href="/3d/kaijiang.html">详情</a></span></p>
 						<p><i>每日20:30开奖</i></p>
 					</li>
 					<li>
-						<p><a target="_blank" href="/qilecai/kaijiang.html"><span>七乐彩</span></a>&nbsp;&nbsp;&nbsp;&nbsp;<i id="qlc_pid">888888期</i><i id="qlc_kjdate"></i></p>
+						<p><a target="_blank" href="/qilecai/kaijiang.html"><span>七乐彩</span></a>&nbsp;&nbsp;&nbsp;&nbsp;<i id="qlc_pid">888888期</i>&nbsp;&nbsp;<i id="qlc_kjdate"></i></p>
 						<p><span class="fl" id="qlc_code"><b></b><b></b><b></b><b></b><b></b><b></b><b></b></span><span class="fr"><a target="_blank"
 											href="/qilecai/kaijiang.html">详情</a></span></p>
 						<p class="p2">每周一、三、五21:30开奖</p>
 					</li>
 					<li>
-						<p><a target="_blank" href="/paisan/kaijiang.html"><span>排列三</span></a>&nbsp;&nbsp;&nbsp;&nbsp;<i id="pls_pid">888888期</i><i id="pls_kjdate"></i></p>
+						<p><a target="_blank" href="/paisan/kaijiang.html"><span>排列三</span></a>&nbsp;&nbsp;&nbsp;&nbsp;<i id="pls_pid">888888期</i>&nbsp;&nbsp;<i id="pls_kjdate"></i></p>
 						<p><span class="fl" id="pls_code"><b></b><b></b><b></b></span><span class="fr"><a target="_blank"
 											href="/paisan/kaijiang.html">详情</a></span></p>
 						<p><i>每日20:30开奖</i></p>
 					</li>
 					<li>
-						<p><a target="_blank" href="/paiwu/kaijiang.html"><span>排列五</span></a>&nbsp;&nbsp;&nbsp;&nbsp;<i id="plw_pid">888888期</i><i id="plw_kjdate"></i></p>
+						<p><a target="_blank" href="/paiwu/kaijiang.html"><span>排列五</span></a>&nbsp;&nbsp;&nbsp;&nbsp;<i id="plw_pid">888888期</i>&nbsp;&nbsp;<i id="plw_kjdate"></i></p>
 						<p><span class="fl" id="plw_code"><b></b><b></b><b></b><b></b><b></b><b></b><b
 											class="blue">1</b></span><span class="fr"><a target="_blank"
 											href="/paiwu/kaijiang.html">详情</a></span></p>
 						<p><i>每日20:30开奖</i></p>
 					</li>
 					<li>
-						<p><a target="_blank" href="/qixingcai/kaijiang.html"><span>七星彩</span></a>&nbsp;&nbsp;&nbsp;&nbsp;<i id="qxc_pid">888888期</i><i id="qxc_kjdate"></i></p>
+						<p><a target="_blank" href="/qixingcai/kaijiang.html"><span>七星彩</span></a>&nbsp;&nbsp;&nbsp;&nbsp;<i id="qxc_pid">888888期</i>&nbsp;&nbsp;<i id="qxc_kjdate"></i></p>
 						<p><span class="fl" id="qxc_code"><b></b><b></b><b></b><b></b><b></b><b></b><b
 											class="blue">1</b></span><span class="fr"><a target="_blank"
 											href="/shuangseqiu/kaijiang.html">详情</a></span></p>
