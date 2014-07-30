@@ -75,12 +75,12 @@ Class(
 				showPics(index);
 				index++;
 				if(index == len) {index = 0;}
-			},1000); //自动播放的间隔
+			},3000); //自动播放的间隔
 		}).trigger("mouseleave");
 		function showPics(index) { 
 			var nowLeft = -index*sWidth; 
 			$("#flash_pic").stop(true,false).animate({"left":nowLeft},300); 
-			$("#flash_num span").stop(true,false).animate({"opacity":"0.3"},300).eq(index).stop(true,false).animate({"opacity":"1"},300); 
+			$("#flash_num span").stop(true,false).animate({"opacity":"0.6"},300).removeClass("ddd").eq(index).stop(true,false).animate({"opacity":"1"},300).addClass("ddd"); 
 		}
     },
 	listHotProject:function(pn, ps, toId){
@@ -201,7 +201,7 @@ Class(
     					row.code = rt.codes;   				
         				row.etime =  rt.et;   		     				
         				row.pools = rt.pools;  
-        				row.pools = row.pools==''?'0元':(parseFloat(row.pools).rmb(false, 0));
+        				row.pools = row.pools==''?'0':(parseFloat(row.pools).rmb(false, 0) + "");
         				row.sales = rt.sales;       				
         				row.nums = rt.nums;       				
         				row.money = rt.moneys;	
