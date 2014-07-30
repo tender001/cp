@@ -899,9 +899,14 @@ Class('CodeList', {
 	getdanCodeString: function (){
 		var c = [];
 		this.codes.each(function (m){
-			c.push(m.map(function (obj){
-				return obj.dan;
-			}).join('/'));
+			m.map(function (obj){
+				if(obj.dan===undefined||obj.dan==""){
+				
+				}else{
+				c.push(obj.dan.join("/"));
+				}
+			}).join('/')
+			
 		});
 		return $_base_s.undel(c).join('/');
 	},
