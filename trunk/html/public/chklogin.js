@@ -235,7 +235,7 @@ Class('Loginer', {// 登陆器
     },
     showUserInfo: function (){
         this.loginDlg.close();
-        this.get('#nologin_info').hide().get('#top_user_info').show();
+        this.get('#nologin_info,#nologin').hide().get('#top_user_info,#onlogin').show();
         this.get("#my_login_info").show();
         this.get("#my_account_info").show();
         this.ajax({
@@ -260,7 +260,7 @@ Class('Loginer', {// 登陆器
 			         				Y.setCANCookie("LoginuserName_cookie",r.nickid,60*24*30);
 			         			}
 			         		 }        
-		                     this.get('#top_username').html(r.nickid);// 用户名
+		                     this.get('#top_username,#onusername').html(r.nickid);// 用户名
 		                     this.get('#money').html(parseFloat(r.usermoeny).rmb());// 下拉菜单中
 		                     this.get(".c_username").html(r.nickid);//用户中心
 		                     this.get("#zhanghu").html(parseFloat(r.usermoeny).rmb());//首页
@@ -401,8 +401,8 @@ Class('Loginer', {// 登陆器
                     	if(fn==undefined){fn=Y.C('logoutinfo');}
                         this.onlogout();
                         
-                        this.get('#nologin_info').show().get('#top_user_info').hide();
-                        this.get('#top_username').html("");
+                        this.get('#nologin_info,#nologin').show().get('#top_user_info,#onlogin').hide();
+                        this.get('#top_username,#onusername').html("");
                         Class.config('userMoney', 0);
                         this.clearUserInfo();
                         this.get('#top_usermoney').html("");
@@ -440,7 +440,7 @@ Class({
         };
         this.loginer = this.lib.Loginer({
             loginBtns: '#top_login_btn',// 顶部登陆
-            logoutBtns: '#logoutLink'
+            logoutBtns: '#logoutLink,#outLogin'
         }); 
 
 		this.onMsg('msg_show_endtime_CountDown',function(){
