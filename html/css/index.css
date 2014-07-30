@@ -112,7 +112,7 @@ div.center .body{width:95%;}
 .hm{width: 772px;float: right;border-bottom: 0;}
 .hm .body{width: 100%;}
 .hm table{width: 100%;}
-.hm table th{height: 33px;*height: 35px;color: #063f6f;background-color: #f8f8f8;font-weight: 400;}
+.hm table th{height: 33px;*height: 35px;color: #063f6f;background-color: #f8f8f8;font-weight: 400;border-bottom: 1px solid #ddd;}
 .hm table td{height: 34px;*height: 35px;text-align: center;border-bottom: 1px solid #ddd;}
 .hm table tr.odd td{background-color: #f8f8f8}
 .hm table td span{color: #25a;}

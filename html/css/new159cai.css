@@ -96,7 +96,7 @@ li.bac{background-image: none !important;}
 
 /*nav*/
 .nav{height: 38px;line-height: 38px;background: #f60 url(../images/bg/nav.jpg) repeat-x;}
-.nav ul li{float: left;background: url(../images/bg/nav_li.jpg) right center no-repeat;}
+.nav ul li{float: left;background: url(../images/bg/nav_li.jpg) right center no-repeat;overflow: visible;}
 .nav ul li a{height:38px;display:block;font-size:14px;font-weight:bold;color:#fff;padding:0 22px;float: left;}
 .nav ul li a:hover{background: #e52e04;margin: 0 -2px;padding:0 24px;text-decoration: none;color:#fff;}
 
@@ -356,9 +356,9 @@ a.a_auto{margin:0 auto 20px auto}
 .inacout p.p3 b{background:url(../images/cdbg/scj.png) no-repeat scroll 0 0 rgba(0, 0, 0, 0);display:block;background-position: -509px -157px;color: #ff6600;cursor: pointer;float: left;font-weight:100;margin-left: 5px;padding-left: 20px;}
 .inacout p.p3 b.cur{ background-position: -509px -184px;color: #2D9300;
 }
-.nav ul li{width:auto}
-.nav ul li:hover{ background:none}
-.nav ul li.li_a:hover{ background:none}
+/*.nav ul li{width:auto}*/
+/*.nav ul li:hover{ background:none}*/
+/*.nav ul li.li_a:hover{ background:none}*/
 .nav_main{padding: 0 0 5px}
 .lefter{width:230px}
 .news_img{height:220px}
