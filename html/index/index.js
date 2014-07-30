@@ -102,7 +102,7 @@ Class(
 						if(!this.isArray(r)){r=new Array(r);}
 						r.each(function(rt,o){
 							var gameid = rt.gid;
-							var odd=o%2==0?"odd":"";
+							var odd=o%2==0?"":"odd";
 							var html = '<tr id='+(o+1)+' class='+odd+'>';
 							html += '<td>';
 							if(rt.iorder > 0 && rt.jindu != 100){
