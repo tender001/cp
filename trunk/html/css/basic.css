@@ -29,6 +29,7 @@ img{vertical-align:top;}
 /*top*/
 .top{height: 36px; line-height: 36px; background-color: #f7f7f7; border-top: 1px solid #e8ecef; border-bottom: 1px solid #ddd;}
 .top .fl{width: 360px;_width: 362px;}
+.ie_fl{float: left;}
 .top dl{float: left;position: relative;z-index: 999;}
 .top dl dt{height:30px;line-height:30px;margin-top:3px;padding: 0 20px 0 5px; background-position: -13px -4px;position: relative;z-index: 14;border:1px solid transparent;_border:1px solid #f7f7f7;_float: left;}
 .top dl.hover dt{ background-position: -110px -5px;border-color: #ddd;border-bottom-color: #f7f7f7;}
@@ -40,6 +41,15 @@ img{vertical-align:top;}
 .top dl.ali.hover dt{background-position: -88px -5px;}
 .top dl.ali dd{width: 97px;_width: 96px;height: 34px;padding: 0;}
 .top dl.ali dd a{width: 100%;height: 100%;display: block;margin: 0;background-position: -266px -224px;}
+.top dl.mysite{}
+.top dl.mysite dt{color: #145fab}
+.top dl.mysite dd{width: 150px;left: 0;padding: 0;line-height: 22px;}
+.top dl.mysite dd p{padding: 5px 7px;}
+.top dl.mysite dd p.y1{border-bottom: 1px dashed #ddd;}
+.top dl.mysite dd p.y1 a{float: right;color: #145fab}
+.top dl.mysite dd p.y1 b{color: #f60}
+.top dl.mysite dd p a{color: #666;margin: 0;}
+.top dl.mysite dd p.y3 a{color: #145fab;font-family: "\5b8b\4f53";}
 .top dl dd li{padding: 10px 0;border-bottom: 1px solid #ddd;line-height: 26px;overflow: hidden;zoom:1;}
 .top dl dd li.kp{border: 0;}
 .top dl dd li div{width: 40px;padding: 6px 2px 0;float: left;font-weight: bold;color: #333;text-align: center;}
