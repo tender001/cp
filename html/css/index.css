@@ -37,7 +37,7 @@
 .m_mid .ad div span{width: 12px;height: 12px;display: inline-block;margin-left: 5px;background: url(../images/bg/page.png) no-repeat;cursor: pointer;opacity: 0.7;-moz-opacity: 0.7;_filter: alpha(opacity=70);}
 .m_mid .ad div span.cur{opacity: 1;-moz-opacity: 1;_filter: alpha(opacity=100);}
 .m_mid .tab{width: 538px;margin:12px auto 0;border:1px solid #ddd;}
-.m_mid .tab .title{height:32px;line-height:32px;border-bottom: 1px solid #ddd;background-color: #f6f6f6;}
+.m_mid .tab .title{height:32px;line-height:32px;border-bottom: 1px solid #ddd;background-color: #f6f6f6;overflow: visible;}
 .m_mid .tab .title span{position: relative;width:80px;height: 32px;display:block;float:left;text-align:center;font-size: 14px;font-weight:bold;color: #3c3c3c;border-right: 1px solid #ddd;cursor: pointer;_bottom: -1px;}
 .m_mid .tab .title span.hover{color:#ff1616;border-bottom: 1px solid #fff;background-color: #fff;}
 .m_mid .tab .title span i{display:none;width: 100%;height: 3px;overflow:hidden;background-color: #f44545;position: absolute;left: 0;top: -1px;}
