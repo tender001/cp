@@ -1,4 +1,7 @@
 @charset "utf-8";
+/*index basic*/
+.top dl dt,.top dl.ali dd a,.top dl dd li s,.top_logo .fr s,.m_l li span s,.m_mid .tab .bod b s,.m_mid .tab .bod b em,.m_mid .tab .bod b i,.m_mid .tab .bod b strong,.m_r p.user a,.mob_buy .body dd a,.today .bod li p a.fr,.center .body li p span em{background: url(../images/bg/index_bg0.png);_background-image: url(../images/bg/index_ie6.png);}
+
 .updo li{position: relative;z-index: 99;}
 .updo li s{width: 11px;height: 11px;display: block;position: absolute;right: 4px;top: 12px;background: transparent url(../images/bg/nav_xia.jpg);cursor: pointer;}
 .updo li.hover s{background: transparent url(../images/bg/nav_xia1.jpg)}
@@ -88,7 +91,7 @@ div.center .body{width:95%;}
 .center .body li{height: 106px;*height: 107px;overflow: hidden;border-bottom: 1px dashed #c5c5c5;}
 .center .body li p{width: 48%;height: 32px; line-height: 34px;font-size: 14px;color: #8c8c8c;float: left; padding-right: 1%;overflow: hidden;white-space: nowrap; text-overflow: ellipsis;}
 .center .body li p span{display: inline-block;width: 46px; height: 18px;line-height: 18px;text-align: center;color: #fff;background-color: #f60;vertical-align: middle;margin-right: 12px;position: relative;_margin-top: 5px;}
-.center .body li p span s{position: absolute;top: 18px;left: 49%;background-position: -164px -177px; width: 6px;height: 3px;}
+.center .body li p span em{position: absolute;top: 18px;left: 49%;background-position: -164px -177px; width: 6px;height: 3px;}
 .center .body li div{clear:both;height: 32px; line-height: 34px;font-size: 14px;color: #8c8c8c;overflow: hidden;}
 .center .body li div a{float:left;margin-right: 16px;_display: inline;}
 
