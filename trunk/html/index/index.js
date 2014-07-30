@@ -201,7 +201,7 @@ Class(
     					row.code = rt.codes;   				
         				row.etime =  rt.et;   		     				
         				row.pools = rt.pools;  
-        				row.pools = row.pools==''?'0元':(parseFloat(row.pools).rmb(false, 0) + "元");
+        				row.pools = row.pools==''?'0元':(parseFloat(row.pools).rmb(false, 0));
         				row.sales = rt.sales;       				
         				row.nums = rt.nums;       				
         				row.money = rt.moneys;	
