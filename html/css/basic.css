@@ -102,6 +102,7 @@ img{vertical-align:top;}
 .foc li dl dt strong{width: 100%;height: 20px;display: block; background-color: #ffe8da;margin-top: 4px;}
 .foc li dl dd{float: right;width: 130px;line-height: 22px;}
 .foc li dl dd p a{color: #135eaa}
+.foc li dl dd p a b{font-weight: 400;}
 .foc li dl dd p span{color: #aaa;padding: 0 3px;}
 .foc li dl dd em{color: #888}
 .foc li dl dd i a{width: 62px;height: 24px;line-height: 24px;color: #444;text-align: center;display: block;float: left;background: url(../images/bg/ov_03.jpg) no-repeat;}
@@ -118,4 +119,4 @@ img{vertical-align:top;}
 .foot p img{vertical-align: middle;width: 20px;height: 20px;}
 .menu_link{padding-bottom: 30px;}
 .menu_link p{color: #333;font-weight: bold;line-height: 24px;}
-.menu_link p a{font-weight: 400;color: #575757;margin: 0 10px;}
+.menu_link p a{font-weight: 400;color: #575757;margin: 0 9px;}

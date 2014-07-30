@@ -46,7 +46,7 @@
 
 .m_r{float: right;width: 222px}
 .m_r p.user{padding-bottom: 13px;}
-.m_r p.user a{width: 104px;height: 37px;line-height:37px;display: inline-block;margin-left:5px;text-align: center;color: #eb6003;font-size: 16px;font-weight: bold;background-position: -1px -110px;}
+.m_r p.user a{width: 104px;height: 37px;font: bold 16px/37px "\5b8b\4f53";display: inline-block;margin-left:5px;text-align: center;color: #eb6003;text-decoration: none;background-position: -1px -110px;}
 .m_r p.user a.reg{margin-left: 8px;}
 .m_r .tab{height: 227px;border: 1px solid #ddd;border-bottom: 0;}
 .m_r .tab .title{height: 28px;line-height: 28px;color: #333;background-color: #f6f6f6;margin-left: -1px;}
