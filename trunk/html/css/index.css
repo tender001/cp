@@ -58,11 +58,15 @@
 .m_mid .tab .bod b strong{width: 90px;height: 35px;line-height: 35px;color: #fff;background-position: -55px -152px;cursor: pointer;}
 
 .m_r{float: right;width: 223px}
-.m_r p.user{padding-bottom: 13px;height: 37px;overflow: hidden;}
-.m_r p.user a{width: 104px;height: 37px;font: bold 16px/37px "\5b8b\4f53";display: inline-block;margin-left:5px;text-align: center;color: #eb6003;text-decoration: none;background-position: -1px -110px;}
+.m_r p.user{padding-bottom: 8px;height: 42px;overflow: hidden;}
+.m_r p.user a.use{width: 104px;height: 37px;font: bold 16px/37px "\5b8b\4f53";display: inline-block;margin-left:5px;text-align: center;color: #eb6003;text-decoration: none;background-position: -1px -110px;}
 .m_r p.user a.reg{margin-left: 8px;}
+.m_r p.user .dlu{width: 86%;margin: 0 auto;display: block;line-height: 21px;}
+.m_r p.user .dlu a{color: #145fab}
+.m_r p.user .dlu span{margin-left: -7px;s}
+.m_r p.user .dlu span a{margin: 0 7px;}
 .m_r .tab{height: 227px;border: 1px solid #ddd;border-bottom: 0;}
-.m_r .tab .title{height: 28px;line-height: 28px;color: #333;background-color: #f6f6f6;margin-left: -1px;}
+.m_r .tab .title{height: 28px;line-height: 28px;color: #333;background-color: #f6f6f6;margin-left: -1px;overflow: visible;}
 .m_r .tab .title span{width:109px;height: 28px; display: block;float: left;border-left: 1px solid #ddd;border-bottom: 1px solid #ddd;text-align: center;cursor: pointer;}
 .m_r .tab .title span.hover{background-color: #fff;border-bottom-color: #fff;font-weight: bold;}
 .m_r .tab .bod{margin: 11px 0;overflow: hidden;zoom: 1;*margin: 0;*padding:  11px 0;}
