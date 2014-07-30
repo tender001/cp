@@ -86,12 +86,14 @@ img{vertical-align:top;}
 .today .bod li{height: 70px;border-bottom: 1px solid #ddd;}
 .today .bod li p{width: 90%;margin: 0 auto;overflow: hidden;line-height: 22px;}
 .today .bod li p span{color: #e52e06;}
+.today .bod li p b{margin-right: 5px;}
+.today .bod li p b.blue{color: #25a}
 .today .bod li p i{color: #434343;}
 .today .bod li p em{color: #7d7d7d;}
 .today .bod li p a.fr{width: 38px;height: 18px;display: block;background-position: -147px -152px;cursor: pointer;}
 .today .bod li p a{color: #145fab}
-.today .bod b{width:100%;height: 19px;display: block;background: #e8e8e8 url(../images/bg/scro.jpg) no-repeat;position: absolute;left: 0;bottom: 0;opacity: 0.9;-moz-opacity: 0.9;_filter: alpha(opacity=90);}
-.today .bod b span{width: 49%;height:19px;display: block;float:left;cursor: pointer;}
+.today .bod strong{width:100%;height: 19px;display: block;background: #e8e8e8 url(../images/bg/scro.jpg) no-repeat;position: absolute;left: 0;bottom: 0;opacity: 0.9;-moz-opacity: 0.9;_filter: alpha(opacity=90);}
+.today .bod strong span{width: 49%;height:19px;display: block;float:left;cursor: pointer;}
 /*焦点赛事*/
 .foc{width: 213px;float: left;}
 .foc .body{width: 92%;}
@@ -101,6 +103,7 @@ img{vertical-align:top;}
 .foc li dl dt img{width: 50px; height: 44px;margin-top: 4px;}
 .foc li dl dt strong{width: 100%;height: 20px;display: block; background-color: #ffe8da;margin-top: 4px;}
 .foc li dl dd{float: right;width: 130px;line-height: 22px;}
+.foc li dl dd p{width: 100%;height: 22px;overflow: hidden;}
 .foc li dl dd p a{color: #135eaa}
 .foc li dl dd p a b{font-weight: 400;}
 .foc li dl dd p span{color: #aaa;padding: 0 3px;}
