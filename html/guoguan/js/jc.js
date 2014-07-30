@@ -185,7 +185,8 @@ var showinfo = function(lotid, expect,type) {
 			if (expectlist.length>0){
 				for ( var i = 0; i < expectlist.length; i++) {
 					if(expectday==expectlist[i][0]){
-						html+='<option value="'+expectlist[i][0]+'" selected="selected">'+expectlist[i][0].substr(0,4)+'-'+expectlist[i][0].substr(4,2)+'-'+expectlist[i][0].substr(6,2)+'</option>';
+//						html+='<option value="'+expectlist[i][0]+'" selected="selected">'+expectlist[i][0].substr(0,4)+'-'+expectlist[i][0].substr(4,2)+'-'+expectlist[i][0].substr(6,2)+'</option>';
+						html+='<option value="'+expectlist[i][0]+'">'+expectlist[i][0].substr(0,4)+'-'+expectlist[i][0].substr(4,2)+'-'+expectlist[i][0].substr(6,2)+'</option>';
 					}else{
 						html+='<option value="'+expectlist[i][0]+'">'+expectlist[i][0].substr(0,4)+'-'+expectlist[i][0].substr(4,2)+'-'+expectlist[i][0].substr(6,2)+'</option>';
 					}
@@ -195,7 +196,8 @@ var showinfo = function(lotid, expect,type) {
 
 			$("#expect").html('');
 			if ($("#expect").html()=="") {
-				expect = expectday;
+//				expect = expectday;
+				expect = expectlist[0][0];
 			}else{
 				expect = expectlist[0][0];
 			}
