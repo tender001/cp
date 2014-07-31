@@ -989,7 +989,7 @@ span.suc_reg a.a3{color:#145fab;text-decoration:underline;margin-left:1px}
 .newgg a:hover{color:#ff6600; text-decoration:underline}
 .nngg_a{height:36px;border-bottom:3px solid #ff6600}
 .nngg_a a{ display:block;float:left;padding:0 25px;height:36px;line-height:36px;text-align:center;font-size:14px;font-weight:bold;color:#333;float:left;border-right:1px solid #ccc;}
-.nngg_a a.cur,.nngg_a a:hover{ background:#ff6600;color:#fff;font-weight:bold;border-bottom:none}
+.nngg_a a.cur,.nngg_a a:hover{ background:#ff6600;color:#fff;font-weight:bold;border-bottom:none;text-decoration: none;}
 a.g_a_t{ background:#e52e04;font-size:14px;font-weight:bold;color:#fff;line-height:32px; text-align:center;-webkit-border-radius:3px;   
 border-radius: 3px;-moz-border-radius:3px;}
 .g_5_right td b{display:block;float:right;margin-right:5px;border:1px solid #ddd; background: url(../images/159/nng_07.jpg) right center #efefef no-repeat;padding:0 20px 0 5px;font-weight:100;color:#333;height:18px; line-height:18px;margin:3px 5px 3px ;cursor:pointer}

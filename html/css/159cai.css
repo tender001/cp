@@ -2492,6 +2492,7 @@ a.x_in_hm{line-height:32px;font-size:12px;color:#145fab;float:right;margin-right
 .zn_gk_msg thead td{background-color:#f5f5f5;font-weight:bold}
 .zn_gg_3{height:35px; border-bottom:2px solid #ff6600;padding-left:10px;clear:both; background:#f0f0f0;height:35px}
 .zn_gg_3 a{color:#444;display:block; float:left;width:95px;height:35px;line-height:35px;text-align:center;font-weight:bold;font-size:14px}
+.zn_gg_3 a:hover{text-decoration: none}
 .zn_gg_3 a.cur{ background:#ff6600;color:#fff}
 .zn_gg_4 a{color:#145fab;}
 .cz_sk{background-color:#fff;overflow:visible;min-height:300px}
