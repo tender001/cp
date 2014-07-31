@@ -181,7 +181,7 @@ font.cm_red{color:#ff6600}
 .user_left h1{font-size:18px;height:40px;line-height:40px; text-align:center;color:#fff;font-family:"微软雅黑"; background:#ff6600}
 .user_left a{display:block;height:32px; background:url(../images/cai888/user_18.jpg) 19px 12px no-repeat;line-height:32px}
 .user_left a em{color:#444;font-size:14px;display:block;margin:0 8px;padding-left:23px;border-bottom:1px solid #ddd;height:32px;line-height:32px}
-.user_left a:hover,.user_left a.cur{background:url(../images/cai888/user_30.jpg) 19px 11px no-repeat #ffdac1;}
+.user_left a:hover,.user_left a.cur{background:url(../images/cai888/user_30.jpg) 19px 11px no-repeat #ffdac1;text-decoration: none;}
 .user_left a:hover em,.user_left a.cur em{border:none;}
 .user_right{width:861px;float:left;min-height:520px;}
 .uactop{padding:5px 19px 5px 27px;height:55px;border-bottom:1px solid #ddd;}
