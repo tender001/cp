@@ -1496,6 +1496,7 @@ a.jc_mtz:hover, a.jc_mhm:hover{background-position:-110px 0}
 .touzcm h1{float:left;line-height:40px;width:128px;text-align:center;color:#333;font-family:"微软雅黑";font-size:22px;font-weight:100;border-right:1px solid #bbb;}
 .touzcm span{float:left;}
 .touzcm span a{display:block;float:left;line-height:40px;padding:0 16px;font-size:14px;color:#333;border-right:1px solid #bbb;height:40px}
+.touzcm span a:hover{text-decoration: none;}
 .touzcm span a.cur{background:#ff6600;color:#fff;font-weight:bold;}
 .touzcm p{float:right;line-height:40px;color:#333;padding-right:15px}
 .touzcm p a{color:#333;margin:0 5px;}
