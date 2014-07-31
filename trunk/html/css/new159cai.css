@@ -26,7 +26,8 @@ img{vertical-align:top;}
 .ba9{color: #1f5ba9 !important;font-weight: bold;}
 .c3{color: #3c3c3c !important;}
 /*index basic*/
-.top dl dt,.top dl.ali dd a,.top dl dd li s,.top_logo .fr s,.m_l li span s,.m_l1 li span s,.m_mid .tab .bod b s,.m_mid .tab .bod b em,.m_mid .tab .bod b i,.m_mid .tab .bod b strong,.m_r p.user a,.mob_buy .body dd a,.today .bod li p a.fr,.center .body li p span em{background: url(../images/bg/index_bg0.png);_background-image: url(../images/bg/index_ie6.png);}
+/*.top dl dt,*/
+.top dl dt s,.top dl.ali dd a,.top dl dd li s,.top_logo .fr s,.m_l li span s,.m_l1 li span s,.m_mid .tab .bod b s,.m_mid .tab .bod b em,.m_mid .tab .bod b i,.m_mid .tab .bod b strong,.m_r p.user a,.mob_buy .body dd a,.today .bod li p a.fr,.center .body li p span em{background: url(../images/bg/index_bg0.png);_background-image: url(../images/bg/index_ie6.png);}
 /* dd */
 /*top*/
 .top{height: 36px; line-height: 36px; background-color: #f7f7f7; border-top: 1px solid #e8ecef; border-bottom: 1px solid #ddd;overflow:visible;}
@@ -34,6 +35,8 @@ img{vertical-align:top;}
 .ie_fl{float: left;}
 .top dl{float: left;position: relative;z-index: 999;}
 .top dl dt{height:30px;line-height:30px;margin-top:3px;padding: 0 20px 0 5px; background-position: -13px -4px;position: relative;z-index: 14;border:1px solid transparent;_border:1px solid #f7f7f7;_float: left;}
+.top dl dt s{width: 11px;height: 11px;display: block;position: absolute;right: 4px;top: 9px;background-position: -70px -14px;-webkit-transition: transform 0.2s ease-in 0s;-moz-transition: transform 0.2s ease-in 0s;-o-transition: transform 0.2s ease-in 0s;transition: transform 0.2s ease-in 0s;}
+.top dl.hover dt s{background-position: -166px -14px\9;-webkit-transform: rotate(180deg);-moz-transform: rotate(180deg);-o-transform: rotate(180deg);transform: rotate(180deg);}
 .top dl.hover dt{ background-position: -110px -5px;border-color: #ddd;border-bottom-color: #f7f7f7;}
 .top dl dd{width:234px;height: auto;padding:0 8px;display: none;border:1px solid #ddd;border-bottom: 3px solid #f60;background-color: #f7f7f7;position: absolute;right: 0;top: 34px;z-index: 13;}
 .top dl.hover dt{background-color: #fff;}
@@ -77,7 +80,8 @@ img{vertical-align:top;}
 
 /*购买彩票 弹出菜单*/
 .nav1_buy{width: 215px;height: 38px;float: left;position: relative;overflow: visible;background: #e52e04 url(../images/bg/nav_b.jpg) no-repeat;z-index: 99;}
-.nav1_buy a.nav1_gm{width: 215px;height: 38px;line-height: 38px;font-size: 14px;display: block;text-indent: -9999em;}
+.nav1_buy a.nav1_gm{width: 215px;height: 38px;line-height: 38px;font-size: 14px;display: block;text-align: center;color: #fff;font-weight: bold;}
+.nav1_buy a.nav1_gm:hover{text-decoration: none;}
 .m_l{width:213px;height: 460px;border:1px solid #ddd;border-bottom:0;background: #fffbe6;}
 .m_l{display: none;float: left;position: absolute;left: 0;top: 38px;z-index: 99;}
 .nav1_buy.hover .m_l{display: block;border-bottom: 3px solid #f60;}
@@ -181,18 +185,18 @@ li.bac{background-image: none !important;}
 .menu_link{padding-bottom: 30px;}
 .menu_link p{color: #333;font-weight: bold;line-height: 24px;}
 .menu_link p a{font-weight: 400;color: #575757;margin: 0 9px;}
-.menu_link .link_mid{float: left;width: 880px;height: 24px;overflow: hidden;}
-.menu_link .link_mid a{float: left;}
+.menu_link .link_mid{float: left;width: 864px;height: 24px;overflow: hidden;}
+/*.menu_link .link_mid a{float: left;}*/
 .menu_link .link_more{float: left;padding-right: 15px;color: #145fab;position: relative;cursor: pointer;-webkit-user-select: none;-moz-user-select: none;-o-user-select: none;user-select: none;}
 .menu_link .link_more s{margin-top: 7px;}
 .menu_link .click{height: auto;}
-.menu_link .mar{margin-top: 24px;}
+/*.menu_link .mar{margin-top: 24px;}*/
 
 .xiaj{width: 11px;height: 8px;display: block;position: absolute;right: 0;top: 0;background: url(../images/bg/link_more.png) 0 0 no-repeat;-webkit-transition: transform .2s ease-in 0s;
 -moz-transition: transform .2s ease-in 0s;
 -o-transition: transform .2s ease-in 0s;
 transition: transform .2s ease-in 0s;}
-.xiaj.hover{transform:rotate(180deg);background-position: 0 -8px\9;}
+.xiaj.hover{background-position: 0 -8px\9;-webkit-transform: rotate(180deg);-moz-transform: rotate(180deg);-o-transform: rotate(180deg);transform: rotate(180deg);}
 /* dd */
 
 
