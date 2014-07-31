@@ -114,10 +114,10 @@ li.bac{background-image: none !important;}
 .nav1 ul li a{height:38px;display:block;font-size:14px;font-weight:bold;color:#fff;padding:0 15px;float: left;}
 .nav1 ul li a:hover{background: #e52e04;margin: 0 -2px;padding:0 17px;text-decoration: none;color:#fff;}
 .nav1 ul li a.a1{padding-right: 22px;}
-.nav1 ul li a.a1:hover{padding-right: 23px;}
+.nav1 ul li a.a1:hover{padding-right: 24px;}
 .nav1 ul li s{right: 9px;}
 .nav1 ul li .xia{width: 98px;}
-.nav1 ul li.hover a.a1{padding-right: 23px;}
+.nav1 ul li.hover a.a1{padding-right: 24px;padding-left: 17px;}
 .updo li{position: relative;z-index: 99;}
 .updo li s{width: 11px;height: 11px;display: block;position: absolute;right: 4px;top: 12px;background: transparent url(../images/bg/nav_xia.jpg);cursor: pointer;}
 .updo li.hover s{background: transparent url(../images/bg/nav_xia1.jpg)}
