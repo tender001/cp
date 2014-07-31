@@ -242,7 +242,7 @@ $(document).ready(function(){
 									html += '<td></td>';
 								}
 							}else{
-								html += '<td><div><input type="text" value="1" id="rengou_' + rt.nid + '" /><a href="#"><img src="/images/index_110.gif" class="gm" onclick="rengou(\''+gameid+'\',\''+rt.cprojid+'\',\'rengou_' + rt.nid +'\',\''+rt.lnum+'\')"/></a></div></td>';//lotid,projid,id,lnum
+								html += '<td><div><input type="text" value="1" id="rengou_' + rt.nid + '" /><a href="javascript:void(0);"><img src="/images/index_110.gif" class="gm" onclick="rengou(\''+gameid+'\',\''+rt.cprojid+'\',\'rengou_' + rt.nid +'\',\''+rt.lnum+'\')"/></a></div></td>';//lotid,projid,id,lnum
 							}
 							if(rt.cnickid=='******'){
 								html += '<td>--</td>';
@@ -389,7 +389,7 @@ $(document).ready(function(){
 									html += '<td></td>';
 								}
 							}else{
-								html += '<td><div><input type="text" value="1" id="rengou_' + idx + '" /><a href="#"><img src="/images/index_110.gif" class="gm" onclick="rengou(\''+gameid+'\',\''+rt.hid+'\',\'rengou_' + idx +'\',\''+rt.lnum+'\')"/></a></div></td>';//lotid,projid,id,lnum
+								html += '<td><div><input type="text" value="1" id="rengou_' + idx + '" /><a href="javascript:void(0);"><img src="/images/index_110.gif" class="gm" onclick="rengou(\''+gameid+'\',\''+rt.hid+'\',\'rengou_' + idx +'\',\''+rt.lnum+'\')"/></a></div></td>';//lotid,projid,id,lnum
 							}
 							if(rt.nickid=='******'){
 								html += '<td>--</td>';
@@ -504,7 +504,7 @@ $(document).ready(function(){
 									html += '<td></td>';
 								}
 							}else{
-								html += '<td><div><input type="text" value="1" onkeyup="if(this.value>'+rt.lnum+')this.value='+rt.lnum+';" id="rengou_' + idx + '" /><a href="#"><img src="/images/index_110.gif" class="gm" onclick="rengou(\''+gameid+'\',\''+rt.hid+'\',\'rengou_' + idx +'\',\''+rt.lnum+'\')"/></a></div></td>';//lotid,projid,id,lnum
+								html += '<td><div><input type="text" value="1" onkeyup="if(this.value>'+rt.lnum+')this.value='+rt.lnum+';" id="rengou_' + idx + '" /><a href="javascript:void(0);"><img src="/images/index_110.gif" class="gm" onclick="rengou(\''+gameid+'\',\''+rt.hid+'\',\'rengou_' + idx +'\',\''+rt.lnum+'\')"/></a></div></td>';//lotid,projid,id,lnum
 							}
 							if(rt.cnickid=='******'){
 								html += '<td>--</td>';
