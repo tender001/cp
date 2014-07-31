@@ -1,6 +1,6 @@
 <div class="fn-clear" style="background: #f60;overflow: visible;zoom:1">
 <div class="w1000">
-	<div class="nav1_buy"><a href="#" class="nav1_gm">购买彩票</a>
+	<div class="nav1_buy nav1_buy_l"><a href="#" class="nav1_gm">购买彩票</a>
 		<div class="m_l">
 			<ul>
 				<li>
@@ -81,5 +81,25 @@ $(function(){
 	},function(){
 		$(this).removeClass("hover");
 	});
+	$(".lottery-nav li").hover(function(){
+		$(this).find(".submenu").show();
+	},function(){
+		$(this).find(".submenu").hide();
+	})
+
+$(".nav1_buy").css({
+		"height":35,
+		"overflow":"hidden"
+		});
+	$(".nav1_buy").hover(function(){
+			$(this).find(".nav1_buy_l>.lottery_box,.nav1_buy_l>em").show();
+			$(this).clearQueue().animate({
+				height:500
+				})
+		},function(){
+			$(this).animate({
+				height:35
+				})
+		})
 });
 </script>
