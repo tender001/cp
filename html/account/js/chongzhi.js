@@ -209,7 +209,7 @@ Class('App', {
    			}
    			//Y.openUrl('suc.html',440,218);
    			setcookie("bank_cookie",Y.get("#bid").val());
-   			Y.openUrl('tishi.html',502,250);
+   			Y.openUrl('tishi.html',502,194);
    			Y.get("#bankform").attr("action",$_user.url.addmoney);
    			$("#bankform").submit();
    	 	});
