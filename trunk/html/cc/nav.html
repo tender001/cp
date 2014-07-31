@@ -1,6 +1,6 @@
 <div class="fn-clear" style="background: #f60;overflow: visible;zoom:1">
 <div class="w1000">
-	<div class="nav1_buy nav1_buy_l"><a href="#" class="nav1_gm">购买彩票</a>
+	<div class="nav1_buy"><a href="#" class="nav1_gm">购买彩票</a>
 		<div class="m_l">
 			<ul>
 				<li>
@@ -76,10 +76,16 @@
 </div>
 <script type="text/javascript">
 $(function(){
-	$(".nav1_buy,.updo li").hover(function(){
+	// $(".nav1_buy,.updo li").hover(function(){
+	$(".updo li").hover(function(){
 		$(this).addClass("hover");
 	},function(){
 		$(this).removeClass("hover");
+	});
+	$(".nav1_buy").hover(function() {
+		$(this).children('.m_l').stop(true,true).slideDown('slow/400/fast');
+	}, function() {
+		$(this).children('.m_l').stop(true,true).slideUp('slow/400/fast');
 	});
 	$(".lottery-nav li").hover(function(){
 		$(this).find(".submenu").show();
@@ -87,12 +93,12 @@ $(function(){
 		$(this).find(".submenu").hide();
 	})
 
-$(".nav1_buy").css({
+/* $(".nav1_buy").css({
 		"height":35,
 		"overflow":"hidden"
 		});
 	$(".nav1_buy").hover(function(){
-			$(this).find(".nav1_buy_l>.lottery_box,.nav1_buy_l>em").show();
+			$(this).find(".nav1_buy_l>.m_1,.nav1_buy_l>em").show();
 			$(this).clearQueue().animate({
 				height:500
 				})
@@ -100,6 +106,6 @@ $(".nav1_buy").css({
 			$(this).animate({
 				height:35
 				})
-		})
+		}) */
 });
 </script>
