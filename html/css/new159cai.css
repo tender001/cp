@@ -181,8 +181,18 @@ li.bac{background-image: none !important;}
 .menu_link{padding-bottom: 30px;}
 .menu_link p{color: #333;font-weight: bold;line-height: 24px;}
 .menu_link p a{font-weight: 400;color: #575757;margin: 0 9px;}
-.menu_link 
+.menu_link .link_mid{float: left;width: 880px;height: 24px;overflow: hidden;}
+.menu_link .link_mid a{float: left;}
+.menu_link .link_more{float: left;padding-right: 15px;color: #145fab;position: relative;cursor: pointer;-webkit-user-select: none;-moz-user-select: none;-o-user-select: none;user-select: none;}
+.menu_link .link_more s{margin-top: 7px;}
+.menu_link .click{height: auto;}
+.menu_link .mar{margin-top: 24px;}
 
+.xiaj{width: 11px;height: 8px;display: block;position: absolute;right: 0;top: 0;background: url(../images/bg/link_more.png) 0 0 no-repeat;-webkit-transition: transform .2s ease-in 0s;
+-moz-transition: transform .2s ease-in 0s;
+-o-transition: transform .2s ease-in 0s;
+transition: transform .2s ease-in 0s;}
+.xiaj.hover{transform:rotate(180deg);background-position: 0 -8px\9;}
 /* dd */
 
 
@@ -297,7 +307,7 @@ table.log_tab td input.box{vertical-align: -2px;_vertical-align: -1px;margin-rig
 table.log_tab td a.aa{color:#145fab;margin-left:50px;}
 table.log_tab td a.aa:hover{color:#790500; text-decoration:underline}
 #footer{ background-color:#efefef;width:100%;margin-top:20px}
-.foot{width:1000px;margin:0 auto;padding:20px 0 40px 0}
+.foot{width:1000px;margin:0 auto;padding:20px 0 15px 0}
 .foot_col{width:170px;float:left;margin:15px 0 0 25px;height:150px;_margin-left:20px}
 .foot_col img{width:42px;height:42px;float:left;margin-bottom:5px}
 .foot_col h3{padding-left:15px;font-size:18px;color:#4a4a4a; font-family:"微软雅黑";float:left;line-height:42px;font-weight:100}
