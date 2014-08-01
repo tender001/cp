@@ -235,12 +235,13 @@
 <div class="kj fn-clear">
 	<div class="today tab">
 		<div class="title" id="todaykaijiang">
-			<span class="hover" ttl="0">今日开奖</span>
+			<!-- <span class="hover" ttl="0">今日开奖</span> -->
+			
+			<span ttl="0" class="hover">数字彩</span>
 			<span ttl="1">竞技彩</span>
-			<span ttl="2">数字彩</span>
 		</div>
 		<div class="bod" id="kjdiv">
-			<div class="hover" id="k1" mark="kj">
+			<!-- <div class="hover" id="k1" mark="kj">
 				<ul>
 					<li today="01" style="display: none;">
 						<p><span class="fl"><a target="_blank" href="/shuangseqiu/kaijiang.html">双色球</a></span><i class="fr" expect="01">888888期</i><i>开奖:21:30</i></p>
@@ -254,7 +255,7 @@
 					</li>
 					<li today="03" style="display: none;">
 						<p><span class="fl"><a target="_blank" href="/3d/kaijiang.html">福彩3D</a></span><i class="fr" expect="03">888888期</i><i>开奖:20:30</i></p>
-						<p><em class="fl">销售中</em><a target="_blank" href="/3d/" class="fr"></a></p>
+						<p><em class="fl" id="show">销售中</em><span id="sd_codes"><b></b><b></b><b></b></span><a target="_blank" href="/3d/" class="fr"></a></p>
 						<p><i class="fl">奖池：<span pool="03"></span>&nbsp;元</i></p>
 					</li>
 					<li today="07" style="display: none;">
@@ -298,32 +299,9 @@
 						<p><i class="fl">奖池：<span pool="83"></span>&nbsp;元</i></p>
 					</li>
 				</ul>
-				<!-- <b><span></span><span></span></b> -->
-			</div>
-			<div style="display: none" id="k2" mark="kj"><!--竞技彩-->
-				<ul>
-					<li>
-						<p><a target="_blank" href="/zc/zc_kj.html"><span>胜负/任九</span></a>&nbsp;&nbsp;&nbsp;&nbsp;<i id="sfc_pid"></i><i id="sfc_kjdate"></i></p>
-						<p><span id="sfc_code"><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b></span></p>
-						<p><i>一等奖&nbsp;&nbsp;0注&nbsp;&nbsp;0元</i></p>
-						<p><i>二等奖&nbsp;&nbsp;1注&nbsp;&nbsp;749元</i></p>
-						<p><i>奖池滚存：<span>6,248,081</span>元</i></p>
-						<p><i class="fl" id="renjiumoney"></i><span class="fr"><a href="/zc/zc_kj.html?lotid=81">详情</a></span></p>
-					</li>
-					<li>
-						<p><a target="_blank" href="/zc/zc_kj.html?lotid=82"><span>进球数</span></a>&nbsp;&nbsp;&nbsp;&nbsp;<i id="jqc_pid"></i><i id="jqc_kjdate"></i></p>
-						<p><span id="jqc_code"><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b></span></p>
-						<p><i class="fl" id="jqcmoney"></i><span class="fr"><a href="/zc/zc_kj.html?lotid=82">详情</a></span></p>
-					</li>
-					<li>
-						<p><a target="_blank" href="/zc/zc_kj.html?lotid=83"><span>半全场</span></a>&nbsp;&nbsp;&nbsp;&nbsp;<i id="bqc_pid"></i><i id="bqc_kjdate"></i></p>
-						<p><span id="sfc_code"><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b></span></p>
-						<p><i class="fl" id="bqcmoney"></i><span class="fr"><a href="/zc/zc_kj.html?lotid=83">详情</a></span></p>
-					</li>
-				</ul>
-				<!-- <b><span></span><span></span></b> -->
-			</div>
-			<div id="k3" style="display: none" mark="kj"><!--数字彩-->
+				<b><span></span><span></span></b>
+			</div> -->
+			<div id="k1"  mark="kj"><!--数字彩-->
 				<ul>
 					<li>
 						<p><a target="_blank" href="/shuangseqiu/kaijiang.html"><span>双色球</span></a>&nbsp;&nbsp;&nbsp;&nbsp;<i id="ssq_pid">888888期</i>&nbsp;&nbsp;<i id="ssq_kjdate"></i></p>
@@ -375,6 +353,30 @@
 				</ul>
 				<!-- <b><span id="scroll_up"></span><span id="scroll_down"></span></b> -->
 			</div>
+			<div style="display: none" id="k2" mark="kj"><!--竞技彩-->
+				<ul>
+					<li>
+						<p><a target="_blank" href="/zc/zc_kj.html"><span>胜负/任九</span></a>&nbsp;&nbsp;&nbsp;&nbsp;<i id="sfc_pid"></i><i id="sfc_kjdate"></i></p>
+						<p><span id="sfc_code"><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b></span></p>
+						<p><i>一等奖&nbsp;&nbsp;0注&nbsp;&nbsp;0元</i></p>
+						<p><i>二等奖&nbsp;&nbsp;1注&nbsp;&nbsp;749元</i></p>
+						<p><i>奖池滚存：<span>6,248,081</span>元</i></p>
+						<p><i class="fl" id="renjiumoney"></i><span class="fr"><a href="/zc/zc_kj.html?lotid=81">详情</a></span></p>
+					</li>
+					<li>
+						<p><a target="_blank" href="/zc/zc_kj.html?lotid=82"><span>进球数</span></a>&nbsp;&nbsp;&nbsp;&nbsp;<i id="jqc_pid"></i><i id="jqc_kjdate"></i></p>
+						<p><span id="jqc_code"><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b></span></p>
+						<p><i class="fl" id="jqcmoney"></i><span class="fr"><a href="/zc/zc_kj.html?lotid=82">详情</a></span></p>
+					</li>
+					<li>
+						<p><a target="_blank" href="/zc/zc_kj.html?lotid=83"><span>半全场</span></a>&nbsp;&nbsp;&nbsp;&nbsp;<i id="bqc_pid"></i><i id="bqc_kjdate"></i></p>
+						<p><span id="sfc_code"><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b></span></p>
+						<p><i class="fl" id="bqcmoney"></i><span class="fr"><a href="/zc/zc_kj.html?lotid=83">详情</a></span></p>
+					</li>
+				</ul>
+				<!-- <b><span></span><span></span></b> -->
+			</div>
+			
 			<strong><span id="scroll_up"></span><span id="scroll_down"></span></strong>
 		</div>
 	</div>
