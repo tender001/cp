@@ -145,7 +145,7 @@ li.bac{background-image: none !important;}
 .today .bod{position: relative;height: 321px;overflow: hidden;*height: 328px;}
 .today .bod div{display: none;}
 .today .bod div.hover{display: block;}
-.today .bod ul{overflow: hidden;padding-top: 18px;}
+.today .bod ul{overflow: hidden;padding-top: 6px;}
 .today .bod li{height: auto;border-bottom: 1px solid #ddd;padding: 5px 0;}
 .today .bod li p{width: 90%;margin: 0 auto;overflow: hidden;line-height: 22px;}
 .today .bod li p span{color: #e52e06;}
