@@ -560,7 +560,7 @@ a.goyh2:hover {
 .dt_toplist{width:290px;height:190px; background-color:#fff;border:1px solid #cfb27f;margin-left:30px;float:left}
 .dt_toplist img{display:block;margin:8px auto 0;width:98px;height:112px;}
 .dt_toplist a{ background:url(../images/159/dting_17.jpg) -131px 0;height:35px;display:block;margin:0 auto;font-size:18px; font-family: "微软雅黑";text-align:center;width:109px;line-height:33px;color:#fff}
-.dt_toplist a:hover{ background-position:0 0}
+.dt_toplist a:hover{ background-position:0 0;text-decoration: none;}
 .dt_toplist p{text-align:Center;color:#444;line-height:30px;}
 .dt_cist{ background:url(../images/159/dting_39.jpg) 0 29px  repeat-x;margin-top:10px}
 .dt_cist h2{height:31px;width:116px;text-align:center;line-height:30px;font-size:16px; font-family: "微软雅黑";color:#fff; background:url(../images/159/dting_20.jpg)}
@@ -590,7 +590,8 @@ a.goyh2:hover {
 .dt_cn p strong{font-weight:bold;font-size:14px;color:#444}
 .dt_cd{background-color:#f6e5c6}
 .dt_cd p{padding-top:22px}
-.dt_cd a{width:76px;height:26px;display:block;margin:12px auto;color:#fff;line-height:26px;text-algin:center;font-size:14px; font-family: "微软雅黑"; background:url(../images/159/dting_35.jpg);text-align:center}
+.dt_cd a{width:76px;height:26px;display:block;margin:12px auto;color:#fff;line-height:26px;text-align:center;font-size:14px; font-family: "微软雅黑"; background:url(../images/159/dting_35.jpg);}
+.dt_cd a:hover{text-decoration: none;}
 .tb_sfc_s{top:80px;height:80px;}
 .tb_sfc_on{border:none;height:auto;line-height:34px}
 .redball b{background-position:-6px -4px}
@@ -633,7 +634,7 @@ span.kj_reson b.blue{background-position: -190px -43px;}
 .nhmleft{border-bottom:1px solid #ddd;margin-bottom:12px}
 .nhmleft h2{padding-left:47px;color:#444;font-weight:bold;border:1px solid #ddd;height:30px;line-height:30px; background-color:#f3f3f3;width:123px;font-size:14px}
 .nhmleft a{display:block;height:32px;padding-left:47px;width:123px;color:#444;font-size:14px;line-height:32px; position:relative;background:#f8f8f8;margin-left:1px}
-.nhmleft a:hover,.nhmleft a.cur{ background:url(../images/159/nhm_09.jpg);margin:0;width:125px}
+.nhmleft a:hover,.nhmleft a.cur{ background:url(../images/159/nhm_09.jpg);margin:0;width:125px;text-decoration: none;}
 .nhmleft a img{display:block; position:absolute;right:5px;top:7px}
 .hm_left{ background:none}
 .winph{border:1px solid #d6be91;padding-bottom:5px}
@@ -1373,6 +1374,7 @@ a.t_a_dz:hover{background-image: url(../images/hm/hmt_05.gif)}
 .userzjk{margin:12px 8px;border:1px solid #ccc;border-top:2px solid #f57e2e}
 .userzjka{height:36px;background:url(../images/cai888/ggnav_03.jpg)}
 .userzjka a{ display:block;float:left;width:80px;height:35px;line-height:34px;text-align:center;font-size:14px;color:#000;float:left;border-bottom:1px solid #ccc;border-right:1px solid #ccc;text-align:center}
+.userzjka a:hover{text-decoration: none;}
 .userzjka a.cur{ background:#fff;color:#333;font-weight:bold;border-bottom:none}
 .userzjka p{float:right;line-height:35px;border-bottom:1px solid #ccc;width:367px;color:#444;padding-right:10px;text-align:right;height:35px}
 .userzjka p input{vertical-align: -2px;_vertical-align: -1px;margin: 0 4px 0 10px;}
