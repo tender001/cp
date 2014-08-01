@@ -40,14 +40,13 @@ img{vertical-align:top;}
 .top dl.hover dt{ background-position: -110px -5px;border-color: #ddd;border-bottom-color: #f7f7f7;}
 .top dl dd{width:234px;height: auto;padding:0 8px;display: none;border:1px solid #ddd;border-bottom: 3px solid #f60;background-color: #f7f7f7;position: absolute;right: 0;top: 34px;z-index: 13;}
 .top dl.hover dt{background-color: #fff;}
-.top dl.hover dd{display: block;background-color: #fff;}
+.top dl.hover dd{background-color: #fff;}/*display: block;*/
 .top dl.ali{float: right;}
 .top dl.ali dt{background-position: 9px -4px;}
 .top dl.ali.hover dt{background-position: -88px -5px;}
 .top dl.ali dd{width: 97px;_width: 96px;height: 34px;padding: 0;}
 .top dl.ali dd a{width: 100%;height: 100%;display: block;margin: 0;background-position: -266px -224px;}
-.top dl.mysite{}
-.top dl.mysite dt{color: #145fab}
+.top dl.mysite dt a{color: #145fab;margin: 0;}
 .top dl.mysite dd{width: 150px;left: 0;padding: 0;line-height: 22px;}
 .top dl.mysite dd p{padding: 5px 7px;}
 .top dl.mysite dd p.y1{border-bottom: 1px dashed #ddd;}
