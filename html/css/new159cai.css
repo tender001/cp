@@ -40,7 +40,7 @@ img{vertical-align:top;}
 .top dl.hover dt{ background-position: -110px -5px;border-color: #ddd;border-bottom-color: #f7f7f7;}
 .top dl dd{width:234px;height: auto;padding:0 8px;display: none;border:1px solid #ddd;border-bottom: 3px solid #f60;background-color: #f7f7f7;position: absolute;right: 0;top: 34px;z-index: 13;}
 .top dl.hover dt{background-color: #fff;}
-.top dl.hover dd{display: block;background-color: #fff;}
+.top dl.hover dd{/*display: block;*/background-color: #fff;}
 .top dl.ali{float: right;}
 .top dl.ali dt{background-position: 9px -4px;}
 .top dl.ali.hover dt{background-position: -88px -5px;}
@@ -124,7 +124,7 @@ li.bac{background-image: none !important;}
 .updo li.hover s{background: transparent url(../images/bg/nav_xia1.jpg)}
 .updo li.hover a.a1{background: #e52e04;margin: 0 -2px;padding:0 18px;}
 .updo li .xia{display: none;width: 93px;background: #fff;position: absolute;left: -1px;top: 38px;z-index: 102;}
-.updo li.hover .xia{display: block;border: 1px solid #e52f05;border-top: 0;}
+.updo li.hover .xia{border: 1px solid #e52f05;border-top: 0;}
 .updo li .xia p{width: 100%;height: 30px;line-height: 30px;text-align: center;border-bottom: 1px solid #ddd;}
 .updo li .xia p a{width: 100%;height: 100%;display: block;padding: 0;color: #e52f05;font-weight: 400;}
 .updo li .xia p a:hover{background: none;margin: 0;text-decoration: underline}
