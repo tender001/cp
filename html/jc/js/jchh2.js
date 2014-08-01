@@ -902,10 +902,10 @@ Class('CodeList', {
 			m.map(function (obj){
 				if(obj.dan===undefined||obj.dan==""){
 				
-				}else{
+				}/*else{
 				c.push(obj.dan.join("/"));
-				}
-			}).join('/')
+				}*/
+			}).join('/');
 			
 		});
 		return $_base_s.undel(c).join('/');
