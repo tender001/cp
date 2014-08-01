@@ -1,4 +1,4 @@
-    Class({
+  Class({
         ready: true,
 	
 		index:function (){
@@ -11,7 +11,7 @@
     	goTotop:function (){
             var isIE=!!window.ActiveXObject;
             var isIE6 = isIE&&!window.XMLHttpRequest;
-            var btn = $("a.back_top");
+            var btn = $("#goTotop");
             var right = 0;
             var top = $(window).height()-247;
             var ietop = $(window).height()-247+$(window).scrollTop();
@@ -19,7 +19,7 @@
             $(window).resize(function(){
                 btn.css({"position":"fixed",top:top,right:right});
                 if(isIE6)btn.css({"position":"absolute",top:ietop,right:right});
-            })
+            });
             btn.css({"position":"fixed",top:top,right:right});
             var areaTop = Y.get("div.newsr").getXY().y;
             
@@ -43,10 +43,10 @@
     	        					V.css({left: "auto",top: Z+$(window).scrollTop(), width: F,position: "absolute"});
     	        				}else{
     	        				V.css({left: "auto",top: Z, width: F, position: "fixed"});
-    	        				}
+    	        				};
     	        			}
     	        			Y.get("#right_area").setStyle('z-index: 1;');
-    	        		}
+    	        		};
     	            	
     	             }else{//停止浮动对齐
                 	 Y.get("#right_area").setStyle('z-index: 1; top:0;  left: auto;position: static;');
@@ -65,7 +65,7 @@
                 btn.css({"position":"fixed",top:top,right:right});
                 ietop = $(window).height()-247+$(window).scrollTop();
                 if(isIE6)btn.css({"position":"absolute",top:ietop,right:right});
-            })
+            });
         },
         otherEven:function(){
 
@@ -77,31 +77,31 @@
         		$("#nav_main").find("#nav_main").show();
     			$("#nav_main").clearQueue().animate({
     				height:640
-    				})
+    				});
     		},function(){
     			$("#nav_main").animate({
     				height:0
-    				})
+    				});
     		});
         	$("li.zqzx,#zq_xl").hover(function(){
         		$("#zq_xl").find("#zq_xl").show();
     			$("#zq_xl").clearQueue().animate({
     				height:90
-    				})
+    				});
     		},function(){
     			$("#zq_xl").animate({
     				height:0
-    				})
+    				});
     		});
         	$("li.bfzb,#bf_xl").hover(function(){
         		$("#bf_xl").find("#bf_xl").show();
     			$("#bf_xl").clearQueue().animate({
     				height:125
-    				})
+    				});
     		},function(){
     			$("#bf_xl").animate({
     				height:0
-    				})
+    				});
     		});
     		 
        
@@ -109,9 +109,9 @@
 
         
         },
-    	loadPeriod = function(){
+    	loadPeriod : function(){
 			Y.ajax({				
-				url : "/cpdata/game/aopencode.json?rnd=" + Math.random(),
+				url : "data/game/aopencode.json?rnd=" + Math.random(),
 				type : "get",
 				cache:false,
 				dataType : "json",
@@ -130,14 +130,14 @@
 						}
 						if(Class.C('lotid') == rt.gid){
 							Class.C('nowpid', rt.nowpid);
-						}
+						};
 					});
 				},
 				error : function() {
-					this.alert("�������!");
+					this.alert("       !");
 					return false;
 				}
 			});
 	}
      
-    }); 
+    });
