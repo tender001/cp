@@ -1204,6 +1204,7 @@ p.buy_sucess a:hover{color:#ff6600; text-decoration:underline}
 .cpxq_tan_2 p{line-height:25px;color:#444;font-size:12px;margin-leolor:#145fab;margin-left:50px;}
 table.log_tab td a.aa:hover{color:#790500; text-decoration:underline}
 table.co1 tbody td.last a.red_b{color:#fff;background:#ff6600;display:inline-block;margin-left:40px;line-height:20px;padding:0 10px;font-size:14px;}
+a.red_b:hover{text-decoration: none;}
 .news_left h4 a.a1{color:#145fab;text-decoration:underline}
 .news_left p a.a1{color:#145fab;text-decoration:underline}
 .news_left  a.a1:hover{color:#ff6600}
@@ -1490,9 +1491,9 @@ table.dcr_table{border:none}
 input.mul{width:60px;border:1px solid #bbb;margin-right:2px}
 .dc_r_m p.dc_qr a.red{color:#145fab}
 .dc_r_m p.dc_qr a.red:hover{color:#ff0000;text-decoration:underline}
-a.jc_mtz, a.jc_mhm{background:url("/images/cai888/jcbtn_03.jpg") no-repeat scroll 0 0 ;width:104px;height:36px;line-height:36px;margin-left:10px}
+a.jc_mtz,a.jc_mhm{background:url("/images/cai888/jcbtn_03.jpg") no-repeat scroll 0 0 ;width:104px;height:36px;line-height:36px;margin-left:10px}
 .dc_hs{background:none;border-bottom:1px solid #ccc}
-a.jc_mtz:hover, a.jc_mhm:hover{background-position:-110px 0;text-decoration: none;}
+a.jc_mtz:hover, a.jc_mhm:hover{background-position:-110px 0;text-decoration: none;color: #fff;}
 .box_m{border:1px solid #ccc}
 .dc_table th{background:#f5f5f5;border-top:1px solid #ccc;border-bottom:1px solid #ccc;height:32px;border-right:1px solid #ccc}
 .touztop{background:url("/images/cai888/jctop_03.jpg");height:82px;border-left:1px solid #ddd;border-right:1px solid #ddd;margin-bottom:10px}
