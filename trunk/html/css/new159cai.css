@@ -207,9 +207,9 @@ transition: transform .2s ease-in 0s;}
 .header img.logo{width:113px;height:46px;float:left;display:block;margin:0}
 .nav_re{width:1000px;margin: 0 auto;position: relative;overflow:visible;z-index:888}
 a.d_c_p,a.d_c_b,.tan_mid a.but2,a.start_hm{ background:url(../images/cdbg/tn_ad.png) 0 0  no-repeat;display:block;margin:15px auto;color:#fff;font-weight:bold;font-size:16px;text-align:center;line-height:40px;width:113px}
-a.d_c_p:hover{ background-position:0 -40px}
+a.d_c_p:hover{ background-position:0 -40px;text-decoration: none;}
 a.d_c_b,.tan_mid a.but2,a.start_hm{ background-position:0 -80px}
-a.d_c_b:hover,.tan_mid a.but2:hover,a.start_hm:hover{ background-position:0 -120px}
+a.d_c_b:hover,.tan_mid a.but2:hover,a.start_hm:hover{ background-position:0 -120px;text-decoration: none;}
 #zq_xl{width:90px;border:1px solid #b60a02; position:absolute;top:10px;border-top:none;display:block;padding-top:35px;z-index:999;cursor:pointer;left:795px;height:0}
 #zq_xl ul li{line-height:30px;color:#ba1f24;text-align:center;font-size:14px;border-bottom:1px solid #ddd; background-color:#fff}
 #zq_xl ul li.last{border:none}
@@ -1367,10 +1367,11 @@ b.b2_9{ background-position:-223px -64px}
 :root .ad_mab table  input.text{padding:0;height:27px}
 .ad_mab table td.box  label input{vertical-align: -2px;_vertical-align: -1px;margin: 0 2px 0 0px}
 .ad_mab table td.box em{color:#aaa}
+.ad_mab table a:hover{text-decoration: none;}
 .ad_mab table a.but{color:#fff;font-size:16px;width:103px;height:34px;display:block;text-align:Center;line-height:34px;font-family:"微软雅黑";background: url(../images/cai888/getw_10.jpg) ;float:left;margin:15px 0 10px;font-weight:bold}
 .ad_mab table span.spzhu{font-size:12px;color:#999;padding-left:10px}
 a.t_a_dz{line-height:20px;height:20px;padding:0 10px;font-size:12px;color:#145fab;float:left;display:block; background-image: url(../images/hm/hmt_03.gif);border:1px solid #4b90d3;margin:8px 0 0 10px}
-a.t_a_dz:hover{background-image: url(../images/hm/hmt_05.gif)}
+a.t_a_dz:hover{background-image: url(../images/hm/hmt_05.gif);text-decoration: none;}
 .userzjk{margin:12px 8px;border:1px solid #ccc;border-top:2px solid #f57e2e}
 .userzjka{height:36px;background:url(../images/cai888/ggnav_03.jpg)}
 .userzjka a{ display:block;float:left;width:80px;height:35px;line-height:34px;text-align:center;font-size:14px;color:#000;float:left;border-bottom:1px solid #ccc;border-right:1px solid #ccc;text-align:center}
@@ -1491,7 +1492,7 @@ input.mul{width:60px;border:1px solid #bbb;margin-right:2px}
 .dc_r_m p.dc_qr a.red:hover{color:#ff0000;text-decoration:underline}
 a.jc_mtz, a.jc_mhm{background:url("/images/cai888/jcbtn_03.jpg") no-repeat scroll 0 0 ;width:104px;height:36px;line-height:36px;margin-left:10px}
 .dc_hs{background:none;border-bottom:1px solid #ccc}
-a.jc_mtz:hover, a.jc_mhm:hover{background-position:-110px 0}
+a.jc_mtz:hover, a.jc_mhm:hover{background-position:-110px 0;text-decoration: none;}
 .box_m{border:1px solid #ccc}
 .dc_table th{background:#f5f5f5;border-top:1px solid #ccc;border-bottom:1px solid #ccc;height:32px;border-right:1px solid #ccc}
 .touztop{background:url("/images/cai888/jctop_03.jpg");height:82px;border-left:1px solid #ddd;border-right:1px solid #ddd;margin-bottom:10px}
@@ -1523,10 +1524,9 @@ a.jc_mtz:hover, a.jc_mhm:hover{background-position:-110px 0}
 .matchxzc i{transform:rotate(180deg)}
 .dc_l_tl{float:left;padding-left:102px}
 .tdaa td{line-height:34px;height:34px;}
-.tdaa a{float:left;height:34px;width:50px;color:#333;}
 .tdaa .hhtdtk td a{height:32px;padding-top:2px}
-.tdaa a{background:url(/images/cai888/ban1.jpg) no-repeat scroll 100% bottom; }
-.tdaa a:hover{background:url(/images/cai888/ban3.jpg) 100% bottom no-repeat}
+.tdaa a{float:left;height:34px;width:50px;color:#333;background:url(/images/cai888/ban1.jpg) no-repeat scroll 100% bottom; }
+.tdaa a:hover{background:url(/images/cai888/ban3.jpg) 100% bottom no-repeat;text-decoration: none;}
 .tdaa a.a1{background: url(/images/cai888/ban2.jpg) 100% bottom no-repeat;}
 .tdaa  a.a2,.tdaa a.a2:hover{background:url(../images/cai888/ban4.jpg) 0 0 no-repeat;cursor:pointer;border-right:1px solid #63A3CF;border-bottom:1px solid #63A3CF;width:49px;height:33px}
 .tdaa .hhtdtk td a.a2,.tdaa .hhtdtk td a.a2:hover{background:url(../images/cai888/ban4.jpg) 0 0 no-repeat;cursor:pointer;border-right:1px solid #63A3CF;border-bottom:1px solid #63A3CF;width:49px;height:31px}
@@ -1811,7 +1811,7 @@ a.jcq_kcur {
 .deltr div{position:ablosute;}
 .deltr a{display:block;background:url(../images/cai888/del.png);width:16px;height:16px;margin:8px auto}
 a.a_catha, a.a_hm_buya{background: url("/images/cai888/jcbtn_03.jpg") no-repeat scroll 0 0;height:36px;line-height:36px;width:104px}
-a.a_catha:hover, a.a_hm_buya:hover{background-position:-110px 0}
+a.a_catha:hover, a.a_hm_buya:hover{background-position:-110px 0;text-decoration: none;}
 .tdlh{width:64px;position:relative;overflow:visible;z-index:9;height:34px;line-height:34px}
 .tdlh p{line-height:34px;}
 .tdab{position:absolute;left:-638px;top:34px;padding:5px 0px 5px 265px}
@@ -1937,6 +1937,7 @@ a.sz_cmt{background: url(../images/cai888/nwx5_112.jpg);width:137px;height:33px}
 .ncathgm p a:hover{ text-decoration:underline;color:#ff6600}
 .ncathgm p input{vertical-align: -2px;_vertical-align: -1px;margin-right:3px;}
 .ncathgm a.a1{display:block;background-image: url(../images/cdbg/gm_11.gif);color: #FFFFFF;font-family: "微软雅黑";font-size: 16px;height: 42px;line-height: 42px;margin:5px auto;text-align: center;width: 190px;border-radius: 4px;}
+.ncathgm a:hover{text-decoration: none;}
 .nwx5kj{border:1px solid #ccc;margin-top:12px;border-right:none}
 .nwx5kj h1{padding-left:20px;font-size:14px;color:#444; background:#f5f5f5;height:35px;line-height:35px;clear:both;border-bottom:1px solid #ccc;border-right:1px solid #ccc;}
 .nwx5kj h1 span{float:left;}
