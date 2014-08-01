@@ -131,7 +131,7 @@ Class(
 									html += '<td></td>';
 								}
 							}else{
-								html += '<td><div><input type="text" value="1" id="hot_rengou_' + (o+1) + '" /><a href="#"><img src="/images/index_110.gif" class="gm" onclick="rengou(\''+gameid+'\',\''+rt.hid+'\',\'hot_rengou_' + (o+1) +'\',\''+rt.lnum+'\')"/></a></div></td>';//lotid,projid,id,lnum
+								html += '<td><div><input type="text" value="1" id="hot_rengou_' + (o+1) + '" /><a href="javascript:void(0)"><img src="/images/index_110.gif" class="gm" onclick="rengou(\''+gameid+'\',\''+rt.hid+'\',\'hot_rengou_' + (o+1) +'\',\''+rt.lnum+'\')"/></a></div></td>';//lotid,projid,id,lnum
 							}
 							if(rt.cnickid=='******'){
 								html += '<td>--</td>';
@@ -153,7 +153,7 @@ Class(
 		 this.lib.Tabs({
 	            items: '#todaykaijiang span',
 	            focusCss: 'hover',
-	            contents: '#k1,#k2,#k3',
+	            contents: '#k1,#k2',
 	            delay: 300
 	        }); 
 			this.red = [];
@@ -226,7 +226,8 @@ Class(
     						row.money =new String( row.money).split(",");
     						row.onenum = row.nums[0] == ''?'0':(parseFloat(row.nums[0]).rmb(false,0));
     						row.onemoney = row.money[0] == ''?'0':(parseFloat(row.money[0]).rmb(false,0));
-            			
+    						Y.get("#rjmoney").html("一等奖："+row.onenum+"注"+row.onemoney+"元");
+    						
     						Y.get("#renjiumoney").html("任九："+row.onenum+"注"+row.onemoney+"元");
     						Y.get("#rxjc_pid").html(row.pid+"期");		
     						
@@ -270,6 +271,13 @@ Class(
     						Y.get("#sd_pools").html(row.pools);
     						Y.get("#sd_kjdate").html(row.awardtime);
     						Y.get("#sd_code").html('<b>'+row.code.split(',').join('</b><b>')+'</b>');
+    						if(row.code != ""){
+    							Y.get("#sd_codes").html('<b>'+row.code.split(',').join('</b><b>')+'</b>').show();
+    							Y.get("#show").hide();
+    						}else{
+    							Y.get("#sd_codes").html('<b>'+row.code.split(',').join('</b><b>')+'</b>').hide();
+    							Y.get("#show").show();
+    						}
     					}else if (row.gid=='53'){	
     						Y.get("#pls_pid").html(row.pid+"期");		
     						Y.get("#pls_pools").html(row.pools);
@@ -301,6 +309,7 @@ Class(
     					} 
     				});	     
     				var o = obj.rows.rownow;
+    				
     				var d = Y.getDate(d.date).format('YY-MM-DD');
     				o.each(function(rt,o) {
     					var nd = Y.getDate(rt.nowendtime).format('YY-MM-DD');
@@ -309,8 +318,10 @@ Class(
 						$("span[pool="+rt.gid+"]").html(rt.pools);
     					if(nd==d){
     						
-    					
+    						/*Y.get("#sd_codes").html('<b>'+row.code.split(',').join('</b><b>')+'</b>');*/
     						$("li[today="+rt.gid+"]").show();
+    					}else{
+    						//$("#sd_codes").show();
     					}
     					
     				});
