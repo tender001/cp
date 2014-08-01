@@ -89,3 +89,12 @@
 		<img src="/images/bg/kef.jpg" alt="在线客服"></a>
 	</div>
 </div>
+<script type="text/javascript">
+$(function(){
+	$(".top dl,.nav1_buy,.updo li").hover(function() {
+		$(this).addClass("hover").children(".up").stop(true,true).slideDown('slow/400/fast');
+	}, function() {
+		$(this).removeClass("hover").children(".up").stop(true,true).slideUp('slow/400/fast');
+	});
+});
+</script>
