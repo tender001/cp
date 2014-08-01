@@ -2642,8 +2642,8 @@ border-radius:4px 4px 0 0;-moz-border-radius:4px 4px 0 0;}
 .reg_pro h4{font-weight:bold;font-size:12px;}
 table.co1 tbody td  em{color:#888}
 
-.dz_dv span,.dz_dv label{padding-left:5px;float:left}
-.dz_dv em{display:block;overflow:hidden;height:38px;width:62px;float:left;text-align:left;line-height:38px}
+.dz_dv span,.dz_dv label{padding-left:5px;float:left;color: #333}
+.dz_dv em{display:block;overflow:hidden;height:38px;width:62px;float:left;text-align:left;line-height:38px;color: #333;}
 .dc_table td s{color:#777;display:block;width:20px;}
 .dz_dv em.em_right{text-align:right;margin-left:10px}
 .dz_dv span.span_right{padding:0}
@@ -2702,7 +2702,7 @@ a.goyh:hover{background-position:-108px -61px}
 .dc_alert td.ert_td{background-color:#eee}
 .dc_alert td:hover{background-color:#fefecf}
 .dc_zcq{width:280px}
-.dc_table tr.even td{background-color:#fff}
+.dc_table tr.even td{background-color:#fff;color: #333}
 .dc_table tr.odd td{background-color:#f1f1f1}
 .gc_list_wk{padding-top:0;height:178px}
 .gc_list_wk div{padding:23px 0 28px}
