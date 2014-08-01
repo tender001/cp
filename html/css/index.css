@@ -102,6 +102,7 @@ div.center .body{width:95%;}
 .center .body li p span em{position: absolute;top: 18px;left: 49%;background-position: -164px -177px; width: 6px;height: 3px;}
 .center .body li div{clear:both;height: 32px; line-height: 34px;font-size: 14px;color: #8c8c8c;overflow: hidden;}
 .center .body li div a{float:left;margin-right: 16px;_display: inline;}
+.center .body li a:hover{color: #e62e04 !important;}
 
 .zx{float: right;width: 223px;}
 .zx .zj{margin-bottom: 9px;}
