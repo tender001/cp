@@ -1,7 +1,7 @@
 <div class="fn-clear" style="background: #f60;overflow: visible;zoom:1">
 <div class="w1000">
 	<div class="nav1_buy"><a href="#" class="nav1_gm">购买彩票</a>
-		<div class="m_l">
+		<div class="m_l up">
 			<ul>
 				<li>
 					<span style="padding-bottom:8px;"><s></s>竞技彩</span>
@@ -57,13 +57,13 @@
 			<li><a href="http://zst.159cai.com/" target="_blank">走势图</a></li>
 			<li><a href="/m/" target="_blank">手机购彩</a></li>
 			<li><a href="http://odds.159cai.com/" target="_blank" class="a1">足球中心</a><s></s>
-				<div class="xia">
+				<div class="xia up">
 					<p><a href="http://odds.159cai.com/" target="_blank">即时赔率</a></p>
 					<p><a href="http://info.159cai.com/index.php?controller=zqindex" target="_blank">足球资料</a></p>
 				</div>
 			</li>
 			<li class="bac"><a href="http://bf.159cai.com/" target="_blank" class="a1">比分直播</a><s></s>
-				<div class="xia">
+				<div class="xia up">
 					<p><a href="http://bf.159cai.com/jingcai" target="_blank">竞技足球</a></p>
 					<p><a href="http://bf.159cai.com/danchang" target="_blank">北京单场</a></p>
 					<p><a href="http://bf.159cai.com/zucai" target="_blank">(老)足彩</a></p>
@@ -76,16 +76,20 @@
 </div>
 <script type="text/javascript">
 $(function(){
-	// $(".nav1_buy,.updo li").hover(function(){
-	$(".updo li").hover(function(){
-		$(this).addClass("hover");
-	},function(){
-		$(this).removeClass("hover");
-	});
-	$(".nav1_buy").hover(function() {
-		$(this).children('.m_l').stop(true,true).slideDown('slow/400/fast');
+	// $(".updo li").hover(function(){
+	// 	$(this).addClass("hover");
+	// },function(){
+	// 	$(this).removeClass("hover");
+	// });
+	// $(".updo li").hover(function() {
+	// 	$(this).children('.xia').stop(true,true).slideDown('slow/400/fast');
+	// }, function() {
+	// 	$(this).children('.xia').stop(true,true).slideUp('slow/400/fast');
+	// });
+	$(".ali,.nav1_buy,.updo li").hover(function() {
+		$(this).addClass("hover").children(".up").stop(true,true).slideDown('slow/400/fast');
 	}, function() {
-		$(this).children('.m_l').stop(true,true).slideUp('slow/400/fast');
+		$(this).removeClass("hover").children(".up").stop(true,true).slideUp('slow/400/fast');
 	});
 	$(".lottery-nav li").hover(function(){
 		$(this).find(".submenu").show();
