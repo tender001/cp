@@ -234,7 +234,7 @@ font.cm_red{color:#ff6600}
 .usertitgd h2{padding:0;padding-right:10px}
 .usercodgd{margin-top:10px}
 .usertitgd p{padding-right:0}
-.usertitab{display:block;height:32px;float:left;width: 700px;}
+.usertitab{display:block;height:32px;float:left;}
 .usertitab b{display:block;margin-left:8px;border:1px solid #ddd;height:32px;line-height:32px;float:left; background:#efefef;margin-top:2px;cursor:pointer;position:relative;}
 .usertitab b s{width:106px; height:21px; display:block; background:url(../images/cai888/kj.png) no-repeat; position:absolute; left:-5px; top:-16px; z-index:10;}
 .usertitab b.cur{border-bottom:2px solid #fff; background:#fff}
