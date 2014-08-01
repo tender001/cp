@@ -75,7 +75,7 @@
 .m_r .tab .bod div{width:200px;margin: 0 auto;line-height:24px;display: none;zoom: 1;}
 .m_r .tab .bod div.hover{display: block;}
 .m_r .tab .bod div ul{height: 144px;overflow: hidden;}
-.m_r .tab .bod div ul li{height: 24px;}
+.m_r .tab .bod div ul li{height: 24px;vertical-align: top;}
 .m_r .tab .bod div strong{float: left;width: 155px;overflow: hidden;white-space: nowrap;text-overflow: ellipsis;}
 .m_r .tab .bod div strong a{color: #434343;font-weight: 400;}
 .m_r .tab .bod div em{float: right;color: #888;}
@@ -96,7 +96,7 @@
 div.center .body{width:95%;}
 .center .body ul{margin-bottom: -1px;*margin-bottom: -4px;}
 .center .body li{height: 106px;*height: 107px;overflow: hidden;border-bottom: 1px dashed #c5c5c5;}
-.center .body li p{width: 48%;height: 32px; line-height: 34px;font-size: 14px;color: #8c8c8c;float: left; padding-right: 1%;overflow: hidden;white-space: nowrap; text-overflow: ellipsis;}
+.center .body li p{width: 48.9%;height: 32px; line-height: 34px;font-size: 14px;color: #8c8c8c;float: left; padding-right: 1%;overflow: hidden;white-space: nowrap; text-overflow: ellipsis;}
 .center .body li p a.f60{padding-left: 6px;}
 .center .body li p span{display: inline-block;width: 46px; height: 18px;line-height: 18px;text-align: center;color: #fff;background-color: #f60;vertical-align: middle;margin-right: 12px;position: relative;_margin-top: 5px;}
 .center .body li p span em{position: absolute;top: 18px;left: 49%;background-position: -164px -177px; width: 6px;height: 3px;}
