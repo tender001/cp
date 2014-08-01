@@ -138,9 +138,9 @@ li.bac{background-image: none !important;}
 .basic .body{width:90%;margin: 0 auto;overflow: hidden;}
 /*今日开奖*/
 .today{width: 213px;border: 1px solid #ccc;}
-.today .title{height: 30px;line-height: 30px;overflow: hidden;}
-.today .title span{width: 105px;height: 29px;text-align: center;display: block;float: left;border-left: 1px solid #ddd;border-bottom: 1px solid #ddd;color: #fff; font-weight: bold;background-color: #f60;position: relative;cursor: pointer;}
-.today .title span.hover{width: 106px;border-color: #fff;background-color: #fff;color: #333;}
+.today .title{height: 30px;line-height: 30px;overflow: hidden;background-color: #f6f6f6;margin-left:-1px;}
+.today .title span{width: 106px;height: 29px;text-align: center;display: block;color: #333;float: left;border-left: 1px solid #ddd;border-bottom: 1px solid #ddd;position: relative;cursor: pointer;}
+.today .title span.hover{font-weight: bold;border-bottom-color: #fff;background-color: #fff;}
 /*.today .bod{padding-top: 18px;}*/
 .today .bod{position: relative;height: 321px;overflow: hidden;*height: 328px;}
 .today .bod div{display: none;}
