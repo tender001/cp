@@ -6,7 +6,7 @@ html{color:#000;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%}
 *html{background-image:url(about:blank);background-attachment:fixed;}
 body{background-color:#fff; font:12px/150% Arial,Verdana,"\5b8b\4f53"; color:#6c6c6c; min-width:1000px;}
 input,select,textarea{font-size:100%}
-a{ color:#464646; text-decoration:none;outline:0;}
+a{ color:#464646; text-decoration:none;outline:0;cursor: pointer;}
 a:hover{color:#00abf9;text-decoration:underline}
 ol,ul,li{list-style:none;}
 i,em{font-style:normal;}
