@@ -166,7 +166,7 @@ Class(
 	    		if(val=="ssq" || val=="dlt"){
 	    			url="/help/help_"+val+"js.html";
 	    			$(this).addClass("cur").siblings().removeClass("cur");
-	    			$("div.ksget div").slice(1,2).hide();
+	    			$("div.ksget div").slice(1).hide();
 	        		$("div[mark="+val+"]").show();
 	        		$("div.ksgtab a").attr("href",url)
 	        	
