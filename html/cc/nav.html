@@ -76,17 +76,7 @@
 </div>
 <script type="text/javascript">
 $(function(){
-	// $(".updo li").hover(function(){
-	// 	$(this).addClass("hover");
-	// },function(){
-	// 	$(this).removeClass("hover");
-	// });
-	// $(".updo li").hover(function() {
-	// 	$(this).children('.xia').stop(true,true).slideDown('slow/400/fast');
-	// }, function() {
-	// 	$(this).children('.xia').stop(true,true).slideUp('slow/400/fast');
-	// });
-	$(".nav1_buy,.updo li").hover(function() {
+	$(".top dl,.nav1_buy,.updo li").hover(function() {
 		$(this).addClass("hover").children(".up").stop(true,true).slideDown('slow/400/fast');
 	}, function() {
 		$(this).removeClass("hover").children(".up").stop(true,true).slideUp('slow/400/fast');
@@ -96,20 +86,5 @@ $(function(){
 	},function(){
 		$(this).find(".submenu").hide();
 	})
-
-/* $(".nav1_buy").css({
-		"height":35,
-		"overflow":"hidden"
-		});
-	$(".nav1_buy").hover(function(){
-			$(this).find(".nav1_buy_l>.m_1,.nav1_buy_l>em").show();
-			$(this).clearQueue().animate({
-				height:500
-				})
-		},function(){
-			$(this).animate({
-				height:35
-				})
-		}) */
 });
 </script>
