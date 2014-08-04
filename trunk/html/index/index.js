@@ -131,7 +131,7 @@ Class(
 									html += '<td></td>';
 								}
 							}else{
-								html += '<td><div><input type="text" value="1" id="hot_rengou_' + (o+1) + '" /><a href="#"><img src="/images/index_110.gif" class="gm" onclick="rengou(\''+gameid+'\',\''+rt.hid+'\',\'hot_rengou_' + (o+1) +'\',\''+rt.lnum+'\')"/></a></div></td>';//lotid,projid,id,lnum
+								html += '<td><div class="shouye"><input type="text" value="1" id="hot_rengou_' + (o+1) + '" /><a href="#"><img src="/images/index_110.gif" class="gm" onclick="rengou(\''+gameid+'\',\''+rt.hid+'\',\'hot_rengou_' + (o+1) +'\',\''+rt.lnum+'\')"/></a></div></td>';//lotid,projid,id,lnum
 							}
 							if(rt.cnickid=='******'){
 								html += '<td>--</td>';
