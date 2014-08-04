@@ -318,9 +318,9 @@ $(document).ready(function(){
 					}else{
 						$("#table_project_list").append("<tr id='err'><td colspan='9' align='center' >抱歉！没有找到符合条件的结果！</td></tr>");
 					}
-				}/*else{
+				}else{
 					$("#table_project_list").append("<tr id='err'><td colspan='9' align='center' >抱歉！没有找到符合条件的结果！</td></tr>");
-				}*/
+				}
 			},
 			error : function() {
 				this.alert("网络故障!");
