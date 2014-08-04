@@ -579,7 +579,7 @@ $_sys.showzhanjii = function (lotid,uid,au,ag,func){
 	if (typeof(func)=='undefined'){
 		func='';
 	}
-	return uid=='******'?$_sys.showzhanji(au,ag):('<a href="javascript:void(0);" onclick="Y.openUrl(\'/game/zhanji.html?lotid='+lotid+'&uid='+uid+'&func='+func+'\',807,600)">'+$_sys.showzhanji(au,ag)+'</a>');
+	return uid=='******'?$_sys.showzhanji(au,ag):('<a href="javascript:void(0);" onclick="Y.openUrl(\'/game/zhanji.html?lotid='+lotid+'&uid='+uid+'&func='+func+'\',807,575)">'+$_sys.showzhanji(au,ag)+'</a>');
 };
 
 $_sys.showzhanjiname = function (lotid,uid,func){
@@ -594,7 +594,7 @@ $_sys.showlishizhanji = function (lotid,uid,func){
 		func='';
 	}
 	if(uid == '******'){return '<a href="javascript:void(0);">历史战绩</a>';}
-	return '<a href="javascript:void(0);" class="uname" onclick="Y.openUrl(\'/game/zhanji.html?lotid='+lotid+'&uid='+uid+'&func='+func+'\',807,600)">历史战绩&gt;&gt;</a>';
+	return '<a href="javascript:void(0);" class="uname" onclick="Y.openUrl(\'/game/zhanji.html?lotid='+lotid+'&uid='+uid+'&func='+func+'\',807,575)">历史战绩&gt;&gt;</a>';
 };
 
 $_sys.showzhanji= function(au,ag){
