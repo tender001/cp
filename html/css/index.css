@@ -78,6 +78,7 @@
 .m_r .tab .bod div ul li{height: 24px;vertical-align: top;}
 .m_r .tab .bod div strong{float: left;width: 155px;overflow: hidden;white-space: nowrap;text-overflow: ellipsis;}
 .m_r .tab .bod div strong a{color: #434343;font-weight: 400;}
+.m_r .tab .bod div strong a:hover{color: #e62e04;}
 .m_r .tab .bod div em{float: right;color: #888;}
 .m_r .tab .bod div a.more{margin: 0;margin-top: 8px;}
 
@@ -125,8 +126,8 @@ div.center .body{width:95%;}
 .hm table td i{color: #f60;}
 .hm table td .x_jdt{background: #FFF;border: 1px solid #ddd;height: 2px;width: 70px;text-align: left;line-height: 2px;border-left: none;_overflow: hidden;margin: 2px auto 0;_height: 3px;}
 .hm table td .x_jdt em{display: block;height: 4px;background-color: #f60;margin: -1px -1px -1px 0px;}
-.hm table td input{width: 38px;border: 1px solid #ddd;color: #333;vertical-align: middle;}
-.hm table td img{vertical-align: middle;}
+.hm table td input{width: 38px;border: 1px solid #ddd;color: #333;vertical-align: top;margin: 2px 0 0;*margin: 1px 0 0;}
+.hm table td .shouye a{vertical-align: top;}
 .hm table td a{color: #3970b6}
 .hm table td a.buy{width: 45px;height: 20px;line-height: 20px;display: block;background-color: #f60;color: #fff;margin: auto;}
 

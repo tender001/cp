@@ -1154,7 +1154,7 @@ a.a_inner{width:166px;height:128px;display:block;margin:4px auto 0}
 .gm_msg table td.sum{font-size:14px;line-height:41px}
 .gm_msg table td.last{padding-top:10px;font-size:14px;}
 a.gm_but{display:block;width:190px;height:42px;margin:10px auto 25px; background-image:url(../images/cdbg/gm_11.gif);font-size:16px; font-family:"微软雅黑";text-align:center;line-height:42px;color:#fff}
-a.gm_but:hover{background-image:url(../images/cdbg/gm_14.gif)}
+a.gm_but:hover{background-image:url(../images/cdbg/gm_14.gif);text-decoration:none;color:fff;}
 .gm_msg table font{color:#ff6600;font-size:16px; font-family:Arial, Helvetica, sans-serif; font-weight:bold;padding:0 5px}
 p.red_pay{color:#444;font-weight:bold;text-align:center;font-size:16px;border-top:1px solid #ddd;padding:15px 0 10px 0;margin:50px 25px 0;line-height:30px;clear:both }
 p.red_pay font{color:#ff6600;font-weight:bold;font-size:18px;padding:0 7px}
