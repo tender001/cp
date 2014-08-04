@@ -307,7 +307,7 @@ var loadpage = function(lotid,expect,pn,ps,tp,tr) {
 						if (isdg){
 							html+=''+uid+'';
 						}else{
-							html+='<a href="javascript:void(0);" class="a1" onclick="Y.openUrl(\'/game/zhanji.html?lotid='+lotid+'&uid='+uid+'&func=award\',806,600)" >'+uid+'</a>';
+							html+='<a href="javascript:void(0);" class="a1" onclick="Y.openUrl(\'/game/zhanji.html?lotid='+lotid+'&uid='+uid+'&func=award\',806,575)" >'+uid+'</a>';
 						}					
 						html+='</td>'+'<td align="center">';
 						html+=isdg?'&nbsp;':($_sys.showzhanji(au,ag)==''?'&nbsp;':$_sys.showzhanjii(lotid,uid,au,ag));
