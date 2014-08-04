@@ -1291,6 +1291,7 @@ table.cot p{text-align:left;padding:5px 0 70px 20px;color:#444;font-size:14px;}
 table.cot p b,table.cot p strong{font-size:14px;color:#ff0000;font-weight:bold;}
 table.cot p strong{color:#145fab}
 .tandiva{width:220px;margin:20px auto 5px}
+.tandiva a:hover{text-decoration:none;}
 .tandiva a.btn{color:#fff;font-size:16px;width:103px;height:34px;display:block;text-align:Center;line-height:34px;font-family:"微软雅黑";background: url(../images/cai888/getw_10.jpg) ;float:left;margin:0}
 .tandiva a.a2{color:#145fab;font-size:14px;float:right;line-height:34px;float:left;margin-left:20px}
 .tandiva a.a2:hover{color:#ff6600; text-decoration:underline}
