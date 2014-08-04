@@ -32,7 +32,7 @@ $(document).ready(function(){
 		}else{
 		selectProject($("#findstr").val());
 		}
-	}
+	},
 	
 	
 	
@@ -68,8 +68,8 @@ $(document).ready(function(){
 					if(!this.isArray(r)){r=new Array(r);}
 					r.each(function(rt,o){
 						var cls = "";
-						if(rt.f == 0){ cls = " title='该用户暂时没有方案'"; }else if(rt.f == 1){ cls = " class='a_cg' title='该用户方案已满员'"; } else if(rt.f == 2){ cls = " class='a_cv' title='该用户有方案在合买'"; } else { cls = " class='a_cc' "; }
-						var _tmp = '<a href="#"'+cls+' onclick="selectProject(\'' + rt.id + '\')">' + rt.id + '</a>';
+						if(rt.f == 0){ cls = "title='该用户暂时没有方案'"; }else if(rt.f == 1){ cls = "class='a_cg' title='该用户方案已满员'"; } else if(rt.f == 2){ cls = "class='a_cv' title='该用户有方案在合买'"; } else { cls = " class='a_cc' "; }
+						var _tmp = '<a href="javascript:void(0)"'+cls+' onclick="selectProject(\'' + rt.id + '\')">' + rt.id + '</a>';
 						hh.push(_tmp);
 					});
 					$("#" + htmlid).html(hh.join(""));
@@ -318,9 +318,9 @@ $(document).ready(function(){
 					}else{
 						$("#table_project_list").append("<tr id='err'><td colspan='9' align='center' >抱歉！没有找到符合条件的结果！</td></tr>");
 					}
-				}else{
+				}/*else{
 					$("#table_project_list").append("<tr id='err'><td colspan='9' align='center' >抱歉！没有找到符合条件的结果！</td></tr>");
-				}
+				}*/
 			},
 			error : function() {
 				this.alert("网络故障!");
