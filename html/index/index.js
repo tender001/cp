@@ -218,10 +218,11 @@ Class(
     						row.twomoney = row.money[1] == ''?'0':(parseFloat(row.money[1]).rmb(false,0));
             			
     						Y.get("#sfcmoney").html("一等奖："+row.onenum+"注"+row.onemoney+"元");
-    						if(isNaN(row.twonum) && isNaN(row.twomoney)){
-    							Y.get("#sfc_twomoney").html("二等奖："+row.twonum+"注"+row.twomoney+"元");
+    						if(!isNaN(row.twonum) || !isNaN(row.twomoney)){
+    							Y.get("#sfc_twomoney").html("二等奖：0注0元"); 
     						}
-    						Y.get("#sfc_twomoney").html("二等奖：0注0元");
+						Y.get("#sfc_twomoney").html("二等奖："+row.twonum+"注"+row.twomoney+"元");
+
     						Y.get("#sfc_pid").html(row.pid+"期");		
     						Y.get("#sfc_pools").html(row.pools);	
     						Y.get("#sfc_kjdate").html(row.auditdate);
