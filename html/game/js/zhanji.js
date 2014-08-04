@@ -202,7 +202,7 @@ var showinfo = function() {// 页码 页面大小 总页数 总记录数
 			
 			$("#dzgd").die().live('click', function(){
 				parent.window.Y.postMsg('msg_login', function() {
-					Y.openUrl('/game/gendan.html?type=new&lotid='+gid+'&owner='+uid, 642,500);
+					Y.openUrl('/game/gendan.html?type=new&lotid='+gid+'&owner='+uid, 642,317);
 
 				});
 			});
