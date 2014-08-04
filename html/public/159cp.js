@@ -380,7 +380,7 @@ $_sys.url = {
 
 $_sys.autobuy = function (lotid,uid){
 	 Y.postMsg('msg_login',function(){
-         Y.openUrl('/game/gendan.html?lotid='+lotid+'&owner='+uid,642,500);
+         Y.openUrl('/game/gendan.html?lotid='+lotid+'&owner='+uid,642,317);
 	 });	
 };
 
