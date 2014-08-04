@@ -25,10 +25,12 @@
 </div>
 <script type="text/javascript">
 $(function(){
-	$(".nav1_buy,.updo li").hover(function(){
-		$(this).addClass("hover");
+	$(".updo li").hover(function(){
+		$(this).addClass("hover").children(".xia").stop(true,true).slideDown('slow/400/fast');
+		//$(this).addClass("hover");
 	},function(){
-		$(this).removeClass("hover");
+		$(this).removeClass("hover").children(".xia").stop(true,true).slideUp('slow/400/fast');
+		//$(this).removeClass("hover");
 	});
 });
 </script>
