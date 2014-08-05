@@ -236,7 +236,7 @@ font.cm_red{color:#ff6600}
 .usertitgd p{padding-right:0}
 .usertitab{display:block;height:32px;float:left;}
 .usertitab b{display:block;margin-left:8px;border:1px solid #ddd;height:32px;line-height:32px;float:left; background:#efefef;margin-top:2px;cursor:pointer;position:relative;}
-.usertitab b s{width:106px; height:21px; display:block; background:url(../images/cai888/kj.png) no-repeat; position:absolute; left:-5px; top:-16px; z-index:10;}
+.usertitab b s{width:106px; height:21px; display:block; background:url(../images/cai888/kj.png) no-repeat; position:absolute; left:-5px; top:-10px; z-index:10;}
 .usertitab b.cur{border-bottom:2px solid #fff; background:#fff}
 .usertitab b a{display: block;height: 100%;padding:0 20px;float: left;}
 .usertitab b a:hover{color: #444;text-decoration: none;}
@@ -293,7 +293,7 @@ font.cm_red{color:#ff6600}
 a.czbtn{display:block;height:32px;width:98px;line-height:32px;text-align:center;color:#fff;font-size:14px;font-weight:bold;margin:10px 0 0 121px;background:url(../images/cai888/user_03.jpg);border:1px solid #ff6702;float:left;_display:inline;}
 a.czbtnhui{color:#666;background:url(../images/cai888/user_03hui.jpg);border:1px solid #B6B6B6 }
 .userp1 b{color:#333;line-height:25px}
-.user{ background:url(../images/cai888/czbj_03.jpg) repeat-y;border:1px solid #ddd; overflow:visible;}
+.user{ background:url(../images/cai888/czbj_03.jpg) repeat-y;border:1px solid #ddd;/* overflow:visible;*/}
 /* .user div{ overflow:visible;} */
 .xyksay{  color: #444444;line-height: 30px;padding:5px 0 15px 20px;}
 .sm_bk{ background:url(../images/njc/bk_sz.gif) no-repeat scroll right -29px transparent;cursor:pointer;font-size:14px;font-weight:bold;color:#145fab;width:110px;margin:20px 0 15px;clear:both;margin: 10px 0px 5px 135px;}
