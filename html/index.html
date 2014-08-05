@@ -209,6 +209,13 @@
 						SsqRandom();
 						DltRandom();
 					</script>
+					<script>
+						$(function(){
+							$("#ssqcodes em input").click(function(){
+								$(this).select();
+							})
+						});
+					</script>
 	</div>
 	<div class="m_r">
 		<p class="user" id="nologin"><a href="/user/login.html" target="_blank" class="use">用户登录</a><a href="/user/reg.html" class="reg use" target="_blank">免费注册</a>
