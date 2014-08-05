@@ -84,7 +84,7 @@ img{vertical-align:top;}
 .m_l{width:213px;height: 460px;border:1px solid #ddd;border-bottom:0;background: #fffbe6;}
 .m_l{display: none;float: left;position: absolute;left: 0;top: 38px;z-index: 99;}
 /*.nav1_buy.hover .m_l{display: block;border-bottom: 3px solid #f60;}*/
-.nav1_buy .m_l{border-bottom: 3px solid #f60;}
+.nav1_buy .m_l{border:1px solid #f60;border-bottom-width: 3px;}
 .m_l li{width:203px;padding-left:10px;float: left;border-bottom: 1px solid #ddd;}
 .m_l li.kp{border:0;}
 .m_l li span{width: 100%;height: 21px;line-height: 21px; padding-top:11px;display: block;font-size: 14px;font-weight:bold;color: #333;}

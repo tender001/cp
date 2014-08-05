@@ -126,9 +126,9 @@ div.center .body{width:95%;}
 .hm table td i{color: #f60;}
 .hm table td .x_jdt{background: #FFF;border: 1px solid #ddd;height: 2px;width: 70px;text-align: left;line-height: 2px;border-left: none;_overflow: hidden;margin: 2px auto 0;_height: 3px;}
 .hm table td .x_jdt em{display: block;height: 4px;background-color: #f60;margin: -1px -1px -1px 0px;}
-.hm table td input{width: 38px;border: 1px solid #ddd;color: #333;vertical-align: middle;/*vertical-align: top;margin: 2px 0 0;*margin: 1px 0 0;*/margin: 2px 0 0;}
+.hm table td input{width: 38px;border: 1px solid #ddd;color: #333;height: 15px;line-height:15px;padding: 1px 0;*margin-top: -1px;}
 .hm table td .shouye a{vertical-align: middle;}
-.hm table td .shouye a img{height: 19px;vertical-align: middle;}
+.hm table td .shouye a img{height: 19px;}
 .hm table td a{color: #3970b6}
 .hm table td a.buy{width: 45px;height: 20px;line-height: 20px;display: block;background-color: #f60;color: #fff;margin: auto;}
 
