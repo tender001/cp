@@ -80,6 +80,17 @@
 							$("#ssqcodes em input")[4].value = b.sort()[4];
 							$("#ssqcodes em input")[5].value = b.sort()[5];
 						}
+						$("#lanqiu").focus(function(){
+						var lanqiu  = $("#lanqiu").val();
+						if(lanqiu != ""){
+							lanqiu=$("#lanqiu").value.replace(/\D/g,'')
+							$("#lanqiu").val(lanqiu);
+							}
+			
+						$("#lanqiu").keyup(function(){
+				    		this.value=this.value.replace(/\D/g,''); //只能输数字
+				    	});
+					});
 						function SsqBuy() {
 
 							var ary = new Array(
@@ -91,21 +102,24 @@
 									$("#ssqcodes em input")[5].value);
 							var nary = ary.sort();
 							for ( var i = 0; i < nary.length - 1; i++) {
-								if (nary[i] == nary[i + 1]) {
+								if (nary[i] == nary[i + 1] ) {
 									$("#errorssq").html("出现重复号码：" + nary[i]).show();
 									
-									return false;
-								} else if (nary[i] > 33 || nary[i] < 1) {
+									return false; 
+								} else if (isNaN($("#ssqcodes em input")[i].value) || nary[i] > 33 || nary[i] < 1 || !nary[i].replace(/\D/g,"")) {
 									
-									$("#errorssq").html("红球投注号码有误").show();
+									$("#errorssq").html("红球投注号码有误：" + $("#ssqcodes em input")[i].value).show();
 									return false;
 								}
+								
 							}
-							if ($("#ssqcodes em input")[6].value > 16
-									|| $("#ssqcodes em input")[6].value < 1) {
-								$("#errorssq").html("篮球投注号码有误").show();
+							
+							if (isNaN($("#ssqcodes em input")[6].value) || $("#ssqcodes em input")[6].value > 16
+									|| $("#ssqcodes em input")[6].value < 1 ) {
+								$("#errorssq").html("篮球投注号码有误：" + $("#ssqcodes em input")[6].value).show();
 								return false;
 							}
+							
 							nary = nary + "|" + $("#ssqcodes em input")[6].value;
 								window.open ('/shuangseqiu/index.html?codes='+nary+'');  
 // 							location.href = '/shuangseqiu/index.html?codes='
@@ -161,14 +175,19 @@
 								
 									$("#errordlt").html("出现重复号码：" + nary[i]).show();
 									return false;
-								} else if (nary[i] > 35 || nary[i] < 1) {
-									$("#errordlt").html("红球投注号码有误").show();
+								} else if (isNaN($("#dltcodes em input")[i].value) || nary[i] > 35 || nary[i] < 1) {
+									$("#errordlt").html("红球投注号码有误：" + $("#dltcodes em input")[i].value).show();
 									return false;
 								}
 							}
-							if ($("#dltcodes em input")[6].value > 12
+							if (isNaN($("#dltcodes em input")[5].value) || $("#dltcodes em input")[5].value > 12
+									|| $("#dltcodes em input")[5].value < 1) {
+								$("#errordlt").html("篮球投注号码有误：" + $("#dltcodes em input")[5].value).show();
+								return false;
+							}
+							if (isNaN($("#dltcodes em input")[6].value) || $("#dltcodes em input")[6].value > 12
 									|| $("#dltcodes em input")[6].value < 1) {
-								$("#errordlt").html("篮球投注号码有误").show();
+								$("#errordlt").html("篮球投注号码有误：" + $("#dltcodes em input")[6].value).show();
 								return false;
 							}
 							nary = nary + "|" + $("#dltcodes em input")[5].value
