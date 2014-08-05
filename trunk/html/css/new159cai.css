@@ -34,11 +34,11 @@ img{vertical-align:top;}
 .top .fl{width: 360px;_width: 362px;overflow:visible;}
 .ie_fl{float: left;}
 .top dl{float: left;position: relative;z-index: 999;}
-.top dl dt{height:30px;line-height:30px;margin-top:3px;padding: 0 20px 0 5px; background-position: -13px -4px;position: relative;z-index: 14;border:1px solid transparent;_border:1px solid #f7f7f7;_float: left;}
+.top dl dt{height:32px;line-height:30px;margin-top:3px;padding: 0 20px 0 5px; background-position: -13px -4px;position: relative;z-index: 14;border:1px solid transparent;_border:1px solid #f7f7f7;_float: left;}
 .top dl dt s{width: 11px;height: 11px;display: block;position: absolute;right: 4px;top: 9px;background-position: -70px -14px;-webkit-transition: transform 0.2s ease-in 0s;-moz-transition: transform 0.2s ease-in 0s;-o-transition: transform 0.2s ease-in 0s;transition: transform 0.2s ease-in 0s;}
 .top dl.hover dt s{background-position: -166px -14px\9;-webkit-transform: rotate(180deg);-moz-transform: rotate(180deg);-o-transform: rotate(180deg);transform: rotate(180deg);}
 .top dl.hover dt{ background-position: -110px -5px;border-color: #ddd;border-bottom-color: #f7f7f7;}
-.top dl dd{width:234px;height: auto;padding:0 8px;display: none;border:1px solid #ddd;border-bottom: 3px solid #f60;background-color: #f7f7f7;position: absolute;right: 0;top: 34px;z-index: 13;}
+.top dl dd{width:234px;height: auto;padding:0 8px;display: none;border:1px solid #ddd;border-bottom: 3px solid #f60;background-color: #f7f7f7;position: absolute;right: 0;top: 36px;z-index: 13;}
 .top dl.hover dt{background-color: #fff;}
 .top dl.hover dd{background-color: #fff;}/*display: block;*/
 .top dl.ali{float: right;}
