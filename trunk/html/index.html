@@ -178,7 +178,7 @@
 								
 									$("#errordlt").html("出现重复号码：" + nary[i]).show();
 									return false;
-								} else if ( nary[i] > 35 && nary[i] < 1) {
+								} else if ( $("#dltcodes em input")[i].value > 35 && $("#dltcodes em input")[i].value < 1) {
 									$("#errordlt").html("红球投注号码有误" ).show();
 									return false;
 								}else if(isNaN($("#dltcodes em input")[i].value) ){
