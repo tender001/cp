@@ -55,7 +55,7 @@
 .m_mid .tab .bod b em input.cur{background: url(../images/bg/focus.png) no-repeat;color: #666;}
 .m_mid .tab .bod b s.dal{background-position: 0 -222px;}
 .m_mid .tab .bod b em.blue{background-position: -152px -110px;}
-.m_mid .tab .bod b i{width: 52px;height: 32px;line-height:32px;color: #444;background-position: -1px -152px;cursor: pointer;margin: 0 5px 0 32px;}
+.m_mid .tab .bod b i{width: 52px;height: 35px;line-height:35px;color: #444;background-position: -1px -152px;cursor: pointer;margin: 0 5px 0 32px;}
 .m_mid .tab .bod b strong{width: 90px;height: 35px;line-height: 35px;color: #fff;background-position: -55px -152px;cursor: pointer;}
 
 .m_r{float: right;width: 223px}
