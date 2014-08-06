@@ -37,7 +37,7 @@
 .m_mid .ad div{position: absolute;bottom: 10px;left: 0;height: 13px;width: 100%;text-align: center;}
 .m_mid .ad div span{width: 12px;height: 12px;display: inline-block;margin-left: 5px;background: url(../images/bg/page.png) no-repeat;cursor: pointer;opacity: 0.7;-moz-opacity: 0.7;_filter: alpha(opacity=70);}
 .m_mid .ad div span.cur{opacity: 1;-moz-opacity: 1;_filter: alpha(opacity=100);}
-.m_mid .tab{width: 100%;margin:16px auto 0;border-top:1px solid #ddd;}
+.m_mid .tab{width: 100%;margin:10px auto 0;border-top:1px solid #ddd;}
 .m_mid .tab .title{height:30px;line-height:30px;border-bottom: 1px solid #ddd;background-color: #f6f6f6;overflow: visible;padding-left: 14px;}
 .m_mid .tab .title span{width:80px;height: 30px;display:block;float:left;text-align:center;font-size: 14px;font-weight:bold;color: #3c3c3c;border-right: 1px solid #ddd;border-left: 1px solid #ddd;margin-left: -1px;cursor: pointer;position: relative;_bottom: -1px;}
 .m_mid .tab .title span.hover{color:#ff1616;border-bottom: 1px solid #fff;background-color: #fff;}
@@ -67,7 +67,7 @@
 .m_r p.user .dlu a:hover{text-decoration: underline;}
 .m_r p.user .dlu span{margin-left: -7px;s}
 .m_r p.user .dlu span a{margin: 0 5px;}
-.m_r .tab{height: 227px;border: 1px solid #ddd;border-bottom: 0;padding-bottom:2px;}
+.m_r .tab{height: 221px;border: 1px solid #ddd;border-bottom: 0;padding-bottom:2px;}
 .m_r .tab .title{height: 28px;line-height: 28px;color: #333;background-color: #f6f6f6;margin-left: -1px;overflow: visible;}
 .m_r .tab .title span{width:109px;height: 28px; display: block;float: left;border-left: 1px solid #ddd;border-bottom: 1px solid #ddd;text-align: center;cursor: pointer;}
 .m_r .tab .title span.hover{background-color: #fff;border-bottom-color: #fff;font-weight: bold;}
@@ -84,7 +84,7 @@
 
 /*手机购彩*/
 .mob_buy{border-bottom: 0;}
-.mob_buy .body{padding: 22px 0;}
+.mob_buy .body{padding: 25px 0;}
 .mob_buy .body dt,.mob_buy .body dd{float: left;}
 .mob_buy .body dt div{width: 103px;height: 103px;padding-right: 8px;}
 .mob_buy .body dt div img{width: 100%;height: 100%;}
