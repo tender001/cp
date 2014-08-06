@@ -60,7 +60,8 @@
 
 .m_r{float: right;width: 223px}
 .m_r p.user{margin-bottom: 8px;height: 42px;overflow: hidden;}
-.m_r p.user a.use{width: 104px;height: 37px;font: bold 16px/37px "\5b8b\4f53";display: inline-block;margin-left:5px;text-align: center;color: #eb6003;text-decoration: none;background-position: -1px -110px;}
+.m_r p.user a.use{width: 104px;height: 42px;font: bold 16px/42px "\5b8b\4f53";display: inline-block;margin-left:5px;text-align: center;color: #eb6003;text-decoration: none;background-position: 0 -293px;}
+.m_r p.user a.use:hover{background-position: 0 -335px;}
 .m_r p.user a.reg{margin-left: 8px;}
 .m_r p.user .dlu{width: 86%;margin: 0 auto;display: block;line-height: 21px;}
 .m_r p.user .dlu a{color: #145fab}
