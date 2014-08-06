@@ -29,7 +29,7 @@
 .m_l1 a{color:#585858;margin-right: 10px; float: left;white-space: nowrap;line-height: 22px;}
 .m_l1 a:hover{color: #e52e04;}
 .m_l1 li p{margin: 10px 0 16px;overflow: hidden;_padding-bottom:16px;}
-.m_mid{width: 559px;overflow: hidden;}
+.m_mid{width: 560px;overflow: hidden;}
 .m_mid .ad{width: 557px;height: 266px;margin: 0 1px;overflow: hidden;position: relative;}
 .m_mid .ad ul{position: absolute;left: 0;top: 0;}
 .m_mid .ad li{width: 557px;height: 266px;float: left;}
@@ -37,13 +37,13 @@
 .m_mid .ad div{position: absolute;bottom: 10px;left: 0;height: 13px;width: 100%;text-align: center;}
 .m_mid .ad div span{width: 12px;height: 12px;display: inline-block;margin-left: 5px;background: url(../images/bg/page.png) no-repeat;cursor: pointer;opacity: 0.7;-moz-opacity: 0.7;_filter: alpha(opacity=70);}
 .m_mid .ad div span.cur{opacity: 1;-moz-opacity: 1;_filter: alpha(opacity=100);}
-.m_mid .tab{width: 538px;margin:12px auto 0;border:1px solid #ddd;}
-.m_mid .tab .title{height:30px;line-height:30px;border-bottom: 1px solid #ddd;background-color: #f6f6f6;overflow: visible;}
-.m_mid .tab .title span{width:80px;height: 30px;display:block;float:left;text-align:center;font-size: 14px;font-weight:bold;color: #3c3c3c;border-right: 1px solid #ddd;cursor: pointer;position: relative;_bottom: -1px;}
+.m_mid .tab{width: 100%;margin:16px auto 0;border-top:1px solid #ddd;}
+.m_mid .tab .title{height:30px;line-height:30px;border-bottom: 1px solid #ddd;background-color: #f6f6f6;overflow: visible;padding-left: 14px;}
+.m_mid .tab .title span{width:80px;height: 30px;display:block;float:left;text-align:center;font-size: 14px;font-weight:bold;color: #3c3c3c;border-right: 1px solid #ddd;border-left: 1px solid #ddd;margin-left: -1px;cursor: pointer;position: relative;_bottom: -1px;}
 .m_mid .tab .title span.hover{color:#ff1616;border-bottom: 1px solid #fff;background-color: #fff;}
 .m_mid .tab .title span i{display:none;width: 100%;height: 3px;overflow:hidden;background-color: #f44545;position: absolute;left: 0;top: -1px;}
 .m_mid .tab .title span.hover i{display: block;}
-.m_mid .tab .bod div{display: none;width:510px;margin: 10px auto;overflow: hidden;}
+.m_mid .tab .bod div{display: none;width:540px;margin: 10px auto;overflow: hidden;}
 .m_mid .tab .bod div.hover{display: block;}
 .m_mid .tab .bod p{overflow: hidden;}
 .m_mid .tab .bod span{color:#8c8c8c;}
@@ -55,11 +55,11 @@
 .m_mid .tab .bod b em input.cur{background: url(../images/bg/focus.png) no-repeat;color: #666;}
 .m_mid .tab .bod b s.dal{background-position: 0 -222px;}
 .m_mid .tab .bod b em.blue{background-position: -152px -110px;}
-.m_mid .tab .bod b i{width: 52px;height: 32px;line-height:32px;color: #444;background-position: -1px -152px;cursor: pointer;margin: 0 5px 0 3px;}
+.m_mid .tab .bod b i{width: 52px;height: 32px;line-height:32px;color: #444;background-position: -1px -152px;cursor: pointer;margin: 0 5px 0 32px;}
 .m_mid .tab .bod b strong{width: 90px;height: 35px;line-height: 35px;color: #fff;background-position: -55px -152px;cursor: pointer;}
 
 .m_r{float: right;width: 223px}
-.m_r p.user{padding-bottom: 8px;height: 42px;overflow: hidden;}
+.m_r p.user{margin-bottom: 8px;height: 42px;overflow: hidden;}
 .m_r p.user a.use{width: 104px;height: 37px;font: bold 16px/37px "\5b8b\4f53";display: inline-block;margin-left:5px;text-align: center;color: #eb6003;text-decoration: none;background-position: -1px -110px;}
 .m_r p.user a.reg{margin-left: 8px;}
 .m_r p.user .dlu{width: 86%;margin: 0 auto;display: block;line-height: 21px;}
@@ -74,26 +74,28 @@
 .m_r .tab .bod{margin: 11px 0;overflow: hidden;zoom: 1;*margin: 0;*padding:  11px 0;}
 .m_r .tab .bod div{width:200px;margin: 0 auto;line-height:24px;display: none;zoom: 1;}
 .m_r .tab .bod div.hover{display: block;}
-.m_r .tab .bod div ul{height: 144px;overflow: hidden;}
-.m_r .tab .bod div ul li{height: 24px;vertical-align: top;}
+.m_r .tab .bod div ul{height: 156px;overflow: hidden;}
+.m_r .tab .bod div ul li{height: 26px;line-height: 26px;vertical-align: top;}
 .m_r .tab .bod div strong{float: left;width: 155px;overflow: hidden;white-space: nowrap;text-overflow: ellipsis;}
 .m_r .tab .bod div strong a{color: #434343;font-weight: 400;}
 .m_r .tab .bod div strong a:hover{color: #e62e04;}
 .m_r .tab .bod div em{float: right;color: #888;}
-.m_r .tab .bod div a.more{margin: 0;margin-top: 8px;}
+.m_r .tab .bod div a.more{margin: 0;margin-top: 4px;}
 
 /*手机购彩*/
 .mob_buy{border-bottom: 0;}
-.mob_buy .body{padding: 33px 0;}
+.mob_buy .body{padding: 22px 0;}
 .mob_buy .body dt,.mob_buy .body dd{float: left;}
-.mob_buy .body dt div{width: 85px;height: 85px;padding-right: 15px;}
-.mob_buy .body dd a{width: 93px;height: 32px;display: block;background-position: -1px -189px;margin-top: 6px;}
-.mob_buy .body dd a.android{background-position: -95px -189px;margin-top: 14px;}
+.mob_buy .body dt div{width: 103px;height: 103px;padding-right: 8px;}
+.mob_buy .body dt div img{width: 100%;height: 100%;}
+.mob_buy .body dd a{width: 86px;height: 30px;display: block;background-position: -1px -188px;}
+.mob_buy .body dd a.android{background-position: -87px -188px;margin-top: 6px;}
+.mob_buy .body dd a.touch{background-position: -71px -260px;margin-top: 6px;}
 /**/
 .today,.center{float: left;}
 .kj{width: 1000px;margin: 0 auto;}
 
-.center{width: 538px;margin-left: 10px;zoom:1;_display: inline;}
+.center{width: 540px;margin-left: 10px;zoom:1;_display: inline;}
 div.center .body{width:95%;}
 .center .body ul{margin-bottom: -1px;*margin-bottom: -4px;}
 .center .body li{height: 106px;*height: 107px;overflow: hidden;border-bottom: 1px dashed #c5c5c5;}
