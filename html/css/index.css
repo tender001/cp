@@ -95,7 +95,7 @@
 .today,.center{float: left;}
 .kj{width: 1000px;margin: 0 auto;}
 
-.center{width: 540px;margin-left: 10px;zoom:1;_display: inline;}
+.center{width: 546px;margin-left: 7px;zoom:1;_display: inline;}
 div.center .body{width:95%;}
 .center .body ul{margin-bottom: -1px;*margin-bottom: -4px;}
 .center .body li{height: 106px;*height: 107px;overflow: hidden;border-bottom: 1px dashed #c5c5c5;}
@@ -117,7 +117,7 @@ div.center .body{width:95%;}
 .zx .cn .body{padding: 10px 0;*padding:14px 0;}
 
 .hot{width: 1000px;margin: 10px auto;}
-.hm{width: 772px;float: right;border-bottom: 0;}
+.hm{width: 776px;float: right;border-bottom: 0;}
 .hm .body{width: 100%;}
 .hm table{width: 100%;}
 .hm table th{height: 33px;*height: 35px;color: #063f6f;background-color: #f8f8f8;font-weight: 400;border-bottom: 1px solid #ddd;}
@@ -128,9 +128,9 @@ div.center .body{width:95%;}
 .hm table td i{color: #f60;}
 .hm table td .x_jdt{background: #FFF;border: 1px solid #ddd;height: 2px;width: 70px;text-align: left;line-height: 2px;border-left: none;_overflow: hidden;margin: 2px auto 0;_height: 3px;}
 .hm table td .x_jdt em{display: block;height: 4px;background-color: #f60;margin: -1px -1px -1px 0px;}
-.hm table td input{width: 38px;border: 1px solid #ddd;color: #333;height: 15px;line-height:15px;padding: 1px 0;text-align: center;*margin-top: -1px;}
+.hm table td input{width: 38px;border: 1px solid #ddd;color: #333;height: 18px;line-height:18px;padding: 1px 0;text-align: center;*margin-top: -1px;}
 .hm table td .shouye a{vertical-align: middle;}
-.hm table td .shouye a img{height: 19px;}
+/*.hm table td .shouye a img{height: 19px;}*/
 .hm table td a{color: #3970b6}
 .hm table td a.buy{width: 45px;height: 20px;line-height: 20px;display: block;background-color: #f60;color: #fff;margin: auto;}
 
