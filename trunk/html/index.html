@@ -91,13 +91,16 @@
 									$("#ssqcodes em input")[4].value,
 									$("#ssqcodes em input")[5].value);
 							var nary = ary.sort();
-							for ( var i = 0; i < nary.length - 1; i++) {
+							for ( var i = 0; i < nary.length; i++) {
 								if (nary[i] == nary[i + 1] ) {
 									$("#errorssq").html("出现重复号码：" + nary[i]).show();
 									
 									return false; 
-								} else if (isNaN($("#ssqcodes em input")[i].value) || $("#ssqcodes em input")[i].value > 33 || $("#ssqcodes em input")[i].value < 1 ) {
+								}else if($("#ssqcodes em input")[i].value > 33 || $("#ssqcodes em input")[i].value < 1 ) {
 									
+									$("#errorssq").html("红球投注号码有误" ).show();
+									return false;
+								}else if (isNaN($("#ssqcodes em input")[i].value)){
 									$("#errorssq").html("红球投注号码有误：" + $("#ssqcodes em input")[i].value).show();
 									return false;
 								}
@@ -160,13 +163,16 @@
 									$("#dltcodes em input")[3].value,
 									$("#dltcodes em input")[4].value);
 							var nary = ary.sort();
-							for ( var i = 0; i < nary.length - 1; i++) {
+							for ( var i = 0; i < nary.length; i++) {
 								if (nary[i] == nary[i + 1]) {
 								
 									$("#errordlt").html("出现重复号码：" + nary[i]).show();
 									return false;
-								} else if (isNaN($("#dltcodes em input")[i].value) || $("#dltcodes em input")[i].value > 35 && $("#dltcodes em input")[i].value < 1) {
+								} else if ( nary[i] > 35 || nary[i] < 1) {
 									$("#errordlt").html("红球投注号码有误" ).show();
+									return false;
+								}else if (isNaN($("#dltcodes em input")[i].value)) {
+									$("#errordlt").html("红球投注号码有误：" + $("#dltcodes em input")[i].value).show();
 									return false;
 								}
 							}
@@ -203,11 +209,7 @@
 								$(this).select();
 							})
 						});
-						$(function(){
-							$("#dltcodes em input").click(function(){
-								$(this).select();
-							})
-						});
+						
 						
 					</script>
 					<!-- <script>
