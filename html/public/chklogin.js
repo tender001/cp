@@ -270,7 +270,7 @@ Class('Loginer', {// 登陆器
                              cpshowText ='<a style="font-size:16px" href="/account/myaccount.html" target="_blank">'+r.nickid+'</a>，<br>账户余额<em>'+(parseFloat(r.usermoeny)||0).rmb()+'</em>元，<a href="'+$_user.daohang.addmoney+'" target="_blank">充值</a>';
                              if(this.get('#top_username').html()!=""){ 
                             	 
-                            	 this.get('#tp1').html("<em id='top_m'>我的账户</em>");
+                            	 /*this.get('#tp1').html("<em id='top_m'></em>");*/
 		                    	 this.get("#tp1").mouseover(function(){
 		                    	 document.getElementById("top_m").className="cur";
 		                    	 var div = document.getElementById("top_show");
@@ -439,7 +439,7 @@ Class({
             return;
         };
         this.loginer = this.lib.Loginer({
-            loginBtns: '#top_login_btn',// 顶部登陆
+            loginBtns: '#top_login_btn,#top_login_btns',// 顶部登陆
             logoutBtns: '#logoutLink,#outLogin'
         }); 
 
