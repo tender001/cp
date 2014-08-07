@@ -94,9 +94,16 @@
 <script type="text/javascript">
 $(function(){
 	$(".top dl,.nav1_buy,.updo li").hover(function() {
-		$(this).addClass("hover").children(".up").stop(true,true).slideDown('fast');
+		var $a=$(this);
+		//$a.stop(true,true)
+		var t=setTimeout(function(){
+			$a.addClass("hover").children(".up").stop(true,true).slideDown("fast");
+		},100);
 	}, function() {
-		$(this).removeClass("hover").children(".up").stop(true,true).slideUp('fast');
+		var $a=$(this);
+		var t1=setTimeout(function(){
+			$a.removeClass("hover").children(".up").stop(true,true).slideUp("fast");
+		},100);
 	});
 });
 </script>
