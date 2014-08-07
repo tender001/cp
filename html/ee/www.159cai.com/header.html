@@ -97,12 +97,12 @@ $(function(){
 		var $a=$(this);
 		//$a.stop(true,true)
 		var t=setTimeout(function(){
-			$a.addClass("hover").children(".up").stop(true,true).slideDown("fast");
+			$a.addClass("hover").children(".up").stop(true,true).fadeIn();//.slideDown();
 		},100);
 	}, function() {
 		var $a=$(this);
 		var t1=setTimeout(function(){
-			$a.removeClass("hover").children(".up").stop(true,true).slideUp("fast");
+			$a.removeClass("hover").children(".up").stop(true,true).fadeOut();//.slideUp();
 		},100);
 	});
 });
