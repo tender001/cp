@@ -180,9 +180,11 @@ Class({
 					if (code == "0") {
 						$("#phoneend").html($.trim($("#phoneNumber").val()));
 
-					  
+						$("#userphone").html($("#phoneNumber").val());
+		 	 			 $("#div4").show();
+	 	 		    	 $("#div2").hide();
 	 	 		    
-						Y.ajax({
+						/*Y.ajax({
 					 	     url:'/phpu/p.phpx?fid=u_hdssq',
 					 	     end:function (data){
 					 	         if (data.error) {
@@ -207,12 +209,10 @@ Class({
 				 	 		    	 
 				 	 		    	 
 				 	 		       }
-				 	 		     $("#userphone").html($("#phoneNumber").val());
-				 	 			 $("#div4").show();
-			 	 		    	 $("#div2").hide();
+				 	 		     
 					 	         }
 					 	     }
-					 	   });
+					 	   });*/
 					} else {
 						$("#conform").attr("disabled", false);
 						if (code=="1"){

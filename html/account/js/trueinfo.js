@@ -82,7 +82,7 @@ Class({
 					var obj = eval("(" + d.text + ")");
 		   		    var code = obj.Resp.code;
 		   		    var desc = obj.Resp.desc;
-					if (code == "0") {	
+					/*if (code == "0") {	
 					 	Y.ajax({
 					 	     url:'/phpu/p.phpx?fid=u_hdssq',
 					 	     end:function (data){
@@ -101,7 +101,7 @@ Class({
 				 	 		    	 $("#usercard").html($("#idnumber").val())
 				 	 		    	  wrapLay.pop();
 				 	 		       }else if(obj2.Resp.code==2){
-				 	 		    	 $("#wrapLayConent").html('<div class="buy_sucs">已实名<br/>新用户<a class="a3" href="/account/mobile.html" target="_blank" id="showClose">绑定手机</a>后系统赠送3元彩金</div>');
+				 	 		    	 $("#wrapLayConent").html('<div class="buy_sucs">已实名<br/><a class="a3" href="/account/mobile.html" target="_blank" id="showClose">绑定手机</a></div>');
 				 	 		    	 $("#username").html($("#truename").val());
 				 	 		    	 $("#usercard").html($("#idnumber").val())
 				 	 		    	  wrapLay.pop();
@@ -119,7 +119,7 @@ Class({
 						}else{
 							Y.alert(desc);
 						}
-					}
+					}*/
 					P.showinfo();
 				},
 				error : function() {
