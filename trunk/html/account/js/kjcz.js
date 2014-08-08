@@ -238,7 +238,9 @@ Class('App', {
     								   		    var code = obj.Resp.code;
     								   		    var desc = obj.Resp.desc;
     											if (code == "0") {	
-    											 	Y.ajax({
+    												smrz.close();
+    												Y.alert(desc);
+    											 	/*Y.ajax({
     											 	     url:'/phpu/p.phpx?fid=u_hdssq',
     											 	     end:function (data){
     											 	         if (data.error) {
@@ -264,7 +266,7 @@ Class('App', {
 
     											 	         }
     											 	     }
-    											 	   });
+    											 	   });*/
     											} else {
     												cmerror.html(desc).parent().show();
     											}

@@ -183,7 +183,8 @@ Class({
 						$("#userphone").html($("#phoneNumber").val());
 		 	 			 $("#div4").show();
 	 	 		    	 $("#div2").hide();
-	 	 		    
+	 	 		    	//smrz.close();
+						//Y.alert(desc)
 						/*Y.ajax({
 					 	     url:'/phpu/p.phpx?fid=u_hdssq',
 					 	     end:function (data){
