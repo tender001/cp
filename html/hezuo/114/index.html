@@ -75,6 +75,49 @@
 		 <!--彩票资讯-->
 			  <!--#include virtual="/dedeinc/shouyezx.html"-->
 		  <!--彩票资讯结束-->
+	<script type="text/javascript">
+	$(document).ready(function(){
+		 var sWidth = $("#flash_outer").width(); 
+		var len=$("#flash_num span").length;; 
+		var index = 0;
+		var picTimer;
+		
+	
+//		$("#focus").append(btn);
+		$("#focus .btnBg").css("opacity",0.8);
+
+		$("#flash_num span").css("opacity",0.4).mouseover(function() {
+			index = $("#flash_num span").index(this);
+			showPics(index);
+		}).eq(0).trigger("mouseover");
+
+		$("#focus .preNext").css("opacity",0.2).hover(function() {
+			$(this).stop(true,false).animate({"opacity":"0.8"},200);
+		},function() {
+			$(this).stop(true,false).animate({"opacity":"0.2"},200);
+		});
+
+
+		//$("#flash_pic").css("width",(sWidth) * (len));
+		$("#flash_pic").css("position","absolute");
+		$("#flash_outer").hover(function() {
+			clearInterval(picTimer);
+		},function() {
+			picTimer = setInterval(function() {
+				showPics(index);
+				index++;
+				if(index == len) {index = 0;}
+			},3000); //自动播放的间隔
+		}).trigger("mouseleave");
+		function showPics(index) { 
+			var nowLeft = -index*sWidth; 
+			$("#flash_pic").stop(true,false).animate({"left":nowLeft},400); 
+			$("#flash_num span").stop(true,false).animate({"opacity":"0.6"},400).eq(index).stop(true,false).animate({"opacity":"1"},400);
+			$("p span").stop(true,false).removeClass("cur").eq(index).stop(true,false).addClass("cur");  
+		}
+});
+   
+</script>
 	<div class="cai_pr">
 		<div class="tab num_cai">
 			<div class="title" id="todaykaijiang">
@@ -317,9 +360,9 @@
 			</div>
 		</div>
 		<div class="tab x5">
-			<div class="title" id="szctab"><span class="hover">11选5</span><span>11运夺金</span><span>新时时彩</span></div>
-			<div class="bod">
-				<div class="hover x511" id="11x5_1">
+			<div class="title" id="szctab"><span class="hover">11选5</span><span>11运夺金</span><span style="display: none;">新时时彩</span></div>
+			<div class="bod" mark="kgcai">
+				<div class="hover x511" id="11x5_1" mark="kpc">
 					<div class="fl">
 						<b></b>
 						<p>2014026期</p>
@@ -384,7 +427,7 @@
 						
 					</div>
 				</div>
-				<div class="hover x511" id="11ydj_1" style="display: none;">
+				<div class="x511" id="11ydj_1" style="display: none;" mark="kpc">
 					<div class="fl">
 						<b></b>
 						<p>2014026期</p>
@@ -448,7 +491,7 @@
 						</strong>
 					</div>
 				</div>
-				<div class="hover x511" id="ssc_1" style="display: none;">
+				<div class="x511" id="ssc_1" style="display: none;" mark="kpc">
 					<div class="fl">
 						<b></b>
 						<p>2014026期</p>
