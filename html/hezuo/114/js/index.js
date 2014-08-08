@@ -881,20 +881,25 @@ Class(
     	var playTabs,x5Tabs,ydjTabs;
     	Y =this;
         //玩法标签切换
-    	var kaijiangtab=this.lib.Tabs({
-            items: '#todaykaijiang span',
-            focusCss: 'hover',
-            contents: '#k1,#k2',
-            delay: 300
-        });           
+//    	var kaijiangtab=this.lib.Tabs({
+//            items: '#todaykaijiang span',
+//            focusCss: 'hover',
+//            contents: '#k1,#k2',
+//            delay: 300
+//        });           
         playTabs = this.lib.Tabs({
             items: '#szctab span',
+           
+//            focusCss: ' hover',
             contents: '#11x5_1,#11ydj_1,#ssc_1',
-            focusCss: ' x511',
         	delay: 300
         });
+    	$("#szctab span").hover(function(){
+            $(this).addClass("hover").siblings().removeClass("hover");
+            $("div[mark=kgcai] div[mark=kpc]").eq($("#szctab span").index(this)).addClass("x511").show().siblings().hide();
+        }); 
         playTabs.onchange= function (a, b){
-           Y.get(".bod div").addClass("x511");
+//           Y.get(".bod div").addClass("x511");
         	if(b == 0){
             	Y.showchange('54');
 //            	Y.loadopencode('01');
