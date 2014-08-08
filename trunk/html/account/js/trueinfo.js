@@ -82,8 +82,8 @@ Class({
 					var obj = eval("(" + d.text + ")");
 		   		    var code = obj.Resp.code;
 		   		    var desc = obj.Resp.desc;
-					/*if (code == "0") {	
-					 	Y.ajax({
+					if (code == "0") {	
+					 	/*Y.ajax({
 					 	     url:'/phpu/p.phpx?fid=u_hdssq',
 					 	     end:function (data){
 					 	         if (data.error) {
@@ -111,7 +111,7 @@ Class({
 
 					 	         }
 					 	     }
-					 	   });
+					 	   });*/
 					} else {
 						if (code=="1"){
 							Y.alert(desc);
@@ -119,7 +119,7 @@ Class({
 						}else{
 							Y.alert(desc);
 						}
-					}*/
+					}
 					P.showinfo();
 				},
 				error : function() {
