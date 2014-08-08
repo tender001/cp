@@ -115,33 +115,9 @@ showSafe : function(){
 								   		    var code = obj.Resp.code;
 								   		    var desc = obj.Resp.desc;
 											if (code == "0") {	
-											 	Y.ajax({
-											 	     url:'/phpu/p.phpx?fid=u_hdssq',
-											 	     end:function (data){
-											 	         if (data.error) {
-											 	        	Y.alert(desc);
-											 	        	return false;
-											 	         }else{
-											 	       	   var obj2 = eval("(" + data.text + ")");
-											 	       	var  wrapLay = Y.lib.MaskLay('#wrapLay', '#wrapLayConent');
-										            	wrapLay.addClose('#wrapLayCloseBtn', '#wrapLayClose');
-										                 Y.get('#yclass_alert  div.tantop').drag('#wrapLay');
-										               
-										 	 		       if(obj2.Resp.code==0){
-										 	 		    	 $("#wrapLayConent").html('<div class="buy_sucs">恭喜您：<br />已获取3元彩金<a style="color:#145fab;text-decoration:underline" href="/account/myaccount.html" target="_blank" >点击查看</a></div>');
-										 	 		    	
-										 	 		    	  wrapLay.pop();
-										 	 		       }else if(obj2.Resp.code==2){
-										 	 		    	 $("#wrapLayConent").html('<div class="buy_sucs">已实名<br/>新用户<a  href="/account/mobile.html" target="_blank" style="color:#145fab;text-decoration:underline">绑定手机</a>后系统赠送3元彩金</div>');
-										 	 		    	
-										 	 		    	  wrapLay.pop();
-										 	 		       }else{
-										 	 		    	 cmerror.html(desc).parent().show();
-										 	 		       }
-
-											 	         }
-											 	     }
-											 	   });
+											
+												smrz.close();
+												Y.alert(desc)
 											} else {
 												cmerror.html(desc).parent().show();
 											}
@@ -239,7 +215,7 @@ showSafe : function(){
    				Y.alert("请选择充值银行");
    				return false;
    			}
-   			Y.openUrl('tishi.html',502,250);
+   			Y.openUrl('tishi.html',500,194);
    			$("#bankform").attr("action",$_user.url.addmoney);		
    			$("#bankform").submit();
    	 	});
