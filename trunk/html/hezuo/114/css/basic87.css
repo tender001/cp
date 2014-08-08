@@ -111,7 +111,7 @@ td .tz{width: 57px;height: 22px;display: inline-block;background-position: -93px
 .x5 .x511 div.fr strong i{height: 35px;font: bold 16px/35px "\5b8b\4f53";float: right;text-align: center;cursor: pointer;}
 .x5 .x511 div.fr strong i.x_tz1{background-position: -62px -112px;width: 105px;color: #fff;}
 .x5 .x511 div.fr strong i.x_tz2{background-position: -1px -112px;width: 57px;color: #333;margin-right: 12px;_display: inline;}
-.x5 .x511 div.fr s{color: #7d7d7d;}
+.x5 .x511 div.fr s{clear: both;color: #7d7d7d;height:38px;line-height:45px;overflow:hidden;display:block;}
 
 .hot{width: 1000px;margin: 10px auto;}
 .hm{width: 768px;float: right;border-bottom: 0;}
