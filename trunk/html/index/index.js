@@ -218,7 +218,7 @@ Class(
     						row.twomoney = row.money[1] == ''?'0':(parseFloat(row.money[1]).rmb(false,0));
             			
     						Y.get("#sfcmoney").html("一等奖："+row.onenum+"注"+row.onemoney+"元");
-    						if(isNaN(row.twonum) || isNaN(row.twomoney)){
+    						if(row.twonum=="" || row.twomoney==""||row.twomoney===undefined||row.twonum===undefined){
     							Y.get("#sfc_twomoney").html("二等奖：0注0元"); 
     						}else{
     							Y.get("#sfc_twomoney").html("二等奖："+row.twonum+"注"+row.twomoney+"元");
