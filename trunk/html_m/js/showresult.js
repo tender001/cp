@@ -19,7 +19,7 @@ function sresult(){
 	}else if(result =="tikuan"){
 		$("#div6").show();
 	}
-	if(code == "0"){
+	/*if(code == "0"){
 		
 		$("#div7").show().html(' 恭喜您：已获取3元彩金<a class="a3" href="/user/account.html" target="_blank" >点击查看</a>');
 	}else if(code=="2"){
@@ -32,5 +32,5 @@ function sresult(){
 	}else if(code=="4"){
 		$("#div4").show();
 	    showTips('手机已绑定,新用户<a class="a3" href="/user/idbd.html" target="_blank" id="showClose">实名后</a>系统赠送3元彩金');
-	}
+	}*/
 }
