@@ -1,28 +1,29 @@
 <!DOCTYPE html>
 <html>
-<script type="text/javascript" src="/public/jq.js"></script>
-<script type="text/javascript" src="/public/jq2.js"></script>
-<script type="text/javascript" src="/public/159cp.js"></script>
 <head>
 	<meta charset="UTF-8">
 	<title>159彩票网</title>
 	<link rel="stylesheet" type="text/css" href="css/basic87.css">
+	<script type="text/javascript" src="/public/jq.js"></script>
+	<script type="text/javascript" src="/public/jq2.js"></script>
+	<script type="text/javascript" src="/public/159cp.js"></script>
+	
+<script type="text/javascript" src="/public/chklogin.js"></script>
 </head>
-
 <body>
 <div class="top_nav">
 	<ul>
 		<li>
-			<a href="#" target="_blank">
+			<a href="http://www.159cai.com/from.phpx?comeFrom=25196&backurl=/jc/" target="_blank">
 				<div></div>
 				<dl>
-					<dt>双色球</dt>
-					<dd>2元最高可中1000万</dd>
+					<dt>竞彩足球</dt>
+					<dd>返奖率高达69%</dd>
 				</dl>
 			</a>
 		</li>
 		<li>
-			<a href="#" target="_blank">
+			<a href="http://www.159cai.com/from.phpx?comeFrom=25196&backurl=/shuangseqiu/" target="_blank">
 				<div class="cai1"></div>
 				<dl>
 					<dt>双色球</dt>
@@ -31,132 +32,57 @@
 			</a>
 		</li>
 		<li>
-			<a href="#" target="_blank">
+			<a href="http://www.159cai.com/from.phpx?comeFrom=25196&backurl=/daletou/" target="_blank">
 				<div class="cai2"></div>
 				<dl>
-					<dt>双色球</dt>
-					<dd>2元最高可中1000万</dd>
+					<dt>大乐透</dt>
+					<dd>3元最高可中1600万</dd>
 				</dl>
 			</a>
 		</li>
 		<li>
-			<a href="#" target="_blank">
+			<a href="http://www.159cai.com/from.phpx?comeFrom=25196&backurl=/bj/" target="_blank">
 				<div class="cai3"></div>
 				<dl>
-					<dt>双色球</dt>
-					<dd>2元最高可中1000万</dd>
+					<dt>北京单场</dt>
+					<dd>猜对一场就有奖</dd>
 				</dl>
 			</a>
 		</li>
 	</ul>
 	<div class="nav_87">
-		<a href="#">胜负彩</a>
-		<a href="#">胜负彩</a>
-		<a href="#">胜负彩</a>
-		<a href="#">胜负彩</a>
+		<a href="http://www.159cai.com/from.phpx?comeFrom=25196&backurl=/jc/">竞彩足球</a>
+		<a href="http://www.159cai.com/from.phpx?comeFrom=25196&backurl=/lc/">竞彩篮球</a>
+		<a href="http://www.159cai.com/from.phpx?comeFrom=25196&backurl=/lc/">北京单场</a>
+		<a href="http://www.159cai.com/from.phpx?comeFrom=25196&backurl=/zc/">胜负彩</a>
+		<a href="http://www.159cai.com/from.phpx?comeFrom=25196&backurl=/renjiu/">任九</a>
+		<a href="http://www.159cai.com/from.phpx?comeFrom=25196&backurl=/banquan/">半全场</a>
+		<a href="http://www.159cai.com/from.phpx?comeFrom=25196&backurl=/jinqiu/">进球彩</a>
+		<a href="http://www.159cai.com/from.phpx?comeFrom=25196&backurl=/3d/">福彩3d</a>
+		<a href="http://www.159cai.com/from.phpx?comeFrom=25196&backurl=/qilecai/">七乐彩</a>
+		<a href="http://www.159cai.com/from.phpx?comeFrom=25196&backurl=/qixingcai/">七星彩</a>
+		<a href="http://www.159cai.com/from.phpx?comeFrom=25196&backurl=/paiwu/">排列五</a>
+		<a href="http://www.159cai.com/from.phpx?comeFrom=25196&backurl=/paisan/">排列三</a>
+		<a href="http://www.159cai.com/from.phpx?comeFrom=25196&backurl=/11x5/">11选5</a>
+		<a href="http://www.159cai.com/from.phpx?comeFrom=25196&backurl=/11ydj/">11运夺金</a>
+		<a href="http://www.159cai.com/from.phpx?comeFrom=25196&backurl=/ssc/">时时彩</a>
+		<a href="http://www.159cai.com/from.phpx?comeFrom=25196&backurl=/daletou/">大乐透</a>
+		<a href="http://www.159cai.com/from.phpx?comeFrom=25196&backurl=/shuangseqiu/">双色球</a>
+		
 	</div>
 </div>
 <div class="cai_p fn-clear">
-<!--#include virtual="/dedeinc/shouyezx.html"-->
-<script type="text/javascript">
-	$(document).ready(function(){
-		 var len=$("#flash_num>li").length;
-   var index=1;
-   var int;
-   $("#flash_num>span").removeClass().addClass("cur").eq(0).toggleClass("cur").addClass("");
-   $("#codes b input").hover(function() {
-	
-	if(isNaN($(this).val())){
-	$(this).val("");
-	}
-	else if($(this).val()>33||$(this).val()<1){
-		$(this).val("");
-	}
-}) ;
-   function showSys(num)  //图片切换函数
-   {
-    $("#flash_num>span").removeClass().addClass("cur").eq(num).toggleClass("cur").addClass("");
-   // $("p").removeClass().addStyle("block").eq(num).toggleClass("block").addClass("none");
-    $("#flash_pic>li" ).fadeOut().eq(num).fadeIn();
-   }
-   function ziDong()  //自动切换
-   {
-    if(index==len)
-    {
-     index=0;
-    }
-    showSys(index);
-    index=index+1;
-   }
-   int=setInterval(ziDong,5000);
-   $("#flash_num>span").mouseover(function() //点击切换
-   {
-    var index_num=$("#flash_num>span").index(this);
-    showSys(index_num);
-    index=index_num+1;  
-   });
-   $(".cur").mouseover(function()  //移动到上面时停止自动切换
-       {
-        clearInterval(int);
-       });
-   $(".cur").mouseout(function()  //移开时继续自动切换
-       {
-        int=setInterval(ziDong,5000);
-       });
-});
-   
-</script>
-	<!-- <div class="cai_pl">
-		<div class="tit">
-			<h3>彩票资讯</h3>
-		</div>
-		<div class="cai_lb">
-			<div>
-				<ul>
-					<li><a href="#"><img src="images/lb1.png" alt=""></a></li>
-					<li><a href="#"><img src="images/lb1.png" alt=""></a></li>
-					<li><a href="#"><img src="images/lb1.png" alt=""></a></li>
-					<li><a href="#"><img src="images/lb1.png" alt=""></a></li>
-					<li><a href="#"><img src="images/lb1.png" alt=""></a></li>
-				</ul>
-				<b><span class="cur">1</span><span>2</span><span>3</span><span>4</span><span>5</span></b>
-				<p>
-					<span>六场半全场大单热购</span>
-					<span>六场半全场大单热购</span>
-					<span>六场半全场大单热购</span>
-					<span>六场半全场大单热购</span>
-					<span>六场半全场大单热购</span>
-					<span>六场半全场大单热购</span>
-				</p>
-			</div>
-			
-		</div>
-		<div class="hotnews">
-			<p><a href="#">竞足混投新增单式和设胆</a></p>
-			<p><a href="#">竞足混投新增单式和设胆</a></p>
-			<p><a href="#">竞足混投新增单式和设胆</a></p>
-			<p><a href="#">竞足混投新增单式和设胆</a></p>
-			<p><a href="#">竞足混投新增单式和设胆</a></p>
-			<p><a href="#">竞足混投新增单式和设胆</a></p>
-		</div>
-		<div class="hotnews">
-			<p><a href="#">竞足混投新增单式和设胆</a></p>
-			<p><a href="#">竞足混投新增单式和设胆</a></p>
-			<p><a href="#">竞足混投新增单式和设胆</a></p>
-			<p><a href="#">竞足混投新增单式和设胆</a></p>
-			<p><a href="#">竞足混投新增单式和设胆</a></p>
-			<p><a href="#">竞足混投新增单式和设胆</a></p>
-			<p><a href="#">竞足混投新增单式和设胆</a></p>
-		</div>
-	</div> -->
+		 <!--彩票资讯-->
+			  <!--#include virtual="/dedeinc/shouyezx.html"-->
+		  <!--彩票资讯结束-->
 	<div class="cai_pr">
 		<div class="tab num_cai">
-			<div class="title">
+			<div class="title" id="todaykaijiang">
 				<span class="hover">数字彩开奖</span><span>竞技彩开奖</span>
-				<a href="http://www.159cai.com/from.phpx?comeFrom=10290&backurl=/kaijiang/index.html" class="more" target="_blank">全国彩种开奖查询>></a>
+				<a href="http://www.159cai.com/from.phpx?comeFrom=25196&backurl=/kaijiang/index.html" class="more" target="_blank">全国彩种开奖查询>></a>
 			</div>
 			<div class="bod">
-				<div class="hover" >
+				<div class="hover" id="k1">
 					<table cellpadding="0" cellspacing="0">
 						<tr>
 							<th>彩种</th>
@@ -168,7 +94,7 @@
 							<th>操作</th>
 						</tr>
 						<tr>
-							<td><a href="http://www.159cai.com/from.phpx?comeFrom=10290&backurl=/shuangseqiu/">双色球</a></td>
+							<td><a href="http://www.159cai.com/from.phpx?comeFrom=25196&backurl=/shuangseqiu/">双色球</a></td>
 							<td id="ssq_pid"></td>
 							<td id="ssq_kjdate"></td>
 							<td class="qiu" id="ssq_code">
@@ -177,12 +103,12 @@
 							<td id="ssq_pools"></td>
 							<td>二&nbsp;四&nbsp;日</td>
 							<td>
-								<a href="http://www.159cai.com/from.phpx?comeFrom=10290&backurl=/shuangseqiu/kaijiang.html" class="xq"></a><!-- 详情 -->
-								<a href="http://www.159cai.com/from.phpx?comeFrom=10290&backurl=/shuangseqiu/" class="tz"></a><!-- 立即投注 -->
+								<a href="http://www.159cai.com/from.phpx?comeFrom=25196&backurl=/shuangseqiu/kaijiang.html" class="xq"></a><!-- 详情 -->
+								<a href="http://www.159cai.com/from.phpx?comeFrom=25196&backurl=/shuangseqiu/" class="tz"></a><!-- 立即投注 -->
 							</td>
 						</tr>
 						<tr class="odd">
-							<td><a href="http://www.159cai.com/from.phpx?comeFrom=10290&backurl=/3d/">福彩3D</a></td>
+							<td><a href="http://www.159cai.com/from.phpx?comeFrom=25196&backurl=/3d/">福彩3D</a></td>
 							<td id="sd_pid"></td>
 							<td id="sd_kjdate"></td>
 							<td class="qiu" id="sd_code">
@@ -191,13 +117,13 @@
 							<td id="sd_pools"></td>
 							<td>每天</td>
 							<td>
-								<a href="http://www.159cai.com/from.phpx?comeFrom=10290&backurl=/3d/kaijiang.html" class="xq"></a><!-- 详情 -->
-								<a href="http://www.159cai.com/from.phpx?comeFrom=10290&backurl=/3d/" class="tz"></a><!-- 立即投注 -->
+								<a href="http://www.159cai.com/from.phpx?comeFrom=25196&backurl=/3d/kaijiang.html" class="xq"></a><!-- 详情 -->
+								<a href="http://www.159cai.com/from.phpx?comeFrom=25196&backurl=/3d/" class="tz"></a><!-- 立即投注 -->
 							</td>
 						</tr>
 						<tr>
-							<td><a href="http://www.159cai.com/from.phpx?comeFrom=10290&backurl=/qilecai/">七乐彩</a></td>
-						<td id="qlc_pid"></td>
+							<td><a href="http://www.159cai.com/from.phpx?comeFrom=25196&backurl=/qilecai/">七乐彩</a></td>
+						 	<td id="qlc_pid"></td>
 							<td id="qlc_kjdate"></td>
 							<td class="qiu" id="qlc_code">
 								<em></em><em></em><em></em><em></em><em></em><em></em><em></em><em class="blue"></em>
@@ -205,69 +131,69 @@
 							<td id="qlc_pools"></td>
 							<td>一&nbsp;三&nbsp;五</td>
 							<td>
-								<a href="http://www.159cai.com/from.phpx?comeFrom=10290&backurl=/qilecai/kaijiang.html" class="xq"></a><!-- 详情 -->
-								<a href="http://www.159cai.com/from.phpx?comeFrom=10290&backurl=/" class="tz"></a><!-- 立即投注 -->
+								<a href="http://www.159cai.com/from.phpx?comeFrom=25196&backurl=/qilecai/kaijiang.html" class="xq"></a><!-- 详情 -->
+								<a href="http://www.159cai.com/from.phpx?comeFrom=25196&backurl=/qilecai/" class="tz"></a><!-- 立即投注 -->
 							</td>
 						</tr>
 						<tr class="odd">
-							<td><a href="http://www.159cai.com/from.phpx?comeFrom=10290&backurl=/">双色球</a></td>
-							<td>2014089</td>
-							<td>08-05</td>
-							<td class="qiu">
-								<em>01</em><em>01</em><em>01</em><em>01</em><em>01</em><em>01</em><em class="blue">01</em>
+							<td><a href="http://www.159cai.com/from.phpx?comeFrom=25196&backurl=/daletou/">大乐透</a></td>
+							<td id="dlt_pid"></td>
+							<td id="dlt_kjdate"></td>
+							<td class="qiu" id="dlt_code">
+								<em></em><em></em><em></em><em></em><em></em><em class="blue"></em><em class="blue"></em>
 							</td>
-							<td>232323,13元</td>
-							<td>二&nbsp;四&nbsp;日</td>
+							<td id="dlt_pools"></td>
+							<td>一&nbsp;三&nbsp;六</td>
 							<td>
-								<a href="http://www.159cai.com/from.phpx?comeFrom=10290&backurl=/" class="xq"></a><!-- 详情 -->
-								<a href="http://www.159cai.com/from.phpx?comeFrom=10290&backurl=/" class="tz"></a><!-- 立即投注 -->
+								<a href="http://www.159cai.com/from.phpx?comeFrom=25196&backurl=/daletou/kaijiang.html" class="xq"></a><!-- 详情 -->
+								<a href="http://www.159cai.com/from.phpx?comeFrom=25196&backurl=/daletou/" class="tz"></a><!-- 立即投注 -->
 							</td>
 						</tr>
 						<tr>
-							<td><a href="http://www.159cai.com/from.phpx?comeFrom=10290&backurl=/">双色球</a></td>
-							<td>2014089</td>
-							<td>08-05</td>
-							<td class="qiu">
-								<em>01</em><em>01</em><em>01</em><em>01</em><em>01</em><em>01</em><em class="blue">01</em>
+							<td><a href="http://www.159cai.com/from.phpx?comeFrom=25196&backurl=/qixingcai/">七星彩</a></td>
+							<td id="qxc_pid"></td>
+							<td id="qxc_kjdate"></td>
+							<td class="qiu" id="qxc_code">
+								<em></em><em></em><em></em><em></em><em></em><em></em><em ></em>
 							</td>
-							<td>232323,13元</td>
-							<td>二&nbsp;四&nbsp;日</td>
+							<td id="qxc_pools"></td>
+							<td>二&nbsp;五&nbsp;日</td>
 							<td>
-								<a href="http://www.159cai.com/from.phpx?comeFrom=10290&backurl=/" class="xq"></a><!-- 详情 -->
-								<a href="http://www.159cai.com/from.phpx?comeFrom=10290&backurl=/" class="tz"></a><!-- 立即投注 -->
+								<a href="http://www.159cai.com/from.phpx?comeFrom=25196&backurl=/qixingcai/kaijiang.html" class="xq"></a><!-- 详情 -->
+								<a href="http://www.159cai.com/from.phpx?comeFrom=25196&backurl=/qixingcai/" class="tz"></a><!-- 立即投注 -->
 							</td>
 						</tr>
 						<tr class="odd">
-							<td><a href="http://www.159cai.com/from.phpx?comeFrom=10290&backurl=/">双色球</a></td>
-							<td>2014089</td>
-							<td>08-05</td>
-							<td class="qiu">
-								<em>01</em><em>01</em><em>01</em><em>01</em><em>01</em><em>01</em><em class="blue">01</em>
+							<td><a href="http://www.159cai.com/from.phpx?comeFrom=25196&backurl=/paiwu/">排列五</a></td>
+							<td id="plw_pid"></td>
+							<td id="plw_kjdate"></td>
+							<td class="qiu" id="plw_code">
+								<em></em><em></em><em></em><em></em><em></em>
 							</td>
-							<td>232323,13元</td>
-							<td>二&nbsp;四&nbsp;日</td>
+							<td id="plw_pools"></td>
+							<td>每天</td>
 							<td>
-								<a href="http://www.159cai.com/from.phpx?comeFrom=10290&backurl=/" class="xq"></a><!-- 详情 -->
-								<a href="http://www.159cai.com/from.phpx?comeFrom=10290&backurl=/" class="tz"></a><!-- 立即投注 -->
+								<a href="http://www.159cai.com/from.phpx?comeFrom=25196&backurl=/paiwu/kaijiang.html" class="xq"></a><!-- 详情 -->
+								<a href="http://www.159cai.com/from.phpx?comeFrom=25196&backurl=/paiwu/" class="tz"></a><!-- 立即投注 -->
 							</td>
 						</tr>
 						<tr>
-							<td><a href="http://www.159cai.com/from.phpx?comeFrom=10290&backurl=/">双色球</a></td>
-							<td>2014089</td>
-							<td>08-05</td>
-							<td class="qiu">
-								<em>01</em><em>01</em><em>01</em><em>01</em><em>01</em><em>01</em><em class="blue">01</em>
+							<td><a href="http://www.159cai.com/from.phpx?comeFrom=25196&backurl=/paisan/">排列三</a></td>
+							<td id="pls_pid"></td>
+							<td id="pls_kjdate"></td>
+							<td class="qiu" id="pls_code">
+								<em></em><em></em><em></em>
 							</td>
-							<td>232323,13元</td>
-							<td>二&nbsp;四&nbsp;日</td>
+							<td id="pls_pools"></td>
+							<td>每天</td>
 							<td>
-								<a href="http://www.159cai.com/from.phpx?comeFrom=10290&backurl=/" class="xq"></a><!-- 详情 -->
-								<a href="http://www.159cai.com/from.phpx?comeFrom=10290&backurl=/" class="tz"></a><!-- 立即投注 -->
+								<a href="http://www.159cai.com/from.phpx?comeFrom=25196&backurl=/paisan/kaijiang.html" class="xq"></a><!-- 详情 -->
+								<a href="http://www.159cai.com/from.phpx?comeFrom=25196&backurl=/paisan/" class="tz"></a><!-- 立即投注 -->
 							</td>
 						</tr>
 					</table>
 				</div>
-				<div>
+				<div id="k2">
 					<table cellpadding="0" cellspacing="0">
 						<tr>
 							<th>彩种</th>
@@ -279,101 +205,93 @@
 							<th>操作</th>
 						</tr>
 						<tr>
-							<td><a href="http://www.159cai.com/from.phpx?comeFrom=10290&backurl=/">双色球</a></td>
-							<td>2014089</td>
-							<td>08-05</td>
-							<td class="qiu">
-								<em>01</em><em>01</em><em>01</em><em>01</em><em>01</em><em>01</em><em class="blue">01</em>
-							</td>
-							<td>232323,13元</td>
-							<td>二&nbsp;四&nbsp;日</td>
+							<td><a href="http://www.159cai.com/from.phpx?comeFrom=25196&backurl=/zc/">胜负彩</a></td>
+							<td id="sfc_pid"></td>
+							<td id="sfc_kjdate"></td>
+							<td id="sfc_code"><b>5</b><b>5</b><b>5</b><b>5</b><b>5</b><b>5</b><b>5</b><b>5</b><b>5</b><b>5</b><b>5</b><b>5</b><b>5</b><b>5</b></td>
+							<td id="sfc_pools">0元</td>
+							<td>不定期</td>
 							<td>
-								<a href="http://www.159cai.com/from.phpx?comeFrom=10290&backurl=/" class="xq"></a><!-- 详情 -->
-								<a href="http://www.159cai.com/from.phpx?comeFrom=10290&backurl=/" class="tz"></a><!-- 立即投注 -->
+								<a href="http://www.159cai.com/from.phpx?comeFrom=25196&backurl=/zc/zc_kj.html?lotid=80" class="xq"></a><!-- 详情 -->
+								<a href="http://www.159cai.com/from.phpx?comeFrom=25196&backurl=/zc/" class="tz"></a><!-- 立即投注 -->
 							</td>
 						</tr>
 						<tr class="odd">
-							<td><a href="http://www.159cai.com/from.phpx?comeFrom=10290&backurl=/">双色球</a></td>
-							<td>2014089</td>
-							<td>08-05</td>
-							<td class="qiu">
-								<em>01</em><em>01</em><em>01</em><em>01</em><em>01</em><em>01</em><em class="blue">01</em>
-							</td>
-							<td>232323,13元</td>
-							<td>二&nbsp;四&nbsp;日</td>
+							<td><a href="http://www.159cai.com/from.phpx?comeFrom=25196&backurl=/renjiu/">任九</a></td>
+							<td id="rxjc_pid"></td>
+							<td id="rxjc_kjdate"></td>
+							<td id="rxjc_code"><b>5</b><b>5</b><b>5</b><b>5</b><b>5</b><b>5</b><b>5</b><b>5</b><b>5</b><b>5</b><b>5</b><b>5</b><b>5</b><b>5</b></td>
+							<td id="rxjc_pools">0元</td>
+							<td>不定期</td>
 							<td>
-								<a href="http://www.159cai.com/from.phpx?comeFrom=10290&backurl=/" class="xq"></a><!-- 详情 -->
-								<a href="http://www.159cai.com/from.phpx?comeFrom=10290&backurl=/" class="tz"></a><!-- 立即投注 -->
+								<a href="http://www.159cai.com/from.phpx?comeFrom=25196&backurl=/zc/zc_kj.html?lotid=81" class="xq"></a><!-- 详情 -->
+								<a href="http://www.159cai.com/from.phpx?comeFrom=25196&backurl=/renjiu/" class="tz"></a><!-- 立即投注 -->
 							</td>
 						</tr>
 						<tr>
-							<td><a href="http://www.159cai.com/from.phpx?comeFrom=10290&backurl=/">双色球</a></td>
-							<td>2014089</td>
-							<td>08-05</td>
-							<td class="qiu">
-								<em>01</em><em>01</em><em>01</em><em>01</em><em>01</em><em>01</em><em class="blue">01</em>
-							</td>
-							<td>232323,13元</td>
-							<td>二&nbsp;四&nbsp;日</td>
+							<td><a href="http://www.159cai.com/from.phpx?comeFrom=25196&backurl=/jinqiu/">进球彩</a></td>
+								<td id="jqc_pid"></td>
+							<td id="jqc_kjdate"></td>
+							<td id="jqc_code"><b>5</b><b>5</b><b>5</b><b>5</b><b>5</b><b>5</b><b>5</b><b>5</b><b>5</b><b>5</b><b>5</b><b>5</b><b>5</b><b>5</b></td>
+							<td id="jqc_pools">0元</td>
+							<td>不定期</td>
 							<td>
-								<a href="http://www.159cai.com/from.phpx?comeFrom=10290&backurl=/" class="xq"></a><!-- 详情 -->
-								<a href="http://www.159cai.com/from.phpx?comeFrom=10290&backurl=/" class="tz"></a><!-- 立即投注 -->
+								<a href="http://www.159cai.com/from.phpx?comeFrom=25196&backurl=/zc/zc_kj.html?lotid=82" class="xq"></a><!-- 详情 -->
+								<a href="http://www.159cai.com/from.phpx?comeFrom=25196&backurl=/jinqiu/" class="tz"></a><!-- 立即投注 -->
 							</td>
 						</tr>
 						<tr class="odd">
-							<td><a href="http://www.159cai.com/from.phpx?comeFrom=10290&backurl=/">双色球</a></td>
-							<td>2014089</td>
-							<td>08-05</td>
-							<td class="qiu">
-								<em>01</em><em>01</em><em>01</em><em>01</em><em>01</em><em>01</em><em class="blue">01</em>
-							</td>
-							<td>232323,13元</td>
-							<td>二&nbsp;四&nbsp;日</td>
+							<td><a href="http://www.159cai.com/from.phpx?comeFrom=25196&backurl=/banquan/">半全场</a></td>
+							<td id="bqc_pid"></td>
+							<td id="bqc_kjdate"></td>
+							<td id="bqc_code"><b>5</b><b>5</b><b>5</b><b>5</b><b>5</b><b>5</b><b>5</b><b>5</b><b>5</b><b>5</b><b>5</b><b>5</b><b>5</b><b>5</b></td>
+							<td id="bqc_pools">0元</td>
+							<td>不定期</td>
 							<td>
-								<a href="http://www.159cai.com/from.phpx?comeFrom=10290&backurl=/" class="xq"></a><!-- 详情 -->
-								<a href="http://www.159cai.com/from.phpx?comeFrom=10290&backurl=/" class="tz"></a><!-- 立即投注 -->
+								<a href="http://www.159cai.com/from.phpx?comeFrom=25196&backurl=/zc/zc_kj.html?lotid=83" class="xq"></a><!-- 详情 -->
+								<a href="http://www.159cai.com/from.phpx?comeFrom=25196&backurl=/banquan/" class="tz"></a><!-- 立即投注 -->
 							</td>
 						</tr>
 						<tr>
-							<td><a href="http://www.159cai.com/from.phpx?comeFrom=10290&backurl=/">双色球</a></td>
-							<td>2014089</td>
-							<td>08-05</td>
-							<td class="qiu">
-								<em>01</em><em>01</em><em>01</em><em>01</em><em>01</em><em>01</em><em class="blue">01</em>
+							<td><a href="http://www.159cai.com/from.phpx?comeFrom=25196&backurl=/jc/jchh.html">竞彩足球</a></td>
+							<td >-</td>
+							<td>每日</td>
+							<td class="qiu" >
+								<a target="_blank" href="http://www.159cai.com/from.phpx?comeFrom=25196&backurl=/jc/kaijiang.html">赛果开奖详情</a>
 							</td>
-							<td>232323,13元</td>
-							<td>二&nbsp;四&nbsp;日</td>
+							<td ></td>
+							<td>每日</td>
 							<td>
-								<a href="http://www.159cai.com/from.phpx?comeFrom=10290&backurl=/" class="xq"></a><!-- 详情 -->
-								<a href="http://www.159cai.com/from.phpx?comeFrom=10290&backurl=/" class="tz"></a><!-- 立即投注 -->
-							</td>
-						</tr>
-						<tr class="odd">
-							<td><a href="http://www.159cai.com/from.phpx?comeFrom=10290&backurl=/">双色球</a></td>
-							<td>2014089</td>
-							<td>08-05</td>
-							<td class="qiu">
-								<em>01</em><em>01</em><em>01</em><em>01</em><em>01</em><em>01</em><em class="blue">01</em>
-							</td>
-							<td>232323,13元</td>
-							<td>二&nbsp;四&nbsp;日</td>
-							<td>
-								<a href="http://www.159cai.com/from.phpx?comeFrom=10290&backurl=/" class="xq"></a><!-- 详情 -->
-								<a href="http://www.159cai.com/from.phpx?comeFrom=10290&backurl=/" class="tz"></a><!-- 立即投注 -->
+								<a href="http://www.159cai.com/from.phpx?comeFrom=25196&backurl=/jc/kaijiang.html" class="xq"></a><!-- 详情 -->
+								<a href="http://www.159cai.com/from.phpx?comeFrom=25196&backurl=/jc/jchh.html" class="tz"></a><!-- 立即投注 -->
 							</td>
 						</tr>
 						<tr>
-							<td><a href="http://www.159cai.com/from.phpx?comeFrom=10290&backurl=/">双色球</a></td>
-							<td>2014089</td>
-							<td>08-05</td>
-							<td class="qiu">
-								<em>01</em><em>01</em><em>01</em><em>01</em><em>01</em><em>01</em><em class="blue">01</em>
+							<td><a href="http://www.159cai.com/from.phpx?comeFrom=25196&backurl=/lc/">竞彩篮球</a></td>
+							<td >-</td>
+							<td>每日</td>
+							<td class="qiu" >
+								<a target="_blank" href="http://www.159cai.com/from.phpx?comeFrom=25196&backurl=/lc/kaijiang.html">赛果开奖详情</a>
 							</td>
-							<td>232323,13元</td>
-							<td>二&nbsp;四&nbsp;日</td>
+							<td ></td>
+							<td>每日</td>
 							<td>
-								<a href="http://www.159cai.com/from.phpx?comeFrom=10290&backurl=/" class="xq"></a><!-- 详情 -->
-								<a href="http://www.159cai.com/from.phpx?comeFrom=10290&backurl=/" class="tz"></a><!-- 立即投注 -->
+								<a href="http://www.159cai.com/from.phpx?comeFrom=25196&backurl=/lc/kaijiang.html" class="xq"></a><!-- 详情 -->
+								<a href="http://www.159cai.com/from.phpx?comeFrom=25196&backurl=/lc/" class="tz"></a><!-- 立即投注 -->
+							</td>
+						</tr>
+						<tr>
+							<td><a href="http://www.159cai.com/from.phpx?comeFrom=25196&backurl=/bj/">北京单场</a></td>
+							<td >-</td>
+							<td>每日</td>
+							<td class="qiu" >
+								<a target="_blank" href="http://www.159cai.com/from.phpx?comeFrom=25196&backurl=/bj/kaijiang.html">赛果开奖详情</a>
+							</td>
+							<td ></td>
+							<td>每日</td>
+							<td>
+								<a href="http://www.159cai.com/from.phpx?comeFrom=25196&backurl=/bj/kaijiang.html" class="xq"></a><!-- 详情 -->
+								<a href="http://www.159cai.com/from.phpx?comeFrom=25196&backurl=/bj/" class="tz"></a><!-- 立即投注 -->
 							</td>
 						</tr>
 					</table>
@@ -381,146 +299,217 @@
 			</div>
 		</div>
 		<div class="tab x5">
-			<div class="title"><span class="hover">11选5</span><span>11运夺金</span><span>新时时彩</span></div>
+			<div class="title" id="szctab"><span class="hover">11选5</span><span>11运夺金</span><span>新时时彩</span></div>
 			<div class="bod">
-				<div class="hover x511">
+				<div class="hover x511" id="11x5_1">
 					<div class="fl">
 						<b></b>
 						<p>2014026期</p>
-						<p><a href="#">开奖</a><a href="#">走势</a></p>
+						<p><a href="http://www.159cai.com/from.phpx?comeFrom=25196&backurl=/11x5/">开奖</a><a href="http://www.159cai.com/from.phpx?comeFrom=25196&backurl=http://zst.159cai.com/cjw11x5/index.php?lotteryType=11x5">走势</a></p>
 					</div>
 					<div class="fr">
 						<p>
-							<span>第<font>2014026</font>期&nbsp;&nbsp;剩余投注时间：</span>每10分钟开奖一次，每天78期，最高奖金1170元
+							<span>第<font expect2="54">2014026</font>期&nbsp;&nbsp;剩余投注时间：</span>每10分钟开奖一次，每天78期，最高奖金1170元
 						</p>
 						<b>
-							<span><i>任选五</i><i>任选三</i><i class="cur">任选八</i><i>前三直选</i></span><span class="fr">08:54</span>
+							<span id="11x5span"><i mark="rx5">任选五</i><i mark="rx3">任选三</i><i class="cur" mark="rx8">任选八</i><i mark="zx3">前三直选</i></span><span class="fr" endtime="54" id="countDownSpan_11x5">08:54</span>
 						</b>
-						<strong>
-							<span class="fl">
-								<em><input type="text" maxlength="2"></em><em><input type="text" maxlength="2"></em><em><input type="text" maxlength="2"></em><em><input type="text" maxlength="2"></em><em><input type="text" maxlength="2"></em><em><input type="text" maxlength="2"></em><em><input type="text" maxlength="2"></em><em><input type="text" maxlength="2"></em>
+						<strong id="x1" style="display: none;">
+							<span class="fl" id="11x5_jx_random2" >
+								<em><input type="text" maxlength="2"></em>
+								<em><input type="text" maxlength="2"></em>
+								<em><input type="text" maxlength="2"></em>
+								<em><input type="text" maxlength="2"></em>
+								<em><input type="text" maxlength="2"></em>
+
 							</span>
-							<i class="x_tz1">立即投注</i><!-- 立即投注 -->
-							<i class="x_tz2">机选</i><!-- 机选 -->
+							<i class="x_tz1" id="buy_dg_11x52">立即投注</i><!-- 立即投注 -->
+							<i class="x_tz2" id="cm_11x5_jx_btn2" >机选</i><!-- 机选 -->
+							<s>最易中奖---从1-11个数字里任选5个，猜中开奖号全部5个数字即中奖9元。</s>
+						</strong>
+						<strong id="x2" style="display: none;">
+							<span class="fl" id="11x5_jx_random3">
+								<em><input type="text" maxlength="2"></em>
+								<em><input type="text" maxlength="2"></em>
+								<em><input type="text" maxlength="2"></em>
+								
+							</span>
+							<i class="x_tz1" id="buy_dg_11x53">立即投注</i><!-- 立即投注 -->
+							<i class="x_tz2" id="cm_11x5_jx_btn3">机选</i><!-- 机选 -->
+							<s>最易中奖---从1-11个数字里任选3个，猜中开奖号全部3个数字即中奖9元。</s>
+						</strong>
+						<strong id="x3" >
+							<span class="fl" id="11x5_jx_random">
+								<em><input type="text" maxlength="2"></em>
+								<em><input type="text" maxlength="2"></em>
+								<em><input type="text" maxlength="2"></em>
+								<em><input type="text" maxlength="2"></em>
+								<em><input type="text" maxlength="2"></em>
+								<em><input type="text" maxlength="2"></em>
+								<em><input type="text" maxlength="2"></em>
+								<em><input type="text" maxlength="2"></em>
+							</span>
+							<i class="x_tz1" id="buy_dg_11x5">立即投注</i><!-- 立即投注 -->
+							<i class="x_tz2" id="cm_11x5_jx_btn">机选</i><!-- 机选 -->
 							<s>最易中奖---从1-11个数字里任选8个，猜中开奖号全部8个数字即中奖9元。</s>
+						</strong>
+						<strong id="x4" style="display: none;">
+							<span class="fl" id="11x5_jx_random4">
+								<em><input type="text" maxlength="2"></em>
+								<em><input type="text" maxlength="2"></em>
+								<em><input type="text" maxlength="2"></em>
+							</span>
+							<i class="x_tz1" id="buy_dg_11x54">立即投注</i><!-- 立即投注 -->
+							<i class="x_tz2" id="cm_11x5_jx_btn4">机选</i><!-- 机选 -->
+							<s>最易中奖---从1-11个数字里任选3个，猜中开奖号全部3个数字即中奖9元。</s>
 						</strong>
 						
 					</div>
 				</div>
-				<div class="x511">
+				<div class="hover x511" id="11ydj_1" style="display: none;">
 					<div class="fl">
 						<b></b>
 						<p>2014026期</p>
-						<p><a href="#">开奖</a><a href="#">走势</a></p>
+						<p><a href="http://www.159cai.com/from.phpx?comeFrom=25196&backurl=/11ydj/">开奖</a><a href="http://www.159cai.com/from.phpx?comeFrom=25196&backurl=http://zst.159cai.com/cjw11x5/index.php?lotteryType=11ydj">走势</a></p>
 					</div>
 					<div class="fr">
 						<p>
-							<span>第<font>2014026</font>期&nbsp;&nbsp;剩余投注时间：</span>每10分钟开奖一次，每天78期，最高奖金1170元
+							<span>第<font expect2="56"></font>期&nbsp;&nbsp;剩余投注时间：</span>每10分钟开奖一次，每天78期，最高奖金1170元
 						</p>
 						<b>
-							<span><i>任选五</i><i>任选三</i><i class="cur">任选八</i><i>前三直选</i></span><span class="fr">08:54</span>
+							<span id="11ydjspan"><i>任选五</i><i>任选三</i><i class="cur">任选八</i><i>前三直选</i></span><span class="fr" endtime="54" id="countDownSpan_11ydj"> 08:54</span>
 						</b>
-						<strong>
-							<span class="fl">
-								<em><input type="text" maxlength="2"></em><em><input type="text" maxlength="2"></em><em><input type="text" maxlength="2"></em><em><input type="text" maxlength="2"></em><em><input type="text" maxlength="2"></em><em><input type="text" maxlength="2"></em><em><input type="text" maxlength="2"></em><em><input type="text" maxlength="2"></em>
+						<strong id="y1" style="display: none;">
+							<span class="fl" id="11ydj_jx_random2" >
+								<em><input type="text" maxlength="2"></em>
+								<em><input type="text" maxlength="2"></em>
+								<em><input type="text" maxlength="2"></em>
+								<em><input type="text" maxlength="2"></em>
+								<em><input type="text" maxlength="2"></em>
+
 							</span>
-							<i class="x_tz1">立即投注</i><!-- 立即投注 -->
-							<i class="x_tz2">机选</i><!-- 机选 -->
+							<i class="x_tz1" id="buy_dg_11ydj2">立即投注</i><!-- 立即投注 -->
+							<i class="x_tz2" id="cm_11ydj_jx_btn2" >机选</i><!-- 机选 -->
+							<s>最易中奖---从1-11个数字里任选5个，猜中开奖号全部5个数字即中奖540元。</s>
 						</strong>
-						<s>最易中奖---从1-11个数字里任选8个，猜中开奖号全部8个数字即中奖9元。</s>
+						<strong id="y2" style="display: none;">
+							<span class="fl" id="11ydj_jx_random3">
+								<em><input type="text" maxlength="2"></em>
+								<em><input type="text" maxlength="2"></em>
+								<em><input type="text" maxlength="2"></em>
+								
+							</span>
+							<i class="x_tz1" id="buy_dg_11ydj3">立即投注</i><!-- 立即投注 -->
+							<i class="x_tz2" id="cm_11ydj_jx_btn3">机选</i><!-- 机选 -->
+							<s>最易中奖---从1-11个数字里任选3个，猜中开奖号全部3个数字即中奖19元。</s>
+						</strong>
+						<strong id="y3" >
+							<span class="fl" id="11ydj_jx_random">
+								<em><input type="text" maxlength="2"></em>
+								<em><input type="text" maxlength="2"></em>
+								<em><input type="text" maxlength="2"></em>
+								<em><input type="text" maxlength="2"></em>
+								<em><input type="text" maxlength="2"></em>
+								<em><input type="text" maxlength="2"></em>
+								<em><input type="text" maxlength="2"></em>
+								<em><input type="text" maxlength="2"></em>
+							</span>
+							<i class="x_tz1" id="buy_dg_11ydj">立即投注</i><!-- 立即投注 -->
+							<i class="x_tz2" id="cm_11ydj_jx_btn">机选</i><!-- 机选 -->
+							<s>最易中奖---从1-11个数字里任选8个，猜中开奖号码全部5个数字即中奖9元。</s>
+						</strong>
+						<strong id="y4" style="display: none;">
+							<span class="fl" id="11ydj_jx_random4">
+								<em><input type="text" maxlength="2"></em>
+								<em><input type="text" maxlength="2"></em>
+								<em><input type="text" maxlength="2"></em>
+							</span>
+							<i class="x_tz1" id="buy_dg_11ydj4">立即投注</i><!-- 立即投注 -->
+							<i class="x_tz2" id="cm_11ydj_jx_btn4">机选</i><!-- 机选 -->
+							<s>最易中奖---从1-11个数字里任选3个，猜中开奖号前3个数字即中奖1170元。</s>
+						</strong>
 					</div>
 				</div>
-				<div class="x511">
+				<div class="hover x511" id="ssc_1" style="display: none;">
 					<div class="fl">
 						<b></b>
 						<p>2014026期</p>
-						<p><a href="#">开奖</a><a href="#">走势</a></p>
+						<p><a href="http://www.159cai.com/from.phpx?comeFrom=25196&backurl=/ssc/">开奖</a><a href="http://www.159cai.com/from.phpx?comeFrom=25196&backurl=/shuangseqiu/">走势</a></p>
 					</div>
 					<div class="fr">
 						<p>
 							<span>第<font>2014026</font>期&nbsp;&nbsp;剩余投注时间：</span>每10分钟开奖一次，每天78期，最高奖金1170元
 						</p>
 						<b>
-							<span><i>任选五</i><i>任选三</i><i class="cur">任选八</i><i>前三直选</i></span><span class="fr">08:54</span>
+							<span><i mark="rx5">任选五</i><i mark="rx3">任选三</i><i class="cur" mark="rx8">任选八</i><i mark="zx3">前三直选</i></span><span class="fr">08:54</span>
 						</b>
-						<strong>
-							<span class="fl">
-								<em><input type="text" maxlength="2"></em><em><input type="text" maxlength="2"></em><em><input type="text" maxlength="2"></em><em><input type="text" maxlength="2"></em><em><input type="text" maxlength="2"></em><em><input type="text" maxlength="2"></em><em><input type="text" maxlength="2"></em><em><input type="text" maxlength="2"></em>
+							<strong id="y1" style="display: none;">
+							<span class="fl" id="11ydj_jx_random2" >
+								<em><input type="text" maxlength="2"></em>
+								<em><input type="text" maxlength="2"></em>
+								<em><input type="text" maxlength="2"></em>
+								<em><input type="text" maxlength="2"></em>
+								<em><input type="text" maxlength="2"></em>
+
 							</span>
-							<i class="x_tz1">立即投注</i><!-- 立即投注 -->
-							<i class="x_tz2">机选</i><!-- 机选 -->
+							<i class="x_tz1" id="buy_dg_11ydj2">立即投注</i><!-- 立即投注 -->
+							<i class="x_tz2" id="cm_11ydj_jx_btn2" >机选</i><!-- 机选 -->
+							<s>最易中奖---从1-11个数字里任选5个，猜中开奖号全部5个数字即中奖9元。</s>
 						</strong>
-						<s>最易中奖---从1-11个数字里任选8个，猜中开奖号全部8个数字即中奖9元。</s>
+						<strong id="y2" style="display: none;">
+							<span class="fl" id="11ydj_jx_random3">
+								<em><input type="text" maxlength="2"></em>
+								<em><input type="text" maxlength="2"></em>
+								<em><input type="text" maxlength="2"></em>
+								
+							</span>
+							<i class="x_tz1" id="buy_dg_11ydj3">立即投注</i><!-- 立即投注 -->
+							<i class="x_tz2" id="cm_11ydj_jx_btn3">机选</i><!-- 机选 -->
+							<s>最易中奖---从1-11个数字里任选3个，猜中开奖号全部3个数字即中奖9元。</s>
+						</strong>
+						<strong id="y3" >
+							<span class="fl" id="11ydj_jx_random">
+								<em><input type="text" maxlength="2"></em>
+								<em><input type="text" maxlength="2"></em>
+								<em><input type="text" maxlength="2"></em>
+								<em><input type="text" maxlength="2"></em>
+								<em><input type="text" maxlength="2"></em>
+								<em><input type="text" maxlength="2"></em>
+								<em><input type="text" maxlength="2"></em>
+								<em><input type="text" maxlength="2"></em>
+							</span>
+							<i class="x_tz1" id="buy_dg_11ydj">立即投注</i><!-- 立即投注 -->
+							<i class="x_tz2" id="cm_11ydj_jx_btn">机选</i><!-- 机选 -->
+							<s>最易中奖---从1-11个数字里任选8个，猜中开奖号全部8个数字即中奖9元。</s>
+						</strong>
+						<strong id="y4" style="display: none;">
+							<span class="fl" id="11ydj_jx_random4">
+								<em><input type="text" maxlength="2"></em>
+								<em><input type="text" maxlength="2"></em>
+								<em><input type="text" maxlength="2"></em>
+							</span>
+							<i class="x_tz1" id="buy_dg_11ydj4">立即投注</i><!-- 立即投注 -->
+							<i class="x_tz2" id="cm_11ydj_jx_btn4">机选</i><!-- 机选 -->
+							<s>最易中奖---从1-11个数字里任选3个，猜中开奖号全部3个数字即中奖9元。</s>
+						</strong>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
 </div>
-<!-- 焦点赛事 -->
+<!-- 焦点赛事热门合买 -->
 <div class="hot fn-clear">
-	<!--首页焦点赛事-->
-	<div class="basic foc">
-	<div class="tit"><h3>焦点赛事</h3><p class="more"><a href="/lc/">竞彩篮球</a><a href="/jc/">竞彩足球</a></p></div>
-	<div class="body">
-		<ul>
-			<li>
-				<dl>
-					<dt>
-                      <a href="#" target="_blank"><img src="http://www.159cai.com/uploads/140808/2-140PPQ13W16.gif"></a>
-                    <h4>
-						<a href="http://odds.159cai.com/match/analysis/722449?lotyid=6" target="_blank">挪超</a>
-					</h4>
-					</dt>
-					<dd>
-						<p><a href="http://odds.159cai.com/match/analysis/722449?lotyid=6" target="_blank"><b>布兰 </b><em>VS</em><b class="br"> 奥勒松</b></a></p>
-						<em>14-08-09 星期六 01:00</em>
-						<i><a class="mar" href="/jc/" target="_blank">投注竞足</a><a class="a1" href="/bj/" target="_blank">投注单场</a></i>
-					</dd>
-				</dl>
-			</li>
-			<li>
-				<dl>
-					<dt>
-                      <a href="#" target="_blank"><img src="http://www.159cai.com/uploads/140808/2-140PPQ13W16.gif"></a>
-                    <h4>
-						<a href="http://odds.159cai.com/match/analysis/722449?lotyid=6" target="_blank">挪超</a>
-					</h4>
-					</dt>
-					<dd>
-						<p><a href="http://odds.159cai.com/match/analysis/722449?lotyid=6" target="_blank"><b>布兰 </b><em>VS</em><b class="br"> 奥勒松</b></a></p>
-						<em>14-08-09 星期六 01:00</em>
-						<i><a class="mar" href="/jc/" target="_blank">投注竞足</a><a class="a1" href="/bj/" target="_blank">投注单场</a></i>
-					</dd>
-				</dl>
-			</li>
-			<li>
-				<dl>
-					<dt>
-                      <a href="#" target="_blank"><img src="http://www.159cai.com/uploads/140808/2-140PPQ13W16.gif"></a>
-                    <h4>
-						<a href="http://odds.159cai.com/match/analysis/722449?lotyid=6" target="_blank">挪超</a>
-					</h4>
-					</dt>
-					<dd>
-						<p><a href="http://odds.159cai.com/match/analysis/722449?lotyid=6" target="_blank"><b>布兰 </b><em>VS</em><b class="br"> 奥勒松</b></a></p>
-						<em>14-08-09 星期六 01:00</em>
-						<i><a class="mar" href="/jc/" target="_blank">投注竞足</a><a class="a1" href="/bj/" target="_blank">投注单场</a></i>
-					</dd>
-				</dl>
-			</li>
-		</ul>
-	
 
-		</div>
-	</div>
-			  <!--首页焦点赛事结束-->
+		 <!--首页焦点赛事-->
+			  <!--#include virtual="/dedeinc/syjiaodian.html"-->
+		  <!--首页焦点赛事结束-->
 
-	<div class="basic hm">
-		<div class="tit"><h3>热单合买</h3><a href="/hemai/" target="_blank" class="more">更多&gt;&gt;</a></div>
+		<div class="basic hm">
+		<div class="tit"><h3>热单合买</h3><a href="/hemai/" target="_blank" class="more">更多>></a></div>
 		<div class="body">
 			<table border="0" cellspacing="0">
-				<tbody><tr>
+				<tr>
 					<th>序号</th>
 					<th>发单人</th>
 					<th>战绩</th>
@@ -532,102 +521,47 @@
 					<th>操作</th>
 				</tr>
 				
-				</tbody><tbody id="table_hot_project">
-				<tr>
-					<td>1</td>
-					<td><a href="#">莲写意</a></td>
-					<td></td><!-- 战绩图标 -->
-					<td>竞彩混投</td>
-					<td>￥160.00</td>
-					<td><p>91%<i>(保56%)</i></p> <p class="x_jdt"><em style="width: 91%"></em></p></td>
-					<td><i>13</i></td>
-					<td><div class="shouye"><input type="text" value="1"><a href="#"><img src="images/index_110.gif" class="gm"></a></div></td>
-					<td><a href="#" target="_blank">详情</a></td>
-				</tr>
-				<tr class="odd">
-					<td>1</td>
-					<td><a href="#">莲写意</a></td>
-					<td></td><!-- 战绩图标 -->
-					<td>竞彩混投</td>
-					<td>￥160.00</td>
-					<td><p>91%<i>(保56%)</i></p> <p class="x_jdt"><em style="width: 91%"></em></p></td>
-					<td><i>13</i></td>
-					<td><div class="shouye"><input type="text" value="1"><a href="#"><img src="images/index_110.gif" class="gm"></a></div></td>
-					<td><a href="#" target="_blank">详情</a></td>
-				</tr>
-				<tr>
-					<td>1</td>
-					<td><a href="#">莲写意</a></td>
-					<td></td><!-- 战绩图标 -->
-					<td>竞彩混投</td>
-					<td>￥160.00</td>
-					<td><p>91%<i>(保56%)</i></p> <p class="x_jdt"><em style="width: 91%"></em></p></td>
-					<td><i>13</i></td>
-					<td><div class="shouye"><input type="text" value="1"><a href="#"><img src="images/index_110.gif" class="gm"></a></div></td>
-					<td><a href="#" target="_blank">详情</a></td>
-				</tr>
-				<tr class="odd">
-					<td>1</td>
-					<td><a href="#">莲写意</a></td>
-					<td></td><!-- 战绩图标 -->
-					<td>竞彩混投</td>
-					<td>￥160.00</td>
-					<td><p>91%<i>(保56%)</i></p> <p class="x_jdt"><em style="width: 91%"></em></p></td>
-					<td><i>13</i></td>
-					<td><div class="shouye"><input type="text" value="1"><a href="#"><img src="images/index_110.gif" class="gm"></a></div></td>
-					<td><a href="#" target="_blank">详情</a></td>
-				</tr>
-				<tr>
-					<td>1</td>
-					<td><a href="#">莲写意</a></td>
-					<td></td><!-- 战绩图标 -->
-					<td>竞彩混投</td>
-					<td>￥160.00</td>
-					<td><p>91%<i>(保56%)</i></p> <p class="x_jdt"><em style="width: 91%"></em></p></td>
-					<td><i>13</i></td>
-					<td><div class="shouye"><input type="text" value="1"><a href="#"><img src="images/index_110.gif" class="gm"></a></div></td>
-					<td><a href="#" target="_blank">详情</a></td>
-				</tr>
-				<tr class="odd">
-					<td>1</td>
-					<td><a href="#">莲写意</a></td>
-					<td></td><!-- 战绩图标 -->
-					<td>竞彩混投</td>
-					<td>￥160.00</td>
-					<td><p>91%<i>(保56%)</i></p> <p class="x_jdt"><em style="width: 91%"></em></p></td>
-					<td><i>13</i></td>
-					<td><div class="shouye"><input type="text" value="1"><a href="#"><img src="images/index_110.gif" class="gm"></a></div></td>
-					<td><a href="#" target="_blank">详情</a></td>
-				</tr>
-				<tr>
-					<td>1</td>
-					<td><a href="#">莲写意</a></td>
-					<td></td><!-- 战绩图标 -->
-					<td>竞彩混投</td>
-					<td>￥160.00</td>
-					<td><p>91%<i>(保56%)</i></p> <p class="x_jdt"><em style="width: 91%"></em></p></td>
-					<td><i>13</i></td>
-					<td><div class="shouye"><input type="text" value="1"><a href="#"><img src="images/index_110.gif" class="gm"></a></div></td>
-					<td><a href="#" target="_blank">详情</a></td>
-				</tr>
-				<tr class="odd">
-					<td>1</td>
-					<td><a href="#">莲写意</a></td>
-					<td></td><!-- 战绩图标 -->
-					<td>竞彩混投</td>
-					<td>￥160.00</td>
-					<td><p>91%<i>(保56%)</i></p> <p class="x_jdt"><em style="width: 91%"></em></p></td>
-					<td><i>13</i></td>
-					<td><div class="shouye"><input type="text" value="1"><a href="#"><img src="images/index_110.gif" class="gm"></a></div></td>
-					<td><a href="#" target="_blank">详情</a></td>
-				</tr>
+				<tbody id="table_hot_project">
+
+			
 				</tbody>
 			</table>
 		</div>
 	</div>
 </div>
+<div id="responseJson" style="display:none"><input type="hidden" value="" name="serverTime" id="serverTime"><input type="hidden" value="" name="endTime" id="endTime"></div>
+<div id="dlg_buysuc" class="caitan" style="width: 500px; display: none; position: absolute;">
+<div class="tantop">
+<span>温馨提示</span><a id="dlg_buysuc_close"></a>
+</div>
+<div class="caitain">
+<div class="buy_sucs">
+<span id="dlg_buysuc_content">您好，恭喜您购买成功</span>
+<p class="">您还可以选择：<a href="javascript:void(0);" id="dlg_buysuc_view">查看方案详情</a> | <a target="_blank" href="/dating/">购买其它玩法</a><br>
+<strong>查看我的帐户：</strong>
+<a style="padding-left:0" href="/account/jiaoyi.html">帐户明细</a>|<a target="_blank" href="/account/orderlist.html">投注记录</a>|<a target="_blank" href="/account/chongzhi.html">在线充值</a></p>
 
-<script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+</div>
+<a class="btn" id="dlg_buysuc_close2">确认</a>
+</div>
+<div class="caitanbm">
+<div class="caitanbm1"></div>
+<div class="caitanbm2"></div>
+</div></div>
+<div id="addMoneyLay" class="caitan" style="width: 500px; display: none; position: absolute;">
+<div class="tantop" style="cursor: move;">
+<span>温馨提示</span><a id="addMoneyClose"></a>
+</div>
+<div class="caitain">
+ <p class="pzong"><b></b>您的可投注余额不足, 请及时充值！</p>
+<a id="addMoneyYes" href="javascript:void(0);" class="btn">立即充值</a>
+</div>
+<div class="caitanbm">
+<div class="caitanbm1"></div>
+<div class="caitanbm2"></div>
+</div></div>
+<!-- <script type="text/javascript" src="js/jquery-1.7.2.min.js"></script> -->
+<!-- <script type="text/javascript" src="js/index.js"></script> -->
 <script type="text/javascript" src="js/index.js"></script>
 </body>
 </html>
