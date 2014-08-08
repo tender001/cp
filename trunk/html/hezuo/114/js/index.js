@@ -97,7 +97,7 @@ Class(
     						Y.get("#jqc_pid").html(row.pid);		
     						Y.get("#jqc_pools").html(row.pools);
     						Y.get("#jqc_kjdate").html(row.auditdate);
-    						Y.get("#jqc_code").html('<b>'+row.code.split(',').join('</em><b>')+'</b>');		
+    						Y.get("#jqc_code").html('<b>'+row.code.split(',').join('</b><b>')+'</b>');		
     					}else if (row.gid=='83'){	
     						Y.get("#bqc_pid").html(row.pid);		
     						Y.get("#bqc_pools").html(row.pools);
