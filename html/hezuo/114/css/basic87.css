@@ -83,7 +83,8 @@ th,td{text-align: center;}
 .bod div table th{height: 30px;color: #666;font-weight: 400;}
 .bod div table td{height: 39px;color: #333;}
 .odd td{background: #f8f8f8;}
-.qiu em{width: 24px;height: 24px;line-height: 24px;display: inline-block;color: #fff;font-weight: bold;margin-right: 2px;background-position: -1px -74px;}
+td.qiu{text-align: left;}
+.qiu em{width: 24px;height: 24px;line-height: 24px;display: inline-block;color: #fff;font-weight: bold;margin-right: 2px;background-position: -1px -74px;text-align: center;}
 .qiu em.blue{background-position: -27px -74px;}
 td .xq{width: 37px;height: 22px;display: inline-block;background-position: -54px -74px;margin-right: 4px;}
 td .tz{width: 57px;height: 22px;display: inline-block;background-position: -93px -74px;}
