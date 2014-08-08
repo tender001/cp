@@ -864,7 +864,7 @@ Class(
 							if(rt.cnickid=='******'){
 								html += '<td>--</td>';
 							}else{
-								html += '<td><a href="' + $_sys.getlotdir(gameid)+$_sys.url.viewpath+'?lotid='+gameid+'&projid='+rt.hid + '" target="_blank">详情</a></td>';
+								html += '<td><a class="x_xq" href="' + $_sys.getlotdir(gameid)+$_sys.url.viewpath+'?lotid='+gameid+'&projid='+rt.hid + '" target="_blank">详情</a></td>';
 							}html += '</tr>';
 							$(html).appendTo($("#" + toId));
 						});
