@@ -1,10 +1,14 @@
 <!DOCTYPE html>
 <html>
+<script type="text/javascript" src="/public/jq.js"></script>
+<script type="text/javascript" src="/public/jq2.js"></script>
+<script type="text/javascript" src="/public/159cp.js"></script>
 <head>
 	<meta charset="UTF-8">
 	<title>159彩票网</title>
 	<link rel="stylesheet" type="text/css" href="css/basic87.css">
 </head>
+
 <body>
 <div class="top_nav">
 	<ul>
@@ -54,7 +58,54 @@
 </div>
 <div class="cai_p fn-clear">
 <!--#include virtual="/dedeinc/shouyezx.html"-->
-
+<script type="text/javascript">
+	$(document).ready(function(){
+		 var len=$("#flash_num>li").length;
+   var index=1;
+   var int;
+   $("#flash_num>span").removeClass().addClass("cur").eq(0).toggleClass("cur").addClass("");
+   $("#codes b input").hover(function() {
+	
+	if(isNaN($(this).val())){
+	$(this).val("");
+	}
+	else if($(this).val()>33||$(this).val()<1){
+		$(this).val("");
+	}
+}) ;
+   function showSys(num)  //图片切换函数
+   {
+    $("#flash_num>span").removeClass().addClass("cur").eq(num).toggleClass("cur").addClass("");
+   // $("p").removeClass().addStyle("block").eq(num).toggleClass("block").addClass("none");
+    $("#flash_pic>li" ).fadeOut().eq(num).fadeIn();
+   }
+   function ziDong()  //自动切换
+   {
+    if(index==len)
+    {
+     index=0;
+    }
+    showSys(index);
+    index=index+1;
+   }
+   int=setInterval(ziDong,5000);
+   $("#flash_num>span").mouseover(function() //点击切换
+   {
+    var index_num=$("#flash_num>span").index(this);
+    showSys(index_num);
+    index=index_num+1;  
+   });
+   $(".cur").mouseover(function()  //移动到上面时停止自动切换
+       {
+        clearInterval(int);
+       });
+   $(".cur").mouseout(function()  //移开时继续自动切换
+       {
+        int=setInterval(ziDong,5000);
+       });
+});
+   
+</script>
 	<!-- <div class="cai_pl">
 		<div class="tit">
 			<h3>彩票资讯</h3>
@@ -105,7 +156,7 @@
 				<a href="http://www.159cai.com/from.phpx?comeFrom=10290&backurl=/kaijiang/index.html" class="more" target="_blank">全国彩种开奖查询>></a>
 			</div>
 			<div class="bod">
-				<div class="hover">
+				<div class="hover" >
 					<table cellpadding="0" cellspacing="0">
 						<tr>
 							<th>彩种</th>
