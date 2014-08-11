@@ -40,13 +40,13 @@ th,td{text-align: center;}
 .top_nav ul{overflow: hidden;}
 .top_nav ul li{float: left;width: 249px;}
 .top_nav ul li a{width: 90%;height: 100%;float: left;padding-left: 10%;color: #333;cursor: pointer;}
-.top_nav ul li a:hover{background-color: #fef0bf;}
+.top_nav ul li a:hover{background-color: #fef0bf;text-decoration: none;}
 .top_nav ul li div{width: 56px;height: 72px;float: left;background-position: -5px 0;margin-right: 12px;_display: inline;}
 .top_nav ul li div.cai1{background-position: -64px 0;}
 .top_nav ul li div.cai2{background-position: -121px 0;}
 .top_nav ul li div.cai3{background-position: -181px 0;}
 .top_nav ul li dl{float: left;}
-.top_nav ul li dl dt{height: 37px;font:18px/44px "Microsoft YaHei";}
+.top_nav ul li dl dt{height: 37px;font:18px/44px "Microsoft YaHei";overflow: hidden;}
 .top_nav ul li dl dt a{color: #333;}
 .top_nav ul li dl dd{color: #f60;}
 .nav_87{height: 27px;line-height: 27px;background-color: #ffd988;}
