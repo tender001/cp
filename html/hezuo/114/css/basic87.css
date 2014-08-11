@@ -76,7 +76,7 @@ th,td{text-align: center;}
 .cai_pr .tab .title{height: 30px;line-height: 30px;color: #333;background-color: #f6f6f6;color: #333;font-weight: bold;border-bottom: 1px solid #ddd;}
 .cai_pr .tab .title span{width: 6em;text-align: center;border: 1px solid #ddd;border-width: 0 1px;display: block;float: left;margin-left: -1px;padding: 0 10px;cursor: pointer;font-size: 14px;}
 .cai_pr .tab .title span.hover{color: #ff1616;background-color: #fff;border-bottom: 1px solid #fff;position: relative;top: 1px;}
-.cai_pr .tab .title span.hover i{position: absolute;top: -2px;left: -1px;width: 106px;padding-top: 2px;background-color: #f44545;height: 0;overflow: hidden;}
+.cai_pr .tab .title span.hover i{position: absolute;top: -2px;left: -1px;width: 106px;border-top: 2px solid #f44545;/*padding-top: 2px;background-color: #f44545;height: 0;overflow: hidden;*/}
 .bod div{display: none;}
 .num_cai .bod{height: 310px;}
 .num_cai .bod div{height: 310px;}
