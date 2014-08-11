@@ -213,9 +213,9 @@ Class(
     						row.nums = new String(row.nums).split(",");
     						row.money =new String( row.money).split(",");
     						row.onenum = row.nums[0] == ''?'0':(parseFloat(row.nums[0]).rmb(false,0));
-    						row.onemoney = row.money[0] == ''?'0':(parseFloat(row.money[0]).rmb(false,0));
-    						row.twonum = row.nums[1] == ''?'0':(parseFloat(row.nums[1]).rmb(false,0));
-    						row.twomoney = row.money[1] == ''?'0':(parseFloat(row.money[1]).rmb(false,0));
+    						row.onemoney = (row.money[0] == ''||row.money[0] ===undefined)?'0':(parseFloat(row.money[0]).rmb(false,0));
+    						row.twonum = (row.nums[1] == '' ||row.nums[1]  ===undefined)?'0':(parseFloat(row.nums[1]).rmb(false,0));
+    						row.twomoney =(row.money[1] == ''||row.money[1] ===undefined)?'0':(parseFloat(row.money[1]).rmb(false,0));
             			
     						Y.get("#sfcmoney").html("一等奖："+row.onenum+"注"+row.onemoney+"元");
     						if(row.twonum=="" || row.twomoney==""||row.twomoney===undefined||row.twonum===undefined){
