@@ -20,8 +20,8 @@ Class(
 		this.init11Ydj2();
 		this.init11Ydj3();
 		this.init11Ydj4();
-		$("#cm_ssq_jx_btn").click();
-		$("#cm_dlt_jx_btn").click();
+//		$("#cm_ssq_jx_btn").click();
+//		$("#cm_dlt_jx_btn").click();
 		$("#cm_11x5_jx_btn2").click();
 		$("#cm_11x5_jx_btn3").click();
 		$("#cm_11x5_jx_btn4").click();
@@ -33,30 +33,7 @@ Class(
 		
         this.showchange('54');
         this.listHotProject(1, 8, "table_hot_project");
-		Y.use('mask',function(){
-			Y.loading = Y.lib.MaskLay();
-			Y.loading.noMask = true;
-			var dlg_buy_end = Y.lib.MaskLay('#dlg_buysuc', '#dlg_buysuc_content');
-			dlg_buy_end.addClose('#dlg_buysuc_back','#dlg_buysuc_close','#dlg_buysuc_close2');
-			Y.extend('popBuyOk', function(user,lotid,projid){
-				$('#dlg_buysuc_view').die().live('click', function(){
-					window.location= $_sys.getlotdir(lotid)+$_sys.url.viewpath+'?lotid='+lotid+'&projid='+projid;
-				});
-				dlg_buy_end.pop('您好，'+user+'，恭喜您购买成功!');
-			});
-		});
-		Y.use('mask', function(){
-			var addMoneyDlg =  this.lib.MaskLay('#addMoneyLay');
-			addMoneyDlg.addClose('#addMoneyClose','#addMoneyYes');
-			Y.get('#addMoneyLay div.tantop').drag('#addMoneyLay');
-			Y.extend('addMoney', function(){
-				addMoneyDlg.pop('', function(e, btn){
-					if(btn.id === 'addMoneyYes'){
-						window.open($_user.daohang.addmoney);
-					}			
-				});
-			});
-		}); 
+		
 	},
 
 
@@ -207,8 +184,9 @@ Class(
                               
                               if (isEnd) {
                             		  timebar.html('<i class="red">'+(msg || '已截止')+'</i>');
+                            		  this.showchange(gid);
                                       Class.config('isEnd', false);
-                                      Y.getcurrentissue(54);
+                                      Y.getcurrentissue(gid);
                               }else{
                                   timebar.html( ctpl.format.apply(tpl, times).replace(/\b\d\b/g,'0$&'))
                               }                                
@@ -759,9 +737,9 @@ Class(
 			
 		}
 		if(url.indexOf('11x5')>0 ||url.indexOf('11ydj')>0){
-			window.open("http://www.159cai.com/from.phpx?comeFrom=10290&backurl="+url + "?codes=" + codes+"&wtype="+wtype);
+			window.open("http://www.159cai.com/from.phpx?comeFrom=25196&backurl="+url + "?codes=" + codes+"&wtype="+wtype);
 		}else{
-			window.open("http://www.159cai.com/from.phpx?comeFrom=10290&backurl="+url + "?codes=" + codes);
+			window.open("http://www.159cai.com/from.phpx?comeFrom=25196&backurl="+url + "?codes=" + codes);
 		}
 		
 		
@@ -849,7 +827,8 @@ Class(
 								html += '<i>(保' + (rt.pnum*100/rt.nums).toFixed(0) + '%)</i>';
 							}
 							html += '</p> <p class="x_jdt"><em style="width: ' + rt.jindu + '%"></em></p></td>';
-							html += '<td><i>' + rt.lnum + '</i></td>';
+							html += '<td>1元</td>';
+							
 							if(rt.lnum == 0 || rt.state != 1){
 								if(rt.state > 2){
 									html += '<td>已撤单</td>';
@@ -859,12 +838,12 @@ Class(
 									html += '<td></td>';
 								}
 							}else{
-								html += '<td><div class="shouye"><input type="text" value="1" id="hot_rengou_' + (o+1) + '" /><a href="javascript:void(0);"><img src="/images/index_110.gif" class="gm" onclick="rengou(\''+gameid+'\',\''+rt.hid+'\',\'hot_rengou_' + (o+1) +'\',\''+rt.lnum+'\')"/></a></div></td>';//lotid,projid,id,lnum
+								html += '<td><i>' + rt.lnum + '份</i></td>';
 							}
 							if(rt.cnickid=='******'){
 								html += '<td>--</td>';
 							}else{
-								html += '<td><a class="x_xq" href="' + $_sys.getlotdir(gameid)+$_sys.url.viewpath+'?lotid='+gameid+'&projid='+rt.hid + '" target="_blank">详情</a></td>';
+								html += '<td><a class="x_xq" href="http://www.159cai.com/from.phpx?comeFrom=25196&backurl=' + $_sys.getlotdir(gameid)+$_sys.url.viewpath+'?lotid='+gameid+'&projid='+rt.hid + '" target="_blank">参与</a></td>';
 							}html += '</tr>';
 							$(html).appendTo($("#" + toId));
 						});
