@@ -1630,9 +1630,11 @@ a.jcq_kcur {
 .news_left table a:hover{color:#ff0000}
 .todaykj{width:195px;height:61px;background:url(../images/cai888/news_03.jpg);padding:12px 10px 10px 55px;margin-bottom:10px;}
 .todaykj p{line-height:20px;}
-.todaykj p a{color:#145fab;width:65px;float:left;display:block}
+.todaykj p a{color:#145fab;width:65px;float:left;display:block;}
 .todaykj p a.a1{color:#ff6600}
 .todaykj p a:hover{text-decoration:underline}
+.todaykj p.m_kaij{font-size: 16px;color: #e52e04;padding-top: 10px;}
+.todaykj p.m_kaij a{width: 190px;text-decoration: underline;font-size: 12px;color: #f60;}
 .sjdownload{border:1px solid #ddd;clear:both;margin-top:10px;zoom:1}
 .sjdownload h3{border-bottom:1px solid #ddd;height:30px;line-height:30px;padding-left:20px;font-weight:bold;font-size:12px;background:#ececec}
 .sjdownload p{background:url(../images/cai888/news_07.jpg) no-repeat 0 0 ;margin:10px;height:83px;padding-left:107px;padding-top:3px}
