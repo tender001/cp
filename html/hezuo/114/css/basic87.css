@@ -135,7 +135,7 @@ tr:hover td{background-color: #fffee6;}
 /*.hm table td .shouye a img{height: 19px;}*/
 .hm table td a{color: #3970b6}
 .hm table td a:hover{text-decoration: underline;}
-.hm table td a.x_xq{color: #fff;padding: 3px 5px;background-color: #f60;text-decoration: none;}
+.hm table td a.x_xq{color: #fff;padding: 3px 5px;background-color: #f60;text-decoration: none;outline: none;}
 .hm table td a.buy{width: 45px;height: 20px;line-height: 20px;display: block;background-color: #f60;color: #fff;margin: auto;}
 
 /*焦点赛事*/
