@@ -1,5 +1,6 @@
+
 	<div class="todaykj">
-		<!-- <p>
+		<p id="stratkj">
 			<a class="a1" href="/daletou/" id="50" target="_blank" style="display: none;">大乐透</a>
 			<a class="a1" href="/shuangseqiu/" target="_blank" id="01" style="display: none;">双色球</a>
 			<a href="/zc/" id="80" target="_blank" style="display: none;">胜负彩</a>
@@ -14,10 +15,10 @@
 				
 
 
-		</p> -->
-		<p class="m_kaij">
+		</p > 
+		<p class="m_kaij" style="display: none;" id="endkj">
 			请稍候，正在开奖中…<br>
-			<a href="#">点击查看开奖详情</a>
+			<a href="/kaijiang/" target="_blank">点击查看开奖详情</a>
 		</p>
 	</div>
 	    <script>
@@ -33,10 +34,11 @@ $(document).ready(function(){
 					var obj = eval("(" + data.text + ")");
 					var r = obj.rows.rownow;
 					var d = Y.getDate(data.date).format('YY-MM-DD');
+					var nums=0;
 					r.each(function(rt,o) {
 						var nd = Y.getDate(rt.nowendtime).format('YY-MM-DD');
 						if(nd==d){
-							
+							++nums;
 							$('.todaykj a[id='+rt.gid+']').show().addClass("a1");
 						}else{
 							
@@ -46,6 +48,16 @@ $(document).ready(function(){
 							Class.C('nowpid', rt.nowpid);
 						}
 					});
+					if(nums>1){
+						$("#stratkj").show();
+						$("#endkj").hide();
+					}else{
+						$("#stratkj").hide();
+						$("#endkj").show();
+					}
+// 					$("#stratkj").show(nums>1);
+// 					$("#endkj").show(nums<1);
+					
 				},
 				error : function() {
 					return false;
