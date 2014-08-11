@@ -155,6 +155,7 @@ var showinfo = function(lotid, expect,type) {
 	var _url="";
 	if($("#lotid").val()==31){
 		_url="/cpdata/guoguan/jczq/index.json?_=" + Math.random();
+//		_url="/cpdata/guoguan/jczq/last3/last3.json?=_" + Math.random();
 	}else if($("#lotid").val()==32){
 		_url="/cpdata/guoguan/jclq/index.json?_=" + Math.random();
 	}else{
@@ -181,6 +182,7 @@ var showinfo = function(lotid, expect,type) {
 			}
 			var html='';
 			var expectday=new Date().format("YY-MM-D")+"";
+		
 			expectday=expectday.replaceAll("-","")
 			if (expectlist.length>0){
 				for ( var i = 0; i < expectlist.length; i++) {
@@ -193,7 +195,11 @@ var showinfo = function(lotid, expect,type) {
 					
 				}		
 			}
-
+			if($("#lotid").val()==31){
+//				$("#expectjczq").html('日期：'+expectlist[2][0].substr(0,4)+'.'+expectlist[2][0].substr(4,2)+'.'+expectlist[2][0].substr(6,2)+'&nbsp;--&nbsp;'+expectlist[0][0].substr(0,4)+'.'+expectlist[0][0].substr(4,2)+'.'+expectlist[0][0].substr(6,2));
+				$("#startinput").val(expectlist[2][0].substr(0,4)+'-'+expectlist[2][0].substr(4,2)+'-'+expectlist[2][0].substr(6,2));
+				$("#endinput").val(expectlist[0][0].substr(0,4)+'-'+expectlist[0][0].substr(4,2)+'-'+expectlist[0][0].substr(6,2));
+			}
 			$("#expect").html('');
 			if ($("#expect").html()=="") {
 //				expect = expectday;
@@ -201,6 +207,7 @@ var showinfo = function(lotid, expect,type) {
 			}else{
 				expect = expectlist[0][0];
 			}
+			
 			$("#expect").append(html);
 		
 			loadmain(lotid, expect,type);
@@ -215,7 +222,8 @@ var showinfo = function(lotid, expect,type) {
 var loadmain = function(lotid, expect,type) {
 	var _url="";
 	if($("#lotid").val()==31){
-		_url="/cpdata/guoguan/jczq/" + expect + "/" + expect + ".json?r="+Math.random();
+		_url="/cpdata/guoguan/jczq/last3/last3.json?r="+Math.random();
+//		_url="/cpdata/guoguan/jczq/last3/last3.json?=_" + Math.random();
 	}else if($("#lotid").val()==32){
 		_url="/cpdata/guoguan/jclq/" + expect + "/" + expect + ".json?r="+Math.random();
 	}else{
@@ -257,7 +265,8 @@ var loadpage = function(lotid,expect,pn,ps,tp,tr) {
 	$("#seltype2").removeClass("cur");
 	var _url="";
 	if($("#lotid").val()==31){
-		_url="/cpdata/guoguan/jczq/" + expect + "/jcfs_"+pn+".json";
+//		_url="/cpdata/guoguan/jczq/last3/last3.json?=_" + Math.random();
+		_url="/cpdata/guoguan/jczq/last3/jcfs_"+pn+".json";
 	}else if($("#lotid").val()==32){
 		_url="/cpdata/guoguan/jclq/" + expect + "/jcfs_"+pn+".json";
 	}else{

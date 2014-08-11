@@ -13,7 +13,7 @@
 <script type="text/javascript" src="/public/159cp.js"></script>
 <script type="text/javascript" src="/public/chklogin.js"></script>
 <script type="text/javascript" src="/public/tab.js"></script>
-<script type="text/javascript" src="/guoguan/js/jc.js?m=20140725"></script>
+
 </head>
 <body>
 <!--#include virtual="/cc/header.html"-->
@@ -25,7 +25,8 @@
 <!--#include virtual="/guoguan/game.html"-->
 
 <div class="zn_gg_1 zn_gg_1x">
-<span class="s_select">请选择日期：<select id="expect"></select></span>
+<span class="s_select" style="width: 250px;">日期：<input type="text"  id="startinput" style="width: 70px;margin-right:10px;text-align:center;"/>至<input type="text"  id="endinput" style="width: 70px;text-align:center;margin-left:10px"/></span>
+<!-- 请选择<select id="expect" ></select> -->
 <p>注：带*为代购方案，请本人登录查看</p>
 </div></div>
 <div class="zn_gg_3" style="border-top:1px solid #ccc">
@@ -39,12 +40,13 @@
 </div>
 </div></div>
 </div>
+
 <input name="lotid" id="lotid" type="hidden" value="31" />
 <input name="type" id="type" type="hidden" value="jc" />
 <input name="tp" id="tp" type="hidden" value="1" />
 <input name="tr" id="tr" type="hidden" value="1" />
 <input name="ps" id="ps" type="hidden" value="20" />
 <!--#include virtual="/cc/footer.html"-->
-
+<script type="text/javascript" src="/guoguan/js/jc.js?m=20140811"></script>
 </body>
 </html>
