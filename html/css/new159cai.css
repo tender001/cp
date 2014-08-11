@@ -489,7 +489,7 @@ p.fotpp{line-height:24px;text-align:center;padding:16px 0;color:#666;}
 .newsrc h3 span{padding:0 10px;float:left}
 .newsrc h3 a{color:#145fab;}
 .newsrc h3 a:hover,.newsrc p a:hover{ text-decoration: underline;color:#e52e04}
-.newsrc h3 em{font-weight:bold;padding-right:10px;font-size:12px;float:right}
+.newsrc h3 em{padding-right:10px;font-size:12px;float:right}
 .newsrc p{line-height:20px;height:20px;padding:7px 0 7px 10px}
 .newsrc p b{display:block;float:left; background:url(../images/159/new_07.jpg);width:20px;height:20px;color:#fff;font-weight:bold;font-size:12px;line-height:20px;text-align:center;margin-right:2px}
 .newsrc p b.cur{background:url(../images/159/new_10.jpg)}
