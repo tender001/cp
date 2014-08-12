@@ -1949,9 +1949,9 @@ a.sz_cmt{background: url(../images/cai888/nwx5_112.jpg);width:137px;height:33px}
 /*start 2014.8.11 时时彩更新*/
 .w_con .nwx5time em,.w_con .nsbool b,.w_con .nsbool b.cur{background: url(../images/ssc_bg/w_bg_1.png);}
 .w_con .nwx5top{border: 0;}
-.nwx5 .nwssctop1 a{padding: 0 16px;}
-.nwx5 .nwssctop1 a.cur{background-color: #088959;}
-.nwx5 .nwssctop1 a:hover{background-color: #088959;}
+.w_con .nwx5 .nwssctop1 a{padding: 0 16px;}
+.w_con .nwx5 .nwssctop1 a.cur{background-color: #088959;}
+.w_con .nwx5 .nwssctop1 a:hover{background-color: #088959;}
 .w_con .nwx5{border-top-color: #088959;}
 .w_con .nwx5time{background: url(../images/ssc_bg/w_bg_2.jpg) repeat;height: 42px;border-color: #231a13;}
 .w_con .nwx5time span{color: #fff;line-height: 40px;}
