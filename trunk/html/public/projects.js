@@ -1700,6 +1700,9 @@ showduizhen =function (lotid,expect,projid,type,codes,cp){
 							
 						}else{
 						var ncode = codes.split("|")[codes.split("|").length-2];
+						if(codes.split("|")[codes.split("|").length-1]==1){//兼容去除二串一格式
+							ncode=codes.split("|")[codes.split("|").length-3]
+						}
 //						var ncode = codes.split("|")[2]
 						var codestr=ncode.split(",");
 						var itemcodes ="";

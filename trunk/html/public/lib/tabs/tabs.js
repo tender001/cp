@@ -109,8 +109,10 @@
 			}
 		},
 		doShow: function (a, b, c, d){
-			this.get(a).hide();
-            this.get(b).show()     
+//			this.get(a).hide();
+//            this.get(b).show()     
+			$(a).hide();
+            $(b).show()    
 		}
 	});
 	/*
