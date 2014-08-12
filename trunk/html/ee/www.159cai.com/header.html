@@ -1,9 +1,9 @@
 <div class="top">
 	<div class="w1000">
 		<div class="fl" id="nologin_info">
-			<dl class="ali">
+			<dl class="ali" mark="hezuodown">
 				<dt>合作账户登录<s></s></dt>
-				<dd class="up">
+				<dd class="up" >
 					<a rel="nofollow" href="/phpu/allylogin.phpx?type=1" target="_blank"></a><!--支付宝账户-->
 				</dd>
 			</dl>
@@ -16,7 +16,7 @@
 			<!-- |<a  href="/user/reg.html" target="_blank" rel="nofollow" >我的账户</a>
 			|<a  href="/user/reg.html" target="_blank" id="tp2" rel="nofollow" >充值</a>
 			|<a  href="/user/reg.html" target="_blank" id="tp4" rel="nofollow" >投注记录</a> -->
-			<dl class="mysite">
+			<dl class="mysite" mark="acdown">
 				<dt><a href="/account/myaccount.html" target="_blank">我的账户</a><s></s></dt>
 				<dd class="up">
 					<p class="y1">
@@ -36,7 +36,7 @@
 			|<a  target="_blank" id="logoutLink" rel="nofollow">安全退出</a>
 		</div>
 		<div class="fr">
-			<dl>
+			<dl mark="gcdown">
 				<dt >购买彩票<s></s></dt>
 				<dd class="up">
 					<ul>
@@ -91,19 +91,3 @@
 		<img src="/images/bg/kef.jpg" alt="在线客服"></a>
 	</div>
 </div>
-<script type="text/javascript">
-$(function(){
-	$(".top dl,.nav1_buy,.updo li").hover(function() {
-		var $a=$(this);
-		//$a.stop(true,true)
-		var t=setTimeout(function(){
-			$a.addClass("hover").children(".up").stop(true,true).fadeIn();//.slideDown();
-		},100);
-	}, function() {
-		var $a=$(this);
-		var t1=setTimeout(function(){
-			$a.removeClass("hover").children(".up").stop(true,true).fadeOut();//.slideUp();
-		},100);
-	});
-});
-</script>
