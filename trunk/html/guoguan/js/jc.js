@@ -18,7 +18,7 @@ $(function() {
 			if ($("#seltype").val()=="my"){
 				myguoguan($("#lotid").val(), $("#expect").val(),1,25,0,0);
 			}else{
-				loadmain($("#lotid").val(), $("#expect").val());
+				loadmain($("#lotid").val(), $("#expect").val(),1);
 			}
 		}
 	});
@@ -156,6 +156,9 @@ var showinfo = function(lotid, expect,type) {
 	if($("#lotid").val()==31){
 		_url="/cpdata/guoguan/jczq/index.json?_=" + Math.random();
 //		_url="/cpdata/guoguan/jczq/last3/last3.json?=_" + Math.random();
+		if(type == 1){
+			_url="/cpdata/guoguan/jczq/index.json?_=" + Math.random();
+		}
 	}else if($("#lotid").val()==32){
 		_url="/cpdata/guoguan/jclq/index.json?_=" + Math.random();
 	}else{
@@ -199,6 +202,9 @@ var showinfo = function(lotid, expect,type) {
 //				$("#expectjczq").html('日期：'+expectlist[2][0].substr(0,4)+'.'+expectlist[2][0].substr(4,2)+'.'+expectlist[2][0].substr(6,2)+'&nbsp;--&nbsp;'+expectlist[0][0].substr(0,4)+'.'+expectlist[0][0].substr(4,2)+'.'+expectlist[0][0].substr(6,2));
 				$("#startinput").val(expectlist[2][0].substr(0,4)+'-'+expectlist[2][0].substr(4,2)+'-'+expectlist[2][0].substr(6,2));
 				$("#endinput").val(expectlist[0][0].substr(0,4)+'-'+expectlist[0][0].substr(4,2)+'-'+expectlist[0][0].substr(6,2));
+				/*if($("#expect").html()!=""){
+					$("#expectjczq").html('日期：'+expectlist[2][0].substr(0,4)+'.'+expectlist[2][0].substr(4,2)+'.'+expectlist[2][0].substr(6,2)+'&nbsp;--&nbsp;'+expectlist[0][0].substr(0,4)+'.'+expectlist[0][0].substr(4,2)+'.'+expectlist[0][0].substr(6,2));
+				}*/
 			}
 			$("#expect").html('');
 			if ($("#expect").html()=="") {
@@ -210,7 +216,7 @@ var showinfo = function(lotid, expect,type) {
 			
 			$("#expect").append(html);
 		
-			loadmain(lotid, expect,type);
+			loadmain(lotid, expect,type,1);
 		},
 		error : function() {
 			alert("您所请求的页面有异常！");
@@ -224,6 +230,9 @@ var loadmain = function(lotid, expect,type) {
 	if($("#lotid").val()==31){
 		_url="/cpdata/guoguan/jczq/last3/last3.json?r="+Math.random();
 //		_url="/cpdata/guoguan/jczq/last3/last3.json?=_" + Math.random();
+		if(type == 1){
+			_url="/cpdata/guoguan/jczq/" + expect + "/" + expect + ".json?r="+Math.random();
+		}
 	}else if($("#lotid").val()==32){
 		_url="/cpdata/guoguan/jclq/" + expect + "/" + expect + ".json?r="+Math.random();
 	}else{
@@ -247,8 +256,12 @@ var loadmain = function(lotid, expect,type) {
 		
 			$("#tp").val(rs.jcfs.tp);
 			$("#tr").val(rs.jcfs.total);
+			if(type == 1 ){
+				loadpage(lotid, expect,1,tps,ttp,ttotal,1);
+			}else{
+				loadpage(lotid, expect,1,tps,ttp,ttotal);
+			}
 			
-			loadpage(lotid, expect,1,tps,ttp,ttotal);
 		},
 		error : function() {
 			var html='<colgroup><col width="70"><col width="120"><col width="100"><col width="100"><col width="100"><col width="100"><col width="100"><col width="100"><col width="100"><col width="110"></colgroup>';
@@ -260,13 +273,16 @@ var loadmain = function(lotid, expect,type) {
 	});
 };
 
-var loadpage = function(lotid,expect,pn,ps,tp,tr) {
+var loadpage = function(lotid,expect,pn,ps,tp,tr,type) {
 	$("#seltype1").addClass("cur");
 	$("#seltype2").removeClass("cur");
 	var _url="";
 	if($("#lotid").val()==31){
 //		_url="/cpdata/guoguan/jczq/last3/last3.json?=_" + Math.random();
 		_url="/cpdata/guoguan/jczq/last3/jcfs_"+pn+".json";
+		if(type == 1){
+			_url="/cpdata/guoguan/jczq/" + expect + "/jcfs_"+pn+".json";
+		};
 	}else if($("#lotid").val()==32){
 		_url="/cpdata/guoguan/jclq/" + expect + "/jcfs_"+pn+".json";
 	}else{
