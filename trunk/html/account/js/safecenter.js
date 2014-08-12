@@ -68,7 +68,7 @@ Class({
 
 							}
 							
-							if (mobbind == 0) {
+							if (mobile == "") {
 						
 								
 								$("#mobbind_i").removeClass("telcur");

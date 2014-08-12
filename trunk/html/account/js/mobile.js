@@ -39,7 +39,7 @@ Class({
 					var r= obj.Resp.row;
 					var mobbind = r.mobbind;				
 					var mobile =r.mobile;
-					if(mobbind==1){
+					if(mobile!=""){
 						$("#div1").hide();
 						$("#div3").show();
 					}else{
