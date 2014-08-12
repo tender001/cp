@@ -1542,57 +1542,101 @@ String.prototype.isEmail = function(){
 Class({
 	ready: true,
     index:function (config){
-    	$(".my_account").hover(function(){
-			$(this).find("div").show();
-		},function(){
-			$(this).find("div").hide();
-		})
-			$(".top dl").hover(function(){
-		$(this).addClass("hover");
-	},function(){
-		$(this).removeClass("hover");
-	});
-	$(".tab .title span").mouseover(function() {
-		$(this).removeClass().addClass('hover').siblings().removeClass('hover');
-		var a=$(this).index();//console.log(a);
-		$(this).parent().siblings('.bod').children().removeClass().eq(a).addClass('hover');
-	});
+//    	$(".my_account").hover(function(){
+//			$(this).find("div").show();
+//		},function(){
+//			$(this).find("div").hide();
+//		})
+//			$(".top dl").hover(function(){
+//		$(this).addClass("hover");
+//	},function(){
+//		$(this).removeClass("hover");
+//	});
+//	$(".tab .title span").mouseover(function() {
+//		$(this).removeClass().addClass('hover').siblings().removeClass('hover');
+//		var a=$(this).index();//console.log(a);
+//		$(this).parent().siblings('.bod').children().removeClass().eq(a).addClass('hover');
+//	});
     	
-    	$("#nav_main,#zq_xl,#bf_xl").css({
+    	$("[mark=hezuodown] dd,[mark=gcdown] dd,div.nav1_buy div.m_l,[mark=bfdown] div.xia,[mark=zqdown] div.xia,[mark=acdown] dd").css({
     		"height":0,
     		"overflow":"hidden"
+    		
     		});
-    	$(".nav_re h2,#nav_main").hover(function(){
-    		$("#nav_main").find("#nav_main").show();
-			$("#nav_main").clearQueue().animate({
-				height:640
+    	$("[mark=hezuodown]").hover(function(){//合作登录鼠标滑入
+    		$(this).addClass("hover").find("dd").show();
+			$("[mark=hezuodown] dd").clearQueue().animate({
+				height:35
 				})
 		},function(){
-			$("#nav_main").animate({
+			
+			$("[mark=hezuodown] dd").animate({
 				height:0
-				})
+				});
+			$(this).removeClass("hover").find("dd").hide();
 		});
-    	$("li.zqzx,#zq_xl").hover(function(){
-    		$("#zq_xl").find("#zq_xl").show();
-			$("#zq_xl").clearQueue().animate({
+    	$("[mark=gcdown]").hover(function(){ //顶部购彩导航滑入
+    		$(this).addClass("hover").find("dd").show();
+			$("[mark=gcdown] dd").clearQueue().animate({
+				height:430
+				})
+		},function(){
+			
+			$("[mark=gcdown] dd").animate({
+				height:0
+				});
+			$(this).removeClass("hover").find("dd").hide();
+		});
+    	$("div.nav1_buy").hover(function(){ //购彩导航滑入
+    		$(this).addClass("hover").find("div.m_l").show();
+			$("div.nav1_buy div.m_l").clearQueue().animate({
+				height:460
+				})
+		},function(){
+			
+			$("div.nav1_buy div.m_l").animate({
+				height:0
+				});
+			$(this).removeClass("hover").find("div.m_l").hide();
+		});
+    	$("[mark=bfdown]").hover(function(){ //导航比分直播滑入
+    		$(this).addClass("hover").find("div.xia").show();
+			$("[mark=bfdown] div.xia").clearQueue().animate({
+				height:90
+				})
+		},function(){
+			
+			$("[mark=bfdown] div.xia").animate({
+				height:0
+				});
+			$(this).removeClass("hover").find("div.xia").hide();
+		});
+    	
+    	$("[mark=zqdown]").hover(function(){ //导航足球数据滑入
+    		$(this).addClass("hover").find("div.xia").show();
+			$("[mark=zqdown] div.xia").clearQueue().animate({
 				height:60
 				})
 		},function(){
-			$("#zq_xl").animate({
+			
+			$("[mark=zqdown] div.xia").animate({
 				height:0
-				})
+				});
+			$(this).removeClass("hover").find("div.xia").hide();
 		});
-    	$("li.bfzb,#bf_xl").hover(function(){
-    		$("#bf_xl").find("#bf_xl").show();
-			$("#bf_xl").clearQueue().animate({
-				height:125
+    	$("[mark=acdown]").hover(function(){ //我的账户滑入
+    		$(this).addClass("hover").find("dd").show();
+    		
+			$("[mark=acdown] dd").clearQueue().animate({
+				height:205
 				})
 		},function(){
-			$("#bf_xl").animate({
+			
+			$("[mark=acdown] dd").animate({
 				height:0
-				})
+				});
+			$(this).removeClass("hover").find("dd").hide();
 		});
-		 
     	var tmpUPage =(document.URL).split( "/" );
     	var thisUPage = tmpUPage[tmpUPage.length-2 ];
     	$("#naver li a").each(function(){
