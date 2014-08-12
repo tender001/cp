@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="gbk"?>
+
+<rbc-config>
+	<action-mappings>
+
+		<action name="jjyh" forward="" bean="com.caipiao.cpweb.trade.TradeBean" scope="request" desc="奖金优化">
+			<execute method="optimize"  group="2" />
+        </action>
+                
+		<action name="t" forward="" bean="com.caipiao.cpweb.trade.TradeBean" scope="request" desc="投注类">
+			<execute method="sqlcheck_login"/>
+			<execute method="tradeMain" group="2" />
+			<execute method="checkfanli"/>
+		</action>
+
+		<action name="rk" forward="" bean="com.caipiao.cpweb.trade.TradeBean" scope="request" desc="排行">
+			<execute method="ranking" />
+		</action>
+		<action name="q" forward="" bean="com.caipiao.cpweb.trade.TradeBean" scope="request" desc="查询类">
+			<execute method="tquery" group="2" />
+		</action>
+		<!-- 北京单场相关开始 -->
+		<action name="bj/step_1" forward="/pp/bj/project_fqck.jsp" bean="com.caipiao.cpweb.trade.bjdc.TradeBJBean" scope="request" desc="北京单场--发起合买确认">
+			<execute method="project_fqck"  />
+		</action>
+		<action name="bj/step_2" forward="/pp/bj/project_dgck.jsp" bean="com.caipiao.cpweb.trade.bjdc.TradeBJBean" scope="request" desc="北京单场--发起代购确认">
+			<execute method="project_fqck"  />
+		</action>
+		
+		<!-- 单式文件上传检测 第二步 -->
+		<action name="bj/step_3" forward="/pp/bj/project_fqck_ds.jsp" bean="com.caipiao.cpweb.trade.bjdc.TradeBJBean" scope="request" desc="北京单场单式发起合买确认">
+			<execute method="check_login" />
+			<execute method="project_fqck_ds"  />
+		</action>
+		<action name="bj/step_4" forward="/pp/bj/project_dgck_ds.jsp" bean="com.caipiao.cpweb.trade.bjdc.TradeBJBean" scope="request" desc="北京单场单式代购确认">
+			<execute method="check_login" />
+			<execute method="project_fqck_ds"  />
+		</action>
+		
+		<!-- 单式文件发起方案(合买代购) 第三步 -->
+		<action name="bj/step_5" forward="" bean="com.caipiao.cpweb.trade.bjdc.TradeBJBean" scope="request" desc="北京单场--单式文件发起方案(合买代购) 第三步">
+			<execute method="check_login" />
+			<execute method="project_fqsuc_ds"  />
+		</action>	
+		
+		<action name="bj/step_6" forward="" bean="com.caipiao.cpweb.trade.bjdc.TradeBJBean" scope="request" desc="北京单场--后上传">
+			<execute method="project_hsc_suc"  />
+		</action>			
+		<!-- 北京单场相关开始 -->
+		
+		<!-- 竞彩足球相关开始 -->
+		
+		<action name="jc/step_1" forward="/pp/jc/project_fqck.jsp" bean="com.caipiao.cpweb.trade.jczq.TradeJcBean" scope="request" desc="竞彩足球复式发起合买确认">
+			<execute method="project_fqck"  />
+		</action>
+		<action name="jc/step_2" forward="/pp/jc/project_dgck.jsp" bean="com.caipiao.cpweb.trade.jczq.TradeJcBean" scope="request" desc="竞彩足球复式代购确认">
+			<execute method="project_fqck"  />
+		</action>
+		<action name="jc/step_3" forward="/pp/jc/project_fqck_ds.jsp" bean="com.caipiao.cpweb.trade.jczq.TradeJcBean" scope="request" desc="竞彩足球单式发起合买确认">
+			<execute method="check_login" />
+			<execute method="project_dsck"  />
+		</action>
+		<action name="jc/step_4" forward="/pp/jc/project_dgck_ds.jsp" bean="com.caipiao.cpweb.trade.jczq.TradeJcBean" scope="request" desc="竞彩足球单式代购确认">
+			<execute method="check_login" />
+			<execute method="project_dsck"  />
+		</action>
+		<action name="jc/step_5" forward="" bean="com.caipiao.cpweb.trade.jczq.TradeJcBean" scope="request" desc="竞彩单式购买">
+		    <execute method="set_user_data" />
+			<execute method="project_dscreate"  />
+		</action>
+		<action name="jc/step_6" forward="" bean="com.caipiao.cpweb.trade.jczq.TradeJcBean" scope="request" desc="竞彩足球后上传确认">
+			<execute method="project_hsc"  />
+		</action>
+		
+		<!-- 过滤相关开始 -->
+		<action name="jc/step_7" forward="" bean="com.caipiao.cpweb.trade.jczq.TradeJcBean" scope="request" desc="竞彩足球在线过滤提交参数到">
+			<execute method="sendfilter"  />
+		</action>
+		<action name="jc/step_8" forward="/pp/jc/project_filter.jsp" bean="com.caipiao.cpweb.trade.jczq.TradeJcBean" scope="request" desc="竞彩足球在线过滤接收过滤后参数">
+			<execute method="project_filter"  />
+		</action>
+		
+		<action name="filter/jc_recv" forward="/pp/jc/project_filter.jsp" bean="com.caipiao.cpweb.trade.jczq.TradeJcBean" scope="request" desc="竞彩足球在线过滤接收过滤后参数">
+			<execute method="project_filter2"  />
+		</action>
+		
+		
+		<action name="bj/step_7" forward="" bean="com.caipiao.cpweb.trade.bjdc.TradeBJBean" scope="request" desc="北京单场在线过滤提交参数到">
+			<execute method="sendfilter"  />
+		</action>
+		
+		<action name="filter/bj_recv" forward="/pp/bj/project_filter.jsp" bean="com.caipiao.cpweb.trade.bjdc.TradeBJBean" scope="request" desc="北京单场在线过滤接收过滤后参数">
+			<execute method="project_filter"  />
+		</action>
+		
+		<!-- 过滤相关结束 -->
+		
+		<!-- 奖金优化 -->
+		<action name="jc/step_9" forward="/pp/jc/project_fqck_yh.jsp" bean="com.caipiao.cpweb.trade.jczq.TradeJcBean" scope="request" desc="竞彩足球单式发起合买确认">
+			<execute method="set_user_data"  />
+			<execute method="project_jjyh"  />
+		</action>
+		<action name="jc/step_10" forward="/pp/jc/project_dgck_yh.jsp" bean="com.caipiao.cpweb.trade.jczq.TradeJcBean" scope="request" desc="竞彩足球单式代购确认">
+			<execute method="set_user_data"  />
+			<execute method="project_jjyh"  />
+		</action>
+		<action name="jc/step_11" forward="/pp/jc/project_fqckhh.jsp" bean="com.caipiao.cpweb.trade.jczq.TradeJcBean" scope="request" desc="竞彩足球复式发起合买确认">
+			<execute method="project_fqck"  />
+		</action>
+		<action name="jc/step_12" forward="/pp/jc/project_dgckhh.jsp" bean="com.caipiao.cpweb.trade.jczq.TradeJcBean" scope="request" desc="竞彩足球复式代购确认">
+			<execute method="project_fqck"  />
+		</action>
+		<!-- 奖金优化 -->
+		
+		<!-- 竞彩足球相关开始 -->
+		
+		<!-- 竞彩篮球相关开始 -->
+		<action name="lc/step_1" forward="/pp/lc/project_fqck.jsp" bean="com.caipiao.cpweb.trade.jclq.TradeJcBean" scope="request" desc="竞彩篮球复式发起合买确认">
+			<execute method="project_fqck"  />
+		</action>
+		<action name="lc/step_2" forward="/pp/lc/project_dgck.jsp" bean="com.caipiao.cpweb.trade.jclq.TradeJcBean" scope="request" desc="竞彩篮球复式代购确认">
+			<execute method="project_fqck"  />
+		</action>
+		<action name="lc/step_3" forward="/pp/lc/project_fqck_ds.jsp" bean="com.caipiao.cpweb.trade.jclq.TradeJcBean" scope="request" desc="竞彩篮球单式发起合买确认">
+			<execute method="check_login" />
+			<execute method="project_dsck"  />
+		</action>
+		<action name="lc/step_4" forward="/pp/lc/project_dgck_ds.jsp" bean="com.caipiao.cpweb.trade.jclq.TradeJcBean" scope="request" desc="竞彩篮球单式代购确认">
+			<execute method="check_login" />
+			<execute method="project_dsck"  />
+		</action>
+		<action name="lc/step_5" forward="" bean="com.caipiao.cpweb.trade.jclq.TradeJcBean" scope="request" desc="竞彩篮球单式购买">
+		    <execute method="set_user_data" />
+			<execute method="project_dscreate"  />
+		</action>
+		<action name="lc/step_6" forward="" bean="com.caipiao.cpweb.trade.jclq.TradeJcBean" scope="request" desc="竞彩篮球后上传确认">
+			<execute method="project_hsc"  />
+		</action>
+		<action name="lc/step_7" forward="/pp/lc/project_fqckhh.jsp" bean="com.caipiao.cpweb.trade.jclq.TradeJcBean" scope="request" desc="竞彩篮球混合复式发起合买确认">
+			<execute method="project_fqck"  />
+		</action>
+		<action name="lc/step_8" forward="/pp/lc/project_dgckhh.jsp" bean="com.caipiao.cpweb.trade.jclq.TradeJcBean" scope="request" desc="竞彩篮球混合复式代购确认">
+			<execute method="project_fqck"  />
+		</action>
+		<!-- 竞彩篮球相关结束 -->
+		
+
+		
+		
+		
+		<!-- 竞彩冠亚军相关开始 -->
+		<action name="jcmc/jcmc_project_fqck" forward="/jsp/trade/jcmc/project_fqck.jsp" bean="com.caipiao.cpweb.trade.jcmc.TradeMcBean" scope="request" desc="竞彩名次[冠亚军]复式发起合买确认">
+			<execute method="project_fqck"  />
+		</action>
+		<action name="jcmc/jcmc_project_dgck" forward="/jsp/trade/jcmc/project_dgck.jsp" bean="com.caipiao.cpweb.trade.jcmc.TradeMcBean" scope="request" desc="竞彩名次[冠亚军]复式代购确认">
+			<execute method="project_fqck"  />
+		</action>
+		<!-- 竞彩足球相关开始 -->
+		
+		<!-- 足彩发起确认开始 -->
+		<action name="buyconfirm" forward="/jsp/trade/buyconfirm.jsp" bean="com.caipiao.cpweb.trade.buyconfirm.BuyConfirmBean" scope="request" desc="北京单场--发起合买确认">
+			<execute method="project_fqck"  />
+		</action>
+		<!-- 足彩发起确认结束 -->
+		<action name="buyconfirm_ds" forward="/jsp/trade/buyconfirm.jsp" bean="com.caipiao.cpweb.trade.buyconfirm.ds.SlowLotteryBean" scope="request" desc="danshi--upload">
+			<execute method="project_fqck_ds"  />
+		</action>
+		<action name="project_fqsuc_ds" bean="com.caipiao.cpweb.trade.buyconfirm.ds.SlowLotteryBean" scope="request" desc="danshi--upload2">
+			<execute method="set_user_data" />
+			<execute method="project_dscreate"  />
+		</action>
+		<action name="buyconfirm_zh" forward="/jsp/trade/zhuihao.jsp" bean="com.caipiao.cpweb.trade.buyconfirm.BuyConfirmBean" scope="request" desc="zhuihao">
+			<execute method="project_fqzh"  />
+		</action>
+		<!-- 合作静态化页面-->
+		<action name="hezuo" forward="/pp/hezuo.jsp" bean="com.caipiao.cpweb.trade.TradeBean" scope="request" desc="">
+		    <execute method="set_user_data" />
+		</action>
+
+		<!-- 亿起发返利接口-->
+		<action name="yiqifa" forward="" bean="com.caipiao.cpweb.trade.TradeBean" scope="request" desc="">
+		    <execute method="yiqifa" />
+		</action>
+		<action name="queryorder" forward="" bean="com.caipiao.cpweb.trade.TradeBean" scope="request" desc="">
+		    <execute method="set_yiqifa_data" />
+		    <execute method="fquery" group="2" />
+		    <execute method="set_jsontoxml" />
+		</action>
+    </action-mappings>
+</rbc-config>

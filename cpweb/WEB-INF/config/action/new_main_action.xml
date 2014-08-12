@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="gbk"?>
+
+<rbc-config>
+	<action-mappings>
+		<!-- 代理商外链接入口 -->
+		<action name="from" forward="" bean="com.caipiao.cpweb.user.UserBean" scope="request" desc="写入代理商Cookie">
+			<execute method="setComeFrom" />
+		</action>
+    </action-mappings>
+</rbc-config>

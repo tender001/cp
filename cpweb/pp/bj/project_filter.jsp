@@ -13,6 +13,14 @@
 	String[] items = str_matches.split(",");
 	String ishm = (String) request.getAttribute("ishm");
 	String rand = (String) request.getAttribute("rand");
+	String glcc = (String) request.getAttribute("glcc");
+	String[] glccs = glcc.split(",");
+	String selcc = (String) request.getAttribute("selcc");
+	String[] selccs = selcc.split(",");
+	String dmstr = (String) request.getAttribute("dmstr");
+	String danScope = (String) request.getAttribute("danScope");
+	String beforezs = (String) request.getAttribute("beforezs");
+	List<String[]> glCondtionList = (List) request.getAttribute("glCondtionList");
 %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -58,32 +66,88 @@
     <td>比赛时间</td>
     <td>对阵</td>
     <td>投注内容</td>
+    <td>胆</td>
   </tr>
 <%
-for (int j=0;j<items.length;j++){		
-	String mid= items[j];	
-	StringBuffer sb = new StringBuffer();
- 	sb.append("<tr><td>"+maps.get(Integer.parseInt(mid)).getMid()+"</td>");
- 	
- 	sb.append("<td>"+maps.get(Integer.parseInt(mid)).getBt()+"</td>");
- 	sb.append("<td>"+maps.get(Integer.parseInt(mid)).getHn());
- 	if (lotid.equalsIgnoreCase("85")){
- 	sb.append("("+maps.get(Integer.parseInt(mid)).getClose()+")");
- 	}
- 	sb.append(" VS "+maps.get(Integer.parseInt(mid)).getGn()+"</td>");
- 	if(j==0){
- 		sb.append("<td rowspan="+items.length+" style=\"border-left:1px solid #ddd\"><a href=\"/cpdata/pupload/temp/"+rand+"_tmp.txt\" title=\"单式拆分方案下载\" target=\"_blank\" class=\"xga\">方案下载</a></td>");
- 	}
-    sb.append("</tr>");
-	out.print(sb);	
-	sb=null;
-}
-%>
+		try{
+			String[] dm=dmstr.split(",");
+			for (int j=0;j<items.length;j++){		
+				String mid= items[j];	
+				StringBuffer sb = new StringBuffer();
+			 	sb.append("<tr><td>"+maps.get(Integer.parseInt(mid)).getMid()+"</td>");
+			 	
+			 	sb.append("<td>"+maps.get(Integer.parseInt(mid)).getBt()+"</td>");
+			 	sb.append("<td>"+maps.get(Integer.parseInt(mid)).getHn());
+			 	if (lotid.equalsIgnoreCase("85")){
+			 	sb.append("("+maps.get(Integer.parseInt(mid)).getClose()+")");
+			 	}
+			 	sb.append(" VS "+maps.get(Integer.parseInt(mid)).getGn()+"</td>");
+			 	String select ="";
+				for(int k=0;k<glccs.length;k++){
+					if(mid.equals(glccs[k])){
+						select = selccs[k];
+						break;
+					}
+				}
+				sb.append("<td>"+select+"</td>");
+			 	boolean has=false;
+			 	for (int i=0;i<dm.length;i++){
+			 		if(dm[i].equalsIgnoreCase(mid)){
+			 			has=true;
+			 			break;
+			 		}
+			 	}
+			 	if (has){
+			 		sb.append("<td><s style='color:red'>√</s></td>");
+			 	}else{
+			 		sb.append("<td><s>×</s></td>");
+			 	}
+			 	if(j==0){
+			 		sb.append("<td rowspan="+(items.length+1)+" style=\"border-left:1px solid #ddd\"><a href=\"/cpdata/pupload/temp/"+rand+"_tmp.txt\" title=\"单式拆分方案下载\" target=\"_blank\" class=\"xga\">方案下载</a></td>");
+			 	}
+			 	
+			    sb.append("</tr>");
+				out.print(sb);	
+				sb=null;
+			}
+		}catch(Exception e){
+			e.printStackTrace();
+	    }
+		%>
   <tr>
     <td colspan="4" class="sum">投注<font>${beishu}</font>倍&nbsp;&nbsp;&nbsp;&nbsp; 过关方式：<font>${sgtypename}</font></td>
   </tr>
   </tbody>
-</table></div>
+</table>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  			<tr class="first">
+			    <td>步骤</td>
+			    <td>过滤设置条件</td>
+			    <td>注数</td>
+			  </tr>
+		<%
+			try{
+				StringBuffer sbu = new StringBuffer();
+				if(!danScope.equals("")){
+					sbu.append("<tr><td>模糊设胆范围</td><td>"+danScope+"</td><td></td></tr>");
+				}
+				sbu.append("<tr><td>原单</td><td></td><td>"+beforezs+"</td></tr>");
+				for (int m=0;m<glCondtionList.size();m++){		
+					String[] cons = glCondtionList.get(m);	
+					sbu.append("<tr><td>第"+(m+1)+"步</td>");
+					sbu.append("<td>"+cons[0]+"</td>");
+					sbu.append("<td>"+cons[1]+"</td>");
+					sbu.append("</tr>");
+				}
+				out.print(sbu);	
+				sbu=null;
+			}catch(Exception ex){
+				ex.printStackTrace();
+		    }
+		%>
+		</table>
+
+</div>
  <div class="tan_mid">
  <div class="b_th_col">
  <table width="760" border="0" class="col_2">
@@ -149,6 +213,7 @@ for (int j=0;j<items.length;j++){
 <input type="hidden" name="gk" id="gk" value="1">
 <input type="hidden" name="tcbili" id="tcbili" value="2">
 <input type="hidden" name="playtype" id="playtype" value="${playid}">
+<input type="hidden" name="source" id="source" value="${source}">
 </form>
 </div>
 <!--#include virtual="/cc/footer.html"-->

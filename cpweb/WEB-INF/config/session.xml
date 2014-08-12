@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="gbk"?>
+
+<rbc-config>
+    <group id="0" desc="session">
+        <node id="1" ip="192.168.1.29" port="4300" />
+    </group>
+    <group id="1" desc="session">
+        <node id="1" ip="192.168.1.29" port="4300" />
+    </group>
+</rbc-config>

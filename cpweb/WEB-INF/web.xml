@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
+  <display-name>GameService</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+  
+  <context-param>
+    <param-name>conf.dir</param-name>
+    <param-value></param-value>
+  </context-param>
+  <context-param>
+    <param-name>no_login_fids</param-name>
+    <param-value>,u_check_user,pinfo,ps,hs,q,jlist,q_mobile,code,</param-value>
+  </context-param>
+
+  <listener>
+    <listener-class>com.rbc.frame.RbcFrameListener</listener-class>
+  </listener>
+  <servlet>
+    <servlet-name>rbc-action</servlet-name>
+    <servlet-class>com.rbc.frame.core.ActionServlet</servlet-class>
+    <load-on-startup>1</load-on-startup>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>rbc-action</servlet-name>
+    <url-pattern>*.phpx</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>RandCodeServlet</servlet-name>
+	<servlet-class>com.rbc.frame.RandCodeServlet</servlet-class>
+	<load-on-startup>1</load-on-startup>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>RandCodeServlet</servlet-name>
+	<url-pattern>/rand.phpx</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    	<description>This is the description of my J2EE component</description>
+     	<display-name>This is the display name of my J2EE component</display-name>
+       	<servlet-name>FileCastServlet</servlet-name>
+	<servlet-class>com.caipiao.cpweb.upload.FileCastServlet</servlet-class>
+   	<init-param>
+	<description>upload path</description>
+	<param-name>path</param-name>
+	<param-value>/opt/export/cpdata/pupload</param-value>
+	</init-param>
+	<load-on-startup>1</load-on-startup>
+  </servlet>
+  <servlet-mapping>
+	 <servlet-name>FileCastServlet</servlet-name>
+	 <url-pattern>/fupload.phpx</url-pattern>   	    	    	    	    												  	  	 
+  </servlet-mapping>
+
+  <servlet>
+       	<servlet-name>FilterCastServlet</servlet-name>
+	<servlet-class>com.caipiao.cpweb.upload.FilterCastServlet</servlet-class>
+   	<init-param>
+	<description>upload path</description>
+	<param-name>path</param-name>
+	<param-value>/opt/export/cpdata/pupload</param-value>
+	</init-param>
+	<load-on-startup>2</load-on-startup>
+  </servlet>
+  
+  <servlet-mapping>
+	 <servlet-name>FilterCastServlet</servlet-name>
+	 <url-pattern>/filtercast.phpx</url-pattern>   	    	    	    	    												  	  	 
+  </servlet-mapping>
+
+  <filter>
+	<filter-name>Encoding</filter-name>
+	<filter-class>com.rbc.frame.core.EncodingFilter</filter-class>
+	<init-param>
+		<param-name>encoding</param-name>
+		<param-value>UTF-8</param-value>
+	</init-param>
+  </filter>
+  <filter-mapping>
+	<filter-name>Encoding</filter-name>
+	<url-pattern>/*</url-pattern>
+  </filter-mapping>
+  
+  <filter>
+      <filter-name>Session</filter-name>
+      <filter-class>com.rbc.frame.session.RbcSessionFilter</filter-class>
+      <init-param>
+          <param-name>conf.dir</param-name>
+          <param-value></param-value>
+      </init-param>
+      <init-param>
+          <param-name>domain.name</param-name>
+          <param-value>159cai.com</param-value>
+      </init-param>
+      <init-param>
+          <param-name>hash.index</param-name>
+          <param-value>2</param-value>
+      </init-param>
+      <init-param>
+          <param-name>cookie.name</param-name>
+          <param-value>PHPSESSID-UUID</param-value>
+      </init-param>
+  </filter>
+  <filter-mapping>
+      <filter-name>Session</filter-name>
+      <url-pattern>/*</url-pattern>
+  </filter-mapping>
+
+</web-app>

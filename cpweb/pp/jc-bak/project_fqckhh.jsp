@@ -10,14 +10,13 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<link href="/css/159cai.css"  rel="stylesheet" type="text/css" />
-<link href="/css/new159cai.css"  rel="stylesheet" type="text/css" />
-<title>竞彩足球混合投注_发起合买_网上购买_在线投注_网上合买_159彩票网</title>
+<link href="/css/139cai.css"  rel="stylesheet" type="text/css" />
+<title>竞彩足球混合投注_发起合买_网上购买_在线投注_网上合买_139彩票网</title>
 <meta name="Keywords" content="竞彩足球混合投注投注,竞彩足球混合投注代购,竞彩足球混合投注合买,竞彩足球混合投注投注,竞彩足球混合投注代购,竞彩足球混合投注合买" />
-<meta name="Description" content="159彩票网竞彩足球混合投注频道为您提供竞彩足球混合投注（竞彩足球混合投注）购买、竞彩足球混合投注（竞彩足球混合投注）投注、竞彩足球混合投注（竞彩足球混合投注）合买、复式投注等" />
+<meta name="Description" content="139彩票网竞彩足球混合投注频道为您提供竞彩足球混合投注（竞彩足球混合投注）购买、竞彩足球混合投注（竞彩足球混合投注）投注、竞彩足球混合投注（竞彩足球混合投注）合买、复式投注等" />
 <script type="text/javascript" src="/public/jq2.js"></script>
 <script type="text/javascript" src="/public/jq.js"></script>
-<script type="text/javascript" src="/public/159cp.js"></script>
+<script type="text/javascript" src="/public/139cp.js"></script>
 <script type="text/javascript" src="/public/chklogin.js"></script>
 <script type="text/javascript" src="/public/menu.js"></script>
 <script type="text/javascript" src="/jc/js/buy_form_hh.js"></script>
@@ -28,7 +27,6 @@ HashMap<String,String[]> mList = (HashMap<String,String[]>) request.getAttribute
 
 String playid = (String) request.getAttribute("playid");
 String codes = (String) request.getAttribute("newcodes");
-String from = (String) request.getAttribute("source");
 %>
 <body>
 <!-- 头部内容 -->  
@@ -36,20 +34,14 @@ String from = (String) request.getAttribute("source");
 <!--#include virtual="/cc/nav.html"-->
 <!-- 头部内容 --> 
 <div id="container">
-<div class=breadcrumb><p>您现在的位置：<a href="/" title="网上买彩票"><font>159彩票网</font></a> &gt;<a href="/dating/" title="购彩大厅"><font>购彩大厅</font></a> &gt; 
-<%if(from.equals("0")) {%>
-<a href="/jc/jchh.html" title="竞彩足球混合投注"><font>竞彩足球混合投注</font></a>
-<%} else {%>
-<a href="/jc/2x1.html" title="竞彩足球2选1"><font>竞彩足球2选1</font></a>
-<%}%>
-</p></div>
+<div class=breadcrumb><p>您现在的位置：<a href="/" title="网上买彩票"><font>139彩票网</font></a> &gt;<a href="/dating/" title="购彩大厅"><font>购彩大厅</font></a> &gt; <a href="/jc/jchh.html" title="竞彩足球混合投注"><font>竞彩足球混合投注</font></a></p></div>
 <div class="gm_msg">
  <table width="100%" border="0" cellspacing="0" cellpadding="0">
  <colgroup>
   <col width="115" />
   <col width="145" />
-  <col width="280" />
-  <col width="100" />
+  <col width="300" />
+  <col width="80" />
   <col />
  </colgroup>
   <thead><tr>
@@ -60,9 +52,7 @@ String from = (String) request.getAttribute("source");
     <td>赛事</td>
     <td>比赛时间</td>
     <td>对阵</td>
-    <%if(from.equals("0")) {%>
     <td>玩法</td>
-    <%}%>
     <td>投注内容</td>    
   </tr>
 <%
@@ -99,15 +89,10 @@ for (int j=0;j<cs.length;j++){
 	
 	StringBuffer sb = new StringBuffer();
 	String tmprate="";
-	if(from.equals("10")){
-		sb.append("<tr><td title=\""+mb.get(count).getItemid()+"\">"+mb.get(count).getMname()+"</td>");
-	 	sb.append("<td>"+mb.get(count).getBt()+"</td>");
-	 	sb.append("<td>"+mb.get(count).getHn()+" VS "+mb.get(count).getGn()+"</td><td>");
-	}else{
-		sb.append("<tr><td title=\""+mb.get(count).getItemid()+"\" rowspan=\""+ni+"\">"+mb.get(count).getMname()+"</td>");
+	 	sb.append("<tr><td title=\""+mb.get(count).getItemid()+"\" rowspan=\""+ni+"\">"+mb.get(count).getMname()+"</td>");
 	 	sb.append("<td rowspan=\""+ni+"\">"+mb.get(count).getBt()+"</td>");
-	 	sb.append("<td rowspan=\""+ni+"\">"+mb.get(count).getHn()+" VS "+mb.get(count).getGn()+"</td>");
-	}
+	 	sb.append("<td rowspan=\""+ni+"\">"+mb.get(count).getHn()+"("+mb.get(count).getClose()+") VS "+mb.get(count).getGn()+"</td>");
+
 	 	for (int i=0;i<ni;i++){	
 	 		String[] xzstr = xz[i].split("=");
 	 		String pty=xzstr[0];
@@ -115,119 +100,66 @@ for (int j=0;j<cs.length;j++){
 	 		String n2="";
 	 		String n3="";
 	 		String n4="";
-	 		if(from.equals("10")){//2选1
-	 			String n5="";
-	 			if (pty.equalsIgnoreCase("SPF")){
-		 			String[] n1str = n1.split("/");
-		 			for (int m=0;m<n1str.length;m++){
-		 				String n11=n1str[m];
-		 				n3=n11;
-			 			n4=TradeJcBeanImpl.SPFMapname.get(n11);
-			 			if((mb.get(count).getClose()+"").equals("1")){//主+1
-			 				if(n3.equals("3")){n5="--";}else{n5="客胜";}
-			 			}else{
-			 				if(n3.equals("3")){n5="主胜";}else{n5="--";}
-			 			}
-			 			n2=TradeJcBeanImpl.getsp(spv,TradeJcBeanImpl.HHSPMaps.get(n4))+"";
-			 			sb.append(n5+"("+n2+") ");
-			 			tmprate+=n3+"#"+n2+",";
-		 			}
-		 		}else if (pty.equalsIgnoreCase("RSPF")){
-		 			String[] n1str = n1.split("/");
-		 			for (int m=0;m<n1str.length;m++){
-		 				String n11=n1str[m];
-		 				n3=n11;
-			 			n4=TradeJcBeanImpl.RSPFMapname.get(n11);
-			 			if((mb.get(count).getClose()+"").equals("1")){//主+1
-			 				if(n3.equals("3")){n5="主不败";}else{n5="--";}
-			 			}else{
-			 				if(n3.equals("3")){n5="--";}else{n5="客不败";}
-			 			}
-			 			n2=TradeJcBeanImpl.getsp(spv,TradeJcBeanImpl.HHSPMaps.get(n4))+"";
-			 			sb.append(n5+"("+n2+") ");
-			 			tmprate+=n3+"#"+n2+",";
-		 			}
-		 		}
-	 			if(i==ni-1){
+	 		if (pty.equalsIgnoreCase("SPF")){
+	 			if(i>0){sb.append("<tr>");}
+				sb.append("<td>胜平负</td>");
+				sb.append("<td>");
+	 			String[] n1str = n1.split("/");
+	 			for (int m=0;m<n1str.length;m++){
+	 				String n11=n1str[m];
+	 				n3=n11;
+		 			n4=TradeJcBeanImpl.SPFMapname.get(n11);
+		 			n2=TradeJcBeanImpl.getsp(spv,TradeJcBeanImpl.HHSPMaps.get(n4))+"";
+		 			sb.append(n4+"("+n2+") ");
+		 			tmprate+=n3+"#"+n2+",";
+	 			}
 	 			sb.append("</td>");
-				sb.append("</tr>");}
-	 		}else{
-	 			if (pty.equalsIgnoreCase("SPF")){
-		 			if(i>0){sb.append("<tr>");}
-					sb.append("<td>胜平负</td>");
-					sb.append("<td>");
-		 			String[] n1str = n1.split("/");
-		 			for (int m=0;m<n1str.length;m++){
-		 				String n11=n1str[m];
-		 				n3=n11;
-			 			n4=TradeJcBeanImpl.SPFMapname.get(n11);
-			 			n2=TradeJcBeanImpl.getsp(spv,TradeJcBeanImpl.HHSPMaps.get(n4))+"";
-			 			sb.append(n4+"("+n2+") ");
-			 			tmprate+=n3+"#"+n2+",";
-		 			}
-		 			sb.append("</td>");
-					sb.append("</tr>");
-		 		}else if (pty.equalsIgnoreCase("RSPF")){
-		 			if(i>0){sb.append("<tr>");}
-					sb.append("<td>让球胜平负 ("+mb.get(count).getClose()+")</td>");
-					sb.append("<td>");
-		 			String[] n1str = n1.split("/");
-		 			for (int m=0;m<n1str.length;m++){
-		 				String n11=n1str[m];
-		 				n3=n11;
-			 			n4=TradeJcBeanImpl.RSPFMapname.get(n11);
-			 			n2=TradeJcBeanImpl.getsp(spv,TradeJcBeanImpl.HHSPMaps.get(n4))+"";
-			 			sb.append(n4+"("+n2+") ");
-			 			tmprate+=n3+"#"+n2+",";
-		 			}
-		 			sb.append("</td>");
-					sb.append("</tr>");
-		 		}else if (pty.equalsIgnoreCase("JQS")){
-		 			if(i>0){sb.append("<tr>");}
-					sb.append("<td>进球数</td>");
-					sb.append("<td>");
-		 			String[] n1str = n1.split("/");
-		 			for (int m=0;m<n1str.length;m++){
-		 				String n11=n1str[m];
-		 				n3=n11;
-			 			n2=TradeJcBeanImpl.getsp(spv,TradeJcBeanImpl.HHSPMaps.get(n11))+"";
-			 			sb.append(n3+"("+n2+") ");
-			 			tmprate+=n3+"#"+n2+",";
-		 			}
-		 			sb.append("</td>");
-					sb.append("</tr>");
-		 		}else if (pty.equalsIgnoreCase("CBF")){
-		 			if(i>0){sb.append("<tr>");}
-					sb.append("<td>猜比分</td>");
-					sb.append("<td>");
-		 			String[] n1str = n1.split("/");
-		 			for (int m=0;m<n1str.length;m++){
-		 				String n11=n1str[m];
-		 				n3=n11.replace("9:0", "胜其它").replace("9:9", "平其它").replace("0:9", "负其它");
-		 				System.out.println("cbf:n11="+n11);
-						n2=TradeJcBeanImpl.getsp(spv,TradeJcBeanImpl.HHSPMaps.get(n11))+"";
-			 			sb.append(n3+"("+n2+") ");
-			 			tmprate+=n3+"#"+n2+",";
-		 			}
-		 			sb.append("</td>");
-					sb.append("</tr>");
-				}else if (pty.equalsIgnoreCase("BQC")){
-					if(i>0){sb.append("<tr>");}
-					sb.append("<td>半全场</td>");
-					sb.append("<td>");
-		 			String[] n1str = n1.split("/");
-		 			for (int m=0;m<n1str.length;m++){
-		 				String n11=n1str[m];
-		 				n3=n11;
-						n4=TradeJcBeanImpl.BQCMapname.get(n11);
-						n2=TradeJcBeanImpl.getsp(spv,TradeJcBeanImpl.HHSPMaps.get(n11))+"";
-						sb.append(n4+"("+n2+") ");
-			 			tmprate+=n3+"#"+n2+",";
-		 			}
-		 			sb.append("</td>");
-					sb.append("</tr>");
-				}
-	 		}
+				sb.append("</tr>");
+	 		}else if (pty.equalsIgnoreCase("JQS")){
+	 			if(i>0){sb.append("<tr>");}
+				sb.append("<td>进球数</td>");
+				sb.append("<td>");
+	 			String[] n1str = n1.split("/");
+	 			for (int m=0;m<n1str.length;m++){
+	 				String n11=n1str[m];
+	 				n3=n11;
+		 			n2=TradeJcBeanImpl.getsp(spv,TradeJcBeanImpl.HHSPMaps.get(n11))+"";
+		 			sb.append(n3+"("+n2+") ");
+		 			tmprate+=n3+"#"+n2+",";
+	 			}
+	 			sb.append("</td>");
+				sb.append("</tr>");
+	 		}else if (pty.equalsIgnoreCase("CBF")){
+	 			if(i>0){sb.append("<tr>");}
+				sb.append("<td>猜比分</td>");
+				sb.append("<td>");
+	 			String[] n1str = n1.split("/");
+	 			for (int m=0;m<n1str.length;m++){
+	 				String n11=n1str[m];
+	 				n3=n11.replace("9:0", "胜其它").replace("9:9", "平其它").replace("0:9", "负其它");
+	 				System.out.println("cbf:n11="+n11);
+					n2=TradeJcBeanImpl.getsp(spv,TradeJcBeanImpl.HHSPMaps.get(n11))+"";
+		 			sb.append(n3+"("+n2+") ");
+		 			tmprate+=n3+"#"+n2+",";
+	 			}
+	 			sb.append("</td>");
+				sb.append("</tr>");
+			}else if (pty.equalsIgnoreCase("BQC")){
+				if(i>0){sb.append("<tr>");}
+				sb.append("<td>半全场</td>");
+				sb.append("<td>");
+	 			String[] n1str = n1.split("/");
+	 			for (int m=0;m<n1str.length;m++){
+	 				String n11=n1str[m];
+	 				n3=n11;
+					n4=TradeJcBeanImpl.BQCMapname.get(n11);
+					n2=TradeJcBeanImpl.getsp(spv,TradeJcBeanImpl.HHSPMaps.get(n11))+"";
+					sb.append(n4+"("+n2+") ");
+		 			tmprate+=n3+"#"+n2+",";
+	 			}
+	 			sb.append("</td>");
+				sb.append("</tr>");
+			}
 	 	}
  	
  	//25:[胜#2.39,平#3.61,负#3.28]/26:[胜#3.65,平#3.55,负#2.25]/27:[胜#1.95,平#3.86,负#4.40]/28:[胜#1.90,平#3.79,负#4.77]
@@ -241,13 +173,12 @@ ratelist="";
     <td colspan="5" class="sum">投注<font>${beishu}</font>倍&nbsp;&nbsp;&nbsp;&nbsp; 过关方式：<font>${sgtypename}</font>
     <%
     String ismix = (String) request.getAttribute("ismix");
-    if(from.equals("0")) {
 	if(ismix.equals("1")) {
     %>
     	(<font color="red">去除单一玩法串投注</font>)
 	<%} else {%>
     	(<font color="red">允许单一玩法串投注</font>)
-    <%}}%>
+    <%}%>
     </td>
   </tr>
   </tbody>
@@ -313,7 +244,6 @@ ratelist="";
 <input type='hidden' name='allnum' id="allnum" value='${totalmoney}'>
 <input type="hidden" name="IsCutMulit" id="IsCutMulit" value="${IsCutMulit}">
 <input type="hidden" name="ishm" id="ishm" value="${ishm}">
-<input type="hidden" name="source" id="source" value="${source}">
 <input type="hidden" name="playtype" id="playtype" value="${playid}">
 <input type="hidden" name="gk" id="gk" value="1">
 <input type="hidden" name="tcbili" id="tcbili" value="2">
