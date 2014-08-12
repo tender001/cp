@@ -114,6 +114,7 @@ img{vertical-align:top;}
 li.bac{background-image: none !important;}
 .nav1 ul li a{height:38px;display:block;font-size:14px;font-weight:bold;color:#fff;padding:0 15px;float: left;}
 .nav1 ul li a:hover{background: #e52e04;margin: 0 -2px;padding:0 17px;text-decoration: none;color:#fff;}
+.nav1 ul li a.cur{background: #e52e04;margin: 0 -2px;padding:0 17px;text-decoration: none;color:#fff;}
 .nav1 ul li a.a1{padding-right: 22px;}
 .nav1 ul li a.a1:hover{padding-right: 24px;}
 .nav1 ul li s{right: 9px;}
@@ -1887,7 +1888,7 @@ a.n_gz{color:#fff}
  .nwx5time span.span1{/*width:220px;*/}
 .nwx5time span.span2{padding:0 55px 0 10px;}
 .nwx5time span.span4{padding:0 75px 0 0}
-.nwx5time span.span2 b{font-size:36px;font-weight:bold;font-family:"Arial";}/*Helvetica-Condensed-Black-Se*/
+.nwx5time span.span2 b{font-size:36px;font-weight:bold;font-family:"Arial";}
 .nwx5time span.span5{width:78px;height:30px;line-height:30px;border:1px solid #ccc;border-bottom:none;padding-left:10px;background:#fde8d8  url(../images/cai888/nwx5_07.jpg) 66px 10px no-repeat;cursor:pointer;margin-top:5px}
 .nwx5time span.span5c{background:#fde8d8  url(../images/cai888/nwx5_07c.jpg) 66px 10px no-repeat;}
 .nwx5time em{width:28px;height:28px;line-height:28px;display:block;text-align:center;background: url(../images/cai888/nwx5q.png);float:left;margin-right:5px;color:#fff;font-weight:bold;font-size:15px;_display:inline;}
@@ -1945,6 +1946,53 @@ a.sz_cmt{background: url(../images/cai888/nwx5_112.jpg);width:137px;height:33px}
 .ncathgm p input{vertical-align: -2px;_vertical-align: -1px;margin-right:3px;}
 .ncathgm a.a1{display:block;background-image: url(../images/cdbg/gm_11.gif);color: #FFFFFF;font-family: "微软雅黑";font-size: 16px;height: 42px;line-height: 42px;margin:5px auto;text-align: center;width: 190px;border-radius: 4px;}
 .ncathgm a:hover{text-decoration: none;}
+/*start 2014.8.11 时时彩更新*/
+.w_con .nwx5time em,.w_con .nsbool b,.w_con .nsbool b.cur{background: url(../images/ssc_bg/w_bg_1.png);}
+.w_con .nwx5top{border: 0;}
+.nwx5 .nwssctop1 a{padding: 0 16px;}
+.nwx5 .nwssctop1 a.cur{background-color: #088959;}
+.nwx5 .nwssctop1 a:hover{background-color: #088959;}
+.w_con .nwx5{border-top-color: #088959;}
+.w_con .nwx5time{background: url(../images/ssc_bg/w_bg_2.jpg) repeat;height: 42px;border-color: #231a13;}
+.w_con .nwx5time span{color: #fff;line-height: 40px;}
+.w_con .nwx5time span.span3{width: 285px;}
+.w_con .nwx5time font{color: #efd41f;}
+.w_con .nwx5time em{width: 26px;height: 35px;color: #e03537;}
+.w_con .nwx5time em.c1{background-position: 0 0;}
+.w_con .nwx5time em.c2{background-position: -27px 0;}
+.w_con .nwx5time em.c3{background-position: -54px 0;color: #000;}
+.w_con .nwx5time em.c4{background-position: -81px 0;}
+.w_con .nwx5time span.span5{line-height: 30px;border-color: #231a13;margin-top: 11px;background: #058455 url(../images/ssc_bg/nwx5_07.jpg) 66px 10px no-repeat;}
+.w_con .nxmiddle{background: url(../images/ssc_bg/w_bg_2.jpg) repeat;}
+.w_con .nxmiddle h2 p{padding-left: 35px;color: #ccc;float: none;}
+.w_con .nxmiddle h2 p em{color: #efd41f;}
+.w_con .nx3span{width: 965px;/*height: 81px;*/padding:20px 0;margin: 0 auto;background-color: #05a06f;}
+.w_con .nxhm span{height: auto;margin-left: 20px;padding:0 !important;zoom:1;}
+.w_con .nxhm span:after{visibility:hidden;display:block;font-size:0;content:" ";clear:both;height: 0;}
+.w_con .nsbool b,.w_con .nsbool b.cur{width: 60px; height: 80px;background-position: 0 -36px;text-align: left;text-indent: 10px;font-size: 30px;}
+.w_con .nsbool b:hover{box-shadow: 0 0 15px rgba(0,0,0,0.3);}/*03cdff*/
+.w_con .nsbool b.cur{position: relative;top: -16px;left: 0;color: #333;}
+.w_con p.xh_text{color: #ccc;}
+.w_con a.sz_cmt{background: url(../images/ssc_bg/a_but_true.png);}
+.w_con a.sz_cmt.cur{background: url(../images/ssc_bg/a_but_true.png) 0 -33px;}
+.w_con .nxszop{width: auto;background: url(../images/ssc_bg/cai_bottom_1.jpg) left bottom no-repeat;padding-bottom: 28px;zoom:1;}
+.w_con a.qc_xh{color: #ccc;}
+.w_con .nxmiddle{padding-bottom: 0;}
+.w_con .ncath{background: url(../images/ssc_bg/j_gou.jpg);}
+.w_con .ncaltbn a{color: #fff;background: #05a066;border: 1px solid #352c1d;width: 96px;}
+.w_con .ncaltbn a:hover{text-decoration: none;}
+.w_con .ncaltbn span a{width: 46px;}
+.w_con .ncatharea{height: 130px;}
+.w_con .ncathleft p{color: #fff;}
+.w_con .ncathtype{border: 1px solid #362d1e;}
+.w_con .ncathtype span{background-color: #78593e;color: #fff;}
+.w_con .ncathtype label{color: #000;}
+.w_con .ncathgm p{color: #ccc;font-size: 12px;font-weight: 400;}
+.w_con .ncathgm p a{color: #ccc;}
+.w_con .nwx5kj h1 span{padding: 0 12px;cursor: pointer;}
+.w_con .nwx5kj h1 span.cur{background-color: #f60;color: #fff;}
+.w_con .nwx5kj h1{border-bottom: 2px solid #f60;}
+/*end 2014.8.11 时时彩更新*/
 .nwx5kj{border:1px solid #ccc;margin-top:12px;border-right:none}
 .nwx5kj h1{padding-left:20px;font-size:14px;color:#444; background:#f5f5f5;height:35px;line-height:35px;clear:both;border-bottom:1px solid #ccc;border-right:1px solid #ccc;}
 .nwx5kj h1 span{float:left;}
