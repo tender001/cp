@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="gbk"?>
+
+<rbc-config>
+	<action-mappings>
+		<!-- 充值相关开始 -->
+		<action name="addmoney" forward="" bean="com.caipiao.cpweb.bank.BankBean" scope="request" desc="充值接口">
+			<execute method="check_login" />
+			<execute method="set_base_data" />
+			<execute method="applyAccountDeposits" group="1" />
+			<execute method="wapAddMoney" />
+		</action>
+		<!-- 支付宝支付通知 -->
+		<action name="alipaynotify" forward="" bean="com.caipiao.cpweb.bank.BankBean" scope="request" desc="支付宝充值服务端回调">
+			<execute method="com.caipiao.cpweb.wap.Bank_wap_zfb.notify" />
+		</action>
+		<action name="alipayreceive" forward="/pp/wap_receive.jsp" bean="com.caipiao.cpweb.bank.BankBean" scope="request" desc="支付宝充值成功跳转">
+			<execute method="com.caipiao.cpweb.wap.Bank_wap_zfb.receive" />
+		</action>
+		
+    </action-mappings>
+</rbc-config>

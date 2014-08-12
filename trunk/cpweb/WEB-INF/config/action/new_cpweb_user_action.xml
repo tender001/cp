@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="gbk"?>
+
+<rbc-config>
+	<action-mappings>
+
+		<action name="reg" forward="" bean="com.caipiao.cpweb.user.UserBean" scope="request" desc="用户注册">
+			<execute method="checkYzm" />
+			<execute method="set_base_data" />
+			<execute method="registerUser" group="1" />
+			<execute method="set_login_status" />
+		</action>
+		
+		<action name="login" forward="" bean="com.caipiao.cpweb.user.UserBean" scope="request" desc="代理登录">
+			<!--execute method="checkYzm"/-->
+			<execute method="set_base_data" />
+			<execute method="login" group="1"/>
+			<execute method="set_login_status"/>
+		</action>
+		
+		<action name="qp" forward="" bean="com.caipiao.cpweb.user.UserBean" scope="request" desc="分页查询">
+			<execute method="sqlcheck_login"/>
+			<execute method="queryPage" group="1"/>
+		</action>
+		
+		<action name="q" forward="" bean="com.caipiao.cpweb.user.UserBean" scope="request" desc="一般查询">
+			<execute method="sqlcheck_login"/>
+			<execute method="query" group="1"/>
+			<execute method="queryresult" />
+		</action>
+
+		<action name="u" forward="" bean="com.caipiao.cpweb.user.UserBean" scope="request" desc="修改操作">
+			<execute method="sqlcheck_login"/>
+			<execute method="update" group="1"/>
+		</action>
+		
+		<action name="p" forward="" bean="com.caipiao.cpweb.user.UserBean" scope="request" desc="存储过程">
+			<execute method="sqlcheck_login"/>
+			<execute method="callSp" group="1"/>
+		</action>
+		
+		<action name="cl" forward="" bean="com.caipiao.cpweb.user.UserBean" scope="request" desc="检查是否登录">
+			<execute method="chk_login" />
+		</action>
+
+		<action name="lout" forward="" bean="com.caipiao.cpweb.user.UserBean" scope="request" desc="用户退出">
+			<execute method="login_out" />
+		</action>
+		
+		<action name="mui" forward="" bean="com.caipiao.cpweb.user.UserBean" scope="request" desc="修改用户信息">
+			<execute method="sqlcheck_login"/>
+			<execute method="modifyUserInfo" group="1"/>
+		</action>
+		<action name="abuy" forward="" bean="com.caipiao.cpweb.user.UserBean" scope="request" desc="设置自动跟单">
+			<execute method="check_login" />
+			<execute method="addAuto" group="1" />
+		</action>
+		<action name="qabuy" forward="" bean="com.caipiao.cpweb.user.UserBean" scope="request" desc="查询单笔自动跟单">
+			<execute method="set_user_data" />
+			<execute method="queryAutoBuy" group="1" />
+		</action>
+		
+		<action name="chklogin" forward="" bean="com.caipiao.cpweb.user.UserBean" scope="request" desc="检查是否登陆">
+			<execute method="check_login" />
+		</action>
+        <action name="ubind" forward="" bean="com.caipiao.cpweb.user.UserBean" scope="request" desc="用户发起绑定">
+            <execute method="check_login" />
+			<execute method="user_bind"/>
+			<execute method="bindUser" group="1" />
+		</action>
+		
+		<action name="ubindck" forward="" bean="com.caipiao.cpweb.user.UserBean" scope="request" desc="用户绑定验证">
+			<execute method="user_bindyz"/>
+			<execute method="bindUseryz" group="1" />
+		</action>
+		
+		<action name="forgetpwd" forward="" bean="com.caipiao.cpweb.user.UserBean" scope="request" desc="忘记密码找回方式">
+			<execute method="userforget" group="1" />
+		</action>
+		
+		<action name="usergetpwd" forward="" bean="com.caipiao.cpweb.user.UserBean" scope="request" desc="用户忘记密码提交">
+			<execute method="forgetpwd" />
+			<execute method="usergetpwd" group="1" />
+		</action>
+		
+		<action name="usergetpwdyz" forward="" bean="com.caipiao.cpweb.user.UserBean" scope="request" desc="用户忘记密码信息验证">
+			<execute method="usergetpwdyz" group="1" />
+		</action>
+
+		<!-- 充值相关开始 -->
+		<action name="addmoney" forward="" bean="com.caipiao.cpweb.bank.BankBean" scope="request" desc="充值接口">
+			<execute method="check_login" />
+			<execute method="set_base_data" />
+			<execute method="applyAccountDeposits" group="1" />
+			<execute method="addmoney" />
+		</action>
+		
+		<action name="addmoney2" forward="" bean="com.caipiao.cpweb.bank.BankBean" scope="request" desc="充值接口">
+			<execute method="check_login" />
+			<execute method="set_base_data" />
+			<execute method="applyAccountDeposits" group="1" />
+			<execute method="addmoney2" />
+		</action>
+		
+		<action name="vtf" forward="" bean="com.caipiao.cpweb.user.UserBean" scope="request" desc="代理商用户申请转款">
+            <execute method="check_login" />
+			<execute method="userTransfer" group="1" />
+		</action>
+		<action name="vtfa" forward="" bean="com.caipiao.cpweb.user.UserBean" scope="request" desc="代理商用户向下级转款">
+            <execute method="check_login" />
+			<execute method="userAgentTransfer" group="1" />
+		</action>
+		<action name="time" forward="" bean="com.caipiao.cpweb.user.UserBean" scope="request" desc="时间">
+            <execute method="time" />
+		</action>
+		<!-- 快钱支付通知 -->
+		<action name="kqnotify" forward="" bean="com.caipiao.cpweb.bank.BankBean" scope="request" desc="快钱充值服务端回调">
+			<execute method="com.caipiao.cpweb.bank.Bank_kq.notify" />
+		</action>
+		<action name="kqreceive" forward="/pp/bank_receive.jsp" bean="com.caipiao.cpweb.bank.BankBean" scope="request" desc="快钱充值成功跳转">
+			<execute method="com.caipiao.cpweb.bank.Bank_kq.receive" />
+		</action>
+		<!-- 支付宝支付通知 -->
+		<action name="alipaynotify" forward="" bean="com.caipiao.cpweb.bank.BankBean" scope="request" desc="支付宝充值服务端回调">
+			<execute method="com.caipiao.cpweb.bank.Bank_zfb.notify" />
+		</action>
+		<action name="alipayreceive" forward="/pp/bank_receive.jsp" bean="com.caipiao.cpweb.bank.BankBean" scope="request" desc="支付宝充值成功跳转">
+			<execute method="com.caipiao.cpweb.bank.Bank_zfb.receive" />
+		</action>
+		<!-- 19pay支付通知 -->
+		<action name="jxpaynotify" forward="" bean="com.caipiao.cpweb.bank.BankBean" scope="request" desc="19pay充值服务端后台回调">
+			<execute method="com.caipiao.cpweb.bank.Bank_19pay.notify" />
+		</action>
+		<!-- umpay支付通知 -->
+		<action name="unotify" forward="" bean="com.caipiao.cpweb.bank.BankBean" scope="request" desc="umpay充值服务端回调">
+			<execute method="com.caipiao.cpweb.bank.Bank_umpay.notify" />
+		</action>
+		<action name="ureceive" forward="/pp/bank_receive.jsp" bean="com.caipiao.cpweb.bank.BankBean" scope="request" desc="umpay充值成功跳转">
+			<execute method="com.caipiao.cpweb.bank.Bank_umpay.receive" />
+		</action>
+		
+		<action name="drawmoney" forward="" bean="com.caipiao.cpweb.bank.BankBean" scope="request" desc="提款接口">
+			<execute method="check_login" />
+			<execute method="takeMoney" group="1" />
+		</action>
+		
+		
+		<action name="agent_2" forward="" bean="com.caipiao.cpweb.user.UserBean" scope="request" desc="代理设置返点">
+			<execute method="check_login" />
+			<execute method="setfandian" group="1" />
+		</action>
+		
+		<action name="agent_1" forward="" bean="com.caipiao.cpweb.user.UserBean" scope="request" desc="查询下级返点信息">
+			<execute method="check_login" />
+			<execute method="checkfandian" group="1" />
+		</action>
+		<action name="allylogin" forward="" bean="com.caipiao.cpweb.login.AllyLogin" scope="request" desc="便捷登录接口">
+			<execute method="allylogin" />
+		</action>
+		<action name="alipay" forward="" bean="com.caipiao.cpweb.login.AllyLogin" scope="request" desc="便捷登录-支付宝-回调">
+			<execute method="alipay" />
+			<execute method="login" group="1" />
+			<execute method="sendbind" />
+			<execute method="result" />
+		</action>
+		<action name="qq" forward="" bean="com.caipiao.cpweb.login.AllyLogin" scope="request" desc="便捷登录-QQ-回调">
+			<execute method="qq" />
+			<execute method="login" group="1" />
+			<execute method="result" />
+		</action>
+		<action name="qq_caibei" forward="" bean="com.caipiao.cpweb.login.AllyLogin" scope="request" desc="便捷登录-QQ彩贝-回调">
+			<execute method="qqcaibei" />
+			<execute method="login" group="1" />
+			<execute method="result" />
+		</action>
+		<action name="allyinfo" forward="" bean="com.caipiao.cpweb.login.AllyLogin" scope="request" desc="便捷登录-信息">
+			<execute method="allyinfo" />
+		</action>
+		<action name="allybind" forward="" bean="com.caipiao.cpweb.login.AllyLogin" scope="request" desc="便捷登录-绑定">
+			<execute method="checkYzm" />
+			<execute method="bind" group="1" />
+			<execute method="sendbind" />
+			<execute method="bindResult" />
+		</action>
+		<action name="alipaylogistics" forward="" bean="com.caipiao.cpweb.login.AllyLogin" scope="request" desc="支付宝物流查询-回调">
+			<execute method="logistics" />
+		</action>
+		
+		<!-- 支付宝账户通绑定 -->
+		<action name="alipayGoBind" forward="" bean="com.caipiao.cpweb.user.UserBean" scope="request" desc="支付宝账户通绑定">
+			<execute method="alipay_go_bind" />
+			<execute method="alipayBind_result" />
+		</action>
+		
+		<action name="alipaybind" forward="" bean="com.caipiao.cpweb.user.UserBean" scope="request" desc="支付宝账户通绑定">
+			<execute method="alipayBind"/>
+			<execute method="alipayBind_result" />
+		</action>
+		
+		<action name="webalipaybind" forward="" bean="com.caipiao.cpweb.user.UserBean" scope="request" desc="网站--支付宝账户通绑定">
+			<execute method="sqlcheck_login"/>
+			<execute method="set_user_data"/>
+			<execute method="alipayBind_result" />
+		</action>
+		
+		<action name="bind_notify" forward="" bean="com.caipiao.cpweb.user.UserBean" scope="request" desc="支付宝账户通绑定">
+			<execute method="alipay_notify" />
+			<execute method="alipayNotify" group="1" />
+			<execute method="alipayNotify_result" />
+		</action>
+		
+		<!-- 连连支付 -->
+		<action name="querycard" forward="" bean="com.caipiao.cpweb.bank.BankBean" scope="request" desc="充值接口">
+			<execute method="queryCard" />
+		</action>
+		<action name="llreceive" forward="/pp/bank_receive.jsp" bean="com.caipiao.cpweb.bank.BankBean" scope="request" desc="llpay充值成功跳转">
+			<execute method="com.caipiao.cpweb.bank.Bank_ll.receive" />
+		</action>
+		<action name="llnotify" forward="" bean="com.caipiao.cpweb.bank.BankBean" scope="request" desc="llpay充值服务端回调">
+			<execute method="com.caipiao.cpweb.bank.Bank_ll.notify" />
+		</action>
+    </action-mappings>
+</rbc-config>

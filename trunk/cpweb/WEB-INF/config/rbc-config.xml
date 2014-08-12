@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="gbk"?>
+
+<rbc-config>
+
+	<group id="1" desc="用户">
+	  	<node id="1" ip="127.0.0.1" port="5000" /> 
+	  	<node id="2" ip="127.0.0.1" port="5000" />
+	</group>
+	<group id="2" desc="用户">
+	        <node id="1" ip="127.0.0.1" port="5000" />
+	        <node id="2" ip="127.0.0.1" port="5000" />
+	</group>
+
+	<action-modules>
+		<module name=""      file="action/new_main_action.xml"/>
+		<module name="phpu"  file="action/new_cpweb_user_action.xml"/>
+		<module name="phpt" file="action/new_cpweb_trade_action.xml"/>
+		<module name="pwap" file="action/cpwap_action.xml"/>
+	</action-modules>
+
+	<service-config>
+	</service-config>
+
+	<message-resources parameter="MessageResources" />
+</rbc-config>
