@@ -289,7 +289,13 @@ Class( 'BuyForm', {
 		var codestr=param.codes.split("|");
 		var playname = codestr[0];
 		var codess = codestr[1];
-		var ggstr = codestr[2];
+		var ggstr="";
+		if(codestr.length==4){
+			ggstr=codestr[2]+"|"+codestr[3];
+		}else{
+			 ggstr=codestr[2];
+		}
+		
 		
 		var codes = codess.split(",");
 		var danma=[];
