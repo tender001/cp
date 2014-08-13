@@ -112,7 +112,7 @@ div.center .body{width:95%;}
 .zx .zj{margin-bottom: 9px;}
 .zx .zj .body{height: 185px;overflow: hidden;}
 .zx table td,.zx table th{height:37px;text-align: center;border-bottom: 1px dashed #ddd;}
-.zx table th{font-weight: 400;color: #f00;}
+.zx table th{font-weight: 400;color: #f00;text-align: right;}
 .zx .cn li{float: left;width: 62px;height: 74px;margin-right: 4px;display: inline;}
 .zx .cn li img{width: 100%;height: 100%;}
 .zx .cn .body{padding: 10px 0;*padding:14px 0;}
