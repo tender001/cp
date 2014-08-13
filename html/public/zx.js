@@ -45,6 +45,9 @@
     	        				V.css({left: "auto",top: Z, width: F, position: "fixed"});
     	        				};
     	        			}
+    	        			if(Z < 0){
+    	        				 Y.get("#right_area").setStyle('z-index: 1; top:0;  left: auto;position: static;');
+    	        			}
     	        			Y.get("#right_area").setStyle('z-index: 1;');
     	        		};
     	            	
