@@ -308,7 +308,7 @@ Class('Loginer', {// 登陆器
  	        					);
                             	 $("[mark=acdown]").hover(function(){ //我的账户滑入
                              		$(this).addClass("hover").find("dd").show();
-                             		
+                             		$("#tuiguangs").show();
                          			$("[mark=acdown] dd").clearQueue().animate({
                          				height:225
                          				})
