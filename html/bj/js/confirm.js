@@ -34,6 +34,43 @@ Class( 'ConfirmForm', {
 
 		this.param.isCutMulit = 0;
 	},
+	glcheck : function() {
+ 		this.getParam();
+		var codes =this.param.codes+"";
+		var totalmoney =this.param.totalmoney;
+		var sgtypename =this.param.sgtype+"";
+		if (codes == '') {
+			this.alert('请选择好您要投注的比赛。');
+		} else if (sgtypename == '') {
+			this.alert('请选择好您要投注的过关方式。');
+		} else if (totalmoney == 0) {
+			this.alert('您好，投注的总金额不能为￥0.00元。');
+		}else {
+			var codes_arr = codes.split("/");
+			if(codes_arr.length > 12){
+				this.alert('对不起，在线过滤最多支持12场比赛。');
+				return false;
+			}
+			var gg_arr = sgtypename.split(",");
+			if(gg_arr.length > 1){
+				this.alert('对不起，只能选择一种过关方式进行过滤！');
+				return false;
+			}else{
+				if(sgtypename=="27"){
+    				this.alert('对不起，只支持【N串1】的过关方式进行过滤！（N>=2）');
+    				return false;
+				}else{
+					var x = sgtypename.split("串");
+					if(x[1]>1){
+	    				this.alert('对不起，只支持【N串1】的过关方式进行过滤！（N>=2）');
+	    				return false;
+					}					
+				}
+			}
+			return true;
+		}
+		return false;
+	},
 
 	check : function() {
 		
@@ -75,7 +112,7 @@ Class( 'ConfirmForm', {
 	doFilter : function() {
 		this.getParam();
 		this.param.ishm = 1;
-		if (this.check() == true) {
+		if (this.glcheck() == true) {
 			var url = '/phpt/bj/step_7.phpx';
 			this.submit(url);
 		}
