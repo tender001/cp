@@ -522,7 +522,7 @@ a.gofilter2:hover {
     background-position: -1px -59px;
 }
 a.goyh {
-    background: url(../images/njc/jcy_38.jpg) repeat scroll -95px -1px ;
+    background: url(../images/njc/jcy_38.jpg) repeat scroll -88px -1px ;
     display: block;
     float: left;
     height: 26px;
@@ -536,7 +536,7 @@ a.goyh2 {
     background-position: -95px -59px;
 }
 a.goyh:hover {
-    background-position: -95px -29px;
+    background-position: -88px -29px;
 }
 a.goyh2:hover {
     background-position: -95px -59px;
@@ -1581,7 +1581,7 @@ html .buyfimsg td input.text {height: 22px;line-height:22px;padding: 0; vertical
 .buyfimsg textarea {border: 1px solid #DDDDDD;color: #444444;float: left;font-size: 12px;height: 100px;margin-top: 11px;padding: 5px;width: 510px;}
 a.buyfa {background: #ff7213;border:1px solid #CF5955;color: #FFFFFF;display: block;font-family: "微软雅黑";font-size: 16px;height: 42px;line-height: 42px;margin:7px auto 2px;text-align: center;width: 190px;}
 a.buyfa:hover{background:#ff6600}
-.buyfimsg p.p2{font-size:12px;line-height:18px;height:24px}
+.buyfimsg p.p2{font-size:12px;line-height:18px;height:24px;text-align: left;}
 .buyfimsg p.p2 a{color:#145fab}
 .buyfimsg p.p2 a:hover{color:#ff0000; text-decoration:underline}
 .buyfimsg p.p1{text-align:Center;padding-top:8px}
