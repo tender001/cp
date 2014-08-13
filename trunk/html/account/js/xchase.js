@@ -116,10 +116,10 @@ Class({
 	   		    	var bcode = r[0].ccodes.split(";");
 	   		    	var xcode = "";
 	   		    	bcode.each(function(i,o){
-	   		    		if(o%3==0){
+	   		    		if((o+1)%3==0){
 	   		    			xcode += i.substring(0,i.indexOf(":")) + "<br/>";
 	   		    		}else{
-	   		    			xcode += i.substring(0,i.indexOf(":")) + ";";
+	   		    			xcode += i.substring(0,i.indexOf(":")) + "；";
 	   		    		}
 	   		    	});
 	   		    	$("#zh_code").append(xcode);
