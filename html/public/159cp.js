@@ -1552,11 +1552,11 @@ Class({
 //	},function(){
 //		$(this).removeClass("hover");
 //	});
-//	$(".tab .title span").mouseover(function() {
-//		$(this).removeClass().addClass('hover').siblings().removeClass('hover');
-//		var a=$(this).index();//console.log(a);
-//		$(this).parent().siblings('.bod').children().removeClass().eq(a).addClass('hover');
-//	});
+	$(".tab .title span").mouseover(function() {
+		$(this).removeClass().addClass('hover').siblings().removeClass('hover');
+		var a=$(this).index();//console.log(a);
+		$(this).parent().siblings('.bod').children().removeClass().eq(a).addClass('hover');
+	});
     	
     	$("[mark=hezuodown] dd,[mark=gcdown] dd,div.nav1_buy div.m_l,[mark=bfdown] div.xia,[mark=zqdown] div.xia,[mark=acdown] dd").css({
     		"height":0,
@@ -1602,7 +1602,7 @@ Class({
     	$("[mark=bfdown]").hover(function(){ //导航比分直播滑入
     		$(this).addClass("hover").find("div.xia").show();
 			$("[mark=bfdown] div.xia").clearQueue().animate({
-				height:90
+				height:123
 				})
 		},function(){
 			
