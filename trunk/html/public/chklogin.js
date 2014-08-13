@@ -306,6 +306,19 @@ Class('Loginer', {// 登陆器
  	        							copyurl(Y.get("#pcurl").val());
  	        						}
  	        					);
+                            	 $("[mark=acdown]").hover(function(){ //我的账户滑入
+                             		$(this).addClass("hover").find("dd").show();
+                             		
+                         			$("[mark=acdown] dd").clearQueue().animate({
+                         				height:225
+                         				})
+                         		},function(){
+                         			
+                         			$("[mark=acdown] dd").animate({
+                         				height:0
+                         				});
+                         			$(this).removeClass("hover").find("dd").hide();
+                         		});
                             	 Y.get("#fzurl2").click(function(){	
 	        							copyurl2(Y.get("#murl").val());
 	        						}
