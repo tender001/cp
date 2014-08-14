@@ -184,9 +184,9 @@ Class(
                               
                               if (isEnd) {
                             		  timebar.html('<i class="red">'+(msg || '已截止')+'</i>');
-                            		  this.showchange(gid);
+                            	
                                       Class.config('isEnd', false);
-                                      Y.getcurrentissue(gid);
+//                                      Y.getcurrentissue(gid);
                               }else{
                                   timebar.html( ctpl.format.apply(tpl, times).replace(/\b\d\b/g,'0$&'))
                               }                                
@@ -843,7 +843,7 @@ Class(
 							if(rt.cnickid=='******'){
 								html += '<td>--</td>';
 							}else{
-								html += '<td><a class="x_xq" href="http://www.159cai.com/from.phpx?comeFrom=25196&backurl=' + $_sys.getlotdir(gameid)+$_sys.url.viewpath+'?lotid='+gameid+'&projid='+rt.hid + '" target="_blank">参与</a></td>';
+								html += '<td><a class="x_xq" href="' + $_sys.getlotdir(gameid)+$_sys.url.viewpath+'?lotid='+gameid+'&amp;projid='+rt.hid + '" target="_blank">参与</a></td>';
 							}html += '</tr>';
 							$(html).appendTo($("#" + toId));
 						});
@@ -870,7 +870,7 @@ Class(
             items: '#szctab span',
            
 //            focusCss: ' hover',
-            contents: '#11x5_1,#11ydj_1,#ssc_1',
+            contents: '#11x5_1,#11ydj_1',
         	delay: 300
         });
     	$("#szctab span").hover(function(){
@@ -900,8 +900,8 @@ Class(
         x5Tabs = this.lib.Tabs({
         	items: '#11x5span i',
             contents: '#x1,#x2,#x3,#x4',
-            focusCss: 'cur',
-        	delay: 300
+            focusCss: 'cur'
+//        	delay: 300
         });
         x5Tabs.onchange = function (a, b){
         	if(b == "0"){
@@ -924,8 +924,8 @@ Class(
         ydjTabs = this.lib.Tabs({
             items:'#11ydjspan i',
             contents: '#y1,#y2,#y3,#y4',
-            focusCss: 'cur',
-        	delay: 300
+            focusCss: 'cur'
+        	
         });
 
     }
@@ -934,64 +934,7 @@ Class(
 });
 
 
-	rengou = function(lotid,projid,id,lnum){
-		Y.postMsg('msg_login', function (){
-			var buynum = $("#" + id).val();
-			if(buynum == ''){
-				Y.alert('您好，认购份数不能为空！');
-				return false;
-			}
-			if(buynum <= 0 || Y.getInt(buynum) != buynum){
-				Y.alert('您好，认购份数必须为大于等于1的整数！');
-				return false;
-			}
-			
-			if(Y.getInt(buynum) > lnum){
-				Y.alert('您好，认购份数不能大于剩余份数！');
-				return false;
-			}
-			
-			dobuy = function(){
-				Y.alert('您好， 正在提交您的请求，请稍等...', false, true);
-		    	Y.postMsg('msg_login', function (){	
-			        Y.ajax(
-			        {
-						 url: $_trade.url.pjoin,
-						 type:'POST',
-						 data:{
-							gid:lotid,
-							hid:projid,
-							bnum:buynum
-						 },
-			            end:function(d)
-			            {
-			            	var obj = eval("(" + d.text + ")");
-		  					var code = obj.Resp.code;
-		  					var desc = obj.Resp.desc; 
-		        			Y.alert.close();
-		        			if (code == "0") {        				
-		        				Y.popBuyOk(Y.C('userName'),lotid,projid);
-//		        				page(Class.C("pn"));
-		        				this.postMsg('msg_update_userMoney');//刷新余额，如果跳转，可能被浏览器取消                            
-		        			} else {
-		        				if (code=="6"){
-		        					Y.addMoney();
-		        				}else{
-		        					Y.alert('对不起，认购失败,请重新认购！'+desc);
-		        				}
-		        				
-		        			}
-			            },
-		        		error : function() {
-		        			Y.alert("网络故障, 请检查您的帐户再重新投注!");
-		        			return false;
-		        		}
-			        });   
-		    	});
-			};
-			Y.confirm("您好，本次认购金额为"+buynum+"元，请确认！",dobuy,''); 
-		});
-	};
+
   
 
 
