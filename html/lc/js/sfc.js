@@ -1366,7 +1366,7 @@
     	        					V.css({left: "auto",top: Z-9, width: F, position: "fixed"});
     	        				}
     	        			}
-    	        			Y.get("#titleTable_r").setStyle('z-index: 1;');
+    	        			Y.get("#titleTable_r").setStyle('z-index: 1; top:0;  left: auto;position: static;');
     	        		}
     	            	
     	             }else{//停止浮动对齐
