@@ -27,8 +27,13 @@ Class({
 	},
 	 submitbind:function(){
 	    	P=this;
-	    	this.get('#submit').click(function() {                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     
+	    	this.get('#submit').click(function() { 
+	    		var pn = 1;// 页码
+    			var ps = 15;// 页面大小
+    			var tp = 0;// 总页数
+    			var tr = 0;// 总记录数
 	    			var ps = $("input[name='pages']:checked").val();// 页面大小
+	    			$("#page_div").hide();
 	    			P.getlist(($("#lotid").val()||0),1, ps, 0, 0);
 	    		});
 	    	
@@ -65,6 +70,7 @@ Class({
 	  	data += "&" + $_user.key.tr + "=" + tr;
 	  	data += "&" + $_user.key.qtype + "=" + $("#qtype").val();
 	  	Y.get("#nocount").hide();
+	  	$("#touzhulist").hide();
 	    var html = "";
 
 	  	Y.ajax({
@@ -93,8 +99,13 @@ Class({
 	  				if(tr==0){
 						Y.get("#nocount").show();
 						$("#touzhulist").html("");
+						Y.get("#page_div").hide();
 					}else{
+						Y.get("#nocount").hide();
+						var s=Y.get("#lotid").val();
+						if(s<10){s="0"+s}
 						if(!this.isArray(r)){r=new Array(r);}
+						var lx=1;
 						r.each(function(rt,o) {
 		  					var rec = rt.rec;
 		  					var nickid = rt.nickid;
@@ -137,6 +148,107 @@ Class({
 		  				});
 						$("#touzhulist").html(html);
 	  					P.showpageno(gid,pn,ps,tp,tr);
+	  					$("#nocount").hide();
+						$("#touzhulist").html(html);	
+						
+						var fn="P.showlist";
+						var maxshow=5;
+						var pagehtml='<ul><li style="line-height:27px;color:#444;padding-right:10px">共'+tr+'条</li><li class="disabled PagedList-skipToFirst"  ><a onclick=\"' + fn + '(1,'+ps+','+tp+','+tr+');\"  href="javascript:void(0)" >首页</a></li>';
+						pagehtml += '<li class="PagedList-skipToNext"><a onclick=\"' + fn + '('+(pn-1>0?(pn-1):1)+','+ps+','+tp+','+tr+');\" href="javascript:void(0)">上一页</a></li>';
+						var min=0;
+						var max=0;
+						
+						if (tp > maxshow){
+						var pageTemp=parseInt(pn*1/maxshow);
+
+						
+						max = pageTemp*maxshow+maxshow;
+						min = pageTemp*maxshow;
+						
+						if(max>tp){
+						max=tp;
+						}
+						if(pn>min){min=min+1;}
+						}else{
+						min = 1;
+						max = tp;
+						}
+						
+
+						
+						for (var i=min;i<max*1+1;i++){
+						if (i==pn){
+						pagehtml+='<li class="active"><a href="javascript:void(0);" id="'+i+'" class="a4" onclick=\"' + fn + '('+i+','+ps+','+tp+','+tr+');">' + i + '</a></li>';
+						}else{
+							pagehtml+='<li><a href="javascript:void(0);" id="'+i+'" class="a3" onclick=\"' + fn + '('+i+','+ps+','+tp+','+tr+');">' + i + '</a></li>';
+						}
+						}
+//						showjoin(\''+lotid+'\',\''+projid+'\','+ps+','+(pn+1>tp?tp:(pn+1))+')
+						
+						pagehtml+='<li class="PagedList-skipToNext"><a onclick=\"' + fn + '('+(pn+1>tp?tp:(pn+1))+','+ps+','+tp+','+tr+');\"  href="javascript:void(0)">下一页</a></li>';
+						pagehtml+='<li class="disabled PagedList-skipToNext"><a onclick=\"'+ fn+'(' +tp+','+ps+','+tp+','+ tr+');" href="javascript:void(0)"> 末页</a></li><ul>';
+						$("#page_div").html(pagehtml);
+						
+						
+						
+						
+						
+						
+//						var maxshow=5;
+//						
+//						var pagehtml='<a class="a1" style="margin-right:5px" onclick=\"' + fn + '(1,'+ps+','+tp+','+tr+');\"  href="javascript:void(0)"">首页</A>';
+//						pagehtml += '<a class="a2" style="margin-right:5px" title="上一页 " onclick=\"' + fn + '('+i+','+ps+','+tp+','+tr+');\" href="javascript:void(0)">上一页</A>';
+//						var min=0;
+//						var max=0;
+//						if ( tp > maxshow){
+//						var pageTemp=parseInt(pn*1/maxshow);
+//						max = pageTemp*maxshow+maxshow;
+//						min = pageTemp*maxshow;
+//						
+//						if(max> tp){
+//						max= tp;
+//						}
+//						if(pn>min){
+//							min=min+1;
+//						}
+//
+//						}else{
+//						min = 1;
+//						max = tp;
+//						}
+//						for (var i=min;i<max*1+1;i++){
+//						if (i==pn){
+//							pagehtml+='<a href="javascript:void(0);" id="'+i+'" class="a4" onclick=\"' + fn + '('+i+','+ps+','+tp+','+tr+');\">' + i + '</a>';
+//						}else{
+//							pagehtml+='<a href="javascript:void(0);" id="'+i+'" class="a3" onclick=\"' + fn + '('+i+','+ps+','+tp+','+tr+');\">' + i + '</a>';
+//						}
+//						}
+//						pagehtml+='<span class="ac">第<INPUT onkeydown="if(event.keyCode==13){page(Y.getInt(this.value));return false;}" id=govalue class="ac" onkeyup="this.value=this.value.replace(/[^\\d]/g,\'\');if(this.value>'+tp+')this.value='+tp+';if(this.value<=0)this.value=1"  name=page>页</span><a class="go"
+//						href="#" onclick=\"' + fn + '(Y.getInt($(\'#govalue\').val()),'+ps+','+tp+','+tr+');\"></a><a class="a2" style="margin-left:10px" onclick=\"' + fn + '('+(pn+1>tp?tp:(pn+1))+','+ps+','+tp+','+tr+');\"  href="javascript:void(0)">下一页</a><a class="a1" style="margin-left:5px" onclick=\"' + fn + '('+tp+','+ps+','+tp+','+tr+');\" href="javascript:void(0)">尾页</a><span class="gy">共'+tp+'页，'+tr+'条记录</span>';
+						$("#page_div").html(pagehtml);
+					   
+					    if(pn==min&&min-maxshow>0){
+					    	
+					    	$("#"+pn+"").click(function(){
+					    		P.showlist(pn-maxshow>=0?(pn-maxshow):maxshow,ps,tp,tr);
+					    	});
+					    	}else if(min-maxshow==0){
+					    	$("#"+pn+"").click(function(){
+					    		P.showlist(1,ps,tp,tr);
+					    	});
+					    	} ;
+//					    $("#govalue").val(pn);
+						
+						
+//						var pagehtml='<a href="javascript:void(0);" class="a1" style="margin-right:5px" onclick=\"' + fn + '(1,'+ps+','+tp+','+tr+');\">首页</a>'+
+//						' <a href="javascript:void(0);" class="a2" style="margin-right:5px" onclick=\"' + fn + '('+(pn-1>0?(pn-1):1)+','+ps+','+tp+','+tr+');\">上一页</a>'+
+//						' <a href="javascript:void(0);" class="a2" style="margin-left:10px" onclick=\"' + fn + '('+(pn+1>tp?tp:(pn+1))+','+ps+','+tp+','+tr+');\">下一页</a>'+
+//						' <a href="javascript:void(0);" class="a1" style="margin-left:5px" onclick=\"' + fn + '('+tp+','+ps+','+tp+','+tr+');\">尾页</a>'+
+//						' <span><input type="text"  name="n_page" id="n_page"/><a href="javascript:void(0);" class="a1" style="margin-left:5px"  onclick=\"' + fn + '(Y.getInt($(\'#n_page\').val()),'+ps+','+tp+','+tr+');\">跳转</a>共'+tp+'页，'+tr+'条记录</span>';
+						
+						$("#touzhulist").show();
+						$("#page_div").show();
+						
 					}
 	  			} else {
 	  				if (code=="1"){
@@ -146,6 +258,8 @@ Class({
 					}else{
 						$("#touzhulist").html(html);
 						Y.get("#nocount").hide();
+						$("#page_div").hide();
+
 					}
 	  			}
 	  		},
