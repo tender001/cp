@@ -1346,10 +1346,12 @@ Class('SPUpdate', {
     	        				if(isIE6){
     	        					V.css({left: "auto",top: Z+$(window).scrollTop(), width: F,position: "absolute"});
     	        				}else{
-    	        					V.css({left: "auto",top: Z-9, width: F, position: "fixed"});
+    	        					V.css({left: "auto",top: Z, width: F, position: "fixed"});
     	        				}
     	        			}
-    	        			Y.get("#titleTable_r").setStyle('z-index: 1;');
+    	        			
+    	        			
+    	        			Y.get("#titleTable_r").setStyle('z-index: 1;top:0;  left: auto;position: static;');
     	        		}
     	            	
     	             }else{//停止浮动对齐
