@@ -105,7 +105,7 @@ div.center .body{width:95%;height:320px;}
 .center .body li p span{display: inline-block;width: 46px; height: 18px;line-height: 18px;text-align: center;color: #fff;background-color: #f60;vertical-align: middle;margin-right: 12px;position: relative;_margin-top: 5px;}
 .center .body li p span em{position: absolute;top: 18px;left: 49%;background-position: -164px -177px; width: 6px;height: 3px;}
 .center .body li div{clear:both;height: 32px; line-height: 34px;font-size: 14px;color: #8c8c8c;overflow: hidden;white-space: nowrap;text-overflow:ellipsis;}
-.center .body li div a{margin-right: 16px;}
+.center .body li div a{margin-right: 16px;/*float:left;_display:inline;*/}
 .center .body li a:hover{color: #e62e04 !important;}
 
 .zx{float: right;width: 223px;}
