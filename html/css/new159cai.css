@@ -2033,7 +2033,7 @@ transition: all 0.2s ease-in;}
 .pok dl dd.dd1{margin-right: 75px;}
 .w_con .pok dl dd.ddd{width: 630px;height: 16px;line-height: 16px;background-color: #05a06f;text-align: left;text-indent: -14px;padding: 8px 0;}
 .pok dl dd.cur{position: relative;top: -8px;left: 0;}
-.pok dl dd.ddd input{vertical-align: -3px;margin: 0 3px 0 28px;}
+.pok dl dd.ddd input{vertical-align: -3px;margin: 0 3px 0 28px;_vertical-align: -1px;}
 .xh_duizi .pok dl.pok_hua dt{height: 120px;width: 65px;}
 .xh_duizi .pok dl.pok_hua dd{width: auto;height: 67px;background: none;margin-bottom: 24px;padding-left: 30px;_padding-left: 27px;}
 .xh_duizi .pok dl.pok_hua dd.dd2{width: 57px;background: url(../images/ssc_bg/pok_bg.png) -190px 0;}
