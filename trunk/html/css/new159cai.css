@@ -1993,6 +1993,7 @@ a.sz_cmt{background: url(../images/cai888/nwx5_112.jpg);width:137px;height:33px}
 .w_con .nwx5kj h1 span{padding: 0 12px;cursor: pointer;}
 .w_con .nwx5kj h1 span.cur{background-color: #f60;color: #fff;}
 .w_con .nwx5kj h1{border-bottom: 2px solid #f60;}
+.w_con .nsbool b{margin-right: 11px;}
 /*近期开奖*/
 .w_con .nxtable tr th{background: #057e57;color: #fff;height: 32px;}
 .w_con .nxtable tr td{background: #05a06f;color: #fff;height: 32px;font-size:14px;border: 0;}
@@ -2006,7 +2007,7 @@ a.sz_cmt{background: url(../images/cai888/nwx5_112.jpg);width:137px;height:33px}
 .w_con .nxtable tr td i,.w_con .nxtable tr td s,.w_con .nxtable tr td cite{width: 21px;height: 21px;line-height: 21px;display: inline-block;background-color: #fff;color: #000;}
 .w_con .nxtable tr td s{background-color: #efd41f;margin-right: 3px;}
 .w_con .nxtable tr td cite{font-style: normal;background-color: #fb0000;margin-right: 3px;}
-.w_con .p_time{text-align: left;}
+.w_con .p_time{text-align: left;padding-left: 15px;}
 .w_con .p_time p{color: #fff;float: none;padding: 0;}
 .w_con .p_time strong{width: 315px;height: 5px;display: block;background-color: #ccc;overflow: hidden;}
 .w_con .p_time em{height: 5px;display: block;background-color: #efd41f;overflow: hidden;}
@@ -2028,7 +2029,7 @@ transition: all 0.2s ease-in;}
 .pok dl.pok_yl dt{background:  url(../images/ssc_bg/poker_ico.png) -102px -57px no-repeat;}
 .pok dl.pok_yl dd.dd1{color: #efd41f;}
 .pok dl dd.dd1{margin-right: 75px;}
-.w_con .pok dl dd.ddd{width: 630px;height: 32px;line-height: 32px;background-color: #05a06f;text-align: left;text-indent: -14px;}
+.w_con .pok dl dd.ddd{width: 630px;height: 16px;line-height: 16px;background-color: #05a06f;text-align: left;text-indent: -14px;padding: 8px 0;}
 .pok dl dd.cur{position: relative;top: -8px;left: 0;}
 .pok dl dd.ddd input{vertical-align: -2px;margin: 0 3px 0 28px;}
 .xh_duizi .pok dl.pok_hua dt{height: 120px;width: 65px;}
@@ -2038,7 +2039,7 @@ transition: all 0.2s ease-in;}
 .xh_duizi .pok dl dd span.right{}
 .xh_duizi .pok dl dd span.right i{width: 32px;height: 40px;display: block;position: absolute;top: 21px;left: 10px;background: url(../images/ssc_bg/poker_ico.png) -157px 0 no-repeat;}
 /*.xh_duizi .pok dl dd.ddd{margin: -20px 0 0;}*/
-.xh_shunzi .pok dl.pok_hua dt{height: 220px;}
+.xh_shunzi .pok dl.pok_hua dt{height: 130px;}
 .xh_shunzi .pok dl.pok_hua dd.dd2{background-position: -190px -68px;}
 /*end 2014.8.11 时时彩更新*/
 .nwx5kj{border:1px solid #ccc;margin-top:12px;border-right:none}
