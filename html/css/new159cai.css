@@ -1971,6 +1971,7 @@ a.sz_cmt{background: url(../images/cai888/nwx5_112.jpg);width:137px;height:33px}
 .w_con .nxhm span{height: auto;margin-left: 20px;padding:0 !important;zoom:1;}
 .w_con .nxhm span:after{visibility:hidden;display:block;font-size:0;content:" ";clear:both;height: 0;}
 .w_con .nsbool b,.w_con .nsbool b.cur{width: 60px; height: 80px;background-position: 0 -36px;text-align: left;text-indent: 10px;font-size: 30px;}
+.w_con .nsbool b{margin-right: 11px;color: #333;font-weight:400;font-family: "宋体";}
 .w_con .nsbool b:hover{box-shadow: 0 0 15px rgba(0,0,0,0.3);}/*03cdff*/
 .w_con .nsbool b.cur{position: relative;top: -16px;left: 0;color: #333;}
 .w_con p.xh_text{color: #ccc;}
@@ -1979,7 +1980,7 @@ a.sz_cmt{background: url(../images/cai888/nwx5_112.jpg);width:137px;height:33px}
 .w_con .nxszop{width: auto;background: url(../images/ssc_bg/cai_bottom_1.jpg) left bottom no-repeat;padding-bottom: 28px;zoom:1;}
 .w_con a.qc_xh{color: #ccc;}
 .w_con .nxmiddle{padding-bottom: 0;}
-.w_con .ncath{background: url(../images/ssc_bg/j_gou.jpg);}
+.w_con .ncath{background: url(../images/ssc_bg/j_gou.jpg) repeat;border-bottom: 1px solid #000;}
 .w_con .ncaltbn a{color: #fff;background: #05a066;border: 1px solid #352c1d;width: 96px;}
 .w_con .ncaltbn a:hover{text-decoration: none;}
 .w_con .ncaltbn span a{width: 46px;}
@@ -1993,7 +1994,6 @@ a.sz_cmt{background: url(../images/cai888/nwx5_112.jpg);width:137px;height:33px}
 .w_con .nwx5kj h1 span{padding: 0 12px;cursor: pointer;}
 .w_con .nwx5kj h1 span.cur{background-color: #f60;color: #fff;}
 .w_con .nwx5kj h1{border-bottom: 2px solid #f60;}
-.w_con .nsbool b{margin-right: 11px;}
 /*近期开奖*/
 .w_con .nxtable tr th{background: #057e57;color: #fff;height: 32px;}
 .w_con .nxtable tr td{background: #05a06f;color: #fff;height: 32px;font-size:14px;border: 0;}
@@ -2020,6 +2020,7 @@ a.sz_cmt{background: url(../images/cai888/nwx5_112.jpg);width:137px;height:33px}
 -moz-transition: all 0.2s ease-in;
 -o-transition: all 0.2s ease-in;
 transition: all 0.2s ease-in;}
+.pok dl dd:hover{box-shadow: 0 0 15px rgba(0,0,0,0.4);}
 .pok dl.pok_hua dd{height: 128px;background: url(../images/ssc_bg/pok_bg.png);}
 .pok dl.pok_hua dd small{display: block;width: 37px;height: 38px;margin: 40px auto 0;background: url(../images/ssc_bg/poker_ico.png);}
 .pok dl.pok_hua dd small.d1{background-position: -38px 0;}
@@ -2031,7 +2032,7 @@ transition: all 0.2s ease-in;}
 .pok dl dd.dd1{margin-right: 75px;}
 .w_con .pok dl dd.ddd{width: 630px;height: 16px;line-height: 16px;background-color: #05a06f;text-align: left;text-indent: -14px;padding: 8px 0;}
 .pok dl dd.cur{position: relative;top: -8px;left: 0;}
-.pok dl dd.ddd input{vertical-align: -2px;margin: 0 3px 0 28px;}
+.pok dl dd.ddd input{vertical-align: -3px;margin: 0 3px 0 28px;}
 .xh_duizi .pok dl.pok_hua dt{height: 120px;width: 65px;}
 .xh_duizi .pok dl.pok_hua dd{width: auto;height: 67px;background: none;margin-bottom: 24px;padding-left: 30px;_padding-left: 27px;}
 .xh_duizi .pok dl.pok_hua dd.dd2{width: 57px;background: url(../images/ssc_bg/pok_bg.png) -190px 0;}
@@ -2041,6 +2042,9 @@ transition: all 0.2s ease-in;}
 /*.xh_duizi .pok dl dd.ddd{margin: -20px 0 0;}*/
 .xh_shunzi .pok dl.pok_hua dt{height: 130px;}
 .xh_shunzi .pok dl.pok_hua dd.dd2{background-position: -190px -68px;}
+.w_con .ncathgm a.a1{width: 180px;background: url(../images/ssc_bg/btn-buy.jpg);text-indent: -999em;}
+.w_con .kc_zjz{border: 0;}
+.w_con .xh_text em{color: #efd41f;}
 /*end 2014.8.11 时时彩更新*/
 .nwx5kj{border:1px solid #ccc;margin-top:12px;border-right:none}
 .nwx5kj h1{padding-left:20px;font-size:14px;color:#444; background:#f5f5f5;height:35px;line-height:35px;clear:both;border-bottom:1px solid #ccc;border-right:1px solid #ccc;}
