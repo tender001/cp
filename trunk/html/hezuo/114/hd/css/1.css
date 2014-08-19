@@ -67,9 +67,9 @@ th,td{text-align: center;}
 .w_bann{display: block;width: 100%;height: 60px;position: relative;margin-top: 10px;overflow: hidden;}
 .w_bann ul li{height: 100%;float: left;}
 .w_bann ul li img{width: 100%;height: 100%;}
-.w_bann p{position: absolute;right: 2%;bottom: 10px;}
-.w_bann p span{display: inline-block;width: 25px;height: 6px;margin-right: 6px;border: 1px solid #aaa;background: #eee;cursor: pointer;}
-.w_bann p span.cur{background-color: rgba(64,147,191,0.3);}
+.w_bann p{position: absolute;right: 2%;bottom: 5px;}
+.w_bann p span{display: inline-block;width: 18px;height: 4px;margin-right: 6px;border: 1px solid #aaa;background-color: rgba(64,147,191,0.3);cursor: pointer;}
+.w_bann p span.cur{background: #eee;}
 /* */
 .w-zc,.w-se{width: 250px;height: 70px;color: #333;}
 .w-zc .w-pic{width: 56px;height: 63px;border: 1px solid #a3a3a1;text-align: center;float: left;margin: 3px 0 0 3px;_display: inline;}
