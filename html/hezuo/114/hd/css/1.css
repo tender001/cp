@@ -31,8 +31,8 @@ th,td{text-align: center;}
 .w-tab .bod p.kj-time{font-size: 14px;}
 .w-tab .bod a.btn{float: right;width: 68px;height: 20px;line-height: 20px;color: #fff;background: #f60;text-align: center;font-size: 12px;}
 .w-tab .bod p.cai-jc a{background-color: #ddd;color: #333;}
-.w-tab .bod p b{display: inline-block;width: 20px;height: 20px;line-height: 20px;text-align: center;color: #fff;background: #e95d3a url(../images/bg/114-ball.png) no-repeat;margin-right: 5px;}
-.w-tab .bod p b.blue{background-position: -21px 0;background-color: #2474e3;}
+.w-tab .bod p b{display: inline-block;width: 20px;height: 20px;line-height: 20px;text-align: center;color: #fff;background: url(../images/bg/114-ball.png) no-repeat;margin-right: 5px;}
+.w-tab .bod p b.blue{background-position: -21px 0;}
 .cai-jc span{color: #f00;}
 .ev-focus{zoom:1;}
 .ev-focus:after{visibility:hidden;display:block;font-size:0;content:" ";clear:both;}
