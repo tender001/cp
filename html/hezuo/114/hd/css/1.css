@@ -47,6 +47,7 @@ th,td{text-align: center;}
 .ev-focus .fr a.c3{background-color: #ddd;color: #333;}
 .cai-news{width: 315px;margin: 15px auto 0;color: #8c8c8c;font-size: 14px;height: 32px;line-height: 35px;border-top: 1px dashed #ccc;overflow: hidden;white-space: nowrap;text-overflow:ellipsis;}
 .cai-news a{color: #3c3c3c;margin-right: 12px;}
+.cai-news a:hover{text-decoration: underline;}
 /*mobile*/
 .m-tab{width: 100%;height: auto;min-width: 318px;border-width: 1px 0;}
 .m-tab h3{height: 43px;font-size: 1.16em;}
