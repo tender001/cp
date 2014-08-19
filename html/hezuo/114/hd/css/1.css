@@ -48,7 +48,7 @@ th,td{text-align: center;}
 .cai-news{width: 315px;margin: 15px auto 0;color: #8c8c8c;font-size: 14px;height: 32px;line-height: 35px;border-top: 1px dashed #ccc;overflow: hidden;white-space: nowrap;text-overflow:ellipsis;}
 .cai-news a{color: #3c3c3c;margin-right: 12px;}
 /*mobile*/
-.m-tab{width: 100%;height: auto;min-width: 318px;}
+.m-tab{width: 100%;height: auto;min-width: 318px;border-width: 1px 0;}
 .m-tab h3{height: 43px;font-size: 1.16em;}
 .m-tab h3 span{width: 33.3%;height: 42px;line-height: 42px;}
 .m-tab .bod{margin: 20px auto;}
@@ -64,7 +64,11 @@ th,td{text-align: center;}
 .m-tab .ev-focus .fr{width: 22.8%;}
 .m-tab .ev-focus .fr a{width: 94.3%;height: 2.16em;line-height: 2.16em;margin-bottom: 10px;}
 .m-tab .cai-news{margin-top: 10px;}
-
+.w_bann{display: block;width: 100%;height: 60px;position: relative;margin-top: 10px;}
+.w_bann ul li{height: 100%;float: left;}
+.w_bann ul li img{width: 100%;height: 100%;}
+.w_bann p{position: absolute;right: 2%;bottom: 10px;}
+.w_bann p span{display: inline-block;width: 25px;height: 6px;margin-right: 6px;border: 1px solid #aaa;background: #ddd;cursor: pointer;}
 /* */
 .w-zc,.w-se{width: 250px;height: 70px;color: #333;}
 .w-zc .w-pic{width: 56px;height: 63px;border: 1px solid #a3a3a1;text-align: center;float: left;margin: 3px 0 0 3px;_display: inline;}
@@ -81,5 +85,5 @@ th,td{text-align: center;}
 .w-se p b{display: block;width: 100%;color: #fff;height: 24px;line-height: 24px;}
 .w-se p b em{display: inline-block;width: 20px;height: 20px;margin-right: 2px;background: url(../images/bg/114-ball.png);text-align: center;line-height: 20px;}
 .w-se p b em.blue{background-position: -21px 0;}
-.w-se p strong{display: block;height: 24px;line-height: 24px;}
+.w-se p strong{display: block;height: 21px;padding-top: 3px;}
 
