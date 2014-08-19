@@ -3,6 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <title>Document</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
     <link rel="stylesheet" href="css/1.css" type="text/css">
     <script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
     <style>
@@ -62,10 +66,17 @@
             <a href="#">双色球095期推荐分析</a>
         </p> -->
     </div>
+    <section class="w_bann">
+        <ul>
+            <li><a href="#"><img src="http://m.159cai.com/images/index_header/4g.png" alt=""></a></li>
+            <li><a href="#"><img src="http://m.159cai.com/images/index_header/4g1.png" alt=""></a></li>
+        </ul>
+        <p><span class="cur"></span><span></span></p>
+    </section>
 </body>
 <script>
     $(function(){
-        $(".w-tab h3 span").mouseover(function(){
+        $(".w-tab h3 span").click(function(){
             $(this).addClass("hover").siblings().removeClass("hover");
             $(".bod .not-see").eq($(this).index()).addClass("hover").siblings().removeClass("hover");
         });
