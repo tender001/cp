@@ -58,7 +58,6 @@ Class(
     		}
      	
     	}); 
-     	 //loadmain(lotid,except);
     }
     
 	
