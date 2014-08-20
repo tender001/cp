@@ -42,7 +42,7 @@ $(document).ready(function(){
 		if(Class.C('lotid')==30){
 			_lotid=85;
 		}else if(Class.C('lotid')==31){
-			_lotid=90;
+			_lotid=70;
 		}else if(Class.C('lotid')==32){
 			_lotid=95;
 		}else{
