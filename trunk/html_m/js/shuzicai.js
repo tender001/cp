@@ -1022,7 +1022,7 @@ function preBuy(bk) {
         data.desc="手机代购";
         data.pnum = 0;
      	data.tnum = money;
-		data.type = 1;
+		data.type = 0;
         data.wrate = 0;
      }
      
