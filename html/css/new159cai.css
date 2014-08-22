@@ -566,7 +566,7 @@ a.goyh2:hover {
 .dt_toplist a:hover{ background-position:-102px 0;text-decoration: none;}
 .dt_toplist p{text-align:Center;color:#444;line-height:30px;}
 .dt_cist{ /*background:url(../images/159/dting_39.jpg) 0 29px  repeat-x;*/margin-top:10px}
-.dt_cist h2{height:38px;width:116px;font: bold 16px/38px "宋体";text-align:center;color:#fff;background-color: #f60;/* background:url(../images/159/dting_20.jpg)*/}
+.dt_cist h2{height:35px;width:116px;font: bold 16px/35px "宋体";text-align:center;color:#fff;background-color: #f60;/* background:url(../images/159/dting_20.jpg)*/}
 .dt_cm{border:1px solid #ccc;border-top:3px solid #f60;padding-bottom:10px;*zoom:1}
 .dt_cn{width:180px;height:150px;margin:10px 0 0 15px;float:left;border:1px solid #ddd;_margin-left:12px; position:relative;overflow:visible}
 .dt_cn h4{position:absolute;right:2px;top:-4px;width:65px;height:39px;background-image:url(../images/159/dting_27.gif)}
@@ -595,7 +595,7 @@ a.goyh2:hover {
 .dt_cd{background-color:#e3e3e3}
 .dt_cd p{padding-top:22px}
 .dt_cd a{width:74px;height:26px;line-height:26px;display:block;margin:12px auto;color:#fff;text-align:center;font-size:12px;font-weight: bold;background-color: #f60;/* background:url(../images/159/dting_35.jpg);*/}
-.dt_cd a:hover{text-decoration: none;}
+.dt_cd a:hover{text-decoration: none;color: #fff;}
 .tb_sfc_s{top:80px;height:80px;}
 .tb_sfc_on{border:none;height:auto;line-height:34px}
 .redball b{background-position:-6px -4px}
