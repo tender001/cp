@@ -64,8 +64,22 @@ Class(
 		},function() {
 			$(this).stop(true,false).animate({"opacity":"0.2"},300);
 		});
+		$("#flash_outer").hover(function() {
+			$("#flash_outer i").css("display","block");
+		},function() {
+			$("#flash_outer i").css("display","none");
+		});
+		$("#flash_outer .prev").click(function() {
+			index -= 1;
+			if(index == -1) {index = len - 1;}
+			showPics(index);
+		});
 
-
+		$("#flash_outer .next").click(function() {
+			index += 1;
+			if(index == len) {index = 0;}
+			showPics(index);
+		});
 		$("#flash_pic").css("width",(sWidth) * (len));
 		$("#flash_pic").css("position","absolute");
 		$("#flash_outer").hover(function() {
