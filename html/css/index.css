@@ -37,7 +37,7 @@
 .m_mid .ad div{position: absolute;bottom: 10px;left: 0;height: 13px;width: 100%;text-align: center;}
 .m_mid .ad div span{width: 12px;height: 12px;display: inline-block;margin-left: 5px;background: url(../images/bg/page.png) no-repeat;cursor: pointer;opacity: 0.7;-moz-opacity: 0.7;_filter: alpha(opacity=70);}
 .m_mid .ad div span.cur{opacity: 1;-moz-opacity: 1;_filter: alpha(opacity=100);}
-.m_mid .ad .prev,.m_mid .ad .next{display: none;width: 28px;height: 60px;position: absolute;background: url(../images/bg/index-pn.png)no-repeat;}
+.m_mid .ad .prev,.m_mid .ad .next{display: none;width: 28px;height: 60px;position: absolute;background: url(../images/bg/index-pn.png) no-repeat;_filter:alpha(opacity=40);}
 .m_mid .ad .prev{left: 0;top: 100px;background-position: 0 0;}
 .m_mid .ad .next{right: 0;top: 100px;background-position: -32px 0;}
 .m_mid .ad .prev.hover{background-position: 0 -62px;}
