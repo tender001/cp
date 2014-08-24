@@ -10,7 +10,7 @@ $(function(){
 	//查询
 	$("#td_submit").click(function(){
 		var pn=1;//页码
-		var ps=$("input[name='pages']:checked").val();//页面大小
+		var ps=10;//页面大小
 		var tp = 0;//总页数
 		var tr = 0;//总记录数
 		
