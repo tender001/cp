@@ -1531,11 +1531,67 @@ showduizhen =function (lotid,expect,projid,type,codes,cp){
 			if(lotid == 70){//混投
 				var oldcodes = codes;
 				codes = codes.replace("$",",");
+				
+				if(codes.split(";").length>2){
+					 var wfname=codes.split("|")[0];
+					 ncode = codes.split(";");
+					 var bet_match=[];
+					 ncode.each(function(n,m){
+						 var s=m;
+						 var bet =n.split(",");
+						 bet.each(function(b,i){
+							 if(i==0){
+								 bet_match.push(b.split("|")[1]);
+							 }else{
+								 bet_match.push(b.split("|")[0]);
+							 }
+							
+						 })
+					 })
+//	
+				    var new_bet=[], bet_expect=[];
+					codes=$_base_s.uniq(bet_match).join(',');
+					codes.split(",").each(function(a,b){
+					
+						bet_expect.push(a.split(">")[0]);
+					});
+					bet_expect=$_base_s.uniq(bet_expect);
+					
+					bet_expect.each(function(a,b){
+						var blen=0;
+						var bets="";
+						codes.split(",").each(function(aq,bq){
+//							if(aa==aq[){}
+							
+							
+							if(a==aq.split(">")[0]){
+								
+								if(blen>0){
+									bets+="+"+aq.split(">")[1];
+								}else{
+									bets+=aq.split(">")[1];
+								}
+								
+								blen++;
+							}else{
+							}
+							
+				});
+						new_bet.push(a+">"+bets);
+			});
+					codes="HH|"+$_base_s.uniq(new_bet).join(',')+"|";
+				}else{
+					codes = codes.replace("$",",");
+					
+				} 
 				var dancodes="";
 				var danexpect = [];
 				if(oldcodes.indexOf("$")>-1){
 					dancodes = oldcodes.split("$")[0].split("|")[1];
 				}
+				
+			
+				
 				var dancode = dancodes.split(",");
 				for (var int = 0; int < dancode.length; int++) {
 					danexpect.push(dancode[int].split(">")[0]);
@@ -1887,7 +1943,7 @@ showduizhen =function (lotid,expect,projid,type,codes,cp){
 						isdystr = "允许单一玩法串投注";
 					}
 					var gg=""
-					var ccode=codes.split(";");
+					var ccode=oldcodes.split(";");
 					if(ccode.length>1){
 						var codearr=[];
 						ccode.each(function(c){
