@@ -61,6 +61,7 @@ Class(
 
 		$("#focus .preNext").css("opacity",0.2).hover(function() {
 			$(this).stop(true,false).animate({"opacity":"0.8"},300);
+			
 		},function() {
 			$(this).stop(true,false).animate({"opacity":"0.2"},300);
 		});
@@ -80,6 +81,11 @@ Class(
 			if(index == len) {index = 0;}
 			showPics(index);
 		});
+		$("#flash_outer i").hover(function(){
+			$(this).addClass("hover");
+		},function(){
+			$(this).removeClass("hover");
+		})
 		$("#flash_pic").css("width",(sWidth) * (len));
 		$("#flash_pic").css("position","absolute");
 		$("#flash_outer").hover(function() {
