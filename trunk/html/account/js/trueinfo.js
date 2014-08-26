@@ -83,7 +83,7 @@ Class({
 		   		    var code = obj.Resp.code;
 		   		    var desc = obj.Resp.desc;
 					if (code == "0") {	
-						smrz.close();
+//						smrz.close();
 						Y.alert(desc);
 					 	/*Y.ajax({
 					 	     url:'/phpu/p.phpx?fid=u_hdssq',
