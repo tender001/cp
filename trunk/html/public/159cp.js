@@ -1552,6 +1552,7 @@ Class({
 //	},function(){
 //		$(this).removeClass("hover");
 //	});
+    
 	$(".tab .title span").mouseover(function() {
 		$(this).removeClass().addClass('hover').siblings().removeClass('hover');
 		var a=$(this).index();//console.log(a);
@@ -1645,7 +1646,10 @@ Class({
     	$(this).parent().addClass('cur').siblings().removeClass("cur");
     	}
     	}); 
-		
+		$("[mark=djclose]").click(function(){
+			
+			$("[mark=djdiv]").hide();
+		})
 
     }
 
