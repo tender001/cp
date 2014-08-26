@@ -1,0 +1,6 @@
+User-agent:*
+Disallow: /css/    
+Disallow: /js/
+Disallow: /user/
+Sitemap: http://www.159cai.com/sitemap.xml
+Sitemap: http://www.159cai.com/about/sitemap.html

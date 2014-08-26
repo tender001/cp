@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="baidu-site-verification" content="bW0m1Di1kA" />
+<title>【159彩票网】网上买彩票_竞彩网_足彩_福彩_最安全可靠的网上购彩平台</title>
+<meta name="keywords" content="159彩票网，网上买彩票，竞彩网，彩票合买" />
+<meta name="description" content="159彩票网(www.159cai.com)是一家专业从事网上彩票投注合买的交易平台，提供最新福彩，足彩，体彩，竞技彩，快彩资讯，包括彩票专家分析，彩票开奖，彩票分析预测，投注攻略与技巧，往期彩票信息查询等。159彩票网最安全可靠的网上购彩平台！" />
+
+<!-- <link rel="stylesheet" type="text/css" href="/css/basic.css"> -->
+
+<link rel="stylesheet" type="text/css" href="/css/new159cai.css">
+<link rel="stylesheet" type="text/css" href="/css/index.css">
+<script type="text/javascript" src="/public/jq.js"></script>
+<script type="text/javascript" src="/public/jq2.js"></script>
+<script type="text/javascript" src="/public/159cp.js"></script>
+	
+<script type="text/javascript" src="/public/chklogin.js"></script>
+</head>
+<body>
+<!-- 头部内容 -->  
+<!--#include virtual="/cc/header.html"-->
+<!--#include virtual="/cc/homenav.html"-->
+<!-- 头部内容 -->
+
+<div class="m_mid">
+<!--#include virtual="/dedeinc/syimges.html"-->
+		
+		
+		<!-- 快速购彩 -->  
+		<!--#include virtual="/cc/cms/kuaisugoucai.html"-->
+		<!-- 快速购彩  -->
+		
+			<script type="text/javascript">
+						function SsqRandom() {
+							var _interval = setInterval(function() {
+								SsqNum();
+							}, 80);
+							$("#errordlt,#errorssq").hide();
+							setTimeout(function() {
+								clearInterval(_interval);
+							}, 900);
+						}
+						function DltRandom() {
+							var _interval = setInterval(function() {
+								DltNum();
+							}, 80);
+							$("#errordlt,#errorssq").hide();
+							setTimeout(function() {
+								clearInterval(_interval);
+							}, 900);
+						}
+						function SsqNum() {
+
+							var a = [];
+							var b = [];
+							var c = [];
+							var n;
+							var m;
+							for ( var i = 1; i < 17; i++) {
+								c.push(i < 10 ? "0" + i : i);
+							}
+							m = c.splice(Math.floor(Math.random() * c.length),
+									1);
+							$("#ssqcodes em input")[6].value = m
+							c.push(m);
+							for ( var i = 1; i < 34; i++) {
+								a.push(i < 10 ? "0" + i : i);
+							}
+							for ( var i = 0; i < 6; i++) {
+								n = a.splice(Math.floor(Math.random()
+										* a.length), 1)
+								b.push(n);
+							}
+							$("#ssqcodes em input")[0].value = b.sort()[0];
+							$("#ssqcodes em input")[1].value = b.sort()[1];
+							$("#ssqcodes em input")[2].value = b.sort()[2];
+							$("#ssqcodes em input")[3].value = b.sort()[3];
+							$("#ssqcodes em input")[4].value = b.sort()[4];
+							$("#ssqcodes em input")[5].value = b.sort()[5];
+						}
+						
+						function SsqBuy() {
+
+							var ary = new Array(
+									$("#ssqcodes em input")[0].value,
+									$("#ssqcodes em input")[1].value,
+									$("#ssqcodes em input")[2].value,
+									$("#ssqcodes em input")[3].value,
+									$("#ssqcodes em input")[4].value,
+									$("#ssqcodes em input")[5].value);
+							var nary = ary.sort();
+							for ( var i = 0; i < nary.length; i++) {
+								if (nary[i] == nary[i + 1] ) {
+									$("#errorssq").html("出现重复号码：" + nary[i]).show();
+									
+									return false; 
+								}else if($("#ssqcodes em input")[i].value > 33 || $("#ssqcodes em input")[i].value < 1 ) {
+									
+									$("#errorssq").html("红球投注号码有误" ).show();
+									return false;
+								}else if (isNaN($("#ssqcodes em input")[i].value)){
+									$("#errorssq").html("红球投注号码有误：" + $("#ssqcodes em input")[i].value).show();
+									return false;
+								}
+								
+							}
+							
+							if (isNaN($("#ssqcodes em input")[6].value) || $("#ssqcodes em input")[6].value > 16
+									|| $("#ssqcodes em input")[6].value < 1 ) {
+								$("#errorssq").html("篮球投注号码有误：" + $("#ssqcodes em input")[6].value).show();
+								return false;
+							}
+							
+							nary = nary + "|" + $("#ssqcodes em input")[6].value;
+								window.open ('/shuangseqiu/index.html?codes='+nary+'');  
+// 							location.href = '/shuangseqiu/index.html?codes='
+// 									+ nary + '';
+
+						}
+						function DltNum() {
+
+							var a = [];
+							var b = [];
+							var c = [];
+							var d = [];
+							var n;
+							var m;
+							for ( var i = 1; i < 13; i++) {
+								c.push(i < 10 ? "0" + i : i);
+							}
+							for ( var i = 0; i < 2; i++) {
+								m = c.splice(Math.floor(Math.random()
+										* c.length), 1);
+								d.push(m);
+							}
+							$("#dltcodes em input")[5].value = d.sort()[0];
+							$("#dltcodes em input")[6].value = d.sort()[1];
+
+							for ( var i = 1; i < 36; i++) {
+								a.push(i < 10 ? "0" + i : i);
+							}
+							for ( var i = 0; i < 6; i++) {
+								n = a.splice(Math.floor(Math.random()
+										* a.length), 1)
+								b.push(n);
+							}
+							$("#dltcodes em input")[0].value = b.sort()[0];
+							$("#dltcodes em input")[1].value = b.sort()[1];
+							$("#dltcodes em input")[2].value = b.sort()[2];
+							$("#dltcodes em input")[3].value = b.sort()[3];
+							$("#dltcodes em input")[4].value = b.sort()[4];
+
+						}
+
+						function DltBuy() {
+
+							var ary = new Array(
+									$("#dltcodes em input")[0].value,
+									$("#dltcodes em input")[1].value,
+									$("#dltcodes em input")[2].value,
+									$("#dltcodes em input")[3].value,
+									$("#dltcodes em input")[4].value);
+							var nary = ary.sort();
+							for ( var i = 0; i < nary.length; i++) {
+								if (nary[i] == nary[i + 1]) {
+								
+									$("#errordlt").html("出现重复号码：" + nary[i]).show();
+									return false;
+								} else if ( nary[i] > 35 || nary[i] < 1) {
+									$("#errordlt").html("红球投注号码有误" ).show();
+									return false;
+								}else if (isNaN($("#dltcodes em input")[i].value)) {
+									$("#errordlt").html("红球投注号码有误：" + $("#dltcodes em input")[i].value).show();
+									return false;
+								}
+							}
+							if (isNaN($("#dltcodes em input")[5].value) || $("#dltcodes em input")[5].value > 12
+									|| $("#dltcodes em input")[5].value < 1) {
+								$("#errordlt").html("篮球投注号码有误：" + $("#dltcodes em input")[5].value).show();
+								return false;
+							}
+							if (isNaN($("#dltcodes em input")[6].value) || $("#dltcodes em input")[6].value > 12
+									|| $("#dltcodes em input")[6].value < 1) {
+								$("#errordlt").html("篮球投注号码有误：" + $("#dltcodes em input")[6].value).show();
+								return false;
+							}
+							nary = nary + "|" + $("#dltcodes em input")[5].value
+									+ "," + $("#dltcodes em input")[6].value;
+// 							location.href = '/daletou/index.html?codes=' + nary
+// 									+ '';
+							window.open( '/daletou/index.html?codes=' + nary+ '');
+						}
+						$("#dltcodes em input").keydown(function() {
+// 							return false;
+						})
+						$("#ssqcodes em input").keydown(function() {
+// 							return false;
+						})
+						$("#dltcodes em input,#ssqcodes em input").click(function() {
+							$("#errordlt,#errordlt").hide();
+						})
+						
+						SsqRandom();
+						DltRandom();
+						$(function(){
+							$(".bod em input").click(function(){
+								$(this).select();
+							})
+						});
+						
+						
+					</script>
+					<!-- <script>
+						
+					</script> -->
+	</div>
+	<div class="m_r">
+		<p class="user" id="nologin" style="height:44px;"><a href="/user/login.html" id="top_login_btns" rel="nofollow" class="use">用户登录</a><a href="/user/reg.html" class="reg use" target="_blank">免费注册</a>
+			
+		</p>
+		<p class="user" id="onlogin" style="display: none;background-color:#fffbe6;border:1px solid #ddd;">
+			
+			<span class="dlu">
+				欢迎您&nbsp;，&nbsp;<span id="onusername"></span><br>
+				<span><a href="/account/myaccount.html" target="_blank">我的账户</a><!--|<a href="/account/orderlist.html" target="_blank">投注记录</a>-->|<a href="/account/tikuan.html" target="_blank">提款</a>|<a href="/account/chongzhi.html" target="_blank">充值</a>|<a id="outLogin">退出</a></span>
+			</span>
+		
+		</p>
+		<div class="tab">
+			<div class="title">
+				<span class="hover">网站公告</span>
+				<span>赛事公告</span>
+			</div>
+			<div class="bod">
+				<div class="hover">
+					<ul>
+						<!--#include virtual="/dedeinc/wzgonggao.html"-->   
+	
+					</ul>
+					<a href="/gonggao/" target="_blank" class="more">更多>></a>
+				</div>
+				<div>
+					<ul>
+							<!--#include virtual="/dedeinc/zsgonggao.html"-->   
+
+					</ul>
+					<a href="/matchgonggao/" target="_blank" class="more">更多>></a>
+				</div>
+			</div>
+		</div>
+		<!-- 快速购彩 -->  
+		<!--#include virtual="/cc/cms/shoujigoucai.html"-->
+		<!-- 快速购彩  -->
+		
+	</div>
+</div>
+<!-- 今日开奖···最新开奖 -->
+<div class="kj fn-clear">
+	<div class="today tab">
+		<div class="title" id="todaykaijiang">
+		<span class="hover" ttl="0">数字彩</span>
+			<span ttl="1">竞技彩</span>
+			
+		</div>
+		<div class="bod" id="kjdiv">
+			<!-- <div class="hover" id="k1" mark="kj">
+				<ul>
+					<li today="01" style="display: none;">
+						<p><span class="fl"><a target="_blank" href="/shuangseqiu/kaijiang.html">双色球</a></span><i class="fr" expect="01">888888期</i><i>开奖:21:30</i></p>
+						<p><em class="fl">销售中</em><a target="_blank" href="/shuangseqiu/" class="fr"></a></p>
+						<p><i class="fl">奖池：<span pool="01"></span>&nbsp;元</i></p>
+					</li>
+					<li today="50" style="display: none;">
+						<p><span class="fl"><a target="_blank" href="/daletou/kaijiang.html">大乐透</a></span><i class="fr" expect="50">888888期</i><i>开奖:20:30</i></p>
+						<p><em class="fl">销售中</em><a target="_blank" href="/daletou/" class="fr"></a></p>
+						<p><i class="fl">奖池：<span pool="50"></span>&nbsp;元</i></p>
+					</li>
+					<li today="03" style="display: none;">
+						<p><span class="fl"><a target="_blank" href="/3d/kaijiang.html">福彩3D</a></span><i class="fr" expect="03">888888期</i><i>开奖:20:30</i></p>
+						<p><em class="fl">销售中</em><a target="_blank" href="/3d/" class="fr"></a></p>
+						<p><i class="fl">奖池：<span pool="03"></span>&nbsp;元</i></p>
+					</li>
+					<li today="07" style="display: none;">
+						<p><span class="fl"><a target="_blank" href="/qilecai/kaijiang.html">七乐彩</a></span><i class="fr" expect="07">888888期</i><i>开奖:20:30</i></p>
+						<p><em class="fl">销售中</em><a target="_blank" href="/qilecai/" class="fr"></a></p>
+						<p><i class="fl">奖池：<span pool="07"></span>&nbsp;元</i></p>
+					</li>
+					<li today="53" style="display: none;">
+						<p><span class="fl"><a target="_blank" href="/paisan/kaijiang.html">排列三</a></span><i class="fr" expect="53">888888期</i><i>开奖:20:30</i></p>
+						<p><em class="fl">销售中</em><a target="_blank" href="/paisan/" class="fr"></a></p>
+						<p><i class="fl">奖池：<span pool="53"></span>&nbsp;元</i></p>
+					</li>
+					<li today="52" style="display: none;">
+						<p><span class="fl"><a target="_blank" href="/paiwu/kaijiang.html">排列五</a></span><i class="fr" expect="52">888888期</i><i>开奖:20:30</i></p>
+						<p><em class="fl">销售中</em><a target="_blank" href="/paiwu/" class="fr"></a></p>
+						<p><i class="fl">奖池：<span pool="52"></span>&nbsp;元</i></p>
+					</li>
+					<li today="51" style="display: none;">
+						<p><span class="fl"><a target="_blank" href="/qixingcai/kaijiang.html">七星彩</a></span><i class="fr" expect="51">888888期</i><i>开奖:20:30</i></p>
+						<p><em class="fl">销售中</em><a target="_blank" href="/qixingcai/" class="fr"></a></p>
+						<p><i class="fl">奖池：<span pool="51"></span>&nbsp;元</i></p>
+					</li>
+					<li today="80" style="display: none;">
+						<p><span class="fl"><a target="_blank" href="/zc/zc_kj.html">胜负彩</a></span><i class="fr" expect="80">888888期</i></p>
+						<p><em class="fl">销售中</em><a target="_blank" href="/zc/" class="fr"></a></p>
+						<p><i class="fl">奖池：<span pool="80"></span>&nbsp;元</i></p>
+					</li>
+					<li today="81" style="display: none;">
+						<p><span class="fl"><a target="_blank" href="/zc/zc_kj.html?lotid=81">任九</a></span><i class="fr" expect="81">888888期</i></p>
+						<p><em class="fl">销售中</em><a target="_blank" href="/renjiu/" class="fr"></a></p>
+						<p><i class="fl">奖池：<span pool="81"></span>&nbsp;元</i></p>
+					</li>
+					<li today="82" style="display: none;">
+						<p><span class="fl"><a target="_blank" href="/zc/zc_kj.html?lotid=82">进球数</a></span><i class="fr" expect="82">888888期</i></p>
+						<p><em class="fl">销售中</em><a target="_blank" href="/jinqiu/" class="fr"></a></p>
+						<p><i class="fl">奖池：<span pool="82"></span>&nbsp;元</i></p>
+					</li>
+					<li today="83" style="display: none;">
+						<p><span class="fl"><a target="_blank" href="/zc/zc_kj.html?lotid=83">半全场</a></span><i class="fr" expect="83">888888期</i></p>
+						<p><em class="fl">销售中</em><a target="_blank" href="/banquan/" class="fr"></a></p>
+						<p><i class="fl">奖池：<span pool="83"></span>&nbsp;元</i></p>
+					</li>
+				</ul>
+				<b><span></span><span></span></b>
+			</div> -->
+			<div id="k1"  mark="kj" class="hover"><!--数字彩-->
+				<ul>
+					<li>
+						<p><a target="_blank" href="/shuangseqiu/kaijiang.html"><span>双色球</span></a>&nbsp;&nbsp;&nbsp;&nbsp;<i id="ssq_pid">888888期</i>&nbsp;&nbsp;<i id="ssq_kjdate"></i></p>
+						<p><span class="fl" id="ssq_code"><b></b><b></b><b></b><b></b><b></b><b></b><b
+											class="blue"></b><b class="blue"></b></span><span class="fr"><a target="_blank"
+											href="/shuangseqiu/kaijiang.html">详情</a></span></p>
+						<p><i>每周二、四、日21:30开奖</i></p>
+					</li>
+					<li>
+						<p><a target="_blank" href="/daletou/kaijiang.html"><span>大乐透</span></a>&nbsp;&nbsp;&nbsp;&nbsp;<i id="dlt_pid">888888期</i>&nbsp;&nbsp;<i id="dlt_kjdate"></i></p>
+						<p><span class="fl" id="dlt_code"><b></b><b></b><b></b><b></b><b></b><b></b><b
+											class="blue"></b><b class="blue"></b></span><span class="fr"><a target="_blank"
+											href="/daletou/kaijiang.html">详情</a></span></p>
+						<p><i>每周一、三、六22:30开奖</i></p>
+					</li>
+					<li>
+						<p><a target="_blank" href="/3d/kaijiang.html"><span>福彩3D</span></a>&nbsp;&nbsp;&nbsp;&nbsp;<i id="sd_pid">888888期</i>&nbsp;&nbsp;<i id="sd_kjdate"></i></p>
+						<p><span class="fl" id="sd_code"><b></b><b></b><b></b></span><span class="fr"><a target="_blank"
+											href="/3d/kaijiang.html">详情</a></span></p>
+						<p><i>每日20:30开奖</i></p>
+					</li>
+					
+					<li>
+						<p><a target="_blank" href="/paisan/kaijiang.html"><span>排列三</span></a>&nbsp;&nbsp;&nbsp;&nbsp;<i id="pls_pid">888888期</i>&nbsp;&nbsp;<i id="pls_kjdate"></i></p>
+						<p><span class="fl" id="pls_code"><b></b><b></b><b></b></span><span class="fr"><a target="_blank"
+											href="/paisan/kaijiang.html">详情</a></span></p>
+						<p><i>每日20:30开奖</i></p>
+					</li>
+					<li>
+						<p><a target="_blank" href="/paiwu/kaijiang.html"><span>排列五</span></a>&nbsp;&nbsp;&nbsp;&nbsp;<i id="plw_pid">888888期</i>&nbsp;&nbsp;<i id="plw_kjdate"></i></p>
+						<p><span class="fl" id="plw_code"><b></b><b></b><b></b><b></b><b></b><b></b><b
+											class="blue">1</b></span><span class="fr"><a target="_blank"
+											href="/paiwu/kaijiang.html">详情</a></span></p>
+						<p><i>每日20:30开奖</i></p>
+					</li>
+					<li>
+						<p><a target="_blank" href="/qilecai/kaijiang.html"><span>七乐彩</span></a>&nbsp;&nbsp;&nbsp;&nbsp;<i id="qlc_pid">888888期</i>&nbsp;&nbsp;<i id="qlc_kjdate"></i></p>
+						<p><span class="fl" id="qlc_code"><b></b><b></b><b></b><b></b><b></b><b></b><b></b></span><span class="fr"><a target="_blank"
+											href="/qilecai/kaijiang.html">详情</a></span></p>
+						<p class="p2">每周一、三、五21:30开奖</p>
+					</li>
+					<li>
+						<p><a target="_blank" href="/qixingcai/kaijiang.html"><span>七星彩</span></a>&nbsp;&nbsp;&nbsp;&nbsp;<i id="qxc_pid">888888期</i>&nbsp;&nbsp;<i id="qxc_kjdate"></i></p>
+						<p><span class="fl" id="qxc_code"><b></b><b></b><b></b><b></b><b></b><b></b><b
+											class="blue">1</b></span><span class="fr"><a target="_blank"
+											href="/shuangseqiu/kaijiang.html">详情</a></span></p>
+						<p class="p2">每周二、五、日20:30开奖</p>
+					</li>
+					
+				</ul>
+				<!-- <b><span id="scroll_up"></span><span id="scroll_down"></span></b> -->
+			</div>
+			<div style="display: none;margin-top: -5px" id="k2" mark="kj"><!--竞技彩-->
+				<ul>
+					<li>
+						<p><a target="_blank" href="/zc/zc_kj.html?lotid=80"><span>胜负彩</span></a>&nbsp;&nbsp;&nbsp;&nbsp;<i id="sfc_pid"></i><i id="sfc_kjdate"></i></p>
+						<p><span id="sfc_code"><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b></span></p>
+						<p><i id="sfcmoney"></i></p>
+						<p><i id="sfc_twomoney">二等奖&nbsp;&nbsp;0注&nbsp;&nbsp;0元</i></p>
+						<p><i>奖池滚存：<span id="sfc_pools">6,248,081</span>元</i><span class="fr"><a href="/zc/zc_kj.html?lotid=80">详情</a></span></p>
+					</li>
+					<li>
+						<p><a target="_blank" href="/zc/zc_kj.html?lotid=81"><span>任选九</span></a>&nbsp;&nbsp;&nbsp;&nbsp;<i id="rxjc_pid"></i><i id="rxjc_kjdate"></i></p>
+						<p><span id="rxjc_code"><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b></span></p>
+						<p><i id="renjiumoney">一等奖&nbsp;&nbsp;0注&nbsp;&nbsp;0元</i></p>
+						<p><i>奖池滚存：<span id="sfcrj_pools">6,248,081</span>元</i><span class="fr"><a href="/zc/zc_kj.html?lotid=81">详情</a></span></p>
+					</li>
+					<li>
+						<p><a target="_blank" href="/zc/zc_kj.html?lotid=82"><span>进球彩</span></a>&nbsp;&nbsp;&nbsp;&nbsp;<i id="jqc_pid"></i><i id="jqc_kjdate"></i></p>
+						<p><span id="jqc_code"><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b></span></p>
+						<p><i class="fl" id="jqcmoney"></i><span class="fr"><a href="/zc/zc_kj.html?lotid=82">详情</a></span></p>
+					</li>
+					<li>
+						<p><a target="_blank" href="/zc/zc_kj.html?lotid=83"><span>半全场</span></a>&nbsp;&nbsp;&nbsp;&nbsp;<i id="bqc_pid"></i><i id="bqc_kjdate"></i></p>
+						<p><span id="bqc_code"><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b></span></p>
+						<p><i class="fl" id="bqcmoney"></i><span class="fr"><a href="/zc/zc_kj.html?lotid=83">详情</a></span></p>
+					</li>
+				</ul>
+				<!-- <b><span></span><span></span></b> -->
+			</div>
+			
+			<strong><span id="scroll_up"></span><span id="scroll_down"></span></strong>
+		</div>
+	</div>
+	
+ <div class="center basic">
+	<div class="tit">
+		<h3>
+			焦点新闻</h3>
+		<p class="more">
+			<a target="_blank" href="/ssq/yuce/">双色球</a><a target="_blank" href="/dlt/yuce/">大乐透</a><a target="_blank" href="/zc/yuce/">胜负彩</a><a target="_blank" href="/jczq/yuce/">竞彩足球</a></p>
+	</div>
+	<div class="body">
+		 <!--首页资讯-->
+	  <!--#include virtual="/dedeinc/syjingtai.html"-->
+	  <!--首页资讯结束-->
+	</div>
+</div>
+
+	<div class="zx">
+		<div class="basic zj">
+			<div class="tit"><h3>最新中奖</h3></div>
+			<div class="body">
+				<div id="scrollDiv">
+				<table width="100%" border="0" cellspacing="0">
+					<colgroup>
+						<col width="33%">
+						<col width="33%">
+						<col width="33%">
+					</colgroup>
+					
+					<tbody >
+					<!--#include virtual="/cc/module/zuixin.html"-->
+					
+					</tbody>
+				
+				</table>
+					</div>
+			</div>
+		</div>
+		<div class="basic cn">
+			<div class="tit"><h3>安全承诺</h3></div>
+			<div class="body">
+				<ul>
+					<li><img src="images/aq/aq1.jpg" alt="账户安全"></li>
+					<li><img src="images/aq/aq2.jpg" alt="兑奖安全"></li>
+					<li><img src="images/aq/aq3.jpg" alt="提款安全"></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- 焦点赛事 热单合买 -->
+<div class="hot fn-clear">
+			<!--首页焦点赛事-->
+			  <!--#include virtual="/dedeinc/syjiaodian.html"-->
+			  <!--首页焦点赛事结束-->
+
+	<div class="basic hm">
+		<div class="tit"><h3>热单合买</h3><a href="/hemai/" target="_blank" class="more">更多>></a></div>
+		<div class="body">
+			<table border="0" cellspacing="0">
+				<tr>
+					<th>序号</th>
+					<th>发单人</th>
+					<th>战绩</th>
+					<th>彩种</th>
+					<th>方案金额(元)</th>
+					<th>进度|保底</th>
+					<th>剩余金额</th>
+					<th>参与合买</th>
+					<th>操作</th>
+				</tr>
+				
+				<tbody id="table_hot_project">
+
+			
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>
+<!--#include virtual="/cc/homefooter.html"-->
+
+
+<script type="text/javascript" src="/index/index.js"></script>
+</body>
+</html>
