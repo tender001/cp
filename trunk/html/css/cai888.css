@@ -304,7 +304,8 @@ a.czbtnhui{color:#666;background:url(../images/cai888/user_03hui.jpg);border:1px
 .sm_bkm a.cur{border:2px solid #81aad4; background-color:#e7eff6;width:133px;padding-left:8px;line-height:26px;height:27px}
 .cz_step{height:36px;margin:0 auto;padding:20px 0 5px 65px}
 .cz_step p{line-height:27px;font-size:14px;color:#222;padding-left:15px;float:left;font-weight:bold}
-.cz_step p em{color:#666;font-size:12px;fon-weight:100}
+.cz_step p em{color:#666;font-size:12px;font-weight:100}
+.cz_step p em.cur{color: #e62e04;}
 .phone_pp{padding:0px 40px 0px 80px}
 .phone_pp ul li{display:block;float:left;width:153px;margin-right:10px;_margin-right:5px;height:50px;color:#444;border:1px solid #ddd ;cursor:pointer}
 .phone_pp ul li.cur{background:url(../images/cai888/czas_03.jpg);width:155px;height:52px;border:none}
