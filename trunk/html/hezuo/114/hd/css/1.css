@@ -73,8 +73,8 @@ th,td{text-align: center;}
 .w_bann p span.cur{background: #eee;}
 /* */
 .w-zc,.w-se{width: 248px;height: 68px;color: #333;border: 1px solid #C9C9C9;background-color: #FBFBFB;border-radius: 4px;}
-.w-zc .w-pic{width: 56px;height: 63px;border: 1px solid transparent;text-align: center;float: left;margin: 2px 0 0 3px;_display: inline;}
-.w-zc .w-pic img{width: 44px;height: 37px;margin-top: 4px;}
+.w-zc .w-pic{width: 56px;height: 63px;border: 1px solid transparent;text-align: center;float: left;margin: 2px 0 0 3px;_display: inline;_border-color: #FBFBFB;}
+.w-zc .w-pic img{width: 54px;height: 42px;}
 .w-zc .w-pic h4{width: 100%;height: 20px;line-height: 24px;overflow: hidden;color: #135eaa;font-size: 12px;}
 .w-zc .w-pic h4 a{color: #3D447A;}
 .w-zc p{width: 175px;padding-left: 10px;float: left;line-height: 20px;}
