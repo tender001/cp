@@ -5,13 +5,12 @@
 .updo li{position: relative;z-index: 99;}
 .updo li s{width: 11px;height: 11px;display: block;position: absolute;right: 9px;top: 12px;background: transparent url(../images/bg/nav_xia.jpg);cursor: pointer;}
 .updo li.hover s{background: transparent url(../images/bg/nav_xia1.jpg)}
-.updo li.hover a.a1{background: #e52e04;margin: 0 -2px;padding:0 24px;}
 .updo li .xia{display: none;width: 93px;background: #fff;position: absolute;left: -1px;top: 38px;z-index: 102;}
 .updo li.hover .xia{display: block;border: 1px solid #e52f05;border-top: 0;}
 .updo li .xia p{width: 100%;height: 30px;line-height: 30px;text-align: center;border-bottom: 1px solid #ddd;}
 .updo li .xia p a{width: 100%;height: 100%;display: block;padding: 0;color: #e52f05;font-weight: 400;}
 .updo li .xia p a:hover{background: none;margin: 0;text-decoration: underline;}
-.updo1 li .xia{width: 104px;}
+.updo1 li .xia{width: 102px;}
 /**/
 .menu{width:998px;margin: 10px auto;border-bottom:1px solid #ddd;overflow: hidden;}
 .m_l1,.m_mid{float: left;}
@@ -54,15 +53,15 @@
 .m_mid .tab .bod p{overflow: hidden;}
 .m_mid .tab .bod span{color:#8c8c8c;}
 .m_mid .tab .bod b{width:100%;display: block;margin: 8px 0;}
-.m_mid .tab .bod b *{vertical-align: middle;font-size: 16px;text-align: center;display: inline-block;}
+.m_mid .tab .bod b *{vertical-align: middle;font-size: 18px;text-align: center;display: inline-block;}
 .m_mid .tab .bod b s{width: 70px;height: 70px;margin-right: 3px;background-position: -124px -38px;}
 .m_mid .tab .bod b em{width: 38px;height: 38px;line-height: 38px;color: #fff;margin-right: 3px;background-position: -110px -110px;}
 .m_mid .tab .bod b em input{width: 29px;height: 23px;line-height: 23px;font-weight: bold;padding: 3px 0;background: none;border: 0;color: #fff;cursor: pointer;margin: -2px 0 0 -1px;*margin: 4px 0 -1px;}
 .m_mid .tab .bod b em input.cur{background: url(../images/bg/focus.png) no-repeat;color: #666;}
 .m_mid .tab .bod b s.dal{background-position: 0 -222px;}
 .m_mid .tab .bod b em.blue{background-position: -152px -110px;}
-.m_mid .tab .bod b i{width: 52px;height: 35px;line-height:35px;color: #444;background-position: -1px -152px;cursor: pointer;margin: 0 5px 0 32px;}
-.m_mid .tab .bod b strong{width: 90px;height: 35px;line-height: 35px;color: #fff;background-position: -55px -152px;cursor: pointer;}
+.m_mid .tab .bod b i{width: 52px;height: 32px;line-height:32px;margin: 0 5px 0 30px;font-size: 14px;color: #444;background-position: -1px -152px;cursor: pointer;}
+.m_mid .tab .bod b strong{width: 90px;height: 31px;line-height: 31px;font-size: 14px;color: #fff;background-position: -55px -152px;cursor: pointer;}
 
 .m_r{float: right;width: 223px}
 .m_r p.user{margin-bottom: 8px;height: 42px;overflow: hidden;}
@@ -118,6 +117,7 @@ div.center .body{width:95%;height:320px;}
 .zx .zj{margin-bottom: 9px;}
 .zx .zj .body{height: 185px;overflow: hidden;}
 .zx table td,.zx table th{height:37px;text-align: center;border-bottom: 1px dashed #ddd;}
+.zx table td:first-of-type{text-align: left;}
 .zx table th{font-weight: 400;color: #f00;text-align: right;}
 .zx .cn li{float: left;width: 62px;height: 74px;margin-right: 4px;display: inline;}
 .zx .cn li img{width: 100%;height: 100%;}

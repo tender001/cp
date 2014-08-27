@@ -27,7 +27,7 @@ img{vertical-align:top;}
 .c3{color: #3c3c3c !important;}
 /*index basic*/
 /*.top dl dt,*/
-.top dl dt s,.top dl.ali dd a,.top dl dd li s,.top_logo .fr s,.m_l li span s,.m_l1 li span s,.m_mid .tab .bod b s,.m_mid .tab .bod b em,.m_mid .tab .bod b i,.m_mid .tab .bod b strong,.m_r p.user a,.mob_buy .body dd a,.today .bod li p a.fr,.center .body li p span em{background: url(../images/bg/index_bg0.png);_background-image: url(../images/bg/index_ie6.png);}
+.top dl dt s,.top dl.ali dd a,.top dl dd li s,.m_l li span s,.m_l1 li span s,.m_mid .tab .bod b s,.m_mid .tab .bod b em,.m_mid .tab .bod b i,.m_mid .tab .bod b strong,.m_r p.user a,.mob_buy .body dd a,.today .bod li p a.fr,.center .body li p span em{background: url(../images/bg/index_bg0.png);_background-image: url(../images/bg/index_ie6.png);}
 /* dd */
 /*top*/
 .top{height: 36px; line-height: 36px; background-color: #f7f7f7; border-top: 1px solid #e8ecef; border-bottom: 1px solid #ddd;overflow:visible;}
@@ -74,8 +74,8 @@ img{vertical-align:top;}
 .top_logo{padding:10px 0;width: 1000px;margin: 0 auto;overflow: hidden;}
 .top_logo .fl{width:160px;height: 60px;}
 .logo1 img{width: 160px;height: 60px;}
-.top_logo .fr s{width: 120px;height: 44px;display: inline-block;background-position: 0 -37px;margin-top: 8px;}
-.top_logo .fr a img{width: 120px;height: 52px;margin-top: 4px;}
+.top_logo .fr s{width: 203px;height: 52px;display: inline-block;background:url(../images/bg/phone.jpg) no-repeat;margin-top: 4px;}
+.top_logo .fr a img{width: 110px;height: 52px;margin: 4px 0 0 8px;}
 
 /*购买彩票 弹出菜单*/
 .nav1_buy{width: 215px;height: 38px;float: left;position: relative;overflow: visible;background: #e52e04 url(../images/bg/nav_b.jpg) no-repeat;z-index: 99;}
@@ -103,27 +103,29 @@ img{vertical-align:top;}
 
 /*nav*/
 .nav{height: 38px;line-height: 38px;background: #f60 url(../images/bg/nav.jpg) repeat-x;}
-.nav ul li{float: left;background: url(../images/bg/nav_li.jpg) right center no-repeat;overflow: visible;}
-.nav ul li a{height:38px;display:block;font-size:14px;font-weight:bold;color:#fff;padding:0 22px;float: left;}
-.nav ul li a:hover{background: #e52e04;margin: 0 -2px;padding:0 24px;text-decoration: none;color:#fff;}
-
+.nav ul li{float: left;background: url(../images/bg/nav_li.jpg) repeat;overflow: visible;border-right: 1px solid #ffa366;}
+.nav ul li a{height:38px;display:block;font-size:14px;font-weight:bold;color:#fff;padding:0 22px 0 21px;float: left;}
+.nav ul li a:hover{background: #e52e04;text-decoration: none;color:#fff;}
+.nav ul li.bac{border: 0}
+.nav ul li.bac a{padding: 0 22px;}
 /*nav1*/
 .nav1{height: 38px;line-height: 38px;background: #f60 url(../images/bg/nav.jpg) repeat-x;overflow:visible;_float: left;}
 .nav1 *{overflow:visible;}
-.nav1 ul li{float: left;background: url(../images/bg/nav_li.jpg) right center no-repeat;}
-li.bac{background-image: none !important;}
-.nav1 ul li a{height:38px;display:block;font-size:14px;font-weight:bold;color:#fff;padding:0 15px;float: left;}
-.nav1 ul li a:hover{background: #e52e04;margin: 0 -2px;padding:0 17px;text-decoration: none;color:#fff;}
-.nav1 ul li a.cur{background: #e52e04;margin: 0 -2px;padding:0 17px;text-decoration: none;color:#fff;}
+.nav1 ul li{float: left;background: url(../images/bg/nav_li.jpg) repeat;border-right: 1px solid #ffa366;}
+.nav1 ul li.bac{border: 0}
+.nav1 ul li a{height:38px;display:block;font-size:14px;font-weight:bold;color:#fff;padding:0 15px 0 14px;float: left;}
+.nav1 ul li.bac a{padding: 0 18px;}
+.nav1 ul li a:hover{background: #e52e04;text-decoration: none;color:#fff;}
+.nav1 ul li a.cur{background: #e52e04;/*margin: 0 -2px;padding:0 17px;*/text-decoration: none;color:#fff;}
 .nav1 ul li a.a1{padding-right: 22px;}
-.nav1 ul li a.a1:hover{padding-right: 24px;}
+/*.nav1 ul li a.a1:hover{padding-right: 24px;}*/
 .nav1 ul li s{right: 9px;}
-.nav1 ul li .xia{width: 98px;}
-.nav1 ul li.hover a.a1{padding-right: 24px;padding-left: 17px;}
+.nav1 ul li .xia{width: 96px;}
+/*.nav1 ul li.hover a.a1{padding-right: 24px;padding-left: 17px;}*/
 .updo li{position: relative;z-index: 99;}
 .updo li s{width: 11px;height: 11px;display: block;position: absolute;right: 4px;top: 12px;background: transparent url(../images/bg/nav_xia.jpg);cursor: pointer;}
 .updo li.hover s{background: transparent url(../images/bg/nav_xia1.jpg)}
-.updo li.hover a.a1{background: #e52e04;margin: 0 -2px;padding:0 18px;}
+.updo li.hover a.a1{background: #e52e04;}
 .updo li .xia{display: none;width: 93px;background: #fff;position: absolute;left: -1px;top: 38px;z-index: 102;}
 .updo li .xia{border: 1px solid #e52f05;border-top: 0;}
 .updo li .xia p{width: 100%;height: 30px;line-height: 30px;text-align: center;border-bottom: 1px solid #ddd;}
@@ -134,8 +136,8 @@ li.bac{background-image: none !important;}
 .basic{border:1px solid #ddd;}
 .tit{height:30px;color: #333;font: 700 14px/30px "\5b8b\4f53";overflow: hidden;border-bottom: 1px solid #ddd;background-color: #f6f6f6;}
 .tit h3{float: left;padding-left: 12px;font-size: 14px;}
-.more{float: right;font-weight: 400;font-size: 12px;margin-right: 12px;color:#f60;_display: inline;}
-.more a{color:#f60;margin-left: 12px;}
+.more{float: right;font-weight: 400;font-size: 12px;margin-right: 12px;color:#333;_display: inline;}
+.more a{color:#333;margin-left: 12px;}
 .basic .body{width:90%;margin: 0 auto;overflow: hidden;}
 /*今日开奖*/
 .today{width: 213px;border: 1px solid #ccc;}
