@@ -72,7 +72,7 @@ th,td{text-align: center;}
 .w_bann p span{display: inline-block;width: 18px;height: 4px;margin-right: 6px;border: 1px solid #aaa;background-color: rgba(64,147,191,0.3);cursor: pointer;}
 .w_bann p span.cur{background: #eee;}
 /* */
-.w-zc,.w-se{width: 248px;height: 68px;color: #333;border: 1px solid #C9C9C9;background-color: #FBFBFB;border-radius: 4px;}
+.w-zc,.w-se{width: 248px;height: 68px;color: #333;border: 1px solid #C9C9C9;background-color: #FBFBFB;border-radius: 4px;-webkit-box-shadow: 0 1px 2px #d3d3d3;-moz-box-shadow: 0 1px 2px #d3d3d3;-o-box-shadow: 0 1px 2px #d3d3d3;box-shadow: 0 1px 2px #d3d3d3;}
 .w-zc .w-pic{width: 56px;height: 63px;border: 1px solid transparent;text-align: center;float: left;margin: 2px 0 0 3px;_display: inline;_border-color: #FBFBFB;}
 .w-zc .w-pic img{width: 54px;height: 42px;}
 .w-zc .w-pic h4{width: 100%;height: 20px;line-height: 24px;overflow: hidden;color: #135eaa;font-size: 12px;}
