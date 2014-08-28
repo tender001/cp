@@ -27,7 +27,7 @@ img{vertical-align:top;}
 .c3{color: #3c3c3c !important;}
 /*index basic*/
 /*.top dl dt,*/
-.top dl dt s,.top dl.ali dd a,.top dl dd li s,.m_l li span s,.m_l1 li span s,.tit,.m_mid .tab .title,.m_mid .tab .bod b s,.m_mid .tab .bod b em,.m_mid .tab .bod b i,.m_mid .tab .bod b strong,.m_r p.user a,.mob_buy .body dd a,.today .bod li p a.fr,.center .body li p span em{background: url(../images/bg/index_bg0.png);_background-image: url(../images/bg/index_ie6.png);}
+.top dl dt s,.top dl.ali dd a,.top dl dd li s,.m_l li span s,.m_l1 li span s,.tit,.m_mid .tab .title,.m_mid .tab .bod b s,.m_mid .tab .bod b em,.m_mid .tab .bod b i,.m_mid .tab .bod b strong,.m_r p.user a,.mob_buy .body dd a,.today .bod li p a.fr,.center .body li p span em,.m_r .tab .title{background: url(../images/bg/index_bg0.png);_background-image: url(../images/bg/index_ie6.png);}
 /* dd */
 /*top*/
 .top{height: 36px; line-height: 36px; background-color: #f7f7f7; border-top: 1px solid #e8ecef; border-bottom: 1px solid #ddd;overflow:visible;}
