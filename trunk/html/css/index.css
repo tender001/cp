@@ -126,8 +126,8 @@ div.center .body{width:95%;height:320px;}
 
 .hot{width: 1000px;margin: 10px auto;}
 .hm{width: 776px;float: right;border-bottom: 0;height: 345px;}
-.hm .tit{background: #e85c00 url(../images/bg/hm_rightbg.jpg) right 0 no-repeat;color: #fff;}
-.hm .tit h3 span{height:26px;line-height:26px;font-size:12px;font-weight: 400;padding:0 10px;display: inline-block;position: relative;bottom: -1px;cursor: pointer;*display: inline;*zoom:1;}
+.hm .tit{background: #e85c00 url(../images/bg/hm_rightbg.jpg) right 0 no-repeat;color: #fff;border-bottom-color: #e8e8e8;}
+.hm .tit h3 span{height:26px;line-height:26px;font-size:12px;font-weight: 400;padding:0 10px;display: inline-block;cursor: pointer;*display: inline;*zoom:1;margin-top: 4px;}
 .hm .tit h3 span.hover{background-color: #e8e8e8;font-weight: 700;color:#333;}
 .hm div.body.hover{display: block;}
 .hm .tit .more{color: #fff;}
