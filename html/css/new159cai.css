@@ -153,6 +153,7 @@ img{vertical-align:top;}
 .today .bod li{height: auto;border-bottom: 1px solid #ddd;padding: 5px 0;}
 .today .bod li p{width: 90%;margin: 0 auto;overflow: hidden;line-height: 22px;}
 .today .bod li p span{color: #e52e06;}
+.today .bod li p a span{color: #1f5ba9;}
 .today .bod li p b{margin-right: 5px;}
 .today .bod li p b.blue{color: #25a}
 .today .bod li p i{color: #434343;}
