@@ -63,7 +63,7 @@ reg = function(){
 	 var data = $_user.key.uid + "=" + encodeURIComponent($.trim(uname)) + "&"
 		+ $_user.key.pwd + "=" + encodeURIComponent($.trim(pwd)) + "&"
 		//+ $_user.key.mobileNo + "=" + encodeURIComponent($.trim(phone)) + "&"
-		+ $_user.key.mailAddr + "=" + encodeURIComponent($.trim(email)) + "&"
+		+ $_user.key.mailAddr + "=" + encodeURIComponent("LotteryDefaultMail@159.com") + "&"
 		+ "yzm=" + rand;
      $.ajax({
  		data: data,
