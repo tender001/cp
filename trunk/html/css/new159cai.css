@@ -74,7 +74,7 @@ img{vertical-align:top;}
 .top_logo{padding:10px 0;width: 1000px;margin: 0 auto;overflow: hidden;}
 .top_logo .fl{width:160px;height: 60px;}
 .logo1 img{width: 160px;height: 60px;}
-.top_logo .fr s{width: 203px;height: 52px;display: inline-block;background:url(../images/bg/phone.jpg) no-repeat;margin-top: 4px;}
+.top_logo .fr s{width: 188px;height: 52px;display: inline-block;background:url(../images/bg/phone.jpg) no-repeat;margin-top: 4px;}
 .top_logo .fr a img{width: 110px;height: 52px;margin: 4px 0 0 8px;}
 
 /*购买彩票 弹出菜单*/
@@ -133,7 +133,7 @@ img{vertical-align:top;}
 .updo li .xia p a:hover{background: none;margin: 0;text-decoration: underline}
 
 /*title相似*/
-.basic{border:1px solid #ddd;}
+.basic{border:1px solid #ccc;}
 .tit{height:30px;color: #333;font: 700 14px/30px "\5b8b\4f53";overflow: hidden;border-bottom: 1px solid #ddd;background-color: #f6f6f6;background-position: 0 -378px;}
 .tit h3{float: left;padding-left: 12px;font-size: 14px;}
 .more{float: right;font-weight: 400;font-size: 12px;margin-right: 12px;color:#333;_display: inline;}
@@ -141,7 +141,7 @@ img{vertical-align:top;}
 .basic .body{width:90%;margin: 0 auto;overflow: hidden;}
 /*今日开奖*/
 .today{width: 213px;border: 1px solid #ccc;}
-.today .title{height: 30px;line-height: 30px;overflow: hidden;background-color: #f60;margin-left:-1px;color: #fff;}
+.today .title{height: 30px;line-height: 30px;overflow: hidden;background-color: #e85c00;margin-left:-1px;color: #fff;}
 .today .title h3{float: left;font-size: 14px;padding: 0 25px 0 7px;}
 .today .title span{width: 57px;height: 25px;line-height: 25px;text-align: center;display: block;float: left;position: relative;top: 5px;cursor: pointer;}
 .today .title span.hover{font-weight: bold;border-bottom-color: #fff;background-color: #fff;color: #333;}
@@ -175,7 +175,7 @@ img{vertical-align:top;}
 .foc li dl dd p a{color: #135eaa}
 .foc li dl dd p a b{font-weight: 400;}
 .foc li dl dd p span{color: #aaa;padding: 0 3px;}
-.foc li dl dd em{color: #888}
+.foc li dl dd em{color: #3c3c3c}
 .foc li dl dd i a{width: 62px;height: 24px;line-height: 24px;color: #444;text-align: center;display: block;float: left;background: url(../images/bg/ov_03.jpg) no-repeat;}
 .foc li dl dd i a.mar{margin-right: 5px;}
 .foc li dl dd i a:hover{background-position: 0 -26px;color: #fff;text-decoration: none;}

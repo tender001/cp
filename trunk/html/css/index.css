@@ -12,10 +12,11 @@
 .updo li .xia p a:hover{background: none;margin: 0;text-decoration: underline;}
 .updo1 li .xia{width: 102px;}
 /**/
-.menu{width:998px;margin: 10px auto;border-bottom:1px solid #ddd;overflow: hidden;}
+.menu{width:998px;margin: 10px auto;border-bottom:1px solid #ccc;overflow: hidden;}
 .m_l1,.m_mid{float: left;}
-.m_l1{width:213px;height: 460px;border:1px solid #ddd;border-bottom:0;background: #fffbe6;}
-.m_l1 li{width:203px;padding-left:10px;float: left;border-bottom: 1px solid #ddd;}
+.m_l1{width:213px;height: 460px;border:1px solid #ccc;border-bottom:0;background: #fffbe6;}
+.m_l1 ul{height: 456px;border: 2px solid #ebebeb;}
+.m_l1 li{width:199px;padding-left:10px;float: left;border-bottom: 1px solid #ccc;}
 .m_l1 li.kp{border:0;}
 .m_l1 li span{width: 100%;height: 21px;line-height: 21px; padding-top:11px;display: block;font-size: 14px;font-weight:bold;color: #333;}
 .m_l1 li span s{width: 20px;height: 20px; display: inline-block;margin-right:3px;background-position: -2px -88px;vertical-align: middle;}
@@ -42,7 +43,7 @@
 .m_mid .ad .prev.hover{background-position: 0 -62px;}
 .m_mid .ad .next.hover{background-position: -32px -62px;}
 
-.m_mid .tab{width: 100%;margin:10px auto 0;border-top:1px solid #ddd;}
+.m_mid .tab{width: 100%;margin:10px auto 0;border-top:1px solid #ccc;}
 .m_mid .tab .title{height:30px;line-height:30px;border-bottom: 1px solid #ddd;overflow: visible;padding-left: 14px;background-color: #f6f6f6;background-position: 0 -378px;}
 .m_mid .tab .title span{width:80px;height: 30px;display:block;float:left;text-align:center;font-size: 14px;font-weight:bold;color: #3c3c3c;border-right: 1px solid #ddd;border-left: 1px solid #ddd;margin-left: -1px;cursor: pointer;position: relative;_bottom: -1px;}
 .m_mid .tab .title span.hover{color:#ff1616;border-bottom: 1px solid #fff;background-color: #fff;}
@@ -73,7 +74,7 @@
 .m_r p.user .dlu a:hover{text-decoration: underline;}
 .m_r p.user .dlu span{margin-left: -7px;s}
 .m_r p.user .dlu span a{margin: 0 5px;}
-.m_r .tab{height: 221px;border: 1px solid #ddd;border-bottom: 0;padding-bottom:2px;}
+.m_r .tab{height: 221px;border: 1px solid #ccc;border-bottom: 0;padding-bottom:2px;}
 .m_r .tab .title{height: 28px;line-height: 28px;color: #333;background-color: #f6f6f6;margin-left: -1px;overflow: visible;background-position: 0 -378px;}
 .m_r .tab .title span{width:109px;height: 28px; display: block;float: left;border-left: 1px solid #ddd;border-bottom: 1px solid #ddd;text-align: center;cursor: pointer;}
 .m_r .tab .title span.hover{background-color: #fff;border-bottom-color: #fff;font-weight: bold;}
@@ -115,7 +116,7 @@ div.center .body{width:95%;height:320px;}
 
 .zx{float: right;width: 223px;}
 .zx .zj{margin-bottom: 9px;}
-.zx .zj .body{height: 185px;overflow: hidden;}
+.zx .zj .body{height: 185px;overflow: hidden;color: #3c3c3c;}
 .zx table td,.zx table th{height:37px;text-align: center;border-bottom: 1px dashed #ddd;}
 .zx table td:first-of-type{text-align: left;}
 .zx table th{font-weight: 400;color: #f00;text-align: right;}
@@ -124,10 +125,13 @@ div.center .body{width:95%;height:320px;}
 .zx .cn .body{padding: 10px 0;*padding:14px 0;}
 
 .hot{width: 1000px;margin: 10px auto;}
-.hm{width: 776px;float: right;border-bottom: 0;}
-.hm .tit{background-color: #f60;color: #fff;background-image: none;}
+.hm{width: 776px;float: right;border-bottom: 0;height: 345px;}
+.hm .tit{background: #e85c00 url(../images/bg/hm_rightbg.jpg) right 0 no-repeat;color: #fff;}
+.hm .tit h3 span{height:26px;line-height:26px;font-size:12px;font-weight: 400;padding:0 10px;display: inline-block;position: relative;bottom: -1px;cursor: pointer;*display: inline;*zoom:1;}
+.hm .tit h3 span.hover{background-color: #e8e8e8;font-weight: 700;color:#333;}
+.hm div.body.hover{display: block;}
 .hm .tit .more{color: #fff;}
-.hm .body{width: 100%;}
+.hm .body{width: 100%;display: none;}
 .hm table{width: 100%;}
 .hm table th{height: 33px;*height: 35px;color: #333;background-color: #e8e8e8;font-weight: 400;border-bottom: 1px solid #ddd;}
 .hm table td{height: 34px;*height: 35px;text-align: center;border-bottom: 1px solid #ddd;}
