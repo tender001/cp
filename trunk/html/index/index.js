@@ -136,13 +136,13 @@ Class(
 							var gameid =rt.cprojid.substr(2,2);
 							var odd=o%2==0?"":"odd";
 							html += '<tr id='+(o+1)+' class = '+odd+'  >';
-							html += '<td>';
-							if(rt.iorder > 0 && rt.jindu != 100){
-								html += '<img src="/images/index_93.gif" />';
-							}else{
-								html += (o+1);
-							}
-							html += '</td>';
+//							html += '<td>';
+//							if(rt.iorder > 0 && rt.jindu != 100){
+//								html += '<img src="/images/index_93.gif" />';
+//							}else{
+//								html += (o+1);
+//							}
+//							html += '</td>';
 							html += '<td style="text-align:left">' + $_sys.showzhanjiname(gameid,rt.cnickid,'award')+ '</td>';
 							html += '<td style="text-align:left">' +(($_sys.showzhanji(rt.aunum,rt.agnum)==''?'&nbsp;':$_sys.showzhanjii(gameid,rt.cnickid,rt.aunum,rt.agnum)+'&nbsp;&nbsp;')) + '</td>';
 							
@@ -204,13 +204,13 @@ Class(
 							var gameid = rt.gid;
 							var odd=o%2==0?"":"odd";
 							 html += '<tr id='+(o+1)+' class='+odd+'>';
-							html += '<td>';
-							if(rt.iorder > 0 && rt.jindu != 100){
-								html += '<img src="/images/index_93.gif" />';
-							}else{
-								html += (o+1);
-							}
-							html += '</td>';
+//							html += '<td>';
+//							if(rt.iorder > 0 && rt.jindu != 100){
+//								html += '<img src="/images/index_93.gif" />';
+//							}else{
+//								html += (o+1);
+//							}
+//							html += '</td>';
 							html += '<td style="text-align:left">' + $_sys.showzhanjiname(gameid,rt.nickid,'award') + '</td>';
 							html += '<td style="text-align:left">' + (($_sys.showzhanji(rt.aunum,rt.agnum)==''?'&nbsp;':$_sys.showzhanjii(gameid,rt.nickid,rt.aunum,rt.agnum)+'&nbsp;&nbsp;')) + '</td>';
 							
