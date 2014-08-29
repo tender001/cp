@@ -38,7 +38,7 @@ img{vertical-align:top;}
 .top dl dt s{width: 11px;height: 11px;display: block;position: absolute;right: 4px;top: 9px;background-position: -70px -16px;-webkit-transition: transform 0.2s ease-in 0s;-moz-transition: transform 0.2s ease-in 0s;-o-transition: transform 0.2s ease-in 0s;transition: transform 0.2s ease-in 0s;}
 .top dl.hover dt s{background-position: -166px -16px\9;-webkit-transform: rotate(180deg);-moz-transform: rotate(180deg);-o-transform: rotate(180deg);transform: rotate(180deg);}
 .top dl.hover dt{ background-position: -110px -5px;border-color: #ddd;border-bottom-color: #f7f7f7;}
-.top dl dd{width:234px;height: auto;padding:0 8px;display: none;border:1px solid #ddd;border-bottom: 3px solid #f60;background-color: #f7f7f7;position: absolute;right: 0;top: 36px;z-index: 13;}
+.top dl dd{width:234px;height: auto;padding:0 8px;display: none;border:1px solid #ddd;border-bottom: 3px solid #f60;background-color: #f7f7f7;position: absolute;right: 0;top: 32px;z-index: 13;}
 .top dl.hover dt{background-color: #fff;}
 .top dl.hover dd{background-color: #fff;}/*display: block;*/
 .top dl.ali{float: right;}
@@ -170,7 +170,7 @@ img{vertical-align:top;}
 .foc li dl dt{float: left;width: 56px; height: 72px;border: 1px solid #a3a3a1;text-align: center;}
 .foc li dl dt img{width: 50px; height: 44px;margin-top: 4px;}
 .foc li dl dt h4{width: 100%;height: 20px;line-height: 20px;display: block;background-color: #ffe8da;margin-top: 4px;font-size: 12px;}
-.foc li dl dd{float: right;width: 130px;line-height: 22px;}
+.foc li dl dd{float: right;width: 130px;line-height: 27px;}
 .foc li dl dd p{width: 100%;height: 22px;overflow: hidden;}
 .foc li dl dd p a{color: #135eaa}
 .foc li dl dd p a b{font-weight: 400;}
