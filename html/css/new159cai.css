@@ -74,7 +74,7 @@ img{vertical-align:top;}
 .top_logo{padding:10px 0;width: 1000px;margin: 0 auto;overflow: hidden;}
 .top_logo .fl{width:160px;height: 60px;}
 .logo1 img{width: 160px;height: 60px;}
-.top_logo .fr s{width: 188px;height: 52px;display: inline-block;background:url(../images/bg/phone.jpg) no-repeat;margin-top: 4px;}
+.top_logo .fr s{width: 180px;height: 52px;display: inline-block;background:url(../images/bg/phone.jpg) no-repeat;margin-top: 4px;}
 .top_logo .fr a img{width: 110px;height: 52px;margin: 4px 0 0 8px;}
 
 /*购买彩票 弹出菜单*/
