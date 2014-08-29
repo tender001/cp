@@ -91,7 +91,7 @@
 
 /*手机购彩*/
 .mob_buy{border-bottom: 0;background-color: #f5f5f5;}
-.mob_buy .body{padding: 25px 0;}
+.mob_buy .body{padding: 26px 0;}
 .mob_buy .body dt,.mob_buy .body dd{float: left;}
 .mob_buy .body dt div{width: 103px;height: 103px;padding-right: 5px;}
 .mob_buy .body dt div img{width: 100%;height: 100%;}
