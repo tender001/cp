@@ -143,7 +143,7 @@ Class(
 //								html += (o+1);
 //							}
 //							html += '</td>';
-							html += '<td style="text-align:left">' + $_sys.showzhanjiname(gameid,rt.cnickid,'award')+ '</td>';
+							html += '<td style="text-align:left;padding-left:10px">' + $_sys.showzhanjiname(gameid,rt.cnickid,'award')+ '</td>';
 							html += '<td style="text-align:left">' +(($_sys.showzhanji(rt.aunum,rt.agnum)==''?'&nbsp;':$_sys.showzhanjii(gameid,rt.cnickid,rt.aunum,rt.agnum)+'&nbsp;&nbsp;')) + '</td>';
 							
 							html += '<td>' + $_sys.getlotname(gameid).split("-")[0] + '</td>';
@@ -211,7 +211,7 @@ Class(
 //								html += (o+1);
 //							}
 //							html += '</td>';
-							html += '<td style="text-align:left">' + $_sys.showzhanjiname(gameid,rt.nickid,'award') + '</td>';
+							html += '<td style="text-align:left;padding-left:10px">' + $_sys.showzhanjiname(gameid,rt.nickid,'award') + '</td>';
 							html += '<td style="text-align:left">' + (($_sys.showzhanji(rt.aunum,rt.agnum)==''?'&nbsp;':$_sys.showzhanjii(gameid,rt.nickid,rt.aunum,rt.agnum)+'&nbsp;&nbsp;')) + '</td>';
 							
 							html += '<td>' + $_sys.getlotname(gameid).split("-")[0] + '</td>';
