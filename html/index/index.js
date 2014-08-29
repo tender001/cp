@@ -143,17 +143,17 @@ Class(
 //								html += (o+1);
 //							}
 //							html += '</td>';
-							html += '<td style="text-align:left;padding-left:10px">' + $_sys.showzhanjiname(gameid,rt.cnickid,'award')+ '</td>';
-							html += '<td style="text-align:left">' +(($_sys.showzhanji(rt.aunum,rt.agnum)==''?'&nbsp;':$_sys.showzhanjii(gameid,rt.cnickid,rt.aunum,rt.agnum)+'&nbsp;&nbsp;')) + '</td>';
+							html += '<td style="padding-left:10px">' + $_sys.showzhanjiname(gameid,rt.cnickid,'award')+ '</td>';
+							html += '<td>' +(($_sys.showzhanji(rt.aunum,rt.agnum)==''?'&nbsp;':$_sys.showzhanjii(gameid,rt.cnickid,rt.aunum,rt.agnum)+'&nbsp;&nbsp;')) + '</td>';
 							
 							html += '<td>' + $_sys.getlotname(gameid).split("-")[0] + '</td>';
-							html += '<td style="text-align:right">' + parseFloat(rt.money).rmb(true) + '</td>';
+							html += '<td>' + parseFloat(rt.money).rmb(true) + '</td>';
 							html += '<td><p>' + rt.jindu + '%';
 							if(rt.pnum > 0){
 								html += '<i>(保' + Math.ceil(rt.pnum*100/rt.nums) + '%)</i>';
 							}
 							html += '</p> <p class="x_jdt"><em style="width: ' + rt.jindu + '%"></em></p></td>';
-							html += '<td style="text-align:right"><i>￥' + rt.lnum + '</i>&nbsp;&nbsp;</td>';
+							html += '<td><i>￥' + rt.lnum + '</i>&nbsp;&nbsp;</td>';
 							if(rt.lnum == 0 || rt.istate != 1){
 								if(rt.istate > 2){
 									html += '<td>已撤单</td>';
@@ -211,17 +211,17 @@ Class(
 //								html += (o+1);
 //							}
 //							html += '</td>';
-							html += '<td style="text-align:left;padding-left:10px">' + $_sys.showzhanjiname(gameid,rt.nickid,'award') + '</td>';
-							html += '<td style="text-align:left">' + (($_sys.showzhanji(rt.aunum,rt.agnum)==''?'&nbsp;':$_sys.showzhanjii(gameid,rt.nickid,rt.aunum,rt.agnum)+'&nbsp;&nbsp;')) + '</td>';
+							html += '<td style="padding-left:10px">' + $_sys.showzhanjiname(gameid,rt.nickid,'award') + '</td>';
+							html += '<td>' + (($_sys.showzhanji(rt.aunum,rt.agnum)==''?'&nbsp;':$_sys.showzhanjii(gameid,rt.nickid,rt.aunum,rt.agnum)+'&nbsp;&nbsp;')) + '</td>';
 							
 							html += '<td>' + $_sys.getlotname(gameid).split("-")[0] + '</td>';
-							html += '<td style="text-align:right">' + parseFloat(rt.money).rmb(true) + '</td>';
+							html += '<td>' + parseFloat(rt.money).rmb(true) + '</td>';
 							html += '<td><p>' + rt.jindu + '%';
 							if(rt.pnum > 0){
 								html += '<i>(保' + (rt.pnum*100/rt.nums).toFixed(0) + '%)</i>';
 							}
 							html += '</p> <p class="x_jdt"><em style="width: ' + rt.jindu + '%"></em></p></td>';
-							html += '<td style="text-align:right"><i>￥' + rt.lnum + '</i>&nbsp;&nbsp;</td>';
+							html += '<td><i>￥' + rt.lnum + '</i>&nbsp;&nbsp;</td>';
 							if(rt.lnum == 0 || rt.state != 1){
 								if(rt.state > 2){
 									html += '<td>已撤单</td>';
