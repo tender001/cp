@@ -6,20 +6,14 @@ Class(
 		this.bindOther();
 		this.Qbuy();
 		this.carousel();//焦点图滚动
-    
-		//var P=this;
         this.screen();
-      
         this._loadcode();
         this.selectProject();
         this.listHotProject(1, 8, "table_hot_project");
-        
-      
 	},
 	ss:function(){
 		alert(0);
 	},
-	
 	selectProject : function(){
 		var P=this;
 		$(".hm .tit span").click(function(){
@@ -32,9 +26,7 @@ Class(
 				P.loadGameProj(1, 8, $(this).attr("id"),$(this).attr("expect"));
 			}
 		});
-		
 	},
-	
 	bindOther:function(){
 		$("#scrollDiv").textSlider({
 			line:2,
@@ -71,19 +63,13 @@ Class(
 		var len = $("#flash_num span").length; 
 		var index = 0;
 		var picTimer;
-		
-	
-//		$("#focus").append(btn);
 		$("#focus .btnBg").css("opacity",0.8);
-
 		$("#flash_num span").css("opacity",0.4).mouseover(function() {
 			index = $("#flash_num span").index(this);
 			showPics(index);
 		}).eq(0).trigger("mouseover");
-
 		$("#focus .preNext").css("opacity",0.2).hover(function() {
 			$(this).stop(true,false).animate({"opacity":"0.8"},300);
-			
 		},function() {
 			$(this).stop(true,false).animate({"opacity":"0.2"},300);
 		});
@@ -97,7 +83,6 @@ Class(
 			if(index == -1) {index = len - 1;}
 			showPics(index);
 		});
-
 		$("#flash_outer .next").click(function() {
 			index += 1;
 			if(index == len) {index = 0;}
@@ -127,7 +112,7 @@ Class(
     },
     loadGameProj : function(pn, ps, toId,expect){
 //    	var data={gid:Class.C('lotid'), pid:Class.C("expect"), state:Class.C("state"), find:Class.C("findstr"), fsort:Class.C("fsort"), dsort:Class.C("dsort"), ps:Class.C("ps"), pn:Class.C("pn")};
-    	var data="gid="+toId+"&pid="+expect+"&state=0&find=&fsort=jindu&dsort=descending&ps=8&pn=1"
+    	var data="gid="+toId+"&pid="+expect+"&state=0&find=&fsort=jindu&dsort=descending&ps=8&pn=1";
     	Y.ajax({
 			url : $_trade.url.plist,
 			type : "POST",
@@ -185,10 +170,7 @@ Class(
 							}else{
 								html += '<td><a href="' + $_sys.getlotdir(gameid)+$_sys.url.viewpath+'?lotid='+gameid+'&projid='+rt.cprojid + '" target="_blank">详情</a></td>';
 							}html += '</tr>';
-							
-							
 						});
-						
 					}
 //					$(html).appendTo($("#" + toId));
 					$("#table_hot_project").html(html)
@@ -268,8 +250,6 @@ Class(
 			}
 		});
 	},
-	
-
 	Qbuy:function(){
 		 this.lib.Tabs({
 	            items: '#todaykaijiang span',
@@ -439,8 +419,6 @@ Class(
 						$("span[nowendtime="+rt.gid+"]").html(rt.nowendtime);
 						$("span[pool="+rt.gid+"]").html(rt.pools);
     					if(nd==d){
-    						
-    					
     						$("li[today="+rt.gid+"]").show();
     					}
     					
@@ -450,11 +428,7 @@ Class(
     		}
     	}); 
     }
-    
-	
-	   
 });
-
 (function(B, H, s, f, tp, z, y, c, ul, li, dl, up, dn, e, bt) {
 	if(B.mozilla) {
 		f -= 5;
@@ -476,12 +450,9 @@ Class(
 		up.mouseup(slowUp);
 		dn.mouseup(slowDn);
 	});
-
-
 	function clear() {
 		clearTimeout(e);
 	}
-
 	function set(v, h) {
 		clear();
 		var ci = getc();
@@ -622,6 +593,3 @@ $.fn.textSlider.scllor = function($this, settings){
     //事件绑定
     ul.hover(autoStop,autoPlay).mouseout();
 };
-
-
-
