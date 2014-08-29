@@ -2,17 +2,39 @@ Class(
 		'Application',{
     use: 'tabs,dataInput,mask,countDown',
 	ready:true,
-	index:function(){
+	index:function(config){
 		this.bindOther();
 		this.Qbuy();
 		this.carousel();//焦点图滚动
     
-		
+		//var P=this;
         this.screen();
       
         this._loadcode();
-        this.listHotProject(1, 8, "table_hot_project")
+        this.selectProject();
+        this.listHotProject(1, 8, "table_hot_project");
+        
+      
 	},
+	ss:function(){
+		alert(0);
+	},
+	
+	selectProject : function(){
+		var P=this;
+		$(".hm .tit span").click(function(){
+        	var a=$(this).index();
+			$(this).addClass("hover").siblings("span").removeClass("hover");
+			$(".hm .body").eq(a).addClass("hover").siblings(".body").removeClass("hover");
+			if($(this).attr("id") == "00") {
+				P.listHotProject(1, 8, "table_hot_project");
+			}else{
+				P.loadGameProj(1, 8, $(this).attr("id"),$(this).attr("expect"));
+			}
+		});
+		
+	},
+	
 	bindOther:function(){
 		$("#scrollDiv").textSlider({
 			line:2,
@@ -103,6 +125,82 @@ Class(
 			$("#flash_num span").stop(true,false).animate({"opacity":"0.6"},300).removeClass("ddd").eq(index).stop(true,false).animate({"opacity":"1"},300).addClass("ddd"); 
 		}
     },
+    loadGameProj : function(pn, ps, toId,expect){
+//    	var data={gid:Class.C('lotid'), pid:Class.C("expect"), state:Class.C("state"), find:Class.C("findstr"), fsort:Class.C("fsort"), dsort:Class.C("dsort"), ps:Class.C("ps"), pn:Class.C("pn")};
+    	var data="gid="+toId+"&pid="+expect+"&state=0&find=&fsort=jindu&dsort=descending&ps=8&pn=1"
+    	Y.ajax({
+			url : $_trade.url.plist,
+			type : "POST",
+			dataType : "json",
+			data :data,
+			end : function(d) {
+				var obj = eval("(" + d.text + ")");
+				var code = obj.Resp.code;
+				var rb = !!obj.Resp.xml;
+				var html="";
+				if(rb){
+					rb = !!obj.Resp.xml.row;
+				}
+				if(code == 0){
+					if(rb){
+						r = obj.Resp.xml.row;
+						//var _pagei = obj.Resp.xml.recordcount;
+						
+						if(!this.isArray(r)){r=new Array(r);}
+						r.each(function(rt,o){
+							var gameid =rt.cprojid.substr(2,2);
+							var odd=o%2==0?"":"odd";
+							html += '<tr id='+(o+1)+' class = '+odd+'  >';
+							html += '<td>';
+							if(rt.iorder > 0 && rt.jindu != 100){
+								html += '<img src="/images/index_93.gif" />';
+							}else{
+								html += (o+1);
+							}
+							html += '</td>';
+							html += '<td>' + $_sys.showzhanjiname(gameid,rt.cnickid,'award')+ '</td>';
+							html += '<td>' +(($_sys.showzhanji(rt.aunum,rt.agnum)==''?'&nbsp;':$_sys.showzhanjii(gameid,rt.cnickid,rt.aunum,rt.agnum)+'&nbsp;&nbsp;')) + '</td>';
+							
+							html += '<td>' + $_sys.getlotname(gameid).split("-")[0] + '</td>';
+							html += '<td>' + parseFloat(rt.money).rmb(true) + '</td>';
+							html += '<td><p>' + rt.jindu + '%';
+							if(rt.pnum > 0){
+								html += '<i>(保' + (rt.pnum*100/rt.nums).toFixed(0) + '%)</i>';
+							}
+							html += '</p> <p class="x_jdt"><em style="width: ' + rt.jindu + '%"></em></p></td>';
+							html += '<td><i>' + rt.lnum + '</i></td>';
+							html += '<td><font>' + rt.lnum + '</font></td>';
+							if(rt.lnum == 0 || rt.istate != 1){
+								if(rt.istate > 2){
+									html += '<td>已撤单</td>';
+								}else if(rt.istate == 2){
+									html += '<td>已满员</td>';
+								}else {
+									html += '<td></td>';
+								}
+							}else{
+								html += '<td><div><input type="text" value="1" id="rengou_' + rt.nid + '" /><a href="javascript:void(0);"><img src="/images/index_110.gif" class="gm" onclick="rengou(\''+gameid+'\',\''+rt.cprojid+'\',\'rengou_' + rt.nid +'\',\''+rt.lnum+'\')"/></a></div></td>';//lotid,projid,id,lnum
+							}
+							if(rt.cnickid=='******'){
+								html += '<td>--</td>';
+							}else{
+								html += '<td><a href="' + $_sys.getlotdir(gameid)+$_sys.url.viewpath+'?lotid='+gameid+'&projid='+rt.cprojid + '" target="_blank">详情</a></td>';
+							}html += '</tr>';
+							
+							
+						});
+						
+					}
+//					$(html).appendTo($("#" + toId));
+					$("#table_hot_project").html(html)
+				}
+			},
+			error : function() {
+				this.alert("网络故障!");
+				return false;
+			}
+		});
+	},
 	listHotProject:function(pn, ps, toId){
 		Y.ajax({
 			url : $_trade.url.hlist,
@@ -169,6 +267,8 @@ Class(
 			}
 		});
 	},
+	
+
 	Qbuy:function(){
 		 this.lib.Tabs({
 	            items: '#todaykaijiang span',
@@ -229,7 +329,8 @@ Class(
         				row.gid = rt.gid;
         				row.auditdate = rt.auditdate.substr(5,11);
         				row.awardtime=rt.at.substr(5,5);           					
-    					if (row.gid=='80'){
+//    					$("span[mark="+gid+"]").attr("expect",row.pid);
+        				if (row.gid=='80'){
     						row.nums = new String(row.nums).split(",");
     						row.money =new String( row.money).split(",");
     						row.onenum = row.nums[0] == ''?'0':(parseFloat(row.nums[0]).rmb(false,0));
@@ -245,7 +346,8 @@ Class(
     						}
 						
 
-    						Y.get("#sfc_pid").html(row.pid+"期");		
+    						Y.get("#sfc_pid").html(row.pid+"期");	
+    						
     						Y.get("#sfc_pools").html(row.pools);	
     						Y.get("#sfc_kjdate").html(row.auditdate);
     						Y.get("#sfc_code").html("<b>"+row.code.split(',').join('</b><b>')+"</b>");			
@@ -255,6 +357,7 @@ Class(
     						row.onenum = row.nums[0] == ''?'0':(parseFloat(row.nums[0]).rmb(false,0));
     						row.onemoney = row.money[0] == ''?'0':(parseFloat(row.money[0]).rmb(false,0));
     						Y.get("#sfcrj_pools").html(row.pools);
+    						Y.get("#"+row.gid+"").attr("expect",row.pid);
     						Y.get("#renjiumoney").html("任九："+row.onenum+"注"+row.onemoney+"元");
     						Y.get("#rxjc_pid").html(row.pid+"期");		
     						
@@ -284,12 +387,13 @@ Class(
     						Y.get("#dlt_pid,#topdlt_pid").html(row.pid+"期");		
     						Y.get("#dlt_pools,#topdlt_pools,span[pool=50]").html(row.pools);
     						Y.get("#dlt_kjdate,#topdlt_kjdate").html(row.awardtime);
+    						Y.get("#"+row.gid+"").attr("expect",row.pid);
     						var code=row.code.split('|');		
     						Y.get("#dlt_code,#topdlt").html('<b>'+code[0].split(',').join('</b><b>')+'</b>'+' <b class="blue">'+code[1].split(',').join('</b><b class="blue">')+'</b>');
     					}else if (row.gid=='01'){	
     						Y.get("#ssq_pid,#topssq_pid").html(row.pid+"期");		
     						Y.get("#ssq_pools,#topssq_pools , span[pool=01]").html(row.pools);
-    						
+    						Y.get("#"+row.gid+"").attr("expect",row.pid);
     						Y.get("#ssq_kjdate,#topssq_kjdate").html(row.awardtime);
     						var code=row.code.split('|');		
     						Y.get("#ssq_code,#topssq").html('<b>'+code[0].split(',').join('</b><b>')+'</b>'+' <b class="blue">'+code[1].split(',').join('</b><b class="blue">')+'</b>');	
@@ -520,3 +624,6 @@ $.fn.textSlider.scllor = function($this, settings){
     //事件绑定
     ul.hover(autoStop,autoPlay).mouseout();
 };
+
+
+
