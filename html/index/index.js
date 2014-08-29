@@ -213,6 +213,7 @@ Class(
 				var obj = eval("(" + d.text + ")");
 				var code = obj.Resp.code;
 				var rb = !!obj.Resp.row;
+				var html="";
 				if(code == 0){
 					if(rb){
 						r = obj.Resp.row;
@@ -220,7 +221,7 @@ Class(
 						r.each(function(rt,o){
 							var gameid = rt.gid;
 							var odd=o%2==0?"":"odd";
-							var html = '<tr id='+(o+1)+' class='+odd+'>';
+							 html += '<tr id='+(o+1)+' class='+odd+'>';
 							html += '<td>';
 							if(rt.iorder > 0 && rt.jindu != 100){
 								html += '<img src="/images/index_93.gif" />';
@@ -255,7 +256,8 @@ Class(
 							}else{
 								html += '<td><a href="' + $_sys.getlotdir(gameid)+$_sys.url.viewpath+'?lotid='+gameid+'&projid='+rt.hid + '" target="_blank">详情</a></td>';
 							}html += '</tr>';
-							$(html).appendTo($("#" + toId));
+//							$(html).appendTo($("#" + toId));
+							$("#table_hot_project").html(html)
 						});
 					}
 				}
