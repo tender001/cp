@@ -11,9 +11,6 @@ Class(
         this.selectProject();
         this.listHotProject(1, 8, "table_hot_project");
 	},
-	ss:function(){
-		alert(0);
-	},
 	selectProject : function(){
 		var P=this;
 		$(".hm .tit span").click(function(){
