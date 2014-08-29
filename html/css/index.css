@@ -133,13 +133,13 @@ div.center .body{width:95%;height:320px;}
 .hm .tit .more{color: #fff;}
 .hm .body{width: 100%;display: none;}
 .hm table{width: 100%;}
-.hm table th{height: 33px;*height: 35px;color: #333;background-color: #e8e8e8;font-weight: 400;border-bottom: 1px solid #ddd;}
-.hm table td{height: 34px;*height: 35px;text-align: center;border-bottom: 1px solid #ddd;}
+.hm table th{height: 33px;color: #333;background-color: #e8e8e8;font-weight: 400;text-align: left;border-bottom: 1px solid #ddd;}
+.hm table td{height: 34px;text-align: left;border-bottom: 1px solid #ddd;}
 .hm table tr.odd td{background-color: #f8f8f8}
 .hm table tr:hover td{background-color: #fffee6;}
 .hm table td span{color: #25a;}
 .hm table td i{color: #f60;}
-.hm table td .x_jdt{background: #FFF;border: 1px solid #ddd;height: 2px;width: 70px;text-align: left;line-height: 2px;border-left: none;_overflow: hidden;margin: 2px auto 0;_height: 3px;}
+.hm table td .x_jdt{background: #FFF;border: 1px solid #ddd;height: 2px;width: 70px;text-align: left;line-height: 2px;border-left: none;_overflow: hidden;margin: 2px 0 0;_height: 3px;}
 .hm table td .x_jdt em{display: block;height: 4px;background-color: #f60;margin: -1px -1px -1px 0px;}
 .hm table td input{width: 38px;border: 1px solid #ddd;color: #333;height: 18px;line-height:18px;padding: 1px 0;text-align: center;*margin-top: -1px;}
 .hm table td .shouye a{vertical-align: middle;}
