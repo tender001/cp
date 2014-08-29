@@ -165,10 +165,9 @@ Class(
 							html += '<td>' + parseFloat(rt.money).rmb(true) + '</td>';
 							html += '<td><p>' + rt.jindu + '%';
 							if(rt.pnum > 0){
-								html += '<i>(保' + (rt.pnum*100/rt.nums).toFixed(0) + '%)</i>';
+								html += '<font>(保' + Math.ceil(rt.pnum*100/rt.nums) + '%)</font>';
 							}
 							html += '</p> <p class="x_jdt"><em style="width: ' + rt.jindu + '%"></em></p></td>';
-							html += '<td><i>' + rt.lnum + '</i></td>';
 							html += '<td><font>' + rt.lnum + '</font></td>';
 							if(rt.lnum == 0 || rt.istate != 1){
 								if(rt.istate > 2){
@@ -357,7 +356,6 @@ Class(
     						row.onenum = row.nums[0] == ''?'0':(parseFloat(row.nums[0]).rmb(false,0));
     						row.onemoney = row.money[0] == ''?'0':(parseFloat(row.money[0]).rmb(false,0));
     						Y.get("#sfcrj_pools").html(row.pools);
-    						Y.get("#"+row.gid+"").attr("expect",row.pid);
     						Y.get("#renjiumoney").html("任九："+row.onenum+"注"+row.onemoney+"元");
     						Y.get("#rxjc_pid").html(row.pid+"期");		
     						
@@ -378,7 +376,6 @@ Class(
     						row.money =new String( row.money).split(",");
     						row.onenum = row.nums[0] == ''?'0':(parseFloat(row.nums[0]).rmb(false,0));
     						row.onemoney = row.money[0] == ''?'0':(parseFloat(row.money[0]).rmb(false,0));
-            			
     						Y.get("#bqcmoney").html("一等奖："+row.onenum+"注"+row.onemoney+"元");
     						Y.get("#bqc_pid").html(row.pid+"期");		
     						Y.get("#bqc_kjdate").html(row.auditdate);
@@ -387,13 +384,11 @@ Class(
     						Y.get("#dlt_pid,#topdlt_pid").html(row.pid+"期");		
     						Y.get("#dlt_pools,#topdlt_pools,span[pool=50]").html(row.pools);
     						Y.get("#dlt_kjdate,#topdlt_kjdate").html(row.awardtime);
-    						Y.get("#"+row.gid+"").attr("expect",row.pid);
     						var code=row.code.split('|');		
     						Y.get("#dlt_code,#topdlt").html('<b>'+code[0].split(',').join('</b><b>')+'</b>'+' <b class="blue">'+code[1].split(',').join('</b><b class="blue">')+'</b>');
     					}else if (row.gid=='01'){	
     						Y.get("#ssq_pid,#topssq_pid").html(row.pid+"期");		
     						Y.get("#ssq_pools,#topssq_pools , span[pool=01]").html(row.pools);
-    						Y.get("#"+row.gid+"").attr("expect",row.pid);
     						Y.get("#ssq_kjdate,#topssq_kjdate").html(row.awardtime);
     						var code=row.code.split('|');		
     						Y.get("#ssq_code,#topssq").html('<b>'+code[0].split(',').join('</b><b>')+'</b>'+' <b class="blue">'+code[1].split(',').join('</b><b class="blue">')+'</b>');	
@@ -438,6 +433,7 @@ Class(
     				o.each(function(rt,o) {
     					var nd = Y.getDate(rt.nowendtime).format('YY-MM-DD');
     					$("i[expect="+rt.gid+"]").html(rt.nowpid+"期");
+    					$("#"+rt.gid+"").attr("expect",rt.nowpid);
 						$("span[nowendtime="+rt.gid+"]").html(rt.nowendtime);
 						$("span[pool="+rt.gid+"]").html(rt.pools);
     					if(nd==d){
