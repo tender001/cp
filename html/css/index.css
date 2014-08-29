@@ -134,7 +134,7 @@ div.center .body{width:95%;height:320px;}
 .hm .body{width: 100%;display: none;}
 .hm table{width: 100%;}
 .hm table th{height: 33px;color: #333;background-color: #e8e8e8;font-weight: 400;text-align: left;border-bottom: 1px solid #ddd;}
-.hm table td{height: 34px;text-align: left;border-bottom: 1px solid #ddd;}
+.hm table td{height: 34px;text-align: left;border-bottom: 1px solid #ddd;color: #3c3c3c;}
 .hm table tr.odd td{background-color: #f8f8f8}
 .hm table tr:hover td{background-color: #fffee6;}
 .hm table td span{color: #25a;}
@@ -144,6 +144,6 @@ div.center .body{width:95%;height:320px;}
 .hm table td input{width: 38px;border: 1px solid #ddd;color: #333;height: 18px;line-height:18px;padding: 1px 0;text-align: center;*margin-top: -1px;}
 .hm table td .shouye a{vertical-align: middle;}
 /*.hm table td .shouye a img{height: 19px;}*/
-.hm table td a{color: #3970b6}
+.hm table td a{color: #10429E}
 .hm table td a.buy{width: 45px;height: 20px;line-height: 20px;display: block;background-color: #f60;color: #fff;margin: auto;}
 
