@@ -1532,7 +1532,7 @@ showduizhen =function (lotid,expect,projid,type,codes,cp){
 				var oldcodes = codes;
 				codes = codes.replace("$",",");
 				
-				if(codes.split(";").length>2){
+				if(codes.split(";").length>1){
 					 var wfname=codes.split("|")[0];
 					 ncode = codes.split(";");
 					 var bet_match=[];
