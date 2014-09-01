@@ -118,7 +118,7 @@ img{vertical-align:top;}
 .nav1 ul li a{height:38px;display:block;font-size:14px;font-weight:bold;color:#fff;padding:0 15px 0 14px;float: left;}
 .nav1 ul li.bac a{padding: 0 17px;}
 .nav1 ul li a:hover{background: #e52e04;text-decoration: none;color:#fff;}
-.nav1 ul li a.cur{/*background: #e52e04;margin: 0 -2px;padding:0 17px;*/text-decoration: none;color:#fff;}
+.nav1 ul li a.cur{/*background: #e52e04;margin: 0 -2px;padding:0 17px;text-decoration: none;color:#fff;*/}
 .nav1 ul li a.a1{padding-right: 22px;}
 /*.nav1 ul li a.a1:hover{padding-right: 24px;}*/
 .nav1 ul li s{right: 9px;}
