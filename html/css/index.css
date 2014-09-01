@@ -61,8 +61,8 @@
 .m_mid .tab .bod b em input.cur{background: url(../images/bg/focus.png) no-repeat;color: #666;}
 .m_mid .tab .bod b s.dal{background-position: 0 -222px;}
 .m_mid .tab .bod b em.blue{background-position: -150px -110px;}
-.m_mid .tab .bod b i{width: 52px;height: 32px;line-height:32px;margin: 0 5px 0 10px;font-size: 14px;color: #444;background-position: -1px -152px;cursor: pointer;}
-.m_mid .tab .bod b strong{width: 90px;height: 31px;line-height: 31px;font-size: 14px;color: #fff;background-position: -55px -152px;cursor: pointer;}
+.m_mid .tab .bod b i{width: 52px;height: 32px;line-height:32px;margin: 0 5px 0 8px;font-size: 14px;color: #444;background-position: -1px -152px;cursor: pointer;}
+.m_mid .tab .bod b strong{width: 93px;height: 34px;line-height: 31px;font-size: 14px;color: #fff;text-indent: -999em;background-position: -55px -152px;cursor: pointer;}
 
 .m_r{float: right;width: 223px}
 .m_r p.user{margin-bottom: 8px;height: 42px;overflow: hidden;}
