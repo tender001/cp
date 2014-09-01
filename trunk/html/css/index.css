@@ -66,7 +66,7 @@
 
 .m_r{float: right;width: 223px}
 .m_r p.user{margin-bottom: 8px;height: 42px;overflow: hidden;}
-.m_r p.user a.use{width: 104px;height: 42px;font: bold 16px/42px "\5b8b\4f53";display: inline-block;margin-left:5px;text-align: center;text-indent: -999em;color: #eb6003;text-decoration: none;background: url(../images/bg/index_login.jpg) no-repeat;}
+.m_r p.user a.use{width: 104px;height: 42px;float:left;font: bold 16px/42px "\5b8b\4f53";margin-left:5px;text-align: center;text-indent: -999em;color: #eb6003;text-decoration: none;background: url(../images/bg/index_login.jpg) no-repeat;_display:inline;}
 .m_r p.user a.use:hover{background-position: 0 -42px;}
 .m_r p.user a.reg{margin-left: 8px;background-position: -104px 0;}
 .m_r p.user a.reg:hover{background-position: -104px -42px;}
