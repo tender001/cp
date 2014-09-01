@@ -150,17 +150,17 @@ Class(
 								html += '<i>(保' + Math.ceil(rt.pnum*100/rt.nums) + '%)</i>';
 							}
 							html += '</p> <p class="x_jdt"><em style="width: ' + rt.jindu + '%"></em></p></td>';
-							html += '<td><i>￥' + rt.lnum + '</i>&nbsp;&nbsp;</td>';
+							html += '<td style="text-align:right"><i>' + rt.lnum + '元</i>&nbsp;&nbsp;</td>';
 							if(rt.lnum == 0 || rt.istate != 1){
 								if(rt.istate > 2){
-									html += '<td>已撤单</td>';
+									html += '<td style="text-align:center">已撤单</td>';
 								}else if(rt.istate == 2){
-									html += '<td>已满员</td>';
+									html += '<td style="text-align:center">已满员</td>';
 								}else {
 									html += '<td></td>';
 								}
 							}else{
-								html += '<td><div><input type="text" value="1" id="rengou_' + rt.nid + '" /><a href="javascript:void(0);"><img src="/images/index_110.gif" class="gm" onclick="rengou(\''+gameid+'\',\''+rt.cprojid+'\',\'rengou_' + rt.nid +'\',\''+rt.lnum+'\')"/></a></div></td>';//lotid,projid,id,lnum
+								html += '<td style="text-align:center"><div><input type="text" value="1" id="rengou_' + rt.nid + '" /><a href="javascript:void(0);"><img src="/images/index_110.gif" class="gm" onclick="rengou(\''+gameid+'\',\''+rt.cprojid+'\',\'rengou_' + rt.nid +'\',\''+rt.lnum+'\')"/></a></div></td>';//lotid,projid,id,lnum
 							}
 							if(rt.cnickid=='******'){
 								html += '<td>--</td>';
@@ -221,9 +221,9 @@ Class(
 							html += '<td style="text-align:right"><i>' + rt.lnum + '元</i>&nbsp;&nbsp;</td>';
 							if(rt.lnum == 0 || rt.state != 1){
 								if(rt.state > 2){
-									html += '<td>已撤单</td>';
+									html += '<td style="text-align:center">已撤单</td>';
 								}else if(rt.state == 2){
-									html += '<td>已满员</td>';
+									html += '<td style="text-align:center">已满员</td>';
 								}else {
 									html += '<td></td>';
 								}
