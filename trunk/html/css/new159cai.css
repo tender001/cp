@@ -71,8 +71,8 @@ img{vertical-align:top;}
 .top a{margin: 0 8px;color:#6c6c6c;}
 .top .fl a{color: #e62e04;cursor: pointer;}
 .top .fr{margin-right: -8px;overflow:visible;}
-.top_logo{padding:10px 0;width: 1000px;margin: 0 auto;overflow: hidden;}
-.top_logo .fl{width:185px;height: 65px;}
+.top_logo{padding:5px 0;width: 1000px;margin: 0 auto;overflow: hidden;}
+.top_logo .fl{width:200px;height: 70px;}
 .logo_right{float: left;padding-left: 5px;}
 .logo1 img{width: 100%;height: 100%;}
 .top_logo .fr s{width: 180px;height: 52px;display: inline-block;background:url(../images/bg/phone.jpg) no-repeat;margin-top: 4px;}
@@ -104,20 +104,20 @@ img{vertical-align:top;}
 
 /*nav*/
 .nav{height: 38px;line-height: 38px;background: #f60 url(../images/bg/nav.jpg) repeat-x;}
-.nav ul li{float: left;background: url(../images/bg/nav_li.jpg) repeat;overflow: visible;border-right: 1px solid #ffa366;}
-.nav ul li a{height:38px;display:block;font-size:14px;font-weight:bold;color:#fff;padding:0 22px 0 21px;float: left;}
+.nav ul li{float: left;background: url(../images/bg/nav_li.jpg) repeat;overflow: visible;border-left: 1px solid #ffa366;}
+.nav ul li a{height:38px;float: left;padding:0 22px 0 21px;font-size:14px;font-weight:bold;color:#fff;}
 .nav ul li a:hover{background: #e52e04;text-decoration: none;color:#fff;}
-.nav ul li.bac{border: 0}
-.nav ul li.bac a{padding: 0 22px;}
+.nav ul li.bac{border-right: 1px solid #ffa366;}
+/*.nav ul li.bac a{padding: 0 22px;}*/
 /*nav1*/
 .nav1{height: 38px;line-height: 38px;background: #f60 url(../images/bg/nav.jpg) repeat-x;overflow:visible;_float: left;}
 .nav1 *{overflow:visible;}
 .nav1 ul li{float: left;background: url(../images/bg/nav_li.jpg) repeat;border-right: 1px solid #ffa366;}
-.nav1 ul li.bac{border: 0}
+.nav1 ul li.bac{/*border: 0*/}
 .nav1 ul li a{height:38px;display:block;font-size:14px;font-weight:bold;color:#fff;padding:0 15px 0 14px;float: left;}
-.nav1 ul li.bac a{padding: 0 18px;}
+.nav1 ul li.bac a{padding: 0 17px;}
 .nav1 ul li a:hover{background: #e52e04;text-decoration: none;color:#fff;}
-.nav1 ul li a.cur{background: #e52e04;/*margin: 0 -2px;padding:0 17px;*/text-decoration: none;color:#fff;}
+.nav1 ul li a.cur{/*background: #e52e04;margin: 0 -2px;padding:0 17px;*/text-decoration: none;color:#fff;}
 .nav1 ul li a.a1{padding-right: 22px;}
 /*.nav1 ul li a.a1:hover{padding-right: 24px;}*/
 .nav1 ul li s{right: 9px;}
