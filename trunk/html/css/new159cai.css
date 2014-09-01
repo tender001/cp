@@ -27,7 +27,7 @@ img{vertical-align:top;}
 .c3{color: #3c3c3c !important;}
 /*index basic*/
 /*.top dl dt,*/
-.top dl dt s,.top dl.ali dd a,.top dl dd li s,.m_l li span s,.m_l1 li span s,.tit,.m_mid .tab .title,.m_mid .tab .bod b s,.m_mid .tab .bod b em,.m_mid .tab .bod b i,.m_mid .tab .bod b strong,.mob_buy .body dd a,.today .bod li p a.fr,.center .body li p span em,.m_r .tab .title{background: url(../images/bg/index_bg0.png);_background-image: url(../images/bg/index_ie6.png);}
+.top dl dt s,.top dl.ali dd a,.top dl dd li s,.m_l li span s,.m_l1 li span s,.tit,.m_mid .tab .title,.m_mid .tab .bod b s,.m_mid .tab .bod b em,.m_mid .tab .bod b i,.m_mid .tab .bod b strong,.mob_buy .body dd a,.today .bod li p a.fr,.center .body li p span em,.m_r .tab .title{background: url(../images/bg/index_bg0.png);_background-image: url(../images/bg/index_bg0-ie6.png);}
 /* dd */
 /*top*/
 .top{height: 32px; line-height: 32px; background-color: #f7f7f7; border-top: 1px solid #e8ecef; border-bottom: 1px solid #ddd;overflow:visible;}
@@ -72,7 +72,8 @@ img{vertical-align:top;}
 .top .fl a{color: #e62e04;cursor: pointer;}
 .top .fr{margin-right: -8px;overflow:visible;}
 .top_logo{padding:10px 0;width: 1000px;margin: 0 auto;overflow: hidden;}
-.top_logo .fl{width:170px;height: 65px;}
+.top_logo .fl{width:185px;height: 65px;}
+.logo_right{float: left;padding-left: 5px;}
 .logo1 img{width: 100%;height: 100%;}
 .top_logo .fr s{width: 180px;height: 52px;display: inline-block;background:url(../images/bg/phone.jpg) no-repeat;margin-top: 4px;}
 .top_logo .fr a img{width: 110px;height: 52px;margin: 4px 0 0 8px;}
@@ -181,7 +182,7 @@ img{vertical-align:top;}
 .foc li dl dd i a:hover{background-position: 0 -26px;color: #fff;text-decoration: none;}
 /*footer*/
 .footer{width: 1000px;margin: 0 auto;}
-.footer .cx{padding: 15px 0;border-top: 3px solid #c9c9c9;border-bottom: 1px solid #e3e3e3;}
+.footer .cx{padding: 15px 0;border-top: 2px solid #c9c9c9;border-bottom: 1px solid #e3e3e3;}
 .footer .cx li{float: left;width: 137px;height: 49px;margin-left: 5px;display: inline;}
 .foot p{text-align: center;color: #333;line-height: 26px;}
 .foot{padding: 15px 0;}
