@@ -54,10 +54,10 @@
 .m_mid .tab .bod p{overflow: hidden;}
 .m_mid .tab .bod span{color:#8c8c8c;}
 .m_mid .tab .bod b{width:100%;display: block;margin: 8px 0;}
-.m_mid .tab .bod b *{vertical-align: middle;font-size: 18px;text-align: center;display: inline-block;}
+.m_mid .tab .bod b *{vertical-align: middle;font-size: 18px;text-align: center;display: inline-block;*display:inline;*zoom:1;}
 .m_mid .tab .bod b s{width: 70px;height: 70px;margin-right: 3px;background-position: -124px -38px;}
 .m_mid .tab .bod b em{width: 41px;height: 41px;line-height: 38px;color: #fff;margin-right: 3px;background-position: -109px -110px;}
-.m_mid .tab .bod b em input{width: 29px;height: 23px;line-height: 23px;font-weight: bold;padding: 3px 0;background: none;border: 0;color: #fff;cursor: pointer;margin: -2px 0 0 -1px;*margin: 4px 0 -1px;}
+.m_mid .tab .bod b em input{width: 29px;height: 23px;line-height: 23px;font-weight: bold;padding: 3px 0;background: none;border: 0;color: #fff;cursor: pointer;margin: -2px 0 0 -1px;*margin: 4px 0 -1px -2px;}
 .m_mid .tab .bod b em input.cur{background: url(../images/bg/focus.png) no-repeat;color: #666;}
 .m_mid .tab .bod b s.dal{background-position: 0 -222px;}
 .m_mid .tab .bod b em.blue{background-position: -150px -110px;}
