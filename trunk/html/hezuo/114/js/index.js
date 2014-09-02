@@ -175,7 +175,8 @@ Class(
             	  var __oncd = {
                           endTime: et,
                           change:function (times, isEnd, msg, now){
-                        	  var tpl = "";
+                        	  var tpl = "", isstop;
+                        	  isstop = Class.C('stop-buy');
                         	  if(gid==54 || gid==56){
                         		  tpl = ctpl3;
                         	  }else{
@@ -186,7 +187,13 @@ Class(
                             		  timebar.html('<i class="red">'+(msg || '已截止')+'</i>');
                             	
                                       Class.config('isEnd', false);
-//                                      Y.getcurrentissue(gid);
+                                      if (!isstop) {// 不是停售
+                  						setTimeout(function(){
+                  							timebar.html(endTime);// 换期号
+                  						},200);
+                  						
+                  					}
+                                      //                                      Y.getcurrentissue(gid);
                               }else{
                                   timebar.html( ctpl.format.apply(tpl, times).replace(/\b\d\b/g,'0$&'))
                               }                                
