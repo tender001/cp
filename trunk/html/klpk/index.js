@@ -97,31 +97,80 @@ if (Class.C('stop-buy')) {
     $(".nxszop .sz_a_l .sz_cmt").addClass("cu");
 }
 
-Class.extend('getPrixRange', function (count){//已选
-    var min, max, rn, hit, sp, ini;
-    sp = this.getPrix();//单注奖金
-    ini = this.getIni();
-    rn = ini[2];//必选个数
-    min = sp;
-    if ((min != 65 && min !=195 && min != 13) && count > rn){//前一共用任选的UI,所以要区分开来
-        if (rn <= 5) {
-            var big = Math.c(Math.min(count, 5), rn)*sp;
-            if (ini[0].indexOf('任')>-1 && rn < 5) {
-                max = big;
-            }else{
-                min = big
-            }
-        }else{
-            min =  Math.dt(5, count - 5, rn)*sp;//最多命中注数
-        }
-    }
-    if (min == max) {
-        max = false
-    }
-    return {
-        min: min,//最小奖金
-        max: max//最大奖金
-    }     
+Class.extend('getPrixRange', function (count,code){//已选
+	var min, max='', rn, hit, sp, ini,playid,mx,mi,getPlayId = this.getPlayId();
+	if(code != '' && code != undefined){
+	codes = Y.getInt(code[0]);
+	if(getPlayId == '249' && codes == '7'){
+	if(code.length == '1'){
+	sp = 22;
+	}else{
+	sp = 112;
+	}
+	}else if(getPlayId == '250' && codes =='8'){
+	if(code.length == '1'){
+	sp = 535;
+	}else{
+	sp = 2685;
+	}
+	}else if(getPlayId == '251' && codes =='13'){
+	if(code.length == '1'){
+	sp = 33;
+	}else{
+	sp = 433;
+	}
+	}else if(getPlayId == '252' && codes =='14'){
+	if(code.length == '1'){
+	sp = 500;
+	}else{
+	sp = 6900;
+	}
+	}else if(getPlayId == '253' && codes =='14'){
+	if(code.length == '1'){
+	sp = 7;
+	}else{
+	sp = 95;
+	}
+	}else{
+	sp = this.getPrix();//单注奖金
+	}
+	}else{
+	sp = this.getPrix();//单注奖金
+	}
+	playid = getPlayId;
+	if( playid == '256' || playid == '257' || playid == '258' || playid == '259'){
+	mx = 3;
+	mi = 3;
+	}else if(playid == '255' || playid == '254'){
+	mx = 3;
+	mi = 1;
+	}else{
+	mx = 1;
+	mi = 1;
+	}
+	ini = this.getIni();
+	rn = ini[2];//必选个数
+	min = sp;
+	var max = Math.c(Math.min(count, mx), rn)*sp;
+	if(playid == '254'){//R1
+	}else if(playid == '255'){//R2
+	}else if(playid == '256'){//R3
+	if(count > mx){//由于开奖号码可能是豹子
+	max = Math.c((count-1), (rn-1))*sp;
+	}
+	}else if(playid == '257' || playid == '258' || playid == '259'){//R4 R5
+	if(count > mx){//由于开奖号码可能是豹子
+	max = Math.c((count-1), (rn-1))*sp;//这里面的1代指豹子
+	min = Math.c((count-3), (rn-3))*sp;//这里面的3代指开奖号码个数
+	}
+	}
+	if (min == max) {
+	max = false;
+	}
+	return {
+	min: min,//最小奖金
+	max: max//最大奖金
+	}; 
 });
 
 Class.extend('getdtplayid', function (){//已选
@@ -596,7 +645,7 @@ Class('Ball>Single', {
          zhushu = this.getCount();
          prix = zhushu > 0 ? Y.getInt(Y.getPrix()) : 0;
          tm = zhushu*Class.C('price');// buy
-         prix =  zhushu > 0 ? this.getPrixRange(this.ball.data.length) : {max: 0, min: 0}; 
+         prix =  zhushu > 0 ? this.getPrixRange(this.ball.data.length,this.ball.data) : {max: 0, min: 0}; 
          if (this.ball.data.length == 11 && prix.max) {
              prix.min = Math.max(prix.max, prix.min);
              prix.max = null;
@@ -1683,23 +1732,42 @@ Class('ExpectList', {
         this.setTotalData(listdata);
     },
     setTotalData: function (listdata){//更新总期数与金额
-         var exp_sum, bs, bslist, pr;
-         exp_sum = bs =n= 0;
-         bslist = [];
-         exlist = [];
-         var code = this.postMsg('msg_get_list_data').data.codes+'';
-         var cl = code.split(";");
-         var isyl = false;
-         if(cl.length==1 && code.length>0){
-             if (code.indexOf('$')>-1) {//胆拖
-                 var dt = code.split('$'); 
-                 pr = this.getDtPrixRange(dt[0].split(',').length, dt[1].split(',').length);
-             }else{
-             	 var len = code.split(',').length;
-                 pr =  this.getPrixRange(len);            
-             } 
-             isyl = true;
-         }
+    	 var exp_sum, bs, bslist, pr = '',c = [];
+    	 exp_sum = bs =n= 0;
+    	 bslist = [];
+    	 exlist = [];
+    	 var code = this.postMsg('msg_get_list_data').data.codes+'';
+    	 if(code.indexOf(';') == -1){
+    	 switch(code){
+    	 case "07:12:01":
+    	 c[0] = 7;
+    	 break;
+    	 case "08:13:01":
+    	 c[0] = 8;
+    	 break;
+    	 case "09:14:01":
+    	 c[0] = 13;
+    	 break;
+    	 case "10:15:01":
+    	 c[0] = 14;
+    	 break;
+    	 case "11:16:01":
+    	 c[0] = 14;
+    	 break;
+    	 }
+    	 }
+    	 var cl = code.split(";");
+    	 var isyl = false;
+    	 if(cl.length==1 && code.length>0){
+    	 if (code.indexOf('$')>-1) {//胆拖
+    	 var dt = code.split('$');
+    	 pr = this.getDtPrixRange(dt[0].split(',').length, dt[1].split(',').length);
+    	 }else{
+    	 var len = this.getPlayId()==245? 2:this.getPlayId()==246? 3:this.getPlayId()==244? 1:code.split(',').length;
+    	 pr = this.getPrixRange(len,c);
+    	 }
+    	 isyl = true;
+    	 } 
          this.expectChks.each(function (el){
              if (el.checked) {
                  exp_sum++;
@@ -2368,12 +2436,13 @@ Class('openCodeList', {
     	}else{
     		opencodeli = this.get('td', ul).slice(1,2);//填写开奖号码的位置
 //    		opentimetd = this.get('td', ul).slice(14,15);//填写开奖时间的位置
-    		var newxh=xuanhao.slice(2,13)
+    		var newxh=this.get('td', ul).slice(2,15);
     		newxh.each(function (li, i){
         		this.get(li).html(omiss_arr[i]);
         		var c = String.zero(i + 1);
-        		if(opencode_arr.indexOf(c)!=-1){
-        			this.get(li).html('<b>'+c+'</b>');
+        		var ocodearr=(opencode_arr[0]+"").substr(1,2)+","+(opencode_arr[1]+"").substr(1,2)+","+(opencode_arr[2]+"").substr(1,2);
+        		if(ocodearr.indexOf(c)!=-1){
+        			this.get(li).html('<i>'+c+'</i>');
         			
         		}else{
 //        			this.get(li).html(c);
@@ -2401,7 +2470,7 @@ Class('openCodeList', {
 		    	var ctpl = ' <b >{2}:{3}:{4} </b>';
 		    	
 		    	var timebar= this.get('#kaijiangexpect').show();
-		    	 timebar.html(pid.substr(2));
+		    	 timebar.html(pid);
 				this.get('#kaijiangopencode').html('');
 				if (diff > 0){
 					clearInterval(window.refreshKjTime);
