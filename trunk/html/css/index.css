@@ -117,8 +117,8 @@ div.center .body{width:95%;height:320px;}
 
 .zx{float: right;width: 223px;}
 .zx .zj{margin-bottom: 9px;}
-.zx .zj .body{height: 185px;overflow: hidden;color: #3c3c3c;}
-.zx table td,.zx table th{height:30px;text-align: center;/*border-bottom: 1px dashed #ddd;*/}
+.zx .zj .body{height: 169px;padding: 8px 0;overflow: hidden;color: #3c3c3c;}
+.zx table td,.zx table th{height:34px;text-align: center;/*border-bottom: 1px dashed #ddd;*/}
 .zx table td:first-of-type{text-align: left;}
 .zx table th{font-weight: 400;color: #f00;text-align: right;}
 .zx .cn li{float: left;width: 62px;height: 74px;margin-right: 4px;display: inline;}
