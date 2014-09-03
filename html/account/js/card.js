@@ -16,6 +16,7 @@ Class('App', {
     	$("li[name=facevalue]").click(function(){
     		$("li[name=facevalue]").removeClass("cur");
     		$(this).addClass("cur");
+    		$("#cardts").addClass("cur")
     	})
     	this.LoginAcc();
     	this.showSafe();
@@ -190,13 +191,18 @@ var subform =function (){
 	})
 	
 	var typevalue="";
+	var typevalue="";
 	$("li[name=cardtype]").each(function(){
-		if($(this).index()==0){
+		
+		if($(this).hasClass("cur")){
+			if($(this).index()==0){
 			typevalue="CMJFK";
-		}else if($(this).index()==0){
+			}else if($(this).index()==1){
 			typevalue="LTJFK";
-		}else if($(this).index()==0){
+			}else if($(this).index()==2){
 			typevalue="DXJFK";
+			}
+			
 		}
 	});
 	var cardid = ($("#cardid").val()).replace(/\s+/g,"");
