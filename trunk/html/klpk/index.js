@@ -2239,7 +2239,7 @@ Class('openCodeList', {
     		//ul.attr("expect",ld[i].p).attr("endtime",ld[i].t).attr("ol",0).attr("codes","");
         	
         	if(i%1==0){
-        		ul.attr("expect",ld[i].p).attr("endtime",ld[i].t).attr("ol",0).attr("codes","").toggleClass("odd");
+        		ul.attr("expect",ld[i].p).attr("endtime",ld[i].t).attr("ol",0).attr("codes","");
         	}else{
         		ul.attr("expect",ld[i].p).attr("endtime",ld[i].t).attr("ol",0).attr("codes","");
         	}
@@ -2282,7 +2282,8 @@ Class('openCodeList', {
             		this.showomiss(omissdata, opencodelen, opencode, ul,opentime);
         		}else{
         			//ul.html(this.opencodehtml);
-        			this.get('.pid', ul).html("" + ld[i].p.substr(2) + "");
+        		
+        			this.get('td', ul).slice(0,1).html("" + ld[i].p + "");//填写开奖期号的位置
             		this.showomiss(omissdata, opencodelen, opencode, ul,opentime);
         		}
         	}else{
@@ -2380,9 +2381,9 @@ Class('openCodeList', {
         	});
     	}
     
-    	var codels = '<span class="pk{4}">{1}<small></small></span><span class="pk{5}">{2}<small></small></span><span class="pk{6}">{3}<small></small></span>';
+    	var codels = '<span class="PK_{1}"></span><span class="PK_{2}"></span><span class="PK_{3}"></span>';
 		var llcc=opencode.split(",");
-		this.get(opencodeli).html(codels.format((llcc[0]+"").substr(1,2),(llcc[1]+"").substr(1,2),(llcc[2]+"").substr(1,2),llcc[0][0],llcc[1][0],llcc[2][0]));  
+		this.get(opencodeli).html(codels.format(llcc[0],llcc[1],llcc[2]));  
 //    	this.get(opencodeli).html(opencode);
 //    	this.get(opentimetd).html(opentime);
     },
