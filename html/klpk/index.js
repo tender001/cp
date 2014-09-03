@@ -2182,7 +2182,7 @@ Class('openCodeList', {
                 });
                 if (this.isFunction(fn)) {
                     fn.call(this, 1);
-//                    this.updateDayOpenCode(data.date);
+                    this.updateDayOpenCode(data.date);
                 }
             }
         	
@@ -2206,21 +2206,21 @@ Class('openCodeList', {
     	
 		this.get('#lastopenexpect').html('{1}'.format(llpid.p));  
 		this.get('#lastopendata').html('（{1}）'.format(llpid.t));
-		var ctpl = ' <em class="c{4}">{1}</em><em class="c{5}">{2}</em><em class="c{6}">{3}</em>';
+		var ctpl = ' <em class="px3_i_{1}"></em><em class="px3_i_{2}"></em><em class="px3_i_{3}"></em>';
 		var llcc=llpid.c.split(",");
-		this.get('#lastopencode').html(ctpl.format((llcc[0]+"").substr(1,2),(llcc[1]+"").substr(1,2),(llcc[2]+"").substr(1,2),llcc[0][0],llcc[1][0],llcc[2][0]));  
+		this.get('#lastopencode').html(ctpl.format(llcc[0],llcc[1],llcc[2]));  
 //    	alert("npid="+npid+" \r\n this.C('currentExpect')"+this.C('currentExpect'));
     	var st = 0; //开奖倒计时
     	if(npid!=this.C('currentExpect')){
     		st = 1; //开奖倒计时
     		this.get('#lastopenexpect').html('{1} '.format(lpid.p));    		
-    		var ctpl = ' <em class="c{4}">{1}</em><em class="c{5}">{2}</em><em class="c{6}">{3}</em>';
-    		var llcc=lpid.c.split(",");
-    		this.get('#lastopencode').html(ctpl.format((llcc[0]+"").substr(1,2),(llcc[1]+"").substr(1,2),(llcc[2]+"").substr(1,2),llcc[0][0],llcc[1][0],llcc[2][0]));  
+    		var ctpl = ' <em class="px3_i_{1}"></em><em class="px3_i_{2}"></em><em class="px3_i_{3}"></em>';
+    		var llcc=llpid.c.split(",");
+    		this.get('#lastopencode').html(ctpl.format(llcc[0],llcc[1],llcc[2]));  
     	}
     	
 		this.get('#kaijiangexpect').html('');    		
-		var ctpl = ' <em class="c{4}">{1}</em><em class="c{5}">{2}</em><em class="c{6}">{3}</em>';
+		var ctpl = ' <em class="px3_i_{1}"></em><em class="px3_i_{2}"></em><em class="px3_i_{3}"></em>';
 		var cc=lpid.c.split(",");
 		this.get('#kaijiangopencode').html('');       
 //		this.get('#kaijianginfo').html('<span>前一：</span><s id="qian1">{1}</s><span>前二：</span><s id="qian2">{2}</s><span>前三：</span><s id="qian3">{3}</s>'.format(cc[0],cc[0]+'&nbsp;&nbsp;'+cc[1],cc[0]+'&nbsp;&nbsp;'+cc[1]+'&nbsp;&nbsp;'+cc[2]));
@@ -2458,157 +2458,7 @@ Class('openCodeList', {
     	}
     	return npid;
     },
-    showcastlist: function(){// 购买金矿状态
-    	var pid2 = this.getPlayId();
-    	this.get('#opencodelist .cm_11ydj_text_xlhover div').html();
-    	this.get('#opencodelist_2 .cm_11ydj_text_xlhover div').html();
-    	this.get('#opencodelist_3 .cm_11ydj_text_xlhover div').html();
-        this.ajax({
-            url:this.castlisturl,
-            retry:1,
-            end:function (data, i){
-            	var arr1 = new Array();
-                var arr2 = new Array();
-                var n = 0;
-                var m = 0;
-                this.qXml('//row', data.xml, function (o, i){
-                	var type = o.items.type;
-                	var pid = o.items.pid;
-                	var projid = o.items.projid;
-                	var tmoney = o.items.tmoney;
-                	var bonus = o.items.bonus;
-                	var codes = o.items.codes;
-                	var st = o.items.st;
-                	var ul = "";
-                	if(pid2 == 245){
-                		ul = this.get('.opencodebox[expect='+pid+']', "#opencodelist_2");
-                	}else if(pid2 == 246){
-                		ul = this.get('.opencodebox[expect='+pid+']', "#opencodelist_3");
-                	}else{
-                		ul = this.get('.opencodebox[expect='+pid+']', "#opencodelist");
-                	}
-                	var ost = ul.attr("ost");
-                	var casttag = this.get(this.get('.cm_11ydj_ico em', ul));
-                	var castclass = casttag.attr("st");
-                	var tcss = "";
-                	var icss = "";
-                	var ttitle = "";
-                	var tn = 0;
-                	if(st==1){
-                		if(ost==1){
-                    		if(bonus>0){
-                    			tcss = "cm_11ydj_jz"; //成功且中奖
-                    			icss = "cm_11ydj_zjico1";
-                    			tn = 10;
-                    			ttitle = "成功且中奖方案";
-                    		}else{
-                    			tcss = "cm_11ydj_st"; //成功未中奖
-                    			icss = "cm_11ydj_zjico2";
-                    			tn = 9;
-                    			ttitle = "成功未中奖方案";
-                    		}         			
-                		}else{                    		
-                			tcss = "cm_11ydj_qb"; //成功未开奖
-                			icss = "cm_11ydj_zjico3";
-                			tn = 6;
-                			ttitle = "成功待开奖方案";
-                		}
-                	}else{
-                		if(ost==1){
-                    		if(bonus>0){
-                    			tcss = "cm_11ydj_jz_gray"; //失败且中奖
-                    			icss = "cm_11ydj_zjico1_gray";
-                    			tn = 8;
-                    			ttitle = "失败且中奖方案";
-                    		}else{
-                    			tcss = "cm_11ydj_st_gray"; //失败未中奖
-                    			icss = "cm_11ydj_zjico2_gray";
-                    			tn = 7;
-                    			ttitle = "失败未中奖方案";
-                    		}       			
-                		}else{                    		
-                			tcss = "cm_11ydj_qb_gray"; //失败未开奖
-                			icss = "cm_11ydj_zjico3_gray";
-                			tn = 5;
-                			ttitle = "失败待开奖方案";
-                		}   		
-                	}
-                	if(tn*1>castclass*1){
-                		casttag.removeClass("cm_11ydj_st").removeClass("cm_11ydj_jz_gray").removeClass("cm_11ydj_st_gray").addClass(tcss);
-                		casttag.attr("st",tn);
-                		casttag.attr("title","本期您有" + ttitle);
-                	}
-                	
-                	if(tn*1>6){
-                		var zol = 0;
-                		var ol = ul.attr("ol");
-                		var cl = codes.split(";").length;
-                		if(cl==1){
-                			zol = ol*1 + 1;
-                		}
-                		 ul.attr("ol",zol);
-                		if(zol==1){
-                			ul.attr("codes",codes);
-                		}else{
-                			ul.attr("codes","");
-                		}
-                	}
-                	var buynum = this.get('.cm_11ydj_text_xlhover .buynum', ul);
-                	var oknum = this.get('.cm_11ydj_text_xlhover .oknum', ul);
-                	var buymoney = this.get('.cm_11ydj_text_xlhover .cm_red', ul);
-                	buynum.html(buynum.html() * 1 + 1);
-                	if(st==1){
-                		oknum.html(oknum.html() * 1 + 1);
-                		buymoney.html((buymoney.html() * 1) + tmoney * 1);
-                	}else{
-                		tmoney = 0;
-                	}
-                	var castinfolist = this.get('.cm_11ydj_text_xlhover div', ul);
-                	var purl;
-                	if(type==1){
-                		purl = $_sys.getlotdir(Class.C('lot_id'))+$_sys.url.viewpath+"?lotid="+Class.C('lot_id')+"&projid="+projid;
-                	}else{
-                		purl = "/useraccount/usertouzhu/xchase.html?tid=" + projid + "&lotid=" + Class.C('lot_id');
-                	}
-                	var infohtml = "";
-                	this.rm = bonus*1;
-                	if(bonus>0){
-                		//castinfolist.html(castinfolist.html()+'<a href="' + purl + '" target="_blank"><p>' + bonus + '</p><span title="方案金额：' + o.items.tmoney + '元">认购<em>' + tmoney +'</em>元</span></a>');
-                		infohtml = '<a href="' + purl + '" target="_blank" title="'+ ttitle +'"><p><em class="cm_11ydj_zjico ' + icss + '"><b class="cm_11ydj_zjnum">' + this.rm.rmb(true,0) + '</b></em></p><span>认购<em>' + tmoney +'</em>元</span></a>';
-                	}else{
-                		infohtml = '<a href="' + purl + '" target="_blank" title="'+ ttitle +'"><p><em class="cm_11ydj_zjico ' + icss + '"></em></p><span>认购<em>' + tmoney +'</em>元</span></a>';
-                	}
-                	castinfolist.html(castinfolist.html() + infohtml);
-                	
-                	if($("#curExpectSpan").html() == pid.substr(2)){
-               		 if(type==1){
-               			 arr1[n] = projid;
-               			 n++;
-                    	 }else if(type==2){
-                    		 arr2[m] = projid;
-                    		 m++;
-                    	 }
-                	}
-                }); 
-                if(arr1.length <1){
-                	if(arr2.length == 1){
-                		$("#curState").html("<a class=\"cm_11ydj_qb cm_left\" href=\"/useraccount/usertouzhu/xchase.html?tid=" + arr2[0] + "&lotid=" + Class.C('lot_id')+"\" target=\"_blank\" title=\"成功待开奖方案\"></a>");
-                	}else if(arr2.length > 1){
-                		$("#curState").html("<a class=\"cm_11ydj_qb cm_left\" href=\"/useraccount/usertouzhu/chase.html\" target=\"_blank\" title=\"成功待开奖方案\"></a>");
-                	}
-                }else if(arr1.length == 1){
-                	if(arr2.length <1){
-                		$("#curState").html("<a class=\"cm_11ydj_qb cm_left\" href=\"/11x5/viewpath.html?lotid=54&projid="+arr1[0]+"\" target=\"_blank\" title=\"成功待开奖方案\"></a>");
-                	}else{
-                		$("#curState").html("<a class=\"cm_11ydj_qb cm_left\" href=\"/useraccount/usertouzhu/userbetlist.html\" target=\"_blank\" title=\"成功待开奖方案\"></a>");
-                	}
-                }else if(arr1.length >1){
-                	$("#curState").html("<a class=\"cm_11ydj_qb cm_left\" href=\"/useraccount/usertouzhu/userbetlist.html\" target=\"_blank\" title=\"成功待开奖方案\"></a>");
-                }
-                this.showcastinfo();
-            }
-        });
-    },
+  
     showcastinfo: function(){
     	var pid = this.getPlayId();
     	if(pid == 245){
