@@ -72,7 +72,6 @@
 .set_notes a.a2{float:left;color:#1e72c6;margin:15px 0 0 10px;line-height:20px;height:20px;}
 .set_notes a.a2:hover{ color:#990000; text-decoration:underline}
 .lineone{width:100%;clear:both; background:url(/images/newimg/newsq_34.jpg);height:17px;margin-top:17px}
-.set_result{ background-color:#efefef;padding:12px 0 10px 165px}
 .result_area{width:553px;height:110px;border:1px solid #ddd;overflow-y:auto; background-color:#fff;float:left; position:relative}
 .result_area p{line-height:26px;border-bottom:1px dotted #ddd;height:26px}
 .result_area  span{float:left;color:#000;display:block;color:#000}
@@ -112,8 +111,8 @@
 .b_th_top1{margin:0;border:1px solid #ddd}
 .linetwo{ background:url(/images/newimg/newsq_45.jpg);height:22px;}
 .nc_numhm{border:1px solid #ddd;border-top:none;margin: 0; background-color:#fff}
-.main_dga{width:132px;height:39px;margin:10px auto; background-position:-3px -216px}
-.main_dga:hover{ background-position:-4px -261px}
+.main_dga{width:180px;height:42px;margin:0 auto; background:#ff791f url(../images/bg/shuangs/se_bg.png) 0 -86px no-repeat;}
+/*.main_dga:hover{ background-position:-4px -261px}*/
 .main_dga1{width:132px;height:39px;margin:10px auto;display:block; background:  url(/images/newimg/newsa.jpg) -5px -4px}
 .main_dga1:hover{ background-position:-159px -4px}
 .main_dga2{width:132px;height:39px;margin:10px auto;display:block; background:  url(/images/newimg/newsa.jpg) -5px -72px}
