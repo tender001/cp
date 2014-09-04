@@ -102,7 +102,7 @@
 //    		alert('Choose_3');
     		
      		this.onMsg('danma_onchange'+(config.msgid==''||config.msgid==undefined?'':'_'+config.msgid), function() {
-    			this.danmaonchange();
+//    			this.danmaonchange();
     		}); 	
 //     		alert('Choose_4');
             this.disabled;
@@ -124,7 +124,7 @@
                     }else{
                         o.toggleClass(Y.focusCss);
                     }   
-                    Y.postMsg('danma_onchange'+(config.msgid==''||config.msgid==undefined?'':'_'+config.msgid));
+//                    Y.postMsg('danma_onchange'+(config.msgid==''||config.msgid==undefined?'':'_'+config.msgid));
                     Y.change(this);  
                 }
             });
@@ -167,9 +167,9 @@
             this.items.each(function (el){//统计选中数
                 if (this.hasClass(el, this.focusCss)) {
 //                    this.data.push(this.getInt(el.innerHTML));//选中组
-                	this.data.push(isNaN(el.innerHTML)? this.getInt($(el).attr('class')):this.getInt(el.innerHTML));
+                	this.data.push($(el).attr('bet'));
                 }else if(this.hasKill && this.hasClass(el, this.killCss)){
-                    this.killData.push(this.getInt(el.innerHTML));//杀号组
+                    this.killData.push(this.getInt($(el).attr('bet')));//杀号组
                 }
             }, this);
             this.onchange();
@@ -304,7 +304,7 @@
                 }
             }, this);
             this.change(null);
-            this.danmaonchange(null);
+//            this.danmaonchange(null);
         },
         danmaonchange: function(){
         	var p = this;
@@ -321,30 +321,30 @@
         	}, this);
         	
             if(x<rn){
-                this.items.each(function (el,i){
-                	xb = p.getdanma(isNaN(el.innerHTML)? this.getInt($(el).attr('class')):this.getInt(el.innerHTML));
-                    if (this.hasClass(el, this.focusCss)) {
-                    	xb.disabled=false;
-                    	if(!xb.checked) this.tuo_data.push(this.getInt(el.innerHTML));
-                    }else{
-                    	xb.disabled=true;
-                    	xb.checked=false;
-                    }
-                }, this); 	
+//                this.items.each(function (el,i){
+//                	xb = p.getdanma(isNaN(el.innerHTML)? this.getInt($(el).attr('class')):this.getInt($(el).attr('bet')));
+//                    if (this.hasClass(el, this.focusCss)) {
+//                    	xb.disabled=false;
+//                    	if(!xb.checked) this.tuo_data.push(this.getInt($(el).attr('bet')));
+//                    }else{
+//                    	xb.disabled=true;
+//                    	xb.checked=false;
+//                    }
+//                }, this); 	
             }else{
-                this.items.each(function (el,i){
-//                	isNaN(a))
-                	xb = p.getdanma(isNaN(el.innerHTML)? this.getInt($(el).attr('class')):this.getInt(el.innerHTML));
-                    if (this.hasClass(el, this.focusCss)) {
-                    	if(!xb.checked){ 
-                    		xb.disabled=true;
-                    		this.tuo_data.push(this.getInt(el.innerHTML));
-                    	}
-                    }else{
-                    	xb.disabled=true;
-                    	xb.checked=false;
-                    }
-                }, this); 
+//                this.items.each(function (el,i){
+////                	isNaN(a))
+//                	xb = p.getdanma(isNaN(el.innerHTML)? this.getInt($(el).attr('class')):this.getInt($(el).attr('bet')));
+//                    if (this.hasClass(el, this.focusCss)) {
+//                    	if(!xb.checked){ 
+//                    		xb.disabled=true;
+//                    		this.tuo_data.push(this.getInt($(el).attr('bet')));
+//                    	}
+//                    }else{
+//                    	xb.disabled=true;
+//                    	xb.checked=false;
+//                    }
+//                }, this); 
             }
             this.onchange();
         },
@@ -450,9 +450,9 @@
             this.killData = [];
             this.items.each(function (el){//统计选中数
                 if (this.hasClass(el, this.focusCss)) {
-                    this.data.push(this.getInt(el.innerHTML));//选中组
+                    this.data.push(this.getInt($(el).attr('bet')));//选中组
                 }else if(this.hasKill && this.hasClass(el, this.killCss)){
-                    this.killData.push(this.getInt(el.innerHTML));//杀号组
+                    this.killData.push(this.getInt($(el).attr('bet')));//杀号组
                 }
             }, this);
             this.onchange();
