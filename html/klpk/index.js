@@ -6,7 +6,7 @@ Class.C('lot_name_ch', '快乐扑克3');
 Class.C('lot_name_en', 'klpk');
 Class.C('lot_id', '58');
 Class.C('price', 2);
-Class.C('playid', 249);
+Class.C('playid', 254);
 Class.C('fsfq', $_trade.url.pcast);
 Class.C('fszh', $_trade.url.zcast);
 Class.C('casttype', 0);
@@ -43,12 +43,12 @@ Class.C('lot_data_new',{// 老玩法ID, 新库中玩法ID, 投注方式 (1单复
 	251: ['顺子', 13, 1,13],
 	252: ['豹子', 14, 1,14],
 	253: ['对子', 14, 1,14],
-	254: ['任选一', 13, 1,13],
-	255: ['任选二', 13, 1,13],
-	256: ['任选三', 13, 1,13],
-	257: ['任选四', 13, 1,13],
-	258: ['任选五', 13, 1,13],
-	259: ['任选六', 13, 1,13]
+	254: ['01:01', 13, 1,13],
+	255: ['02:01', 13, 1,13],
+	256: ['03:01', 13, 1,13],
+	257: ['04:01', 13, 1,13],
+	258: ['05:01', 13, 1,13],
+	259: ['06:01', 13, 1,13]
 	  
 });
 
@@ -79,7 +79,18 @@ Class.C('lot_data_wanfa',{
     258: '玩法提示：前二直选玩法：每行各选<em class="red">1</em>个号码。1/110的中奖机会，奖金<em class="red">130</em>元。',// 前二直选
     259: '玩法提示：前三直选玩法：每行各选<em class="red">1</em>个号码。1/990的中奖机会，奖金<em class="red">1,170</em>元。'// 前三直选		
 });
-
+//Class.C('child_wanfa',{
+//    249: '1234,111,222,333,444',
+//    250: '1234,111,222,333,444',
+//    251: '1234,111,222,333,444',
+//    252: '1234,111,222,333,444',
+//    253: '1234,111,222,333,444',
+//    255: 'A,2,3,4,5,6,7,8,9,10,J,Q,K',
+//    256: 'A,2,3,4,5,6,7,8,9,10,J,Q,K',
+//    257: 'A,2,3,4,5,6,7,8,9,10,J,Q,K',
+//    258: 'A,2,3,4,5,6,7,8,9,10,J,Q,K',
+//    259: 'A,2,3,4,5,6,7,8,9,10,J,Q,K'	
+//});
 Class.extend('getPlayId', function (){
     return this.getInt(Class.C('playid'));
 });
@@ -880,15 +891,15 @@ Class.extend('exportCode', function (){
 		
 	}
 
-	if(type==""||typeof(type) == 'undefined' || type =="rx8"){
-		type="255";
-		Y.postMsg('msg_force_change_playtabs', 7,1);
+	if(type==""||typeof(type) == 'undefined' || type =="rx1"){
+		type="254";
+		Y.postMsg('msg_force_change_playtabs', 5,1);
 	}else if(type=="rx5"){
-		type ="252";
-		Y.postMsg('msg_force_change_playtabs', 4,1);
+		type ="258";
+		Y.postMsg('msg_force_change_playtabs', 9,1);
 	}else if(type =="rx3"){
-		type ="250";
-		Y.postMsg('msg_force_change_playtabs', 2,1);
+		type ="256";
+		Y.postMsg('msg_force_change_playtabs', 7,1);
 	}else if(type =="zx3"){
 		type ="246";
 //		Y.postMsg('msg_force_change_playtabs', 11,1);
@@ -960,7 +971,7 @@ Class('App', {
 			$("#num_header_1").show();
 			if($("#span5").hasClass("span5c")){
 				$("#num_header_1").clearQueue().animate({
-					height:362
+					height:352
 					});
 				
 			}else{
@@ -1128,8 +1139,21 @@ Class('App', {
             danmas:'#danma input'
         });
 //        alert('single');
-        this.lib.Multi({
-            items: '#q2zx span.nsbool',  //球
+        this.lib.Multi({ //同花
+            items: '#q1zx dd',  //球
+            group: '#ballMulti2 em',
+            focusCss: 'cur',
+            hoverCss: '',
+            showbar: '#Multi_bar1',//奖金 盈利
+            put: '#s1_put',//选好了
+            clear:'#s1_clear',
+            rnd1: '#s1_jx1',
+            //rnd5: '#s1_jx5',
+            jixuan: '#jixuan'
+            //rnd15: '#s1_jx15'
+        });
+        this.lib.Multi({ //同花顺
+            items: '#q2zx dd',  //球
             group: '#ballMulti2 em',
             focusCss: 'cur',
             hoverCss: '',
@@ -1141,14 +1165,40 @@ Class('App', {
             jixuan: '#jixuan'
             //rnd15: '#s1_jx15'
         });
-        this.lib.Multi({
-            items: '#q3zx span.nsbool',
+        this.lib.Multi({ //顺子
+            items: '#q3zx dd',
             group: '#ballMulti3 em',
             focusCss: 'cur',
             hoverCss: '',
             showbar: '#Multi_bar3',
             put: '#s3_put',
             clear:'#s3_clear',
+            rnd1: '#s1_jx1',
+           // rnd5: '#s1_jx5',
+            jixuan: '#jixuan'
+            //rnd15: '#s1_jx15'
+        });
+        this.lib.Multi({ //豹子
+            items: '#q4zx dd',
+            group: '#ballMulti3 em',
+            focusCss: 'cur',
+            hoverCss: '',
+            showbar: '#Multi_bar4',
+            put: '#s4_put',
+            clear:'#s4_clear',
+            rnd1: '#s1_jx1',
+           // rnd5: '#s1_jx5',
+            jixuan: '#jixuan'
+            //rnd15: '#s1_jx15'
+        });
+        this.lib.Multi({ //对子
+            items: '#q5zx dd',
+            group: '#ballMulti3 em',
+            focusCss: 'cur',
+            hoverCss: '',
+            showbar: '#Multi_bar5',
+            put: '#s5_put',
+            clear:'#s5_clear',
             rnd1: '#s1_jx1',
            // rnd5: '#s1_jx5',
             jixuan: '#jixuan'
@@ -1187,7 +1237,7 @@ Class('App', {
         });
 //        alert('addTabs_1');
         playTabs.onchange= function (a, b){
-        	//$("#num_header_1").hide();
+        
         	$("#num_header_1").css('height','0');
         	$("#span5").removeClass("span5c");
         	var ol = Y.getopencodelength(Class.C('playid'));//上一个的
@@ -1196,7 +1246,7 @@ Class('App', {
             Class.C('playid', pid);
             
             Y.get("#wanfatishi").html(Class.C('lot_data_wanfa')[pid]);
-            Y.get("#shil s").attr("data-help",Class.C('lot_data_dome')[pid]);
+//            Y.get("#shil s").attr("data-help",Class.C('lot_data_dome')[pid]);
             
             Y.postMsg('playtabs_onchange'); 
             Y.postMsg('danma_onchange');
@@ -1204,57 +1254,19 @@ Class('App', {
 			Y.get("#inputtext").val("");
 			$("#sdinput").show();
             if(ol!=nl){
-            	Y.postMsg('show_opencodelist', 2);
+            	Y.postMsg('show_opencodelist', 6);
             }
-            if(nl == 6){
-//            	$("#num_header_1").hide();
-            	$("#opencodelist").hide();
-            	//$("#num_header_2").show();
-            	$("#opencodelist_2").show();
-            	//$("#num_header_3").hide();
-	        	$("#opencodelist_3").hide();
-	        	$("#win_today").show();
-	        	$("#setdanma_i").hide();
-	        	$("#setdanma").hide();
-	        	$("#haoma_1").hide();
-//	        	$("#q3zx span b").removeClass("cur");
-	        	
-	        	$("#haoma_2").show();
-	        	$("#haoma_3").hide();
-//	        	$("#11x5_hd").show();
-	        	
-            }else if(nl ==7){
-//            	$("#num_header_1").hide();
-	        	$("#opencodelist").hide();
-	        	//$("#num_header_2").hide();
-	        	$("#opencodelist_2").hide();
-	        	//$("#num_header_3").show();
-	        	$("#opencodelist_3").show();
-//	        	$("#win_today").hide();
-	        	$("#setdanma_i").hide();
-	        	$("#setdanma").hide();
-	        	$("#haoma_1").hide();
-	        	$("#haoma_2").hide();
-//	        	$("#q3zx span b").removeClass("cur");
-	        	
-	        	$("#haoma_3").show();
-//	        	$("#11x5_hd").hide();
-            }else{
-//            	$("#num_header_1").hide();
-	        	$("#opencodelist").show();
-	        	//$("#num_header_2").hide();
-	        	$("#opencodelist_2").hide();
-	        	//$("#num_header_3").hide();
-	        	$("#opencodelist_3").hide();
-//	        	$("#win_today").show();
-	        	$("#renxuan").show();
-	        	$("#setdanma_i").show();
-	        	$("#setdanma").show();
-	        	$("#haoma_1").show();
-	        	$("#haoma_2").hide();
-	        	$("#haoma_3").hide();
-//	        	$("#11x5_hd").show();
-            }
+          $("#opencodelist,#opencodelist_1,#opencodelist_2,#opencodelist_3,#opencodelist_4,#opencodelist_5").hide();
+          
+       	$("#setdanma_i,#num_header_1,#num_header_2,#haoma,#haoma_1,#haoma_2,#haoma_3,#haoma_4,#haoma_5").hide();
+       	
+       	if(nl>5){
+	       		$("#opencodelist,#renxuan,#haoma").show();
+	       		
+	       	}else{
+	       		$("#opencodelist_"+nl).show();
+	           	$("#haoma_"+nl).show();
+	       	}
         };
 //        alert('addTabs_2');
 		this.onMsg('msg_force_change_playtabs', function(x, y) {
@@ -1303,17 +1315,17 @@ Class('App', {
         }; 
     },
     getopencodelength: function(pid){
-    	var pl = 5;
-    	if(pid==244){
+    	var pl = 6;
+    	if(pid==249){//同花
     		pl = 1;
-    	}else if (pid==245){//前二直选
-    		pl = 6;
-    	}else if (pid==246){//前三直选
-    		pl = 7;
-    	}else if (pid==247){//前二组选
+    	}else if (pid==250){//同花顺
     		pl = 2;
-    	}else if (pid==248){//前三组选
+    	}else if (pid==251){//顺子
     		pl = 3;
+    	}else if (pid==252){//豹子
+    		pl = 4;
+    	}else if (pid==253){//对子
+    		pl = 5;
     	}
     	return pl;
     }
@@ -1505,12 +1517,12 @@ Class('CodeList', {
         }, 0);
     },
     formatCode: function (d){
-  	var tmp = d[0].replace(/拖/,'$').replace(/\[.*\]/g,'').replace(/[^0-9$\-,|]/g,'');
-      if (this.C('lot_data_new')[d[1]][2]!="undefine"){
-      	tmp = tmp.slice(0,this.C('lot_data_new')[d[1]][2]);
-      }
-  	tmp += ':'+this.C('lot_data_new')[d[1]][0]+':'+this.C('lot_data_new')[d[1]][1];
-      return tmp;
+      var tmp = d[0].replace(/拖/,'$').replace(/\[.*\]/g,'').replace(/[^0-9$\-,|]/g,'');
+//    if (this.C('lot_data_new')[d[1]][2]!="undefine"){
+    	tmp = tmp.slice(0);//,this.C('lot_data_new')[d[1]][2]
+//    }
+	tmp += ':'+this.C('lot_data_new')[d[1]][0];
+    return tmp;
   },
   getData: function (){
       var arr = [];
@@ -2297,10 +2309,16 @@ Class('openCodeList', {
     	var ld = this.listdata.slice(dl-(9-0), dl);//列表里面的所以值 都在ld里面
     	for(var i=0; i<ld.length; i++){
     		var ul = "";
-    		if(pid == 245){//前二
-    			ul = this.get('.opencodebox', "#opencodelist_2").slice(i);
-    		}else if(pid == 246){//前三
-    			ul = this.get('.opencodebox', "#opencodelist_3").slice(i);
+    		if(pid == 249){//同花
+    			ul = this.get('[mark=opencodebox]', "#opencodelist_1").slice(i);
+    		}else if(pid == 250){//同花顺
+    			ul = this.get('[mark=opencodebox]', "#opencodelist_2").slice(i);
+    		}else if(pid == 251){//顺子
+    			ul = this.get('[mark=opencodebox]', "#opencodelist_3").slice(i);
+    		}else if(pid == 252){//豹子
+    			ul = this.get('[mark=opencodebox]', "#opencodelist_4").slice(i);
+    		}else if(pid == 253){//对子
+    			ul = this.get('[mark=opencodebox]', "#opencodelist_5").slice(i);
     		}else{
     			ul = this.get('[mark=opencodebox]', "#opencodelist").slice(i);
     		}
@@ -2319,41 +2337,31 @@ Class('openCodeList', {
         	var opentime = ld[i].t;
         	
         	var omissdata = ld[i].m0;
-        	var opencodelen = 5;
-        	if(pid==244){
+        	var opencodelen = 3;
+        	var omissall=0;
+        	if(pid==249){ //同花
         		omissdata = ld[i].m1;
-        		opencodelen = 1;
+        		omissall = ld[i].m6;
         	}
-        	else if (pid==245){
-        		omissdata = ld[i].m1+','+ld[i].m4;//前二直选遗漏
-        		opencodelen = 2;//开奖号码个数
-        	}
-        	else if (pid==246){
-        		omissdata = ld[i].m1+','+ld[i].m4+','+ld[i].m5;//前三直选遗漏
-        		opencodelen = 3;
-        	}
-        	else if (pid==247){
+        	else if (pid==250){ //同花顺
         		omissdata = ld[i].m2;
-        		opencodelen = 2;
-        	}else if (pid==248){
-        		omissdata = ld[i].m3;
-        		opencodelen = 3;
+        		omissall = ld[i].m7;
+        	}
+        	else if (pid==251){
+        		omissdata = ld[i].m3;//前三直选遗漏
+        		omissall = ld[i].m8;
+        	}
+        	else if (pid==252){
+        		omissdata = ld[i].m4;
+        		omissall = ld[i].m9;
+        	}else if (pid==253){
+        		omissdata = ld[i].m5;
+        		omissall = ld[i].m10;
         	}
         	if(opencode!=""){
-        		if(pid == 245){//前二
-//        			ul.html(this.opencodehtml_2);
-        			this.get('.pid', ul).html("" + ld[i].p.substr(2) + "");
-            		this.showomiss(omissdata, opencodelen, opencode, ul,opentime);
-        		}else if(pid == 246){//前三
-//        			ul.html(this.opencodehtml_3);input[name="nw"]'
-        			this.get('.pid', ul).html("" + ld[i].p.substr(2) + "");
-            		this.showomiss(omissdata, opencodelen, opencode, ul,opentime);
-        		}else{
-        			//ul.html(this.opencodehtml);
+        		this.get('td', ul).slice(0,1).html("" + ld[i].p + "");//填写开奖期号的位置
+            	this.showomiss(omissdata, opencodelen, opencode, ul,opentime,omissall); //加载遗漏
         		
-        			this.get('td', ul).slice(0,1).html("" + ld[i].p + "");//填写开奖期号的位置
-            		this.showomiss(omissdata, opencodelen, opencode, ul,opentime);
-        		}
         	}else{
         		this.countdown(ld[i].t, ld[i].p, ul);
         	}
@@ -2367,94 +2375,120 @@ Class('openCodeList', {
 //    	this.showcastlist();
     	
     },
-    showomiss: function(data, opencodelen, opencode, ul,opentime){//填遗漏  (遗漏 ， 开奖号码 长度，开奖号码，指定那一行)
+    showomiss: function(data, opencodelen, opencode, ul,opentime,omissall){//填遗漏  (遗漏 ， 开奖号码 长度，开奖号码，指定那一行)
     	var pid = this.getPlayId();
     	ul.attr("ost",1);
     	var omiss_arr = data.split(',');
     	var opencode_arr = opencode.split(',').slice(0, opencodelen);
     	var xuanhao = this.get('td', ul);
     	var opencodeli = "";
-    	if(pid == 245){
-    		var qian2_1 = xuanhao.slice(2,13);
-    		var qian2_2 = xuanhao.slice(13,24);
-    		opencodeli = this.get('td', ul).slice(24,25);//填写开奖号码的位置
-    		qian2_1.each(function (li, i){
-        		this.get(li).html(omiss_arr[i]);
-        		var c = String.zero(i + 1);
-        		if(opencode_arr[0].indexOf(c)!=-1){
-//        			this.get(li).html(c);
-        			this.get(li).html('<b>'+c+'</b>');
-//        			this.get(li).removeClass("cur").addClass("cur");
-        		}else{
-//        			this.get(li).removeClass("cur");
+    	opencodeli = this.get('td', ul).slice(1,2);//填写开奖号码的位置
+    	var codels = '<span class="PK_{1}"></span><span class="PK_{2}"></span><span class="PK_{3}"></span>';
+		var llcc=opencode.split(",");
+		this.get(opencodeli).html(codels.format(llcc[0],llcc[1],llcc[2]));  
+    	if(pid == 249){
+    		omissall=omissall==0?"<i class=tongh>同花</i>":omissall
+    		this.get('td', ul).slice(2,3).html(omissall);
+    		var newxh=this.get('td', ul).slice(3,7);
+    		newxh.each(function (li, i){
+        		if(omiss_arr[i]==4){
+        			switch(i){
+					case 0:
+						omiss_arr[i]="<small class=heitao></small>"
+						break;
+					case 1:
+						omiss_arr[i]="<small class=hongtao></small>"
+						break;
+					case 2:
+						omiss_arr[i]="<small class=meihua></small>"
+						break;
+					case 3:
+						omiss_arr[i]="<small class=fangkuai></small>"
+						break;
+					
+        			}
         		}
-        	});
-    		qian2_2.each(function (li, i){
-        		this.get(li).html(omiss_arr[i+11]);
-        		var c = String.zero(i + 1);
-        		if(opencode_arr[1].indexOf(c)!=-1){
-        			this.get(li).html('<b>'+c+'</b>');
-//        			this.get(li).removeClass("cur").addClass("cur");
-        		}else{
-//        			this.get(li).removeClass("cur");
-        		}
-        	});
-    	}else if(pid == 246){    		
-    		var qian3_1 = xuanhao.slice(2,13);
-    		var qian3_2 = xuanhao.slice(13,24);
-    		var qian3_3 = xuanhao.slice(24,35);
-    		qian3_1.each(function (li, i){
-        		this.get(li).html(omiss_arr[i]);
-        		var c = String.zero(i + 1);
-        		if(opencode_arr[0].indexOf(c)!=-1){
-        			this.get(li).html('<b>'+c+'</b>');
-//        			this.get(li).removeClass("cur").addClass("cur");
-        		}else{
-//        			this.get(li).removeClass("cur");
-        		}
-        	});
-    		qian3_2.each(function (li, i){
-        		this.get(li).html(omiss_arr[i+11]);
-        		var c = String.zero(i + 1);
-        		if(opencode_arr[1].indexOf(c)!=-1){
-        			this.get(li).html('<b>'+c+'</b>');
-//        			this.get(li).removeClass("cur").addClass("cur");
-        		}else{
-//        			this.get(li).removeClass("cur");
-        		}
-        	});
-    		qian3_3.each(function (li, i){
-        		this.get(li).html(omiss_arr[i+22]);
-        		var c = String.zero(i + 1);
-        		if(opencode_arr[2].indexOf(c)!=-1){
-        			this.get(li).html('<b>'+c+'</b>');
-//        			this.get(li).removeClass("cur").addClass("cur");
-        		}else{
-//        			this.get(li).removeClass("cur");
-        		}
-        	});
+    			this.get(li).html(omiss_arr[i]);
+
+    		})
+    	}else if(pid == 250){
+    		omissall=omissall==0?"<i class=tongh>同花顺</i>":omissall
+    	    		this.get('td', ul).slice(2,3).html(omissall);
+    	    		var newxh=this.get('td', ul).slice(3,7);
+    	    		newxh.each(function (li, i){
+    	        		if(omiss_arr[i]==0){
+    	        			switch(i){
+    	        			case 0:
+    							omiss_arr[i]="<small class=heitao></small>"
+    							break;
+    						case 1:
+    							omiss_arr[i]="<small class=hongtao></small>"
+    							break;
+    						case 2:
+    							omiss_arr[i]="<small class=meihua></small>"
+    							break;
+    						case 3:
+    							omiss_arr[i]="<small class=fangkuai></small>"
+    							break;
+    	        			}
+    	        		}
+    	    			this.get(li).html(omiss_arr[i]);
+
+    	    		})
+	    	}else if(pid == 251){
+	    		omissall=omissall==0?"<i class=tongh>顺子</i>":omissall
+	    		this.get('td', ul).slice(2,3).html(omissall);
+	    		var newxh=this.get('td', ul).slice(3,16);
+	    		newxh.each(function (li, i){
+	        		if(omiss_arr[i]==0){
+						
+	        			omiss_arr[i]="<i class=tongh>"+((i+1)+""+(i+2)+""+(i+3)).replace('1','A').replace('11','J').replace('12','Q').replace('13','K').replace('A0','10')+"</i>"
+	        		}
+	    			this.get(li).html(omiss_arr[i]);
+
+	    		})
+	    	}else if(pid == 252){
+	    		omissall=omissall==0?"<i class=tongh>豹子</i>":omissall
+	    	    		this.get('td', ul).slice(2,3).html(omissall);
+	    	    		var newxh=this.get('td', ul).slice(3,17);
+	    	    		newxh.each(function (li, i){
+	    	        		if(omiss_arr[i]==0){
+	    						
+	    	        			omiss_arr[i]="<i class=tongh>"+((i+1)+""+(i+1)+""+(i+1)).replace('1','A').replace('11','J').replace('12','Q').replace('13','K').replace('A0','10')+"</i>"
+	    	        		}
+	    	    			this.get(li).html(omiss_arr[i]);
+
+	    	    		})
+	    	}
+	    	else if(pid == 253){
+	    		omissall=omissall==0?"<i class=tongh>对子</i>":omissall
+	    	    		this.get('td', ul).slice(2,3).html(omissall);
+	    	    		var newxh=this.get('td', ul).slice(3,17);
+	    	    		newxh.each(function (li, i){
+	    	        		if(omiss_arr[i]==0){
+	    						
+	    	        			omiss_arr[i]="<i class=tongh>"+((i+1)+""+(i+1)).replace('1','A').replace('11','J').replace('12','Q').replace('13','K').replace('A0','10')+"</i>"
+	    	        		}
+	    	    			this.get(li).html(omiss_arr[i]);
+
+	    	    		})
+	    	
     	}else{
-    		opencodeli = this.get('td', ul).slice(1,2);//填写开奖号码的位置
-//    		opentimetd = this.get('td', ul).slice(14,15);//填写开奖时间的位置
+    		
     		var newxh=this.get('td', ul).slice(2,15);
     		newxh.each(function (li, i){
         		this.get(li).html(omiss_arr[i]);
         		var c = String.zero(i + 1);
         		var ocodearr=(opencode_arr[0]+"").substr(1,2)+","+(opencode_arr[1]+"").substr(1,2)+","+(opencode_arr[2]+"").substr(1,2);
         		if(ocodearr.indexOf(c)!=-1){
-        			this.get(li).html('<i>'+c+'</i>');
+        			c=(c*1)+"";
+        			this.get(li).html('<i>'+	c.replace('1','A').replace('A1','J').replace('A2','Q').replace('A3','K').replace('A0','10')+'</i>');
         			
         		}else{
-//        			this.get(li).html(c);
         		}
         	});
     	}
     
-    	var codels = '<span class="PK_{1}"></span><span class="PK_{2}"></span><span class="PK_{3}"></span>';
-		var llcc=opencode.split(",");
-		this.get(opencodeli).html(codels.format(llcc[0],llcc[1],llcc[2]));  
-//    	this.get(opencodeli).html(opencode);
-//    	this.get(opentimetd).html(opentime);
     },
     countdown: function(ed, pid,  ul){//截至时间、开奖期次
     	pid = pid + "";
