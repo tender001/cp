@@ -1,4 +1,4 @@
-﻿.numcai{border:1px solid #ddd; background-color:#fff}
+﻿@charset "utf-8";
 .nc_top{height:120px; background:url(/images/newimg/newsq_05.jpg); overflow:visible}
 .nc_top img{display:block;float:left;width:124px;height:120px;}
 .czmsg{float:left;width:510px;}
