@@ -1959,6 +1959,7 @@ a.sz_cmt{background: url(../images/cai888/nwx5_112.jpg);width:137px;height:33px}
 .ncathgm a.a1{display:block;background-image: url(../images/cdbg/gm_11.gif);color: #FFFFFF;font-family: "微软雅黑";font-size: 16px;height: 42px;line-height: 42px;margin:5px auto;text-align: center;width: 190px;}
 .ncathgm a:hover{text-decoration: none;}
 /*start 2014.8.11 时时彩更新*/
+#container.w_con{border: 0;}
 .w_con .nsbool b,.w_con .nsbool b.cur{background: url(../images/ssc_bg/w_bg_1.png);}
 .w_con .nwx5top{border: 0;}
 .w_con .nwx5 .nwssctop1 a{padding: 0 16px;}
@@ -2062,71 +2063,72 @@ a.sz_cmt{background: url(../images/cai888/nwx5_112.jpg);width:137px;height:33px}
 .w_con .nxtable tr th{background: #057e57;color: #fff;height: 32px;}
 .w_con .nxtable tr td{background: #05a06f;color: #fff;height: 32px;font-size:14px;border: 0;}
 .w_con .nxtable tr.odd td{background-color: #057e57;}
-.w_con .nxtable tr td span{width: 36px;height: 20px;line-height: 20px;color: #000;display: inline-block;margin-right: 10px;background-color: #f9f9f9;text-align: left;text-indent: 20px;background:url(../images/ssc_bg/PK_K.png) no-repeat;position: relative;}
-.w_con .nxtable tr td span.PK_101{background-position:0 0}
-.w_con .nxtable tr td span.PK_201{background-position:-37px 0}
-.w_con .nxtable tr td span.PK_301{background-position:-74px 0}
-.w_con .nxtable tr td span.PK_401{background-position:-111px 0}
+.kaijiang-num tr td span{width: 36px;height: 20px;line-height: 20px;color: #000;display: inline-block;margin-right: 10px;background-color: #f9f9f9;text-align: left;text-indent: 20px;background:url(../images/ssc_bg/PK_K.png) no-repeat;position: relative;}
+.kc_td_kj .kaijiang-num tr td span{margin: 0;}
+.kaijiang-num tr td span.PK_101{background-position:0 0}
+.kaijiang-num tr td span.PK_201{background-position:-37px 0}
+.kaijiang-num tr td span.PK_301{background-position:-74px 0}
+.kaijiang-num tr td span.PK_401{background-position:-111px 0}
 
-.w_con .nxtable tr td span.PK_102{background-position:0 -21px}
-.w_con .nxtable tr td span.PK_202{background-position:-37px -21px}
-.w_con .nxtable tr td span.PK_302{background-position:-74px -21px}
-.w_con .nxtable tr td span.PK_402{background-position:-111px -21px}
+.kaijiang-num tr td span.PK_102{background-position:0 -21px}
+.kaijiang-num tr td span.PK_202{background-position:-37px -21px}
+.kaijiang-num tr td span.PK_302{background-position:-74px -21px}
+.kaijiang-num tr td span.PK_402{background-position:-111px -21px}
 
-.w_con .nxtable tr td span.PK_103{background-position:0 -42px}
-.w_con .nxtable tr td span.PK_203{background-position:-37px -42px}
-.w_con .nxtable tr td span.PK_303{background-position:-74px -42px}
-.w_con .nxtable tr td span.PK_403{background-position:-111px -42px}
+.kaijiang-num tr td span.PK_103{background-position:0 -42px}
+.kaijiang-num tr td span.PK_203{background-position:-37px -42px}
+.kaijiang-num tr td span.PK_303{background-position:-74px -42px}
+.kaijiang-num tr td span.PK_403{background-position:-111px -42px}
 
-.w_con .nxtable tr td span.PK_104{background-position:0 -63px}
-.w_con .nxtable tr td span.PK_204{background-position:-37px -63px}
-.w_con .nxtable tr td span.PK_304{background-position:-74px -63px}
-.w_con .nxtable tr td span.PK_404{background-position:-111px -63px}
+.kaijiang-num tr td span.PK_104{background-position:0 -63px}
+.kaijiang-num tr td span.PK_204{background-position:-37px -63px}
+.kaijiang-num tr td span.PK_304{background-position:-74px -63px}
+.kaijiang-num tr td span.PK_404{background-position:-111px -63px}
 
-.w_con .nxtable tr td span.PK_105{background-position:0 -84px}
-.w_con .nxtable tr td span.PK_205{background-position:-37px -84px}
-.w_con .nxtable tr td span.PK_305{background-position:-74px -84px}
-.w_con .nxtable tr td span.PK_405{background-position:-111px -84px}
+.kaijiang-num tr td span.PK_105{background-position:0 -84px}
+.kaijiang-num tr td span.PK_205{background-position:-37px -84px}
+.kaijiang-num tr td span.PK_305{background-position:-74px -84px}
+.kaijiang-num tr td span.PK_405{background-position:-111px -84px}
 
-.w_con .nxtable tr td span.PK_106{background-position:0 -105px}
-.w_con .nxtable tr td span.PK_206{background-position:-37px -105px}
-.w_con .nxtable tr td span.PK_306{background-position:-74px -105px}
-.w_con .nxtable tr td span.PK_406{background-position:-111px -105px}
+.kaijiang-num tr td span.PK_106{background-position:0 -105px}
+.kaijiang-num tr td span.PK_206{background-position:-37px -105px}
+.kaijiang-num tr td span.PK_306{background-position:-74px -105px}
+.kaijiang-num tr td span.PK_406{background-position:-111px -105px}
 
-.w_con .nxtable tr td span.PK_107{background-position:0 -126px}
-.w_con .nxtable tr td span.PK_207{background-position:-37px -126px}
-.w_con .nxtable tr td span.PK_307{background-position:-74px -126px}
-.w_con .nxtable tr td span.PK_407{background-position:-111px -126px}
+.kaijiang-num tr td span.PK_107{background-position:0 -126px}
+.kaijiang-num tr td span.PK_207{background-position:-37px -126px}
+.kaijiang-num tr td span.PK_307{background-position:-74px -126px}
+.kaijiang-num tr td span.PK_407{background-position:-111px -126px}
 
-.w_con .nxtable tr td span.PK_108{background-position:0 -147px}
-.w_con .nxtable tr td span.PK_208{background-position:-37px -147px}
-.w_con .nxtable tr td span.PK_308{background-position:-74px -147px}
-.w_con .nxtable tr td span.PK_408{background-position:-111px -147px}
+.kaijiang-num tr td span.PK_108{background-position:0 -147px}
+.kaijiang-num tr td span.PK_208{background-position:-37px -147px}
+.kaijiang-num tr td span.PK_308{background-position:-74px -147px}
+.kaijiang-num tr td span.PK_408{background-position:-111px -147px}
 
-.w_con .nxtable tr td span.PK_109{background-position:0 -168px}
-.w_con .nxtable tr td span.PK_209{background-position:-37px -168px}
-.w_con .nxtable tr td span.PK_309{background-position:-74px -168px}
-.w_con .nxtable tr td span.PK_409{background-position:-111px -168px}
+.kaijiang-num tr td span.PK_109{background-position:0 -168px}
+.kaijiang-num tr td span.PK_209{background-position:-37px -168px}
+.kaijiang-num tr td span.PK_309{background-position:-74px -168px}
+.kaijiang-num tr td span.PK_409{background-position:-111px -168px}
 
-.w_con .nxtable tr td span.PK_110{background-position:0 -189px}
-.w_con .nxtable tr td span.PK_210{background-position:-37px -189px}
-.w_con .nxtable tr td span.PK_310{background-position:-74px -189px}
-.w_con .nxtable tr td span.PK_410{background-position:-111px -189px}
+.kaijiang-num tr td span.PK_110{background-position:0 -189px}
+.kaijiang-num tr td span.PK_210{background-position:-37px -189px}
+.kaijiang-num tr td span.PK_310{background-position:-74px -189px}
+.kaijiang-num tr td span.PK_410{background-position:-111px -189px}
 
-.w_con .nxtable tr td span.PK_111{background-position:0 -210px}
-.w_con .nxtable tr td span.PK_211{background-position:-37px -210px}
-.w_con .nxtable tr td span.PK_311{background-position:-74px -210px}
-.w_con .nxtable tr td span.PK_411{background-position:-111px -210px}
+.kaijiang-num tr td span.PK_111{background-position:0 -210px}
+.kaijiang-num tr td span.PK_211{background-position:-37px -210px}
+.kaijiang-num tr td span.PK_311{background-position:-74px -210px}
+.kaijiang-num tr td span.PK_411{background-position:-111px -210px}
 
-.w_con .nxtable tr td span.PK_112{background-position:0 -231px}
-.w_con .nxtable tr td span.PK_212{background-position:-37px -231px}
-.w_con .nxtable tr td span.PK_312{background-position:-74px -231px}
-.w_con .nxtable tr td span.PK_412{background-position:-111px -231px}
+.kaijiang-num tr td span.PK_112{background-position:0 -231px}
+.kaijiang-num tr td span.PK_212{background-position:-37px -231px}
+.kaijiang-num tr td span.PK_312{background-position:-74px -231px}
+.kaijiang-num tr td span.PK_412{background-position:-111px -231px}
 
-.w_con .nxtable tr td span.PK_113{background-position:0 -252px}
-.w_con .nxtable tr td span.PK_213{background-position:-37px -252px}
-.w_con .nxtable tr td span.PK_313{background-position:-74px -252px}
-.w_con .nxtable tr td span.PK_413{background-position:-111px -252px}
+.kaijiang-num tr td span.PK_113{background-position:0 -252px}
+.kaijiang-num tr td span.PK_213{background-position:-37px -252px}
+.kaijiang-num tr td span.PK_313{background-position:-74px -252px}
+.kaijiang-num tr td span.PK_413{background-position:-111px -252px}
  .w_con .nxtable tr td  small{width: 13px;height: 14px;display: block;margin: 3px auto 0;background: url(../images/ssc_bg/poker_ico.png);}
 .w_con .nxtable tr td small.meihua {background-position: -231px -1px;}
 .w_con .nxtable tr td small.fangkuai {background-position: -248px -1px;}
