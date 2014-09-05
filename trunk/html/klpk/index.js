@@ -2236,19 +2236,19 @@ Class('openCodeList', {
     		this.get('td', ul).slice(2,3).html(omissall);
     		var newxh=this.get('td', ul).slice(3,7);
     		newxh.each(function (li, i){
-        		if(omiss_arr[i]==4){
+        		if(omiss_arr[i]==25){
         			switch(i){
 					case 0:
-						omiss_arr[i]="<small class=heitao></small>"
+						omiss_arr[i]="<i class='white'><small class=heitao></small></i>"
 						break;
 					case 1:
-						omiss_arr[i]="<small class=hongtao></small>"
+						omiss_arr[i]="<i class='white'><small class=hongtao></small></i>"
 						break;
 					case 2:
-						omiss_arr[i]="<small class=meihua></small>"
+						omiss_arr[i]="<i class='white'><small class=meihua></small></i>"
 						break;
 					case 3:
-						omiss_arr[i]="<small class=fangkuai></small>"
+						omiss_arr[i]="<i class='white'><small class=fangkuai></small></i>"
 						break;
 					
         			}
