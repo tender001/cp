@@ -2633,11 +2633,11 @@ Class('openCodeList', {
 					var codes = rt.codes;
 					var at = rt.at;
 					codes=codes.split(",");
-					$("#dopencode"+pid).html('<em class="px3_i_'+codes[0]+'"></em><em class="px3_i_'+codes[1]+'"></em><em class="px3_i_'+codes[1]+'"></em>');
+					var ntype=Y.kjtype(codes,pid);
+					$("#dopencode0"+pid).html('<span class="PK_'+codes[0]+'"></span><span class="PK_'+codes[1]+'"></span><span class="PK_'+codes[2]+'"></span>'+ntype);
 				});
 			}
 		});
-    }   
+    },
+    
 });
-
- 
