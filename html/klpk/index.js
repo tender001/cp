@@ -11,7 +11,7 @@ Class.C('fsfq', $_trade.url.pcast);
 Class.C('fszh', $_trade.url.zcast);
 Class.C('casttype', 0);
 Class.C('iszh', false);
-Class.C('sump', 78);
+Class.C('sump', 79);
 Class.C('limit-code-ischecking',true);
 Class.C('lot_data',{
 	239: ['同花', 90, 1],//同花包选
@@ -38,17 +38,17 @@ Class.C('lot_data',{
     269: ['任六胆拖',12, 6]
 });
 Class.C('lot_data_new',{// 老玩法ID, 新库中玩法ID, 投注方式 (1单复式 2单复式 3包号 4和值 5胆拖)
-	249: ['07:01', 4, 1,5],
-	250: ['08:01', 4, 1,5],
-	251: ['09:01', 13, 1,13],
-	252: ['10:01', 14, 1,14],
-	253: ['11:01', 14, 1,14],
-	254: ['01:01', 13, 1,13],
-	255: ['02:01', 13, 1,13],
-	256: ['03:01', 13, 1,13],
-	257: ['04:01', 13, 1,13],
-	258: ['05:01', 13, 1,13],
-	259: ['06:01', 13, 1,13]
+	249: ['07', 12,"01",5],
+	250: ['08', 12,"01",5],
+	251: ['09', 12, "01",13],
+	252: ['10', 12, "01",14],
+	253: ['11', 12, "01",14],
+	254: ['01', 13, "01",13],
+	255: ['02', 13,"01",13],
+	256: ['03', 13,"01",13],
+	257: ['04', 13, "01",13],
+	258: ['05', 13, "01",13],
+	259: ['06', 13, "01",13]
 	  
 });
 
@@ -67,17 +67,18 @@ Class.C('lot_data_dome',{
 });
 
 Class.C('lot_data_wanfa',{
-    249: '玩法提示：任选二玩法：选<em class="red">2</em>个号码，猜中开奖号码任意2个数字即中奖&nbsp;1/5.5的中奖机会&nbsp;奖金<em class="red">6</em>元。',
-    250: '玩法提示：任选三玩法：选<em class="red">3</em>个号码，猜中开奖号码任意3个数字即中奖&nbsp;1/16.5的中奖机会&nbsp;奖金<em class="red">19</em>元。 ',
-    251: '玩法提示：任选四玩法：选<em class="red">4</em>个号码，猜中开奖号码任意4个数字即中奖&nbsp;1/66的中奖机会&nbsp;奖金<em class="red">78</em>元。',// r4
-    252: '玩法提示：任选五玩法：选<em class="red">5</em>个号码，猜中开奖号码全部5个数字即中奖&nbsp;1/462的中奖机会&nbsp;奖金<em class="red">540</em>元。',// r5
-    253: '玩法提示：任选六玩法：选<em class="red">6</em>个号码，猜中开奖号码全部5个数字即中奖&nbsp;1/77的中奖机会&nbsp;奖金<em class="red">90</em>元。',// r6
-    254: '玩法提示：任选七玩法：选<em class="red">7</em>个号码，猜中开奖号码全部5个数字即中奖&nbsp;1/22的中奖机会&nbsp;奖金<em class="red">26</em>元。',// r7
-    255: '玩法提示：任选八玩法：选<em class="red">8</em>个号码，猜中开奖号码全部5个数字即中奖&nbsp;1/8.25的中奖机会&nbsp;奖金<em class="red">9</em>元。',
-    256: '玩法提示：任选八玩法：选<em class="red">8</em>个号码，猜中开奖号码全部5个数字即中奖&nbsp;1/8.25的中奖机会&nbsp;奖金<em class="red">9</em>元。',
-    257: '玩法提示：任选八玩法：选<em class="red">8</em>个号码，猜中开奖号码全部5个数字即中奖&nbsp;1/8.25的中奖机会&nbsp;奖金<em class="red">9</em>元。',
-    258: '玩法提示：前二直选玩法：每行各选<em class="red">1</em>个号码。1/110的中奖机会，奖金<em class="red">130</em>元。',// 前二直选
-    259: '玩法提示：前三直选玩法：每行各选<em class="red">1</em>个号码。1/990的中奖机会，奖金<em class="red">1,170</em>元。'// 前三直选		
+		
+		249:' 同花包选，开奖号为任意相同花色即中奖<em class="red">22</em>元，中奖率1/19.3；同花单选，与开奖号花色都相同即中奖<em class="red">90</em>元，中奖率1/77.3。',
+		250: '同花顺包选，开奖号是三连号且花色一致即中奖<em class="red">535</em>元；同花顺单选，所选花色与顺子开奖号花色都相同即中奖<em class="red">2150</em>元。',
+		251: ' 顺子包选，开奖号码为三连号即中奖<em class="red">33</em>元，中奖概率1/28.7；顺子单选，所选顺子号与开奖号相同即中奖<em class="red">400</em>元，中奖概率1/345。',
+		252: ' 豹子包选，开奖号为三同号即中奖<em class="red">500</em>元，中奖概率1/425；豹子单选，所选豹子号与开奖号相同即中奖<em class="red">6400</em>元，中奖概率1/5525。',
+		253: '对子包选，开奖号中只出现2个同号即中奖<em class="red">7</em>元，中奖率1/5.9；对子单选，与开奖号中的对子相同即中奖<em class="red">88</em>元，中奖概率1/76.7。',
+		254: '至少选1个号码，所选号码与开奖号码中任意一个相同即中奖<em class="red">5</em>元，中奖概率1/4.6。',
+	    255: '至少选2个号码，所选号码至少命中开奖号中2个不同号码即中奖<em class="red">33</em>元，中奖概率1/29.4。',
+	    256: '至少选3个号码，所选号码包括当期全部开奖号即中奖<em class="red">116</em>元，中奖概率1/100.45。',
+	    257: '至少选4个号码，所选号码包括当期全部开奖号即中奖<em class="red">46</em>元，中奖概率1/39.46。',
+	    258: '至少选5个号码，所选号码包括当期全部开奖号即中奖<em class="red">22</em>元，中奖概率1/19.38。 ',
+	    259: '至少选6个号码，所选号码包括当期全部开奖号即中奖<em class="red">12</em>元，中奖概率1/10.9。'
 });
 //Class.C('child_wanfa',{
 //    249: '1234,111,222,333,444',
@@ -112,31 +113,31 @@ Class.extend('getPrixRange', function (count,code){//已选
 	var min, max='', rn, hit, sp, ini,playid,mx,mi,getPlayId = this.getPlayId();
 	if(code != '' && code != undefined){
 	codes = Y.getInt(code[0]);
-	if(getPlayId == '249' && codes == '7'){
+	if(getPlayId == '249' && codes == '00'){
 	if(code.length == '1'){
 	sp = 22;
 	}else{
 	sp = 112;
 	}
-	}else if(getPlayId == '250' && codes =='8'){
+	}else if(getPlayId == '250' && codes =='00'){
 	if(code.length == '1'){
 	sp = 535;
 	}else{
 	sp = 2685;
 	}
-	}else if(getPlayId == '251' && codes =='13'){
+	}else if(getPlayId == '251' && codes =='00'){
 	if(code.length == '1'){
 	sp = 33;
 	}else{
 	sp = 433;
 	}
-	}else if(getPlayId == '252' && codes =='14'){
+	}else if(getPlayId == '252' && codes =='00'){
 	if(code.length == '1'){
 	sp = 500;
 	}else{
 	sp = 6900;
 	}
-	}else if(getPlayId == '253' && codes =='14'){
+	}else if(getPlayId == '253' && codes =='00'){
 	if(code.length == '1'){
 	sp = 7;
 	}else{
@@ -1205,41 +1206,92 @@ Class('CodeList', {
 		});
     },
     addCode: function (code){
-        var one, li;
-        if (code.length) {
-            if (!this.isArray(code[0])) {
-                code = [code];
-            }
-            for (var i = 0, j = code.length; i < j; i++) {
-                one = code[i]; // [code, id, count];
-                li = this.createLine(one);
-                li.data('code', one.slice());
-                li.setStyle('cursor:pointer');
-                this.need('s', li).click(function (e, Y){
-                    Y.removeLine(Y.get(this).parent(function (el){
-                        return el.nodeName.toLowerCase() == 'li';
-                    }));
-                });
-            }
-            this.change(this.getCount());
-        }
+    	 var one, li;
+         if (code.length) {
+         	if((Class.C('playid') == '249' || Class.C('playid') == '250' || Class.C('playid') == '251' || Class.C('playid') == '252' || Class.C('playid') == '253') && code[0][0].split(',').length>1){
+         		var code_r = code[0][0].split(',');
+         		for(var i = 0;i<code_r.length; i++){
+         			var code_e = [];
+         			code_e[0] = code_r[i];
+         			code_e[1] =  code[0][1];
+         			code_e[2] = 1;
+         			li = this.createLine(code_e);//先页面显示
+         			if(code_r[i] == '07' && Class.C('playid') == '249'){
+         				code_e[1] =  239;
+         			}else if(code_r[i] == '08' && Class.C('playid') == '250'){
+         				code_e[1] =  230;				
+         			}else if(code_r[i] == '13' && Class.C('playid') == '251'){
+         				code_e[0] = '9';
+         				code_e[1] =  231;
+ 					}else if(code_r[i] == '14' && Class.C('playid') == '252'){
+ 						code_e[0] = '10';
+ 						code_e[1] =  232;
+ 					}else if(code_r[i] == '14' && Class.C('playid') == '253'){
+ 						code_e[0] = '11';
+ 						code_e[1] =  233;
+ 					}
+         			li.data('code', code_e.slice());
+                     li.setStyle('cursor:pointer');
+                     this.need('s', li).click(function (e, Y){
+                         Y.removeLine(Y.get(this).parent(function (el){
+                             return el.nodeName.toLowerCase() == 'li';
+                         }));
+                     });
+         		}
+         	}else{
+         		if (!this.isArray(code[0])) {
+                     code = [code];
+                 }
+                 for (var i = 0, j = code.length; i < j; i++) {
+                     one = code[i];
+                     li = this.createLine(one);
+                     if(Class.C('playid') == '249' || Class.C('playid') == '250' || Class.C('playid') == '251' || Class.C('playid') == '252' || Class.C('playid') == '253'){
+                     	if(one[0] == '07' && Class.C('playid') == '249'){
+                     		one[1] =  239;
+             			}else if(one[0] == '08' && Class.C('playid') == '250'){
+             				one[1] =  230;				
+             			}else if(one[0] == '13' && Class.C('playid') == '251'){
+             				one[0] = '9';
+             				one[1] =  231;
+     					}else if(one[0] == '14' && Class.C('playid') == '252'){
+     						one[0] = '10';
+     						one[1] =  232;
+     					}else if(one[0] == '14' && Class.C('playid') == '253'){
+     						one[0] = '11';
+     						one[1] =  233;
+     					}
+                     }else{
+                     	one[0] = one[0].replace('A','01').replace('J','11').replace('Q','12').replace('K','13');
+                     }
+                     li.data('code', one.slice());
+                     li.setStyle('cursor:pointer');
+                     this.need('s', li).click(function (e, Y){
+                         Y.removeLine(Y.get(this).parent(function (el){
+                             return el.nodeName.toLowerCase() == 'li';
+                         }));
+                     });
+                 }
+         	}
+         }
+         this.change(this.getCount());
+      
     },
     createLine: function (code){//创建一行
     	var codes = code[0];
     	if(Class.C('playid') == '249'){//同花 投注篮里面显示转化
-    		codes=codes.replace('07','同花包选').replace('01','黑桃单选').replace('02','红桃单选').replace('03','梅花单选').replace('04','方片单选');
+    		codes=codes.replace('00','同花包选').replace('01','黑桃单选').replace('02','红桃单选').replace('03','梅花单选').replace('04','方片单选');
     	}else if(Class.C('playid') == '250'){//同花顺
-    		codes=codes.replace('08','包选').replace('01','黑桃').replace('02','红桃').replace('03','梅花').replace('04','方片');
+    		codes=codes.replace('00','包选').replace('01','黑桃').replace('02','红桃').replace('03','梅花').replace('04','方片');
     	}else if(Class.C('playid') == '251'){//顺子
-    		codes=codes.replace('10','10JQ').replace('13','顺子包选').replace('01','A23').replace('02','234').replace('03','345')
+    		codes=codes.replace('10','10JQ').replace('00','顺子包选').replace('01','A23').replace('02','234').replace('03','345')
     		.replace('04','456').replace('05','567').replace('06','678').replace('07','789').replace('08','8910').replace('09','910J')
     		.replace('11','JQK').replace('12','QKA');
     	}else if(Class.C('playid') == '252'){//豹子
-    		codes=codes.replace('14','豹子包选').replace('01','AAA').replace('02','222').replace('03','333').replace('04','444')
+    		codes=codes.replace('00','豹子包选').replace('01','AAA').replace('02','222').replace('03','333').replace('04','444')
     		.replace('05','555').replace('06','666').replace('07','777').replace('08','888').replace('09','999')
     		.replace('10','101010').replace('11','JJJ').replace('12','QQQ').replace('13','KKK');
     	}else if(Class.C('playid') == '253'){//对子
-    		codes=codes.replace('14','对子包选').replace('01','AA').replace('02','22').replace('03','33').replace('04','44')
+    		codes=codes.replace('00','对子包选').replace('01','AA').replace('02','22').replace('03','33').replace('04','44')
     		.replace('05','55').replace('06','66').replace('07','77').replace('08','88').replace('09','99')
     		.replace('10','1010').replace('11','JJ').replace('12','QQ').replace('13','KK');
     	}else{
@@ -1308,10 +1360,13 @@ Class('CodeList', {
     },
     formatCode: function (d){
       var tmp = d[0].replace(/拖/,'$').replace(/\[.*\]/g,'').replace(/[^0-9$\-,|]/g,'');
-//    if (this.C('lot_data_new')[d[1]][2]!="undefine"){
     	tmp = tmp.slice(0);//,this.C('lot_data_new')[d[1]][2]
-//    }
-	tmp += ':'+this.C('lot_data_new')[d[1]][0];
+    	if((d[1]=="249"||d[1]=="250"||d[1]=="251"||d[1]=="252"||d[1]=="253")&&tmp=="00"){
+    		tmp = this.C('lot_data_new')[d[1]][0] +':'+this.C('lot_data_new')[d[1]][1]+':'+this.C('lot_data_new')[d[1]][2];
+    	}else{
+    		tmp += ':'+this.C('lot_data_new')[d[1]][0]+':'+this.C('lot_data_new')[d[1]][2];
+    	}
+
     return tmp;
   },
   getData: function (){
