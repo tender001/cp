@@ -2057,6 +2057,7 @@ a.sz_cmt{background: url(../images/cai888/nwx5_112.jpg);width:137px;height:33px}
 .w_con .ncathgm p a{color: #ccc;}
 .w_con .nwx5kj h1 span{padding: 0 12px;cursor: pointer;}
 .w_con .nwx5kj h1 span.cur{background-color: #f60;color: #fff;}
+.w_con .nwx5kj h1 span.cur{background-color: #f60;color: #fff;}
 .w_con .nwx5kj h1{border-bottom: 2px solid #f60;}
 .w_con .ncathleft p em{color: #efd41f;}
 /*近期开奖*/
@@ -2278,6 +2279,10 @@ transition: all 0.2s ease-in;}
 .kc_zj4 a{background:url(../images/cai888/heizhbn.jpg);width:137px;height:33px}
 .kc_zj4 a:hover{background:url(../images/cai888/heizhbn.jpg)}
 .kc_td_kj table tbody th{border-right:1px solid #ddd}
+.w_kc table{border-collapse: collapse;}
+.w_kc td,.w_kc th{border: 1px solid #ddd;}
+.w_kc th{border-top: 0;color: #444 !important;line-height: 32px !important;}
+.w_kc td.pk3_tr3{text-align: left;text-indent: 15px;}
 .hm_right .rig_hm_main table thead th{height:34px;line-height:34px}
 .cuptab1 tr.tr2 th{line-height:35px;text-align:left;color:#444;font-size:12px;padding-left:15p x;height:35px}
 .cuptab1 tr.tr2:hover th{background:none}
