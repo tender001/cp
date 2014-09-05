@@ -168,11 +168,11 @@ Class('CountDownGp', {
 			this.clock.add(this.lister);
 			this.clock.play(now);
 			var lnum = "";
-			if(Class.C('sump') == 120){//时时彩的时候 剩余期次
+			if(Class.C('sump') == 79){//时时彩的时候 剩余期次
 				lnum = expect.substr(6,3)*1;
 				this.lastexpect_notice.html(Class.C('sump')-(lnum-1));
 			}else{
-				lnum = expect.substr(8,9)*1;
+				lnum = expect.substr(6,8)*1;
 				this.lastexpect_notice.html(Class.C('sump')-(lnum-1));
 				this.endexpect_notice.html((lnum-1));
 			}
