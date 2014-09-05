@@ -755,8 +755,8 @@ Class('App', {
 			sp = ini[3] || ',';
 			n=codevalue.split("\n").length;
 			
-			if(id>248&&id<256){
-				if(!(Y.checksdinput(id-247))){
+			if(id>253&&id<259){
+				if(!(Y.checksdinput(id-253))){
 					return;
 				}
 			}else if(id==244){
@@ -2081,7 +2081,7 @@ Class('openCodeList', {
 		this.onMsg('update_opencodelist', function() {
 			this.checkpid();
 		});
-//		this.createDayOpenCodeHtml();
+		this.createDayOpenCodeHtml();
     },
     postlist: function (n){
     	Y.postMsg('show_opencodelist', n);
@@ -2358,8 +2358,8 @@ Class('openCodeList', {
 		                    change:function (times, now){
 								var lt = times[1]*60*60 + times[2]*60 + times[3];
 		                        var wlt = lt>314 ? 314:lt;
-		                       
-								this.get('#kaijiangopencode').html( '{3}:{4}'.format.apply('{3}:{4}后开奖<span><em style="width:'+wlt+'px"></em></span>', times).replace(/\b\d\b/g,'0$&'));
+	
+								this.get('#kaijiangopencode').html( '{3}:{4}'.format.apply('<p>{3}:{4}后开奖</p><strong><em style="width:'+wlt+'px"></em></strong>', times).replace(/\b\d\b/g,'0$&'));
 		                    	if (lt==0 ||lt==1){
 		                        	
 									this.get('#kaijiangopencode').html('正在开奖……');
@@ -2600,21 +2600,23 @@ Class('openCodeList', {
     	});
     },
     createDayOpenCodeHtml: function(){
-        var htmlul = "";
-    	for(var i=1;i<14;i++){
-    		htmlul+="<tr><th><span id=span"+String.zero(i)+">"+String.zero(i)+"</span></th><td><span id=dopencode"+String.zero(i)+"></span></td>"
-    		+   "<th><span id=span"+(13+i)+">"+(13+i)+"</span></th><td><span id=dopencode"+(13+i)+"></span></td>" 
-    		+	"<th><span id=span"+(26+i)+">"+(26+i)+"</span></th><td><span id=dopencode"+(26+i)+"></span></td>"
-    		+	"<th><span id=span"+(39+i)+">"+(39+i)+"</span></th><td><span id=dopencode"+(39+i)+"></span></td>"
-    		+	"<th><span id=span"+(52+i)+">"+(52+i)+"</span></th><td><span id=dopencode"+(52+i)+"></span></td>"
-    		+	"<th><span id=span"+(65+i)+">"+(65+i)+"</span></th><td><span id=dopencode"+(65+i)+"></span></td>";
+    	var htm = "";
+        for(var i=1;i<16;i++){
+    		htm+="<tr><th id=span0"+String.zero(i)+">"+String.zero(i)+"</th><td id=dopencode0"+String.zero(i)+">&nbsp;</td>";
+    		htm+="<th id=span0"+(15+i)+">"+(15+i)+"</th><td id=dopencode0"+(15+i)+">&nbsp;</td>"+
+    			 "<th id=span0"+(30+i)+">"+(30+i)+"</th><td id=dopencode0"+(30+i)+">&nbsp;</td>"+
+    		     "<th id=span0"+(45+i)+">"+(45+i)+"</th><td id=dopencode0"+(45+i)+">&nbsp;</td>";
+    		htm+="<th id=span"+(60+i)+">"+(60+i)+"</th><td id=dopencode"+(60+i)+">&nbsp;</td>";
+	        if(75+i<=79){
+	        	htm+="<th id=span0"+(75+i)+">"+(75+i)+"</th><td id=dopencode0"+(75+i)+">&nbsp;</td>";
+	        }else{
+	        	htm+="<th >&nbsp;</th><td >&nbsp;</td>";
+	        }
+	       
     	}
-    	$("#kaijiang").html(htmlul);
-    	
-    	$("#span79").html("");
-    	$("#dopencode79").html("");
-    	$("#span80").html("");
-    	$("#dopencode80").html("");
+     	
+        $("#kaijiang").html(htm);
+     	$("#dopencode80").html("");
     },
     updateDayOpenCode: function(d){	
     	var riqi2 = Y.getDate(d).format('YYMMDD');
@@ -2627,10 +2629,11 @@ Class('openCodeList', {
 				var obj = eval("(" + data.text + ")");				
 				var r = obj.rows.row;
 				r.each(function(rt,o) {
-					var pid = rt.pid.substr(8,2);
+					var pid = rt.pid.substr(6,2);
 					var codes = rt.codes;
 					var at = rt.at;
-					$("#dopencode"+pid).html(codes);
+					codes=codes.split(",");
+					$("#dopencode"+pid).html('<em class="px3_i_'+codes[0]+'"></em><em class="px3_i_'+codes[1]+'"></em><em class="px3_i_'+codes[1]+'"></em>');
 				});
 			}
 		});
