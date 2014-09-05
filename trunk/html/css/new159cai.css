@@ -2144,13 +2144,13 @@ a.sz_cmt{background: url(../images/cai888/nwx5_112.jpg);width:137px;height:33px}
 .pok dl{margin-top: 12px;zoom:1;}
 .pok dl:after{visibility:hidden;display:block;font-size:0;content:" ";clear:both;}
 .pok dl dt,.pok dl dd{float: left;color: #ccc;margin-right: 28px;_display: inline;}
-.pok dl dt{width: 85px;}
+.pok dl dt{width: 85px;cursor: pointer;}
 .pok dl dd{width: 94px;text-align: center;-webkit-transition: all 0.2s ease-in;
 -moz-transition: all 0.2s ease-in;
 -o-transition: all 0.2s ease-in;
 transition: all 0.2s ease-in;}
 .pok dl dd:hover{box-shadow: 0 0 15px rgba(0,0,0,0.4);}
-.pok dl.pok_hua dd{height: 128px;background: url(../images/ssc_bg/pok_bg.png);}
+.pok dl.pok_hua dd{height: 128px;background: url(../images/ssc_bg/pok_bg.png);cursor: pointer;-webkit-user-select: none;-moz-user-select: none;-o-user-select: none;user-select: none;}
 .pok dl.pok_hua dd small{display: block;width: 37px;height: 38px;margin: 40px auto 0;background: url(../images/ssc_bg/poker_ico.png);}
 .pok dl.pok_hua dd small.d1{background-position: -38px 0;}
 .pok dl.pok_hua dd small.d2{background-position: -75px 0;width: 40px;}
