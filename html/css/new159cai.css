@@ -1943,7 +1943,7 @@ a.sz_cmt{background: url(../images/cai888/nwx5_112.jpg);width:137px;height:33px}
 .nxmiddle h2 .cm_left b{font-weight:400;color:#145fab;font-weight:400;float:left;}
 .cm_right{float:right;}
 .cm_ssq_yx_num ul li s{margin-top:3px}
-.ncathright{float:left;width:475px;padding-left:18px;}
+.ncathright{float:right;width:475px;/* float:left;padding-left:18px; */}
 .ncathtype{height:34px;border:1px solid #ccc;border-radius:3px 3px 0 0 ;background:#fff}
 .ncathtype span{display:block;float:left;width:78px;line-height:34px;color:#333;text-align:center;background:#fde8d8;margin-right:6px}
 .ncathtype label{display:block;float:left;padding:0 5px 0 19px;color:#444;height:34px;line-height:34px}
