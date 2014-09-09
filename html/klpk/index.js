@@ -698,6 +698,12 @@ Class('App', {
         }).mouseout(function(){
         	$(this).removeClass("b_r");
         });
+        var footer= this.lib.Tabs({
+            items: 'div.nwx5kj h1 span',
+            focusCss: 'cur',
+            contents: '[mark=ft1],[mark=ft2]'
+            
+        });
 		
 	
 		
@@ -714,7 +720,7 @@ Class('App', {
 			
 		});
 		this.get("#showkaijiang").click(function(){
-			$("#kaijianginfo").toggle();
+			$("[mark=kaijianginfo]").toggle();
 			$("#showkaijiang").toggleClass("cur");
 			if($("#showkaijiang").html()=="展开"){
 				$("#showkaijiang").html("隐藏");
@@ -2236,7 +2242,7 @@ Class('openCodeList', {
     		this.get('td', ul).slice(2,3).html(omissall);
     		var newxh=this.get('td', ul).slice(3,7);
     		newxh.each(function (li, i){
-        		if(omiss_arr[i]==25){
+        		if(omiss_arr[i]==0){
         			switch(i){
 					case 0:
 						omiss_arr[i]="<i class='white'><small class=heitao></small></i>"
@@ -2601,23 +2607,24 @@ Class('openCodeList', {
     },
     createDayOpenCodeHtml: function(){
     	var htm = "";
-        for(var i=1;i<16;i++){
-    		htm+="<tr><th id=span0"+String.zero(i)+">"+String.zero(i)+"</th><td id=dopencode0"+String.zero(i)+">&nbsp;</td>";
-    		htm+="<th id=span0"+(15+i)+">"+(15+i)+"</th><td id=dopencode0"+(15+i)+">&nbsp;</td>"+
-    			 "<th id=span0"+(30+i)+">"+(30+i)+"</th><td id=dopencode0"+(30+i)+">&nbsp;</td>"+
-    		     "<th id=span0"+(45+i)+">"+(45+i)+"</th><td id=dopencode0"+(45+i)+">&nbsp;</td>";
-    		htm+="<th id=span"+(60+i)+">"+(60+i)+"</th><td id=dopencode"+(60+i)+">&nbsp;</td>";
-	        if(75+i<=79){
-	        	htm+="<th id=span0"+(75+i)+">"+(75+i)+"</th><td id=dopencode0"+(75+i)+">&nbsp;</td>";
-	        }else{
-	        	htm+="<th >&nbsp;</th><td >&nbsp;</td>";
-	        }
+        for(var i=1;i<17;i++){
+    		htm+="<tr><th id=span0"+String.zero(i)+">"+String.zero(i)+"</th><td id=dopencode0"+String.zero(i)+">&nbsp;</td><td id=type"+String.zero(i)+">&nbsp;</td>";
+    		htm+="<th id=span0"+(16+i)+">"+(16+i)+"</th><td id=dopencode0"+(16+i)+">&nbsp;</td><td id=type"+(16+i)+">&nbsp;</td>"+
+    			 "<th id=span0"+(32+i)+">"+(32+i)+"</th><td id=dopencode0"+(32+i)+">&nbsp;</td><td id=type"+(32+i)+">&nbsp;</td>"+
+    		     "<th id=span0"+(48+i)+">"+(48+i)+"</th><td id=dopencode0"+(48+i)+">&nbsp;</td><td id=type"+(48+i)+">&nbsp;</td>";
+    		htm+="<th id=span"+(64+i)+">"+(64+i)+"</th><td id=dopencode"+(64+i)+">&nbsp;</td><td id=type"+(64+i)+">&nbsp;</td>";
+//	        if(75+i<=79){
+//	        	htm+="<th id=span0"+(75+i)+">"+(75+i)+"</th><td id=dopencode0"+(75+i)+">&nbsp;</td><td id=type"+(75+i)+">&nbsp;</td>";
+//	        }else{
+//	        	htm+="<th >&nbsp;</th><td >&nbsp;</td>";
+//	        }
 	       
     	}
      	
         $("#kaijiang").html(htm);
      	$("#dopencode80").html("");
     },
+
     updateDayOpenCode: function(d){	
     	var riqi2 = Y.getDate(d).format('YYMMDD');
 		this.ajax({
@@ -2633,8 +2640,85 @@ Class('openCodeList', {
 					var codes = rt.codes;
 					var at = rt.at;
 					codes=codes.split(",");
-					var ntype=Y.kjtype(codes,pid);
-					$("#dopencode0"+pid).html('<span class="PK_'+codes[0]+'"></span><span class="PK_'+codes[1]+'"></span><span class="PK_'+codes[2]+'"></span>'+ntype);
+					var ncode = '',ntype = '';
+//					ntype = Y.kjtype(kjcode,pid);
+					
+					if(codes != '' && codes.length == 3){
+						var a = codes[0],b = codes[1],c = codes[2];
+						var a1 = a.substr(0,1);//第一个开奖号码的花色
+						var a2 = a.substr(1);//第一个开奖号码的点数
+						var b1 = b.substr(0,1);
+						var b2 = b.substr(1);
+						var c1 = c.substr(0,1);
+						var c2 = c.substr(1);
+						var sz = [];
+						sz[0] = Y.getInt(a2);
+						sz[1] = Y.getInt(b2);
+						sz[2] = Y.getInt(c2);
+						if(a1 == b1 && b1 == c1 && a1 == c1){
+//							sz = $_sys.sort(sz,desc);
+							if(sz.indexOf(13) >= 0 && sz.indexOf(1) >= 0){
+								if(sz.indexOf(12) >= 0 || sz.indexOf(2) >= 0){
+									$("#type"+pid).addClass('orange');
+									ntype= '同花顺';
+								}else{
+									$("#type"+pid).addClass('yl');
+									ntype= '同花';
+								}
+							}else{
+								if(sz[0] + 1 != sz[1]){
+									$("#type"+pid).addClass('yl');
+									ntype= '同花';
+								}else{
+									if(sz[1] + 1 != sz[2]){
+										$("#type"+pid).addClass('yl');
+										ntype= '同花';
+									}else{
+										$("#type"+pid).addClass('orange');
+										ntype= '同花顺';
+									}
+								}
+							}
+						}else{
+							if(a2 != b2 || b2 !=c2 || c2 != a2){
+								if(a2 == b2 || b2 ==c2 || c2 == a2){
+									$("#type"+pid).addClass('blue');
+									ntype= '对子';
+									
+								}else{
+//									sz = $_sys.sort(sz,desc);
+									if(sz.indexOf(13) >= 0 && sz.indexOf(1) >= 0){
+										if(sz.indexOf(12) >= 0){
+											$("#type"+pid).addClass('ger');
+											ntype= '顺子';
+										}else{
+											$("#type"+pid).addClass('k3br2');
+											ntype='';
+										}
+									}else{
+										if(sz[0] + 1 != sz[1]){
+											$("#type"+pid).addClass('k3br2');
+											ntype= '';
+										}else{
+											if(sz[1] + 1 != sz[2]){
+												$("#type"+pid).addClass('k3br2');
+												ntype='';
+											}else{
+												$("#type"+pid).addClass('ger');
+												ntype= '顺子';
+											}
+										}
+									}
+								}
+							}else{
+								$("#type"+pid).addClass('cm_red');
+								ntype= '豹子';
+							}
+						}
+			    	}
+//					var ntype="";
+					$("#dopencode0"+pid).html('<span class="PK_'+codes[0]+'"></span><span class="PK_'+codes[1]+'"></span><span class="PK_'+codes[2]+'"></span>');
+					$("#type"+pid).html(ntype);
 				});
 			}
 		});
