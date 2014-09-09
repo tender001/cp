@@ -1962,7 +1962,7 @@ a.sz_cmt{background: url(../images/cai888/nwx5_112.jpg);width:137px;height:33px}
 #container.w_con{border: 0;}
 .w_con .nsbool b,.w_con .nsbool b.cur{background: url(../images/ssc_bg/w_bg_1.png);}
 .w_con .nwx5top{border: 0;}
-.w_con .nwx5 .nwssctop1 a{padding: 0 16px;}
+.w_con .nwx5 .nwssctop1 a{padding: 0 16px;width: 45px;}
 .w_con .nwx5 .nwssctop1 a.cur{background-color: #088959;}
 .w_con .nwx5 .nwssctop1 a:hover{background-color: #088959;}
 .w_con .nwx5{border-top-color: #088959;}
