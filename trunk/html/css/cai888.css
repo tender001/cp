@@ -40,6 +40,7 @@ div{zoom:1}
 .jc_xqy span.ydj-logo{ background-position: -14px -531px;}
 .jc_xqy span.nssc-logo { background-position: -158px -443px;}
 .jc_xqy span.x5-logo{ background-position:-13px -354px;}
+.jc_xqy span.klpk-logo{ background-position:-155px -534px;}
 .hm_left{width:666px;float:left;padding:16px}
 .hmtb1 td{line-height:26px;color:#666;text-align:left;padding-left:8px}
 .hmtb1 tr.tr1 td a{color:#666;font-size:14px;font-weight:bold;}
@@ -141,6 +142,62 @@ p.fotpp a:hover{color:#ff0000;text-decoration:underline}
 .jcxqa span b{ background-position:  -283px -10px;text-align:Center;font-size:16px;line-height:36px;height:35px;margin-right:2px;width:33px;}
 .jcxqa span b.blue{ background-position:-242px -10px }
 .jcxqa span i{float:left;color:#444}
+/*快乐扑克详情*/
+.w-happypk span b{width: 36px;height: 20px;line-height: 20px;color: #000;margin: 7px 10px 0 0;background-color: #f9f9f9;text-align: left;text-indent: 20px;background:url(../images/ssc_bg/PK_K.png) no-repeat;_display: inline;}
+.kc_td_kj .w-happypk span b{margin: 0;}
+.w-happypk span b.PK_101{background-position:0 0}
+.w-happypk span b.PK_201{background-position:-37px 0}
+.w-happypk span b.PK_301{background-position:-74px 0}
+.w-happypk span b.PK_401{background-position:-111px 0}
+.w-happypk span b.PK_102{background-position:0 -21px}
+.w-happypk span b.PK_202{background-position:-37px -21px}
+.w-happypk span b.PK_302{background-position:-74px -21px}
+.w-happypk span b.PK_402{background-position:-111px -21px}
+.w-happypk span b.PK_103{background-position:0 -42px}
+.w-happypk span b.PK_203{background-position:-37px -42px}
+.w-happypk span b.PK_303{background-position:-74px -42px}
+.w-happypk span b.PK_403{background-position:-111px -42px}
+.w-happypk span b.PK_104{background-position:0 -63px}
+.w-happypk span b.PK_204{background-position:-37px -63px}
+.w-happypk span b.PK_304{background-position:-74px -63px}
+.w-happypk span b.PK_404{background-position:-111px -63px}
+.w-happypk span b.PK_105{background-position:0 -84px}
+.w-happypk span b.PK_205{background-position:-37px -84px}
+.w-happypk span b.PK_305{background-position:-74px -84px}
+.w-happypk span b.PK_405{background-position:-111px -84px}
+.w-happypk span b.PK_106{background-position:0 -105px}
+.w-happypk span b.PK_206{background-position:-37px -105px}
+.w-happypk span b.PK_306{background-position:-74px -105px}
+.w-happypk span b.PK_406{background-position:-111px -105px}
+.w-happypk span b.PK_107{background-position:0 -126px}
+.w-happypk span b.PK_207{background-position:-37px -126px}
+.w-happypk span b.PK_307{background-position:-74px -126px}
+.w-happypk span b.PK_407{background-position:-111px -126px}
+.w-happypk span b.PK_108{background-position:0 -147px}
+.w-happypk span b.PK_208{background-position:-37px -147px}
+.w-happypk span b.PK_308{background-position:-74px -147px}
+.w-happypk span b.PK_408{background-position:-111px -147px}
+.w-happypk span b.PK_109{background-position:0 -168px}
+.w-happypk span b.PK_209{background-position:-37px -168px}
+.w-happypk span b.PK_309{background-position:-74px -168px}
+.w-happypk span b.PK_409{background-position:-111px -168px}
+.w-happypk span b.PK_110{background-position:0 -189px}
+.w-happypk span b.PK_210{background-position:-37px -189px}
+.w-happypk span b.PK_310{background-position:-74px -189px}
+.w-happypk span b.PK_410{background-position:-111px -189px}
+.w-happypk span b.PK_111{background-position:0 -210px}
+.w-happypk span b.PK_211{background-position:-37px -210px}
+.w-happypk span b.PK_311{background-position:-74px -210px}
+.w-happypk span b.PK_411{background-position:-111px -210px}
+.w-happypk span b.PK_112{background-position:0 -231px}
+.w-happypk span b.PK_212{background-position:-37px -231px}
+.w-happypk span b.PK_312{background-position:-74px -231px}
+.w-happypk span b.PK_412{background-position:-111px -231px}
+.w-happypk span b.PK_113{background-position:0 -252px}
+.w-happypk span b.PK_213{background-position:-37px -252px}
+.w-happypk span b.PK_313{background-position:-74px -252px}
+.w-happypk span b.PK_413{background-position:-111px -252px}
+/**/
 .jcxqa p{float:right}
 .hm_timep{ position: absolute;right:40px;bottom:10px;width:205px;height:20px;line-height:20px}
 .hm_top_1 p b{ width:70px;height:23px;line-height:20px;display:block;background:url(../images/cai888/jczt.png);line-height:22px;text-align:center;color:#888;font-size:12px;margin-left:80px}
