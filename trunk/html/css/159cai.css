@@ -1469,7 +1469,7 @@ a.bz:hover{ background-image:url(../images/jc/cxj_14.gif) }
 .hm_lr_list ul li.cur{border:1px solid #d6be91;border-right:none; background-color:#fff;padding:5px 0 5px 5px}
 .hm_lr_list ul li.cur:hover{ background-color:#fff}
 .hm_lr_list img{margin-left:3px}
-.hm_right{width:824px;margin-left:4px;float:left}
+.hm_right{width:824px;margin-left:2px;float:left}
 .hm_right_t{width:824px;height:140px; background-image:url(../images/hm/hm_t.gif);_padding-top:20px;_height:120px}
 .hm_right_t p{line-height:30px;padding:25px 0 10px 160px;_padding-top:10px;_line-height:22px}
 .hm_right_t a{displcy:block;float:left;width:115px;font-size:12px;color:#754c24;white-space:nowrap;padding-left:15px}
