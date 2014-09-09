@@ -61,7 +61,14 @@ Class('Choose_base>Choose_dt', {
         });
          //机选
          this.get(ini.tuoRnd).click(function (){
-             Y.tuo.random(Y.need(ini.tuoRndOpts).val(), Y.dan.data);
+             Y.tuo.random(Y.need(ini.tuoRndOpts).val().replace("注",""), Y.dan.data);
+         });
+//         this.get(ini.tuo).click(function (){
+//             Y.random(Y.need(ini.tuoRndOptss).val(), Y.dan.data);
+//         });
+         this.get(ini.s1).click(function (){
+        	 Y.tuo.random(1);
+            
          });
          this.get(ini.blueRnd).click(function (){
              Y.blue.random(Y.need(ini.blueRndOpts).val());
@@ -86,8 +93,11 @@ Class('Choose_base>Choose_dt', {
                   Y.clearCode();
               }
           });
-         this.statusbar = this.need(ini.dtStatus)
+         
+         this.statusbar = this.need(ini.dtStatus);
+       
     },
+    
     getCount: function (){
        var  d, t, b, zs;
        d = this.dan.data.length;
@@ -241,7 +251,25 @@ Class('CodeList>CodeList_dt', {
         buytype = Class.config('buy_type');
         return playname == 'lr' || playname == 'sc' ? 3 : (playname == 'dt' ? 135 : 1)
     });
+    $("#pt_sel").focus(function(){
+   		var pt_sel  = $("#pt_sel").val();
+   		if(pt_sel != ""){
+   			pt_sel=$("#pt_sel").val().replace(/\D/g,'');
+   			$("#pt_sel").val(pt_sel);
+   		}
+   		
+   		$("#pt_sel").keyup(function(){
+       		this.value=this.value.replace(/\D/g,''); //只能输数字
+       	});
+   	});
+       $("#pt_sel").blur(function(){
+   		var pt_sel  = $("#pt_sel").val();
+   		if(pt_sel=pt_sel.replace(/\D/g,'')){
+   				$("#pt_sel").val(pt_sel+"注");
+   		}
+   	});
 
+   
 //    Class.extend('exportCode', function (){});
 
     /*
@@ -304,6 +332,8 @@ Class('CodeList>CodeList_dt', {
                 clearBtn: '#pt_clear',
                 rndSelect: '#pt_sel',
                 rndBtn: '#pt_jx',
+                s1:'#pt_one',
+                ddRnd: '#dd_jx',
                 yl:[{
                     xml: '/cpdata/omi/01/yilou/hmyl_red_all.xml',
                     dom: '#pt_red i'
@@ -386,11 +416,14 @@ Class('CodeList>CodeList_dt', {
                 clearBlue: '#dt_clear_blue',
                 clearAll: '#dt_clear_all',
                 tuoRndOpts: '#dt_tuo_opts',
+                //tuoRndOptss: '#dt_tuo_optss',
                 tuoRnd: '#dt_tuo_jx',
+                //tuoRnd: '#dt_tuo_jx',
                 blueRndOpts: '#dt_blue_opts',
                 blueRnd: '#dt_blue_jx',
                 dtStatus: '#dt_status',
                 putBtn: '#dt_put',
+                putBtns: '#dt_one',
                 dtListOpts: '#dt_list_opts',
                 dtListRnd: '#dt_list_jx',
                 rhoverCss:'b_r',
@@ -474,7 +507,7 @@ Class('CodeList>CodeList_dt', {
             };
 
             playTabs = this.lib.Tabs({
-                items:'#playTabsDd .ssq',
+                items:'#playTabsDd [bet]',
                 contents: '#pttz,#dttz,#dssc',
                 focusCss: 'cur'
             });
