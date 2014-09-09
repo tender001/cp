@@ -693,6 +693,7 @@ $_sys.lot.push([ 3, "福彩3D","fc3d", "" ]);
 $_sys.lot.push([ 4, "时时彩","ssc", "" ]);
 $_sys.lot.push([ 7, "七乐彩","qlc", "" ]);
 $_sys.lot.push([ 20, "新时时彩","xssc", "" ]);
+$_sys.lot.push([ 58, "快乐扑克3","klpk3", "" ]);
 
 $_sys.lot.push([ 50, "超级大乐透","dlt", "" ]);
 $_sys.lot.push([ 51, "七星彩","qxc", "" ]);
@@ -737,7 +738,7 @@ $_sys.lottype.push([ "足 彩", "zc", "80,81,82,83" ]);
 
 
 
-$_sys.lottype.push([ "高频彩", "gpc", "4,20,54,56" ]);
+$_sys.lottype.push([ "高频彩", "gpc", "4,20,54,56,58" ]);
 $_sys.lottype.push([ "数字彩", "szc", "1,3,7,50,51,52,53" ]);
 $_sys.lottype.push([ "世界杯", "worldcup", "98,99" ]);
 
@@ -839,11 +840,13 @@ $_sys.lotpath.push([ 3, "/3d/" ]);
 $_sys.lotpath.push([ 4, "/ssc/" ]);
 $_sys.lotpath.push([ 7, "/qilecai/" ]);
 $_sys.lotpath.push([ 20, "/nssc/" ]);
+$_sys.lotpath.push([ 58, "/klpk/" ]);
 
 $_sys.lotpath.push([ 50, "/daletou/" ]);
 $_sys.lotpath.push([ 51, "/qixingcai/" ]);
 $_sys.lotpath.push([ 52, "/paiwu/" ]);
 $_sys.lotpath.push([ 53, "/paisan/" ]);
+
 
 $_sys.lotpath.push([ 80, "/zc/" ]);
 $_sys.lotpath.push([ 81, "/renjiu/" ]);
@@ -1017,6 +1020,7 @@ $_sys.lotfordetail.push([ 3, "/3d/" ]);
 $_sys.lotfordetail.push([ 4, "/ssc/" ]);
 $_sys.lotfordetail.push([ 7, "/qilecai/" ]);
 $_sys.lotfordetail.push([ 20, "/nssc/" ]);
+$_sys.lotfordetail.push([ 58, "/klpk/" ]);
 
 $_sys.lotfordetail.push([ 50, "/daletou/" ]);
 $_sys.lotfordetail.push([ 51, "/qixingcai/" ]);
