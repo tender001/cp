@@ -2027,13 +2027,14 @@ a.sz_cmt{background: url(../images/cai888/nwx5_112.jpg);width:137px;height:33px}
 .w_con .nwx5time em.px3_i_213{background-position:-258px -281px}
 .w_con .nwx5time em.px3_i_313{background-position:-306px -281px}
 .w_con .nwx5time em.px3_i_413{background-position:-354px -281px}
-.w_con .nwx5time span.span5{line-height: 30px;border-color: #231a13;margin-top: 11px;background: #058455 url(../images/ssc_bg/nwx5_07.jpg) 66px 10px no-repeat;}
+.w_con .nwx5time span.span5{line-height: 30px;border-color: #231a13;text-indent:6px;margin-top: 11px;background: #058455 url(../images/ssc_bg/nwx5_07.jpg) 66px 10px no-repeat;}
 .w_con .nxmiddle{background: url(../images/ssc_bg/w_bg_2.jpg) repeat;}
 .w_con .nxmiddle h2 p{padding-left: 35px;color: #ccc;float: none;}
 .w_con .nxmiddle h2 p em{color: #efd41f;}
 .w_con .nx3span{width: 965px;/*height: 81px;*/padding:20px 0;margin: 0 auto;background-color: #05a06f;}
 .w_con .nxhm span{height: auto;margin-left: 20px;padding:0 !important;zoom:1;}
 .w_con .nxhm span:after{visibility:hidden;display:block;font-size:0;content:" ";clear:both;height: 0;}
+.w_con .nxsd{display: none;}
 .w_con .nsbool b,.w_con .nsbool b.cur{width: 60px; height: 80px;background-position: 0 -36px;text-align: left;text-indent: 10px;font-size: 30px;}
 .w_con .nsbool b{margin-right: 11px;color: #333;font-weight:400;font-family: "宋体";}
 .w_con .nsbool b:hover{box-shadow: 0 0 15px rgba(0,0,0,0.3);}/*03cdff*/
