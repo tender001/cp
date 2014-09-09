@@ -2219,7 +2219,7 @@ a.sz_cmt{background: url(../images/cai888/nwx5_112.jpg);width:137px;height:33px}
 .ball-right .l{float: left;width: 520px;padding-right: 25px;border-right: 1px solid #ddd;}
 .ball-right .r{float: left;width: 285px;padding-left: 25px;}
 .ball-right ul li{float: left;width: 100%;}
-.ball-right ul li b{width: 44px;height: 44px;font: 400 18px/38px Arial;text-indent: 9px;color: #222;float: left;margin-right: 3px;background-position: 0 -8px;}
+.ball-right ul li b{width: 44px;height: 44px;font: 400 18px/38px Arial;text-indent: 9px;color: #222;float: left;margin-right: 3px;background-position: 0 -8px;cursor: pointer;}
 .ball-right ul li b.hover{background-position: -52px -8px;}
 .ball-right ul li b.red{background-position: -108px -5px;color: #fff;}
 .ball-right ul li b.blue{background-position: -156px -5px;color: #fff;}
@@ -2237,7 +2237,24 @@ a.sz_cmt{background: url(../images/cai888/nwx5_112.jpg);width:137px;height:33px}
 .choose-btn b a.ball-btn{display: inline-block;width: 137px;height: 33px;background-position: 0 -19px;text-indent: -999em;margin-right: 14px;}
 .choose-show-b{padding: 16px 0 0;background-color: #f5f5f5;border-top: 1px solid #ccc;}
 .choose-show{width: 725px;margin: 0 auto;}
-.choose-show .ball-bool{float: left;width: 605px;height: 125px;background-color: #fff3ea;border: 1px solid #b5b5b5;}
+.choose-show .ball-bool{float: left;width: 605px;height: 125px;background-color: #fff3ea;border: 1px solid #b5b5b5;overflow: auto;}
+.choose-show .ball-bool .r_a_p{width: 585px;color: #000;}
+.choose-show .ball-bool .r_a_p span{float: left;}
+.choose-show .ball-bool .r_a_p span.span1{padding-left: 15px;width: 70px;}
+.choose-show .ball-bool .r_a_p span.span2{width: 400px;font-family: '\5b8b\4f53';font-weight: 700;}
+.choose-show .ball-bool .r_a_p span.span2 b{color: #ba1414;}
+.choose-show .ball-bool .r_a_p span.span2 em{color: #1e72c6}
+.choose-show .ball-bool .r_a_p span.span3{float: right;}
+.choose-show .ball-bool .r_a_p span.span3 s{width: auto;}
+.choose-show .ball-bool .r_a_p span.span3 a{float: left;width: 16px;height: 16px;background: url(/images/newimg/xs_03.jpg);margin: 5px 0 0 5px;_display: inline;}
+.choose-show .ball-bool .r_a_p span.span3 a.a1{background-position: -5px -29px;}
+.choose-show .ball-bool .r_a_p span.span3 a.a1:hover{background-position:-5px -1px}
+.choose-show .ball-bool .r_a_p span.span3 a.a2{background-position: -29px -29px;}
+.choose-show .ball-bool .r_a_p span.span3 a.a2:hover{ background-position:-29px -1px}
+
+
+
+
 .choose-show .computer-btn{float: right;width: 100px;}
 .choose-show .computer-btn a{float: left;width: 96px;height: 26px;line-height: 26px;text-align: center;color: #000;background-color: #f0f0f0;border: 1px solid #c9c9c9;margin-bottom: 5px;background-position: 0 -130px;}
 .choose-show .computer-btn .s{border: 1px solid #c9c9c9;float: left;width: 45px;height: 26px;line-height: 26px;}
