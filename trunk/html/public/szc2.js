@@ -1257,17 +1257,20 @@
     		});
     	},
     	showhis:function(info){
-    		var html = '<li>期次</li><li class="sup">开奖号码</li>';
+    		var html = '<tr class="tr1 tr3"><td>期次</td><td class="tdi">开奖号码</td></tr>';
     		$(info).each(function(i){
     			if(i<11){
-    			if($(this).attr("rm") != '1'){
+    			
 	    			if($(this).attr('cc').indexOf('\|') >= 0){
-	    				html += "<li>" + $(this).attr('cp') + "</li><li class='sup'><font>" + $(this).attr('cc').split('|')[0].replaceAll(',',' ') + "</font><strong>" + $(this).attr('cc').split('|')[1].replaceAll(',',' ') + "</strong></li>";			
+	    				html += '<tr class="tr2 tr4"><td>' + $(this).attr('cp') + "</td><td class='tdi'><i>" + $(this).attr('cc').split('|')[0].replaceAll(',',' ') + '  </i><strong style="color: #145fab;">' + $(this).attr('cc').split('|')[1].replaceAll(',',' ') + '</strong></td></tr>';
+	    				//html += "<li>" + $(this).attr('cp') + "</li><li class='sup'><font>" + $(this).attr('cc').split('|')[0].replaceAll(',',' ') + "</font><strong>" + $(this).attr('cc').split('|')[1].replaceAll(',',' ') + "</strong></li>";			
 	    			}else{
-	    				html += "<li>" + $(this).attr('cp') + "</li><li class='sup'><font>" + $(this).attr('cc').replaceAll(',', ' ') + "</font></li>";			
+	    				html +='<tr class="tr2 tr4"><td>'+ $(this).attr('cp') +'</td><td class="tdi"><i>'+ $(this).attr('cc').split(',').join('</i><i>')+'</i></td></tr>';
+	    			
 	    			}
-    			}}
+    			}
     		});
+    		var Recenthigh=325;
     		html +="<a href='javascript:void(0);' target='_blank' id='more_kj' class='xu_gd'>更多</a>";
     		
     		$("#kjhis").html(html);
@@ -1300,6 +1303,30 @@
     		
     		
     		});
+        	
+    		$("#codeRecent").click(function(){
+
+    			$(this).toggleClass("span5c");
+    			$("#divRecent").show();
+    			$("#divCount").hide();
+    			$("#codeCount").removeClass("span5c");
+    	
+    			if($(this).hasClass("span5c")){
+    				$("#divRecent").clearQueue().animate({
+    					height:Recenthigh
+    					});
+    				
+    			}else{
+    				
+    				$("#divRecent").animate({
+    					height:0
+    					
+    					});
+    				$("#divRecent").hide();
+    			}
+    			
+    		
+        	});
     	}
     });
     
