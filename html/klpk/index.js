@@ -51,7 +51,19 @@ Class.C('lot_data_new', {// 老玩法ID, 新库中玩法ID, 投注方式 (1单�
     259: ['06', 13, "01", 13]
 
 });
-
+Class.C('lot_sub',{// 
+	249: ['同花', 4, 1,5],
+	250: ['同花顺', 4, 1,5],
+	251: ['顺子', 12, 1,13],
+	252: ['豹子', 13, 1,14],
+	253: ['对子', 13, 1,14],
+	254: ['任选一', 13, 1,13],
+	255: ['任选二', 13, 1,13],
+	256: ['任选三', 13, 1,13],
+	257: ['任选四', 13, 1,13],
+	258: ['任选五', 13, 1,13],
+	259: ['任选六', 13, 1,13]
+});
 Class.C('lot_data_dome', {
     249: '<h5>示例</h5>选号：01 05<br/>开奖：01 02 03 04 05<br/>中奖：<em class="cm_red">6</em>元',
     250: '<h5>示例</h5>选号：01 04 05<br/>开奖：01 02 03 04 05<br/>中奖：<em class="cm_red">19</em>元',
@@ -439,27 +451,31 @@ Class('Ball', {
         }
     },
     random: function (n) {// 随机生成号码, [[red],[blue]]
-        var a, b, code, id, len, ini, sp;
-        n = ~~n;
-        code = [];
-        id = this.getPlayId();
-        ini = Class.C('lot_data')[id];
-        len = ini[2];
-        sp = ini[3] || ',';
-        a = this.repeat(11, 1);
-        for (var i = n; i--;) {
-            code[i] = [a.random(-len), id, 1];
-            if (!ini[3]) {
-                code[i][0].sort(Array.up)
-            }
-        }
-        code.each(function (arr) {
-            if (sp === '|') {//直选修饰
-                arr[0] = arr[0].concat('-', '-', '-', '-', '-').slice(0, 5)
-            }
-            arr[0] = String.zero(arr[0].join(sp));
-        });
-        this.postMsg('msg_put_code', code);//广播号码输出消息, 号码列表监听此消息
+    	 var a, code, id, len, ini,sp;
+         n = ~~n;
+         code = [];
+         id = this.getPlayId();
+         ini = Class.C('lot_data')[id];
+         len = ini[2];
+         sp = ini[3] || ',';
+         a = this.repeat(Class.C('lot_sub')[id][1], Class.C('lot_sub')[id][2]);
+         if(Class.C('playid') === '249' ||Class.C('playid') === '250'||Class.C('playid') === '251'||Class.C('playid') === '252'||Class.C('playid') === '253'){
+         	a[4] = '00';
+         }
+     
+         for (var i = n; i--;) {
+             code[i] = [a.random(-len), id, 1];
+             if (!ini[3]) {
+                 code[i][0].sort(Array.up);
+             }
+         }
+         code.each(function (arr){
+             if (sp==='|') {//直选修饰
+                 arr[0] = arr[0].concat('-', '-', '-', '-', '-').slice(0, 5);
+             }
+             arr[0] = String.zero(arr[0].join(sp));
+         });
+         this.postMsg('msg_put_code', code);//广播号码输出消息, 号码列表监听此消息
     }
 });
 //单行选择器
@@ -700,6 +716,12 @@ Class('App', {
         this.lib.BuyProject();
         this.lib.openCodeList(false);
         this.addChoose();
+        this.lib.ExpectList();
+
+        this.lib.CountDownGp({
+            stop: Y.C('lot_id'),
+            lot: Y.C('lot_id')
+        });
         this.addTabs();
         Y.exportCode();
         Y.get("#zh_bs_big").val(1);
@@ -914,85 +936,85 @@ Class('App', {
             danmas: '#danma input'
         });
 
-        this.lib.Single({ //同花
-            items: '#q1zx dd',  //球
-            group: '#ballsingle b',
-            focusCss: 'cur',
-            hoverCss: '',
-            showbar: '#Multi_bar1',//奖金 盈利
-            put: '#s1_put',//选好了
-            clear: '#s1_clear',
-            rnd1: '#s1_jx1',
-            jixuan: '#jixuan',
-            setdan: '#setdanma',
-            setdan_i: '#setdanma_i',
-            danma: '#danma',
-            danmas: '#danma input'
-        });
-        this.lib.Single({ //同花顺
-            items: '#q2zx dd',  //球
-            group: '#ballsingle b',
-            focusCss: 'cur',
-            hoverCss: '',
-            showbar: '#Multi_bar2',//奖金 盈利
-            put: '#s2_put',//选好了
-            clear: '#s2_clear',
-            rnd1: '#s1_jx1',
-            //rnd5: '#s1_jx5',
-            jixuan: '#jixuan',
-            setdan: '#setdanma',
-            setdan_i: '#setdanma_i',
-            danma: '#danma',
-            danmas: '#danma input'
-        });
-        this.lib.Single({ //顺子
-            items: '#q3zx dd',
-            group: '#ballsingle b',
-            focusCss: 'cur',
-            hoverCss: '',
-            showbar: '#Multi_bar3',
-            put: '#s3_put',
-            clear: '#s3_clear',
-            rnd1: '#s1_jx1',
-            // rnd5: '#s1_jx5',
-            jixuan: '#jixuan',
-            setdan: '#setdanma',
-            setdan_i: '#setdanma_i',
-            danma: '#danma',
-            danmas: '#danma input'
-        });
-        this.lib.Single({ //豹子
-            items: '#q4zx dd',
-            group: '#ballsingle b',
-            focusCss: 'cur',
-            hoverCss: '',
-            showbar: '#Multi_bar4',
-            put: '#s4_put',
-            clear: '#s4_clear',
-            rnd1: '#s1_jx1',
-            // rnd5: '#s1_jx5',
-            jixuan: '#jixuan',
-            setdan: '#setdanma',
-            setdan_i: '#setdanma_i',
-            danma: '#danma',
-            danmas: '#danma input'
-        });
-        this.lib.Single({ //对子
-            items: '#q5zx dd',
-            group: '#ballsingle b',
-            focusCss: 'cur',
-            hoverCss: '',
-            showbar: '#Multi_bar5',
-            put: '#s5_put',
-            clear: '#s5_clear',
-            rnd1: '#s1_jx1',
-            // rnd5: '#s1_jx5',
-            jixuan: '#jixuan',
-            setdan: '#setdanma',
-            setdan_i: '#setdanma_i',
-            danma: '#danma',
-            danmas: '#danma input'
-        });
+//        this.lib.Single({ //同花
+//            items: '#q1zx dd',  //球
+//            group: '#ballsingle b',
+//            focusCss: 'cur',
+//            hoverCss: '',
+//            showbar: '#Multi_bar1',//奖金 盈利
+//            put: '#s1_put',//选好了
+//            clear: '#s1_clear',
+//            rnd1: '#s1_jx1',
+//            jixuan: '#jixuan',
+//            setdan: '#setdanma',
+//            setdan_i: '#setdanma_i',
+//            danma: '#danma',
+//            danmas: '#danma input'
+//        });
+//        this.lib.Single({ //同花顺
+//            items: '#q2zx dd',  //球
+//            group: '#ballsingle b',
+//            focusCss: 'cur',
+//            hoverCss: '',
+//            showbar: '#Multi_bar2',//奖金 盈利
+//            put: '#s2_put',//选好了
+//            clear: '#s2_clear',
+//            rnd1: '#s1_jx1',
+//            //rnd5: '#s1_jx5',
+//            jixuan: '#jixuan',
+//            setdan: '#setdanma',
+//            setdan_i: '#setdanma_i',
+//            danma: '#danma',
+//            danmas: '#danma input'
+//        });
+//        this.lib.Single({ //顺子
+//            items: '#q3zx dd',
+//            group: '#ballsingle b',
+//            focusCss: 'cur',
+//            hoverCss: '',
+//            showbar: '#Multi_bar3',
+//            put: '#s3_put',
+//            clear: '#s3_clear',
+//            rnd1: '#s1_jx1',
+//            // rnd5: '#s1_jx5',
+//            jixuan: '#jixuan',
+//            setdan: '#setdanma',
+//            setdan_i: '#setdanma_i',
+//            danma: '#danma',
+//            danmas: '#danma input'
+//        });
+//        this.lib.Single({ //豹子
+//            items: '#q4zx dd',
+//            group: '#ballsingle b',
+//            focusCss: 'cur',
+//            hoverCss: '',
+//            showbar: '#Multi_bar4',
+//            put: '#s4_put',
+//            clear: '#s4_clear',
+//            rnd1: '#s1_jx1',
+//            // rnd5: '#s1_jx5',
+//            jixuan: '#jixuan',
+//            setdan: '#setdanma',
+//            setdan_i: '#setdanma_i',
+//            danma: '#danma',
+//            danmas: '#danma input'
+//        });
+//        this.lib.Single({ //对子
+//            items: '#q5zx dd',
+//            group: '#ballsingle b',
+//            focusCss: 'cur',
+//            hoverCss: '',
+//            showbar: '#Multi_bar5',
+//            put: '#s5_put',
+//            clear: '#s5_clear',
+//            rnd1: '#s1_jx1',
+//            // rnd5: '#s1_jx5',
+//            jixuan: '#jixuan',
+//            setdan: '#setdanma',
+//            setdan_i: '#setdanma_i',
+//            danma: '#danma',
+//            danmas: '#danma input'
+//        });
         this.lib.CodeList({
             panel: '#code_list',
             clearBtn1: '#clear_list1',
@@ -1001,15 +1023,80 @@ Class('App', {
             moneySpan: '#single_m'
         });
 //        alert('CodeList');
-        this.lib.ExpectList();
-//        alert('ExpectList');
-        this.lib.CountDownGp({
-            stop: Y.C('lot_id'),
-            lot: Y.C('lot_id')
-        });
+
 
 //        alert('CountDownGp');
     },
+    addTH: function (){//同花
+  	  	this.lib.Single({
+  	  	 items: '#q1zx dd',  //球
+         group: '#ballsingle b',
+         focusCss: 'cur',
+         hoverCss: '',
+         showbar: '#Multi_bar1',//奖金 盈利
+         put: '#s1_put',//选好了
+         clear: '#s1_clear',
+         danma: '#danma',
+         danmas: '#danma input'
+  	  	 });
+         this.addTH = this.getNoop();
+      },
+      addTHS: function (){//同花顺
+      	  	this.lib.Single({
+	      	  	 items: '#q2zx dd',  //球
+	             group: '#ballsingle b',
+	             focusCss: 'cur',
+	             hoverCss: '',
+	             showbar: '#Multi_bar2',//奖金 盈利
+	             put: '#s2_put',//选好了
+	             clear: '#s2_clear',
+	             danma: '#danma',
+	             danmas: '#danma input'
+      	  	 });
+             this.addTHS = this.getNoop();
+      },
+      addSZ: function (){//顺子
+      	this.lib.Single({
+      		 items: '#q3zx dd',
+             group: '#ballsingle b',
+             focusCss: 'cur',
+             hoverCss: '',
+             showbar: '#Multi_bar3',
+             put: '#s3_put',
+             clear: '#s3_clear',
+             danma: '#danma',
+             danmas: '#danma input'
+      	  	 });
+             this.addSZ = this.getNoop();
+      },
+      addBZ: function (){//豹子
+      	  this.lib.Single({
+      		 items: '#q4zx dd',
+             group: '#ballsingle b',
+             focusCss: 'cur',
+             hoverCss: '',
+             showbar: '#Multi_bar4',
+             put: '#s4_put',
+             clear: '#s4_clear',
+             danma: '#danma',
+             danmas: '#danma input'
+      	  	 });
+             this.addBZ = this.getNoop();
+      },
+      addDZ: function (){//对子
+      	  this.lib.Single({
+      		 items: '#q5zx dd',
+             group: '#ballsingle b',
+             focusCss: 'cur',
+             hoverCss: '',
+             showbar: '#Multi_bar5',
+             put: '#s5_put',
+             clear: '#s5_clear',
+             danma: '#danma',
+             danmas: '#danma input'
+      	  	 });
+             this.addDZ = this.getNoop();
+      },
     addTabs: function () {
         var playTabs, zhTabs, kjTabs;
         Y = this;
