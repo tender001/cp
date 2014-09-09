@@ -1400,10 +1400,10 @@
 				var blue =code[1].split(",");
 				var html='';
 				for(var i=0;i<red.length;i++){
-					html+='<b>'+red[i]+'</b>';
+					html+='<em>'+red[i]+'</em>';
 				}
 				for(var i=0;i<blue.length;i++){
-					html+='<b class="cur">'+blue[i]+'</b>';
+					html+='<em class="blue">'+blue[i]+'</em>';
 				}
 				var pools=(row.pools)*1;
 				if(pools>100000000){
@@ -1975,7 +1975,7 @@
             this.putBtn = this.get(config.putBtn).concat(this.get(config.aiBtn).nodes);
         //接收随机选号命令
             this.onMsg('msg_rnd_code_'+config.msgId, function (){
-                this.random(this.rndOpts.val());
+                this.random($("#jx_dlg_list b").length);
             });
              this.onMsg('msg_clear_code_'+config.msgId, function (){
                  this.clearCode();
@@ -2146,6 +2146,7 @@
             red_rnd_sel = this.need(config.red.rndSelect);
             blue_rnd_sel = this.need(config.blue.rndSelect);
             this.rndOpts = all_rnd_sel = this.get(config.rndSelect);
+            
             Y.need(config.red.rndBtn).click(function (){
                 
                
@@ -2153,6 +2154,7 @@
 				setTimeout(function(){clearInterval(_interval);}, 1000);
                 return false
             });
+           
             Y.need(config.blue.rndBtn).click(function (){
                 
 				var _interval = setInterval(function(){Y.blue.random(blue_rnd_sel.val());},90);
@@ -2160,19 +2162,25 @@
                 return false
             });
             Y.get(config.rndBtn).click(function (){
-				if(isNaN(all_rnd_sel.val())){
-					Y.postMsg('msg_show_dlg', '请输入要机选的注数');
-					return false
-				}else if(Y.getInt(all_rnd_sel.val())>100){
-					Y.postMsg('msg_show_dlg', '单次机选不能超过100注');
-					return false
-				}else{
-					Y.random(all_rnd_sel.val());
-	                return false  
-				}
-				 
-            	    
+            	 
+            		 if(isNaN(all_rnd_sel.val().replace("注",""))){
+     					Y.postMsg('msg_show_dlg', '请输入要机选的注数');
+     					return false
+     				}else if(Y.getInt(all_rnd_sel.val().replace("注",""))>100){
+     					Y.postMsg('msg_show_dlg', '单次机选不能超过100注');
+     					return false
+     				}else{
+     					Y.random(all_rnd_sel.val().replace("注",""));
+     	                return false  
+     				}
             });
+            Y.get(config.s1).click(function (){
+           	 
+           		Y.random(1);
+           		return false;
+	               
+           	 
+           });
            Y.onMsg('msg_rnd_ssq_'+this.msgId, function (fn){//智能过滤时对未选号码进行自动选号, 1w注内
                 Y.red.random(14);  
                 Y.blue.random(3);
@@ -2495,7 +2503,11 @@
         // 随机选取
             this.rndOpts = opts = this.need(ini.rndOpts);
             Y.need(ini.rnd).click(function (){
-                Y.random(opts.val());
+                Y.random(opts.val().replace("注",""));
+                return false
+            });
+            Y.need(ini.s1).click(function (){
+                Y.random(1);
                 return false
             });
 			//定胆机选
@@ -2525,7 +2537,7 @@
 				} else if (_zs > 0) {
 					Y.postMsg('msg_show_dlg', '您好，您选择的胆码数可以组成一注，请删减！');
 				} else {
-					Y.randomDD(opts.val(), code);
+					Y.randomDD(opts.val().replace("注","")*1, code);
 				}
 				return false;
 			} );
@@ -2801,8 +2813,8 @@
     });
 //左侧图表
     Class.C('time_style', true);
-    Class.C('time_style_ctpl','<em>{1}</em><i>天</i><em>{2}</em><i>时</i><em>{3}</em><i>分</i>');
-    Class.C('time_style_ctp2','<em>{2}</em><i>时</i><em>{3}</em><i>分</i><em>{4}</em><i>秒</i>');
+    Class.C('time_style_ctpl','<em>{1}</em>天<em>{2}</em>时<em>{3}</em>分');
+    Class.C('time_style_ctp2','<em>{2}</em>时<em>{3}</em>分<em>{4}</em>秒');
     Class(
     		'Application',
     		{
