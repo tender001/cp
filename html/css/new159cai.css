@@ -507,7 +507,6 @@ p.fotpp{line-height:24px;text-align:center;padding:16px 0;color:#666;}
 .all_kj_main{border:3px solid #e62e04;border-top:none}
 .kj_left_cm{border:1px solid #ddd;border-top:none}
 
-
 a.gofilter {
     background: url(../images/njc/jcy_38.jpg) repeat scroll -1px -1px ;
     display: block;
@@ -589,6 +588,7 @@ a.goyh2:hover {
 .dt_cc b.g_ssc{background-position:-9px -440px}
 .dt_cc b.g_xssc{background-position:-150px -440px}
 .dt_cc b.g_11x5{background-position:-9px -350px}
+.dt_cc b.g_klpk{background-position: -156px -527px}
 .dt_cc b.g_p3{background-position:-160px -6px}
 .dt_cc b.g_p5{ background-position:-160px -90px}
 .dt_cc b.g_qxc{background-position:-160px -175px}
@@ -1588,7 +1588,8 @@ html .buyfimsg td input.text {height: 22px;line-height:22px;padding: 0; vertical
 .buyfimsg td em.cur{border:1px solid #ff6600;background:#ff6600;color:#fff}
 .buyfimsg td input.bt {border: 1px solid #DDDDDD;display: block;float: left;height: 25px;margin-top:1px;width: 515px;font-size:12px;padding:6px 0 0 5px\9;height:19px\9}
 :root .buyfimsg td input.bt{padding:0 0 0 5px}
-#container {margin: 0 auto;position: relative;width: 998px;border: 1px solid #ccc;overflow: visible;}
+#container {margin: 0 auto;position: relative;width: 998px;border: 1px solid #ccc;overflow: visible;zoom: 1;}
+#container:after{visibility:hidden;display:block;font-size:0;content:" ";clear:both;}
 .numcai{overflow: visible;}
 .buyfimsg textarea {border: 1px solid #DDDDDD;color: #444444;float: left;font-size: 12px;height: 100px;margin-top: 11px;padding: 5px;width: 510px;}
 a.buyfa {background: #ff7213;border:1px solid #CF5955;color: #FFFFFF;display: block;font-family: "微软雅黑";font-size: 16px;height: 42px;line-height: 42px;margin:7px auto 2px;text-align: center;width: 190px;}
