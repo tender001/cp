@@ -761,7 +761,7 @@ a.asz_tz{margin:0 auto}
 .kc_td_kj table{border:none}
 .kc_td_kj table tbody th{border:none;font-size:12px;color:#888; font-family: Arial}
 .kc_td_kj table thead td.td1{border-right:none;font-size:12px;color:#888; font-family: Arial}
-.kc_td_kj table tbody td{font-size:12px;color:#444}
+.kc_td_kj table tbody td{height: 30px;font-size:12px;color:#444}
 .kc_td_kj table thead td{font-size:12px}
 .nx3span{zoom:1;padding:8px 0 0px 137px;clear:both}
 .nxhm span.nsbools{height:auto;width:295px;padding-bottom:15px;padding-right:20px}
@@ -2042,7 +2042,7 @@ a.sz_cmt{background: url(../images/cai888/nwx5_112.jpg);width:137px;height:33px}
 .w_con .nsbool b.cur{position: relative;top: -16px;left: 0;color: #333;background-position: -61px -36px;}
 .w_con p.xh_text{color: #ccc;}
 .w_con a.sz_cmt{background: url(../images/ssc_bg/a_but_true.png);}
-.w_con a.sz_cmt.cur{background: url(../images/ssc_bg/a_but_true.png) 0 -33px;}
+.w_con .sz_a_l a.sz_cmt.cur{background: url(../images/ssc_bg/a_but_true.png) 0 -33px;}
 .w_con .nxszop{width: auto;background: url(../images/ssc_bg/cai_bottom_1.jpg) left bottom no-repeat;padding-bottom: 28px;zoom:1;}
 .w_con a.qc_xh{color: #ccc;}
 .w_con .nxmiddle{padding-bottom: 0;}
@@ -2066,8 +2066,8 @@ a.sz_cmt{background: url(../images/cai888/nwx5_112.jpg);width:137px;height:33px}
 .w_con .nxtable tr th{background: #057e57;color: #fff;height: 32px;}
 .w_con .nxtable tr td{background: #05a06f;color: #eee;height: 32px;font-size:14px;border: 0;}
 .w_con .nxtable tr.odd td{background-color: #057e57;}
-.kaijiang-num tr td span{width: 36px;height: 20px;line-height: 20px;color: #000;display: inline-block;margin-right: 10px;background-color: #f9f9f9;text-align: left;text-indent: 20px;background:url(../images/ssc_bg/PK_K.png) no-repeat;position: relative;}
-.kc_td_kj .kaijiang-num tr td span{margin: 0;}
+.kaijiang-num tr td span{width: 36px;height: 20px;line-height: 20px;color: #000;float: left;margin-left: 5px;background-color: #f9f9f9;text-align: left;text-indent: 20px;background:url(../images/ssc_bg/PK_K.png) no-repeat;_display: inline;}
+/*.kc_td_kj .kaijiang-num tr td span{margin: 0;}*/
 .kaijiang-num tr td span.PK_101{background-position:0 0}
 .kaijiang-num tr td span.PK_201{background-position:-37px 0}
 .kaijiang-num tr td span.PK_301{background-position:-74px 0}
@@ -2175,6 +2175,7 @@ a.sz_cmt{background: url(../images/cai888/nwx5_112.jpg);width:137px;height:33px}
 .xh_shunzi .pok dl.pok_hua dt{height: 130px;}
 .xh_shunzi .pok dl.pok_hua dd.dd2{background-position: -190px -68px;}
 .w_con .ncathgm a.a1{width: 180px;background: url(../images/ssc_bg/btn-buy.jpg);text-indent: -999em;}
+.w_con .ncathgm a.a1:hover{background-position: 0 -42px}
 .w_con .kc_zjz{border: 0;}
 .w_con .xh_text em{color: #efd41f;}
 /*end 2014.8.11 时时彩更新*/
