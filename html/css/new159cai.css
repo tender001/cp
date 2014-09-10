@@ -2040,7 +2040,7 @@ a.sz_cmt{background: url(../images/cai888/nwx5_112.jpg);width:137px;height:33px}
 .w_con .ncaltbn a:hover{text-decoration: none;}
 .w_con .ncaltbn span a{width: 46px;}
 .w_con .ncatharea{height: 130px;}
-.w_con .ncathleft p{color: #fff;}
+.w_con .ncathleft p{text-align: left;color: #fff;}
 .w_con .ncathtype{border: 1px solid #362d1e;}
 .w_con .ncathtype span{background-color: #78593e;color: #fff;}
 .w_con .ncathtype label{color: #000;}
