@@ -1890,7 +1890,7 @@ a.n_gz{color:#fff}
 .nwx5time span{display:block;float: left;color:#333;line-height:30px;}
 .nwx5time span.span1{/*width:220px;*/}
 .nwx5time span.span2{padding:0 55px 0 10px;}
-.nwx5time span.span4{padding:0 75px 0 0}
+.nwx5time span.span4{padding:0 152px 0 0}
 .nwx5time span.span2 b{font-size:36px;font-weight:bold;font-family:"Arial";}
 .nwx5time span.span5{width:78px;height:30px;line-height:30px;border:1px solid #ccc;border-bottom:none;padding-left:10px;background:#fde8d8  url(../images/cai888/nwx5_07.jpg) 66px 10px no-repeat;cursor:pointer;margin-top:5px}
 .nwx5time span.span5c{background:#fde8d8  url(../images/cai888/nwx5_07c.jpg) 66px 10px no-repeat;}
@@ -2138,7 +2138,7 @@ a.sz_cmt{background: url(../images/cai888/nwx5_112.jpg);width:137px;height:33px}
 .pok{padding-left: 40px;}
 .pok dl{margin-top: 12px;zoom:1;}
 .pok dl:after{visibility:hidden;display:block;font-size:0;content:" ";clear:both;}
-.pok dl dt,.pok dl dd{float: left;color: #ccc;margin-right: 28px;_display: inline;}
+.pok dl dt,.pok dl dd{float: left;color: #ccc;/*margin-right: 28px;_display: inline;*/}
 .pok dl dt{width: 85px;cursor: pointer;}
 .pok dl dd{width: 94px;text-align: center;-webkit-transition: all 0.2s ease-in;-moz-transition: all 0.2s ease-in;-o-transition: all 0.2s ease-in;transition: all 0.2s ease-in;}
 .pok dl dd:hover{box-shadow: 0 0 15px rgba(0,0,0,0.4);}
@@ -2155,9 +2155,12 @@ a.sz_cmt{background: url(../images/cai888/nwx5_112.jpg);width:137px;height:33px}
 .pok dl dd.cur{position: relative;top: -8px;left: 0;}
 .pok dl dd.ddd input{vertical-align: -3px;margin: 0 3px 0 28px;_vertical-align: -1px;}
 .xh_duizi .pok dl.pok_hua dt{height: 120px;width: 65px;}
-.xh_duizi .pok dl.pok_hua dd{width: auto;height: 67px;background: none;margin-bottom: 24px;padding-left: 30px;_padding-left: 27px;}
-.xh_duizi .pok dl.pok_hua dd.dd2{width: 57px;background: url(../images/ssc_bg/pok_bg.png) -190px 0;}
+.xh_tonghua .pok dl dd{margin-right: 25px;_display: inline;}
+.xh_duizi .pok dl.pok_hua dd{width: 72px;height: 67px;background: none;margin: 0 0 24px 30px;}
+.xh_duizi .pok dl.pok_hua_3 dd{width: 93px;}
+.xh_duizi .pok dl.pok_hua dd.dd2{width: 88px;background: url(../images/ssc_bg/pok_bg.png) -190px 0;}
 .xh_duizi .pok dl dd span{width: 51px;height: 100%;float: left;font: 16px/24px Tahoma;text-align: left;text-indent: 3px;color: #000;background: url(../images/ssc_bg/pok_bg.png) -278px 0 no-repeat;position: relative;margin-left: -30px;}
+.xh_duizi .pok dl dd span.first-left{margin: 0;}
 .xh_duizi .pok dl dd span.right{}
 .xh_duizi .pok dl dd span.right i{width: 32px;height: 40px;display: block;position: absolute;top: 21px;left: 10px;background: url(../images/ssc_bg/poker_ico.png) -157px 0 no-repeat;}
 /*.xh_duizi .pok dl dd.ddd{margin: -20px 0 0;}*/
