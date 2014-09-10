@@ -92,6 +92,19 @@ Class.C('lot_data_wanfa', {
     258: '至少选5个号码，所选号码包括当期全部开奖号即中奖<em class="red">22</em>元，中奖概率1/19.38。 ',
     259: '至少选6个号码，所选号码包括当期全部开奖号即中奖<em class="red">12</em>元，中奖概率1/10.9。'
 });
+Class.C('wanfa',{// 
+	0: ['th','addTH'],
+	1: ['ths','addTHS'],
+	2: ['sz','addSZ'],
+	3: ['bz','addBZ'],
+	4: ['dz','addDZ'],
+	5: ['r','addR'],
+	6: ['r','addR'],
+	7: ['r','addR'],
+	8: ['r','addR'],
+	9: ['r','addR'],
+	10: ['r','addR']
+});
 //Class.C('child_wanfa',{
 //    249: '1234,111,222,333,444',
 //    250: '1234,111,222,333,444',
@@ -124,7 +137,7 @@ if (Class.C('stop-buy')) {
 Class.extend('getPrixRange', function (count, code) {//已选
     var min, max = '', rn, hit, sp, ini, playid, mx, mi, getPlayId = this.getPlayId();
     if (code != '' && code != undefined) {
-        codes = Y.getInt(code[0]);
+    	codes = Y.getInt(code[0]);
         if (getPlayId == '249' && codes == '00') {
             if (code.length == '1') {
                 sp = 22;
@@ -715,13 +728,8 @@ Class('App', {
         this.lib.Dlg();
         this.lib.BuyProject();
         this.lib.openCodeList(false);
-        this.addChoose();
-        this.lib.ExpectList();
+//        this.addChoose();
 
-        this.lib.CountDownGp({
-            stop: Y.C('lot_id'),
-            lot: Y.C('lot_id')
-        });
         this.addTabs();
         Y.exportCode();
         Y.get("#zh_bs_big").val(1);
@@ -919,7 +927,7 @@ Class('App', {
         }
         return rest;
     },
-    addChoose: function () {
+    addR: function () {
         this.lib.Single({
             items: '#renxuan b',
             group: '#ballsingle b',
@@ -1024,7 +1032,7 @@ Class('App', {
         });
 //        alert('CodeList');
 
-
+        this.addR = this.getNoop();
 //        alert('CountDownGp');
     },
     addTH: function (){//同花
@@ -1036,6 +1044,10 @@ Class('App', {
          showbar: '#Multi_bar1',//奖金 盈利
          put: '#s1_put',//选好了
          clear: '#s1_clear',
+	       rnd1: '#s1_jx2',
+	       // rnd5: '#s1_jx5',
+	       jixuan: '#jixuan2',
+       setdan: '#setdanma',
          danma: '#danma',
          danmas: '#danma input'
   	  	 });
@@ -1050,6 +1062,10 @@ Class('App', {
 	             showbar: '#Multi_bar2',//奖金 盈利
 	             put: '#s2_put',//选好了
 	             clear: '#s2_clear',
+	             rnd1: '#s1_jx2',
+	             // rnd5: '#s1_jx5',
+	             jixuan: '#jixuan2',
+	             setdan: '#setdanma',
 	             danma: '#danma',
 	             danmas: '#danma input'
       	  	 });
@@ -1064,6 +1080,10 @@ Class('App', {
              showbar: '#Multi_bar3',
              put: '#s3_put',
              clear: '#s3_clear',
+             rnd1: '#s1_jx2',
+             // rnd5: '#s1_jx5',
+             jixuan: '#jixuan2',
+             setdan: '#setdanma',
              danma: '#danma',
              danmas: '#danma input'
       	  	 });
@@ -1078,6 +1098,10 @@ Class('App', {
              showbar: '#Multi_bar4',
              put: '#s4_put',
              clear: '#s4_clear',
+             rnd1: '#s1_jx2',
+             // rnd5: '#s1_jx5',
+             jixuan: '#jixuan2',
+             setdan: '#setdanma',
              danma: '#danma',
              danmas: '#danma input'
       	  	 });
@@ -1092,6 +1116,10 @@ Class('App', {
              showbar: '#Multi_bar5',
              put: '#s5_put',
              clear: '#s5_clear',
+             rnd1: '#s1_jx2',
+             // rnd5: '#s1_jx5',
+             jixuan: '#jixuan2',
+             setdan: '#setdanma',
              danma: '#danma',
              danmas: '#danma input'
       	  	 });
@@ -1100,6 +1128,13 @@ Class('App', {
     addTabs: function () {
         var playTabs, zhTabs, kjTabs;
         Y = this;
+      //默认玩法
+        this[Class.C('wanfa')[5][1]]();
+        this.lib.ExpectList();
+        this.lib.CountDownGp({
+            stop: Y.C('lot_id'),
+            lot: Y.C('lot_id')
+        });
         //玩法标签切换
         playTabs = this.lib.Tabs({
             items: '#play_tabs a',
@@ -1132,16 +1167,18 @@ Class('App', {
             if (ol != nl) {
                 Y.postMsg('show_opencodelist', 6);
             }
-            $("#opencodelist,#opencodelist_1,#opencodelist_2,#opencodelist_3,#opencodelist_4,#opencodelist_5").hide();
+            $("#opencodelist,#opencodelist_1,#opencodelist_2,#opencodelist_3,#opencodelist_4,#opencodelist_5,#s1_jx1,#jixuan,#s1_jx2,#jixuan2").hide();
 
             $("#setdanma_i,#num_header_1,#num_header_2,#haoma,#haoma_1,#haoma_2,#haoma_3,#haoma_4,#haoma_5").hide();
-
+            Y[Class.C('wanfa')[b][1]]();
             if (nl > 5) {
-                $("#opencodelist,#renxuan,#haoma").show();
-
+                $("#opencodelist,#renxuan,#haoma,#s1_jx1,#jixuan").show();
+               
             } else {
                 $("#opencodelist_" + nl).show();
                 $("#haoma_" + nl).show();
+                $("#s1_jx2,#jixuan2").show();
+                
             }
         };
         this.onMsg('msg_force_change_playtabs', function (x, y) {
@@ -2823,6 +2860,6 @@ Class('openCodeList', {
                 });
             }
         });
-    },
+    }
 
 });
