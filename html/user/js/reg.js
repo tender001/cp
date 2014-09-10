@@ -71,7 +71,7 @@ $(function() {
 							if (code=="0") {
 								return showErr('username', "用户名已存在");
 							} else if (code=="1000"){
-								return showErr('username', "最多含6位连续数字");
+								return showErr('username', "用户名含有特殊字符");
 							}else if (code=="9000"){
 								_status['username'] = true;
 								return showOK('username');
