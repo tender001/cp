@@ -2162,7 +2162,7 @@ a.sz_cmt{background: url(../images/cai888/nwx5_112.jpg);width:137px;height:33px}
 .pok dl.pok_yl dt{background:  url(../images/ssc_bg/poker_ico.png) -102px -57px no-repeat;}
 .pok dl.pok_yl dd.dd1{color: #efd41f;}
 .pok dl dd.dd1{margin-right: 75px;}
-.w_con .pok dl dd.ddd{width: 630px;height: 16px;line-height: 16px;background-color: #05a06f;text-align: left;text-indent: -14px;padding: 8px 0;}
+.w_con .pok dl dd.ddd{width: 630px;height: 16px;line-height: 16px;text-align: left;text-indent: -14px;background-color: #05a06f;padding: 8px 0;}
 .pok dl dd.cur{position: relative;top: -8px;left: 0;}
 .pok dl dd.ddd input{vertical-align: -3px;margin: 0 3px 0 28px;_vertical-align: -1px;}
 .xh_duizi .pok dl.pok_hua dt{height: 120px;width: 65px;}
