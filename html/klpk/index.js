@@ -902,7 +902,7 @@ Class('App', {
                         return false;
 
                     }
-                    if (sdvalue.split(",")[m] < 12 && sdvalue.split(",")[m] > 0) {
+                    if (sdvalue.split(",")[m] < 14 && sdvalue.split(",")[m] > 0) {
                         rest = true;
                         code[m] = sdvalue.split(",")[m];
                     } else {
