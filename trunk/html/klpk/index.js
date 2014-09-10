@@ -779,7 +779,7 @@ Class('App', {
             $("#num_header_1").show();
             if ($("#span5").hasClass("span5c")) {
                 $("#num_header_1").clearQueue().animate({
-                    height: 352
+                    height: 353
                 });
 
             } else {
