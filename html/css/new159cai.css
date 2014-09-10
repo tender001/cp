@@ -1950,7 +1950,7 @@ a.sz_cmt{background: url(../images/cai888/nwx5_112.jpg);width:137px;height:33px}
 .ncathgm a:hover{text-decoration: none;}
 /*start 2014.8.11 时时彩更新*/
 #container.w_con{border: 0;}
-.w_con .nsbool b,.w_con .nsbool b.cur{background: url(../images/ssc_bg/w_bg_1.png);}
+.w_con .nsbool b,.w_con .nsbool b.cur{background: url(../images/ssc_bg/w_bg_1.png);_background: url(../images/ssc_bg/w_bg_1-ie.png);}
 .w_con .nwx5top{border: 0;}
 .w_con .nwx5 .nwssctop1 a{padding: 0 16px;width: 45px;}
 .w_con .nwx5 .nwssctop1 a.cur{background-color: #088959;}
@@ -2027,7 +2027,7 @@ a.sz_cmt{background: url(../images/cai888/nwx5_112.jpg);width:137px;height:33px}
 .w_con .nxsd{display: none;}
 .w_con .nsbool b,.w_con .nsbool b.cur{width: 60px; height: 80px;background-position: 0 -36px;text-align: left;text-indent: 10px;font-size: 22px;}
 .w_con .nsbool b{margin-right: 11px;color: #333;font-weight:400;font-family:  "Microsoft Yahei","Hiragino Sans GB",tahoma,arial;}
-.w_con .nsbool b:hover{box-shadow: 0 0 15px rgba(0,0,0,0.3);background-position: -61px -36px;}
+.w_con .nsbool b.b_r{box-shadow: 0 0 15px rgba(0,0,0,0.3);background-position: -61px -36px;}
 .w_con .nsbool b.cur{position: relative;top: -16px;left: 0;color: #333;background-position: -61px -36px;}
 .w_con p.xh_text{color: #ccc;}
 .w_con a.sz_cmt{background: url(../images/ssc_bg/a_but_true.png);}
@@ -2035,7 +2035,7 @@ a.sz_cmt{background: url(../images/cai888/nwx5_112.jpg);width:137px;height:33px}
 .w_con .nxszop{width: auto;background: url(../images/ssc_bg/cai_bottom_1.jpg) left bottom no-repeat;padding-bottom: 28px;zoom:1;}
 .w_con a.qc_xh{color: #ccc;}
 .w_con .nxmiddle{padding-bottom: 0;}
-.w_con .ncath{background: url(../images/ssc_bg/j_gou.jpg) repeat;border-bottom: 1px solid #000;}
+.w_con .ncath{background: url(../images/ssc_bg/j_gou.jpg) 0 bottom no-repeat;border-bottom: 1px solid #000;}
 .w_con .ncaltbn a{color: #fff;background: #05a066;border: 1px solid #352c1d;width: 96px;}
 .w_con .ncaltbn a:hover{text-decoration: none;}
 .w_con .ncaltbn span a{width: 46px;}
