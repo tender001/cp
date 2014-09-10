@@ -137,7 +137,7 @@ if (Class.C('stop-buy')) {
 Class.extend('getPrixRange', function (count, code) {//已选
     var min, max = '', rn, hit, sp, ini, playid, mx, mi, getPlayId = this.getPlayId();
     if (code != '' && code != undefined) {
-    	codes = Y.getInt(code[0]);
+    	var codes = Y.getInt(code[0]);
         if (getPlayId == '249' && codes == '00') {
             if (code.length == '1') {
                 sp = 22;
