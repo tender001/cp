@@ -2140,14 +2140,15 @@ a.sz_cmt{background: url(../images/cai888/nwx5_112.jpg);width:137px;height:33px}
 .pok dl:after{visibility:hidden;display:block;font-size:0;content:" ";clear:both;}
 .pok dl dt,.pok dl dd{float: left;color: #ccc;/*margin-right: 28px;_display: inline;*/}
 .pok dl dt{width: 85px;cursor: pointer;}
-.pok dl dd{width: 94px;text-align: center;-webkit-transition: all 0.2s ease-in;-moz-transition: all 0.2s ease-in;-o-transition: all 0.2s ease-in;transition: all 0.2s ease-in;}
-.pok dl dd:hover{box-shadow: 0 0 15px rgba(0,0,0,0.4);}
+.pok dl dd{width: 98px;text-align: center;/*-webkit-transition: all 0.2s ease-in;-moz-transition: all 0.2s ease-in;-o-transition: all 0.2s ease-in;transition: all 0.2s ease-in;*/}
+/*.pok dl dd:hover{box-shadow: 0 0 15px rgba(0,0,0,0.4);}*/
 .pok dl.pok_hua dd{height: 128px;background: url(../images/ssc_bg/pok_bg.png);cursor: pointer;-webkit-user-select: none;-moz-user-select: none;-o-user-select: none;user-select: none;}
 .pok dl.pok_hua dd small{display: block;width: 37px;height: 38px;margin: 40px auto 0;background: url(../images/ssc_bg/poker_ico.png);}
 .pok dl.pok_hua dd small.d1{background-position: -38px 0;}
 .pok dl.pok_hua dd small.d2{background-position: -75px 0;width: 40px;}
 .pok dl.pok_hua dd small.d3{background-position: -114px 0;}
-.pok dl.pok_hua dd.dd1{background-position: -95px 0;}
+.pok dl.pok_hua dd.dd1{background: url(../images/ssc_bg/pok_bg.png) 0 0;}
+.pok dl.pok_hua dd.dd1.cur,.pok dl.pok_hua dd.dd1:hover{background: url(../images/ssc_bg/pok_bg.png) -99px 0;}
 .pok dl.pok_yl dt{background:  url(../images/ssc_bg/poker_ico.png) -102px -57px no-repeat;}
 .pok dl.pok_yl dd.dd1{color: #efd41f;}
 .pok dl dd.dd1{margin-right: 75px;}
@@ -2155,17 +2156,20 @@ a.sz_cmt{background: url(../images/cai888/nwx5_112.jpg);width:137px;height:33px}
 .pok dl dd.cur{position: relative;top: -8px;left: 0;}
 .pok dl dd.ddd input{vertical-align: -3px;margin: 0 3px 0 28px;_vertical-align: -1px;}
 .xh_duizi .pok dl.pok_hua dt{height: 120px;width: 65px;}
-.xh_tonghua .pok dl dd{margin-right: 25px;_display: inline;}
-.xh_duizi .pok dl.pok_hua dd{width: 72px;height: 67px;background: none;margin: 0 0 24px 30px;}
-.xh_duizi .pok dl.pok_hua_3 dd{width: 93px;}
-.xh_duizi .pok dl.pok_hua dd.dd2{width: 88px;background: url(../images/ssc_bg/pok_bg.png) -190px 0;}
-.xh_duizi .pok dl dd span{width: 51px;height: 100%;float: left;font: 16px/24px Tahoma;text-align: left;text-indent: 3px;color: #000;background: url(../images/ssc_bg/pok_bg.png) -278px 0 no-repeat;position: relative;margin-left: -30px;}
+.xh_tonghua .pok dl dd{height:132px;margin-right: 25px;background: url("../images/ssc_bg/3.png") no-repeat;_display: inline;}
+.xh_tonghua .pok dl dd.cur,.xh_tonghua .pok dl dd:hover{background: url("../images/ssc_bg/3hover.png") no-repeat;}
+.xh_duizi .pok dl.pok_hua dd{width: 72px;height: 73px;background: none;margin: 0 0 24px 30px;background: url("../images/ssc_bg/1.png") no-repeat;}
+.xh_duizi .pok dl.pok_hua dd.cur,.xh_duizi .pok dl.pok_hua dd:hover{background: url("../images/ssc_bg/1hover.png") no-repeat;}
+.xh_duizi .pok dl.pok_hua_3 dd{width: 93px;background: url("../images/ssc_bg/2.png") no-repeat;}
+.xh_duizi .pok dl.pok_hua_3 dd.cur,.xh_duizi .pok dl.pok_hua_3 dd:hover{background: url("../images/ssc_bg/2hover.png") no-repeat;}
+.xh_duizi .pok dl.pok_hua dd.dd2{width: 88px;background: url(../images/ssc_bg/pok_bg.png) -197px 0;}
+.xh_duizi .pok dl dd span{width: 51px;height: 100%;float: left;font: 16px/24px Tahoma;text-align: left;text-indent: 3px;color: #000;/*background: url(../images/ssc_bg/pok_bg.png) -278px 0 no-repeat;*/position: relative;margin-left: -30px;}
 .xh_duizi .pok dl dd span.first-left{margin: 0;}
 .xh_duizi .pok dl dd span.right{}
 .xh_duizi .pok dl dd span.right i{width: 32px;height: 40px;display: block;position: absolute;top: 21px;left: 10px;background: url(../images/ssc_bg/poker_ico.png) -157px 0 no-repeat;}
 /*.xh_duizi .pok dl dd.ddd{margin: -20px 0 0;}*/
 .xh_shunzi .pok dl.pok_hua dt{height: 130px;}
-.xh_shunzi .pok dl.pok_hua dd.dd2{background-position: -190px -68px;}
+.xh_shunzi .pok dl.pok_hua dd.dd2{background-position: -197px -67px;}
 .w_con .ncathgm a.a1{width: 180px;background: url(../images/ssc_bg/btn-buy.jpg);text-indent: -999em;}
 .w_con .ncathgm a.a1:hover{background-position: 0 -42px}
 .w_con .kc_zjz{border: 0;}
