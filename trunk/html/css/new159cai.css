@@ -2036,8 +2036,8 @@ a.sz_cmt{background: url(../images/cai888/nwx5_112.jpg);width:137px;height:33px}
 .w_con .nxhm span{height: auto;margin-left: 20px;padding:0 !important;zoom:1;}
 .w_con .nxhm span:after{visibility:hidden;display:block;font-size:0;content:" ";clear:both;height: 0;}
 .w_con .nxsd{display: none;}
-.w_con .nsbool b,.w_con .nsbool b.cur{width: 60px; height: 80px;background-position: 0 -36px;text-align: left;text-indent: 10px;font-size: 30px;}
-.w_con .nsbool b{margin-right: 11px;color: #333;font-weight:400;font-family: "宋体";}
+.w_con .nsbool b,.w_con .nsbool b.cur{width: 60px; height: 80px;background-position: 0 -36px;text-align: left;text-indent: 10px;font-size: 24px;}
+.w_con .nsbool b{margin-right: 11px;color: #333;font-weight:400;font-family:  "Microsoft Yahei","Hiragino Sans GB",tahoma,arial;}
 .w_con .nsbool b:hover{box-shadow: 0 0 15px rgba(0,0,0,0.3);}/*03cdff*/
 .w_con .nsbool b.cur{position: relative;top: -16px;left: 0;color: #333;}
 .w_con p.xh_text{color: #ccc;}
