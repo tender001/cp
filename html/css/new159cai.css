@@ -64,7 +64,7 @@ img{vertical-align:top;}
 .top dl dd li.zc s{background-position: -102px -88px;}
 .top dl dd li.sz s{background-position: -23px -88px;}
 .top dl dd li.kp s{background-position: -44px -88px;}
-.top dl dd li p{width: 184px;float: right;}
+.top dl dd li p{width: 184px;float: right;*white-space: nowrap;}
 .top dl dd li p a{margin:0;margin-right: 8px;float: left;}
 .top dl dd li p a:hover{color: #e52e04;}
 .top a{margin: 0 8px;color:#6c6c6c;}
