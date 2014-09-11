@@ -1900,7 +1900,7 @@ a.sz_cmt{background: url(../images/cai888/nwx5_112.jpg);width:137px;height:33px}
 .ncathleft{float:left;width:470px;}
 .ncatharea{overflow-y:auto;background:#fff;width:356px;float:left;height:124px;border:1px solid #bbb;border-radius:3px;padding:2px;line-height:20px;color:#444}
 .ncatharea em{display:inline-block}
-.cm_w80{width:65px}
+.cm_w80{width:65px;}
 .cm_w59{width:50px}
 
 /* start 2014.7.10*/
@@ -1928,6 +1928,7 @@ a.sz_cmt{background: url(../images/cai888/nwx5_112.jpg);width:137px;height:33px}
 .ncathleft p s{font-size:12px;color:#999}
 .ncathleft p img{float:left;height:15px;border:1px solid #ccc;cursor:pointer}
 .cm_left{float:left}
+.cm_left .cm_w80{padding-left: 15px;}
 .nxmiddle h2 .cm_left{padding-left:0;}
 .nxmiddle h2 s.cm_left{padding-left:0px;}
 .nxmiddle h2 .cm_left b{font-weight:400;color:#145fab;font-weight:400;float:left;}
@@ -2056,6 +2057,7 @@ a.sz_cmt{background: url(../images/cai888/nwx5_112.jpg);width:137px;height:33px}
 .w_con .nxtable tr td{background: #05a06f;color: #eee;height: 32px;font-size:14px;border: 0;}
 .w_con .nxtable tr.odd td{background-color: #057e57;}
 .kaijiang-num tr td span{width: 36px;height: 20px;line-height: 20px;color: #000;float: left;margin-left: 5px;background-color: #f9f9f9;text-align: left;text-indent: 20px;background:url(../images/ssc_bg/PK_K.png) no-repeat;_display: inline;}
+.nxtable .kaijiang-num tr td span{float: none;display: inline-block;margin: 0 5px 0 0;}
 /*.kc_td_kj .kaijiang-num tr td span{margin: 0;}*/
 .kaijiang-num tr td span.PK_101{background-position:0 0}
 .kaijiang-num tr td span.PK_201{background-position:-37px 0}
@@ -2126,7 +2128,7 @@ a.sz_cmt{background: url(../images/cai888/nwx5_112.jpg);width:137px;height:33px}
 .w_con .nxtable tr td small.fangkuai {background-position: -248px -1px;}
 .w_con .nxtable tr td small.heitao {background-position: -200px -1px;}
 .w_con .nxtable tr td small.hongtao {background-position: -215px -1px;}
-.w_con .nxtable tr td i,.w_con .nxtable tr td s,.w_con .nxtable tr td cite{width: 21px;height: 21px;line-height: 21px;display: inline-block;background-color: #fb0000;color: #fff;}
+.w_con .nxtable tr td i,.w_con .nxtable tr td s,.w_con .nxtable tr td cite{width: 21px;height: 21px;font:700 12px/21px Tahoma;color: #333;display: inline-block;background-color: #fff;}
 .w_con .nxtable tr td i.white{background-color: #fff;}
 .w_con .nxtable tr td i.tongh{width: auto;text-align: center;font-size: 12px;padding: 0 4px;}
 .w_con .nxtable tr td s{background-color: #efd41f;margin-right: 3px;}
@@ -2156,13 +2158,13 @@ a.sz_cmt{background: url(../images/cai888/nwx5_112.jpg);width:137px;height:33px}
 .pok dl dd.cur{position: relative;top: -8px;left: 0;}
 .pok dl dd.ddd input{vertical-align: -3px;margin: 0 3px 0 28px;_vertical-align: -1px;}
 .xh_duizi .pok dl.pok_hua dt{height: 120px;width: 65px;}
-.xh_tonghua .pok dl dd{height:132px;margin-right: 25px;background: url("../images/ssc_bg/3.png") no-repeat;_display: inline;}
+.xh_tonghua .pok dl dd{height:132px;margin-right: 65px;background: url("../images/ssc_bg/3.png") no-repeat;_display: inline;}
 .xh_tonghua .pok dl dd.cur,.xh_tonghua .pok dl dd:hover{background: url("../images/ssc_bg/3hover.png") no-repeat;}
 .xh_duizi .pok dl.pok_hua dd{width: 72px;height: 73px;background: none;margin: 0 0 24px 30px;background: url("../images/ssc_bg/1.png") no-repeat;}
 .xh_duizi .pok dl.pok_hua dd.cur,.xh_duizi .pok dl.pok_hua dd:hover{background: url("../images/ssc_bg/1hover.png") no-repeat;}
 .xh_duizi .pok dl.pok_hua_3 dd{width: 93px;background: url("../images/ssc_bg/2.png") no-repeat;}
 .xh_duizi .pok dl.pok_hua_3 dd.cur,.xh_duizi .pok dl.pok_hua_3 dd:hover{background: url("../images/ssc_bg/2hover.png") no-repeat;}
-.xh_duizi .pok dl.pok_hua dd.dd2{width: 88px;background: url(../images/ssc_bg/pok_bg.png) -197px 0;}
+.xh_duizi .pok dl.pok_hua dd.dd2{width: 88px;font:700 16px/70px "Microsoft YaHei";color: #333;background: url(../images/ssc_bg/pok_bg.png) -197px 0;}
 .xh_duizi .pok dl dd span{width: 51px;height: 100%;float: left;font: 16px/24px Tahoma;text-align: left;text-indent: 3px;color: #000;/*background: url(../images/ssc_bg/pok_bg.png) -278px 0 no-repeat;*/position: relative;margin-left: -30px;}
 .xh_duizi .pok dl dd span.first-left{margin: 0;}
 .xh_duizi .pok dl dd span.right{}
@@ -2271,7 +2273,7 @@ a.sz_cmt{background: url(../images/cai888/nwx5_112.jpg);width:137px;height:33px}
 .nwx5kj table .y1{color: #c90}
 .nwx5kj table .y11{color: orange}
 .nwx5kj table .y2{color: #096ED6}
-.nwx5kj table .y3{color: #eee}
+.nwx5kj table .y3{color: #333}
 .kc_zjz{border:1px solid #ccc;border-top:none;background:#fff}
 .kc_zjz1{border-bottom:0;}
 .kc_zj2{background:#fff}
