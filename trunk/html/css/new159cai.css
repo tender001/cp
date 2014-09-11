@@ -2162,9 +2162,9 @@ a.sz_cmt{background: url(../images/cai888/nwx5_112.jpg);width:137px;height:33px}
 .pok dl dd.cur{position: relative;top: -16px;left: 0;}
 .pok dl dd.ddd input{vertical-align: -3px;margin: 0 3px 0 28px;_vertical-align: -1px;}
 .xh_duizi .pok dl.pok_hua dt{height: 120px;width: 65px;}
-.xh_tonghua .pok dl dd{height:132px;margin-right: 90px;background: url("../images/ssc_bg/3.png") no-repeat;_display: inline;}
+.xh_tonghua .pok dl dd{height:132px;margin-right: 37px;background: url("../images/ssc_bg/3.png") no-repeat;_display: inline;}
 .xh_tonghua .pok dl dd.cur,.xh_tonghua .pok dl dd:hover{background: url("../images/ssc_bg/3hover.png") no-repeat;}
-.xh_duizi .pok dl.pok_hua dd{width: 72px;height: 73px;background: none;margin: 0 0 24px 30px;background: url("../images/ssc_bg/1.png") no-repeat;}
+.xh_duizi .pok dl.pok_hua dd{width: 72px;height: 73px;background: none;margin: 0 0 24px 40px;background: url("../images/ssc_bg/1.png") no-repeat;}
 .xh_duizi .pok dl.pok_hua dd.cur,.xh_duizi .pok dl.pok_hua dd:hover{background: url("../images/ssc_bg/1hover.png") no-repeat;}
 .xh_duizi .pok dl.pok_hua_3 dd{width: 93px;background: url("../images/ssc_bg/2.png") no-repeat;}
 .xh_duizi .pok dl.pok_hua_3 dd.cur,.xh_duizi .pok dl.pok_hua_3 dd:hover{background: url("../images/ssc_bg/2hover.png") no-repeat;}
@@ -2180,6 +2180,7 @@ a.sz_cmt{background: url(../images/cai888/nwx5_112.jpg);width:137px;height:33px}
 .w_con .ncathgm a.a1:hover{background-position: 0 -42px}
 .w_con .kc_zjz{border: 0;}
 .w_con .xh_text em{color: #efd41f;}
+.xh_tonghua .pok dl.pok_tonghua{width:680px;margin:0 auto;}
 /*end 2014.8.11 时时彩更新*/
 /*双色球改版2014.9.3*/
 .se_main_top .p3 b em,.ball-right ul li b{background: url(../images/bg/shuangs/qiu.jpg) no-repeat;}
