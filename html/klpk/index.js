@@ -493,27 +493,22 @@ Class('Ball', {
 });
 //单行选择器
 Class('Ball>Single', {
-    index: function (ini) {
-//    	alert(ini);    	
+	index:function (ini){
         var Y = this;
         this.base(ini);
-        //alert('Ball>Single1');
         this.msgType = 'single';
         this.ball = this.lib.Choose(ini);
-        //alert('Ball>Single2');
         this.danmas = this.need(ini.danmas);
-//        alert('Ball>Single3');
         this.addNoop('onchange');
-//        alert('Ball>Single4');
         this.showbar = this.get(ini.showbar);
-//        alert('Ball>Single5');
-        this.ball.onchange = function () {
-            if (this.dan_data.length > 0) {
-                Class.C('casttype', 1);
-                Y.dtchange();
-            } else {
-                Y.ptchange();
-                Class.C('casttype', 0);
+        
+        this.ball.onchange = function (){
+            if(this.dan_data.length>0){  
+            	Class.C('casttype', 1);
+            	Y.dtchange();
+            }else{
+            	Y.ptchange();
+            	Class.C('casttype', 0);
             }
         };
         this.bindDom(ini);
@@ -523,13 +518,11 @@ Class('Ball>Single', {
         this.need(ini.clear).click(function () {
             Y.clearCode();
         });
-        this.need(ini.rnd1).click(function () {
-            Y.random("1");
-            /*var clear_list = $("#clear_list").val();
-             if(clear_list != null){
-             $("#clear_list").toggleClass("a1");
-             }*/
-        });
+        if(ini.rnd1!='' && ini.rnd1!=undefined){
+	        this.need(ini.rnd1).click(function (){
+	            Y.random("1");
+	        });
+        }
 //       /* this.need(ini.rnd5).click(function (){
 //            Y.random("5");
 //        });
@@ -936,7 +929,7 @@ Class('App', {
             showbar: '#single_bar',
             put: '#s0_put',
             clear: '#s0_clear',
-            rnd1: '#s1_jx1',
+            rnd1: '#s1_jx',
             jixuan: '#jixuan',
             setdan: '#setdanma',
             setdan_i: '#setdanma_i',
@@ -944,85 +937,7 @@ Class('App', {
             danmas: '#danma input'
         });
 
-//        this.lib.Single({ //同花
-//            items: '#q1zx dd',  //球
-//            group: '#ballsingle b',
-//            focusCss: 'cur',
-//            hoverCss: '',
-//            showbar: '#Multi_bar1',//奖金 盈利
-//            put: '#s1_put',//选好了
-//            clear: '#s1_clear',
-//            rnd1: '#s1_jx1',
-//            jixuan: '#jixuan',
-//            setdan: '#setdanma',
-//            setdan_i: '#setdanma_i',
-//            danma: '#danma',
-//            danmas: '#danma input'
-//        });
-//        this.lib.Single({ //同花顺
-//            items: '#q2zx dd',  //球
-//            group: '#ballsingle b',
-//            focusCss: 'cur',
-//            hoverCss: '',
-//            showbar: '#Multi_bar2',//奖金 盈利
-//            put: '#s2_put',//选好了
-//            clear: '#s2_clear',
-//            rnd1: '#s1_jx1',
-//            //rnd5: '#s1_jx5',
-//            jixuan: '#jixuan',
-//            setdan: '#setdanma',
-//            setdan_i: '#setdanma_i',
-//            danma: '#danma',
-//            danmas: '#danma input'
-//        });
-//        this.lib.Single({ //顺子
-//            items: '#q3zx dd',
-//            group: '#ballsingle b',
-//            focusCss: 'cur',
-//            hoverCss: '',
-//            showbar: '#Multi_bar3',
-//            put: '#s3_put',
-//            clear: '#s3_clear',
-//            rnd1: '#s1_jx1',
-//            // rnd5: '#s1_jx5',
-//            jixuan: '#jixuan',
-//            setdan: '#setdanma',
-//            setdan_i: '#setdanma_i',
-//            danma: '#danma',
-//            danmas: '#danma input'
-//        });
-//        this.lib.Single({ //豹子
-//            items: '#q4zx dd',
-//            group: '#ballsingle b',
-//            focusCss: 'cur',
-//            hoverCss: '',
-//            showbar: '#Multi_bar4',
-//            put: '#s4_put',
-//            clear: '#s4_clear',
-//            rnd1: '#s1_jx1',
-//            // rnd5: '#s1_jx5',
-//            jixuan: '#jixuan',
-//            setdan: '#setdanma',
-//            setdan_i: '#setdanma_i',
-//            danma: '#danma',
-//            danmas: '#danma input'
-//        });
-//        this.lib.Single({ //对子
-//            items: '#q5zx dd',
-//            group: '#ballsingle b',
-//            focusCss: 'cur',
-//            hoverCss: '',
-//            showbar: '#Multi_bar5',
-//            put: '#s5_put',
-//            clear: '#s5_clear',
-//            rnd1: '#s1_jx1',
-//            // rnd5: '#s1_jx5',
-//            jixuan: '#jixuan',
-//            setdan: '#setdanma',
-//            setdan_i: '#setdanma_i',
-//            danma: '#danma',
-//            danmas: '#danma input'
-//        });
+
         this.lib.CodeList({
             panel: '#code_list',
             clearBtn1: '#clear_list1',
@@ -1044,9 +959,9 @@ Class('App', {
          showbar: '#Multi_bar1',//奖金 盈利
          put: '#s1_put',//选好了
          clear: '#s1_clear',
-	       rnd1: '#s1_jx2',
+	       rnd1: '#s1_jx1',
 	       // rnd5: '#s1_jx5',
-	       jixuan: '#jixuan2',
+	       jixuan: '#jixuan1',
        setdan: '#setdanma',
          danma: '#danma',
          danmas: '#danma input'
@@ -1080,9 +995,9 @@ Class('App', {
              showbar: '#Multi_bar3',
              put: '#s3_put',
              clear: '#s3_clear',
-             rnd1: '#s1_jx2',
+             rnd1: '#s1_jx3',
              // rnd5: '#s1_jx5',
-             jixuan: '#jixuan2',
+             jixuan: '#jixuan3',
              setdan: '#setdanma',
              danma: '#danma',
              danmas: '#danma input'
@@ -1098,9 +1013,9 @@ Class('App', {
              showbar: '#Multi_bar4',
              put: '#s4_put',
              clear: '#s4_clear',
-             rnd1: '#s1_jx2',
+             rnd1: '#s1_jx4',
              // rnd5: '#s1_jx5',
-             jixuan: '#jixuan2',
+             jixuan: '#jixuan4',
              setdan: '#setdanma',
              danma: '#danma',
              danmas: '#danma input'
@@ -1116,9 +1031,9 @@ Class('App', {
              showbar: '#Multi_bar5',
              put: '#s5_put',
              clear: '#s5_clear',
-             rnd1: '#s1_jx2',
+             rnd1: '#s1_jx5',
              // rnd5: '#s1_jx5',
-             jixuan: '#jixuan2',
+             jixuan: '#jixuan5',
              setdan: '#setdanma',
              danma: '#danma',
              danmas: '#danma input'
@@ -1167,17 +1082,18 @@ Class('App', {
             if (ol != nl) {
                 Y.postMsg('show_opencodelist', 6);
             }
-            $("#opencodelist,#opencodelist_1,#opencodelist_2,#opencodelist_3,#opencodelist_4,#opencodelist_5,#s1_jx1,#jixuan,#s1_jx2,#jixuan2").hide();
+            $("#opencodelist,#opencodelist_1,#opencodelist_2,#opencodelist_3,#opencodelist_4,#opencodelist_5,a[mark=s1],a[mark=jx]").hide();
 
             $("#setdanma_i,#num_header_1,#num_header_2,#haoma,#haoma_1,#haoma_2,#haoma_3,#haoma_4,#haoma_5").hide();
             Y[Class.C('wanfa')[b][1]]();
             if (nl > 5) {
-                $("#opencodelist,#renxuan,#haoma,#s1_jx1,#jixuan").show();
+                $("#opencodelist,#renxuan,#haoma,#s1_jx,#jixuan").show();
                
             } else {
                 $("#opencodelist_" + nl).show();
                 $("#haoma_" + nl).show();
-                $("#s1_jx2,#jixuan2").show();
+                $("#s1_jx"+nl).show();
+                $("#jixuan"+nl).show();
                 
             }
         };
