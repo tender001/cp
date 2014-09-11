@@ -55,10 +55,10 @@ img{vertical-align:top;}
 .top dl.mysite dd p a{color: #666;margin: 0;}
 .top dl.mysite dd p a:hover{color: #e52e04}
 .top dl.mysite dd p.y3 a{color: #145fab;font-family: "\5b8b\4f53";}
-.top dl dd li{padding: 10px 0;border-bottom: 1px solid #ddd;line-height: 26px;overflow: hidden;zoom:1;}
+.top dl dd li{padding: 10px 0;border-bottom: 1px solid #ddd;line-height: 26px;overflow: hidden;float: left;zoom:1;}
 .top dl dd li.kp{border: 0;}
 .top dl dd li div{width: 40px;padding: 6px 2px 0;float: left;font-weight: bold;color: #333;text-align: center;}
-.top dl dd li s{width: 20px;height: 20px;line-height: 20px;display: block;margin-left: 9px;background-position: -2px -88px;}
+.top dl dd li s{width: 20px;height: 20px;line-height: 20px;display: block;margin: 0 auto;background-position: -2px -88px;}
 .top dl dd li.dc s{background-position: -63px -88px;}
 .top dl dd li.lc s{background-position: -82px -88px;}
 .top dl dd li.zc s{background-position: -102px -88px;}
