@@ -1588,7 +1588,7 @@ html .buyfimsg td input.text {height: 22px;line-height:22px;padding: 0; vertical
 .buyfimsg td em.cur{border:1px solid #ff6600;background:#ff6600;color:#fff}
 .buyfimsg td input.bt {border: 1px solid #DDDDDD;display: block;float: left;height: 25px;margin-top:1px;width: 515px;font-size:12px;padding:6px 0 0 5px\9;height:19px\9}
 :root .buyfimsg td input.bt{padding:0 0 0 5px}
-#container {margin: 0 auto;position: relative;width: 998px;border: 1px solid #ccc;overflow: visible;zoom: 1;}
+#container {margin: 0 auto;position: relative;width: 998px;/*border: 1px solid #ccc;*/overflow: visible;zoom: 1;}
 #container:after{visibility:hidden;display:block;font-size:0;content:" ";clear:both;}
 .numcai{overflow: visible;}
 .buyfimsg textarea {border: 1px solid #DDDDDD;color: #444444;float: left;font-size: 12px;height: 100px;margin-top: 11px;padding: 5px;width: 510px;}
