@@ -67,7 +67,6 @@ img{vertical-align:top;}
 .top dl dd li p{width: 184px;float: right;}
 .top dl dd li p a{margin:0;margin-right: 8px;float: left;}
 .top dl dd li p a:hover{color: #e52e04;}
-
 .top a{margin: 0 8px;color:#6c6c6c;}
 .top .fl a{color: #e62e04;cursor: pointer;}
 .top .fr{margin-right: -8px;overflow:visible;}
@@ -102,10 +101,9 @@ img{vertical-align:top;}
 .m_l a:hover{color: #e52e04}
 .happy-pok{position: relative;}
 .happy-pok i{display:block;width:21px;height:17px;position:absolute;top:-10px;right:-20px;z-index:10;background:url(../images/bg/new.png) no-repeat;}
-.m_l li p{margin: 10px 0 16px;zoom: 1;}
-.m_l1 li p:after{visibility:hidden;display:block;font-size:0;content:" ";clear:both;}
+.m_l li p{margin: 9px 0 10px;zoom: 1;}
+.m_l li p:after{visibility:hidden;display:block;font-size:0;content:" ";clear:both;}
 /*end 购买彩票*/
-
 /*nav*/
 .nav{height: 38px;line-height: 38px;background: #f60 url(../images/bg/nav.jpg) repeat-x;}
 .nav ul li{float: left;background: url(../images/bg/nav_li.jpg) repeat;overflow: visible;border-left: 1px solid #ffa366;}
@@ -2140,7 +2138,10 @@ a.sz_cmt{background: url(../images/cai888/nwx5_112.jpg);width:137px;height:33px}
 .w_con .p_time p{color: #fff;float: none;padding: 0;}
 .w_con .p_time strong{width: 315px;height: 5px;display: block;background-color: #ccc;overflow: hidden;}
 .w_con .p_time em{height: 5px;display: block;background-color: #efd41f;overflow: hidden;}
-.pok{padding-left: 40px;}
+.xh_tonghua{overflow: visible;zoom: 1;}
+.xh_tonghua:after{visibility:hidden;display:block;font-size:0;content:" ";clear:both;}
+.pok{padding-left: 40px;overflow: visible;zoom: 1;}
+.pok:after{visibility:hidden;display:block;font-size:0;content:" ";clear:both;}
 .pok dl{margin-top: 12px;zoom:1;}
 .pok dl:after{visibility:hidden;display:block;font-size:0;content:" ";clear:both;}
 .pok dl dt,.pok dl dd{float: left;color: #ccc;/*margin-right: 28px;_display: inline;*/}
@@ -2158,7 +2159,7 @@ a.sz_cmt{background: url(../images/cai888/nwx5_112.jpg);width:137px;height:33px}
 .pok dl.pok_yl dd.dd1{color: #efd41f;}
 .pok dl dd.dd1{margin-right: 75px;}
 .w_con .pok dl dd.ddd{width: 630px;height: 16px;line-height: 16px;text-align: left;text-indent: -14px;background-color: #05a06f;padding: 8px 0;}
-.pok dl dd.cur{position: relative;top: -12px;left: 0;}
+.pok dl dd.cur{position: relative;top: -16px;left: 0;}
 .pok dl dd.ddd input{vertical-align: -3px;margin: 0 3px 0 28px;_vertical-align: -1px;}
 .xh_duizi .pok dl.pok_hua dt{height: 120px;width: 65px;}
 .xh_tonghua .pok dl dd{height:132px;margin-right: 65px;background: url("../images/ssc_bg/3.png") no-repeat;_display: inline;}
@@ -2171,10 +2172,10 @@ a.sz_cmt{background: url(../images/cai888/nwx5_112.jpg);width:137px;height:33px}
 .xh_duizi .pok dl dd span{width: 51px;height: 100%;float: left;font: 16px/24px Tahoma;text-align: left;text-indent: 3px;color: #000;/*background: url(../images/ssc_bg/pok_bg.png) -278px 0 no-repeat;*/position: relative;margin-left: -30px;}
 .xh_duizi .pok dl dd span.first-left{margin: 0;}
 .xh_duizi .pok dl dd span.right{}
-.xh_duizi .pok dl dd span.right i{width: 32px;height: 40px;display: block;position: absolute;top: 21px;left: 5px;background: url(../images/ssc_bg/poker_ico.png) -157px 0 no-repeat;}
+.xh_duizi .pok dl dd span.right i{width: 32px;height: 40px;display: block;position: absolute;top: 21px;left: 7px;background: url(../images/ssc_bg/poker_ico.png) -157px 0 no-repeat;}
 /*.xh_duizi .pok dl dd.ddd{margin: -20px 0 0;}*/
 .xh_shunzi .pok dl.pok_hua dt{height: 130px;}
-.xh_shunzi .pok dl.pok_hua dd.dd2{background-position: -197px -67px;}
+.xh_shunzi .pok dl.pok_hua dd.dd2{background-position: -197px -67px;box-shadow: 2px 2px 5px rgba(0,0,0,.3);}
 .w_con .ncathgm a.a1{width: 180px;background: url(../images/ssc_bg/btn-buy.jpg);text-indent: -999em;box-shadow: 2px 2px 5px rgba(0,0,0,.3);}
 .w_con .ncathgm a.a1:hover{background-position: 0 -42px}
 .w_con .kc_zjz{border: 0;}
