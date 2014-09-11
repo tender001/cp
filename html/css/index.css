@@ -28,7 +28,7 @@
 .m_l1 dd{width:150px;}
 .m_l1 a{color:#585858;margin-right: 10px; float: left;white-space: nowrap;line-height: 22px;}
 .m_l1 a:hover{color: #e52e04;}
-.m_l1 li p{margin: 9px 0 10px;_padding-bottom:16px;zoom:1;}
+.m_l1 li p{margin: 9px 0 10px;zoom:1;}
 .m_l1 li p:after{visibility:hidden;display:block;font-size:0;content:" ";clear:both;}
 .m_mid{width: 560px;overflow: hidden;}
 .m_mid .ad{width: 557px;height: 266px;margin: 0 1px;overflow: hidden;position: relative;}
