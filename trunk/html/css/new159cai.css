@@ -102,7 +102,7 @@ img{vertical-align:top;}
 .m_l a:hover{color: #e52e04}
 .happy-pok{position: relative;}
 .happy-pok i{display:block;width:21px;height:17px;position:absolute;top:-10px;right:-20px;z-index:10;background:url(../images/bg/new.png) no-repeat;}
-.m_l li p{margin: 10px 0 16px;_padding-bottom:16px;zoom: 1;}
+.m_l li p{margin: 10px 0 16px;zoom: 1;}
 .m_l1 li p:after{visibility:hidden;display:block;font-size:0;content:" ";clear:both;}
 /*end 购买彩票*/
 
