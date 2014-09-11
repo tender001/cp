@@ -436,6 +436,9 @@ $_sys.showcode = function (lotid,ccodes,oc){
 					html +=  matchopencode2(lotid, pm, tmpCode[0], oc);
 				}
 				
+			}else if(lotid=="58"){
+					html +=  matchopencode2(lotid, pm, tmpCode[0], oc);
+				
 			}else{
 				html += tmpCode[0];
 			}
@@ -449,17 +452,55 @@ $_sys.showcode = function (lotid,ccodes,oc){
 var matchopencode2 = function (lotid, pm, cd, win){
 	var rc = "";
 	var wf = $_sys.getplayname(lotid, pm, 0);
+	if(pm=="12"){
+		  if(cd=="07"){
+			  wf="同花包选";
+		  }else if(cd=="08"){
+			  wf="同花顺包选";
+		  }else if(cd=="09"){
+			  wf="顺子包选";
+		  }else if(cd=="10"){
+			  wf="豹子包选";
+		  }else if(cd=="11"){
+			  wf="对子包选";
+		  }
+		  cd = '[' + wf + ']' ;
+	}else if(wf!=""){
+		if(lotid=="58"){
+			if(wf.indexOf("任")!=-1){
+				cd=cd.replace('01', 'A').replace('11', 'J').replace('12', 'Q').replace('13', 'K');
+			}else if(pm=="07"){
+				cd=cd.replace('01', '黑桃').replace('02', '红桃').replace('03', '梅花').replace('04', '方片');
+			}else if(pm=="08"){
+				cd=cd.replace('01', '黑桃').replace('02', '红桃').replace('03', '梅花').replace('04', '方片');
+			}else if(pm=="09"){
+				cd=cd.replace('10', '10JQ').replace('01', 'A23').replace('02', '234').replace('03', '345')
+              .replace('04', '456').replace('05', '567').replace('06', '678').replace('07', '789').replace('08', '8910').replace('09', '910J')
+              .replace('11', 'JQK').replace('12', 'QKA');
+			}else if(pm=="10"){
+				cd=cd.replace('01', 'AAA').replace('02', '222').replace('03', '333').replace('04', '444')
+              .replace('05', '555').replace('06', '666').replace('07', '777').replace('08', '888').replace('09', '999')
+              .replace('10', '101010').replace('11', 'JJJ').replace('12', 'QQQ').replace('13', 'KKK');
+			}else if(pm=="11"){
+				cd=cd.replace('01', 'AA').replace('02', '22').replace('03', '33').replace('04', '44')
+              .replace('05', '55').replace('06', '66').replace('07', '77').replace('08', '88').replace('09', '99')
+              .replace('10', '1010').replace('11', 'JJ').replace('12', 'QQ').replace('13', 'KK');
+			}
+		}
+		cd = '[' + wf + ']&nbsp;&nbsp;' + cd;
+	}
 	if(win == '' || win == undefined){
 		rc = cd;
 	}else{
 	rc+=arrmatch2(cd, win, "cm_red cm_bold", ",");
-	if(wf!=""){
-		rc = '[' + wf + ']' + rc;
-	}
+
 	
 //	rc=rc.replace("|", "&nbsp;┃&nbsp;");
 	}
-	rc=rc.replaceAll(",", "&nbsp;|&nbsp;");
+	if(lotid=="58"){}else{
+		rc=rc.replaceAll(",", "&nbsp;|&nbsp;");
+	}
+	
 	return rc;
 	
 }
@@ -518,7 +559,7 @@ var matchopencode = function (lotid, pm, cd, win){
 			rc+= arrmatch(cl, wl, "cm_red cm_bold", ",");
 		}
 		
-		if(lotid != "07" && lotid !="54"&& lotid !="56"){
+		if(lotid != "07" && lotid !="54"&& lotid !="56"&& lotid !="58"){
 			if(cr.indexOf("$")!=-1){
 				var dan = cr.split("$");
 				rc+= "[后胆:" + arrmatch(dan[0], wr, "blue cm_bold", ",") +"]&nbsp;";
@@ -945,6 +986,7 @@ $_sys.grade_def.push([ 53, "直选,组三,组六" ]);
 $_sys.grade_def.push([ 54, "前一直选,任选二,任选三,任选四,任选五,任选六,任选七,任选八,前二直选,前三直选,前二组选,前三组选" ]);
 $_sys.grade_def.push([ 56, "前一直选,任选二,任选三,任选四,任选五,任选六,任选七,任选八,前二直选,前三直选,前二组选,前三组选" ]);
 $_sys.grade_def.push([ 55, "前一直选,任选二,任选三,任选四,任选五,任选六,任选七,任选八,前二直选,前三直选,前二组选,前三组选" ]);
+$_sys.grade_def.push([ 58, "任选一,任选二,任选三,任选四,任选五,任选六,同花,同花顺,顺子,豹子,对子,同花包选,同花顺包选,顺子包选,豹子包选,对子包选" ]);
 
 $_sys.getgrade = function(f, n) {
 	if (typeof (n) == 'undefined') {
@@ -1457,6 +1499,46 @@ $_sys.getplayname = function(lotid, playid, castdef) {
 			break;
 		}
 		break;
+	case 58:
+		switch (playid) {
+		case 1:
+			s = "任选一";
+			break;
+		case 2:
+			s = "任选二";
+			break;
+		case 3:
+			s = "任选三";
+			break;
+		case 4:
+			s = "任选四";
+			break;
+		case 5:
+			s = "任选五";
+			break;
+		case 6:
+			s = "任选六";
+			break;
+		case 7:
+			s = "同花";
+			break;
+		case 8:
+			s = "同花顺";
+			break;
+		case 9:
+			s = "顺子";
+			break;
+		case 10:
+			s = "豹子";
+			break;
+		case 11:
+			s = "对子";
+			break;
+		case 12:
+			s = "包选";
+			break;
+		}
+		break;
 	}
 	return s;
 };
@@ -1583,7 +1665,7 @@ Class({
     	$("[mark=gcdown]").hover(function(){ //顶部购彩导航滑入
     		$(this).addClass("hover").find("dd").show();
 			$("[mark=gcdown] dd").clearQueue().animate({
-				height:430
+				height:434
 				})
 		},function(){
 			
