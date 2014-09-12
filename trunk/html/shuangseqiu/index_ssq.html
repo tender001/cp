@@ -47,7 +47,7 @@
             </b>
         </p>
         <p class="p2">
-            <i>单式截止：09-03 19:20&nbsp;&nbsp;&nbsp;复式截止：09-03 19:40</i>
+            <i id="infopool"><!-- 单式截止：09-03 19:20&nbsp;&nbsp;&nbsp;复式截止：09-03 19:40 --></i>
             每周二、四、日21:30开奖
         </p>
         <p class="p3">
@@ -57,9 +57,9 @@
                     <option value="">1024期(在售)</option>
                     <option value="">1024期(在售)</option> -->
                 </select>
-                期截止时间:<m id="countDownSpan"></m><!-- <em>02</em>天<em>18</em>时<em>52</em>秒 -->
+                期&nbsp;截止时间:<m id="countDownSpan"></m><!-- <em>02</em>天<em>18</em>时<em>52</em>秒 -->
             </span>
-            <b ><m id="ex"></m>&nbsp; 期开奖号码
+            <b >第<m id="ex"></m> 期开奖号码：
             <m id="kjopcode"><em>02</em><em>02</em><em>02</em><em>02</em><em>02</em><em>02</em><em>02</em><em class="blue">02</em> </m>
                  <!-- <a href="javascript:void(0);"
 							 >详情</a> -->
@@ -84,146 +84,67 @@
 
 			</div>
 			<div class="nkj_tan nkj_tan1" style="display: none;" id="kj_details">
-						<table width="100%" border="0" cellpadding="0" cellspacing="0">
+						<table width="100%" border="0" cellpadding="0" cellspacing="0" >
 							<colgroup>
-								<col width="80">
-								<col width="70">
-								<col width="70">
-								<col width="70">
-								<col width="70">
+								<col width="60" />
+								<col width="74" />
+								<col width="" />
 							</colgroup>
-							<tbody><tr class="tr1">
-								<td colspan="2">奖项</td>
+							<tr class="tr1">
+							<td>奖项</td>
 								<td>中奖注数</td>
 								<td>每注金额</td>
 								<td>组合</td>
 							</tr>
 							<tr>
-								<td align="center" rowspan="2">一等奖</td>
-								<td class="td3">基本</td>
-								<td class="td1" id="kjzs0">2</td>
-								<td class="td2" id="kjjj0">10,000,000</td>
-								<td align="center" rowspan="2"><em>5</em>+<span style="color: blue">2</span></td>
-							</tr>
-							<tr>
-								<td class="td3">追加</td>
-								<td class="td1" id="kjzs7">0</td>
-								<td class="td2" id="kjjj7">0</td>
-							</tr>
-							<tr>
-								<td align="center" rowspan="2">二等奖</td>
-								<td class="td3">基本</td>
-								<td class="td1" id="kjzs1">54</td>
-								<td class="td2" id="kjjj1">126,768</td>
-								<td align="center" rowspan="2"><em>5</em>+<span style="color: blue">1</span></td>
-							</tr>
-							<tr>
-								<td class="td3">追加</td>
-								<td class="td1" id="kjzs8">14</td>
-								<td class="td2" id="kjjj8">76,060</td>
-							</tr>
-							<tr>
-								<td align="center" rowspan="2">三等奖</td>
-								<td class="td3">基本</td>
-								<td class="td1" id="kjzs2">525</td>
-								<td class="td2" id="kjjj2">4,725</td>
-								<td align="center" rowspan="2"><em>5</em>+<span style="color: blue">0</span>/<em>4</em>+<span style="color: blue">2</span></td>
-							</tr>
-							<tr>
-								<td class="td3">追加</td>
-								<td class="td1" id="kjzs9">210</td>
-								<td class="td2" id="kjjj9">2,835</td>
-							</tr>
-							<tr>
-								<td align="center" rowspan="2">四等奖</td>
-								<td class="td3">基本</td>
-								<td class="td1" id="kjzs3">21356</td>
-								<td class="td2" id="kjjj3">200</td>
-								<td align="center" rowspan="2"><em>4</em>+<span style="color: blue">1</span>/<em>3</em>+<span style="color: blue">2</span></td>
-							</tr>
-							<tr>
-								<td class="td3">追加</td>
-								<td class="td1" id="kjzs10">6943</td>
-								<td class="td2" id="kjjj10">100</td>
-							</tr>
-							<tr>
-								<td align="center" rowspan="2">五等奖</td>
-								<td class="td3">基本</td>
-								<td class="td1" id="kjzs4">411040</td>
-								<td class="td2" id="kjjj4">10</td>
-								<td align="center" rowspan="2"><em>4</em>+<span style="color: blue">0</span>/<em>3</em>+<span style="color: blue">1</span>/<em>2</em>+<span style="color: blue">2</span></td>
-							</tr>
-							<tr>
-								<td class="td3">追加</td>
-								<td class="td1" id="kjzs11">128537</td>
-								<td class="td2" id="kjjj11">5</td>
-							</tr>
-							<tr>
-								<td align="center" rowspan="2">六等奖</td>
-								<td class="td3" rowspan="2">基本</td>
-								<td class="td1" id="kjzs5" rowspan="2">4047851</td>
-								<td class="td2" id="kjjj5" rowspan="2">5</td>
-								<td align="center" rowspan="2"><em>3</em>+<span style="color: blue">0</span>/<em>1</em>+<span style="color: blue">2</span>
-								/<em>2</em>+<span style="color: blue">1</span>
-								/<em>0</em>+<span style="color: blue">2</span></td>
-							</tr>
-<tr>
-							
-							</tr>
-							
-						</tbody></table>
-					</div>
-         <!--  <div class="nkj_tan" style="display:none ;" id="kj_details">
-						<table width="100%" border="0" cellpadding="0" cellspacing="0" >
-							<colgroup>
-								<col width="65" />
-								<col width="74" />
-								<col width="" />
-							</colgroup>
-							<tr class="tr1">
-								<td>奖项</td>
-								<td>中奖注数</td>
-								<td>每注金额</td>
-							</tr>
-							<tr>
 								<td align="center"><em>一等奖</em></td>
+								
 								<td class="td1" id="kjzs0"></td>
 								<td class="td2"><em id="kjjj0"></em>元</td>
+								<td style="text-align: center;"><font color="red">6</font>+<font color="blue">1</font></td>
 							</tr>
 							<tr>
 								<td align="center"><em>二等奖</em></td>
+								
 								<td class="td1" id="kjzs1"></td>
 								<td class="td2"><em id="kjjj1"></em>元</td>
+								<td style="text-align: center;"><font color="red">6</font>+<font color="blue">0</font></td>
 							</tr>
 							<tr>
 								<td align="center"><em>三等奖</em></td>
 								<td class="td1" id="kjzs2"></td>
 								<td class="td2"><em id="kjjj2"></em>元</td>
+								<td style="text-align: center;"><font color="red">5</font>+<font color="blue">1</font></td>
 							</tr>
 
 							<tr>
 								<td align="center">四等奖</td>
 								<td class="td1" id="kjzs3"></td>
 								<td class="td2"><em id="kjjj3"></em>元</td>
+								<td style="text-align: center;"><font color="red">5</font>+<font color="blue">0</font>/<font color="red">4</font>+<font color="blue">1</font></td>
 							</tr>
 							<tr>
 								<td align="center">五等奖</td>
 								<td class="td1" id="kjzs4"></td>
 								<td class="td2"><em id="kjjj4"></em>元</td>
+								<td style="text-align: center;"><font color="red">4</font>+<font color="blue">0</font>/<font color="red">3</font>+<font color="blue">1</font></td>
 							</tr>
 							<tr>
 								<td align="center">六等奖</td>
 								<td class="td1" id="kjzs5"></td>
 								<td class="td2"><em id="kjjj5"></em>元</td>
+								<td style="text-align: center;"><font color="red">2</font>+<font color="blue">1</font>/<font color="red">1</font>+<font color="blue">1</font>/<font color="red">0</font>+<font color="blue">1</font></td>
+							
 							</tr>
 						</table>
-					</div> -->
+					</div>
+         
         <div class="choose-ball" id='pttz'>
             <p class="ball-t"><span class="red-ball-l"><i>红球区</i>请选择6-16个红球</span><span><em>蓝球区</em>请选择1-16个红球</span></p>
             <div class="ball-left" >遗漏<s></s></div>
             <div class="ball-right" >
                 <div class="l" id="pt_red">
-                    <ul>
+                    <ul id="danmas">
                         <li>
                             <b class="hover">01</b><b>02</b><b>03</b><b>04</b><b>05</b><b>06</b><b>07</b><b>08</b><b>09</b><b>10</b><b>11</b></li>
                             <li><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></li>
