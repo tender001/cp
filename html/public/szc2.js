@@ -1273,7 +1273,7 @@
 	    			}
     			}
     		});
-    		var Recenthigh=325;
+    		var Recenthigh=330;
     		html +="<a href='javascript:void(0);' target='_blank' id='more_kj' class='xu_gd'>更多</a>";
     		
     		$("#kjhis").html(html);
@@ -1395,16 +1395,21 @@
 				var blue =code[1].split(",");
 				var html='';
 				for(var i=0;i<red.length;i++){
-					html+='<b>'+red[i]+'</b>';
+					html+='<em>'+red[i]+'</em>';
 				}
 				for(var i=0;i<blue.length;i++){
-					html+='<b class="cur">'+blue[i]+'</b> ';
+					html+='<em class="blue">'+blue[i]+'</em> ';
 				}
 				var pools=(row.pools)*1;
+				var wg=((pools%100000000)/10000)+"";
+				wg=wg.split(".")
+				var wgs = wg[1];
 				if(pools>100000000){
-					$("#infopool").html(''+Math.ceil(pools/5000000)+'倍清空奖池<font>'+parseInt(pools/100000000)+'亿'+Math.round((pools%100000000)/10000)+'万</font>');
+					//$("#infopool").html(''+Math.ceil(pools/5000000)+'倍清空奖池<font>'+parseInt(pools/100000000)+'亿'+Math.round((pools%100000000)/10000)+'万</font>');
+					$("#infopool").html('大乐透奖池<font>'+parseInt(pools/100000000)+'亿'+parseInt((pools%100000000)/10000)+'万'+wgs+'元</font>');
 				}else{
-					$("#infopool").html(''+Math.ceil(pools/5000000)+'倍清空奖池<font>'+Math.round(pools/10000)+'万</font>');
+					//$("#infopool").html(''+Math.ceil(pools/5000000)+'倍清空奖池<font>'+Math.round(pools/10000)+'万</font>');
+					$("#infopool").html('大乐透奖池<font>'+parseInt(pools/10000)+'万'+wgs+'元</font>');
 				}
 				$("#kjopcode").html(html);
 				var rmoney = row.money == '' ? "-,-,-,200,10,5,-,-,-,-,100,5" : row.money;
@@ -1436,12 +1441,16 @@
 					html+='<em class="blue">'+blue[i]+'</em>';
 				}
 				var pools=(row.pools)*1;
+				var wg=((pools%100000000)/10000)+"";
+				wg=wg.split(".")
+				var wgs = wg[1];
 				if(pools>100000000){
-					$("#infopool").html(''+Math.ceil(pools/5000000)+'倍清空奖池<font>'+parseInt(pools/100000000)+'亿'+Math.round((pools%100000000)/10000)+'万</font>');
+					//$("#infopool").html(''+Math.ceil(pools/5000000)+'倍清空奖池<font>'+parseInt(pools/100000000)+'亿'+Math.round((pools%100000000)/10000)+'万</font>');
+					$("#infopool").html('双色球奖池<font>'+parseInt(pools/100000000)+'亿'+parseInt((pools%100000000)/10000)+'万'+wgs+'元</font>');
 				}else{
-					$("#infopool").html(''+Math.ceil(pools/5000000)+'倍清空奖池<font>'+Math.round(pools/10000)+'万</font>');
+					//$("#infopool").html(''+Math.ceil(pools/5000000)+'倍清空奖池<font>'+Math.round(pools/10000)+'万</font>');
+					$("#infopool").html('双色球奖池<font>'+parseInt(pools/10000)+'万'+wgs+'元</font>');
 				}
-				
 				$("#kjopcode").html(html);
 				var rmoney = row.money == '' ? "-,-,3000,200,10,5" : row.money;
 				var rnums = row.nums == '' ? "-,-,-,-,-,-" : row.nums;
@@ -1619,7 +1628,7 @@
 										$("#expect").val(expectlist[i][0]);
 									}
 									
-									html = '<option value="'+expectlist[i][0]+'" id="exp' + expectlist[i][0] + '">'+expectlist[i][0].substr(2)+'(在售)</option>';
+									html = '<option style="font-color:#333;" value="'+expectlist[i][0]+'" id="exp' + expectlist[i][0] + '">'+expectlist[i][0].substr(2)+'(在售)</option >';
 								} else {
 									html += '<option value="'+expectlist[i][0]+'" id="exp' + expectlist[i][0] + '" >'+expectlist[i][0].substr(2)+'(预售)</option>';
 								}
@@ -2003,10 +2012,19 @@
     Class('Choose_base', {
         index:function (config){
             this.putBtn = this.get(config.putBtn).concat(this.get(config.aiBtn).nodes);
+            var Y = this;
+//            var d = this.red.data;
         //接收随机选号命令
+        	 this.onMsg('msg_Drnd_code_'+config.msgId, function (){
+                 this.Ddrandom($("#jx_dlg_list b").length);
+             });
+        	 this.onMsg('msg_Ddrnd_code_'+config.msgId, function (){
+                 this.Ddrandoms($("#jx_dlg_list b").length);
+             });
             this.onMsg('msg_rnd_code_'+config.msgId, function (){
                 this.random($("#jx_dlg_list b").length);
             });
+            
              this.onMsg('msg_clear_code_'+config.msgId, function (){
                  this.clearCode();
              });
@@ -2032,6 +2050,63 @@
                this.putBtn.addClass('cur')
             }else{
                this.putBtn.removeClass('cur')
+            }
+        },
+        Ddrandom: function (n){// 随机生成号码, [[胆], [拖],[blue]]
+            var d, a, b, tn, code, id, zs;
+            n = ~~n;
+            code = [];
+            d = this.red.data;
+            a = this.repeat(33, 1).remove(d); 
+            //d = code = [];
+            b = this.repeat(16, 1);
+            //tn = 6 - d.length;
+            zs = Math.dt(d.length, tn, 6);
+            for (var i = n; i--;) {
+            	
+            	//a.random(-tn).sort(up)
+                code[i] = [(a.random(-(6-d.length)).concat(d).sort(Array.up)), b.random(-1), zs]
+            }
+            id = this.msgId;
+            this.postMsg('msg_show_jx', code, function (e, btn){
+                  if (btn.id == 'jx_dlg_re') {
+                        this.postMsg('msg_Drnd_code')
+                   }else if(btn.id == 'jx_dlg_ok'){
+                        this.postMsg('msg_put_code', code);//广播号码输出消息, 号码列表监听此消息    
+                   }
+            }, this.codeTpl);
+            //广播号码输出消息, 号码列表监听此消息        
+            function up(a, b){
+                return a>b ? 1 : -1
+            }
+        },
+        Ddrandoms: function (n){// 随机生成号码, [[胆], [拖],[blue]]
+            var d, a, b, tn, code, id, zs,m;
+            n = ~~n;
+            code = [];
+            d = this.red.data;
+            m = this.blue.data;
+            a = this.repeat(35, 1).remove(d); 
+            //d = code = [];
+            b = this.repeat(12, 1).remove(m);
+            //tn = 6 - d.length;
+            zs = Math.dt(d.length, tn, 6);
+            for (var i = n; i--;) {
+            	
+            	//a.random(-tn).sort(up)
+                code[i] = [(a.random(-(5-d.length)).concat(d).sort(Array.up)), (b.random(-(2-m.length)).concat(m).sort(Array.up)), zs]
+            }
+            id = this.msgId;
+            this.postMsg('msg_show_jx', code, function (e, btn){
+                  if (btn.id == 'jx_dlg_re') {
+                        this.postMsg('msg_Ddrnd_code')
+                   }else if(btn.id == 'jx_dlg_ok'){
+                        this.postMsg('msg_put_code', code);//广播号码输出消息, 号码列表监听此消息    
+                   }
+            }, this.codeTpl);
+            //广播号码输出消息, 号码列表监听此消息        
+            function up(a, b){
+                return a>b ? 1 : -1
             }
         },
         random: function (n){// 随机生成号码, [[red],[blue]]
@@ -2117,7 +2192,7 @@
         leftChooseMax: 20,
         leftname: '红球',
         index:function (config){
-            var red, blue, showbar, Y;
+            var red, blue, showbar, Y,ball;
             Y = this;
             this.msgId = config.msgId || '';
             this.red = red = this.lib.Choose(config.red);
@@ -2151,7 +2226,7 @@
             this.base(config)
         },
         bindEvent: function (config){
-            var red_rnd_sel, blue_rnd_sel, all_rnd_sel, Y;
+            var red_rnd_sel, blue_rnd_sel, all_rnd_sel, Y,ball;
             Y = this;
         //输出按扭
             Y.get(config.putBtn).click(function (){
@@ -2171,7 +2246,6 @@
                     }             
                 }           
             });
-           
         // 随机选取
             red_rnd_sel = this.need(config.red.rndSelect);
             blue_rnd_sel = this.need(config.blue.rndSelect);
@@ -2204,6 +2278,41 @@
      	                return false  
      				}
             });
+            Y.get(config.ddRnd).click(function (){
+              	 
+            	var selected_num = Y.red.data.length;
+    			if (selected_num == 0) {
+    				Y.postMsg('msg_show_dlg', '您好，请您至少选择一个胆码！');
+    				return false;
+    			} else if (selected_num > 5) {
+    				Y.postMsg('msg_show_dlg', '您好，最多可选5个号码作为胆码！');
+    				return false;
+    			} else {
+    				Y.Ddrandom(all_rnd_sel.val().replace("注",""));
+    				return false;
+    			}
+            	//alert(1);
+           	 
+           });
+            Y.get(config.ddRnds).click(function (){
+             	 
+            
+    			var selected_num = Y.red.data.length;
+            	var selected_nums = Y.blue.data.length;
+    			if (selected_num == 0 && selected_nums == 0) {
+    				Y.postMsg('msg_show_dlg', '您好，请您至少选择一个胆码！');
+    				return false;
+    			} else if (selected_num > 4 || selected_nums > 1) {
+    				Y.postMsg('msg_show_dlg', '您好，最多可选4个红球和1个篮球作为胆码！');
+    				return false;
+    			} else {
+    				Y.Ddrandoms(all_rnd_sel.val().replace("注",""));
+    				return false;
+    			}
+    			
+            	//alert(1);
+           	 
+           });
             Y.get(config.s1).click(function (){
            	 
            		Y.random(1);
@@ -2214,6 +2323,7 @@
            Y.onMsg('msg_rnd_ssq_'+this.msgId, function (fn){//智能过滤时对未选号码进行自动选号, 1w注内
                 Y.red.random(14);  
                 Y.blue.random(3);
+                
                 fn && fn(Y.red.data, Y.blue.data)     
            })
        // 清除
@@ -2237,7 +2347,7 @@
         },
         clearCode: function (){
             this.blue.clearCode(true);
-            this.red.clearCode(true)            
+            this.red.clearCode(true);
         },
         getCount: function (){//计算注数
             var r, b;
@@ -2598,6 +2708,7 @@
                 o.clearCode(true)
             })         
         },
+        
         random: function (n){// 随机生成号码, [[red],[blue]]
             var a, b, code, id, lines;
             n = ~~n;
@@ -2626,6 +2737,7 @@
 			var a, b, code, id, lines, Y = this;
             n = ~~n;
             code = [];
+            //danma = this.ball.data;
             b = this.repeat(10);
             lines = this.balls.length;
             for (var i = n; i--;) {
@@ -2651,6 +2763,7 @@
                    }
             }, this.rndtpl, true) 
 		},
+		
         redrawCode: function (code){//重现号码
             this.clearCode();
             this.balls.each(function (b, i){
