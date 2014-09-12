@@ -57,6 +57,7 @@ String danma = (String) request.getAttribute("danma");
   </tr>
   <%
 String ratelist = "";
+System.out.println("----------------------codes="+codes);
 String[] cs=codes.split("/");
 String[] dm=danma.split("/");
 String dmstr="";
@@ -88,7 +89,13 @@ for (int j=0;j<cs.length;j++){
  	sb.append("<td>"+maps.get(Integer.parseInt(mid)).getBt()+"</td>");
  	sb.append("<td>"+maps.get(Integer.parseInt(mid)).getHn()+"");
  	if (playid.equalsIgnoreCase("34")){
- 	sb.append("("+maps.get(Integer.parseInt(mid)).getClose()+")");
+ 		double close = maps.get(Integer.parseInt(mid)).getClose();
+ 		if(close != 0.0){
+ 			sb.append("("+(int)close+")");
+ 		}
+ 	}
+ 	if (playid.equalsIgnoreCase("46")){
+ 		sb.append("("+maps.get(Integer.parseInt(mid)).getClose()+")");
  	}
  	sb.append(" VS "+maps.get(Integer.parseInt(mid)).getGn()+"</td>");
  	sb.append("<td>");
