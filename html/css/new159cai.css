@@ -2044,6 +2044,7 @@ a.sz_cmt{background: url(../images/cai888/nwx5_112.jpg);width:137px;height:33px}
 .w_con .ncatharea{height: 130px;}
 .w_con .ncathleft p{text-align: left;color: #fff;}
 .w_con .ncathtype{border: 1px solid #362d1e;}
+.w_con .ncatharea ul li{border-bottom: 1px dashed #ddd;padding: 2px 0;}
 .w_con .ncathtype span{background-color: #78593e;color: #fff;}
 .w_con .ncathtype label{color: #000;}
 .w_con .ncathgm p{color: #ccc;font-size: 12px;font-weight: 400;}
