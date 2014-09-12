@@ -48,15 +48,15 @@
         </p>
         <p class="p3">
             <span>第
-                <select name="" id="">
+                <select id="expect_tab">
                     <option value="">1024期(在售)
-                    </option><option value="">1024期(在售)
-                    </option><option value="">1024期(在售)
-                </option></select>
-                期截止时间:<em>02</em>天<em>18</em>时<em>52</em>秒
+                    <option value="">1024期(在售)
+                    <option value="">1024期(在售)
+                </select>
+                期截止时间:<!-- <em>02</em>天<em>18</em>时<em>52</em>秒 --><m id="countDownSpan"></m>
             </span>
-            <b>2014097期开奖号码
-                <em>02</em><em>02</em><em>02</em><em>02</em><em>02</em><em>02</em><em class="blue">02</em><em class="blue">02</em>
+            <b><m id="ex"></m>&nbsp;<!-- 2014097 -->期开奖号码
+                <m id="kjopcode"><em>02</em><em>02</em><em>02</em><em>02</em><em>02</em><em>02</em><em>02</em><em class="blue">02</em></m>
                 <s></s><!--详情-->
             </b>
             <i>近期开奖<s></s></i>
@@ -65,7 +65,7 @@
             <p class="ball-t"><span class="red-ball-l"><i>红球区</i>请选择6-16个红球</span><span><em>蓝球区</em>请选择1-16个红球</span></p>
             <div class="ball-left">遗漏<s></s></div>
             <div class="ball-right">
-                <div class="l" id="pt_red" style="width:567px;">
+                <div class="l" id="pt_red">
                     <ul>
                         <li><b>01</b><b>02</b><b>03</b><b>04</b><b>05</b><b>06</b><b>07</b><b>08</b><b>09</b><b>10</b><b>11</b><b>12</b></li>
 								<li><i>0</i><i>0</i><i>0</i><i>0</i><i>0</i><i>0</i><i>0</i><i>0</i><i>0</i><i>0</i><i>0</i><i>0</i></li>
@@ -75,54 +75,74 @@
 								<li><i>0</i><i>0</i><i>0</i><i>0</i><i>0</i><i>0</i><i>0</i><i>0</i><i>0</i><i>0</i><i>0</i></li>
                     </ul>
                     <p>
-                        <select name="" id="">
-                            <option value="">6
-                            <option value="">7
-                            <option value="">8
-                            <option value="">9
-                            <option value="">10
+                        <select id="pt_red_sel">
+								<option value="6" selected>6</option>
+								<option value="7">7</option>
+								<option value="8">8</option>
+								<option value="9">9</option>
+								<option value="10">10</option>
+								<option value="11">11</option>
+								<option value="12">12</option>
+								<option value="13">13</option>
+								<option value="14">14</option>
+								<option value="15">15</option>
+								<option value="16">16</option>
+								<option value="17">17</option>
+								<option value="18">18</option>
+								<option value="19">19</option>
+								<option value="20">20</option>
                         </select>
-                        <span>机选红球</span><em>清空</em>
+                        <span><a href="javascript:void(0);" id="pt_red_jx">机选红球</a></span><em><a
+								href="javascript:void(0);" id="pt_red_clear" class="a1">清空</a></em>
                     </p>
                 </div>
-                <div class="r">
+                <div class="r" id="pt_blue">
                     <ul>
-                        <li><b class="blue">01</b><b>01</b><b>01</b><b>01</b><b>01</b><b>01</b></li>
-                        <li><i>11</i><i>11</i><i>11</i><i>11</i><i>11</i><i>11</i></li>
-                        <li><b>01</b><b>01</b><b>01</b><b>01</b><b>01</b><b>01</b></li>
-                        <li><i>11</i><i>11</i><i>11</i><i>11</i><i>11</i><i>11</i></li>
-                        <li><b>01</b><b>01</b><b>01</b><b>01</b></li>
-                        <li><i>11</i><i>11</i><i>11</i><i>11</i></li>
+                       <li><b>01</b><b>02</b><b>03</b><b>04</b><b>05</b></li>
+								<li><i>0</i><i>0</i><i>0</i><i>0</i><i>0</i></li>
+								<li><b>06</b><b>07</b><b>08</b><b>09</b><b>10</b></li>
+								<li><i>0</i><i>0</i><i>0</i><i>0</i><i>0</i></li>
+								<li><b>11</b><b>12</b></li>
+								<li><i>0</i><i>0</i></li>
                     </ul>
                     <p>
-                        <select name="" id="">
-                            <option value="">1
-                            <option value="">2
-                            <option value="">3
-                            <option value="">4
-                            <option value="">5
+                        <select id="pt_blue_sel">
+								<option value="1">1</option>
+								<option value="2">2</option>
+								<option value="3">3</option>
+								<option value="4">4</option>
+								<option value="5">5</option>
+								<option value="6">6</option>
+								<option value="7">7</option>
+								<option value="8">8</option>
+								<option value="9">9</option>
+								<option value="10">10</option>
+								<option value="11">11</option>
+								<option value="12">12</option>
+								<option value="13">13</option>
+								<option value="14">14</option>
+								<option value="15">15</option>
+								<option value="16">16</option>
                         </select>
-                        <span>机选红球</span><em>清空</em>
+                        <span><a href="javascript:void(0);" id="pt_blue_jx">机选蓝球</a></span><em><a
+								href="javascript:void(0);" id="pt_blue_clear" class="a1">清空</a></em>
                     </p>
                 </div>
             </div>
             <div class="choose-btn">
-                <p>【您选择了<span>0</span>注，共￥<span>0</span>元】&nbsp;&nbsp;如中奖，奖金<span>0</span>元，盈利<span>0</span>元</p>
-                <b><a class="ball-btn" href="javascript:void(0);">确认选号</a><a href="#">清空全部</a></b>
+                <p id="pt_choose_info">【您选择了<span>0</span>注，共￥<span>0</span>元】&nbsp;&nbsp;如中奖，奖金<span>0</span>元，盈利<span>0</span>元</p>
+                <b><a class="ball-btn" id="pt_put" href="javascript:void(0);">确认选号</a><a href="javascript:void(0);" id="pt_clear">清空全部</a></b>
             </div>
+             <div class="choose-show-b">
+           <div class="choose-show">
+                <div class="ball-bool" id="pt_list"></div>
+                <div class="computer-btn"><a id="dd_jx" href="javascript:void(0);">定胆机选</a><a href="javascript:void(0);" id="pt_one">机选一注</a><input id="pt_sel" class="s" type="text" value="5注"/><a class="s" href="javascript:void(0);" id="pt_jx">机选</a><a class="d" href="javascript:void(0);" id="pt_list_clear">清空列表</a></div>
+                <p>共<em id="pt_zs">0</em>注，我要买<span><input type="text" value="1" id="pt_bs"/><a class="add" title="加一倍" href="javascript:void(0);" id="pt_addbs">+</a><a id="pt_lessbs" title="减一倍" href="javascript:void(0);">-</a></span>倍<i>(最高限投10000倍)</i>，合计金额：<em id="pt_money">0</em>元</p>
+            </div>
+        </div>
         </div>
         <!---->
-        <div class="choose-show-b">
-            <div class="choose-show">
-                <div class="ball-bool"></div>
-                <div class="computer-btn"><a href="javascript:void(0);">定胆机选</a><a href="javascript:void(0);">机选一注</a><input class="s" type="text" value="5注"/><a class="s" href="javascript:void(0);">机选</a><a class="d" href="javascript:void(0);">清空列表</a></div>
-                <p>共<em>0</em>注，我要买<span><input type="text" value="1"/><a class="add" title="加一倍" href="javascript:void(0);">+</a><a title="减一倍" href="javascript:void(0);">-</a></span>倍<i>(最高限投10000倍)</i>，合计金额：<em>0</em>元</p>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!--胆拖投注-->
+       <!--胆拖投注-->
 <div class="set_m" id='dttz' style="display:none;">
     <div style="height:530px;margin-top:20px" class="set_num">
 
@@ -264,6 +284,10 @@
         </div>
     </form>
 </div>
+       
+    </div>
+</div>
+
 
 
 <div class="set_result set_result1" id="all_form">
@@ -285,7 +309,7 @@
 </div>
 <div class="news_tab " id="hm_form" style="display:none">
     <div class="set_result set_result2">
-        <div class="b_th_cosz nc_numhm">
+        <div class="b_th_cosz nc_numhm" style="margin:0 auto">
             <!-- 					<table width="760" border="0" class="col_2" -->
             <!-- 						style="margin: 10px 0 0 5px"> -->
             <!-- 						<tr> -->
@@ -374,7 +398,7 @@
 </div>
 <div class="news_tab " id="zh_form" style="display:none;">
     <div class="set_result set_result2">
-        <div class="b_th_cosz nc_numhm">
+        <div class="b_th_cosz nc_numhm" style="margin:0 auto">
             <p class="p_z_qs">
                 追号期数<select id="zh_opts" name="zh_opts">
                 <option checked="ture" value="10">追10期</option>

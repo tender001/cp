@@ -76,12 +76,14 @@ Class('Choose_base>Dlt_12x2',{
                 Y.postMsg('msg_show_dlg', '生肖乐至少要选择两个号码！')
             }            
         });
+        
         // 随机选取
         this.rndOpts = jx_opts = this.need(config.jx_opts);
         Y.get(config.jxbtn).click(function (){
             Y.random(jx_opts.val());
             return false            
         });
+      
        // 清除
        Y.need(config.clearbtn).click(function (){
             Y.balls.clearCode(true)
@@ -99,6 +101,7 @@ Class('Choose_base>Dlt_12x2',{
         this.clearCode();
         this.balls.importCode(code[0]);
     },
+    
     random: function (n){// 随机生成号码, [[red],[blue]]
         var a, code, id, tpl;
         n = ~~n;
@@ -392,6 +395,7 @@ Class('CodeList>Dlt_CodeList_dt', {
             return isds ? (isadd ? 99 : 3) : ( isadd ? ( isdt ? 2 : 98) : (isdt ? 135 : 1 ))//加注id=98/99
         }        
     });
+    
     Class.extend('exportCode', function (){
         // 传入号码
     	var showid =location.search.getParam('codes');
@@ -447,6 +451,23 @@ Class('CodeList>Dlt_CodeList_dt', {
                 rightXml: '/cpdata/omi/50/yilou/hmyl_back_100.xml',
                 rqXml: '/cpdata/omi/50/yilou/omission.xml'
             });
+            $("#pt_sel").focus(function(){
+           		var pt_sel  = $("#pt_sel").val();
+           		if(pt_sel != ""){
+           			pt_sel=$("#pt_sel").val().replace(/\D/g,'');
+           			$("#pt_sel").val(pt_sel);
+           		}
+           		
+           		$("#pt_sel").keyup(function(){
+               		this.value=this.value.replace(/\D/g,''); //只能输数字
+               	});
+           	});
+               $("#pt_sel").blur(function(){
+           		var pt_sel  = $("#pt_sel").val();
+           		if(pt_sel=pt_sel.replace(/\D/g,'')){
+           				$("#pt_sel").val(pt_sel+"注");
+           		}
+           	});
         },        
         
         createSub: function (){
@@ -460,7 +481,9 @@ Class('CodeList>Dlt_CodeList_dt', {
                 this.moveToBuy();
                 return this.postMsg('msg_put_code_'+Class.config('play_name'), code).data;
             });
-
+            this.onMsg('msg_Ddrnd_code', function (code){//自动匹配不同的号码列表进行消息转发
+                return this.postMsg('msg_Ddrnd_code_'+Class.config('play_name'), code).data;
+            });
             this.onMsg('msg_rnd_code', function (code){//自动匹配不同的号码列表进行消息转发
                 return this.postMsg('msg_rnd_code_'+Class.config('play_name'), code).data;
             });
@@ -487,6 +510,8 @@ Class('CodeList>Dlt_CodeList_dt', {
                  clearBtn: '#pt_clear',
                  rndSelect: '#pt_sel',
                  rndBtn: '#pt_jx',
+                 s1: '#pt_one',
+                 ddRnds:'#dd_jx',
                 yl:[{
                     xml: '/cpdata/omi/50/yilou/hmyl_fore_all.xml',
                     dom: '#pt_red i'
@@ -686,7 +711,7 @@ Class('CodeList>Dlt_CodeList_dt', {
             //子玩法导航
         
             PlayTabs_def = this.lib.Tabs({
-                items:'#playTabsDd .ssq',
+                items:'#playTabsDd [bet]',
                 contents:'#pttz,#dttz,#dssc',
                 focusCss: 'cur'
             });
