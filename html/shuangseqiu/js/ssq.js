@@ -196,7 +196,18 @@ Class('CodeList>CodeList_dt', {
                    
                }               
            }
-       })
+       });
+    /*   Y.get('#dd_jx').click( function() {
+			var selected_num = Y.ball.data.length;
+			if (selected_num == 0) {
+				Y.postMsg('msg_show_dlg', '您好，请您至少选择一个胆码！');
+			} else if (selected_num > 6) {
+				Y.postMsg('msg_show_dlg', '您好，最多可选6个号码作为胆码！');
+			} else {
+				Y.randomDD(all_rnd_sel.val().replace("注","")*1);
+			}
+			return false;
+		} );*/
    },
 
     	liTpl:'<span class="span1">胆拖投注</span><span class="span2"> <b>({1}){2}</b> : <em>{3}</em> </span>'+
@@ -310,6 +321,9 @@ Class('CodeList>CodeList_dt', {
 
             this.onMsg('msg_rnd_code', function (code){//自动匹配不同的号码列表进行消息转发
                 return this.postMsg('msg_rnd_code_'+Class.config('play_name'), code).data;
+            });
+            this.onMsg('msg_Drnd_code', function (code){//自动匹配不同的号码列表进行消息转发
+                return this.postMsg('msg_Drnd_code_'+Class.config('play_name'), code).data;
             });
 
             this.onMsg('msg_clear_code', function (code){//自动匹配不同的号码列表进行消息转发
