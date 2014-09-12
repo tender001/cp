@@ -80,7 +80,8 @@
 			 	sb.append("<td>"+maps.get(Integer.parseInt(mid)).getBt()+"</td>");
 			 	sb.append("<td>"+maps.get(Integer.parseInt(mid)).getHn());
 			 	if (lotid.equalsIgnoreCase("85")){
-			 	sb.append("("+maps.get(Integer.parseInt(mid)).getClose()+")");
+			 		//double close = maps.get(Integer.parseInt(mid)).getClose();
+			 		//sb.append("("+close+")");
 			 	}
 			 	sb.append(" VS "+maps.get(Integer.parseInt(mid)).getGn()+"</td>");
 			 	String select ="";
