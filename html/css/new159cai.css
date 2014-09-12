@@ -2188,7 +2188,7 @@ a.sz_cmt{background: url(../images/cai888/nwx5_112.jpg);width:137px;height:33px}
 .xh_tonghua .pok dl.pok_tonghua{width:680px;margin:0 auto;}
 /*end 2014.8.11 时时彩更新*/
 /*双色球改版2014.9.3*/
-.se_main_top .p3 b em,.ball-right ul li b{background: url(../images/bg/shuangs/qiu.jpg) no-repeat;}
+.se_main_top b em,.ball-right ul li b{background: url(../images/bg/shuangs/qiu.jpg) no-repeat;}
 .se_main_top .p3 b s,.se_main_top .p3 i s,.choose-ball .ball-left s,.choose-btn b a.ball-btn,.choose-show .computer-btn a,.choose-show p span{background: url(../images/bg/shuangs/se_bg.png) no-repeat;}
 .se_main{width: 1000px;margin: 0 auto;overflow: visible;}
 .se_main_top{border-top: 4px solid #f60;}
@@ -2208,7 +2208,7 @@ a.sz_cmt{background: url(../images/cai888/nwx5_112.jpg);width:137px;height:33px}
 .se_main_top .p3 span em{display: inline-block;width: 21px;height: 24px;font: bold 16px/24px Arial;background-color: #444;border-radius: 3px;text-align: center;color: #0f0;}
 .se_main_top .p3 b{float: left;padding-left: 52px;font-weight: 400;_padding-top:8px;}
 .se_main_top .p3 b *{display: inline-block;}
-.se_main_top .p3 b em{width: 32px;height: 35px;margin-right: 4px;font: bold 16px/31px Arial;text-align: center;text-indent: -2px;color: #fff;background-position: -204px -11px;}
+.se_main_top b em{width: 32px;height: 35px;margin-right: 4px;font: bold 16px/31px Arial;text-align: center;text-indent: -2px;color: #fff;background-position: -204px -11px;}
 .se_main_top .p3 b em.blue{background-position: -237px -11px}
 .se_main_top .p3 b s{background-position: 0 0;width: 40px;height: 13px;cursor: pointer;position: relative;z-index: 101;}
 .se_main_top .nkj_tan{top: 116px;left: 454px;}
