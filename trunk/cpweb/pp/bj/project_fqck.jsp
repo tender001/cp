@@ -109,6 +109,13 @@ for (int j=0;j<cs.length;j++){
  				n2=TradeBJBeanImpl.getsp(spv,TradeBJBeanImpl.JQSSpMaps.get(TradeBJBeanImpl.JQSMaps.get(xz[i])))+"";	
  			} 
  		}
+ 		else if (playid.equalsIgnoreCase("46")){
+ 			if (TradeBJBeanImpl.getsp(spv,TradeBJBeanImpl.SFSpMaps.get(TradeBJBeanImpl.SFMaps.get(xz[i])))==null){
+ 				n2="--";	
+ 			}else{
+ 				n2=TradeBJBeanImpl.getsp(spv,TradeBJBeanImpl.SFSpMaps.get(TradeBJBeanImpl.SFMaps.get(xz[i])))+"";	
+ 			} 
+ 		}
 		else if (playid.equalsIgnoreCase("41")){	
  			if (TradeBJBeanImpl.getsp(spv,TradeBJBeanImpl.SXPSpMaps.get(TradeBJBeanImpl.SXPMaps.get(xz[i])))==null){
  				n2="--";	
