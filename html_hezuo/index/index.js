@@ -9,7 +9,11 @@ Class(
             focusCss: 'cur',
             contents: '#k1,#k2,#k3',
             delay: 300
-        });           
+        });  
+		$(".sy_gg ul li").mouseover(function(){
+            $(this).addClass("cur").siblings().removeClass("cur");
+            $(".gg_main div").eq($(".sy_gg ul li").index(this)).show().siblings().hide();
+        });    		
     	this.red = [];
         this.blue = [];
         var lotid="01";
