@@ -522,7 +522,7 @@ Class('CodeList>Dlt_CodeList_dt', {
                 red:{
                     items:'#pt_red b',
                     focusCss:'red',
-                    hoverCss:'b_r',
+                    hoverCss:'hover',
                     clearBtn: '#pt_red_clear',
                     rndSelect: '#pt_red_sel',
                     rndBtn:'#pt_red_jx'
@@ -530,7 +530,7 @@ Class('CodeList>Dlt_CodeList_dt', {
                 blue:{
                 	 items:'#pt_blue b',
                      focusCss:'blue',
-                     hoverCss:'b_l',
+                     hoverCss:'hover',
                      clearBtn: '#pt_blue_clear',
                      rndSelect: '#pt_blue_sel',
                      rndBtn:'#pt_blue_jx'
@@ -627,8 +627,8 @@ Class('CodeList>Dlt_CodeList_dt', {
                   putBtn: '#dt_put',
                   dtListOpts: '#dt_list_opts',
                   dtListRnd: '#dt_list_jx',
-                  rhoverCss:'b_r',
-                  bhoverCss:'b_l',
+                  rhoverCss:'hover',
+                  bhoverCss:'hover',
                 yl:[{
                     xml: '/cpdata/omi/50/yilou/hmyl_fore_all.xml',
                     dom:'#dt_dan i'
