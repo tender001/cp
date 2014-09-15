@@ -2164,7 +2164,7 @@ a.sz_cmt{background: url(../images/cai888/nwx5_112.jpg);width:137px;height:33px}
 .xh_tonghua .pok dl.pok_tonghua{width:680px;margin:12px auto 0;}
 /*end 2014.8.11 时时彩更新*/
 /*双色球改版2014.9.3*/
-.se_main_top b em,.ball-right ul li b{background: url(../images/bg/shuangs/qiu.jpg) no-repeat;}
+.se_main_top b em,.ball b{background: url(../images/bg/shuangs/qiu.jpg) no-repeat;}
 .se_main_top .p3 b s,.se_main_top .p3 i s,.choose-ball .ball-left s,.choose-btn b a.ball-btn,.choose-show .computer-btn a,.choose-show p span{background: url(../images/bg/shuangs/se_bg.png) no-repeat;}
 .se_main{width: 1000px;margin: 0 auto;overflow: visible;}
 .se_main_top{border-top: 4px solid #f60;}
@@ -2205,10 +2205,10 @@ a.sz_cmt{background: url(../images/cai888/nwx5_112.jpg);width:137px;height:33px}
 .ball-right .l{float: left;width: 520px;padding-right: 25px;border-right: 1px solid #ddd;}
 .ball-right .r{float: left;width: 285px;padding-left: 25px;}
 .ball-right ul li{float: left;width: 100%;}
-.ball-right ul li b{width: 44px;height: 44px;font: 400 18px/38px Arial;text-indent: 9px;color: #222;float: left;margin-right: 3px;background-position: 0 -8px;cursor: pointer;}
-.ball-right ul li b.hover{background-position: -52px -8px;}
-.ball-right ul li b.red{background-position: -108px -5px;color: #fff;}
-.ball-right ul li b.blue{background-position: -156px -5px;color: #fff;}
+.ball b{float: left;width: 44px;height: 44px;font: 400 18px/38px Arial;text-indent: 9px;color: #222;margin-right: 3px;background-position: 0 -8px;cursor: pointer;}
+.ball b.hover{background-position: -52px -8px;}
+.ball b.red{background-position: -108px -5px;color: #fff;}
+.ball b.blue{background-position: -156px -5px;color: #fff;}
 .ball-right ul li i{width: 44px;height: 24px;line-height: 24px;float: left;margin-right: 3px;text-indent: 11px;color: #b8b1c2;}
 .ball-right p{padding-top: 12px;}
 .ball-right p span,.ball-right p em{height: 18px;line-height: 18px;display: inline-block;*display: inline;*zoom: 1;padding: 0 5px;border: 1px solid #ddd;background-color: #fefefe;cursor: pointer;}
