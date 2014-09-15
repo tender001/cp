@@ -456,9 +456,9 @@ Class('App', {
 		return rest;
 	/*}*/
     	$("#yxzx_area b").mouseover(function(){
-    	  	$(this).addClass("b_r").siblings().removeClass("b_r");
+    	  	$(this).addClass("hover").siblings().removeClass("hover");
     	  }).mouseout(function(){
-    	  	$(this).removeClass("b_r");
+    	  	$(this).removeClass("hover");
     	  });
 
     },
@@ -484,8 +484,8 @@ Class('App', {
             msgid:'s'+Class.C('lot_sub')[107][3],
             group: '#yxzx_area .nsopr b',
             items: '#yxzx_area span.nsbool b',
-            focusCss: 'cur',
-            hoverCss: '',
+            focusCss: 'red',
+            hoverCss: 'hover',
             showbar: '#showbar_107',
             put: '#put_107',
             clear:'#clear_107',
@@ -502,8 +502,8 @@ Class('App', {
             dxds:false,
             noGroup:true,
             group: '#exzx_area .nsopr b',
-            focusCss: 'cur',
-            hoverCss: '',
+            focusCss: 'red',
+            hoverCss: 'hover',
             showbar: '#showbar_106',
             clear:'#clear_106',
             put: '#put_106'
@@ -517,8 +517,8 @@ Class('App', {
             group: '#exzx_area .nsopr b',
             dxds:false,
             noGroup:true,
-            focusCss: 'cur',
-            hoverCss: '',
+            focusCss: 'red',
+            hoverCss: 'hover',
             showbar: '#showbar_105',
             clear:'#clear_105',
             put: '#put_105'
@@ -533,8 +533,8 @@ Class('App', {
 //        	 group: '#wxzx_area .nsopr b',
         	 dxds:false,
              noGroup:true,
-             focusCss: 'cur',
-             hoverCss: '',
+             focusCss: 'red',
+             hoverCss: 'hover',
              showbar: '#showbar_104',
              clear:'#clear_104',
              put: '#put_104'
@@ -549,8 +549,8 @@ Class('App', {
 //            group: '#wxtx_area .nsopr b',
        	    dxds:false,
             noGroup:true,
-            focusCss: 'cur',
-            hoverCss: '',
+            focusCss: 'red',
+            hoverCss: 'hover',
             showbar: '#showbar_124',
             clear:'#clear_124',
             put: '#put_124'
@@ -563,8 +563,8 @@ Class('App', {
             rangeNum: 18,
             items: '#exzxhz_area span.nsbool b',
             dxds:false,
-       	    focusCss: 'cur',
-            hoverCss: '',
+       	    focusCss: 'red',
+            hoverCss: 'hover',
             showbar: '#showbar_118',            
             clear:'#clear_118',
             put: '#put_118'
@@ -575,8 +575,8 @@ Class('App', {
         this.lib.Dxds({
             items: '#dxds_area .nxds .nxdsc',
             dxds:true,
-            focusCss: 'cur',
-            hoverCss: '',
+            focusCss: 'red',
+            hoverCss: 'hover',
             noGroup: false,
             maxLength: 1,
             showbar: '#showbar_111',
@@ -590,8 +590,8 @@ Class('App', {
         	maxLength: 8,
         	items: '#sxzxl_area p b',
         	group: '#sxzxl_area p em',
-        	focusCss: 'cur',
-            hoverCss: '',
+        	focusCss: 'red',
+            hoverCss: 'hover',
             showbar: '#showbar_146',
             clear:'#clear_146',
             put: '#put_146'
@@ -602,8 +602,8 @@ Class('App', {
         this.lib.Single({
             items: '#sxzsbh_area p b',
             group: '#sxzsbh_area p em',
-            focusCss: 'cur',
-            hoverCss: '',
+            focusCss: 'red',
+            hoverCss: 'hover',
             showbar: '#showbar_145',         
             clear:'#clear_145',
             put: '#put_145'
@@ -616,8 +616,8 @@ Class('App', {
             maxLength: 6,
             items: '#exzux_area span.nsbool b',
             group: '#exzux_area .nsopr b',
-       	    focusCss: 'cur',
-            hoverCss: '',
+       	    focusCss: 'red',
+            hoverCss: 'hover',
             showbar: '#showbar_116',
             clear:'#clear_116',
             put: '#put_116'
