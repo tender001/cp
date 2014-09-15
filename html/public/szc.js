@@ -2306,8 +2306,8 @@
         index:function (ini){
             var hoverCss, focusCss, Y, showbar, startNum;
             Y = this;
-            hoverCss = ini.hoverCss || '';
-            focusCss = ini.focusCss || 'cur';
+            hoverCss = ini.hoverCss || 'hover';
+            focusCss = ini.focusCss || 'red';
             this.balls = [];
             this.addNoop('onchange');
             showbar = this.get(ini.showbar);
