@@ -22,7 +22,8 @@
 .m_l1 li span s{width: 20px;height: 20px; display: inline-block;margin-right:3px;background-position: -2px -88px;vertical-align: middle;}
 .m_l1 li.sz span s{background-position: -23px -88px;}
 .m_l1 li.kp span s{background-position: -44px -88px;}
-.m_l1 li dl{overflow: hidden;margin-bottom: 8px;zoom:1;}
+.m_l1 li dl{margin-bottom: 8px;zoom:1;}
+.m_l1 li dl:after{visibility:hidden;display:block;font-size:0;content:" ";clear:both;}
 .m_l1 dt,.m_l1 dd{float: left;line-height: 22px;}
 .m_l1 dt{width:40px;font-weight: bold;color: #585858;}
 .m_l1 dd{width:150px;}
