@@ -893,9 +893,9 @@ Class('App', {
         Y.exportCode();
         Y.get("#zh_bs_big").val(1);
         $("#renxuan b").mouseover(function(){
-        	$(this).addClass("b_r").siblings().removeClass("b_r");
+        	$(this).addClass("hover").siblings().removeClass("hover");
         }).mouseout(function(){
-        	$(this).removeClass("b_r");
+        	$(this).removeClass("hover");
         });
        
 		
@@ -1095,8 +1095,8 @@ Class('App', {
         this.lib.Single({
             items: '#renxuan b',
             group: '#ballsingle b',
-            focusCss: 'cur',
-            hoverCss: 'b_r',
+            focusCss: 'red',
+            hoverCss: 'hover',
             showbar: '#single_bar',
             put: '#s1_put',
             clear:'#s1_clear',
