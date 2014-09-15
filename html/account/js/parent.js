@@ -3,7 +3,7 @@ $(function(){
 	loadSI();	
 	$("#td_myrate").click(function(){		
 		Y.postMsg('msg_login', function (){
-			Y.openUrl('/account/myrate.html',807,580);
+			Y.openUrl('/account/myrate.html',807,620);
 		});
 	});
 	
@@ -218,7 +218,7 @@ var showInfo = function(stime,etime,pn,ps,tp,tr,owner){
 //
 function fandian(uid){
 	Y.postMsg('msg_login', function (){
-		Y.openUrl('/account/shezhi.html?uid='+uid,807,580);
+		Y.openUrl('/account/shezhi.html?uid='+uid,807,620);
 	});
 };
 
