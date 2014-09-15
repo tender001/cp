@@ -836,9 +836,9 @@
                         iszj2: param.lotid == 50 ? '<td>'+(this.C('price') > 2 ? '是' : '否')+'</td>' : '',
                         expect: param.expect,
                         play: this.getPlayText(),
-                        zhushu: param.zhushu,
+                        zhushu: 1,
                         beishu: param.beishu,
-                        allmoney: param.totalmoney.rmb(),
+                        allmoney: 2,
                         unitmoney: (param.totalmoney/ param.allnum).rmb(),
                         buymun: param.buynum,
                         buyscale: (param.buynum/param.allnum*100).toFixed(2),
@@ -1152,7 +1152,7 @@
 		        				 gid:Class.C('lot_id'),// 游戏编号
 		        				 pid:param.expect,// 期次编号
 		        				 play:1,// 玩法编号
-		        				 codes:param.codes,
+		        				 codes:"1,1,7:2:3",
 		        				 muli:param.beishu,// 投注倍数
 		        				 fflag:0,// 是否文件
 		        				 type:0,// 方案类型
@@ -1173,15 +1173,17 @@
 		        				 gid:Class.C('lot_id'),// 游戏编号
 		        				 pid:param.expect,// 期次编号
 		        				 play:1,// 玩法编号
-		        				 codes:param.codes,
-		        				 muli:param.beishu,// 投注倍数
+		        				 codes:"1,1,7:2:3",
+		        				 muli:1,// 投注倍数
 		        				 fflag:0,// 是否文件
 		        				 type:param.ishm,// 方案类型
 		        				 name:param.title,// 方案标题
 		        				 desc:param.content,// 方案描叙
-		        				 money:param.totalmoney,// 方案金额
-		        				 tnum:param.allnum,// 方案份数
-		        				 bnum:param.buynum,// 购买份数
+		        				 money:2,// 方案金额
+		        				 tnum:1,// 方案份数
+		        				 bnum:1,// 购买份数
+		        				 zhushu:1,
+		        				 totalmoney:2,
 		        				 pnum:param.isbaodi==1?param.baodinum:0,// 保底份数
 		        				 oflag:param.isshow,// 公开标志
 		        				 wrate:param.tc_bili,// 提成比率
@@ -1194,35 +1196,35 @@
 	             
 	             param = param_new;      
              }
-             this.ajax({
-                 url: url,
-                 type: 'POST',
-                 data: param,
-                 retry: 1,
-                 dataType : "json",
-                 end:function (data){
-                	var obj = eval("(" + data.text + ")");
- 					var code = obj.Resp.code;
- 					var desc = obj.Resp.desc; 
-        			Y.alert.close();
-        			if (code == "0") {        			
-        				if (param.ischase==1){
-        					var r = obj.Resp.zhuihao;			
-            				var projid = r.id;
-            				this.buySucceedDlg(param.gid,projid,1);
-        				}else{
-        					var r = obj.Resp.result;			
-            				var projid = r.projid;
-            				var balance = r.balance;
-            				this.buySucceedDlg(param.gid,projid);
-        				}
-        				this.postMsg('msg_buy_succeed');
-        				this.postMsg('msg_update_userMoney');
-        			} else {
-        				this.postMsg('msg_show_dlg', desc);
-        			}
-                 }
-             });                
+					             this.ajax({
+						url : url,
+						type : 'POST',
+						data : "gid=53&pid=2014226&play=1&codes=1,1,7:2:3&muli=1&fflag=0&type=1&name=胜负彩复式合买，欢迎跟单。&desc=&money=2&tnum=2&bnum=1&pnum=0&oflag=1&wrate=2&comeFrom=&source=&endTime=",
+						retry : 1,
+						dataType : "json",
+						end : function(data) {
+							var obj = eval("(" + data.text + ")");
+							var code = obj.Resp.code;
+							var desc = obj.Resp.desc;
+							Y.alert.close();
+							if (code == "0") {
+								if (param.ischase == 1) {
+									var r = obj.Resp.zhuihao;
+									var projid = r.id;
+									this.buySucceedDlg(param.gid, projid, 1);
+								} else {
+									var r = obj.Resp.result;
+									var projid = r.projid;
+									var balance = r.balance;
+									this.buySucceedDlg(param.gid, projid);
+								}
+								this.postMsg('msg_buy_succeed');
+								this.postMsg('msg_update_userMoney');
+							} else {
+								this.postMsg('msg_show_dlg', desc);
+							}
+						}
+					});                
          }
     });
     
@@ -1432,7 +1434,7 @@
 				var code=row.code.split(",");
 				var html='';
 				for(var i=0;i<code.length;i++){
-					html+='<b>'+code[i]+'</b>';
+					html+='<em>'+code[i]+'</em>';
 				}
 				$("#kjopcode").html(html);
 			}else if (row.gid=='53'){	
@@ -1442,7 +1444,7 @@
 				var code=row.code.split(",");
 				var html='';
 				for(var i=0;i<code.length;i++){
-					html+='<b>'+code[i]+'</b>';
+					html+='<em>'+code[i]+'</em>';
 				}
 				$("#kjopcode").html(html);
 			}else if (row.gid=='52'){	
@@ -1452,7 +1454,7 @@
 				var code=row.code.split(",");
 				var html='';
 				for(var i=0;i<code.length;i++){
-					html+='<b>'+code[i]+'</b>';
+					html+='<em>'+code[i]+'</em>';
 				}
 				$("#kjopcode").html(html);
 			}else if (row.gid=='07'){	
@@ -1464,10 +1466,10 @@
 				var blue =code[1].split(",");
 				var html='';
 				for(var i=0;i<org.length;i++){
-					html+='<b>'+org[i]+'</b>';
+					html+='<em>'+org[i]+'</em>';
 				}
 				for(var i=0;i<blue.length;i++){
-					html+='<b class="blue">'+blue[i]+'</b>';
+					html+='<em class="blue">'+blue[i]+'</em>';
 				}				
 				$("#kjopcode").html(html);		
 				Y.getInt(row.pools) > 0 ? ($("#gc").html((row.pools == '' ? "--" : parseFloat(row.pools).rmb(false, 0)))):'';
@@ -1478,7 +1480,7 @@
 				var code=row.code.split(",");
 				var html='';
 				for(var i=0;i<code.length;i++){
-					html+='<b>'+code[i]+'</b>';
+					html+='<em>'+code[i]+'</em>';
 				}
 				$("#kjopcode").html(html);
 				Y.getInt(row.pools) > 0 ? ($("#gc").html((row.pools == '' ? "--" : parseFloat(row.pools).rmb(false, 0)))):'';
