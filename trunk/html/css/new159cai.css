@@ -2031,7 +2031,7 @@ a.sz_cmt{background: url(../images/cai888/nwx5_112.jpg);width:137px;height:33px}
 .w_con .nxhm span{height: auto;margin-left: 20px;padding:0 !important;zoom:1;}
 .w_con .nxhm span:after{visibility:hidden;display:block;font-size:0;content:" ";clear:both;height: 0;}
 .w_con .nxsd{display: none;}
-.w_con .nsbool b,.w_con .nsbool b.cur{width: 60px; height: 80px;background-position: 0 -36px;text-align: left;text-indent: 10px;font-size: 22px;border-radius:4px;}
+.w_con .nsbool b,.w_con .nsbool b.cur{width: 60px; height: 80px;background-position: 0 -36px;text-align: left;text-indent: 10px;font-size: 26px;border-radius:4px;}
 .w_con .nsbool b{margin-right: 11px;color: #333;font-weight:400;font-family:  "Microsoft Yahei","Hiragino Sans GB",tahoma,arial;box-shadow: 2px 2px 5px rgba(0,0,0,.3);}
 .w_con .nsbool b.b_r{box-shadow: 0 0 15px rgba(0,0,0,0.3);background-position: -61px -36px;}
 .w_con .nsbool b.cur{position: relative;top: -16px;left: 0;color: #333;background-position: -61px -36px;}
@@ -2201,9 +2201,10 @@ a.sz_cmt{background: url(../images/cai888/nwx5_112.jpg);width:137px;height:33px}
 .se_main_top .p1 b a.cur{background-color: #f60;font-weight: 700;color: #fff;}
 .se_main_top .p1 em{float: right;padding-right: 16px;}
 .se_main_top .p1 em a{margin: 0 7px;}
-.se_main_top .p2,.se_main_top .p3{width: 956px;margin: 0 auto;padding: 0 21px;color: #333;}
-.se_main_top .p2{height: 35px;line-height: 35px;background-color: #f5f5f5;border: 1px solid #ccc;border-width: 1px 0;}
-.se_main_top .p2 i{float: right;}
+.se_main_top .p2,.se_main_top .p3,.paiwu-p2{width: 956px;margin: 0 auto;padding: 0 21px;color: #333;}
+.se_main_top .p2,.paiwu-p2{height: 35px;line-height: 35px;background-color: #f5f5f5;border: 1px solid #ccc;border-width: 1px 0;}
+.paiwu-p2{border-top: 0;}
+.se_main_top .p2 i,.paiwu-p2 i{float: right;}
 .se_main_top .p3{height: 48px;line-height: 48px;border-bottom: 1px solid #ccc;}
 .se_main_top .p3 span{float: left;_padding-top:12px;}
 .se_main_top .p3 span em{display: inline-block;width: 21px;height: 24px;font: bold 16px/24px Arial;background-color: #444;border-radius: 3px;text-align: center;color: #0f0;}
