@@ -2385,13 +2385,21 @@ Class('openCodeList', {
                 this.get(li).html(omiss_arr[i]);
                 var c = String.zero(i + 1);
                 var ocodearr = (opencode_arr[0] + "").substr(1, 2) + "," + (opencode_arr[1] + "").substr(1, 2) + "," + (opencode_arr[2] + "").substr(1, 2);
-                if (ocodearr.indexOf(c) != -1) {
+                var clen=ocodearr.split(c).length;
+                if (clen=="2") {
                     c = (c * 1) + "";
                     this.get(li).html('<i>' + c.replace('1', 'A').replace('A1', 'J').replace('A2', 'Q').replace('A3', 'K').replace('A0', '10') + '</i>');
 
-                } else {
-                }
-            });
+                } else  if (clen=="3") {
+              	  c = (c * 1) + "";
+                  this.get(li).html('<s>' + c.replace('1', 'A').replace('A1', 'J').replace('A2', 'Q').replace('A3', 'K').replace('A0', '10') + '</s><s>' + c.replace('1', 'A').replace('A1', 'J').replace('A2', 'Q').replace('A3', 'K').replace('A0', '10') + '</s>');
+	            } else  if (clen=="4") {
+	          	  c = (c * 1) + "";
+	          	  c=c.replace('1', 'A').replace('A1', 'J').replace('A2', 'Q').replace('A3', 'K').replace('A0', '10');
+	              this.get(li).html('<cite>' + c + '</cite><cite>' + c + '</cite><cite>' + c + '</cite>');
+	        }else {
+	                }
+	            });
         }
 
     },
