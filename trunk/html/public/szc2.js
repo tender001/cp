@@ -2570,7 +2570,7 @@
         index:function (ini){
             var hoverCss, focusCss, Y, showbar, startNum;
             Y = this;
-            hoverCss = ini.hoverCss || '';
+            hoverCss = ini.hoverCss || 'hover';
             focusCss = ini.focusCss || 'red';
             this.balls = [];
             this.addNoop('onchange');
