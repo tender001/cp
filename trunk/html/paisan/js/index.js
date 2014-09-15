@@ -17,8 +17,8 @@ Class('Choose_base>Z6Choose',{
     index:function (ini){
         var hoverCss, focusCss, Y, showbar, startNum;
         Y = this;
-        hoverCss = '';
-        focusCss = 'cur';
+        hoverCss = 'hover';
+        focusCss = 'red';
         this.balls = [];
         this.addNoop('onchange');
         showbar = this.get(ini.showbar);
@@ -173,8 +173,8 @@ Class('Choose_base>HzChoose', {
     index:function (ini){
         var hoverCss, focusCss, Y, showbar;
         Y = this;
-        hoverCss = '';
-        focusCss = 'cur';
+        hoverCss = 'hover';
+        focusCss = 'red';
         this.addNoop('onchange');
         showbar = this.get(ini.showbar);
         this.ball = new this.lib.Choose({
