@@ -24,17 +24,17 @@ Class( 'myrate', {
 			 var gstr=['80','81','83','82',
 			 '90','93','91','92','70','72','98','99',
 			 '94','95','97','96','71',
-			 '85','89','86','87','88',
+			 '84','85','89','86','87','88',
 			 '50','51','53','52',
 			 '01','03','07',
-			 '54','56','04','20'];
+			 '54','56','04','20','58'];
 			 var fdstr = ['zc_sfc','zc_rj','zc_bq','zc_jq',
 			 'jc_spf','jc_jqs','jc_cbf','jc_bqc','jc_hh','jc_rspf','jc_gj','jc_gyj',
 			 'lc_sf','lc_rfsf','lc_dxf','lc_sfc','lc_hh',
-			 'dc_spf','dc_jqs','dc_cbf','dc_bqc','dc_sx',
+			 'dc_sfgg','dc_spf','dc_jqs','dc_cbf','dc_bqc','dc_sx',
 			 'tc_dlt','tc_qxc','tc_ps','tc_pw',
 			 'fc_ssq','fc_sd','fc_qlc',
-			 'kp_xw','kp_ydj','kp_ssc','kp_nssc'];
+			 'kp_xw','kp_ydj','kp_ssc','kp_nssc','kp_klpk'];
 			 if(!this.isArray(r)){r=new Array(r);}
 			 r.each(function(rt,o){
 			 // var cagentid = rt.cagentid;

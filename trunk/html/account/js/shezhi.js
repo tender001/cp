@@ -49,17 +49,17 @@ Class( 'shezhi', {
 					var gstr=['80','81','83','82',
 					          '90','93','91','92','70','72','98','99',
 					          '94','95','97','96','71',
-					          '85','89','86','87','88',
+					          '84','85','89','86','87','88',
 					          '50','51','53','52',
 					          '01','03','07',
-					          '54','56','04','20'];
+					          '54','56','04','20','58'];
 					var fdstr = ['zc_sfc','zc_rj','zc_bq','zc_jq',
 					               'jc_spf','jc_jqs','jc_cbf','jc_bqc','jc_hh','jc_rspf','jc_gj','jc_gyj',
 					               'lc_sf','lc_rfsf','lc_dxf','lc_sfc','lc_hh',
-					               'dc_spf','dc_jqs','dc_cbf','dc_bqc','dc_sx',
+					               'dc_sfgg','dc_spf','dc_jqs','dc_cbf','dc_bqc','dc_sx',
 					               'tc_dlt','tc_qxc','tc_ps','tc_pw',
 					               'fc_ssq','fc_sd','fc_qlc',
-					               'kp_xw','kp_ydj','kp_ssc','kp_nssc'];
+					               'kp_xw','kp_ydj','kp_ssc','kp_nssc','kp_klpk'];
 					
 					if(!this.isArray(r)){r=new Array(r);}
 					if(isdaili){
@@ -106,15 +106,15 @@ Class( 'shezhi', {
 		this._param.isdaili = this.need('#isdaili').prop('checked') ? "1" : "0";
 //		this._param.isdaili = "1";
 		//this._param.ty = this.need('#ty1').prop('checked') ? 1 : (this.need('#ty2').prop('checked') ? 0 : 1);
-		this._param.fid="80,81,83,82,90,93,91,92,70,72,98,99,94,95,97,96,71,85,89,86,87,88,50,51,53,52,01,03,07,54,56,04,20";
+		this._param.fid="80,81,83,82,90,93,91,92,70,72,98,99,94,95,97,96,71,84,85,89,86,87,88,50,51,53,52,01,03,07,54,56,04,20,58";
 		this._param.num="";
 		var inputs = ['zc_sfc','zc_rj','zc_bq','zc_jq',
 		               'jc_spf','jc_jqs','jc_cbf','jc_bqc','jc_hh','jc_rspf','jc_gj','jc_gyj',
 		               'lc_sf','lc_rfsf','lc_dxf','lc_sfc','lc_hh',
-		               'dc_spf','dc_jqs','dc_cbf','dc_bqc','dc_sx',
+		               'dc_sfgg','dc_spf','dc_jqs','dc_cbf','dc_bqc','dc_sx',
 		               'tc_dlt','tc_qxc','tc_ps','tc_pw',
 		               'fc_ssq','fc_sd','fc_qlc',
-		               'kp_xw','kp_ydj','kp_ssc','kp_nssc'];
+		               'kp_xw','kp_ydj','kp_ssc','kp_nssc','kp_klpk'];
 
 		var len = inputs.length;
 		for ( var i = 0; i < len; i++) {
@@ -350,10 +350,10 @@ Class( 'shezhi', {
 		var inputs1 = ['zc_sfc','zc_rj','zc_bq','zc_jq'];
 		var inputs2 = ['jc_spf','jc_jqs','jc_cbf','jc_bqc','jc_hh','jc_rspf','jc_gj','jc_gyj'];
 		var inputs3 = ['lc_sf','lc_rfsf','lc_dxf','lc_sfc','lc_hh'];
-		var inputs4 = ['dc_spf','dc_jqs','dc_cbf','dc_bqc','dc_sx'];
+		var inputs4 = ['dc_sfgg','dc_spf','dc_jqs','dc_cbf','dc_bqc','dc_sx'];
 		var inputs5 = ['fc_ssq','fc_sd','fc_qlc'];
 		var inputs6 = ['tc_dlt','tc_qxc','tc_ps','tc_pw'];	
-		var inputs7 = ['kp_xw','kp_ssc','kp_nssc','kp_ydj','kp_gdxw','kp_ks'];
+		var inputs7 = ['kp_xw','kp_ssc','kp_nssc','kp_ydj','kp_gdxw','kp_ks','kp_klpk'];
 		
 		if(type=="1" || type=="8"){
 			var len1 = inputs1.length;
