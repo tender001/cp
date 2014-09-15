@@ -45,7 +45,7 @@
 .redball b{width:39px;height:41px; background-position:-7px -3px;font-size:20px;color:#222;line-height:41px;margin-right:8px;cursor:pointer}
 .redball b:hover{ background-position:-50px -5px}
 .redball b.red{ background-position:-95px -7px;color:#fff}
-.redball b.red:hover{ background-position:-95px -7px;color:#fff}
+.redball b.red{ background-position:-95px -7px;color:#fff}
 .redball i{width:39px;line-height:27px;color:#aaa;text-align:Center;margin-right:8px;dsiplay:block;float:left}
 .opera{clear:both;padding-top:7px;line-height:22px;color:#000;height:22px}
 .opera select{width:40px;float:left;height:20px;border:1px solid #bbb;color:#333}
