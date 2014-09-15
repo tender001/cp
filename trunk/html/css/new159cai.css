@@ -917,8 +917,8 @@ span.suc_reg  font{font-size:16px;color:#790500;font-weight:bold}
 .success_reg p.p1 a{color:#145fab;margin: 0 10px}
 .success_reg p.p1 a:hover{color:#790500; text-decoration:underline}
 span.suc_reg{background:url(../images/cdbg/cd_bg_07.gif) no-repeat scroll left 2px ;padding-left:60px}
-.redball ul.blue b.blue,.redball ul.blue b.blue:hover{background-position:-191px -5px}
-.redball ul.blue b:hover{background-position:-143px -5px}
+.redball ul.blue b.blue,.redball ul.blue b.blue{/*background-position:-191px -5px*/}
+.redball ul.blue b:hover{/*background-position:-143px -5px*/}
 .x_xq_t1 b{background-position: -189px -83px;}
 .x_xq_t1 b.blue{background-position: -190px -43px;}
 .nxtable tr td.tdhx{border-right:1px solid #ddd;}
@@ -2208,7 +2208,7 @@ a.sz_cmt{background: url(../images/cai888/nwx5_112.jpg);width:137px;height:33px}
 .ball b{float: left;width: 44px;height: 44px;font: 400 18px/38px Arial;text-align: center;text-indent: -5px;color: #222;margin-right: 3px;background-position: 0 -8px;cursor: pointer;}
 .ball b.hover{background-position: -52px -8px;}
 .ball b.red{background-position: -108px -5px;color: #fff;}
-.ball b.blue{background-position: -156px -5px;color: #fff;}
+.ball b.blue{background-position: -156px -5px !important;color: #fff;}
 .ball-right ul li i{width: 44px;height: 24px;line-height: 24px;float: left;margin-right: 3px;text-indent: 11px;color: #b8b1c2;}
 .ball-right p{padding-top: 12px;}
 .ball-right p span,.ball-right p em{height: 18px;line-height: 18px;display: inline-block;*display: inline;*zoom: 1;padding: 0 5px;border: 1px solid #ddd;background-color: #fefefe;cursor: pointer;}
