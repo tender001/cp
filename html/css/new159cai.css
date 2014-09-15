@@ -1966,6 +1966,7 @@ a.sz_cmt{background: url(../images/cai888/nwx5_112.jpg);width:137px;height:33px}
 .w_con .nwx5time span.span3{width: 240px;}
 .w_con .nwx5time font{color: #efd41f;}
 .span4-pok em{float:left;width: 28px;height: 37px;line-height: 22px;color: #e03537;background: url(../images/ssc_bg/xlpk3.png) no-repeat;}
+.w-happypk .span4-pok em{margin-right: 8px;}
 /*.w_con .nwx5time em.c1{background-position: 0 0;}
 .w_con .nwx5time em.c2{background-position: -27px 0;}
 .w_con .nwx5time em.c3{background-position: -54px 0;color: #000;}
@@ -2156,7 +2157,7 @@ a.sz_cmt{background: url(../images/cai888/nwx5_112.jpg);width:137px;height:33px}
 .pok dl.pok_hua dd small{display: block;width: 37px;height: 38px;margin: 40px auto 0;background: url(../images/ssc_bg/poker_ico.png);}
 .pok dl.pok_hua dd small.d1{background-position: -38px 0;}
 .pok dl.pok_hua dd small.d2{background-position: -75px 0;width: 40px;}
-.pok dl.pok_hua dd small.d3{background-position: -114px 0;}
+.pok dl.pok_hua dd small.d3{background-position: -116px 0;}
 .pok dl.pok_hua dd.dd1{background: url(../images/ssc_bg/pok_bg.png) 0 0;}
 .pok dl.pok_hua dd.dd1.cur,.pok dl.pok_hua dd.dd1:hover{background: url(../images/ssc_bg/pok_bg.png) -99px 0;}
 .pok dl.pok_yl dt{background:  url(../images/ssc_bg/poker_ico.png) -102px -57px no-repeat;}
