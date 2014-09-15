@@ -138,7 +138,35 @@ tr:hover td{background-color: #fffee6;}
 .hm table td a:hover{text-decoration: underline;}
 .hm table td a.x_xq{color: #fff;padding: 3px 5px;background-color: #f60;text-decoration: none;outline: none;}
 .hm table td a.buy{width: 45px;height: 20px;line-height: 20px;display: block;background-color: #f60;color: #fff;margin: auto;}
+b.jj{display:inline-block;width:19px;height:19px;margin-left:4px; background:url(http://www.159cai.com/images/hm/hm2_07.gif) 0 0 no-repeat;margin-top:5px}
+b.b1{ background-position:-1px -1px}
+b.b2{ background-position:-27px -1px}
+b.b3{ background-position:-54px -1px}
+b.b4{ background-position:-81px -1px}
+b.b5{ background-position:-108px -1px}
+b.b6{ background-position:-135px -1px}
+b.b7{ background-position:-162px -1px}
+b.b8{ background-position:-189px -1px}
+b.b9{ background-position:-221px -1px}
+b.b1_1{ background-position:-1px -32px}
+b.b1_2{ background-position:-30px -32px}
+b.b1_3{ background-position:-57px -32px}
+b.b1_4{ background-position:-84px -32px}
+b.b1_5{ background-position:-111px -32px}
+b.b1_6{ background-position:-138px -32px}
+b.b1_7{ background-position:-165px -32px}
+b.b1_8{ background-position:-192px -32px}
+b.b1_9{ background-position:-219px -32px}
+b.b2_1{ background-position:-1px -64px}
+b.b2_2{ background-position:-29px -64px}
 
+b.b2_3{ background-position:-56px -64px}
+b.b2_4{ background-position:-84px -64px}
+b.b2_5{ background-position:-112px -64px}
+b.b2_6{ background-position:-139px -64px}
+b.b2_7{ background-position:-164px -64px}
+b.b2_8{ background-position:-191px -64px}
+b.b2_9{ background-position:-223px -64px}
 /*焦点赛事*/
 .foc{width: 218px;float: left;}
 .foc .body{width: 92%;margin: 0 auto;}
