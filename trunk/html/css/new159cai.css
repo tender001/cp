@@ -1893,7 +1893,7 @@ a.n_gz{color:#fff}
 .nwx5time font{color:#ff6600;font-weight:bold;}
 .nwx5time span{display:block;float: left;color:#333;line-height:30px;}
 .nwx5time span.span1{/*width:220px;*/}
-.nwx5time span.span2{padding:0 118px 0 10px;}
+.nwx5time span.span2{padding:0 50px 0 10px;}
 .nwx5time span.span4{padding:0 152px 0 0}
 .nwx5time span.span2 b{font-size:36px;font-weight:bold;font-family:"Arial";}
 .nwx5time span.span5{width:78px;height:30px;line-height:30px;border:1px solid #ccc;border-bottom:none;padding-left:10px;background:#fde8d8  url(../images/cai888/nwx5_07.jpg) 66px 10px no-repeat;cursor:pointer;margin-top:5px}
@@ -2208,6 +2208,8 @@ a.sz_cmt{background: url(../images/cai888/nwx5_112.jpg);width:137px;height:33px}
 .se_main_top .p3 span em{display: inline-block;width: 21px;height: 24px;font: bold 16px/24px Arial;background-color: #444;border-radius: 3px;text-align: center;color: #0f0;}
 .se_main_top .p3 b{float: left;padding-left: 52px;font-weight: 400;_padding-top:8px;}
 .se_main_top .p3 b *{display: inline-block;}
+.numcai .se_main_top b{font-weight: 400;}
+.numcai .se_main_top b *{display: inline-block;vertical-align: middle;}
 .se_main_top b em{width: 32px;height: 35px;margin-right: 4px;font: bold 16px/31px Arial;text-align: center;text-indent: -2px;color: #fff;background-position: -204px -11px;}
 .se_main_top .p3 b em.blue{background-position: -237px -11px}
 .se_main_top .p3 b s{background-position: 0 0;width: 40px;height: 13px;cursor: pointer;position: relative;z-index: 101;}
@@ -2363,8 +2365,8 @@ col.ie_w{*width:62px;}
 .numcount td{text-align:Center;color:#444}
 .numcount tr.tr1 td{background:#fde8d8;height:34px;line-height:34px;border-bottom:1px solid #ccc;font-weight:bold;font-size:14px;}
 .numcount2{width: 209px; float: right;z-index:98;top:130px;left:790px;position:absolute;}
-.numcount3{width: 209px; float: right;z-index:98;top:140px;left:752px;position:absolute;width: 247px;}
-.numcount4{width: 209px; float: right;z-index:98;top:140px;left:752px;position:absolute;width: 247px;}
+.numcount3{float: right;z-index:98;top:140px;left:752px;position:absolute;width: 247px;}
+.numcount4{float: right;z-index:98;top:140px;left:752px;position:absolute;width: 247px;}
 .numcount2 tr td{border-bottom:1px dashed #ddd;}
 .numcount3 tr td{border-bottom:1px dotted #ddd}
 .ncdcol{width:210px;margin:0 auto;padding:10px 0}
