@@ -148,21 +148,21 @@
     begin
     */
     $("span.nsbool b").mouseover(function(){
-    	if($(this).attr("class")=="cur"){
+    	if($(this).attr("class")=="red"){
     		return false;
     	}else{
-    	$(this).addClass("b_r").siblings().removeClass("b_r");
+    	$(this).addClass("hover").siblings().removeClass("hover");
     	}
     });
     $("span.nsbool b").click(function(){
-    	if($(this).attr("class")=="b_r cur"){
-    		$(this).attr("class","cur");
+    	if($(this).attr("class")=="hover red"){
+    		$(this).attr("class","red");
     	}else{
-			$(this).attr("class","b_r");
+			$(this).attr("class","hover");
 		}
     });
     $("span.nsbool b").mouseout(function(){
-    	$(this).removeClass("b_r");
+    	$(this).removeClass("hover");
     });
     Class({
         use: 'tabs,dataInput,mask',
@@ -213,7 +213,7 @@
                 msgId: 'pt',
                 balls: '#pttz1 div.nx3span',
                 showbar: '#pt_showbar',
-                focusCss: 'cur',
+                focusCss: 'red',
                 putBtn: '#pt_put',
                 rndOpts:'#pt_jx_opts',
                 clearBtn:'#pt_clear',
