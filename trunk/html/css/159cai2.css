@@ -2184,7 +2184,7 @@ a.kc_sh{position:absolute;display:block;padding:0 12px;color:#fff; background-co
 .kc_td_kj table thead td{ color: #444;font-size: 14px;line-height:32px;text-align:center;background:#ECECEC;border-bottom:1px solid #ddd;}
 .kc_td_kj table tbody td{line-height:30px;color:#444;font-size:14px;text-align:center;}
 .kc_td_kj table tbody th{line-height:30px;color:#333;font-size:12px;text-align:center;font-weight:100;}
-.kc_td_kj table td,.kc_td_kj table th{border-right:1px solid #ddd}
+.kc_td_kj table td,.kc_td_kj table th{border-right:1px solid #ddd;border-bottom: 1px solid #ddd;}
 .gs_t{height:450px;overflow:auto}
 .gs_t p{line-height:25px;color:#444;font-size:12px;padding-left:20px;text-align:left}
 .gs_tp{padding:25px 20px  0 20px}
