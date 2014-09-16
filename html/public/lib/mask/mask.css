@@ -38,7 +38,7 @@ filter: progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Colo
 box-shadow: 2px 3px 4px #666;
 -moz-box-shadow: 2px 3px 4px #666;
 -webkit-box-shadow: 2px 3px 4px #666;
-background:#FFFFE1;border:1px solid #666666;padding:5px 10px;font:12px/1.5 verdana;-moz-border-radius:8px;-webkit-border-radius:8px;border-radius:8px;}
+background:#FFFFE1;border:1px solid #666666;padding:5px 9px;font:12px/1.5 verdana;-moz-border-radius:8px;-webkit-border-radius:8px;border-radius:8px;}
 .notifyicon h5{margin:0 0 3px 0;padding:0;font:bold 12px/1.5 verdana;}
 .notifyicon p{margin:0 0 10px 0;padding:0;text-indent:2em;}
 .notifyicon_content a{color:#4100FC}
