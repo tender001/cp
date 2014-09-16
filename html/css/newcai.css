@@ -122,7 +122,7 @@
 .last_megp a:hover{color:#ba1414; text-decoration:underline;}
 .last_megp input{vertical-align: -2px;_vertical-align: -1px;margin-right:4px}
 .last_megp strong{font-weight:bold;font-size:12px}
-.point_ts{width:930px;margin:10px auto;border-top:1px solid #ddd;padding-top:5px}
+.point_ts{width:930px;margin:10px auto;border-top:1px solid #ddd;padding-top:5px;}
 .point_ts h3{font-weight:bold;color:#000;font-size:14px;line-height:30px;padding-bottom:6px}
 .point_ts h3 a{margin-left:20px;color:#1e72c6;padding-bottom:6px;font-size:12px;font-weight:100}
 .point_ts p{line-height:24px;color:#666;}
