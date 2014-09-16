@@ -11,7 +11,7 @@ Class('CodeList>Dlt_CodeList', {
 大乐透普通选号
 */
 Class('Choose_pt>Dlt_Choose_pt',{
-    showTxt:'您选择了<b>{$dan}</b>个前区号码，<em>{$blue}</em>个后区号码，共<b>{$zhushu}</b>注，共<b>{$totalmoney}</b>元',
+    showTxt:'您选择了<span>{$dan}</span>个前区号码，<span>{$blue}</span>个后区号码，共<span>{$zhushu}</span>注，共<span>{$totalmoney}</span>元',
     leftNum: 5,
     rightNum: 2,
     leftMax: 35,
