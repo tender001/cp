@@ -112,9 +112,9 @@
 .nc_numhm{border:1px solid #ddd;border-top:none;margin: 0; background-color:#fff}
 .main_dga{width:180px;height:42px;margin:0 auto; background:#ff791f url(../images/bg/shuangs/se_bg.png) 0 -86px no-repeat;}
 /*.main_dga:hover{ background-position:-4px -261px}*/
-.main_dga1{width:132px;height:39px;margin:10px auto;display:block; background:  url(/images/newimg/newsa.jpg) -5px -4px}
+.main_dga1{width:132px;height:39px;margin:0 auto;display:block; background:  url(/images/newimg/newsa.jpg) -5px -4px}
 .main_dga1:hover{ background-position:-159px -4px}
-.main_dga2{width:132px;height:39px;margin:10px auto;display:block; background:  url(/images/newimg/newsa.jpg) -5px -72px}
+.main_dga2{width:132px;height:39px;margin:0 auto;display:block; background:  url(/images/newimg/newsa.jpg) -5px -72px}
 .main_dga2:hover{ background-position:-159px -72px}
 
 .last_megp{line-height:32px;color:#333;text-align:center;}

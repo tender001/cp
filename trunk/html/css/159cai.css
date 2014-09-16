@@ -1403,7 +1403,8 @@ td.btn_b{ background-image:url(../images/jc/lc_41.gif);color:#444;font-size:14px
 .xuan_z_k p input{width:45px;text-algin:center;color:#555;font-size:14px;height:23px;paddint-top:6px\9;height:17px\9}
 :root .xuan_z_k p input{padding-top:0;height:23px;margin:0 3ox;text-align:center}
 .xuan_z_k p font{color:#ff6600;font-size:16px;font-weight:bold;padding:0 5px}
-p.xytk{clear:both;line-height:30px;font-size:12px;text-align:center;color:#000;padding-top:10px}
+p.xytk{clear:both;width:725px;margin: 0 auto;padding-top:10px;font:12px/30px "宋体";text-align:center;color:#000;border: 1px solid #ddd;border-width: 0 1px;}
+p.xytk1{border-bottom: 1px solid #ddd;}
 p.xytk input{vertical-align: -2px;_vertical-align: -1px;margin-right:5px;}
 .jc_ds h2.step_s1{background:url(../images/jc/sds_03.gif) left center no-repeat;}
 .jc_ds h2.step_s2{background:url(../images/jc/sds_06.gif) left center no-repeat;}
@@ -1980,7 +1981,7 @@ p.zj_bt input.text{width:45px;border:1px solid #ddd;height:24px;text-align:cente
 html .b_th_top1 b{_height:20px;_padding:7px 0;}
 .b_th_top1 b.cur{border:1px solid #c3b7ab; background-color:#fff;margin-top:1px;height:28px;border-bottom:1px solid #fff;}
 .b_th_top1 input{vertical-align: -2px;_vertical-align: -1px;margin-right:3px}
-.b_th_cosz{width:675px;margin:0 auto;*zoom:1;border:1px solid #c3b7ab;border-top:none; position:relative;padding-bottom:25px}
+.b_th_cosz{width:725px;margin:0 auto;*zoom:1;border:1px solid #c3b7ab;border-top:none; position:relative;padding-bottom:25px}
 a.asz_tz{display:block; background:url(../images/cdbg/sz_07.png) -2px -253px no-repeat;width:90px;height:41px;color:#fff;font-size:16px;padding-left:45px;line-height:41px;margin:0 auto}
 a.asz_tz:hover{ background-position:-138px -253px}
 .dlt_m_right{width:245px;border-right:1px solid #ddd;border-bottom:1px solid #ddd;float:left; background-image:url(../images/cdbg/dltr.png)}
