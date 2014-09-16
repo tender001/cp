@@ -1701,6 +1701,10 @@
             this.hasKill = !!config.killCss;
             this.data = [];
             this.killData = [];
+            
+            
+            
+            
             this.addNoop('onchange, onbeforeselect');
             this.items.mousedown(function (e, Y){
                 var isUnselect, o;
@@ -2060,7 +2064,7 @@
             a = this.repeat(33, 1).remove(d); 
             //d = code = [];
             b = this.repeat(16, 1);
-            //tn = 6 - d.length;
+            tn = 6 - d.length;
             zs = Math.dt(d.length, tn, 6);
             for (var i = n; i--;) {
             	
@@ -2089,7 +2093,7 @@
             a = this.repeat(35, 1).remove(d); 
             //d = code = [];
             b = this.repeat(12, 1).remove(m);
-            //tn = 6 - d.length;
+            tn = 6 - d.length;
             zs = Math.dt(d.length, tn, 6);
             for (var i = n; i--;) {
             	
@@ -2988,7 +2992,7 @@
     				            $("#responseJson #serverTime").val(Y.getDate(d.date).format('YY-MM-DD hh:mm:ss'));
     							$("#responseJson #endTime").val(Y.getDate(et).format('YY-MM-DD hh:mm:ss'));
     							
-    							this.postMsg('msg_show_endtime_CountDown');
+//    							this.postMsg('msg_show_endtime_CountDown');
 //    							this.postMsg('msg_endtime_change', endtime, data.date);
     						} else {
     							this.alert(desc);
