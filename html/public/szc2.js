@@ -2187,7 +2187,7 @@
 //双色球选号器
     Class('Choose_base>Choose_pt', {
 //        showTxt:'[ 您选择了<font>{$dan}</font>个前区号码，<font>{$blue}</font>个后区号码，共<font>{$zhushu}</font>注，共计<font>元</font>]',
-        showTxt:'您选择了<b>{$dan}</b>个红球，<em>{$blue}</em>个蓝球，共<b>{$zhushu}</b>注，共<b>{$totalmoney}</b>元',
+        showTxt:'您选择了<span>{$dan}</span>个红球，<span>{$blue}</span>个蓝球，共<span>{$zhushu}</span>注，共<span>{$totalmoney}</span>元',
         noCodeMsg: '您好，请您至少选择6个红球和1个蓝球！',
         leftNum: 6,
         rightNum: 1,
