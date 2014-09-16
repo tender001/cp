@@ -2183,13 +2183,13 @@ a.sz_cmt{background: url(../images/cai888/nwx5_112.jpg);width:137px;height:33px}
 .se_main_top .p3{height: 48px;line-height: 48px;border-bottom: 1px solid #ccc;}
 .se_main_top .p3 span{float: left;_padding-top:12px;}
 /*.se_main_top .p3 span em{display: inline-block;width: 21px;height: 24px;font: bold 16px/24px Arial;background-color: #444;border-radius: 3px;text-align: center;color: #0f0;}*/
-.se_main_top .p3 span em{display: inline-block;*display:inline;*zoom: 1;width: 24px;height: 24px;padding: 0 3px;font: bold 24px/24px Arial;background-color: #fff;border-radius: 3px;text-align: center;color: #f60;}
+.se_main_top .p3 span em{display: inline-block;*display:inline;*zoom: 1;width: 24px;height: 24px;padding: 0 3px;font: bold 24px/24px Arial;background-color: #fff;border-radius: 3px;text-align: center;color: #f60;vertical-align: -4px;}
 .se_main_top .p3 b{float: left;padding-left: 52px;font-weight: 400;_padding-top:8px;}
 .se_main_top .p3 b *{display: inline-block;}
 .numcai .se_main_top b{font-weight: 400;}
 .numcai .se_main_top b *{display: inline-block;vertical-align: middle;}
 .ball_top cite,.ball_top i{font-weight: 700;font-style: normal;color: #f60;}
-.ball_top em{width: 32px;height: 35px;margin-right: 4px;font: bold 16px/31px Arial;text-align: center;text-indent: -2px;color: #fff;background-position: -204px -11px;}
+.ball_top em{width: 32px;height: 35px;margin-right: 4px;font: bold 16px/31px Arial;text-align: center;text-indent: -2px;color: #fff;background-position: -204px -11px;float: none;}
 .ball_top em.blue{background-position: -237px -11px}
 .se_main_top .p3 b s{background-position: 0 0;width: 40px;height: 13px;cursor: pointer;position: relative;z-index: 101;}
 .se_main_top .nkj_tan{top: 116px;left: 504px;}
