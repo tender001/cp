@@ -11,14 +11,11 @@
     <link href="/css/159cai.css" type="text/css" rel="stylesheet"/>
     <link href="/css/newcai.css" rel="stylesheet" type="text/css"/>
     <link href="/css/new159cai.css" rel="stylesheet" type="text/css"/>
-    <script type="text/javascript" src="/public/jq2.js"></script>
-    <script type="text/javascript" src="/public/jq.js"></script>
-    <script type="text/javascript" src="/public/menu.js"></script>
-    <script type="text/javascript" src="/public/159cp.js"></script>
-    <script type="text/javascript" src="/public/chklogin.js"></script>
-    <script type="text/javascript">
-
-    </script>
+    <!--<script type="text/javascript" src="/public/jq2.js"></script>-->
+    <!--<script type="text/javascript" src="/public/jq.js"></script>-->
+    <!--<script type="text/javascript" src="/public/menu.js"></script>-->
+    <!--<script type="text/javascript" src="/public/159cp.js"></script>-->
+    <!--<script type="text/javascript" src="/public/chklogin.js"></script>-->
 </head>
 <body>
 <!-- 头部内容 -->
@@ -406,6 +403,99 @@
         <p>由购买人自行全额购买彩票</p>
     </div>
 </div>
+<div class="set_result set_result2" style="background-color: #f5f5f5">
+    <div class="b_th_cosz nc_numhm" style="margin:0 auto">
+        <table width="100%" border="0" class="col_2" style="margin:10px 0 0 5px">
+            <tbody><tr>
+                <th>投注信息</th>
+                <td>总金额<font id="buyMoneySpan3">0</font>元</td>
+            </tr>
+            <tr>
+                <th>我要分成</th>
+                <td><p>每份<font id="fsMoney">1</font>元，共<font id="fsInput">0</font>份</p></td>
+            </tr>
+            <tr>
+                <th>我要认购</th>
+                <td><input type="text" class="text" id="rgInput" value="1">份，<font id="rgMoney">0</font>元，约<font id="rgScale">0.00%</font><font id="rgErr" style="display:none">至少需要认购3份</font></td>
+            </tr>
+            <tr>
+                <th></th>
+                <td><input type="checkbox" name="isbaodi" id="isbaodi"> 我要保底 <input type="text" class="text" value="0" disabled="disabled" id="bdInput">份，<font id="bdMoney">0</font>元，约<font id="bdScale">0.00%</font><font id="bdErr" style="display:none">最低保底20%</font>
+                </td>
+            </tr>
+            <tr>
+                <th>提成比例</th>
+                <td id="tc"><b class="first" value="0">无</b><b value="1">1%</b><b class="cur" value="2">2%</b><b value="3">3%</b><b value="4">4%</b><b value="5">5%</b><b value="6">6%</b><b value="7">7%</b><b value="8">8%</b><b value="9">9%</b><b value="10">10%</b></td>
+            </tr>
+            <tr>
+                <th>保密设置</th>
+                <td id="gkfs"><em value="0">完全公开</em><em class="cur" value="1">截止后公开</em><em value="2">仅对跟单者公开</em><em value="3">截止后对跟单者公开</em></td>
+            </tr>
+            <tr>
+                <th>可选选项</th>
+                <td><input type="checkbox" class="box" id="moreCheckbox">方案宣传选填信息</td>
+            </tr>
+            </tbody></table>
+        <div class="conduct_msg" style="padding-left:20px;_padding-left:10px;display:none;" id="case_ad">
+            <span class="fa">方案标题</span><input type="text" class="bt" id="caseTitle" value="双色球合买，欢迎跟单。"><span class="fa_play">最多可以输入<font>20</font>个字符。</span>
+            <span class="fa" style="clear:both">方案描述</span><textarea id="caseInfo">说点什么吧，让您的方案被彩民认可．．．</textarea><span class="fa_play">最多可以输入<font>200</font>个字符。</span>
+        </div>
+        <a id="buy_zh" class="main_dga2" href="javascript:void(0);"></a>
+    </div>
+</div>
+<!--追号-->
+<div class="news_tab " id="zh_form" style="display:block;background-color: #f5f5f5">
+    <div class="set_result set_result2">
+        <div class="b_th_cosz nc_numhm" style="margin:0 auto">
+            <p class="p_z_qs">
+                追号期数<select id="zh_opts" name="zh_opts">
+                <option checked="ture" value="10">追10期</option>
+                <option value="20">追20期</option>
+                <option value="30">追30期</option>
+                <option value="100">追更多期</option>
+            </select>
+            </p>
+            <p class="p_z_tz">
+                追号设置 <select id="tzzh" name="zhflag">
+                <option selected="" value="0">中奖后不停止</option>
+                <option value="1">中奖后停止</option>
+                <option value="2">盈利后停止</option>
+            </select>
+            </p>
+            <div class="x_zy">
+                <table width="100%" cellspacing="0" cellpadding="0" border="0" class="zh_tb_c">
+                    <colgroup>
+                        <col width="70">
+                        <col width="140">
+                        <col width="140">
+                        <col width="140">
+                        <col>
+                    </colgroup>
+                    <thead>
+                    <tr>
+                        <td>序号</td>
+                        <td class="tld">期号</td>
+                        <td>倍数</td>
+                        <td>金额</td>
+                        <td>开奖日期</td>
+                    </tr>
+                    </thead>
+                    <tbody id="zh_list">
+
+                    </tbody>
+                </table>
+            </div>
+            <div class="sz_line"></div>
+            <p class="red_pay">
+                本次投注金额为<font id="buyMoneySpan2">￥0.00</font>元
+            </p>
+
+            <!-- <a id="buy_zh" class="asz_tz" href="javascript:void(0);">我要追号</a> -->
+        </div>
+    </div>
+    <!--<div class="linetwo"></div>-->
+    <p class="xytk"><a id="buy_zh" class="main_dga2" href="javascript:void(0);"></a></p>
+</div>
     <p class="xytk w_se" id="userMoneyInfo">
         账户信息：您尚未登录，请先<a href="javascript:void(0);"
                         onclick="Yobj.postMsg('msg_login')">登录</a>后购买
@@ -414,153 +504,6 @@
     <div class="news_tab " id="dg_form">
         <a id="buy_dg" class="main_dga" href="javascript:void(0);"></a>
     </div>
-    <div class="news_tab " id="hm_form" style="display:none">
-        <div class="set_result set_result2">
-            <div class="b_th_cosz nc_numhm" style="margin:0 auto">
-                <!-- 					<table width="760" border="0" class="col_2" -->
-                <!-- 						style="margin: 10px 0 0 5px"> -->
-                <!-- 						<tr> -->
-                <!-- 							<th>投注信息</th> -->
-                <!-- 							<td>总金额<font>100</font>元 -->
-                <!-- 							</td> -->
-                <!-- 						</tr> -->
-                <!-- 						<tr> -->
-                <!-- 							<th>我要分成</th> -->
-                <!-- 							<td><p> -->
-                <!-- 									每份<font>1</font> 元，共<font>100</font>份 -->
-                <!-- 								</p></td> -->
-                <!-- 						</tr> -->
-                <!-- 						<tr> -->
-                <!-- 							<th>我要认购</th> -->
-                <!-- 							<td><input type="text" class="text" />份，<font>10</font>元，约10%</td> -->
-                <!-- 						</tr> -->
-                <!-- 						<tr> -->
-                <!-- 							<th>我要保底</th> -->
-                <!-- 							<td><input type="text" class="text" />份，<font>0</font>元，约0% -->
-                <!-- 								<input type="checkbox" class="box" /> 全额保底</td> -->
-                <!-- 						</tr> -->
-                <!-- 						<tr> -->
-                <!-- 							<th>中奖佣金</th> -->
-                <!-- 							<td><b class="first">无</b><b>1%</b><b class="cur">2%</b><b>3%</b><b>4%</b><b>5%</b><b>6%</b><b>7%</b><b>8%</b><b>9%</b><b>10%</b></td> -->
-                <!-- 						</tr> -->
-                <!-- 						<tr> -->
-                <!-- 							<th>保密设置</th> -->
-                <!-- 							<td><em>完全公开</em><em class="cur">截止后公开</em><em>仅对跟单者公开</em><em>截止后对跟单者公开</em></td> -->
-                <!-- 						</tr> -->
-                <!-- 						<tr> -->
-                <!-- 							<th>可选选项</th> -->
-                <!-- 							<td><input type="checkbox" class="box" />方案宣传选填信息</td> -->
-                <!-- 						</tr> -->
-                <!-- 					</table> -->
-                <table width="100%" border="0" class="col_2" style="margin:10px 0 0 5px">
-                    <tr>
-                        <th>投注信息</th>
-                        <td>总金额<font id="buyMoneySpan3">0</font>元</td>
-                    </tr>
-                    <tr>
-                        <th>我要分成</th>
-                        <td><p>每份<font id="fsMoney">1</font>元，共<font id="fsInput">0</font>份</p></td>
-                    </tr>
-                    <tr>
-                        <th>我要认购</th>
-                        <td><input type="text" class="text" id="rgInput" value="1"/>份，<font
-                                id="rgMoney">0</font>元，约<font
-                                id="rgScale">0.00%</font><font id="rgErr" style="display:none">至少需要认购3份</font></td>
-                    </tr>
-                    <tr>
-                        <th></th>
-                        <td><input type="checkbox" name="isbaodi" id="isbaodi"/> 我要保底 <input type="text" class="text"
-                                                                                             value="0"
-                                                                                             disabled="disabled"
-                                                                                             id="bdInput"/>份，<font
-                                id="bdMoney">0</font>元，约<font id="bdScale">0.00%</font><font id="bdErr"
-                                                                                             style="display:none">最低保底20%</font>
-                        </td>
-                    </tr>
-                    <tr>
-                        <th>提成比例</th>
-                        <td id="tc"><b class="first" value="0">无</b><b value="1">1%</b><b class="cur" value="2">2%</b><b
-                                value="3">3%</b><b value="4">4%</b><b value="5">5%</b><b value="6">6%</b><b
-                                value="7">7%</b><b
-                                value="8">8%</b><b value="9">9%</b><b value="10">10%</b></td>
-                    </tr>
-                    <tr>
-                        <th>保密设置</th>
-                        <td id="gkfs"><em value="0">完全公开</em><em class="cur" value="1">截止后公开</em><em
-                                value="2">仅对跟单者公开</em><em value="3">截止后对跟单者公开</em></td>
-                    </tr>
-                    <tr>
-                        <th>可选选项</th>
-                        <td><input type="checkbox" class="box" id="moreCheckbox"/>方案宣传选填信息</td>
-                    </tr>
-                </table>
-                <div class="conduct_msg" style="padding-left:20px;_padding-left:10px;display:none;" id="case_ad">
-                    <span class="fa">方案标题</span><input type="text" class="bt" id="caseTitle" value="双色球合买，欢迎跟单。"/><span
-                        class="fa_play">最多可以输入<font>20</font>个字符。</span>
-                    <span class="fa" style="clear:both">方案描述</span><textarea
-                        id="caseInfo">说点什么吧，让您的方案被彩民认可．．．</textarea><span
-                        class="fa_play">最多可以输入<font>200</font>个字符。</span>
-                </div>
-
-            </div>
-        </div>
-        <!--<div class="linetwo"></div>-->
-        <p class="xytk"><a id="buy_hm" class="main_dga1" href="javascript:void(0);"></a></p>
-    </div>
-    <div class="news_tab " id="zh_form" style="display:none;">
-        <div class="set_result set_result2">
-            <div class="b_th_cosz nc_numhm" style="margin:0 auto">
-                <p class="p_z_qs">
-                    追号期数<select id="zh_opts" name="zh_opts">
-                    <option checked="ture" value="10">追10期</option>
-                    <option value="20">追20期</option>
-                    <option value="30">追30期</option>
-                    <option value="100">追更多期</option>
-                </select>
-                </p>
-                <p class="p_z_tz">
-                    追号设置 <select id="tzzh" name="zhflag">
-                    <option selected="" value="0">中奖后不停止</option>
-                    <option value="1">中奖后停止</option>
-                    <option value="2">盈利后停止</option>
-                </select>
-                </p>
-                <div class="x_zy">
-                    <table width="100%" cellspacing="0" cellpadding="0" border="0"
-                           class="zh_tb_c">
-                        <colgroup>
-                            <col width="70"/>
-                            <col width="140"/>
-                            <col width="140"/>
-                            <col width="140"/>
-                            <col/>
-                        </colgroup>
-                        <thead>
-                        <tr>
-                            <td>序号</td>
-                            <td class="tld">期号</td>
-                            <td>倍数</td>
-                            <td>金额</td>
-                            <td>开奖日期</td>
-                        </tr>
-                        </thead>
-                        <tbody id="zh_list">
-
-                        </tbody>
-                    </table>
-                </div>
-                <div class="sz_line"></div>
-                <p class="red_pay">
-                    本次投注金额为<font id="buyMoneySpan2">￥0.00</font>元
-                </p>
-
-                <!-- <a id="buy_zh" class="asz_tz" href="javascript:void(0);">我要追号</a> -->
-            </div>
-        </div>
-        <!--<div class="linetwo"></div>-->
-        <p class="xytk"><a id="buy_zh" class="main_dga2" href="javascript:void(0);"></a></p>
-    </div>
-
     <p class="xytk xytk1">
         <input type="checkbox" checked="checked" id="agreement"/>我已阅读同意《<a
             href="/help/help_yffwxy.html" target="_blank">用户委托投注协议</a>》并同意其中的条款
