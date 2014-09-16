@@ -16,7 +16,7 @@ Class( 'shezhi', {
 		Class.config('uId', location.search.getParam('uid'));  //userid
 		Class.config('submitting', false);  //是否正在提交中
 		
-		this.get("#userid").html("用户["+Class.config('uId')+"]");
+		this.get("#setagent").html("用户["+Class.config('uId')+"]&nbsp&nbsp;推广佣金比率设置");
 		this.tjBtn = this.get('#tj_btn');
 		
 		this.showinfo();
