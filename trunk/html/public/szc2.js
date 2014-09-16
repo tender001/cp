@@ -2956,8 +2956,8 @@
     });
 //左侧图表
     Class.C('time_style', true);
-    Class.C('time_style_ctpl','<b>{1}</b>天<b>{2}</b>时<b>{3}</b>分');
-    Class.C('time_style_ctp2','<b>{2}</b>时<b>{3}</b>分<b>{4}</b>秒');
+    Class.C('time_style_ctpl','<em>{1}</em>天<em>{2}</em>时<em>{3}</em>分');
+    Class.C('time_style_ctp2','<em>{2}</em>时<em>{3}</em>分<em>{4}</em>秒');
     Class(
     		'Application',
     		{
