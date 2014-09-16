@@ -1095,8 +1095,8 @@ Class('App', {
         this.lib.Multi({
             items: '#q2zx span.nsbool',  //球
             group: '#ballMulti2 em',
-            focusCss: 'cur',
-            hoverCss: '',
+            focusCss: 'red',
+            hoverCss: 'hover',
             showbar: '#Multi_bar2',//奖金 盈利
             put: '#s2_put',//选好了
             clear:'#s2_clear',
@@ -1108,8 +1108,8 @@ Class('App', {
         this.lib.Multi({
             items: '#q3zx span.nsbool',
             group: '#ballMulti3 em',
-            focusCss: 'cur',
-            hoverCss: '',
+            focusCss: 'red',
+            hoverCss: 'hover',
             showbar: '#Multi_bar3',
             put: '#s3_put',
             clear:'#s3_clear',
