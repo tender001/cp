@@ -1864,14 +1864,14 @@ a.n_gz{color:#fff}
 .nwx5top a.cur b,.nwx5top a.cur span,.nwx5top a:hover b,.nwx5top a:hover span{color:#fff}
 .nwx5top em{float:left;width:134px;padding:6px 0 0 5px;line-height:18px;color:#333}
 .nwx5top em font{color:#e52e04;font-weight:100;float: right;font-size: 12px;}
-.nwx5time{border-bottom:1px solid #ccc;padding:20px 0 0 25px;height:35px}
+.nwx5time{height:35px;border-bottom:1px solid #ccc;padding:20px 0 0 25px;position: relative;}
 .nwx5time font{color:#f60;font-weight:bold;}
 .nwx5time span{float: left;color:#333;line-height:30px;}
 .nwx5time span.span1{/*width:220px;*/}
 .nwx5time span.span2{padding:5px 14px 0 0;}
 .nwx5time span.span4{padding:0 152px 0 0}
 .nwx5time span.span2 b{font-size:36px;font-weight:bold;font-family:Arial;}
-.nwx5time span.span5{width:78px;height:30px;line-height:30px;border:1px solid #ccc;border-bottom:none;padding-left:10px;background:#fde8d8  url(../images/cai888/nwx5_07.jpg) 66px 10px no-repeat;cursor:pointer;margin-top:5px}
+.nwx5time span.span5{width:78px;height:30px;line-height:30px;border:1px solid #ccc;border-bottom:none;padding-left:10px;margin-top:5px;background:#fde8d8  url(../images/cai888/nwx5_07.jpg) 66px 10px no-repeat;cursor:pointer;position: absolute;right: 20px;}
 .nwx5time span.span5c{background:#fde8d8  url(../images/cai888/nwx5_07c.jpg) 66px 10px no-repeat;}
 .nwx5time em{float:left;width:28px;height:28px;line-height:28px;font-weight:bold;font-size:15px;color:#fff;text-align:center;background: url(../images/cai888/nwx5q.png);margin-right:5px;_display:inline;}
 a.sz_cmt{background: url(../images/cai888/nwx5_112.jpg);width:137px;height:33px}
