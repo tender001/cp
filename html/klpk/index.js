@@ -138,6 +138,9 @@ Class.extend('getPrixRange', function (count, code) {//已选
     var min, max = '', rn, hit, sp, ini, playid, mx, mi, getPlayId = this.getPlayId();
     if (code != '' && code != undefined) {
     	var codes = Y.getInt(code[0]);
+    	if(getPlayId == '251'||getPlayId == '252'||getPlayId == '253'){
+    		codes = Y.getInt(code[(code.length-1)]);
+    	}
         if (getPlayId == '249' && codes == '00') {
             if (code.length == '1') {
                 sp = 22;
@@ -2674,7 +2677,7 @@ Class('openCodeList', {
             htm += "<th id=span0" + (16 + i) + ">" + (16 + i) + "</th><td id=dopencode0" + (16 + i) + " class='bor-r'>&nbsp;</td><td id=type" + (16 + i) + " class='bor-l'>&nbsp;</td>" +
                 "<th id=span0" + (32 + i) + ">" + (32 + i) + "</th><td id=dopencode0" + (32 + i) + " class='bor-r'>&nbsp;</td><td id=type" + (32 + i) + " class='bor-l'>&nbsp;</td>" +
                 "<th id=span0" + (48 + i) + ">" + (48 + i) + "</th><td id=dopencode0" + (48 + i) + " class='bor-r'>&nbsp;</td><td id=type" + (48 + i) + " class='bor-l'>&nbsp;</td>";
-            htm += "<th id=span" + (64 + i) + ">" + (64 + i) + "</th><td id=dopencode" + (64 + i) + " class='bor-r'>&nbsp;</td><td id=type" + (64 + i) + " class='bor-l'>&nbsp;</td>";
+            htm += "<th id=span0" + (64 + i) + ">" + (64 + i) + "</th><td id=dopencode0" + (64 + i) + " class='bor-r'>&nbsp;</td><td id=type" + (64 + i) + " class='bor-l'>&nbsp;</td>";
 //	        if(75+i<=79){
 //	        	htm+="<th id=span0"+(75+i)+">"+(75+i)+"</th><td id=dopencode0"+(75+i)+">&nbsp;</td><td id=type"+(75+i)+">&nbsp;</td>";
 //	        }else{
