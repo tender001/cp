@@ -528,7 +528,7 @@ Class('CodeList>CodeList_dt', {
             buyTabs = this.lib.Tabs({
                 items:'#all_form b',
                 focusCss:'cur',
-                contents: '#dg_form,#hm_form,#zh_form'
+                contents: '#ptdiv,#hm_form,#zh_form'
             });
             //玩法
 
