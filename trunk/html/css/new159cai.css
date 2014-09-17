@@ -2345,9 +2345,9 @@ col.ie_w{*width:62px;}
 .numcount{border-bottom:1px solid #ccc}
 .numcount td{text-align:Center;color:#444}
 .numcount tr.tr1 td{background:#fde8d8;height:34px;line-height:34px;border-bottom:1px solid #ccc;font-weight:bold;font-size:14px;}
-.numcount2{width: 209px; float: right;position:absolute;top:130px;left:790px;z-index:98;border-left: 1px solid #ccc;background-color: #fdf5e0;}
-.numcount3{float: right;z-index:98;top:140px;left:752px;position:absolute;width: 247px;}
-.numcount4{float: right;z-index:98;top:140px;left:752px;position:absolute;width: 247px;}
+.numcount2,.numcount3{border-left: 1px solid #ccc;background-color: #fdf5e0;}
+.numcount2{width: 209px; float: right;position:absolute;top:130px;left:790px;z-index:98;}
+.numcount3,.numcount4{float: right;z-index:98;top:140px;left:752px;position:absolute;width: 247px;}
 .numcount2 tr td{border-bottom:1px dashed #ddd;}
 .numcount3 tr td{border-bottom:1px dotted #ddd}
 .ncdcol{width:210px;margin:0 auto;padding:10px 0}
