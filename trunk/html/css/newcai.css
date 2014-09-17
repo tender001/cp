@@ -112,11 +112,12 @@
 .nc_numhm{border:1px solid #ddd;border-top:none;margin: 0; background-color:#fff}
 .main_dga{width:180px;height:42px;margin:0 auto; background:#ff791f url(../images/bg/shuangs/se_bg.png) 0 -86px no-repeat;}
 /*.main_dga:hover{ background-position:-4px -261px}*/
-.main_dga1{width:132px;height:39px;margin:0 auto;display:block; background:  url(/images/newimg/newsa.jpg) -5px -4px}
-.main_dga1:hover{ background-position:-159px -4px}
+.main_dga{display:block;width:190px;height:42px;margin:0 auto;font: 16px/42px "Microsoft YaHei","微软雅黑";text-align:center;color: #fff !important;background:  #f60 url(http://www.159cai.com/images/cdbg/gm_11.gif) no-repeat;}
+a.main_dga:hover{text-decoration:none !important;}
+/*.main_dga1:hover{ background-position:-159px -4px}
 .main_dga2{width:132px;height:39px;margin:0 auto;display:block; background:  url(/images/newimg/newsa.jpg) -5px -72px}
 .main_dga2:hover{ background-position:-159px -72px}
-
+*/
 .last_megp{line-height:32px;color:#333;text-align:center;}
 .last_megp a{color:#1e72c6;}
 .last_megp a:hover{color:#ba1414; text-decoration:underline;}
@@ -126,10 +127,8 @@
 .point_ts h3{font-weight:bold;color:#000;font-size:14px;line-height:30px;padding-bottom:6px}
 .point_ts h3 a{margin-left:20px;color:#1e72c6;padding-bottom:6px;font-size:12px;font-weight:100}
 .point_ts p{line-height:24px;color:#666;}
-.nkj_tan{ background-color:#fff;width:235px;padding:30px 15px 20px;filter:progid:DXImageTransform.Microsoft.Shadow(color=#909090,direction=120,strength=4);/*ie*/
--moz-box-shadow: 2px 2px 10px #909090;/*firefox*/
--webkit-box-shadow: 2px 2px 10px #909090;/*safari或chrome*/
-box-shadow:2px 2px 10px #909090;/*opera或ie9*/; position:absolute;border:1px solid #ddd;top:7px;left:20px;z-index:98}
+.nkj_tan{ background-color:#fff;width:235px;padding:30px 15px 20px;position:absolute;border:1px solid #ddd;top:7px;left:20px;z-index:98;filter:progid:DXImageTransform.Microsoft.Shadow(color=#909090,direction=120,strength=4);/*ie*/
+-moz-box-shadow: 2px 2px 10px #909090;-webkit-box-shadow: 2px 2px 10px #909090;box-shadow:2px 2px 10px #909090;}
 .nkj_tan tr.tr1 td{ background-color:#f1f1f1;border-top:1px solid #d2d2d2;border-bottom:1px solid #d2d2d2;line-height:30px;text-align:Center;color:#333}
 .nkj_tan td{line-height:35px;color:#444;border-bottom:1px solid #ddd}
 .nkj_tan td.td1{ text-align:left;padding-left:15px}
