@@ -924,7 +924,15 @@ Class('CodeList>Dlt_CodeList_dt', {
             //购买方式
             buyTabs.onchange = function (a, b, c){
                  Class.config('buy_type', b );
+                 $("a[mark]").hide();
+                 $("a[mark="+b+"]").show();
                  this.get('#ishm').val(b==1? 1 : 0);
+                 if(b == 0){
+                	 $("div.b_th_top11").css("margin-bottom","15px");
+                	 $("#all_form").css("border-bottom","1px solid #ccc");
+                 }else{
+                	 $("div.b_th_top11").css("margin-bottom","0");
+                	 $("#all_form").css("border-bottom","0");
                  this.get('#ischase').val(b==2? 1 : 0);
                  if (b==2) {
                      !c && this.moveToBuy(function (){
@@ -933,6 +941,7 @@ Class('CodeList>Dlt_CodeList_dt', {
                      this.postMsg('toggle-zh')// 通知倍数框限制倍数
                  }else{
                      !c && this.moveToBuy()
+                 }
                  }
                  this.get('#all_form p').html(['由购买人自行全额购买彩票','由多人共同出资购买彩票','连续多期购买同一个（组）号码'][b]);
             };
