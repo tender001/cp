@@ -2519,6 +2519,7 @@ Class('openCodeList', {
     },
     updateDayOpenCode: function(d){
 		var rq = Y.getDate(d).format('YYMMDD');
+//		rq="20140916";
 		this.ajax({
 			url:"/cpdata/game/"+ Class.C('lot_id') +"/day/"+rq+".json?v="+Math.random(),
 			type : "get",
