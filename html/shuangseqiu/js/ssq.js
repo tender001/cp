@@ -531,10 +531,10 @@ Class('CodeList>CodeList_dt', {
                 contents: '#ptdiv,#hm_form,#zh_form'
             });
             //玩法
-
             playTabs.onchange = function (a, b){
                 Class.config('play_name', pn[b]);
                 Class.config('playid', playid[pn[b]]);
+                
                 this.postMsg('msg_clear_code');
                 buyTabs.btns.show();
                 buyTabs.btns.slice(-1).hide(b==2);
@@ -746,6 +746,8 @@ Class('CodeList>CodeList_dt', {
             //购买方式
             buyTabs.onchange = function (a, b, c){
                  Class.config('buy_type', b );
+                 $("a[bet]").hide();
+                 $("a[bet="+b+"]").show();
                  this.get('#ishm').val(b==1? 1 : 0);
                  this.get('#ischase').val(b==2? 1 : 0);
                  if (b==2) {
