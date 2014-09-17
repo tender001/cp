@@ -1,5 +1,5 @@
 /* LineSelector 北单行选择器*/
-Class.C('sfgg_pk',[[["足球"],["球"]],[["篮球"],["分"]],[["冰球"],["球"]],[["网球"],["盘"]],[["羽毛球"],["局"]],[["排球"],["局"]],[["橄榄球"],["分"]],[["曲棍球"],["球"]],[["乒乓球"],["局"]],[["沙滩排球"],["局"]],[["手球"],["球"]],[["水球"],["球"]]]);
+Class.C('sfgg_pk',[[["足球"],["球"],["#993333"]],[["篮球"],["分"],["#E54227"]],[["冰球"],["球"],["#0099C0"]],[["网球"],["盘"],["#456C89"]],[["羽毛球"],["局"],["#6969E0"]],[["排球"],["局"],["#F57070"]],[["橄榄球"],["分"],["#BA6F30"]],[["曲棍球"],["球"],["#C98810"]],[["乒乓球"],["局"],["#C85B5B"]],[["沙滩排球"],["局"],["#FD91B5"]],[["手球"],["球"],["#339933"]],[["水球"],["球"],["#339933"]]]);
 Class( 'LineSelector', {
 
 	index : function(config) {
@@ -742,7 +742,7 @@ Class( 'TouzhuInfoLine', {
 			td_html += '<span class="' + (play_name == 'jq' ? 'x_sz' : 'x_s yl') + '" value="' + this.index + '|' + v + '">' + v + '</span>';
 		}, this );
 		danma = this.postMsg('msg_get_danma').data;
-		if (play_name == 'sfgg') {
+		if (play_name == 'sf') {
 			tr_html = '<tr>' + 
 						  '<td>' + 
 							  '<input type="checkbox" class="chbox" checked="checked" onclick="Yobj.postMsg(\'msg_touzhu_line_cancel\', ' + this.index + ')" />' + 
@@ -1456,7 +1456,7 @@ Class('LoadExpect',{
 		'<label class="label_n span_left">'+
 		'<input type="checkbox" class="chbox" value="胜" onclick="return false"  disabled="disabled" style="display: none"/><em id="htid_{$mid}" class="em_left">{$hn}</em> {$sp3str}</label>'+
 		'</div></td>'+
-		'<td class="h_br tdhui" style="text-align:center"><div class="dz_dv">{$closestr}</label></div></td>'+
+		'<td  style="text-align:center"><div >{$closestr}</label></div></td>'+
 		'<td class="h_br tdhui" style="text-align: left; "><div class="dz_dv">'+
 		'<label class="label_n span_rihgt">'+
 		'<input type="checkbox" class="chbox" value="负" onclick="return false"  disabled="disabled" style="display: none"/>{$sp0str}<em id="gtid_{$mid}" class="em_right">{$gn}</em></label> '+
@@ -1481,7 +1481,7 @@ Class('LoadExpect',{
 		'<input type="checkbox" class="chbox" value="胜" onclick="return false" style="display: none"/><em id="htid_{$mid}" class="em_left">{$hn}</em> <span class="sp_value eng b_left1">{$sp3}</span>'+
 		'</label>'+
 		'</div></td>'+
-		'<td class="h_br tdhui" style="text-align:center"><div class="dz_dv">{$closestr}</label></div></td>'+
+		'<td  style="text-align:center"><div >{$closestr}</label></div></td>'+
 		'<td class="h_br" style="text-align: left;  cursor: pointer" title="{$gn}"><div class="dz_dv">'+
 		'<label class="label_n span_right" >'+
 		'<input type="checkbox" class="chbox" value="负" onclick="return false" style="display: none"/><span class="sp_value eng b_rihgt1">{$sp0}</span> <em id="gtid_{$mid}" class="em_right">{$gn}</em>'+
@@ -1530,7 +1530,7 @@ Class('LoadExpect',{
 			row.short_et=Y.getDate(row.et).format('hh:mm');
 			
 //			row.bgColor=odds_issuc?(odds_data[i].cl):'#009900';
-			row.bgColor=row.cl!=''?row.cl:'#009900';
+			
 	
 			row.sp3=parseFloat($_sys.getsp(row.sf,"sp3"))>0?parseFloat($_sys.getsp(row.sf,"sp3")).rmb(false,2):'--';
 		
@@ -1541,13 +1541,25 @@ Class('LoadExpect',{
 			row.rs=parseFloat($_sys.getrs(row.rs,0)).rmb(false,2);//parseFloat(this.getsp(row.spf,"rs")).rmb(false,2);
 			row.bf=(new String(row.ms)!=''&&new String(row.ss)!=''?(row.ms+':'+row.ss):(''));
 			all_matches++;		
-						
+			if(row.mtype != undefined)
+			{
+				$.each(Class.C("sfgg_pk"),function()
+		    	{
+					if(this[0] == row.mtype)
+	    			{
+	    				row.pkunit = this[1];
+	    				row.cl = this[2];
+	    				return false;
+	    			}
+	    		});
+			}			
+			row.bgColor=row.cl!=''?row.cl:'#009900';
 			if ((row.close)*1>0){
-				row.closestr='<strong class="eng red">+'+row.close+'&nbsp;球</strong>';
+				row.closestr='<span class="eng red">+'+row.close+'&nbsp;'+row.pkunit+'</span>';
 			}else if ((row.close)*1<0){
-				row.closestr='<strong class="eng green">'+row.close+'&nbsp;球</strong>';
+				row.closestr='<span class="eng green">'+row.close+'&nbsp;'+row.pkunit+'</span>';
 			}else{
-				row.closestr='<strong class="eng green">&nbsp;</strong>';
+				row.closestr='<span class="eng green">&nbsp;</span>';
 			}
 			if (Y.getDate(data.date)>Y.getDate(row.et) || row.icancel=="1"){//已经过期的场次
 				out_of_date_matches++;
@@ -1905,9 +1917,9 @@ Class( {
 				Class.config('codeValue_1', ['3-3', '3-1', '3-0', '1-3', '1-1', '1-0', '0-3', '0-1', '0-0']);
 				break;
 			case 46 :    //让球胜平负
-				Class.config('playName', 'sfgg');
+				Class.config('playName', 'sf');
 				Class.config('codeValue', ['胜', '负']);
-				Class.config('playName_1', 'SFGG');
+				Class.config('playName_1', 'SF');
 				Class.config('codeValue_1', ['3', '0']);
 				break;
 			default :
