@@ -187,7 +187,7 @@ a.main_dga:hover{text-decoration:none !important;}
 .r_a_p s{float:left;display:block;width:85px;text-align:right;}
 .b_th_top1 b.cur{background:none;border:none 0;}
 .set_result1{padding-top:0;padding-bottom:0}
-.set_result2{padding-top:0}
+.set_result2{padding-top:0;border-bottom:1px solid #ccc;}
 .nkj_tan1 table{border-left:1px solid #ddd}
 .nkj_tan1 table td{border-right:1px solid #ddd;line-height:26px}
 .nkj_tan td.td3{text-align:center;padding:0}
