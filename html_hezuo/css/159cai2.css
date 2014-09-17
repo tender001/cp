@@ -1,7 +1,7 @@
 ﻿@charset "utf-8";
 {margin:0;padding:0}
 body,h3,h4,h2,h1,h5,table,td,th,ul,li,ol,dd,dt,dl,div,span,p,b,i,s,em,thead,tbody,font,select,input,option{margin:0;padding:0}
-body{font-size:12px; font-family: Arial,simsun; background-color:#fffdf3}
+body{font-size:12px; font-family: Arial,simsun; }
 a{text-decoration:none;color:#333333;outline:none;cursor:pointer} 
 em,i,s,b{ font-style:normal; text-decoration:none}
 img{border:none;}
@@ -36,12 +36,11 @@ div,ul,li{ list-style-type:none;overflow:hidden}
 .head_r ul li a{color:#a7a6a7}
 .head_tel{width:199px;height:32px;}
 .head_tel img{width:199px;height:32px}
-#naver{width:100%;height:45px; background-image: url(../images/index_13.gif);margin-top:5px;  overflow:visible}
 .nav_re{width:1000px;margin: 0 auto;position: relative;overflow:visible;z-index:888}
 .nav{width:1000px;margin: 0 auto;height:45px}
 .nav h2{width:221px;height:45px;line-height:47px; background-image:url(../images/index_11.gif);text-align:center;font-size:16px;font-weight:100;color:#fff;float:left;}
 .nav ul{float:left}
-.nav ul li{float:left;display:block;line-height:47px;cursor:pointer;width:93px;text-align:center}
+.nav ul li{float:left;display:block;cursor:pointer;width:96px;text-align:center}
 .nav ul li.sup_x{ background:url(../images/sup_x.gif) left center no-repeat;width:3px;height:44px;line-height:44px;}
 .nav ul li:hover{ background-image:url(../images/index_14.gif)}
 .nav ul li.li_a:hover{ background-image:url(../images/index_15.gif)}
@@ -610,7 +609,7 @@ a.all_hm:hover{background-image: url(../images/1_03_06.gif); text-decoration:und
 .acct_rig_1{height:40px;padding-top:10px;border-bottom:1px solid #f1c573;width:802px;overflow:visible;position:relative;}
 .acct_rig_1 h2{line-height:30px;font-size:16px;color:#333;font-weight:100;width:250px;float:left;padding-left:25px;padding-top:10px}
 .acct_rig_1 h2 strong{font-weight:bold}
-.acct_rig_1 p{line-height:40px;font-size:12px;color:#999;width:250px;float:right;padding-right:20px;text-align:right}
+.acct_rig_1 p{line-height:40px;font-size:12px;color:#999;float:right;padding-right:20px;text-align:right}
 .acct_rig_2{border:1px solid #ddd; background-color:#f2f2f2;*zoom:1; position:relative;padding-bottom:30px}
 .act_rig_2_let{width:460px;float:left;padding:10px 10px 10px 50px }
 .act_rig_2_let span{display:block}
@@ -817,7 +816,7 @@ em.kq{ background-image:url(../images/bank/bank_44.gif)}
 .un_b_main{height:302px;width:645px;float:left;border:1px solid #ddd;border-left:none}
 .un_b_main{padding:10px 20px;margin-bottom:20px}
 .cz_step{width:760px;height:36px;margin:0 auto; background-image:url(../images/bank/step.gif);margin-top:20px}
-.cz_step p{line-height:27px;font-size:12px;color:#444;padding-left:15px}
+.cz_step p{line-height:27px;font-size:12px;color:#444;padding-left:15px;float:left;}
 .phone_pp{padding:10px 40px 0px 80px}
 .phone_pp ul li{display:block;float:left;width:195px;margin-right:15px;_margin-right:7px;height:75px;padding:10px 0;text-align:right;color:#444; }
 .phone_pp ul li p{line-height:22px;color:#444;text-align:center;clear:both;}
@@ -2181,10 +2180,10 @@ a.kc_sh{position:absolute;display:block;padding:0 12px;color:#fff; background-co
 .p_k_d{text-align:center;line-height:25px;padding:7px 0px;font-size:16px;color:#444;margin:0 auto; background-color:#fdf3df;border:1px solid #ddd;width:195px;margin-bottom:15px}
 .kc h1{padding-left:30px;font-size:14px;color:#444; background-image:url(../images/index_118.gif);height:37px;line-height:37px;clear:both;border-top:1px solid #ccc;border-bottom:1px solid #ccc;}
 .kc_td_kj table{margin:0 auto;border-left:1px solid #ddd;border-bottom:1px solid #ddd}
-.kc_td_kj table thead td{ background-image:url(../images/cdbg/gm_03.gif);color: #444444;font-size: 14px;line-height:32px;border-bottom:1px solid #ccc;text-align:center}
+.kc_td_kj table thead td{ color: #444;font-size: 14px;line-height:32px;text-align:center;background:#ECECEC;border-bottom:1px solid #ddd;}
 .kc_td_kj table tbody td{line-height:30px;color:#444;font-size:14px;text-align:center;}
 .kc_td_kj table tbody th{line-height:30px;color:#333;font-size:12px;text-align:center;font-weight:100;}
-.kc_td_kj table td,.kc_td_kj table th{border-right:1px solid #ddd}
+.kc_td_kj table td,.kc_td_kj table th{border-right:1px solid #ddd;border-bottom: 1px solid #ddd;}
 .gs_t{height:450px;overflow:auto}
 .gs_t p{line-height:25px;color:#444;font-size:12px;padding-left:20px;text-align:left}
 .gs_tp{padding:25px 20px  0 20px}
