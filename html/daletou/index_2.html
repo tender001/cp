@@ -443,9 +443,9 @@
 </div>
 
 
-<div class="set_result set_result1" id="all_form">
+<div class="set_result set_result1" id="all_form" style="border-bottom: 1px solid #ccc;">
 
-    <div class="b_th_top1 b_th_top11">
+    <div class="b_th_top1 b_th_top11" style="margin-bottom:15px;">
         <span>购买方式</span><b><input type="radio" name="radio_r"/>我要代购</b><b><input
             type="radio" name="radio_r"/>发起合买</b><b><input type="radio"
                                                            name="radio_r"/>我要追号</b>
@@ -454,17 +454,17 @@
     </div>
 </div>
 
-    <p class="xytk w_se" id="userMoneyInfo">
-        账户信息：您尚未登录，请先<a href="javascript:void(0);"
-                        onclick="Yobj.postMsg('msg_login')">登录</a>后购买
-    </p>
-
+<!--     <p class="xytk w_se" id="userMoneyInfo"> -->
+<!--         账户信息：您尚未登录，请先<a href="javascript:void(0);" -->
+<!--                         onclick="Yobj.postMsg('msg_login')">登录</a>后购买 -->
+<!--     </p> -->
+   
     <div class="news_tab " id="dg_form">
-        <p class="xytk"><a id="buy_dg" class="main_dga" href="javascript:void(0);"></a></p>
-    </div>
-    <div class="news_tab " id="hm_form" style="display:none">
-        <div class="set_result set_result2">
-            <div class="b_th_cosz nc_numhm" style="margin:0 auto">
+        
+    </div> 
+    <div class="news_tab " id="hm_form" style="display:none;background-color: #f5f5f5;border-bottom:1px solid #ccc">
+        <div class="set_result set_result2" >
+            <div class="b_th_cosz nc_numhm" style="margin:0 auto 15px">
                 <!-- 					<table width="760" border="0" class="col_2" -->
                 <!-- 						style="margin: 10px 0 0 5px"> -->
                 <!-- 						<tr> -->
@@ -553,9 +553,9 @@
             </div>
         </div>
         <!--<div class="linetwo"></div>-->
-        <p class="xytk"><a id="buy_hm" class="main_dga1" href="javascript:void(0);"></a></p>
+<!--         <p class="xytk"></p> -->
     </div>
-    <div class="news_tab " id="zh_form" style="display:none;">
+    <div class="news_tab " id="zh_form" style="display:none;background-color: #f5f5f5">
         <div class="set_result set_result2">
             <div class="b_th_cosz nc_numhm" style="margin:0 auto">
                 <p class="p_z_qs">
@@ -606,9 +606,15 @@
             </div>
         </div>
         <!--<div class="linetwo"></div>-->
-        <p class="xytk"><a id="buy_zh" class="main_dga2" href="javascript:void(0);"></a></p>
+        
     </div>
-
+     <p class="xytk w_se" id="userMoneyInfo">
+        账户信息：您尚未登录，请先<a href="javascript:void(0);"
+                        onclick="Yobj.postMsg('msg_login')">登录</a>后购买
+    </p>
+<a id="buy_dg" class="main_dga" href="javascript:void(0);" mark='0'>我要代购</a>
+	<a id="buy_hm" class="main_dga" href="javascript:void(0);" style="display:none;" mark="1"> 发起合买</a>
+	  <a id="buy_zh" class="asz_tz" href="javascript:void(0);" style="display:none;" mark="2">我要追号</a>
     <p class="xytk xytk1">
         <input type="checkbox" checked="checked" id="agreement"/>我已阅读同意《<a
             href="/help/help_yffwxy.html" target="_blank">用户委托投注协议</a>》并同意其中的条款
