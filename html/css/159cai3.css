@@ -2645,7 +2645,7 @@ table.co1 tbody td  em{color:#888}
 .dz_dv span,.dz_dv label{padding-left:5px;float:left;color: #333}
 .dz_dv em{display:block;overflow:hidden;height:38px;width:62px;float:left;text-align:left;line-height:38px;color: #333;}
 .dc_table td s{color:#777;display:block;width:20px;}
-.dz_dv em.em_right{text-align:right;margin-left:10px}
+.dz_dv em.em_right{text-align:right;margin-left:10px;width: 78px;}
 .dz_dv span.span_right{padding:0}
 .dz_dv span b,.dz_dv lable span{float:left;font-weight:100;margin-left:14px;_margin-left:7px}
 .dz_dv label span{padding-left:0;float:left;line-height:38px}
