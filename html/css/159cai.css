@@ -1980,7 +1980,7 @@ p.zj_bt input.text{width:45px;border:1px solid #ddd;height:24px;text-align:cente
 html .b_th_top1 b{_height:20px;_padding:7px 0;}
 .b_th_top1 b.cur{border:1px solid #c3b7ab; background-color:#fff;margin-top:1px;height:28px;border-bottom:1px solid #fff;}
 .b_th_top1 input{vertical-align: -2px;_vertical-align: -1px;margin-right:3px}
-.b_th_cosz{width:725px;margin:0 auto;*zoom:1;border:1px solid #c3b7ab;border-top:none; position:relative;padding-bottom:25px}
+.b_th_cosz{width:725px;margin:0 auto;*zoom:1;border:1px solid #c3b7ab;border-top:none; position:relative;}
 a.asz_tz{display:block; background:url(http://www.159cai.com/images/cdbg/gm_11.gif) no-repeat;width:190px;height:42px;text-align:center;color:#fff;font:16px/42px "Microsoft YaHei","微软雅黑";margin:0 auto}
 a.asz_tz:hover{text-decoration:none;color:#fff;}
 .dlt_m_right{width:245px;border-right:1px solid #ddd;border-bottom:1px solid #ddd;float:left; background-image:url(../images/cdbg/dltr.png)}
