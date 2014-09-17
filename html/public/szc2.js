@@ -1405,7 +1405,7 @@
 				wg=wg.split(".")
 				var wgs = wg[1];*/
 				if(pools>100000000){
-					$("#infopool").html(''+Math.ceil(pools/5000000)+'倍清空奖池<font>'+parseInt(pools/100000000)+'亿'+Math.round((pools%100000000)/10000)+'万</font>');
+					$("#infopool").html('3元赢取<font style="color:red;">￥1600</font>万元&nbsp;&nbsp;&nbsp;'+Math.ceil(pools/5000000)+'倍清空奖池<font style="color:red;">'+parseInt(pools/100000000)+'亿'+Math.round((pools%100000000)/10000)+'万</font>');
 					//$("#infopool").html('大乐透奖池<font>'+parseInt(pools/100000000)+'亿'+parseInt((pools%100000000)/10000)+'万'+wgs+'元</font>');
 				}else{
 					$("#infopool").html(''+Math.ceil(pools/5000000)+'倍清空奖池<font>'+Math.round(pools/10000)+'万</font>');
@@ -1445,7 +1445,7 @@
 				wg=wg.split(".")
 				var wgs = wg[1];*/
 				if(pools>100000000){
-					$("#infopool").html(''+Math.ceil(pools/5000000)+'倍清空奖池<font style="color:red;">'+parseInt(pools/100000000)+'亿'+Math.round((pools%100000000)/10000)+'万</font>');
+					$("#infopool").html('2元赢取<font style="color:red;">￥1000</font>万元&nbsp;&nbsp;&nbsp;'+Math.ceil(pools/5000000)+'倍清空奖池<font style="color:red;">'+parseInt(pools/100000000)+'亿'+Math.round((pools%100000000)/10000)+'万</font>');
 					//$("#infopool").html('双色球奖池<font>'+parseInt(pools/100000000)+'亿'+parseInt((pools%100000000)/10000)+'万'+wgs+'元</font>');
 				}else{
 					$("#infopool").html(''+Math.ceil(pools/5000000)+'倍清空奖池<font>'+Math.round(pools/10000)+'万</font>');
