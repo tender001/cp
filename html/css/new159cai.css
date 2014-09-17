@@ -206,10 +206,7 @@ img{vertical-align:top;}
 .menu_link .click{height: auto;}
 /*.menu_link .mar{margin-top: 24px;}*/
 
-.xiaj{width: 11px;height: 8px;display: block;position: absolute;right: 0;top: 0;background: url(../images/bg/link_more.png) 0 0 no-repeat;-webkit-transition: transform .2s ease-in 0s;
-    -moz-transition: transform .2s ease-in 0s;
-    -o-transition: transform .2s ease-in 0s;
-    transition: transform .2s ease-in 0s;}
+.xiaj{width: 11px;height: 8px;display: block;position: absolute;right: 0;top: 0;background: url(../images/bg/link_more.png) 0 0 no-repeat;-webkit-transition: transform .2s ease-in 0s;-moz-transition: transform .2s ease-in 0s;-o-transition: transform .2s ease-in 0s;transition: transform .2s ease-in 0s;}
 .xiaj.hover{background-position: 0 -8px\9;-webkit-transform: rotate(180deg);-moz-transform: rotate(180deg);-o-transform: rotate(180deg);transform: rotate(180deg);}
 /* dd */
 .header{padding-top:25px;width:1000px;margin:0 auto; position:relative;z-index:55;overflow:visible;height:48px}
