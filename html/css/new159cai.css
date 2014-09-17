@@ -1164,7 +1164,7 @@ table.col_2 td b{display:block;line-height:28px;padding:0 15px;font-size:14px;co
 table.col_2 td b.first{border-left:1px solid #ccc}
 table.col_2 td b:hover{border:1px solid #f18623}
 table.col_2 td b.cur{ background-image:url(../images/cdbg/tan_k_07.gif);border:1px solid #f18623;color:#fff}
-table.col_2 td em{display:block;line-height:28px;padding:0 15px;font-size:14px;color:#444;font-weight:100;float:left; background-image:url(../images/cdbg/tan_k_03.gif);border:1px solid #ccc;cursor:pointer;margin-right:4px;_margin-left:2px;font-weight:bold}
+table.col_2 td em{display:block;line-height:28px;padding:0 11px;font-size:14px;color:#444;font-weight:100;float:left; background-image:url(../images/cdbg/tan_k_03.gif);border:1px solid #ccc;cursor:pointer;margin-right:4px;_margin-left:2px;font-weight:bold}
 table.col_2 td em:hover{border:1px solid #f18623}
 table.col_2 td em.cur{ background-image:url(../images/cdbg/tan_k_07.gif);border:1px solid #f18623;color:#fff}
 .conduct_msg{clear:both;padding:0 0 0 60px}
