@@ -256,6 +256,13 @@ Class( 'BuyForm', {
 			Class.config('codeValue_1', ['3-3', '3-1', '3-0', '1-3', '1-1', '1-0', '0-3', '0-1', '0-0']);
 			param.lotid=87;
 			break;
+		case 46 :    //胜负过关
+			Class.config('playName', 'bf');
+			Class.config('codeValue', ['胜', '负']);
+			Class.config('playName_1', 'SF');
+			Class.config('codeValue_1', ['3', '0']);
+			param.lotid=84;
+			break;
 		default :
 		}	
 		var codes=param.codes;
