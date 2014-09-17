@@ -1401,15 +1401,15 @@
 					html+='<em class="blue">'+blue[i]+'</em> ';
 				}
 				var pools=(row.pools)*1;
-				var wg=((pools%100000000)/10000)+"";
+				/*var wg=((pools%100000000)/10000)+"";
 				wg=wg.split(".")
-				var wgs = wg[1];
+				var wgs = wg[1];*/
 				if(pools>100000000){
-					//$("#infopool").html(''+Math.ceil(pools/5000000)+'倍清空奖池<font>'+parseInt(pools/100000000)+'亿'+Math.round((pools%100000000)/10000)+'万</font>');
-					$("#infopool").html('大乐透奖池<font>'+parseInt(pools/100000000)+'亿'+parseInt((pools%100000000)/10000)+'万'+wgs+'元</font>');
+					$("#infopool").html(''+Math.ceil(pools/5000000)+'倍清空奖池<font>'+parseInt(pools/100000000)+'亿'+Math.round((pools%100000000)/10000)+'万</font>');
+					//$("#infopool").html('大乐透奖池<font>'+parseInt(pools/100000000)+'亿'+parseInt((pools%100000000)/10000)+'万'+wgs+'元</font>');
 				}else{
-					//$("#infopool").html(''+Math.ceil(pools/5000000)+'倍清空奖池<font>'+Math.round(pools/10000)+'万</font>');
-					$("#infopool").html('大乐透奖池<font>'+parseInt(pools/10000)+'万'+wgs+'元</font>');
+					$("#infopool").html(''+Math.ceil(pools/5000000)+'倍清空奖池<font>'+Math.round(pools/10000)+'万</font>');
+					//$("#infopool").html('大乐透奖池<font>'+parseInt(pools/10000)+'万'+wgs+'元</font>');
 				}
 				$("#kjopcode").html(html);
 				var rmoney = row.money == '' ? "-,-,-,200,10,5,-,-,-,-,100,5" : row.money;
@@ -1441,15 +1441,15 @@
 					html+='<em class="blue">'+blue[i]+'</em>';
 				}
 				var pools=(row.pools)*1;
-				var wg=((pools%100000000)/10000)+"";
+				/*var wg=((pools%100000000)/10000)+"";
 				wg=wg.split(".")
-				var wgs = wg[1];
+				var wgs = wg[1];*/
 				if(pools>100000000){
-					//$("#infopool").html(''+Math.ceil(pools/5000000)+'倍清空奖池<font>'+parseInt(pools/100000000)+'亿'+Math.round((pools%100000000)/10000)+'万</font>');
-					$("#infopool").html('双色球奖池<font>'+parseInt(pools/100000000)+'亿'+parseInt((pools%100000000)/10000)+'万'+wgs+'元</font>');
+					$("#infopool").html(''+Math.ceil(pools/5000000)+'倍清空奖池<font style="color:red;">'+parseInt(pools/100000000)+'亿'+Math.round((pools%100000000)/10000)+'万</font>');
+					//$("#infopool").html('双色球奖池<font>'+parseInt(pools/100000000)+'亿'+parseInt((pools%100000000)/10000)+'万'+wgs+'元</font>');
 				}else{
-					//$("#infopool").html(''+Math.ceil(pools/5000000)+'倍清空奖池<font>'+Math.round(pools/10000)+'万</font>');
-					$("#infopool").html('双色球奖池<font>'+parseInt(pools/10000)+'万'+wgs+'元</font>');
+					$("#infopool").html(''+Math.ceil(pools/5000000)+'倍清空奖池<font>'+Math.round(pools/10000)+'万</font>');
+					//$("#infopool").html('双色球奖池<font>'+parseInt(pools/10000)+'万'+wgs+'元</font>');
 				}
 				$("#kjopcode").html(html);
 				var rmoney = row.money == '' ? "-,-,3000,200,10,5" : row.money;
