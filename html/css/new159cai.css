@@ -2208,7 +2208,7 @@ a.sz_cmt{background: url(../images/cai888/nwx5_112.jpg);width:137px;height:33px}
 .ball-right .l{float: left;width: 520px;padding-right: 25px;border-right: 1px solid #ddd;}
 .ball-right .r{float: left;width: 285px;padding-left: 25px;}
 .ball-right ul li{float: left;width: 100%;}
-.ball b{float: left;width: 44px;height: 44px;font: 400 18px/38px Arial;text-align: center;text-indent: -5px;color: #222;margin-right: 3px;background-position: 0 -8px;cursor: pointer;}
+.ball b{float: left;width: 44px;height: 44px;font: 400 18px/38px Arial;text-align: center;text-indent: -5px;color: #222;margin-right: 3px;background-position: 0 -8px;cursor: pointer;-webkit-user-select: none;-moz-user-select: none;-o-user-select: none;user-select: none;}
 .ball b.hover{background-position: -52px -8px;}
 .ball b.red{background-position: -108px -5px;color: #fff;}
 .ball b.blue{background-position: -156px -5px !important;color: #fff;}
