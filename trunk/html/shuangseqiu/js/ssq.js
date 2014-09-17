@@ -537,6 +537,7 @@ Class('CodeList>CodeList_dt', {
                 
                 this.postMsg('msg_clear_code');
                 buyTabs.btns.show();
+                
                 buyTabs.btns.slice(-1).hide(b==2);
                 buyTabs.focus(0);
 				b == 3 && this.postMsg('msg_auto_kill_num', false);  //始初时不自动杀号
@@ -746,17 +747,26 @@ Class('CodeList>CodeList_dt', {
             //购买方式
             buyTabs.onchange = function (a, b, c){
                  Class.config('buy_type', b );
-                 $("a[bet]").hide();
-                 $("a[bet="+b+"]").show();
+                 $("a[mark]").hide();
+                 $("a[mark="+b+"]").show();
                  this.get('#ishm').val(b==1? 1 : 0);
-                 this.get('#ischase').val(b==2? 1 : 0);
-                 if (b==2) {
-                     !c && this.moveToBuy(function (){
-                          Y.createZhOptions(this.btns.nodes[b]);
-                     });
+                 if(b == 0){
+                	 $("div.b_th_top11").css("margin-bottom","15px");
+                	 $("#all_form").css("border-bottom","1px solid #ccc");
                  }else{
-                     !c && this.moveToBuy();
+                	 $("div.b_th_top11").css("margin-bottom","0");
+                	 $("#all_form").css("border-bottom","0");
+                	 this.get('#ischase').val(b==2? 1 : 0);
+                     if (b==2) {
+                    	
+                         !c && this.moveToBuy(function (){
+                              Y.createZhOptions(this.btns.nodes[b]);
+                         });
+                     }else{
+                         !c && this.moveToBuy();
+                     }
                  }
+                 
                  this.get('#all_form p').html(['由购买人自行全额购买彩票','由多人共同出资购买彩票','连续多期购买同一个（组）号码。'][b]);
             };
         }
