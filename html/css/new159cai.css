@@ -1870,6 +1870,7 @@ a.n_gz{color:#fff}
 .nwx5time span{float: left;color:#333;line-height:30px;}
 .nwx5time span.span1{/*width:220px;*/}
 .nwx5time span.span2{padding:0 14px 0 0;line-height: 28px;}
+.nwx5time span.span2 b{color: #e52e04;}
 .nwx5time span.span3 font{color: #f60;font-weight: 700;}
 .nwx5time span.span4{padding:0 152px 0 0}
 .nwx5time span.span2 b{font-size:30px;font-weight:bold;}
