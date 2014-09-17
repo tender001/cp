@@ -20,6 +20,8 @@ Class( 'ConfirmForm', {
 		
 		this.param.lotid  = this.need('#lotid').val();
 		this.param.playid = this.need('#playid').val();
+//		this.param.lotid  = 9;
+//		this.param.playid =34;
 		this.param.expect = this.need('#expect').val();
 
 		code_info = this.postMsg('msg_get_codes_4_submit').data;
