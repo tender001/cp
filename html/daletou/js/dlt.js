@@ -11,14 +11,14 @@ Class('CodeList>Dlt_CodeList', {
 大乐透普通选号
 */
 Class('Choose_pt>Dlt_Choose_pt',{
-    showTxt:'您选择了<span>{$dan}</span>个前区号码，<span>{$blue}</span>个后区号码，共<span>{$zhushu}</span>注，共<span>{$totalmoney}</span>元',
+    showTxt:'您选择了<span>{$dan}</span>个红球，<span>{$blue}</span>个篮球，共<span>{$zhushu}</span>注，共<span>{$totalmoney}</span>元',
     leftNum: 5,
     rightNum: 2,
     leftMax: 35,
     rightMax: 12,
     leftChooseMax: 18,
-    leftname: '前区号码',
-    noCodeMsg: '您好，请您至少选择5个前区号码和2个后区号码！',
+    leftname: '红球',
+    noCodeMsg: '您好，请您至少选择5个红球和2个篮球！',
     index2:function (ini){
         this.base(ini)
     }  
