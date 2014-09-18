@@ -575,8 +575,8 @@ Class('App', {
         this.lib.Dxds({
             items: '#dxds_area .nxds .nxdsc',
             dxds:true,
-            focusCss: 'red',
-            hoverCss: 'hover',
+            focusCss: 'cur',
+            hoverCss: '',
             noGroup: false,
             maxLength: 1,
             showbar: '#showbar_111',
