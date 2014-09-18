@@ -56,7 +56,7 @@ img{vertical-align:top;}
 .top dl.mysite dd p a{color: #666;margin: 0;}
 .top dl.mysite dd p a:hover{color: #e52e04}
 .top dl.mysite dd p.y3 a{color: #145fab;font-family: "\5b8b\4f53";}
-.top dl dd li{padding: 10px 0;border-bottom: 1px solid #ddd;line-height: 26px;overflow: hidden;float: left;zoom:1;}
+.top dl dd li{padding: 10px 0;border-bottom: 1px solid #ddd;line-height: 26px;overflow: visible;float: left;zoom:1;}
 .top dl dd li.kp{border: 0;}
 .top dl dd li div{width: 40px;padding: 6px 2px 0;float: left;font-weight: bold;color: #333;text-align: center;}
 .top dl dd li s{width: 20px;height: 20px;line-height: 20px;display: block;margin: 0 auto;background-position: -2px -88px;}
@@ -66,7 +66,7 @@ img{vertical-align:top;}
 .top dl dd li.sz s{background-position: -23px -88px;}
 .top dl dd li.kp s{background-position: -44px -88px;}
 .top dl dd li p{width: 184px;float: right;*white-space: nowrap;}
-.top dl dd li p a{margin:0;margin-right: 8px;float: left;}
+.top dl dd li p a{margin:0;margin-right: 8px;float: left;position: relative;}
 .top dl dd li p a:hover{color: #e52e04;}
 .top a{margin: 0 8px;color:#6c6c6c;}
 .top .fl a{color: #e62e04;cursor: pointer;}
@@ -101,9 +101,9 @@ img{vertical-align:top;}
 .m_l dd{width:150px;}
 .m_l a,.m_l1 a{color:#585858;margin-right: 10px; float: left;white-space: nowrap;line-height: 22px;position: relative;}
 .m_l a:hover{color: #e52e04}
-.m_l a i,.m_l1 a i{display:block;width:21px;height:17px;position:absolute;top:-12px;right:-16px;z-index:10;background:url(../images/bg/new.png) no-repeat;}
-.m_l a i.hot,.m_l1 a i.hot{background-position: -42px 0;margin: 0;}
-.m_l a i.add,.m_l1 a i.add{background-position: -21px 0;}
+.m_l a i,.m_l1 a i,.top dl dd li p a i{display:block;width:21px;height:17px;position:absolute;top:-9px;right:-17px;z-index:10;background:url(../images/bg/new.png) no-repeat;}
+.m_l a i.hot,.m_l1 a i.hot,.top dl dd li p a i.hot{background-position: -42px 0;margin: 0;}
+.m_l a i.add,.m_l1 a i.add,.top dl dd li p a i.add{background-position: -21px 0;}
 .m_l li p{margin: 9px 0 10px;zoom: 1;}
 .m_l li p:after{visibility:hidden;display:block;font-size:0;content:" ";clear:both;}
 /*end 购买彩票*/
