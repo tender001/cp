@@ -11,7 +11,7 @@ Class('CodeList>Dlt_CodeList', {
 大乐透普通选号
 */
 Class('Choose_pt>Dlt_Choose_pt',{
-    showTxt:'您选择了<span>{$dan}</span>个红球，<span>{$blue}</span>个篮球，共<span>{$zhushu}</span>注，共<span>{$totalmoney}</span>元',
+    showTxt:'您选择了<span>{$dan}</span>个红球，<span style="color: #1e72c6">{$blue}</span>个篮球，共<span>{$zhushu}</span>注，共<span>{$totalmoney}</span>元',
     leftNum: 5,
     rightNum: 2,
     leftMax: 35,
