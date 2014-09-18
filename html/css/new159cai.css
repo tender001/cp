@@ -705,7 +705,7 @@ em.uf{ background-image:url(../images/159/uf.gif)}
 .head_r ul li{padding:0 3px}
 .jckj_tb p.note{ background-image:none;padding-left:20px}
 .tkts p{background-image:none;}
-.nxhm{zoom:1}
+.nxhm{zoom:1;margin-left:60px;}
 .nxhm span{float:left;display:block;height:38px;line-height:38px}
 .nstime{width:130px;padding:0 15px 0 10px;color:#333;font-size:12px;color:#000;padding-top:5px;_padding-top:8px;display:block;height:38px;line-height:38px ; position:absolute;top:51px;left:0px}
 .nstime b{display:inline-block;background: url(../images/159/nx_38.jpg);width:22px;height:20px;font:16px/20px Arial;color:#333;margin:0 2px}
@@ -1871,7 +1871,7 @@ a.n_gz{color:#fff}
 .nwx5time{height:35px;border-bottom:1px solid #ccc;padding:20px 0 0 25px;position: relative;}
 .nwx5time span{float: left;color:#333;line-height:30px;}
 .nwx5time span.span1{/*width:220px;*/}
-.nwx5time span.span2{padding:0 14px 0 0;line-height: 28px;}
+.nwx5time span.span2{padding:0 111px 0 0;line-height: 28px;}
 .nwx5time span.span2 b{color: #e52e04;}
 .nwx5time span.span3 font{color: #e52e04;font-weight: 700;}
 .nwx5time span.span4{padding:0 152px 0 0}
@@ -2324,7 +2324,7 @@ a.sz_cmt{background: url(../images/cai888/nwx5_112.jpg);width:137px;height:33px}
 /*.nwx5time span.span2 em{display: inline-block;width: 21px;height: 24px;font: bold 16px/24px Arial;background: #444;border-radius: 3px;text-align: center;color: #0f0;}*/
 .nwx5time span.span2 em{display:inline-block;float:none;font: bold 20px/28px Arial;text-align: center;color: #e52e04;background: #fff;margin: 0 !important;vertical-align: -2px;}
 .numyl{width:49px;height:24px;float:left; background:url(../images/159/nx_4y.jpg);color:#e52e04;line-height:24px;text-align:Center;margin:8px 30px 0 0}
-.numcai .nxmiddle h2{padding-bottom:10px}
+.numcai .nxmiddle h2{padding-bottom:10px;margin-left:60px;}
 .numcai .nxmiddle h2 p{padding-left:105px;}
 .numcai .nx3span{padding-left:25px;padding-top:0}
 .nxyl{clear:both;height:18px;}
