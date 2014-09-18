@@ -382,6 +382,7 @@ Class('CodeList>CodeList_dt', {
                 lessbs:'#pt_lessbs',
                 zsSpan: '#pt_zs',
                 clearBtn: '#pt_list_clear'
+               
             });
             // 其它初始化
             Y.lib.Dlg();
@@ -429,6 +430,7 @@ Class('CodeList>CodeList_dt', {
                 clearTuo: '#dt_clear_tuo',
                 clearBlue: '#dt_clear_blue',
                 clearAll: '#dt_clear_all',
+                /*dt_list_clear*/
                 tuoRndOpts: '#dt_tuo_opts',
                 //tuoRndOptss: '#dt_tuo_optss',
                 tuoRnd: '#dt_tuo_jx',
