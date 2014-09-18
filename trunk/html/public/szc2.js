@@ -1405,7 +1405,7 @@
 				wg=wg.split(".")
 				var wgs = wg[1];*/
 				if(pools>100000000){
-					$("#infopool").html('3元赢取<font style="color:red;">￥1600</font>万元&nbsp;&nbsp;&nbsp;'+Math.ceil(pools/5000000)+'倍清空奖池<font style="color:red;">'+parseInt(pools/100000000)+'亿'+Math.round((pools%100000000)/10000)+'万</font>');
+					$("#infopool").html('3元赢取<font style="color:red;">1600万</font>&nbsp;&nbsp;&nbsp;'+Math.ceil(pools/5000000)+'倍清空奖池<font style="color:red;">'+parseInt(pools/100000000)+'亿'+Math.round((pools%100000000)/10000)+'万</font>');
 					//$("#infopool").html('大乐透奖池<font>'+parseInt(pools/100000000)+'亿'+parseInt((pools%100000000)/10000)+'万'+wgs+'元</font>');
 				}else{
 					$("#infopool").html(''+Math.ceil(pools/5000000)+'倍清空奖池<font>'+Math.round(pools/10000)+'万</font>');
@@ -1445,7 +1445,7 @@
 				wg=wg.split(".")
 				var wgs = wg[1];*/
 				if(pools>100000000){
-					$("#infopool").html('2元赢取<font style="color:red;">￥1000</font>万元&nbsp;&nbsp;&nbsp;'+Math.ceil(pools/5000000)+'倍清空奖池<font style="color:red;">'+parseInt(pools/100000000)+'亿'+Math.round((pools%100000000)/10000)+'万</font>');
+					$("#infopool").html('2元赢取<font style="color:red;">1000万</font>&nbsp;&nbsp;&nbsp;'+Math.ceil(pools/5000000)+'倍清空奖池<font style="color:red;">'+parseInt(pools/100000000)+'亿'+Math.round((pools%100000000)/10000)+'万</font>');
 					//$("#infopool").html('双色球奖池<font>'+parseInt(pools/100000000)+'亿'+parseInt((pools%100000000)/10000)+'万'+wgs+'元</font>');
 				}else{
 					$("#infopool").html(''+Math.ceil(pools/5000000)+'倍清空奖池<font>'+Math.round(pools/10000)+'万</font>');
@@ -2187,7 +2187,7 @@
 //双色球选号器
     Class('Choose_base>Choose_pt', {
 //        showTxt:'[ 您选择了<font>{$dan}</font>个前区号码，<font>{$blue}</font>个后区号码，共<font>{$zhushu}</font>注，共计<font>元</font>]',
-        showTxt:'您选择了<span>{$dan}</span>个红球，<span>{$blue}</span>个蓝球，共<span>{$zhushu}</span>注，共<span>{$totalmoney}</span>元',
+        showTxt:'您选择了<span>{$dan}</span>个红球，<span style="color:#1e72c6;">{$blue}</span>个蓝球，共<span>{$zhushu}</span>注，共<span>{$totalmoney}</span>元',
         noCodeMsg: '您好，请您至少选择6个红球和1个蓝球！',
         leftNum: 6,
         rightNum: 1,
