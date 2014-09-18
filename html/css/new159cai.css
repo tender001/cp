@@ -99,10 +99,11 @@ img{vertical-align:top;}
 .m_l dt,.m_l dd{float: left;line-height: 22px;}
 .m_l dt{width:40px;font-weight: bold;color: #f60;}
 .m_l dd{width:150px;}
-.m_l a{color:#585858;margin-right: 10px; float: left;white-space: nowrap;line-height: 22px;}
+.m_l a,.m_l1 a{color:#585858;margin-right: 10px; float: left;white-space: nowrap;line-height: 22px;position: relative;}
 .m_l a:hover{color: #e52e04}
-.happy-pok{position: relative;}
-.happy-pok i{display:block;width:21px;height:17px;position:absolute;top:-12px;right:-16px;z-index:10;background:url(../images/bg/new.png) no-repeat;}
+.m_l a i,.m_l1 a i{display:block;width:21px;height:17px;position:absolute;top:-12px;right:-16px;z-index:10;background:url(../images/bg/new.png) no-repeat;}
+.m_l a i.hot,.m_l1 a i.hot{background-position: -42px 0;margin: 0;}
+.m_l a i.add,.m_l1 a i.add{background-position: -21px 0;}
 .m_l li p{margin: 9px 0 10px;zoom: 1;}
 .m_l li p:after{visibility:hidden;display:block;font-size:0;content:" ";clear:both;}
 /*end 购买彩票*/
