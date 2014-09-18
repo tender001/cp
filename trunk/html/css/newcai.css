@@ -62,7 +62,7 @@
 .blueball b.blue:hover{ background-position:-192px -7px;color:#fff}
 .redball ul.blue b.blue{ background-position:-192px -7px;color:#fff}
 .redball ul.blue b.blue:hover{ background-position:-192px -7px;color:#fff}
-.set_notes{clear:both;padding:20px 0 15;border-bottom:1px solid #ccc;}
+.set_notes{clear:both;padding:20px 0 15px;border-bottom:1px solid #ccc;}
 .set_notes p{clear:both;display:block;height:30px;line-height:30px;color:#444;text-align:center;padding-bottom:8px;}
 .set_notes p b{color:#ba1414;padding:0 3px;font-family:Arial ;font-size:14px}
 .set_notes p em{color:#1e72c6;padding:0 3px;font-family:Arial;font-size:14px}
