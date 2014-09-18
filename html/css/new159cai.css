@@ -1861,7 +1861,8 @@ a.n_gz{color:#fff}
 .nwx5top a{display:block;float:left;height:60px;padding:0 15px;border-right:1px solid #ccc;_width:34px;_padding:0 13px}
 .nwssctop a{padding:0 21px}
 .nwx5top a:hover,.nwx5top a.cur{background:#f60;text-decoration: none;}
-.nwx5top a b{color:#333;font-weight:bold;text-align:Center;display:block;font-size:14px;line-height:22px;height:22px;padding-top:2px;letter-spacing: 1.4px;}
+.nwx5top a b{color:#333;font-weight:bold;text-align:Center;display:block;font-size:14px;line-height:22px;height:22px;padding-top:2px;}
+.w_con .nwx5top a b{letter-spacing: 1.4px;}
 .nwx5top a span{color:#999;text-align:Center;display:block;font-size:12px;line-height:16px;}
 .nwx5top a.cur b,.nwx5top a.cur span,.nwx5top a:hover b,.nwx5top a:hover span{color:#fff}
 .nwx5top em{float:left;width:134px;padding:6px 0 0 5px;line-height:18px;color:#333}
@@ -2168,7 +2169,7 @@ a.sz_cmt{background: url(../images/cai888/nwx5_112.jpg);width:137px;height:33px}
 /*end 2014.8.11 时时彩更新*/
 /*双色球改版2014.9.3*/
 .ball_top em,.ball b{background: url(../images/bg/shuangs/qiu.jpg) no-repeat;}
-.se_main_top .p3 b s,.se_main_top .p3 i s,.choose-ball .ball-left s,.choose-btn b a.ball-btn,.choose-show .computer-btn a,.choose-show p span{background: url(../images/bg/shuangs/se_bg.png) no-repeat;}
+.se_main_top .p3 b s,.se_main_top .p3 i s,.choose-ball .ball-left s,.choose-btn strong a.ball-btn,.choose-show .computer-btn a,.choose-show p span{background: url(../images/bg/shuangs/se_bg.png) no-repeat;}
 .se_main{width: 998px;margin: 0 auto;overflow: visible;}
 .se_main_top{border-top: 4px solid #f60;}
 .se_main_top .p1{height: 40px;line-height: 40px;background: url(../images/bg/shuangs/se_top_bg.jpg) repeat;}
@@ -2221,11 +2222,12 @@ a.sz_cmt{background: url(../images/cai888/nwx5_112.jpg);width:137px;height:33px}
 .ball-right p span{margin:0 7px 0 4px;}
 .ball-right .l p span a{color: #900;}
 .ball-right .r p span a{color: #1e72c6;}
-.choose-btn{clear: both;padding: 16px 0;text-align: center;}
+.choose-btn{clear:left;padding: 16px 0;text-align: center;zoom: 1;}
+.choose-btn:before{visibility:hidden;display:block;font-size:0;content:" ";clear:both;}
 .choose-btn p{line-height: 32px;color: #444;}
 .choose-btn p span{color: #f60;font-weight: 700;padding: 0 2px;}
-.choose-btn b a{line-height: 33px;font-weight: 400;color: #03319a;text-decoration: underline;}
-.choose-btn b a.ball-btn{display: inline-block;width: 137px;height: 33px;background-position: 0 -19px;text-indent: -999em;margin-right: 14px;}
+.choose-btn strong a{line-height: 33px;font-weight: 400;color: #03319a;vertical-align: middle;}
+.choose-btn strong a.ball-btn{display: inline-block;width: 137px;height: 33px;margin-right: 14px;background-position: 0 -19px;}
 .choose-show-b{padding: 16px 0 0;background-color: #f5f5f5;border-top: 1px solid #ccc;}
 .choose-show{width: 725px;margin: 0 auto;}
 .choose-show .ball-bool{float: left;width: 605px;height: 125px;background-color: #fff3ea;border: 1px solid #b5b5b5;overflow: auto;}
