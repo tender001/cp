@@ -139,7 +139,8 @@ Class('CodeList>Dlt12_CodeList', {
 大乐透胆拖选号类
 */
 Class('Choose_base>Dlt_Choose_dt', {
-    statusTpl: '您选择了，前区：胆<b>{$d}</b>码，拖 <b>{$t}</b>码，后区：胆码 <b>{$bd}</b>个，拖码 <b>{$b}</b>个，共<b>{$zhushu}</b>注，共 <b>{$m}</b>元',
+	//<p id="dt_status" >您选择了<b>0</b>个胆码，<b>0</b> 个拖码 ,<em>0</em>个蓝球胆码 <em>0</em> 个蓝球拖码，共 <b>0</b> 注，共 <b>￥0.00</b> 元</p>
+    statusTpl: '您选择了<b>{$d}</b>个胆码，<b>{$t}</b>个拖 码，<em>{$bd}</em>个蓝球胆码，<em>{$b}</em>个蓝球拖 码，共<b>{$zhushu}</b>注，共 <b>{$m}</b>元',
     index:function (ini){
         this.bindDom(ini);
         this.tip = this.lib.NotifyIcon();
