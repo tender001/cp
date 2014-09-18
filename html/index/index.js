@@ -109,7 +109,8 @@ Class(
     },
     loadGameProj : function(pn, ps, toId,expect){
 //    	var data={gid:Class.C('lotid'), pid:Class.C("expect"), state:Class.C("state"), find:Class.C("findstr"), fsort:Class.C("fsort"), dsort:Class.C("dsort"), ps:Class.C("ps"), pn:Class.C("pn")};
-    	var data="gid="+toId+"&pid="+expect+"&state=0&find=&fsort=jindu&dsort=descending&ps=8&pn=1";
+    	var state=(toId=="01"||toId=="50"||toId=="81")?"0":"1";
+    	var data="gid="+toId+"&pid="+expect+"&state="+state+"&find=&fsort=jindu&dsort=descending&ps=8&pn=1";
     	Y.ajax({
 			url : $_trade.url.plist,
 			type : "POST",
