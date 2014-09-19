@@ -705,7 +705,6 @@ em.uf{ background-image:url(../images/159/uf.gif)}
 .head_r ul li{padding:0 3px}
 .jckj_tb p.note{ background-image:none;padding-left:20px}
 .tkts p{background-image:none;}
-.nxhm{zoom:1;margin-left:60px;}
 .nxhm span{float:left;display:block;height:38px;line-height:38px}
 .nstime{width:130px;padding:0 15px 0 10px;color:#333;font-size:12px;color:#000;padding-top:5px;_padding-top:8px;display:block;height:38px;line-height:38px ; position:absolute;top:51px;left:0px}
 .nstime b{display:inline-block;background: url(../images/159/nx_38.jpg);width:22px;height:20px;font:16px/20px Arial;color:#333;margin:0 2px}
@@ -1525,7 +1524,7 @@ a.jc_mtz:hover, a.jc_mhm:hover{background-position:-110px 0;text-decoration: non
 .dc_l_tl{float:left;padding-left:102px}
 .tdaa td{line-height:34px;height:34px;}
 .tdaa .hhtdtk td a{height:32px;padding-top:2px}
-.tdaa a{float:left;height:34px;width:50px;color:#333;background:url(/images/cai888/ban1.jpg) no-repeat scroll 100% bottom; }
+.tdaa a{float:left;height:34px;width:49px;color:#333;background:url(/images/cai888/ban1.jpg) no-repeat scroll 100% bottom; }
 .tdaa a:hover{background:url(/images/cai888/ban3.jpg) 100% bottom no-repeat;text-decoration: none;}
 .tdaa a.a1{background: url(/images/cai888/ban2.jpg) 100% bottom no-repeat;}
 .tdaa  a.a2,.tdaa a.a2:hover{background:url(../images/cai888/ban4.jpg) 0 0 no-repeat;cursor:pointer;border-right:1px solid #63A3CF;border-bottom:1px solid #63A3CF;width:49px;height:33px}
