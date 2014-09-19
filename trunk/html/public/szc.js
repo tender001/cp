@@ -1152,7 +1152,7 @@
 		        				 gid:Class.C('lot_id'),// 游戏编号
 		        				 pid:param.expect,// 期次编号
 		        				 play:1,// 玩法编号
-		        				 codes:"1,1,7:2:3",
+		        				 codes:param.codes,
 		        				 muli:param.beishu,// 投注倍数
 		        				 fflag:0,// 是否文件
 		        				 type:0,// 方案类型
@@ -1173,7 +1173,7 @@
 		        				 gid:Class.C('lot_id'),// 游戏编号
 		        				 pid:param.expect,// 期次编号
 		        				 play:1,// 玩法编号
-		        				 codes:"1,1,7:2:3",
+		        				 codes:param.codes,
 		        				 muli:1,// 投注倍数
 		        				 fflag:0,// 是否文件
 		        				 type:param.ishm,// 方案类型
@@ -1199,7 +1199,7 @@
 					             this.ajax({
 						url : url,
 						type : 'POST',
-						data : "gid=53&pid=2014226&play=1&codes=1,1,7:2:3&muli=1&fflag=0&type=1&name=胜负彩复式合买，欢迎跟单。&desc=&money=2&tnum=2&bnum=1&pnum=0&oflag=1&wrate=2&comeFrom=&source=&endTime=",
+						data :param, /*"gid=53&pid=2014226&play=1&codes=1,1,7:2:3&muli=1&fflag=0&type=1&name=胜负彩复式合买，欢迎跟单。&desc=&money=2&tnum=2&bnum=1&pnum=0&oflag=1&wrate=2&comeFrom=&source=&endTime=",*/
 						retry : 1,
 						dataType : "json",
 						end : function(data) {
