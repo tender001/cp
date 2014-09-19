@@ -2266,7 +2266,7 @@ a.start_hm{margin:10px auto 25px;font-family:"微软雅黑";}
 .tan_mid a.but2{margin:20px auto 0; font-family:"微软雅黑"}
 input#n_page {float: left;}
 .he_in_t,.he_in_t a,.he_in_t b,.he_in_co1 h3 b,.he_in_co2 a{ background: url(../images/cdbg/hlan.png) -1px 0 no-repeat;display:block;float:left}
-.he_in_rt{width:812px;float:left;*zoom:1;padding:0px 0px 50px 10px;margin-bottom:30px}
+.he_in_rt{width:812px;float:left;*zoom:1;padding:0px 0px 50px 8px;margin-bottom:30px}
 .he_in_t{border-left:1px solid #ddd; background-position:-130px -5px;height:52px;border-bottom:1px solid #ddd;padding:40px 0 20px 25px;width:100%;margin-bottom:15px}
 .he_in_t a{width:128px;height:43px}
 .he_in_t a:hover{background-position:-1px -54px}
