@@ -50,8 +50,10 @@ th,td{text-align: center;}
 .top_nav ul li dl dt a{color: #333;}
 .top_nav ul li dl dd{color: #f60;}
 .nav_87{height: 27px;line-height: 27px;background-color: #ffd988;}
-.nav_87 a{color: #333;margin-left: 15px;}
-
+.nav_87 a{color: #333;margin-left: 24px;position: relative;}
+.nav_87 a i{display:block;width:21px;height:17px;position:absolute;top:-11px;right:-21px;z-index:10;background:url(../images/new.png) no-repeat;}
+.nav_87 a i.hot{background-position: -42px 0;margin: 0;}
+.nav_87 a i.add{background-position: -21px 0;}
 .cai_p{width: 1000px;margin: 0 auto;}
 .cai_pl{float: left;width: 218px;border: 1px solid #ddd;}
 .cai_lb{width: 218px;height: 310px;position: relative;z-index: 10;}
