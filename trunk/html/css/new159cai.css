@@ -69,6 +69,7 @@ img{vertical-align:top;}
 .top dl dd li p a{margin:0;margin-right: 8px;float: left;position: relative;}
 .top dl dd li p a:hover{color: #e52e04;}
 .top a{margin: 0 8px;color:#6c6c6c;}
+.top a.e62{color: #e62e04;}
 .top .fl a{color: #e62e04;cursor: pointer;}
 .top .fr{margin-right: -8px;overflow:visible;}
 .top_logo{padding:5px 0;width: 1000px;margin: 0 auto;overflow: hidden;}
