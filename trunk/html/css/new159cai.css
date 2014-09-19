@@ -1805,7 +1805,7 @@ a.jcq_kcur {
 .cubfot{border-top:8px solid #ececec;padding:15px 0;*margin-top:12px}
 .cubfot p{text-align:Center;color:#333;line-height:24px;}
 .cubfot p a{color:#333;}
-.dz_dv label span.sp_value{width:25px;display:block;padding-left: 20px;}
+.dz_dv label span.sp_value{width:25px;display:block;}
 .deltr{width:100%;background:#fefecb;height:34px;position:relative;z-index:1000}
 .deltr div{position:ablosute;}
 .deltr a{display:block;background:url(../images/cai888/del.png);width:16px;height:16px;margin:8px auto}
@@ -1872,6 +1872,7 @@ a.n_gz{color:#fff}
 .nwx5time span.span1{/*width:220px;*/}
 .nwx5time span.span2{padding:0 111px 0 0;line-height: 28px;}
 .nwx5time span.span2 b{color: #e52e04;}
+.nwx5time span.klpk-time b{color:#efd41f;}
 .nwx5time span.span3 font{color: #e52e04;font-weight: 700;}
 .nwx5time span.span4{padding:0 152px 0 0}
 .nwx5time span.span2 b{font-size:30px;font-weight:bold;}
@@ -1943,7 +1944,7 @@ a.sz_cmt{background: url(../images/cai888/nwx5_112.jpg);width:137px;height:33px}
 .w_con .nwx5time{background: url(../images/ssc_bg/w_bg_2.jpg) repeat;height: 42px;border-color: #231a13;}
 .w_con .nwx5time span{color: #fff;line-height: 40px;}
 .w_con .nwx5time span.span3{width: 240px;}
-.w_con .nwx5time font{color: #efd41f;}
+.w_con .nwx5time font{color: #efd41f !important;}
 .span4-pok em{float:left;width: 28px;height: 37px;line-height: 22px;color: #e03537;background: url(../images/ssc_bg/xlpk3.png) no-repeat;border-radius: 3px;}
 .w-happypk .span4-pok em{margin-right: 8px;}
 /*.w_con .nwx5time em.c1{background-position: 0 0;}
