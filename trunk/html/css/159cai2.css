@@ -377,12 +377,13 @@ span.kj_reson em{color:#9b130f;font-size:14px;padding-right:15px;display:block;f
 .all_km_2 table tr:hover td{ background-color:#fefecb}
 .all_km_2 table thead:hover td{background-color:#E9E9E9}
 .all_km_2 table thead td{ background:#e9e9e9;line-height:38px;text-align:center;font-size:12px;font-weight:bold;border-right:none}
-.all_km_2 table h2.fc{line-height:40px;font-size:16px;color:#9b130f;text-align:left; background:url(../images/all_kj/all_kj_30.gif) 10px center no-repeat;border-bottom:1px solid #bbb;border-top:1px solid #ddd;padding-left:50px}
-.all_km_2 table h2.tc{line-height:40px;font-size:16px;color:#9b130f;text-align:left; background:url(../images/all_kj/all_kj_65.gif) 10px center no-repeat;border-bottom:1px solid #bbb;border-top:1px solid #ddd;padding-left:50px}
-.all_km_2 table h2.zc{line-height:40px;font-size:16px;color:#9b130f;text-align:left; background:url(../images/all_kj/zj_zc_log.png) 10px center no-repeat;border-bottom:1px solid #bbb;border-top:1px solid #ddd;padding-left:50px}
-.all_km_2 table h2.gp{line-height:40px;font-size:16px;color:#9b130f;text-align:left; background:url(../images/all_kj/all_kj_67.gif) 12px center no-repeat;border-bottom:1px solid #bbb;border-top:1px solid #ddd;padding-left:50px}
-.all_km_2 table h2.jc{line-height:40px;font-size:16px;color:#9b130f;text-align:left; background:url(../images/all_kj/all_kj_69.gif) 12px center no-repeat;border-bottom:1px solid #bbb;border-top:1px solid #ddd;padding-left:50px}
-.all_km_2 table h2.dc{line-height:40px;font-size:16px;color:#9b130f;text-align:left; background:url(../images/all_kj/all_kj_72.gif) 10px center no-repeat;border-bottom:1px solid #bbb;border-top:1px solid #ddd;padding-left:50px}
+.all_km_2 table h2.fc,.all_km_2 table h2.tc,.all_km_2 table h2.zc,.all_km_2 table h2.gp,.all_km_2 table h2.jc,.all_km_2 table h2.dc{line-height:40px;font-size:16px;color:#9b130f;text-align:left;border-bottom:1px solid #bbb;border-top:1px solid #ddd;padding-left:50px;}
+.all_km_2 table h2.fc{background:url(../images/all_kj/all_kj_30.gif) 10px center no-repeat;}
+.all_km_2 table h2.tc{background:url(../images/all_kj/all_kj_65.gif) 10px center no-repeat;}
+.all_km_2 table h2.zc{background:url(../images/all_kj/zj_zc_log.png) 10px center no-repeat;}
+.all_km_2 table h2.gp{background:url(../images/all_kj/all_kj_67.gif) 12px center no-repeat;}
+.all_km_2 table h2.jc{background:url(../images/all_kj/all_kj_69.gif) 12px center no-repeat;}
+.all_km_2 table h2.dc{background:url(../images/all_kj/all_kj_72.gif) 10px center no-repeat;}
 .all_km_2 table tr.odd td{ background-color:#f0f0f0}
 .all_km_2 table tr.zj_qiu td,.all_km_2 table tr.zj_fang td{padding:5px 3px;height:30px}
 .all_km_2 table tr.zj_qiu b{float:left;width:27px;height:27px;background: url("../images/bg/ball-gai.jpg") -42px 0 no-repeat;margin-left:1px;color:#fff;text-align:center;text-indent:-2px;line-height:24px}
