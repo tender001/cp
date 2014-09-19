@@ -29,6 +29,7 @@ img{vertical-align:top;}
 /*index basic*/
 /*.top dl dt,*/
 .top dl dt s,.top dl.ali dd a,.top dl dd li s,.m_l li span s,.m_l1 li span s,.tit,.m_mid .tab .title,.m_mid .tab .bod b s,.m_mid .tab .bod b em,.m_mid .tab .bod b i,.m_mid .tab .bod b strong,.mob_buy .body dd a,.today .bod li p a.fr,.center .body li p span em,.m_r .tab .title{background: url(../images/bg/index_bg0.png);_background-image: url(../images/bg/index_bg0-ie6.png);}
+.onlkj p b,.newsrc p b{background: url("../images/bg/ball-gai.jpg") no-repeat;}
 /* dd */
 /*top*/
 .top{height: 32px; line-height: 32px; background-color: #f7f7f7; border-top: 1px solid #e8ecef; border-bottom: 1px solid #ddd;overflow:visible;}
@@ -428,7 +429,6 @@ a.a_auto{margin:0 auto 20px auto}
 .tan_top_l{background-image:url(../images/cdbg/m_tan_03.png)}
 .all_km_2 table tr.zj_fang b{background:none;color:#e62e04;font-weight:bold;font-size:14px}
 .tan_top{height:37px}
-.all_km_2 table tr.zj_qiu b{background-image:url(../images/index_99.png)}
 .team_tk{border:1px solid #ff6600}
 .team_tk table thead td{background-color:#ff6600}
 .fotop{height:33px; background-color:#ff7800;line-height:33px;text-align:center;color:#fff;font-size:12px;font-weight:bold;}
@@ -476,8 +476,8 @@ p.fotpp{line-height:24px;text-align:center;padding:16px 0;color:#666;}
 .newsrc h3 a:hover,.newsrc p a:hover{ text-decoration: underline;color:#e52e04}
 .newsrc h3 em{padding-right:10px;font-size:12px;float:right}
 .newsrc p{line-height:20px;height:20px;padding:7px 0 7px 10px}
-.newsrc p b{display:block;float:left; background:url(../images/159/new_07.jpg);width:20px;height:20px;color:#fff;font-weight:bold;font-size:12px;line-height:20px;text-align:center;margin-right:2px}
-.newsrc p b.cur{background:url(../images/159/new_10.jpg)}
+.newsrc p b{float:left;width:20px;height:20px;color:#fff;font-weight:bold;font-size:12px;line-height:20px;text-align:center;margin-right:2px}
+.newsrc p b.cur{background-position: -21px 0;}
 .newsrc p a{color:#145fab;float:right;padding-right:10px}
 .newsr img{display:block;margin-top:10px}
 .news_l_list ul li a:hover{color:#ff6600}
@@ -599,8 +599,6 @@ a.goyh2:hover {
 .he_in_t a.sp3 {
     background-position: -1px -222px;
 }
-span.kj_reson b{background-position: -189px -83px;}
-span.kj_reson b.blue{background-position: -190px -43px;}
 .ds ul li a.cnew{font-weight:bold;color:#ff6600;font-size:13px;
     background: url("/images/159/new.gif") no-repeat scroll 20px 5px ;
     color: #FF6600;
@@ -1649,8 +1647,8 @@ a.jcq_kcur {background: url(../images/njc/jcy_17.jpg) no-repeat scroll 0 0 ;}
 .onlkj p{padding:5px 0 0 12px;line-height:24px;color:#333;clear:both;height:24px}
 .onlkj p span{float:left}
 .onlkj select{border:1px solid #aaa;margin-right:2px}
-.onlkj p b{float:left;width:20px;height:20px;line-height:20px;color:#fff;font-weight:bold;font-size:12px;text-align:center;margin-right:2px;background:url(../images/159/new_07.jpg);}
-.onlkj p b.cur{background:url(../images/159/new_10.jpg)}
+.onlkj p b{float:left;width:20px;height:20px;line-height:20px;color:#fff;font-weight:bold;font-size:12px;text-align:center;margin-right:2px;}
+.onlkj p b.cur{background-position: -21px 0;}
 .onlkj .jc_xqy{margin:0;width:215px;padding:10px 10px 20px}
 .onlkj .jc_xqy span{float:left;height:72px;position:relative;left:0;top:0}
 .onlkj .jc_xqy div{float:left;padding-left:5px;line-height:24px;color:#333;font-size:12px;_padding-left:2px}

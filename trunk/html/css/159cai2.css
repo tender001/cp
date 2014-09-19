@@ -385,9 +385,9 @@ span.kj_reson em{color:#9b130f;font-size:14px;padding-right:15px;display:block;f
 .all_km_2 table h2.dc{line-height:40px;font-size:16px;color:#9b130f;text-align:left; background:url(../images/all_kj/all_kj_72.gif) 10px center no-repeat;border-bottom:1px solid #bbb;border-top:1px solid #ddd;padding-left:50px}
 .all_km_2 table tr.odd td{ background-color:#f0f0f0}
 .all_km_2 table tr.zj_qiu td,.all_km_2 table tr.zj_fang td{padding:5px 3px;height:30px}
-.all_km_2 table tr.zj_qiu b{display:block;width:24px;height:24px; background-image:url(../images/index_99.gif);margin-left:1px;float:left;color:#fff;text-align:center;line-height:24px}
-.all_km_2 table tr.zj_fang b{display:block;width:15px;height:26px; background-image:url(../images/all_kj/zc_fang.gif);margin-left:1px;float:left;color:#fff;text-align:center;line-height:26px}
-.all_km_2 table tr.zj_qiu b.blue{background-image:url(../images/index_102.gif)}
+.all_km_2 table tr.zj_qiu b{float:left;width:27px;height:27px;background: url("../images/bg/ball-gai.jpg") -42px 0 no-repeat;margin-left:1px;color:#fff;text-align:center;text-indent:-2px;line-height:24px}
+.all_km_2 table tr.zj_qiu b.blue{background-position: -70px 0;}
+.all_km_2 table tr.zj_fang b{float:left;width:15px;height:26px; background-image:url(../images/all_kj/zc_fang.gif);margin-left:1px;color:#fff;text-align:center;line-height:26px}
 .all_km_2 table span{text-align:center;display:block;}
 a.ggtj{width:18px;height:18px;display:inline-block; background-image: url(../images/1_01_12.gif)}
 a.zs{width:18px;height:18px;display:inline-block; background-image: url(../images/1_01_13.gif)}
@@ -2549,8 +2549,8 @@ a.g_a_t:hover{background-position:-235px -79px}
 .g_5_right  a{bottom: 10px;clear: both;left: 280px;position: absolute;}
 .c_rtd{border-right:1px solid #ccc;width:60px}
 .zn_gk_msg td.last{border-bottom:none}
-span.kj_reson b{display:block;width:38px;height:38px;float:left; background-position:-189px -82px;color:#fff;text-align:center;line-height:38px;font-weight:bold;font-size:20px; font-family:Arial, Helvetica, sans-serif;margin-right:1px}
-span.kj_reson b.blue{ background-position:-189px -42px}
+span.kj_reson b{float:left;width:38px;height:38px;font:20px/34px Arial, Helvetica, sans-serif;margin-right:1px;color:#fff;text-align:center;text-indent: -3px;background: url("../images/bg/ball-gai.jpg") -97px 0 no-repeat;}
+span.kj_reson b.blue{ background-position:-136px 0;}
 .help_right h3{color:#000;font-size:14px;line-height:30px}
 
 .hm_top_r p a,.hm_fh,.time_bg b.tim,.x_g_b,.hm_ms_main ul li.mr a.dz,.x_xq_t1 em,.hm_col_5_top,.hm_col_5_top ul li,.x_f_b b,.a_ss1,.x_f_a span,.x_g_d b,.x_f_a a.a_zcz{ background: url(../images/cdbg/x_xq.png) 0 0 no-repeat;display:block}
