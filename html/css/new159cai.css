@@ -1482,43 +1482,43 @@ table.bk_yd  p{text-align:left;padding-left:10px}
 .dc_r_t{background:none;border-bottom:1px solid #ddd}
 .dcr_table th{ background: #f5f5f5;border-bottom:1px solid #ddd}
 .dc_r_m .an_title{ background: #f5f5f5}
-a.jcq_k{margin-top:2px;background:url("/images/njc/jcy_15.jpg")   no-repeat scroll 0 0 ;height:22px;margin-right:0}
+a.jcq_k{height:22px;margin-top:2px;margin-right:0;background:url("/images/njc/jcy_15.jpg")   no-repeat scroll 0 0 ;}
 .an_title ul li{border-bottom:1px solid #ddd}
 .an_title ul li.cur{border:none}
 table.dcr_table{border:none}
-input.mul{width:60px;border:1px solid #bbb;margin-right:2px}
+input.mul{width:60px;margin-right:2px;border:1px solid #bbb;}
 .dc_r_m p.dc_qr a.red{color:#145fab}
-.dc_r_m p.dc_qr a.red:hover{color:#ff0000;text-decoration:underline}
-a.jc_mtz,a.jc_mhm{background:url("/images/cai888/jcbtn_03.jpg") no-repeat scroll 0 0 ;width:104px;height:36px;line-height:36px;margin-left:10px}
+.dc_r_m p.dc_qr a.red:hover{color:#f00;text-decoration:underline}
+a.jc_mtz,a.jc_mhm{width:104px;height:36px;line-height:36px;margin-left:10px;background:url("/images/cai888/jcbtn_03.jpg") no-repeat scroll 0 0 ;}
 .dc_hs{background:none;border-bottom:1px solid #ccc}
 a.jc_mtz:hover, a.jc_mhm:hover{background-position:-110px 0;text-decoration: none;color: #fff;}
 .box_m{border:1px solid #ccc}
 .dc_table th{background:#f5f5f5;border-top:1px solid #ccc;border-bottom:1px solid #ccc;height:32px;border-right:1px solid #ccc}
 .touztop{background:url("/images/cai888/jctop_03.jpg");height:82px;border-left:1px solid #ddd;border-right:1px solid #ddd;margin-bottom:10px}
 .touzcm{height:40px;padding-top:4px}
-.touzcm h1{float:left;line-height:40px;width:128px;text-align:center;color:#333;font-family:"微软雅黑";font-size:22px;font-weight:100;border-right:1px solid #bbb;}
+.touzcm h1{float:left;width:128px;font:400 22px/40px "微软雅黑";text-align:center;color:#333;border-right:1px solid #bbb;}
 .touzcm span{float:left;}
-.touzcm span a{display:block;float:left;line-height:40px;padding:0 16px;font-size:14px;color:#333;border-right:1px solid #bbb;height:40px}
+.touzcm span a{float:left;line-height:40px;padding:0 16px;font-size:14px;color:#333;border-right:1px solid #bbb;height:40px}
 .touzcm span a:hover{text-decoration: none;}
-.touzcm span a.cur{background:#ff6600;color:#fff;font-weight:bold;}
+.touzcm span a.cur{background:#f60;color:#fff;font-weight:bold;}
 .touzcm p{float:right;line-height:40px;color:#333;padding-right:15px}
 .touzcm p a{color:#333;margin:0 5px;}
-.touzcm p a:hover{color:#ff0000;text-decoration:underline}
+.touzcm p a:hover{color:#f00;text-decoration:underline}
 .tzsontab{height:30px;padding-top:8px;}
 .tzsontab span{float:left;padding-left:20px;color:}
-.tzsontab span a{color:#444;display:block;float:left;padding:0 18px;line-height:30px;height:30px}
+.tzsontab span a{float:left;height:30px;line-height:30px;padding:0 18px;color:#444;}
 .tzsontab span a.cur{border:1px solid #ccc;border-bottom:none;background:#fff}
 .tzsontab p{float:right;margin-right:20px;line-height:26px;color:#333}
 .tzsontab p em{color:#e52e04;font-weight:bold;font-family:Arial;margin:0 2px}
 .tzsontab p b,.br1{background:url("/images/cai888/jctop_06.jpg") 0 0 ;height:15px;width:15px;cursor:pointer;display:block;float:left;margin:5px 0 0 3px}
 .br1{margin:0}
 .jckj_tb p span{float:left}
-.jckj_tb p b{background:url("/images/cai888/jctop_06.jpg") 0 0 ;height:15px;width:15px;cursor:pointer;display:block;float:left;margin:5px 0 0 3px}
+.jckj_tb p b{float:left;width:15px;height:15px;margin:5px 0 0 3px;background:url("/images/cai888/jctop_06.jpg") 0 0 ;cursor:pointer;}
 .jckj_tb label{float:left;cursor:pointer}
 .matchxzk{ cursor: pointer;height: 32px;line-height: 30px;position: relative;z-index: 2;overflow:visible;_height:22px}
 .matchxz{float:left;width:100%;_height:22px;_padding-top:10px}
 .matchxz i{background:url("/images/cai888/jtdown_11.jpg") 0 0 no-repeat;transition: all 0.2s ease-in 0s;height: 4px;margin-left: 5px;vertical-align: middle;width: 7px;display:inline-block}
-.jcslt{position:absolute;z-index:9;top:30px;left:0;background:#fff;width:113px;border:2px solid #444;padding-bottom:10px}
+.jcslt{width:113px;background:#fff;border:2px solid #444;padding-bottom:10px;position:absolute;top:30px;left:0;z-index:9;}
 .matchxzc{border:2px solid #444;border-bottom:none; background:#fff;height:30px;line-height:20px;position:relative;z-index:99;_height:20px}
 .matchxzc i{transform:rotate(180deg)}
 .dc_l_tl{float:left;padding-left:102px}
@@ -1527,32 +1527,31 @@ a.jc_mtz:hover, a.jc_mhm:hover{background-position:-110px 0;text-decoration: non
 .tdaa a{float:left;height:34px;width:49px;color:#333;background:url(/images/cai888/ban1.jpg) no-repeat scroll 100% bottom; }
 .tdaa a:hover{background:url(/images/cai888/ban3.jpg) 100% bottom no-repeat;text-decoration: none;}
 .tdaa a.a1{background: url(/images/cai888/ban2.jpg) 100% bottom no-repeat;}
-.tdaa  a.a2,.tdaa a.a2:hover{background:url(../images/cai888/ban4.jpg) 0 0 no-repeat;cursor:pointer;border-right:1px solid #63A3CF;border-bottom:1px solid #63A3CF;width:49px;height:33px}
-.tdaa .hhtdtk td a.a2,.tdaa .hhtdtk td a.a2:hover{background:url(../images/cai888/ban4.jpg) 0 0 no-repeat;cursor:pointer;border-right:1px solid #63A3CF;border-bottom:1px solid #63A3CF;width:49px;height:31px}
+.tdaa  a.a2,.tdaa a.a2:hover{width:49px;height:33px;border-right:1px solid #63A3CF;border-bottom:1px solid #63A3CF;background:url(../images/cai888/ban4.jpg) 0 0 no-repeat;cursor:pointer;}
+.tdaa .hhtdtk td a.a2,.tdaa .hhtdtk td a.a2:hover{width:49px;height:31px;border-right:1px solid #63A3CF;border-bottom:1px solid #63A3CF;background:url(../images/cai888/ban4.jpg) 0 0 no-repeat;cursor:pointer;}
 .tdaa a:hover{color:#333}
 .unselect a{display:block;height:68px;width:60px;line-height:68px;color:#444}
-.tdaa a em{color: #1F5BA9;display: block;line-height: 16px;text-align: center;}
-.tdaa a i{ color: #999999;display: block;line-height: 16px;text-align: center;}
+.tdaa a em,.tdaa a i{color: #1F5BA9;display: block;line-height: 16px;text-align: center;}
+.tdaa a i{ color: #999;}
 .hhtdtk{padding:5px}
 .tdaa td.hhtdtk{background:#fffeed}
 .tdaa .hhtdtk td{height:34px}
-
 .hhtdtk table{width:705px;border:1px solid #ddd;background:#fafafa;margin:0 auto;_width:710px}
 .unselecttd{cursor:pointer;}
-.unselect font{color:#ff0000;font-weight:100;font-size:12px}
+.unselect font{color:#f00;font-weight:100;font-size:12px}
 .unselect{background:#EBF5FF;}
 span.jckj_tm{font-size:12px;color:#555}
 span.jckj_tm select{margin-left:5px}
 .unselecttdcur{background:#fffeed}
-.dc_table .unselect a:hover{color:#ff6600}
+.dc_table .unselect a:hover{color:#f60}
 .dc_ls_n ul.clearfix li{width:95px;text-align:left;padding-left:10px}
 .dc_ls_n ul.clearfix li input{margin-right:2px}
 .dc_ls_n h3{line-height:24px;color:#333;padding-left:10px;text-align:left;padding-top:5px;font-size:12px;font-weight:bold;clear:both}
 .dc_ls_n p{padding:2px 0 2px 6px}
 .dc_table td.tdaa{border:none}
-.dc_ls_n p a{display:block;float:left;width:45px;height:20px;background:#ff6600;margin-left:4px;text-align:center;color:#fff;line-height:20px}
+.dc_ls_n p a{display:block;float:left;width:45px;height:20px;background:#f60;margin-left:4px;text-align:center;color:#fff;line-height:20px}
 .dc_ls_n p a:hover{color:#fff}
-.jckj_tb table.co1 thead td{background: none repeat scroll 0 0 #F5F5F5;border-bottom: 1px solid #CCCCCC;border-right: 1px solid #CCCCCC;height: 32px;}
+.jckj_tb table.co1 thead td{background: none repeat scroll 0 0 #F5F5F5;border-bottom: 1px solid #ccc;border-right: 1px solid #ccc;height: 32px;}
 .jc_ds_col_1{background:#f5f5f5;border:1px solid #ddd;width:971px}
 .buyfimsg{border-left:1px solid #ddd;border-bottom:1px solid #ddd;}
 .buyfimsg td{border-right:1px solid #ddd;border-bottom:1px solid #ddd;padding:7px 0;color:#444;font-size:12px;text-align:left;padding-left:13px;vertical-align:middle;}
