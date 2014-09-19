@@ -1468,7 +1468,7 @@ table.bk_yd  p{text-align:left;padding-left:10px}
 .dc_table{border-collapse:collapse;margin: -1px 0 0 -1px;}
 .dc_table tr.odd td{background-color:#fff}
 .dc_table tr:hover td,.dc_table tr.odd td:hover{background-color:#fffee6}
-.dc_table td{border:1px solid #ddd;}
+.dc_l_m1 .dc_table td{border:1px solid #ddd;}
 .dc_table td.h_br,table.co1 tbody td.btn_a{background:url(/images/cai888/ban1.jpg) no-repeat scroll 100% bottom;border-right:1px solid #E0E2E1;}
 .dc_table td.h_br:hover{background:url(/images/cai888/ban3.jpg) 100% bottom no-repeat}
 .dc_table td.h_brx{background: url(/images/cai888/ban2.jpg) 100% bottom no-repeat;}
