@@ -1465,7 +1465,7 @@ table.bk_yd  p{text-align:left;padding-left:10px}
 .predp{line-height:30px;color:#f00;font-size:12px;font-weight:bold;text-align:Center;}
 .predpnone{display:none}
 .kj_yctj{margin-top:0}
-.dc_table{border-collapse:collapse;margin: -1px 0 0 0;}
+.dc_table{border-collapse:collapse;}
 .dc_table tr.odd td{background-color:#fff}
 .dc_table tr:hover td,.dc_table tr.odd td:hover{background-color:#fffee6}
 .dc_l_m1 .dc_table{margin: -1px 0 -1px -1px;}
