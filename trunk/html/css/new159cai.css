@@ -101,7 +101,7 @@ img{vertical-align:top;}
 .m_l dd{width:150px;}
 .m_l a,.m_l1 a{color:#585858;margin-right: 10px; float: left;white-space: nowrap;line-height: 22px;position: relative;}
 .m_l a:hover{color: #e52e04}
-.m_l a i,.m_l1 a i,.top dl dd li p a i{display:block;width:21px;height:17px;position:absolute;top:-9px;right:-17px;z-index:10;background:url(../images/bg/new.png) no-repeat;}
+.m_l a i,.m_l1 a i,.top dl dd li p a i{display:block;width:21px;height:17px;position:absolute;top:-7px;right:-17px;z-index:10;background:url(../images/bg/new.png) no-repeat;}
 .m_l a i.hot,.m_l1 a i.hot,.top dl dd li p a i.hot{background-position: -42px 0;margin: 0;}
 .m_l a i.add,.m_l1 a i.add,.top dl dd li p a i.add{background-position: -21px 0;}
 .m_l li p{margin: 9px 0 10px;zoom: 1;}
