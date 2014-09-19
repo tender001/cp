@@ -1468,6 +1468,7 @@ table.bk_yd  p{text-align:left;padding-left:10px}
 .dc_table{border-collapse:collapse;margin: -1px 0 0 0;}
 .dc_table tr.odd td{background-color:#fff}
 .dc_table tr:hover td,.dc_table tr.odd td:hover{background-color:#fffee6}
+.dc_l_m1 .dc_table{margin: -1px 0 -1px -1px;}
 .dc_l_m1 .dc_table td{border:1px solid #ddd;}
 .dc_table td.h_br,table.co1 tbody td.btn_a{background:url(/images/cai888/ban1.jpg) no-repeat scroll 100% bottom;border-right:1px solid #E0E2E1;}
 .dc_table td.h_br:hover{background:url(/images/cai888/ban3.jpg) 100% bottom no-repeat}
@@ -1524,7 +1525,7 @@ a.jc_mtz:hover, a.jc_mhm:hover{background-position:-110px 0;text-decoration: non
 .dc_l_tl{float:left;padding-left:102px}
 .tdaa td{line-height:34px;height:34px;}
 .tdaa .hhtdtk td a{height:32px;padding-top:2px}
-.tdaa a{float:left;height:34px;width:49px;color:#333;background:url(/images/cai888/ban1.jpg) no-repeat scroll 100% bottom; }
+.tdaa a{float:left;height:34px;width:33.33%;color:#333;background:url(/images/cai888/ban1.jpg) no-repeat scroll 100% bottom; }
 .tdaa a:hover{background:url(/images/cai888/ban3.jpg) 100% bottom no-repeat;text-decoration: none;}
 .tdaa a.a1{background: url(/images/cai888/ban2.jpg) 100% bottom no-repeat;}
 .tdaa  a.a2,.tdaa a.a2:hover{width:49px;height:33px;border-right:1px solid #63A3CF;border-bottom:1px solid #63A3CF;background:url(../images/cai888/ban4.jpg) 0 0 no-repeat;cursor:pointer;}
