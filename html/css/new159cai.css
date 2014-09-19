@@ -1465,7 +1465,7 @@ table.bk_yd  p{text-align:left;padding-left:10px}
 .predp{line-height:30px;color:#f00;font-size:12px;font-weight:bold;text-align:Center;}
 .predpnone{display:none}
 .kj_yctj{margin-top:0}
-.dc_table{border-collapse:collapse;margin: -1px 0 0 -1px;}
+.dc_table{border-collapse:collapse;margin: -1px 0 0 0;}
 .dc_table tr.odd td{background-color:#fff}
 .dc_table tr:hover td,.dc_table tr.odd td:hover{background-color:#fffee6}
 .dc_l_m1 .dc_table td{border:1px solid #ddd;}
@@ -1560,27 +1560,24 @@ span.jckj_tm select{margin-left:5px}
 .buyfimsg td input.text {border: 1px solid #DDDDDD;height: 22px;margin-right: 5px;text-align: center;width: 45px;}
 html .buyfimsg td input.text {height: 22px;line-height:22px;padding: 0; vertical-align:middle;}
 .buyfimsg td input.box {margin-right:4px;vertical-align: -2px;}
-.buyfimsg td b {background:#eee;border: 1px solid #CCCCCC;border-left:1px solid #eee;color: #444444;cursor: pointer;display: block;float: left;font-family: Arial,Helvetica,sans-serif;font-size: 14px;font-weight: 100;line-height: 28px;padding: 0 15px;}
+.buyfimsg td b {background:#eee;border: 1px solid #ccc;border-left-color: #eee;color: #444;cursor: pointer;float: left;font: 400 14px/28px Arial,Helvetica,sans-serif;padding: 0 15px;}
 .buyfimsg td b.first{border-left:1px solid #ccc}
-.buyfimsg td b.cur,.buyfimsg td b:hover{border:1px solid #ff6600;}
-.buyfimsg td b.cur{border:1px solid #ff6600;background:#ff6600;color:#fff}
-.buyfimsg td em {margin-right:12px;background:#eee;border: 1px solid #CCCCCC;color: #444444;cursor: pointer;display: inline-block;font-family: Arial,Helvetica,sans-serif;font-size: 14px;font-weight: 100;line-height: 28px;padding: 0 15px;}
-.buyfimsg td em.cur,.buyfimsg td em:hover{border:1px solid #ff6600;}
-.buyfimsg td em.cur{border:1px solid #ff6600;background:#ff6600;color:#fff}
+.buyfimsg td b:hover,.buyfimsg td em.cur,.buyfimsg td em:hover{border:1px solid #f60;}
+.buyfimsg td b.cur,.buyfimsg td em.cur{border:1px solid #f60;background:#f60;color:#fff}
+.buyfimsg td em {margin-right:12px;background:#eee;border: 1px solid #ccc;color: #444;cursor: pointer;display: inline-block;font: 400 14px/28px Arial,Helvetica,sans-serif;padding: 0 15px;}
 .buyfimsg td input.bt {border: 1px solid #DDDDDD;display: block;float: left;height: 25px;margin-top:1px;width: 515px;font-size:12px;padding:6px 0 0 5px\9;height:19px\9}
 :root .buyfimsg td input.bt{padding:0 0 0 5px}
 #container {margin: 0 auto;position: relative;width: 998px;/*border: 1px solid #ccc;*/overflow: visible;zoom: 1;}
 #container:after{visibility:hidden;display:block;font-size:0;content:" ";clear:both;}
 .numcai{overflow: visible;}
 .buyfimsg textarea {border: 1px solid #DDDDDD;color: #444444;float: left;font-size: 12px;height: 100px;margin-top: 11px;padding: 5px;width: 510px;}
-a.buyfa {background: #ff7213;border:1px solid #CF5955;color: #FFFFFF;display: block;font-family: "微软雅黑";font-size: 16px;height: 42px;line-height: 42px;margin:7px auto 2px;text-align: center;width: 190px;}
+a.buyfa {display: block;width: 190px;height: 42px;margin:7px auto 2px;font: 16px/42px "微软雅黑";text-align: center;color: #fff;background: #ff7213;border:1px solid #CF5955;}
 a.buyfa:hover{background:#ff6600}
 .buyfimsg p.p2{font-size:12px;line-height:18px;height:24px;text-align: left;}
 .buyfimsg p.p2 a{color:#145fab}
-.buyfimsg p.p2 a:hover{color:#ff0000; text-decoration:underline}
+.buyfimsg p.p2 a:hover,.buyfimsg p.p1 a:hover{color:#ff0000; text-decoration:underline}
 .buyfimsg p.p1{text-align:Center;padding-top:8px}
 .buyfimsg p.p1 a{color:#145fab}
-.buyfimsg p.p1 a:hover{color:#ff0000; text-decoration:underline}
 .buyfimvs{width:840px;margin:10px auto;border:4px solid #f1f1f1}
 .buyfimvs table{border-left:1px solid #ccc;border-bottom:1px solid #ccc}
 .buyfimvs td{padding:0;text-align:center;border-right:1px solid #ccc;border-top:1px solid #ccc;line-height:30px;height:30px;font-size:12px}
@@ -1592,11 +1589,9 @@ em.ew_eright{text-align:right;float:right}
 .dc_l_tr{margin:0}
 #title_folats,#title_folat{overflow:visible}
 .ddc_table td s.lests{float:right}
-a.jcq_kcur {
-    background: url(../images/njc/jcy_17.jpg) no-repeat scroll 0 0 ;
-}
+a.jcq_kcur {background: url(../images/njc/jcy_17.jpg) no-repeat scroll 0 0 ;}
 .hide_table{border:none; border-top: 1px solid #62A3D0;}
-.hide_table tr.ping td{background-position:100% 0px;}
+.hide_table tr.ping td{background-position:100% 0;}
 .hide_table tr.fu td{border-top:1px solid #62A3D0}
 .dz_dv{padding-right:6px;/*background: url(/images/cai888/ban1-180.jpg) left top no-repeat;position: relative;left: -1px;top: -1px;*/}
 .bank_zj ul li em.jthpd{background-position:-28px -269px}
@@ -1606,33 +1601,33 @@ a.jcq_kcur {
 .zf_judge h1{background:url(../images/cai888/gttd.jpg) no-repeat scroll left center ;margin:0 auto}
 .zf_j_bg{background:none;padding-left:120px;padding-top:0;height:auto;padding-bottom:30px}
 .zf_judge p{line-height:30px;padding-left:130px;}
-.zf_judge p a{display:block;float:left;padding:0 20px;color:#fff;font-weight:bold;background:#ff6600;margin-left:10px;font-size:12px}
+.zf_judge p a{float:left;margin-left:10px;padding:0 20px;font-size:12px;font-weight:bold;color:#fff;background:#f60;}
 .zf_judge p a:hover{color:#fff; text-decoration:underline}
 .zf_judge p.sb{padding:20px 0  0 30px;text-align:left;}
 .zf_judge h1.sb{   background: url(../images/cai888/gth_03.jpg) no-repeat scroll left center }
-.zf_j_bg table td em{color:#333;font-weight:100}
-.zf_j_bg table td{font-weight:100}
+.zf_j_bg table td em{color:#333;}
+.zf_j_bg table td,.zf_j_bg table td em{font-weight:400}
 .dc_tablehh th{line-height:22px;height:22px;}
 .zf_j_bg table strong{font-weight:bold}
 .dc_table tr.tdaa table:hover td{background:#fff}
 .tdaa .hhtdtk .lchhtab td a{width:65px;font-weight:bold}
 .tdaa .hhtdtk tr.tr2 td{height:28px;line-height:28px}
-.hhtdtk table span{display:block;float:left;width:64px;float:left;border-left:1px solid #ccc;color:#444;text-align:center;line-height:28px;height:28px}
+.hhtdtk table span{float:left;width:64px;height:28px;line-height:28px;border-left:1px solid #ccc;color:#444;text-align:center;}
 .dc_r_m{clear:both}
 .dc_table td{height:34px;}
 .news_left table td{height:35px;line-height:35px;}
 .news_left thead td,.news_left thead th{background:#f5f5f5;}
-.news_left table a:hover{color:#ff0000}
+.news_left table a:hover{color:#f00}
 .todaykj{width:195px;height:61px;background:url(../images/cai888/news_03.jpg);padding:12px 10px 10px 55px;margin-bottom:10px;}
 .todaykj p{line-height:20px;}
-.todaykj p a{color:#145fab;width:65px;float:left;display:block;}
+.todaykj p a{color:#145fab;width:65px;float:left;}
 .todaykj p a.a1{color:#ff6600}
 .todaykj p a:hover{text-decoration:underline}
 .todaykj p.m_kaij{font-size: 16px;color: #e52e04;padding-top: 10px;}
-.todaykj p.m_kaij a{width: 9em;text-decoration: underline;font-size: 12px;color: #f60;}
-.sjdownload{border:1px solid #ddd;clear:both;margin-top:10px;zoom:1}
-.sjdownload h3{border-bottom:1px solid #ddd;height:30px;line-height:30px;padding-left:20px;font-weight:bold;font-size:12px;background:#ececec}
-.sjdownload p{background:url(../images/cai888/news_07.jpg) no-repeat 0 0 ;margin:10px;height:83px;padding-left:107px;padding-top:3px}
+.todaykj p.m_kaij a{width: 9em;font-size: 12px;color: #f60;text-decoration: underline;}
+.sjdownload{clear:both;border:1px solid #ddd;margin-top:10px;zoom:1}
+.sjdownload h3,.onlkj h3{border-bottom:1px solid #ddd;height:30px;line-height:30px;padding-left:20px;font-weight:bold;font-size:12px;background:#ececec}
+.sjdownload p{margin:10px;height:83px;padding-left:107px;padding-top:3px;background:url(../images/cai888/news_07.jpg) no-repeat 0 0 ;}
 .sjdownload p a{display:block;width:114px;height:34px;background:url(../images/cai888/news_10.jpg)}
 .sjdownload p a.a1{background:url(../images/cai888/news_13.jpg);margin-top:12px}
 .news_left h4{border-bottom:1px solid #e5e5e5;padding: 0;margin-bottom:15px}
@@ -1645,24 +1640,23 @@ a.jcq_kcur {
 .onlkjp{padding-top:5px}
 .fxgj h2{background:#f5f5f5;height:30px;line-height:30px;font-weight:bold}
 .onlkj{border:1px solid #ddd;clear:both;zoom:1}
-.onlkj h3{border-bottom:1px solid #ddd;height:32px;line-height:32px;padding-left:10px;font-weight:bold;font-size:12px;background:#ececec}
+.onlkj h3{height:32px;line-height:32px;padding-left:10px;}
 .onlkj h3 span{float:left;font-size:14px}
 .onlkj h3 a{float:right;color:#145fab;margin-right:12px;font-weight:100;font-size:12px}
-.onlkj h3 a:hover{color:#f00}
+.onlkj p em,.onlkj h3 a:hover{color:#f00}
 .onlkj p{padding:5px 0 0 12px;line-height:24px;color:#333;clear:both;height:24px}
 .onlkj p span{float:left}
 .onlkj select{border:1px solid #aaa;margin-right:2px}
-.onlkj p em{color:#f00;}
-.onlkj p b{display:block;float:left; background:url(../images/159/new_07.jpg);width:20px;height:20px;color:#fff;font-weight:bold;font-size:12px;line-height:20px;text-align:center;margin-right:2px}
+.onlkj p b{float:left;width:20px;height:20px;line-height:20px;color:#fff;font-weight:bold;font-size:12px;text-align:center;margin-right:2px;background:url(../images/159/new_07.jpg);}
 .onlkj p b.cur{background:url(../images/159/new_10.jpg)}
 .onlkj .jc_xqy{margin:0;width:215px;padding:10px 10px 20px}
-.onlkj .jc_xqy span{position:relative;float:left;height:72px;left:0;top:0}
+.onlkj .jc_xqy span{float:left;height:72px;position:relative;left:0;top:0}
 .onlkj .jc_xqy div{float:left;padding-left:5px;line-height:24px;color:#333;font-size:12px;_padding-left:2px}
 .onlkj .jc_xqy div strong{font-weight:bold}
-.onlkj .jc_xqy div a{display:block;float:left;color:#fff;background:#ff6600;padding:0 10px;margin-left:10px;height:25px;line-height:25px;margin-top:6px}
+.onlkj .jc_xqy div a{float:left;height:25px;line-height:25px;margin-top:6px;padding:0 10px;color:#fff;background:#f60;margin-left:10px;}
 .onlkjplist{padding:7px 0 10px 10px}
-.onlkjplist a{line-height:24px;color:#333;background: url(../images/cai888/news2_03.jpg) left 10px no-repeat;display:block;height:24px;padding-left:16px}
-.onlkjplist a:hover{color:#ff6600;text-decoration:underline}
+.onlkjplist a{display:block;height:24px;line-height:24px;padding-left:16px;color:#333;background: url(../images/cai888/news2_03.jpg) left 10px no-repeat;}
+.onlkjplist a:hover,.newsc2list a:hover{color:#ff6600;text-decoration:underline}
 .dc_table td label{}
 .dc_r{background:#fff}
 .newsco1{float:left;width:688px;height:520px;padding:20px;border:1px solid #ddd;}
@@ -1670,44 +1664,42 @@ a.jcq_kcur {
 .newsc2c{border:1px solid #ddd;margin-top:10px}
 .newsco2 h3{border-bottom:1px solid #ddd;height:30px;line-height:30px;padding-left:12px;font-weight:bold;font-size:14px;background:#ececec}
 .newsco2 h3 span{float:left}
-.newsco2 h3 a{float:right;margin-right:10px;color:#444;font-size:12px;font-weight:100}
-.newsco2 h3 a:hover{color:#ff0000;text-decoration:underline}
+.newsco2 h3 a,.newsc1c h3 a{float:right;margin-right:10px;color:#444;font-size:12px;font-weight:100}
+.newsco2 h3 a:hover,.newsc1c h3 a:hover{color:#ff0000;text-decoration:underline}
 .newsc2list{padding:7px 0 10px 10px}
-.newsc2list a{line-height:24px;color:#333;background: url(../images/cai888/news2_03.jpg) left 10px no-repeat;display:block;height:24px;padding-left:16px}
-.newsc2list a:hover{color:#ff6600;text-decoration:underline}
-.newscrlist a{line-height:24px;color:#555;background: url(../images/cai888/news1_11.jpg) left 9px no-repeat;display:block;height:24px;padding-left:16px}
+.newsc2list a,.newscrlist a{line-height:24px;display:block;height:24px;padding-left:16px}
+.newsc2list a{color:#333;background: url(../images/cai888/news2_03.jpg) left 10px no-repeat;}
+.newscrlist a{color:#555;background: url(../images/cai888/news1_11.jpg) left 9px no-repeat;}
 .newscrlist h5{font-weight:100;color:#000;font-size:12px;line-height:22px;background:#f2f2f2;margin:8px 10px 8px 0;padding-left:10px}
 .newscrlist a.aimg1{width:auto;height:auto;background:none;padding:0}
 .newscrlist img{margin:6px 0 0 15px;display:block}
 .newsc1c{height:265px;width:330px;float:left;}
 .newsc1c h3{border-bottom:1px solid #ccc;height:34px;line-height:34px;padding-left:14px;font-weight:100;font-size:14px;background:#ececec}
-.newsc1c h3 span{float:left;font-size:18px;font-family:"微软雅黑"}
-.newsc1c h3 a{float:right;margin-right:10px;color:#444;font-size:12px;font-weight:100}
-.newsc1c h3 a:hover{color:#ff0000;text-decoration:underline}
+.newsc1c h3 span{float:left;font:18px/34px "Microsoft YaHei"}
 .newsc1list{padding:12px 0 0 0}
 .newsc1list a{font-size:14px;line-height:29px;color:#333;background: url(../images/cai888/news1_03.jpg) left 10px no-repeat;display:block;height:29px;padding-left:16px}
 .newsc1list a:hover{color:#ff6600;text-decoration:underline}
 .newsbanner{margin:10px 0;clear:both;height:80px}
-.newsc2list1 b{float:left;font-family:arial;font-weight:100;text-align:center;margin-top:7px;*margin-top:4px;display:block;width:12px;height:12px;margin-right:10px;color:#fff;line-height:12px;background: url(../images/cai888/news1_22.jpg)}
+.newsc2list1 b{float:left;width:12px;height:12px;line-height:12px;margin-right:10px;font-family:arial;font-weight:100;text-align:center;color:#fff;margin-top:7px;*margin-top:4px;background: url(../images/cai888/news1_22.jpg)}
 .newsc2list1 a{background:none;padding:0;line-height:26px;height:26px;*line-height:18px;*height:18px}
 .newsc2list1 p{clear:both;line-height:26px;*line-height:18px}
 .backtime{padding:226px 0 152px 592px;height:34px}
-.backtime span{padding-right:20px;display:block;float:left;height:34px;width:56px}
-.backtime b{letter-spacing:12px;display:block;float:left;width:26px;height:34px;line-height:34px;color:#ffd800;font-weight:bold;font-size:30px;font-family:arial;margin-right:2px;text-align:Center}
+.backtime span{float:left;height:34px;width:56px;padding-right:20px;}
+.backtime b{float:left;width:26px;height:34px;margin-right:2px;font:700 30px/34px Arial;color:#ffd800;letter-spacing:12px;text-align:Center}
 .cubm{width:973px;padding:0 14px;background:#fff;}
 .vstop{background: url(../images/cai888/worcub_03.jpg) no-repeat 0 0 ;width:977px;}
 .vsbottom{background: url(../images/cai888/worcub_05.jpg) no-repeat 0 bottom ;width:977px;height:11px}
-.vscd{width:110px;float:left;border-right:2px solid #d3b39a;padding-top:30px;padding-left:10px}
+.vscd{float:left;width:110px;border-right:2px solid #d3b39a;padding-top:30px;padding-left:10px}
 .vsbottom .vscd{height:9px;padding:0 0 0 10px}
 .vscd a{display:block;border:1px solid #d3b39a;background:#fff;border-right:none;height:25px;line-height:25px;margin-top:4px}
-.vscd a img{display:block;height:25px;width:25px;float:left}
-.vscd a span{display:block;height:25px;line-height:25px;float:left;padding-left:10px;color:#111}
+.vscd a img{float:left;width:25px;height:25px;}
+.vscd a span{float:left;height:25px;line-height:25px;padding-left:10px;color:#111}
 .vscd a:hover{background:#f1f1f1}
 .vstaim .vscd{padding-left:0;padding-right:4px;width:116px}
 .vscd div{height:32px;margin:0 auto;padding-left:10px}
-.vscd div img{display:block;float:left;width:25px;height:25px;margin-top:4px}
+.vscd div img{float:left;width:25px;height:25px;margin-top:4px}
 .cubfo{padding:20px 0 15px}
-.cubbanner{width:669px;height:300px;float:left;position:relative}
+.cubbanner{float:left;width:669px;height:300px;position:relative}
 .cubbanner p{width:100%;height:45px;font:400 18px/45px "Microsoft YaHei";text-align:center;color:#fff;position:absolute;bottom:0;left:0;background:#000;opacity: 0.8;filter:alpha(opacity=80);-moz-opacity:0.8;-khtml-opacity: 0.8;}
 .cubtt{float:right;width:295px;}
 .rTabTit{ color: #bbb;  height: 35px; line-height: 35px;}
@@ -1721,12 +1713,12 @@ a.jcq_kcur {
 .rTbConTable{ overflow: hidden; line-height:30px;}
 .rTbConTable td{ padding: 0 5px;}
 .rTbConTable .on td{ background-color: #f8f8f8;}
-.cGrey {color: #999999;}
+.cGrey {color: #999;}
 .cubzx h2{height:50px;font:bold 20px/50px "Microsoft YaHei";border-bottom:2px solid #000;margin-bottom:10px}
 .cubzx h2 span{float:left;font-weight:bold}
-.cubzx h2 a{float:right;display:block;height:20px;width:65px;background:#2f6b15;color:#fff;text-align:center;line-height:20px;font-size:12px;font-weight:100;margin-top:20px;margin-right:4px}
+.cubzx h2 a,.cubzx h4 a{float:right;width:65px;height:20px;line-height:20px;background:#2f6b15;color:#fff;text-align:center;font-size:12px;font-weight:100;margin-top:20px;margin-right:4px}
 .cubzx h4 span{float:left}
-.cubzx h4 a{float:right;display:block;height:20px;width:65px;background:#2f6b15;color:#fff;text-align:center;line-height:20px;font-size:12px;font-weight:100;margin-top:6px;margin-right:4px}
+.cubzx h4 a{margin-top:6px;}
 .cubleft{width:670px;float:left;padding-top:10px}
 .cubright{width:296px;float:right;}
 .cubctt{width:325px;float:left;}
@@ -1737,7 +1729,7 @@ a.jcq_kcur {
 .cubcc{width:325px;float:left;}
 .cubcc a{color:#444;font-size:14px;background: url(../images/cai888/news1_03.jpg) no-repeat 0px 9px;padding-left:15px;line-height:29px;display:block;height:29px}
 .cubright h4{height:32px;line-height:32px;border-bottom:2px solid #000;padding-left:5px;color:#289403;font-weight:bold;font-size:14px}
-.cubright h4 b{display:block;width:3px;height:16px;background:#289403;margin-right:10px;margin-top:8px;float:left}
+.cubright h4 b{float:left;width:3px;height:16px;background:#289403;margin-right:10px;margin-top:8px;}
 .cubright h4 span{float:left;}
 .newactbr{padding-bottom:10px}
 .gswin td{text-align:center;color:#444;line-height:30px}
