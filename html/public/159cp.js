@@ -748,6 +748,7 @@ $_sys.lot.push([ 81, "任选九","r9", "" ]);
 $_sys.lot.push([ 82, "进球彩","jqc", ""  ]);
 $_sys.lot.push([ 83, "半全场","bqc", ""  ]);
 
+$_sys.lot.push([ 84, "北单胜负过关","dc_sf", "" ]);
 $_sys.lot.push([ 85, "北单胜平负","dc_spf", "" ]);
 $_sys.lot.push([ 86, "北单猜比分","dc_bf", "" ]);
 $_sys.lot.push([ 87, "北单半全场","dc_bqc", "" ]);
@@ -773,7 +774,7 @@ $_sys.lot.push([ 99, "世界杯猜冠亚军","worldcup", "" ]);
 $_sys.lottype = [];
 
 $_sys.lottype.push([ "竞彩足球", "jczq", "90,72,91,92,93,70" ]);
-$_sys.lottype.push([ "北京单场", "bjdc", "85,86,87,88,89" ]);
+$_sys.lottype.push([ "北京单场", "bjdc", "84,85,86,87,88,89" ]);
 $_sys.lottype.push([ "竞彩篮球", "jclq", "94,95,96,97,71" ]);
 $_sys.lottype.push([ "足 彩", "zc", "80,81,82,83" ]);
 
@@ -894,6 +895,7 @@ $_sys.lotpath.push([ 81, "/renjiu/" ]);
 $_sys.lotpath.push([ 82, "/jinqiu/" ]);
 $_sys.lotpath.push([ 83, "/banquan/" ]);
 
+$_sys.lotpath.push([ 84, "/bj/" ]);
 $_sys.lotpath.push([ 85, "/bj/" ]);
 $_sys.lotpath.push([ 86, "/bj/" ]);
 $_sys.lotpath.push([ 87, "/bj/" ]);
@@ -932,6 +934,7 @@ $_sys.iopen.push(["对所有人公开"]);
 $_sys.iopen.push(["截止后公开"]);
 $_sys.iopen.push(["对参与人员公开"]);
 $_sys.iopen.push(["截止后对参与人公开"]);
+$_sys.iopen.push(["完全保密"]);
 
 $_sys.getlotname = function(f,n) {
 	if (typeof(n)=='undefined'){n=1;};
@@ -1077,6 +1080,7 @@ $_sys.lotfordetail.push([ 81, "/renjiu/" ]);
 $_sys.lotfordetail.push([ 82, "/jinqiu/" ]);
 $_sys.lotfordetail.push([ 83, "/banquan/" ]);
 
+$_sys.lotfordetail.push([ 84, "/bj/" ]);
 $_sys.lotfordetail.push([ 85, "/bj/" ]);
 $_sys.lotfordetail.push([ 86, "/bj/" ]);
 $_sys.lotfordetail.push([ 87, "/bj/" ]);
@@ -1281,6 +1285,9 @@ $_sys.getplayname = function(lotid, playid, castdef) {
 	playid=Y.getInt(playid);
 	castdef=Y.getInt(castdef);
 	switch (lotid) {
+	case 84:
+		s = "胜负过关";
+		break;
 	case 85:
 		s = "让球胜平负";
 		break;
