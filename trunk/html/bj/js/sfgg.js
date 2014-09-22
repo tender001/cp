@@ -1313,7 +1313,7 @@ Class('LoadExpect',{
 		}    	
     	
     	this.ajax({
-			url : "/cpdata/game/85/c.json?_=" + Math.random(),
+			url : "/cpdata/game/84/c.json?_=" + Math.random(),
 			type : "get",
 			dataType : "json",
 			end  : function (d){
@@ -1349,7 +1349,7 @@ Class('LoadExpect',{
 							}
 						}		
 					}
-					this.get("#expect_select_div").html('<select  style="color:#F00"  id="expect_select">'+html+'</select>');	
+					this.get("#expect_select").html(html);	
 					
 					if (this.get("#expect").val()==''){
 						this.get("#expect").attr("value",nowexpect);
@@ -1359,7 +1359,17 @@ Class('LoadExpect',{
 						this.get("#expect_select option[text="+this.get("#expect").val()+"]").attr("selected", true);
 												
 					}						
-									
+					this.get('#expect_select').change( function() {
+			var url = location.href.replace(/#.*/, '');
+			if (url.indexOf('expect') != -1) {
+				url = url.replace(/expect=.+?(?=&|$)/ig, 'expect=' + this.value.split('|')[0]);
+			} else if (url.indexOf('?') != -1 && url.indexOf('=') != -1) {
+				url += '&expect=' + this.value.split('|')[0];
+			} else {
+				url += '?expect=' + this.value.split('|')[0];
+			}
+			location.replace(url);
+		} );				
 					if (!find) {
 						alert('对不起，该期暂未开售或者已经截止!');
 						if (history.length == 0) {
@@ -1390,9 +1400,9 @@ Class('LoadExpect',{
 		}		
 		Class.config('playId', parseInt(this.need('#playid').val()) );  //玩法id		
 		
-		var url="/cpdata/match/beid/"+expect+"/spf.json";
+		var url="/cpdata/match/beid/"+expect+"/sfgg.json";
 		if(Class.config('nowexpect')!=expect){
-			url="/cpdata/match/beid/"+expect+"/"+expect+".json";
+			url="/cpdata/match/beid/"+expect+"/sfgg.json";
 		}else{
 			switch (Class.config('playId')) {
 		
@@ -1856,17 +1866,7 @@ Class( {
 		var Y = this, d = new Date();
 		
 		// 切换期号
-		this.get('#expect_select').change( function() {
-			var url = location.href.replace(/#.*/, '');
-			if (url.indexOf('expect') != -1) {
-				url = url.replace(/expect=.+?(?=&|$)/ig, 'expect=' + this.value.split('|')[0]);
-			} else if (url.indexOf('?') != -1 && url.indexOf('=') != -1) {
-				url += '&expect=' + this.value.split('|')[0];
-			} else {
-				url += '?expect=' + this.value.split('|')[0];
-			}
-			location.replace(url);
-		} );
+		
 
 		if (this.get('tr.vs_lines').nodes.length == 0) {
 			return;  //没取到对阵的话则以下js代码不执行
