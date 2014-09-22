@@ -2286,14 +2286,13 @@ input#n_page {float: left;}
 .he_in_co1 h3 span{float:left}
 .he_in_co1 h3 b{width:34px;height:21px; background-position:-134px -255px;float:left;margin-left:5px}
 .he_in_co1 a{margin:0 7px; white-space:nowrap;color:#145fab;line-height:25px}
-.he_in_co1 a:hover,.he_in_co2 a:hover{color:#ff6600; text-decoration:underline}
+.he_in_co1 a:hover,.he_in_co2 a:hover,a.a_x_g:hover{color:#ff6600; text-decoration:underline}
 .he_in_co2{width:340px;padding:10px 5px 10px 45px;float:left;font-size:14px}
-.he_in_co2 h3{font-size:14px;color:#555;border-bottom:1px solid #ddd;font-weight:bold;line-height:25px;margin:0 0 5px 0px;height:25px}
-.he_in_co2 a{color:#555;line-height:28px; background-position:-150px -117px;padding-left:15px;clear:both;width:240px}
+.he_in_co2 h3{height:25px;line-height:25px;margin:0 0 5px 0px;font-size:14px;font-weight:bold;color:#555;border-bottom:1px solid #ddd;}
+.he_in_co2 a{clear:both;width:240px;line-height:28px;color:#555;background-position:-150px -117px;padding-left:15px;}
 .rig_hm_main table b{font-weight:100}
 .news_left a.nws_a:hover{text-decoration:underline}
 a.a_x_g{float:left;color:#145fab;font-size:14px;margin-top:30px}
-a.a_x_g:hover{color:#ff6600; text-decoration:underline}
 table.cot{}
 table.cot td{border-bottom:1px solid #ddd;border-right:1px solid #ddd;text-align:center;color:#444;font-size:12px;line-height:16px;padding:8px 0}
 table.cot td.t_td_c{color:#999;width:135px}
