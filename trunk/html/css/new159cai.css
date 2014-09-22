@@ -267,7 +267,7 @@ a.t_a_qc b{display: block;width: 115px;height: 35px;margin:10px auto;font: 400 1
 .kj-time{margin-bottom: 10px;border: 1px solid #ccc;color: #333;zoom:1;}
 .kj-time p{height: 70px;line-height: 35px;width: 90%;padding-left: 10%;border-bottom: 1px solid #ccc;background-color: #f5f5f5;}
 .kj-time p span{font-weight: 700;color: #e52e04;}
-.kj-time a{display: block;width: 120px;height: 36px;margin: 16px auto;text-indent: -999em;background: url("/images/bg/history-tz.jpg") no-repeat;}
+.kj-time a{display: block;width: 120px;height: 36px;margin: 16px auto;text-indent: -999em;background: url("../images/bg/history-tz.jpg") no-repeat;}
 
 .mn_k{position:absolute;z-index:2;top:73px;left:231px; background-color:#fff;_width:230px}
 .mn_t{display:block;border:1px solid #ddd;padding:13px 17px;line-height:15px;color:#ff6600;font-weight:bold;height:15px}
