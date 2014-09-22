@@ -715,8 +715,9 @@ em.uf{ background-image:url(../images/159/uf.gif)}
 .nsopr b.bem{color:#e52e04;float:left;margin-left:10px;cursor:pointer;width:24px;background:none}
 .nsopr b.bem:hover{ text-decoration:underline;color:#000;background:none}
 .nxsd{clear:both;padding-top:4px;padding-bottom:0px;_padding-top:0;height:24px;margin-left:-56px}
-.nxsd span{width:49px;height:24px;float:left; background:url(../images/159/nx_45.jpg);margin-right:18px;_margin-right:13px;cursor:pointer}
-.nxsd input{display:block;float:left;margin-right:37px;margin-top:5px;_margin-top:3px;_margin-right:27px}
+.nxsd span{width:49px;height:24px;float:left; background:url(../images/159/nx_45.jpg);cursor:pointer}
+.nxsd input{display:inline;margin:5px 11px 0 20px;zoom:1;*margin:5px 9px 0 14px; }
+*html .nxsd input{*margin:5px 8px 0 13px; }
 .nxp{padding:}
 .xh_text em{color:#ff6600;font-weight:bold}
 a.sz_cmt{background:url(../images/159/nx5s_09.jpg);width:137px;height:34px;}
