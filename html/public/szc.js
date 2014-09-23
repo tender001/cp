@@ -1174,23 +1174,24 @@
 		        				 pid:param.expect,// 期次编号
 		        				 play:1,// 玩法编号
 		        				 codes:param.codes,
-		        				 muli:1,// 投注倍数
+		        				 muli:param.beishu,// 投注倍数
 		        				 fflag:0,// 是否文件
 		        				 type:param.ishm,// 方案类型
 		        				 name:param.title,// 方案标题
 		        				 desc:param.content,// 方案描叙
-		        				 money:2,// 方案金额
-		        				 tnum:1,// 方案份数
-		        				 bnum:1,// 购买份数
-		        				 zhushu:1,
-		        				 totalmoney:2,
+		        				 money:param.totalmoney,// 方案金额
+		        				 tnum:param.allnum,// 方案份数
+		        				 bnum:param.buynum,// 购买份数
+		        				 zhushu:param.zhushu,
+		        				 totalmoney:param.totalmoney,
 		        				 pnum:param.isbaodi==1?param.baodinum:0,// 保底份数
 		        				 oflag:param.isshow,// 公开标志
 		        				 wrate:param.tc_bili,// 提成比率
 		        				 comeFrom:'',// 方案来源
 		        				 source:'',// 投注来源
 		        				 endTime:'' // 截止时间
-		                     };	 
+		        					
+	                     };	 
 		             }
 	             }
 	             
