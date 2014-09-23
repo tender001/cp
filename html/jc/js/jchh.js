@@ -1,73 +1,109 @@
-/*当前时间*/
-Class('Clock', {
-	index : function(clock_id) {
-		this.clockTag = this.get(clock_id);
-		Class.config('servertimediff', 0); 
-		this.runClock();
-		
-	},
-	runClock : function() {
-		var Y = this;		
-		Y.ajax({
-			url : "/cpdata/time.json",
-			end : function(data) {
-				var servernow = Y.getDate(data.date);			
-				var diff=Date.parse(servernow) - Date.parse(new Date()) ;	
-				Class.config('servertimediff',(diff));
-				
-				setInterval( function() {
-					var now = new Date();
-					var d = new Date(Date.parse(now) + Class.config('servertimediff'));
-					var h_time='<span>当前时间</span><span class="jc_tms">'+Y.addZero(d.getFullYear())+'-'+Y.addZero((d.getMonth() + 1))+'-'+Y.addZero(d.getDate())+'</span><span class="jc_tmv jc_tms">' + Y.addZero(d.getHours()) + ':' + Y.addZero(d.getMinutes()) + ':' + Y.addZero(d.getSeconds())+'</span>';
-					Y.clockTag.html(h_time);
-				}, 1000 );
-				
-				var _runtime=setInterval( function() {
-					Y.ajax({
-						url : "/phpu/cl.phpx",
-						end : function(data) {
-							var servernow = Y.getDate(data.date);			
-							var diff=Date.parse(servernow) - Date.parse(new Date()) ;	
-							Class.config('servertimediff',(diff));						
-						}
-					});	
-				}, 10*60*1000);
-				setTimeout(function(){clearInterval(_runtime);}, 6*10*60*1000);
-			}
-		});	
-	},
-    	addZero : function(n) {
-    		return parseInt(n) < 10 ? '0' + n : n;
-    	}
-    });
+Class.C('lege_sele_data',{
+	teamFive: ["德甲","西甲","法甲","意甲","英超"],
+	teamHot: ["世界杯","联合会杯","女世界杯","世预赛","亚洲杯","亚预赛","亚冠","澳超","日职","欧洲杯","欧冠","欧罗巴",
+	          "英冠","德乙","法乙","荷甲","葡超","苏超","瑞超","挪超","解放者杯","巴甲","阿甲","美职联"] //热门赛事 除五大联赛之外还有【】
+});
+
+Class.extend('getTeamisExist', function (mode, data){//数组是否包含
+	var s = Class.C('lege_sele_data')[mode];
+	for(var i=0;i<s.length;i++){
+		if(s[i] == data)
+			return true;  
+	}
+	return false;  
+});
+Class.C('chuan',0);
+Class.C('chuanlength',0);
+/*w
+*  竞彩足球混串玩法
+*  2012-12-15
+*/
 //选择器虚拟管理器
 Yobj.optsAdm = {
 	data: {},
 	add: function (bid, tr123){
 		var _self = this,
-			spf = Yobj.get(tr123).find('input[data-type=spf]').nodes;
-		    rqspf = Yobj.get(tr123).find('input[data-type=rqspf]').nodes;
-		for (var i =  spf.length; i--;) {//保存胜平负的选项信息
-			var el = spf[i];
-			this.set(bid, el.getAttribute('data-type') + el.value, false, el.getAttribute('data-sp'));
+			spf = Yobj.get(tr123).find('td>a[data-type=spf]').nodes,
+			rqspf = Yobj.get(tr123).find('td>a[data-type=rqspf]').nodes;
+			jqs = Yobj.get(tr123).next('tr').find('td>a[data-type=jqs]').nodes;
+			bqc = Yobj.get(tr123).next('tr').find('td>a[data-type=bqc]').nodes;
+			bf = Yobj.get(tr123).next('tr').find('td>a[data-type=bf]').nodes;
+			
+		if(spf.length==3){
+			_self.set(bid, spf[0].getAttribute('data-type') + spf[0].getAttribute('value'), false, spf[0].getAttribute('data-sp'));
+			_self.set(bid, spf[1].getAttribute('data-type') + spf[1].getAttribute('value'), false, spf[1].getAttribute('data-sp'));
+			_self.set(bid, spf[2].getAttribute('data-type') + spf[2].getAttribute('value'), false, spf[2].getAttribute('data-sp'));
 		}
-		for (var i =  rqspf.length; i--;) {//保存胜平负的选项信息
-			var el2 = rqspf[i];
-			this.set(bid, el2.getAttribute('data-type') + el2.value, false, el2.getAttribute('data-sp'));
+		
+		if(rqspf.length==3){
+			_self.set(bid, rqspf[0].getAttribute('data-type') + rqspf[0].getAttribute('value'), false, rqspf[0].getAttribute('data-sp'));
+			_self.set(bid, rqspf[1].getAttribute('data-type') + rqspf[1].getAttribute('value'), false, rqspf[1].getAttribute('data-sp'));
+			_self.set(bid, rqspf[2].getAttribute('data-type') + rqspf[2].getAttribute('value'), false, rqspf[2].getAttribute('data-sp'));
 		}
-		Yobj.get(tr123).find('p.tb_s_more').each(function (p){
-			var type = p.getAttribute('data-type');
-			p.getAttribute('data-sp').split(',').each(function (str){
-				var arr = str.split('|');
-				_self.set(bid, type + arr[0], false, arr[1]);
-			});
-		});
+		if(jqs.length==8){
+			_self.set(bid, jqs[0].getAttribute('data-type') + jqs[0].getAttribute('value'), false, jqs[0].getAttribute('data-sp'));
+			_self.set(bid, jqs[1].getAttribute('data-type') + jqs[1].getAttribute('value'), false, jqs[1].getAttribute('data-sp'));
+			_self.set(bid, jqs[2].getAttribute('data-type') + jqs[2].getAttribute('value'), false, jqs[2].getAttribute('data-sp'));
+			_self.set(bid, jqs[3].getAttribute('data-type') + jqs[3].getAttribute('value'), false, jqs[3].getAttribute('data-sp'));
+			_self.set(bid, jqs[4].getAttribute('data-type') + jqs[4].getAttribute('value'), false, jqs[4].getAttribute('data-sp'));
+			_self.set(bid, jqs[5].getAttribute('data-type') + jqs[5].getAttribute('value'), false, jqs[5].getAttribute('data-sp'));
+			_self.set(bid, jqs[6].getAttribute('data-type') + jqs[6].getAttribute('value'), false, jqs[6].getAttribute('data-sp'));
+			_self.set(bid, jqs[7].getAttribute('data-type') + jqs[7].getAttribute('value'), false, jqs[7].getAttribute('data-sp'));
+		}
+		if(bqc.length==9){
+			_self.set(bid, bqc[0].getAttribute('data-type') + bqc[0].getAttribute('value'), false, bqc[0].getAttribute('data-sp'));
+			_self.set(bid, bqc[1].getAttribute('data-type') + bqc[1].getAttribute('value'), false, bqc[1].getAttribute('data-sp'));
+			_self.set(bid, bqc[2].getAttribute('data-type') + bqc[2].getAttribute('value'), false, bqc[2].getAttribute('data-sp'));
+			_self.set(bid, bqc[3].getAttribute('data-type') + bqc[3].getAttribute('value'), false, bqc[3].getAttribute('data-sp'));
+			_self.set(bid, bqc[4].getAttribute('data-type') + bqc[4].getAttribute('value'), false, bqc[4].getAttribute('data-sp'));
+			_self.set(bid, bqc[5].getAttribute('data-type') + bqc[5].getAttribute('value'), false, bqc[5].getAttribute('data-sp'));
+			_self.set(bid, bqc[6].getAttribute('data-type') + bqc[6].getAttribute('value'), false, bqc[6].getAttribute('data-sp'));
+			_self.set(bid, bqc[7].getAttribute('data-type') + bqc[7].getAttribute('value'), false, bqc[7].getAttribute('data-sp'));
+			_self.set(bid, bqc[8].getAttribute('data-type') + bqc[8].getAttribute('value'), false, bqc[8].getAttribute('data-sp'));
+		}
+		if(bf.length==31){
+			_self.set(bid, bf[0].getAttribute('data-type') + bf[0].getAttribute('value'), false, bf[0].getAttribute('data-sp'));
+			_self.set(bid, bf[1].getAttribute('data-type') + bf[1].getAttribute('value'), false, bf[1].getAttribute('data-sp'));
+			_self.set(bid, bf[2].getAttribute('data-type') + bf[2].getAttribute('value'), false, bf[2].getAttribute('data-sp'));
+			_self.set(bid, bf[3].getAttribute('data-type') + bf[3].getAttribute('value'), false, bf[3].getAttribute('data-sp'));
+			_self.set(bid, bf[4].getAttribute('data-type') + bf[4].getAttribute('value'), false, bf[4].getAttribute('data-sp'));
+			_self.set(bid, bf[5].getAttribute('data-type') + bf[5].getAttribute('value'), false, bf[5].getAttribute('data-sp'));
+			_self.set(bid, bf[6].getAttribute('data-type') + bf[6].getAttribute('value'), false, bf[6].getAttribute('data-sp'));
+			_self.set(bid, bf[7].getAttribute('data-type') + bf[7].getAttribute('value'), false, bf[7].getAttribute('data-sp'));
+			_self.set(bid, bf[8].getAttribute('data-type') + bf[8].getAttribute('value'), false, bf[8].getAttribute('data-sp'));
+			_self.set(bid, bf[9].getAttribute('data-type') + bf[9].getAttribute('value'), false, bf[9].getAttribute('data-sp'));
+			_self.set(bid, bf[10].getAttribute('data-type') + bf[10].getAttribute('value'), false, bf[10].getAttribute('data-sp'));
+			_self.set(bid, bf[11].getAttribute('data-type') + bf[11].getAttribute('value'), false, bf[11].getAttribute('data-sp'));
+			_self.set(bid, bf[12].getAttribute('data-type') + bf[12].getAttribute('value'), false, bf[12].getAttribute('data-sp'));
+			
+			
+			_self.set(bid, bf[13].getAttribute('data-type') + bf[13].getAttribute('value'), false, bf[13].getAttribute('data-sp'));
+			_self.set(bid, bf[14].getAttribute('data-type') + bf[14].getAttribute('value'), false, bf[14].getAttribute('data-sp'));
+			_self.set(bid, bf[15].getAttribute('data-type') + bf[15].getAttribute('value'), false, bf[15].getAttribute('data-sp'));
+			_self.set(bid, bf[16].getAttribute('data-type') + bf[16].getAttribute('value'), false, bf[16].getAttribute('data-sp'));
+			_self.set(bid, bf[17].getAttribute('data-type') + bf[17].getAttribute('value'), false, bf[17].getAttribute('data-sp'));
+			
+			_self.set(bid, bf[18].getAttribute('data-type') + bf[18].getAttribute('value'), false, bf[18].getAttribute('data-sp'));
+			_self.set(bid, bf[19].getAttribute('data-type') + bf[19].getAttribute('value'), false, bf[19].getAttribute('data-sp'));
+			_self.set(bid, bf[20].getAttribute('data-type') + bf[20].getAttribute('value'), false, bf[20].getAttribute('data-sp'));
+			_self.set(bid, bf[21].getAttribute('data-type') + bf[21].getAttribute('value'), false, bf[21].getAttribute('data-sp'));
+			_self.set(bid, bf[22].getAttribute('data-type') + bf[22].getAttribute('value'), false, bf[22].getAttribute('data-sp'));
+			_self.set(bid, bf[23].getAttribute('data-type') + bf[23].getAttribute('value'), false, bf[23].getAttribute('data-sp'));
+			_self.set(bid, bf[24].getAttribute('data-type') + bf[24].getAttribute('value'), false, bf[24].getAttribute('data-sp'));
+			_self.set(bid, bf[25].getAttribute('data-type') + bf[25].getAttribute('value'), false, bf[25].getAttribute('data-sp'));
+			_self.set(bid, bf[26].getAttribute('data-type') + bf[26].getAttribute('value'), false, bf[26].getAttribute('data-sp'));
+			_self.set(bid, bf[27].getAttribute('data-type') + bf[27].getAttribute('value'), false, bf[27].getAttribute('data-sp'));
+			_self.set(bid, bf[28].getAttribute('data-type') + bf[28].getAttribute('value'), false, bf[28].getAttribute('data-sp'));
+			_self.set(bid, bf[29].getAttribute('data-type') + bf[29].getAttribute('value'), false, bf[29].getAttribute('data-sp'));
+			_self.set(bid, bf[30].getAttribute('data-type') + bf[30].getAttribute('value'), false, bf[30].getAttribute('data-sp'));
+		}
 	},
 	get: function (bid, type){// get('8569', 'fs1')
 		var vs = this.__getBid(bid);
 		return vs[type] || [false , 1];
 	},
 	getSp: function (bid, type){
+
 		return this.get(bid, type)[1];
 	},
 	set: function (bid, type, checked, sp){//type = fs1;
@@ -92,300 +128,224 @@ Yobj.optsAdm = {
 		return this.data[bid];
 	}
 };
-//回到顶部链接
-Class('ScrollStill', {
-	index : function() {
-		var Y = this;
-		this.goTop = this.one('a.back_top');
-		this.rightArea = this.get('div.dc_r');
-		this.mainArea = this.get('#main');
-		if (this.ie && this.ie == 6) {
-			this.goTop.style.position = 'absolute';
-			this.goTop.style.left = '750px';
-		} else {
-			setTimeout( function() {
-				Y.goTop.style.left = Y.rightArea.getXY().x-10 + 'px';
-			}, 500 );
-		}
-		this.get(window).scroll( function () {
-			clearTimeout(Class.C('scrollTimer'));
-			if (Y.ie && Y.ie == 6) {
-				Class.C('scrollTimer', setTimeout(Y.scrollStillIE6.proxy(Y), 100));
-			} else {
-				Class.C('scrollTimer', setTimeout(Y.scrollStillOthers.proxy(Y), 100));
-			}
-		});
-	},
-	scrollStillOthers : function() {
-		var window_size = Y.getSize();
-		Y.goTop = Y.get('a.back_top');
-		Y.mainArea = Y.get('#main');
-		Y.leftArea = Y.get('#main div.dc_l');
-		Y.rightArea = Y.get('#main div.dc_r');
-		var right_xy = Y.rightArea.getXY();
-		var right_size = Y.rightArea.getSize();
-		if (window_size.scrollTop + window_size.offsetHeight > Y.mainArea.getXY().y + Y.mainArea.getSize().offsetHeight + 10) {
-			Y.goTop.setStyle('position', 'absolute').setStyle('bottom', 0).setStyle('left', '750px');
-		} else {
-			Y.goTop.setStyle('position', 'fixed').setStyle('bottom', '10px').setStyle('left', right_xy.x-10 + 'px');
-		}
-		if (window_size.scrollTop <= right_xy.y || 
-				right_xy.y + right_size.offsetHeight + 90 > window_size.scrollTop + window_size.offsetHeight ||
-				Y.leftArea.getSize().offsetHeight - 90 < right_size.offsetHeight) {
-			Y.goTop.hide();
-		} else {
-			Y.goTop.show();
-		}
-	},
-	scrollStillIE6 : function() {
-		var window_size = Y.getSize();
-		Y.goTop = Y.get('a.back_top');
-		Y.mainArea = Y.get('#main');
-		Y.leftArea = Y.get('#main div.dc_l');
-		Y.rightArea = Y.get('#main div.dc_r');
-		var right_xy = Y.rightArea.getXY();
-		var right_size = Y.rightArea.getSize();
-		if (window_size.scrollTop + window_size.offsetHeight > Y.mainArea.getXY().y + Y.mainArea.getSize().offsetHeight + 10) {
-			Y.goTop.setStyle('top', '').setStyle('bottom', 0);
-		} else {
-			Y.goTop.setStyle('top', window_size.scrollTop + window_size.offsetHeight - 310 + 'px');
-		}
-		if (window_size.scrollTop <= right_xy.y || 
-				right_xy.y + right_size.offsetHeight + 90 > window_size.scrollTop + window_size.offsetHeight || 
-				Y.leftArea.getSize().offsetHeight - 90 < right_size.offsetHeight) {
-			Y.goTop.hide();
-		} else {
-			Y.goTop.show();
-		}
-	}
-});
-
-//选号层类
-Class('SelectLayer', {
-	index: function (layId, type, selector){
-		var _self = this;
-		this.type = type;
-		this.lay = Yobj.get(layId);
-		this.selector = selector;
-		this.chks = this.lay.find('input');
-		this.chks.click(function (){
-			_self.optionClick(this);
-		});
-		//点击外面隐藏
-		this.lay.mousedown(function (e){
-			e.stop();
-		});
-		Yobj.get(document).mousedown(function (){
-			_self.hide();
-		});
-	},
-	optionClick: function (chk){
-		this.setTdBg(chk);
-		this.setNum(this.lay.find('input:checked').size());
-		this.optionChange(chk);
-	},
-	setTdBg: function (chk){
-		var td = Yobj.get(chk).parent('td');
-		if (chk.checked) {
-			//td.setStyle('background', '#ffdaa4');
-			td.addClass('h_brb');
-		}else{
-			//td.setStyle('background', '');
-			td.removeClass('h_brb');
-		}
-	},
-	optionChange: function (chk){
-		Yobj.optsAdm.set(this.bindId, chk.getAttribute('data-type') + chk.value, chk.checked);
-		if (chk.checked) {
-			chk.isinlay = true;
-			this.selector.lastChk = chk;// 记录最后点击的复选框， 以恢复溢出;
-		}
-		this.selector.setCode(this.bindId, true/*不再回溯到自己*/);//选择器也要同步
-		this.selector.onchange(this.bindId);//事件由号码框响应
-	},
-	update: function (bid, p){//弹出的时候刷新所有状态
-		this.bindId = bid;
-		this.p = p;
-		var _self = this,
-			sum = 0,
-			doc = Yobj.optsAdm.__getBid(bid);//{'sf1':[true, 1.2]}
-		this.chks.each(function (chk){
-			var id = (chk.getAttribute('data-type') + chk.value).replace('+', '');
-			var state = doc[id];
-			if (state) {
-				chk.checked = state[0];//设置选中
-				if (chk.checked) {
-					sum++;
-				}
-				Yobj.get(chk.parentNode).find('span.tb_tdul_pl').html(state[1]);//设置sp值
-				_self.setTdBg(chk);//是否高亮				
-			}else if(window.console){
-				console.log('Yobj.optsAdm not found ' + id);
-			}
-		});
-		this.setNum(sum);
-	},
-	setNum: function (n){
-		var html;
-		if (this.p) {
-			this.p.innerHTML = this.getHtml(n, false);
-		}
-	},
-	getHtml: function (n, _open){
-		var ini = _open ? ['s_more_show', '<a class="xs">显示</a>'] : ['s_more_hide', '<a class="yc">隐藏</a>'];
-		if (n) {
-			html = '<span class="'+ini[0]+'">'+ini[1]+'</span><strong class="red">'+n+'</strong>';
-		}else{
-			html = '<span class="'+ini[0]+'">'+ini[1]+'</span>';
-		}	
-		return html;
-	},
-	show: function (ref){//参考定位
-		var xy = Yobj.get(ref).getXY();
-		this.lay.show();
-		xy.x  = xy.x - (this.lay.nodes[0].offsetWidth - ref.prop('offsetWidth'));
-		xy.y = xy.y + 80;		
-		this.lay.show().setXY(xy);	
-		this.isshow = true;
-	},
-	hide: function (){
-		this.lay.hide();
-		this.isshow = false;
-		if (this.p) {
-			Yobj.get(this.p).find('span').prop('className', 's_more_show').html('<a class="xs">显示</a>');
-		}
-	}
-});
 
 /*竞彩选号器
 *************************************************************************/
 Class('Selector', {
 	oninit: Yobj.getNoop(),// 初始化完成
 	init: function (box){
-		var box = Yobj.get(box);
+		var box = Yobj.get(box), _self = this;
 		Yobj.get('#main').setStyle('overflow', 'visible');//修正层级问题
-		this.findVsTags(box);
+//		setTimeout(function(){
+//			_self.findVsTags(box);
+//		},500);
 		this.setClickFx(box);
 		this.otherSet(box);
-		this.setHoverBg(box);
 		this.oninit();
-		Yobj.get("#vsTable tr td .h_bra").mouseover(function(){
-			Yobj.get(this).addClass("h_brc");
-		});
-		Yobj.get("#vsTable tr td .h_bra").mouseout(function(){
-			Yobj.get(this).removeClass("h_brc");
-		});
+		this.hotCss="a2";
+		this.hotCss2 = "a2";
+//		this._getList();
+		if(this.allTr) this.allTr = undefined;
+	},
+	
+	_getList: function (){
+        if (!this.allTr) {//缓存
+            this.allList = Y.get('#vsTable tr[fid]');
+            this.allTr = this.allList.filter(function (tr){
+               if (tr.getAttribute('isend') == '1') {
+                   this.endList[this.endList.length] = tr;
+               }else{
+                   return true;
+               }                     
+            }, this);
+        }
+        return this.allTr;
+   },
+	
+	filterTye: function(tye, checked){
+		this._getList();
+		var sel = 0, a;
+		if(tye.indexOf('spf')>-1){
+			this.allTr.each(function (tr){
+				if(checked){
+				
+					Yobj.get(tr).find('td[dat_tye='+tye+']>a').removeClass('tdhui');
+				}else{
+				
+					Yobj.get(tr).find('td[dat_tye='+tye+']>a').addClass('tdhui');
+				}
+			});
+		}else{
+			this.allTr.each(function (tr){
+				if($(tr).is(":hidden")){
+					
+				}else{
+					Yobj.get(tr).next('tr').find('tr[dat_tye='+tye+']').show(checked);
+					sel = Yobj.get(tr).next('tr').find('tr[dat_tye]:visited');
+					a = Yobj.get(tr).find('td[mark=unselect]>a');
+					if(sel.size() == 0){
+						if (a.one().className.indexOf('unselecttdcur') > -1) {
+			            	a.removeClass('unselecttdcur').html('收起');
+			            	Yobj.get(tr).next('tr').hide(); 
+			            }
+					}else{
+						a.addClass('unselecttdcur').html('收起');
+		            	Yobj.get(tr).next('tr').show();
+					}
+				}
+			
+			});
+		}
 	},
 	filterLg: function (lgs_str){
+		this._getList();
+		var _self = this;
 		this.allTr.each(function (tr){
 			var mt = lgs_str.indexOf(tr.getAttribute('lg')) > -1;
 			if (mt) {
-				Yobj.get(tr).removeClass('hide_row');
+				Yobj.get(tr).show();
 			}else{
-				Yobj.get(tr).addClass('hide_row');
+				_self._hideHH(tr);
+//				Yobj.get(tr).hide();
 			}
 		});
 		this.updateHideCount();
 	},
 	filterOneLg: function (lg, checked){
-		this.allTr.each(function (tr){
-			if (tr.getAttribute('lg') == lg) {
-				if (checked) {
-					Yobj.get(tr).removeClass('hide_row');
+		this._getList();
+		var _self = this;
+		if(lg==""){
+			this.allTr.each(function (tr){
+				Yobj.get(tr).show();
+			});
+		}else{
+			this.allTr.each(function (tr){
+				if (lg.indexOf(tr.getAttribute('lg'))>-1) {
+					if (checked) {
+						Yobj.get(tr).show();
+					}else{
+						_self._hideHH(tr);
+					}
 				}else{
-					Yobj.get(tr).addClass('hide_row');
+					Yobj.get(tr).show(!checked);
 				}
+			});
+		}
+
+		this.updateHideCount();
+	},
+	fileterDayLg: function(day, checked){
+		this._getList();
+		var _self = this;
+		this.allTr.each(function (tr){
+			if (day.indexOf(tr.parentNode.parentNode.getAttribute('id'))>-1) {
+				if(checked) Yobj.get(tr).show(checked);
+				else _self._hideHH(tr);
+			}
+		});
+		
+  	   this.updateHideCount();
+	},
+	filterAll: function(sel){
+		this._getList()
+		var _self = this;
+		this.allTr.each(function (tr){
+			if(sel){
+				Yobj.get(tr).show(sel);
+			}else{
+				_self._hideHH(tr);
 			}
 		});
 		this.updateHideCount();
 	},
+	_hideHH: function (target){
+		Yobj.get(target).each(function (t){
+            var tr=this.get(t);
+            tr.hide();
+            tr.get('a.cm_w103').removeClass('cm_hhgg_bg_hover').html('<i class="cm_left">展开</i><em class="cm_jsbf_down"></em>');
+            tr.next('tr').hide();
+        }, this);
+    },
 	updateHideCount: function (){
-		this.hideNum = this.allTr.reduce(function (sum, tr){
-			return sum += (tr.className.indexOf('hide_row') > -1 ? 1 : 0);
-		}, 0);
+//		this.hideNum = this.allTr.filter(function (sum, tr){
+//			return sum += (tr.style.display == 'none' ? 1 : 0);
+//		}, 0);
+		 var s = 0;
+         this.allTr.each(function (tr){
+             s += tr.style.display == 'none' ? 1 : 0;
+         });
+         this.hideNum = s;
 		this.setHideNum();
 	},
-	setHoverBg: function (box){//悬浮变色效果
-		var _self = this;
-		Yobj.get(this.vsTr).hover(function (){
-			var id = this.bindid;
-			_self.getTrs(id).addClass('th_on');
-		}, function (){
-			var id = this.bindid;
-			_self.getTrs(id).removeClass('th_on');
-		});
-		box.live('span.x_s', 'click', function (){//选择区中的点击删除
-			var bid  = this.getAttribute('data-bid');
-			Yobj.optsAdm.set(bid, this.getAttribute('data-type') + this.getAttribute('data-value'), false);
-			_self.setCode(bid);
-			_self.onchange(bid);
-		});
+	tagChange: function(tag, vals){
+		if(tag){
+            if(vals.length>0){
+           	 if(vals.length==1){
+           		 tag.html(vals[0]);
+           	 }else{
+           		tag.html('<em  style="cursor:pointer">已选<font>'+vals.length+'</font>项</em>').addClass("unselecttdcur"); 
+           	 }
+            }else{
+           	 Y.get("td[mark=unselect]").html("<a>展开</a>").removeClass("unselecttdcur"); 
+            }
+        }
 	},
 	hideNum: 0,
 	//显示隐藏场数
 	setHideNum: function (){
 		Yobj.get('#hide_count').html(this.hideNum);
 	},
+	counthidenmu:function(itemid){
+  		var Y=this;
+  		var num =0;//统计隐藏场数
+  		Y.need('tr[pname^='+itemid+']').each(function(o,n){
+  				if(o.style.display=="none"){
+  					num++;
+  				}
+  		});
+  		$("#yccs_"+itemid).html(num);
+  		Y.isshowall(itemid);
+  	},
+  	isshowall:function(itemid){
+  		var Y=this;
+  		$("a[id^=showall_"+itemid+"]").click(function(){//显示所有已隐藏的赛事
+  			Y.need('tr[pname^='+itemid+']').show();
+  			$("#yccs_"+itemid).html(0);
+  		});	
+  		
+  	},
 	onshowAll: function(){},
 	//显隐一些对阵
 	otherSet: function (box){
 		var _self = this;
-		Yobj.get('#showAll_btn').click(function (){
-			Yobj.get(_self.allTrs).removeClass('hide_row');
-			_self.hideNum = 0;
-			_self.setHideNum();
-			_self.onshowAll();
-		});
-		Yobj.get('#ck3').click(function (){
-			var stoper = Yobj.get(_self.stopTr);
-			if (this.checked) {
-				stoper.setStyle('display', '').removeClass('hide_row');
-			}else{
-				stoper.addClass('hide_row');
-			}
-		});
-		var layIdMap = {
-			'jqs': new Yobj.lib.SelectLayer('#jqs_more', 'jqs', this),
-			'bf': new Yobj.lib.SelectLayer('#bf_more', 'bf', this),
-			'bqc': new Yobj.lib.SelectLayer('#bqc_more', 'bqc', this)
-		};
-		this.getLayByType = function (type){
-			return layIdMap[type] || null;
-		};
-		function hideAlllay(){
-			for(var k in layIdMap){
-				layIdMap[k].hide();
-			}
-		}
-		this.popMoreLay = function (moreBtn){
-			var lay = layIdMap[moreBtn.getAttribute('data-type')];
-			if (lay) {
-				hideAlllay();
-				_self.popMoreLayer(lay, moreBtn);
-			}			
-		};
-		//点击更多的时候
-		box.find('p.tb_s_more').click(function (){
-			if (this.innerHTML.indexOf('隐藏') > -1) {
-				hideAlllay();
-			}else{
-				_self.popMoreLay(this);	
-			}			
-		}).mousedown(function (e){
-			e.stop();
-		});
+		
+//		var layIdMap =  new Yobj.lib.SelectLayer('#hhmore', 'hhmore', this);
+//		
+//		this.getLayByType = function (type){
+//			return layIdMap[type] || null;
+//		};
+//		function hideAlllay(){
+//			for(var k in layIdMap){
+//				layIdMap[k].hide();
+//			}
+//		}
+//		this.popMoreLay = function (moreBtn){
+//			var lay = layIdMap[moreBtn.getAttribute('data-type')];
+//			if (lay) {
+//				hideAlllay();
+//				_self.popMoreLayer(lay, moreBtn);
+//			}			
+//		};
 		//显隐周赛
-		box.find('div.dc_hs a').click(function (){
-			var html = '',
-				next = Yobj.get(this).parent('div.dc_hs').next('table');
-			if (this.innerHTML.indexOf('隐藏') == -1) {
-				html = '隐藏';
-				next.show();
-			}else{
-				html = '显示';
-				next.hide();
-			}
-			this.innerHTML = html;
+		box.find('a[mark=hidetable]').click(function(e,Y){
+			var s = Y.get(this).one();
+            if(Y.get(s).html()=="隐藏"){
+            	Y.get(s).html('显示').parent('div').next('table').hide();
+            }else{
+	          	 
+	          	 Y.get(s).html('隐藏').parent('div').next('table').show();
+	          	 
+            }
 		});
 	},
 	//弹出更多层
@@ -399,41 +359,174 @@ Class('Selector', {
 	},
 	//选项点击时回调处理
 	clickCallBack: function (chk){
-		if (chk.getAttribute('data-type')) {
-			this.setTdBg(chk);
-			if (chk.id.indexOf('_sfc_') > -1) {//如果是胜分差，要显示统计选中数目
-				this.updateSelectNum(chk.getAttribute('data-id'));
-			}
+		if (chk.getAttribute('data-type')|| chk.className.indexOf('sh_quanxuan')>-1) {
 			this.optionChange(chk);
 		}		
 	},
 	//点击对阵选项, 用户选择回调
 	setClickFx: function (box){
 		var _self = this;
-		box.live('input', 'click', function (e){
+		box.live('td>a[data-id]', 'click', function (e){
+			_self.allTr = undefined;
 			_self.clickCallBack(this);
+		}).live('td.sh_quanxuan','click', function(e){//全选
+			_self.allTr = undefined;
+			_self.clickCallBack(this);
+		}).live('tr[fid]', 'mouseover', function(e){
+			_self.allTr = undefined;
+			_self.get(this).addClass('cm_hhgg_hover');
+//			_self.get(this).find('div.cm_jc_sc').show();
+			$(this).find('div.cm_jc_sc').css('display','block');
+		}).live('tr[fid]', 'mouseout', function(e){
+			_self.allTr = undefined;
+			_self.get(this).removeClass('cm_hhgg_hover');
+			$(this).find('div.cm_jc_sc').css('display','none');
+		}).live('label[mark=name]', 'click', function(e){
+			_self.allTr = undefined;
+			var tr = Yobj.get(this).parent('tr').eq(0);
+			tr.hide();
+			tr.next('tr').hide();
+			_self.hideNum++;
+			_self.setHideNum();
+			 var itemid;
+             itemid = _self.get(this).parent('tr').attr("pname").substring(0, 6);//130607
+             _self.counthidenmu(itemid);
+             
+		}).live('td[mark=unselect]', 'click', function (e){
+			_self.allTr = undefined;
+			var tr = _self.get(this).parent('tr').next('tr');
+			var $tr = $(this).parent('tr').next('tr');
+			var a = _self.get(this);
+            if ($(this).hasClass("unselecttdcur")) {
+            	a.removeClass('unselecttdcur').find("a").html('展开');
+//            	a.removeClass('cm_hhgg_bg_hover').find('em').prop('className', 'cm_jsbf_down');
+                tr.hide(); 
+            }else{
+            	a.addClass('unselecttdcur').find("a").html('收起');
+//            	a.addClass('cm_hhgg_bg_hover').find('em').prop('className', 'cm_jsbf_up');
+            	var zjqarr=tr.find("td").attr("zjq").split(",");
+            	var cbfarr=tr.find("td").attr("cbf").split(",");
+            	var bqcarr=tr.find("td").attr("bqc").split(",");
+            	var dataid=tr.find("td").attr("data-id")
+            	_self.get("#hhmore tr[dat_tye=zjq] i").each(function(h,i){
+            		_self.get(h).html(zjqarr[i]);
+            		_self.get(h).parent("a").attr("data-id",dataid);
+            	})
+                _self.get("#hhmore tr[dat_tye=cbf] i").each(function(h,i){
+                	_self.get(h).html(cbfarr[i]);
+                	_self.get(h).parent("a").attr("data-id",dataid);
+            	})
+                _self.get("#hhmore tr[dat_tye=bqc] i").each(function(h,i){
+                	_self.get(h).html(bqcarr[i]);
+                	_self.get(h).parent("a").attr("data-id",dataid);
+            	})
+                
+                tr.find('td').html('<table width="100%" cellspacing="0" cellpadding="0">'+$("#hhmore").html()+'</table>');
+                tr.find('tr[dat_tye]').show();
+                tr.show();
+            }
 		});
-		//设置点击在li上也可以选
-		box.live('li', 'click', function (e){
-			if (e.srcElement === this || e.target === this) {
-				var input = Yobj.get('input[data-type]', this);
-				if (input.size()) {
-					input.nodes[0].click();
-				}				
-			}
-		});
+	},
+	//是否超出最大场次
+	isOverMaxVs: function (bid){
+		return Yobj.postMsg('get-selector-selected', bid).data > 14;
 	},
 	onchange: Yobj.getNoop(),
 	//重新统计选项
 	optionChange: function (chk){
-		var bid  = chk.getAttribute('data-id');
-		var type = chk.getAttribute('data-type');
-		Yobj.optsAdm.set(bid, type + chk.value, chk.checked);
-		if (chk.checked) {
-			this.lastChk = chk;// 记录最后点击的复选框， 以恢复溢出;
-		}		
-		this.onchange(bid);//事件由号码框响应
-		this.updateMoreBtn(bid, Yobj.optsAdm.__getBid(bid), type == 'spf'||type == 'rqspf' ? false : type);//同步更多按钮
+		var s = this;
+		var bid  = chk.className.indexOf("sh_quanxuan")>-1? s.get(chk).prev('td').child('a').attr('data-id'):chk.getAttribute('data-id');
+		var tr = Y.get('#vs'+bid);
+		
+	    var trpanel = tr.find('td.unselect ');
+		if (!tr.data('xhtag')) {
+            tr.data('xhtag', []);
+        }
+		if (!tr.data('scm')) {
+            tr.data('scm', []);
+        }
+		var xtag = tr.data('xhtag'), scm = tr.data('scm');
+		var isspf = chk.className.indexOf("sh_quanxuan")==-1? chk.getAttribute('data-type').indexOf('spf')>-1? true:false:false;
+		var chks = chk.className.indexOf("sh_quanxuan")>-1? s.get(chk).prev('td').find('a'):s.get(chk).parent('td').find('a'),
+				allchk = chk.className.indexOf("sh_quanxuan")>-1? s.get(chk):s.get(chk).parent('td').next('td');
+
+		var isq = chk.className.indexOf("sh_quanxuan")>-1? chk.firstChild.innerHTML=='全'? true:false:false;
+		if(chk.className.indexOf("sh_quanxuan")>-1){
+			s.get(chk).prev('td').find('a').each(function(e,Y){
+				xtag.remove(e.firstChild.innerHTML);
+				if(isq){
+					s.get(e).addClass(s.hotCss);
+					xtag.push(e.firstChild.innerHTML);
+					scm[scm.length]=e.getAttribute('data-type')+e.getAttribute('value');
+				}else{
+					s.get(e).removeClass(s.hotCss);
+					xtag.remove(e.firstChild.innerHTML);
+					scm.remove(e.getAttribute('data-type')+e.getAttribute('value'));
+				}
+				
+				if (isq) {
+					s.lastChk = e;// 记录最后点击的复选框， 以恢复溢出;
+				}
+			});
+//			if(isq) chk.firstChild.innerHTML='清'; else chk.firstChild.innerHTML='全';
+		}else{
+			Y.get(chk).toggleClass(isspf? s.hotCss2:s.hotCss);
+			var checked = chk.className.indexOf(isspf? s.hotCss2:s.hotCss)>-1? true: false;
+			if(!isspf){
+				if(checked){
+					xtag.push(chk.firstChild.innerHTML);
+					scm[scm.length]=chk.getAttribute('data-type')+chk.getAttribute('value');
+				}else{
+					xtag.remove(chk.firstChild.innerHTML);
+					scm.remove(chk.getAttribute('data-type')+chk.getAttribute('value'));
+				}
+			}else{
+				if(checked)
+				scm[scm.length]=chk.getAttribute('data-type')+chk.getAttribute('value');
+				else scm.remove(chk.getAttribute('data-type')+chk.getAttribute('value'));
+			}
+			
+			if (checked) {
+				this.lastChk = chk;// 记录最后点击的复选框， 以恢复溢出;
+			}
+		}
+		
+        if(!isspf){
+        	var opts = chks.filter(function (el){
+                return el.className.indexOf(isspf? s.hotCss2:s.hotCss)>0;
+            });
+            if (opts.size()==chks.size()) {
+            	allchk.find('span').html('清');
+            }else{
+            	allchk.find('span').html('全');
+            }
+            
+        	s.tagChange(trpanel, xtag);
+        }
+        
+		if (this.isOverMaxVs(bid)) {
+			this.resetLast();
+			Yobj.alert('您好， 最多只能选择15场比赛!');
+		}else{
+			this.onchange(bid);//事件由号码框响应
+//			this.updateMoreBtn(bid, Yobj.optsAdm.__getBid(bid), type == 'spf' || type == 'rqspf' ? false : type);//同步更多按钮			
+		}
+		if(scm.length>0)
+		{
+			$('#vs'+bid).removeAttr("baoliu");
+			if($("#lotid") && "70" == $("#lotid").val())
+			{
+				$(chk).parent().parent().removeAttr("baoliu");
+			}
+		}
+		else
+		{
+			tr.attr("baoliu","1");
+			if($("#lotid") && "70" == $("#lotid").val())
+			{
+				$(chk).parent().parent().attr("baoliu","1");
+			}
+		}
 	},
 	//注数超出时回复
 	resetLast: function (){
@@ -459,74 +552,6 @@ Class('Selector', {
 			tag.selectedNum = table.find('input:checked').size();
 		}
 	},
-	//匹配所有对阵标签
-	findVsTags: function (box){
-		var vs = [],
-			vsTr = [], //包括截止的
-			stopTr = [],
-			vs_hash = {},
-			all = [],
-			allTr = [],
-			idArr = [],
-			doc = {},
-			_self = this;
-		box.childs('table').each(function (table){
-			if (table.innerHTML.indexOf('赛事编号') == -1) {//跳过表头
-				var trs = table.rows,//tr里面包含一个显示剩分差的选项table
-					chk, other, id, data, A, B, C, chks, moreP;
-				for (var i = 0, j = trs.length; i < j; i++) {//一行是一个比赛
-					A = trs[i];
-					all.push(A);
-					allTr.push(A);
-					chk = getHeadInput(A);//头标签
-					chk.onclick = onclick_head;
-					chks = Yobj.get(A).find('input[data-type]');
-					moreP = Yobj.get(A).find('p.tb_s_more');//三个更多按钮
-					if (moreP.size()) {//截止后不再存在"更多"
-						id = A.getAttribute('mid');
-						idArr.push(id);
-						A.id = 'vs'+id;
-						A.bindid = id;//基本id, 用于组装成两个a,b id;
-						data = {
-							mid_pname: A.getAttribute('mid') + '|' + A.getAttribute('pname'),
-							game_time: A.cells[0].getElementsByTagName('span')[0].innerHTML,
-							end_time: Yobj.getDate(A.getAttribute('pendtime')).getTime(),
-							title: A.getAttribute('hometeam') + 'vs' + A.getAttribute('guestteam'),
-							id: id,
-							trs: [A]
-						};
-						vs.push(data);
-						vs_hash[id] = data; //分别保存为数组和哈希以供检索
-						chks.attr('data-id', id).prop('checked', false);//用bindid关联tr
-						moreP.attr('data-id', id);						
-						vsTr.push(A);
-						Yobj.optsAdm.add(id, [A]);
-					}else{
-						stopTr.push(A);
-					}					
-				}
-			}
-		});
-		//查找头复选框, 位于在奇行中
-		function getHeadInput(tr){
-			var td = tr.cells[0];
-			return td.getElementsByTagName('input')[0];
-		}
-		//点击隐藏对阵
-		function onclick_head(){
-			this.checked = true;
-			var tr = Yobj.get(this).parent('tr').eq(0);
-			tr.addClass('hide_row');
-			_self.hideNum++;
-			_self.setHideNum();
-		}
-		this.vsTr = vsTr;
-		this.vsList = vs;
-		this.vs_hash = vs_hash;
-		this.stopTr = stopTr;
-		this.allTr = all;//只有主行
-		this.allTrs = allTr;//包括所有子行
-	},
 	getTrs: function (bid){
 		return Yobj.get('#vs' + bid);
 	},
@@ -536,77 +561,46 @@ Class('Selector', {
 	setTdBg: function (chk){
 		var td = Yobj.get(chk).parent('li');
 		if (chk.checked) {
-			td.addClass('h_brb');
+			td.addClass('label_cd');
 		}else{
-			td.removeClass('h_brb');
+			td.removeClass('label_cd');
 		}
 	},
-	synState: function (opts, data){
-		var _self = this;
+	synState: function (opts, data, vals, tr){
+		var _self = this,
+		    scm = _self.get(tr).data('scm');
 		opts.each(function (chk){//一个一个的同步
-			var set = data[chk.getAttribute('data-type')+chk.value];
-			if (set) {
-				chk.checked = set[0];
+			var set = chk.getAttribute('data-type')+chk.getAttribute('value');
+			if($_sys.getSub(data, set)>-1){
+				_self.get(chk).addClass(chk.getAttribute('data-type').indexOf('spf')>-1? _self.hotCss2:_self.hotCss);
+			}else{
+				_self.get(chk).removeClass(chk.getAttribute('data-type').indexOf('spf')>-1? _self.hotCss2:_self.hotCss);
+				vals.remove(chk.getAttribute('data-type').indexOf('spf')>-1? chk.getAttribute('data_val'):chk.firstChild.innerHTML);
+				scm.remove(set);
 			}
-			_self.setTdBg(chk);
-		});		
+		});	
 	},
 	//用号码来选择一个对阵
-	setCode: function (bid, isFormLay){//
-		var trs = this.getTrs(bid), 
-			opts = trs.find('input[data-type]');//找到对应的inputs组
-		var data = Yobj.optsAdm.__getBid(bid);//查询状态表
-		this.synState(opts, data);//同步简单显示的checkbox
-		//如果弹层存在， 同时刷新弹层的内容。
-		if (!isFormLay && this.currentExlay && this.currentExlay.bindId == bid && this.currentExlay.isshow) {
-			this.currentExlay.update(bid, this.currentExlay.p);
-		};
-		//如果弹层隐藏也要更新按钮数字
-		this.updateMoreBtn(bid, data);
-	},
-	//更新更多按钮的状态
-	updateMoreBtn: function (bid, data, fromSimleBtnClickType){
-		var nums = '',
-			optsHTML = {'jqs': [], 'bf': [], 'bqc': [], 'spf': [], 'rqspf': []};
-		for(var k in data){
-			var hk = k.replace(/\d.*$/, '');
-			var val = k.replace(hk, '');
-			var checked = data[k][0];
-			if (checked) {//选中
-				nums += k;//'bqc00spf0';
-				if (hk in optsHTML) {//添加显示的选中项
-					optsHTML[hk].push('<span class="x_s yl" onmouseover="this.className=\'x_s yl nx_s\'" onmouseout="this.className=\'x_s yl\'" data-type="'+hk+'" data-value="'+val+'" data-bid="'+bid+'">'+this.codeId2text(hk, val)+'</span>');
+	setCode: function (bid, sel){//
+		var arr = new Array();
+        arr[0] = this.one('#vs'+bid);
+        arr[1] = this.get('#vs'+bid).next().one();
+        var trs = arr, trpanel = this.getTrs(bid).find('td[mark=unselect]'),xtag = this.getTrs(bid).data('xhtag'),
+			opts = this.get(trs).find('a[data-type]');//找到对应的inputs组
+        
+		this.synState(opts, sel, xtag, arr[0]);//同步简单显示的checkbox
+		this.tagChange(trpanel, xtag);
+		
+		var f = false,y = this;
+		this.get(arr[1]).find('tr').each(function(el){
+			f = false;
+			Y.get(el).find('a').each(function(e){
+				if(e.className.indexOf(y.hotCss)==-1){
+					f=true;
 				}
-			}
-		}
-		//遍历三个有扩展层的td
-		Yobj.get('#vs' + bid + ' p.tb_s_more').each(function (p){
-			var type = p.getAttribute('data-type');
-			var m = nums.split(type).length - 1;//使用选项类型名做分隔符， 用来统计选中多少个
-			var td = Yobj.get(p.parentNode);
-			var ul = td.find('ul.dc_tdul');//包含复选框的ul
-			var optsDiv  =td.find('div.dc_tddiv');//显示选择内容的div, 优化...
-			ul.show(m === 0);
-			optsDiv.show(m > 0);
-			if (type in optsHTML) {
-				optsDiv.html(optsHTML[type].join(''));
-			}
-			if (m) {//选中
-				p.innerHTML = '<span class="s_more_show"><a class="xs">显示</a></span><strong class="red">'+m+'</strong>';
-				if (fromSimleBtnClickType && fromSimleBtnClickType == type) {//如果来自于简单按钮的选择，弹出层
-					this.popMoreLay(p);
-				}				
-			}else{
-				p.innerHTML = '<span class="s_more_show"><a class="xs">显示</a></span>';
-			}
-		}, this);
-		//如果弹层存在， 同时刷新弹层的内容。
-		if (this.currentExlay && this.currentExlay.bindId == bid && this.currentExlay.isshow) {
-			var curp =  this.currentExlay.p;
-			if (curp) {
-				Yobj.get(curp).find('span').prop('className', 's_more_hide').html('<a class="yc">隐藏</a>');
-			}
-		}
+			});
+			if(f) Y.get(el).find('td.sh_quanxuan>span').html('全');
+		});
 	},
 	codeId2text: function (type, val){
 		if (type == 'bqc') {
@@ -632,11 +626,11 @@ Class('CodeList', {
 	onchange: Yobj.getNoop(),//选择的时候, 用于绑定 选择器方法
 	ondatachange: Yobj.getNoop(), //用于输出号码， 绑定过关方式方法
 	playids: {
-		spf: 'SPF>',
-		rqspf: 'RSPF>',
-		jqs: 'JQS>', 
-		bf: 'CBF>',
-		bqc: 'BQC>' 
+		spf: "SPF>",
+		rqspf: "RSPF>",
+		jqs: "JQS>", 
+		bf: "CBF>",
+		bqc: "BQC>" 
 	},
 	__getGroup: function (type, bid, mp){
 		return {
@@ -689,7 +683,6 @@ Class('CodeList', {
 		}
 		switch(type){
 			case 'spf'://降序
-				return codesArr.sort(down);
 			case 'rqspf'://降序
 				return codesArr.sort(down);
 			case 'bf'://转换后升序
@@ -719,7 +712,8 @@ Class('CodeList', {
 	updateData: function (){//重新生成号码数据
 		var data = [],
 			info = [],
-			optsArr2 = [],
+			optsArr2 = [], 
+			danoptArr2 = [],
 			playNum = {
 				spf: 0,
 				rqspf: 0,
@@ -727,21 +721,25 @@ Class('CodeList', {
 				bf: 0,
 				bqc: 0
 			};
-			endtime = 0,
+			 endtime= 0,
 			_self = this;
 		//查找号码列表中所有可见号码区的号码;
+		var visiTr=this.box.find('tr.code_area:visited');
+		$("#xznum").html("("+visiTr.nodes.length+")");
 		this.box.find('tr.code_area:visited').each(function (tr){
 			var bid = tr.getAttribute('data-id');
 			var mp = tr.getAttribute('data-mp');
 			var m_endtime = tr.getAttribute('data-endtime');
 			var span = Yobj.get(tr).find('span.x_s:visited');
 			var codes = [];
+			var dan = tr.getAttribute('dan') == '1' ? 1 : 0;
+			var rq = tr.getAttribute('data-rq');
 			var spf = _self.__getGroup('spf', bid, mp);
 			var rqspf = _self.__getGroup('rqspf', bid, mp);
 			var jqs = _self.__getGroup('jqs', bid, mp);
 			var bf = _self.__getGroup('bf', bid, mp);
 			var bqc = _self.__getGroup('bqc', bid, mp);
-			var hasSfc, hasrqSfc, hasSf, hasRfsf, hasDxf;
+			var hasSfc, hasNsfc, hasSf, hasRfsf, hasDxf;
 			var prizeArr = [];
 			var codeArr = [];
 			if (endtime) {
@@ -752,18 +750,18 @@ Class('CodeList', {
 			span.nodes.each(function (span){
 				var type = span.getAttribute('data-sg');
 				var g;
-				if (type.indexOf('spf') === 0) {
+				if (type.indexOf('rqspf') === 0) {
+					g = rqspf;
+					if (!hasNsfc) {
+						hasNsfc = true;
+						playNum.rqspf++;
+					}		
+				}else if (type.indexOf('spf') === 0) {
 					g = spf;
 					if (!hasSfc) {
 						hasSfc = true;
 						playNum.spf++;
-					}					
-				}else if (type.indexOf('rqspf') === 0) {
-					g = rqspf;
-					if (!hasrqSfc) {
-						hasSfc = true;
-						playNum.rqspf++;
-					}					
+					}
 				}else if(type.indexOf('bf') === 0){
 					g = bf;
 					if (!hasSf) {
@@ -784,35 +782,143 @@ Class('CodeList', {
 					}
 				}
 				g.code.push(type.replace(/\D/g, ''));//去掉号码的玩法识别(-sfc)部分, data-sg="sf2"
-				var sp = Yobj.optsAdm.getSp(bid, type);
+				var sp = /*Yobj.optsAdm.getSp(bid, type)*/ _self.getSp(bid, type);
 				g.prize.push(sp);//查询sp值
 				codeArr.push(span.innerHTML+'('+sp+')');
 			});
 			var opt = [];
-			data.push([spf,rqspf,jqs,bf,bqc].filter(function (obj){
-				var len = obj.code.length;
-				if (len) {
-					opt.push(len + '-' + obj.type);//[2-sfc];
-					obj.mps += '['+_self.formatCode(obj.type, obj.code).join(',')+']';//排序后拼接
-					prizeArr = prizeArr.concat(obj.prize);
-					return true;
-				}
-			}));
-			optsArr2.push(opt);
+			var danopt = [];
+			if(dan == 0){
+				data.push([rqspf,spf, jqs,bf, bqc].filter(function (obj){
+					var len = obj.code.length;
+					if (len) {
+						if(obj.type == 'rqspf'){
+							obj.rq = rq;
+						}
+						opt.push(len + '-' + obj.type);//[2-sfc];
+						obj.mps += '['+_self.formatCode(obj.type, obj.code).join(',')+']';//排序后拼接
+
+						prizeArr = prizeArr.concat(obj.prize);
+						return true;
+					}
+				}));
+			}else if(dan == 1){
+				data.push([rqspf,spf, jqs,bf, bqc].filter(function (obj){
+					var len = obj.code.length;
+					if (len) {
+						if(obj.type == 'rqspf'){
+							obj.rq = rq;
+						}
+						danopt.push(len + '-' + obj.type);//[2-sfc];
+						obj.dan = obj.mps+'['+_self.formatCode(obj.type, obj.code).join(',')+']';//排序后拼接
+						obj.mps += '['+_self.formatCode(obj.type, obj.code).join(',')+']';//排序后拼接
+						prizeArr = prizeArr.concat(obj.prize);
+						return true;
+					}
+				}));
+			}
+			if(opt.length != 0){
+				optsArr2.push(opt);
+			}
+			if(danopt.length != 0){
+				danoptArr2.push(danopt);
+			}
 			info.push({
 				index: tr.getAttribute('data-index'),//赛程名
 				vs: tr.getAttribute('data-vs'),//对阵名
 				codes: codeArr.join(','),
+				dan: tr.getAttribute('dan') == '1' ? '√' : '×',//胆
 				min: Math.min.apply(Math, prizeArr), 
 				max: Math.max.apply(Math, prizeArr)//最大和最小奖金
 			});//做为查看明细的基本数据
 		});
 		this.codeInfo = info;//全盘号码视图
 		this.codes = data;//全选择数据
+		this.danselOpts = danoptArr2;//用于快速计算注数
 		this.selOpts = optsArr2;//用于快速计算注数
 		this.playNum = playNum;//用于判断可用的过关方式
 		this.endtime = endtime;
 		this.ondatachange();//传递给过关方式处理
+	},
+	
+	getSp: function(bid,type){
+		var _self = this,len,arrs = [],
+		spf = _self.get('#vs'+bid).find('td>a[data-type=spf]').nodes,
+		rqspf = _self.get('#vs'+bid).find('td>a[data-type=rqspf]').nodes;
+		jqs = _self.get('#vs'+bid).next('tr').find('td>a[data-type=jqs]').nodes;
+		bqc = _self.get('#vs'+bid).next('tr').find('td>a[data-type=bqc]').nodes;
+		bf = _self.get('#vs'+bid).next('tr').find('td>a[data-type=bf]').nodes;
+		
+		if(type.indexOf('rqspf')>-1){
+			len = rqspf.length;
+			arrs = rqspf;
+		}else if(type.indexOf('spf')>-1){
+			len = spf.length;
+			arrs = spf;
+		}else if(type.indexOf('jqs')>-1){
+			len = jqs.length;
+			arrs = jqs;
+		}else if(type.indexOf('bqc')>-1){
+			len = bqc.length;
+			arrs = bqc;
+		}else if(type.indexOf('bf')>-1){
+			len = bf.length;
+			arrs = bf;
+		}
+		
+		var _l = len, _i = _l%8, f = false,xb;
+		if(_i){
+		    do{
+		    	xb = _l-_i;
+		    	f = returnSp(arrs[xb]);
+		    	if(f) break;
+		    }while(--_i);
+		}
+
+		_i = Math.floor(_l/8);
+		if(_i){
+		  do{
+			  if(f) break;
+			  xb = (_i-1)*8+0;
+			  f = returnSp(arrs[xb]); 
+			  if(f) break;
+			  xb = (_i-1)*8+1;
+			  f = returnSp(arrs[xb]);
+			  if(f) break;
+			  xb = (_i-1)*8+2;
+			  f = returnSp(arrs[xb]);
+			  if(f) break;
+			  xb = (_i-1)*8+3;
+			  f = returnSp(arrs[xb]);
+			  if(f) break;
+			  xb = (_i-1)*8+4;
+			  f = returnSp(arrs[xb]);
+			  if(f) break;
+			  xb = (_i-1)*8+5;
+			  f = returnSp(arrs[xb]);
+			  if(f) break;
+			  xb = (_i-1)*8+6;
+			  f = returnSp(arrs[xb]);
+			  if(f) break;
+			  xb = (_i-1)*8+7;
+			  f = returnSp(arrs[xb]);
+			  if(f) break;
+		  } while(--_i);
+		}
+		
+		  return arrs[xb].getAttribute('data-sp')||1;
+		
+		function returnSp(array){
+			if(array){
+				if((array.getAttribute('data-type') + array.getAttribute('value')) == type){
+					return true;
+				}else{
+					return false;
+				}
+			}else{
+				return false;
+			}
+		}
 	},
 	getCodeString: function (){
 		var c = [];
@@ -823,6 +929,23 @@ Class('CodeList', {
 		});
 		return c.join('/');
 	},
+//	55077|140430001|SPF>[3,1]/55077|140430001|RSPF>[3]/55077|140430001|JQS>[0]/55078|140430002|RSPF>[3,1]
+	
+
+	getdanCodeString: function (){
+		var c = [];
+		this.codes.each(function (m){
+			m.map(function (obj){
+				if(obj.dan===undefined||obj.dan==""){
+				
+				}/*else{
+				c.push(obj.dan.join("/"));
+				}*/
+			}).join('/');
+			
+		});
+		return $_base_s.undel(c).join('/');
+	},
 	getTr1: function (bid){
 		return Yobj.get('#code'+bid+ '_a');
 	},
@@ -832,56 +955,54 @@ Class('CodeList', {
 	//添加事件
 	addEvents: function (){
 		var _self = this;
-		//点击头复选框, x掉一个对阵
-		this.box.find('input').click(function (){
-			this.checked = true;
-			var tr = Yobj.get(this).parent('tr').hide(),
-				bid = tr.attr('data-id');
+		this.box.live('tr.cm_hhgg_xztt', 'mouseover', function(e,Y){
+			Y.get(this).addClass("cm_jchover");
+		}).live('tr.cm_hhgg_xztt', 'mouseout', function(e,Y){
+			Y.get(this).removeClass("cm_jchover");
+	    }).live('input[view=hh]', 'click', function(e){
+	    	var tr = Yobj.get(this).parent('tr').hide(),
+			bid = tr.attr('data-id');
 			tr.next().hide();
-			Yobj.optsAdm.allSet(bid, false);
-			_self.onchange(bid);// 本对阵选项全部清空
+			_self.onchange(bid,[]);// 本对阵选项全部清空
 			_self.updateData();
-		});
-		_self.get("#checkbox_clear").click(function(){
-          	Y.get("#choose_list").find("tr").each(function(e){
-          		var tr=this.hide();
-          		var bid=this.attr('data-id');
-          		tr.next().hide();
-          		Yobj.optsAdm.allSet(bid, false);
-    			_self.onchange(bid);// 本对阵选项全部清空
-    			_self.updateData();
-          	});
-          	
-      	}); 
+	    }).live(':checkbox', 'click', function (e, Y){//点击头复选框
+             var tr = Y.get(this).parent('tr');
+             tr.attr('dan', this.checked ? 1 : 0);
+	         _self.updateData();
+	     });
+		
+		_self.get("#delMatch").click(function(){
+			_self.box.find("tr:visited").each(function(e){
+				if(e.getAttribute('id').indexOf('_a')>-1){
+					var tr = Yobj.get(e).hide(), bid = tr.attr('data-id');
+					tr.next().hide();
+					_self.onchange(bid,[]);// 本对阵选项全部清空
+					_self.updateData();
+	    		 }
+	    	 });
+	     });
+		
 		//点击选项
-		this.box.find('span.x_s').hover(function (){
-			Yobj.get(this).addClass('nx_s');
-		}, function (){
-			Yobj.get(this).removeClass('nx_s');
-		}).click(function (){
+		this.box.live(' span.x_s', 'mousedown', function (e, Y){
 			Yobj.get(this).hide();
-			var bid = this.getAttribute('data-id'),
+			var bid = Yobj.get(this).parent('tr').attr('data-id'),
 				tr = _self.getTr2(bid),
-				sel = tr.find('span:visited');
-			if (sel.size() === 0) {//全部隐藏了
+				sel = tr.find('span.x_s:visited').nodes.filter(function(c){
+					return $(c).is(":visible");
+				}).map(function(c){
+					return Y.get(c).attr('data-sg');
+				});
+			
+			if (sel.length === 0) {//全部隐藏了
 				tr.hide();
 				tr.prev().hide();
 			}
-			Yobj.optsAdm.set(bid, this.getAttribute('data-sg'), false);
-			_self.onchange(bid);
+			_self.onchange(bid,sel);
 			_self.updateData();
-		}).mousedown(function (e){
-			e.stop();
 		});
 	},
 	//添加基本对阵表格
 	addBaseTr: function (vsList){
-		var doc = document.createDocumentFragment(),
-			vs, tr;
-		for (var i = 0, j = vsList.length; i < j; i++) {
-			this.__addTr(vsList[i], doc);
-		}
-		this.box.nodes[0].appendChild(doc);
 		this.addEvents();
 	},
 	//添加了一行, addBaseTr的辅助方法
@@ -889,45 +1010,66 @@ Class('CodeList', {
 		var tr = this.tmpl_1.cloneNode(true);
 		var tr2 = this.tmpl_2.cloneNode(true);
 		var tds = Yobj.get('td', tr);
-		tds.nodes[0].getElementsByTagName('span')[0].innerHTML = vsInfo.game_time;
+//		tds.nodes[0].innerHTML = vsInfo.game_time;
+		tds.nodes[0].getElementsByTagName('span')[0].innerHTML= vsInfo.game_time;
 		tds.nodes[1].innerHTML = vsInfo.title.replace('vs', '<span class="sp_vs">VS</span>');
 		doc.appendChild(tr);
 		doc.appendChild(tr2);
 		tr.id = 'code' + vsInfo.id + '_a';
 		tr2.id = 'code' + vsInfo.id + '_b';	
-		tr2.className += ' code_area';
+		tr2.className = ' code_area';
 		Yobj.get([tr, tr2]).attr('data-id', vsInfo.id)
 			.attr('data-mp', vsInfo.mid_pname)
 			.attr('data-index', vsInfo.game_time)
 			.attr('data-vs', vsInfo.title)
-			.attr('data-endtime', vsInfo.end_time)
-			.find('span.x_s').attr('data-id', vsInfo.id).hide();
+			.attr('data- endtime', vsInfo.end_time)
+			.find('p>a').attr('data-id', vsInfo.id).hide();
 	},
 	//同步选择器, 选择器触发
 	syncSelector: function (bid){
-		var tr1 = this.getTr1(bid),
-			sum = 0,
-			tr2 = tr1.next();
-		var data = Yobj.optsAdm.__getBid(bid);//{'fs1':[true, 12.2]};从状态文档中读取最新状态来同步号码
-		tr2.find('span.x_s').each(function (span){
-			span = Yobj.get(span);
-			var state = data[span.attr('data-sg')];// [true, sp];
-			if (state && state[0]) {
-				span.setStyle('display', ''); 
-				sum++;
-			}else{
-				span.hide();
-			}
-		});
-		if(sum){
-			tr1.show();
-			tr2.show();
-		}else{
-			tr1.hide();
-			tr2.hide();
-		};
+		var tr1 = this.get("#vs"+bid),vstr = this.one("#vs"+bid), id="code"+bid+"_a", 
+		sum = 0,tr2 = tr1.next(), tr = this.get('#'+id),trn,
+		rq,A,B,date,chk;
+		rq = vstr.cells[0].getElementsByTagName('em')[0].title;
+		rq2 = this.get("#vs"+bid).find('td strong[mark=close]').html();
+		A = vstr.getAttribute('hometeam');
+		B = vstr.getAttribute('guestteam');
+		date = vstr.getAttribute('pendtime');
+		chk = tr1.data('scm');
+		if (tr.size() == 0) {
+			tr = this.get(this.tmpl_1.cloneNode(true)).insert(this.box);
+			tr.prop('id', id).attr('data-id', vstr.getAttribute('fid')).attr('data-mp', vstr.getAttribute('fid')+"|"+vstr.getAttribute('pname'))
+			  .attr('data-index',rq)
+			  .attr('data-vs', A+"vs"+B)
+			  .attr('data-endtime', this.getDate(date));
+			tr.one().cells[1].innerHTML = A+"<span class=\"sp_vs\">VS</span>"+B;
+	        tr.one().cells[0].innerHTML ='<input type="checkbox" view="hh" checked="" class="chbox">'+ rq;
+
+	        trn = this.get(this.tmpl_2.cloneNode(true)).insert(tr, 'next');
+	        trn.addClass('code_area');
+	        trn.attr('id', "code"+bid+"_b").attr('data-id', vstr.getAttribute('fid'))
+	           .attr('data-mp', vstr.getAttribute('fid')+"|"+vstr.getAttribute('pname'))
+	           .attr('data-index',rq)
+	           .attr('data-rq',rq2)
+			   .attr('data-vs', A+"vs"+B)
+			   .attr('data-endtime', this.getDate(date));
+	        tr.data('linkTR', trn);
+	        trn.data('linkTR', tr);
+//	        this._sort();//仅在添加新的时候排序
+		}
+        
+        this._showChoose(tr, chk, vstr);
 		this.updateData();
-	}
+	},
+	
+	_showChoose: function (tr, chk, vstr){
+        var tr2 = tr.data('linkTR');
+        tr2.find(' span.x_s').each(function (span, i){
+            span.style.display = chk.indexOf(span.getAttribute('data-sg')) == -1 ?  'none' : '';
+        }, this);
+        tr2.show(chk.length > 0);
+        tr.show(chk.length > 0);
+    }
 });
 
 
@@ -937,8 +1079,22 @@ Class('GgType', {
 	index: function (){
 		this.setTabs();
 		this.setEvents();
+		this.addMsg();
+		this.tbody = this.get('#choose_list');
 		this.idmap = Yobj.dejson(Yobj.get('#jsonggtype').val());
 		this.only_mix = Yobj.get('#qcdy').prop('checked');
+		var thiss = this;
+		Yobj.onMsg('get-selector-selected', function (bid){
+			var has;
+			thiss.codes.each(function (item){
+				var first = item[0];
+				if (first && first.id == bid) {
+					has = true;
+					return false;
+				}
+			});
+			return !has ? thiss.codes.length : 0;
+		});
 	},
 	setEvents: function (){
 		var _self = this;
@@ -952,12 +1108,12 @@ Class('GgType', {
 			};
 		});
 		Yobj.get('#qcdy').prop('disabled', true).prop('checked', false);
-		this.lt2_info = this.get('<div style="text-align: center;position:relative;top:15px;color: red;" id="vslt2">请至少选择2场比赛进行投注。</div>').insert('#ggListFree', 'prev');
+		this.lt2_info = this.get('<div style="text-align: center;position:relative;top:8px;color: red;" id="vslt2">请至少选择2场比赛进行投注。</div>').insert('#ggListFree', 'prev');
 	},
 	max: 0, //当前最多能玩的串数
 	maxNum: {//混串最多可玩数
-		'spf': 8,
 		'rqspf': 8,
+		'spf': 8,
 		'jqs': 6,
 		'bf': 4,
 		'bqc': 4
@@ -981,6 +1137,11 @@ Class('GgType', {
 			focusTab( this.tab_index);
 		});
 		function focusTab(idx){
+			if(idx==0){
+				_self.get('#ch_desc').hide();
+			}else{
+				_self.get('#ch_desc').show();
+			}
 			tabs.removeClass(css).eq(idx).addClass(css);
 			change(idx);			
 		};
@@ -1036,9 +1197,14 @@ Class('GgType', {
 		var isFree = this.mode == 'free';
 		var id = isFree ? '#ggListFree' : '#ggList';
 		var min = isFree ? 2 : 3;
-		Yobj.get('#ggListFree').next('div').show(isFree);
 		var labs = Yobj.get(id + ' label').hide();
 		this.lt2_info.show(max < min);
+		if(max < min){
+			this.get('#x_guoguan_sty').removeClass('cm_jclq_red');
+		}else{
+			this.get('#x_guoguan_sty').addClass('cm_jclq_red');
+		}
+		
 		labs.each(function (lab){
 			 var labelFor = (lab.getAttribute('for') || lab.getAttribute('HTMLfor'))+'',
 				 num = parseInt(labelFor.slice(1));
@@ -1061,114 +1227,277 @@ Class('GgType', {
 			ggtype.push(input.value);
 			return input.value;
 		});
+		Class.C('chuan',parseInt(this.ggTypes[0]));
+		Class.C('chuanlength',this.ggTypes.length);
+		if(ggtype.length>0){
+			this.get('#x_buy_sty').addClass('cm_jclq_red');
+			this.get('#x_buy_sty').next('div').addClass('cm_jclq_red');
+		}else{
+			this.get('#x_buy_sty').removeClass('cm_jclq_red');
+			this.get('#x_buy_sty').next('div').removeClass('cm_jclq_red');
+		}
 		this.ggTypeIds = ids;
+		if(ggtype.length>0){
+			this.get('#x_buy_sty').addClass('cm_jclq_red');
+			this.get('#x_buy_sty').next('div').addClass('cm_jclq_red');
+		}else{
+			this.get('#x_buy_sty').removeClass('cm_jclq_red');
+			this.get('#x_buy_sty').next('div').removeClass('cm_jclq_red');
+		}
 		this.ggtype = ggtype;//过关方式字符型
 		if (is_gg_fire) {
 			Yobj.get('#qcdy').prop('checked', false);
 			this.only_mix = false;			
 		}
+		
+		if(this.ggTypes.length>0 && box == '#ggList'){
+			Y.postMsg('msg_dc_split', this.ggTypes[0]);
+		}
+		this.postMsg('msg_choose_update');
 		return this.onchange(is_gg_fire);//计算溢出时会返回true;
+	},
+	addMsg:function(){
+		this.onMsg('msg_choose_update', function (){
+			var tr, all, dan=[], nDan=[];
+			var isFree = this.mode;
+			tr = this.tbody.find('tr:visited');
+			all = tr.find(':checkbox[dan]');//所有胆的复选框
+			all.each(function (el){
+			if (el.checked) {dan.push(el)}else{nDan.push(el)}//取得胆与非胆
+			}); 
+			if(isFree == 'free'){
+				var id = isFree ? '#ggListFree' : '#ggList';
+				var labs = Yobj.get(id + ' label');
+				var yRn = true;
+				if((dan.length + nDan.length) <= 2){
+					all.each(function (el){
+						 el.disabled = true;
+						 el.checked = false;
+						 el.parentNode.parentNode.setAttribute('dan','0');
+					});
+				}else{
+					if(dan.length < 1){
+						all.each(function (el){
+							 el.disabled = false;
+							 el.checked = false;
+							 el.parentNode.parentNode.setAttribute('dan','0');
+						}); 
+					}
+					if(Class.C('chuanlength') == 1 && Class.C('chuan') == (dan.length+nDan.length)){
+						all.each(function (el){
+							 el.disabled = true;
+							 el.checked = false;
+							 el.parentNode.parentNode.setAttribute('dan','0');
+						}); 
+						labs.each(function (lab){
+							lab.getElementsByTagName('input')[0].disabled = false;
+						});	
+						yRn = false;
+					}
+					if(Class.C('chuan') -1 == dan.length){
+						 nDan.each(function (el){
+							 el.disabled = true;
+						 });
+					}else{
+						if(nDan.length > 0 && Class.C('chuanlength') != 1){
+							nDan.each(function (el){
+								 el.disabled = false;
+							});
+						}
+					}
+					if(dan.length>0){
+						$("#ddjjyh").hide();
+					}else{
+						$("#ddjjyh").show();
+					}
+					labs.each(function (lab){
+						if(parseInt(lab.htmlFor.slice(1))<=dan.length){
+							if(yRn){
+								lab.getElementsByTagName('input')[0].disabled = true;
+								lab.getElementsByTagName('input')[0].checked = false;
+							}
+						}else{
+							lab.getElementsByTagName('input')[0].disabled = false;
+						}
+					});	
+				}
+			}else{
+				if(dan.length>0){
+					$("#ggList").hide();
+					$("#vslt2").html("胆拖不支持多串");
+					$("#vslt2").show();
+					$("#ddjjyh").hide();
+					$("#ch_desc").hide();
+				}else{
+					$("#ggList").show();
+					$("#vslt2").hide();
+					$("#ddjjyh").show();
+				}
+			}
+        });
 	},
 	//同步号码框
 	syncCodeList: function (codeList){//[{id:'4578', codes:[{type:'sf', code: ['1']}]}]
 		this.codes = codeList.codes;
 		this.playNum = codeList.playNum;
 		this.selOpts = codeList.selOpts;
-		this.updateTypeView();	
-		if(this.codes.length>0){
-        	this.get("#checkbox_clear").addClass("jcq_kcur");
-        }else{
-        	this.get("#checkbox_clear").removeClass("jcq_kcur");
-        }
+		this.danselOpts = codeList.danselOpts;
+		this.updateTypeView();
 		Yobj.get('#cs').html(this.codes.length);
-		//var single = 	Math.cl(codes, codes);
+		
+		if(this.codes.length>0){
+       	 	this.get('#delMatch').addClass('jcq_kcur');
+        }else{
+       	 	this.get('#delMatch').removeClass('jcq_kcur');
+        }
 	}
 });
+Class.C('Max-BeiShu', 5*10000);
+
+
 
 /*发起购买类 
 *************************************************************************/
+Class.C('add-money-url', "/account/chongzhi.html");
+
 Class('Buy', {
-	single: true,
-	bs: 1,
-	index: function (target){
-		var _self = this;	
-		this.form = Yobj.get(target);
-		Yobj.createIntInput('#bs', function (e){//修改倍数
-           
-			_self.bs = parseInt(this.value);
+ 	single: true,
+ 	bs: 1,
+ 	index: function (target){
+ 		var _self = this;	
+ 		this.form = Yobj.get(target);
+ 		
+ 	
+
+ 		Yobj.get('#gobuy,#gohm').click(function (){
+ 			_self.ishm = this.id == 'gohm' ? 1 : 0;
+ 			 Y.get('#ishm').val(_self.ishm);//合买与代购
+ 			Y.get('#beishu').val(Y.get('#bs').val());
+ 			if (_self.ishm){
+             	Y.get("#project_form").attr("action", "/phpt/jc/step_11.phpx");
+             }else{
+             	Y.get("#project_form").attr("action", "/phpt/jc/step_12.phpx");
+             }
+ 			if (true === _self.check()) {
+// 				_self.send();
+ 				Y.get('#project_form').doProp('submit');
+ 			}
+ 		});
+ 		Yobj.createIntInput('#bs', function (e){//修改倍数
+            _self.bs = parseInt(this.value);
 			   _self.bschange();
-         }, 100000);
-
-		Yobj.get('#gobuy,#gohm').click(function (){
-			_self.ishm = this.id == 'gohm' ? 1 : 0;
-			if (_self.ishm){
-            	Y.get("#project_form").attr("action", "/phpt/jc/step_11.phpx");
-            }else{
-            	Y.get("#project_form").attr("action", "/phpt/jc/step_12.phpx");
-            }
-			if (true === _self.check()) {
-				_self.send();
+      }, Class.C('Max-BeiShu'));
+ 		this.get('#jjyh').click(function (){
+ 			_self.ishm = this.id == 'jjyh' ? 1 : 0;
+ 			if (_self.ishm){
+             	//Y.get("#jjyh_form").attr("action", "jjyh_hh.html");
+             }
+            var dan = false;
+	    	  Y.get(".dcr_table td input[dan]").each(function(d,i){
+	     			 if(d.checked){
+	     				dan = true;
+	     			 }
+	     		 });
+	    	 if(dan){
+	    		 return Y.alert('奖金优化不支持胆拖！');
+	    	 }
+ 			Y.get('#beishu').val(Y.get('#bs').val());
+ 			if (true === _self.check()) {
+ 				var ty=Y.get('#ggtypename').val().split('\串');
+ 				if(Y.get('#ggtypename').val().split(',').length>1){
+                 	return Y.alert('奖金优化暂不支持同时选择多个过关方式！');
+                 }
+ 	            if(ty[1]>1){
+ 	            	return Y.alert('奖金优化仅支持N串1！');
+ 	            }
+ 	
+ 	            Y.get('#pnum').val(ty[0]);
+ 				Y.get('#code').val(Y.get('#codes').val());
+ 				Y.get('#tmoney').val(Y.get('#totalmoney').val());
+ 				Y.get('#muli').val(Y.get('#beishu').val());
+ 				var MAX_ALL_MONEY = 100000;
+ 	            if (Y.get('#tmoney').val() > MAX_ALL_MONEY) {
+ 	                return Y.alert('您好, 发起方案金额最多不能超过￥'+MAX_ALL_MONEY+'元!');
+ 	            }
+ 	            Y.get('#jjyh_form').doProp('submit')
+ 				//_self.send();
+ 			}
+ 		});
+ 	},
+ 	bschange: function (){},//倍数变化时
+ 	setVals: function (obj){//批量设置表单
+ 		for(var k in obj){
+ 			Yobj.get(k).val(obj[k]);
+ 		}
+ 	},
+	check : function() {
+ 		var maxMoney =$("#money_limit").val().split(',')[1];
+ 		var codes =$("#codes").val();
+ 		var totalmoney =$("#totalmoney").val();
+ 		var beishu =$("#beishu").val();
+ 		var ggtypename =$("#ggtypename").val();
+ 		
+ 		//出票有压力，方案注数大于等于50注且倍数小于10倍的方案不让投注
+ 		/*if(codes.indexOf('让负')>0||codes.indexOf('让平')>0||codes.indexOf('让胜')>0){
+			var zhushu = parseInt(parseInt(totalmoney)/parseInt(beishu)/2);
+			if(zhushu>=50 && parseInt(beishu)<10){
+				this.alert('尊敬的用户，因中心限制，近期注数>=50、且倍数<10倍的，含让球胜平负玩法的混合过关方案暂时无法投注，请减少注数或增加倍数，敬请谅解。');
+				return false;
 			}
-		});
-		
-		this.get('#jjyh').click(function (){
-			_self.ishm = this.id == 'jjyh' ? 1 : 0;
-			if (_self.ishm){
-            	//Y.get("#jjyh_form").attr("action", "jjyh_hh.html");
-            }
-			if (true === _self.check()) {
-				var ty=Y.get('#ggtypename').val().split('\串');
-				if(Y.get('#ggtypename').val().split(',').length>1){
-                	return Y.alert('奖金优化暂不支持同时选择多个过关方式！');
-                }
-	            if(ty[1]>1){
-	            	return Y.alert('奖金优化仅支持N串1！');
-	            }
-	            Y.get('#pnum').val(ty[0]);
-				Y.get('#code').val(Y.get('#codes').val());
-				Y.get('#tmoney').val(Y.get('#totalmoney').val());
-				Y.get('#muli').val(Y.get('#beishu').val());
-				var MAX_ALL_MONEY = 100000;
-	            if (Y.get('#tmoney').val() > MAX_ALL_MONEY) {
-	                return Y.alert('您好, 发起方案金额最多不能超过￥'+MAX_ALL_MONEY+'元!');
-	            }
-	            Y.get('#jjyh_form').doProp('submit')
-				//_self.send();
-			}
-		});
-	},
-	bschange: function (){},//倍数变化时
-	setVals: function (obj){//批量设置表单
-		for(var k in obj){
-			Yobj.get(k).val(obj[k]);
-		}
-	},
-	check: function (){},
-	send: function (){//表单提交
-		this.form.doProp('submit');
-	}
-});
-
+ 		}*/
+ 		
+ 		if (codes == '') {
+ 			this.alert('请选择好您要投注的比赛。');
+ 		} else if (ggtypename == '') {
+ 			this.alert('请选择好您要投注的过关方式。');
+ 		} else if (totalmoney == 0) {
+ 			this.alert('您好，投注的总金额不能为￥0.00元。');
+ 		} else if (totalmoney / beishu > 20000) {
+ 			this.alert('您好，单倍认购金额不能超过20,000元。');
+ 		} else if (totalmoney*1 > maxMoney) {
+ 			this.alert('对不起，您的方案发起金额不能大于' + maxMoney + '元。');
+ 		} else {
+ 			return true;
+ 		}
+ 		return false;
+ 	},
+ 	send: function (){//表单提交
+ 		this.form.doProp('submit');
+ 		
+ 	}
+ });
 
 //联赛过滤器
 Class('LgFilter', {
 	index: function (){
 		var $this = this,
 			btn = Yobj.get('#listDisplay'),
-			menu = Yobj.get('#listMenu'),
-			all = Yobj.get('#listMenu,#listDisplay'),
+			menu = Yobj.get('div.listMenu'),
+			all = Yobj.get('div.listMenu,#listDisplay'),
 			tid;
 		this.setOptionsEvent(menu);
-		all.hover(function (){
-			clearTimeout(tid);
-			$this.open();
-			btn.addClass('ls_h_btn');
-		}, function (){
-			tid = setTimeout(function() {
+		btn.click(function (e){
+			if($this.hasClass(btn.one(), 'cm_jc_first_hover')){
 				$this.close();
-				btn.removeClass('ls_h_btn');				
-			}, 100);
+				btn.removeClass('cm_jc_first_hover');
+			}else{
+				$this.open();
+				btn.addClass('cm_jc_first_hover');	
+			}
+			
+			e.stopPropagation();
 		});
+		
+		this.get("div.listMenu").click(function(e) { 
+       	 e.stopPropagation(); 
+        }); 
+        
+        document.onclick = function(){
+   		 if(Yobj.one('#listDisplay').className.indexOf('cm_jc_first_hover')>0){
+	    		 Yobj.get('div.listMenu').hide();
+	    		 Yobj.get('#listDisplay').removeClass('cm_jc_first_hover');
+   		 }
+   	 	}
 		this.menu = menu;
 	},
 	reset: function (){
@@ -1176,35 +1505,157 @@ Class('LgFilter', {
 	},
 	onchange: function(){},
 	setOptionsEvent: function (menu){
-		var all_chks = menu.find('input:checkbox'),
-			$this = this;
-		all_chks.click(function (){
-			$this.onchange(this.getAttribute('m'), this.checked);
-		});
-		Yobj.get('#selectAllBtn').click(function (){
-			var str = '';
-			all_chks.each(function (chk){
-				chk.checked = true;
-				str += chk.getAttribute('m');
-			});
-			$this.onchange(str);
-		});
-		Yobj.get('#selectOppBtn').click(function (){
-			var str = '';
-			all_chks.each(function (chk){
-				chk.checked = !chk.checked;
-				if (chk.checked) {
-					str += chk.getAttribute('m');
-				}
-			});
-			$this.onchange(str);
-		});
+		var Y = this, all = Y.get('div.listMenu div.cm_jc_lxtk');
+   	    var ss_size = this.get('#lgList>a'),$this = this,sel_lg = [],unsel_lg = [];
+   	    
+   	   Y.get('#wanfa_chk').find(':checkbox').each(function(e){
+   		    if(e.getAttribute('value').indexOf('spf')>-1){
+   		    	Y.get(e).prop('checked', true);
+   		    }else{
+   		    	Y.get(e).prop('checked', false);
+   		    }
+   	   });
+   	   
+   	   Y.get('#wanfa_chk').live(':checkbox','click', function(e,Y){
+   		   $this.onchange(this.value, this.checked, 3);
+   	   });
+   	    
+   		Yobj.get('#lglist input').click(function(e){
+   		 clearcur(1);
+   		var lgarr=[];
+   		 if(!$(this).attr("checked")){
+   			 $this.onchange(Y.get(this).attr('m'), false, 0);
+   			var lgarr=[];
+  			 Yobj.get('#lglist input').each(function(a){
+  	   			if(($(a).attr("checked"))){
+  	   				lgarr.push(a.getAttribute('m'))
+  	   			}
+  	   	
+  	   		})
+  	   	$this.onchange(lgarr, true, 0);
+   		 }else if($(this).attr("checked")){
+   			
+   			 Yobj.get('#lglist input').each(function(a){
+   	   			if(($(a).attr("checked"))){
+   	   				lgarr.push(a.getAttribute('m'))
+   	   			}
+   	   	
+   	   		})
+   	 	$this.onchange(lgarr, true, 0);
+   		 }
+   
+   		
+
+   	 })
+   	Yobj.get('#wdls').click(function(){
+   		var lg=Y.get('#lglist input');
+   		$("#wanfa_chk input").each(function(){
+   			if($(this).attr("checked")){
+   			  $this.onchange(this.value, false, 3);
+   			}
+   			
+   		})
+   		Y.get("#wanfa_chk input").prop("checked",false);
+	   	if($(this).attr("checked")){
+			lg.prop("checked",false);
+			$("input[m='西班牙甲']").attr("checked",true);
+			$("input[m='德国甲级']").attr("checked",true);
+			$("input[m='法国甲级']").attr("checked",true);
+			$("input[m='意大利甲']").attr("checked",true);
+			$("input[m='英格兰超']").attr("checked",true);
+			  $this.onchange( ["西班牙甲","德国甲级","法国甲级","意大利甲","英格兰超"], true, 0);  //存在五大联赛或热门赛事
+		}
+	  
+		else if(!$(this).attr("checked")){
+			lg.prop("checked",true);
+			  $this.onchange("", true, 0);  //存在五大联赛或热门赛事
+		}
+    
+	 
+
+	
+		
+
+   	});
+   	Yobj.get('#showAll_btn,#selectAllBtn').click(function(){
+   		$this.onchange(false, true, 2);//全选
+   		Y.get("#lglist input").prop("checked",true);
+   		Y.get("label[mark=name] input").prop("checked",true);
+   		
+	 });
+	Yobj.get('#unAllBtn').click(function(){
+   		$this.onchange(false, false, 2);//全清
+   		Y.get("#lglist input").prop("checked",false);
+	 });
+	Yobj.get('#selectOppBtn').click(function(){
+   		var lg=Y.get("#lglist input:checkbox");
+   		var lgarr=[]
+   		lg.each(function(a){
+   			if(!($(a).attr("checked"))){
+   				lgarr.push(a.getAttribute('m'))
+   			}
+   			Y.get(a).prop("checked",!($(a).attr("checked")));
+   		 
+   		})
+   		$this.onchange(lgarr, true, 0);
+	 });
+   	 
+   	function clearcur(val,isp){
+  		 switch(val){
+           	case 0://点击 快捷筛选
+           		Y.get('#list_rq>span>a,#list_riqi>span>a').each(function(e){
+       				if(e.getAttribute('value')=='all'){
+       					e.className = 'cm_cur';
+       				}else{
+       					e.className = '';
+       				}
+           		});
+           		if(isp){
+           			Y.get('#list_ss>span>a').each(function(e){
+           				if(e.getAttribute('value')=='all'){
+           					e.className = 'cm_cur';
+           				}else{
+           					e.className = '';
+           				}
+               		});
+           		}
+           		break;
+           	case 1://点击赛事
+           		Y.get('#list_kjsx>span>a,#list_rq>span>a,#list_riqi>span>a').each(function(e){
+           			if(e.getAttribute('value')=='all'){
+       					e.className = 'cm_cur';
+       				}else{
+       					e.className = '';
+       				}
+           		});
+           		break;
+           	case 2://点击让球
+           		Y.get('#list_kjsx>span>a,#list_ss>span>a,#list_riqi>span>a').each(function(e){
+           			if(e.getAttribute('value')=='all'){
+       					e.className = 'cm_cur';
+       				}else{
+       					e.className = '';
+       				}
+           		});
+           		break;
+           	case 3://点击日期
+           		Y.get('#list_kjsx>span>a,#list_ss>span>a,#list_rq>span>a').each(function(e){
+           			if(e.getAttribute('value')=='all'){
+       					e.className = 'cm_cur';
+       				}else{
+       					e.className = '';
+       				}
+           		});
+           		break;
+  		 }
+  	 }
+		
 	},
 	open: function (){
-		Yobj.get('#listMenu').show();
+		Yobj.get('div.listMenu').show();
 	},
 	close: function (){
-		Yobj.get('#listMenu').hide();
+		Yobj.get('div.listMenu').hide();
 	}
 });
 
@@ -1212,56 +1663,171 @@ Class('LgFilter', {
 *************************************************************************/
 Class('Main', {
 	ready: true,
+	use: 'mask',
 	index: function (){
 		this.createClass();
-		this.otherEvents();
-		this.lib.Clock('#sysTime');//时间
-		this.setTableHeadFixed();
 		this.sethref();
-	},
-	sethref:function() {
-		this.ajax({
-				url:"/cpdata/omi/jczq/odds/odds.xml",
-        		end:function(data,i){
-                     this.qXml('//row', data.xml, function (u, i){
-                    	   
-                    	 Y.get("#mm"+u.items.xid).attr("href","http://info.159cai.com/league/index/"+u.items.lid);
-                    	    Y.get("#hn"+u.items.xid).attr("href","http://info.159cai.com/team/index/"+u.items.htid);
-                       	 	Y.get("#gn"+u.items.xid).attr("href","http://info.159cai.com/team/index/"+u.items.gtid);
-                       	 Y.get("#ox"+u.items.xid).attr("href","http://odds.159cai.com/match/analysis/"+u.items.oddsmid+"?lotyid=6");
-                       	Y.get("#oz"+u.items.xid).attr("href","http://odds.159cai.com/match/odds/"+u.items.oddsmid+"?lotyid=6");
-             			
-
-                    	    Y.get("#oh"+u.items.xid).html(u.items.oh);
-        					Y.get("#od"+u.items.xid).html(u.items.od);
-        					Y.get("#oa"+u.items.xid).html(u.items.oa);
-                     });                     
-        		}
-				});
+		
+//		 http://local.159cai.com/cpdata/omi/odds/jczq/oz/1.xml?rnd=0.8910419419263784
+		this.otherEvents();
+		this.lib.Clock('#sysTimeDisplay');
+		this.setTableHeadFixed();
 	},
 	otherEvents: function (){
+		//切换平均欧赔
+		this.get('#sssx div.matchxz').drop( this.get('#sssx div.jcslt'),{focusCss: 'matchxzc', fixed: true, y: -1});
+        this.get('#jztime div.matchxz').drop( this.get('#jztime div.jcslt'),{focusCss: 'matchxzc', fixed: true, y: -1});
+        this.get('#oddstype div.matchxz').drop( this.get('#oddstype div.jcslt'),{focusCss: 'matchxzc', fixed: true, y: -1});
+		var pjpl = Yobj.get('#vsTable ul.pjpl'),
+			tzbl = Yobj.get('#vsTable ul.tzbl');
+		Yobj.get('#select_pv').change(function (){
+			if (this.value == 0) {
+				pjpl.show();
+				tzbl.hide();
+			}else{
+				tzbl.show();
+				pjpl.hide();
+			}
+		});
 		//显示截止时间或者开赛时间
 		var endTime = Yobj.get('#vsTable span.end_time'),
 			matchTime = Yobj.get('#vsTable span.match_time');
-		Yobj.get('#select_time').change(function (){
-			if (this.value == 0) {
-				endTime.show();
-				matchTime.hide();
-			}else{
-				matchTime.show();
-				endTime.hide();
-			}
-		});
 		
-		Yobj.use('mask', function (){
-			Yobj.get('#dshelp').setStyle('zIndex', 1).tip('data-help', 1, false, 360);// 帮助说明
-		});
-		Yobj.use('mask', function (){
-			Yobj.get('#wfhelp').setStyle('zIndex', 1).tip('data-help', 1, false, 360);// 帮助说明
-		});
-		//解决右边的小图标浮在选择层上的bug
-		Yobj.get('#main > div.dc_l').setStyle('zIndex', 5);
+		Yobj.get('#tzts span').click(function(){
+        	if($(this).hasClass("cm_jc_tztsdown")){
+            	$(this).removeClass("cm_jc_tztsdown");
+            	$("#tztsnr").hide();
+        	}else{
+            	$(this).addClass("cm_jc_tztsdown");
+            	$("#tztsnr").show();
+        	}
+        }); 
+		
+		this.get('#jztime div.plv_set').live('a','click', function(){
+	       	
+	       	 Y.get("#select_time").html(Y.get(this).html());
+//	       	 Y.get("#jztime div.jcslt").hide();
+	       	  Yobj.get('#vsTable span.end_time').show(this.getAttribute('value') == '0');
+	          Yobj.get('#vsTable span.match_time').show(this.getAttribute('value') == '1');
+        });
+		//察看往期
+
+        
+
+        
+
+        
+        this.goTotop();//返回顶部
 	},
+    sethref:function() {
+    	var Y = this;
+    	var lottype=parseInt(Y.get('#playid').val());
+		this.ajax({
+			    url:"/cpdata/omi/jczq/odds/odds.xml",
+        		end:function(data,i){
+        			 var htid =1;
+                     this.qXml('//row', data.xml, function (u, i){
+                    	    $("#mn"+u.items.xid).attr("href","http://info.159cai.com/league/index/"+u.items.lid);
+                    	    $("#hn"+u.items.xid).attr("data",u.items.htid);
+            				$("#gn"+u.items.xid).attr("data",u.items.gtid);		
+//            				http://info.159cai.com/league/index/34/4647
+            				Y.get("#hn"+u.items.xid).attr("href","http://info.159cai.com/team/index/"+u.items.htid);
+                        	 Y.get("#gn"+u.items.xid).attr("href","http://info.159cai.com/team/index/"+u.items.gtid);
+                        		$("#ox"+u.items.xid).attr("href","http://odds.159cai.com/match/analysis/"+u.items.oddsmid+"?lotyid=6");
+                 				$("#oz"+u.items.xid).attr("href","http://odds.159cai.com/match/odds/"+u.items.oddsmid+"?lotyid=6");
+                 				$("#oy"+u.items.xid).attr("href","http://odds.159cai.com/match/asia/"+u.items.oddsmid+"?lotyid=6");
+            				var hm=isNaN(u.items.hm)||u.items.hm==""?"":u.items.hm<10?'0'+u.items.hm:u.items.hm;
+	            				var am=isNaN(u.items.am)||u.items.hm==""?"":u.items.am<10?'0'+u.items.am:u.items.am;
+	            				$("#hn"+u.items.xid).parent().find("i").html(hm==""|| typeof hm == undefined?"&nbsp;":'['+hm+']');
+	            				$("#gn"+u.items.xid).parent().find("i").html(am=="" || typeof am == undefined?"&nbsp;":'['+am+']');	
+	            				   Y.get("#oh"+u.items.xid).html(u.items.oh);
+	           					Y.get("#od"+u.items.xid).html(u.items.od);
+	           					Y.get("#oa"+u.items.xid).html(u.items.oa);
+                     });                     
+                     var xhhistory = "";
+             			 xhhistory="tr[isend=0] a[data]";
+             			 Class.C('lot_id',90)	;
+             			 Class.config('odds_t',0);
+             			 Class.config('jchh',0);
+                	     historyMatchOdds({
+   	                         items: xhhistory,
+   	                         tipid: 'odds_tip',
+   	                         tip: '#odds_tip',
+   	                         fleft: 260
+   	                     }); 
+//                	     http://local.159cai.com/cpdata/omi/jczq/odds/historymatch/218.xml
+//                	     http://local.159cai.com/cpdata/omi/0/historymatch/1506.xml
+	                     $("#oddstype").odds_select_name();
+	                     load_odds_sp();
+	                     ozOdds({
+	                    	 items: 'div.pjpl',
+   	                         tipid: 'odds_tip',
+   	                         tip: '#datachange',
+   	                         path: '/cpdata/omi/odds/jczq/oz'
+   	                     });    			 
+             			 
+        		}
+				});
+	},
+	goTotop:function (){
+        var isIE=!!window.ActiveXObject;
+        var isIE6 = isIE&&!window.XMLHttpRequest;
+        var btn = $("#goTotop");
+        var right = 0;
+        var top = $(window).height()-247;
+        var ietop = $(window).height()-247+$(window).scrollTop();
+        var flag = true;
+        $(window).resize(function(){
+            btn.css({"position":"fixed",top:top,right:right});
+            if(isIE6)btn.css({"position":"absolute",top:ietop,right:right});
+        })
+        btn.css({"position":"fixed",top:top,right:right});
+        var areaTop = Y.get("#right_area").getXY().y;
+        
+        $(window).scroll(function(){
+        	 if ($(this).scrollTop() > areaTop){//跟踪对齐当滚动条超过右侧区域则开始滚动
+	            	var V = $('#titleTable_r');
+	        		if (V[0]) {
+	        			var T = $(document),
+	        			H = $("#main div.box_m").eq(0),
+	        			M = H.offset().top + H.outerHeight(),
+	        			F = V.innerWidth(),
+	        			B = V.offset().top,
+	        			L = V.outerHeight(), 
+	        			u = T.scrollTop();
+	        			Z = Math.min(0, M - (L + u));
+	        			
+	        			if (B == Z) {
+	        				V.css({left: "auto", top: "auto",width: F, position: "static"});
+	        			} else {
+	        				if(isIE6){
+	        					V.css({left: "auto",top: Z+$(window).scrollTop()-140, width: F,position: "absolute"});
+	        				}else{
+	        					V.css({left: "auto",top: Z, width: F, position: "fixed"});
+	        				}
+	        			}
+	        			Y.get("#titleTable_r").setStyle('z-index: 1;');
+	        		}
+	            	
+	             }else{//停止浮动对齐
+            	 Y.get("#titleTable_r").setStyle('z-index: 1; top:0;  left: auto;position: static;');
+            }
+        	
+            if(flag)
+            {
+                btn.show();
+                flag = false;
+            }
+            if($(this).scrollTop() == 0)
+            {
+                btn.hide();
+                flag = true;
+            }
+            btn.css({"position":"fixed",top:top,right:right});
+            ietop = $(window).height()-247+$(window).scrollTop();
+            if(isIE6)btn.css({"position":"absolute",top:ietop,right:right});
+        })
+    },
 	createClass: function (){
 		var selector = new Yobj.lib.Selector(),
 			codeList = new Yobj.lib.CodeList(),
@@ -1270,7 +1836,6 @@ Class('Main', {
 			algo = new Yobj.lib.Algo(),
 			splitView = new Yobj.lib.SplitView(),
 			lgFilter = new Yobj.lib.LgFilter();
-			this.lib.ScrollStill();
 
 		selector.onchange = function (bid){
 			codeList.syncSelector(bid);//选择器变化时， 同步到号码框
@@ -1280,23 +1845,21 @@ Class('Main', {
 			codeList.addBaseTr(this.vsList);//创建对应的选项到号码框
 		};
 
-		codeList.onchange = function (bid){
-			selector.setCode(bid);//号码列表变动时， 选择器同步
+		codeList.onchange = function (bid,sel){
+			selector.setCode(bid,sel);//号码列表变动时， 选择器同步
 		};
 
 		codeList.ondatachange = function (){// 号码列表数据变化时
 			splitView.codeInfo = this.codeInfo;
 			splitView.codes = this.codes;
 			splitView.selOpts = this.selOpts;
+			splitView.danselOpts = this.danselOpts;
 			ggTypeBox.syncCodeList(this);//同步可用的过关方式
 			buy.bschange();
 			//方案截止时间显示
 			var showtime = '';
 			if (this.endtime) {//没有选择时为0
-				var endTime = new Date(parseInt(this.endtime));
-			    if (endTime) {
-					showtime = endTime.format('MM-DD hh:mm');
-			    }
+					showtime = new Date(this.endtime).format('MM-DD hh:mm');
 			}
 			Yobj.get('#end_time').html(showtime);			
 		};
@@ -1331,6 +1894,7 @@ Class('Main', {
 			Yobj.get('#zs').html(zs);
 			Yobj.get('#buy_money').html(money);
 			Yobj.get('#maxmoney').html(maxMoney);
+			Yobj.get('#minmoney').html(minMoney);
 			Yobj.get('#prix_range').html('奖金范围：'+minMoney+'-'+maxMoney+'元');
 		};
 
@@ -1338,21 +1902,32 @@ Class('Main', {
 		selector.onshowAll = function (){
 			lgFilter.reset();
 		};
-
-		lgFilter.onchange = function (lgs_str, checked){
-			if (arguments.length > 1) {//单个变化时
-				selector.filterOneLg(lgs_str, checked);
-			}else{
-				selector.filterLg(lgs_str);//过滤场次
-			}			
+		
+		lgFilter.onchange = function (lgs_str, checked, mode){
+			 switch(mode){
+             	case 0://赛事
+             		selector.filterOneLg(lgs_str, checked);
+             		break;
+             	case 1: //日期
+             		selector.fileterDayLg(lgs_str, checked);
+             		break;
+             	case 2://全部
+             		selector.filterAll(checked);
+             		break;
+             	case 3:
+             		selector.filterTye(lgs_str, checked);
+             		break;
+			 } 
 		};
 
+		//世界杯切换
+		if (location.href.indexOf('sjb') > -1) {
+           Yobj.postMsg('lg-filter-by-array');
+        }
+
 		buy.check = function (){
-			var ggType = ggTypeBox.ggTypes;
-			//	codes = codeList.data;
-			//if (codes.length < 2) {
-			//	return Yobj.alert('请至少选择两场比赛');
-			//}
+			var ggType = ggTypeBox.ggTypes,
+				codes = codeList.data;
 			if (ggTypeBox.max) {
 				if (ggType.length === 0) {
 					return Yobj.alert('请选择过关方式');
@@ -1360,13 +1935,21 @@ Class('Main', {
 			}else{
 				return Yobj.alert('请至少选择两场不是同一玩法的比赛');
 			}
-
+			var MAX_ALL_MONEY = this.C('MAX_ALL_MONEY'),
+				totalmoney = algo.zs*this.bs*2;
+			if (totalmoney > MAX_ALL_MONEY) {
+				return this.alert('您好, 方案金额不能超过'+MAX_ALL_MONEY.rmb(true, 0)+'元!');
+			}
+			
 			this.setVals({
 				'#codes': codeList.getCodeString(),
-				'#ggtypeid': ggTypeBox.ggTypeIds.join(','),
-				'#ggtypename': ggTypeBox.ggTypes.join(','),
+				'#danma': codeList.getdanCodeString(),
+//				'#danma': "",
+//				'#ggtypeid': ggTypeBox.ggTypeIds.join(','),
+				'#ggtypeid': 40,
+				'#ggtypename': ggTypeBox.ggtype.join(','),
 				'#zhushu': algo.zs,
-				'#gggroup': ggTypeBox.mode === 'multi' ? 2 : 3,
+				'#gggroup': ggTypeBox.mode === 'multi' ? 2 : 1,
 				'#beishu': this.bs,
 				'#totalmoney': algo.zs*this.bs*2,
 				'#ishm': this.ishm,
@@ -1374,11 +1957,11 @@ Class('Main', {
 			});
 			return true;
 		};
-	},
+	}
+	,
 	setTableHeadFixed: function (){
 		//设置表头浮动
-
-		Yobj.get('<div id="title_folats" style="z-index:9;"></div>').insert().setFixed({
+		   Y.get('<div id="title_folats" style="z-index:9;"></div>').insert().setFixed({
 	            area: '#vsTable',
 	            offset:0,
 	            init: function(){
@@ -1407,3 +1990,71 @@ Class('Main', {
 	        });
 	}
 });
+
+/*当前时间*/
+Class( 'Clock', {
+	index : function(clock_id) {
+		this.clockTag = this.get(clock_id);
+		Class.config('servertimediff', 0); 
+		this.runClock();
+		
+	},
+	runClock : function() {
+		var Y = this;		
+		Y.ajax({
+			url : "/cpdata/time.json",
+			end : function(data, i) {
+				var servernow = Y.getDate(data.date);			
+				var diff=Date.parse(servernow) - Date.parse(new Date()) ;	
+				Class.config('servertimediff',(diff));
+				Y.C('sdate',data.date);//判断隐藏场次用
+				setInterval( function() {
+					var now = new Date();
+					var d = new Date(Date.parse(now) + Class.config('servertimediff'));
+					var d_str = d.getFullYear()+'年'+Y.addZero((d.getMonth() + 1)) + '月' + Y.addZero(d.getDate()) + '日 ';
+					var ctpl2 = '<em style="width:49px;"><b class="cm_red arial">'+Y.addZero(d.getHours())+'</b>时</em><em><b class="cm_red arial">' + Y.addZero(d.getMinutes()) + '</b>分</em><em><b class="cm_red arial">' + Y.addZero(d.getSeconds())+ '</b>秒</em>';
+					Y.clockTag.html(ctpl2);
+					Y.get("#sysDayDisplay").html(d_str);
+				}, 1000 );
+				
+				setInterval( function() {
+					Y.ajax({
+						url : "/cpdata/time.json",
+						end : function(data, i) {
+							var servernow = Y.getDate(data.date);			
+							var diff=Date.parse(servernow) - Date.parse(new Date()) ;	
+							Class.config('servertimediff',(diff));						
+						}
+					});	
+				}, 30000);
+//				this.lib.reLoadDuizheng();//隐藏截止对阵 
+			}
+		});	
+	},
+	addZero : function(n) {
+		return parseInt(n) < 10 ? '0' + n : n;
+	}
+} );
+
+Class.extend('getPlayText', function (play_name){
+    var map;
+    map = {
+        '90': '竞彩足球-让球胜平负',
+        '72': '竞彩足球-胜平负',
+        '91': '竞彩足球-猜比分',
+        '92': '竞彩足球-半全场',
+        '93': '竞彩足球-进球数',
+        '70': '竞彩足球-混合投注'
+    };
+    return map[play_name];
+});
+
+Array.prototype.in_array = function(e)
+{
+for(i=0;i<this.length && this[i]!=e;i++);
+return !(i==this.length);
+}
+
+Class.C('min-rengou', .05);//最低认购
+
+Class.C('paytype', 0);
