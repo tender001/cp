@@ -589,7 +589,7 @@ var showview = function(lotid,projid){
 				var pnum = Y.getInt(r.pnum);// 发起人保底份数
 				var lnum = Y.getInt(r.lnum);// 剩余份数
 				var iopen = r.iopen;// 是否保密 （0 对所有人公开 1 截止后公开 2 对参与人员公开
-											// 3 截止后对参与人公开）4 完全保密
+											// 3 截止后对参与人公开）
 				var wrate = r.wrate;// 发起人中奖提成比率 （盈利情况）
 				var jindu = r.jindu;// 进度
 				var endtime = r.endtime;// 截止时间 
@@ -874,7 +874,7 @@ var showview = function(lotid,projid){
 				
 //				var iopen = r.iopen;// 是否保密 （0 对所有人公开 1 截止后公开 2 对参与人员公开// 3 截止后对参与人公开）
 				
-				var cptype = ["对所有人公开","截止后公开","对参与人员公开","截止后对参与人公开","完全保密"]
+				var cptype = ["对所有人公开","截止后公开","对参与人员公开","截止后对参与人公开"]
 				var cpstate = ["禁止认购","认购中","已满员","过期未满撤销","本人撤销","已出票","已派奖"]
 //				var istate = r.istate;// 状态(0 禁止认购 1 认购中,2 已满员 3过期未满撤销 4主动撤销 5已出票 6 已派奖)
 			
@@ -1957,7 +1957,12 @@ showduizhen =function (lotid,expect,projid,type,codes,cp){
 					if(ccode.length>1){
 						var codearr=[];
 						ccode.each(function(c){
-							codearr.push(c.split("|")[2]);
+							if(c.split("|")[2]==undefined){
+								
+							}else{
+								codearr.push(c.split("|")[2]);
+							}
+							
 						})
 						codearr=$_base_s.uniq(codearr);
 						gg = (codearr+"").replaceAll("\\*","串");
