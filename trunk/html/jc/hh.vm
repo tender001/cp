@@ -1,0 +1,102 @@
+#foreach ($daymatch in $list)
+<div class="dc_hs" style="text-align: left; padding-left: 10px;">
+	<strong>${daymatch.day} ${daymatch.week} ${daymatch.num}场比赛可投注</strong> <a href="javascript:void 0" mark="hidetable">隐藏</a>
+</div>
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class="dc_table" id="d_${daymatch.day}">
+	<colgroup><col width="45"><col width="64"><col width="64"><col width="165"><col width="190"><col width="60"><col width="120"><col width=""><col></colgroup>
+	
+	
+#foreach ($match in $daymatch.matchs)
+		<tr zid="${match.itemid}" id="vs${match.mid}" pname="${match.itemid}" pdate="${match.itemid}" lg="${match.short_mname}" rq="${match.close}" pendtime="${match.et}" win="${match.sp3}" draw="${match.sp1}" lost="${match.sp0}" guestTeam="${match.gn}" homeTeam="${match.hn}" isend="0" gdate="${daymatch.day}" fid="${match.mid}">
+			
+			<td>
+				<label mark="name"><input type="checkbox" checked="checked" value="${match.itemid}" id="m${match.itemid}" name="m${match.itemid}" class="i-cr"><em title="${match.name}">${match.name.substring(2,5)}</em></label>
+			</td>
+			<td style="background:${match.cl};"><a style="color: #fff" id="mn${match.itemid}" title="${match.mname}">${match.short_mname}</a></td>
+			<td style="border-right:1px solid #ccc"><span class="eng end_time" title="截止时间：${match.et}" style="line-height: 30px;">${match.short_et}</span>
+				<span class="eng match_time" title="开赛时间：${match.mt}" style="display: none; line-height: 30px;">${match.short_mt}</span></td>
+			
+			<td style="border-right:1px solid #ccc">
+				<A title="${match.hn}" href="" target="_blank" id="hn${match.itemid}" >
+					#if ($match.hn.length()>5)
+					${match.hn.substring(0,5)}
+					#else
+						${match.hn}
+					#end
+				</A> 
+				VS
+				<A title="${match.gn}" href="" target="_blank" id="gn${match.itemid}" >
+					#if ($match.gn.length()>5)
+					${match.gn.substring(0,5)}
+					#else
+						${match.gn}
+					#end
+				</A> 
+			</td>
+			<td class="tdaa">
+				<table width="100%" border="0" cellspacing="0" cellpadding="0">
+				<colgroup><col width="38"><col width="150"></colgroup>
+				<tbody>
+				#if($match.spfSale > 0)
+				<tr><td>0</td>
+					<td style="border-left:1px solid #ddd" dat_tye="spf">
+						<a data-sp="${match.sp3}" data-type="spf" data-id="${match.mid}" data_val="胜" value="3" href="javascript:void(0);">${match.sp3}</a>
+						<a data-sp="${match.sp1}" data-type="spf" data-id="${match.mid}" data_val="平" value="1" href="javascript:void(0);">${match.sp1}</a>
+						<a data-sp="${match.sp0}" data-type="spf" data-id="${match.mid}" data_val="负" value="0" href="javascript:void(0);">${match.sp0}</a>
+					</td>
+				</tr>
+
+
+				#else
+						<tr ><td colspan="2" style="background:#f5f5f5">未开玩法</td></tr>		
+				#end
+				#if($match.rspfSale > 0)
+				
+				<tr><td>
+						#if($match.close>0)
+							<strong class="eng red" mark="close">+${match.close}</strong>
+						#else
+							<strong class="eng green" mark="close">${match.close}</strong>
+						#end
+					</td>
+					<td style="border-left:1px solid #ddd" dat-type="rqspf">
+						<a data-sp="${match.rsp3}" data-type="rqspf" data-id="${match.mid}" data_val="胜" value="3" href="javascript:void(0);">${match.rsp3}</a>
+						<a data-sp="${match.rsp1}" data-type="rqspf" data-id="${match.mid}" data_val="平" value="1" href="javascript:void(0);">${match.rsp1}</a>
+						<a data-sp="${match.rsp0}" data-type="rqspf" data-id="${match.mid}" data_val="负" value="0" href="javascript:void(0);">${match.rsp0}</a>
+					</td>
+				</tr>
+
+
+				#else
+							<tr ><td colspan="2" style="background:#f5f5f5">未开玩法</td></tr>		
+				#end
+
+				</tbody></table>
+			</td>
+
+
+
+
+			<td style="border-right:1px solid #ccc;cursor:pointer"" mark='unselect' class="unselect"><a >展开</a></td>
+			<td style="border-right:1px solid #ccc">
+				<div class="pjpl">
+					<span id="oh${match.itemid}" class="sp_w35 eng">${match.b3}</span>
+					<span id="od${match.itemid}" class="sp_w35 eng">${match.b1}</span>
+					<span id="oa${match.itemid}" class="sp_w35 eng">${match.b0}</span>
+				</div>
+			</td>
+			<td style="">
+			<a id="ox${match.itemid}" target="_blank" >析</a> 
+			<a id="oz${match.itemid}" target="_blank" >欧</a>
+			</td>
+		</tr>
+
+		<tr  class="tdaa" style="DISPLAY: none">
+			<td colspan="9" class="hhtdtk" data-id="${match.mid}" zjq="${match.jqs0},${match.jqs1},${match.jqs2},${match.jqs3},${match.jqs4},${match.jqs5},${match.jqs6},${match.jqs7}" bqc="${match.bqc33},${match.bqc31},${match.bqc30},${match.bqc13},${match.bqc11},${match.bqc10},${match.bqc03},${match.bqc01},${match.bqc00}" cbf="${match.bf10},${match.bf20},${match.bf21},${match.bf30},${match.bf31},${match.bf32},${match.bf40},${match.bf41},${match.bf42},${match.bf50},${match.bf51},${match.bf52},${match.bf3A},${match.bf00},${match.bf11},${match.bf22},${match.bf33},${match.bf1A},${match.bf01},${match.bf02},${match.bf12},${match.bf03},${match.bf13},${match.bf23},${match.bf04},${match.bf14},${match.bf24},${match.bf05},${match.bf15},${match.bf25},${match.bf0A}">
+			
+			</td>
+		</tr>
+#end
+	
+</table>
+#end
