@@ -404,24 +404,27 @@ Class('Selector', {
             }else{
             	a.addClass('unselecttdcur').find("a").html('收起');
 //            	a.addClass('cm_hhgg_bg_hover').find('em').prop('className', 'cm_jsbf_up');
-            	var zjqarr=tr.find("td").attr("zjq").split(",");
-            	var cbfarr=tr.find("td").attr("cbf").split(",");
-            	var bqcarr=tr.find("td").attr("bqc").split(",");
-            	var dataid=tr.find("td").attr("data-id")
-            	_self.get("#hhmore tr[dat_tye=zjq] i").each(function(h,i){
-            		_self.get(h).html(zjqarr[i]);
-            		_self.get(h).parent("a").attr("data-id",dataid);
-            	})
-                _self.get("#hhmore tr[dat_tye=cbf] i").each(function(h,i){
-                	_self.get(h).html(cbfarr[i]);
-                	_self.get(h).parent("a").attr("data-id",dataid);
-            	})
-                _self.get("#hhmore tr[dat_tye=bqc] i").each(function(h,i){
-                	_self.get(h).html(bqcarr[i]);
-                	_self.get(h).parent("a").attr("data-id",dataid);
-            	})
-                
-                tr.find('td').html('<table width="100%" cellspacing="0" cellpadding="0">'+$("#hhmore").html()+'</table>');
+            	if(tr.find("td.hhtdtk").html().indexOf("\n")==0){
+            		var zjqarr=tr.find("td").attr("zjq").split(",");
+                	var cbfarr=tr.find("td").attr("cbf").split(",");
+                	var bqcarr=tr.find("td").attr("bqc").split(",");
+                	var dataid=tr.find("td").attr("data-id")
+                	_self.get("#hhmore tr[dat_tye=zjq] i").each(function(h,i){
+                		_self.get(h).html(zjqarr[i]);
+                		_self.get(h).parent("a").attr("data-id",dataid);
+                	})
+                    _self.get("#hhmore tr[dat_tye=cbf] i").each(function(h,i){
+                    	_self.get(h).html(cbfarr[i]);
+                    	_self.get(h).parent("a").attr("data-id",dataid);
+                	})
+                    _self.get("#hhmore tr[dat_tye=bqc] i").each(function(h,i){
+                    	_self.get(h).html(bqcarr[i]);
+                    	_self.get(h).parent("a").attr("data-id",dataid);
+                	})
+                    
+                    tr.find('td').html('<table width="100%" cellspacing="0" cellpadding="0">'+$("#hhmore").html()+'</table>');
+            	}
+            	
                 tr.find('tr[dat_tye]').show();
                 tr.show();
             }
