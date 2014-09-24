@@ -947,6 +947,10 @@ Class('Main', {
 		this.lib.Clock('#sysTime');//时间
 		this.setTableHeadFixed();
 		this.sethref();
+		if(this.get("#vsTable").html().trim()==""){
+			this.get("#vsTable").html('<div class="event-no"><p>当前无赛事可投注，请等待官方公布新赛程！<br> <a href="http://bf.159cai.com/basketball/weilai">查看赛程预告&gt;&gt;</a> <a href="/jc/jchh.html">购买其他彩种&gt;&gt;</a> </p></div>');
+		}
+		
 	},
 	goTotop:function (){
         var isIE=!!window.ActiveXObject;
