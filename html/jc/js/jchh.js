@@ -404,7 +404,7 @@ Class('Selector', {
             }else{
             	a.addClass('unselecttdcur').find("a").html('收起');
 //            	a.addClass('cm_hhgg_bg_hover').find('em').prop('className', 'cm_jsbf_up');
-            	if(tr.find("td.hhtdtk").html().indexOf("\n")==0){
+            	if(tr.find("td.hhtdtk").html().indexOf("总进球")==-1){
             		var zjqarr=tr.find("td").attr("zjq").split(",");
                 	var cbfarr=tr.find("td").attr("cbf").split(",");
                 	var bqcarr=tr.find("td").attr("bqc").split(",");
