@@ -176,7 +176,7 @@ div,ul,li{ list-style-type:none;overflow:hidden}
 .rig_hm_t ul li.cur{background-image:url(../images/index_79.gif);color:#ff6600;font-weight:bold;margin-top:1px}
 .rig_hm_main table{background:#fff;}
 .rig_hm_main table thead{ background-image:url(../images/index_85.gif);line-height:30px;height:30px}
-.rig_hm_main table td{text-align:center;color:#4b4a4b}
+.rig_hm_main table td{text-align:center;color:#3b3b3b}
 .rig_hm_main table thead td{line-height:30px;color:#4b4a4b}
 .rig_hm_main table tbody td{border-bottom:1px solid #ddd;line-height:32px}
 .rig_hm_main table p{line-height:15px}
@@ -186,10 +186,10 @@ border-radius: 10px;-moz-border-radius:10px;text-align:left;_overflow:hidden }
 .rig_hm_main table span em{ display:block;height:6px; background:url(../images/index_96.gif)  0 0 repeat-x;}
 .rig_hm_main table tbody p.x_jdt{background: none no-repeat scroll 0 0 #FFFFFF;border: 1px solid #ddd;display: inline-block;height:2px;width:70px;text-align:left;line-height:2px;border-left:none;_overflow:hidden;margin-top:2px;_height:3px}
 .rig_hm_main table p.x_jdt em{ display:block;height:4px; background:#B82434  0 0 repeat-x;margin:-1px -1px -1px 0px ;}
-.rig_hm_main table div{padding-left:20px}
+.rig_hm_main table div{padding-left:8px}
 .rig_hm_main table input{border:1px solid #ddd;text-align:center;color:#333;width:35px;height:20px;float:left}
 .rig_hm_main table img.gm{float:left;width:33px;height:23px}
-.rig_hm_main table a{color:#3970b6}
+.rig_hm_main table a{color:#13429c}
 .rig_hm_main table  a:hover{color:#ff6600; text-decoration:underline}
 
 .rig_hm_main table tbody tr.odd{ background-color:#f5f5f5}
@@ -1458,7 +1458,7 @@ a.fb{ background-image:url(../images/jc/cxj_05.gif) }
 a.fb:hover{ background-image:url(../images/jc/cxj_13.gif) }
 a.bz{ background-image:url(../images/jc/cxj_07.gif) }
 a.bz:hover{ background-image:url(../images/jc/cxj_14.gif) }
-.hm_left{width:172px;*zoom:1;float:left;margin-top:5px; background-image: url(../images/hm/hm1_01.gif)}
+.hm_left{float:left;width:188px;margin-top:5px; background-image: url(../images/hm/hm1_01.gif);*zoom:1;}
 .hm_left_t{height:34px; background-image:url(../images/hm/hm1_06.gif)  }
 .hm_left_1{border-bottom:1px solid #d6be91;*zoom:1}
 .hm_left_1 span.cm_slog{display:block;width:35px;padding:7px 0 0 5px;float:left}
@@ -1469,14 +1469,12 @@ a.bz:hover{ background-image:url(../images/jc/cxj_14.gif) }
 .hm_lr_list ul li.cur{border:1px solid #d6be91;border-right:none; background-color:#fff;padding:5px 0 5px 5px}
 .hm_lr_list ul li.cur:hover{ background-color:#fff}
 .hm_lr_list img{margin-left:3px}
-.hm_right{width:824px;margin-left:2px;float:left}
-.hm_right_t{width:824px;height:140px; background-image:url(../images/hm/hm_t.gif);_padding-top:20px;_height:120px}
+.hm_right{width:796px;margin-left:2px;float:left}
 .hm_right_t p{line-height:30px;padding:25px 0 10px 160px;_padding-top:10px;_line-height:22px}
-.hm_right_t a{displcy:block;float:left;width:115px;font-size:12px;color:#754c24;white-space:nowrap;padding-left:15px}
+.hm_right_t a{font-size:12px;color:#754c24;white-space:nowrap;}
 .hm_right_t a:hover{color:#ff6600; text-decoration:underline}
-.hm_right .rig_hm_main{margin-left:7px;border:1px solid #ddd;padding-bottom:20px;*zoom:1;background:#fff;}
+.hm_right .rig_hm_main{margin-left:7px;border:1px solid #ccc;padding-bottom:20px;*zoom:1;background:#fff;}
 .hm_right .rig_hm_main table thead{ background-image:url(../images/jc/lc_16.gif);}
-.hm_right .rig_hm_main table thead th{height:30px;line-height:30px}
 .hm_right .rig_hm_main table a.nm{display:block;float:left;padding-right:25px}
 b.jj{display:inline-block;width:19px;height:19px;margin-left:4px; background:url(../images/hm/hm2_07.gif) 0 0 no-repeat;margin-top:5px}
 b.b1{ background-position:-1px -1px}
@@ -1873,10 +1871,9 @@ span.s_p_p a{float:left;display:block;margin:25px 0 0 20px;color:#145fab}
 span.s_p_p a:hover{color:#ff6600; text-decoration:underline}
 span.s_p_p a.p_a{display:block;width:115px;height:35px;line-height:35px;color:#fff;text-align:center;font-size:14px; background:url(../images/cdbg/reg_07.gif) 0 0px no-repeat;margin:15px 0 0 160px;_margin-left:80px}
 span.s_p_p a.p_a:hover{background:url(../images/cdbg/reg_10.gif) 0 0 no-repeat;color:#fff; text-decoration:none}
-.hm_left_t2{width:172px;height:32px;border-bottom:1px solid #d6be91; background-image:url(../images/hm/hmx1.gif)}
-.hm_left_t2:hover{ background-image:url(../images/hm/hmx2.gif)}
+/*.hm_left_t2{width:172px;height:32px;border-bottom:1px solid #d6be91; background-image:url(../images/hm/hmx1.gif)}
+.hm_left_t2:hover{ background-image:url(../images/hm/hmx2.gif)} */
 .hm_left_t2 p{line-height:32px; background:url(../images/hm/jz.gif) 40px center  no-repeat;color:#ff6600;font-size:14px;font-weight:bold }
-.hm_left_t2 p a{color:#ff6600;padding:5px 50px 5px 60px}
 h2.dlt-logo,h2.jczq-logo,h2.sfc-logo,h2.r9-logo,h2.bq-logo,h2.jq-logo,h2.qxc-logo,h2.sd-logo,h2.p3-logo,h2.qlc-logo,h2.p5-logo,h2.ssq-logo{ background:url(../images/cdbg/gcdtlog.png) 0 0 no-repeat;left: 30px;position: absolute;text-indent: -2000em; top: 5px;height: 80px;width: 90px;}
 h2.dlt-logo{background-position: -9px -265px;top:15px; }
 h2.jczq-logo{background-position: -310px -92px;}
@@ -2237,10 +2234,6 @@ a.hm_ta:hover{background-position:0 -27px;color:#663300;text-decoration: none;}
 .zd_dd select{float:right;margin-top:7px;margin-right:10px;color:#444;padding-left:4px}
 .hm_zs{line-height:15px;padding:7px 0 7px 20px;color:#444;}
 .hm_zs1{line-height:15px;padding:20px 0 4px 20px;color:#444;border-top:1px solid #ddd}
-.hm_right_t a{ background:url(../images/cdbg/hye.gif) left center no-repeat }
-.hm_right_t a.a_cg{ background:url(../images/cdbg/hmm1.gif) left center no-repeat }
-.hm_right_t a.a_cv{ background:url(../images/cdbg/hmm2.gif) left center no-repeat }
-.hm_right_t a.a_cc{ background:url(../images/cdbg/hmm3.gif) left center no-repeat }
 .help_lc_t{padding-top: 5px;}
 .help_lc_t ul li,.help_lc_m,.help_lca a,.help_lcb ul li{display:block; background:url(../images/help/hlc_03.png) 0 0 no-repeat}
 .help_lc_t ul li{ background-position:0 -66px;text-align:center;line-height:33px;width:103px;font-size:14px;color:#ff6600;margin-right:4px;float:left;height:33px;cursor:pointer}
@@ -2290,7 +2283,6 @@ input#n_page {float: left;}
 .he_in_co2{width:340px;padding:10px 5px 10px 45px;float:left;font-size:14px}
 .he_in_co2 h3{height:25px;line-height:25px;margin:0 0 5px 0px;font-size:14px;font-weight:bold;color:#555;border-bottom:1px solid #ddd;}
 .he_in_co2 a{clear:both;width:240px;line-height:28px;color:#555;background-position:-150px -117px;padding-left:15px;}
-.rig_hm_main table b{font-weight:100}
 .news_left a.nws_a:hover{text-decoration:underline}
 a.a_x_g{float:left;color:#145fab;font-size:14px;margin-top:30px}
 table.cot{}
