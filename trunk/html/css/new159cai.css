@@ -1291,7 +1291,7 @@ a.a_inner{width:166px;height:128px;display:block;margin:4px auto 0}
 .caitain{ background:#fff}
 p.pzong img{margin-right:12px;}
 p.pzong{margin-right:12px;height:50px;color:#444;font-size:14px;text-align:center;font-size:14px;padding-top:27px;line-height:50px}
-.caitain a.btn{color:#fff;font-size:16px;width:103px;height:34px;display:block;text-align:Center;line-height:34px;font-family:"微软雅黑";background: url(../images/cai888/getw_10.jpg) ;margin:20px auto 5px}
+.caitain a.btn,.caitain div.btn{color:#fff;font-size:16px;width:103px;height:34px;display:block;text-align:Center;line-height:34px;font-family:"微软雅黑";background: url(../images/cai888/getw_10.jpg) ;margin:20px auto 5px}
 .caitain a.btn:hover{text-decoration: none;}
 .abtnd{background:#fff}
 .abtnd a.btn{color:#fff;font-size:16px;width:103px;height:34px;display:block;text-align:Center;line-height:34px;font-family:"微软雅黑";background: url(../images/cai888/getw_10.jpg) ;margin:20px auto 5px}
