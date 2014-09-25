@@ -303,8 +303,8 @@ input.text_log{width:205px;height:32px;border:1px solid #bbb;border-top-color:#a
 :root input.text_log{height:32px;padding:0 0 0 6px}
 a.but_log{display:block;width:115px;height:35px;margin-left:30px;color:#fff;font:16px/34px "微软雅黑"; text-align:center;background-image:url(../images/cdbg/reg_07.gif);_margin-top:15px}
 a.but_log:hover{background-image:url(../images/cdbg/reg_10.gif)}
-span.say_4,span.say_5{display:block;width:164px;height:25px;line-height:22px;font-size:12px;text-align:center;color:#444;background-image:url(../images/cdbg/logt_03.gif);position:absolute;top:81px;left:160px;padding-top:10px;}
-span.say_5{background-image:url(../images/cdbg/logt_06.gif);display:block;top:140px;}
+span.say_4,span.say_5{display:block;width:164px;height:25px;line-height:22px;padding-top:10px;font-size:12px;text-align:center;color:#444;background-image:url(../images/cdbg/logt_03.gif);position:absolute;top:81px;left:160px;}
+span.say_5{display:block;top:140px;background-image:url(../images/cdbg/logt_06.gif);}
 table.log_tab td input.box{margin-right: 4px;vertical-align: -2px;_vertical-align: -1px;}
 table.log_tab td a.aa{color:#145fab;margin-left:50px;}
 table.log_tab td a.aa:hover{color:#790500; text-decoration:underline}
@@ -331,9 +331,9 @@ table.log_tab td a.aa:hover{color:#790500; text-decoration:underline}
 .gg_main div{height:170px}
 .gg_main dl dd{height:25px;line-height:25px}
 .proms{height:91px;border:1px solid #ddd;margin-top:10px;padding-left:15px}
-.proms h2{float:left;color:#e62e04;font:16px/30px "微软雅黑";}
-.proms  a{display:block;float:right;margin-right:10px;height:22px;padding:0 10px; background-color:#ff6600;color:#fff;font-size:12px;line-height:22px;margin-top:4px}
-.proms_c{float:left;width:120px; background:url(../images/in_14.jpg) 0 0 no-repeat;line-height:22px; font-family:"微软雅黑";color:#333;padding-left:45px}
+.proms h2{float:left;color:#e62e04;font:16px/30px "Microsoft YaHei";}
+.proms  a{float:right;margin-right:10px;height:22px;padding:0 10px; background-color:#ff6600;color:#fff;font-size:12px;line-height:22px;margin-top:4px}
+.proms_c{float:left;width:120px;line-height:22px;padding-left:45px; font-family:"Microsoft YaHei";color:#333;background:url(../images/in_14.jpg) 0 0 no-repeat;}
 .proms_c1{ background-position:-67px -233px}
 .proms_c2{ background-position:-67px -175px}
 .proms_c3{ background-position:-58px -119px;padding-left:55px;width:110px}
@@ -354,23 +354,23 @@ table.log_tab td a.aa:hover{color:#790500; text-decoration:underline}
 .jxxk_col{ background-color:#fff}
 .friend_link p{padding:8px 0 0;line-height:24px}
 .friend_link{padding-bottom:8px}
-.nav_main{border:1px solid #ff6600;border-top:none}
+.nav_main{border:1px solid #f60;border-top:none}
 .hz_d_t{z-index:99;left:272px;width:120px}
 #bf_xl{border:1px solid #f60;border-top:none;left:880px;top:4px}
-#zq_xl{left:784px;border:1px solid #ff6600;top:3px;}
+#zq_xl{left:784px;border:1px solid #f60;top:3px;}
 #naver{z-index:50; position:relative}
 .hz_d_t{top:22px;left:297px;width:113px;border:1px solid #ddd;-webkit-border-radius:6px;
     border-radius: 6px;-moz-border-radius:6px;}
 .hz_boxs{color:#ff6600;line-height:24px;padding-left:6px}
 .hz_d_t a{line-height:23px;height:23px; background-position:-228px -6px}
 .hz_d_t a.a1{background-position:-228px -35px}
-.hz_d_t a:hover{color:#ff6600; text-decoration:underline}
+.hz_d_t a:hover{color:#f60; text-decoration:underline}
 .hz_d_t span{float:left}
 .hz_d_t .hz_boxj{float:right;width:12px;height:20px;margin:4px 5px 0 0 ;background:url(../images/in_14.jpg) no-repeat -4px -88px  ;}
 .inacout p.p1 a.ab{background-position:66px -1px}
 a.a_auto{margin:0 auto 20px auto}
-.inacout p.p3 a {color: #004398;display: block;float: left;height: 22px;line-height: 22px;margin: 0 5px;}
-.inacout p.p3 b{float: left;background:rgba(0, 0, 0, 0) url(../images/cdbg/scj.png) -509px -157px no-repeat;color: #f60;cursor: pointer;font-weight:400;margin-left: 5px;padding-left: 20px;}
+.inacout p.p3 a {float: left;height: 22px;line-height: 22px;margin: 0 5px;color: #004398;}
+.inacout p.p3 b{float: left;color: #f60;font-weight:400;margin-left: 5px;padding-left: 20px;background:rgba(0, 0, 0, 0) url(../images/cdbg/scj.png) -509px -157px no-repeat;cursor: pointer;}
 .inacout p.p3 b.cur{ background-position: -509px -184px;color: #2D9300;}
 /*.nav ul li{width:auto}*/
 /*.nav ul li:hover{ background:none}*/
@@ -378,17 +378,17 @@ a.a_auto{margin:0 auto 20px auto}
 .nav_main{padding: 0 0 5px}
 .lefter{width:230px}
 .news_img{height:220px}
-.sy_gg ul li{ background:#f5f5f5;font-weight:100; font-family:simsun;height:30px;line-height:30px}
+.sy_gg ul li{height:30px;line-height:30px;font-weight:100;font-family:simsun;background:#f5f5f5;}
 .mn_k{left:162px;top:70px;}
 .mn_t{line-height:12px;height:12px;padding:12px 15px}
-#nav_main{display:block;width:230px;height:0;padding:0;left:0;top:40px;border-top:none;}
+#nav_main{display:block;width:230px;height:0;padding:0;left:0;top:40px;border-top:0;}
 .nav ul li:hover{background-color:#E62E04}
 .nav ul li.li_a:hover{background-color:#E62E04}
 .nav ul li.cur{background:none;background-color:#E62E04}
 
 .nav ul li.zqzx:hover,.nav ul li.bfzb:hover{background-color:#f60}
 #zq_xl ul li:hover,#bf_xl ul li:hover{ background-color:#e62e04}
-.nav h2{background-image: url(../images/navh.jpg);width:230px;height:40px; position:relative}
+.nav h2{width:230px;height:40px;background-image: url(../images/navh.jpg);position:relative;}
 .nav h2 a{display:block;width:25px;height:25px;padding:0;position:absolute;left:10px;top:8px;cursor:pointer}
 .inacout p{clear:both}
 .top-caiz{margin:0 0 12px 7px;padding: 10px 0;border: 1px solid #ccc;zoom: 1;}
@@ -408,7 +408,7 @@ a.a_auto{margin:0 auto 20px auto}
 .hm_right_t ul li{float: left;width: 120px;height: 24px;line-height: 24px;padding-left: 10px;overflow: hidden;white-space: nowrap;text-overflow: ellipsis;}
 .hm-tit{background-color: #f4f4f4;padding: 6px 0;zoom: 1;border-bottom: 1px solid #ccc;}
 .hm-tit span{float: left;margin-left: 8px;border: 1px solid #cbcbcb;_display: inline}
-.hm-tit span input{width: 200px;height:24px;line-height: 24px;padding-left: 6px;border: 0;float: left;}
+.hm-tit span input{float: left;width: 200px;height:24px;line-height: 24px;padding-left: 6px;border: 0;}
 .hm-tit a{display: inline-block;height: 24px;line-height: 24px; text-align: center;color: #323232;background-position: 0 -33px;}
 .hm-tit a:hover{background-position: 0 -58px;text-decoration: none;}
 .hm-tit span a{width: 50px;border-left: 1px solid #cbcbcb;}
@@ -418,12 +418,7 @@ a.a_auto{margin:0 auto 20px auto}
 .cm_center{position:relative}
 .logo img{width:145px;height:53px;}
 .logo{width:145px;height:53px;margin-top:25px}
-.login_reg {
-    background-image: url(../images/cdbg/zcff_03.jpg);
-    height: 643px;
-    margin: 0 auto;
-    width: 920px;
-}
+.login_reg {width: 920px;height: 643px;margin: 0 auto;background-image: url(../images/cdbg/zcff_03.jpg);}
 .login_left{padding-left:95px;padding-top:70px}
 .login_right{padding-top:70px}
 .login_right p.p1{background: url(../images/cdbg/zc_07.jpg) no-repeat scroll left 3px ;}
@@ -431,52 +426,47 @@ a.a_auto{margin:0 auto 20px auto}
 .login_left table img.code-img{margin:3px 0 0 3px}
 .login_left table td a.a1{color:#0088cc}
 .login_left table td a.a2,.login_right a.text{color:#0088cc}
-.login {
-    background-image: url(../images/cdbg/loginff_03.jpg);
-    height: 531px;
-    margin: 0 auto;
-    width: 856px;
-}
+.login {width: 856px;height: 531px;margin: 0 auto;background-image: url(../images/cdbg/loginff_03.jpg);}
 .login .login_left{padding:100px 0 0 40px}
 .login .login_left{padding-top:80px}
 .login_right{padding-left:30px}
 .tan_top_l{background-image:url(../images/cdbg/m_tan_03.png)}
 .all_km_2 table tr.zj_fang b{background:none;color:#e62e04;font-weight:bold;font-size:14px}
 .tan_top{height:37px}
-.team_tk{border:1px solid #ff6600}
-.team_tk table thead td{background-color:#ff6600}
-.fotop{height:33px; background-color:#ff7800;line-height:33px;text-align:center;color:#fff;font-size:12px;font-weight:bold;}
+.team_tk{border:1px solid #f60}
+.team_tk table thead td{background-color:#f60}
+.fotop{height:33px;font:bold 12px/33px arial;text-align:center;color:#fff;background-color:#ff7800;}
 .fotop a{margin:0 10px;color:#fff}
 .fotop a:hover{color:#aaa}
 p.fotpp{line-height:24px;text-align:center;padding:16px 0;color:#666;}
 .jxxk_col img{width:auto;margin:3px 0 0 3px;}
 .jxxk{padding-top:0}
 .navfn{margin-top:20px}
-.navfn span{width:73px;height:24px;display:block;text-align:center;color:#666;font-weight:100; background-image:url(../images/159/bttm_19.jpg);float:left}
+.navfn span{float:left;width:73px;height:24px;text-align:center;color:#666;font-weight:100; background-image:url(../images/159/bttm_19.jpg);}
 .navfn{padding:8px 15px; background-color:#fff;border:1px solid #ccc}
 .navfn p{line-height:24px;padding:2px 0;clear:both;height:24px}
-.navfn p a{color:#444;padding:0 7px;border-right:1px solid #aaa;float:left;height:12px;display:block;line-height:12px;margin-top:6px}
-.navfn p a:hover{color:#ff6600;text-decoration:underline}
-.ov_main span{display:block;float:left;padding:10px 0px 0 0px;}
-.ov_main span b{display:block;width:48px;text-align:Center;color:#fff;height:20px;line-height:20px; background-color:#ff6600;font-weight:100;margin-left:7px;}
+.navfn p a{float:left;height:12px;line-height:12px;color:#444;margin-top:6px;padding:0 7px;border-right:1px solid #aaa;}
+.navfn p a:hover{color:#f60;text-decoration:underline}
+.ov_main span{float:left;padding:10px 0px 0 0px;}
+.ov_main span b{display:block;width:48px;text-align:Center;color:#fff;height:20px;line-height:20px; background-color:#f60;font-weight:100;margin-left:7px;}
 .ov_main span p{line-height:24px;padding-top:10px;color:#888;padding-left:0px;}
 .ov_r{float:left;width:137px;padding-top:10px;}
-.ov_r a.abt{display:block;float:left;margin-left:6px;width:62px;height:24px;text-align:center;color:#444; background: url(../images/159/ov_03.jpg);line-height:24px}
+.ov_r a.abt{float:left;width:62px;height:24px;line-height:24px;margin-left:6px;text-align:center;color:#444; background: url(../images/159/ov_03.jpg);}
 .ov_r a.abt:hover{ background-position:0 -26px;color:#fff}
-.ov_r a.pap{clear:both;font-size:14px;color:#145fab;line-height:24px;padding-top:7px;display:block;height:24px;text-align:Center}
+.ov_r a.pap{clear:both;display:block;height:24px;line-height:24px;padding-top:7px;font-size:14px;color:#145fab;text-align:Center}
 .ov_r a.pap font{color:#666;font-size:12px}
 .ov_r a.pap:hover{ text-decoration:underline;color:#e52e04;}
 .ov_list{margin:0 10px;border-bottom:1px dashed #ddd;padding:5px 0;*zoom:1}
 .ov_main{height:240px}
 .zc_da{padding-left:335px;padding-top:7px}
-.ov_main span b.cur{background-color:#006633}
-.breadcrumb p font{color:#ff6600}
+.ov_main span b.cur{background-color:#063}
+.breadcrumb p font{color:#f60}
 .news_left{width:695px;border:1px solid #ccc;padding:10px 16px}
 .news_left p{padding:0 5px 15px;line-height:24px}
 .newsr{width:260px;float:right;}
 .news_left h2{border:none; background:none;border-bottom:1px solid #ddd;height:30px;padding:0;width:440px}
-.news_left h2 a{color:#ff6600;font-weight:bold;height:30px;border-bottom:1px solid #ff6600;display:block;float:left;padding:0 4px}
-.newsr1{border:1px solid #ccc;margin-top:0px;clear:both}
+.news_left h2 a{float:left;height:30px;padding:0 4px;color:#f60;font-weight:bold;border-bottom:1px solid #f60;}
+.newsr1{border:1px solid #ccc;margin-top:0px;clear:both;}
 .fxgj{margin-top:12px}
 .newsr1 h2{height:26px;line-height:26px;padding-left:12px;background:url(../images/159/new_03.jpg);border-bottom:1px solid #ddd}
 .newsr1 h2 span{float:left;font-size:14px;color:#444;weight:bold;}
