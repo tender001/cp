@@ -227,6 +227,8 @@ a.d_c_b:hover,.tan_mid a.but2:hover,a.start_hm:hover{ background-position:0 -120
 #bf_xl ul li:hover{ background-color:#E62E04;color:#fff}
 a.t_a_qc b{display: block;width: 115px;height: 35px;margin:10px auto;font: 400 16px/34px "微软雅黑";text-align: center;color: #fff;background-image: url(../images/cdbg/reg_07.gif);}
 .dc_qr{padding-top:3px}
+.dc_qr i{display:inline-block;width:89px;height:22px;margin: 0 3px;background-image:url(../images/bg/jc-a.jpg);vertical-align: middle;-webkit-user-select: none;-moz-user-select: none;-o-user-select: none;user-select: none;}
+.dc_qr i .mul{width:45px;height:20px;line-height:20px;border:0;background-color:transparent;margin:1px 0 0 22px;text-align: center;}
 .inacout{float:left;padding-left:18px}
 .inacout p{line-height:24px;color:#333;}
 .inacout span{float:left;}
@@ -504,47 +506,16 @@ p.fotpp{line-height:24px;text-align:center;padding:16px 0;color:#666;}
 .news_l_list ul li a:hover{color:#ff6600}
 .all_kj_main{border:3px solid #e62e04;border-top:none}
 .kj_left_cm{border:1px solid #ddd;border-top:none}
-
-a.gofilter {
-    background: url(../images/njc/jcy_38.jpg) repeat scroll -1px -1px ;
-    display: block;
-    float: left;
-    height: 26px;
-    margin-left: 12px;
-    width: 84px;
-}
-a.gofilter1 {
-    background-position: -1px -29px;
-}
-a.gofilter2 {
-    background-position: -1px -59px;
-}
-a.gofilter:hover {
-    background-position: -1px -29px;
-}
-a.gofilter2:hover {
-    background-position: -1px -59px;
-}
-a.goyh {
-    background: url(../images/njc/jcy_38.jpg) repeat scroll -95px -1px ;
-    display: block;
-    float: left;
-    height: 26px;
-    margin-left: 13px;
-    width: 84px;
-}
-a.goyh1 {
-    background-position: -95px -29px;
-}
-a.goyh2 {
-    background-position: -95px -59px;
-}
-a.goyh:hover {
-    background-position: -95px -29px;
-}
-a.goyh2:hover {
-    background-position: -95px -59px;
-}
+a.gofilter {float: left;width: 84px;height: 26px;margin-left: 12px;background: url(../images/njc/jcy_38.jpg) repeat scroll -1px -1px;}
+a.gofilter1 {background-position: -1px -29px;}
+a.gofilter2 {background-position: -1px -59px;}
+a.gofilter:hover {background-position: -1px -29px;}
+a.gofilter2:hover {background-position: -1px -59px;}
+a.goyh {float: left;width: 84px;height: 26px;margin-left: 38px;background: url(../images/njc/jcy_38.jpg) repeat scroll -88px -1px;}
+a.goyh1 {background-position: -95px -29px;}
+a.goyh2 {background-position: -95px -59px;}
+a.goyh:hover {background-position: -88px -29px;}
+a.goyh2:hover {background-position: -95px -59px;}
 .infoy h3 em{float:left}
 .sy_gg{margin-bottom:11px}
 .gccn{margin-top:0}
@@ -614,21 +585,9 @@ a.goyh2:hover {
 .grzl_bg table a.but,.mm_bg_2 table a.but,.bank_main a.cz_but{width:122px;height:42px;}
 .ddc_table td s{display:inline-block}
 .he_in_t a.sp5{background-position: -1px -442px;}
-.he_in_t a.sp4 {
-    background-position: -1px -331px;
-}
-.he_in_t a.sp3 {
-    background-position: -1px -222px;
-}
-.ds ul li a.cnew{font-weight:bold;color:#ff6600;font-size:13px;
-    background: url("/images/159/new.gif") no-repeat scroll 20px 5px ;
-    color: #FF6600;
-    font-size: 14px;
-    font-weight: bold;
-    height: 30px;
-    padding: 0;
-    text-align: center;
-    width: 100%;display:block}
+.he_in_t a.sp4 {background-position: -1px -331px;}
+.he_in_t a.sp3 {background-position: -1px -222px;}
+.ds ul li a.cnew{display:block;width: 100%;height: 30px;padding: 0;color: #f60;font-size: 14px;font-weight: bold;text-align: center;background: url("/images/159/new.gif") no-repeat scroll 20px 5px ;}
 .b-top-inner{background-image:url(../images/cdbg/sz_03.gif)}
 .all_kt_2,.all_kt_3,.kj_left_2,.kj_left_3{background-position:0 -1px}
 .all_kj_top{height:65px}
@@ -652,8 +611,6 @@ a.goyh2:hover {
 .hm_help .bod li{float: left;width: 100%;height: 24px;line-height: 24px;overflow: hidden;white-space: nowrap;text-overflow: ellipsis;-webkit-text-overflow: ellipsis;}
 .hm_help .bod li s{display: inline-block;width: 10px;height: 10px;background-position: -62px 0;}
 .hm_help .bod li a{padding-left: 6px;color: #323232;}
-
-
 .winph{border:1px solid #d6be91;padding-bottom:5px}
 .winph h2{height:28px; background:url(../images/159/nhm_12.jpg);padding-left:10px;font-size:12px;font-weight:bold;color:#555;line-height:28px;border-bottom:1px solid #d6be91;}
 .winphtop{padding-top:5px;line-height:25px;height:25px}
@@ -663,7 +620,7 @@ a.goyh2:hover {
 .winph p b{ display:block;float:left;margin:7px 6px 0;color:#000;font-weight:bold; background:url(../images/159/nhm_19.jpg);width:14px;height:16px;text-align:center;line-height:16px;}
 .winph p b.cur{ background:url(../images/159/nhm_16.jpg);color:#fff}
 .winph p span{float:left;width:75px}
-.winph p em{float:left;width:70px;color:#ff6600;width:56px; text-align:right}
+.winph p em{float:left;width:56px;color:#f60;text-align:right}
 .hm_left{margin:0}
 .bank_tan{margin:20px 0 0 30px}
 .czje p{padding-left:0;font-size:12px}
@@ -671,9 +628,9 @@ a.goyh2:hover {
 em.uf{ background-image:url(../images/159/uf.gif)}
 .header img.logo{width:145px;height:53px}
 .bank_tan{width:715px}
-.bank_zj ul li{border: 1px solid #CCCCCC;float: left;height: 36px;margin:5px;width: 157px;padding:0;cursor: pointer;}
+.bank_zj ul li{float: left;height: 36px;width: 157px;margin:5px;padding:0;border: 1px solid #ccc;cursor: pointer;}
 .bank_zj ul li.cur{ background:url(../images/159/hoverk.png);border:none;width:159px;height:38px}
-.bank_zj ul li em{width:142px;height:28px;background:url(../images/159/bank_ico.png);display: block;border:none;margin:5px auto;}
+.bank_zj ul li em{display: block;width:142px;height:28px;margin:5px auto;border:0;background:url(../images/159/bank_ico.png);}
 .bank_zj ul li em.zfb{background-position:-2px -5px}
 .bank_zj ul li em.kq{background-position:-2px -1285px}
 .bank_zj ul li em.uf{background-position:-18px -1242px}
@@ -694,10 +651,9 @@ em.uf{ background-image:url(../images/159/uf.gif)}
 .bank_zj ul li em.pah{background-position:-6px -535px}
 .bank_zj ul li em.qth{background-position:-6px -1285px}
 .bank_zj ul li em.hzh{background-position:-6px -848px}
-.pagination li{float:left;display:block;margin-right:6px;font-size:12px;color:#444;line-height:18px;padding:0 3px}
-
-.pagination li strong{color:#ff6600}
-.nhmrtop{border-left:1px solid #ddd;border-right:1px solid #ddd;;margin-left:7px}
+.pagination li{float:left;margin-right:6px;font-size:12px;color:#444;line-height:18px;padding:0 3px}
+.pagination li strong{color:#f60}
+.nhmrtop{border-left:1px solid #ddd;border-right:1px solid #ddd;margin-left:7px}
 .pagina{padding-top:10px}
 .pagina select{margin-top:0px;}
 .pagination span{line-height:18px;padding-left:0}
@@ -710,19 +666,19 @@ em.uf{ background-image:url(../images/159/uf.gif)}
 .nxtab{padding:5px 0 0 15px; background:url(../images/159/nx_06.jpg);height:37px}
 .nxtab li,.nxtab a{background:url(../images/159/b-top-nav.gif) no-repeat scroll 0 -292px;display:block;float:left;height:30px;}
 .nxtab li{margin-right:4px;margin-top:6px}
-.nxtab li a{background-position: 100% -322px;color: #000;cursor: pointer;font-size:14px;font-weight:100;height: 30px;line-height: 30px;margin-left:2px;padding: 0 15px;_margin-left:1px}
+.nxtab li a{height: 30px;margin-left:2px;padding: 0 15px;font:400 14px/30px arial;color: #000;background-position: 100% -322px;cursor: pointer;_margin-left:1px}
 .nxtab .cur {background-position: 0 -350px;height:35px;margin-top:2px}
-.nxtab .cur a{background-position: 100% -385px;color: #FFFFFF;font-weight: bold;height:35px;line-height:35px}
-.nxtable tr td{text-align:Center;color:#666;font-size:12px; font-family:Arial;height:32px;line-height:30px; background:url(../images/159/nx_10.jpg)}
-.nxtable tr.tr1 td{font-size:15px; font-family:Arial;font-weight:bold;color:#333;line-height:32px; background:#fde8d8;border-bottom:1px solid #fdcd5e}
+.nxtab .cur a{background-position: 100% -385px;color: #fff;font-weight: bold;height:35px;line-height:35px}
+.nxtable tr td{height:32px;font:12px/30px Arial;text-align:Center;color:#666;background:url(../images/159/nx_10.jpg)}
+.nxtable tr.tr1 td{font:700 15px/32px Arial;color:#333;background:#fde8d8;border-bottom:1px solid #fdcd5e}
 .nxtable tr b{display:inline-block;width:24px;height:24px; background:url(../images/159/nx_14.png);text-algin:center;color:#fff;font-weight:bold;line-height:24px}
 .nxtable tr.last td{height:30px;line-height:30px}
 .nxtable p{float:left;text-align:left;color:#333;font-size:14px;font-weight:bold;line-height:18px;padding-left:13px}
-.nxtable span{display:block;width:314px;height:5px; background-color:#cccccc;overflow:hidden}
+.nxtable span{display:block;width:314px;height:5px; background-color:#ccc;overflow:hidden}
 .nxtable span em{display:block;width:100%;height:5px;overflow:hidden;background-color:#c95b06;}
 .nxmiddle{position:relative;padding-bottom:15px}
-.nxmiddle h2{line-height:30px;height:30px;padding-top:20px;}
-.nxmiddle h2 span{float:left;display:block;width:140px;height:30px;padding-left:10px;color:#ff3300;font-size:18px; background:url(../images/159/nx_26.jpg) no-repeat right 0; }
+.nxmiddle h2{height:30px;line-height:30px;padding-top:20px;}
+.nxmiddle h2 span{float:left;width:140px;height:30px;padding-left:10px;color:#ff3300;font-size:18px; background:url(../images/159/nx_26.jpg) no-repeat right 0; }
 .nxmiddle h2 p{float:left;padding-left:113px;color:#555;font-weight:100;font-size:12px}
 .nxmiddle h2 p em{color:#145fab;font-weight:400;}
 .head_tel img{width:auto;height:auto}
