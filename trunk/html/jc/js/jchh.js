@@ -318,27 +318,10 @@ Class('Selector', {
 	//显隐一些对阵
 	otherSet: function (box){
 		var _self = this;
-		
-//		var layIdMap =  new Yobj.lib.SelectLayer('#hhmore', 'hhmore', this);
-//		
-//		this.getLayByType = function (type){
-//			return layIdMap[type] || null;
-//		};
-//		function hideAlllay(){
-//			for(var k in layIdMap){
-//				layIdMap[k].hide();
-//			}
-//		}
-//		this.popMoreLay = function (moreBtn){
-//			var lay = layIdMap[moreBtn.getAttribute('data-type')];
-//			if (lay) {
-//				hideAlllay();
-//				_self.popMoreLayer(lay, moreBtn);
-//			}			
-//		};
 		//显隐周赛
 		box.find('a[mark=hidetable]').click(function(e,Y){
 			var s = Y.get(this).one();
+//            Y.get(this).parent('div').next('div.cm_border').show(!Y.hasClass(s.lastChild ,'cm_jsbf_up'));
             if(Y.get(s).html()=="隐藏"){
             	Y.get(s).html('显示').parent('div').next('table').hide();
             }else{
@@ -395,7 +378,6 @@ Class('Selector', {
 		}).live('td[mark=unselect]', 'click', function (e){
 			_self.allTr = undefined;
 			var tr = _self.get(this).parent('tr').next('tr');
-			var $tr = $(this).parent('tr').next('tr');
 			var a = _self.get(this);
             if ($(this).hasClass("unselecttdcur")) {
             	a.removeClass('unselecttdcur').find("a").html('展开');
@@ -403,7 +385,6 @@ Class('Selector', {
                 tr.hide(); 
             }else{
             	a.addClass('unselecttdcur').find("a").html('收起');
-//            	a.addClass('cm_hhgg_bg_hover').find('em').prop('className', 'cm_jsbf_up');
             	if(tr.find("td.hhtdtk").html().indexOf("总进球")==-1){
             		var zjqarr=tr.find("td").attr("zjq").split(",");
                 	var cbfarr=tr.find("td").attr("cbf").split(",");
@@ -941,10 +922,10 @@ Class('CodeList', {
 			m.map(function (obj){
 				if(obj.dan===undefined||obj.dan==""){
 				
-				}/*else{
-				c.push(obj.dan.join("/"));
-				}*/
-			}).join('/');
+				}else{
+				c.push(obj.dan);
+				}
+			}).join('/')
 			
 		});
 		return $_base_s.undel(c).join('/');
