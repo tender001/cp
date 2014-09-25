@@ -902,9 +902,9 @@ Class('CodeList', {
 			m.map(function (obj){
 				if(obj.dan===undefined||obj.dan==""){
 				
-				}/*else{
+				}else{
 				c.push(obj.dan.join("/"));
-				}*/
+				}
 			}).join('/');
 			
 		});
