@@ -138,9 +138,8 @@ p.fotpp a:hover{color:#ff0000;text-decoration:underline}
 .jcxqa a{color:#145fab;margin:0 5px;}
 .jcxqa a:hover{color:#e52e04; text-decoration:underline}
 .jcxqa span{float:left;}
-.jcxqa span b{ background:url(../images/newimg/newsq_31.jpg);float:left;display:block;text-align:center;color:#fff; font-family:Arial;font-weight:100}
-.jcxqa span b{ background-position:  -283px -10px;text-align:Center;font-size:16px;line-height:36px;height:35px;margin-right:2px;width:33px;}
-.jcxqa span b.blue{ background-position:-242px -10px }
+.jcxqa span b{float: left;width: 38px;height: 38px;font: 20px/34px Arial, Helvetica, sans-serif;margin-right: 1px;color: #fff;text-align: center;text-indent: -3px;background: url("../images/bg/ball-gai.jpg") -97px 0 no-repeat;}
+.jcxqa span b.blue{background-position: -136px 0;}
 .jcxqa span i{float:left;color:#444}
 /*快乐扑克详情*/
 .w-happypk span b{width: 36px;height: 20px;line-height: 20px;color: #000;margin: 7px 10px 0 0;background-color: #f9f9f9;text-align: left;text-indent: 20px;background:url(../images/ssc_bg/PK_K.png) no-repeat;_display: inline;}
@@ -224,7 +223,7 @@ p.fotpp a:hover{color:#ff0000;text-decoration:underline}
 .xqtabm .zcmxq tr.tr3 td{padding:3px 0;height:16px}
 .xqtabm .zcmxq tr.tr4 td{padding:3px 0; background-color:#f3f3f3}
 .xqtabm .zcmxq font{color:#ff0000}
-.xqtabm .zcmxq b{width:20px;height:20px;display:block;margin:0 auto;color:#fff;background:url(../images/newimg/newsq_31.jpg) -324px -24px no-repeat;}
+.xqtabm .zcmxq b{width:20px;height:20px;display:block;margin:0 auto;color:#fff;background:url("../images/bg/ball-gai.jpg") no-repeat;}
 .xqtabm .zcmxq .bcqxqtb  td{padding:3px 17px;_padding:3px 15px}
 .xqtabm .zcmxq .bcqxqtb tr.tr5 td{line-height:16px;padding:0;height:16px}
 .xqtabm .zcmxq .bcqxqtb tr.tr6 td{border-top:1px solid #ddd;color:#ff0000}
@@ -246,8 +245,8 @@ font.cm_red{color:#ff6600}
 .uacname p{line-height:26px;color:#222;font-size:12px;clear:both}
 .uacname p strong{font-weight:bold;font-size:14px}
 .uacname span{float:left}
-.uacjd{display:block;height:8px; background:#b8b8b8;width:80px;margin:9px 6px;overflow:hidden }
-.uacjd em{display:block;background:#ff6600;width:50%;height:8px}
+.uacjd{display:block;width:80px;height:8px;margin:9px 6px;background:#b8b8b8;overflow:hidden }
+.uacjd em{display:block;width:50%;height:8px;background:#ff6600;}
 .uacname p a{display:block;float:left;height:21px;margin-top:2px;line-height:21px;color:#888;padding:0 0px 0 18px;margin-left:14px}
 .uacname p a.a1{ background:url(../images/cai888/user_13.jpg) left 0 no-repeat;}
 .uacname p a.a2{ background:url(../images/cai888/user_08.jpg) left 0 no-repeat;}
@@ -276,26 +275,26 @@ font.cm_red{color:#ff6600}
 .usercodtab table thead td{border-bottom:1px solid #ccc;text-align:center;color:#444;line-height:35px; background:#f8f8f8;border-top:1px solid #ddd;border-bottom:1px solid #ddd}
 .usercodtab table tbody td{text-align:center;color:#444;line-height:30px; font-family:Arial, Helvetica, sans-serif;border-bottom:1px solid #ddd}
 .usercodtab table tr.odd td{ background:#f8f8f8;}
-.usercodtab table span{color:#ff6600}
+.usercodtab table span{color:#f60}
 .usercodtab a{color:#145fab}
 .usercodtab a:hover{color:#E52E04; text-decoration: underline}
 .usertitle{padding:8px 0 5px}
 .usertitle h2{float:left}
 .usertitle p{float:right;padding-right:20px}
-.usertitle p input{display:block;border:1px solid #bbb;height:20px;width:83px;padding-left:2px;float:left;margin:0 3px;color:#222;margin-top:4px}
-.usertitle p select{display:block;border:1px solid #bbb;height:22px;width:83px;padding-left:2px;float:left;margin:0 3px;color:#222;margin-top:4px}
+.usertitle p input,.usertitle p select{float:left;width:83px;height:20px;padding-left:2px;margin:4px 3px 0;color:#222;border:1px solid #bbb;}
+.usertitle p select{height:22px;}
 .usertitle p span{color:#444;float:left;padding:0 3px;line-height:30px}
-.usertitle p a{display:block;height:22px; background:#ff6600;color:#fff;margin-left:6px;float:left;padding:0 15px;line-height:22px;margin-top:4px}
+.usertitle p a{display:block;height:22px; background:#f60;color:#fff;margin-left:6px;float:left;padding:0 15px;line-height:22px;margin-top:4px}
 .usertitle p a:hover{color:#FFE07A}
 .usertitgd{background:url(../images/cai888/user1_01.jpg) 0 -3px;margin:0 20px;height:32px}
 .usertitgd h2{padding:0;padding-right:10px}
 .usercodgd{margin-top:10px}
 .usertitgd p{padding-right:0}
-.usertitab{display:block;height:32px;float:left;}
-.usertitab b{display:block;margin-left:8px;border:1px solid #ddd;height:32px;line-height:32px;float:left; background:#efefef;margin-top:2px;cursor:pointer;position:relative;}
-.usertitab b s{width:106px; height:21px; display:block; background:url(../images/cai888/kj.png) no-repeat; position:absolute; left:-5px; top:-10px; z-index:10;}
+.usertitab{float:left;height:32px;}
+.usertitab b{float:left;height:32px;line-height:32px;margin-top:2px;margin-left:8px;border:1px solid #ddd;background:#efefef;cursor:pointer;position:relative;}
+.usertitab b s{display:block;width:106px; height:21px;background:url(../images/cai888/kj.png) no-repeat; position:absolute; left:-5px; top:-10px; z-index:10;}
 .usertitab b.cur{border-bottom:2px solid #fff; background:#fff}
-.usertitab b a{display: block;height: 100%;padding:0 20px;float: left;}
+.usertitab b a{float: left;height: 100%;padding:0 20px;}
 .usertitab b a:hover{color: #444;text-decoration: none;}
 .userp1{line-height:22px;color:#666;width:790px;padding:50px 0 10px 30px;clear:both;font-size:12px}
 .userp1 strong{display:block;color:#444;font-size:14px;}
