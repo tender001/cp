@@ -207,10 +207,10 @@ img{vertical-align:top;}
 .menu_link .click{height: auto;}
 /*.menu_link .mar{margin-top: 24px;}*/
 
-.xiaj{width: 11px;height: 8px;display: block;position: absolute;right: 0;top: 0;background: url(../images/bg/link_more.png) 0 0 no-repeat;-webkit-transition: transform .2s ease-in 0s;-moz-transition: transform .2s ease-in 0s;-o-transition: transform .2s ease-in 0s;transition: transform .2s ease-in 0s;}
+.xiaj{display: block;width: 11px;height: 8px;position: absolute;right: 0;top: 0;background: url(../images/bg/link_more.png) 0 0 no-repeat;-webkit-transition: transform .2s ease-in 0s;-moz-transition: transform .2s ease-in 0s;-o-transition: transform .2s ease-in 0s;transition: transform .2s ease-in 0s;}
 .xiaj.hover{background-position: 0 -8px\9;-webkit-transform: rotate(180deg);-moz-transform: rotate(180deg);-o-transform: rotate(180deg);transform: rotate(180deg);}
 /* dd */
-.header{padding-top:25px;width:1000px;margin:0 auto; position:relative;z-index:55;overflow:visible;height:48px}
+.header{padding-top:25px;width:1000px;margin:0 auto; position:relative;z-index:55;overflow:visible;height:48px;}
 .header img.logo{width:113px;height:46px;float:left;display:block;margin:0}
 .nav_re{width:1000px;margin: 0 auto;position: relative;overflow:visible;z-index:888}
 a.d_c_p,a.d_c_b,.tan_mid a.but2,a.start_hm{ background:url(../images/cdbg/tn_ad.png) 0 0  no-repeat;display:block;margin:15px auto;color:#fff;font-weight:bold;font-size:16px;text-align:center;line-height:40px;width:113px}
