@@ -227,7 +227,7 @@ a.d_c_b:hover,.tan_mid a.but2:hover,a.start_hm:hover{ background-position:0 -120
 #bf_xl ul li:hover{ background-color:#E62E04;color:#fff}
 a.t_a_qc b{display: block;width: 115px;height: 35px;margin:10px auto;font: 400 16px/34px "微软雅黑";text-align: center;color: #fff;background-image: url(../images/cdbg/reg_07.gif);}
 .dc_qr{padding-top:3px}
-.dc_qr i{display:inline-block;width:89px;height:22px;margin: 0 3px;background-image:url(../images/bg/jc-a.jpg);vertical-align: middle;-webkit-user-select: none;-moz-user-select: none;-o-user-select: none;user-select: none;}
+.dc_qr i{display:inline-block;width:89px;height:22px;margin: 0 2px;background-image:url(../images/bg/jc-a.jpg);vertical-align: middle;-webkit-user-select: none;-moz-user-select: none;-o-user-select: none;user-select: none;}
 .dc_qr i .mul{width:45px;height:20px;line-height:20px;border:0;background-color:transparent;margin:1px 0 0 22px;text-align: center;}
 .inacout{float:left;padding-left:18px}
 .inacout p{line-height:24px;color:#333;}
