@@ -582,7 +582,8 @@ a.goyh2:hover {background-position: -95px -59px;}
 .hm_left_t{ height:40px;font: 400 18px/38px "微软雅黑";text-indent: 20px;color:#fff;background:#f60;}
 .top-j{height: 17px;position: relative;}
 .top-j span{height: 0;border: 6px solid #ff6507;border-width: 8px 6px 0 6px;border-left-color: transparent;border-right-color: transparent;position: absolute;left: 20px;top: 0;font-size: 0;line-height: 0;_border-left-color: #f4f4f4;_border-right-color: #f4f4f4;}
-.hm_left_t2{height:36px;font: 700 14px/36px arial;text-indent: 20px;color: #e42e06;}
+.hm_left_t2{height:36px;font: 700 14px/36px arial;text-indent: 20px;}
+.hm_left_t2 a{color: #e42e06 !important;}
 .nhmleft{border:1px solid #ccc;border-top-width:0;margin-bottom:12px;background-color: #f4f4f4;zoom: 1;}
 .nhmleft:after{visibility:hidden;display:block;font-size:0;content:" ";clear:both;}
 .nhmleft h2{padding-left:47px;color:#444;font-weight:bold;border:1px solid #ddd;height:30px;line-height:30px; background-color:#f3f3f3;width:123px;font-size:14px}
