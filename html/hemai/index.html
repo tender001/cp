@@ -31,63 +31,63 @@
 		
 		<div class="hm_left">
 			<div class="hm_left_t">合买中心</div>
-			<div class="hm_left_t2">
-				<p>
-					<a id="00" >热门推荐</a>
-				</p>
-			</div>
-            <div class="nhmleft">
-            <h2>竞技彩</h2>
-            <a  id="31">竞彩足球</a><a id="32">竞彩篮球</a><a id="30">北京单场</a><a id="80">胜负彩</a><a id="81">任选九</a><a id="82">进球彩</a><a id="83">半全场</a>
-            <h2>数字彩</h2>
-            <a id="01">双色球</a><a id="50">大乐透</a><a id="03">福彩3D</a><a id="53">排列三</a><a id="52">排列五</a><a id="51">七星彩</a><a id="07">七乐彩 </a>
-            </div>
-<!--             <div class="winph" style="display: none"> -->
-<!--              <h2>中奖排行榜</h2> -->
-<!--              <div class="winphtop"><span>用户名</span><em>中奖金额</em></div> -->
-<!--              <p><b class="cur">1</b><span>足彩超级...</span><em>2995万元</em></p> -->
-<!--              <p><b class="cur">2</b><span>足彩超级...</span><em>2995万元</em></p> -->
-<!--              <p><b class="cur">3</b><span>足彩超级...</span><em>2995万元</em></p> -->
-<!--              <p><b>1</b><span>足彩超级...</span><em>2995万元</em></p> -->
-<!--              <p><b>1</b><span>足彩超级...</span><em>2995万元</em></p> -->
-<!--              <p><b>1</b><span>足彩超级...</span><em>2995万元</em></p> -->
-<!--             </div> -->
-		</div>
-		<div class="hm_right">
 			
-			<div class="hm_t_xx">
-				<p class="p_h_t">
-					<strong>合买方案</strong>
-					<em>第期</em>
-					<s id="etinfo"></s>
-				</p>
-				<a href="javascript:void(0);" id="start_hm" class="hm_ta">发起合买</a>
-				
+			<div class="nhmleft">
+				<div class="top-j"><span></span></div>
+            	<div class="hm_left_t2" ><a id="00" >热门推荐</a></div>
+				 <a id="31">竞彩足球</a><a id="32">竞彩篮球</a><a id="30">北京单场</a><a id="80">胜负彩<img src="/images/159/jrkj.png"></a><a id="81">任选九<img src="/images/159/jrkj.png"></a><a
+                id="82">进球彩</a><a id="83">半全场</a>
+            	<a id="01">双色球</a><a id="50">大乐透</a><a id="03">福彩3D</a><a id="53">排列三</a><a id="52">排列五</a><a
+                id="51">七星彩</a><a id="07">七乐彩 </a>
 			</div>
-			<div class="hm_right_t" style="display: none">
-			    <h3><span>合买名人</span><em>代表有方案在合买</em><span class="hrsou"><input type="text" id="findstr"/><a onclick="searchUser();"></a></span></h3>
-				<p id="list_hotuser"></p>
+			 <div class="hm_help">
+            <h3>合买帮助</h3>
+
+            <div class="bod">
+                <ul>
+                    <li><s></s><a href="/help/help.html?helpid=2#">什么是合买</a></li>
+                    <li><s></s><a href="#">如何在网易彩票参与合买？</a></li>
+                    <li><s></s><a href="#">如何在网易彩票参与合买？</a></li>
+                    <li><s></s><a href="#">如何在网易彩票参与合买？</a></li>
+                    <li><s></s><a href="#">如何在网易彩票参与合买？</a></li>
+                </ul>
+            </div>
+        </div>
+		</div>
+		
+		<div class="hm_right">
+			<div class="top-caiz">
+            <span class="p_h_ts"><em>胜负彩</em><i>第20141212期</i><cite id="etinfo">截止时间：09-23 22:50(单式：22:30)</cite></span>
+            <b><a href="javascript:void(0);" id="start_hm">投注</a> <a href="javascript:void(0);" id="start_hmss" >发起合买</a> </b>
+        </div>
+			<div class="hm_right_t">
+			<h3><i><s class="blue"></s>代表有方案在合买</i>合买中心</h3><!--标签s的类名分别为red，white，blue，为红色，灰色，蓝色五角星-->
+				 <ul id="list_hotuser">
+				 </ul>
 			</div>
-			<div class="nhmrtop"><div class="zd_dv">
+			<div class="nhmrtop"><div class="zd_dv" style="display: none;">
 					<em class="zd_dv1">全部方案</em>
 					<em class="zd_dv2"><a href="/help/help_prob.html?topid=2&titleid=8" target="_blank">置顶规则</a></em>
 					<em class="zd_dv3">查看<select id='expectlist'></select></em>
 				</div>
 		</div>
-			
 			<div class="rig_hm_main">
+			<div class="hm-tit">
+                <span><input type="text" id="findstr"/><a href="javascript:;" onclick="searchUser();">搜&nbsp;索</a></span>
+                <b><a href="/account/orderlist.html" target="_blank">我的方案</a><a href="javascript:void(0);" id="start_hms"  class="hemai">发起合买</a></b>
+            </div>
 				<table width="100%" border="0" cellpadding="0" cellspacing="0" id="table_project_list">
 					<thead>
 						<tr>
 							<td width="56">序号</td>
 							<th width="115">发单人</th>
-							<th width="90" class="t_zj"><a onclick="psort('sort_aunum','aunum')">战绩<span id='sort_aunum' class="hm_sx1"></span></a></th>
+							<th width="178" class="t_zj"><a onclick="psort('sort_aunum','aunum')">战绩<span id='sort_aunum' class="hm_sx1"></span></a></th>
 							<td width="105">彩种</td>
 							<td width="105"><a onclick="psort('sort_money','money')">方案金额(元)<span id='sort_money' class="hm_sx1"></span></a></td>
 							<td width="115"><a onclick="psort('sort_jindu','jindu')">进度|保底<span id='sort_jindu' class="hm_sx3"></span></a></td>
 							<td width="80"><a onclick="psort('sort_lnum','lnum')">剩余金额<span id='sort_lnum' class="hm_sx1" ></span></a></td>
 							<td width="90">参与合买</td>
-							<td>操作</td>
+							<td width="50">操作</td>
 						</tr>
 					</thead>
 				</table>
@@ -105,17 +105,19 @@
 <!-- 					<a href="#" class="a1" style="margin-left: 5px">尾页</a> -->
 <!-- 					<span><input type="text" />共1页，31条记录</span> -->
 				</div>
-				<p class="hm_zs1">单个方案合买成功盈利≥500元</p>
+				<!-- <p class="hm_zs1">单个方案合买成功盈利≥500元</p>
 				<p class="hm_zs">
 					则获得1个<img src="/images/cdbg/hmj_07.png" />；
 					累积10个<img src="/images/cdbg/hmj_07.png" />， 获得1个<img src="/images/cdbg/hmj_09.png" /> ；
 					累积10个<img src="/images/cdbg/hmj_09.png" />，获得1个 <img src="/images/cdbg/hmj_11.png" /> ；
 					累积10个<img src="/images/cdbg/hmj_11.png" />，获得1个<img src="/images/cdbg/hmj_12.png" />
 				</p>
-				
+				 -->
 			</div>
 		</div>
-	</div>
+			
+			
+		</div>
 <!--#include virtual="/cc/footer.html"-->
 </body>
 </html>
