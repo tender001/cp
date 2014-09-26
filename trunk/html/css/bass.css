@@ -94,12 +94,12 @@ a.a5:hover {
 .clear1 {
     clear: both;
 }
-.cm_center {
+.cm_center {width: 1000px;
     height: auto;
     margin: 10px auto 20px;
     overflow: visible;
-    width: 1000px;
     z-index: 1;
+    -webkit-user-select: none;-moz-user-select: none;-o-user-select: none;user-select: none;
 }
 .cm_centerw998 {
     margin: 10px auto 0;
