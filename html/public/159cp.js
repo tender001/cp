@@ -620,7 +620,7 @@ $_sys.showzhanjii = function (lotid,uid,au,ag,func){
 	if (typeof(func)=='undefined'){
 		func='';
 	}
-	return uid=='******'?$_sys.showzhanji(au,ag):('<a class="zj-pic" href="javascript:void(0);" onclick="Y.openUrl(\'/game/zhanji.html?lotid='+lotid+'&uid='+uid+'&func='+func+'\',807,575)">'+$_sys.showzhanji(au,ag)+'</a>');
+	return uid=='******'?$_sys.showzhanji(au,ag):('<a class="zj-pic" href="javascript:void(0);" onclick="Y.openUrl(\'/game/zhanji.html?lotid='+lotid+'&uid='+uid+'&func='+func+'\',807,575)"><strong>...</strong>'+$_sys.showzhanji(au,ag));
 };
 
 $_sys.showzhanjiname = function (lotid,uid,func){
@@ -641,11 +641,12 @@ $_sys.showlishizhanji = function (lotid,uid,func){
 $_sys.showzhanji= function(au,ag){
 	var arr = new Array();
 	var html='';
+	var strong = '<strong>...</strong>';
 	 var yb='<i class="Rating4"></i>';//星星
 	 var zhuan='<i class="Rating3"></i>';//月亮
 	 var zuan='<i class="Rating2"></i>';//太阳 
 	 var hg='<i class="Rating1"></i>';//皇冠+
-	 var tip ='<strong>...</strong><b>';//隐藏提示<div class="lv_box">
+	 var tip ='</a><b>';//隐藏提示<div class="lv_box">
 	 var crownNum = Math.floor(au / 1000);
 	 var sunNum = 0;
 	 var moonNum = 0;
