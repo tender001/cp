@@ -620,7 +620,7 @@ $_sys.showzhanjii = function (lotid,uid,au,ag,func){
 	if (typeof(func)=='undefined'){
 		func='';
 	}
-	return uid=='******'?$_sys.showzhanji(au,ag):('<a class="zj-pic" href="javascript:void(0);" onclick="Y.openUrl(\'/game/zhanji.html?lotid='+lotid+'&uid='+uid+'&func='+func+'\',807,575)"><strong>...</strong>'+$_sys.showzhanji(au,ag));
+	return uid=='******'?$_sys.showzhanji(au,ag):('<a class="zj-pic" href="javascript:void(0);" onclick="Y.openUrl(\'/game/zhanji.html?lotid='+lotid+'&uid='+uid+'&func='+func+'\',807,575)">'+$_sys.showzhanji(au,ag));
 };
 
 $_sys.showzhanjiname = function (lotid,uid,func){
@@ -641,12 +641,12 @@ $_sys.showlishizhanji = function (lotid,uid,func){
 $_sys.showzhanji= function(au,ag){
 	var arr = new Array();
 	var html='';
-	var strong = '<strong>...</strong>';
+	var strong = '';
 	 var yb='<i class="Rating4"></i>';//星星
 	 var zhuan='<i class="Rating3"></i>';//月亮
 	 var zuan='<i class="Rating2"></i>';//太阳 
 	 var hg='<i class="Rating1"></i>';//皇冠+
-	 var tip ='</a><b>';//隐藏提示<div class="lv_box">
+	 var tip ='</a><strong>...</strong><b class="lv_boxs" style="display:none;">';//隐藏提示<div class="lv_box">
 	 var crownNum = Math.floor(au / 1000);
 	 var sunNum = 0;
 	 var moonNum = 0;
@@ -664,7 +664,7 @@ $_sys.showzhanji= function(au,ag){
 				 //html+=zuan.replace('$1', Math.floor(a/100));	
 				 sunNum = Math.floor(a/100);
 				 for(var i=0;i<sunNum;i++){
-					 html+=zuan;
+					 html+=zuan ;
 				 }
 				 var b= a % 100;
 				 if (Math.floor(b/10)>0){//余数后
@@ -679,7 +679,6 @@ $_sys.showzhanji= function(au,ag){
 							for(var i=0;i<starNum;i++){
 								 html+=yb;
 							}
-							
 						 }
 				 }else{
 					 starNum = b;
@@ -699,7 +698,6 @@ $_sys.showzhanji= function(au,ag){
 						 for(var i=0;i<starNum;i++){
 							 html+=yb;
 						 }
-						
 					 }
 				 }else{
 					 starNum = a;
@@ -733,7 +731,7 @@ $_sys.showzhanji= function(au,ag){
 			 }else{
 				 starNum = a;
 				 for(var i=0;i<starNum;i++){
-					 html+=yb;
+					 html+=yb ;
 				 }
 			 }
 		 }	 
@@ -756,7 +754,7 @@ $_sys.showzhanji= function(au,ag){
 			 html+=yb;
 		 }	
 	 }
-	 if(Y.getInt(crownNum)+Y.getInt(sunNum)+Y.getInt(moonNum)+Y.getInt(starNum)>4){
+	 if(Y.getInt(crownNum)+Y.getInt(sunNum)+Y.getInt(moonNum)+Y.getInt(starNum)>6){
 		 if(crownNum>0){
 			 tip+= hg+"<em>："+crownNum+"个</em>";
 		 }
@@ -773,6 +771,12 @@ $_sys.showzhanji= function(au,ag){
 		 arr[1] = tip;
 	 }else{
 		 arr[1] ="";
+		
+//		 $(".zj-pic")each(function(){
+//			 if($(this).find("i").length<=6){
+//					$(this).find("strong").hide();
+//				}
+//			});
 	 }
 	 
 	 arr[0] = html;
