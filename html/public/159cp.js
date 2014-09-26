@@ -639,63 +639,143 @@ $_sys.showlishizhanji = function (lotid,uid,func){
 };
 
 $_sys.showzhanji= function(au,ag){
-	var html="";
-	 var yb='<b class="b$1 jj"></b>';//星星
-	 var zhuan='<b class="b1_$1 jj"></b>';//月亮
-	 var zuan='<b class="b2_$1 jj"></b>';//太阳 
-	 var hg='<b class="b2_$1 jj"></b>';//太阳+
-	 if (Math.floor(au / 1000) > 0){//如果有太阳+
-		 html+=hg.replace('$1', Math.floor(au/1000));//太阳+个数
+	var arr = new Array();
+	var html='';
+	 var yb='<i class="Rating4"></i>';//星星
+	 var zhuan='<i class="Rating3"></i>';//月亮
+	 var zuan='<i class="Rating2"></i>';//太阳 
+	 var hg='<i class="Rating1"></i>';//皇冠+
+	 var tip ='...<th>';//隐藏提示<div class="lv_box">
+	 var crownNum = Math.floor(au / 1000);
+	 var sunNum = 0;
+	 var moonNum = 0;
+	 var zjlen=0;
+	 var starNum = 0;
+	 if (crownNum > 0){//如果有太阳+
+		 for(var i=0;i<crownNum;i++){
+			 html+=hg;  //皇冠的个数
+		 }
+		 
 		 var a=au % 1000;//余数
+		 
 		 if (a >0){
 			 if (Math.floor(a/100)>0){//余数
-				 html+=zuan.replace('$1', Math.floor(a/100));			 
+				 //html+=zuan.replace('$1', Math.floor(a/100));	
+				 sunNum = Math.floor(a/100);
+				 for(var i=0;i<sunNum;i++){
+					 html+=zuan;
+				 }
 				 var b= a % 100;
 				 if (Math.floor(b/10)>0){//余数后
-					 html+=zhuan.replace('$1', Math.floor(b/10));			 
+					 //html+=zhuan.replace('$1', Math.floor(b/10));
+					 moonNum =Math.floor(b/10);
+					 for(var i=0;i<moonNum;i++){
+						 html+=zhuan;
+					 }
 					 var b= a % 10;
 					 if (b>0){
-						 html+=yb.replace('$1',b);
-					 }
+						 starNum = b;
+							for(var i=0;i<starNum;i++){
+								 html+=yb;
+							}
+							
+						 }
 				 }else{
-					 html+=yb.replace('$1', b);
+					 starNum = b;
+						for(var i=0;i<starNum;i++){
+							 html+=yb;
+						}
 				 }
 			 }else{
 				 if (Math.floor(a/10)>0){//余数后
-					 html+=zhuan.replace('$1', Math.floor(a/10));			 
+					 moonNum=Math.floor(a/10);	
+					 for(var i=0;i<moonNum;i++){
+						 html+=zhuan;
+					 }		
 					 var b= a % 10;
 					 if (b>0){
-						 html+=yb.replace('$1',b);
+						 starNum = b;
+						 for(var i=0;i<starNum;i++){
+							 html+=yb;
+						 }
+						
 					 }
 				 }else{
-					 html+=yb.replace('$1', a);
+					 starNum = a;
+					 for(var i=0;i<starNum;i++){
+						 html+=yb;
+					 	}
 				 }
 			 }
-		 }	 
-	 }else if (Math.floor(au / 100) > 0){//如果有太阳
-		 html+=zuan.replace('$1', Math.floor(au/100));//
+			 
+		 }
+	 }else if (Math.floor(au / 100) > 0){//如果有皇冠
+		 sunNum = Math.floor(au/100);
+		 for(var i=0;i<sunNum;i++){
+			 html+=zuan;
+		 }
 		 var a=au % 100;//
 		 if (a >0){
 			 if (Math.floor(a/10)>0){//余数后
-				 html+=zhuan.replace('$1', Math.floor(a/10));			 
+				 moonNum =Math.floor(a/10);
+				 for(var i=0;i<moonNum;i++){
+					 html+=zhuan;
+				 }			 		 
 				 var b= a % 10;
 				 if (b>0){
-					 html+=yb.replace('$1',b);
+					 starNum = b;
+					 for(var i=0;i<starNum;i++){
+						 html+=yb;
+					 }
+					 
 				 }
 			 }else{
-				 html+=yb.replace('$1', a);
+				 starNum = a;
+				 for(var i=0;i<starNum;i++){
+					 html+=yb;
+				 }
 			 }
 		 }	 
 	 }else if (Math.floor(au/10) >0){
-		 html+=zhuan.replace('$1', Math.floor(au/10));		 
+		 moonNum =Math.floor(au/10);
+		 for(var i=0;i<moonNum;i++){
+			 html+=zhuan;
+		 }		 	 
 		 var a= au % 10;
 		 if (a>0){
-			 html+=yb.replace('$1',a);
+			 starNum = a;
+			 for(var i=0;i<starNum;i++){
+				 html+=yb;
+			 }
 		 }	
 	 }else if (au >0){	
-			html+=yb.replace('$1', au);	
+		 
+		 starNum = au;
+		 for(var i=0;i<starNum;i++){
+			 html+=yb;
+		 }	
 	 }
-	 return html;
+	 if(Y.getInt(crownNum)+Y.getInt(sunNum)+Y.getInt(moonNum)+Y.getInt(starNum)>4){
+		 if(crownNum>0){
+			 tip+= hg+"<span>："+crownNum+"个</span>";
+		 }
+		 if(sunNum>0){
+			 tip+= zuan+"<span>："+sunNum+"个</span>";
+		 }
+		 if(moonNum>0){
+			 tip+= zhuan+"<span>："+moonNum+"个</span>";
+		 }
+		 if(starNum>0){
+			 tip+= yb+"<span>："+starNum+"个</span>";
+		 }
+		 tip+="</th>";
+		 arr[1] = tip;
+	 }else{
+		 arr[1] ="";
+	 }
+	 
+	 arr[0] = html;
+	 return arr;
 };
 
 $_sys.getsp=function(sprow,spname){
