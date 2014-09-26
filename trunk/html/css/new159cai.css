@@ -137,7 +137,6 @@ img{vertical-align:top;}
 .updo li .xia p{width: 100%;height: 30px;line-height: 30px;text-align: center;border-bottom: 1px solid #ddd;}
 .updo li .xia p a{display: block;width: 100%;height: 100%;padding: 0;color: #e52f05;font-weight: 400;}
 .updo li .xia p a:hover{background: none;margin: 0;text-decoration: underline}
-
 /*title相似*/
 .basic{border:1px solid #ccc;}
 .tit{height:30px;color: #333;font: 700 14px/30px "\5b8b\4f53";overflow: hidden;border-bottom: 1px solid #ddd;background-color: #f6f6f6;background-position: 0 -378px;}
@@ -302,7 +301,7 @@ a.t_a_qd:hover{background-image:url(../images/cdbg/reg_10.gif)}
 table.log_tab {margin:35px 0 0 85px;padding-bottom:20px}
 table.log_tab th{width:55px;font:700 14px/60px arial;text-align:center;color:#444;}
 table.log_tab td {text-align:left;line-height:60px;}
-input.text_log{width:205px;height:32px;border:1px solid #bbb;border-top-color:#aaa; display:block; background: url(../images/cdbg/login_18.gif) transparent;-webkit-border-radius:4px;border-radius:4px;-moz-border-radius:4px;padding-left:6px;padding:8px 0 0 6px\9;height:24px\9}
+input.text_log{width:205px;height:32px;border:1px solid #bbb;border-top-color:#aaa; display:block; background: url(../images/cdbg/login_18.gif) transparent;-webkit-border-radius:4px;border-radius:4px;-moz-border-radius:4px;padding-left:6px;padding:8px 0 0 6px\9;height:24px\9;}
 :root input.text_log{height:32px;padding:0 0 0 6px}
 a.but_log{display:block;width:115px;height:35px;margin-left:30px;color:#fff;font:16px/34px "微软雅黑"; text-align:center;background-image:url(../images/cdbg/reg_07.gif);_margin-top:15px}
 a.but_log:hover{background-image:url(../images/cdbg/reg_10.gif)}
@@ -398,6 +397,7 @@ a.a_auto{margin:0 auto 20px auto}
 .top-caiz span{float: left;color: #656565;line-height: 26px;}
 .top-caiz span em{font-size: 16px;font-weight: 700;color: #e42e06;padding: 0 14px;}
 .top-caiz span i{height: 20px;line-height:20px;margin-right: 14px;padding: 0 3px;background-color: #e42e06;color: #fff;display: inline-block;*display: inline;*zoom: 1;}
+.top-caiz span cite{font-style: normal;}
 .top-caiz b{float: right;}
 .top-caiz b a{float: left;height: 26px;margin-right: 10px;padding: 0 10px;font: 700 14px/26px arial;color: #fff;background-color: #ff6507;}
 .hm_right_t{width: auto;background:#fff;border:1px solid #ccc;margin-left:7px;margin-bottom:12px;}
@@ -582,7 +582,7 @@ a.goyh2:hover {background-position: -95px -59px;}
 .hm_left_t{ height:40px;font: 400 18px/38px "微软雅黑";text-indent: 20px;color:#fff;background:#f60;}
 .top-j{height: 17px;position: relative;}
 .top-j span{height: 0;border: 6px solid #ff6507;border-width: 8px 6px 0 6px;border-left-color: transparent;border-right-color: transparent;position: absolute;left: 20px;top: 0;font-size: 0;line-height: 0;_border-left-color: #f4f4f4;_border-right-color: #f4f4f4;}
-.hm_left_t2{height:36px;font: 700 14px/36px arial;text-indent: 20px;color: #e42e06;border-top: 1px solid #ccc;}
+.hm_left_t2{height:36px;font: 700 14px/36px arial;text-indent: 20px;color: #e42e06;}
 .nhmleft{border:1px solid #ccc;border-top-width:0;margin-bottom:12px;background-color: #f4f4f4;zoom: 1;}
 .nhmleft:after{visibility:hidden;display:block;font-size:0;content:" ";clear:both;}
 .nhmleft h2{padding-left:47px;color:#444;font-weight:bold;border:1px solid #ddd;height:30px;line-height:30px; background-color:#f3f3f3;width:123px;font-size:14px}
@@ -1285,14 +1285,15 @@ table.cpmxtab p{line-height:25px;color:#444;font-size:12px;margin-leolor:#145fab
 .cptsp{line-height:30px;color:#333;padding-left:25px;}
 .cptsp em{color:#ff0000}
 .userp1p{font-size:14px}
-.rig_hm_main table .zj-pic{display: block;width: 120px;height: 16px;overflow: hidden;}
-.rig_hm_main table .zj-pic i{float: left;width:15px;height:15px;margin: 0 2px 0 0;/* background:url(../images/hm/hm2_07.gif) 0 0 no-repeat;*/}
-.rig_hm_main table .zj-pic i.Rating1{background-position: 0 -17px;}
-.rig_hm_main table .zj-pic i.Rating2{background-position: -19px -17px;}
-.rig_hm_main table .zj-pic i.Rating3{background-position: -38px -17px;}
-.rig_hm_main table .zj-pic i.Rating4{background-position: -56px -17px;}
-.rig_hm_main table .zj-pic strong{float: right;width: 1em;height: 15px;line-height: 15px;color: #999;}
-.rig_hm_main table b{display: none;float:left;width: 140px;height: 15px;position: absolute;top: 13px;left: 0;}
+.rig_hm_main table .zj-pic{float:left;width: 120px;height: 16px;overflow: hidden;}
+.rig_hm_main table i{float: left;width:15px;height:15px;margin: 0 2px 0 0;/* background:url(../images/hm/hm2_07.gif) 0 0 no-repeat;*/}
+.rig_hm_main table em{float: left;margin-right: 4px;display: inline;}
+.rig_hm_main table i.Rating1{background-position: 0 -17px;}
+.rig_hm_main table i.Rating2{background-position: -19px -17px;}
+.rig_hm_main table i.Rating3{background-position: -38px -17px;}
+.rig_hm_main table i.Rating4{background-position: -56px -17px;}
+.rig_hm_main table strong{float: left;width: 1em;height: 15px;line-height: 15px;color: #999;}
+.rig_hm_main table b{display: none;float:left;width: 160px;height: 15px;line-height:15px;padding:6px 3px;font-weight: normal;border: 1px solid #C7E0FC;background-color: #ECF8FF;position: absolute;top: 26px;left: 0;z-index: 15;}
 /*b.b1{ background-position:-1px -1px}
 b.b2{ background-position:-27px -1px}
 b.b3{ background-position:-54px -1px}
