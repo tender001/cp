@@ -100,7 +100,7 @@ img{vertical-align:top;}
 .m_l dd{width:150px;}
 .m_l a,.m_l1 a{color:#585858;margin-right: 10px; float: left;white-space: nowrap;line-height: 22px;position: relative;}
 .m_l a:hover{color: #e52e04}
-.m_l a i,.m_l1 a i,.top dl dd li p a i{display:block;width:21px;height:17px;position:absolute;top:-7px;right:-17px;z-index:10;background:url(../images/bg/new.png) no-repeat;}
+.m_l a i,.m_l1 a i,.top dl dd li p a i,.dc_qr a s{display:block;width:21px;height:17px;position:absolute;top:-7px;right:-17px;z-index:10;background:url(../images/bg/new.png) no-repeat;}
 .m_l a i.hot,.m_l1 a i.hot,.top dl dd li p a i.hot{background-position: -42px 0;margin: 0;}
 .m_l a i.add,.m_l1 a i.add,.top dl dd li p a i.add{background-position: -21px 0;}
 .m_l li p{margin: 9px 0 10px;zoom: 1;}
@@ -229,6 +229,9 @@ a.t_a_qc b{display: block;width: 115px;height: 35px;margin:10px auto;font: 400 1
 .dc_qr i{display:inline-block;width:89px;height:22px;margin: 0 2px;background-image:url(../images/bg/jc-a.jpg);vertical-align: middle;-webkit-user-select: none;-moz-user-select: none;-o-user-select: none;user-select: none;}
 .dc_qr i a{display: inline-block;width: 21px;height: 100%;background: transparent;vertical-align: top;}
 .dc_qr i .mul{width:45px;height:20px;line-height:20px;border:0;background-color:transparent;margin:1px 0 0 0;text-align: center;}
+.dc_qr span a{color: #145fab;margin-right: 10px;position: relative;}
+.dc_qr span a:hover{color: #900;}
+.dc_qr span a s{width: 23px;height: 12px;top: -11px;background-position: -64px 0;}
 .inacout{float:left;padding-left:18px}
 .inacout p{line-height:24px;color:#333;}
 .inacout span{float:left;}
@@ -1542,7 +1545,7 @@ html .buyfimsg td input.text {height: 22px;line-height:22px;padding: 0; vertical
 .numcai{overflow: visible;}
 .buyfimsg textarea {border: 1px solid #DDDDDD;color: #444444;float: left;font-size: 12px;height: 100px;margin-top: 11px;padding: 5px;width: 510px;}
 a.buyfa {display: block;width: 190px;height: 42px;margin:7px auto 2px;font: 16px/42px "微软雅黑";text-align: center;color: #fff;background: #ff7213;border:1px solid #CF5955;}
-a.buyfa:hover{background:#ff6600}
+a.buyfa:hover{background:#f60}
 .buyfimsg p.p2{font-size:12px;line-height:18px;height:24px;text-align: left;}
 .buyfimsg p.p2 a{color:#145fab}
 .buyfimsg p.p2 a:hover,.buyfimsg p.p1 a:hover{color:#ff0000; text-decoration:underline}
