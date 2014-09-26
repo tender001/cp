@@ -1292,7 +1292,7 @@ table.cpmxtab p{line-height:25px;color:#444;font-size:12px;margin-leolor:#145fab
 .rig_hm_main table .zj-pic i.Rating3{background-position: -38px -17px;}
 .rig_hm_main table .zj-pic i.Rating4{background-position: -56px -17px;}
 .rig_hm_main table .zj-pic strong{float: right;width: 1em;height: 15px;line-height: 15px;color: #999;}
-.rig_hm_main table b{display: block;float:left;width: 140px;height: 15px;position: absolute;top: 13px;left: 0;}
+.rig_hm_main table b{display: none;float:left;width: 140px;height: 15px;position: absolute;top: 13px;left: 0;}
 /*b.b1{ background-position:-1px -1px}
 b.b2{ background-position:-27px -1px}
 b.b3{ background-position:-54px -1px}
