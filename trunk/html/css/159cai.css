@@ -1470,7 +1470,7 @@ a.bz:hover{ background-image:url(../images/jc/cxj_14.gif) }
 .hm_lr_list img{margin-left:3px}
 .hm_right{width:796px;margin-left:2px;float:left}
 .hm_right_t p{line-height:30px;padding:25px 0 10px 160px;_padding-top:10px;_line-height:22px}
-.hm_right_t a{font-size:12px;color:#754c24;white-space:nowrap;}
+.hm_right_t a{font-size:12px;white-space:nowrap;}
 .hm_right_t a:hover{color:#ff6600; text-decoration:underline}
 .hm_right .rig_hm_main{margin-left:7px;border:1px solid #ccc;padding-bottom:20px;background:#fff;*zoom:1;}
 .hm_right .rig_hm_main table thead{ background-image:url(../images/jc/lc_16.gif);}
