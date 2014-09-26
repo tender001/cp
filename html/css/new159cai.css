@@ -487,12 +487,14 @@ p.fotpp{line-height:24px;text-align:center;padding:16px 0;color:#666;}
 .news_l_list ul li a:hover{color:#ff6600}
 .all_kj_main{border:3px solid #e62e04;border-top:none}
 .kj_left_cm{border:1px solid #ddd;border-top:none}
-a.gofilter {float: left;width: 84px;height: 26px;margin-left: 12px;background: url(../images/njc/jcy_38.jpg) repeat scroll -1px -1px;}
+a.gofilter {float: left;width: 84px;height: 26px;margin-left: 10px;background: url(../images/njc/jcy_38.jpg) repeat scroll -1px -1px;}
 a.gofilter1 {background-position: -1px -29px;}
 a.gofilter2 {background-position: -1px -59px;}
 a.gofilter:hover {background-position: -1px -29px;}
 a.gofilter2:hover {background-position: -1px -59px;}
-a.goyh {float: left;width: 84px;height: 26px;margin-left: 38px;background: url(../images/njc/jcy_38.jpg) repeat scroll -88px -1px;}
+.dc_r_btn{height:43px;padding-bottom:5px;position: relative;zoom: 1;}
+.dc_r_btn:after{visibility:hidden;display:block;font-size:0;content:" ";clear:both;}
+a.goyh {float: left;width: 84px;height: 26px;background: url(../images/njc/jcy_38.jpg) repeat scroll -88px -1px;position: absolute;top:0;right: 29px;}
 a.goyh1 {background-position: -95px -29px;}
 a.goyh2 {background-position: -95px -59px;}
 a.goyh:hover {background-position: -88px -29px;}
@@ -1535,7 +1537,7 @@ html .buyfimsg td input.text {height: 22px;line-height:22px;padding: 0; vertical
 .buyfimsg td em {margin-right:12px;background:#eee;border: 1px solid #ccc;color: #444;cursor: pointer;display: inline-block;font: 400 14px/28px Arial,Helvetica,sans-serif;padding: 0 15px;}
 .buyfimsg td input.bt {border: 1px solid #DDDDDD;display: block;float: left;height: 25px;margin-top:1px;width: 515px;font-size:12px;padding:6px 0 0 5px\9;height:19px\9}
 :root .buyfimsg td input.bt{padding:0 0 0 5px}
-#container {margin: 0 auto;position: relative;width: 998px;/*border: 1px solid #ccc;*/overflow: visible;zoom: 1;}
+#container {margin: 0 auto;position: relative;width: 998px;/*border: 1px solid #ccc;*/overflow: visible;-webkit-user-select: none;-moz-user-select: none;-o-user-select: none;user-select: none;zoom: 1;}
 #container:after{visibility:hidden;display:block;font-size:0;content:" ";clear:both;}
 .numcai{overflow: visible;}
 .buyfimsg textarea {border: 1px solid #DDDDDD;color: #444444;float: left;font-size: 12px;height: 100px;margin-top: 11px;padding: 5px;width: 510px;}
