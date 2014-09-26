@@ -68,8 +68,14 @@ $(document).ready(function(){
 					if(!this.isArray(r)){r=new Array(r);}
 					r.each(function(rt,o){
 						var cls = "";
-						if(rt.f == 0){ cls = "title='该用户暂时没有方案'"; }else if(rt.f == 1){ cls = "class='a_cg' title='该用户方案已满员'"; } else if(rt.f == 2){ cls = "class='a_cv' title='该用户有方案在合买'"; } else { cls = " class='a_cc' "; }
-						var _tmp = '<a href="javascript:void(0)"'+cls+' onclick="selectProject(\'' + rt.id + '\')">' + rt.id + '</a>';
+						var clss = "";
+						if(rt.id != ""){
+						if(rt.f == 0){ cls = "title='该用户暂时没有方案'"; }else if(rt.f == 1){ cls = "title='该用户方案已满员'"; } else if(rt.f == 2){  cls = "title='该用户有方案在合买'"; }
+						if(rt.f == 0 ){ clss ='<li><s class="white"></s>'}else if(rt.f == 1){ clss ='<li><s class="red"></s>' } else if(rt.f == 2){ clss ='<li><s class="blue"></s>' } 
+						
+						}
+						var _tmp =clss+ '<a href="javascript:void(0)"'+cls+' onclick="selectProject(\'' + rt.id + '\')">' + rt.id + '</a></li>';
+						
 						hh.push(_tmp);
 					});
 					$("#" + htmlid).html(hh.join(""));
@@ -316,6 +322,9 @@ $(document).ready(function(){
 					  
 					    $("#govalue").val(pn);
 					}else{
+						$("div.rig_hm_main").css('padding-bottom','0');
+						$("div.paginachange").hide();
+						
 						$("#table_project_list").append("<tr id='err'><td colspan='9' align='center' >抱歉！没有找到符合条件的结果！</td></tr>");
 					}
 				}else{
@@ -433,6 +442,9 @@ $(document).ready(function(){
 								
 							    $("#govalue").val(pn);
 							}else{
+								$("div.rig_hm_main").css('padding-bottom','0');
+								$("div.paginachange").hide();
+								
 								$("#table_project_list").append("<tr id='err'><td colspan='9' align='center' >抱歉！没有找到符合条件的结果！</td></tr>");
 							}
 						},
@@ -572,6 +584,9 @@ $(document).ready(function(){
 						
 					    $("#govalue").val(pn);
 					}else{
+						$("div.rig_hm_main").css('padding-bottom','0');
+						$("div.paginachange").hide();
+						
 						$("#table_project_list").append("<tr id='err'><td colspan='9' align='center' >抱歉！没有找到符合条件的结果！</td></tr>");
 					}
 				},
@@ -694,6 +709,9 @@ $(document).ready(function(){
 						
 					    $("#govalue").val(pn);
 					}else{
+						$("div.rig_hm_main").css('padding-bottom','0');
+						$("div.paginachange").hide();
+						
 						$("#table_project_list").append("<tr id='err'><td colspan='9' align='center' >抱歉！没有找到符合条件的结果！</td></tr>");
 					}
 				},
@@ -778,9 +796,9 @@ $(document).ready(function(){
 		if(arr.length >= 3){
 			var title = $_sys.getlotname(Class.C("lotid"));
 			if(Class.C("lotid")==30) title = "北单";
-			$(".p_h_t strong").html(title+"合买方案");
-			$(".p_h_t em").html("第"+arr[0]+"期");
-			$(".p_h_t #etinfo").html("截止时间："+Y.getDate(arr[1]).format('MM-DD hh:mm')+"（单式："+Y.getDate(arr[2]).format('hh:mm')+"）");
+			$(".p_h_ts em").html(title+"合买方案");
+			$(".p_h_ts i").html("第"+arr[0]+"期");
+			$(".p_h_ts #etinfo").html("截止时间："+Y.getDate(arr[1]).format('MM-DD hh:mm')+"（单式："+Y.getDate(arr[2]).format('hh:mm')+"）");
 			Class.C("expect",arr[0]);
 			loadGameProj();
 		}else{
@@ -828,12 +846,17 @@ $(document).ready(function(){
 		
 		if(Class.C("lotid") == '00'){
 			$(".nhmrtop").remove();
-			$(".hm_t_xx").remove();
+			$(".top-caiz").remove();
 			$(".hm_right_t").show();
 			loadHotProj();
+			$("#start_hms").click(function(){
+					location.href=$_sys.getlotdir(Class.C('lotid'));
+			});
 		}
 		else if(Class.C('lotid') == 30||Class.C('lotid') ==50||Class.C('lotid')== 1||Class.C('lotid')== 80||Class.C('lotid')== 81){
-			$(".hm_t_xx").show();
+			$(".top-caiz").show();
+			$(".hemai").hide();
+			
 			$(".hm_right_t").show();
 			cachePeriod();
 			$("#start_hm").click(function(){
@@ -844,22 +867,42 @@ $(document).ready(function(){
 				}
 				
 			});
+			$("#start_hmss").click(function(){
+				if(Class.C('lotid') == 30){
+					location.href=$_sys.getlotdir(85);
+				}else{
+					location.href=$_sys.getlotdir(Class.C('lotid'));
+				}
+				
+			});
+			
 		
 		}
 		else if(parseInt(Class.C('lotid'))<90 && Class.C('lotid') != 70 && Class.C('lotid') != 71 && Class.C('lotid') != 72 && Class.C('lotid') != 31 && Class.C('lotid') != 32 && Class.C('lotid') != 30){
 			$(".hm_right_t").remove();
-			$(".hm_t_xx").show();
+			$(".top-caiz").show();
+			$(".hemai").hide();
 			cachePeriod();
 			$("#start_hm").click(function(){
 				location.href=$_sys.getlotdir(Class.C('lotid'));
 			});
+			$("#start_hmss").click(function(){
+				location.href=$_sys.getlotdir(Class.C('lotid'));
+			});
+			
 		
 		}
 		else{
 			$(".nhmrtop").remove();
 			$(".hm_right_t").show();
 			if(Class.C('lotid') == 31||Class.C('lotid') == 32||(Class.C('lotid')<98&&Class.C('lotid')>89 )||Class.C('lotid') == 70||Class.C('lotid') == 71||Class.C('lotid') == 72){
-				$(".hm_t_xx").remove();
+				$(".top-caiz").remove();
+				$("#start_hms").click(function(){
+				if(Class.C('lotid') == 31){	
+					location.href=$_sys.getlotdir(70);}
+				if(Class.C('lotid') == 32){
+					location.href=$_sys.getlotdir(71);}
+				});
 			}else{
 				
 			}
