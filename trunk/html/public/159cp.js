@@ -620,7 +620,7 @@ $_sys.showzhanjii = function (lotid,uid,au,ag,func){
 	if (typeof(func)=='undefined'){
 		func='';
 	}
-	return uid=='******'?$_sys.showzhanji(au,ag):('<a href="javascript:void(0);" onclick="Y.openUrl(\'/game/zhanji.html?lotid='+lotid+'&uid='+uid+'&func='+func+'\',807,575)">'+$_sys.showzhanji(au,ag)+'</a>');
+	return uid=='******'?$_sys.showzhanji(au,ag):('<a class="zj-pic" href="javascript:void(0);" onclick="Y.openUrl(\'/game/zhanji.html?lotid='+lotid+'&uid='+uid+'&func='+func+'\',807,575)">'+$_sys.showzhanji(au,ag)+'</a>');
 };
 
 $_sys.showzhanjiname = function (lotid,uid,func){
@@ -645,7 +645,7 @@ $_sys.showzhanji= function(au,ag){
 	 var zhuan='<i class="Rating3"></i>';//月亮
 	 var zuan='<i class="Rating2"></i>';//太阳 
 	 var hg='<i class="Rating1"></i>';//皇冠+
-	 var tip ='...<th>';//隐藏提示<div class="lv_box">
+	 var tip ='<strong>...</strong><b>';//隐藏提示<div class="lv_box">
 	 var crownNum = Math.floor(au / 1000);
 	 var sunNum = 0;
 	 var moonNum = 0;
@@ -757,16 +757,16 @@ $_sys.showzhanji= function(au,ag){
 	 }
 	 if(Y.getInt(crownNum)+Y.getInt(sunNum)+Y.getInt(moonNum)+Y.getInt(starNum)>4){
 		 if(crownNum>0){
-			 tip+= hg+"<span>："+crownNum+"个</span>";
+			 tip+= hg+"<em>："+crownNum+"个</em>";
 		 }
 		 if(sunNum>0){
-			 tip+= zuan+"<span>："+sunNum+"个</span>";
+			 tip+= zuan+"<em>："+sunNum+"个</em>";
 		 }
 		 if(moonNum>0){
-			 tip+= zhuan+"<span>："+moonNum+"个</span>";
+			 tip+= zhuan+"<em>："+moonNum+"个</em>";
 		 }
 		 if(starNum>0){
-			 tip+= yb+"<span>："+starNum+"个</span>";
+			 tip+= yb+"<em>："+starNum+"个</em>";
 		 }
 		 tip+="</th>";
 		 arr[1] = tip;
