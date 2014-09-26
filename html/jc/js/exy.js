@@ -91,6 +91,24 @@
             }
         }
     });
+    Class.extend('createaddInput', function (input, fn, max){
+        this.get(input).click(function (e,Y){
+            setTimeout((function() {
+            	this.preValue=$("#bs").val(parseInt($("#bs").val())+1)
+            	$("#bs").select();
+            	fn.call(this, e, Y);
+            }).proxy(this),10);
+        });
+    });
+    Class.extend('createminusInput', function (input, fn, max){
+        this.get(input).click(function (e,Y){
+            setTimeout((function() {
+            	this.preValue=parseInt($("#bs").val())>1?$("#bs").val(parseInt($("#bs").val())-1):$("#bs").val(1)
+            	$("#bs").select();
+            	fn.call(this, e, Y);
+            }).proxy(this),10);
+        });
+    });  
    //对阵
     Class('Vs', {
         index:function (){
