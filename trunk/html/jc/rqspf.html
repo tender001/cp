@@ -245,7 +245,7 @@
 					<DIV class=dc_r_m>
 						<H2 class="h_4"></H2>
 						<P class=dc_qr>
-							投注&nbsp;<i><a href="javascript:;"></a><input class="mul" type="text" id="beishu_input" value="1" maxlength="6" /><a href="javascript:;"></a></i>倍(最高100000倍)<BR>共<SPAN id=zs class="eng red">0</SPAN>注,总金额
+							投注&nbsp;<i><a mark="minus"></a><input class="mul" type="text" id="bs" value="1" maxlength="6" /><a mark="add"></a></i>倍<BR>共<SPAN id=zs class="eng red">0</SPAN>注,总金额
 									<STRONG id=buy_money class="eng red">￥0.00</STRONG>元<BR><SPAN>预测最高奖金：<SPAN id=maxmoney class="eng red">￥0.00</SPAN></SPAN> <BR><A
 											id=seemore href="javascript:void(0);" class="eng red">详细奖金预算</A>
 						</P>
@@ -260,17 +260,25 @@
 					</DIV>
 				</DIV>
 			</DIV>
-			<FORM id=project_form method=post name=project_form action="" target='_blank'>
-				<INPUT id=jsonggtype
-					value="{'单关':40,'2串1':1,'2串3':2,'3串1':3,'3串3':56,'3串4':4,'3串6':5,'3串7':6,'4串1':7,'4串4':8,'4串5':9,'4串6':10,'4串10':11,'4串11':12,'4串14':13,'4串15':14,'5串1':15,'5串5':16,'5串6':17,'5串10':18,'5串15':19,'5串16':20,'5串20':21,'5串25':22,'5串26':23,'5串30':24,'5串31':25,'6串1':26,'6串6':27,'6串7':28,'6串15':29,'6串20':30,'6串21':31,'6串22':57,'6串35':32,'6串41':33,'6串42':34,'6串50':35,'6串56':36,'6串57':37,'6串62':38,'6串63':39,'7串1':41,'7串7':42,'7串8':43,'7串21':44,'7串35':45,'7串120':46,'7串127':47,'8串1':48,'8串8':49,'8串9':50,'8串28':51,'8串56':52,'8串70':53,'8串247':54,'8串255':55}"
-					type=hidden> <INPUT id=ggtypename value=普通过关 type=hidden name=sgtypename> <INPUT id=ggtypeid value=40 type=hidden
-						name=sgtype> <INPUT id=codes type=hidden name=codes> <INPUT id=danma type=hidden name=danma> <INPUT
-									id=totalmoney type=hidden name=totalmoney> <INPUT id=zhushu type=hidden name=zhushu> <INPUT id=beishu type=hidden
-											name=beishu> <INPUT id=gggroup value=1 type=hidden name=gggroup> <INPUT id=ishm value=0 type=hidden name=ishm>
-														<INPUT id=playtype value=spf type=hidden> <INPUT id=isgg value=2 type=hidden> <INPUT id=money_limit
-																value=2.000000,200000,, type=hidden name=money_limit> <input type="hidden" id="lotid" name="lotid" value="9" /> <input
-																	type="hidden" id="playid" name="playid" value="72" /> <input type="hidden" id="expect" name="expect" value="" /> <!--金额限制 格式:最小金额,最大金额,加注最小金额,加注最大多金额(加注的只有大乐透有-->
-			</FORM>
+			<form target="_blank" action="" name="project_form" method="post" id="project_form">
+		<input type="hidden" value="{'单关':40,'2串1':1,'2串3':2,'3串1':3,'3串3':56,'3串4':4,'3串6':5,'3串7':6,'4串1':7,'4串4':8,'4串5':9,'4串6':10,'4串10':11,'4串11':12,'4串14':13,'4串15':14,'5串1':15,'5串5':16,'5串6':17,'5串10':18,'5串15':19,'5串16':20,'5串20':21,'5串25':22,'5串26':23,'5串30':24,'5串31':25,'6串1':26,'6串6':27,'6串7':28,'6串15':29,'6串20':30,'6串21':31,'6串22':57,'6串35':32,'6串41':33,'6串42':34,'6串50':35,'6串56':36,'6串57':37,'6串62':38,'6串63':39,'7串1':41,'7串7':42,'7串8':43,'7串21':44,'7串35':45,'7串120':46,'7串127':47,'8串1':48,'8串8':49,'8串9':50,'8串28':51,'8串56':52,'8串70':53,'8串247':54,'8串255':55}" id="jsonggtype"> 
+		<input type="hidden" name="sgtypename" value="普通过关" id="ggtypename"> 
+		<input type="hidden" name="sgtype" value="40" id="ggtypeid"> 
+		<input type="hidden" name="codes" id="codes">
+		<input type="hidden" name="danma" id="danma"> 
+		<input type="hidden" name="totalmoney" id="totalmoney"> 
+		<input type="hidden" name="zhushu" id="zhushu"> 
+		<input type="hidden" name="beishu" id="beishu"> 
+		<input type="hidden" name="gggroup" value="1" id="gggroup"> 
+		<input type="hidden" name="ishm" value="0" id="ishm"> 
+		<input type="hidden" value="rqspf" id="playtype"> 
+		<input type="hidden" value="2" id="isgg">
+		<input type="hidden" value="78" id="all_matches">
+		<input type="hidden" name="money_limit" value="2.000000,200000,," id="money_limit"> 
+		<input type="hidden" value="2" name="lotid" id="lotid"> 
+		<input type="hidden" value="72" name="playid" id="playid"> 
+		<input type="hidden" value="" name="expect" id="expect"> <!--金额限制 格式:最小金额,最大金额,加注最小金额,加注最大多金额(加注的只有大乐透有-->
+	</form>
 			<FORM id=jjyh_form method=get name=jjyh_form action="" target='_blank'>
 				<INPUT id=code type=hidden name=code> <INPUT id=tmoney type=hidden name=tmoney> <INPUT id=muli type=hidden name=muli>
 							<INPUT id=pnum type=hidden name=pnum>
