@@ -1285,11 +1285,14 @@ table.cpmxtab p{line-height:25px;color:#444;font-size:12px;margin-leolor:#145fab
 .cptsp{line-height:30px;color:#333;padding-left:25px;}
 .cptsp em{color:#ff0000}
 .userp1p{font-size:14px}
-.rig_hm_main table i{display:inline-block;width:15px;height:15px;margin:5px 0 0 4px;/* background:url(../images/hm/hm2_07.gif) 0 0 no-repeat;*/}
-.rig_hm_main table i.Rating1{background-position: 0 -17px;}
-.rig_hm_main table i.Rating2{background-position: -19px -17px;}
-.rig_hm_main table i.Rating3{background-position: -38px -17px;}
-.rig_hm_main table i.Rating4{background-position: -56px -17px;}
+.rig_hm_main table .zj-pic{display: block;width: 140px;height: 16px;overflow: hidden;}
+.rig_hm_main table .zj-pic i{float: left;width:15px;height:15px;margin: 0 2px 0 0;/* background:url(../images/hm/hm2_07.gif) 0 0 no-repeat;*/}
+.rig_hm_main table .zj-pic i.Rating1{background-position: 0 -17px;}
+.rig_hm_main table .zj-pic i.Rating2{background-position: -19px -17px;}
+.rig_hm_main table .zj-pic i.Rating3{background-position: -38px -17px;}
+.rig_hm_main table .zj-pic i.Rating4{background-position: -56px -17px;}
+.rig_hm_main table .zj-pic strong{float: right;width: 2em;height: 15px;line-height: 15px;}
+.rig_hm_main table .zj-pic b{display: block;float:left;width: 140px;height: 15px;position: absolute;top: 13px;left: 0;}
 /*b.b1{ background-position:-1px -1px}
 b.b2{ background-position:-27px -1px}
 b.b3{ background-position:-54px -1px}
