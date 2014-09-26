@@ -215,6 +215,7 @@ $(document).ready(function(){
 						if(!this.isArray(r)){r=new Array(r);}
 						r.each(function(rt,o){
 							var gameid =rt.cprojid.substr(2,2);
+							
 							var cl=o%2==0?"":"odd";
 							var html = '<tr id='+rt.nid+' class = '+cl+'  >';
 							html += '<td>';
@@ -225,7 +226,7 @@ $(document).ready(function(){
 							}
 							html += '</td>';
 							html += '<th>' + $_sys.showzhanjiname(gameid,rt.cnickid,'award') + '</th>';
-							html += '<th>' + (($_sys.showzhanji(rt.aunum,rt.agnum)==''?'&nbsp;':$_sys.showzhanjii(gameid,rt.cnickid,rt.aunum,rt.agnum)+'&nbsp;&nbsp;')) + '</th>';
+							html += '<th class="tdmark">' + (($_sys.showzhanji(rt.aunum,rt.agnum)==''?'':$_sys.showzhanjii(gameid,rt.cnickid,rt.aunum,rt.agnum))) + '</th>';
 							
 							html += '<td>' + $_sys.getlotname(gameid).split("-")[0] + '</td>';
 							if(rt.cnickid=='******'){
@@ -256,6 +257,7 @@ $(document).ready(function(){
 								html += '<td><a href="' + $_sys.getlotdir(gameid)+$_sys.url.viewpath+'?lotid='+gameid+'&projid='+rt.cprojid + '" target="_blank">详情</a></td>';
 							}html += '</tr>';
 							$(html).appendTo($("#table_project_list"));
+							
 						});
 //						for(var i = 1; i <= _pagei.pagesize-r.length;i++){
 //							$("#table_project_list").append("<tr id='"+(r.length + i)+"'><td colspan='9' align='center' >&nbsp;</td></tr>");
@@ -321,6 +323,7 @@ $(document).ready(function(){
 						
 					  
 					    $("#govalue").val(pn);
+					    
 					}else{
 						$("div.rig_hm_main").css('padding-bottom','0');
 						$("div.paginachange").hide();
@@ -347,6 +350,7 @@ $(document).ready(function(){
 								r.each(function(rt,o){
 									var gameid = rt.gid;
 									var idx = (o+1) + (Class.C("pn")-1)*Class.C("ps");
+									
 									var cl=o%2==0?"":"odd";
 									var html = '<tr id='+idx+' class = '+cl+'>';
 									html += '<td>';
@@ -357,7 +361,7 @@ $(document).ready(function(){
 									}
 									html += '</td>';
 									html += '<th>' + $_sys.showzhanjiname(gameid,rt.nickid,'award') + '</th>';
-									html += '<th>' + (($_sys.showzhanji(rt.aunum,rt.agnum)==''?'&nbsp;':$_sys.showzhanjii(gameid,rt.nickid,rt.aunum,rt.agnum)+'&nbsp;&nbsp;')) + '</th>';
+									html += '<th class="tdmark">' + (($_sys.showzhanji(rt.aunum,rt.agnum)==''?'':$_sys.showzhanjii(gameid,rt.nickid,rt.aunum,rt.agnum))) + '</th>';
 									
 									html += '<td>' + $_sys.getlotname(gameid).split("-")[0] + '</td>';
 									if(rt.nickid=='******'){
@@ -388,6 +392,11 @@ $(document).ready(function(){
 										html += '<td><a href="' + $_sys.getlotdir(gameid)+$_sys.url.viewpath+'?lotid='+gameid+'&projid='+rt.hid + '" target="_blank">详情</a></td>';
 									}html += '</tr>';
 									$(html).appendTo($("#table_project_list"));
+									$(".tdmark").hover(function(){
+										$("b.lv_boxs").show();
+									},function(){
+										$("b.lv_boxs").hide();
+									})
 								});
 								
 								var maxshow=5;
@@ -489,6 +498,7 @@ $(document).ready(function(){
 						r.each(function(rt,o){
 							var gameid = rt.gid;
 							var idx = (o+1) + (Class.C("pn")-1)*Class.C("ps");
+							
 							var cl=o%2==0?"":"odd";
 							var html = '<tr id='+idx+' class = '+cl+'>';
 							html += '<td>';
@@ -499,7 +509,7 @@ $(document).ready(function(){
 							}
 							html += '</td>';
 							html += '<th>' + $_sys.showzhanjiname(gameid,rt.nickid,'award') + '</th>';
-							html += '<th>' + (($_sys.showzhanji(rt.aunum,rt.agnum)==''?'&nbsp;':$_sys.showzhanjii(gameid,rt.nickid,rt.aunum,rt.agnum)+'&nbsp;&nbsp;')) + '</th>';
+							html += '<th class="tdmark">' + (($_sys.showzhanji(rt.aunum,rt.agnum)==''?'':$_sys.showzhanjii(gameid,rt.nickid,rt.aunum,rt.agnum))) + '</th>';
 							
 							html += '<td>' + $_sys.getlotname(gameid).split("-")[0] + '</td>';
 							if(rt.nickid=='******'){
@@ -530,6 +540,7 @@ $(document).ready(function(){
 								html += '<td><a href="' + $_sys.getlotdir(gameid)+$_sys.url.viewpath+'?lotid='+gameid+'&projid='+rt.hid + '" target="_blank">详情</a></td>';
 							}html += '</tr>';
 							$(html).appendTo($("#table_project_list"));
+								
 						});
 						
 						var maxshow=5;
@@ -611,6 +622,7 @@ $(document).ready(function(){
 						r.each(function(rt,o){
 							var gameid = rt.gid;
 							var idx = (o+1) + (Class.C("pn")-1)*Class.C("ps");
+							
 							var cl=o%2==0?"":"odd";
 							var html = '<tr id = '+idx+' class='+cl+'>';
 							html += '<td>';
@@ -621,7 +633,7 @@ $(document).ready(function(){
 							}
 							html += '</td>';
 							html += '<th>' + $_sys.showzhanjiname(gameid,rt.nickid,'award') + '</th>';
-							html += '<th>' + (($_sys.showzhanji(rt.aunum,rt.agnum)==''?'&nbsp;':$_sys.showzhanjii(gameid,rt.nickid,rt.aunum,rt.agnum)+'&nbsp;&nbsp;')) + '</th>';
+							html += '<th class="tdmark">' + (($_sys.showzhanji(rt.aunum,rt.agnum)==''?'':$_sys.showzhanjii(gameid,rt.nickid,rt.aunum,rt.agnum))) + '</th>';
 							
 							html += '<td>' + $_sys.getlotname(gameid).split("-")[0] + '</td>';
 							html += '<td>' + parseFloat(rt.money).rmb(true) + '</td>';
@@ -648,6 +660,16 @@ $(document).ready(function(){
 								html += '<td><a href="' + $_sys.getlotdir(gameid)+$_sys.url.viewpath+'?lotid='+gameid+'&projid='+rt.hid + '" target="_blank">详情</a></td>';
 							}html += '</tr>';
 							$(html).appendTo($("#table_project_list"));
+							$(".zj-pic").each(function(){
+								if($(this).find("i").length<=6){
+									$(this).find("strong").hide();
+								}
+							})
+						$("th.tdmark").hover(function(){
+							$(this).find("b.lv_boxs").show();
+						},function(){
+							$(this).find("b.lv_boxs").hide();
+						})
 						});
 						
 						var maxshow=5;
@@ -907,8 +929,9 @@ $(document).ready(function(){
 				
 			}
 			
-			
 			loadGameProj();
+			
+			
 		}
 	};
 	initPage();
