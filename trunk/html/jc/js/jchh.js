@@ -1368,9 +1368,17 @@ Class('Buy', {
  			}
  		});
  		Yobj.createIntInput('#bs', function (e){//修改倍数
-            _self.bs = parseInt(this.value);
+	            _self.bs = parseInt(this.value);
+				   _self.bschange();
+	      }, Class.C('Max-BeiShu'));
+ 		Yobj.createaddInput('a[mark=add]', function (e){//加倍数
+            _self.bs =$("#bs").val()
 			   _self.bschange();
-      }, Class.C('Max-BeiShu'));
+ 		}, Class.C('Max-BeiShu'));
+ 		Yobj.createminusInput('a[mark=minus]', function (e){//减倍数
+    		 _self.bs =$("#bs").val()
+			   _self.bschange();
+		}, Class.C('Max-BeiShu'));
  		this.get('#jjyh').click(function (){
  			_self.ishm = this.id == 'jjyh' ? 1 : 0;
  			if (_self.ishm){

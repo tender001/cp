@@ -114,6 +114,24 @@
             }
         }
     });
+    Class.extend('createaddInput', function (input, fn, max){
+        this.get(input).click(function (e,Y){
+            setTimeout((function() {
+            	this.preValue=$("#bs").val(parseInt($("#bs").val())+1)
+            	$("#bs").select();
+            	fn.call(this, e, Y);
+            }).proxy(this),10);
+        });
+    });
+    Class.extend('createminusInput', function (input, fn, max){
+        this.get(input).click(function (e,Y){
+            setTimeout((function() {
+            	this.preValue=parseInt($("#bs").val())>1?$("#bs").val(parseInt($("#bs").val())-1):$("#bs").val(1)
+            	$("#bs").select();
+            	fn.call(this, e, Y);
+            }).proxy(this),10);
+        });
+    });    	    	
    //对阵
     Class('Vs', {
         index:function (){
@@ -1034,6 +1052,12 @@
             	
             	Y._upView(Y.C('choose_data'));
             }, 100000);
+            this.createaddInput('a[mark=add]', function (e, Y){//加倍数
+        		Y._upView(Y.C('choose_data'));
+            }, 100000);
+        	this.createminusInput('a[mark=minus]', function (e, Y){//减倍数
+        	    Y._upView(Y.C('choose_data'));
+        	}, 100000);
             this.onMsg('msg_choose_update', function (data){//选择场次或者子项变化, 可能化引起过关方式自动切换
                 this._upView(data)
             });
@@ -1248,12 +1272,16 @@
                 this.get('#maxmoney').html('计算中...')
             }
             this.delayGetPrixTimer = setTimeout((function() {
-                var zs = this._getZs(data),
-                    prix = this._getPrix(data, hand);
+                var zs = this._getZs(data);
+                  
                 this.get('#zs').html(zs);
                 this.get('#buy_money').html(this.getInt(zs*2*bs).rmb());
-                this.get('#maxmoney').html(prix === undefined ? '<span onclick="Yobj.postMsg(\'msg_show_prix_hand\', true)" style="cursor:pointer;">点击查看</span>' : (prix=="NaN"?"点击查看明细":parseFloat(prix*bs).rmb()));                
-            }).proxy(this),100)
+                if(zs>0){
+                	var prix = this._getPrix(data, hand);
+                	this.get('#maxmoney').html(prix === undefined ? '<span onclick="Yobj.postMsg(\'msg_show_prix_hand\', true)" style="cursor:pointer;">点击查看</span>' : (prix=="NaN"?"点击查看明细":parseFloat(prix*bs).rmb()));                
+                }
+               
+            }).proxy(this),100);
         },
         _getZs: function (data){//计算注数
             if (this.C('_isgg')) {//过关
