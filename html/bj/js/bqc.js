@@ -1125,6 +1125,8 @@ Class( 'TouzhuResult', {
 		var Y = this;
 		
 		this.beishuInput = this.need(config.beishuInput);
+		this.addbeishu = this.need(config.addbeishu);
+		this.minusbeishu = this.need(config.minusbeishu);
 		this.matchNumTag = this.need(config.matchNum);
 		this.zhushuTag   = this.need(config.zhushu);
 		this.totalSumTag = this.need(config.totalSum);
@@ -1141,7 +1143,19 @@ Class( 'TouzhuResult', {
 				Y.updateTouzhuResult();
 			}
 		} );
-		
+		this.addbeishu.click(function (e,Y){
+            setTimeout((function() {
+            	Y.beishuInput.val(parseInt(Y.beishuInput.val())+1)
+            	
+            	Y.updateTouzhuResult();
+            }).proxy(this),10);
+        });
+		this.minusbeishu.click(function (e,Y){
+            setTimeout((function() {
+            	Y.beishuInput.val()>1?Y.beishuInput.val(parseInt(Y.beishuInput.val())-1):Y.beishuInput.val(1)
+    			Y.updateTouzhuResult();
+            }).proxy(this),10);
+        });
 		this.onMsg('msg_guoguan_info_changed', function() {
 			this.updateTouzhuResult();
 		} );
@@ -1870,6 +1884,8 @@ Class( {
 
 		this.lib.TouzhuResult( {
 			beishuInput : '#beishu_input',
+			addbeishu   : 'a[mark=add]',
+			minusbeishu : 'a[mark=minus]',
 			matchNum    : '#match_num',
 			zhushu      : '#zhushu',
 			totalSum    : '#total_sum'
