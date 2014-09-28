@@ -620,16 +620,18 @@ $_sys.showzhanjii = function (lotid,uid,au,ag,func){
 	if (typeof(func)=='undefined'){
 		func='';
 	}
-	//onclick="Y.openUrl(\'/game/zhanji.html?lotid='+lotid+'&uid='+uid+'&func='+func+'\',807,575)"
-	return uid=='******'?$_sys.showzhanji(au,ag):('<a class="zj-pic" href="javascript:void(0);" >'+$_sys.showzhanji(au,ag));
+	//
+	return uid=='******'?'':('<a class="zj-pic" href="javascript:void(0);" onclick="Y.openUrl(\'/game/zhanji.html?lotid='+lotid+'&uid='+uid+'&func='+func+'\',807,575)">'+$_sys.showzhanji(au,ag));
 };
 
 $_sys.showzhanjiname = function (lotid,uid,func){
 	if (typeof(func)=='undefined'){
 		func='';
 	}
-	if(uid == '******'){return '<a href="javascript:void(0);"><b>' + uid + '</b></a>';}
-	return '<a href="javascript:void(0);" onclick="Y.openUrl(\'/game/zhanji.html?lotid='+lotid+'&uid='+uid+'&func='+func+'\',807,575)">'+uid+'</a>';
+	if(uid == '******'){
+			return '<a href="javascript:void(0);"><b>' + uid + '</b></a>';
+			}
+		return '<a href="javascript:void(0);" onclick="Y.openUrl(\'/game/zhanji.html?lotid='+lotid+'&uid='+uid+'&func='+func+'\',807,575)">'+uid+'</a>';
 };
 $_sys.showlishizhanji = function (lotid,uid,func){
 	if (typeof(func)=='undefined'){
