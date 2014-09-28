@@ -225,7 +225,12 @@ $(document).ready(function(){
 								html +=  parseInt(rt.nid)+1;
 							}
 							html += '</td>';
-							html += '<th>' + $_sys.showzhanjiname(gameid,rt.cnickid,'award') + '</th>';
+//							html += '<th>' + $_sys.showzhanjiname(gameid,rt.cnickid,'award') + '</th>';
+							if(rt.cnickid=='******'){
+								html += '<th><a >******</a></th>';
+							}else{
+								html += '<th>' + $_sys.showzhanjiname(gameid,rt.cnickid,'award') + '</th>';
+							}
 							html += '<th class="tdmark">' + (($_sys.showzhanji(rt.aunum ,rt.agnum)==''?'':$_sys.showzhanjii(gameid,rt.cnickid,rt.aunum,rt.agnum))) + '</th>';
 							
 							html += '<td>' + $_sys.getlotname(gameid).split("-")[0] + '</td>';
@@ -501,6 +506,7 @@ $(document).ready(function(){
 						if(!this.isArray(r)){r=new Array(r);}
 						r.each(function(rt,o){
 							var gameid = rt.gid;
+							//var nickid = rt.nickid;
 							var idx = (o+1) + (Class.C("pn")-1)*Class.C("ps");
 							
 							var cl=o%2==0?"":"odd";
@@ -512,7 +518,12 @@ $(document).ready(function(){
 								html += idx;
 							}
 							html += '</td>';
-							html += '<th>' + $_sys.showzhanjiname(gameid,rt.nickid,'award') + '</th>';
+							if(rt.nickid=='******'){
+								html += '<th>******</th>';
+							}else{
+								html += '<th>' + $_sys.showzhanjiname(gameid,rt.nickid,'award') + '</th>';
+							}
+							
 							html += '<th class="tdmark">' + (($_sys.showzhanji(rt.aunum,rt.agnum)==''?'':$_sys.showzhanjii(gameid,rt.nickid,rt.aunum,rt.agnum))) + '</th>';
 							
 							html += '<td>' + $_sys.getlotname(gameid).split("-")[0] + '</td>';
