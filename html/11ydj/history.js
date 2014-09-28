@@ -1,3 +1,4 @@
+Class.C('lot_id',56);
 Class({
 	ready : true,
 	use   : 'mask',
@@ -6,7 +7,12 @@ Class({
 		
 		this.onMsg('msg_get_expect_suc', function (expect){
 		    this.lib.Loadduizhen(expect);
-        });		
+        });	
+		
+		this.lib.CountDownGp({
+            stop:Y.C('lot_id'),
+            lot:Y.C('lot_id')
+        });
 	},
 	
     init: function (){
@@ -70,17 +76,6 @@ Class({
 /*------------------------------------------------------------------------------*/
 Class('Loadduizhen',{
 	index:function(expect){
-		this.listdata=[];
-		this.edata;
-		this.onMsg('opencodelist_getlistdata', function() {
-			this.getlistdata(this.postlist);
-		});
-		this.onMsg('update_userinfodata', function() {
-			this.getlistdata(this.postlist);
-		});
-		this.onMsg('show_opencodelist', function(n) {
-			this.showlist(n);
-		});
 		this.LoadDuiZhen(expect);
 	},
 	LoadDuiZhen : function(expect,lotid) {

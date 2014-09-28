@@ -1,3 +1,4 @@
+Class.C('lot_id',54);
 Class({
 	ready : true,
 	use   : 'mask',
@@ -7,7 +8,12 @@ Class({
 		this.onMsg('msg_get_expect_suc', function (expect){
 		    this.lib.Loadduizhen(expect);
 		   
-        });		
+        });	
+
+		this.lib.CountDownGp({
+            stop:Y.C('lot_id'),
+            lot:Y.C('lot_id')
+        });
 	},
 	
     init: function (){
@@ -65,31 +71,6 @@ Class({
 			}
 		});
 		
-    },
-    showcastlist: function(){// 购买金矿状态
-        this.ajax({
-            url:this.castlisturl,
-            retry:1,
-            end:function (data, i){
-                this.qXml('//row', data.xml, function (o, i){
-                	var type = o.items.type;
-                	var pid = o.items.pid;
-                	var projid = o.items.projid;
-                	var codes = o.items.codes;
-                	
-                	if($("#curExpectSpan").html() == pid.substr(2)){
-               		 if(type==1){
-               			 arr1[n] = projid;
-               			 n++;
-                    	 }else if(type==2){
-                    		 arr2[m] = projid;
-                    		 m++;
-                    	 }
-                	}
-                }); 
-                this.showcastinfo();
-            }
-        });
     },
     
 });
