@@ -40,7 +40,7 @@ Class({
 						html += "<OPTION value=" + expectlist[i][0] + " >" + expectlist[i][0] + "</OPTION>";
 					}
 
-					$("#expect_select_div").html('<select id="expect_select">'+html+'</select>');	
+					$("#expect_select_div").html('选择日期：<select id="expect_select">'+html+'</select>');	
 					
 					if ($("#expect").val()==''){
 						$("#expect").attr("value",nowexpect);
