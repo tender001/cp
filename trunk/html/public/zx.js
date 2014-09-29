@@ -36,19 +36,23 @@
     	        			u = T.scrollTop();
     	        			Z = Math.min(0, M - (L + u));
     	        			
-    	        			if (B == Z) {
-    	        				V.css({left: "auto", top: "auto",width: F, position: "static"});
-    	        			} else {
-    	        				if(isIE6){
-    	        					V.css({left: "auto",top: Z+$(window).scrollTop(), width: F,position: "absolute"});
-    	        				}else{
-    	        				V.css({left: "auto",top: Z, width: F, position: "fixed"});
-    	        				};
+    	        			
+    	        			if(H.outerHeight()<V.eq(0).outerHeight()){
+//    	        				 Y.get("#right_area").setStyle('z-index: 1; top:'+Z+'px;  left: auto;position: static;');
+    	        				 Y.get("#right_area").setStyle('z-index: 1; top:0;  left: auto;position: static;');
+    	        			}else{
+    	        				if (B == Z) {
+        	        				V.css({left: "auto", top: "auto",width: F, position: "static"});
+        	        			} else {
+        	        				if(isIE6){
+        	        					V.css({left: "auto",top: Z+$(window).scrollTop(), width: F,position: "absolute"});
+        	        				}else{
+        	        				V.css({left: "auto",top: Z, width: F, position: "fixed"});
+        	        				};
+        	        			}
+    	        				Y.get("#right_area").setStyle('z-index: 1;');
     	        			}
-    	        			/*if(Z < 0){
-    	        				 Y.get("#right_area").setStyle('z-index: 1; top:"auto";  left: auto;position: static;');
-    	        			}*/
-    	        			Y.get("#right_area").setStyle('z-index: 1;');
+    	        			
     	        		};
     	            	
     	             }else{//停止浮动对齐
