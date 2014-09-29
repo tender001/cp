@@ -937,6 +937,7 @@ span.suc_reg a.a3{color:#145fab;text-decoration:underline;margin-left:1px}
 .qg_other span{float:left;height:70px;padding: 0 30px;font-size: 22px;color: #333;background-color: #f7ebdd;}
 .qg_other em{float: left;width: 7px;height: 70px;background: url("../images/bg/qb_bg.jpg") repeat-y;}
 .qg_other a{float: left;font: 14px/70px "\5b8b\4f53";color: #135faa;margin-left: 36px;_display: inline;}
+.qg_other a:hover{color: #e62e04;}
 .kj_xq select{float:right;color:#333;font-size:14px;border:1px solid #ccc;margin-top:10px}
 .rkj_reson{border:1px solid #ccc;border-bottom:none; background-color:#fff;margin-botttom:10px}
 .rkj_reson h4{height:38px;line-height:38px;font-weight:100; background-color:#e9e9e9;border-bottom:1px solid #ccc}
