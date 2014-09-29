@@ -1,10 +1,10 @@
 $(function() {  
 	window.onload=function(){
-		var Y;
-		Y = this;
-		alertInfo=$("#alertInfo").html('');
-		$("#alertInfo").html('未绑定手机，不能领取<br /><em>谢谢您的支持！</em>');
-		Y.alert("本活动已结束，敬请关注本网站其他活动");
+//		var Y;
+//		Y = this;
+//		alertInfo=$("#alertInfo").html('');
+//		$("#alertInfo").html('未绑定手机，不能领取<br /><em>谢谢您的支持！</em>');
+//		Y.alert("本活动已结束，敬请关注本网站其他活动");
 	};
 $("#chongzhi").click(function(){
      	
