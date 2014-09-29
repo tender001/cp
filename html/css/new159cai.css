@@ -2007,10 +2007,9 @@ a.sz_cmt{background: url(../images/cai888/nwx5_112.jpg);width:137px;height:33px}
 .w_con .ncathgm p{color: #ccc;font-size: 12px;font-weight: 400;}
 .w_con .ncathgm p a{color: #ccc;}
 .w_con .nwx5kj h1{border-bottom: 2px solid #f60;}
-.w_con .nwx5kj h1 span{padding: 0 12px;cursor: pointer;}
+.w_con .nwx5kj h1 span,.w_con .nwx5kj h1 i{padding: 0 12px;cursor: pointer;}
 .w_con .nwx5kj h1 span.cur{background-color: #f60;color: #fff;}
-.w_con .nwx5kj h1 span a{float: none;background: none;margin: 0;padding: 0;color: #444;font-size: inherit;}
-.w_con .nwx5kj h1 span.cur a{color: #fff;}
+.w_con .nwx5kj h1 i a{float: none;background: none;margin: 0;padding: 0;color: #444;font-size: inherit;}
 .w_con .ncathleft p em{color: #efd41f;}
 /*近期开奖*/
 .w_con .nxtable tr th{background: #057e57;color: #fff;height: 32px;}
