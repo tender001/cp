@@ -540,6 +540,14 @@ Class( 'TableSelector', {
 				}
 			}, this );
 		} );
+		this.leagueSelector.live('#lslist input', 'click', function(e, ns) {
+			Y.vsTrs.each( function(item) {
+				if (Y.vsInfo[item.index].mtype == this.value && 
+				        (!item.disabled || Y.stopSale || Y.ckOutOfDate.prop('checked'))) {
+					this.checked ? item.showLine() : item.hideLine();
+				}
+			}, this );
+		} );
 		//显示五大联赛
 		this.wdls.click(function(){
 			if($(this).attr("checked")){
@@ -1467,7 +1475,7 @@ Class('LoadExpect',{
 		'</tr>'+
 		//'<colgroup><col width="7%"><col width="10%"><col width="8%"><col width="20%"><col width="8%"><col width="20%"><col width="4%"><col width="15%"><col width="8%"><col width="2%"></colgroup>'+
 		'<tbody id="{$enddate}" onselectstart="return false">',//1
-		'<tr class="{$classname}" style="display:none" value="{index:\'{$mid}\',leagueName:\'{$mname}\',homeTeam:\'{$hn}\',guestTeam:\'{$gn}\',endTime:\'{$et}\',rangqiuNum:\'{$close}\',scheduleDate:\'{$enddate}\',disabled:\'yes\',homeTeamRank:2,guestTeamRank:7,bgColor:\'{$bgColor}\'}">'+
+		'<tr class="{$classname}" style="display:none" value="{index:\'{$mid}\',leagueName:\'{$mname}\',mtype:\'{$mtype}\',homeTeam:\'{$hn}\',guestTeam:\'{$gn}\',endTime:\'{$et}\',rangqiuNum:\'{$close}\',scheduleDate:\'{$enddate}\',disabled:\'yes\',homeTeamRank:2,guestTeamRank:7,bgColor:\'{$bgColor}\'}">'+
 		'<td style="">'+
 		'<input type="checkbox" checked="checked" class="chbox" style="cursor:default" /><span class="chnum">{$mid}</span>'+
 		'</td>'+
@@ -1491,7 +1499,7 @@ Class('LoadExpect',{
 //		'{$shuju}'+
 //		'</td>'+
 		'</tr>',//2 已经过期
-		'<tr onselectstart="return false" class="{$classname}" style="display:" value="{index:\'{$mid}\',leagueName:\'{$mname}\',homeTeam:\'{$hn}\',guestTeam:\'{$gn}\',endTime:\'{$et}\',rangqiuNum:\'{$close}\',scheduleDate:\'{$enddate}\',disabled:\'no\',homeTeamRank:8,guestTeamRank:11,bgColor:\'{$bgColor}\'}">'+
+		'<tr onselectstart="return false" class="{$classname}" style="display:" value="{index:\'{$mid}\',mtype:\'{$mtype}\',leagueName:\'{$mname}\',homeTeam:\'{$hn}\',guestTeam:\'{$gn}\',endTime:\'{$et}\',rangqiuNum:\'{$close}\',scheduleDate:\'{$enddate}\',disabled:\'no\',homeTeamRank:8,guestTeamRank:11,bgColor:\'{$bgColor}\'}">'+
 		'<td style="">'+
 		'<input type="checkbox" checked="checked" class="chbox" style="cursor:default" /><span class="chnum">{$mid}</span>'+
 		'</td>'+
@@ -1531,6 +1539,7 @@ Class('LoadExpect',{
 		var dateweek =[];
 		var rangqiu_matches=[];
 		var lgname=[];
+		var lsname=[];
 		var obj = eval("(" + data.text + ")");
 		var code = obj.match.code;
 		var desc = obj.match.desc;
@@ -1613,6 +1622,7 @@ Class('LoadExpect',{
 				}
 //				rangqiu_matches.push(row.close);
 				lgname.push(row.mname);
+				lsname.push(row.mtype);
 				dateweek.push('星期'+wk[Y.getDate(row.enddate).getDay()]+"_"+row.enddate);
 	
 				html[html.length] = tableTpl[3].tpl(row);
@@ -1634,37 +1644,7 @@ Class('LoadExpect',{
 		}
 		$("#vsTable").show();	
 		
-		//生成让球列表
-//   		var arrrangqiu_matches = [];
-//   		var rangqiu_matcheshtml = '';
-//   		var arrrangqiu_matchesnum = {};
-//   		rangqiu_matches.each( function(item) {
-//   			var rangqiunum = item;
-//   				if ( $_sys.getSub(arrrangqiu_matches,rangqiunum) == -1 ) {
-//   					arrrangqiu_matches.push(rangqiunum);
-//   					var rqname='';
-//   					if(parseInt(rangqiunum)==0){
-//   						rqname='非让球';
-//   					}else if(parseInt(rangqiunum)>0){
-//   						rqname='客让'+rangqiunum+'球';
-//   					}else if(parseInt(rangqiunum)<0){
-//   						rqname='主让'+Math.abs(rangqiunum)+'球';
-//   					}
-////   					<li><label for="rd主让1球"><input type="checkbox"  id="rd主让1球" class="radio"><span>主让1球</span>[<i>56</i>]</label></li>
-//   					rangqiu_matcheshtml += '<li><label for='+rqname+'><input class="radio" type="checkbox" value="'+rangqiunum+'" checked="checked"/><span>'+rqname+'</span>[<i id='+rangqiunum + '_num></i>]</label></li>';
-//   				}
-//   				if (typeof arrrangqiu_matchesnum[rangqiunum] == 'undefined') {
-//   					arrrangqiu_matchesnum[rangqiunum] = 1;
-//   				} else {
-//   					arrrangqiu_matchesnum[rangqiunum]++;
-//   				}
-//   				
-//   		} );
-//   		$("#rqlist").html(rangqiu_matcheshtml);
-//   		for (var rangqiunum in arrrangqiu_matchesnum) {
-//   			$('#'+rangqiunum+'_num').html(arrrangqiu_matchesnum[rangqiunum]);
-//   		}
-   		
+
    		
    		//生成联赛列表
    		var arr_league = [];
@@ -1687,7 +1667,27 @@ Class('LoadExpect',{
    			league_list_html = league_list_html.replace(league_name + '_num', match_num_of_league[league_name]);
    		}
    		$("#lglist").html(league_list_html);
-   		
+   		//生成赛事列表
+   		var arr_lsname = [];
+   		var lsname_list_html = '';
+   		var match_num_of_lsname = {};
+   		lsname.each( function(item) {
+   			var lsname_name = item;
+   				if ($_sys.getSub(arr_lsname,lsname_name) == -1 ) {
+   					arr_lsname.push(lsname_name);
+   					lsname_list_html += '<li><label for="' + lsname_name + '"><input name="ls" type="checkbox" value="' + lsname_name + '" checked="checked"/><span>' + lsname_name + '</span>[<i>'+lsname_name +'_num</i>]</label></li>';
+  				}
+   				if (typeof match_num_of_lsname[lsname_name] == 'undefined') {
+   					match_num_of_lsname[lsname_name] = 1;
+   				} else {
+   					match_num_of_lsname[lsname_name]++;
+   				}
+   				
+   		} );
+   		for (var lsname_name in match_num_of_lsname) {
+   			lsname_list_html = lsname_list_html.replace(lsname_name + '_num', match_num_of_lsname[lsname_name]);
+   		}
+   		$("#lslist").html(lsname_list_html);
    		//生成星期列表
    		var newday=Y.getDate(data.date).format('YY-MM-DD');
    		var arr_week = [];
