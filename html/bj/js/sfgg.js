@@ -1466,7 +1466,7 @@ Class('LoadExpect',{
 	sfgg:function(data){
 		 var html = [];
 
-		 var tableTpl=['<colgroup><col width="50"><col width="70"><col width="111"><col width="64"><col width="175"><col width="62"><col width="175"><col></colgroup>',//0
+		 var tableTpl=['<colgroup><col width="50"><col width="70"><col width="111"><col width="80"><col width="175"><col width="62"><col width="175"><col></colgroup>',//0
 		'<tr id="switch_for_{$enddate}">'+
 		'<td colspan="12" class="dc_hstd" style="height:32px"><div class=dc_hs style="text-align: left; padding-left: 10px;border-bottom:0px;">'+
 		'<strong>{$enddate} {$weekday} (10：00--次日10：00)</strong>&nbsp;'+
@@ -1548,19 +1548,22 @@ Class('LoadExpect',{
 			if(row.ms == -1) return;
 			row.classname=i%2==0?"vs_lines odd":"vs_lines";
 			row.enddate=(((Y.getDate(row.bt).getHours()<10) || (Y.getDate(row.bt).getHours()==10 && Y.getDate(row.bt).getMinutes()==0))?(Y.getDate(Date.parse(Y.getDate(row.bt))-1000*60*60*24).format('YY-MM-DD')):Y.getDate(row.bt).format('YY-MM-DD'));
-			if(mathdate[mathdate.length-1]>row.enddate) return;
+//			if(mathdate[mathdate.length-1]>row.enddate) return;
 			if (mathdate.indexOf(row.enddate)<0){
 				mathdate[mathdate.length]=row.enddate;
 				row.weekday='周'+wk[Y.getDate(row.enddate).getDay()];
 				html[html.length] = mathdate.length>1?(tableTpl[4]+tableTpl[1].tpl(row)):tableTpl[1].tpl(row);   
 			};
+			
+			
+			
 			row.index=row.mid;
 			row.mtype=row.mtype;
 			row.b3=row.b3!=''?parseFloat(row.b3).rmb(false,2):'--';
 		
 			row.b0=row.b0!=''?parseFloat(row.b0).rmb(false,2):'--';		
-			row.short_bt=Y.getDate(row.bt).format('hh:mm');
-			row.short_et=Y.getDate(row.et).format('hh:mm');
+			row.short_bt=Y.getDate(row.bt).format('MM-DD hh:mm');
+			row.short_et=Y.getDate(row.et).format('MM-DD hh:mm');
 			
 //			row.bgColor=odds_issuc?(odds_data[i].cl):'#009900';
 			
@@ -1614,6 +1617,7 @@ Class('LoadExpect',{
 				}
 				
 				html[html.length] = tableTpl[2].tpl(row);
+				
 			}else{//未过期的场次
 				if (row.close!=0){
 					rangqiu_matches++;
