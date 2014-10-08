@@ -138,6 +138,7 @@ div.center .body{width:95%;height:320px;}
 .hm table{width: 100%;}
 .hm table th{height: 33px;color: #333;background-color: #e8e8e8;font-weight: 400;text-align: left;border-bottom: 1px solid #ddd;}
 .hm table td{height: 34px;text-align: left;border-bottom: 1px solid #ddd;color: #3c3c3c;}
+.hm table td.tdmark{position: relative;}
 .hm table tr.odd td{background-color: #f8f8f8}
 .hm table tr:hover td{background-color: #fffee6;}
 .hm table td span{color: #25a;}
