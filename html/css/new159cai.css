@@ -466,6 +466,7 @@ p.fotpp{line-height:24px;text-align:center;padding:16px 0;color:#666;}
 .breadcrumb p font{color:#f60}
 .news_left{width:695px;border:1px solid #ccc;padding:10px 16px}
 .news_left p{padding:0 5px 15px;line-height:24px}
+.news_left p a:hover{color: rgb(255,0,0);}
 .newsr{width:260px;float:right;}
 .news_left h2{border:none; background:none;border-bottom:1px solid #ddd;height:30px;padding:0;width:440px}
 .news_left h2 a{float:left;height:30px;padding:0 4px;color:#f60;font-weight:bold;border-bottom:1px solid #f60;}
