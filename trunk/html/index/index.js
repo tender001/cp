@@ -148,10 +148,10 @@ Class(
 							html += '<td>' + parseFloat(rt.money).rmb(true) + '</td>';
 							html += '<td><p>' + rt.jindu + '%';
 							if(rt.pnum > 0){
-								html += '<i>(保' + Math.ceil(rt.pnum*100/rt.nums) + '%)</i>';
+								html += '<em>(保' + Math.ceil(rt.pnum*100/rt.nums) + '%)</em>';
 							}
 							html += '</p> <p class="x_jdt"><em style="width: ' + rt.jindu + '%"></em></p></td>';
-							html += '<td style="text-align:right"><i>' + rt.lnum + '元</i>&nbsp;&nbsp;</td>';
+							html += '<td style="text-align:right"><em>' + rt.lnum + '元</em>&nbsp;&nbsp;</td>';
 							if(rt.lnum == 0 || rt.istate != 1){
 								if(rt.istate > 2){
 									html += '<td style="text-align:center">已撤单</td>';
@@ -221,10 +221,10 @@ Class(
 							html += '<td>' + parseFloat(rt.money).rmb(true) + '</td>';
 							html += '<td><p>' + rt.jindu + '%';
 							if(rt.pnum > 0){
-								html += '<i>(保' + (rt.pnum*100/rt.nums).toFixed(0) + '%)</i>';
+								html += '<em>(保' + (rt.pnum*100/rt.nums).toFixed(0) + '%)</em>';
 							}
 							html += '</p> <p class="x_jdt"><em style="width: ' + rt.jindu + '%"></em></p></td>';
-							html += '<td style="text-align:right"><i>' + rt.lnum + '元</i>&nbsp;&nbsp;</td>';
+							html += '<td style="text-align:right"><em>' + rt.lnum + '元</em>&nbsp;&nbsp;</td>';
 							if(rt.lnum == 0 || rt.state != 1){
 								if(rt.state > 2){
 									html += '<td style="text-align:center">已撤单</td>';
