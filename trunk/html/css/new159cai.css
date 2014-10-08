@@ -28,7 +28,7 @@ img{vertical-align:top;}
 .bor-container{border: 1px solid #ccc;border-top: 0;}
 .top dl dt s,.top dl.ali dd a,.top dl dd li s,.m_l li span s,.m_l1 li span s,.tit,.m_mid .tab .title,.m_mid .tab .bod b s,.m_mid .tab .bod b em,.m_mid .tab .bod b i,.m_mid .tab .bod b strong,.mob_buy .body dd a,.today .bod li p a.fr,.center .body li p span em,.m_r .tab .title{background: url(../images/bg/index_bg0.png);_background-image: url(../images/bg/index_bg0-ie6.png);}
 .onlkj p b,.newsrc p b{background: url("../images/bg/ball-gai.jpg") no-repeat;}
-.hm_help .bod li s,.hm_right_t s,.hm-tit a,.jp a i{background: url("../images/bg/buy-me.png");}
+.hm_help .bod li s,.hm_right_t s,.hm-tit a,.jp i{background: url("../images/bg/buy-me.png");}
 .top{height: 32px; line-height: 32px; background-color: #f7f7f7; border-top: 1px solid #e8ecef; border-bottom: 1px solid #ddd;overflow:visible;}
 .top .fl{width: 360px;_width: 362px;overflow:visible;}
 .ie_fl{float: left;}
@@ -1292,12 +1292,12 @@ table.cpmxtab p{line-height:25px;color:#444;font-size:12px;margin-leolor:#145fab
 .cptsp em{color:#ff0000}
 .userp1p{font-size:14px}
 .jp .zj-pic{float:left;width: 120px;height: 16px;overflow: hidden;}
-.jp a i{float: left;width:15px;height:15px;margin: 0 2px 0 0;/* background:url(../images/hm/hm2_07.gif) 0 0 no-repeat;*/}
+.jp i{float: left;width:15px;height:15px;margin: 0 2px 0 0;/* background:url(../images/hm/hm2_07.gif) 0 0 no-repeat;*/}
 .jp b em{float: left;margin-right: 4px;display: inline;}
-.jp a i.Rating1{background-position: 0 -17px;}
-.jp a i.Rating2{background-position: -19px -17px;}
-.jp a i.Rating3{background-position: -38px -17px;}
-.jp a i.Rating4{background-position: -56px -17px;}
+.jp i.Rating1{background-position: 0 -17px;}
+.jp i.Rating2{background-position: -19px -17px;}
+.jp i.Rating3{background-position: -38px -17px;}
+.jp i.Rating4{background-position: -56px -17px;}
 .jp strong{float: left;width: 1em;height: 15px;line-height: 15px;color: #999;}
 .jp b{display: none;float:left;width: 160px;height: 15px;line-height:15px;padding:6px 3px;font-weight: normal;border: 1px solid #C7E0FC;background-color: #ECF8FF;position: absolute;top: 26px;left: 0;z-index: 15;}
 /*b.b1{ background-position:-1px -1px}
