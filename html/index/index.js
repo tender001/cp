@@ -142,7 +142,7 @@ Class(
 //							}
 //							html += '</td>';
 							html += '<td style="padding-left:15px">' + $_sys.showzhanjiname(gameid,rt.cnickid,'award')+ '</td>';
-							html += '<td>' +(($_sys.showzhanji(rt.aunum,rt.agnum)==''?'&nbsp;':$_sys.showzhanjii(gameid,rt.cnickid,rt.aunum,rt.agnum)+'&nbsp;&nbsp;')) + '</td>';
+							html += '<td class="tdmark">' + ($_sys.showzhanji(rt.aunum ,rt.agnum)==''?'':$_sys.showzhanjii(gameid,rt.cnickid,rt.aunum,rt.agnum)) + '</td>';
 							
 							html += '<td>' + $_sys.getlotname(gameid).split("-")[0] + '</td>';
 							html += '<td>' + parseFloat(rt.money).rmb(true) + '</td>';
@@ -172,6 +172,11 @@ Class(
 					}
 //					$(html).appendTo($("#" + toId));
 					$("#table_hot_project").html(html)
+							$("td.tdmark").hover(function(){
+								$(this).find("b.lv_boxs").show();
+							},function(){
+								$(this).find("b.lv_boxs").hide();
+							})
 				}
 			},
 			error : function() {
@@ -210,7 +215,7 @@ Class(
 //							}
 //							html += '</td>';
 							html += '<td style="padding-left:15px">' + $_sys.showzhanjiname(gameid,rt.nickid,'award') + '</td>';
-							html += '<td>' + (($_sys.showzhanji(rt.aunum,rt.agnum)==''?'&nbsp;':$_sys.showzhanjii(gameid,rt.nickid,rt.aunum,rt.agnum)+'&nbsp;&nbsp;')) + '</td>';
+							html += '<td class="tdmark">' + ($_sys.showzhanji(rt.aunum ,rt.agnum)==''?'':$_sys.showzhanjii(gameid,rt.cnickid,rt.aunum,rt.agnum)) + '</td>';
 							
 							html += '<td>' + $_sys.getlotname(gameid).split("-")[0] + '</td>';
 							html += '<td>' + parseFloat(rt.money).rmb(true) + '</td>';
@@ -238,6 +243,11 @@ Class(
 							}html += '</tr>';
 //							$(html).appendTo($("#" + toId));
 							$("#table_hot_project").html(html)
+							$("td.tdmark").hover(function(){
+								$(this).find("b.lv_boxs").show();
+							},function(){
+								$(this).find("b.lv_boxs").hide();
+							})
 						});
 					}
 				}
