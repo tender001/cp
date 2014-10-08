@@ -141,7 +141,7 @@ div.center .body{width:95%;height:320px;}
 .hm table tr.odd td{background-color: #f8f8f8}
 .hm table tr:hover td{background-color: #fffee6;}
 .hm table td span{color: #25a;}
-.hm table td i{color: #f60;}
+.hm table td em{color: #f60;}
 .hm table td .x_jdt{background: #FFF;border: 1px solid #ddd;height: 2px;width: 70px;text-align: left;line-height: 2px;border-left: none;_overflow: hidden;margin: 2px 0 0;_height: 3px;}
 .hm table td .x_jdt em{display: block;height: 4px;background-color: #f60;margin: -1px -1px -1px 0px;}
 .hm table td input{width: 38px;border: 1px solid #ddd;color: #333;height: 18px;line-height:18px;padding: 1px 0;text-align: center;*margin-top: -1px;}
