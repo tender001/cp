@@ -131,7 +131,55 @@
 		
 		
 		<!-- 快速购彩 -->  
-		<!--#include virtual="/cc/cms/kuaisugoucai.html"-->
+		<div class="tab">
+			<div class="title">
+				<span class="hover"><i></i>双色球</span>
+				<span><i></i>大乐透</span>
+<!-- 				<span><i></i>11选5</span> -->
+			</div>
+			<div class="bod fn-clear">
+				<div class="hover">
+					<p>
+						<span class="fl"><strong>第<i expect="01"></i></strong>&nbsp;&nbsp;火热投注中</span>
+						<span class="fr">停售时间：<span nowendtime="01"></span></span>
+					</p>
+					<b id="ssqcodes" class="focu">
+						<s></s><em><input type="text" maxlength="2"></em><em><input type="text" maxlength="2"></em><em><input type="text" maxlength="2"></em><em><input type="text" maxlength="2"></em><em><input type="text" maxlength="2"></em><em><input type="text" maxlength="2"></em><em class="blue"><input type="text" maxlength="2"></em><i  onclick="SsqRandom();">机选</i><strong onclick="SsqBuy();">立即投注</strong>
+					</b>
+					<span class="fl">每注2元&nbsp;最高奖1000万&nbsp;当前奖池：<span pool="01"></span>元</span><span id="errorssq"  style="color: red;" class="fr"></span>
+				</div>
+				<div>
+					<p>
+						<span class="fl"><strong>第<i expect="50"></i></strong>&nbsp;&nbsp;火热投注中</span>
+						<span class="fr">停售时间：<span nowendtime="50"></span></span>
+					</p>
+					<b id="dltcodes" class="focu">
+						<s class="dal"></s><em><input type="text" maxlength="2"></em><em><input type="text" maxlength="2"></em><em><input type="text" maxlength="2"></em><em><input type="text" maxlength="2"></em><em><input type="text" maxlength="2"></em><em class="blue"><input type="text" maxlength="2"></em><em class="blue"><input type="text" maxlength="2"></em><i  onclick="DltRandom();">机选</i><strong onclick="DltBuy();">立即投注</strong>
+					</b>
+					<span class="fl">每注2元&nbsp;最高奖1600万&nbsp;当前奖池：<span pool="50"></span>元</span><span id="errordlt"  style="color: red;" class="fr"></span>
+				</div>
+<!-- 				<div> -->
+<!-- 					<p> -->
+<!-- 						<span class="fl"><strong>第2014081期</strong>&nbsp;&nbsp;火热投注中</span> -->
+<!-- 						<span class="fr">停售时间：2014-07-17 19:40:00</span> -->
+<!-- 					</p> -->
+<!-- 					<b> -->
+<!-- 						<s></s><em>01</em><em>01</em><em>01</em><em>01</em><em>01</em><em>01</em><em class="blue">01</em><i>机选</i><strong>立即投注</strong> -->
+<!-- 					</b> -->
+<!-- 					<span>每注2元&nbsp;最高奖1000万&nbsp;当前奖池：250000元</span> -->
+<!-- 				</div> -->
+				<script type="text/javascript">
+				$(function(){
+					$(".focu em input").focus(function() {
+						$(this).addClass('cur');
+					});
+					$(".focu em input").blur(function() {
+						$(this).removeClass();
+					});
+				});
+				</script>
+			</div>
+		</div>
 		<!-- 快速购彩  -->
 		
 			<script type="text/javascript">
