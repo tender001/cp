@@ -151,8 +151,11 @@ Class({
 								html += "<td title=\"进行中\">进行中</td>";
 							}					
 							html += "<td>"+adddate+"</td>";
-							html += "<td><a href=\"xchase.html?zid="+zhid+"&lotid=" + gameid +"\" class=\"a1\">详情</a></td>";
-							html += "</tr>";
+							html += "<td><a href=\"xchase.html?zid="+zhid+"&lotid=" + gameid +"\" class=\"a1\">详情</a>";
+							if(gameid==1||gameid==50){
+								html +="&nbsp;<a href=\""+$_sys.getlotdir(gameid)+"?zid="+zhid+"\" target=_blank>再次追号</a>";
+							}
+							html += "</td></tr>";
 		
 						});
 					}
