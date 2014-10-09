@@ -547,13 +547,40 @@ Class('CodeList>CodeList_dt', {
                 this.loadEndTime();//同步变换截止时间
             };
 
-
-
             playTabs.focus(0);
+            this.onMsg('msg_toogle_nosc', function (isnosc){
+                buyTabs.btns.slice(0, 1).hide(isnosc);//稍后上传只能合买
+                buyTabs.focus(isnosc ? 1 : 0);
+            });
+          //购买方式
+            buyTabs.onchange = function (a, b, c){
+                 Class.config('buy_type', b );
+                 $("a[mark]").hide();
+                 $("a[mark="+b+"]").show();
+                 this.get('#ishm').val(b==1? 1 : 0);
+                 if(b == 0){
+                	 $("div.b_th_top11").css("margin-bottom","15px");
+                	 $("#all_form").css("border-bottom","1px solid #ccc");
+                 }else{
+                	 $("div.b_th_top11").css("margin-bottom","0");
+                	 $("#all_form").css("border-bottom","0");
+                	 this.get('#ischase').val(b==2? 1 : 0);
+                     if (b==2) {
+                    	
+                         !c && this.moveToBuy(function (){
+                              Y.createZhOptions(this.btns.nodes[b]);
+                         });
+                     }else{
+                         !c && this.moveToBuy();
+                     }
+                 }
+                 
+                 this.get('#all_form p').html(['由购买人自行全额购买彩票','由多人共同出资购买彩票','连续多期购买同一个（组）号码。'][b]);
+            };
             // 传入号码
-        	var showid =location.search.getParam('codes');
+            var showid =location.search.getParam('codes');
         	var projid =location.search.getParam('projid');
-        	
+        	var zid    =location.search.getParam('zid');
         	if(projid!=""&&typeof(projid) != 'undefined'){
         		Y.postMsg('msg_login', function (){
         		location.href='#page_buy';
@@ -705,6 +732,123 @@ Class('CodeList>CodeList_dt', {
         		});
         	});
         	}
+        	if(zid!=""&&typeof(zid) != 'undefined'){
+
+        		Y.postMsg('msg_login', function (){
+        		location.href='#page_zh';
+        		buyTabs.focus(2);
+        		
+                setTimeout(function() {
+                    Y.lib.ZhOptions();
+                },99);   
+        		var data = $_trade.key.gid + "=" + encodeURIComponent("01") + "&tid=" + encodeURIComponent(zid) + "&rnd=" + Math.random();
+        		Y.ajax({
+        			url :$_user.url.xchase,
+        			type : "POST",
+        			dataType : "json",
+        			data : data,
+        			end: function(d) {
+        				var obj = eval("(" + d.text + ")");
+        				var code = obj.Resp.code;
+    		   		    var desc = obj.Resp.desc;
+        				if (code == "0") {
+        					var r = obj.Resp.row;
+        					var ccodes = r[0].ccodes;// 投注号码
+        					var mulity = r.imulity;// 倍数
+        					var periodid = r.periodid;//期次
+        					if(mulity>1){
+        						$("#beishu").val(mulity);
+        					}
+        					var import_code, arrCodes, short_code;
+        					
+        		    		if(ccodes==""){
+        		    			Y.alert("您不是该方案的发起人，不能再次购买本方案");
+        		    			return false;
+        		    		}
+        					if(ccodes.indexOf("$")==-1){
+        				
+        							Yobj.get('#codes').val(ccodes);
+        						
+    							   if (import_code = Yobj.get('#codes').val()) {
+    	   			    				if (typeof this.dejson(import_code) == 'object') return;
+    	   			    	            if (/\b0\b/.test(import_code)) {
+    	   			    	                return
+    	   			    	            }
+    	   			    	            arrCodes = import_code.split(';').map(function (c){
+    	   			    	                var rb = c.split('|'),
+    	   			    	                    r = rb[0] ? rb[0].split(',') : [],
+    	   			    	                    b = rb[1] ? rb[1].split(":")[0].split(",") : [],
+    	   			    	                    zs = Math.c(r.length, 6) * Math.c(b.length, 1);
+    	   			    	                return [r, b, zs];
+    	   			    	            }).filter(function (c){
+    	   			    	                if (c[c.length - 1] == 0) {//zs
+    	   			    	                    short_code = c;//残缺号码
+    	   			    	                }else{
+    	   			    	                    return true;
+    	   			    	                }
+    	   			    	            });
+    	   			    	            if (arrCodes.length) {//完整号码显示到列表
+    	   			    	                 this.postMsg('msg_put_code', arrCodes);
+    	   			    	                 this.moveToBuy();
+    	   			    	            }
+    	   			    	            if (short_code && short_code.length) {// 残缺号码显示到球区
+    	   			    	                this.postMsg('msg_redraw_code', short_code);
+    	   			    	            }
+    							   }
+        						
+        					}else{ 
+        						Yobj.get('#codes').val(ccodes);
+        						 playTabs.focus(1);
+        						 Class.config('ssqid', 1);
+        						if (import_code = Yobj.get('#codes').val()) {
+       			    	            if (/\b0\b/.test(import_code)) {
+       			    	                return
+       			    	            }
+       			    	            arrCodes = import_code.split(';').map(function (c){
+       			    	                var rb = c.split('|'),
+       			    	                    d= rb[0] ? rb[0].split('$')[0].split(',') : [],
+    	    	                    		t = rb[0] ? rb[0].split('$')[1].split(',') : [],
+       			    	                    b = rb[1] ? rb[1].split(":")[0].split(",") : [],
+       			    	                 zs = Math.dt(d.length, t.length, 6)*(b.length)*((d.length) > 0 ? 1 : 0);
+       			    	                return [[d,t,b,zs]];
+       			    	            }).filter(function (c){
+       			    	                if (c[c.length - 1] == 0) {//zs
+       			    	                    short_code = c;//残缺号码
+       			    	                }else{
+       			    	                    return true;
+       			    	                }
+       			    	            });
+       			    	            if (arrCodes.length) {//完整号码显示到列表
+//       			    	            	this.postMsg('msg_put_code',[[[8, 9, 26, 27], [10, 11, 28, 29], [12, 13], 12]]);
+       			    	            	for(var i=0;i<arrCodes.length;i++){
+       			    	            		this.postMsg('msg_put_code',arrCodes[i]);
+       			    	            		
+       			    	            	}
+       			    	                
+       			    	            }
+       			    	            if (short_code && short_code.length) {// 残缺号码显示到球区
+       			    	                this.postMsg('msg_redraw_code', short_code);
+       			    	            }
+       			    	            
+       			    	        }
+        					}
+        					
+        				}else if(code=='2002'){
+        					Y.alert("您不是该方案的发起人，不能再次购买本方案");
+        					return false;
+        				}else{
+        					Y.alert(desc);
+        					return false;
+        				}
+        			},
+        			error : function() {
+        				alert("您所请求的页面有异常！");
+        				return false;
+        			}
+        		});
+        	});
+        	
+        	}
         	
         	if(showid!=""&&typeof(showid) != 'undefined'){
         		Yobj.get('#codes').val(showid);
@@ -742,35 +886,8 @@ Class('CodeList>CodeList_dt', {
         
         
             
-            this.onMsg('msg_toogle_nosc', function (isnosc){
-                buyTabs.btns.slice(0, 1).hide(isnosc);//稍后上传只能合买
-                buyTabs.focus(isnosc ? 1 : 0);
-            });
-            //购买方式
-            buyTabs.onchange = function (a, b, c){
-                 Class.config('buy_type', b );
-                 $("a[mark]").hide();
-                 $("a[mark="+b+"]").show();
-                 this.get('#ishm').val(b==1? 1 : 0);
-                 if(b == 0){
-                	 $("div.b_th_top11").css("margin-bottom","15px");
-                	 $("#all_form").css("border-bottom","1px solid #ccc");
-                 }else{
-                	 $("div.b_th_top11").css("margin-bottom","0");
-                	 $("#all_form").css("border-bottom","0");
-                	 this.get('#ischase').val(b==2? 1 : 0);
-                     if (b==2) {
-                    	
-                         !c && this.moveToBuy(function (){
-                              Y.createZhOptions(this.btns.nodes[b]);
-                         });
-                     }else{
-                         !c && this.moveToBuy();
-                     }
-                 }
-                 
-                 this.get('#all_form p').html(['由购买人自行全额购买彩票','由多人共同出资购买彩票','连续多期购买同一个（组）号码。'][b]);
-            };
+            
+            
         }
 	}); 
 })();
