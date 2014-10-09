@@ -59,30 +59,6 @@ Class('Loginer', {// 登陆器
     		 linkdiv.style.display = "none"; 
     	 });
 
-        this.get("#tp1").click(function(){
-        	Y.postMsg('msg_login', function (){
-        		 window.open('/account/myaccount.html','_self');
-        	});
-
-         });
-         this.get("#tp2").click(function(){
-        	 Y.postMsg('msg_login', function (){
-        		 window.open('/account/chongzhi.html','_self');
-        	});
-     
-     });
-     this.get("#tp3").click(function(){
-    		Y.postMsg('msg_login', function (){
-       		 window.open('/account/tikuan.html','_self');
-       	});
-     
-     });
-	 this.get("#tp4").click(function(){
-			Y.postMsg('msg_login', function (){
-	       		 window.open('/account/orderlist.html','_self');
-	       	});
-	     
-	     });
     },
 
     bindEvent: function (config){
@@ -271,20 +247,20 @@ Class('Loginer', {// 登陆器
                              if(this.get('#top_username').html()!=""){ 
                             	 
                             	 /*this.get('#tp1').html("<em id='top_m'></em>");*/
-		                    	 this.get("#tp1").mouseover(function(){
-		                    	 document.getElementById("top_m").className="cur";
-		                    	 var div = document.getElementById("top_show");
-		                    	 div.style.display = "block"; 
-		                    	
-		                    	 
-
-		                     });
-	                    	 
-		                     this.get("#tp1").mouseout(function(){
-		                    	document.getElementById("top_m").className="";
-		                    	 var div = document.getElementById("top_show");
-			                    	 div.style.display = "none"; 
-			                     });
+//		                    	 this.get("#tp1").mouseover(function(){
+//		                    	 document.getElementById("top_m").className="cur";
+//		                    	 var div = document.getElementById("top_show");
+//		                    	 div.style.display = "block"; 
+//		                    	
+//		                    	 
+//
+//		                     });
+//	                    	 
+//		                     this.get("#tp1").mouseout(function(){
+//		                    	document.getElementById("top_m").className="";
+//		                    	 var div = document.getElementById("top_show");
+//			                    	 div.style.display = "none"; 
+//			                     });
 		                     this.get("#top_show").mouseover(function(){
 			                    	document.getElementById("top_m").className="cur";
 			                    	 var div = document.getElementById("top_show");
