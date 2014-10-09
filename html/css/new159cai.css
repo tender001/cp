@@ -1124,7 +1124,7 @@ a.g_a_t{ background:#e52e04;font-size:14px;font-weight:bold;color:#fff;line-heig
 .tan_mid a.but1:hover{ background-image: url(../images/cdbg/cd_bg_15.gif)}
 .main_tan_2{width:587px;*zoom:1}
 .tan_top_m2{width:540px;height:38px; background-image: url(../images/cdbg/m_tan_05.gif);float:left}
-table.col_2{border-collapse: collapse;margin: -1px 0 0 -1px;}
+table.col_2{border-collapse: collapse;margin: -1px 0 0 0;}
 table.col_2 th,table.col_2 td{border: 1px solid #ddd;}
 table.col_2 th{line-height:40px;text-align:left;text-indent:8px;color:#333;font-weight:400;font-size:12px;}
 table.col_2 td{line-height:40px;text-align:left;color:#444;padding-left:15px;font-size:14px;}
