@@ -664,6 +664,11 @@ $(document).ready(function(){
 								html += '<td><a href="' + $_sys.getlotdir(gameid)+$_sys.url.viewpath+'?lotid='+gameid+'&projid='+rt.hid + '" target="_blank">详情</a></td>';
 							}html += '</tr>';
 							$(html).appendTo($("#table_project_list"));
+//						$("th.tdmark").hover(function(){
+//							$(this).find("b.lv_boxs").show();
+//						},function(){
+//							$(this).find("b.lv_boxs").hide();
+//						})
 						});
 						
 						var maxshow=5;
@@ -928,70 +933,70 @@ $(document).ready(function(){
 			
 		}
 	};
-	 goTotop=function (){
-	        var isIE=!!window.ActiveXObject;
-	        var isIE6 = isIE&&!window.XMLHttpRequest;
-	        var btn = $("#goTotop");
-	        var left = 0;
-	        var top = $(window).height()-247;
-	        var ietop = $(window).height()-247+$(window).scrollTop();
-	        var flag = true;
-	        $(window).resize(function(){
-	            btn.css({"position":"fixed",top:top,left:left});
-	            if(isIE6)btn.css({"position":"absolute",top:ietop,left:left});
-	        })
-	        btn.css({"position":"fixed",top:top,left:left});
-	        var areaTop = Y.get("div.hm_right").getXY().y;
-	        $(window).scroll(function(){
-	        	 if ($(this).scrollTop() > areaTop){//跟踪对齐当滚动条超过右侧区域则开始滚动
-		            	var V = $('div.hm_right');
-		        		if (V[0]) {
-		        			var T = $(document),
-		        			H = $("div.hm_left").eq(0),
-		        			M = H.offset().top + H.outerHeight(),
-		        			F = V.innerWidth(),
-		        			B = V.offset().top,
-		        			L = V.outerHeight(), 
-		        			u = T.scrollTop();
-		        			Z = Math.min(0, M - (L + u));
-		        			
-
-		        			if(H.outerHeight()>V.eq(0).outerHeight()){
-//		        				 Y.get("#right_area").setStyle('z-index: 1; top:'+Z+'px;  left: auto;position: static;');
-		        				 Y.get("div.hm_right").setStyle('z-index: 1; top:0;  right: auto;position: static;');
-		        			}else{
-			        				if (B == Z) {
-		  	        				V.css({right: "auto", top: "auto",width: F, position: "static"});
-		  	        			} else {
-		  	        				if(isIE6){
-		  	        					V.css({right: "464px",top: Z+$(window).scrollTop(), width: F,position: "absolute"});
-		  	        				}else{
-		  	        				V.css({right: '464px',top: Z, width: F, position: "fixed"});
-		  	        				};
-		  	        			}
-		        				Y.get("div.hm_right").setStyle('z-index: 1;');
-		        			}
-		        		}
-		            	
-		             }else{//停止浮动对齐
-	            	 Y.get("div.hm_right").setStyle('z-index: 1; top:0;  right: auto;position: static;');
-	            }
-	        	
-	            if(flag)
-	            {
-	                btn.show();
-	                flag = false;
-	            }
-	            if($(this).scrollTop() == 0)
-	            {
-	                btn.hide();
-	                flag = true;
-	            }
-	            btn.css({"position":"fixed",top:top,left:left});
-	            ietop = $(window).height()-247+$(window).scrollTop();
-	            if(isIE6)btn.css({"position":"absolute",top:ietop,left:left});
-	        })
-	    };
+//	 goTotop=function (){
+//	        var isIE=!!window.ActiveXObject;
+//	        var isIE6 = isIE&&!window.XMLHttpRequest;
+//	        var btn = $("#goTotop");
+//	        var left = 0;
+//	        var top = $(window).height()-247;
+//	        var ietop = $(window).height()-247+$(window).scrollTop();
+//	        var flag = true;
+//	        $(window).resize(function(){
+//	            btn.css({"position":"fixed",top:top,left:left});
+//	            if(isIE6)btn.css({"position":"absolute",top:ietop,left:left});
+//	        })
+//	        btn.css({"position":"fixed",top:top,left:left});
+//	        var areaTop = Y.get("div.hm_right").getXY().y;
+//	        $(window).scroll(function(){
+//	        	 if ($(this).scrollTop() > areaTop){//跟踪对齐当滚动条超过右侧区域则开始滚动
+//		            	var V = $('div.hm_right');
+//		        		if (V[0]) {
+//		        			var T = $(document),
+//		        			H = $("div.hm_left").eq(0),
+//		        			M = H.offset().top + H.outerHeight(),
+//		        			F = V.innerWidth(),
+//		        			B = V.offset().top,
+//		        			L = V.outerHeight(), 
+//		        			u = T.scrollTop();
+//		        			Z = Math.min(0, M - (L + u));
+//		        			
+//
+//		        			if(H.outerHeight()>V.eq(0).outerHeight()){
+////		        				 Y.get("#right_area").setStyle('z-index: 1; top:'+Z+'px;  left: auto;position: static;');
+//		        				 Y.get("div.hm_right").setStyle('z-index: 1; top:0;  right: auto;position: static;');
+//		        			}else{
+//			        				if (B == Z) {
+//		  	        				V.css({right: "auto", top: "auto",width: F, position: "static"});
+//		  	        			} else {
+//		  	        				if(isIE6){
+//		  	        					V.css({right: '10px;',top: Z+$(window).scrollTop(), width: F,position: "absolute"});
+//		  	        				}else{
+//		  	        					V.css({right: '464px',top: Z, width: F, position: "fixed"});
+//		  	        				};
+//		  	        			}
+//		        				Y.get("div.hm_right").setStyle('z-index: 1;');
+//		        			}
+//		        		}
+//		            	
+//		             }else{//停止浮动对齐
+//	            	 Y.get("div.hm_right").setStyle('z-index: 1; top:0;  right: auto;position: static;');
+//	            }
+//	        	
+//	            if(flag)
+//	            {
+//	                btn.show();
+//	                flag = false;
+//	            }
+//	            if($(this).scrollTop() == 0)
+//	            {
+//	                btn.hide();
+//	                flag = true;
+//	            }
+//	            btn.css({"position":"fixed",top:top,left:left});
+//	            ietop = $(window).height()-247+$(window).scrollTop();
+//	            if(isIE6)btn.css({"position":"absolute",top:ietop,left:left});
+//	        })
+//	    };
 	initPage();
-	goTotop();
+//	goTotop();
 });
