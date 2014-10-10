@@ -877,7 +877,8 @@ $(document).ready(function(){
 		else if(Class.C('lotid') == 30||Class.C('lotid') ==50||Class.C('lotid')== 1||Class.C('lotid')== 80||Class.C('lotid')== 81){
 			$(".top-caiz").show();
 			$(".hemai").hide();
-			
+			$(".annotation").show();
+			$(".annotations").hide();
 			$(".hm_right_t").show();
 			cachePeriod();
 			$("#start_hm").click(function(){
@@ -903,6 +904,8 @@ $(document).ready(function(){
 			$(".hm_right_t").remove();
 			$(".top-caiz").show();
 			$(".hemai").hide();
+			$(".annotation").hide();
+			$(".annotations").show();
 			cachePeriod();
 			$("#start_hm").click(function(){
 				location.href=$_sys.getlotdir(Class.C('lotid'));

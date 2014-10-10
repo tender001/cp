@@ -188,9 +188,9 @@ Class(
                             	
                                       Class.config('isEnd', false);
                                       if (!isstop) {// 不是停售
-                  						setTimeout(function(){
-                  							timebar.html(endTime);// 换期号
-                  						},200);
+                                    	  timebar.html('<i endtime="54" class="fr">'+($("#endTime").val())+'</i>');
+                                    	  timebar.html('<i endtime="56" class="fr">'+($("#endTime").val())+'</i>');
+                                    	 // $("span[endtime="+now+"]").html(ctpl3);
                   						
                   					}
                                       //                                      Y.getcurrentissue(gid);
@@ -222,7 +222,76 @@ Class(
           }
       }
   },
-
+  /* getNextExpect : function(isUpTime) {		
+		 this.ajax({
+	            url:"/cpdata/game/"+lotid+"/s.json",
+	            end:function (data, i){
+	                 var isbuy;
+	                 var starttime,endtime,now;
+	                 this.qXml('//row', data.xml, function (e){
+	                     isbuy = e.items.Value;
+	                     starttime = Y.getDate(e.items.starttime);	                     
+	                     endtime = Y.getDate(e.items.endtime);
+	                     now = Y.getDate(data.date);
+	                     if (now>starttime&&now<endtime){	                    	
+	                    	 isbuy=0;
+	                     }
+	                 });
+	                 if (isbuy != '1') {
+	                	 if((Class.C('lot_id')) == "56"){//11运夺金
+	                		 var zz = this.lib.MaskLay('#kp_stop');
+	                     	 zz.addClose('#kp_close');
+	                     	 Y.get('#kp_stop div.tips_title').drag('#kp_stop');
+	                     	 zz.pop();
+	                     	 $("#gp_gd11x5").hide();
+	                     	 $("#gp_11x5").show();
+	                     	 $("#gp_k3").show();
+	                     	 $("#gp_ssc").show();
+	                	 }
+	                	 if((Class.C('lot_id')) == "54"){//11选5
+	                		 var zz = this.lib.MaskLay('#kp_stop');
+	                     	 zz.addClose('#kp_close');
+	                     	 Y.get('#kp_stop div.tips_title').drag('#kp_stop');
+	                     	 zz.pop();
+	                     	 $("#gp_gd11x5").show();
+	                     	 $("#gp_11x5").hide();
+	                     	 $("#gp_k3").show();
+	                     	 $("#gp_ssc").show();
+	                	 }
+	                	 if((Class.C('lot_id')) == "05"){//k3
+	                		 $("#hz_put").hide();
+		                     $("#hz_put_2").show();
+	                		 var zz = this.lib.MaskLay('#kp_stop');
+	                     	 zz.addClose('#kp_close');
+	                     	 Y.get('#kp_stop div.tips_title').drag('#kp_stop');
+	                     	 zz.pop();
+	                     	 $("#gp_gd11x5").show();
+	                     	 $("#gp_11x5").show();
+	                     	 $("#gp_k3").hide();
+	                     	 $("#gp_ssc").show();
+	                	 }
+	                	 if((Class.C('lot_id')) == "55"){//gd11x5
+	                		 var zz = this.lib.MaskLay('#kp_stop');
+	                     	 zz.addClose('#kp_close');
+	                     	 Y.get('#kp_stop div.tips_title').drag('#kp_stop');
+	                     	 zz.pop();
+	                     	 $("#gp_gd11x5").hide();
+	                     	 $("#gp_11x5").show();
+	                     	 $("#gp_k3").show();
+	                     	 $("#gp_ssc").show();
+	                	 }
+	                	 
+	                   
+	                     Class.C('stop-buy', true);
+	                     this._loadcode();//开奖号码期次遗漏显示控制
+	                 }else if(isUpTime){
+	                     this.postMsg('msg_new_servertimer', data.date);//只更新服务器时间
+	                 }else{
+	                     this._loadcode();
+	                 }
+	            }
+	        }); 
+	},*/
 
 	init11X5: function(){
 	    var r3 = $("#11x5_jx_random em input");
@@ -771,8 +840,7 @@ Class(
     					var et = rt.et; //截止时间
     					var fet = rt.fet; //截止时间
     					var at = rt.at; //开奖时间
-    				
-						expectlist[expectlist.length] = [ pid, et, fet, at ];
+						expectlist[expectlist.length] = [ pid, et, fet, at];
 						if (Y.getDate(et) > Y.getDate(d.date)) {// 只缓存有效期
 							if (!Y.C('findCurrented'+"_"+lotid)) {
 								if (Y.C('currentExpect'+"_"+lotid) != pid) {
