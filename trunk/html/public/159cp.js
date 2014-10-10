@@ -642,13 +642,70 @@ $_sys.showlishizhanji = function (lotid,uid,func){
 };
 
 $_sys.showzhanji= function(au,ag){
-	var arr = new Array();
+	var html="";
+	 var yb='<i class="Rating4 Rating4_$1"></i>';//钻
+	 var zhuan='<i class="Rating3 Rating3_$1"></i>';//奖杯
+	 var zuan='<i class="Rating2 Rating2_$1"></i>';//皇冠 
+	 var hg='<i class="Rating1 Rating1_$1"></i>';//大皇冠+
+	 if (Math.floor(au / 1000) > 0){//如果有太阳+
+		 html+=hg.replace('$1', Math.floor(au/1000));//太阳+个数
+		 var a=au % 1000;//余数
+		 if (a >0){
+			 if (Math.floor(a/100)>0){//余数
+				 html+=zuan.replace('$1', Math.floor(a/100));			 
+				 var b= a % 100;
+				 if (Math.floor(b/10)>0){//余数后
+					 html+=zhuan.replace('$1', Math.floor(b/10));			 
+					 var b= a % 10;
+					 if (b>0){
+						 html+=yb.replace('$1',b);
+					 }
+				 }else{
+					 html+=yb.replace('$1', b);
+				 }
+			 }else{
+				 if (Math.floor(a/10)>0){//余数后
+					 html+=zhuan.replace('$1', Math.floor(a/10));			 
+					 var b= a % 10;
+					 if (b>0){
+						 html+=yb.replace('$1',b);
+					 }
+				 }else{
+					 html+=yb.replace('$1', a);
+				 }
+			 }
+		 }	 
+	 }else if (Math.floor(au / 100) > 0){//如果有太阳
+		 html+=zuan.replace('$1', Math.floor(au/100));//
+		 var a=au % 100;//
+		 if (a >0){
+			 if (Math.floor(a/10)>0){//余数后
+				 html+=zhuan.replace('$1', Math.floor(a/10));			 
+				 var b= a % 10;
+				 if (b>0){
+					 html+=yb.replace('$1',b);
+				 }
+			 }else{
+				 html+=yb.replace('$1', a);
+			 }
+		 }	 
+	 }else if (Math.floor(au/10) >0){
+		 html+=zhuan.replace('$1', Math.floor(au/10));		 
+		 var a= au % 10;
+		 if (a>0){
+			 html+=yb.replace('$1',a);
+		 }	
+	 }else if (au >0){	
+			html+=yb.replace('$1', au);	
+	 }
+	 return html;
+	/*var arr = new Array();
 	var html='';
 	 var yb='<i class="Rating4"></i>';//星星
 	 var zhuan='<i class="Rating3"></i>';//月亮
 	 var zuan='<i class="Rating2"></i>';//太阳 
 	 var hg='<i class="Rating1"></i>';//皇冠+
-	 var tip ='</a><strong>...</strong><b class="lv_boxs" style="display:none;">';//隐藏提示<div class="lv_box">
+	 var tip ='</a><strong>...</strong><b class="lv_boxs">';//隐藏提示<div class="lv_box">
 	 var crownNum = Math.floor(au / 1000);
 	 var sunNum = 0;
 	 var moonNum = 0;
@@ -775,7 +832,7 @@ $_sys.showzhanji= function(au,ag){
 	 }
 	 
 	 arr[0] = html;
-	 return arr;
+	 return arr;*/
 };
 
 $_sys.getsp=function(sprow,spname){
