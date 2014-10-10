@@ -25,6 +25,53 @@ Class({
 			Y.get("#div2").hide();
 		});
 	}
+	,autocard:function(){
+		this.get('#cardnumber').blur(function (){
+			if($("#bankid").val() == undefined || $("#bankid").val().trim() == ''){
+				var cardnumber = $("#cardnumber").val().trim().replaceAll(" ","");
+				if(isNaN(cardnumber)){
+					Y.alert("请填写正确银行卡号码");
+					return false;
+				}
+				if(cardnumber.length< 10){
+					Y.alert("请填写正确银行卡号码");
+					return false;
+				}
+				Y.ajax({
+					url : '/phpu/bankarea.phpx',
+					type : "POST",
+					data : {cardnum:cardnumber},
+					dataType : "json",
+					end : function(d) {
+						var obj = eval("(" + d.text + ")");
+						var code = obj.Resp.code;
+						if (code == "0") {
+							var _row = obj.Resp.row;
+							if(_row != undefined){
+								$("#bankType").val(_row.bank);
+								var __area = _row.area.split("-");
+								if(__area.length > 1){
+									var __prov = __area[0].trim().replaceAll("省","");
+									var __city = __area[1].trim().replaceAll("市","");
+									$("#province").val(__prov);
+									if(__prov != ''){
+										$("#province").change();
+									} else {
+										$("#province").val("");
+									}
+									if(__city != ''){
+										$("#city").val(__city);
+									} else {
+										$("#city").val("");
+									}
+								}
+							}
+						}
+					}
+				});
+			}
+		});
+	}
 	,showinfo:function(){
 		Y.ajax({
 			url : $_user.url.card,
