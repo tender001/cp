@@ -963,7 +963,7 @@ a.g_a_t{ background:#e52e04;font-size:14px;font-weight:bold;color:#fff;line-heig
 .g_5_right td b{display:block;float:right;margin-right:5px;border:1px solid #ddd; background: url(../images/159/nng_07.jpg) right center #efefef no-repeat;padding:0 20px 0 5px;font-weight:100;color:#333;height:18px; line-height:18px;margin:3px 5px 3px ;cursor:pointer}
 .g_5_right td b.cur{background: url(../images/159/nng_09.jpg) right center #efefef no-repeat;}
 
-.paginachange {float: right;font-family: Tahoma;height: 34px;margin: 14px 0 -7px; width: auto;}
+.paginachange {float: right;font-family: Tahoma;height: 34px;margin: 5px 0 -7px; width: auto;}
 .paginachange ul {height: auto;margin: 4px 10px 0 0;overflow: hidden;}
 .paginachange li {box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);float: left;height: 27px;line-height:27px}
 .paginachange li a{display:block;padding:0 10px;color:#1e50a2;line-height:25px;border:1px solid #ddd;border-left:none}
@@ -1604,7 +1604,7 @@ html .buyfimsg td input.text {height: 22px;line-height:22px;padding: 0; vertical
 :root .buyfimsg td input.bt{padding:0 0 0 5px}
 #container {margin: 0 auto;position: relative;width: 998px;/*border: 1px solid #ccc;*/overflow: visible;-webkit-user-select: none;-moz-user-select: none;-o-user-select: none;user-select: none;zoom: 1;}
 #container:after{visibility:hidden;display:block;font-size:0;content:" ";clear:both;}
-.annotation,.annotations{width:998px;height:auto;margin:10px auto 0;text-align:center;}
+.annotation,.annotations{padding: 10px 0 0;text-indent:1.5em;}
 .numcai{overflow: visible;}
 .buyfimsg textarea {border: 1px solid #DDDDDD;color: #444444;float: left;font-size: 12px;height: 100px;margin-top: 11px;padding: 5px;width: 510px;}
 a.buyfa {display: block;width: 190px;height: 42px;margin:7px auto 2px;font: 16px/42px "微软雅黑";text-align: center;color: #fff;background: #ff7213;border:1px solid #CF5955;}
