@@ -412,7 +412,7 @@ a.a_auto{margin:0 auto 20px auto}
 .hm_right_t ul li{float: left;width: 120px;height: 24px;line-height: 24px;padding-left: 10px;overflow: hidden;white-space: nowrap;text-overflow: ellipsis;}
 .hm-tit{background-color: #f4f4f4;padding: 6px 0;zoom: 1;border-bottom: 1px solid #ccc;}
 .hm-tit span{float: left;margin-left: 8px;border: 1px solid #cbcbcb;_display: inline}
-.hm-tit span input{float: left;width: 200px;height:24px;line-height: 24px;padding-left: 6px;border: 0;}
+.hm-tit span input{float: left;width: 200px;height:24px;line-height: 24px;color:#585858;padding-left: 6px;border: 0;}
 .hm-tit a{display: inline-block;height: 24px;line-height: 24px; text-align: center;color: #323232;background-position: 0 -33px;}
 .hm-tit a:hover{background-position: 0 -58px;text-decoration: none;}
 .hm-tit span a{width: 50px;border-left: 1px solid #cbcbcb;}
