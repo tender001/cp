@@ -186,17 +186,17 @@ p.fotpp a:hover{color:#ff0000;text-decoration:underline}
 .jcxqa p{float:right}
 .hm_timep{ position: absolute;right:40px;bottom:10px;width:205px;height:20px;line-height:20px}
 .hm_top_1 p b{ width:70px;height:23px;line-height:20px;display:block;background:url(../images/cai888/jczt.png);line-height:22px;text-align:center;color:#888;font-size:12px;margin-left:80px}
-.hm_top_1 p b.cur{ background-position:-83px 0;color:#ff0000}
+.hm_top_1 p b.cur{ background-position:-83px 0;color:#f00}
 .hm_timep i{float:left;color:#444;}
 .hm_timep span{float:left;padding-left:5px;}
-.hm_timep em{display:block;float:left; background:url(../images/newimg/newsq_08.jpg);height:20px;line-height:20px;padding:0 5px;color:#9cff00; font-family:Arial;margin:0px 2px 0}
-.hm_myrg{margin:0px 0 5px 0;border-bottom:1px dashed #bbb;padding:5px 0 5px;line-height:26px;color:#333;clear:both}
+.hm_timep em{float:left;height:20px;line-height:20px;font-family:Arial;margin:0px 2px 0;padding:0 5px;color:#9cff00;background:url(../images/newimg/newsq_08.jpg);}
+.hm_myrg{clear:both;margin:0px 0 5px;border-bottom:1px dashed #bbb;padding:5px 0 5px;line-height:26px;color:#333;}
 .hm_myrg strong{font-weight:bold;color:#555;display:block}
 .hm_myrg a{color:#145fab;margin-left:50px;_margin-left:25px}
 .hm_myrg a:hover{color:#e52e04; text-decoration:underline}
 .hm_myrg em{color:#145fab;margin-left:50px;_margin-left:25px}
 .hm_myrg span{display:block}
-.xqtabm .sscmxq table strong{color:#ff6600;font-size:12px;font-weight:bold}
+.xqtabm .sscmxq table strong{color:#f60;font-size:12px;font-weight:bold}
 .xqtabm .sscmxq table{clear:both;border:1px solid #ccc;border-bottom:none}
 .xqtabm .sscmxq table thead td{border-bottom:1px solid #ccc;line-height:32px; background-color:#f6f6f6}
 .xqtabm .sscmxq table td{line-height:35px;font-size:12px;color:#444;text-align:center;border-bottom:1px solid #ddd}
@@ -208,15 +208,15 @@ p.fotpp a:hover{color:#ff0000;text-decoration:underline}
 .xqtabm .zcmxq tr.tr1 td{ background:#e9e9e9;border-top:1px solid #ddd;border-bottom:1px solid #ddd;border-right:1px solid #ddd}
 .xqtabm .zcmxq tr.tr3 td{padding:3px 0;height:16px}
 .xqtabm .zcmxq tr.tr4 td{padding:3px 0; background-color:#f3f3f3}
-.xqtabm .zcmxq font{color:#ff0000}
+.xqtabm .zcmxq font{color:#f00}
 .xqtabm .zcmxq b{width:20px;height:20px;display:block;margin:0 auto;color:#fff;background:url("../images/bg/ball-gai.jpg") no-repeat;}
 .xqtabm .zcmxq .bcqxqtb  td{padding:3px 17px;_padding:3px 15px}
 .xqtabm .zcmxq .bcqxqtb tr.tr5 td{line-height:16px;padding:0;height:16px}
-.xqtabm .zcmxq .bcqxqtb tr.tr6 td{border-top:1px solid #ddd;color:#ff0000}
+.xqtabm .zcmxq .bcqxqtb tr.tr6 td{border-top:1px solid #ddd;color:#f00}
 .xqtabm .zcmxq .jqcxqtb  td{padding:3px 27px}
 .xqtbpa{padding:35px 0 35px; text-align:center;font-size:24px;color:#777; font-family:"微软雅黑"; background:#eee}
 .xqtbpa a{color:#145fab;font-size:24px;}
-.xqtbpa a:hover{color:#ff6600; text-decoration:underline}
+.xqtbpa a:hover{color:#f60; text-decoration:underline}
 font.blue{color:#145fab}
 font.cm_red{color:#ff6600}
 .user_left{width:134px;float:left; background-color:#f8f8f8;height:520px}
@@ -232,16 +232,16 @@ font.cm_red{color:#ff6600}
 .uacname p strong{font-weight:bold;font-size:14px}
 .uacname span{float:left}
 .uacjd{display:block;width:80px;height:8px;margin:9px 6px;background:#b8b8b8;overflow:hidden }
-.uacjd em{display:block;width:50%;height:8px;background:#ff6600;}
+.uacjd em{display:block;width:50%;height:8px;background:#f60;}
 .uacname p a{display:block;float:left;height:21px;margin-top:2px;line-height:21px;color:#888;padding:0 0px 0 18px;margin-left:14px}
 .uacname p a.a1{ background:url(../images/cai888/user_13.jpg) left 0 no-repeat;}
 .uacname p a.a2{ background:url(../images/cai888/user_08.jpg) left 0 no-repeat;}
 .uacname p a.a3{ background:url(../images/cai888/user_10.jpg) left 0 no-repeat;padding-left:24px}
-.uacname p a.a1cur{ background:url(../images/cai888/user1_03.jpg) left 0 no-repeat;color:#ff6600}
-.uacname p a.a2cur{ background:url(../images/cai888/user1_05.jpg) left 0 no-repeat;color:#ff6600}
-.uacname p a.a3cur{ background:url(../images/cai888/user1_07.jpg) left 0 no-repeat;color:#ff6600}
-.uacname p a:hover{color:#ff6600; text-decoration:underline}
-.uacname p a.a1cur:hover,.uacname p a.a2cur:hover,.uacname p a.a3cur:hover{color:#ff6600; text-decoration:none}
+.uacname p a.a1cur{ background:url(../images/cai888/user1_03.jpg) left 0 no-repeat;color:#f60}
+.uacname p a.a2cur{ background:url(../images/cai888/user1_05.jpg) left 0 no-repeat;color:#f60}
+.uacname p a.a3cur{ background:url(../images/cai888/user1_07.jpg) left 0 no-repeat;color:#f60}
+.uacname p a:hover{color:#f60; text-decoration:underline}
+.uacname p a.a1cur:hover,.uacname p a.a2cur:hover,.uacname p a.a3cur:hover{color:#f60; text-decoration:none}
 .uacname .fontred{padding-right:10px}
 .uaccz{float:right;line-height:32px;padding-top:6px}
 .uaccz span{float:left;padding-right:10px}
@@ -249,8 +249,8 @@ font.cm_red{color:#ff6600}
 .uaccz a{display:block;float:left;margin-left:10px;height:32px;border:1px solid #ff6702;text-align:center;width:65px;color:#fff; background:url(../images/cai888/user_03.jpg);font-size:16px;font-weight:bold; }
 .uaccz a:hover{text-decoration: none;}
 .uaccz a.a2{color:#444;background:url(../images/cai888/user_05.jpg);border:1px solid #ccc}
-.uacnop{margin:15px 20px 10px 20px;border:1px solid #ddd;padding:8px 8px 8px 35px;background:url(../images/cai888/user_25.jpg) 10px 11px no-repeat #f4f4f4;}
-.uacnop p{width:600px;float:left;line-height:25px;color:#444;}
+.uacnop{margin:15px 20px 10px;padding:8px 8px 8px 35px;border:1px solid #ddd;background:url(../images/cai888/user_25.jpg) 10px 11px no-repeat #f4f4f4;}
+.uacnop p{float:left;width:600px;line-height:25px;color:#444;}
 .uacnop p strong{font-size:14px;color:#E52E04;font-weight:bold;display:block}
 .uacnop a{display:block;float:left;height:27px;padding:0 15px;line-height:27px;text-align:center;color:#fff;font-size:14px;font-weight:bold;margin-top:10px;background:url(../images/cai888/user1_13.jpg);border:1px solid #ff6702;}
 .uacnop a:hover{text-decoration: none;}
@@ -303,7 +303,7 @@ font.cm_red{color:#ff6600}
 .czje font{font-size:!2px;padding-left:15px}
 .bank_main a.cz_but{display:block;width:124px;height:44px; background-image:url(../images/bank/bank_48.gif);margin:17px auto}
 .bank_main a.cz_but:hover{ background-image:url(../images/bank/bank_51.gif)}
-.bank_tan{width:655px; position:absolute;top:61px;left:85px;border:1px solid #ddd;z-index:99999;*zoom:1;padding:15px 20px  30px; background-color:#fff ;display:none}
+.bank_tan{display:none;width:655px; position:absolute;top:61px;left:85px;border:1px solid #ddd;z-index:99999;padding:15px 20px  30px; background-color:#fff ;*zoom:1;}
 .bank_zj p{line-height:35px;color:#444;float:left;font-size:14px;padding-right:5px;_padding-right:0px}
 .bank_tan{width:715px}
 .bank_zj ul li{border: 1px solid #ccc;float: left;height: 36px;margin:5px;width: 157px;padding:0;cursor: pointer;}
@@ -430,7 +430,7 @@ a.czbtnhui{color:#666;background:url(../images/cai888/user_03hui.jpg);border:1px
 .tk_tan_2 p.p1{line-height:30px;color:#444;font-size:14px;text-align:center;font-weight:bold}
 .tk_tan_2 p.p1 font{color:#ff6600;font-size:14px}
 .tk_tan_2 p.p1  a{color:#145fab;font-size:12px}
-.tk_tan_2 p.p1  a:hover{color:#ff6600; text-decoration:underline}
+.tk_tan_2 p.p1  a:hover{color:#f60; text-decoration:underline}
 .tk_t_ts{width:385px;*zoom:1;border:1px solid #ddd; background-color:#f4f4f4;padding:10px 15px;margin:10px auto 15px}
 .tk_t_ts p{ background:url(../images/cai888/user_25.jpg) left 4px  no-repeat;line-height:28px;color:#444;padding-left:35px}
 .fleft{float:left;}
