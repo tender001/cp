@@ -405,6 +405,7 @@ a.a_auto{margin:0 auto 20px auto}
 .hm_right_t s.red{background-position: 0 0;}
 .hm_right_t s.white{background-position: -13px 0;}
 .hm_right_t s.blue{background-position: -25px 0;}
+.hm_right_t s.big-blue{width:16px;height:16px;vertical-align:middle;background-position: -38px 0;}
 .hm_right_t h3{height:33px;font: 700 16px/33px arial;text-indent: 15px;color:#323232;border-bottom:1px solid #ddd;}
 .hm_right_t h3 i{float: right;padding-right: 18px;font: 400 12px/33px arial;text-indent: 0;_padding-top: 10px;}
 .hm_right_t ul{padding: 10px 0;background-color: #fefae5;zoom: 1;}
