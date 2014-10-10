@@ -1176,11 +1176,10 @@ table.co1 tbody td.last a.red_b{color:#fff;background:#ff6600;display:inline-blo
 a.red_b:hover{text-decoration: none;}
 .news_left h4 a.a1{color:#145fab;text-decoration:underline}
 .news_left p a.a1{color:#145fab;text-decoration:underline}
-.news_left  a.a1:hover{color:#ff6600}
+.news_left  a.a1:hover,.newpag a:hover{color:#f60}
 .newpag{padding:0 15px;margin:0px 0 10px;clear:both;background:#f5f5f5}
 .newpag span{display:block;float:left;width:276px;font-size:14px;color:#444;line-height:30px;height:30px;}
 .newpag a{color:#145fab}
-.newpag a:hover{color:#ff6600}
 .newpag span.span1{float:right;text-align:right}
 .logk{width:420px;height:330px;background-image:url(../images/cai888/logk.png)}
 .logtop{height:55px}
@@ -1188,11 +1187,11 @@ a.red_b:hover{text-decoration: none;}
 .logkm{width:386px;padding:7px 0 0 34px}
 .logkm table{clear:both}
 .logkm td{height:66px;text-align:left;color:#444; vertical-align:top;}
-.logkm td.td1{height:40px;line-height:40px;color:#ff0000;padding-left:5px;padding-top:3px}
-.logkm td.td2{height:41px;line-height:41px;color:#ff0000;padding-left:10px}
+.logkm td.td1{height:40px;line-height:40px;color:#f00;padding-left:5px;padding-top:3px}
+.logkm td.td2{height:41px;line-height:41px;color:#f00;padding-left:10px}
 .logkm td input{border:none; background:none;display:block;width:277px;height:38px;font-size:16px;color:#444;padding:11px 0 0 13px\9;height:27px\9;margin-left:52px;outline:none;}
 :root .logkm td input{padding:0 0 0 13px;height:38px;}
-.logkm td a.btn{width:133px;height:40px;display:block;line-height:40px;color:#fff;font-size:20px; font-family:"微软雅黑";text-align:Center;margin-top:3px;float:left;margin-right:22px}
+.logkm td a.btn{float:left;width:133px;height:40px;font:20px/40px "Microsoft YaHei";text-align:Center;color:#fff;margin-top:3px;margin-right:22px}
 .logkm td.td1{line-height:45px;color:#444}
 .logkm td.td1 a{color:#ff6600}
 .logkm td.td1 a.a2{float:left;margin:0;padding:0}
