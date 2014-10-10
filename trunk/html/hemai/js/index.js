@@ -219,7 +219,7 @@ $(document).ready(function(){
 							var cl=o%2==0?"":"odd";
 							var html = '<tr id='+rt.nid+' class = '+cl+'  >';
 							html += '<td>';
-							if(rt.iorder > 0 && rt.jindu != 100){
+							if(rt.iorder > 0  && rt.jindu != 100 && rt.nid < 15){
 								html += '<img src="/images/index_93.gif" />';
 							}else{
 								html +=  parseInt(rt.nid)+1;
@@ -358,7 +358,7 @@ $(document).ready(function(){
 									var cl=o%2==0?"":"odd";
 									var html = '<tr id='+idx+' class = '+cl+'>';
 									html += '<td>';
-									if(rt.iorder > 0 && rt.jindu != 100){
+									if(rt.iorder > 0 && rt.jindu != 100 && idx <= 15){
 										html += '<img src="/images/index_93.gif" />';
 									}else{
 										html += idx;
@@ -502,7 +502,7 @@ $(document).ready(function(){
 							var cl=o%2==0?"":"odd";
 							var html = '<tr id='+idx+' class = '+cl+'>';
 							html += '<td>';
-							if(rt.iorder > 0 && rt.jindu != 100){
+							if(rt.iorder > 0 && rt.jindu != 100 && idx <= 15){
 								html += '<img src="/images/index_93.gif" />';
 							}else{
 								html += idx;
@@ -630,7 +630,7 @@ $(document).ready(function(){
 							var cl=o%2==0?"":"odd";
 							var html = '<tr id = '+idx+' class='+cl+'>';
 							html += '<td>';
-							if(rt.iorder > 0 && rt.jindu != 100){
+							if(rt.iorder > 0 && rt.jindu != 100 && idx <= 15){
 								html += '<img src="/images/index_93.gif" />';
 							}else{
 								html += idx;
