@@ -869,6 +869,8 @@ $(document).ready(function(){
 			$(".nhmrtop").remove();
 			$(".top-caiz").remove();
 			$(".hm_right_t").show();
+			$(".annotation").hide();
+			$(".annotations").hide();
 			loadHotProj();
 			$("#start_hms").click(function(){
 					location.href=$_sys.getlotdir(Class.C('lotid'));
