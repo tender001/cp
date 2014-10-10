@@ -447,14 +447,14 @@ a.czbtnhui{color:#666;background:url(../images/cai888/user_03hui.jpg);border:1px
 .filter_box .step2{background:#FFFFEF}
 .youhua{border:1px solid #ccc;border-top:2px solid #ccc}
 .aut_btn{border:none}
-.aut_red{border:none;background:#ff6600}
+.aut_red{border:none;background:#f60}
 .aut_red span{border:none}                    
-.dialog01{border:1px solid #ff6600}
+.dialog01{border:1px solid #f60}
 .padding_t10{clear:both}
-.aut_blue{background:#ff6600}
+.aut_blue{background:#f60}
 .aut_blue span{border:none}
 .gl_tab .see_all{color:#145fab}
-.gl_tab .see_all:hover{color:#ff6600; text-decoration:underline}
+.gl_tab .see_all:hover,.loghed p a:hover{color:#f60; text-decoration:underline}
 .youhua .tab_team_mix th{boder-left:none}
 .youhua .tab_team_mix td{border-left:none}
 .condition_select .open_up, .condition_select .fold{width:117px}
@@ -463,13 +463,12 @@ a.czbtnhui{color:#666;background:url(../images/cai888/user_03hui.jpg);border:1px
 .loghed .log{display:block;float:left;width:177px;height:70px}
 .loghed p{float:right;line-height:30px;color:#444;text-align:right;padding-top:10px}
 .loghed p a{color:444;margin:0 5px;}
-.loghed p a:hover{color:#ff6600; text-decoration:underline}
 .loghed p img{display:block;width:218px;height:35px;margin-top:5px}
 .loginm{ background:url(../images/cai888/login_11.jpg) 50% 0  no-repeat #ff912c;height:400px;width:100%}
 .logm{width:960px;margin:0 auto}
 .logtb{width:252px;float:right;margin:59px 29px 0 0;_margin-right:15px}
 .logtb td{height:66px;text-align:left;color:#444; vertical-align:top}
-.logtb td.td1{height:40px;line-height:40px;color:#ff0000}
+.logtb td.td1{height:40px;line-height:40px;color:#f00}
 .logtb td input{border:none; background:none;display:block;width:245px;height:44px;font-size:16px;color:#444;padding:14px 0 0 5px\9;height:28px\9;}
 :root .logtb td input{padding:0 0 0 5px;height:44px;}
 .logtb td a.btn{width:252px;height:45px;display:block;line-height:44px;color:#fff;font-size:20px; font-family:"微软雅黑";text-align:Center;background:url(../images/cai888/loginbtn.jpg)}
@@ -479,15 +478,15 @@ a.czbtnhui{color:#666;background:url(../images/cai888/user_03hui.jpg);border:1px
 .logtb p a.a1{float:left}
 .logtb p a:hover{color:#ff6600; text-decoration:underline}
 .logtb p span{float:right}
-.logfot{padding:20px 0;width:1000px;margin:0 auto;border-top:2px solid #ff6600}
+.logfot{padding:20px 0;width:1000px;margin:0 auto;border-top:2px solid #f60}
 .logfot p.p1{color:#444;line-height:24px;text-align:Center;padding-bottom:15px}
 .regline{height:30px; background:#fff;width:100%}
-.regline div{ background:url(../images/cai888/rgb1_03.jpg) 0 0 no-repeat;width:1000px;margin:0 auto;height:30px}
+.regline div{width:1000px;height:30px;margin:0 auto;background:url(../images/cai888/rgb1_03.jpg) 0 0 no-repeat;}
 .regline div.div1{background:url(../images/cai888/reg2bg_03.jpg) 0 0 no-repeat}
 .regline div.div2{background:url(../images/cai888/getw_03.jpg) 0 0 no-repeat}
 .regline div.div3{background:url(../images/cai888/rgb1_02.jpg) 0 0 no-repeat}
 .regline div.div4{background:url(../images/cai888/rgb11.jpg) 0 0 no-repeat}
-.reginm{ background:#fff;height:355px;padding:40px 0 35px 0}
+.reginm{ background:#fff;height:355px;padding:40px 0 35px}
 .regm{width:960px;margin:0 auto}
 .regleft{width:600px;float:left;height:355px;border-right:1px solid #ddd}
 .regleft th{height:60px;text-align:right;color:#333; vertical-align:top;font-size:14px;line-height:40px}
@@ -495,7 +494,7 @@ a.czbtnhui{color:#666;background:url(../images/cai888/user_03hui.jpg);border:1px
 .regleft td input.text{border:1px solid #bbb; background:none;display:block;width:235px;height:38px;font-size:16px;color:#444;padding:11px 0 0 5px\9;height:27px\9;float:left}
 :root .regleft td input.text{padding:0 0 0 5px;height:38px;}
 .regleft  a{color:#145fab;}
-.regleft  a:hover{color:#ff6600; text-decoration:underline}
+.regleft  a:hover{color:#f60; text-decoration:underline}
 .regleft  img{display:block;float:left;width:90px;height:35px;margin:2px 0 0 12px}
 .regleft a.btn{width:240px;height:38px;display:block;text-align:Center;color:#fff;line-height:38px; background:url(../images/cai888/reg_22.jpg);font-size:18px; font-family:"微软雅黑"}
 .regleft a.btn:hover{background:url(../images/cai888/reg_23.jpg); text-decoration:none}
@@ -505,7 +504,7 @@ a.czbtnhui{color:#666;background:url(../images/cai888/user_03hui.jpg);border:1px
 .regleft span.regrs{ background:url(../images/cai888/dui.jpg) 1px 12px  no-repeat;}
 .regleft b{display:block;float:left;background:url(../images/cai888/yzm_bg.png) 7px 8px  no-repeat;height: 40px;margin-left: 4px;opacity: 0.7;outline: medium none;width: 34px;cursor:pointer}
 .regleft b:hover{opacity:1}
-.regright{width:200px;float:right;padding-right:60px;background:url(../images/cai888/reg_18.jpg) 2px 193px  no-repeat;height:355px}
+.regright{float:right;width:200px;height:355px;padding-right:60px;background:url(../images/cai888/reg_18.jpg) 2px 193px  no-repeat;}
 .regr1{height:29px}
 .regr1 span{float:left;color:#444;font-size:14px;font-weight:bold;line-height:29px}
 .regr1 a{display:block;float:left;background:url(../images/cai888/reg_07.jpg);width:78px;height:29px;text-align:center;line-height:29px;color:#444;font-size:12px;margin-left:13px}
@@ -517,26 +516,26 @@ a.czbtnhui{color:#666;background:url(../images/cai888/user_03hui.jpg);border:1px
 .rztab .susessp a{margin:0;padding:0}
 .regsusm{ background:#fff}
 .regsus{padding:60px 0 0 55px;width:905px;margin:0 auto}
-.regsus h2{border-bottom:1px solid #ddd;height:40px;line-height:40px;font-size:18px;font-family:"微软雅黑";color:#444}
+.regsus h2{border-bottom:1px solid #ddd;height:40px;font:18px/40px "Microsoft YaHei";color:#444}
 .regsusbg{ background: url(../images/cai888/regsus_03.jpg) 0 10px no-repeat;height:300px;padding:55px 0 0 270px;font-size:12px;color:#888;}
-.regsusbg span{font-size:22px;color:#444;font-family:"微软雅黑";line-height:32px;display:block}
-.regsusbg strong{color:#ff6600;font-weight:100}
+.regsusbg span{display:block;font:22px/32px "Microsoft YaHei";color:#444;}
+.regsusbg strong{color:#f60;font-weight:100}
 .regsusbg p a{color:#145fab}
-.regsusbg p a:hover{ text-decoration:underline;color:#ff6600}
+.regsusbg p a:hover{ text-decoration:underline;color:#f60}
 .regsusbg p{display:block;padding:30px 0 10px;color:#145fab}
-.regsusbg a.a1{width:260px;height:50px;text-align:center;line-height:50px; background:#ff6600;color:#fff;font-family:"微软雅黑";font-size:26px;margin-right:12px;display:block;}
-.regdv{font-size:16px;color:#000;font-family:"微软雅黑";line-height:35px;height:35px}
+.regsusbg a.a1{display:block;width:260px;height:50px;margin-right:12px;font:26px/50px "Microsoft YaHei";color:#fff;text-align:center;background:#f60;}
+.regdv{height:35px;font:16px/35px "Microsoft YaHei";color:#000;}
 .regdv a{color:#145fab}
-.regdv a:hover{ text-decoration:underline;color:#ff6600}
+.regdv a:hover{ text-decoration:underline;color:#f60}
 .adnav{ background:#f5f5f5;border-bottom:1px solid #d5d5d5;height:27px}
-.ad_nav{height:27px;line-height:27px;margin:0 auto;width:960px}
+.ad_nav{width:960px;height:27px;line-height:27px;margin:0 auto;}
 .ad_nav span{float:left;color:#888}
 .ad_nav span a{color:#444;margin:0 5px;}
 .ad_nav p{float:right;color:#888}
 .ad_nav p a{color:#444;margin:0 5px;}
 .ad_nav a:hover{color:#ff3300; text-decoration:underline}
 .getword{width:940px;margin:0 auto;padding:30px 0 100px 10px}
-.getword h2{border-bottom:1px solid #ddd;height:40px;line-height:40px;font-size:18px;font-family:"微软雅黑";color:#444}
+.getword h2{border-bottom:1px solid #ddd;height:40px;font:18px/40px "Microsoft YaHei";color:#444}
 .getwtb{padding:47px 0 0 180px}
 .getwtb td{height:30px;line-height:30px;color:#333;font-size:14px;text-align:right}
 .getwtb td.tdred{height:22px;line-height:22px;text-align:left;color:#ff0000;font-size:12px;}
@@ -544,7 +543,7 @@ a.czbtnhui{color:#666;background:url(../images/cai888/user_03hui.jpg);border:1px
 :root .getwtb input.text1{padding:0 0 0 3px;height:30px}
 .getwtb a.a1{color:#555;font-size:12px;margin-left:15px;float:left}
 .getwtb a.a1:hover{color:#ff6600; text-decoration:underline}
-.getwtb a.btn{color:#fff;font-size:14px;width:103px;height:34px;display:block;text-align:Center;line-height:34px;font-family:"微软雅黑";background: url(../images/cai888/getw_10.jpg) ;margin-top:20px;float:left}
+.getwtb a.btn{float:left;width:103px;height:34px;margin-top:20px;color:#fff;font:14px/34px "Microsoft YaHei";text-align:Center;background: url(../images/cai888/getw_10.jpg);}
 /*弹框css 
 .tantop{height:38px;line-height:36px;background: url(../images/cai888/getwtan_03.jpg)}
 .tantop span{float:left;color:#fff;font-size:18px;font-family:"微软雅黑";padding-left:10px;}
