@@ -876,7 +876,7 @@ $(document).ready(function(){
 					location.href=$_sys.getlotdir(Class.C('lotid'));
 			});
 		}
-		else if(Class.C('lotid') == 03||Class.C('lotid') == 53||Class.C('lotid') == 30||Class.C('lotid')== 80||Class.C('lotid')== 81||Class.C('lotid')== 82||Class.C('lotid')== 83){
+		else if(Class.C('lotid') == 03||Class.C('lotid') == 53||Class.C('lotid') == 30||Class.C('lotid')== 81||Class.C('lotid')== 82||Class.C('lotid')== 83){
 			$(".top-caiz").show();
 			$(".hemai").hide();
 			$(".annotation").hide();
@@ -901,7 +901,7 @@ $(document).ready(function(){
 			});
 			
 		
-		}else if(Class.C('lotid') ==50||Class.C('lotid')== 1){
+		}else if(Class.C('lotid') ==50||Class.C('lotid')== 1||Class.C('lotid')== 80){
 
 			$(".top-caiz").show();
 			$(".hemai").hide();
