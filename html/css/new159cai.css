@@ -1339,7 +1339,7 @@ table.cpmxtab p{line-height:25px;color:#444;font-size:12px;margin-leolor:#145fab
 .jp i.Rating3_7{background-position: -96px 0;}
 .jp i.Rating3_8{background-position: -112px 0;}
 .jp i.Rating3_9{background-position: -128px 0;}
-.jp i.Rating4{height: 14px;background: url("../images/bg/vip-cp4.gif") no-repeat;}
+.jp i.Rating4{width:16px;height: 14px;background: url("../images/bg/vip-cp4.gif") no-repeat;}
 .jp i.Rating4_1{background-position: 0 0;}
 .jp i.Rating4_2{background-position: -16px 0;}
 .jp i.Rating4_3{background-position: -32px 0;}
