@@ -1291,7 +1291,7 @@ table.cpmxtab p{line-height:25px;color:#444;font-size:12px;margin-leolor:#145fab
 .cptsp{line-height:30px;color:#333;padding-left:25px;}
 .cptsp em{color:#f00}
 .userp1p{font-size:14px}
-.jp .zj-pic{float:left;width: 120px;height: 16px;overflow: hidden;}
+.jp .zj-pic{float:left;width: 90px;height: 16px;overflow: hidden;}
 .jp i{float: left;width:15px;height:15px;margin: 0 6px 0 0;_display: inline/* background:url(../images/hm/hm2_07.gif) 0 0 no-repeat;*/}
 .jp b em{float: left;margin-right: 4px;display: inline;}
 /*.jp i.Rating1{background-position: 0 -17px;}
@@ -1319,7 +1319,7 @@ table.cpmxtab p{line-height:25px;color:#444;font-size:12px;margin-leolor:#145fab
 .jp i.Rating1_18{background-position: -272px 0;}
 .jp i.Rating1_19{background-position: -288px 0;}
 .jp i.Rating1_20{background-position: -304px 0;}
-.jp i.Rating2{height: 12px;background: url("../images/bg/vip-cp2.gif") no-repeat;}
+.jp i.Rating2{height: 14px;background: url("../images/bg/vip-cp2.gif") no-repeat;}
 .jp i.Rating2_1{background-position: 0 0}
 .jp i.Rating2_2{background-position: -16px 0}
 .jp i.Rating2_3{background-position: -32px 0}
@@ -1329,7 +1329,7 @@ table.cpmxtab p{line-height:25px;color:#444;font-size:12px;margin-leolor:#145fab
 .jp i.Rating2_7{background-position: -96px 0;}
 .jp i.Rating2_8{background-position: -112px 0;}
 .jp i.Rating2_9{background-position: -128px 0;}
-.jp i.Rating3{width: 16px;background: url("../images/bg/vip-cp3.gif") no-repeat;}
+.jp i.Rating3{width: 16px;height:14px;background: url("../images/bg/vip-cp3.gif") no-repeat;}
 .jp i.Rating3_1{background-position: 0 0}
 .jp i.Rating3_2{background-position: -16px 0}
 .jp i.Rating3_3{background-position: -32px 0}
