@@ -876,7 +876,33 @@ $(document).ready(function(){
 					location.href=$_sys.getlotdir(Class.C('lotid'));
 			});
 		}
-		else if(Class.C('lotid') == 30||Class.C('lotid') ==50||Class.C('lotid')== 1||Class.C('lotid')== 80||Class.C('lotid')== 81){
+		else if(Class.C('lotid') == 03||Class.C('lotid') == 53||Class.C('lotid') == 30||Class.C('lotid')== 80||Class.C('lotid')== 81||Class.C('lotid')== 82||Class.C('lotid')== 83){
+			$(".top-caiz").show();
+			$(".hemai").hide();
+			$(".annotation").hide();
+			$(".annotations").show();
+			$(".hm_right_t").show();
+			cachePeriod();
+			$("#start_hm").click(function(){
+				if(Class.C('lotid') == 30){
+					location.href=$_sys.getlotdir(85);
+				}else{
+					location.href=$_sys.getlotdir(Class.C('lotid'));
+				}
+				
+			});
+			$("#start_hmss").click(function(){
+				if(Class.C('lotid') == 30){
+					location.href=$_sys.getlotdir(85);
+				}else{
+					location.href=$_sys.getlotdir(Class.C('lotid'));
+				}
+				
+			});
+			
+		
+		}else if(Class.C('lotid') ==50||Class.C('lotid')== 1){
+
 			$(".top-caiz").show();
 			$(".hemai").hide();
 			$(".annotation").show();
@@ -901,13 +927,13 @@ $(document).ready(function(){
 			});
 			
 		
+		
 		}
 		else if(parseInt(Class.C('lotid'))<90 && Class.C('lotid') != 70 && Class.C('lotid') != 71 && Class.C('lotid') != 72 && Class.C('lotid') != 31 && Class.C('lotid') != 32 && Class.C('lotid') != 30){
 			$(".hm_right_t").remove();
 			$(".top-caiz").show();
 			$(".hemai").hide();
-			$(".annotation").hide();
-			$(".annotations").show();
+			
 			cachePeriod();
 			$("#start_hm").click(function(){
 				location.href=$_sys.getlotdir(Class.C('lotid'));
@@ -919,6 +945,8 @@ $(document).ready(function(){
 		
 		}
 		else{
+			$(".annotation").hide();
+			$(".annotations").show();
 			$(".nhmrtop").remove();
 			$(".hm_right_t").show();
 			if(Class.C('lotid') == 31||Class.C('lotid') == 32||(Class.C('lotid')<98&&Class.C('lotid')>89 )||Class.C('lotid') == 70||Class.C('lotid') == 71||Class.C('lotid') == 72){
