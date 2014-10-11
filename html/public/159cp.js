@@ -629,7 +629,7 @@ $_sys.showzhanjiname = function (lotid,uid,func){
 		func='';
 	}
 	if(uid == '******'){
-			return '<a href="javascript:void(0);"><b>' + uid + '</b></a>';
+			return uid;
 			}
 		return '<a href="javascript:void(0);" onclick="Y.openUrl(\'/game/zhanji.html?lotid='+lotid+'&uid='+uid+'&func='+func+'\',807,575)">'+uid+'</a>';
 };
