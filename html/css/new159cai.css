@@ -1602,7 +1602,7 @@ html .buyfimsg td input.text {height: 22px;line-height:22px;padding: 0; vertical
 .buyfimsg td em {margin-right:12px;background:#eee;border: 1px solid #ccc;color: #444;cursor: pointer;display: inline-block;font: 400 14px/28px Arial,Helvetica,sans-serif;padding: 0 15px;}
 .buyfimsg td input.bt {border: 1px solid #DDDDDD;display: block;float: left;height: 25px;margin-top:1px;width: 515px;font-size:12px;padding:6px 0 0 5px\9;height:19px\9}
 :root .buyfimsg td input.bt{padding:0 0 0 5px}
-#container {margin: 0 auto;position: relative;width: 998px;/*border: 1px solid #ccc;*/overflow: visible;-webkit-user-select: none;-moz-user-select: none;-o-user-select: none;user-select: none;zoom: 1;}
+#container {margin: 0 auto;position: relative;width: 998px;/*border: 1px solid #ccc;*/overflow: visible;zoom: 1;}
 #container:after{visibility:hidden;display:block;font-size:0;content:" ";clear:both;}
 .annotation,.annotations{padding: 10px 0 0;text-indent:1.5em;}
 .numcai{overflow: visible;}
