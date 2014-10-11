@@ -294,7 +294,7 @@ p.bd_say input{height:24px;text-algin:center;border:1px solid #ddd;padding-top:4
 p.bd_say font{color:#790500;font-size:12px}
 a.t_a_qx{float:left;width:98px;height:34px;margin:12px 0 0 130px;font:16px/34px "微软雅黑";text-align:center;color:#333; background-image:url(../images/cdbg/login_10.gif);text-decoration:none;_margin-left:70px}
 a.t_a_qx:hover{background-image:url(../images/cdbg/reg_03.gif)}
-a.t_a_qd{float:left;width:115px;height:35px;margin:10px 0 0 15px;color:#fff;font:16px/34px "微软雅黑"; text-align:center;background-image:url(../images/cdbg/reg_07.gif);}
+a.t_a_qd{float:left;width:115px;height:35px;margin:10px 0 0 15px;color:#fff;font:16px/34px "Microsoft Yahei"; text-align:center;background-image:url(../images/cdbg/reg_07.gif);}
 a.t_a_qd:hover{background-image:url(../images/cdbg/reg_10.gif)}
 .main_tan_login{width:477px;margin:70px auto;*zoom:1;}
 .tan_top_login{float:left;width:430px;height:38px; background-image: url(../images/cdbg/m_tan_05.gif);}
@@ -303,7 +303,7 @@ table.log_tab th{width:55px;font:700 14px/60px arial;text-align:center;color:#44
 table.log_tab td {text-align:left;line-height:60px;}
 input.text_log{width:205px;height:32px;border:1px solid #bbb;border-top-color:#aaa; display:block; background: url(../images/cdbg/login_18.gif) transparent;-webkit-border-radius:4px;border-radius:4px;-moz-border-radius:4px;padding-left:6px;padding:8px 0 0 6px\9;height:24px\9;}
 :root input.text_log{height:32px;padding:0 0 0 6px}
-a.but_log{display:block;width:115px;height:35px;margin-left:30px;color:#fff;font:16px/34px "微软雅黑"; text-align:center;background-image:url(../images/cdbg/reg_07.gif);_margin-top:15px}
+a.but_log{display:block;width:115px;height:35px;margin-left:30px;color:#fff;font:16px/34px "Microsoft Yahei"; text-align:center;background-image:url(../images/cdbg/reg_07.gif);_margin-top:15px}
 a.but_log:hover{background-image:url(../images/cdbg/reg_10.gif)}
 span.say_4,span.say_5{display:block;width:164px;height:25px;line-height:22px;padding-top:10px;font-size:12px;text-align:center;color:#444;background-image:url(../images/cdbg/logt_03.gif);position:absolute;top:81px;left:160px;}
 span.say_5{display:block;top:140px;background-image:url(../images/cdbg/logt_06.gif);}
@@ -314,7 +314,7 @@ table.log_tab td a.aa:hover{color:#790500; text-decoration:underline}
 .foot{width:1000px;margin:0 auto;padding:20px 0 15px 0}
 .foot_col{float:left;width:170px;height:150px;margin:15px 0 0 25px;_margin-left:20px}
 .foot_col img{float:left;width:42px;height:42px;margin-bottom:5px}
-.foot_col h3{float:left;padding-left:15px;font:400 18px/42px "微软雅黑";color:#4a4a4a;}
+.foot_col h3{float:left;padding-left:15px;font:400 18px/42px "Microsoft Yahei";color:#4a4a4a;}
 .foot_col a{display:block;line-height:27px;font-size:14px;color:#4a4a4a;clear:both}
 .foot_col a:hover,.foot_dd ul li a:hove{color:#f60; text-decoration:underline;}
 .foot_dd{clear:both;padding:25px 0 0 65px;height:20px;width:100%}
