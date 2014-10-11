@@ -612,7 +612,7 @@ a.public_Dblue:hover,a.public_Lblue:hover,a.public_Dora:hover,a.public_Lora:hove
 .cm_hm_pxico2{background-position:-521px -200px}
 .cm_hm_pxico2_cur{background-position:-521px -183px}
 .cm_fqhm_btn{display:inline-block;height:22px;line-height:22px;margin-left:7px;text-align:center;width:66px}
-.cm_hm_pxtext{border:1px solid ##d7d7d7;border-top:0}
+.cm_hm_pxtext{border:1px solid #d7d7d7;border-top:0}
 .cm_hm_pxtext ul:hover{background:none repeat scroll 0 0 #ffffe8}
 .cm_hm_ul52{border-bottom:1px solid #e5e5e5;height:38px;padding:5px 0 5px 10px}
 .cm_hm_ul52 li{float:left;line-height:20px;overflow:hidden}
@@ -1044,7 +1044,7 @@ a.cm_zc_buy{color:#c00;font-family:"微软雅黑";margin-right:50px}
 .mx_tips th,.mx_tips td{text-align:center}
 .mx_tips td{line-height:30px}
 .mx_tips th.sup{background-color:#fc8080;color:#fff;line-height:25px;font-weight:100}
-p_tb5 .mx_tips td.last_td{border-bottom:1px solid #fd9691}
+.p_tb5 .mx_tips td.last_td{border-bottom:1px solid #fd9691}
 .mx_tips table{border-bottom:1px solid #fd9691}
 .cm_cz_ico b.cm_hmzxico{background-position:-209px -28px;display:block;height:19px;margin:4px 0 0 0;width:21px}
 a.cm_species_img b.cm_smg,.cm_cz_ico b.cm_smg{background-position:-65px -301px;height:23px;margin:4px 0 0 0;width:23px}
