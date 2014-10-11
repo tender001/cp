@@ -1,7 +1,6 @@
 @charset "utf-8";
 /*index basic*/
 .center .body li p span em{background: url(../images/bg/index_bg0.png);_background-image: url(../images/bg/index_ie6.png);}
-
 .updo li{position: relative;z-index: 99;}
 .updo li s{width: 11px;height: 11px;display: block;position: absolute;right: 9px;top: 12px;background: transparent url(../images/bg/nav_xia.jpg);cursor: pointer;}
 .updo li.hover s{background: transparent url(../images/bg/nav_xia1.jpg)}
@@ -44,7 +43,6 @@
 .m_mid .ad .next{right: 0;top: 100px;background-position: -32px 0;}
 .m_mid .ad .prev.hover{background-position: 0 -62px;}
 .m_mid .ad .next.hover{background-position: -32px -62px;}
-
 .m_mid .tab{width: 100%;margin:8px auto 0;border-top:1px solid #ccc;}
 .m_mid .tab .title{height:30px;line-height:30px;border-bottom: 1px solid #ddd;overflow: visible;padding-left: 14px;background-color: #f6f6f6;background-position: 0 -378px;}
 .m_mid .tab .title span{width:80px;height: 30px;display:block;float:left;text-align:center;font-size: 14px;font-weight:bold;color: #3c3c3c;border-right: 1px solid #ddd;border-left: 1px solid #ddd;margin-left: -1px;cursor: pointer;position: relative;_bottom: -1px;}
@@ -65,7 +63,6 @@
 .m_mid .tab .bod b em.blue{background-position: -150px -110px;}
 .m_mid .tab .bod b i{width: 52px;height: 32px;line-height:32px;margin: 0 5px 0 8px;font-size: 14px;color: #444;background-position: -1px -152px;cursor: pointer;}
 .m_mid .tab .bod b strong{width: 93px;height: 34px;line-height: 31px;font-size: 14px;color: #fff;text-indent: -999em;background-position: -55px -152px;cursor: pointer;}
-
 .m_r{float: right;width: 223px}
 .m_r p.user{margin-bottom: 8px;height: 42px;overflow: hidden;}
 .m_r p.user a.use{width: 104px;height: 42px;float:left;font: bold 16px/42px "\5b8b\4f53";margin-left:5px;text-align: center;text-indent: -999em;color: #eb6003;text-decoration: none;background: url(../images/bg/index_login.jpg) no-repeat;_display:inline;}
@@ -75,7 +72,7 @@
 .m_r p.user .dlu{width: 86%;margin: 0 auto;display: block;line-height: 21px;}
 .m_r p.user .dlu a{color: #145fab}
 .m_r p.user .dlu a:hover{text-decoration: underline;}
-.m_r p.user .dlu span{margin-left: -7px;s}
+.m_r p.user .dlu span{margin-left: -7px;}
 .m_r p.user .dlu span a{margin: 0 5px;}
 .m_r .tab{height: 219px;border: 1px solid #ccc;border-bottom: 0;padding-bottom:2px;}
 .m_r .tab .title{height: 28px;line-height: 28px;color: #333;background-color: #f6f6f6;margin-left: -1px;overflow: visible;background-position: 0 -378px;}
@@ -91,7 +88,6 @@
 .m_r .tab .bod div strong a:hover{color: #e62e04;}
 .m_r .tab .bod div em{float: right;color: #888;}
 .m_r .tab .bod div a.more{margin: 0;font-family: "\5b8b\4f53";}
-
 /*手机购彩*/
 .mob_buy{border-bottom: 0;background-color: #f5f5f5;}
 .mob_buy .body{padding: 26px 0;}
@@ -104,7 +100,6 @@
 /**/
 .today,.center{float: left;}
 .kj{width: 1000px;margin: 0 auto;}
-
 .center{width: 546px;margin-left: 7px;zoom:1;_display: inline;}
 div.center .body{width:95%;height:320px;}
 .center .body ul{margin-bottom: -1px;*margin-bottom: -4px;}
@@ -116,7 +111,6 @@ div.center .body{width:95%;height:320px;}
 .center .body li div{clear:both;height: 32px; line-height: 34px;font-size: 14px;color: #8c8c8c;overflow: hidden;white-space: nowrap;text-overflow:ellipsis;}
 .center .body li div a{margin-right: 14px;}
 .center .body li a:hover{color: #e62e04 !important;}
-
 .zx{float: right;width: 223px;}
 .zx .zj{margin-bottom: 9px;}
 .zx .zj .body{height: 169px;padding: 8px 0;overflow: hidden;color: #3c3c3c;}
@@ -126,7 +120,6 @@ div.center .body{width:95%;height:320px;}
 .zx .cn li{float: left;width: 62px;height: 74px;margin-right: 4px;display: inline;}
 .zx .cn li img{width: 100%;height: 100%;}
 .zx .cn .body{padding: 10px 0;}
-
 .hot{width: 1000px;margin: 10px auto;}
 .hm{width: 776px;float: right;border-bottom: 0;height: 345px;}
 .hm .tit{background: #e85c00 url(../images/bg/hm_rightbg.jpg) right 0 no-repeat;color: #fff;border-bottom-color: #e8e8e8;}
