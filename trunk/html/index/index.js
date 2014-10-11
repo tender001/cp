@@ -210,7 +210,7 @@ Class(
 //							}
 //							html += '</td>';
 							html += '<td style="padding-left:15px">' + $_sys.showzhanjiname(gameid,rt.nickid,'award') + '</td>';
-							html += '<td>' + ($_sys.showzhanji(rt.aunum ,rt.agnum)==''?'':$_sys.showzhanjii(gameid,rt.cnickid,rt.aunum,rt.agnum)) + '</td>';
+							html += '<td>' + ($_sys.showzhanji(rt.aunum ,rt.agnum)==''?'':$_sys.showzhanjii(gameid,rt.nickid,rt.aunum,rt.agnum)) + '</td>';
 							
 							html += '<td>' + $_sys.getlotname(gameid).split("-")[0] + '</td>';
 							html += '<td>' + parseFloat(rt.money).rmb(true) + '</td>';
