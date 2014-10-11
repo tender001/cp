@@ -526,11 +526,11 @@ a.goyh2:hover {background-position: -95px -59px;}
 .dt_top .line{border-top: 4px solid #f60;width: 1000px;height: 0;overflow: hidden;position: relative;left: 0;top: 0;}
 .dt_toplist{width:290px;height:190px; background-color:#fff;border:1px solid #ccc;margin-left:30px;float:left}
 .dt_toplist img{display:block;margin:8px auto 0;width:98px;height:112px;}
-.dt_toplist a{width:102px;height:35px;background:url(../images/159/dating_bg_btn.png) no-repeat;display:block;margin:0 auto;font-size:18px; font-family: "微软雅黑";text-align:center;color:#fff;text-indent: -999em;}
+.dt_toplist a{width:102px;height:35px;background:url(../images/159/dating_bg_btn.png) no-repeat;display:block;margin:0 auto;font-size:18px; font-family: "Microsoft Yahei";text-align:center;color:#fff;text-indent: -999em;}
 .dt_toplist a:hover{ background-position:-102px 0;text-decoration: none;}
 .dt_toplist p{text-align:Center;color:#444;line-height:30px;}
 .dt_cist{ /*background:url(../images/159/dting_39.jpg) 0 29px  repeat-x;*/margin-top:10px}
-.dt_cist h2{height:35px;width:116px;font: bold 16px/35px "宋体";text-align:center;color:#fff;background-color: #f60;/* background:url(../images/159/dting_20.jpg)*/}
+.dt_cist h2{height:35px;width:116px;font: bold 16px/35px "simsun";text-align:center;color:#fff;background-color: #f60;/* background:url(../images/159/dting_20.jpg)*/}
 .dt_cist .line{width: 1000px;height: 0;overflow: hidden;border-top: 3px solid #f60;}
 .dt_cm{border:1px solid #ccc;border-top:0;padding-bottom:10px;*zoom:1}
 .dt_cn{width:180px;height:150px;margin:10px 0 0 15px;float:left;border:1px solid #ddd;_margin-left:12px; position:relative;overflow:visible}
