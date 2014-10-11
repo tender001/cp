@@ -503,7 +503,7 @@ a.all_hm:hover{background-image: url(../images/1_03_06.gif); text-decoration:und
 .pagination span{display:block;float:left;padding-left:25px;line-height:25px;color:#434343}
 .pagination span input{width:40px;height:25px;border:1px solid #ddd;text-align:center;padding:5px 0 0 0\9;height:20px\9;}
 :root .pagination span input{height:25px;padding:0}
-.hm_xx_main ul li.last a.my,.hm_xx_main ul li.last a.cd,.hm_xx_main ul li.last a.rg,.hm_xx_main ul li.last a.zrg,.time_bg span.red{width:144px;height:41px; background: url(../images/cdbg/gxq.jpg) 0 0 no-repeat;text-align:center;display:block;font-size:18px; font-family:"微软雅黑";line-height:41px;}
+.hm_xx_main ul li.last a.my,.hm_xx_main ul li.last a.cd,.hm_xx_main ul li.last a.rg,.hm_xx_main ul li.last a.zrg,.time_bg span.red{display:block;width:144px;height:41px;font:18px/41px "Microsoft YaHei";text-align:center;background: url(../images/cdbg/gxq.jpg) 0 0 no-repeat;}
 .hm_xx_main ul li.last a.my{ background-position:0 -44px;color:#ff6600}
 .hm_xx_main ul li.last a.cd{ background-position:0 -44px;color:#4a4a4a}
 .hm_xx_main ul li.last a.rg,.hm_xx_main ul li.last a.zrg{color:#fff}
