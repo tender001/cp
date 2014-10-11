@@ -332,7 +332,8 @@ $(document).ready(function(){
 						$("div.rig_hm_main").css('padding-bottom','0');
 						$("div.paginachange").hide();
 						
-						$("#table_project_list").append("<tr id='err'><td colspan='9' align='center' >抱歉！没有找到符合条件的结果！</td></tr>");
+//						$("#table_project_list").append("<tr id='err'><td colspan='9' align='center' >抱歉！没有找到符合条件的结果！</td></tr>");
+						$("#table_project_list").append("<tr id='err' ><td colspan='9' align='center' style='line-height:218px'>当前暂无合买方案</td></tr>");
 					}
 				}else{
 					Y.ajax({
@@ -453,7 +454,8 @@ $(document).ready(function(){
 								$("div.rig_hm_main").css('padding-bottom','0');
 								$("div.paginachange").hide();
 								
-								$("#table_project_list").append("<tr id='err'><td colspan='9' align='center' >抱歉！没有找到符合条件的结果！</td></tr>");
+//								$("#table_project_list").append("<tr id='err'><td colspan='9' align='center' >抱歉！没有找到符合条件的结果！</td></tr>");
+								$("#table_project_list").append("<tr id='err' ><td colspan='9' align='center' style='line-height:218px'>当前暂无合买方案</td></tr>");
 							}
 						},
 						error : function() {
@@ -602,7 +604,8 @@ $(document).ready(function(){
 						$("div.rig_hm_main").css('padding-bottom','0');
 						$("div.paginachange").hide();
 						
-						$("#table_project_list").append("<tr id='err'><td colspan='9' align='center' >抱歉！没有找到符合条件的结果！</td></tr>");
+//						$("#table_project_list").append("<tr id='err'><td colspan='9' align='center' >抱歉！没有找到符合条件的结果！</td></tr>");
+						$("#table_project_list").append("<tr id='err' ><td colspan='9' align='center' style='line-height:218px'>当前暂无合买方案</td></tr>");
 					}
 				},
 				error : function() {
@@ -733,7 +736,8 @@ $(document).ready(function(){
 						$("div.rig_hm_main").css('padding-bottom','0');
 						$("div.paginachange").hide();
 						
-						$("#table_project_list").append("<tr id='err'><td colspan='9' align='center' >抱歉！没有找到符合条件的结果！</td></tr>");
+//						$("#table_project_list").append("<tr id='err'><td colspan='9' align='center' >抱歉！没有找到符合条件的结果！</td></tr>");
+						$("#table_project_list").append("<tr id='err' ><td colspan='9' align='center' style='line-height:218px'>当前暂无合买方案</td></tr>");
 					}
 				},
 				error : function() {
