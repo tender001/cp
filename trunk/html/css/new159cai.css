@@ -316,7 +316,7 @@ table.log_tab td a.aa:hover{color:#790500; text-decoration:underline}
 .foot_col img{float:left;width:42px;height:42px;margin-bottom:5px}
 .foot_col h3{float:left;padding-left:15px;font:400 18px/42px "Microsoft Yahei";color:#4a4a4a;}
 .foot_col a{display:block;line-height:27px;font-size:14px;color:#4a4a4a;clear:both}
-.foot_col a:hover,.foot_dd ul li a:hove{color:#f60; text-decoration:underline;}
+.foot_col a:hover,.foot_dd ul li a:hover{color:#f60; text-decoration:underline;}
 .foot_dd{clear:both;padding:25px 0 0 65px;height:20px;width:100%}
 .foot_dd ul li{float:left;padding:0 3px;color:#434343;font-size:14px }
 .foot_dd ul li a{color:#434343;font-size:14px}
@@ -644,7 +644,7 @@ em.uf{ background-image:url(../images/159/uf.gif)}
 .pagination li strong{color:#f60}
 .nhmrtop{border-left:1px solid #ddd;border-right:1px solid #ddd;margin-left:7px}
 .pagina{padding-top:10px}
-.pagina select{margin-top:0px;}
+.pagina select{margin-top:0;}
 .pagination span{line-height:18px;padding-left:0}
 .rig_hm_main table p.x_jdt em{background-color:#ff6600}
 .rig_hm_main table font{color:#ff6600}
@@ -685,7 +685,7 @@ em.uf{ background-image:url(../images/159/uf.gif)}
 .nsopr b:hover{background:url(../images/159/nx5s_06.jpg)}
 .nsopr b.bem{color:#e52e04;float:left;margin-left:10px;cursor:pointer;width:24px;background:none}
 .nsopr b.bem:hover{ text-decoration:underline;color:#000;background:none}
-.nxsd{clear:both;padding-top:4px;padding-bottom:0px;_padding-top:0;height:24px;margin-left:-56px}
+.nxsd{clear:both;padding-top:4px;padding-bottom:0;_padding-top:0;height:24px;margin-left:-56px}
 .nxsd span{width:49px;height:24px;float:left; background:url(../images/159/nx_45.jpg);cursor:pointer}
 .nxsd input{display:inline;margin:5px 11px 0 20px;zoom:1;*margin:5px 9px 0 14px; }
 *html .nxsd input{*margin:5px 8px 0 13px; }
@@ -822,7 +822,7 @@ span.sz_a_l a.cu{background:url(../images/159/nx5s_09z.jpg) repeat scroll 0 0 }
 .card_bg table img{display:block;float:left;margin:5px 0 0 5px}
 .sz_xuh ul li b.b_r,.qx_xuh ul li b.b_r{background-position:0 -241px;}
 .tgdiv{padding:100px 0 80px 30px}
-.tgdiv h4{color:#444;font-size:14px;float:left;font-weight:bold;line-height:25px;font-weight:100}
+.tgdiv h4{float:left;line-height:25px;font-size:14px;font-weight:100;color:#444;}
 .tgdiv input{display:block;float:left;width:260px;border:1px solid #bbb;height:22px;font-size:12px;color:#333;padding:3px 0 0 5px\9;height:19px\9;margin:0 5px}
 :root .tgdiv input{height:22px;padding:0 0 0 5px}
 .tgdiv a{display:block;float:left; background-color:#ff6600;height:22px;width:65px;color:#fff;text-align:center;line-height:22px;margin-top:1px}
@@ -843,7 +843,7 @@ span.suc_reg a.a3{color:#145fab;text-decoration:underline;margin-left:1px}
 .lr_m{padding-left:8px}
 .pagina select{margin-top:1px}
 .cpxq_tan_1 a{top:12px;right:20px;}
-.cpxq_tan_1 a:hover{}background-image:url(..images/hm/zchm_11.png) no-repeat scroll 0 0 }
+.cpxq_tan_1 a:hover{background-image:url(..images/hm/zchm_11.png) no-repeat}
 .b_th_top11{margin:0}
 .all_kj{margin-top:0}
 .all_kj_top{height:auto}
@@ -973,7 +973,7 @@ a.g_a_t{ background:#e52e04;font-size:14px;font-weight:bold;color:#fff;line-heig
 .winc_top p{float:right;color:#666}
 .winc_top p em{color:#e52e04;font-weight:bold;padding-right:15px}
 .winmain{padding:8px;border:1px solid #ccc;border-top:none; background:#fff;*zoom:1;}
-.wdcupleft h4{line-height:14px;height:14px;color:#444;font-size:12px;text-align:right;padding:10px 0 10px 0;font-weight:100; _padding:7px 0 7px}
+.wdcupleft h4{line-height:14px;height:14px;color:#444;font-size:12px;text-align:right;padding:10px 0 10px 0;font-weight:100;_padding:7px 0 7px}
 .wdcupleft h4 input{vertical-align: -2px;_vertical-align: -1px;margin-right: 2px;}
 .wdcupleft{width:740px;float:left; overflow:visible}
 .teamnum{height:27px;border-top:1px solid #bbb}
@@ -998,7 +998,7 @@ a.g_a_t{ background:#e52e04;font-size:14px;font-weight:bold;color:#fff;line-heig
 .wdcupright tr.tr1 td{ background-color:#e9e9e9;line-height:30px;height:30px; text-align:left;padding-left:14px;font-size:14px;color:#444;border-top:1px solid #ccc;border-bottom:1px solid #ccc;font-weight:bold}
 .wdcupright p.p1{line-height:24px;padding:10px;color:#444}
 .wdcupright p.p1 em{color:#ff6600;font-weight:bold;padding:0 2px}
-.wdcupright p.p1 input{width:40px;padding-left:3px;height:18px;margin: 0 8px 0 2px;border:1px solid #ddd;border-top:1px solid #bbb;border-left:1px solid #bbb;color:#444}
+.wdcupright p.p1 input{width:40px;padding-left:3px;height:18px;margin: 0 8px 0 2px;border:1px solid #ddd;color:#444}
 .wdcupright  a.jc_mtz{margin:10px 0 0px 55px;_margin-left:28px}
 .cupteamdiv a{width:315px;border:1px solid #ddd;border-top:none}
 .cuptab1{float:left}
@@ -1137,7 +1137,7 @@ a.a_inner{width:166px;height:128px;display:block;margin:4px auto 0}
 .getwod_col p{text-align:center;color:#333;font-size:14px;font-weight:100;line-height:20px;padding:5px 0 0 0}
 .getwod_col p strong{color:#007e00;font-weight:bold}
 .f_l{margin-left:2px;_margin-left:1px}
-.getsus{background: url(../images/cai888/rgb12.jpg) 0 0px no-repeat;padding-left:50px;line-height:30px;color:#333;font-size:14px;}
+.getsus{background: url(../images/cai888/rgb12.jpg) 0 0 no-repeat;padding-left:50px;line-height:30px;color:#333;font-size:14px;}
 .getsus strong{display:block;font-size:16px;color:#222;font-weight:bold;line-height:35px;height:35px;padding-bottom:5px}
 .getsus s{font-size:14px;color:#145fab;font-weight:bold}
 .getsus p{font-size:14px;clear:both;display:block}
@@ -1197,7 +1197,7 @@ table.cot p strong{color:#145fab}
 .sz_jlist p.odd{ background:#f8f8f8}
 .caibdk{padding:20px 0 0 20px}
 .caibdk span{float:left;font-size:14px;color:#222;line-height:26px;}
-.caibdk input{float:left;fcolor:#444;height:24px;width:55px;border:1px solid #ddd;padding:5px 0 0 5px\9;height:19px\9;font-size:14px;margin:0 3px}
+.caibdk input{float:left;color:#444;height:24px;width:55px;border:1px solid #ddd;padding:5px 0 0 5px\9;height:19px\9;font-size:14px;margin:0 3px}
 :root .caibdk input{height:24px;padding:0 0 0 5px;}
 .caibdk p{color:#999;font-size:12px;clear:both;line-height:24px}
 .caibdk em{color:#ff0000}
@@ -1340,10 +1340,10 @@ a.t_a_dz:hover{background-image: url(../images/hm/hmt_05.gif);text-decoration: n
 .zj_mab table font{color:#a91e24; font-family:Arial;font-size:12px}
 .zj_mab table b{margin-left:25px}
 .zj_mab tr.odd td{ background-color:#f5f5f5}
-.gs_xgbj{margin:15px 20px;background-color: #f5f5f5; border: 1px solid #ddd;*zoom:1;padding:5px}
+.gs_xgbj{margin:15px 20px;background-color: #f5f5f5; border: 1px solid #ddd;padding:5px;*zoom:1}
 .gs_xgbj table th{text-align:right;width:60px;font-weight:100;color:#444;line-height:30px}
 .gs_xgbj table td{text-align:center;color:#444}
-.gs_xgbj table input{border:1px solid #ddd;height:20px;width:35px;text-align:center;padding-top:2px\9;height:18px\9;border-top:1px solid #bbb}
+.gs_xgbj table input{border:1px solid #ddd;height:20px;width:35px;text-align:center;padding-top:2px\9;height:18px\9}
 :root .gs_xgbj table input{padding-top:0;height:20px}
 .gs_xgbj a,span.s_tan_a1 a{display:block;float:left;margin:10px 0 10px 10px;font-size:12px;text-align:center;width:54px;height:22px; background:url(../images/cai888/sman.png) 0 -44px no-repeat;color:#444;line-height:22px;_margin:5px 0 5px 5px; }
 .gs_xgbj a:hover,span.s_tan_a1 a:hover{background-position:0 -66px;color:#145fab}
@@ -1461,7 +1461,7 @@ a.jc_mtz:hover, a.jc_mhm:hover{background-position:-110px 0;text-decoration: non
 .touzcm p a{color:#333;margin:0 5px;}
 .touzcm p a:hover{color:#f00;text-decoration:underline}
 .tzsontab{height:30px;padding-top:8px;}
-.tzsontab span{float:left;padding-left:20px;color:}
+.tzsontab span{float:left;padding-left:20px}
 .tzsontab span a{float:left;height:30px;line-height:30px;padding:0 18px;color:#444;}
 .tzsontab span a.cur{border:1px solid #ccc;border-bottom:none;background:#fff}
 .tzsontab p{float:right;margin-right:20px;line-height:26px;color:#333}
@@ -1745,7 +1745,7 @@ a.jcq_kcur {background: url(../images/njc/jcy_17.jpg) no-repeat scroll 0 0 ;}
 .ctofor .ctoonec p{background:#f20000}
 .h_br{cursor:pointer}
 .ctofor .ctoonec p.p1{background:#2eab03}
-.cubaimg{clear;both;}
+.cubaimg{clear:both;}
 .cubaimg div{float:left;margin-right:11px;margin-bottom:14px;width:234px;height:160px;position:relative}
 .cubaimg img{width:235px;height:160px;}
 .cubaimg .cubimgc1{width:478px;height:335px}
@@ -1756,7 +1756,7 @@ a.jcq_kcur {background: url(../images/njc/jcy_17.jpg) no-repeat scroll 0 0 ;}
 .cubfot p a{color:#333;}
 .dz_dv label span.sp_value{width:25px;display:block;}
 .deltr{width:100%;background:#fefecb;height:34px;position:relative;z-index:1000}
-.deltr div{position:ablosute;}
+.deltr div{position:absosute;}
 .deltr a{display:block;background:url(../images/cai888/del.png);width:16px;height:16px;margin:8px auto}
 a.a_catha, a.a_hm_buya{background: url("/images/cai888/jcbtn_03.jpg") no-repeat scroll 0 0;height:36px;line-height:36px;width:104px}
 a.a_catha:hover, a.a_hm_buya:hover{background-position:-110px 0;text-decoration: none;}
@@ -2246,7 +2246,7 @@ a.sz_cmt{background: url(../images/cai888/nwx5_112.jpg);width:137px;height:33px}
 .w_kc th{border-top: 0;color: #444 !important;line-height: 32px !important;}
 .w_kc td.pk3_tr3{text-align: left;text-indent: 15px;}
 .hm_right .rig_hm_main table thead th{height:34px;line-height:34px}
-.cuptab1 tr.tr2 th{line-height:35px;text-align:left;color:#444;font-size:12px;padding-left:15p x;height:35px}
+.cuptab1 tr.tr2 th{line-height:35px;text-align:left;color:#444;font-size:12px;padding-left:15px;height:35px}
 .cuptab1 tr.tr2:hover th{background:none}
 .cuptab1 tr.tr2 s{display:block;float:right;height:22px;line-height:22px;cursor: pointer;margin-left:10px;color:#145fab;}
 .cuptab1 tr.tr2 s:hover{text-decoration:underline;}
