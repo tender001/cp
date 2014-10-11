@@ -581,7 +581,7 @@ a.goyh2:hover {background-position: -95px -59px;}
 .all_kj_top{height:65px}
 .kj_left_top{height:60px}
 .b-top-mainNav li a,.dc_w b,.b-top-info .dc_w .f99{color:#ff6600}
-.hm_left_t{ height:40px;font: 400 18px/38px "微软雅黑";text-indent: 20px;color:#fff;background:#f60;}
+.hm_left_t{ height:40px;font: 400 18px/38px "Microsoft Yahei";text-indent: 20px;color:#fff;background:#f60;}
 .top-j{height: 17px;position: relative;}
 .top-j span{height: 0;border: 6px solid #ff6507;border-width: 8px 6px 0 6px;border-left-color: transparent;border-right-color: transparent;position: absolute;left: 20px;top: 0;font-size: 0;line-height: 0;_border-left-color: #f4f4f4;_border-right-color: #f4f4f4;}
 .hm_left_t2{height:36px;font: 700 14px/36px arial;text-indent: 20px;}
@@ -676,7 +676,7 @@ em.uf{ background-image:url(../images/159/uf.gif)}
 .jckj_tb p.note{ background-image:none;padding-left:20px}
 .tkts p{background-image:none;}
 .nxhm span{float:left;display:block;height:38px;line-height:38px}
-.nstime{width:130px;padding:0 15px 0 10px;color:#333;font-size:12px;color:#000;padding-top:5px;_padding-top:8px;display:block;height:38px;line-height:38px ; position:absolute;top:51px;left:0px}
+.nstime{width:130px;padding:0 15px 0 10px;font-size:12px;color:#000;padding-top:5px;_padding-top:8px;display:block;height:38px;line-height:38px; position:absolute;top:51px;left:0px}
 .nstime b{display:inline-block;background: url(../images/159/nx_38.jpg);width:22px;height:20px;font:16px/20px Arial;color:#333;margin:0 2px}
 .nsbool b{background:url(../images/159/nx_33.jpg);width:37px;height:38px;margin-right:13px;float:left;color:#000;font:22px/38px Arial;cursor:pointer;-webkit-user-select: none;-moz-user-select: none;-o-user-select: none;-ms-user-select: none;user-select: none;}
 .nsbool b.cur{ background:url(../images/159/nx_30.jpg);color:#fff}
@@ -774,108 +774,29 @@ span.sz_a_l a.cur{background:url(../images/cai888/nwx5_11.jpg) repeat scroll 0 0
 .vs_mchc{width:258px;margin-bottom:12px;border:1px solid #ddd}
 .mch_c_leftc{margin-left:10px}
 .mch_c_rc{margin-right:10px}
-.mch_cc {border-bottom: 1px dashed #DDDDDD;margin: 0 10px;padding: 7px 0;clear:both}
-.vs_mchc h3 {
-    background: none;border-bottom: 1px solid #DDDDDD;
-    color: #333333;
-    font-size: 14px;
-    font-weight: bold;
-    height: 30px;
-    line-height: 30px;
-    padding-left: 15px;
-}
-
-.vs_mchc h3 span {
-    font-size: 12px;
-}
-.vs_mchc h3 span {
-    float: left;
-}
-
-.vs_mchc h3 a {
-    color: #444444;
-    float: right;
-    font-size: 12px;
-    font-weight: 100;
-    margin-right: 6px;
-}
-.mch_c_leftc {
-    background: url("../images/njc/xind_36.jpg") repeat scroll -89px -6px ;
-    float: left;
-    height: 88px;
-    margin-top: 3px;
-    width: 59px;
-}
-
-.mch_c_leftc {
-    background-position: -89px -9px;
-    height: 74px;
-    width: 58px;
-}
-
-.mch_c_leftc img {
-    height: 44px;
-    margin: 4px auto 0;
-    width: 50px;display:block
-}
-.mch_c_leftc h5 {
-    color: #444444;
-    font-size: 12px;
-    font-weight: bold;
-    padding-top: 6px;
-    text-align: center;
-    line-height: 18px;
-}
-
-.mch_c_rc{
-    width: 152px;float:right
-}
-
-.dc_l_tl .mie7{float:left}
-
-.vs_mchc p {
-    clear: both;
-    color: #333333;
-    line-height: 22px;
-}
-.vs_mchc p.p1 {
-    color: #888888;
-    line-height: 20px;
-    padding: 0;
-}
-.vs_mchc p.p1 {
-    line-height: 24px;
-    padding-left: 6px;
-}
-.success_reg p.p1{width:415px}
-.tan_top_r a{margin-left:1px}
-.tan_top_r a:hover{ background-image:url(../images/cdbg/m_tan_guan.png)}
-
-.mch_ct b {
-    color: #135EAA;
-    font-weight: 100;
-    text-align: left;
-}
-.mch_ct em {
-    color: #AAAAAA;
-}
-.mch_ct b.br {
-    text-align: right;
-}
-.mch_ct:hover {
-    text-decoration: underline;
-}
-.mch_ct:hover b {
-    color: #FF6600;
-}
-.mch_ct {
-    border-bottom: 1px solid #FFFFFF;
-    color: #FF6600;
-    font-size: 14px;
-    font-weight: bold;
-    height: 21px;
-    line-height: 21px;
-}
+.mch_cc {border-bottom: 1px dashed #ddd;margin: 0 10px;padding: 7px 0;clear:both}
+.vs_mchc h3{background:none;border-bottom:1px solid #DDD;color:#333;font-size:14px;font-weight:700;height:30px;line-height:30px;padding-left:15px;}
+.vs_mchc h3 span{font-size:12px;}
+.vs_mchc h3 span{float:left;}
+.vs_mchc h3 a{color:#444;float:right;font-size:12px;font-weight:100;margin-right:6px;}
+.mch_c_leftc{background:url(../images/njc/xind_36.jpg) repeat scroll -89px -6px;float:left;height:88px;margin-top:3px;width:59px;}
+.mch_c_leftc{background-position:-89px -9px;height:74px;width:58px;}
+.mch_c_leftc img{height:44px;margin:4px auto 0;width:50px;display:block;}
+.mch_c_leftc h5{color:#444;font-size:12px;font-weight:700;padding-top:6px;text-align:center;line-height:18px;}
+.mch_c_rc{width:152px;float:right;}
+.dc_l_tl .mie7{float:left;}
+.vs_mchc p{clear:both;color:#333;line-height:22px;}
+.vs_mchc p.p1{color:#888;line-height:20px;padding:0;}
+.vs_mchc p.p1{line-height:24px;padding-left:6px;}
+.success_reg p.p1{width:415px;}
+.tan_top_r a{margin-left:1px;}
+.tan_top_r a:hover{background-image:url(../images/cdbg/m_tan_guan.png);}
+.mch_ct b{color:#135EAA;font-weight:100;text-align:left;}
+.mch_ct em{color:#AAA;}
+.mch_ct b.br{text-align:right;}
+.mch_ct:hover{text-decoration:underline;}
+.mch_ct:hover b{color:#F60;}
+.mch_ct{border-bottom:1px solid #FFF;color:#F60;font-size:14px;font-weight:700;height:21px;line-height:21px;}
 .pagination span.ac{padding-left:8px}
 .tan_top_r a{width:38px;height:36px}
 span.suc_reg{width:270px;margin:30px auto 0;display:block; background:url(../images/cdbg/tyk_03.gif) left 18px no-repeat;line-height:30px;color:#444;padding:20px 0 0 45px;font-size:14px}
