@@ -1270,7 +1270,7 @@ table.cpmxtab p{line-height:25px;color:#444;font-size:12px;margin-leolor:#145fab
 .jp i.Rating4_8{background-position: -112px 0;}
 .jp i.Rating4_9{background-position: -128px 0;}
 .jp strong{float: left;width: 1em;height: 15px;line-height: 15px;color: #999;}
-.jp #jpnum{margin-left:6px;padding-top:10px;vertical-align: middle;_display: inline}
+.jp #jpnum{padding:10px 0 0 6px;vertical-align: middle;}
 .jp span strong{width: auto;padding-top:10px;vertical-align: middle;color: #444}
 .jp b{display: none;float:left;width: 160px;height: 15px;line-height:15px;padding:6px 3px;font-weight: normal;border: 1px solid #C7E0FC;background-color: #ECF8FF;position: absolute;top: 26px;left: 0;z-index: 15;}
 /*b.b1{ background-position:-1px -1px}
