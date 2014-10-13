@@ -844,7 +844,14 @@ Class('Buy', {
 			_self.bs = parseInt(this.value);
 		   _self.bschange();
          }, 100000);
-
+		Yobj.createaddInput('a[mark=add]', function (e){//加倍数
+            _self.bs =$("#bs").val()
+			   _self.bschange();
+ 		}, 100000);
+ 		Yobj.createminusInput('a[mark=minus]', function (e){//减倍数
+    		 _self.bs =$("#bs").val()
+			   _self.bschange();
+		}, 100000);
 		Yobj.get('#gobuy,#gohm').click(function (){
 			_self.ishm = this.id == 'gohm' ? 1 : 0;
 			if (_self.ishm){
