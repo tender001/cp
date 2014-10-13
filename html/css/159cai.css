@@ -1,5 +1,4 @@
 ﻿@charset "utf-8";
-{margin:0;padding:0}
 body,h3,h4,h2,h1,h5,table,td,th,ul,li,ol,dd,dt,dl,div,span,p,b,i,s,em,thead,tbody,font,select,input,option{margin:0;padding:0}
 body{font-size:12px; font-family: Arial,simsun; }
 a{text-decoration:none;color:#333;outline:none;cursor:pointer}
@@ -7,8 +6,8 @@ em,i,s,b{ font-style:normal; text-decoration:none}
 img{border:none;}
 body a{outline:none;blr:expression(this.onFocus=this.blur());}
 div,ul,li{ list-style-type:none;overflow:hidden}
-#header{width:1000px;margin:0 auto; position:relative;overflow:visible;height:85px;z-index:8888;padding-bottom:5px}
-.logo{float:left;width:131px;height:60px;margin:15px 0 0 60px;_margin-left:30px}
+#header{width:1000px;height:85px;margin:0 auto;padding-bottom:5px;overflow:visible;position:relative;z-index:8888;}
+.logo{float:left;width:131px;height:60px;margin:15px 0 0 60px;_display: inline;}
 .logo img{width:131px;height:60px}
 .head_m{float:left;width:530px;height:65px;padding:17px 0 0 0;}
 .head_m a.zcs{display:block;width:240px;height:90px; position:absolute;right:10px;top:0px}
@@ -16,8 +15,8 @@ div,ul,li{ list-style-type:none;overflow:hidden}
 .head_m p{color:#4b4a4b;line-height:24px;padding:5px 0 0 50px;height:24px}
 .head_m p span{float:left;padding:0}
 .head_m span{padding-left:35px;display:block}
-.head_m span a{color:#4b4a4b;display:block;float:left}
-.head_m span b{color:#888;font-size:12px;font-weight:100;float:left;margin:0 7px;}
+.head_m span a{color:#4b4a4b;float:left}
+.head_m span b{float:left;color:#888;font-size:12px;font-weight:100;margin:0 7px;}
 .head_m span em,.head_m p a.a1,.ks_cm span{ background: url(../images/cdbg/0227.png) 0 0 no-repeat}
 .ks_cm span{display:block;width:105px;height:103px;}
 .ks_cm span.x_slo{ background-position:0 0}
@@ -26,7 +25,7 @@ div,ul,li{ list-style-type:none;overflow:hidden}
 .head_m p a{margin:0 5px;color:#004398;display:block;float:left;height:22px;line-height:22px}
 .head_m p a.a1{margin:0 5px;color:#004398;display:block;float:left; background-position:-23px -123px;width:48px;height:22px;text-align:center;line-height:22px}
 .head_m p a.a1:hover{ background-position:-23px -145px; text-decoration:none;color:#ff6600;}
-.head_m span em{display:block;width:65px;color:#444;cursor:text;float:left; position:relative;z-index:999;padding-left:8px;height:22px;line-height:22px; /*background-color:#fff; */background-position:23px -236px;border:1px solid #fff;cursor:pointer}
+.head_m span em{display:block;width:65px;color:#444;cursor:text;float:left; position:relative;z-index:999;padding-left:8px;height:22px;line-height:22px;background-position:23px -236px;border:1px solid #fff;cursor:pointer}
 .head_m span em.cur{background-position:23px -251px; background-color:#fff;border:1px solid #ddd;border-bottom:none}
 .mn_k{position:absolute;z-index:2;top:73px;left:231px; background-color:#fff;_width:230px}
 .mn_t{display:block;border:1px solid #ddd;padding:13px 17px;line-height:15px;color:#ff6600;font-weight:bold;height:15px}
@@ -51,9 +50,9 @@ div,ul,li{ list-style-type:none;overflow:hidden}
 .nav_main .last{border:none}
 .everlog span{display:block;width:50px;height:50px;float:left;}
 .everlog p{width:140px;float:left;line-height:20px;padding-top:5px}
-.everlog p a{color:#333;font-size:12px;margin-left:8px; white-space: nowrap;display:block;float:left;_margin-left:6px }
+.everlog p a{float:left;color:#333;font-size:12px;margin-left:8px;white-space: nowrap;_display: inline}
 .everlog p a:hover,.kj_cm h4 a:hover{color:#f60; text-decoration:underline}
-.kj_announce{margin-top:15px;border:1px solid #ddd;*zoom:1;border-bottom:none; background:#ffffff;}
+.kj_announce{margin-top:15px;border:1px solid #ddd;border-bottom:none; background:#fff;*zoom:1;}
 .kj_announce h3{ padding-left:20px;color:#333;font:14px/38px "Microsoft YaHei";border-bottom:1px solid #ccc;background-image:url(../images/index_70.gif);}
 .kj_announce ul.tit li{display:block;float:left;padding:0 22px;font-size:14px;color:#333; background-image:url(../images/index_122.gif);height:26px;line-height:26px;text-align:center;border-right:1px solid #ddd;cursor:pointer}
 .kj_announce ul.tit li.cur{ background-image:url(../images/index_74.gif);color:#fff;padding:0 23px}

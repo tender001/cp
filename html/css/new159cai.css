@@ -204,7 +204,6 @@ img{vertical-align:top;}
 .menu_link .link_more s{margin-top: 7px;}
 .menu_link .click{height: auto;}
 /*.menu_link .mar{margin-top: 24px;}*/
-
 .xiaj{display: block;width: 11px;height: 8px;position: absolute;right: 0;top: 0;background: url(../images/bg/link_more.png) 0 0 no-repeat;-webkit-transition: transform .2s ease-in 0s;-moz-transition: transform .2s ease-in 0s;-o-transition: transform .2s ease-in 0s;transition: transform .2s ease-in 0s;}
 .xiaj.hover{background-position: 0 -8px\9;-webkit-transform: rotate(180deg);-moz-transform: rotate(180deg);-o-transform: rotate(180deg);transform: rotate(180deg);}
 /* dd */
@@ -267,14 +266,13 @@ a.t_a_qc b{display: block;width: 115px;height: 35px;margin:10px auto;font: 400 1
 .kj-time p{height: 70px;line-height: 35px;width: 90%;padding-left: 10%;border-bottom: 1px solid #ccc;background-color: #f5f5f5;}
 .kj-time p span{font-weight: 700;color: #e52e04;}
 .kj-time a{display: block;width: 120px;height: 36px;margin: 16px auto;text-indent: -999em;background: url("../images/bg/history-tz.jpg") no-repeat;}
-
-.mn_k{position:absolute;z-index:2;top:73px;left:231px; background-color:#fff;_width:230px}
+.mn_k{position:absolute;top:73px;left:231px;z-index:2;background-color:#fff;_width:230px}
 .mn_t{display:block;border:1px solid #ddd;padding:13px 17px;line-height:15px;color:#f60;font-weight:bold;height:15px}
 .naver{width:100%;height:40px;margin-top:20px;background-color:#f60;}
 .everlog{padding-left:10px;border-bottom:1px solid #FFBC56;margin:0 7px}
 .everlog img.j_jia{left:10px}
-.head_m p a.a_hz,.hz_d_t a{background:url(../images/cdbg/hz_dl.png) 0 0 no-repeat;display:block;}
-.head_m p a.a_hz{width:91px;height:21px;line-height:21px;color:#145fab;padding-left:10px; background-position:-7px -4px}
+.head_m p a.a_hz,.hz_d_t a{display:block;background:url(../images/cdbg/hz_dl.png) 0 0 no-repeat;}
+.head_m p a.a_hz{width:91px;height:21px;line-height:21px;color:#145fab;padding-left:10px;background-position:-7px -4px}
 .head_m p a.a_hzover{text-decoration:none; background-position:-118px -4px}
 .hz_d_t{width:98px; position:absolute;top:42px;left:244px;border:1px solid #ccc;border-top:0; background-color:#fff;padding-top:2px;zoom:1}
 .hz_d_t a{margin-left:5px;line-height:32px; background-position:-228px 0;color:#145fab;padding-left:20px; }
