@@ -1636,7 +1636,7 @@ a.jcq_kcur {background: url(../images/njc/jcy_17.jpg) no-repeat scroll 0 0 ;}
 .newsc1list{padding:12px 0 0 0}
 .newsc1list a{font-size:14px;line-height:29px;color:#333;background: url(../images/cai888/news1_03.jpg) left 10px no-repeat;display:block;height:29px;padding-left:16px}
 .newsc1list a:hover{color:#f60;text-decoration:underline}
-.newsbanner{clear:both;height:auto;margin:10px 0;}
+.newsbanner{clear:both;height:65px;margin:10px 0;}
 .newsbanner img{width: 100%;height: 100%}
 .newsc2list1 b{float:left;width:12px;height:12px;line-height:12px;margin-right:10px;font-family:arial;font-weight:100;text-align:center;color:#fff;margin-top:7px;background: url(../images/cai888/news1_22.jpg);*margin-top:4px;}
 .newsc2list1 a{background:none;padding:0;line-height:26px;height:26px;*line-height:18px;*height:18px}
@@ -2366,6 +2366,6 @@ label.red {color:red}
 .opt-t-right p em.cur{background-position: -96px 0}
 .opt-t-right p s{display:inline-block;width: 12px;height: 12px;margin-left:8px;background-position: -179px -35px}
 .opt-t-right table tbody td{border-width: 0 0 1px}
-.opt-t-right table tbody td span{display:inline-block;border: 1px solid #398fe5}
+.opt-t-right table tbody td span{display:inline-block;width:60px;border: 1px solid #398fe5}
 .opt-t-right table tbody td span i{display:inline-block;width:40px;padding: 2px 0;background-color: #398fe5}
 /*end 奖金优化 */
