@@ -2366,7 +2366,7 @@ label.red {color:red}
 .opt-t-right p em{display:inline-block;width: 95px;height: 35px;line-height:35px;margin-left:9px;text-align:center;cursor: pointer}
 .opt-t-right p em.cur{background-position: -96px 0}
 .opt-t-right p s{display:inline-block;width: 12px;height: 12px;margin-left:8px;background-position: -179px -35px;cursor:pointer}
-.opt-t-right table tbody td{height:80px;border-width: 0 0 1px}
+.opt-t-right table tbody td,.opt-t-right table tbody th{height:80px;border-width: 0 0 1px 0}
 .opt-t-right table tbody th{width: 231px;}
 .opt-t-right table tbody th .ie{width: 230px;}
 .opt-t-right table tbody th b,.opt-t-right table tbody th strong{float:left;width:100px;line-height:22px;margin:0 0 0 6px;font-weight:normal;text-align:center;text-indent:0;border: 1px solid #398fe5;_display: inline;}
