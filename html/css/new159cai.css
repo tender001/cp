@@ -210,11 +210,12 @@ img{vertical-align:top;}
 .header{padding-top:25px;width:1000px;margin:0 auto; position:relative;z-index:55;overflow:visible;height:48px;}
 .header img.logo{width:113px;height:46px;float:left;display:block;margin:0}
 .nav_re{width:1000px;margin: 0 auto;position: relative;overflow:visible;z-index:888}
-a.d_c_p,a.d_c_b,.tan_mid a.but2,a.start_hm{ background:url(../images/cdbg/tn_ad.png) 0 0  no-repeat;display:block;margin:15px auto;color:#fff;font-weight:bold;font-size:16px;text-align:center;line-height:40px;width:113px}
+a.d_c_p,a.d_c_b,.tan_mid a.but2,a.start_hm{display:block;width:113px;margin:15px auto;color:#fff;font-weight:bold;font-size:16px;text-align:center;line-height:40px;background:url(../images/cdbg/tn_ad.png) 0 0  no-repeat;}
+a.d_c_b{margin: 15px auto 0}
 a.d_c_p:hover{ background-position:0 -40px;text-decoration: none;}
 a.d_c_b,.tan_mid a.but2,a.start_hm{ background-position:0 -80px}
 a.d_c_b:hover,.tan_mid a.but2:hover,a.start_hm:hover{ background-position:0 -120px;text-decoration: none;}
-div.p-buy-btn{margin-top:-1px;border:1px solid #ddd}
+div.p-buy-btn{margin-top:-1px;padding-bottom:12px;border:1px solid #ddd}
 #zq_xl{width:90px;border:1px solid #b60a02; position:absolute;top:10px;border-top:none;display:block;padding-top:35px;z-index:999;cursor:pointer;left:795px;height:0}
 #zq_xl ul li{line-height:30px;color:#ba1f24;text-align:center;font-size:14px;border-bottom:1px solid #ddd; background-color:#fff}
 #zq_xl ul li.last{border:none}
