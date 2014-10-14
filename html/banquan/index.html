@@ -82,12 +82,12 @@
 <table width="100%" border="0" class="co1" cellpadding="0" cellspacing="0">
 <tr><td class="last">您选了：<font id="zsSpan">0</font>注，<input type="text"  value="1" id="bsInput"/> 倍，金额：<font id="moneySpan">0</font>元</td></tr>
 </table>
-	<div class="b_th_top" style="width: 950px" id="b_form">
+	<div class="b_th_top" style="width: 946px" id="b_form">
 				<span>购买方式</span><b class="cur"><label for="dg"><input type="radio" name="radio_r" id="dg" value="0" checked="checked" />代购</label></b><b><label
 					for="hm"><input type="radio" name="radio_r" id="hm" value="1" />发起合买</label></b>
 			</div>
 			<div style="width: 100%; display:;" id="dgdiv">
-				<div class="b_th_co2" style="width:971px">
+				<div class="b_th_co2" style="width:970px;display: none">
 					<table width="100%" border="0" class="col_2">
 						<tr>
 							<th>投注信息</th>
@@ -96,13 +96,15 @@
 						</tr>
 					</table>
 				</div>
-				<a class="d_c_b" href="javascript:void(0);" id="buy_dg">立即投注</a>
-				<p class="xytk">
-					<input type="checkbox" id="agreement" checked="checked">我已阅读并同意《<a target="_blank" href="/help/helpxy.html">用户合买代购协议</a>》 
-				</p>
+                <div class="p-buy-btn">
+                    <a class="d_c_b" href="javascript:void(0);" id="buy_dg">立即投注</a>
+                    <p class="xytk">
+                        <input type="checkbox" id="agreement" checked="checked">我已阅读并同意《<a target="_blank" href="/help/helpxy.html">用户合买代购协议</a>》
+                    </p>
+                </div>
 			</div>
 			<div style="width: 100%; display: none;" id="hmdiv">
-				<div class="b_th_co2 buyfimsg"  style="width:972px;border-bottom:none;padding-bottom:0">
+				<div class="b_th_co2 buyfimsg"  style="width:970px;border-bottom:none;padding-bottom:0">
 					<table width="100%" border="0" cellspacing="0" cellpadding="0">
 						<colgroup>
 							<col width="110">
@@ -161,10 +163,12 @@
 						</tbody>
 					</table>
 				</div>
-				<a class="d_c_b" href="javascript:void(0);" id="buy_hm">发起合买</a>
-				<p class="xytk">
-					<input type="checkbox" id="agreement" checked="checked">我已阅读并同意《<a target="_blank" href="/help/helpxy.html">用户合买代购协议</a>》 
-				</p>
+                <div class="p-buy-btn">
+                    <a class="d_c_b" href="javascript:void(0);" id="buy_hm">发起合买</a>
+                    <p class="xytk">
+                        <input type="checkbox" id="agreement" checked="checked">我已阅读并同意《<a target="_blank" href="/help/helpxy.html">用户合买代购协议</a>》
+                    </p>
+                </div>
 			</div>
 </div>
 </div>
