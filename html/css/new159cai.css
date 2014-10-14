@@ -2382,3 +2382,12 @@ label.red {color:red}
 .opt-t-right p a.dg-btn{float:left;width: 72px;height: 36px;font:700 16px/36px "Microsoft YaHei";text-align:center;color:#fff;background-position:0 -36px;position: absolute;top: 18px;right: 100px;}
 .opt-t-right p a.dg-btn1{right: 12px}
 /*end 奖金优化 */
+.jctj-t{width: 1200px;margin: 10px auto;color: #333}
+.jctj-t h2{padding: 1em 0;font-size:1.8em;text-align: center}
+.jctj-t table{width: 100%;border: 1px solid #ccc;border-collapse: collapse}
+.jctj-t table th,.jctj-t table td{border: 1px solid #ccc;}
+.jctj-t table thead th{height: 35px;font-weight:400;background-color: #ececec}
+.jctj-t table tbody th{font-weight:400;text-align:left;text-indent: 1em}
+.jctj-t table tbody td{padding: 10px 0;text-align: center;}
+/*.jctj-t table tbody tr:hover td,.jctj-t table tbody tr:hover th{background-color: #fefeca}*/
+.jctj-t table .odd td,.jctj-t table .odd th{background-color: #f5f5f5}
