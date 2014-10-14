@@ -1878,7 +1878,7 @@ Class({
     	}); 
 		$("[mark=djclose]").click(function(){
 			
-			$("[mark=djdiv]").hide();
+			$("[mark=djdiv],.newsbanner").hide();
 		})
 
     }
