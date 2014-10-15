@@ -2352,7 +2352,7 @@ label.red {color:red}
 .opt-t-right p a.dg-btn{float:left;width: 72px;height: 36px;font:700 16px/36px "Microsoft YaHei";text-align:center;color:#fff;background-position:0 -36px;position: absolute;top: 18px;right: 100px;}
 .opt-t-right p a.dg-btn1{right: 12px}
 /*end 奖金优化 */
-.jctj-t{width: 1200px;min-height:300px;margin: 10px auto;color: #333}
+.jctj-t{width: 1200px;min-height:500px;margin: 10px auto;color: #333}
 .jctj-t h2{padding: 1em 0;font-size:1.8em;text-align: center}
 .jctj-t h2 select{float: right;font-size: 0.8em;}
 .jctj-t table{width: 100%;border: 1px solid #ccc;border-collapse: collapse}
