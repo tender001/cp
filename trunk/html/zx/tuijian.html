@@ -10,12 +10,14 @@
 <script type="text/javascript" src="/public/jq.js"></script>
 <script type="text/javascript" src="/public/159cp.js"></script>
 <script type="text/javascript" src="/public/checklogin.js"></script>
+<script type="text/javascript" src="js/tuijian.js"></script>
     <style>.footer{width: 1200px}</style>
 </head>
 <body>
 <!-- 头部内容 -->  
 <!--#include virtual="/cc/otherheader.html"-->
 <!-- 头部内容 --> 
+<div><select id="expect"><option></option></select></div>
 
 <!--#include virtual="/dedeinc/jingcaituijian.html"-->
  
@@ -23,30 +25,6 @@
 
 
 <!--#include virtual="/cc/footer.html"-->
-<script type="text/javascript">
-    $(function(){
-    
-        $(".jctj-t tbody tr:even").hover(function(){$(this).addClass("hover").next().addClass("hover")},
-                function(){$(this).removeClass("hover").next().removeClass("hover")});
-        $(".jctj-t tbody tr:odd").hover(function(){$(this).addClass("hover").prev().addClass("hover")},
-                function(){$(this).removeClass("hover").prev().removeClass("hover")});
-    
-                 var ss;
-        $(".jctj-t tbody").find("tr").each(function(o){
-//         	var cl =(o+1)%3==0?"":"odd";
-// 			$(this).addClass("odd").next().addClass("odd")
-// 			if(class != "cl"){
-// 				var cl = "" ;
-// 				$(this).removeClass(cl)
-// 			}
-// 			if(o > 1 && o % 2 == 0){
-// 				$(this).removeClass(cl)
-// 			}
-			if(((o+1)%3)==0||((o+1)%4)==0){
-				$(this).addClass("odd")
-			}
-        })     
-    })
-</script>
+
 </body>
 </html>
