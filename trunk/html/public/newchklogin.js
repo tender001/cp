@@ -229,12 +229,20 @@ Class('Loginer', {// 登陆器
 						   this.get("#acc_userinfo").html(r.nickid);
 						   $("#sjandscc").show();
   						   $("#sjand").hide();
-  				    	if(r.nickid.indexOf("TJVIP0")!=-1){
-  				    		$("#tjinfo").show();
-  				    	}else{
-  				    		$("#tjinfo").hide();
-  				    	}
-  						   }else{
+						
+							if((r.nickid.split("TJVIP0")[1])===undefined){
+								
+								$("#tjinfo").hide();
+							}else{
+								isvip=(r.nickid.split("TJVIP0")[1])*1;
+								if(isvip>0&&isvip<36){
+									$("#tjinfo").show();
+								}
+							}
+//							
+							
+	  				    	
+					   }else{
 						   this.setUserInfo('拉取用户信息失败, 请刷新重试!');
 						   cpshowText='您尚未登录,请先<a href="javascript:void(0)" title="" style="color: red;" onclick="Yobj.postMsg(\'msg_login\')">&nbsp;&nbsp;登录&nbsp;&nbsp;</a>';
 					   }      
