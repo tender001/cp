@@ -2384,6 +2384,7 @@ label.red {color:red}
 /*end 奖金优化 */
 .jctj-t{width: 1200px;margin: 10px auto;color: #333}
 .jctj-t h2{padding: 1em 0;font-size:1.8em;text-align: center}
+.jctj-t h2 select{float: right;font-size: 0.8em;}
 .jctj-t table{width: 100%;border: 1px solid #ccc;border-collapse: collapse}
 .jctj-t table th,.jctj-t table td{border: 1px solid #ccc;padding: 10px 1em;}
 .jctj-t table thead th{height: 24px;font-weight:400;background-color: #ececec}
