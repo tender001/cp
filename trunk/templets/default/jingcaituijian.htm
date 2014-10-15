@@ -1,0 +1,56 @@
+<div class="jctj-t">
+    <h2>159彩票网竞彩推荐</h2>
+
+    <table>
+        <colgroup>
+            <col width="50"/>
+            <col width="100"/>
+            <col width="100"/>
+            <col width="60"/>
+            <col width="100"/>
+            <col width="60"/>
+            <col width="60"/>
+            <col width="400"/>
+            <col width="70"/>
+            <col width="70"/>
+        </colgroup>
+        <thead>
+            <tr>
+                <th>序号</th>
+                <th>比赛时间</th>
+                <th>对阵</th>
+                <th colspan="2">近况</th>
+                <th>亚盘</th>
+                <th colspan="2">推荐</th>
+                <th>总结</th>
+                <th>备注</th>
+            </tr>
+        </thead>
+        <tbody>
+{dede:arclist addfields='number,pubdata,time,duizhen,jinkuang,keduijk,yapan,tuijian,tuijianf,zongjie,beizhu'
+	orderby='id' row='100' typeid='58' channelid='22'}
+            <tr mark="[field:pubdata/]">
+                <td rowspan="2">[field:number/]</td>
+                <td rowspan="2">[field:time/]</td> 
+                <td rowspan="2">[field:duizhen/]</td>
+                <td>主队</td>
+                <td>[field:jinkuang/]</td>
+                
+                <td>[field:yapan/]</td>
+                <td>情报</td>
+                <th>[field:tuijian/]</th>
+               
+                <td rowspan="2">[field:zongjie/]</td>
+                <td rowspan="2">[field:beizhu/]</td>
+            </tr>
+            <tr mark="[field:pubdata/]">
+                <td>客队</td>
+               <td>[field:keduijk/]</td>
+                 <td>[field:yapan/]</td>
+                <td>分析</td>
+                 <th>[field:tuijianf/]</th>
+            </tr>
+          {/dede:arclist}
+        </tbody>
+    </table>
+</div>
