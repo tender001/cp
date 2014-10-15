@@ -222,5 +222,13 @@
 
 
 <!--#include virtual="/cc/footer.html"-->
+<script type="text/javascript">
+    $(function(){
+        $(".jctj-t tbody tr:even").hover(function(){$(this).addClass("hover").next().addClass("hover")},
+                function(){$(this).removeClass("hover").next().removeClass("hover")});
+        $(".jctj-t tbody tr:odd").hover(function(){$(this).addClass("hover").prev().addClass("hover")},
+                function(){$(this).removeClass("hover").prev().removeClass("hover")})
+    })
+</script>
 </body>
 </html>
