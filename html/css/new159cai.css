@@ -77,7 +77,6 @@ img{vertical-align:top;}
 .top_logo div.fr{padding-top:8px;}
 .top_logo .fr s{width: 180px;height: 52px;display: inline-block;background:url(../images/bg/phone.jpg) no-repeat;}
 .top_logo .fr a img{width: 110px;height: 52px;margin: 0 0 0 8px;}
-
 /*购买彩票 弹出菜单*/
 .nav1_buy{width: 215px;height: 38px;float: left;position: relative;overflow: visible;background: #e52e04 url(../images/bg/nav_b.jpg) no-repeat;z-index: 99;border: 1px solid #ffa366;border-width: 0 1px;}
 .nav1_buy a.nav1_gm{width: 215px;height: 38px;line-height: 38px;font-size: 14px;display: block;text-align: center;color: #fff;font-weight: bold;}
@@ -646,8 +645,8 @@ em.uf{ background-image:url(../images/159/uf.gif)}
 .pagina{padding-top:10px}
 .pagina select{margin-top:0;}
 .pagination span{line-height:18px;padding-left:0}
-.rig_hm_main table p.x_jdt em{background-color:#ff6600}
-.rig_hm_main table font{color:#ff6600}
+.rig_hm_main table p.x_jdt em{background-color:#f60}
+.rig_hm_main table font{color:#f60}
 .login_left h1.log{background: url(../images/159/login_07.png) no-repeat scroll left 0 }
 .login_left h1.reg{background: url(../images/159/login_34.png) no-repeat scroll left 0 }
 .nxtop{width:999px;height:7px;margin:0 auto;background: url(../images/159/nx_03.jpg)}
@@ -697,7 +696,7 @@ a.qc_xh:hover{color:#145fab;}
 p.xh_text{padding:10px 0;font-size:12px}
 .jxxk{height:47px}
 .kc_zj3{height:30px}
-p.red_pay{font-size:15px; font-family:Arial;padding-bottom:2px}
+p.red_pay{font-size:15px;font-family:Arial;padding-bottom:2px}
 p.red_pay font{color:#ff6600;}
 a.asz_tz{margin:0 auto}
 .nxfive h1{padding-left:30px;font-size:14px;color:#444; background-image:url(../images/index_118.gif);height:37px;line-height:37px;clear:both;border-top:1px solid #ccc;border-bottom:1px solid #ccc;}
@@ -744,7 +743,7 @@ a.asz_tz{margin:0 auto}
 a.a_smsuc{ background-position:0 -57px}
 a.a_smsuc:hover{ background-position:0 -85px}
 span.sz_a_l a.cur{background:url(../images/cai888/nwx5_11.jpg) repeat scroll 0 0 }
-.nxtable tr font{font-size:13px;color:#ff3300;font-weight:bold; font-family:Arial}
+.nxtable tr font{font-size:13px;color:#ff3300;font-weight:bold;font-family:Arial}
 .nxtable tr .font1{font-weight:100;padding-left:50px}
 .nxtable tr em{width:100%;height:30px;display:block}
 .nxtable tr em.em1{ background-color:#db2442;color:#fff;}
@@ -753,7 +752,7 @@ span.sz_a_l a.cur{background:url(../images/cai888/nwx5_11.jpg) repeat scroll 0 0
 .nxtable tr em.em4{ background-color:#61bba1;color:#fff;}
 .nxtable tr em.em5{ background-color:#4cb034;color:#fff;}
 .nxtable tr em.em6{ background-color:#cf6490;color:#fff;}
-.nxtable tr strong{font-weight:bold;font-size:13px; font-family:Arial}
+.nxtable tr strong{font-weight:bold;font-size:13px;font-family:Arial}
 .nxmiddle h2 p s{color:#145fab;cursor:pointer;padding-right:20px; background:url(../images/cai888/jctop_06.jpg) right 7px no-repeat;display:inline-block;height:25px;padding-left:8px;}
 .nxds{padding:10px 0 30px 190px}
 .nxdsc{width:350px;float:left;margn-left:50px;}
@@ -843,7 +842,7 @@ span.suc_reg a.a3{color:#145fab;text-decoration:underline;margin-left:1px}
 .lr_m{padding-left:8px}
 .pagina select{margin-top:1px}
 .cpxq_tan_1 a{top:12px;right:20px;}
-.cpxq_tan_1 a:hover{background-image:url(..images/hm/zchm_11.png) no-repeat}
+.cpxq_tan_1 a:hover{background-image:url(../images/hm/zchm_11.png) no-repeat}
 .b_th_top11{margin:0}
 .all_kj{margin-top:0}
 .all_kj_top{height:auto}
@@ -993,13 +992,13 @@ a.g_a_t{ background:#e52e04;font-size:14px;font-weight:bold;color:#fff;line-heig
 .cupvs{width:750px;height:368px;background: url(../images/159/win_07.jpg) 3px 0 no-repeat;margin:20px -3px 5px;}
 .wdcupright{width:230px;float:right;border:1px solid #ccc;border-top:none;margin-top:34px;padding-bottom:20px}
 .wdcupright tr td{line-height:24px; text-align:center;border-top:1px solid #ddd;color:#333}
-.wdcupright tr td input{vertical-align: -2px;_vertical-align: -1px;margin-right: 2px;}
+.wdcupright tr td input{margin-right: 2px;vertical-align: -2px;_vertical-align: -1px;}
 .wdcupright tr.tr2 td{ background-color:#f0f0f0;color:#888;border:none}
 .wdcupright tr.tr1 td{ background-color:#e9e9e9;line-height:30px;height:30px; text-align:left;padding-left:14px;font-size:14px;color:#444;border-top:1px solid #ccc;border-bottom:1px solid #ccc;font-weight:bold}
 .wdcupright p.p1{line-height:24px;padding:10px;color:#444}
 .wdcupright p.p1 em{color:#ff6600;font-weight:bold;padding:0 2px}
 .wdcupright p.p1 input{width:40px;padding-left:3px;height:18px;margin: 0 8px 0 2px;border:1px solid #ddd;color:#444}
-.wdcupright  a.jc_mtz{margin:10px 0 0px 55px;_margin-left:28px}
+.wdcupright  a.jc_mtz{margin:10px 0 0 55px;_margin-left:28px}
 .cupteamdiv a{width:315px;border:1px solid #ddd;border-top:none}
 .cuptab1{float:left}
 .cuptab1 tr.tr1 td,.cuptab1 tr.tr1 th{height:30px;line-height:30px; background-color:#e9e9e9;text-align:Center;border-bottom:none;border-right:1px solid #fff;color:#444;font-size:12px}
@@ -1038,7 +1037,7 @@ a.g_a_t{ background:#e52e04;font-size:14px;font-weight:bold;color:#fff;line-heig
 .tan_mid{border:1px solid #ccc;*zoom:1;border-top:none;padding-bottom:15px;position:relative; background-color:#fff}
 .tan_mid table.col_1{margin:15px auto}
 .tan_mid table.col_1 td{padding:13px  0;text-align:right;line-height:25px;border-bottom:1px solid #ccc;color:#444}
-.tan_mid table.col_1 input.box{vertical-align: -2px;_vertical-align: -1px;margin-right:5px;}
+.tan_mid table.col_1 input.box{margin-right:5px;vertical-align: -2px;_vertical-align: -1px;}
 .tan_mid table.col_1 input.text{width:45px;height:22px;border:1px solid #ddd;text-align:center;margin-left:7px;padding-top:3px\9;height:19px\9}
 :root table.col_1 td input.text{height:22px;padding-top:0}
 .tan_mid p{text-align:center;line-height:25px;color:#444;}
@@ -1099,7 +1098,7 @@ a.red_b:hover{text-decoration: none;}
 .news_left h4 a.a1{color:#145fab;text-decoration:underline}
 .news_left p a.a1{color:#145fab;text-decoration:underline}
 .news_left  a.a1:hover,.newpag a:hover{color:#f60}
-.newpag{padding:0 15px;margin:0px 0 10px;clear:both;background:#f5f5f5}
+.newpag{padding:0 15px;margin:0 0 10px;clear:both;background:#f5f5f5}
 .newpag span{display:block;float:left;width:276px;font-size:14px;color:#444;line-height:30px;height:30px;}
 .newpag a{color:#145fab}
 .newpag span.span1{float:right;text-align:right}
@@ -1127,8 +1126,8 @@ a.red_b:hover{text-decoration: none;}
 .caitan{}
 .tanms{ background: url(../images/cai888/getw2_03.gif);width:360px;height:201px;}
 .tanms a.a1{margin:40px 0 0 20px;display:block;width:114px;height:140px;}
-.getwtb h3{font-size:14px;color:#555;text-align:left;line-height:25px;padding:0px 0 10px 80px; font-family:simsun}
-.getwtb h3 strong{font-weight:100;color:#ff6600}
+.getwtb h3{padding:0px 0 10px 80px;font:14px/25px simsun;color:#555;text-align:left;}
+.getwtb h3 strong{font-weight:100;color:#f60}
 .getwod_col{float:left;margin:10px 0 30px 25px}
 .a_out{background-image:url(../images/cdbg/getw1_05.gif);width:180px;height:136px}
 .a_out_y{background-image:url(../images/cdbg/getw1_05.gif);width:180px;height:136px}
@@ -1144,7 +1143,7 @@ a.a_inner{width:166px;height:128px;display:block;margin:4px auto 0}
 .getsus p input{width:90px;height:30px;display:inline-block;border:1px solid #d5d5d5;padding:8px 0 0 10px\9;height:22px\9;font-size:14px;color:#ff0000;}
 :root .getsus p input{padding:0 0 0 10px;height:30px}
 .getsus .a3{width:98px;height:28px;line-height:28px;text-align:center;background: url(../images/cai888/rgb13.jpg);color:#0f3f94;border:1px solid #79c1f3;display:inline-block;margin-left:12px}
-.getsus .a4{width:124px;height:27px;line-height:28px;text-align:center;background: url(../images/cai888/user_03.jpg);color:#fff;border:1px solid #79c1f3;display:block;margin-left:12px;border:1px solid #ff7800;margin:0;margin-top:7px}
+.getsus .a4{display:block;width:124px;height:27px;line-height:28px;text-align:center;background: url(../images/cai888/user_03.jpg);color:#fff;border:1px solid #ff7800;margin:7px 0 0;}
 .caitanbm{ background: url(../images/cai888/btm2.gif);height:27px;}
 .caitanbm1{background: url(../images/cai888/btm1.gif);height:27px;width:176px;float:left}
 .caitanbm2{background: url(../images/cai888/btm3.gif);height:27px;width:176px;float:right}
@@ -1154,24 +1153,23 @@ a.a_inner{width:166px;height:128px;display:block;margin:4px auto 0}
 .caitanm select{height:22px;border:1px solid #bbb}
 .caitanm  input.text1{width:245px;height:30px;background: url(../images/cai888/getw_07.jpg) 0 0px no-repeat transparent;display:block;float:left;border:none;padding:8px 0 0 3px\9;height:22px\9;font-size:14px;color:#444;border-right:1px solid #ddd}
 :root .caitanm  input.text1{padding:0 0 0 3px;height:30px}
-.caitanm a.btn{color:#fff;font-size:14px;width:103px;height:34px;display:block;text-align:Center;line-height:34px;font-family:"Microsoft YaHei";background: url(../images/cai888/getw_10.jpg) ;}
+.caitanm a.btn{display:block;width:103px;height:34px;font:14px/34px "Microsoft YaHei";color:#fff;text-align:Center;background: url(../images/cai888/getw_10.jpg)}
 .caitanm em{font-size:14px;color:#ff6600}
 .caitanm td.td1{color:#ff0000;font-size:12px;line-height:20px;padding:0}
 .caitanm a.a5{height:28px;width:100px;border:1px solid #ddd;background: url(../images/cai888/rgb14.jpg);line-height:28px;text-align:center;color:#145fab;display:block;margin-left:10px;float:left}
 .caitain{ background:#fff}
 p.pzong img{margin-right:12px;}
-p.pzong{margin-right:12px;height:50px;color:#444;font-size:14px;text-align:center;font-size:14px;padding-top:27px;line-height:50px}
-.caitain a.btn,.caitain div.btn{color:#fff;font-size:16px;width:103px;height:34px;display:block;text-align:Center;line-height:34px;font-family:"Microsoft YaHei";background: url(../images/cai888/getw_10.jpg) ;margin:20px auto 5px}
+p.pzong{height:50px;line-height:50px;padding-top:27px;margin-right:12px;font-size:14px;color:#444;text-align:center;}
+.caitain a.btn,.caitain div.btn,.abtnd a.btn,.tandiva a.btn{display:block;width:103px;height:34px;margin:20px auto 5px;font:16px/34px "Microsoft YaHei";text-align:Center;color:#fff;background: url(../images/cai888/getw_10.jpg);}
 .caitain a.btn:hover{text-decoration: none;}
 .abtnd{background:#fff}
-.abtnd a.btn{color:#fff;font-size:16px;width:103px;height:34px;display:block;text-align:Center;line-height:34px;font-family:"Microsoft YaHei";background: url(../images/cai888/getw_10.jpg) ;margin:20px auto 5px}
-.pzong b{display:inline-block;width:44px;height:40px;background: url(../images/cai888/gttb.jpg);margin-right:10px }
-.pzong b.cur{background: url(../images/cai888/gttd.jpg);height:40px;width:47px;}
+.pzong b{display:inline-block;width:44px;height:40px;margin-right:10px;background: url(../images/cai888/gttb.jpg);}
+.pzong b.cur{width:47px;height:40px;background: url(../images/cai888/gttd.jpg);}
 table.cot{border-left:1px solid #ddd}
 table.cot td{border-bottom:1px solid #ddd;border-right:1px solid #ddd;text-align:center;color:#444;font-size:12px;line-height:16px;padding:8px 0; background:#f5f5f5}
 table.cot td.t_td_c{color:#999;width:135px}
 table.cot td.tdff{ background:#fff}
-table.cot font{color:#ff0000;font-size:12px;padding:0 1px}
+table.cot font{color:#f00;font-size:12px;padding:0 1px}
 table.coz{margin:10px auto;border:5px solid #E8E8E8}
 table.coz thead td{line-height:25px; background-color: #EFF4F5;border-top:1px solid #ccc}
 table.coz td{border-right:1px solid #ccc;border-bottom:1px solid #ccc;padding:5px 10px}
@@ -1183,7 +1181,7 @@ table.cot p b,table.cot p strong{font-size:14px;color:#ff0000;font-weight:bold;}
 table.cot p strong{color:#145fab}
 .tandiva{width:220px;margin:20px auto 5px}
 .tandiva a:hover{text-decoration:none;}
-.tandiva a.btn{float:left;width:103px;height:34px;margin:0;font:16px/34px "Microsoft YaHei";text-align:Center;color:#fff;background: url(../images/cai888/getw_10.jpg)}
+.tandiva a.btn{float:left;margin:0;}
 .tandiva a.a2{float:left;font-size:14px;color:#145fab;line-height:34px;margin-left:20px}
 .tandiva a.a2:hover{color:#f60; text-decoration:underline}
 .tandiva a.a1{float:right;width:103px;height:34px;font:16px/34px "Microsoft YaHei";text-align:Center;color:#444;background: url(../images/cai888/btna2.jpg);}
@@ -1275,43 +1273,15 @@ table.cpmxtab p{line-height:25px;color:#444;font-size:12px;margin-leolor:#145fab
 .jp #jpnum{padding:10px 0 0 6px;vertical-align: middle;}
 .jp span strong{width: auto;padding-top:10px;vertical-align: middle;color: #444}
 .jp b{display: none;float:left;width: 160px;height: 15px;line-height:15px;padding:6px 3px;font-weight: normal;border: 1px solid #C7E0FC;background-color: #ECF8FF;position: absolute;top: 26px;left: 0;z-index: 15;}
-/*b.b1{ background-position:-1px -1px}
-b.b2{ background-position:-27px -1px}
-b.b3{ background-position:-54px -1px}
-b.b4{ background-position:-81px -1px}
-b.b5{ background-position:-108px -1px}
-b.b6{ background-position:-135px -1px}
-b.b7{ background-position:-162px -1px}
-b.b8{ background-position:-189px -1px}
-b.b9{ background-position:-221px -1px}
-b.b1_1{ background-position:-1px -32px}
-b.b1_2{ background-position:-30px -32px}
-b.b1_3{ background-position:-57px -32px}
-b.b1_4{ background-position:-84px -32px}
-b.b1_5{ background-position:-111px -32px}
-b.b1_6{ background-position:-138px -32px}
-b.b1_7{ background-position:-165px -32px}
-b.b1_8{ background-position:-192px -32px}
-b.b1_9{ background-position:-219px -32px}
-b.b2_1{ background-position:-1px -64px}
-b.b2_2{ background-position:-29px -64px}
-
-b.b2_3{ background-position:-56px -64px}
-b.b2_4{ background-position:-84px -64px}
-b.b2_5{ background-position:-112px -64px}
-b.b2_6{ background-position:-139px -64px}
-b.b2_7{ background-position:-164px -64px}
-b.b2_8{ background-position:-191px -64px}
-b.b2_9{ background-position:-223px -64px}*/
 .dztktop{padding:3px 0 3px 10px;border-bottom:1px solid #ddd; background:#f5f5f5}
 .dztktop table td{color:#444;line-height:35px;padding-left:15px;_paddingleft:0}
 .dztktop table  span{float:left;}
 .dztktop table  span.titspan{font-weight:bold;font-size:14px;color:#222;}
 .dztktop table td strong{font-weight:100;font-size:12px}
 .dztktop table  b.jj{margin-top:6px}
-.dztktop table  font{color:#ff0000;font-weight:100;font-size:14px; font-family:Arial;padding:0}
-.ad_mab{margin:0;*zoom:1;border-top:none;padding:0}
-.ad_mab table  th{font-weight:100;text-align:right;padding-right:12px;width:200px;line-height:35px;font-size:14px;color:#222;padding:2px 0}
+.dztktop table  font{color:#ff0000;font-weight:100;font-size:14px;font-family:Arial;padding:0}
+.ad_mab{margin:0;padding:0;border-top:none;*zoom:1;}
+.ad_mab table  th{width:200px;line-height:35px;font-weight:100;text-align:right;font-size:14px;color:#222;padding:2px 0}
 .ad_mab table td{line-height:35px;color:#444;padding-left:5px}
 .addz_mab{padding-top:15px}
 .addz_mab  table td label{font-size:14px}
@@ -1339,7 +1309,7 @@ a.t_a_dz:hover{background-image: url(../images/hm/hmt_05.gif);text-decoration: n
 .zj_mab table{border-top:1px solid #ccc}
 .zj_mab table  td{line-height:30px;color:#444;text-align:center;border-bottom:1px solid #ddd}
 .zj_mab table thead td{ background-color:#f5f1ea}
-.zj_mab table font{color:#a91e24; font-family:Arial;font-size:12px}
+.zj_mab table font{color:#a91e24;font-family:Arial;font-size:12px}
 .zj_mab table b{margin-left:25px}
 .zj_mab tr.odd td{ background-color:#f5f5f5}
 .gs_xgbj{margin:15px 20px;background-color: #f5f5f5; border: 1px solid #ddd;padding:5px;*zoom:1}
@@ -1372,7 +1342,7 @@ table.col_5 tbody td{line-height:40px;text-align:center;color:#444;border-right:
 table.col_5 td.m{padding-left:15px;text-align:left}
 table.col_5 td font{color:#ff0000; font-family:Arial, Helvetica, sans-serif;padding-right:3px;font-size:14px;font-weight:bold}
 table.col_5 strong{font-size:14px;color:#444}
-p.jjz{padding:20px 30px;line-height:20px;color:#444; background:url(../images/bank/tk_29.gif) 30px 20px no-repeat;padding-left:65px;margin:15px auto 30px;border:1px solid #acc8e4; background-color:#e3f0fd;width:635px}
+p.jjz{width:635px;line-height:20px;margin:15px auto 30px;padding:20px 30px 65px;color:#444;border:1px solid #acc8e4; background:#e3f0fd url(../images/bank/tk_29.gif) 30px 20px no-repeat;}
 .gs_stp{padding:25px 20px  0 20px}
 .gs_stp p{line-height:25px;color:#444;font-size:12px;text-align:left}
 .gs_stp p font{color:#f60;font-size:12px;}
@@ -2382,7 +2352,7 @@ label.red {color:red}
 .opt-t-right p a.dg-btn{float:left;width: 72px;height: 36px;font:700 16px/36px "Microsoft YaHei";text-align:center;color:#fff;background-position:0 -36px;position: absolute;top: 18px;right: 100px;}
 .opt-t-right p a.dg-btn1{right: 12px}
 /*end 奖金优化 */
-.jctj-t{width: 1200px;margin: 10px auto;color: #333}
+.jctj-t{width: 1200px;min-height:300px;margin: 10px auto;color: #333}
 .jctj-t h2{padding: 1em 0;font-size:1.8em;text-align: center}
 .jctj-t h2 select{float: right;font-size: 0.8em;}
 .jctj-t table{width: 100%;border: 1px solid #ccc;border-collapse: collapse}
