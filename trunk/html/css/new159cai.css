@@ -1151,12 +1151,12 @@ a.a_inner{width:166px;height:128px;display:block;margin:4px auto 0}
 .caitanm p.p1{line-height:30px;padding:8px 0 2px 22px;color:#333;font-size:14px;font-weight:bold}
 .caitanm td{font-size:14px;line-height:24px;color:#444;text-align:left;padding:5px 0}
 .caitanm select{height:22px;border:1px solid #bbb}
-.caitanm  input.text1{width:245px;height:30px;background: url(../images/cai888/getw_07.jpg) 0 0px no-repeat transparent;display:block;float:left;border:none;padding:8px 0 0 3px\9;height:22px\9;font-size:14px;color:#444;border-right:1px solid #ddd}
+.caitanm  input.text1{float:left;width:245px;height:30px;background:transparent url(../images/cai888/getw_07.jpg) no-repeat;border:none;padding:8px 0 0 3px\9;height:22px\9;font-size:14px;color:#444;border-right:1px solid #ddd}
 :root .caitanm  input.text1{padding:0 0 0 3px;height:30px}
 .caitanm a.btn{display:block;width:103px;height:34px;font:14px/34px "Microsoft YaHei";color:#fff;text-align:Center;background: url(../images/cai888/getw_10.jpg)}
-.caitanm em{font-size:14px;color:#ff6600}
-.caitanm td.td1{color:#ff0000;font-size:12px;line-height:20px;padding:0}
-.caitanm a.a5{height:28px;width:100px;border:1px solid #ddd;background: url(../images/cai888/rgb14.jpg);line-height:28px;text-align:center;color:#145fab;display:block;margin-left:10px;float:left}
+.caitanm em{font-size:14px;color:#f60}
+.caitanm td.td1{color:#f00;font-size:12px;line-height:20px;padding:0}
+.caitanm a.a5{float:left;display:block;width:100px;height:28px;line-height:28px;margin-left:10px;text-align:center;color:#145fab;border:1px solid #ddd;background: url(../images/cai888/rgb14.jpg);}
 .caitain{ background:#fff}
 p.pzong img{margin-right:12px;}
 p.pzong{height:50px;line-height:50px;padding-top:27px;margin-right:12px;font-size:14px;color:#444;text-align:center;}
@@ -1495,30 +1495,30 @@ html .buyfimsg td input.text {height: 22px;line-height:22px;padding: 0; vertical
 .buyfimsg td em {margin-right:12px;background:#eee;border: 1px solid #ccc;color: #444;cursor: pointer;display: inline-block;font: 400 14px/28px Arial,Helvetica,sans-serif;padding: 0 15px;}
 .buyfimsg td input.bt {border: 1px solid #DDDDDD;display: block;float: left;height: 25px;margin-top:1px;width: 515px;font-size:12px;padding:6px 0 0 5px\9;height:19px\9}
 :root .buyfimsg td input.bt{padding:0 0 0 5px}
-#container {margin: 0 auto;position: relative;width: 998px;/*border: 1px solid #ccc;*/overflow: visible;zoom: 1;}
+#container {width: 998px;margin: 0 auto;position: relative;overflow: visible;zoom: 1;}
 #container:after{visibility:hidden;display:block;font-size:0;content:" ";clear:both;}
 .annotation,.annotations{padding: 10px 0 0;text-indent:1.5em;}
 .numcai{overflow: visible;}
-.buyfimsg textarea {border: 1px solid #DDDDDD;color: #444444;float: left;font-size: 12px;height: 100px;margin-top: 11px;padding: 5px;width: 510px;}
-a.buyfa {display: block;width: 190px;height: 42px;margin:7px auto 2px;font: 16px/42px "微软雅黑";text-align: center;color: #fff;background: #ff7213;border:1px solid #CF5955;}
+.buyfimsg textarea {border: 1px solid #ddd;color: #444;float: left;font-size: 12px;height: 100px;margin-top: 11px;padding: 5px;width: 510px;}
+a.buyfa {display: block;width: 190px;height: 42px;margin:7px auto 2px;font: 16px/42px "Microsoft YaHei";text-align: center;color: #fff;background: #ff7213;border:1px solid #CF5955;}
 a.buyfa:hover{background:#f60}
 .buyfimsg p.p2{font-size:12px;line-height:18px;height:24px;text-align: left;}
 .buyfimsg p.p2 a{color:#145fab}
-.buyfimsg p.p2 a:hover,.buyfimsg p.p1 a:hover{color:#ff0000; text-decoration:underline}
+.buyfimsg p.p2 a:hover,.buyfimsg p.p1 a:hover{color:#f00; text-decoration:underline}
 .buyfimsg p.p1{text-align:Center;padding-top:8px}
 .buyfimsg p.p1 a{color:#145fab}
 .buyfimvs{width:840px;margin:10px auto;border:4px solid #f1f1f1}
 .buyfimvs table{border-left:1px solid #ccc;border-bottom:1px solid #ccc}
 .buyfimvs td{padding:0;text-align:center;border-right:1px solid #ccc;border-top:1px solid #ccc;line-height:30px;height:30px;font-size:12px}
 .buyfimvs tr.tr1 td{background:#f5f5f5}
-em.ew_e {display: inline-block;float: left;height: 38px;line-height: 38px;overflow: hidden;text-align: left;width: 62px;}
+em.ew_e {float: left;width: 62px;height: 38px;line-height: 38px;text-align: left;overflow: hidden;}
 em.ew_eright{text-align:right;float:right}
 .dc_r em.ew_e{float:none;clear:both}
 .ddc_table td s{line-height:38px}
 .dc_l_tr{margin:0}
 #title_folats,#title_folat{overflow:visible}
 .ddc_table td s.lests{float:right}
-a.jcq_kcur {background: url(../images/njc/jcy_17.jpg) no-repeat scroll 0 0 ;}
+a.jcq_kcur {background: url(../images/njc/jcy_17.jpg) no-repeat;}
 .hide_table{border:none; border-top: 1px solid #62A3D0;}
 .hide_table tr.ping td{background-position:100% 0;}
 .hide_table tr.fu td{border-top:1px solid #62A3D0}
@@ -2312,7 +2312,7 @@ div.step_3_m input.text{padding:0 ;height:20px;width:40px;text-align:center;font
 div.step_3_m a{color:#145fab;margin:0 5px}
 div.step_3_m h2{float:left;font-weight:100;font-size:12px}
 div.step_3_m h2 p{color:#888;}
-.ncathleft font{color:#ff6600;font-weight:bold;padding:0 5px;font-size:14px; font-family:Arial}
+.ncathleft font{color:#ff6600;font-weight:bold;padding:0 5px;font-size:14px;font-family:Arial}
 .step_3_m .upfilespan{margin: 21px 0 22px}
 .tipbankinfo{padding-left:28px;color:#999}
 .tipbankinfored{padding-left:28px;color:red}
