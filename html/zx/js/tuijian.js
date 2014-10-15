@@ -27,7 +27,9 @@ Class({
         });
     }
 	,show:function(){
-    	var expect=[];
+    	
+    	
+		var expect=[];
         $(".jctj-t tbody tr:even").hover(function(){$(this).addClass("hover").next().addClass("hover")},
                 function(){$(this).removeClass("hover").next().removeClass("hover")});
         $(".jctj-t tbody tr:odd").hover(function(){$(this).addClass("hover").prev().addClass("hover")},
@@ -39,14 +41,15 @@ Class({
 			expect.push($(this).attr("mark"));
 			
         }) 
-        expect=$_base_s.uniq(expect);
+        expect=$_base_s.uniq(expect).sort().reverse();
         var html='';
-		var expectday=new Date().format("YY-MM-DD");
-	
-		
+		var expectday=new Date().format("YY-MM-DD").replaceAll("-","");
+		$("tr[mark]").hide();
+		$("tr[mark="+expectday+"]").show();
         if (expect.length>0){
 			for ( var i = 0; i < expect.length; i++) {
-				if(expectday==expect[i][0]){
+				
+				if(expectday==expect[i]){
 					html+='<option value="'+expect[i]+'">'+expect[i]+'</option>';
 				}else{
 					html+='<option value="'+expect[i]+'">'+expect[i]+'</option>';
