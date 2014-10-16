@@ -1177,9 +1177,9 @@ p.bd_say em{color:#999;font-size:12px}
 p.bd_say input{border:1px solid #ddd;width:60px;border:1px solid #ddd;height:24px;text-algin:center;padding-top:4px\9;height:20px\9;margin:0 5px}
 :root p.bd_say input{padding:0;height:24px}
 p.bd_say font{color:#790500;font-size:12px}
-a.t_a_qx{ width:98px;height:34px;display:block;color:#333;font-size:16px; font-family:"微软雅黑";text-align:center;line-height:34px; background-image:url(../images/cdbg/login_10.gif);margin:12px 0 0 130px; text-decoration:none;float:left;_margin-left:70px}
+a.t_a_qx{float:left;width:98px;height:34px;margin:12px 0 0 130px;font:16px/34px "Microsoft YaHei";text-align:center;color:#333;background-image:url(../images/cdbg/login_10.gif);text-decoration:none;_display: inline}
 a.t_a_qx:hover{background-image:url(../images/cdbg/reg_03.gif)}
-a.t_a_qd{width:115px;height:35px;display:block;margin-left:15px;color:#fff;font-size:16px; font-family:"微软雅黑";text-align:center;line-height:34px; background-image:url(../images/cdbg/reg_07.gif);margin-top:10px;float:left}
+a.t_a_qd{float:left;width:115px;height:35px;margin:10px 0 0 15px;font:16px/34px "Microsoft YaHei";text-align:center;color:#fff;background-image:url(../images/cdbg/reg_07.gif);_display: inline}
 a.t_a_qd:hover{background-image:url(../images/cdbg/reg_10.gif)}
 a.a_auto{margin:0 auto 20px auto}
 .news_left{float:left;width:605px;padding:40px;border:1px solid #ddd;}
