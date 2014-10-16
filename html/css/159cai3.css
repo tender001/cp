@@ -1182,8 +1182,8 @@ a.t_a_qx:hover{background-image:url(../images/cdbg/reg_03.gif)}
 a.t_a_qd{width:115px;height:35px;display:block;margin-left:15px;color:#fff;font-size:16px; font-family:"微软雅黑";text-align:center;line-height:34px; background-image:url(../images/cdbg/reg_07.gif);margin-top:10px;float:left}
 a.t_a_qd:hover{background-image:url(../images/cdbg/reg_10.gif)}
 a.a_auto{margin:0 auto 20px auto}
-.news_left{width:605px;float:left;border:1px solid #ddd;padding:40px}
-.news_left h1{line-height:50px;font-size:24px; font-family:"微软雅黑";text-align:center;color:#444;font-weight:100}
+.news_left{float:left;width:605px;padding:40px;border:1px solid #ddd;}
+.news_left h1{font:400 24px/50px "Microsoft YaHei";text-align:center;color:#444}
 .news_left h4{color:#999;font-size:12px;text-align:center;font-weight:100;line-height:35px;padding-bottom:10px}
 .news_left h2{color:#444;font-size:14px;text-align:left;padding-left:10px;font-weight:bold;line-height:30px;border:1px solid #DDD; background-color:#fff4ef;margin: 0 5px}
 .news_left p{line-height:28px;font-size:14px;color:#444; text-indent:24px;padding-bottom:25px}
