@@ -319,33 +319,67 @@ Class('Loginer', {// 登陆器
 
     logout: function (fn){// 退出
         var Y = this;
-        this.ajax({
+//        this.ajax({
+//            url: Class.C('url-login-out'),
+//            end: function (){
+//                Y.getLogStart(function (isLogin){// 检查是否退出
+//                    if (!isLogin) {
+//                    	if(fn==undefined){fn=Y.C('logoutinfo');}
+//                        this.onlogout();
+//                        
+//                        this.get('#nologin_info,#nologin').show().get('#top_user_info,#onlogin').hide();
+//                        this.get('#top_username,#onusername').html("");
+//                        Class.config('userMoney', 0);
+//                        this.clearUserInfo();
+//                        this.get('#top_usermoney').html("");
+//                        this.get("#zhanghu").html("0");//选号首页
+//                        if (Y.isFunction(fn)) {
+//                            fn();
+//                            return;
+//                        }
+//                        if (this.onlogout() == false && this.get('#reload').val() == 1) {
+//                            location.href = Y.param({rnd:+new Date}, location.href);
+//                        }
+//                    }else{
+//                    	var obj = eval("(" + data.text + ")");
+//              		   var code = obj.Resp.code;
+//         					   if (code=="-1"){
+//         						     var u = obj.Resp.row;
+//         							   this.get("#acc_userinfo").html("");
+//         								$("#sjandscc").hide();
+//         								$("#sjand").show();
+//         					   }else{
+//         						  
+//         							 $("#sjandscc").show();
+//         	  						   $("#sjand").hide();
+//         					   }      
+//                    }                     
+//                });
+//            }
+//        }); 
+        Y.ajax({
             url: Class.C('url-login-out'),
-            end: function (){
-                Y.getLogStart(function (isLogin){// 检查是否退出
-                    if (!isLogin) {
-                    	if(fn==undefined){fn=Y.C('logoutinfo');}
-                        this.onlogout();
-                        
-                        this.get('#nologin_info,#nologin').show().get('#top_user_info,#onlogin').hide();
-                        this.get('#top_username,#onusername').html("");
-                        Class.config('userMoney', 0);
-                        this.clearUserInfo();
-                        this.get('#top_usermoney').html("");
-                        this.get("#zhanghu").html("0");//选号首页
-                        if (Y.isFunction(fn)) {
-                            fn();
-                            return;
-                        }
-                        if (this.onlogout() == false && this.get('#reload').val() == 1) {
-                            location.href = Y.param({rnd:+new Date}, location.href);
-                        }
-                    }else{
-                        this.alert('退出失败, 请重试!');
-                    }                     
-                });
-            }
-        }); 
+            end:function (data){
+                var Y;
+                Y = this;
+                if (data.error) {
+              	  return false;
+                }else{
+        				   var obj = eval("(" + data.text + ")");
+             		   var code = obj.Resp.code;
+        					   if (code=="-1"){
+        						     var u = obj.Resp.row;
+        							   this.get("#acc_userinfo").html("");
+        								$("#sjandscc").hide();
+        								$("#sjand").show();
+        					   }else{
+        						  
+        							 $("#sjandscc").show();
+        	  						   $("#sjand").hide();
+        					   }      
+                	}
+            	}
+        	}); 
     }
 });
 /*
