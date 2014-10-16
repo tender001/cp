@@ -25,7 +25,7 @@ img{vertical-align:top;}
 .f60{color: #e52e04 !important;font-weight: bold;}
 .ba9{color: #1f5ba9 !important;font-weight: bold;}
 .c3{color: #3c3c3c !important;}
-input[type="text"]:focus{border-color: rgb(255,113,0)}
+input[type="text"]:focus{border-color: rgb(255,113,0) !important}
 .bor-container{border: 1px solid #ccc;border-top: 0;}
 .top dl dt s,.top dl.ali dd a,.top dl dd li s,.m_l li span s,.m_l1 li span s,.tit,.m_mid .tab .title,.m_mid .tab .bod b s,.m_mid .tab .bod b em,.m_mid .tab .bod b i,.m_mid .tab .bod b strong,.mob_buy .body dd a,.today .bod li p a.fr,.center .body li p span em,.m_r .tab .title{background: url(../images/bg/index_bg0.png);_background-image: url(../images/bg/index_bg0-ie6.png);}
 .onlkj p b,.newsrc p b{background: url("../images/bg/ball-gai.jpg") no-repeat;}
