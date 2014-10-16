@@ -1,7 +1,7 @@
 ﻿@charset "utf-8";
 div,ul,li{ list-style-type:none;overflow:hidden}
 
-html,body,div,span,iframe,h1,h2,h3,h4,h5,h6,p,a,em,img,q,s,small,strong,b,u,i,center,dl,dt,dd,ol,ul,li,form,table,tbody,tr,th,td{margin:0;padding:0;border:0;outline:0;}
+html,body,div,span,iframe,h1,h2,h3,h4,h5,h6,p,a,em,img,q,s,small,strong,b,u,i,center,dl,dt,dd,ol,ul,li,form,table,tbody,tr,th,td{margin:0;padding:0;border:0;}
 html{color:#000;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%}
 *html{background-image:url(about:blank);background-attachment:fixed;}
 body{background-color:#fff; font:12px/150% Arial,Verdana,"\5b8b\4f53"; color:#6c6c6c; min-width:1000px;}
@@ -25,6 +25,7 @@ img{vertical-align:top;}
 .f60{color: #e52e04 !important;font-weight: bold;}
 .ba9{color: #1f5ba9 !important;font-weight: bold;}
 .c3{color: #3c3c3c !important;}
+input[type="text"]:focus{border-color: rgb(255,113,0)}
 .bor-container{border: 1px solid #ccc;border-top: 0;}
 .top dl dt s,.top dl.ali dd a,.top dl dd li s,.m_l li span s,.m_l1 li span s,.tit,.m_mid .tab .title,.m_mid .tab .bod b s,.m_mid .tab .bod b em,.m_mid .tab .bod b i,.m_mid .tab .bod b strong,.mob_buy .body dd a,.today .bod li p a.fr,.center .body li p span em,.m_r .tab .title{background: url(../images/bg/index_bg0.png);_background-image: url(../images/bg/index_bg0-ie6.png);}
 .onlkj p b,.newsrc p b{background: url("../images/bg/ball-gai.jpg") no-repeat;}
@@ -1774,7 +1775,7 @@ a.n_gz{color:#fff}
 .guogd1{border:1px solid #ddd;margin-bottom:14px}
 .s_select{padding:15px 0 0 20px;font-weight:100}
 .zn_gg_3{border-left:1px solid #ddd;border-right:1px solid #ddd}
-.zn_gg_4{border:1px solid #ddd;border-top:none}
+.zn_gg_4{padding-bottom:10px;border:1px solid #ddd;border-top:none;zoom:1;}
 .ggzcnav{height:33px;padding:20px 0 5px 25px;background: url(../images/cai888/cjt_01.jpg) 0 37px repeat-x;}
 .ggzcnav a{float:left;width:58px;height:33px;line-height:28px;color:#333;margin-right:6px;text-align:center;}
 .ggzcnav a.cur,.ggzcnav a:hover{color:#fff;background: url(../images/cai888/cjt_03.jpg)}
