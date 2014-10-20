@@ -24,6 +24,9 @@ $(document).ready(function(){
 	           }
 	       }
 	});
+   		$("#logoutLink").click(function(){
+   			loginout();
+   		})
 	});
 loginout = function (fn){ 
 	
