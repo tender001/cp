@@ -181,7 +181,7 @@ input[type="text"]:focus{border-color: rgb(255,113,0) !important}
 .foc li dl dd p a b{font-weight: 400;}
 .foc li dl dd p span{color: #aaa;padding: 0 3px;}
 .foc li dl dd em{color: #3c3c3c}
-.foc li dl dd i a{width: 62px;height: 24px;line-height: 24px;color: #444;text-align: center;display: block;float: left;background: url(../images/bg/ov_03.jpg) no-repeat;}
+.foc li dl dd i a{display: block;float: left;width: 62px;height: 24px;line-height: 24px;color: #444;text-align: center;background: url(../images/bg/ov_03.jpg) no-repeat;}
 .foc li dl dd i a.mar{margin-right: 5px;}
 .foc li dl dd i a:hover{background-position: 0 -26px;color: #fff;text-decoration: none;}
 /*footer*/
