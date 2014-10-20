@@ -109,7 +109,7 @@ input[type="text"]:focus{border-color: rgb(255,113,0) !important}
 /*nav*/
 .nav{height: 38px;line-height: 38px;/*background: #f60 url(../images/bg/nav.jpg) repeat-x;*/}
 .nav ul li{float: left;border-left: 1px solid #ffa366;overflow: visible;/*background: url(../images/bg/nav_li.jpg) repeat;*/}
-.nav ul li a{float: left;height:38px;padding:0 22px 0 21px;font-size:14px;font-weight:bold;color:#fff;}
+.nav ul li a{float: left;height:38px;padding:0 22px 0 21px;font-size:14px;font-weight:bold;color:#fff;letter-spacing: normal}
 .nav ul li a.cur{background: #e52e04;}
 .nav ul li a:hover{background: #e52e04;text-decoration: none;color:#fff;}
 .nav ul li.bac{border-right: 1px solid #ffa366;}
