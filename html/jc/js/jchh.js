@@ -390,17 +390,26 @@ Class('Selector', {
                 	var cbfarr=tr.find("td").attr("cbf").split(",");
                 	var bqcarr=tr.find("td").attr("bqc").split(",");
                 	var dataid=tr.find("td").attr("data-id")
+                	if(zjqarr[0]==""&&zjqarr[1]==""){
+                		_self.get("#hhmore tr[dat_tye=zjq]").html('<td>总进球</td><td style="background:#f5f5f5">未开玩法</td>')
+                	}
+                	if(bqcarr[0]==""&&bqcarr[1]==""){
+                		_self.get("#hhmore tr[dat_tye=bqc]").html('<td>半全场</td><td style="background:#f5f5f5">未开玩法</td>')
+                	}
+                	if(cbfarr[0]==""&&cbfarr[1]==""){
+                		_self.get("#hhmore tr[dat_tye=cbf]").html('<td>猜比分</td><td style="background:#f5f5f5">未开玩法</td>')
+                	}
                 	_self.get("#hhmore tr[dat_tye=zjq] i").each(function(h,i){
                 		_self.get(h).html(zjqarr[i]);
-                		_self.get(h).parent("a").attr("data-id",dataid);
+                		_self.get(h).parent("a").attr("data-id",dataid).attr("data-sp",zjqarr[i]);
                 	})
                     _self.get("#hhmore tr[dat_tye=cbf] i").each(function(h,i){
                     	_self.get(h).html(cbfarr[i]);
-                    	_self.get(h).parent("a").attr("data-id",dataid);
+                    	_self.get(h).parent("a").attr("data-id",dataid).attr("data-sp",cbfarr[i]);
                 	})
                     _self.get("#hhmore tr[dat_tye=bqc] i").each(function(h,i){
                     	_self.get(h).html(bqcarr[i]);
-                    	_self.get(h).parent("a").attr("data-id",dataid);
+                    	_self.get(h).parent("a").attr("data-id",dataid).attr("data-sp",bqcarr[i]);
                 	})
                     
                     tr.find('td').html('<table width="100%" cellspacing="0" cellpadding="0">'+$("#hhmore").html()+'</table>');
