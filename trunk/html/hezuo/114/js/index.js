@@ -899,7 +899,7 @@ Class(
 							html += '<td>' + parseFloat(rt.money).rmb(true) + '</td>';
 							html += '<td><p>' + rt.jindu + '%';
 							if(rt.pnum > 0){
-								html += '<i>(保' + (rt.pnum*100/rt.nums).toFixed(0) + '%)</i>';
+								html += '<em>(保' + (rt.pnum*100/rt.nums).toFixed(0) + '%)</em>';
 							}
 							html += '</p> <p class="x_jdt"><em style="width: ' + rt.jindu + '%"></em></p></td>';
 							html += '<td>1元</td>';
@@ -913,7 +913,7 @@ Class(
 									html += '<td></td>';
 								}
 							}else{
-								html += '<td><i>' + rt.lnum + '份</i></td>';
+								html += '<td><em>' + rt.lnum + '份</em></td>';
 							}
 							if(rt.cnickid=='******'){
 								html += '<td>--</td>';

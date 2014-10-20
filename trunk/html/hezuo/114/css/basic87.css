@@ -33,7 +33,6 @@ th,td{text-align: center;}
 .tit h3{float: left;padding-left: 12px;font-size: 14px;}
 .more{float: right;font-weight: 400;font-size: 12px;font-family: "\5b8b\4f53";margin-right: 12px;color:#f60;_display: inline;}
 .more a{color:#f60;margin-left: 12px;}
-
 /*87-top*/
 .top_nav{width: 998px;margin: 0 auto 10px;border: 1px solid #ffd988;background-color: #fff5df;}
 .top_nav a:hover{text-decoration: underline;color: #e62e04;}
@@ -70,15 +69,12 @@ th,td{text-align: center;}
 .hotnews{border-top: 1px dashed #ddd;padding: 3px 0 4px;}
 .hotnews p{width: 203px;height: 26px;line-height: 26px;padding-left: 14px;overflow: hidden;background-position: -235px -25px;}
 .hotnews p a:hover{text-decoration: underline;}
-
-
-
 .cai_pr{float: right;width: 770px;}
 .cai_pr .tab{border: 1px solid #ddd;margin-bottom: 10px;}
-.cai_pr .tab .title{height: 30px;line-height: 30px;color: #333;background-color: #f6f6f6;color: #333;font-weight: bold;border-bottom: 1px solid #ddd;}
+.cai_pr .tab .title{height: 30px;line-height: 30px;font-weight: bold;color: #333;background-color: #f6f6f6;border-bottom: 1px solid #ddd;}
 .cai_pr .tab .title span{width: 6em;text-align: center;border: 1px solid #ddd;border-width: 0 1px;display: block;float: left;margin-left: -1px;padding: 0 10px;cursor: pointer;font-size: 14px;}
 .cai_pr .tab .title span.hover{color: #ff1616;background-color: #fff;border-bottom: 1px solid #fff;position: relative;top: 1px;}
-.cai_pr .tab .title span.hover i{position: absolute;top: -2px;left: -1px;width: 106px;border-top: 2px solid #f44545;/*padding-top: 2px;background-color: #f44545;height: 0;overflow: hidden;*/}
+.cai_pr .tab .title span.hover i{position: absolute;top: -2px;left: -1px;width: 106px;border-top: 2px solid #f44545;}
 .bod div{display: none;}
 .num_cai .bod{height: 310px;}
 .num_cai .bod div{height: 310px;}
@@ -115,7 +111,7 @@ td .tz{width: 57px;height: 22px;display: inline-block;background-position: -93px
 .x5 .x511 div.fr b span.fr{float: right;color: #f30;font:bold 20px/30px Arial;}
 .x5 .x511 div.fr strong{height: 52px;line-height: 48px;padding-top: 10px;}
 .x5 .x511 div.fr strong em{width: 38px;height: 38px;line-height: 38px;float: left;margin-right: 4px;background-position: -188px -74px;_display: inline;text-align: center;}
-.x5 .x511 div.fr strong em input{width: 22px;height: 22px;line-height: 22px;border: 0;text-align: center;color: #333;font:bold 15px/22px "\5b8b\4f53";*margin-top: 6px;}
+.x5 .x511 div.fr strong em input{width: 22px;height: 22px;font:bold 15px/22px "\5b8b\4f53";text-align: center;color: #333;border: 0;*margin-top: 6px;}
 .x5 .x511 div.fr strong i{height: 35px;font: bold 16px/35px "\5b8b\4f53";float: right;text-align: center;cursor: pointer;}
 .x5 .x511 div.fr strong i.x_tz1{background-position: -62px -112px;width: 105px;color: #fff;}
 .x5 .x511 div.fr strong i.x_tz2{background-position: -1px -112px;width: 57px;color: #333;margin-right: 12px;_display: inline;}
@@ -135,9 +131,10 @@ tr:hover td{background-color: #fffee6;}
 .hm table td .x_jdt em{display: block;height: 4px;background-color: #f60;margin: -1px -1px -1px 0px;}
 .hm table td input{width: 38px;border: 1px solid #ddd;color: #333;height: 18px;line-height:18px;padding: 1px 0;text-align: center;*margin-top: -1px;}
 .hm table td .shouye a{vertical-align: middle;}
-/*.hm table td .shouye a img{height: 19px;}*/
 .hm table td a{color: #3970b6}
 .hm table td a:hover{text-decoration: underline;}
+.hm table td span{color: #25a;}
+.hm table td em{color: #f60;}
 .hm table td a.x_xq{color: #fff;padding: 3px 5px;background-color: #f60;text-decoration: none;outline: none;}
 .hm table td a.buy{width: 45px;height: 20px;line-height: 20px;display: block;background-color: #f60;color: #fff;margin: auto;}
 b.jj{display:inline-block;width:19px;height:19px;margin-left:4px; background:url(http://www.159cai.com/images/hm/hm2_07.gif) 0 0 no-repeat;margin-top:5px}
@@ -169,7 +166,63 @@ b.b2_6{ background-position:-139px -64px}
 b.b2_7{ background-position:-164px -64px}
 b.b2_8{ background-position:-191px -64px}
 b.b2_9{ background-position:-223px -64px}
+.jp .zj-pic{float:left;width: 90px;height: 16px;overflow: hidden;}
+.jp .zj-pic:hover{text-decoration: none}
+.jp i{float: left;width:15px;height:15px;margin: 0 4px 0 0;_display: inline}
+.jp b em{float: left;margin-right: 4px;display: inline;}
+.jp i.Rating1{width:16px;height:16px;background: url("http://www.159cai.com/images/bg/vip-cp1.gif") no-repeat;}
+.jp i.Rating1_1{background-position: 0 0;}
+.jp i.Rating1_2{background-position: -16px 0;}
+.jp i.Rating1_3{background-position: -32px 0;}
+.jp i.Rating1_4{background-position: -48px 0;}
+.jp i.Rating1_5{background-position: -64px 0;}
+.jp i.Rating1_6{background-position: -80px 0;}
+.jp i.Rating1_7{background-position: -96px 0;}
+.jp i.Rating1_8{background-position: -112px 0;}
+.jp i.Rating1_9{background-position: -128px 0;}
+.jp i.Rating1_10{background-position: -144px 0;}
+.jp i.Rating1_11{background-position: -160px 0;}
+.jp i.Rating1_12{background-position: -176px 0;}
+.jp i.Rating1_13{background-position: -192px 0;}
+.jp i.Rating1_14{background-position: -208px 0;}
+.jp i.Rating1_15{background-position: -224px 0;}
+.jp i.Rating1_16{background-position: -240px 0;}
+.jp i.Rating1_17{background-position: -256px 0;}
+.jp i.Rating1_18{background-position: -272px 0;}
+.jp i.Rating1_19{background-position: -288px 0;}
+.jp i.Rating1_20{background-position: -304px 0;}
+.jp i.Rating2{height: 14px;background: url("http://www.159cai.com/images/bg/vip-cp2.gif") no-repeat;}
+.jp i.Rating2_1{background-position: 0 0}
+.jp i.Rating2_2{background-position: -16px 0}
+.jp i.Rating2_3{background-position: -32px 0}
+.jp i.Rating2_4{background-position: -48px 0}
+.jp i.Rating2_5{background-position: -64px 0;}
+.jp i.Rating2_6{background-position: -80px 0;}
+.jp i.Rating2_7{background-position: -96px 0;}
+.jp i.Rating2_8{background-position: -112px 0;}
+.jp i.Rating2_9{background-position: -128px 0;}
+.jp i.Rating3{width: 16px;height:14px;background: url("http://www.159cai.com/images/bg/vip-cp3.gif") no-repeat;}
+.jp i.Rating3_1{background-position: 0 0}
+.jp i.Rating3_2{background-position: -16px 0}
+.jp i.Rating3_3{background-position: -32px 0}
+.jp i.Rating3_4{background-position: -48px 0}
+.jp i.Rating3_5{background-position: -64px 0;}
+.jp i.Rating3_6{background-position: -80px 0;}
+.jp i.Rating3_7{background-position: -96px 0;}
+.jp i.Rating3_8{background-position: -112px 0;}
+.jp i.Rating3_9{background-position: -128px 0;}
+.jp i.Rating4{width:16px;height: 14px;background: url("http://www.159cai.com/images/bg/vip-cp4.gif") no-repeat;}
+.jp i.Rating4_1{background-position: 0 0;}
+.jp i.Rating4_2{background-position: -16px 0;}
+.jp i.Rating4_3{background-position: -32px 0;}
+.jp i.Rating4_4{background-position: -48px 0;}
+.jp i.Rating4_5{background-position: -64px 0;}
+.jp i.Rating4_6{background-position: -80px 0;}
+.jp i.Rating4_7{background-position: -96px 0;}
+.jp i.Rating4_8{background-position: -112px 0;}
+.jp i.Rating4_9{background-position: -128px 0;}
 /*焦点赛事*/
+/*
 .foc{width: 218px;float: left;}
 .foc .body{width: 92%;margin: 0 auto;}
 .foc ul{overflow: hidden;margin-top: -1px;}
@@ -186,5 +239,24 @@ b.b2_9{ background-position:-223px -64px}
 .foc li dl dd p span{color: #aaa;padding: 0 3px;}
 .foc li dl dd em{color: #888}
 .foc li dl dd i a{width: 62px;height: 24px;line-height: 24px;color: #444;text-align: center;display: block;float: left;background: url(../images/bg1/ov_03.jpg) no-repeat;}
+.foc li dl dd i a.mar{margin-right: 5px;}
+.foc li dl dd i a:hover{background-position: 0 -26px;color: #fff;text-decoration: none;}*/
+.foc{width: 213px;float: left;}
+.foc .body{width: 92%;}
+.foc ul{overflow: hidden;margin-top: -1px;}
+.foc li{height: 76px;border-top: 1px dashed #ddd;padding: 14px 0;*float: left;}
+.foc li dl dt{float: left;width: 56px; height: 72px;border: 1px solid #a3a3a1;text-align: center;}
+.foc li dl dt img{width: 50px; height: 44px;margin-top: 4px;}
+.foc li dl dt h4{width: 100%;height: 20px;line-height: 20px;display: block;background-color: #ffe8da;margin-top: 4px;font-size: 12px;}
+.foc li dl dt h4 a{color: #464646}
+.foc li dl dt h4 a:hover{color: #06c}
+.foc li dl dd{float: right;width: 130px;line-height: 27px;}
+.foc li dl dd p{width: 100%;height: 22px;overflow: hidden;}
+.foc li dl dd p a{color: #135eaa}
+.foc li dl dd p a:hover{text-decoration: underline}
+.foc li dl dd p a b{font-weight: 400;}
+.foc li dl dd p span{color: #aaa;padding: 0 3px;}
+.foc li dl dd em{color: #3c3c3c}
+.foc li dl dd i a{width: 62px;height: 24px;line-height: 24px;color: #444;text-align: center;display: block;float: left;background: url(../images/bg/ov_03.jpg) no-repeat;}
 .foc li dl dd i a.mar{margin-right: 5px;}
 .foc li dl dd i a:hover{background-position: 0 -26px;color: #fff;text-decoration: none;}
