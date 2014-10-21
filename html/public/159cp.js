@@ -1732,6 +1732,10 @@ ScorllNum.prototype.scroll = function(o){
 		o.fun();
 	}
 }; 
+//数字前面补0
+$_sys.pad= function(num, n) {  
+	  return Array(n>num?(n-(''+num).length+1):0).join(0)+num;  
+	}  
 
 //数组随机排序
 Array.prototype.aSort = function(method){
@@ -1809,7 +1813,7 @@ Class({
     	$("[mark=gcdown]").hover(function(){ //顶部购彩导航滑入
     		$(this).addClass("hover").find("dd").show();
 			$("[mark=gcdown] dd").clearQueue().animate({
-				height:434
+				height:463
 				})
 		},function(){
 			
