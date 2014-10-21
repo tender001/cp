@@ -275,6 +275,7 @@ Class('App', {
         this.lib.SendBuy();
         this.lib.Dlg();
     	Y = this;
+    	var playTabs,zhTabs;
         this.lib.openCodeList(false);
         this.lib.ExpectList();
         this.lib.BuyProject();
@@ -287,6 +288,7 @@ Class('App', {
         
         this.addChoose();
     	this.addTabs();
+    	Y.exportCode();
     	 Y.get("#zh_bs_big").val(1);
     	this.get("#showkaijiang").click(function(){
 			$("#kaijianginfo").toggle();
@@ -625,7 +627,7 @@ Class('App', {
 //        this._add116 = this.getNoop();
     },
     addTabs: function (){
-        var playTabs,zhTabs;
+        
         Y =this;
         //玩法切换
         playTabs = this.lib.Tabs({
@@ -700,7 +702,8 @@ Class('App', {
         	}
         	var pid = this.get('#play_tabs a').slice(b, b+1).attr("value");
         	Class.C('playid', pid);
-        	z==0? '':this.postMsg("show_opencodelist");
+        	 Y.postMsg('playtabs_onchange'); 
+//        	z==0? '':Y.postMsg('show_opencodelist', b);
         	z++;
         	Y[Class.C('lot_sub')[pid][0]]();
         };
@@ -1975,6 +1978,114 @@ getData: function (){
 }
 });
 
+
+Class.extend('exportCode', function (){
+    // 传入号码
+	var showid =location.search.getParam('codes');
+	var type =location.search.getParam('wtype');
+	var zid    =location.search.getParam('zid');
+	if(zid!=""&&typeof(zid) != 'undefined'){
+
+		Y.postMsg('msg_login', function (){
+			location.href='#page_zh';
+			zhTabs.focus(1);
+    		
+			/* setTimeout(function() {
+                Y.lib.ZhOptions();
+            },99);   */
+		var data = $_trade.key.gid + "=" + encodeURIComponent("04") + "&tid=" + encodeURIComponent(zid) + "&rnd=" + Math.random();
+		Y.ajax({
+			url :$_user.url.xchase,
+			type : "POST",
+			dataType : "json",
+			data : data,
+			end: function(d) {
+				var obj = eval("(" + d.text + ")");
+				var code = obj.Resp.code;
+	   		    var desc = obj.Resp.desc;
+				if (code == "0") {
+					var r = obj.Resp.row;
+					var ccodes = r[0].ccodes;// 投注号码
+					var ss = r[0].ccodes;// 投注号码
+					var sss = r[0].ccodes;// 投注号码
+					ccodes = ccodes.split(':')[0];
+					ss = ss.split(':')[1];
+					sss = sss.split(':')[2];
+					zhushu = r[0].icmoney*1/2;
+					
+//					ss += ccodes.split(':');
+					var mulity = r.imulity;// 倍数
+					//var periodid = r.periodid;//期次
+					if(mulity>1){
+						$("#beishu").val(mulity);
+					}
+					ss = ss+','+sss;
+					if(ss=='7,3'){
+						type="116";
+						Y.postMsg('msg_force_change_playtabs', 0,1);
+					}
+					else if(ss=='5,1'){
+						type="107";
+						Y.postMsg('msg_force_change_playtabs', 3,1);
+					}
+					else if(ss == '4,1'){
+						type="106";
+						Y.postMsg('msg_force_change_playtabs', 4,1);
+					}else if(ss == '3,1'){
+						type="105";
+						Y.postMsg('msg_force_change_playtabs', 3,1);
+					}else if(ss == '1,1'){
+						type="104";
+						Y.postMsg('msg_force_change_playtabs', 4,1);
+					}else if(ss == '12,1'){
+						type="124";
+						Y.postMsg('msg_force_change_playtabs', 5,1);
+					}else if(ss == '7,4'){
+						type="118";
+						Y.postMsg('msg_force_change_playtabs', 6,1);
+					}
+					if(ccodes==""){
+		    			Y.alert("您不是该方案的发起人，不能再次购买本方案");
+		    			return false;
+		    		}
+					if(ccodes.split(':')[0]){
+						$("#zjtz23").attr("checked",'true');
+					}
+//					
+					if(ccodes.indexOf("$")==-1){
+						
+							Yobj.get('#codes').val(ccodes);
+							var import_code, arrCodes, short_code;
+						    if (import_code = Yobj.get('#codes').val()) {
+								if (typeof this.dejson(import_code) == 'object') return;
+						        if (/\b0\b/.test(import_code)) {
+						            return
+						        }
+						        arrCodes= [import_code,type,zhushu];
+						        if (arrCodes.length) {//完整号码显示到列表
+						             Y.postMsg('msg_put_code', arrCodes);
+						        }
+						    }
+						}  
+					
+				}else if(code=='2002'){
+					Y.alert("您不是该方案的发起人，不能再次购买本方案");
+					return false;
+				}else{
+					Y.alert(desc);
+					return false;
+				}
+			},
+			error : function() {
+				alert("您所请求的页面有异常！");
+				return false;
+			}
+		});
+	});
+
+	}
+
+});
 //开奖号
 Class('openCodeList', {
 	omissionurl:"/cpdata/omi/" + Class.C('lot_id') + "/miss.xml?v="+Math.random(),
