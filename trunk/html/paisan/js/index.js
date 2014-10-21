@@ -7,6 +7,7 @@ Class.config('hzQuery',{
     "z6" : Class.C('zxhzQuery'),
     "zhx" : {0:1,1:3,2:6,3:10,4:15,5:21,6:28,7:36,8:45,9:55,10:63,11:69,12:73,13:75,14:75,15:73,16:69,17:63,18:55,19:45,20:36,21:28,22:21,23:15,24:10,25:6,26:3,27:1}
 });
+
 /*
 组6组3直选
 */
@@ -373,7 +374,9 @@ Main
     });
     Class.extend('exportCode', function (){
         // 传入号码
+    	
         var import_code, arrCodes, short_code, pid = this.get('#playid2').val() || 1;
+        var zid    =location.search.getParam('zid');
         var type = pid == 28 ? 'Z3' : ( pid == 29 ? 'Z6' : 'Zhx');
         if (import_code = Yobj.get('#codes').val()) {
 			if (typeof this.dejson(import_code) == 'object') return;
@@ -381,7 +384,7 @@ Main
                 var w = c.split('|'), q, b, g;
                 switch(type){
                     case 'Z3':
-                        return [w.sort(Array.up), Math.c(w.length, 2) * 2]
+                    	return [w.sort(Array.up), Math.c(w.length, 2) * 2]
                         break;
                     case 'Z6':
                         return [w.sort(Array.up), Math.c(w.length, 3)]
@@ -406,9 +409,105 @@ Main
                  this.moveToBuy()
             }
             if (short_code && short_code.length) {// 残缺号码显示到球区
-                this.postMsg('msg_redraw_code_pt_'+type.toLowerCase(), short_code)
+                this.postMsg('msg_redraw_code'+type.toLowerCase(), short_code)
             }
-        }
+        };
+        if(zid!=""&&typeof(zid) != 'undefined'){
+        	var import_code, arrCodes, short_code;
+    		Y.postMsg('msg_login', function (){
+    			location.href='#page_zh';
+    			buyTabs.focus(2);
+                setTimeout(function() {
+                    Y.lib.ZhOptions();
+                },99);   
+    		var data = $_trade.key.gid + "=" + encodeURIComponent("53") + "&tid=" + encodeURIComponent(zid) + "&rnd=" + Math.random();
+    		Y.ajax({
+    			url :$_user.url.xchase,
+    			type : "POST",
+    			dataType : "json",
+    			data : data,
+    			end: function(d) {
+    				var obj = eval("(" + d.text + ")");
+    				var code = obj.Resp.code;
+		   		    var desc = obj.Resp.desc;
+    				if (code == "0") {
+    					var r = obj.Resp.row;
+    					var ccodes = r[0].ccodes;// 投注号码
+    					ccodes = ccodes.split(':')[0];
+    					var mulity = r.imulity;// 倍数
+    					var periodid = r.cperiodid;//期次
+    					
+    					if(mulity>1){
+    						$("#beishu").val(mulity);
+    					}
+    					
+						if(ccodes==""){
+    		    			Y.alert("您不是该方案的发起人，不能再次购买本方案");
+    		    			return false;
+    		    		}
+						if(ccodes.split(';')[0].split(':')[1]==2){
+							$("#zjtz23").attr("checked",'true');
+							Y.processAddPrice(true);
+						}
+						if(ccodes.indexOf("$")==-1){
+    						
+							Yobj.get('#codes').val(ccodes);
+						
+						   if (import_code = Yobj.get('#codes').val()) {
+							   if (typeof this.dejson(import_code) == 'object') return;
+					            arrCodes = import_code.split('$').map(function (c){
+					                var w = c.split(','), q, b, g;
+					                switch(type){
+					                    case 'Z3':
+					                    	Y.postMsg('msg_change_play', 2);
+					                        return [w.sort(Array.up), Math.c(w.length, 2) * 2]
+					                        break;
+					                    case 'Z6':
+					                    	Y.postMsg('msg_change_play', 1);
+					                        return [w.sort(Array.up), Math.c(w.length, 3)]
+					                        break;
+					                    default:
+					                        q = w[0] ? w[0].split('') : [];
+					                        b = w[1] ? w[1].split('') : [];
+					                        g = w[2] ? w[2].split('') : [];
+					                        zs = q.length*b.length*g.length;                        
+					                }
+					                return [q.sort(Array.up), b.sort(Array.up), g.sort(Array.up), zs]
+					            }).filter(function (c){
+					                if (c[c.length - 1] == 0) {//zs
+					                    short_code = c//残缺号码
+					                }else{
+					                    return true
+					                }
+					            });
+					           // Y.postMsg('msg_change_play', pid == 28 ? 2 : (pid == 29 ? 1 : 0));
+					            if (arrCodes.length) {//完整号码显示到列表
+					                 this.postMsg('msg_put_code_pt_'+type.toLowerCase(), arrCodes);
+					                 this.moveToBuy()
+					            }
+					            if (short_code && short_code.length) {// 残缺号码显示到球区
+					                this.postMsg('msg_redraw_code'+type.toLowerCase(), short_code)
+					            }
+						   }
+						
+    					}
+			    	     
+    				}else if(code=='2002'){
+    					Y.alert("您不是该方案的发起人，不能再次购买本方案");
+    					return false;
+    				}else{
+    					Y.alert(desc);
+    					return false;
+    				}
+    			},
+    			error : function() {
+    				alert("您所请求的页面有异常！");
+    				return false;
+    			}
+    		});
+    	});
+    	}
+        
     });
     /*
     begin直选
@@ -480,7 +579,8 @@ Main
         ready: true,
         index:function (){
             this.Type = 'App_index';
-            this.lib.LoadExpect();	
+            this.lib.LoadExpect();
+            var playTabs, subPlayTabs,dsTabs, buyTabs,Y;
             this.createTabs();
             this.createSub();				
             this.lib.PLHotCoolChart({//冷热图表
@@ -790,7 +890,7 @@ Main
         },
 
         createTabs: function (){
-            var playTabs, subPlayTabs,dsTabs, buyTabs, pn, pn2,  playid, runSub, Y, reqiTabs;
+        	var pn, pn2,  playid, runSub, Y, reqiTabs
             Y = this;
 
             //主玩法

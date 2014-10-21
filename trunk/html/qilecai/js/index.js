@@ -190,6 +190,97 @@ Class('CodeList>SingeCodeList', {
         };
         return map[Class.C('play_name')] + ['代购','合买','追号'][Class.C('buy_type')];
     });
+    Class.extend('exportCode', function (){
+        // 传入号码
+        var zid =location.search.getParam('zid');
+        if(zid!=""&&typeof(zid) != 'undefined'){
+    		Y.postMsg('msg_login', function (){
+    			location.href='#page_zh';
+    			buyTabs.focus(2);
+                setTimeout(function() {
+                    Y.lib.ZhOptions();
+                },99);   
+    		var data = $_trade.key.gid + "=" + encodeURIComponent("07") + "&tid=" + encodeURIComponent(zid) + "&rnd=" + Math.random();
+    		Y.ajax({
+    			url :$_user.url.xchase,
+    			type : "POST",
+    			dataType : "json",
+    			data : data,
+    			end: function(d) {
+    				var obj = eval("(" + d.text + ")");
+    				var code = obj.Resp.code;
+		   		    var desc = obj.Resp.desc;
+    				if (code == "0") {
+    					var r = obj.Resp.row;
+    					var ccodes = r[0].ccodes;// 投注号码
+    					ccodes = ccodes.split(':')[0];
+    					var mulity = r.imulity;// 倍数
+    					var periodid = r.cperiodid;//期次
+    					
+    					if(mulity>1){
+    						$("#beishu").val(mulity);
+    					}
+    					
+						if(ccodes==""){
+    		    			Y.alert("您不是该方案的发起人，不能再次购买本方案");
+    		    			return false;
+    		    		}
+						if(ccodes.split(';')[0].split(':')[1]==2){
+							$("#zjtz23").attr("checked",'true');
+							Y.processAddPrice(true);
+						}
+						if(ccodes.indexOf("$")==-1){
+							var import_code, arrCodes, short_code;
+							Yobj.get('#codes').val(ccodes);
+						
+							 if (import_code = Yobj.get('#codes').val()) {
+//								   if (typeof this.dejson(import_code) == 'object') return;
+//						            arrCodes = import_code.split('$').map(function (c){
+//						                var rb = c.split(','), w = [], zs = 1;
+//						                rb.each(function (x, i){
+//						                    w[i] = x;
+//						                    zs *= x.length;
+//						                });
+//						                w.push(w.length < 7 ? 0 : zs);
+//						                return w;
+//						            }).filter(function (c){
+//						                if (c[c.length - 1] == 0) {//zs
+//						                    short_code = c//残缺号码
+//						                }else{
+//						                    return true
+//						                }
+//						            });
+								 	arrCodes=[[import_code.split(","),1]];
+						            if (arrCodes.length) {//完整号码显示到列表
+						            	
+//						                 this.postMsg('msg_put_code', arrCodes);
+						                 Y.postMsg('msg_put_code', arrCodes);
+						                 this.moveToBuy();
+						                 
+						            }
+						            if (short_code && short_code.length) {// 残缺号码显示到球区
+						                this.postMsg('msg_redraw_code', short_code)
+						            }
+							   }
+    					}
+			    	     
+    				}else if(code=='2002'){
+    					Y.alert("您不是该方案的发起人，不能再次购买本方案");
+    					return false;
+    				}else{
+    					//Y.alert(desc);
+    					return false;
+    				}
+    			},
+    			error : function() {
+    				alert("您所请求的页面有异常！");
+    				return false;
+    			}
+    		});
+    	});
+    	}
+        
+    });
     // 自动生成playid
     Class.extend('getPlayId', function (play_name){
         var pn = Class.config('play_name');
@@ -254,7 +345,8 @@ Class('CodeList>SingeCodeList', {
 
         index:function (){
             this.Type = 'App_index';
-            this.lib.LoadExpect();		
+            this.lib.LoadExpect();
+            var playTabs, subPlayTabs,dsTabs, buyTabs, pn, pn2,  playid, runSub, Y, reqiTabs;
             this.createTabs();
             this.createSub();            
             this.lib.PLHotCoolChart({
@@ -323,6 +415,7 @@ Class('CodeList>SingeCodeList', {
             Y.lib.HmOptions();
             setTimeout(function() {
                 Y.lib.BuySender();
+                Y.exportCode()
             },500);            
 
             this.setBuyFlow();
@@ -383,7 +476,7 @@ Class('CodeList>SingeCodeList', {
         },
 
         createTabs: function (){
-            var playTabs, subPlayTabs,dsTabs, buyTabs, pn, pn2,  playid, runSub, Y, reqiTabs;
+            
             Y = this;
 
             //主玩法
