@@ -754,6 +754,7 @@ Class('CodeList>CodeList_dt', {
         				if (code == "0") {
         					var r = obj.Resp.row;
         					var ccodes = r[0].ccodes;// 投注号码
+        					ccodes = ccodes.split(':')[0];
         					var mulity = r.imulity;// 倍数
         					var periodid = r.periodid;//期次
         					if(mulity>1){
@@ -774,19 +775,19 @@ Class('CodeList>CodeList_dt', {
     	   			    	            if (/\b0\b/.test(import_code)) {
     	   			    	                return
     	   			    	            }
-    	   			    	            arrCodes = import_code.split(';').map(function (c){
-    	   			    	                var rb = c.split('|'),
-    	   			    	                    r = rb[0] ? rb[0].split(',') : [],
-    	   			    	                    b = rb[1] ? rb[1].split(":")[0].split(",") : [],
-    	   			    	                    zs = Math.c(r.length, 6) * Math.c(b.length, 1);
-    	   			    	                return [r, b, zs];
-    	   			    	            }).filter(function (c){
-    	   			    	                if (c[c.length - 1] == 0) {//zs
-    	   			    	                    short_code = c;//残缺号码
-    	   			    	                }else{
-    	   			    	                    return true;
-    	   			    	                }
-    	   			    	            });
+    	   			    	         arrCodes = import_code.split(';').map(function (c){
+		   			    	                var rb = c.split('|'),
+		   			    	                    r = rb[0] ? rb[0].split(',') : [],
+		   			    	                    b = rb[1] ? rb[1].split(":")[0].split(",") : [],
+		   			    	                    zs = Math.c(r.length, 6) * Math.c(b.length, 1);
+		   			    	                return [r, b, zs];
+		   			    	            }).filter(function (c){
+		   			    	                if (c[c.length - 1] == 0) {//zs
+		   			    	                    short_code = c;//残缺号码
+		   			    	                }else{
+		   			    	                    return true;
+		   			    	                }
+		   			    	            });
     	   			    	            if (arrCodes.length) {//完整号码显示到列表
     	   			    	                 this.postMsg('msg_put_code', arrCodes);
     	   			    	                 this.moveToBuy();
@@ -804,20 +805,19 @@ Class('CodeList>CodeList_dt', {
        			    	            if (/\b0\b/.test(import_code)) {
        			    	                return
        			    	            }
-       			    	            arrCodes = import_code.split(';').map(function (c){
-       			    	                var rb = c.split('|'),
-       			    	                    d= rb[0] ? rb[0].split('$')[0].split(',') : [],
-    	    	                    		t = rb[0] ? rb[0].split('$')[1].split(',') : [],
-       			    	                    b = rb[1] ? rb[1].split(":")[0].split(",") : [],
-       			    	                 zs = Math.dt(d.length, t.length, 6)*(b.length)*((d.length) > 0 ? 1 : 0);
-       			    	                return [[d,t,b,zs]];
-       			    	            }).filter(function (c){
-       			    	                if (c[c.length - 1] == 0) {//zs
-       			    	                    short_code = c;//残缺号码
-       			    	                }else{
-       			    	                    return true;
-       			    	                }
-       			    	            });
+       			    	         arrCodes = import_code.split(';').map(function (c){
+	   			    	                var rb = c.split('|'),
+	   			    	                    r = rb[0] ? rb[0].split(',') : [],
+	   			    	                    b = rb[1] ? rb[1].split(":")[0].split(",") : [],
+	   			    	                    zs = Math.c(r.length, 6) * Math.c(b.length, 1);
+	   			    	                return [r, b, zs];
+	   			    	            }).filter(function (c){
+	   			    	                if (c[c.length - 1] == 0) {//zs
+	   			    	                    short_code = c;//残缺号码
+	   			    	                }else{
+	   			    	                    return true;
+	   			    	                }
+	   			    	            });
        			    	            if (arrCodes.length) {//完整号码显示到列表
 //       			    	            	this.postMsg('msg_put_code',[[[8, 9, 26, 27], [10, 11, 28, 29], [12, 13], 12]]);
        			    	            	for(var i=0;i<arrCodes.length;i++){
