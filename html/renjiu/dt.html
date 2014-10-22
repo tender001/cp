@@ -88,9 +88,9 @@
 				<span>购买方式</span><b class="cur"><label for="dg"><input type="radio" name="radio_r" id="dg" value="0" checked="checked" />代购</label></b><b><label
 					for="hm"><input type="radio" name="radio_r" id="hm" value="1" />发起合买</label></b>
 			</div>
-			<div style="width: 100%; display:;" id="dgdiv">
-				<div class="b_th_co2" style="width: 100%">
-					<table width="760" border="0" class="col_2" style="margin-left: 130px">
+				<div style="width: 100%; display:;" id="dgdiv">
+				<div class="b_th_co2"  style="width: 970px;display: none">
+					<table width="100%" border="0" class="col_2">
 						<tr>
 							<th>投注信息</th>
 							<td>总金额<font id="buyMoneySpan">0</font>元
@@ -98,10 +98,12 @@
 						</tr>
 					</table>
 				</div>
-				<a class="d_c_b" href="javascript:void(0);" id="buy_dg">立即投注</a>
-				<p class="xytk">
-					<input type="checkbox" id="agreement" checked="checked">我已阅读并同意《<a target="_blank" href="/help/helpxy.html">用户合买代购协议</a>》 
-				</p>
+				<div class="p-buy-btn">
+                    <a class="d_c_b" href="javascript:void(0);" id="buy_dg">立即投注</a>
+                    <p class="xytk">
+                        <input type="checkbox" id="agreement" checked="checked">我已阅读并同意《<a target="_blank" href="/help/helpxy.html">用户合买代购协议</a>》
+                    </p>
+                </div>
 			</div>
 			<div style="width: 100%; display: none;" id="hmdiv">
 				<div class="b_th_co2 buyfimsg" style="width: 100%">
