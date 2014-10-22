@@ -2422,7 +2422,7 @@ label.red {color:red}
 .sf-left .sf em.cur{color:#fff;background: #f60 url("../images/bg/true-ico.gif") right bottom no-repeat;}
 .sf-left .sf em.cur i,.sf-left .sf em.hover i{color: #fff}
 .sf-left .c{background-color: #89b5fe;cursor: pointer}
-.sf-left .c:hover{background-color: #488bfe;background-image: linear-gradient()}
+.sf-left .c:hover{background-color: #488bfe}
 
 
 
