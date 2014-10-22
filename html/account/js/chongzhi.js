@@ -223,7 +223,7 @@ Class('App', {
 var changdiv=function(divnum){
 	var bankid=divnum;
 	var bconfig=0;
-	//if(bankid==20) bconfig = 1;
+	
 	//else if (bankid==21) bconfig = 3;
 	//else bconfig = 3;
 	var bankname=" ";
@@ -254,7 +254,11 @@ var changdiv=function(divnum){
 			        }  
 				});
 					
-					
+				if(bankid==20){
+					 bankid = "8";
+					 banktype = "CIB";
+					 bconfig= "1";
+				}
 						Y.get("#bankid").val(bconfig);
 						Y.get("#bid").val(bankid);
 						Y.get("#banktype").val(banktype);
