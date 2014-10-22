@@ -2354,9 +2354,9 @@ showduizhen =function (lotid,expect,projid,type,codes,cp){
 							}
 							
 							
-							if(result!=""&&bet_str.indexOf(result)!=-1){
-								bet_str=bet_str.replace(result,"<font   class='cm_red'><b>"+result+"</b></font>");
-								}
+//							if(result!=""&&bet_str.indexOf(result)!=-1){
+//								bet_str=bet_str.replace(result,"<font   class='cm_red'><b>"+result+"</b></font>");
+//								}
 							
 							
 							if(lotid==92){
@@ -2627,7 +2627,7 @@ showduizhen =function (lotid,expect,projid,type,codes,cp){
 //				var gg_name=arr_bet[2].replaceAll("\\*","串");
 				var d=[];
 				$("#predictPrize").html( this.postMsg('msg_predict_max_prize', arrmaxSp, ggstr2, d).data);
-				$("#cp_guoguan").html(html);
+				$("#cp_guoguan").html(html.replace("1串1","单关"));
 				if(lotid>=88 || lotid==70 || lotid==72 ){
 //					html += Class.C("caststate") == 3 ? "&nbsp;&nbsp;<a href='javascript:void(0);' onclick=\'billcode(\""+lotid+"\",\""+projid+"\")\'>出票明细</a>" : "";
 					if(Class.C("caststate") == 3){
