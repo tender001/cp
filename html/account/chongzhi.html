@@ -60,12 +60,12 @@
 								onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/^\D*(\d*(?:\.\d{0,2})?).*$/g, '$1'));"
 								onkeyup="this.value=this.value.replace(/^\D*(\d*(?:\.\d{0,2})?).*$/g, '$1');"
 								onfocus="this.value='';" id="addmoney" name="addmoney" /><span>(至少<em>10</em>元，限整数)
-							</span> <input id="banktype" type="hidden" name="banktype"
-								value="ICBCB2C"> <input id="bankid" type="hidden"
-								name="bankid" value="3"> <input id="payType"
-									type="hidden" name="B2CBANK" value=""> <input
-										id="iszfb" type="hidden" name="iszfb" value="0"><input
-											id="bid" type="hidden" name="bid" value="2">
+							</span> 
+								<input id="banktype" type="hidden" name="banktype"value="CMBC"> 
+								<input id="payType" type="hidden" value="" name="B2CBANK">
+								<input id="bankid" type="hidden" name="bankid" value="3"> 
+								<input id="iszfb" type="hidden" name="iszfb" value="0">
+								<input id="bid" type="hidden" name="bid" value="2">
 						</form>
 					</p>
 				</div>
@@ -75,6 +75,8 @@
 						<ul>
 							<li id="bank_div_21" onclick="changdiv(21);"
 								style="cursor: pointer"><em class="zfb" class="cur"></em></li>
+							<li id="bank_div_20" onclick="changdiv(20);"
+								style="cursor: pointer"><em class="kq" ></em></li>
 							<li id="bank_div_2" onclick="changdiv(2);"
 								style="cursor: pointer"><em class="gh"></em></li>
 							<li id="bank_div_4" onclick="changdiv(4);"
