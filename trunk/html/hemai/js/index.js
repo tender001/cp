@@ -910,6 +910,9 @@ $(document).ready(function(){
 			$(".top-caiz").show();
 			$(".hemai").hide();
 			$(".annotation").show();
+			if(Class.C('lotid') ==50||Class.C('lotid')== 1){
+				$(".annotation").html("注：单个方案合买成功盈利超过10000元（含10000元），则获得一个钻石，当期方案个数不限。")
+			}
 			$(".annotations").hide();
 			$(".hm_right_t").show();
 			cachePeriod();
