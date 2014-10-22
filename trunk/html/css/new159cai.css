@@ -2399,6 +2399,7 @@ label.red {color:red}
 .sf-left .bod .bod-m dl dd{float:left;width: 189px;height: 52px;margin: 20px 10px 0 14px;padding-top:10px;font: 24px/24px "黑体";text-align: center;color: #2f913e;background-repeat: no-repeat;cursor:pointer;-webkit-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;*font-weight: 700;_display: inline}
 .sf-left .bod .bod-m dl dd.hover{color:#fff;background-position: 0 -63px}
 .sf-left .bod .bod-m dl dd.cur{height:50px;color:#fff;background-position: 0 -126px}
+.sf-left .bod .bod-m dl dd.un-time{color:#777;background-position: 0 -231px;cursor: not-allowed;}
 .sf-left .bod .bod-m dl dd em{display: block;width: 100%;font-size: 16px;}
 .sf-right .bod p i{display: inline-block;width: 15px;height: 14px;margin:0 4px 0 0;vertical-align:middle;background-position: -124px -187px;overflow: hidden}
 .sf-right .bod .bod-m{border-top: 1px solid #ccc}
@@ -2421,5 +2422,7 @@ label.red {color:red}
 .sf-left .sf em.hover{color:#fff;background-color: #3ba748}
 .sf-left .sf em.cur{color:#fff;background: #f60 url("../images/bg/true-ico.gif") right bottom no-repeat;}
 .sf-left .sf em.cur i,.sf-left .sf em.hover i{color: #fff}
+.sf-left .sf em.un-time{color:#bbb;border-color: #999;background-color#f1f1f1;cursor: not-allowed;}
+.sf-left .sf em.un-time *{color:#bbb;}
 .sf-left .c{background-color: #89b5fe;cursor: pointer}
 .sf-left .c:hover{background-color: #488bfe}
