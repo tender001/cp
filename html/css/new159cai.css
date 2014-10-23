@@ -34,7 +34,7 @@ input[type="text"]:focus{border-color: rgb(255,113,0) !important}
 .top .fl{width: 360px;_width: 362px;overflow:visible;}
 .ie_fl{float: left;}
 .top dl{float: left;position: relative;z-index: 999;}
-.top dl dt{height:28px;line-height:25px;margin-top:3px;padding: 0 20px 0 5px; background-position: -13px -4px;position: relative;z-index: 14;border:1px solid transparent;_border:1px solid #f7f7f7;_float: left;}
+.top dl dt{height:28px;line-height:25px;margin-top:3px;padding: 0 20px 0 5px; background-position: -13px -4px;position: relative;z-index: 14;border:1px solid transparent;_border-color:#f7f7f7;_float: left;}
 .top dl dt s{width: 11px;height: 11px;display: block;position: absolute;right: 4px;top: 6px;background-position: -70px -14px;-webkit-transition: transform 0.2s ease-in 0s;-moz-transition: transform 0.2s ease-in 0s;-o-transition: transform 0.2s ease-in 0s;transition: transform 0.2s ease-in 0s;}
 .top dl.hover dt s{background-position: -166px -16px\9;-webkit-transform: rotate(180deg);-moz-transform: rotate(180deg);-o-transform: rotate(180deg);transform: rotate(180deg);}
 .top dl.hover dt{ background-position: -110px -5px;border-color: #ddd;border-bottom-color: #f7f7f7;}
@@ -758,7 +758,7 @@ span.sz_a_l a.cur{background:url(../images/cai888/nwx5_11.jpg) repeat scroll 0 0
 .nxds{padding:10px 0 30px 190px}
 .nxdsc{width:350px;float:left;margn-left:50px;}
 .nxdsc em{display:block;width:61px;height:27px;margin-left:100px;line-height:27px;color:#666;text-align:center;background:url(../images/159/nsc1_07.jpg);margin-bottom:15px}
-.nxdsc b{display:block;width:55px;height:55px;line-height:55px;text-align:Center;color:#444; font-family:Arial;float:left;margin-right:14px;background:url(../images/159/nsc1_11.jpg);font-size:32px;cursor:pointer}
+.nxdsc b{display:block;width:55px;height:55px;line-height:55px;text-align:Center;color:#444;font-family:Arial;float:left;margin-right:14px;background:url(../images/159/nsc1_11.jpg);font-size:32px;cursor:pointer}
 .nxdsc b.cur,.nxdsc b:hover{ background:url(../images/159/nsc1_13.jpg);color:#fff}
 .nxtable tr td.td3{padding-left:15px}
 .nxhm span.sscbool{padding:0 50px 10px 20px;height:auto}
@@ -832,7 +832,7 @@ span.suc_reg a.a3{color:#145fab;text-decoration:underline;margin-left:1px}
 .navmlist a.sjia{background:url(../images/159/jia.gif) no-repeat scroll 96px 5px }
 .pagination li select{margin: 0}
 .mm_bg_2 table td a{color:#145fab}
-.mm_bg_2 table td a:hover{text-decotration:underline}
+.mm_bg_2 table td a:hover{text-decoration:underline}
 .sz_jlist li{font-size:14px;color:#ff6600;line-height:30px;border-bottom:1px dashed #ddd}
 .pagination li {box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);float: left;height: 20px;line-height:20px;margin-left:5px;margin-right:0;padding:0}
 .pagination li a{display:block;color:#1e50a2;line-height:18px;padding:0 7px;border:1px solid #ddd}
@@ -870,102 +870,50 @@ span.suc_reg a.a3{color:#145fab;text-decoration:underline;margin-left:1px}
 .rkj_reson td{line-height:24px;color:#333;text-align:center;border-bottom:1px solid #ddd}
 .dj_oder{padding:6px 10px;border-bottom:1px solid #ccc}
 .dj_oder h5{font-size:14px;font-weight:bold;line-height:28px;}
-.dj_oder h5 b{ display:inline-block;text-align:center;width:20px;height:20px;line-height:20px; background-color:#ff6600;color:#fff;margin-right:10px;-webkit-border-radius: 4px;border-radius:4px;-moz-border-radius :4px;font-size:16px;font-weight:100}
+.dj_oder h5 b{ display:inline-block;text-align:center;width:20px;height:20px;line-height:20px; background-color:#f60;color:#fff;margin-right:10px;-webkit-border-radius: 4px;border-radius:4px;-moz-border-radius :4px;font-size:16px;font-weight:100}
 .dj_oder  p{line-height:20px;color:#444;padding-right:5px;padding-top:3px}
 .newgg{height:30px;border:1px solid #ccc; background-color:#fff;line-height:30px}
 .newgg span{color:#e52e04;font-weight:bold;padding-left:12px;}
 .newgg a{margin-left:10px;color:#333}
-.newgg a:hover{color:#ff6600; text-decoration:underline}
-.nngg_a{height:36px;border-bottom:3px solid #ff6600}
-.nngg_a a{ display:block;float:left;padding:0 25px;height:36px;line-height:36px;text-align:center;font-size:14px;font-weight:bold;color:#333;float:left;border-right:1px solid #ccc;}
-.nngg_a a.cur,.nngg_a a:hover{ background:#ff6600;color:#fff;font-weight:bold;border-bottom:none;text-decoration: none;}
+.newgg a:hover{color:#f60; text-decoration:underline}
+.nngg_a{height:36px;border-bottom:3px solid #f60}
+.nngg_a a{ display:block;float:left;padding:0 25px;height:36px;line-height:36px;text-align:center;font-size:14px;font-weight:bold;color:#333;border-right:1px solid #ccc;}
+.nngg_a a.cur,.nngg_a a:hover{ background:#f60;color:#fff;font-weight:bold;border-bottom:none;text-decoration: none;}
 a.g_a_t{ background:#e52e04;font-size:14px;font-weight:bold;color:#fff;line-height:32px; text-align:center;-webkit-border-radius:3px;
     border-radius: 3px;-moz-border-radius:3px;}
-.g_5_right td b{display:block;float:right;margin-right:5px;border:1px solid #ddd; background: url(../images/159/nng_07.jpg) right center #efefef no-repeat;padding:0 20px 0 5px;font-weight:100;color:#333;height:18px; line-height:18px;margin:3px 5px 3px ;cursor:pointer}
+.g_5_right td b{display:block;float:right;height:18px; line-height:18px;margin:3px 5px 3px;padding:0 20px 0 5px;font-weight:400;color:#333;border:1px solid #ddd; background: url(../images/159/nng_07.jpg) right center #efefef no-repeat;cursor:pointer}
 .g_5_right td b.cur{background: url(../images/159/nng_09.jpg) right center #efefef no-repeat;}
 
-.paginachange {float: right;font-family: Tahoma;height: 34px;margin: 5px 0 -7px; width: auto;}
+.paginachange {float: right;width: auto;height: 34px;margin: 5px 0 -7px;font-family: Tahoma;}
 .paginachange ul {height: auto;margin: 4px 10px 0 0;overflow: hidden;}
-.paginachange li {box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);float: left;height: 27px;line-height:27px}
+.paginachange li {float: left;height: 27px;line-height:27px;box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);}
 .paginachange li a{display:block;padding:0 10px;color:#1e50a2;line-height:25px;border:1px solid #ddd;border-left:none}
-.paginachange .disabled span, .paginachange .disabled a, .paginachange .disabled a:hover {
-    background-color: rgba(0, 0, 0, 0);
-    color: #7C7C7C;
-
-}
+.paginachange .disabled span, .paginachange .disabled a, .paginachange .disabled a:hover {background-color: rgba(0, 0, 0, 0);color: #7C7C7C;}
 .all_km_2 table thead td,.zn_gg_4 table tr.tr1 td{ background: none repeat scroll 0 0 #EcEcEc;}
 .all_km_2 table tr.odd td{ background: none repeat scroll 0 0 #f5f5f5}
-
 .zn_gg_3,.zn_gg_4 table tr.odd td{ background: none repeat scroll 0 0 #f5f5f5}
 .all_km_2 table tr.odd:hover td,.zn_gg_4 table tr.odd:hover td{ background:#fefecb}
-.paginachange li.PagedList-skipToFirst a {
-    border-left: 1px solid #DDDDDD;
-}
-.paginachange a:hover, .paginachange .active a,.paginachange .thisclass{
-    background-color: #ECECEC;
-    text-decoration: none;
-}
+.paginachange li.PagedList-skipToFirst a{border-left:1px solid #ddd}
+.paginachange a:hover,.paginachange .active a,.paginachange .thisclass{background-color:#ececec;text-decoration:none}
 .paginachange .thisclass{padding:0 10px;border:1px solid #ddd;height:25px}
 .pagina select{margin:1px 5px}
-.pagina strong{color:#ff0000}
-.paginachange .active a {
-    color: #7C7C7C;
-    cursor: default;
-}
+.pagina strong{color:#f00}
+.paginachange .active a{color:#7c7c7c;cursor:default}
 .s_sezc{padding-left:25px;font-size:16px}
-.ggabs{bottom: 10px;
-    clear: both;
-    left: 260px;
-    position: absolute;}
+.ggabs{bottom:10px;clear:both;left:260px;position:absolute}
 .g_5_rightx{height:150px;padding-top:40px}
 .kj_dzxq table td.tdx{ background-color:#f0f0f0}
 .zn_gg_1x{height:45px}
 .zn_gg_1 p{padding-top:10px;line-height:25px}
 .zn_gg_1x p{float:right;padding-right:15px;line-height:30px;color:#666;padding-top:10px}
-.kj_dzxq table td.td_shu {
-    font-size: 12px;
-    letter-spacing: 1px;
-    line-height: 15px;
-    text-align: center;padding:0;height:65px
-}
-.td_shu div.t1 {
-    color: #484848;
-    float: left;
-    padding-left: 13px;
-    width: 12px;
-}
-
-.td_shu div.vs {
-    color: #484848;
-    float: left;
-    text-align: center;
-    width: 73px;
-}
-
-.td_shu div.t2 {
-    color: #484848;
-    float: right;
-    padding-right: 13px;
-    width: 12px;
-}
+.kj_dzxq table td.td_shu{font-size:12px;letter-spacing:1px;line-height:15px;text-align:center;padding:0;height:65px}
+.td_shu div.t1{color:#484848;float:left;padding-left:13px;width:12px}
+.td_shu div.vs{color:#484848;float:left;text-align:center;width:73px}
+.td_shu div.t2{color:#484848;float:right;padding-right:13px;width:12px}
 .bqggtb .td_shu div.t1{padding-left:4px}
-
-.bqggtb .td_shu div.vs {
-    color: #484848;
-    float: left;
-    text-align: center;
-    width: 48px;
-}
-
-.bqggtb .td_shu div.t2 {
-    color: #484848;
-    float: right;
-    padding-right: 4px;
-    width: 15px;
-}
-.navmlist a.sre {
-    background: url(../images/159/re.gif) no-repeat scroll 96px 5px ;
-}
+.bqggtb .td_shu div.vs{color:#484848;float:left;text-align:center;width:48px}
+.bqggtb .td_shu div.t2{color:#484848;float:right;padding-right:4px;width:15px}
+.navmlist a.sre{background:url(../images/159/re.gif) no-repeat scroll 96px 5px}
 .winc_top{height:34px;border-bottom:2px solid #ff6600;line-height:34px;background:#f0f0f0 url(/images/cai888/33.png) no-repeat 16px 3px;padding-left:50px}
 .winc_top span{float:left}
 .winc_top span a{width:120px;text-align:Center;font-size:14px;font-weight:bold;color:#222;display:block;float:left}
