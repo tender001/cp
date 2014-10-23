@@ -2431,7 +2431,7 @@ label.red {color:red}
 .sf-left .sf em.hover{color:#fff;background-color: #3ba748}
 .sf-left .sf em.cur{color:#fff;background: #f60 url("../images/bg/true-ico.gif") right bottom no-repeat;}
 .sf-left .sf em.cur i,.sf-left .sf em.hover i{color: #fff}
-.sf-left .sf em.un-time{color:#bbb;border-color: #999;background-color#f1f1f1;cursor: not-allowed;}
+.sf-left .sf em.un-time{color:#bbb;border-color: #999;background-color:#f1f1f1;cursor: not-allowed;}
 .sf-left .sf em.un-time *{color:#bbb;}
 .sf-left .c{background-color: #89b5fe;cursor: pointer}
 .sf-left .c:hover{background-color: #488bfe}
