@@ -1930,7 +1930,7 @@ a.sz_cmt{background: url(../images/cai888/nwx5_112.jpg);width:137px;height:33px}
 .span4-pok em.px3_i_413{background-position:-354px -281px}
 .w_con .nwx5time span.span5{line-height: 30px;border-color: #231a13;text-indent:6px;margin-top: 11px;background: #058455 url(../images/ssc_bg/nwx5_07.jpg) 66px 10px no-repeat;}
 .w_con .nxmiddle{background: url(../images/ssc_bg/w_bg_2.jpg) repeat;}
-.w_con .nxmiddle h2 p{padding-left: 35px;color: #ccc;float: none;}
+.w_con .nxmiddle h2 p{float: none;padding-left: 35px;color: #ccc;}
 .w_con .nxmiddle h2 p em{color: #efd41f;}
 .w_con .nx3span{width: 965px;padding:20px 0;margin: 0 auto;background-color: #05a06f;}
 .w_con .nxhm span{height: auto;margin-left: 20px;padding:0 !important;zoom:1;}
@@ -1967,7 +1967,7 @@ a.sz_cmt{background: url(../images/cai888/nwx5_112.jpg);width:137px;height:33px}
 .w_con .nxtable tr th{background: #057e57;color: #fff;height: 32px;}
 .w_con .nxtable tr td{background: #05a06f;color: #eee;height: 32px;font-size:14px;border: 0;}
 .w_con .nxtable tr.odd td{background-color: #057e57;}
-.kaijiang-num tr td span{width: 36px;height: 20px;line-height: 20px;color: #000;float: left;margin-left: 5px;background-color: #f9f9f9;text-align: left;text-indent: 20px;background:url(../images/ssc_bg/PK_K.png) no-repeat;_display: inline;}
+.kaijiang-num tr td span{float: left;width: 36px;height: 20px;line-height: 20px;color: #000;margin-left: 5px;text-align: left;text-indent: 20px;background:#f9f9f9 url(../images/ssc_bg/PK_K.png) no-repeat;_display: inline;}
 .nxtable .kaijiang-num tr td span{float: none;display: inline-block;margin: 0 5px 0 0;}
 /*.kc_td_kj .kaijiang-num tr td span{margin: 0;}*/
 .kaijiang-num tr td span.PK_101{background-position:0 0}
@@ -2054,11 +2054,10 @@ a.sz_cmt{background: url(../images/cai888/nwx5_112.jpg);width:137px;height:33px}
 .pok:after{visibility:hidden;display:block;font-size:0;content:" ";clear:both;}
 .pok dl{margin-top: 12px;zoom:1;}
 .pok dl:after{visibility:hidden;display:block;font-size:0;content:" ";clear:both;}
-.pok dl dt,.pok dl dd{float: left;color: #ccc;/*margin-right: 28px;_display: inline;*/}
-.pok dl dt{/* width: 85px; */width:0 !important;  cursor: pointer;}
-.pok dl dd{width: 98px;text-align: center;/*-webkit-transition: all 0.2s ease-in;-moz-transition: all 0.2s ease-in;-o-transition: all 0.2s ease-in;transition: all 0.2s ease-in;*/}
-/*.pok dl dd:hover{box-shadow: 0 0 15px rgba(0,0,0,0.4);}*/
-.pok dl.pok_hua dd{height: 128px;background: url(../images/ssc_bg/pok_bg.png);cursor: pointer;-webkit-user-select: none;-moz-user-select: none;-o-user-select: none;user-select: none;}
+.pok dl dt,.pok dl dd{float: left;color: #ccc;}
+.pok dl dt{width:0 !important;  cursor: pointer;}
+.pok dl dd{width: 98px;text-align: center;}
+.pok dl.pok_hua dd{height: 128px;background: url(../images/ssc_bg/pok_bg.png);cursor: pointer;-webkit-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;}
 .pok dl.pok_hua dd small{display: block;width: 37px;height: 38px;margin: 40px auto 0;background: url(../images/ssc_bg/poker_ico.png);}
 .pok dl.pok_hua dd small.d1{background-position: -38px 0;}
 .pok dl.pok_hua dd small.d2{background-position: -75px 0;width: 40px;}
