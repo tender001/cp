@@ -195,7 +195,7 @@ input[type="text"]:focus{border-color: rgb(255,113,0) !important}
 .foot p span{color: #e52e04;}
 .foot p img{vertical-align: middle;width: 20px;height: 20px;}
 .menu_link{padding-bottom: 30px;}
-.menu_link p{color: #333;font-weight: bold;line-height: 24px;}
+.menu_link p{color: #777;font-weight: bold;line-height: 24px;}
 .menu_link p a{font-weight: 400;color: #777;margin: 0 6px;}
 .menu_link p a:hover{color: #e52e04;}
 .menu_link .link_mid{float: left;width: 864px;height: 24px;overflow: hidden;}
