@@ -335,7 +335,7 @@ table.log_tab td a.aa:hover{color:#790500; text-decoration:underline}
 .proms{height:91px;border:1px solid #ddd;margin-top:10px;padding-left:15px}
 .proms h2{float:left;color:#e62e04;font:16px/30px "Microsoft YaHei";}
 .proms  a{float:right;margin-right:10px;height:22px;padding:0 10px; background-color:#ff6600;color:#fff;font-size:12px;line-height:22px;margin-top:4px}
-.proms_c{float:left;width:120px;line-height:22px;padding-left:45px; font-family:"Microsoft YaHei";color:#333;background:url(../images/in_14.jpg) 0 0 no-repeat;}
+.proms_c{float:left;width:120px;line-height:22px;padding-left:45px; font-family:"Microsoft YaHei UI","微软雅黑";color:#333;background:url(../images/in_14.jpg) 0 0 no-repeat;}
 .proms_c1{ background-position:-67px -233px}
 .proms_c2{ background-position:-67px -175px}
 .proms_c3{ background-position:-58px -119px;padding-left:55px;width:110px}
@@ -451,9 +451,9 @@ p.fotpp{line-height:24px;text-align:center;padding:16px 0;color:#666;}
 .navfn p{line-height:24px;padding:2px 0;clear:both;height:24px}
 .navfn p a{float:left;height:12px;line-height:12px;color:#444;margin-top:6px;padding:0 7px;border-right:1px solid #aaa;}
 .navfn p a:hover{color:#f60;text-decoration:underline}
-.ov_main span{float:left;padding:10px 0px 0 0px;}
+.ov_main span{float:left;padding:10px 0 0;}
 .ov_main span b{display:block;width:48px;text-align:Center;color:#fff;height:20px;line-height:20px; background-color:#f60;font-weight:100;margin-left:7px;}
-.ov_main span p{line-height:24px;padding-top:10px;color:#888;padding-left:0px;}
+.ov_main span p{line-height:24px;padding-top:10px;color:#888;padding-left:0;}
 .ov_r{float:left;width:137px;padding-top:10px;}
 .ov_r a.abt{float:left;width:62px;height:24px;line-height:24px;margin-left:6px;text-align:center;color:#444; background: url(../images/159/ov_03.jpg);}
 .ov_r a.abt:hover{ background-position:0 -26px;color:#fff}
@@ -471,14 +471,14 @@ p.fotpp{line-height:24px;text-align:center;padding:16px 0;color:#666;}
 .newsr{width:260px;float:right;}
 .news_left h2{border:none; background:none;border-bottom:1px solid #ddd;height:30px;padding:0;width:440px}
 .news_left h2 a{float:left;height:30px;padding:0 4px;color:#f60;font-weight:bold;border-bottom:1px solid #f60;}
-.newsr1{border:1px solid #ccc;margin-top:0px;clear:both;}
+.newsr1{border:1px solid #ccc;margin-top:0;clear:both;}
 .fxgj{margin-top:12px}
 .newsr1 h2{height:26px;line-height:26px;padding-left:12px;background:url(../images/159/new_03.jpg);border-bottom:1px solid #ddd}
-.newsr1 h2 span{float:left;font-size:14px;color:#444;weight:bold;}
+.newsr1 h2 span{float:left;font-size:14px;color:#444;font-weight:bold;}
 .rig_hm_main table input{height:20px;}
 .rig_hm_main table img.gm{height:22px}
-.newsr1 h2 a{float:right;color:#444;float:right;margin-right:15px;font-size:12px;font-weight:100}
-.newsr1 h2 a:hover{color:#ff6600; text-decoration:underline}
+.newsr1 h2 a{float:right;color:#444;margin-right:15px;font-size:12px;font-weight:100}
+.newsr1 h2 a:hover{color:#f60; text-decoration:underline}
 .newsrc h3{height:24px;line-height:24px; background-color:#f1f1f1;font-size:12px;color:#444;font-weight:100}
 .newsrc h3 span{padding:0 10px;float:left}
 .newsrc h3 a{color:#145fab;}
@@ -487,9 +487,9 @@ p.fotpp{line-height:24px;text-align:center;padding:16px 0;color:#666;}
 .newsrc p{line-height:20px;height:20px;padding:7px 0 7px 10px}
 .newsrc p b{float:left;width:20px;height:20px;color:#fff;font-weight:bold;font-size:12px;line-height:20px;text-align:center;margin-right:2px}
 .newsrc p b.cur{background-position: -21px 0;}
-.newsrc p a{color:#145fab;float:right;padding-right:10px}
+.newsrc p a{float:right;color:#145fab;padding-right:10px}
 .newsr img{display:block;margin-top:10px}
-.news_l_list ul li a:hover{color:#ff6600}
+.news_l_list ul li a:hover{color:#f60}
 .all_kj_main{border:3px solid #e62e04;border-top:none}
 .kj_left_cm{border:1px solid #ddd;border-top:none}
 a.gofilter {float: left;width: 84px;height: 26px;margin-left: 10px;background: url(../images/njc/jcy_38.jpg) repeat scroll -1px -1px;}
@@ -1280,7 +1280,7 @@ table.cpmxtab p{line-height:25px;color:#444;font-size:12px;margin-leolor:#145fab
 .dztktop table  span.titspan{font-weight:bold;font-size:14px;color:#222;}
 .dztktop table td strong{font-weight:100;font-size:12px}
 .dztktop table  b.jj{margin-top:6px}
-.dztktop table  font{color:#ff0000;font-weight:100;font-size:14px;font-family:Arial;padding:0}
+.dztktop table  font{color:#f00;font-weight:100;font-size:14px;font-family:Arial;padding:0}
 .ad_mab{margin:0;padding:0;border-top:none;*zoom:1;}
 .ad_mab table  th{width:200px;line-height:35px;font-weight:100;text-align:right;font-size:14px;color:#222;padding:2px 0}
 .ad_mab table td{line-height:35px;color:#444;padding-left:5px}
@@ -1290,7 +1290,7 @@ table.cpmxtab p{line-height:25px;color:#444;font-size:12px;margin-leolor:#145fab
 .ad_mab table span{color:#444;float:left}
 .ad_mab table input.text{float:left;width:65px;height:27px;text-align:center;color:#444;margin:3px 5px 0 5px;display:block;border:1px solid #ccc;font-size:14px;padding:6px 0 0 0\9;height:21px\9;}
 :root .ad_mab table  input.text{padding:0;height:27px}
-.ad_mab table td.box  label input{vertical-align: -2px;_vertical-align: -1px;margin: 0 2px 0 0px}
+.ad_mab table td.box  label input{margin: 0 2px 0 0;vertical-align: -2px;_vertical-align: -1px;}
 .ad_mab table td.box em{color:#aaa}
 .ad_mab table a:hover{text-decoration: none;}
 .ad_mab table a.but{float:left;width:103px;height:34px;font:bold 16px/34px "Microsoft YaHei";text-align:Center;color:#fff;background: url(../images/cai888/getw_10.jpg);margin:15px 0 10px;}
@@ -1318,7 +1318,7 @@ a.t_a_dz:hover{background-image: url(../images/hm/hmt_05.gif);text-decoration: n
 .gs_xgbj table td{text-align:center;color:#444}
 .gs_xgbj table input{border:1px solid #ddd;height:20px;width:35px;text-align:center;padding-top:2px\9;height:18px\9}
 :root .gs_xgbj table input{padding-top:0;height:20px}
-.gs_xgbj a,span.s_tan_a1 a{display:block;float:left;margin:10px 0 10px 10px;font-size:12px;text-align:center;width:54px;height:22px; background:url(../images/cai888/sman.png) 0 -44px no-repeat;color:#444;line-height:22px;_margin:5px 0 5px 5px; }
+.gs_xgbj a,span.s_tan_a1 a{display:block;float:left;width:54px;height:22px;line-height:22px;margin:10px 0 10px 10px;font-size:12px;text-align:center;color:#444; background:url(../images/cai888/sman.png) 0 -44px no-repeat;_display: inline}
 .gs_xgbj a:hover,span.s_tan_a1 a:hover{background-position:0 -66px;color:#145fab}
 .gs_xgbj a.a_oth,span.s_tan_a1 a.a_oth{color:#fff; background-position:0 0}
 .gs_xgbj a.a_oth:hover,span.s_tan_a1 a.a_oth{background-position:0 -22px}
@@ -1330,21 +1330,21 @@ a.t_a_dz:hover{background-image: url(../images/hm/hmt_05.gif);text-decoration: n
 table.col_3 thead td{line-height:30px; background:#f5f5f5;text-align:center;color:#444;border-right:1px solid #ccc;border-bottom:1px solid #ccc}
 table.col_3 tbody td{line-height:18px;text-align:center;color:#444;padding:7px 0;border-right:1px solid #ccc;border-bottom:1px solid #ccc}
 table.col_3 tbody td.m{text-align:left;padding-left:10px}
-table.col_3 font{ font-family:Arial, Helvetica, sans-serif;color:#ff0000;padding:0 4px}
+table.col_3 font{ font-family:Arial, Helvetica, sans-serif;color:#f00;padding:0 4px}
 table.col_4{}
 table.col_4 td{border-right:1px solid #ccc;border-bottom:1px solid #ccc;text-align:center;line-height:28px;color:#444}
 table.col_4 td font{color:#ff0000; font-family:Arial, Helvetica, sans-serif;padding-right:3px}
 table.col_4 td.td1{ background:#f5f5f5;}
 table.col_4 td.td2{background:#f5f5f5;}
 table.col_4 a{color:#145fab;margin:0 5px}
-table.col_4 a:hover{color:#ff6600; text-decoration:underline}
+table.col_4 a:hover{color:#f60; text-decoration:underline}
 table.col_5 thead td{ background:#f5f5f5;line-height:34px;text-align:center;color:#444;border-right:1px solid #ccc;border-bottom:1px solid #ccc}
 table.col_5 tbody td{line-height:40px;text-align:center;color:#444;border-right:1px solid #ccc;border-bottom:1px solid #ccc}
 table.col_5 td.m{padding-left:15px;text-align:left}
-table.col_5 td font{color:#ff0000; font-family:Arial, Helvetica, sans-serif;padding-right:3px;font-size:14px;font-weight:bold}
+table.col_5 td font{color:#f00; font-family:Arial, Helvetica, sans-serif;padding-right:3px;font-size:14px;font-weight:bold}
 table.col_5 strong{font-size:14px;color:#444}
 p.jjz{width:635px;line-height:20px;margin:15px auto 30px;padding:20px 30px 65px;color:#444;border:1px solid #acc8e4; background:#e3f0fd url(../images/bank/tk_29.gif) 30px 20px no-repeat;}
-.gs_stp{padding:25px 20px  0 20px}
+.gs_stp{padding:25px 20px 0}
 .gs_stp p{line-height:25px;color:#444;font-size:12px;text-align:left}
 .gs_stp p font{color:#f60;font-size:12px;}
 .gs_stp p a{color:#145fab;}
@@ -1365,30 +1365,30 @@ span.s_psp{display:block;*zoom:1;padding:20px 0 0px;height:112px}
 span.s_psp p{float:left;font-size:14px;line-height:28px;color:#444;height:28px}
 p.p_p1p{width:215px;text-align:right;}
 p.p_p2p{width:260px;text-align:left;font-weight:bold;}
-p.p_p2p font{color:#ff0000;font-weight:bold;font-size:14px; font-family:Arial;padding:0 3px }
+p.p_p2p font{color:#f00;font-weight:bold;font-size:14px; font-family:Arial;padding:0 3px }
 span.s_psp a{float:left;display:block;margin:25px 0 0 20px;color:#145fab}
 span.s_psp a:hover{color:#ff0000; text-decoration:underline}
 span.s_psp a.p_a{display:block;width:115px;height:35px;line-height:35px;color:#fff;text-align:center;font-size:14px; background:url(../images/cdbg/reg_07.gif) 0 0px no-repeat;margin:15px 0 0 160px;_margin-left:80px}
 span.s_psp a.p_a:hover{background:url(../images/cdbg/reg_10.gif) 0 0 no-repeat;color:#fff; text-decoration:none}
 p.cz_opd{padding:30px 0 20px 35px;font-size:14px;color:#444;line-height:27px;text-align:left;}
 p.cz_opd strong{font-weight:bold;font-size:14px}
-a.a_cw{display:block;width:192px;height:34px;line-height:34px;text-align:center;font-size:14px;color:#fff;float:left;margin-left:40px; background-image:url(../images/cdbg/czts_03.gif);}
-a.a_fc{display:block;width:103px;height:34px;line-height:34px;text-align:center;font-size:14px;color:#444;float:left;margin-left:10px; background-image:url(../images/cai888/btna2.jpg)}
+a.a_cw,a.a_fc{float:left;display:block;width:192px;height:34px;line-height:34px;text-align:center;font-size:14px;color:#fff;margin-left:40px;background-image:url(../images/cdbg/czts_03.gif);}
+a.a_fc{margin-left:10px;background-image:url(../images/cai888/btna2.jpg)}
 a.a_ta{color:#145fab;font-size:14px;margin:7px 0 15px 10px;float:left}
 a.a_ta:hover{color:#ff0000; text-decoration:underline;}
 table.col_tab{margin:15px auto 0}
-table.col_tab td{padding:13px  0;text-align:right;line-height:25px;border-bottom:1px solid #ccc;color:#444}
+table.col_tab td{padding:13px 0;text-align:right;line-height:25px;border-bottom:1px solid #ccc;color:#444}
 table.col_tab input.box{vertical-align: -2px;_vertical-align: -1px;margin-right:5px;}
 table.col_tab input.text{width:45px;height:22px;border:1px solid #ddd;text-align:center;margin-left:7px;padding-top:3px\9;height:19px\9}
 :root table.col_tab td input.text{height:22px;padding-top:0}
 .caix5k{padding:5px 0 0 30px}
-.caix5k h5{line-height:30px;color:#444;font-size:12px;font-weight:100}
+.caix5k h5{line-height:30px;color:#444;font-size:12px;font-weight:400}
 .caix5k textarea{width:320px;height:140px;border:1px solid #ccc;color:#444;padding:2px;line-height:24px;display:block;font-size:12px;overflow-y:auto;}
 table.bk_yd{border-right:1px solid #ddd;border-top:1px solid #ddd;margin:15px auto;width:480px}
 table.bk_yd td{border-left:1px solid #ddd;border-bottom:1px solid #ddd;line-height:25px;padding:2px 3px;text-align:center;color:#444;}
 table.bk_yd td.th1{font-weight:bold}
 table.bk_yd tr.odd td{ background-color:#eee}
-table.bk_yd em{color:#ff0000}
+table.bk_yd em{color:#f00}
 table.bk_yd  p{text-align:left;padding-left:10px}
 .predp{line-height:30px;color:#f00;font-size:12px;font-weight:bold;text-align:Center;}
 .predpnone{display:none}
@@ -1403,15 +1403,14 @@ table.bk_yd  p{text-align:left;padding-left:10px}
 .dc_table td.h_brx{background: url(/images/cai888/ban2.jpg) 100% bottom no-repeat;}
 .dc_table td.label_cd,.dc_table td.label_cd:hover,table.co1 tbody td.btn_b,table.co1 tbody td.btn_b:hover{background:url(../images/cai888/ban4.jpg) 0 0 no-repeat;cursor:pointer;border-right:1px solid #63A3CF}
 .dc_table td.tdhui,.dc_table td.tdhui:hover{background:url(/images/cai888/ban11.jpg) no-repeat scroll 100% bottom;}
-.jc_l_t {padding-left: 6px;overflow: visible;background: url("/images/cai888/lc_25.jpg") left center no-repeat;border-top:none
-}
+.jc_l_t {padding-left: 6px;overflow: visible;background: url("/images/cai888/lc_25.jpg") left center no-repeat;border-top:none}
 .dc_r_m h2.h_2{ background: url("/images/cai888/lc_28.jpg") 5px 2px transparent no-repeat;padding:7px 0px 0 0;height:28px;border-bottom:1px solid #ddd}
 .dc_r_m h2.h_3{ background: url("/images/cai888/lc_51.jpg") 5px 2px transparent no-repeat;}
 .dc_r_m h2.h_4{ background: url("/images/cai888/lc_54.jpg") 5px 2px transparent no-repeat;border-top:1px solid #ccc}
 .dc_r_t{background:none;border-bottom:1px solid #ddd}
 .dcr_table th{ background: #f5f5f5;border-bottom:1px solid #ddd}
 .dc_r_m .an_title{ background: #f5f5f5}
-a.jcq_k{height:22px;margin-top:2px;margin-right:0;background:url("/images/njc/jcy_15.jpg")   no-repeat scroll 0 0 ;}
+a.jcq_k{height:22px;margin-top:2px;margin-right:0;background:url("/images/njc/jcy_15.jpg")   no-repeat scroll 0 0;}
 .an_title ul li{border-bottom:1px solid #ddd}
 .an_title ul li.cur{border:none}
 table.dcr_table{border:none}
@@ -1425,7 +1424,7 @@ a.jc_mtz:hover, a.jc_mhm:hover{background-position:-110px 0;text-decoration: non
 .dc_table th{background:#f5f5f5;border-top:1px solid #ccc;border-bottom:1px solid #ccc;height:32px;border-right:1px solid #ccc}
 .touztop{background:url("/images/cai888/jctop_03.jpg");height:82px;border-left:1px solid #ddd;border-right:1px solid #ddd;margin-bottom:10px}
 .touzcm{height:40px;padding-top:4px}
-.touzcm h1{float:left;width:128px;font:400 22px/40px "微软雅黑";text-align:center;color:#333;border-right:1px solid #bbb;}
+.touzcm h1{float:left;width:128px;font:400 22px/40px "Microsoft YaHei UI","微软雅黑";text-align:center;color:#333;border-right:1px solid #bbb;}
 .touzcm span{float:left;}
 .touzcm span a{float:left;line-height:40px;padding:0 16px;font-size:14px;color:#333;border-right:1px solid #bbb;height:40px}
 .touzcm span a:hover{text-decoration: none;}
@@ -1486,7 +1485,7 @@ span.jckj_tm select{margin-left:5px}
 .buyfimsg td{border-right:1px solid #ddd;border-bottom:1px solid #ddd;padding:7px 0 7px 13px;color:#444;font-size:12px;text-align:left;vertical-align:middle;}
 .buyfimsg td.td1{background:#f5f5f5;line-height:28px;color:#222;padding-left:30px;font-size:12px}
 .buyfimsg td font {color: #E62E04;font-size: 14px;font-weight: bold;padding: 0 5px;font-family:arial}
-.buyfimsg td input.text {border: 1px solid #DDDDDD;height: 22px;margin-right: 5px;text-align: center;width: 45px;}
+.buyfimsg td input.text {border: 1px solid #ddd;height: 22px;margin-right: 5px;text-align: center;width: 45px;}
 html .buyfimsg td input.text {height: 22px;line-height:22px;padding: 0; vertical-align:middle;}
 .buyfimsg td input.box {margin-right:4px;vertical-align: -2px;}
 .buyfimsg td b {background:#eee;border: 1px solid #ccc;border-left-color: #eee;color: #444;cursor: pointer;float: left;font: 400 14px/28px Arial,Helvetica,sans-serif;padding: 0 15px;}
@@ -1494,7 +1493,7 @@ html .buyfimsg td input.text {height: 22px;line-height:22px;padding: 0; vertical
 .buyfimsg td b:hover,.buyfimsg td em.cur,.buyfimsg td em:hover{border:1px solid #f60;}
 .buyfimsg td b.cur,.buyfimsg td em.cur{border:1px solid #f60;background:#f60;color:#fff}
 .buyfimsg td em {margin-right:12px;background:#eee;border: 1px solid #ccc;color: #444;cursor: pointer;display: inline-block;font: 400 14px/28px Arial,Helvetica,sans-serif;padding: 0 15px;}
-.buyfimsg td input.bt {border: 1px solid #DDDDDD;display: block;float: left;height: 25px;margin-top:1px;width: 515px;font-size:12px;padding:6px 0 0 5px\9;height:19px\9}
+.buyfimsg td input.bt {display: block;float: left;width: 515px;height: 25px;margin-top:1px;font-size:12px;border: 1px solid #ddd;padding:6px 0 0 5px\9;height:19px\9}
 :root .buyfimsg td input.bt{padding:0 0 0 5px}
 #container {width: 998px;margin: 0 auto;position: relative;overflow: visible;zoom: 1;}
 #container:after{visibility:hidden;display:block;font-size:0;content:" ";clear:both;}
@@ -1562,7 +1561,7 @@ a.jcq_kcur {background: url(../images/njc/jcy_17.jpg) no-repeat;}
 .sjdownload p a.a1{background:url(../images/cai888/news_13.jpg);margin-top:12px}
 .news_left h4{border-bottom:1px solid #e5e5e5;padding: 0;margin-bottom:15px}
 .news_left p.pbtp{text-indent:0;padding:0;float:left;padding-bottom:8px}
-.news_l_list{padding-left:5px;background: url(../images/cai888/news2_07.jpg) 502px 0px no-repeat}
+.news_l_list{padding-left:5px;background: url(../images/cai888/news2_07.jpg) 502px 0 no-repeat}
 .news_l_list ul li{background: url(../images/cai888/news2_03.jpg) no-repeat scroll left center ;padding-left:15px}
 .news_l_list ul li a{color:#333}
 .news_l_list ul li span{color:#999;padding-left:10px;font-size:12px}
@@ -1611,7 +1610,7 @@ a.jcq_kcur {background: url(../images/njc/jcy_17.jpg) no-repeat;}
 .newsc1list a:hover{color:#f60;text-decoration:underline}
 .newsbanner{clear:both;height:65px;margin:10px 0;}
 .newsbanner img{width: 100%;height: 100%}
-.newsc2list1 b{float:left;width:12px;height:12px;line-height:12px;margin-right:10px;font-family:arial;font-weight:100;text-align:center;color:#fff;margin-top:7px;background: url(../images/cai888/news1_22.jpg);*margin-top:4px;}
+.newsc2list1 b{float:left;width:12px;height:12px;line-height:12px;margin-right:10px;font-family:arial;font-weight:400;text-align:center;color:#fff;margin-top:7px;background: url(../images/cai888/news1_22.jpg);*margin-top:4px;}
 .newsc2list1 a{background:none;padding:0;line-height:26px;height:26px;*line-height:18px;*height:18px}
 .newsc2list1 p{clear:both;line-height:26px;*line-height:18px}
 .backtime{padding:226px 0 152px 592px;height:34px}
