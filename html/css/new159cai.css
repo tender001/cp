@@ -1534,7 +1534,7 @@ a.jcq_kcur {background: url(../images/njc/jcy_17.jpg) no-repeat;}
 .newsco2 h3{border-bottom:1px solid #ddd;height:30px;line-height:30px;padding-left:12px;font-weight:bold;font-size:14px;background:#ececec}
 .newsco2 h3 span{float:left}
 .newsco2 h3 a,.newsc1c h3 a{float:right;margin-right:10px;color:#444;font-size:12px;font-weight:100}
-.newsco2 h3 a:hover,.newsc1c h3 a:hover{color:#ff0000;text-decoration:underline}
+.newsco2 h3 a:hover,.newsc1c h3 a:hover{color:#f00;text-decoration:underline}
 .newsc2list{padding:7px 0 10px 10px}
 .newsc2list a,.newscrlist a{line-height:24px;display:block;height:24px;padding-left:16px}
 .newsc2list a{color:#333;background: url(../images/cai888/news2_03.jpg) left 10px no-repeat;}
