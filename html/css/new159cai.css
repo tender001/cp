@@ -2310,7 +2310,7 @@ label.red {color:red}
 .sf-right{width: 100%;}
 .dp-basic h2{height: 40px;font:700 22px/40px "microsoft yahei";color: #fff;text-align:center;background-color: #39a746}
 .sf-right h2{background-color: #488bfe !important}
-.choose-match{max-height: 284px;overflow: auto;border: 1px solid #ccc;_height: 284px;_overflow-y: scroll;}
+.choose-match{max-height: 284px;overflow: auto;border: 1px solid #ccc;*overflow-y: scroll;_height: 284px;}
 .dp-basic .choose-match .bod{border: 0}
 .dp-basic .bod{border: 1px solid #ccc;border-top-width: 0}
 .dp-basic .bod b{display:inline-block;width: 100%;font: normal 14px/88px "Microsoft YaHei";text-align: center;color: #f30}
