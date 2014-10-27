@@ -688,7 +688,6 @@ em.uf{ background-image:url(../images/159/uf.gif)}
 .nxsd span{width:49px;height:24px;float:left; background:url(../images/159/nx_45.jpg);cursor:pointer}
 .nxsd input{display:inline;margin:5px 11px 0 20px;zoom:1;*margin:5px 9px 0 14px; }
 *html .nxsd input{*margin:5px 8px 0 13px; }
-.nxp{padding:}
 .xh_text em{color:#f60;font-weight:bold}
 a.sz_cmt{background:url(../images/159/nx5s_09.jpg);width:137px;height:34px;}
 a.sz_cmtcur{background:url(../images/159/nx5s_11.jpg);}
@@ -710,7 +709,7 @@ a.asz_tz{margin:0 auto}
 .kc_td_kj table thead td.td1{border-right:none;font-size:12px;color:#888; font-family: Arial}
 .kc_td_kj table tbody td{height: 30px;font-size:12px;color:#444}
 .kc_td_kj table thead td{font-size:12px}
-.nx3span{zoom:1;padding:8px 0 0px 90px;clear:both}
+.nx3span{clear:both;padding:8px 0 0 90px;zoom:1;}
 .nxhm span.nsbools{height:auto;width:295px;padding-bottom:15px;padding-right:20px}
 .nxhm span.nsbools b{margin-bottom:6px;margin-right:4px;}
 .nxhm span.nsboolss{padding-right:0;width:275px;height:auto}
@@ -1549,7 +1548,7 @@ a.jcq_kcur {background: url(../images/njc/jcy_17.jpg) no-repeat;}
 .newsc1list{padding:12px 0 0 0}
 .newsc1list a{font-size:14px;line-height:29px;color:#333;background: url(../images/cai888/news1_03.jpg) left 10px no-repeat;display:block;height:29px;padding-left:16px}
 .newsc1list a:hover{color:#f60;text-decoration:underline}
-.newsbanner{clear:both;height:65px;margin:10px 0;}
+.newsbanner{clear:both;/*height:65px;*/margin:10px 0;}
 .newsbanner img{width: 100%;height: 100%}
 .newsc2list1 b{float:left;width:12px;height:12px;line-height:12px;margin-right:10px;font-family:arial;font-weight:400;text-align:center;color:#fff;margin-top:7px;background: url(../images/cai888/news1_22.jpg);*margin-top:4px;}
 .newsc2list1 a{background:none;padding:0;line-height:26px;height:26px;*line-height:18px;*height:18px}
@@ -2346,7 +2345,7 @@ label.red {color:red}
 .sf-left .sf{height:auto;margin: 0 auto;background-color: #eff8f0;overflow: visible;zoom: 1;_padding:1px 0 0 1px;}
 .sf-left .sf:after{visibility:hidden;display:block;font-size:0;content:" ";clear:both;}
 .sf-left .sf em{float: left;width: 70px;height:43px;margin:-1px 0 0 -1px;padding-top:7px;font:700 14px/18px "Microsoft YaHei UI","\5fae\8f6f\96c5\9ed1";text-align: center;color: #0d753a;border:1px solid #3ba748;background-color: #eff8f0;cursor:pointer;-webkit-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;_display: inline}
-.sf-left .sf-num em{line-height: 40px}
+/*.sf-left .sf-num em{line-height: 40px}*/
 .sf-left .bf-sf em{width: 48px;}
 .sf-left .sf em.line{width: 0;overflow: hidden;border-left: 2px solid #333}
 .sf-left .sf em i{display: inline-block;width: 100%;font-weight:400;color: #8b8b8b}
