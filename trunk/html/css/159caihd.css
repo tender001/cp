@@ -12,7 +12,7 @@ div,ul,li{ list-style-type:none;overflow:hidden}
 .z_t_lg,.ac_zc a,.ac_cj a{background: url(../images/cdbg/zc_ac.png) 0 0 no-repeat transparent;display:block}
 .z_t_lg{width:92px;height:40px;float:left; background-position:0 -8px}
 .ac_top p{line-height:40px;color:#fff;font-size:12px}
-.ac_top p a{color:#fff; font-family:"微软雅黑";margin:0 5px}
+.ac_top p a{color:#fff; font-family:"Microsoft YaHei";margin:0 5px}
 .ac_top p a:hover,.ac_ft p a:hover{ text-decoration:underline}
 .ac_zc{padding:486px 0 0 681px;clear:both;height:60px}
 .ac_zc a{width:160px;height:60px; background-position:-16px -66px}
@@ -24,11 +24,11 @@ div,ul,li{ list-style-type:none;overflow:hidden}
 .ac_cj{padding:110px 0 0 300px}
 .ac_p2{width:350px;float:left;padding-top:33px}
 .ac_p2 p{color:#fff;line-height:17px;}
-.ac_p2 p.p1,.ac_p2 p.p3{color:#000d14; font-family:"微软雅黑";padding-top:14px;font-size:14px}
+.ac_p2 p.p1,.ac_p2 p.p3{color:#000d14; font-family:"Microsoft YaHei";padding-top:14px;font-size:14px}
 .ac_cj a{width:160px;height:60px; background-position:-12px -150px;float:left;margin-left:32px}
 .ac_cj a:hover{ background-position:-12px -227px}
 .ac_xz{clear:both;padding:20px 0 0 260px;width:900px;margin:0 auto}
-.ac_xz span{color:#fff;font-weight:bold;float:left; font-family:"微软雅黑";line-height:28px;font-weight:bold;font-size:14px}
+.ac_xz span{float:left;color:#fff;font:bold 14px/28px "Microsoft YaHei UI","\5fae\8f6f\96c5\9ed1"}
 .ac_xz p{line-height:28px;color:#be8c8c;float:left;padding-left:15px}
 .ac_ft{height:100px; background-color:#9f0100;width:100%;margin-top:45px}
 .ac_ft p{padding-top:25px;line-height:25px;color:#ff490f;text-align:center}
