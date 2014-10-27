@@ -299,41 +299,41 @@ var tzxxnames = {"3":"主胜","1":"平","0":"主负","33":"胜-胜","31":"胜-�
                 +'</p>'
                 +'<div class="bod-m">'
                 +'<div class="sf bf-sf">'
-                +'<em sp="{$sp90}" value="9:0">胜其它<i>{$sp90}</i></em>'
-                +'<em sp="{$sp10}" value="1:0">1:0<i>{$sp10}</i></em>'
-                +'<em sp="{$sp20}" value="2:0">2:0<i>{$sp20}</i></em>'
-                +'<em sp="{$sp21}" value="2:1">2:1<i>{$sp21}</i></em>'
-                +'<em sp="{$sp30}" value="3:0">3:0<i>{$sp30}</i></em>'
-                +'<em sp="{$sp31}" value="3:1">3:1<i>{$sp31}</i></em>'
-                +'<em sp="{$sp32}" value="3:2">3:2<i>{$sp32}</i></em>'
-                +'<em sp="{$sp40}" value="4:0">4:0<i>{$sp40}</i></em>'
-                +'<em sp="{$sp41}" value="4:1">4:1<i>{$sp41}</i></em>'
-                +'<em sp="{$sp42}" value="4:2">4:2<i>{$sp42}</i></em>'
-                +'<em sp="{$sp50}" value="5:0">5:0<i>{$sp50}</i></em>'
-                +'<em sp="{$sp51}" value="5:1">5:1<i>{$sp51}</i></em>'
-                +'<em sp="{$sp52}" value="5:2">5:2<i>{$sp52}</i></em>'
+                +'<em sp="{$sp90}" value="9:0" v="9:0">胜其它<i>{$sp90}</i></em>'
+                +'<em sp="{$sp10}" value="1:0" v="1:0">1:0<i>{$sp10}</i></em>'
+                +'<em sp="{$sp20}" value="2:0" v="2:0">2:0<i>{$sp20}</i></em>'
+                +'<em sp="{$sp21}" value="2:1" v="2:1">2:1<i>{$sp21}</i></em>'
+                +'<em sp="{$sp30}" value="3:0" v="3:0">3:0<i>{$sp30}</i></em>'
+                +'<em sp="{$sp31}" value="3:1" v="3:1">3:1<i>{$sp31}</i></em>'
+                +'<em sp="{$sp32}" value="3:2" v="3:2">3:2<i>{$sp32}</i></em>'
+                +'<em sp="{$sp40}" value="4:0" v="4:0">4:0<i>{$sp40}</i></em>'
+                +'<em sp="{$sp41}" value="4:1" v="4:1">4:1<i>{$sp41}</i></em>'
+                +'<em sp="{$sp42}" value="4:2" v="4:2">4:2<i>{$sp42}</i></em>'
+                +'<em sp="{$sp50}" value="5:0" v="5:0">5:0<i>{$sp50}</i></em>'
+                +'<em sp="{$sp51}" value="5:1" v="5:1">5:1<i>{$sp51}</i></em>'
+                +'<em sp="{$sp52}" value="5:2" v="5:2">5:2<i>{$sp52}</i></em>'
                 +'</div>'
                 +'<div class="sf bf-sf">'
-                +'<em sp="{$sp99}" value="9:9">平其它<i>{$sp99}</i></em>'
-                +'<em sp="{$sp00}" value="0:0">5:2<i>{$sp00}</i></em>'
-                +'<em sp="{$sp11}" value="1:1">5:2<i>{$sp11}</i></em>'
-                +'<em sp="{$sp22}" value="2:2">5:2<i>{$sp22}</i></em>'
-                +'<em sp="{$sp33}" value="3:3">5:2<i>{$sp33}</i></em>'
+                +'<em sp="{$sp99}" value="9:9" v="9:9">平其它<i>{$sp99}</i></em>'
+                +'<em sp="{$sp00}" value="0:0" v="0:0">5:2<i>{$sp00}</i></em>'
+                +'<em sp="{$sp11}" value="1:1" v="1:1">5:2<i>{$sp11}</i></em>'
+                +'<em sp="{$sp22}" value="2:2" v="2:2">5:2<i>{$sp22}</i></em>'
+                +'<em sp="{$sp33}" value="3:3" v="3:3">5:2<i>{$sp33}</i></em>'
                 +'</div>'
                 +'<div class="sf bf-sf">'
-                +'<em sp="{$sp09}" value="0:9">负其它<i>{$sp09}</i></em>'
-                +'<em sp="{$sp01}" value="0:1">0:1<i>{$sp01}</i></em>'
-                +'<em sp="{$sp02}" value="0:2">0:2<i>{$sp02}</i></em>'
-                +'<em sp="{$sp12}" value="1:2">1:2<i>{$sp12}</i></em>'
-                +'<em sp="{$sp03}" value="0:3">0:3<i>{$sp03}</i></em>'
-                +'<em sp="{$sp13}" value="1:3">1:3<i>{$sp13}</i></em>'
-                +'<em sp="{$sp23}" value="2:3">2:3<i>{$sp23}</i></em>'
-                +'<em sp="{$sp04}" value="0:4">0:4<i>{$sp04}</i></em>'
-                +'<em sp="{$sp14}" value="1:4">1:4<i>{$sp14}</i></em>'
-                +'<em sp="{$sp24}" value="2:4">2:4<i>{$sp24}</i></em>'
-                +'<em sp="{$sp05}" value="0:5">0:5<i>{$sp05}</i></em>'
-                +'<em sp="{$sp15}" value="1:5">1:5<i>{$sp15}</i></em>'
-                +'<em sp="{$sp25}" value="2:5">2:5<i>{$sp25}</i></em>'
+                +'<em sp="{$sp09}" value="0:9" v="0:9">负其它<i>{$sp09}</i></em>'
+                +'<em sp="{$sp01}" value="0:1" v="0:0">0:1<i>{$sp01}</i></em>'
+                +'<em sp="{$sp02}" value="0:2" v="0:2">0:2<i>{$sp02}</i></em>'
+                +'<em sp="{$sp12}" value="1:2" v="1:2">1:2<i>{$sp12}</i></em>'
+                +'<em sp="{$sp03}" value="0:3" v="0:3">0:3<i>{$sp03}</i></em>'
+                +'<em sp="{$sp13}" value="1:3" v="1:3">1:3<i>{$sp13}</i></em>'
+                +'<em sp="{$sp23}" value="2:3" v="2:3">2:3<i>{$sp23}</i></em>'
+                +'<em sp="{$sp04}" value="0:4" v="0:4">0:4<i>{$sp04}</i></em>'
+                +'<em sp="{$sp14}" value="1:4" v="1:4">1:4<i>{$sp14}</i></em>'
+                +'<em sp="{$sp24}" value="2:4" v="2:4">2:4<i>{$sp24}</i></em>'
+                +'<em sp="{$sp05}" value="0:5" v="0:5">0:5<i>{$sp05}</i></em>'
+                +'<em sp="{$sp15}" value="1:5" v="1:5">1:5<i>{$sp15}</i></em>'
+                +'<em sp="{$sp25}" value="2:5" v="2:5">2:5<i>{$sp25}</i></em>'
                 +'</div>'
                 +'</div>'
                 +'</div>'
@@ -697,27 +697,27 @@ Class('Selector', {
 //	    }); 
     },
 	rscroll : function(ltop,rtop){
-//		var dt = $("h2.c").offset().top;
-//		var ch = $("#chooselist").height();
-//        var wtop = $(window).scrollTop();
-//		if(dt>(ch+wtop)){
-//			if(wtop < ltop)
-//			{
-//				$("#vsTable").prev().css({"position":"","top":ltop,"background":"","margin-top":"9px","z-index":""});
-//				$("#chooselist").css({"position":"","top":(rtop)});
-//				$("#chooselist").find("p.xl_dggp_p").css("margin-top","9px");
-//			}
-//			else
-//			{
-//				$("#vsTable").prev().css({"position":"absolute","top":wtop,"background":"#fff","width":"690px","margin-top":"0","z-index":"999"});
-//				$("#chooselist").css({"position":"absolute","top":wtop});
-//				$("#chooselist").find("p.xl_dggp_p").css("margin-top","0");
-//			}
-//		}else{
-//				$("#vsTable").prev().css({"position":"absolute","top":wtop,"background":"#fff","width":"690px","margin-top":"0","z-index":"999"});
-//				$("#chooselist").css({"position":"absolute","top":dt-ch});
-//				$("#chooselist").find("p.xl_dggp_p").css("margin-top","0");			
-//		}
+		var dt = $("h2.c").offset().top;
+		var ch = $("#chooselist").height();
+        var wtop = $(window).scrollTop();
+		if(dt>(ch+wtop)){
+			if(wtop < ltop)
+			{
+				$("#vsTable").prev().css({"position":"","top":ltop,"background":"","margin-top":"9px","z-index":""});
+				$("#chooselist").css({"position":"","top":(rtop)});
+				$("#chooselist").find("p.xl_dggp_p").css("margin-top","9px");
+			}
+			else
+			{
+				$("#vsTable").prev().css({"position":"absolute","top":wtop,"background":"#fff","width":"690px","margin-top":"0","z-index":"999"});
+				$("#chooselist").css({"position":"absolute","top":wtop});
+				$("#chooselist").find("p.xl_dggp_p").css("margin-top","0");
+			}
+		}else{
+				$("#vsTable").prev().css({"position":"absolute","top":wtop,"background":"#fff","width":"690px","margin-top":"0","z-index":"999"});
+				$("#chooselist").css({"position":"absolute","top":dt-ch});
+				$("#chooselist").find("p.xl_dggp_p").css("margin-top","0");			
+		}
 	},
     changeCodeList:function(node,pnode)      //更新投注选项
     {
