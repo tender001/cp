@@ -206,7 +206,7 @@ border-radius: 10px;-moz-border-radius:10px;_overflow:hidden }
 .foot_col h3{float:left;padding-left:15px;font:400 18px/42px "Microsoft Yahei";color:#4a4a4a;}
 .foot_col a{display:block;line-height:27px;font-size:14px;color:#4a4a4a;clear:both}
 .foot_dd{clear:both;padding:25px 0 0 65px;height:20px;width:100%}
-.foot_dd ul li{display:blcok;padding:0 3px;float:left;color:#434343;;font-size:14px }
+.foot_dd ul li{display:block;padding:0 3px;float:left;color:#434343;;font-size:14px }
 .foot_dd ul li a{color:#434343;font-size:14px}
 .foot_dd ul li.first{padding-right:10px}
 .jxxk{padding:10px 0 0 150px;clear:both}
@@ -941,7 +941,7 @@ table.col_2 td b{display:block;line-height:28px;padding:0 15px;font-size:14px;co
 table.col_2 td b.first{border-left:1px solid #ccc}
 table.col_2 td b:hover{border:1px solid #f18623}
 table.col_2 td b.cur{ background-image:url(../images/cdbg/tan_k_07.gif);border:1px solid #f18623;color:#fff}
-table.col_2 td em{display:block;line-height:28px;padding:0 15px;font-size:14px;color:#444;font-weight:100;float:left; background-image:url(../images/cdbg/tan_k_03.gif);border:1px solid #ccc;cursor:pointer;/* margin-left:4px;_margin-left:2px; */font-weight:bold}
+table.col_2 td em{float:left;display:block;line-height:28px;padding:0 15px;font-size:14px;font-weight:bold;color:#444; background-image:url(../images/cdbg/tan_k_03.gif);border:1px solid #ccc;cursor:pointer;/* margin-left:4px;_margin-left:2px; */}
 table.col_2 td em:hover{border:1px solid #f18623}
 table.col_2 td em.cur{ background-image:url(../images/cdbg/tan_k_07.gif);border:1px solid #f18623;color:#fff}
 .conduct_msg{clear:both;padding:0 0 0 60px}
@@ -1010,7 +1010,7 @@ height:34px;line-height:34px;margin-left:2px;padding: 0 15px; font-weight:bold;}
 .ds ul li.cur,.ds ul li.cur a{background: url(../images/jc/b-top-nav.gif) no-repeat scroll 100% 0 transparent;display:block}
 .ds ul li a{color:#444;padding:0 15px;line-height:27px}
 .ds ul li.cur{background-position:100% -27px}
-.ds ul li.cur a{background-position: 0 0px;}
+.ds ul li.cur a{background-position: 0 0;}
 table.col_4 td{border-right:1px solid #ccc;border-bottom:1px solid #ccc;text-align:center;line-height:28px;color:#444}
 table.col_4 td font{color:#ff6600; font-family:Arial, Helvetica, sans-serif;padding-right:3px}
 table.col_4 td.td1{ background-image:url(../images/cdbg/zcjjmx_03.gif)}
@@ -1021,7 +1021,7 @@ table.col_5 thead td{ background-image:url(../images/cdbg/zcjjmx_10.gif);line-he
 table.col_5 tbody td{line-height:40px;text-align:center;color:#444;border-right:1px solid #ccc;border-bottom:1px solid #ccc}
 table.col_5 td.m{padding-left:15px;text-align:left}
 table.col_5 td font{color:#ff6600; font-family:Arial, Helvetica, sans-serif;padding-right:3px;font-size:14px;font-weight:bold}
-table.col_5 strong{font-size:!4px;color:#444}
+table.col_5 strong{font-size:14px;color:#444}
 p.jjz{padding:20px 30px;line-height:20px;color:#444; background:url(../images/bank/tk_29.gif) 30px 20px no-repeat;padding-left:65px;margin:15px auto 30px;border:1px solid #acc8e4; background-color:#e3f0fd;width:635px}
 #header h1{line-height:25px;border-left:1px solid #bbb;padding-left:15px;color:#ff6600;font-weight:100;font-size:18px;float:left;width:400px; font-family:"微软雅黑";margin:40px 0 0 20px;}
 .login_line{height:8px; background-image:url(../images/cdbg/login_03.gif);margin-top:15px}
@@ -1048,12 +1048,12 @@ span.say_3{width:16px;height:17px;background-image:url(../images/cdbg/sjbd_11.gi
 .login_left  table td a.a2{color:#145fab}
 .login_left  table td a.a3{color:#145fab;margin-left:40px}
 .login_left  table td a.a2:hover,.login_left  table td a.a3:hover{color:#ff6600; text-decoration:underline}
-.login_left  table td a.but,.login_left  table td a.but1{width:115px;height:35px;display:block;margin-left:30px;color:#fff;font-size:16px; font-family:"微软雅黑";text-align:center;line-height:34px; background-image:url(../images/cdbg/login_44.gif)}
+.login_left  table td a.but,.login_left  table td a.but1{display:block;width:115px;height:35px;margin-left:30px;color:#fff;font:16px/34px "Microsoft YaHei"; text-align:center;background-image:url(../images/cdbg/login_44.gif)}
 .login_left  table td a.but:hover{background-image:url(../images/cdbg/login_47.gif)}
 .login_left  table td a.but1{background-image:url(../images/cdbg/reg_07.gif);margin-top:10px}
 .login_left  table td a.but1:hover{background-image:url(../images/cdbg/reg_10.gif)}
 .login_right h2{color:#007e00;font-weight:bold;font-size:14px;line-height:35px}
-.login_right a.but,.login_right a.but1{ float:left;display:block;width:98px;height:34px;color:#145fab;font-size:14px;font-family:"微软雅黑";text-align:center;line-height:34px; background-image:url(../images/cdbg/login_10.gif);margin-right:20px;}
+.login_right a.but,.login_right a.but1{ float:left;display:block;width:98px;height:34px;color:#145fab;font:14px/34px "Microsoft YaHei";text-align:center;background-image:url(../images/cdbg/login_10.gif);margin-right:20px;}
 .login_right a.but:hover{background-image:url(../images/cdbg/login_12.gif)}
 .login_right a.but1{color:#f60;}
 .login_right a.but1:hover{background-image:url(../images/cdbg/reg_03.gif)}
@@ -1370,7 +1370,7 @@ td.btn_b{ background-image:url(../images/jc/lc_41.gif);color:#444;font-size:14px
 .xuan_z_k{padding:25px;width:680px;margin:30px auto 0;border:1px solid #eee9da; background-color:#fefbf2}
 .xuan_z_k p{line-height:25px;font-size:14px;color:#444;text-align:center}
 .xuan_z_k p input{width:45px;text-algin:center;color:#555;font-size:14px;height:23px;paddint-top:6px\9;height:17px\9}
-:root .xuan_z_k p input{padding-top:0;height:23px;margin:0 3ox;text-align:center}
+:root .xuan_z_k p input{padding-top:0;height:23px;margin:0 3px;text-align:center}
 .xuan_z_k p font{color:#ff6600;font-size:16px;font-weight:bold;padding:0 5px}
 p.xytk{clear:both;padding-top:10px;font:12px/30px "宋体";text-align:center;color:#000;}
 /*p.xytk1{border-bottom: 1px solid #ddd;}*/
@@ -2402,12 +2402,12 @@ a.x_in_hm{line-height:32px;font-size:12px;color:#145fab;float:right;margin-right
 .b_gg_lgg span.jc_bqc{background-position:-471px -143px}
 .b_gg_lgg span.jc_hh{background-position:-471px -288px}
 .b_gg_lgg span.qlc{background-position:-4px -114px}
-.b_gg_lgg span.ssq{background-position:-254px 0px}
+.b_gg_lgg span.ssq{background-position:-254px 0}
 .b_gg_lgg span.fc3d{background-position:-4px -227px}
-.b_gg_lgg span.qxc{background-position:-9px 0px}
+.b_gg_lgg span.qxc{background-position:-9px 0}
 .b_gg_lgg span.p3{background-position:-131px -114px}
 .b_gg_lgg span.p5{background-position:-131px -227px}
-.b_gg_lgg span.dlt{background-position:-131px 0px}
+.b_gg_lgg span.dlt{background-position:-131px 0}
 .b_gg_lgg span.dc_spf{background-position:-657px 1px}
 .b_gg_lgg span.dc_sxds{background-position:-657px -216px}
 .b_gg_lgg span.dc_jqs{background-position:-657px -64px}
@@ -2441,7 +2441,7 @@ a.x_in_hm{line-height:32px;font-size:12px;color:#145fab;float:right;margin-right
 .zn_gk_msg td.cop{text-align:left;padding-left:10px;}
 .zn_gk_msg em{color:#ff6600; font-family:Arial;padding:0 3px;font-weight:bold}
 .zn_gk_msg thead td{background-color:#f5f5f5;font-weight:bold}
-.zn_gg_3{height:35px; border-bottom:2px solid #ff6600;padding-left:10px;clear:both; background:#f0f0f0;height:35px}
+.zn_gg_3{height:35px; border-bottom:2px solid #ff6600;padding-left:10px;clear:both; background:#f0f0f0;}
 .zn_gg_3 a{color:#444;display:block; float:left;width:95px;height:35px;line-height:35px;text-align:center;font-weight:bold;font-size:14px}
 .zn_gg_3 a:hover{text-decoration: none}
 .zn_gg_3 a.cur{ background:#ff6600;color:#fff}
@@ -2455,14 +2455,14 @@ a.x_in_hm{line-height:32px;font-size:12px;color:#145fab;float:right;margin-right
 .zn_gg_4 table tr:hover td{ background:#fefecb}
 .zn_gg_4 table tr.tr1:hover td{ background:#e9e9e9}
 .zn_gg_4 a:hover{color:#ff6600;text-decoration:underline;}
-a.n_gz{width:43px;height:20px;display:block;margin:0 au 8;color:#dadada;text-align:center;line-height:20px; background:#ff6600}
+a.n_gz{width:43px;height:20px;display:block;margin:0 auto 8px;color:#dadada;text-align:center;line-height:20px; background:#ff6600}
 a.n_gz:hover{text-decoration:underline;color:#fff}
 .zn_gg_4 em{color:#ff6600; font-weight:bold}
 
 .n_g_jq em{margin-left:215px}
 .n_g_2c{margin:0 auto;width:960px}
 .n_g_2cs{display:block;margin-left:360px;width:118px;height:21px;color:#145fab; text-align:center;line-height:20px; background-position:-61px -51px;cursor:pointer;clear:both}
-.n_g_2cur{background-position:-61px -86px;color:#ff6600}
+.n_g_2cur{background-position:-61px -86px;color:#f60}
 .n_g_bq table td{padding:2px 25px}
 .n_g_jq table tbody td{padding:2px 25px}
 .zn_gg_5{clear:both;margin:0;padding:10px;*zoom:1}
