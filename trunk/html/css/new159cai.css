@@ -2303,6 +2303,7 @@ label.red {color:red}
 .dggp-main-bg{width: 100%;height:auto;min-height: 545px;background:#ededed url("../images/bg/dggp-bg.jpg") center 0 repeat-y;}
 .dggp-main{width: 1000px;margin: 15px auto;}
 .dggp-main:after{visibility:hidden;display:block;font-size:0;content:" ";clear:both;}
+.shenpinf{position: relative}
 .w-sf-left{float: left;width: 688px;}
 .sf-left{width: 100%;margin: 0 0 15px}
 .w-sf-right{float: right;width: 300px;}
@@ -2330,7 +2331,7 @@ label.red {color:red}
 .sf-left .bod .bod-m dl dd.cur{height:50px;color:#fff;background-position: 0 -126px}
 .sf-left .bod .bod-m dl dd.un-time{color:#777;background-position: 0 -231px;cursor: not-allowed;}
 .sf-left .bod .bod-m dl dd em{display: block;width: 100%;font-size: 16px;}
-.sf-right .bod p i{display: inline-block;width: 15px;height: 14px;margin:0 4px 0 0;vertical-align:middle;background-position: -124px -187px;cursor:pointer;overflow: hidden}
+.sf-right .bod p i{display: inline-block;width: 15px;height: 14px;margin:-2px 4px 0 0;vertical-align:middle;background-position: -124px -187px;cursor:pointer;overflow: hidden}
 .sf-right .bod .bod-m{border-top: 1px solid #ccc}
 .sf-right .bod .bod-m li{float: left;width: auto;height: 28px;font: 14px/28px "Microsoft YaHei UI","\5fae\8f6f\96c5\9ed1";color: #484858}
 .sf-right .bod .bod-m li em{float: right;}
@@ -2340,6 +2341,7 @@ label.red {color:red}
 .sf-right .bod .bod-m li a.draw{background-color: #488bfe}
 .sf-right .bod .bod-m li input{width: 50px;margin: 0 4px;text-align: center}
 .sf-right .bod .bod-m li i{margin: 0 4px 0 50px}
+.buylist .bod .bod-m li{width: 100%}
 .sf-right .you{font:700 14px/30px "Microsoft YaHei UI","\5fae\8f6f\96c5\9ed1";color: #145fab}
 .btn-dh a{display: inline-block;width: 120px;height: 43px;margin:0 7px 0 0;font:400 18px/43px "Microsoft YaHei Ui","\5fae\8f6f\96c5\9ed1";text-align: center;color: #fff;background-position: 0 -187px}
 .sf-left .sf{height:auto;margin: 0 auto;background-color: #eff8f0;overflow: visible;zoom: 1;_padding:1px 0 0 1px;}
