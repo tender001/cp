@@ -2309,11 +2309,10 @@ table.co1_x tbody tr:hover td{ background-color:#feffd1}
 .dc_tdulx li{font-size:12px}
 .dc_tdul input,.dc_alert input{vertical-align: -2px;_vertical-align: -1px;margin-right: 2px;_margin-right:1px}
 table.co1_x a.xs,table.co1_x a.yc{float:right;}
-.dc_alert {background: none repeat scroll 0 0 #FFFFFF;border: 2px solid #f60;border-collapse: inherit;box-shadow: 1px 1px 2px #999999;overflow: hidden;z-index: 999;}
+.dc_alert {background: none repeat scroll 0 0 #fff;border: 2px solid #f60;border-collapse: inherit;box-shadow: 1px 1px 2px #999;overflow: hidden;z-index: 999;}
 .dc_alert td {font-family: Tahoma;height: 28px;line-height: 28px;}
 .tb_tz_s {clear: both;color: #444;cursor: pointer;display: block;outline: medium none;}
-.tb_tdul_pl {color: #333333;display: block;float: right;text-align: left;width: 40px;}
-
+.tb_tdul_pl {color: #333;display: block;float: right;text-align: left;width: 40px;}
 .alert_tb td {border-right: 1px solid #DCDCDC;}
 .alert_tb td.no_br {border-right: 0 none;}
 .dc_tb_rq {text-align: left;width: 30px;font-size:14px;color:#333}
