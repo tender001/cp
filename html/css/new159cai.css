@@ -1512,7 +1512,7 @@ a.jcq_kcur {background: url(../images/njc/jcy_17.jpg) no-repeat;}
 .onlkj{border:1px solid #ddd;clear:both;zoom:1}
 .onlkj h3{height:32px;line-height:32px;padding-left:10px;}
 .onlkj h3 span{float:left;font-size:14px}
-.onlkj h3 a{float:right;color:#145fab;margin-right:12px;font-weight:100;font-size:12px;_display: inline;}
+.onlkj h3 a{float:right;color:#145fab;margin-right:12px;font-weight:400;font-size:12px;_display: inline;}
 .onlkj p em,.onlkj h3 a:hover{color:#f00}
 .onlkj p{padding:5px 0 0 12px;line-height:24px;color:#333;clear:both;height:24px}
 .onlkj p span{float:left}
@@ -1558,7 +1558,7 @@ a.jcq_kcur {background: url(../images/njc/jcy_17.jpg) no-repeat;}
 .backtime span{float:left;height:34px;width:56px;padding-right:20px;}
 .backtime b{float:left;width:26px;height:34px;margin-right:2px;font:700 30px/34px Arial,"simsun";color:#ffd800;letter-spacing:12px;text-align:Center}
 .cubm{width:973px;padding:0 14px;background:#fff;}
-.vstop{background: url(../images/cai888/worcub_03.jpg) no-repeat 0 0 ;width:977px;}
+.vstop{background: url(../images/cai888/worcub_03.jpg) no-repeat 0 0;width:977px;}
 .vsbottom{background: url(../images/cai888/worcub_05.jpg) no-repeat 0 bottom ;width:977px;height:11px}
 .vscd{float:left;width:110px;border-right:2px solid #d3b39a;padding-top:30px;padding-left:10px}
 .vsbottom .vscd{height:9px;padding:0 0 0 10px}
