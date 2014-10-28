@@ -293,7 +293,7 @@ Class('CodeList>CodeList_dt', {
         index:function (){
             this.Type = 'App_index';
             this.lib.LoadExpect();
-           
+           var playTabs, buyTabs;
             this.createSub();
             this.createTabs();
            
@@ -506,7 +506,7 @@ Class('CodeList>CodeList_dt', {
 
         createTabs: function (){
         	
-            var playTabs, buyTabs, pn, playid, runSub, Y;
+            var  pn, playid, runSub, Y;
             Y = this;
              
             pn = 'pt,dt,sc'.split(',');
@@ -755,8 +755,7 @@ Class('CodeList>CodeList_dt', {
         					var r = obj.Resp.row;
         					var ccodes = r[0].ccodes;// 投注号码
         					ccodes = ccodes.split(':')[0];
-        					var mulity = r.imulity;// 倍数
-        					var periodid = r.periodid;//期次
+        					var mulity = r[0].imulity;// 倍数
         					if(mulity>1){
         						$("#beishu").val(mulity);
         					}
