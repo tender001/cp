@@ -2295,6 +2295,8 @@ label.red {color:red}
 /**/
 .dp-basic .bod p span em,.sf-left .bod .bod-m dl dd,.sf-right .bod p i,.btn-dh a{background-image: url("../images/bg/dggp-ico.png")}
 .dggp-top{width: 100%;height: 158px;background:#d49f41 url("../images/bg/dggp-top.jpg") center 0 no-repeat;}
+.dggp-top .dggp-logo{width: 1000px;margin: 0 auto}
+.dggp-top .dggp-logo a{display: block;width: 210px;height: 98px;text-indent:-999em;background-color: transparent}
 .dggp-nav-bg{width: 100%;height: 45px;background-color: #0d753a}
 .dggp-nav{width: 1000px;margin: 0 auto;}
 .dggp-nav a{float:left;padding: 0 25px;font:700 16px/45px "Microsoft YaHei";color: #fff}
