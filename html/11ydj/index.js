@@ -898,14 +898,14 @@ Class.extend('exportCode', function (){
 	   		    var desc = obj.Resp.desc;
 				if (code == "0") {
 					var r = obj.Resp.row;
-					var ccodes = r[0].ccodes;// 投注号码
-					var ss = r[0].ccodes;// 投注号码
+					var ccodes =r.ccodes===undefined?r[0].ccodes:r.ccodes;// 投注号码
 					ccodes = ccodes.split(':')[0];
+					var mulity =r.imulity===undefined?r[0].imulity:r.imulity;// 投注号码 ;// 倍数
+					var ss = r[0].ccodes;// 投注号码
 					ss = ss.split(':')[1];
 					zhushu = r[0].icmoney*1/2;
 					//ss = ccodes.split(':')[1];
 					
-					var mulity = r.imulity;// 倍数
 					//var periodid = r.periodid;//期次
 					if(mulity>1){
 						$("#beishu").val(mulity);
@@ -972,6 +972,9 @@ Class.extend('exportCode', function (){
 						        if (arrCodes.length) {//完整号码显示到列表
 						             Y.postMsg('msg_put_code', arrCodes);
 						        }
+						        if (short_code && short_code.length) {// 残缺号码显示到球区
+   			    	                this.postMsg('msg_redraw_code', short_code);
+   			    	            }
 						    }
 						}  
 					

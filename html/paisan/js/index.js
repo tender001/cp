@@ -432,9 +432,9 @@ Main
 		   		    var desc = obj.Resp.desc;
     				if (code == "0") {
     					var r = obj.Resp.row;
-    					var ccodes = r[0].ccodes;// 投注号码
+    					var ccodes =r.ccodes===undefined?r[0].ccodes:r.ccodes;// 投注号码
     					ccodes = ccodes.split(':')[0];
-    					var mulity = r[0].imulity;// 倍数
+    					var mulity =r.imulity===undefined?r[0].imulity:r.imulity;// 投注号码 ;// 倍数
     					
     					if(mulity>1){
     						$("#beishu").val(mulity);
