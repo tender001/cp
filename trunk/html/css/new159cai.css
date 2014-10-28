@@ -2307,8 +2307,9 @@ label.red {color:red}
 .dggp-main:after{visibility:hidden;display:block;font-size:0;content:" ";clear:both;}
 .shenpinf{position: relative}
 .w-sf-left{float: left;width: 688px;}
+.w-sf-left .event-no{width:686px;margin:0;padding:82px 0;border:1px solid #ccc;background-color: #fff;background-position: 40px 90px;}
 .sf-left{width: 100%;margin: 0 0 15px}
-.w-sf-right{float: right;width: 300px;}
+.w-sf-right{float: right;width: 300px;background-color: #fff}
 .sf-right{width: 100%;}
 .dp-basic h2{height: 40px;font:700 22px/40px "microsoft yahei";color: #fff;text-align:center;background-color: #39a746}
 .sf-right h2{background-color: #488bfe !important}
@@ -2346,13 +2347,13 @@ label.red {color:red}
 .buylist .bod .bod-m li{width: 100%}
 .sf-right .you{font:700 14px/30px "Microsoft YaHei UI","\5fae\8f6f\96c5\9ed1";color: #145fab}
 .btn-dh a{display: inline-block;width: 120px;height: 43px;margin:0 7px 0 0;font:400 18px/43px "Microsoft YaHei Ui","\5fae\8f6f\96c5\9ed1";text-align: center;color: #fff;background-position: 0 -187px}
-.sf-left .sf{height:auto;margin: 0 auto;background-color: #eff8f0;overflow: visible;zoom: 1;_padding:1px 0 0 1px;}
+.sf-left .sf{height:auto;margin: 0 auto;/*background-color: #eff8f0;*/overflow: visible;zoom: 1;_padding:1px 0 0 1px;}
 .sf-left .sf:after{visibility:hidden;display:block;font-size:0;content:" ";clear:both;}
 .sf-left .sf em{float: left;width: 70px;height:43px;margin:-1px 0 0 -1px;padding-top:7px;font:700 14px/18px "Microsoft YaHei UI","\5fae\8f6f\96c5\9ed1";text-align: center;color: #0d753a;border:1px solid #3ba748;background-color: #eff8f0;cursor:pointer;-webkit-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;_display: inline}
 /*.sf-left .sf-num em{line-height: 40px}*/
 .sf-left .bf-sf em{width: 48px;}
 .sf-left .sf em.line{width: 0;overflow: hidden;border-left: 2px solid #333}
-.sf-left .sf em i{display: inline-block;width: 100%;font-weight:400;color: #8b8b8b}
+.sf-left .sf em i{display: inline-block;width: 100%;font-size:12px;font-weight:400;color: #8b8b8b}
 .sf-left .sf em.hover{color:#fff;background-color: #3ba748}
 .sf-left .sf em.cur{color:#fff;background: #f60 url("../images/bg/true-ico.gif") right bottom no-repeat;}
 .sf-left .sf em.cur i,.sf-left .sf em.hover i{color: #fff}
