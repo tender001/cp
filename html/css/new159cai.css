@@ -2302,12 +2302,12 @@ label.red {color:red}
 .dggp-nav a{float:left;padding: 0 25px;font:700 16px/45px "Microsoft YaHei";color: #fff}
 .dggp-nav a:hover{text-decoration: none}
 .dggp-nav a.hover{color:#629875;background-color: #fff;}
-.dggp-main-bg{width: 100%;height:auto;min-height: 545px;background:#ededed url("../images/bg/dggp-bg.jpg") center 0 repeat-y;}
+.dggp-main-bg{width: 100%;height:auto;min-height: 313px;background:#ededed url("../images/bg/dggp-bg.jpg") center 0 repeat-y;}
 .dggp-main{width: 1000px;margin: 15px auto;}
 .dggp-main:after{visibility:hidden;display:block;font-size:0;content:" ";clear:both;}
 .shenpinf{position: relative}
 .w-sf-left{float: left;width: 688px;}
-.w-sf-left .event-no{width:686px;margin:0;padding:82px 0;border:1px solid #ccc;background-color: #fff;background-position: 40px 90px;}
+.w-sf-left .event-no{width:686px;margin:0;padding:30px 0;border:1px solid #ccc;background-color: #fff;background-position: 40px 37px;}
 .sf-left{width: 100%;margin: 0 0 15px}
 .w-sf-right{float: right;width: 300px;background-color: #fff}
 .sf-right{width: 100%;}
