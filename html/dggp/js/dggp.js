@@ -717,7 +717,7 @@ Class('Selector', {
         var rcs ="cur";
         if(!node.hasClass(rcs))
         {
-            $("li[zid='" + data.zid + "_" + data.tzv + "']").remove();
+            $("li[zid='" + data.zid + "_" + data.tzvv + "']").remove();
             if($("ul[zid='" + data.zid + "_tbs'] li").length < 1)
             {
                 $("div[zid='" + data.zid + "_li']").remove();
