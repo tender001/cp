@@ -138,7 +138,7 @@ var tzxxnames = {"3":"主胜","1":"平","0":"主负","33":"胜-胜","31":"胜-�
 			var r = obj.match.row;
 			if(!this.isArray(r)){r=new Array(r);}
 			r.each(function(row,i){
-//				if(((row.idanguan*1) & 1 << 4) == (1 << 4)){
+				if(((row.idanguan*1) & 1 << 4) == (1 << 4)){
 				row.enddate=((Y.getDate(row.mt).getHours()<11 || (Y.getDate(row.mt).getHours()==11 && Y.getDate(row.mt).getMinutes()<30))?(Y.getDate(Date.parse(Y.getDate(row.mt))-1000*60*60*24).format('YY-MM-DD')):Y.getDate(row.mt).format('YY-MM-DD'));
     			row.short_et=Y.getDate(row.et).format('YY-M-D hh:mm');
     			row.short_mt=Y.getDate(row.mt).format('M/D hh:mm');
@@ -173,14 +173,14 @@ var tzxxnames = {"3":"主胜","1":"平","0":"主负","33":"胜-胜","31":"胜-�
        				}
     				
     			};
-//			}
+			}
     		});
 			
     		this.get("#vsTable").html(html);
     		this.get("#vsTable").show();
     
     		if(this.get("#vsTable").html().trim()==""){
-    			this.get("#vsTable").html('<div class="event-no event-no1"><p>当前无赛事可投注，请等待官方公布新赛程！<br> <a href="http://bf.159cai.com/jingcaii">查看赛程预告&gt;&gt;</a> <a href="/dating/">购买其他彩种&gt;&gt;</a> </p></div>');
+    			this.get("#vsTable").html('<div class="event-no event-no1"><p>当前无赛事可投注，请等待官方公布新赛程！<br> <a href="http://bf.159cai.com/jingcai">查看赛程预告&gt;&gt;</a> <a href="/dating/">购买其他彩种&gt;&gt;</a> </p></div>');
     		}
     		this.postMsg('load_duizhen_succ');			
     	},
@@ -242,7 +242,7 @@ var tzxxnames = {"3":"主胜","1":"平","0":"主负","33":"胜-胜","31":"胜-�
 			var r = obj.match.row;
 			if(!this.isArray(r)){r=new Array(r);}
 			r.each(function(row,i){
-//				if(((row.idanguan*1) & 1 << 3) == (1 << 3)){
+				if(((row.idanguan*1) & 1 << 3) == (1 << 3)){
 				row.enddate=((Y.getDate(row.mt).getHours()<11 || (Y.getDate(row.mt).getHours()==11 && Y.getDate(row.mt).getMinutes()<30))?(Y.getDate(Date.parse(Y.getDate(row.mt))-1000*60*60*24).format('YY-MM-DD')):Y.getDate(row.mt).format('YY-MM-DD'));
    			row.short_et=Y.getDate(row.et).format('YY-M-D hh:mm');
    			row.short_mt=Y.getDate(row.mt).format('M/D hh:mm');
@@ -277,14 +277,14 @@ var tzxxnames = {"3":"主胜","1":"平","0":"主负","33":"胜-胜","31":"胜-�
    				}
    				
    			};
-//			}
+			}
    		});
 			
    		this.get("#vsTable").html(html);
    		this.get("#vsTable").show();
    
    		if(this.get("#vsTable").html().trim()==""){
-   			this.get("#vsTable").html('<div class="event-no event-no1"><p>当前无赛事可投注，请等待官方公布新赛程！<br> <a href="http://bf.159cai.com/jingcaii">查看赛程预告&gt;&gt;</a> <a href="/dating/">购买其他彩种&gt;&gt;</a> </p></div>');
+   			this.get("#vsTable").html('<div class="event-no event-no1"><p>当前无赛事可投注，请等待官方公布新赛程！<br> <a href="http://bf.159cai.com/jingcai">查看赛程预告&gt;&gt;</a> <a href="/dating/">购买其他彩种&gt;&gt;</a> </p></div>');
    		}
    		this.postMsg('load_duizhen_succ');			
    	},
@@ -421,7 +421,7 @@ var tzxxnames = {"3":"主胜","1":"平","0":"主负","33":"胜-胜","31":"胜-�
    		this.get("#vsTable").show();
    
    		if(this.get("#vsTable").html().trim()==""){
-   			this.get("#vsTable").html('<div class="event-no event-no1"><p>当前无赛事可投注，请等待官方公布新赛程！<br> <a href="http://bf.159cai.com/jingcaii">查看赛程预告&gt;&gt;</a> <a href="/dating/">购买其他彩种&gt;&gt;</a> </p></div>');
+   			this.get("#vsTable").html('<div class="event-no event-no1"><p>当前无赛事可投注，请等待官方公布新赛程！<br> <a href="http://bf.159cai.com/jingcai">查看赛程预告&gt;&gt;</a> <a href="/dating/">购买其他彩种&gt;&gt;</a> </p></div>');
    		}
    		this.postMsg('load_duizhen_succ');			
    	},
@@ -503,7 +503,7 @@ var tzxxnames = {"3":"主胜","1":"平","0":"主负","33":"胜-胜","31":"胜-�
   		this.get("#vsTable").show();
   
   		if(this.get("#vsTable").html().trim()==""){
-  			this.get("#vsTable").html('<div class="event-no event-no1"><p>当前无赛事可投注，请等待官方公布新赛程！<br> <a href="http://bf.159cai.com/jingcaii">查看赛程预告&gt;&gt;</a> <a href="/dating/">购买其他彩种&gt;&gt;</a> </p></div>');
+  			this.get("#vsTable").html('<div class="event-no event-no1"><p>当前无赛事可投注，请等待官方公布新赛程！<br> <a href="http://bf.159cai.com/jingcai">查看赛程预告&gt;&gt;</a> <a href="/dating/">购买其他彩种&gt;&gt;</a> </p></div>');
   		}
   		this.postMsg('load_duizhen_succ');			
   	},
@@ -587,7 +587,7 @@ var tzxxnames = {"3":"主胜","1":"平","0":"主负","33":"胜-胜","31":"胜-�
  		this.get("#vsTable").show();
  
  		if(this.get("#vsTable").html().trim()==""){
- 			this.get("#vsTable").html('<div class="event-no event-no1"><p>当前无赛事可投注，请等待官方公布新赛程！<br> <a href="http://bf.159cai.com/jingcaii">查看赛程预告&gt;&gt;</a> <a href="/dating/">购买其他彩种&gt;&gt;</a> </p></div>');
+ 			this.get("#vsTable").html('<div class="event-no event-no1"><p>当前无赛事可投注，请等待官方公布新赛程！<br> <a href="http://bf.159cai.com/jingcai">查看赛程预告&gt;&gt;</a> <a href="/dating/">购买其他彩种&gt;&gt;</a> </p></div>');
  		}
  		this.postMsg('load_duizhen_succ');			
  	}
@@ -696,29 +696,6 @@ Class('Selector', {
 //			Y.rscroll(ltop,rtop);
 //	    }); 
     },
-	rscroll : function(ltop,rtop){
-		var dt = $("h2.c").offset().top;
-		var ch = $("#chooselist").height();
-        var wtop = $(window).scrollTop();
-		if(dt>(ch+wtop)){
-			if(wtop < ltop)
-			{
-				$("#vsTable").prev().css({"position":"","top":ltop,"background":"","margin-top":"9px","z-index":""});
-				$("#chooselist").css({"position":"","top":(rtop)});
-				$("#chooselist").find("p.xl_dggp_p").css("margin-top","9px");
-			}
-			else
-			{
-				$("#vsTable").prev().css({"position":"absolute","top":wtop,"background":"#fff","width":"690px","margin-top":"0","z-index":"999"});
-				$("#chooselist").css({"position":"absolute","top":wtop});
-				$("#chooselist").find("p.xl_dggp_p").css("margin-top","0");
-			}
-		}else{
-				$("#vsTable").prev().css({"position":"absolute","top":wtop,"background":"#fff","width":"690px","margin-top":"0","z-index":"999"});
-				$("#chooselist").css({"position":"absolute","top":dt-ch});
-				$("#chooselist").find("p.xl_dggp_p").css("margin-top","0");			
-		}
-	},
     changeCodeList:function(node,pnode)      //更新投注选项
     {
         var data = new Object();
@@ -829,9 +806,8 @@ Class('Selector', {
             $("#buylist").show();
             $("#codemsg").hide();
 			
-			var ltop = $("#vsTable").offset().top;
-			var rtop = $("#chooselist").offset().top;
-			Y.rscroll(ltop,rtop);
+			
+			
         }
         else
         {
@@ -889,72 +865,81 @@ Class({
 //    	 this.goTotop();//返回顶部
 //    	Class.C('odds_t','jczq/odds'); 
 //    	this.oneodds=true;
+//    	this.rscroll();
 		this.onMsg('load_duizhen_succ', function () {
 			this._index();
 			
 		});            
     },
-    
-   
-	goTotop:function (){
-        var isIE=!!window.ActiveXObject;
-        var isIE6 = isIE&&!window.XMLHttpRequest;
-        var btn = $("#goTotop");
-        var right = 0;
-        var top = $(window).height()-247;
-        var ietop = $(window).height()-247+$(window).scrollTop();
-        var flag = true;
-        $(window).resize(function(){
-            btn.css({"position":"fixed",top:top,right:right});
-            if(isIE6)btn.css({"position":"absolute",top:ietop,right:right});
-        })
-        btn.css({"position":"fixed",top:top,right:right});
-        var areaTop = Y.get("#right_area").getXY().y;
+
+    rscroll:function (){
+            var isIE=!!window.ActiveXObject;
+            var isIE6 = isIE&&!window.XMLHttpRequest;
+            var right = 0;
+            var top = $(window).height()-247;
+            var ietop = $(window).height()-247+$(window).scrollTop();
+            var flag = true;
+//            $(window).resize(function(){
+//                btn.css({"position":"fixed",top:top,right:right});
+//                if(isIE6)btn.css({"position":"absolute",top:ietop,right:right});
+//            });
+//            btn.css({"position":"fixed",top:top,right:right});
+            var areaTop = Y.get("div[mark=newsr]").getXY().y;
+            
+            $(window).scroll(function(){
+            	 if ($(this).scrollTop() > areaTop){//跟踪对齐当滚动条超过右侧区域则开始滚动
+    	            	var V = $('#chooselist');
+    	        		if (V[0]) {
+    	        			var T = $(document),
+    	        			H = $("#vsTable").eq(0),
+//    	        			Le=H.offset().left+H.innerWidth(),
+    	        			Le=V.offset().left,
+    	        			M = H.offset().top + H.outerHeight(),
+    	        			F = V.innerWidth(),
+    	        			B = V.offset().top,
+    	        			L = V.outerHeight(), 
+    	        			u = T.scrollTop();
+    	        			Z = Math.min(0, M - (L + u));
+    	        			
+    	        			
+    	        			if(H.outerHeight()<V.eq(0).outerHeight()){
+//    	        				 Y.get("#right_area").setStyle('z-index: 1; top:'+Z+'px;  left: auto;position: static;');
+    	        				 Y.get("#chooselist").setStyle('z-index: 1; top:0;  left: '+ Le+';position: static;');
+    	        			}else{
+    	        				if (B == Z) {
+        	        				V.css({left: Le, top: "auto",width: F, position: "static"});
+        	        			} else {
+        	        				if(isIE6){
+        	        					V.css({left: Le,top: Z+$(window).scrollTop(), width: F,position: "absolute"});
+        	        				}else{
+        	        				V.css({left: Le,top: Z, width: F, position: "fixed"});
+        	        				};
+        	        			}
+    	        				Y.get("#chooselist").setStyle('z-index: 1;');
+    	        			}
+    	        			
+    	        		};
+    	            	
+    	             }else{//停止浮动对齐
+                	 Y.get("#right_area").setStyle('z-index: 1; top:0;  left: '+Le+';position: static;');
+                }
+            	
+                if(flag)
+                {
+//                    btn.show();
+                    flag = false;
+                }
+                if($(this).scrollTop() == 0)
+                {
+//                    btn.hide();
+                    flag = true;
+                }
+//                btn.css({"position":"fixed",top:top,right:right});
+                ietop = $(window).height()-247+$(window).scrollTop();
+                
+            });
         
-        $(window).scroll(function(){
-        	 if ($(this).scrollTop() > areaTop){//跟踪对齐当滚动条超过右侧区域则开始滚动
-	            	var V = $('#titleTable_r');
-	        		if (V[0]) {
-	        			var T = $(document),
-	        			H = $("#main div.box_m").eq(0),
-	        			M = H.offset().top + H.outerHeight(),
-	        			F = V.innerWidth(),
-	        			B = V.offset().top,
-	        			L = V.outerHeight(), 
-	        			u = T.scrollTop();
-	        			Z = Math.min(0, M - (L + u));
-	        			
-	        			if (B == Z) {
-	        				V.css({left: "auto", top: "auto",width: F, position: "static"});
-	        			} else {
-	        				if(isIE6){
-	        					V.css({left: "auto",top: Z+$(window).scrollTop()-140, width: F,position: "absolute"});
-	        				}else{
-	        					V.css({left: "auto",top: Z, width: F, position: "fixed"});
-	        				}
-	        			}
-	        			Y.get("#titleTable_r").setStyle('z-index: 1;');
-	        		}
-	            	
-	             }else{//停止浮动对齐
-            	 Y.get("#titleTable_r").setStyle('z-index: 1; top:0;  left: auto;position: static;');
-            }
-        	
-            if(flag)
-            {
-                btn.show();
-                flag = false;
-            }
-            if($(this).scrollTop() == 0)
-            {
-                btn.hide();
-                flag = true;
-            }
-            btn.css({"position":"fixed",top:top,right:right});
-            ietop = $(window).height()-247+$(window).scrollTop();
-            if(isIE6)btn.css({"position":"absolute",top:ietop,right:right});
-        })
-    },
+	},
     _index:function (){
         Class.C("isspf",(Class.config('playId') == "72" ||Class.config('playId') == "34"));
     	this.lib.Selector({});
