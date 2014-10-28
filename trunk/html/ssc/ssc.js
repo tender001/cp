@@ -2005,16 +2005,16 @@ Class.extend('exportCode', function (){
 	   		    var desc = obj.Resp.desc;
 				if (code == "0") {
 					var r = obj.Resp.row;
-					var ccodes = r[0].ccodes;// 投注号码
+					var ccodes =r.ccodes===undefined?r[0].ccodes:r.ccodes;// 投注号码
+					ccodes = ccodes.split(':')[0];
+					var mulity =r.imulity===undefined?r[0].imulity:r.imulity;// 投注号码 ;// 倍数
 					var ss = r[0].ccodes;// 投注号码
 					var sss = r[0].ccodes;// 投注号码
-					ccodes = ccodes.split(':')[0];
 					ss = ss.split(':')[1];
 					sss = sss.split(':')[2];
 					zhushu = r[0].icmoney*1/2;
 					
 //					ss += ccodes.split(':');
-					var mulity = r.imulity;// 倍数
 					//var periodid = r.periodid;//期次
 					if(mulity>1){
 						$("#beishu").val(mulity);
