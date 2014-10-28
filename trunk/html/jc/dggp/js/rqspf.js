@@ -1011,7 +1011,7 @@
     		}
     		this.get("#vsTable").show();	
     		if(this.get("#vsTable").html().trim()==""){
-    			this.get("#vsTable").html('<div class="event-no event-no1"><p>当前无赛事可投注，请等待官方公布新赛程！<br> <a href="http://bf.159cai.com/jingcaii">查看赛程预告&gt;&gt;</a> <a href="/dating/">购买其他彩种&gt;&gt;</a> </p></div>');
+    			this.get("#vsTable").html('<div class="event-no event-no1"><p>当前无赛事可投注，请等待官方公布新赛程！<br> <a href="http://bf.159cai.com/jingcai">查看赛程预告&gt;&gt;</a> <a href="/dating/">购买其他彩种&gt;&gt;</a> </p></div>');
     		}
     		//生成让球列表
        		var arrrangqiu_matches = [];
