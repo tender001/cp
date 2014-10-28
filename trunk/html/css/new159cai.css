@@ -2338,12 +2338,13 @@ label.red {color:red}
 .sf-right .bod .bod-m{border-top: 1px solid #ccc}
 .sf-right .bod .bod-m li{float: left;width: auto;height: 28px;font: 14px/28px "Microsoft YaHei UI","\5fae\8f6f\96c5\9ed1";color: #484858}
 .sf-right .bod .bod-m li em{float: right;}
+.sf-right .bod .bod-m li em#totalbonus{color:#f00;}
 .sf-right .bod .bod-m li a{display: inline-block;width: 40px;height: 18px;line-height: 18px;margin:0 10px 0 0;text-align: center;color: #fff;background-color: #f00;}
 .sf-right .bod .bod-m li a:hover{background-color: #C6DDE7;text-decoration: line-through;color: #333;}
 .sf-right .bod .bod-m li a.zf{background-color: #39a746}
 .sf-right .bod .bod-m li a.draw{background-color: #488bfe}
 .sf-right .bod .bod-m li input{width: 50px;margin: 0 4px;text-align: center}
-.sf-right .bod .bod-m li i{margin: 0 4px 0 50px}
+.sf-right .bod .bod-m li i{margin: 0 4px 0 58px}
 .buylist .bod .bod-m li{width: 100%}
 .sf-right .you{font:700 14px/30px "Microsoft YaHei UI","\5fae\8f6f\96c5\9ed1";color: #145fab}
 .btn-dh a{display: inline-block;width: 120px;height: 43px;margin:0 7px 0 0;font:400 18px/43px "Microsoft YaHei Ui","\5fae\8f6f\96c5\9ed1";text-align: center;color: #fff;background-position: 0 -187px}
