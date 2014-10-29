@@ -2643,7 +2643,7 @@ border-radius:4px 4px 0 0;-moz-border-radius:4px 4px 0 0;}
 table.co1 tbody td  em{color:#888}
 
 .dz_dv span,.dz_dv label{padding-left:5px;float:left;color: #333}
-.dz_dv em{display:block;overflow:hidden;height:38px;width:62px;float:left;text-align:left;line-height:38px;color: #333;}
+.dz_dv em{display:block;overflow:hidden;height:38px;width:50px;float:left;text-align:left;line-height:38px;color: #333;}
 .dc_table td s{color:#777;display:block;width:20px;}
 .dz_dv em.em_right{text-align:right;margin-left:10px;width: 78px;}
 .dz_dv span.span_right{padding:0}
@@ -2653,7 +2653,7 @@ table.co1 tbody td  em{color:#888}
 .dz_dv span b.b_right{margin-right:4px;margin-left:0}
 .dz_dv{height:38px;line-height:38px;}
 .dz_dv label.span_left,.dz_dv span.span_left{margin-left:0px;}
-.dz_dv  strong{float:left;width:23px;display:block;line-height:38px}
+.dz_dv  strong{float:left;display:block;line-height:38px}
 .dz_dv span b.b_left1{margin-left:6px;float:right}
 .dz_dv span b.b_right1{margin-right:2px;margin-left:0}
 
