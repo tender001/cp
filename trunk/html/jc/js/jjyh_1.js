@@ -244,44 +244,40 @@ Class( {
 		               '</tr>'
 	    		];
 		 var tableTp2=[
-//			'<tr>'+
-//					'<td>{$seqno}</td>'+
-//					
-//					'<td>3串1</td>'+
-//					
-//					'<th><div class="ie">'+
-//					
-//					'<b><i>胜(+1)</i>阿曼</b><b><i>负</i>阿曼</b><strong><i>平</i>阿曼</strong>'+
-//					
-//					'</div></th>'+
-//					
-//					'<td><font color="red"><label id="tbonus{$seqno}">{$tbonus}</label></font></td>'+					
-//					
-//					'<td>1</td>'+
-//					
-//					'<td><p class="dc_qr"><i><a onclick="return P.decMulity({$seqno});"></a>'+
-//					
-//					'<input class="mul" type="text" value="{$tbonus}" maxlength="6">'+
-//					
-//					'<a onclick="return P.incMulity({$seqno});"></a></i></p></td>'+
-//			'</tr>'
+			'<tr>'+
+					'<td>{$seqno}</td>'+
+					
+					'<td>{$gg}</td>'+
+					
+					'<th><div class="ie">{$bets}</div></th>'+
+					
+					'<td><font color="red"><label id="tbonus{$seqno}">{$tbonus}</label></font></td>'+					
+					
+					'<td>1</td>'+
+					
+					'<td><p class="dc_qr"><i><a onclick="return P.decMulity({$seqno});"></a>'+
+					
+					'<input class="mul" type="text" value="{$tbonus}" maxlength="6">'+
+					
+					'<a onclick="return P.incMulity({$seqno});"></a></i></p></td>'+
+			'</tr>'
 		               
-		               
-		               '<tr>'+
-		               '<td>{$seqno}</td>'+
-		              
-		               '<td ><p>{$desc}=<font color="red"><label id="bonus{$seqno}">{$bonus}</label></font></p></td>'+
-		               
-		               '<td><font color="red"><label id="tbonus{$seqno}">{$tbonus}</label></font></td>'+
-		               
-		               '<td><a onclick="return P.decMulity({$seqno});"><img src="/images/jc/ds_14.gif"/></a></td>'+
-		              
-		               '<td><input id="txtm{$seqno}" type="text" class="text1" value="{$muli}" onchange="P.numChange({$seqno})" /></td>'+
-		               
-		               '<td><a onclick="return P.incMulity({$seqno});"><img src="/images/jc/ds_11.gif" /></td>'+
-		               
-		               '<td><div id="mc{$seqno}" style="display:none">{$code}</div></td>'+
-			           '</tr>'
+//		               
+//		               '<tr>'+
+//		               '<td>{$seqno}</td>'+
+//		              
+//		               '<td ><p>{$desc}=<font color="red"><label id="bonus{$seqno}">{$bonus}</label></font></p></td>'+
+//		               
+//		               '<td><font color="red"><label id="tbonus{$seqno}">{$tbonus}</label></font></td>'+
+//		               
+//		               '<td><a onclick="return P.decMulity({$seqno});"><img src="/images/jc/ds_14.gif"/></a></td>'+
+//		              
+//		               '<td><input id="txtm{$seqno}" type="text" class="text1" value="{$muli}" onchange="P.numChange({$seqno})" /></td>'+
+//		               
+//		               '<td><a onclick="return P.incMulity({$seqno});"><img src="/images/jc/ds_11.gif" /></td>'+
+//		               
+//		               '<td><div id="mc{$seqno}" style="display:none">{$code}</div></td>'+
+//			           '</tr>'
 	    		];
 		 
 		 var tableTp3=[
@@ -319,7 +315,7 @@ Class( {
              if ( ss.indexOf('0') >= 0) {
 				 row.c0 = "g_br";
 			 }
-             betdata.push([row.name,row.hn]);
+             betdata.push([row.itemid,row.hn]);
 			 var spf=row.spf.split(",");
 			 row.sp3=spf[0];
 			 row.sp1=spf[1];
@@ -345,8 +341,19 @@ Class( {
 		 Y.get("#vsTable").html(html.join(''));
 		
 		rj.each(function(rw,o) {
-			rw.desc.$_sys.betname
-			rw.bhn=rw.desc.split(",")
+//			<b><i>胜(+1)</i>阿曼</b>
+			var bet=""
+			var codearr=rw.code.split("|")[0].split(",");
+			if(codearr.length>1){
+				codearr.each(function(x,y){
+					rw.bhn=$_sys.betname(x.split("=")[0]);
+					rw.bet=(x.split("=")[1]).replace(3,"胜").replace(1,"平").replace(0,"负");
+					rw.gg=rw.code.split("|")[1].replace("*","串");
+					bet+='<b><i>'+rw.bet+'</i>'+rw.bhn+'</b>';
+				})
+			}
+			rw.bets=bet;
+			
 			htm[htm.length] = tableTp2[0].tpl(rw);
 		});
 		Y.get("#jjTable").html(htm.join(''));
