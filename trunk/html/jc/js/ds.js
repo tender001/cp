@@ -700,17 +700,20 @@ Class('Loadduizhen',{
 		               ];	
 		 switch (lotid) {
 			case "70" : //混投
+				$("a[title=单关投注]").hide();
+				
 				$("#format_switch").html(tableTmpl[0]);
 				$("#sr").show();
 				$("#bzgs").click(function(){
 					Yobj.openUrl('/jc/bzgs/HT.html',450,470)
 				});
 				$("#switch_link").parent().hide();
+				$("a[title=过关投注]").attr('href','/jc/jchh.html');
 				break;	
 			case "90" :    //胜平负
 				$("#format_switch").html(tableTmpl[0]);
 				$("#sr").hide();
-				$("#tzurl").attr('href','/jc/index.html');
+				$("a[title=过关投注]").attr('href','/jc/index.html');
 				$("#bzgs").click(function(){
 					Yobj.openUrl('/jc/bzgs/SPF.html',450,470)
 				});	
@@ -718,7 +721,7 @@ Class('Loadduizhen',{
 			case "72" :    //让球胜平负
 				$("#format_switch").html(tableTmpl[0]);
 				$("#sr").hide();
-				$("#tzurl").attr('href','/jc/rqspf.html');
+				$("a[title=过关投注]").attr('href','/jc/rqspf.html');
 				$("#bzgs").click(function(){
 					Yobj.openUrl('/jc/bzgs/RQSPF.html',450,470)
 				});	
@@ -726,7 +729,7 @@ Class('Loadduizhen',{
 			case "93" :    //总进球数
 				$("#format_switch").html(tableTmpl[1]);
 				$("#sr").hide();
-				$("#tzurl").attr('href','/jc/jqs.html');
+				$("a[title=过关投注]").attr('href','/jc/jqs.html');
 //				$("#bzgs").attr('href','/jc/bzgs/JQS.html');
 				$("#bzgs").click(function(){
 					Yobj.openUrl('/jc/bzgs/JQS.html',450,470)
@@ -734,7 +737,7 @@ Class('Loadduizhen',{
 			
 				break;
 			case "91" :    //比分
-				$("#tzurl").attr('href','/jc/cbf.html');
+				$("a[title=过关投注]").attr('href','/jc/cbf.html');
 				$("#sr").hide();
 				$("#bzgs").click(function(){
 					Yobj.openUrl('/jc/bzgs/BF.html',450,470)
@@ -744,7 +747,7 @@ Class('Loadduizhen',{
 				break;
 			case "92" :    //半全场
 			    $("#format_switch").html(tableTmpl[2]);
-			    $("#tzurl").attr('href','/jc/bqc.html');
+			    $("a[title=过关投注]").attr('href','/jc/bqc.html');
 //				$("#bzgs").attr('href','/jc/bzgs/BQC.html');
 				$("#bzgs").click(function(){
 					Yobj.openUrl('/jc/bzgs/BQC.html',450,470)
