@@ -760,30 +760,65 @@ Class.extend('exportCode', function () {
 						type="259";
 						Y.postMsg('msg_force_change_playtabs', 10,1);
 					}
-					//type=type;
-					if(ccodes==""){
-		    			Y.alert("您不是该方案的发起人，不能再次购买本方案");
-		    			return false;
-		    		}
-					if(ccodes.split(':')[0]){
-						$("#zjtz23").attr("checked",'true');
-					}
-					
-					if(ccodes.indexOf("$")==-1){
+					if(ss == '12'){
+						if(ccodes == '07'){
+							type="249";
+							Y.postMsg('msg_force_change_playtabs', 0,1);
+							arrCodes= [['00',type,zhushu]];
+							if (arrCodes.length) {//完整号码显示到列表
+					             Y.postMsg('msg_put_code', arrCodes);
+					        }
+						}else if(ccodes == '08'){
+							type="250";
+							Y.postMsg('msg_force_change_playtabs', 1,1);
+							arrCodes= [['00',type,zhushu]];
+							if (arrCodes.length) {//完整号码显示到列表
+					             Y.postMsg('msg_put_code', arrCodes);
+					        }
+						}else if(ccodes == '09'){
+							type="251";
+							Y.postMsg('msg_force_change_playtabs', 2,1);
+							arrCodes= [['00',type,zhushu]];
+							if (arrCodes.length) {//完整号码显示到列表
+					             Y.postMsg('msg_put_code', arrCodes);
+					        }
+						}else if(ccodes == '11'){
+							type="253";
+							Y.postMsg('msg_force_change_playtabs', 4,1);
+							arrCodes= [['00',type,zhushu]];
+							if (arrCodes.length) {//完整号码显示到列表
+					             Y.postMsg('msg_put_code', arrCodes);
+					        }
+						}
 						
-							Yobj.get('#codes').val(ccodes);
-							var import_code, arrCodes, short_code;
-						    if (import_code = Yobj.get('#codes').val()) {
-								if (typeof this.dejson(import_code) == 'object') return;
-						        if (/\b0\b/.test(import_code)) {
-						            return
-						        }
-						        arrCodes= [[import_code,type,zhushu]];
-						        if (arrCodes.length) {//完整号码显示到列表
-						             Y.postMsg('msg_put_code', arrCodes);
-						        }
-						    }
-						}  
+							
+					}else{
+						if(ccodes==""){
+			    			Y.alert("您不是该方案的发起人，不能再次购买本方案");
+			    			return false;
+			    		}
+						if(ccodes.split(':')[0]){
+							$("#zjtz23").attr("checked",'true');
+						}
+						
+						if(ccodes.indexOf("$")==-1){
+							
+								Yobj.get('#codes').val(ccodes);
+								var import_code, arrCodes, short_code;
+							    if (import_code = Yobj.get('#codes').val()) {
+									if (typeof this.dejson(import_code) == 'object') return;
+							        if (/\b0\b/.test(import_code)) {
+							            return
+							        }
+							        arrCodes= [[import_code,type,zhushu]];
+							        if (arrCodes.length) {//完整号码显示到列表
+							             Y.postMsg('msg_put_code', arrCodes);
+							        }
+							    }
+							} 
+					}
+					//type=type;
+					 
 					
 				}else if(code=='2002'){
 					Y.alert("您不是该方案的发起人，不能再次购买本方案");
