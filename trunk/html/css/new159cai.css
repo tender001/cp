@@ -1100,7 +1100,7 @@ a.a_inner{width:166px;height:128px;display:block;margin:4px auto 0}
 .caitanm a.a5{float:left;display:block;width:100px;height:28px;line-height:28px;margin-left:10px;text-align:center;color:#145fab;border:1px solid #ddd;background: url(../images/cai888/rgb14.jpg);}
 .caitain{ background:#fff}
 p.pzong img{margin-right:12px;}
-p.pzong{height:auto;padding:25px 15px 0;font:14px/36px "Microsoft YaHei";color:#444;text-align:center}
+p.pzong{height:50px;line-height:25px;padding-top:27px;margin-right:12px;font-size:14px;color:#444;text-align:center;overflow: hidden}
 .caitain a.btn,.caitain div.btn,.abtnd a.btn,.tandiva a.btn{display:block;width:103px;height:34px;margin:20px auto 5px;font:16px/34px "Microsoft YaHei";text-align:Center;color:#fff;background: url(../images/cai888/getw_10.jpg);}
 .caitain a.btn:hover{text-decoration: none;}
 .abtnd{background:#fff}
