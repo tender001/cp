@@ -867,11 +867,12 @@ Class.extend('exportCode', function (){
 				if (code == "0") {
 					var r = obj.Resp.row;
 					var ccodes =r.ccodes===undefined?r[0].ccodes:r.ccodes;// 投注号码
-					ccodes = ccodes.split(':')[0];
 					var mulity =r.imulity===undefined?r[0].imulity:r.imulity;// 投注号码 ;// 倍数
 					var ss = r[0].ccodes;// 投注号码
 					ss = ss.split(':')[1];
 					zhushu = r[0].icmoney*1/2;
+					var periodid = r.periodid;//期次
+					var import_code, arrCodes, short_code;
 					//ss = ccodes.split(':')[1];
 					
 					//var periodid = r.periodid;//期次
@@ -881,41 +882,41 @@ Class.extend('exportCode', function (){
 					//Y.postMsg('msg_force_change_playtabs',0,1);
 //					ss = ss * 1 ;
 					if(ss==1){
-						type="244";
+						type=244;
 						Y.postMsg('msg_force_change_playtabs', 0,1);
 					}
 					else if(ss==2){
-						type="249";
+						type=249;
 						Y.postMsg('msg_force_change_playtabs', 1,1);
 					}else if(ss == 3){
-						type="250";
+						type=250;
 						Y.postMsg('msg_force_change_playtabs', 2,1);
 					}else if(ss == 4){
-						type="251";
+						type=251;
 						Y.postMsg('msg_force_change_playtabs', 3,1);
 					}else if(ss == 5){
-						type="252";
+						type=252;
 						Y.postMsg('msg_force_change_playtabs', 4,1);
 					}else if(ss == 6){
-						type="253";
+						type=253;
 						Y.postMsg('msg_force_change_playtabs', 5,1);
 					}else if(ss == 7){
-						type="254";
+						type=254;
 						Y.postMsg('msg_force_change_playtabs', 6,1);
 					}else if(ss == 8){
-						type="255";
+						type=255;
 						Y.postMsg('msg_force_change_playtabs', 7,1);
 					}else if(ss == 11){
-						type="247";
+						type=247;
 						Y.postMsg('msg_force_change_playtabs', 8,1);
 					}else if(ss == 12){
-						type="248";
+						type=248;
 						Y.postMsg('msg_force_change_playtabs', 9,1);
 					}else if(ss == 9){
-						type="245";
+						type=245;
 						Y.postMsg('msg_force_change_playtabs', 10,2);
 					}else if(ss == 10){
-						type="246";
+						type=246;
 						Y.postMsg('msg_force_change_playtabs',11,3);
 					}
 					//type=type;
@@ -928,17 +929,61 @@ Class.extend('exportCode', function (){
 					}
 					
 					if(ccodes.indexOf("$")==-1){
-						
-							Yobj.get('#codes').val(ccodes);
-								
-							ccodes= type == "244" ? [ccodes].concat('-', '-', '-', '-', '-').slice(0,5).join('|') : ccodes;
-						        arrCodes= [[ccodes,type,zhushu]];
-						       
+						/*if(ccodes.indexOf("|")==-1){
+							Y.ajax({
+				    			url : "/cpdata/pupload/54/"+periodid+"/"+ccodes+"",
+				    			type : "GET",
+				    			end: function(d) {
+				    				var obj =  d.text;
+				    				re = /[\r\n]+/g;
+				    				re2= /^\;|\;$/g;
+				    				obj=obj.replace(re,";").replace(re2,"");
+				    				if(obj.split(";").length>100){
+				    					Y.alert("单式方案注数超过100");
+				    				}else{
+				    					Yobj.get('#codes').val(obj);
+				    					 if (import_code = Yobj.get('#codes').val()) {
+				   			    				if (typeof this.dejson(import_code) == 'object') return;
+				   			    	            if (/\b0\b/.test(import_code)) {
+				   			    	                return
+				   			    	            }
+				   			    	         ccodes= type == "244" ? [ccodes].concat('-', '-', '-', '-', '-').slice(0,5).join('|') : ccodes;
+										        arrCodes= [[ccodes,type,zhushu]];
+										       
+										        if (arrCodes.length) {//完整号码显示到列表
+										             Y.postMsg('msg_put_code', arrCodes);
+										        }
+										   }
+				    				}
+				    			}
+							});
+						}else{*/
+//							Yobj.get('#codes').val(ccodes);
+							 arrCodes = ccodes.split(';').map(function (c){
+			    	                var rb = c.split(':'),
+			    	                    d= rb[0] ? rb[0] : [],
+//	    	                    		t = rb[1] ? rb[1],
+//			    	                    if (this.C('lot_data_new')[rb[1]="undefine"){
+//			    	                      	tmp = tmp.slice(0,this.C('lot_data_new')[d[1]][2]);
+//			    	                      }
+			    	                zs = Math.c(d.split(',').length, Class.C('lot_data')[type][2]);
+			    	                   
+			    	                return [[d,type,zs]];
+			    	            }).filter(function (c){
+			    	                if (c[c.length - 1] == 0) {//zs
+			    	                    short_code = c;//残缺号码
+			    	                }else{
+			    	                    return true;
+			    	                }
+			    	            });
+//							 arrCodes= [[ccodes,type,zhushu]];
+						       ccodes= type == "244" ? [ccodes].concat('-', '-', '-', '-', '-').slice(0,5).join('|') : ccodes;
 						        if (arrCodes.length) {//完整号码显示到列表
-						             Y.postMsg('msg_put_code', arrCodes);
+						        	for(var i=0;i<arrCodes.length;i++){
+   			    	            		this.postMsg('msg_put_code',arrCodes[i]);
+   			    	            	}
 						        }
-						}  
-					
+					}
 				}else if(code=='2002'){
 					Y.alert("您不是该方案的发起人，不能再次购买本方案");
 					return false;
