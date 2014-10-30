@@ -2380,7 +2380,7 @@ label.red {color:red}
 .event-jc p{filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#aa000000,endColorstr=#aa000000);zoom:1;}
 .event-jc dt:hover p,.event-jc dd:hover p{height: 30px;}
 .event-jc p span{padding: 0 0 0 10px}
-.event-jc p a{float: right;height:20px;margin:5px 3% 0 0;padding:0 10px;font: 12px/20px "Microsoft YaHei";color:#333;background-color: #ffd600;border-radius:4px;_display: inline}
+.event-jc p a{float: right;height:20px;margin:5px 3% 0 0;padding:0 10px;font: 12px/20px "Microsoft YaHei";color:#333;background-color: #ffd600;border-radius:3px;_display: inline}
 .event-dj{margin:8px auto 0;padding: 28px 0;border: 1px solid #ccc;border-top-width: 2px;background-color: #fffdee;zoom: 1}
 .event-dj dl{float: left;width: 510px;padding: 0 20px;}
 .event-dj dl dt{float: left;width: 300px;height: 140px;}
