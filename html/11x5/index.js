@@ -905,17 +905,17 @@ Class.extend('exportCode', function (){
 					}else if(ss == 8){
 						type="255";
 						Y.postMsg('msg_force_change_playtabs', 7,1);
-					}else if(ss == 9){
-						type="247";
-						Y.postMsg('msg_force_change_playtabs', 8,1);
-					}else if(ss == 10){
-						type="248";
-						Y.postMsg('msg_force_change_playtabs', 9,1);
 					}else if(ss == 11){
-						type="245";
-						Y.postMsg('msg_force_change_playtabs', 10,2);
+						type="247";
+						Y.postMsg('msg_force_change_playtabs', 10,1);
 					}else if(ss == 12){
 						type="248";
+						Y.postMsg('msg_force_change_playtabs', 9,1);
+					}else if(ss == 9){
+						type="245";
+						Y.postMsg('msg_force_change_playtabs', 8,2);
+					}else if(ss == 10){
+						type="246";
 						Y.postMsg('msg_force_change_playtabs',11,3);
 					}
 					//type=type;
@@ -930,17 +930,13 @@ Class.extend('exportCode', function (){
 					if(ccodes.indexOf("$")==-1){
 						
 							Yobj.get('#codes').val(ccodes);
-							var import_code, arrCodes, short_code;
-						    if (import_code = Yobj.get('#codes').val()) {
-								if (typeof this.dejson(import_code) == 'object') return;
-						        if (/\b0\b/.test(import_code)) {
-						            return
-						        }
-						        arrCodes= [import_code,type,zhushu];
+								
+							ccodes= type == "244" ? [ccodes].concat('-', '-', '-', '-', '-').slice(0,5).join('|') : ccodes;
+						        arrCodes= [[ccodes,type,zhushu]];
+						       
 						        if (arrCodes.length) {//完整号码显示到列表
 						             Y.postMsg('msg_put_code', arrCodes);
 						        }
-						    }
 						}  
 					
 				}else if(code=='2002'){
