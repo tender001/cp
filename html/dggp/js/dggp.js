@@ -83,7 +83,7 @@ var tzxxnames = {"3":"主胜","1":"平","0":"主负","33":"胜-胜","31":"胜-�
     	spf:function(data){
     		 var html="" ;
     		 var tableTpl=['<div class="sf-left dp-basic"  etimes="{$short_et}" gn="{$gn}" hn="{$hn}" zid="{$itemid}" mid="{$mid}">'
-                 +'<h2>{$gn}VS{$hn}</h2>'
+                 +'<h2>{$hn}VS{$gn}</h2>'
                  +'<div class="bod">'
                  +'<p>'
                  +'<span>投注截止时间：{$short_et}</span>'
@@ -96,9 +96,9 @@ var tzxxnames = {"3":"主胜","1":"平","0":"主负","33":"胜-胜","31":"胜-�
                  +'<li><span style="height: {$zsp0}px"><i>{$zsp0}%支持率</i></span></li>'
                  +'</ul>'
                  +'<dl>'
-                 +'<dd sp="{$sp3}" value="3" v="胜">{$lgn}&nbsp;胜<em>{$sp3}</em></dd>'
+                 +'<dd sp="{$sp3}" value="3" v="胜">{$lhn}&nbsp;胜<em>{$sp3}</em></dd>'
                  +'<dd sp="{$sp1}" value="1" v="平">平局<em>{$sp1}</em></dd>'
-                 +'<dd sp="{$sp0}" value="0" v="负">{$lhn}&nbsp;负<em>{$sp0}</em></dd>'
+                 +'<dd sp="{$sp0}" value="0" v="负">{$lgn}&nbsp;负<em>{$sp0}</em></dd>'
                  +'</dl>'
                  +'</div>'
                  +'</div>'
@@ -116,9 +116,9 @@ var tzxxnames = {"3":"主胜","1":"平","0":"主负","33":"胜-胜","31":"胜-�
                  +'<li><span style="height: {$zsp0}px"><i>{$zsp0}%支持率</i></span></li>'
                  +'</ul>'
                  +'<dl>'
-                 +'<dd class="un-time">{$lgn}&nbsp;胜<em>{$sp3}</em></dd>'
+                 +'<dd class="un-time">{$lhn}&nbsp;胜<em>{$sp3}</em></dd>'
                  +'<dd class="un-time">平局<em>{$sp1}</em></dd>'
-                 +'<dd class="un-time">{$lhn}&nbsp;负<em>{$sp0}</em></dd>'
+                 +'<dd class="un-time">{$lgn}&nbsp;负<em>{$sp0}</em></dd>'
                  +'</dl>'
                  +'</div>'
                  +'</div>'
@@ -187,7 +187,7 @@ var tzxxnames = {"3":"主胜","1":"平","0":"主负","33":"胜-胜","31":"胜-�
     	rspf:function(data){
    		 var html="" ;
    		 var tableTpl=['<div class="sf-left dp-basic"  etimes="{$short_et}" gn="{$gn}" hn="{$hn}" zid="{$itemid}" mid="{$mid}">'
-                +'<h2>{$gn}VS{$hn}</h2>'
+   		            +'<h2>{$hn}VS{$gn}</h2>'
                 +'<div class="bod">'
                 +'<p>'
                 +'<span>投注截止时间：{$short_et}</span>'
@@ -291,7 +291,7 @@ var tzxxnames = {"3":"主胜","1":"平","0":"主负","33":"胜-胜","31":"胜-�
     	bf:function(data){
    		 var html="" ;
    		 var tableTpl=['<div class="sf-left dp-basic"  etimes="{$short_et}" gn="{$gn}" hn="{$hn}" zid="{$itemid}" mid="{$mid}">'
-                +'<h2>{$gn}VS{$hn}</h2>'
+                +'<h2>{$hn}VS{$gn}</h2>'
                 +'<div class="bod">'
                 +'<p>'
                 +'<span>投注截止时间：{$short_et}</span>'
@@ -315,10 +315,10 @@ var tzxxnames = {"3":"主胜","1":"平","0":"主负","33":"胜-胜","31":"胜-�
                 +'</div>'
                 +'<div class="sf bf-sf">'
                 +'<em sp="{$sp99}" value="9:9" v="9:9">平其它<i>{$sp99}</i></em>'
-                +'<em sp="{$sp00}" value="0:0" v="0:0">5:2<i>{$sp00}</i></em>'
-                +'<em sp="{$sp11}" value="1:1" v="1:1">5:2<i>{$sp11}</i></em>'
-                +'<em sp="{$sp22}" value="2:2" v="2:2">5:2<i>{$sp22}</i></em>'
-                +'<em sp="{$sp33}" value="3:3" v="3:3">5:2<i>{$sp33}</i></em>'
+                +'<em sp="{$sp00}" value="0:0" v="0:0">0:0<i>{$sp00}</i></em>'
+                +'<em sp="{$sp11}" value="1:1" v="1:1">1:1<i>{$sp11}</i></em>'
+                +'<em sp="{$sp22}" value="2:2" v="2:2">2:2<i>{$sp22}</i></em>'
+                +'<em sp="{$sp33}" value="3:3" v="3:3">3:3<i>{$sp33}</i></em>'
                 +'</div>'
                 +'<div class="sf bf-sf">'
                 +'<em sp="{$sp09}" value="0:9" v="0:9">负其它<i>{$sp09}</i></em>'
@@ -428,7 +428,7 @@ var tzxxnames = {"3":"主胜","1":"平","0":"主负","33":"胜-胜","31":"胜-�
    	jq:function(data){
   		 var html="" ;
   		 var tableTpl=['<div class="sf-left dp-basic"  etimes="{$short_et}" gn="{$gn}" hn="{$hn}" zid="{$itemid}" mid={$mid}>'
-               +'<h2>{$gn}VS{$hn}</h2>'
+  		             +'<h2>{$hn}VS{$gn}</h2>'
                +'<div class="bod">'
                +'<p>'
                +'<span>投注截止时间：{$short_et}</span>'
@@ -510,7 +510,7 @@ var tzxxnames = {"3":"主胜","1":"平","0":"主负","33":"胜-胜","31":"胜-�
    	bq:function(data){
  		 var html="" ;
  		 var tableTpl=['<div class="sf-left dp-basic"  etimes="{$short_et}" gn="{$gn}" hn="{$hn}" zid="{$itemid}" mid={$mid}>'
-              +'<h2>{$gn}VS{$hn}</h2>'
+ 		              +'<h2>{$hn}VS{$gn}</h2>'
               +'<div class="bod">'
               +'<p>'
               +'<span>投注截止时间：{$short_et}</span>'
