@@ -907,13 +907,13 @@ Class.extend('exportCode', function (){
 						Y.postMsg('msg_force_change_playtabs', 7,1);
 					}else if(ss == 11){
 						type="247";
-						Y.postMsg('msg_force_change_playtabs', 10,1);
+						Y.postMsg('msg_force_change_playtabs', 8,1);
 					}else if(ss == 12){
 						type="248";
 						Y.postMsg('msg_force_change_playtabs', 9,1);
 					}else if(ss == 9){
 						type="245";
-						Y.postMsg('msg_force_change_playtabs', 8,2);
+						Y.postMsg('msg_force_change_playtabs', 10,2);
 					}else if(ss == 10){
 						type="246";
 						Y.postMsg('msg_force_change_playtabs',11,3);
