@@ -14,143 +14,99 @@
 <script type="text/javascript" src="/public/jq2.js"></script>
 <script type="text/javascript" src="/public/chklogin.js"></script>
 </HEAD>
-<BODY  class="xuanhao_nav">
-<!-- 头部内容 -->  
+<body>
+<!-- 头部内容 -->
 <!--#include virtual="/cc/header.html"-->
 <!--#include virtual="/cc/nav.html"-->
-<!-- 头部内容 -->  
+<!-- 头部内容 -->
+<div class="breadcrumb">
+    <p>您现在的位置：<a href="/" title="网上买彩票"><font>159彩票网</font></a> &gt; <a href="/dating/" title="购彩大厅"><font>购彩大厅</font></a> &gt; 竞彩足球
+    </p>
+</div>
+<div class="jc-opt">
+    <h2>竞彩足球奖金优化</h2>
 
-<div id="container">
-<div class="breadcrumb"><p>您现在的位置：<a href="/"><font>159彩票网</font></a> &gt; <a href="/dating/" title="购彩大厅"><font>购彩大厅</font></a> > <a href="/jc/" title="竞彩足球"><font>竞彩足球</font></a> > 奖金优化</p></div>
-<div class=b-top style="height:100px">
-<div class=b-top-inner>
-<h2 class="jczq-logo">竞彩足球</h2>
-<div class="b-top-info">
-<div  class="dc_w" style="margin-top:15px"><b>竞彩足球胜平负奖金优化</b></div>
-<div class="dc_q">销售时间：周一至周五 09:00～23:35&nbsp;&nbsp;周六至周日 09:00～00:45</div></div>
-<div class="b-top-nav">
-  <div class="b-top-links"><a href="http://bf.159cai.com/jingcai" target="_blank">竞彩比分</a> | <a href="/help/help_jczqjs.html" target="_blank">玩法规则</a></div></div>
-</div></div>
-<div class="jj_yh">
- <div class="jj_yh_co1">
- <h2><em>第<b>1</b>步：</em> 输入金额后选择优化方式，优化中奖奖金</h2>
- <table width="100%" border="0" cellpadding="0" cellspacing="0">
- <colgroup>
- <col width="230" />
- <col width="510" />
- <col width="140" />
- <col />
- </colgroup>
-  <tr>
-    <td rowspan="3" class="td1">计划购买：<input type="text"  class="text" id="tmoney" name="tmoney"/> 元<p style="color:#ff0000;line-height:12px;padding-top:10px;font-weight:100;font-size:12px;">*  以实际购买金额为准</p></td>
-    <td><input type="radio"  name="ytype" id="ytype0" class="rad" checked value="0">平均优化<em>奖金进行平均型优化后，每个单注的奖金趋于一致。</em></td>
-    <td rowspan="3"><a href="javascript:void(0);" class="but" id="btnYh">优化</a></td>
-    <td rowspan="3"><a href="/jczq/yuce/2013/1206/142.html" class="yh_bz" target="_blank">帮助</a></td>
-  </tr>
-  <tr>
-    <td><input type="radio"  name="ytype" id="ytype1" class="rad" value="1"/>博热优化<em>奖金进行博热型优化后，概率最高的单注奖金最大化，其它单注的奖金保本。</em></td>
-  </tr>
-  <tr>
-    <td><input type="radio"  name="ytype" id="ytype2" class="rad" value="2"/>博冷优化<em>奖金进行博冷型优化后，奖金最高的单注奖金最大化，其它单注的奖金保本。</em></td>
-  </tr>
-</table>
-
- 
+    <div class="jc-opt-t">
+        <div class="opt-t-left">
+            <div class="bor">
+            <table>
+                <thead>
+                    <tr>
+                        <th>场次</th>
+                        <th>主队</th>
+                        <th>平局</th>
+                        <th class="t-left-last">客队</th>
+                    </tr>
+                </thead>
+                <tbody id="vsTable">
+                    <tr>
+                        <td class="h_br">周一001</td>
+                        <td class="h_br">阿曼</td>
+                        <td class="h_br">乌拉圭</td>
+                        <th class="h_br">让球胜(+1)[3.05]</th>
+                    </tr>
+                    <tr>
+                        <td>周一001</td>
+                        <td>阿曼</td>
+                        <td>乌拉圭</td>
+                        <th><span>平[4.20]</span></th>
+                    </tr>
+                    <tr>
+                        <td>周一001</td>
+                        <td>阿曼</td>
+                        <td>乌拉圭</td></td>
+                        <th>负[1.20]</th>
+                    </tr>
+                </tbody>
+            </table>
+            </div>
+            <p>过关方式：<b>3串1</b>(共4注)</p>
+        </div>
+        <div class="opt-t-right">
+            <p class="dc_qr yh">计划购买：<i><a href="#"></a><input class="mul" type="text" value="1" maxlength="6" id="tmoney"><a href="#"></a></i>元<em class="cur">平均优化</em><em>博热优化</em><em>博冷优化</em><s></s></p>
+            <div class="bor">
+            <table>
+                <thead>
+                    <tr>
+                    
+                        <th>序号</th>
+                        <th>&nbsp;</th>
+                        <th>单注</th>
+                        <th>单注奖金</th>
+                        <th>注数</th>
+                        <th>理论奖金</th>
+                    </tr>
+                </thead>
+                <tbody id="jjTable">
+                    <tr>
+                        <td>1</td>
+                        <td>3串1</td>
+                        <th><div class="ie"><b><i>胜(+1)</i>阿曼</b><b><i>负</i>阿曼</b><strong><i>平</i>阿曼</strong></div></th>
+                        <td>14.36</td>
+                        <td>1</td>
+                        <td>
+                            <p class="dc_qr"><i><a href="#"></a><input class="mul" type="text" value="1" maxlength="6"><a href="#"></a></i></p>
+                        </td>
+                    </tr>
+                    <tr class="odd">
+                        <td>2</td>
+                        <td>3串1</td>
+                        <th><div class="ie"><b><i>胜(+1)</i>阿曼</b><b><i>负</i>阿曼</b><strong><i>平</i>阿曼</strong></div></th>
+                        <td>14.36</td>
+                        <td>1</td>
+                        <td>
+                            <p class="dc_qr"><i><a href="#"></a><input class="mul" type="text" value="1" maxlength="6"><a href="#"></a></i></p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            </div>
+            <p class="dc_qr yh yh1">
+                倍数：<i><a href="#"></a><input class="mul" type="text" value="1" maxlength="6"><a href="#"></a></i>方案金额：<b id="sjmm">2</b>元<br>理论奖金：<span id="mzTable"></span>元<a class="dg-btn" href="javascript:void(0);" id="btnSubmit">代购</a><a class="dg-btn dg-btn1" href="javascript:void(0);" id="btnSubmit1">合买</a>
+            </p>
+        </div>
+    </div>
 </div>
-<div class="jj_yh_co2">
- <h2><em>第<b>2</b>步：</em>调节选项或单注可对优化详情手动调整</h2>
- <div class="jy_tb_left">
-  <table width="100%" border="0"  cellpadding="0" cellspacing="0" class="tb_c1">
-  <colgroup>
-  <col width="55" />
-  <col width="140" />
-  <col width="70" />
-  <col width="135" />
-  <col width="86" />
-  <col width="86" />
-  <col/>
-  </colgroup>
-  <thead><tr>
-    <td>场次</td>
-    <td>主队</td>
-    <td>平局</td>
-    <td>客队</td>
-    <td colspan="3" class="last">平均赔率</td>
-  </tr></thead>
-  <tbody id="vsTable">
-  <tr>
-    <td></td>
-    <td class="h_br"><span class="yh_s_ftl"></span><span class="yh_s_ftr"></span></td>
-    <td class="h_br"></td>
-    <td class="h_br"><span class="yh_s_ftl"></span><span class="yh_s_ftr"></span></td>
-    <td></td>
-    <td></td>
-    <td></td>
-  </tr> 
-  </tbody>
-</table>
-  <table width="100%" border="0"  cellpadding="0" cellspacing="0" class="tb_c2">
-  <colgroup>
-  <col width="55" />
-  <col width="480" />
-  <col width="65" />
-  <col width="20" />
-  
-  <col width="70"/>
-  <col />
-  </colgroup>
-  <thead><tr>
-    <td>序号</td>
-    <td>单注(<font color="red"><label id="cnum">1</label></font>)</td>
-    <td>奖金</td>
-    <td  colspan="3" class="last">注数 </td>
-    <td width="0"></td>
-  </tr></thead>
-  <tbody id="jjTable">
-  <tr>
-    <td></td>
-    <td class="jjyh_dz"></td>
-    <td></td>
-    <td><img src="/images/jc/ds_14.gif" /></td>
-    <td><input type="text" class="text1" /></td>
-    <td><img  src="/images/jc/ds_11.gif" /></td>
-    <td></td>
-    <td></td>
-  </tr>
-  </tbody>
-</table>
- </div>
- <div class="jy_tb_right">
-    <table width="100%" border="0"  cellpadding="0" cellspacing="0" class="tb_c3">
-  <colgroup>
-  <col width="60" />
-  <col width="60" />
-  <col width="60" />
-  <col />
-  <col />	
-  </colgroup>
-  <thead><tr>
-    <td>命中场次</td>
-    <td>中奖注数</td>
-    <td>最小奖金</td>
-    <td>最大奖金</td>
-  </tr></thead>
-  <tbody id="mzTable">
-  <tr>
-    <td><strong id="mzcs"></strong></td>
-    <td></td>
-    <td class="red"><label id="mmin"></label></td>
-    <td class="red"><label id="mmax"></label></td>
-  </tr></tbody>
-</table>
-<p>实际购买<font><strong id="sjmm"></strong></font>元</p>
-<a href="javascript:void(0);" class="but" id="btnSubmit">确认代购</a><a href="javascript:void(0);" class="t_f" id="btnSubmit1">发起合买</a>
-<p style="color:#666;font-size:12px;padding:0;line-height:30px;font-weight:100;clear:both;padding-top:10px">奖金优化、在线过滤与单式投注截止时间一致</p>
-</div>
-</div>
-</div>
-</div>
-
 <form action="post" target='_blank' name="project_form" id="project_form">
 <input type='hidden' name='content' id='content'/>
 <input type='hidden' name='ishm' id='ishm'/>
@@ -158,8 +114,7 @@
 <input type='hidden' name='yhtyp' id='yhtyp'/>
 <input type='hidden' name='old_codes' id='old_codes'/>
 </form>
-
 <!--#include virtual="/cc/footer.html"-->
-<script type="text/javascript" src="/jc/js/jjyh.js"></script>
+<script type="text/javascript" src="/jc/js/jjyh_1.js"></script>
 </body>
 </html>
