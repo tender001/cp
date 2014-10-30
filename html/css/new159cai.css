@@ -2385,7 +2385,7 @@ label.red {color:red}
 .event-dj dl dd.dj-more a{font-weight:400;color: #0e4294}
 .event-dj .line{float:left;width: 1px;height: 140px;background: url("../zhuanti/images/zt/event-line.jpg") repeat-y;overflow: hidden}
 .event-dj ul{float: left;width: 380px;padding: 0 0 0 45px}
-.event-dj ul li{float: left;width: 360px;height: 32px;padding: 0 0 0 10px;font:16px/32px "simsun";color:#363636;background: url("../zhuanti/images/zt/list-before.jpg") 0 12px no-repeat;white-space: nowrap;text-overflow: ellipsis;overflow: hidden}
+.event-dj ul li{float: left;width: 360px;height: 32px;padding: 0 0 0 10px;font:16px/32px "Microsoft YaHei UI","微软雅黑";color:#363636;background: url("../zhuanti/images/zt/list-before.jpg") 0 12px no-repeat;white-space: nowrap;text-overflow: ellipsis;overflow: hidden}
 
 
 
