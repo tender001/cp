@@ -2377,7 +2377,7 @@ label.red {color:red}
 .event-jc dd{width: 246px;height: 117px;margin: 0 0 5px 5px;_display: inline}
 .event-jc dd img{width: 100%;height: 100%}
 .event-jc p{width:100%;height: 0;font:15px/30px "Microsoft YaHei";color:#fff;background-color: rgba(0,0,0,0.7);position:absolute;left:0;bottom:0;-webkit-transition: height 0.3s ease-in;-moz-transition: height 0.3s ease-in;-ms-transition: height 0.3s ease-in;transition: height 0.3s ease-in;_display:none;}
-.event-jc p{background:transparent\9;filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#aa000000,endColorstr=#aa000000);zoom: 1;}
+.event-jc p{filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#aa000000,endColorstr=#aa000000);zoom:1;}
 .event-jc dt:hover p,.event-jc dd:hover p{height: 30px;}
 .event-jc p span{padding: 0 0 0 10px}
 .event-jc p a{float: right;height:20px;margin:5px 3% 0 0;padding:0 10px;font: 12px/20px "Microsoft YaHei";color:#333;background-color: #ffd600;border-radius:4px;_display: inline}
