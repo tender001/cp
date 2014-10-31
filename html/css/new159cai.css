@@ -1036,8 +1036,7 @@ p.buy_sucess a:hover{color:#f60; text-decoration:underline}
 table.log_tab td a.aa:hover{color:#790500; text-decoration:underline}
 table.co1 tbody td.last a.red_b{color:#fff;background:#f60;display:inline-block;margin-left:40px;line-height:20px;padding:0 10px;font-size:14px;}
 a.red_b:hover{text-decoration: none;}
-.news_left h4 a.a1{color:#145fab;text-decoration:underline}
-.news_left p a.a1{color:#145fab;text-decoration:underline}
+.news_left h4 a.a1,.news_left p a.a1{color:#145fab;text-decoration:underline}
 .news_left  a.a1:hover,.newpag a:hover{color:#f60}
 .newpag{padding:0 15px;margin:0 0 10px;clear:both;background:#f5f5f5}
 .newpag span{display:block;float:left;width:276px;font-size:14px;color:#444;line-height:30px;height:30px;}
@@ -1051,7 +1050,7 @@ a.red_b:hover{text-decoration: none;}
 .logkm td{height:66px;text-align:left;color:#444; vertical-align:top;}
 .logkm td.td1{height:40px;line-height:40px;color:#f00;padding-left:5px;padding-top:3px}
 .logkm td.td2{height:41px;line-height:41px;color:#f00;padding-left:10px}
-.logkm td input{border:none; background:none;display:block;width:277px;height:38px;font-size:16px;color:#444;padding:11px 0 0 13px\9;height:27px\9;margin-left:52px;outline:none;}
+.logkm td input{display:block;width:277px;height:38px;margin-left:52px;font-size:16px;color:#444;outline:none;border:none; background:none;padding:11px 0 0 13px\9;height:27px\9;}
 :root .logkm td input{padding:0 0 0 13px;height:38px;}
 .logkm td a.btn{float:left;width:133px;height:40px;font:20px/40px "Microsoft YaHei";text-align:Center;color:#fff;margin-top:3px;margin-right:22px}
 .logkm td.td1{line-height:45px;color:#444}
@@ -1063,18 +1062,17 @@ a.red_b:hover{text-decoration: none;}
 .tantop{height:38px;line-height:36px;background: url(../images/cai888/getwtan_03.jpg)}
 .tantop span{float:left;color:#fff;font-size:18px;font-family:"Microsoft YaHei";padding-left:10px;}
 .tantop strong{color:#fff;font-size:18px;font-family:"Microsoft YaHei";padding:0 3px;}
-.tantop  a{float:right;width:39px;height:38px;background: url(../images/cai888/getwtan_05.jpg);padding-right:5px}
+.tantop  a{float:right;width:39px;height:38px;padding-right:5px;background: url(../images/cai888/getwtan_05.jpg)}
 .caitan{}
-.tanms{ background: url(../images/cai888/getw2_03.gif);width:360px;height:201px;}
-.tanms a.a1{margin:40px 0 0 20px;display:block;width:114px;height:140px;}
+.tanms{width:360px;height:201px;background: url(../images/cai888/getw2_03.gif)}
+.tanms a.a1{display:block;width:114px;height:140px;margin:40px 0 0 20px;}
 .getwtb h3{padding:0 0 10px 80px;font:14px/25px simsun;color:#555;text-align:left;}
 .getwtb h3 strong{font-weight:100;color:#f60}
 .getwod_col{float:left;margin:10px 0 30px 25px}
-.a_out{background-image:url(../images/cdbg/getw1_05.gif);width:180px;height:136px}
-.a_out_y{background-image:url(../images/cdbg/getw1_05.gif);width:180px;height:136px}
-.a_out_y:hover{background-image:url(../images/cdbg/getw1_03.gif);width:180px;height:136px}
+.a_out,.a_out_y{background-image:url(../images/cdbg/getw1_05.gif);width:180px;height:136px}
+.a_out_y:hover{background-image:url(../images/cdbg/getw1_03.gif)}
 a.a_inner{width:166px;height:128px;display:block;margin:4px auto 0}
-.getwod_col p{text-align:center;color:#333;font-size:14px;font-weight:100;line-height:20px;padding:5px 0 0 0}
+.getwod_col p{text-align:center;color:#333;font-size:14px;font-weight:400;line-height:20px;padding:5px 0 0 0}
 .getwod_col p strong{color:#007e00;font-weight:bold}
 .f_l{margin-left:2px;_margin-left:1px}
 .getsus{background: url(../images/cai888/rgb12.jpg) 0 0 no-repeat;padding-left:50px;line-height:30px;color:#333;font-size:14px;}
@@ -1264,7 +1262,7 @@ a.t_a_dz:hover{background-image: url(../images/hm/hmt_05.gif);text-decoration: n
 .gs_xgbj a.a_oth:hover,span.s_tan_a1 a.a_oth{background-position:0 -22px}
 .jjmx{height:450px;overflow:auto;padding:7px 0 20px 0}
 .jjmx h3{line-height:40px;font-size:14px;color:#333;font-weight:bold;text-align:center}
-.jjmx h3 a{color:#145fab;font-size:14px;font-weight:100}
+.jjmx h3 a{color:#145fab;font-size:14px;font-weight:400}
 .jjmx h3 a:hover{color:#f60; text-decoration:underline}
 .jjmx table{margin:0 auto;border-top:1px solid #ccc;border-left:1px solid #ccc; font-family:Arial, Helvetica, sans-serif}
 table.col_3 thead td{line-height:30px; background:#f5f5f5;text-align:center;color:#444;border-right:1px solid #ccc;border-bottom:1px solid #ccc}
