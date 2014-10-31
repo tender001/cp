@@ -855,7 +855,7 @@ span.suc_reg a.a3{color:#145fab;text-decoration:underline;margin-left:1px}
 .all_km_2 table td.akja a{color:#135faa;margin:0 5px}
 .all_km_2 table td.akja a:hover{color:#f60; text-decoration:underline}
 .qg_other{width: 996px;margin: 14px auto 20px;line-height: 70px;border: 1px solid #ff6609;}
-.qg_other span{float:left;height:70px;padding: 0 30px;font-size: 22px;color: #333;background-color: #f7ebdd;}
+.qg_other span{float:left;height:70px;padding: 0 30px;font: 20px/70px "Microsoft YaHei";color: #333;background-color: #f7ebdd;}
 .qg_other em{float: left;width: 7px;height: 70px;background: url("../images/bg/qb_bg.jpg") repeat-y;}
 .qg_other a{float: left;font: 14px/70px "\5b8b\4f53";color: #135faa;margin-left: 36px;_display: inline;}
 .qg_other a:hover{color: #e62e04;}
