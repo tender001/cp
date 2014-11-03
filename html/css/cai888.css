@@ -344,7 +344,7 @@ a.czbtnhui{color:#666;background:url(../images/cai888/user_03hui.jpg);border:1px
 .sm_bkm a:hover,.sm_bkm a.cur{border:2px solid #81aad4; background-color:#e7eff6;width:133px;padding-left:8px;line-height:26px;height:27px}
 .cz_step{height:36px;margin:0 auto;padding:20px 0 5px 65px}
 .cz_step p{float:left;padding-left:15px;font:bold 14px/27px arial;color:#222;}
-.cz_step p em{color:#666;font-size:12px;font-weight:100}
+.cz_step p em{color:#f00;font-size:12px;font-weight:100}
 .cz_step p em.cur{color: #e62e04;}
 .phone_pp{padding:0px 40px 0px 80px}
 .phone_pp ul li{float:left;width:153px;height:50px;margin-right:10px;color:#444;border:1px solid #ddd ;cursor:pointer;_display:inline;}
