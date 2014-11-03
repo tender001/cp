@@ -506,9 +506,7 @@ a.btn_buy_m {
     background-position: 0 -45px;
     text-decoration: none;
 }
-.dc_table {
-    border-collapse: separate;
-}
+/*.dc_table {border-collapse: separate;}*/
 
 .dc_table th {
     background: none repeat scroll 0 0 #E4E4E4;
