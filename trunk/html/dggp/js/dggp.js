@@ -83,7 +83,7 @@ var tzxxnames = {"3":"主胜","1":"平","0":"主负","33":"胜-胜","31":"胜-�
     	spf:function(data){
     		 var html="" ;
     		 var tableTpl=['<div class="sf-left dp-basic"  etimes="{$short_et}" gn="{$gn}" hn="{$hn}" zid="{$itemid}" mid="{$mid}">'
-                 +'<h2>{$hn}VS{$gn}</h2>'
+                 +'<h2>{$hn}&nbsp;VS&nbsp;{$gn}</h2>'
                  +'<div class="bod">'
                  +'<p>'
                  +'<span>投注截止时间：{$short_et}</span>'
@@ -103,7 +103,7 @@ var tzxxnames = {"3":"主胜","1":"平","0":"主负","33":"胜-胜","31":"胜-�
                  +'</div>'
                  +'</div>'
                  +'</div>','<div class="sf-left dp-basic">'
-                 +'<h2>{$gn}VS{$hn}</h2>'
+                 +'<h2>{$hn}&nbsp;VS&nbsp;{$gn}</h2>'
                  +'<div class="bod">'
                  +'<p>'
                  +'<span>距投注截止时间：{$short_et}</span>'
@@ -187,7 +187,7 @@ var tzxxnames = {"3":"主胜","1":"平","0":"主负","33":"胜-胜","31":"胜-�
     	rspf:function(data){
    		 var html="" ;
    		 var tableTpl=['<div class="sf-left dp-basic"  etimes="{$short_et}" gn="{$gn}" hn="{$hn}" zid="{$itemid}" mid="{$mid}">'
-   		            +'<h2>{$hn}{$closestr}VS{$gn}</h2>'
+   		            +'<h2>{$hn}&nbsp;VS&nbsp;{$gn}</h2>'
                 +'<div class="bod">'
                 +'<p>'
                 +'<span>投注截止时间：{$short_et}</span>'
@@ -200,14 +200,14 @@ var tzxxnames = {"3":"主胜","1":"平","0":"主负","33":"胜-胜","31":"胜-�
                 +'<li><span style="height: {$zsp0}px"><i>{$zsp0}%支持率</i></span></li>'
                 +'</ul>'
                 +'<dl>'
-                +'<dd sp="{$sp3}" value="3" v="胜">{$lhn}<em>{$sp3}</em></dd>'
+                +'<dd sp="{$sp3}" value="3" v="胜">{$lhn}&nbsp;{$closestr}<em>{$sp3}</em></dd>'
                 +'<dd sp="{$sp1}" value="1" v="平">平局<em>{$sp1}</em></dd>'
                 +'<dd sp="{$sp0}" value="0" v="负">{$lgn}<em>{$sp0}</em></dd>'
                 +'</dl>'
                 +'</div>'
                 +'</div>'
                 +'</div>','<div class="sf-left dp-basic">'
-                +'<h2>{$gn}VS{$hn}</h2>'
+                +'<h2>{$hn}&nbsp;VS&nbsp;{$gn}</h2>'
                 +'<div class="bod">'
                 +'<p>'
                 +'<span>距投注截止时间：{$short_et}</span>'
@@ -220,7 +220,7 @@ var tzxxnames = {"3":"主胜","1":"平","0":"主负","33":"胜-胜","31":"胜-�
                 +'<li><span style="height: {$zsp0}px"><i>{$zsp0}%支持率</i></span></li>'
                 +'</ul>'
                 +'<dl>'
-                +'<dd class="un-time">{$lgn}<em>{$sp3}</em></dd>'
+                +'<dd class="un-time">{$lhn}&nbsp;{$closestr}<em>{$sp3}</em></dd>'
                 +'<dd class="un-time">平局<em>{$sp1}</em></dd>'
                 +'<dd class="un-time">{$lhn}<em>{$sp0}</em></dd>'
                 +'</dl>'
@@ -298,7 +298,7 @@ var tzxxnames = {"3":"主胜","1":"平","0":"主负","33":"胜-胜","31":"胜-�
     	bf:function(data){
    		 var html="" ;
    		 var tableTpl=['<div class="sf-left dp-basic"  etimes="{$short_et}" gn="{$gn}" hn="{$hn}" zid="{$itemid}" mid="{$mid}">'
-                +'<h2>{$hn}VS{$gn}</h2>'
+   		            +'<h2>{$hn}&nbsp;VS&nbsp;{$gn}</h2>'
                 +'<div class="bod">'
                 +'<p>'
                 +'<span>投注截止时间：{$short_et}</span>'
@@ -435,7 +435,7 @@ var tzxxnames = {"3":"主胜","1":"平","0":"主负","33":"胜-胜","31":"胜-�
    	jq:function(data){
   		 var html="" ;
   		 var tableTpl=['<div class="sf-left dp-basic"  etimes="{$short_et}" gn="{$gn}" hn="{$hn}" zid="{$itemid}" mid={$mid}>'
-  		             +'<h2>{$hn}VS{$gn}</h2>'
+  		             +'<h2>{$hn}&nbsp;VS&nbsp;{$gn}</h2>'
                +'<div class="bod">'
                +'<p>'
                +'<span>投注截止时间：{$short_et}</span>'
@@ -517,7 +517,7 @@ var tzxxnames = {"3":"主胜","1":"平","0":"主负","33":"胜-胜","31":"胜-�
    	bq:function(data){
  		 var html="" ;
  		 var tableTpl=['<div class="sf-left dp-basic"  etimes="{$short_et}" gn="{$gn}" hn="{$hn}" zid="{$itemid}" mid={$mid}>'
- 		              +'<h2>{$hn}VS{$gn}</h2>'
+ 		              +'<h2>{$hn}&nbsp;VS&nbsp;{$gn}</h2>'
               +'<div class="bod">'
               +'<p>'
               +'<span>投注截止时间：{$short_et}</span>'
