@@ -399,8 +399,6 @@ a.btn_buy_m {
     color: #C90505;
 }
 
-
-
 .main_dc {
     margin-bottom: 10px;
     overflow: hidden;
@@ -519,13 +517,11 @@ a.btn_buy_m {
     text-align: center;
 }
 .dc_hs {
-    
     height: 16px;
     line-height: 16px;
     padding: 7px 0;
     text-align: center;
 }
-
 
 .dc_table td {
     border-bottom: 1px solid #E0E2E1;
@@ -535,17 +531,14 @@ a.btn_buy_m {
     vertical-align: middle;
 }
 .dc_table td.h_br {
-    border-right: 1px solid #E0E2E1;
+    /*border-right: 1px solid #E0E2E1;*/
 	 background: url("/images/jczq/lc_48.jpg") 100% 0 no-repeat;
-	
 }
 .dc_table td.label_cd {
     border-right: 1px solid #E0E2E1;
 	 background: url("/images/jczq/lc_40.jpg") repeat;
-	
 }
 .dc_table tr.th_on td{ background-color:#cfe6b3}
-
 .dc_r {
     float: left;
     width: 240px;
@@ -884,7 +877,7 @@ clear:both
     background: none repeat scroll 0 0 #F8F8F8;
     border: 1px solid #E3E3E3;
     line-height: 22px;
-    padding: 10px 0 10px 10x;
+    padding: 10px 0 10px 10px;
 	clear:both
 }
 .dc_e li {
@@ -937,7 +930,7 @@ table.dcr_table{border-top:1px solid #ddd}
 a#seemore{color:#145fab;}
 a#seemore:hover{color:#990000;text-decoration:underline}
 .dc_r_m p.dc_qr{}
-.dc_r_m p.dc_qr img{display:block;width:89px;height:33px;position:absulote;bottom:5px;right:25px}
+.dc_r_m p.dc_qr img{display:block;width:89px;height:33px;position:absulute;bottom:5px;right:25px}
 
 
 /*  竞彩篮球混合投注  */
@@ -945,7 +938,7 @@ a#seemore:hover{color:#990000;text-decoration:underline}
 .dc_tb_bgred {background:red; color:#eee;}
 .game_time {line-height:24px; display:block;}
 .dcr_table_last {text-align:left; padding-left:14px; padding-top:6px;}
-.dcr_table_help {width:14px; height:14px; display:block; background:url(/images/why_ico.gif) no-repeat 0 0px; margin:0px 0 0 6px;float:left;*margin-top:4px}
+.dcr_table_help {width:14px; height:14px; display:block; background:url(/images/why_ico.gif) no-repeat 0 0; margin:0 0 0 6px;float:left;*margin-top:4px}
 .marb td {border-bottom:0;}
 .dc_tb_lq .label_cd .tb_tdul_pl {font-weight:bold;}
 .dc_tb_lq .dc_tdul_vs {padding:0 3px;}
