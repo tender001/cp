@@ -29,6 +29,7 @@
 .foot a:hover{ text-decoration:underline}
 #foot{margin:10px 0 0;padding-top:40px;height:80px;}
 </style>
+
 </head>
 <body style="background:url(images/zcsbg.jpg) 50% 27px no-repeat">
 <!-- 头部内容 -->  
@@ -45,7 +46,16 @@
 四、如有疑问，咨询24小时客服热线：400-0696-159；本次活动最终解释权归159彩票网所有。</p>
 
  </div>
- 
+ <script>
+ Class( {
+	    use: ' mask',
+		ready: true,
+	    index:function (config){
+	    	var Y= this;
+	    	Y.alert("本活动已截止!!!");
+	    }
+	});
+</script>
   <div id="foot">
 <!--尾部内容 -->  
 <!--#include virtual="/cc/otherfooter.html"-->
@@ -55,9 +65,7 @@
 <a href="javascript:void(0);" class="a1" onclick="javascript:$('#alertdiv').hide();$('.yclass_mask_panel').hide()"></a>
 <p id="alertInfo">实名认证后，才能领取<br />
 <em>谢谢您的支持！</em></p>
-<div style="width:500px;display:none;" class="caitan"  id="zcsover">
-<p class="pzong">本次活动已结束，请关注其他活动<br />
-<em>谢谢您的支持！</em></p></div>
+
 <a href="javascript:void(0);" id="alertok" class="a2"></a>
 </div>
 </body>
