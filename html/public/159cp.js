@@ -1606,7 +1606,7 @@ $_sys.getplayname = function(lotid, playid, castdef) {
 	case 56:
 		switch (playid) {
 		case 1:
-			s = "任选一";
+			s = "前一";
 			break;
 		case 2:
 			s = "任选二";
