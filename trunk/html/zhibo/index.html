@@ -44,24 +44,21 @@
 <!--[if lt IE 9]>
 <script src="http://static.cpdyj.com/newtrade/js/base/html5.js"></script>
 <![endif]-->
-<body>
-<!-- 头部内容 -->  
-<!--#include virtual="/cc/header.html"-->
-<!--#include virtual="/cc/nav.html"-->
-<!-- 头部内容 --> 
-
 
 <IE:CLIENTCAPS ID="oClientCaps"/>
 <body data-ng-controller="NotificationCenter">
+<!-- 头部内容 -->
+<!--#include virtual="/cc/header.html"-->
+<!--#include virtual="/cc/nav.html"-->
+<!-- 头部内容 -->
+<div class="breadcrumb"><p>您现在的位置：<a href="/" title="网上购彩"><font>159彩票网</font></a> &gt; 比分直播</p></div>
 <div class="mainbox">
-    <ul  id="bfbiaotou" class="score_nav" role="navgation">
+    <ul id="bfbiaotou" class="score_nav" role="navgation">
        <li class="score_page"><a vals_t="jingcaizuqiu" href="?type=jingcaizuqiu">竞彩足球</a></li>
        <li><a vals_t="bjdanchang" href="?type=bjdanchang">单场比分</a></li>
        <li><a vals_t="zucai14,zucaibanquan,zucaijingqiu" href="?type=zucai14">足彩比分</a></li>
        <li><a vals_t="jingcailanqiu"  href="baskball.html">篮彩比分</a></li>
-
        <li class="change_lau">
-
 	   <a href="javascript:void(0)" id="lang_a_j" onclick="changeJF('1');" class="now_lau">简体</a> |
 	   <a onclick="changeJF('2');" id="lang_a_f" href="javascript:void(0)">繁体</a>
 
@@ -77,7 +74,7 @@
            </ul>
 		</li>
 
-		<li style="float:right;margin-right:5px;_margin-right:0px;">
+		<li class="match-audio">
            <a href="javascript:void(0)" onclick="songUnSong();"  id="song_a"   onfocus="this.blur()" class="musicon"></a>
            <a href="javascript:void(0)" onclick="songUnSong()"  style="display:none;" id='unsong_a'  onfocus="this.blur()" class="musicdown"></a>
 
