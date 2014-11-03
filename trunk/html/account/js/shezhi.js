@@ -6,8 +6,8 @@ Class( 'shezhi', {
 		var Y = this;
 
 		
-		Class.config('zc', 10);  
-		Class.config('jc', 10);  
+		Class.config('zc', 9);  
+		Class.config('jc', 9);  
 		Class.config('dc', 7);  
 		Class.config('szc', 9); 
 		
