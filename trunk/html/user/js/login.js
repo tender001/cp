@@ -85,7 +85,8 @@ Class({// 用户登录
             	}else if(backurl=="sssq"){
             		location.href ="/huodong/czs.html";
             	}else{
-            	location.href ="/";
+//            	location.href ="/";
+            	history.go(-1)
             	}
             }
             window.passportloginmsg = false;
