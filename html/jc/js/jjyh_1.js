@@ -232,16 +232,12 @@ Class( {
 		 var htm = [];
 		 var htmRow = [];
 		 var tableTp1=['<tr>'+
-			          
-		               '<td>{$name}</td>'+
-			           
-		               '<td class="{$c3} jjyh_dz"><span class="yh_s_ftl">{$hn}</span><span class="yh_s_ftr">{$sp3}</span></td>'+
-			           
-		               '<td class="{$c1}">{$sp1}</td>'+
-			           
-		               '<td class="{$c0}"><span class="yh_s_ftl">{$sp0}</span><span class="yh_s_ftr">{$gn}</span></td>'+
-			           
-		               '</tr>'
+			           '<td>{$name}</td>'+
+			           '<td class="{$c3} jjyh_dz"><span class="yh_s_ftl">{$hn}</span><span class="yh_s_ftr">{$sp3}</span></td>'+
+			           '<td class="{$c1}">{$sp1}</td>'+
+			           '<td class="{$c0}"><span class="yh_s_ftl">{$sp0}</span><span class="yh_s_ftr">{$gn}</span></td>'+
+			         
+			           '</tr>'
 	    		];
 		 var tableTp2=[
 			'<tr>'+
@@ -315,19 +311,13 @@ Class( {
              if ( ss.indexOf('0') >= 0) {
 				 row.c0 = "g_br";
 			 }
-             betdata.push([row.itemid,row.hn]);
+             betdata.push([row.itemid,row.hn.substr(0,5)]);
 			 var spf=row.spf.split(",");
 			 row.sp3=spf[0];
 			 row.sp1=spf[1];
 			 row.sp0=spf[2];
 
-			 if (parseInt(row.close)>0){
-				row.close='<strong style="color:red">(+'+row.close+')</strong>';
-			 } else if (parseInt(row.close)<0){
-				row.close='<strong style="color:green">('+row.close+')</strong>';
-			 } else {
-				row.close="";
-			 }
+			
 			 html[html.length] = tableTp1[0].tpl(row);
 		 });
 		 $_sys.betname = function(f,n) {
@@ -341,7 +331,6 @@ Class( {
 		 Y.get("#vsTable").html(html.join(''));
 		
 		rj.each(function(rw,o) {
-//			<b><i>胜(+1)</i>阿曼</b>
 			var bet=""
 			var codearr=rw.code.split("|")[0].split(",");
 			if(codearr.length>1){
