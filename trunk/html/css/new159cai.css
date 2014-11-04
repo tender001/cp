@@ -2248,10 +2248,17 @@ label.red {color:red}
 .jc-opt table .t-left-last{width: 55%;text-align: left;text-indent: 25px;}
 .jc-opt table tbody tr.odd td,.jc-opt table tbody tr.odd th{background-color: #f5f5f5}
 .jc-opt table tbody tr:hover td,.jc-opt table tbody tr:hover th{background-color: #fefeca}
-.jc-opt table tbody th,.jc-opt table tbody td{height: 36px;text-align: center;border: 1px solid #e1e1e1;}
+.jc-opt table tbody th,.jc-opt table tbody td{height: auto;padding:10px 0;text-align: center;border: 1px solid #e1e1e1;}
+.jc-opt-t tbody .cur{background: url("http://www.159cai.com/images/cai888/ban4.jpg") repeat;}
+.jc-opt-t tbody .tohover{font-weight: bold;color: #f00}
 .jc-opt table tbody th{font-weight: 400;text-align: left;text-indent: 5px;}
 .jc-opt table tbody th span{padding:2px;color: #fff;background-color: #e52e04}
 .opt-t-left p{line-height: 50px;font-size: 14px;text-indent: 12px}
+.yh_s{height: 18px;overflow: hidden}
+.yh_s_ftr{float: right;padding-right: 8px}
+.yh_s_ftl{float: left;padding-left: 8px}
+.yh_s i{float: left;width:95px;padding-left: 8px;text-align:left;overflow:hidden;}
+.yh_s em{float: right;max-width:95px;padding-right: 8px;overflow:hidden;_width:95px;}
 .opt-t-right{float: right;width: 545px;}
 .opt-t-right p.yh{margin-bottom:5px;padding: 8px 0 8px 8px;border: 1px solid #e1e1e1}
 .opt-t-right p.yh i{line-height:22px;margin: 0 6px}
@@ -2260,10 +2267,10 @@ label.red {color:red}
 .opt-t-right p em{display:inline-block;width: 95px;height: 35px;line-height:35px;margin-left:9px;text-align:center;cursor: pointer}
 .opt-t-right p em.cur{background-position: -96px 0}
 .opt-t-right p s{display:inline-block;width: 12px;height: 12px;margin-left:8px;background-position: -179px -35px;cursor:pointer}
-.opt-t-right table tbody td,.opt-t-right table tbody th{height:80px;border-width: 0 0 1px 0}
+.opt-t-right table tbody td,.opt-t-right table tbody th{height:auto;border-width: 0 0 1px 0}
 .opt-t-right table tbody th{width: 231px;}
-.opt-t-right table tbody th .ie{width: 230px;}
-.opt-t-right table tbody th b,.opt-t-right table tbody th strong{float:left;width:100px;line-height:22px;margin:0 0 0 6px;font-weight:normal;text-align:center;text-indent:0;border: 1px solid #398fe5;_display: inline;}
+th .ie{width: 230px;zoom: 1}
+.opt-t-right table tbody th b,.opt-t-right table tbody th strong{float:left;width:100px;height:22px;line-height:22px;margin:0 0 8px 6px;font-weight:normal;text-align:center;text-indent:0;overflow:hidden;border: 1px solid #398fe5;_display: inline;}
 .opt-t-right table tbody th strong{margin-top: 10px}
 .opt-t-right table tbody th i{float:right;width:40px;color:#fff;background-color: #398fe5}
 .opt-t-right p.yh1{line-height:28px;margin-top: 10px;position: relative;}
