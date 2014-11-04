@@ -720,7 +720,7 @@ a.asz_tz{margin:0 auto}
 .b_gg_lgg span.dc_spf{background: url(../images/159/dcjc_icon.png) no-repeat scroll 0 0 ;}
 .b_gg_lgg span.lc_sf{background: url(../images/159/lc_icon.png) no-repeat scroll 0 0 ;}
 .nxszop{clear:both;width:660px}
-.nxtable tr td.tdd{padding-left:15px}
+.nxtable tr td.tdd{/*padding-left:15px;*/border-left:1px solid #ddd;}
 .bank_zj ul li em.shh{background-position:-6px -801px}
 .bank_zj ul li em.hxh{background-position:-6px -1022px}
 .mch_c_left img{margin:4px auto 0;width:50px;height:44px;}
