@@ -290,7 +290,7 @@ checkForm = function(){
 			        });   
 		    	});
 			}
-		    Y.confirm("您好，本次认金额为"+permoney+"元，请确认！",regou,''); 
+		    Y.confirm("您好，本次认购金额为"+permoney+"元，请确认！",regou,''); 
 		});
 	}
 	comfirmxieyi();
