@@ -1502,7 +1502,7 @@ a.jcq_kcur {background: url(../images/njc/jcy_17.jpg) no-repeat;}
 .news_left h4{border-bottom:1px solid #e5e5e5;padding: 0;margin-bottom:15px}
 .news_left p.pbtp{text-indent:0;padding:0 0 8px;float:left;}
 .news_l_list{padding-left:5px;background: url(../images/cai888/news2_07.jpg) 502px 0 no-repeat}
-.news_l_list ul li{background: url(../images/cai888/news2_03.jpg) no-repeat scroll left center ;padding-left:15px}
+.news_l_list ul li{height:27px;max-width:460px;padding-left:15px;overflow:hidden;background: url(../images/cai888/news2_03.jpg) no-repeat scroll left center;}
 .news_l_list ul li a{color:#333}
 .news_l_list ul li span{color:#999;padding-left:10px;font-size:12px}
 .newsrc h3  a{float:left}
