@@ -2261,7 +2261,7 @@ label.red {color:red}
 .yh_s i{float: left;width:95px;padding-left: 8px;text-align:left;overflow:hidden;}
 .yh_s em{float: right;max-width:95px;padding-right: 8px;overflow:hidden;_width:95px;}
 .opt-t-right{float: right;width: 545px;}
-.opt-t-right p.yh{margin-bottom:5px;padding: 8px 0 8px 8px;border: 1px solid #e1e1e1}
+.opt-t-right p.yh{margin-bottom:5px;padding: 8px 0 8px 8px;border: 1px solid #e1e1e1;background-color: #fff}
 .opt-t-right p.yh i{line-height:22px;margin: 0 6px}
 .opt-t-right p.yh i input{_margin-top:-2px;}
 .opt-t-right p em,.opt-t-right p s,.opt-t-right p a.dg-btn{background: url("../images/bg/jc-yh.png") no-repeat;}
