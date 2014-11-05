@@ -2641,9 +2641,8 @@ border-radius:4px 4px 0 0;-moz-border-radius:4px 4px 0 0;}
 .reg_pro{ background-color:#fff0db;padding:15px 25px;line-height:22px;color:#444;margin:0 10px 0 30px}
 .reg_pro h4{font-weight:bold;font-size:12px;}
 table.co1 tbody td  em{color:#888}
-
-.dz_dv span,.dz_dv label{padding-left:5px;float:left;color: #333}
-.dz_dv em{display:block;float:left;width:88px;height:38px;line-height:38px;text-align:left;color: #333;overflow:hidden;}
+.dz_dv span,.dz_dv label{/*float:left;*/padding-left:5px;color: #333}
+.dz_dv em{display:block;float:left;width:60px;height:38px;line-height:38px;text-align:left;color: #333;overflow:hidden;}
 .dc_table td s{color:#777;display:block;width:20px;}
 .dz_dv em.em_right{text-align:right;margin-left:5px;width: 78px;}
 .dz_dv span.span_right{padding:0}
@@ -2654,7 +2653,7 @@ table.co1 tbody td  em{color:#888}
 .dz_dv span b.b_right{margin-right:4px;margin-left:0}
 .dz_dv{height:38px;line-height:38px;}
 .dz_dv label.span_left,.dz_dv span.span_left{margin-left:0px;}
-.dz_dv span.span_left{width: 116px}
+.dz_dv span.span_left{width: 120px}
 .dz_dv  strong{float:left;display:block;line-height:38px}
 .dz_dv span b.b_left1{margin-left:6px;float:right}
 .dz_dv span b.b_right1{margin-right:2px;margin-left:0}
