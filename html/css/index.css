@@ -78,16 +78,16 @@
 .m_r .tab .title{height: 28px;line-height: 28px;margin-left: -1px;color: #333;background-color: #f6f6f6;background-position: 0 -378px;overflow: visible;}
 .m_r .tab .title span{float: left;width:109px;height: 28px;border-left: 1px solid #ddd;border-bottom: 1px solid #ddd;text-align: center;cursor: pointer;}
 .m_r .tab .title span.hover{background-color: #fff;border-bottom-color: #fff;font-weight: bold;}
-.m_r .tab .bod{margin: 11px 0;overflow: hidden;zoom: 1;*margin: 0;*padding:  11px 0;}
+.m_r .tab .bod{margin: 11px 0;overflow: hidden;zoom: 1;*margin: 0;*padding:11px 0;}
 .m_r .tab .bod div{width:200px;margin: 0 auto;line-height:24px;display: none;zoom: 1;}
 .m_r .tab .bod div.hover{display: block;}
 .m_r .tab .bod div ul{height: 156px;overflow: hidden;}
 .m_r .tab .bod div ul li{height: 26px;line-height: 26px;vertical-align: top;}
-.m_r .tab .bod div strong{float: left;width: 155px;overflow: hidden;white-space: nowrap;text-overflow: ellipsis;}
+.m_r .tab .bod div strong{float: left;width: 158px;overflow: hidden;/*white-space: nowrap;text-overflow: ellipsis;*/}
 .m_r .tab .bod div strong a{color: #434343;font-weight: 400;}
 .m_r .tab .bod div strong a:hover{color: #e62e04;}
 .m_r .tab .bod div em{float: right;color: #888;}
-.m_r .tab .bod div a.more{margin: 0;font-family: "\5b8b\4f53";}
+.m_r .tab .bod div a.more{margin:0;font-family: "\5b8b\4f53";}
 /*mobile buy*/
 .mob_buy{border-bottom: 0;background-color: #f5f5f5;}
 .mob_buy .body{padding: 26px 0;}
