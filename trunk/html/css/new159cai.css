@@ -2261,24 +2261,24 @@ label.red {color:red}
 .yh_s i{float: left;width:95px;padding-left: 8px;text-align:left;overflow:hidden;}
 .yh_s em{float: right;max-width:95px;padding-right: 8px;overflow:hidden;_width:95px;}
 .opt-t-right{float: right;width: 545px;}
-.opt-t-right p.yh{margin-bottom:5px;padding: 8px 0 8px 8px;border: 1px solid #e1e1e1;background-color: #fff}
-.opt-t-right p.yh i{line-height:22px;margin: 0 6px}
-.opt-t-right p.yh i input{_margin-top:-2px;}
-.opt-t-right p em,.opt-t-right p s,.opt-t-right p a.dg-btn{background: url("../images/bg/jc-yh.png") no-repeat;}
-.opt-t-right p em{display:inline-block;width: 95px;height: 35px;line-height:35px;margin-left:9px;text-align:center;cursor: pointer}
-.opt-t-right p em.cur{background-position: -96px 0}
-.opt-t-right p s{display:inline-block;width: 12px;height: 12px;margin-left:8px;background-position: -179px -35px;cursor:pointer}
+p.yh{margin-bottom:5px;padding: 8px 0 8px 8px;border: 1px solid #e1e1e1;background-color: #fff}
+p.yh i{line-height:22px;margin: 0 6px}
+p.yh i input{_margin-top:-2px;}
+p.yh em,p.yh s,p.yh a.dg-btn{background: url("../images/bg/jc-yh.png") no-repeat;}
+.opt-t-right p.yh em{display:inline-block;width: 95px;height: 35px;line-height:35px;margin-left:9px;text-align:center;cursor: pointer}
+.opt-t-right p.yh em.cur{background-position: -96px 0}
+.opt-t-right p.yh s{display:inline-block;width: 12px;height: 12px;margin-left:8px;background-position: -179px -35px;cursor:pointer}
 .opt-t-right table tbody td,.opt-t-right table tbody th{height:auto;border-width: 0 0 1px 0}
 .opt-t-right table tbody th{width: 231px;}
 th .ie{width: 230px;zoom: 1}
 .opt-t-right table tbody th b{float:left;width:100px;height:22px;line-height:22px;margin:0 0 8px 6px;font-weight:normal;text-align:center;text-indent:0;overflow:hidden;border: 1px solid #398fe5;_display: inline;}
 .opt-t-right table tbody th strong{margin-top: 10px}
 .opt-t-right table tbody th i{float:right;width:40px;color:#fff;background-color: #398fe5}
-.opt-t-right p.yh1{line-height:28px;margin-top: 10px;position: relative;}
-.opt-t-right p.yh1 b{margin-right:3px;font-size:16px;font-weight:700;color: #f00;}
-.opt-t-right p.yh1 span{color: #fd0000}
-.opt-t-right p a.dg-btn{float:left;width: 72px;height: 36px;font:700 16px/36px "Microsoft YaHei";text-align:center;color:#fff;background-position:0 -36px;position: absolute;top: 18px;right: 100px;}
-.opt-t-right p a.dg-btn1{right: 12px}
+p.yh1{float: right;width: 535px;line-height:28px;margin-top: 10px;position: relative;}
+p.yh1 b{margin-right:3px;font-size:16px;font-weight:700;color: #f00;}
+p.yh1 span{color: #fd0000}
+p.yh1 a.dg-btn{float:left;width: 72px;height: 36px;font:700 16px/36px "Microsoft YaHei";text-align:center;color:#fff;background-position:0 -36px;position: absolute;top: 18px;right: 100px;}
+p.yh1 a.dg-btn1{right: 12px}
 /*end 奖金优化 */
 .jctj-t{width: 1200px;min-height:500px;margin: 10px auto;color: #333}
 .jctj-t h2{padding: 1em 0;font-size:1.8em;text-align: center}
