@@ -2264,15 +2264,6 @@ label.red {color:red}
 p.yh{margin-bottom:5px;padding: 8px 0 8px 8px;border: 1px solid #e1e1e1;background-color: #fff}
 p.yh i{line-height:22px;margin: 0 6px}
 p.yh i input{_margin-top:-2px;}
-.yhBet {
-    border: medium none;
-    bottom: 0;
-    right: 0;
-    position: fixed;
-    text-align: center;
-    width: 100%;
-    z-index: 151;
-}
 p.yh em,p.yh s,p.yh a.dg-btn{background: url("../images/bg/jc-yh.png") no-repeat;}
 .opt-t-right p.yh em{display:inline-block;width: 95px;height: 35px;line-height:35px;margin-left:9px;text-align:center;cursor: pointer}
 .opt-t-right p.yh em.cur{background-position: -96px 0}
@@ -2283,11 +2274,13 @@ th .ie{width: 230px;zoom: 1}
 .opt-t-right table tbody th b{float:left;width:100px;height:22px;line-height:22px;margin:0 0 8px 6px;font-weight:normal;text-align:center;text-indent:0;overflow:hidden;border: 1px solid #398fe5;_display: inline;}
 .opt-t-right table tbody th strong{margin-top: 10px}
 .opt-t-right table tbody th i{float:right;width:40px;color:#fff;background-color: #398fe5}
-p.yh1{float: right;width: 535px;line-height:28px;margin-top: 10px;}
+p.yh1{float: right;width: 535px;line-height:28px;margin-top: 10px;position:relative;}
 p.yh1 b{margin-right:3px;font-size:16px;font-weight:700;color: #f00;}
 p.yh1 span{color: #fd0000}
 p.yh1 a.dg-btn{float:left;width: 72px;height: 36px;font:700 16px/36px "Microsoft YaHei";text-align:center;color:#fff;background-position:0 -36px;position: absolute;top: 18px;right: 100px;}
 p.yh1 a.dg-btn1{right: 12px}
+.yhBet {position: fixed !important;bottom: 0;right: 0;z-index: 151;
+}
 /*end 奖金优化 */
 .jctj-t{width: 1200px;min-height:500px;margin: 10px auto;color: #333}
 .jctj-t h2{padding: 1em 0;font-size:1.8em;text-align: center}
