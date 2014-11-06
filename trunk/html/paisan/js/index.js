@@ -433,7 +433,6 @@ Main
     				if (code == "0") {
     					var r = obj.Resp.row;
     					var ccodes =r.ccodes===undefined?r[0].ccodes:r.ccodes;// 投注号码
-    					ccodes = ccodes.split(':')[0];
     					var mulity =r.imulity===undefined?r[0].imulity:r.imulity;// 投注号码 ;// 倍数
     					
     					if(mulity>1){
@@ -444,26 +443,25 @@ Main
     		    			Y.alert("您不是该方案的发起人，不能再次购买本方案");
     		    			return false;
     		    		}
-						if(ccodes.split(';')[0].split(':')[1]==2){
-							$("#zjtz23").attr("checked",'true');
-							Y.processAddPrice(true);
-						}
-						if(ccodes.indexOf("$")==-1){
-    						
-							Yobj.get('#codes').val(ccodes);
+						if(ccodes.indexOf("$")!=-1){
+							Y.alert("和值再次追号不支持");
+							return false;
+						}else{
 						
-						   if (import_code = Yobj.get('#codes').val()) {
-							   if (typeof this.dejson(import_code) == 'object') return;
-					            arrCodes = import_code.split('$').map(function (c){
-					                var w = c.split(','), q, b, g;
-					                switch(type){
-					                    case 'Z3':
+    						
+						
+					            arrCodes = ccodes.split(';').map(function (c){
+					            	 var w = c.split(':')[0].split(','), q, b, g;
+					                switch(c.split(':')[1]){
+					                    case '2':
 					                    	Y.postMsg('msg_change_play', 2);
-					                        return [w.sort(Array.up), Math.c(w.length, 2) * 2]
+					                    	buyTabs.focus(2);
+					                        return [[w.sort(Array.up), Math.c(w.length, 2) * 2]]
 					                        break;
-					                    case 'Z6':
+					                    case '3':
 					                    	Y.postMsg('msg_change_play', 1);
-					                        return [w.sort(Array.up), Math.c(w.length, 3)]
+					                    	buyTabs.focus(2);
+					                        return [[w.sort(Array.up), Math.c(w.length, 3)]]
 					                        break;
 					                    default:
 					                        q = w[0] ? w[0].split('') : [];
@@ -471,7 +469,7 @@ Main
 					                        g = w[2] ? w[2].split('') : [];
 					                        zs = q.length*b.length*g.length;                        
 					                }
-					                return [q.sort(Array.up), b.sort(Array.up), g.sort(Array.up), zs]
+					                return [[q.sort(Array.up), b.sort(Array.up), g.sort(Array.up), zs]]
 					            }).filter(function (c){
 					                if (c[c.length - 1] == 0) {//zs
 					                    short_code = c//残缺号码
@@ -479,17 +477,18 @@ Main
 					                    return true
 					                }
 					            });
-					           // Y.postMsg('msg_change_play', pid == 28 ? 2 : (pid == 29 ? 1 : 0));
 					            if (arrCodes.length) {//完整号码显示到列表
-					                 this.postMsg('msg_put_code_pt_'+type.toLowerCase(), arrCodes);
-					                 this.moveToBuy()
+					            	 this.moveToBuy();
+					                 for(var i=0;i<arrCodes.length;i++){
+    			    	            		this.postMsg('msg_put_code',arrCodes[i]);
+    			    	            	}
 					            }
 					            if (short_code && short_code.length) {// 残缺号码显示到球区
-					                this.postMsg('msg_redraw_code'+type.toLowerCase(), short_code)
+					            	this.postMsg('msg_redraw_code', short_code);
 					            }
-						   }
+						   
 						
-    					}
+						}
 			    	     
     				}else if(code=='2002'){
     					Y.alert("您不是该方案的发起人，不能再次购买本方案");
