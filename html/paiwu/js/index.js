@@ -123,7 +123,6 @@
     				if (code == "0") {
     					var r = obj.Resp.row;
     					var ccodes =r.ccodes===undefined?r[0].ccodes:r.ccodes;// 投注号码
-    					ccodes = ccodes.split(':')[0];
     					var mulity =r.imulity===undefined?r[0].imulity:r.imulity;// 投注号码 ;// 倍数
     					if(mulity>1){
     						$("#beishu").val(mulity);
@@ -137,20 +136,24 @@
 							$("#zjtz23").attr("checked",'true');
 							Y.processAddPrice(true);
 						}
-						if(ccodes.indexOf("$")==-1){
+						if(ccodes.indexOf("$")!=-1){
+							Y.alert("胆拖再次追号不支持");
+							return false;
+						}
     						
-							Yobj.get('#codes').val(ccodes);
 						
-						   if (import_code = Yobj.get('#codes').val()) {
-							   if (typeof this.dejson(import_code) == 'object') return;
-					            arrCodes = import_code.split('$').map(function (c){
-					                var rb = c.split(','), w = [], zs = 1;
-					                rb.each(function (x, i){
-					                    w[i] = x.split('');
-					                    zs *= x.length
-					                });
-					                w.push(w.length < 5 ? 0 : zs);
-					                return w
+					            arrCodes = ccodes.split(';').map(function (c){
+					            	var rb = c.split(':'),
+					                d= rb[0] ? rb[0] : [];
+					                d = d.split(","); 
+					                var zs = 1;
+					                zs = Math.c(d.length, 5);
+   			    	             	
+//   			    	              zs = Math.c(d.length, 5);
+   			    	             d.each(function (item, n){
+       			    	                zs *= item.length;
+       			    	            });
+				    	                return [[[d],zs]];
 					            }).filter(function (c){
 					                if (c[c.length - 1] == 0) {//zs
 					                    short_code = c//残缺号码
@@ -159,15 +162,17 @@
 					                }
 					            });
 					            if (arrCodes.length) {//完整号码显示到列表
-					                 this.postMsg('msg_put_code', arrCodes);
-					                 this.moveToBuy()
+					            	 this.moveToBuy();
+					                 for(var i=0;i<arrCodes.length;i++){
+    			    	            		this.postMsg('msg_put_code',arrCodes[i]);
+    			    	            	}
 					            }
 					            if (short_code && short_code.length) {// 残缺号码显示到球区
 					                this.postMsg('msg_redraw_code', short_code)
 					            }
-						   }
+						   
 						
-    					}
+    					
 			    	     
     				}else if(code=='2002'){
     					Y.alert("您不是该方案的发起人，不能再次购买本方案");
