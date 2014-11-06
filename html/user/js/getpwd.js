@@ -54,7 +54,11 @@
 		$("[mark=err_info]").html("&nbsp;")
 	})
 	$("#mobile_again").click(function(){
-		checkMobileForm();
+		if($(this).html()=="重新发送"||$(this).html()=="发送验证码" ){
+			checkMobileForm();
+		}
+		
+		
 	});
 	$("#pwbhelp").click(function(){
 			var getpwd_help =  Y.lib.MaskLay('#getpwd_help');
@@ -287,6 +291,7 @@
 			$('#err_info3').show();
 			return false;
 		}
+		
 		if(mobile>''){
 			var data ="flag=1&uid=" + encodeURIComponent($("#username").val())+ "&newValue=" + $.trim($("#mobile").val())+ "&rnd=" + Math.random();
 			$.ajax({
@@ -470,5 +475,6 @@ var Timer=function(num) {
 	 }else{ 
 	  secs=wait-num; 
 	  $("#mobile_again").html("重新发送 "+secs);
+	  $("#mobile_again").attr("disabled", true);
 	 } 
 };
