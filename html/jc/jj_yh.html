@@ -27,45 +27,42 @@
     <h2>竞彩足球奖金优化</h2>
 
     <div class="jc-opt-t">
-        <div class="opt-t-left">
-            <div class="bor">
+        <div class="opt-t-left" id="leftdiv">
+            <div class="bor" id="scoll-team">
             <table>
+                <colgroup>
+                            <col width="80">
+                            <col width="140">
+                            <col width="60">
+                            <col width="140">
+                        </colgroup>
                 <thead>
                     <tr>
                         <th>场次</th>
                         <th>主队</th>
                         <th>平局</th>
-                        <th class="t-left-last">客队</th>
+                        <th >客队</th>
                     </tr>
                 </thead>
                 <tbody id="vsTable">
-                    <tr>
-                        <td class="h_br">周一001</td>
-                        <td class="h_br">阿曼</td>
-                        <td class="h_br">乌拉圭</td>
-                        <th class="h_br">让球胜(+1)[3.05]</th>
-                    </tr>
-                    <tr>
-                        <td>周一001</td>
-                        <td>阿曼</td>
-                        <td>乌拉圭</td>
-                        <th><span>平[4.20]</span></th>
-                    </tr>
-                    <tr>
-                        <td>周一001</td>
-                        <td>阿曼</td>
-                        <td>乌拉圭</td></td>
-                        <th>负[1.20]</th>
-                    </tr>
+                   
                 </tbody>
             </table>
             </div>
-            <p>过关方式：<b>3串1</b>(共4注)</p>
+            <p>过关方式：<b id="yhgg"></b>(共<em id="cnum"></em>注)</p>
         </div>
-        <div class="opt-t-right">
-            <p class="dc_qr yh">计划购买：<i><a href="#"></a><input class="mul" type="text" value="1" maxlength="6" id="tmoney"><a href="#"></a></i>元<em class="cur">平均优化</em><em>博热优化</em><em>博冷优化</em><s></s></p>
+        <div class="opt-t-right" id="box">
+            <p class="dc_qr yh" id="qhyhObj">计划购买：<i>
+            <a mark="m_minus"></a><input class="mul" type="text" value="1" maxlength="6" id="tmoney"><a mark="m_add"></a></i>元
+            <em class="cur" yhtype="0">平均优化</em>
+            <em yhtype="1">博热优化</em>
+            <em yhtype="2">博冷优化</em>
+<!--             <s></s> -->
+            <s style="z-index: 1;" data-help="平均优化：使所有单注奖金较为平均，一定程度上避免方案中奖却不盈利！<br>博热优化：在其它单注奖金保本的情况下，使概率最高的单注奖金最大化！ <br>博冷优化：在其它单注奖金保本的情况下，使回报最高的单注奖金最大化！" mark="pro_em"></s>
+            </p>
+            <div dzlistbox>
             <div class="bor">
-            <table>
+            <table id="jjTjObj">
                 <thead>
                     <tr>
                     
@@ -78,33 +75,18 @@
                     </tr>
                 </thead>
                 <tbody id="jjTable">
-                    <tr>
-                        <td>1</td>
-                        <td>3串1</td>
-                        <th><div class="ie"><b><i>胜(+1)</i>阿曼</b><b><i>负</i>阿曼</b><strong><i>平</i>阿曼</strong></div></th>
-                        <td>14.36</td>
-                        <td>1</td>
-                        <td>
-                            <p class="dc_qr"><i><a href="#"></a><input class="mul" type="text" value="1" maxlength="6"><a href="#"></a></i></p>
-                        </td>
-                    </tr>
-                    <tr class="odd">
-                        <td>2</td>
-                        <td>3串1</td>
-                        <th><div class="ie"><b><i>胜(+1)</i>阿曼</b><b><i>负</i>阿曼</b><strong><i>平</i>阿曼</strong></div></th>
-                        <td>14.36</td>
-                        <td>1</td>
-                        <td>
-                            <p class="dc_qr"><i><a href="#"></a><input class="mul" type="text" value="1" maxlength="6"><a href="#"></a></i></p>
-                        </td>
-                    </tr>
+                   
                 </tbody>
             </table>
             </div>
-            <p class="dc_qr yh yh1">
-                倍数：<i><a href="#"></a><input class="mul" type="text" value="1" maxlength="6"><a href="#"></a></i>方案金额：<b id="sjmm">2</b>元<br>理论奖金：<span id="mzTable"></span>元<a class="dg-btn" href="javascript:void(0);" id="btnSubmit">代购</a><a class="dg-btn dg-btn1" href="javascript:void(0);" id="btnSubmit1">合买</a>
-            </p>
+     <p class="dc_qr yh yh1 " id="betbottom">
+<!--      倍数：<i><a mark="b_minus"></a><input type="text" maxlength="6" value="1" class="mul" id="bs"><a mark="b_add"></a></i> -->
+                方案金额：<b id="sjmm"></b>元<br>理论奖金：<span id="mzTable"></span>元<a class="dg-btn" href="javascript:void(0);" id="btnSubmit">代购</a><a class="dg-btn dg-btn1" href="javascript:void(0);" id="btnSubmit1">合买</a>
+            </p> 
+            </div>
+        
         </div>
+                  
     </div>
 </div>
 <form action="post" target='_blank' name="project_form" id="project_form">
