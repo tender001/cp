@@ -2242,7 +2242,7 @@ label.red {color:red}
 .jc-opt{width: 1000px;margin: 0 auto;color: #333;zoom: 1}
 .jc-opt:after{content: "";display: table;overflow: hidden}
 .jc-opt h2{height: 40px;margin-bottom: 10px;font:400 20px/40px "Microsoft YaHei";text-indent: 12px;border-bottom: 3px solid #f60;background-color: #f5f5f5}
-.opt-t-left{float: left;width: 440px;}
+.opt-t-left{float: left;width: 440px;background:white}
 .jc-opt .bor{border: 1px solid #6ca7d3;}
 .jc-opt table{width:100%;border-collapse: collapse;}
 .jc-opt table thead th{height: 28px;font-weight: 400;border-bottom: 1px solid #6ca7d3;background-color: #bce4f8;}
