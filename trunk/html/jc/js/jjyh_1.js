@@ -182,15 +182,29 @@ Class( {
 			}
 			mmin== undefined?rr.mmin=rr.mmin:rr.mmin= mmin.toFixed(2);
 			mmax== undefined?rr.mmax=rr.mmax:rr.mmax= mmax.toFixed(2);
-//			Y.get("#mmin").html('<font color="black">'+rr.mmin~+'</font>');
-			Y.get("#mmin").html(rr.mmin+"~");
-			Y.get("#mmax").html(rr.mmax);
+			Y.get("#mmin").html(mmin+"~");
+			Y.get("#mmax").html(mmax);
 			
 		}else{
-		rr.each(function(rw,o) {});
-		Y.get("#mzTable").html(htmRow.join(''));
-		}
+			rr.each(function(rw,o) {
+				var mmin = 0;
+				var mmax = 0;
 
+				var count = rw.znum;
+				for (var i=0;i<count;i++) {
+					mmin += tabonus[i];
+				}
+				for (var i=tabonus.length-count;i<tabonus.length;i++) {
+					mmax += tabonus[i];;
+				}
+				rw.mmin = mmin.toFixed(2);
+				rw.mmax = mmax.toFixed(2);
+			})
+			
+			Y.get("#mmin").html(rr[rr.length-1].mmin+"~");
+			Y.get("#mmax").html(rr[0].mmax);
+
+		}
 	},
 	betStyleUpdate : function(data) {
 //		betStyleObj = "";
@@ -262,7 +276,7 @@ Class( {
 	bschange : function (m){
 			m=Math.ceil(m);
 			$("td[yhzs]").each(function(){
-				if(Y.getInt($(this).html()-m)==1){
+				if(Y.getInt($(this).html()-m)==1||Y.getInt($(this).html()-m)==-1){
 					$(this).html(m);
 				}else{
 					$(this).html($(this).html()*m);
@@ -394,13 +408,13 @@ Class( {
 			if ( rw.mmin > Y.get("#sjmm").html() ) {
 				rw.mincolor ="red";
 			} else {
-				rw.mincolor ="black";
+				rw.mincolor ="red";
 			}
 			
 			if ( rw.mmax > Y.get("#sjmm").html() ) {
 				rw.maxcolor ="red";
 			} else {
-				rw.maxcolor ="black";
+				rw.maxcolor ="red";
 			}
 			
 			if(o==0){
@@ -437,6 +451,7 @@ Class( {
 			return false;
 		}else {
 			betTitleObj.removeClass("yhBet");
+			betTitleObj.css('left', 'auto');
 			return false
 		}
 	},
@@ -457,6 +472,7 @@ Class( {
 			} else {
 				if (!betTitleObj.hasClass(className)) return false;
 				betTitleObj.removeClass(className);
+				betTitleObj.css('left', 'auto');
 			}
 		}
 		$(window).scroll(getlocate);
@@ -466,16 +482,9 @@ Class( {
 $(window).scroll(function() {
 	if ($('div[dzlistbox]').height() < $(window).height()) return;
 	var top = $(window).scrollTop();
-	var betTitleObj = $("#betbottom");
 //	var betTitleHeight = Y.get("#betbottom").getXY().y;
 	
-	var betTitleHeight = betTitleObj.offset().top;
-	var nowClientHeigth = document.documentElement.clientHeight;
-	if (betTitleHeight + 48 > nowClientHeigth) {
-		betTitleObj.addClass("yhBet");
-	} else {
-		betTitleObj.removeClass("yhBet");
-	}
+
 	if ($.browser.isIe6) {
 		if (top > 120) {
 			var ol = $('#qhyhObj').offset().left;
@@ -492,14 +501,14 @@ $(window).scroll(function() {
 			$('#qhyhObj').css({
 				position: 'fixed',
 				top: '0px',
-				zIndex: 1000,
-				width: 548
+				zIndex: 1000
+				
 			});
 			$('#leftdiv').css({
 				position: 'fixed',
 				top: '0px',
-				zIndex: 1000,
-				width: 450
+				zIndex: 1000
+				
 			});
 			resizeLeft();
 			var lheight = $('#leftdiv').height(),
