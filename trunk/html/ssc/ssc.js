@@ -697,13 +697,14 @@ Class('App', {
         		case 9:
         			Y.get(Class.C('lot_sub')[111][2]).show();
         			$("#zhushujx").show();
+//        			Y.postMsg('show_opencodelist', b);
 //        			$("#hezhijx").hide();
         			break;
         	}
         	var pid = this.get('#play_tabs a').slice(b, b+1).attr("value");
         	Class.C('playid', pid);
         	 Y.postMsg('playtabs_onchange'); 
-//        	z==0? '':Y.postMsg('show_opencodelist', b);
+        	z==0? '':Y.postMsg('show_opencodelist', b);
         	z++;
         	Y[Class.C('lot_sub')[pid][0]]();
         };
@@ -1812,7 +1813,12 @@ Class('CodeList', {
          });
          this.onMsg('msg_expect_change', function (expect, now, endtime){
              if (this.panel.find('li').size() && !this.C('-is-continue-buy')) {//如有选号，弹出提示
-                 this.alert('您好，<span style="color:#999">'+(expect-1)+'</span>期已截止，当前期是<span style="color:#FF4E00">'+expect+'</span>期，投注时请确认您选择的期号。')
+            	 var  wrapLay = Y.lib.MaskLay('#wrapLay', '#wrapLayConent');
+             	wrapLay.addClose('#wrapLayCloseBtn', '#wrapLayClose');
+                  Y.get('#yclass_alert  div.tantop').drag('#wrapLay');
+                  $("#wrapLayConent").html('<div class=wxts_p>您好，<span style="color:#999">'+(expect-1)+'</span>期已截止<br/>当前期是<span style="color:#FF4E00">'+expect+'</span>期<br/>投注时请确认您选择的期号。</div>');
+                  wrapLay.pop();
+//                 this.alert('您好，<span style="color:#999">'+(expect-1)+'</span>期已截止，当前期是<span style="color:#FF4E00">'+expect+'</span>期，投注时请确认您选择的期号。')
              }
              this.C('-is-continue-buy', false)
          });
@@ -2006,67 +2012,78 @@ Class.extend('exportCode', function (){
 				if (code == "0") {
 					var r = obj.Resp.row;
 					var ccodes =r.ccodes===undefined?r[0].ccodes:r.ccodes;// 投注号码
-					ccodes = ccodes.split(':')[0];
 					var mulity =r.imulity===undefined?r[0].imulity:r.imulity;// 投注号码 ;// 倍数
-					var ss = r[0].ccodes;// 投注号码
-					var sss = r[0].ccodes;// 投注号码
-					ss = ss.split(':')[1];
-					sss = sss.split(':')[2];
-					zhushu = r[0].icmoney*1/2;
-					
-//					ss += ccodes.split(':');
-					//var periodid = r.periodid;//期次
+					var icmoney =r.icmoney===undefined?r[0].icmoney:r.icmoney;// 投注号码 ;// 倍数
 					if(mulity>1){
 						$("#beishu").val(mulity);
 					}
-					ss = ss+','+sss;
-					if(ss=='7,3'){
-						type="116";
-						Y.postMsg('msg_force_change_playtabs', 0,1);
-					}
-					else if(ss=='5,1'){
-						type="107";
-						Y.postMsg('msg_force_change_playtabs', 3,1);
-					}
-					else if(ss == '4,1'){
-						type="106";
-						Y.postMsg('msg_force_change_playtabs', 4,1);
-					}else if(ss == '3,1'){
-						type="105";
-						Y.postMsg('msg_force_change_playtabs', 3,1);
-					}else if(ss == '1,1'){
-						type="104";
-						Y.postMsg('msg_force_change_playtabs', 4,1);
-					}else if(ss == '12,1'){
-						type="124";
-						Y.postMsg('msg_force_change_playtabs', 5,1);
-					}else if(ss == '7,4'){
-						type="118";
-						Y.postMsg('msg_force_change_playtabs', 6,1);
-					}
-					if(ccodes==""){
-		    			Y.alert("您不是该方案的发起人，不能再次购买本方案");
-		    			return false;
-		    		}
-					if(ccodes.split(':')[0]){
-						$("#zjtz23").attr("checked",'true');
-					}
+					
 //					
-					if(ccodes.indexOf("$")==-1){
+					if(ccodes.indexOf("$")!=-1){
+						Y.alert("胆拖再次追号不支持");
+						return false;
+					}
 						
 							Yobj.get('#codes').val(ccodes);
 							var import_code, arrCodes, short_code;
-						    if (import_code = Yobj.get('#codes').val()) {
-								if (typeof this.dejson(import_code) == 'object') return;
-						        if (/\b0\b/.test(import_code)) {
-						            return
-						        }
-						        arrCodes= [import_code,type,zhushu];
+							arrCodes = ccodes.split(';').map(function (c){
+		    	                var rb = c.split(':'),
+		    	                    d= rb[0] ? rb[0] : [],
+		    	                   ss= rb[1] ? rb[1] : [],
+		    	                    sss= rb[2] ? rb[2] : [],
+		    	                   
+		    	                    ss = ss+','+sss;
+		    						if(ss=='7,3'){
+		    							type=116;
+		    							Y.postMsg('msg_force_change_playtabs', 0,1);
+		    						}
+		    						else if(ss=='5,1'){
+		    							
+		    							type=107;
+		    							Y.postMsg('msg_force_change_playtabs', 3,1);
+		    							d = ['-,-,-,-'].concat(d).slice(-5).join(',');
+		    						}
+		    						else if(ss == '4,1'){
+		    							type=106;
+		    							Y.postMsg('msg_force_change_playtabs', 4,1);
+		    							d = ['-,-,-'].concat(d).slice(-5).join(',');
+			    	                	   zs = Math.c(rb[1].split(',').length, Class.C('lot_data')[type][3]);
+		    						}else if(ss == '3,1'){
+		    							type=105;
+		    							Y.postMsg('msg_force_change_playtabs', 5,1);
+		    							  d = ['-,-'].concat(d).slice(-5).join(',');
+			    	                	   zs = Math.c(rb[1].split(',').length, Class.C('lot_data')[type][4]);
+		    						}else if(ss == '1,1'){
+		    							type=104;
+		    							Y.postMsg('msg_force_change_playtabs', 6,1);
+		    						}else if(ss == '12,1'){
+		    							type=124;
+		    							Y.postMsg('msg_force_change_playtabs', 7,1);
+		    						}else if(ss == '7,4'){
+		    							type=118;
+		    							Y.alert("二星和值再次追号不支持");
+		    							return false;
+		    						}
+		    						else if(ss == '6,1'){
+		    							type=111;
+		    							Y.postMsg('msg_force_change_playtabs',9,1);
+		    						}
+		    						 zs = Math.c(rb[1].split(',').length, Class.C('lot_data')[type][3]);
+		    	                    return [d,type,zs];
+		    	                
+		    	            }).filter(function (c){
+		    	                if (c[c.length - 1] == 0) {//zs
+		    	                    short_code = c;//残缺号码
+		    	                }else{
+		    	                    return true;
+		    	                }
+		    	            });
 						        if (arrCodes.length) {//完整号码显示到列表
-						             Y.postMsg('msg_put_code', arrCodes);
+						        	for(var i=0;i<arrCodes.length;i++){
+   			    	            		this.postMsg('msg_put_code',arrCodes[i]);
+   			    	            	}
 						        }
-						    }
-						}  
+						
 					
 				}else if(code=='2002'){
 					Y.alert("您不是该方案的发起人，不能再次购买本方案");
@@ -2101,7 +2118,10 @@ Class('openCodeList', {
 			this.getlistdata(this.postlist);
 		});
 		this.onMsg('show_opencodelist', function(n) {
-			this.showlist(n);
+			var P=this
+			setTimeout(function() {
+				 P.showlist(n);
+				},300);
 		});
 		this.onMsg('update_opencodelist', function() {
 			this.checkpid();
