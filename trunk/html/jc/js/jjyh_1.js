@@ -428,9 +428,12 @@ Class( {
 	getHeaderW:function(){
 		var betTitleObj = $("#betbottom");
 		var betTitleHeight = betTitleObj.offset().top;
+		var H=$(".opt-t-right").offset().left
 		var nowClientHeigth = document.documentElement.clientHeight;
 		if (betTitleHeight > nowClientHeigth) {
 			betTitleObj.addClass("yhBet");
+			betTitleObj.css('left', H);
+
 			return false;
 		}else {
 			betTitleObj.removeClass("yhBet");
@@ -442,6 +445,7 @@ Class( {
 		var betTitleHeight = betTitleObj.height();
 		var betObj = $("#" + showId);
 		var betTop = betObj.offset().top;
+		var H=$(".opt-t-right").offset().left
 		function getlocate() {
 			var scrollTop = Number($(document).scrollTop());
 			var nowClientHeigth = document.documentElement.clientHeight;
@@ -449,6 +453,7 @@ Class( {
 			if (scrollTop + nowClientHeigth - 48 < betTop + betHeight) {
 				if (betTitleObj.hasClass(className)) return false;
 				betTitleObj.addClass(className);
+				betTitleObj.css('left', H);
 			} else {
 				if (!betTitleObj.hasClass(className)) return false;
 				betTitleObj.removeClass(className);
