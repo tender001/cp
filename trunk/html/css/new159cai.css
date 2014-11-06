@@ -2266,7 +2266,7 @@ p.yh{width:535px;margin-bottom:5px;padding: 8px 0 8px 8px;border: 1px solid #e1e
 p.yh i{line-height:22px;margin: 0 6px}
 p.yh i input{_margin-top:-2px;}
 p.yh em,p.yh s,p.yh a.dg-btn{background: url("../images/bg/jc-yh.png") no-repeat;}
-.opt-t-right p.yh em{display:inline-block;width: 95px;height: 35px;line-height:35px;margin-left:9px;text-align:center;cursor: pointer}
+.opt-t-right p.yh em{display:inline-block;width: 95px;height: 35px;line-height:35px;margin-left:9px;text-align:center;cursor: pointer;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;}
 .opt-t-right p.yh em.cur{background-position: -96px 0}
 .opt-t-right p.yh s{display:inline-block;width: 12px;height: 12px;margin-left:8px;background-position: -179px -35px;cursor:pointer}
 .opt-t-right table tbody td,.opt-t-right table tbody th{height:auto;border-width: 0 0 1px 0}
