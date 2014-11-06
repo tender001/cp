@@ -60,9 +60,9 @@
 		#end
 		
 		#if($match.dxfSale > 0)
-			<td class="h_br  border-left""><input id=g${match.itemid}_t5  style="display:none;" value=3 type=checkbox data-sp="${match.dxf3}" data-type="dxf">${match.rf0}</td>
+			<td class="h_br  border-left""><input id=g${match.itemid}_t5  style="display:none;" value=3 type=checkbox data-sp="${match.dxf3}" data-type="dxf">${match.dxf3}</td>
 			<td >${match.zclose}</td>
-			<td  style="border-left:1px solid #ccc" class="h_br border-right"><input id=g${match.itemid}_t6  style="display:none;" value=0 type=checkbox data-sp="${match.dxf0}" data-type="dxf">${match.rf3}</td>
+			<td  style="border-left:1px solid #ccc" class="h_br border-right"><input id=g${match.itemid}_t6  style="display:none;" value=0 type=checkbox data-sp="${match.dxf0}" data-type="dxf">${match.dxf0}</td>
 		#else
 			<td colspan="3" style="background:#f5f5f5" class="border-lr">未开玩法</td>
 		#end
