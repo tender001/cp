@@ -417,6 +417,10 @@ Main
     		Y.postMsg('msg_login', function (){
     			location.href='#page_zh';
     			buyTabs.focus(2);
+    			 if($("#subPlayTabs a").focus(2)){
+						Y.alert("排三和值不支持再次追号");
+						return false;
+					}
                 setTimeout(function() {
                     Y.lib.ZhOptions();
                 },99);   
