@@ -575,6 +575,10 @@ Class('CodeList>Z6CodeList', {
     		Y.postMsg('msg_login', function (){
     			location.href='#page_zh';
     			buyTabs.focus(2);
+    			 if($("#subPlayTabs a").focus(2)){
+						Y.alert("3D和值不支持再次追号");
+						return false;
+					}
                 setTimeout(function() {
                     Y.lib.ZhOptions();
                 },99);   
@@ -598,6 +602,8 @@ Class('CodeList>Z6CodeList', {
     						$("#beishu").val(mulity);
     					}
     					
+    						
+    					
 						if(ccodes==""){
     		    			Y.alert("您不是该方案的发起人，不能再次购买本方案");
     		    			return false;
@@ -616,6 +622,7 @@ Class('CodeList>Z6CodeList', {
 //					                }else if(c.split(':')[1] == 3){
 //					                	type="Z6"
 //					                }
+					               
 					                switch(c.split(':')[1]){
 					                    case '2':
 				                    	 Y.postMsg('msg_change_play', 2);

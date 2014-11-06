@@ -2061,7 +2061,7 @@ Class.extend('exportCode', function (){
 		    							Y.postMsg('msg_force_change_playtabs', 7,1);
 		    						}else if(ss == '7,4'){
 		    							type=118;
-		    							Y.alert("二星和值再次追号不支持");
+		    							Y.alert("二星和值不支持再次追号");
 		    							return false;
 		    						}
 		    						else if(ss == '6,1'){
