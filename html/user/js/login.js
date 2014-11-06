@@ -86,7 +86,12 @@ Class({// 用户登录
             		location.href ="/huodong/czs.html";
             	}else{
 //            	location.href ="/";
-            	history.go(-1)
+            		if(history.length>1){
+            			history.go(-1)
+            		}else{
+            			location.href ="/";
+            		}
+            	
             	}
             }
             window.passportloginmsg = false;
