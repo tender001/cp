@@ -382,6 +382,7 @@ Main
 			if (typeof this.dejson(import_code) == 'object') return;
             arrCodes = import_code.split('$').map(function (c){
                 var w = c.split('|'), q, b, g;
+                
                 switch(type){
                     case 'Z3':
                     	return [w.sort(Array.up), Math.c(w.length, 2) * 2]
@@ -417,10 +418,6 @@ Main
     		Y.postMsg('msg_login', function (){
     			location.href='#page_zh';
     			buyTabs.focus(2);
-    			 if($("#subPlayTabs a").focus(2)){
-						Y.alert("排三和值不支持再次追号");
-						return false;
-					}
                 setTimeout(function() {
                     Y.lib.ZhOptions();
                 },99);   
@@ -456,6 +453,10 @@ Main
 						
 					            arrCodes = ccodes.split(';').map(function (c){
 					            	 var w = c.split(':')[0].split(','), q, b, g;
+					            	 if(c.split(':')[2] == 4){
+					                 	Y.alert("排三和值不支持再次追号");
+										return false;
+					                }
 					                switch(c.split(':')[1]){
 					                    case '2':
 					                    	Y.postMsg('msg_change_play', 2);
