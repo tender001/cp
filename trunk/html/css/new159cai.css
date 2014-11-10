@@ -1,6 +1,6 @@
 ﻿@charset "utf-8";
 div,ul,li{ list-style-type:none;overflow:hidden}
-html,body,div,span,iframe,h1,h2,h3,h4,h5,h6,p,a,em,img,q,s,small,strong,b,u,i,center,dl,dt,dd,ol,ul,li,form,table,tbody,tr,th,td{margin:0;padding:0;border:0;}
+html,body,div,iframe,h1,h2,h3,h4,h5,h6,p,img,q,s,small,i,center,dl,dt,dd,ol,ul,li,form,table,tbody,tr,th,td{margin:0;padding:0;border:0;}
 html{color:#000;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%}
 *html{background-image:url(about:blank);background-attachment:fixed;}
 body{background-color:#fff;font:12px/150% Arial,Verdana,"\5b8b\4f53";color:#6c6c6c; min-width:1000px;}
@@ -2250,7 +2250,8 @@ label.red {color:red}
 .jc-opt-t tbody .tohover{font-weight: bold;color: #f00}
 .jc-opt table tbody th{font-weight: 400;text-align: left;text-indent: 5px;}
 .jc-opt table tbody th em{margin:0 4px}
-.jc-opt table tbody th .pad-red{padding:2px;color: #fff;background-color: #e52e04}
+.pad-red{padding:2px;color: #fff;background-color: #e52e04}
+.pad-red strong{color: #fff !important}
 .opt-t-left p{line-height: 50px;font-size: 14px;text-indent: 12px}
 .yh_s{height: 18px;overflow: hidden}
 .yh_s_ftr{float: right;padding-right: 8px}
@@ -2266,7 +2267,7 @@ p.yh em,p.yh s,p.yh a.dg-btn{background: url("../images/bg/jc-yh.png") no-repeat
 .opt-t-right p.yh em.cur{background-position: -96px 0}
 .opt-t-right p.yh s{display:inline-block;width: 12px;height: 12px;margin-left:8px;background-position: -179px -35px;cursor:pointer}
 .opt-t-right table tbody td,.opt-t-right table tbody th{height:auto;border-width: 0 0 1px 0}
-.opt-t-right table tbody th{width: 231px;}
+/*.opt-t-right table tbody th{width: 231px;}*/
 th .ie{width: 230px;zoom: 1}
 .opt-t-right table tbody th b{float:left;width:100px;height:22px;line-height:22px;margin:0 0 8px 6px;font-weight:normal;text-align:center;text-indent:0;overflow:hidden;border: 1px solid #398fe5;_display: inline;}
 /*.opt-t-right table tbody th strong{margin-top: 10px}*/
