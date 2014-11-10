@@ -1,6 +1,50 @@
 /*----------------------------------------------------------------------------*
  * 竞彩足球奖金优化   
 ------------------------------------------------------------------------------*/
+$_sys.cbf = [];
+
+$_sys.cbf.push([ 0, "1:0" ]);
+$_sys.cbf.push([ 1, "2:0" ]);
+$_sys.cbf.push([ 2, "2:1" ]);
+$_sys.cbf.push([ 3, "3:0" ]);
+$_sys.cbf.push([ 4, "3:1" ]);
+$_sys.cbf.push([ 5, "3:2" ]);
+$_sys.cbf.push([ 6, "4:0" ]);
+$_sys.cbf.push([ 7, "4:1" ]);
+$_sys.cbf.push([ 8, "4:2" ]);
+$_sys.cbf.push([ 9, "5:0" ]);
+$_sys.cbf.push([ 10, "5:1" ]);
+$_sys.cbf.push([ 11, "5:2" ]);
+$_sys.cbf.push([ 12, "9:0" ]);
+
+$_sys.cbf.push([ 13, "0:0" ]);
+$_sys.cbf.push([ 14, "1:1" ]);
+$_sys.cbf.push([ 15, "2:2" ]);
+$_sys.cbf.push([ 16, "3:3" ]);
+$_sys.cbf.push([ 17, "9:9" ]);
+
+$_sys.cbf.push([ 18, "0:1" ]);
+$_sys.cbf.push([ 19, "0:2" ]);
+$_sys.cbf.push([ 20, "1:2" ]);
+$_sys.cbf.push([ 21, "0:3" ]);
+$_sys.cbf.push([ 22, "1:3" ]);
+$_sys.cbf.push([ 23, "2:3" ]);
+$_sys.cbf.push([ 24, "0:4" ]);
+$_sys.cbf.push([ 25, "1:4" ]);
+$_sys.cbf.push([ 26, "2:4" ]);
+$_sys.cbf.push([ 27, "0:5" ]);
+$_sys.cbf.push([ 28, "1:2" ]);
+$_sys.cbf.push([ 29, "2:9" ]);
+$_sys.cbf.push([ 30, "0:9" ]);
+
+$_sys.getcbfindex = function(f,n) {
+	if (typeof(n)=='undefined'){n=0;};
+	for ( var i = 0; i < $_sys.cbf.length; i++) {
+		if ($_sys.cbf[i][1] == f) {
+			return $_sys.cbf[i][n];
+		}
+	}
+};
 Class( {
 	ready : true,
 	use   : 'mask',
@@ -12,37 +56,79 @@ Class( {
     	
     	this.get("#tmoney").val(totalmoney);
 		this.LoadDuiZhen(codes,totalmoney/2,0,gg);
-		
+		this.get("#yhzs").html(totalmoney/2);
 		this.get("#sjmm").html(totalmoney);
 		
-		var yhtyp = 0;		
-		this.get('#ytype0').click(function (e, Y){
-			yhtyp= 0;
-		});
-
-		this.get('#ytype1').click(function (e, Y){
-			yhtyp= 1;
-		});
-		
-		this.get('#ytype2').click(function (e, Y){
-			yhtyp= 2;
-		});
+		var yhtyp = "0";
 		
 		
-		this.get('#btnYh').click(function (e, Y){
+		setTimeout(function() {
+			P.getHeaderW();
+			P.betFooterLocate("betbottom", "jjTjObj", "yhBet");
+			},300);
+		
+		this.get('em[yhtype]').click(function (e, Y){
 			if($("#tmoney").val()%2!=0){
 				alert("输入计划购买的金额必须是偶数");
 				return false;
 			}
-			
+			yhtyp = Y.get(this).attr("yhtype");		
+			Y.get('em[yhtype]').removeClass("cur");
+			Y.get(this).addClass("cur");
 			Y.LoadDuiZhen(codes,Y.get("#tmoney").val()/2,yhtyp,gg);
+		});
+		this.get("#tmoney").keydown(function (e, Y){
+			Y.get("em[yhtype]").removeClass("cur");
+			Y.get("td[yhzs]").html(0);
+			Y.get("input[yhjj]").val(0);
+			P.setMinMaxMoney();
+			return false;
+		});
+		this.get("a[mark=m_minus]").click(function(){
+			var tmoney=Y.get("#tmoney").val()*1;
+			if(tmoney>2){
+				tmoney%2!=0?Y.get("#tmoney").val(tmoney-1):Y.get("#tmoney").val(tmoney-2);
+				Y.get("em[yhtype]").removeClass("cur");
+				$("td[yhzs],#sjm").html(0);
+				Y.get("input[yhjj]").val(0);
+				P.setMinMaxMoney();
+				return false;
+			}
+		});
+		this.get("a[mark=b_minus]").click(function(){
+			var bs=Y.get("#bs").val()*1;
+			if(bs>1){
+				P.bschange(bs-1)
+			}
+		})
+		this.get("a[mark=b_add]").click(function(){
+			var bs=Y.get("#bs").val()*1;
+			P.bschange(bs+1)
+			
+		})
+		this.get("#bs").change(function(){
+			var bs=Y.get("#bs").val()*1;
+			P.bschange(bs);
+			
+		})
+		
+		this.get("a[mark=m_add]").click(function(){
+			var tmoney=Y.get("#tmoney").val()*1;
+			if(tmoney<2000000){
+				tmoney%2!=0?Y.get("#tmoney").val(tmoney+1):Y.get("#tmoney").val(tmoney+2);
+				Y.get("em[yhtype]").removeClass("cur");
+				$("td[yhzs],#sjmm").html(0);
+				Y.get("input[yhjj]").val(0);
+				P.setMinMaxMoney();
+				return false;
+			}
 		});
 		
 		this.get("#btnSubmit").click(function(e, Y){
 			var num = parseInt(Y.get("#cnum").html());
 			var s = "";
 			for ( var i=1;i<=num;i++) {
-				var muli = Y.get("#txtm" + i).val();
+				var muli = Y.get("#txtm" + i).html();
 				var cccc = Y.get("#mc" + i).html();
 				if ( muli > 0 ) {
 					s += 'CBF|' + cccc + "_" + muli + ";";
@@ -64,7 +150,7 @@ Class( {
 			var num = parseInt(Y.get("#cnum").html());
 			var s = "";
 			for ( var i=1;i<=num;i++) {
-				var muli = Y.get("#txtm" + i).val();
+				var muli = Y.get("#txtm" + i).html();
 				var cccc = Y.get("#mc" + i).html();
 				if ( muli > 0 ) {
 					s += 'CBF|' + cccc + "_" + muli + ";";
@@ -118,18 +204,12 @@ Class( {
 		var htmRow = [];
 
 		for ( var i=1;i<=num;i++) {
-			tabonus[tabonus.length] = Y.get("#tbonus"+ i).html() - 0;
+			tabonus[tabonus.length] = Y.get("#yhjj"+ i).val() - 0;
 		}
 		
 		tabonus.sort(function(a,b){return a>b?1:-1;});
 
-		 var tableTp3=['<tr>'+
-		               '<td>{$mnum}</td>'+
-		               '<td>{$znum}</td>'+
-		               '<td><font color="{$mincolor}"><label id="mmin">{$mmin}</label></font></td>'+
-		               '<td><font color="{$maxcolor}"><label id="mmax">{$mmax}</label></font></td>'+
-			           '</tr>'
-	    		];
+		
 		
 		var rr = this.xxx ;
 		if(rr.znum == 1){
@@ -145,61 +225,73 @@ Class( {
 			}
 			mmin== undefined?rr.mmin=rr.mmin:rr.mmin= mmin.toFixed(2);
 			mmax== undefined?rr.mmax=rr.mmax:rr.mmax= mmax.toFixed(2);
-			Y.get("#mmin").html(rr.mmin);
-			Y.get("#mmax").html(rr.mmax);
+			Y.get("#mmin").html(mmin+"~");
+			Y.get("#mmax").html(mmax);
 			
 		}else{
-		rr.each(function(rw,o) {
-			var mmin = 0;
-			var mmax = 0;
+			rr.each(function(rw,o) {
+				var mmin = 0;
+				var mmax = 0;
 
-			var count = rw.znum;
-			for (var i=0;i<count;i++) {
-				mmin += tabonus[i];
+				var count = rw.znum;
+				for (var i=0;i<count;i++) {
+					mmin += tabonus[i];
+				}
+				for (var i=tabonus.length-count;i<tabonus.length;i++) {
+					mmax += tabonus[i];;
+				}
+				rw.mmin = mmin.toFixed(2);
+				rw.mmax = mmax.toFixed(2);
+			})
+			
+			Y.get("#mmin").html(rr[rr.length-1].mmin+"~");
+			Y.get("#mmax").html(rr[0].mmax);
+
+		}
+	},
+	
+	betStyleUpdate : function(data) {
+//		betStyleObj = "";
+		var betTrObj=$("#vsTable tr")
+		var dataArr = data.split(",");
+		for (var i = 0,
+		ilen = betTrObj.length; i < ilen; i++) {
+			var dataTeamval = betTrObj.eq(i).attr("teamval");
+			for (var d = 0,
+			dlen = dataArr.length; d < dlen; d++) {
+				var betData = dataArr[d].split("=");
+				if (Number(dataTeamval) == Number(dataArr[d].split("=")[0])) {
+					var BetObj = betTrObj.eq(i).find("em[data-val=\"" + (dataArr[d].split("=")[1]) + "\"]");
+					var LotteryType = $("#LotteryType").val();
+					if (LotteryType == "SportteryBasketMix" || LotteryType == "SportterySoccerMix") {
+						BetObj.addClass("widthxuanxbg");
+					} else {
+						
+					}
+					BetObj.addClass("pad-red");
+
+				}
 			}
-			for (var i=tabonus.length-count;i<tabonus.length;i++) {
-				mmax += tabonus[i];;
-			}
-			rw.mmin = mmin.toFixed(2);
-			rw.mmax = mmax.toFixed(2);
-			
-			
-			
-			
-			if ( rw.mmin >  sjmm) {
-				rw.mincolor ="red";
-			} else {
-				rw.mincolor ="black";
-			}
-			
-			if ( rw.mmax > sjmm) {
-				rw.maxcolor ="red";
-			} else {
-				rw.maxcolor ="black";
-			}
-			htmRow[htmRow.length] = tableTp3[0].tpl(rw);
-		});
-		Y.get("#mzTable").html(htmRow.join(''));
 		}
 	},
 	
 	incMulity : function(m) {
-		var num = parseInt(Y.get("#txtm" + m).val());
+		var num = parseInt(Y.get("#txtm" + m).html());
 		num = num + 1;
-		Y.get("#txtm" + m).val(num);
-		var sbonuns = Y.get("#bonus" + m).html();
-		Y.get("#tbonus" + m).html((sbonuns * num).toFixed(2));
+		Y.get("#txtm" + m).html(num);
+		var sbonuns = Y.get("#tbonus" + m).html();
+		Y.get("#yhjj" + m).val((sbonuns * num).toFixed(2));
 		Y.get("#sjmm").html(parseInt(Y.get("#sjmm").html())+2);
 		P.setMinMaxMoney();
 		return false;
 	},
 	decMulity : function(m) {
-		var num = parseInt(Y.get("#txtm" + m).val());
+		var num = parseInt(Y.get("#txtm" + m).html());
 		if ( num > 0) {
 			num = num - 1;
-			Y.get("#txtm" + m).val(num);
-			var sbonuns = Y.get("#bonus" + m).html();
-			Y.get("#tbonus" + m).html((sbonuns * num).toFixed(2));
+			Y.get("#txtm" + m).html(num);
+			var sbonuns = Y.get("#tbonus" + m).html();
+			Y.get("#yhjj" + m).val((sbonuns * num).toFixed(2));
 			Y.get("#sjmm").html(parseInt(Y.get("#sjmm").html())-2);
 			P.setMinMaxMoney();
 		}
@@ -208,23 +300,40 @@ Class( {
     
 	numChange : function(m) {
 		var num = 0;
-		if ( !isNaN(Y.get("#txtm" + m).val()) ) {
-			num = parseInt(Y.get("#txtm" + m).val());
+		if ( !isNaN(Y.get("#yhjj" + m).val()) ) {
+			num = Math.ceil(Y.get("#yhjj" + m).val()/Y.get("#tbonus" + m).html());
 		}
-		Y.get("#txtm" + m).val(num);
-		var sbonuns = Y.get("#bonus" + m).html();
-		Y.get("#tbonus" + m).html((sbonuns * num).toFixed(2));
+		Y.get("#txtm" + m).html(num);
+		var sbonuns = Y.get("#tbonus" + m).html();
+		Y.get("#yhjj" + m).val((sbonuns * num).toFixed(2));
 		var s = parseInt(Y.get("#cnum").html());
 		var muli=0;
 		for ( var i=1;i<=s;i++) {
-			muli += parseInt(Y.get("#txtm" + i).val());
+			muli += parseInt(Y.get("#txtm" + i).html());
 			
 		}			
 		Y.get("#sjmm").html(parseInt(muli*2));
 		P.setMinMaxMoney();
-		Y.get("#txtm" + m).val(num);
+		Y.get("#txtm" + m).html(num);
 		return false;
 	},
+	bschange : function (m){
+			m=Math.ceil(m);
+			$("td[yhzs]").each(function(){
+				if(Y.getInt($(this).html()-m)==1||Y.getInt($(this).html()-m)==-1){
+					$(this).html(m);
+				}else{
+					$(this).html($(this).html()*m);
+				}
+				
+				var sbonuns = $(this).parent().find("input[yhjj]").attr("yhjj");
+				$(this).parent().find("input[yhjj]").val((sbonuns * m).toFixed(2))
+			})
+			Y.get("#bs").val(m);
+			P.setMinMaxMoney();
+			return false;
+	},
+	
 	
 	
 
@@ -233,33 +342,40 @@ Class( {
 		 var html = [];
 		 var htm = [];
 		 var htmRow = [];
-		 var tableTp1=['<tr>'+
+		 var tableTp1=['<tr teamval="{$itemid}">'+
 			           '<td>{$name}</td>'+
-			           '<td><span class="yh_s_ftl">{$hn}{$close}</span></td>'+
-			           '<td><span class="yh_s_ftl">{$gn}</span></td>'+
-			           '<td><span class="yh_s_ftl">{$sdesc}</span></td>'+
-			           '<td>{$bet3}</td>'+
-			           '<td>{$bet1}</td>'+
-			           '<td>{$bet0}</td>'+
+			           '<td>{$hn}{$close}</td>'+
+			           '<td>{$gn}</td>'+
+			           '<th>{$jqbet}</th>'+
+			         
 			           '</tr>'
 	    		];
-		 var tableTp2=['<tr>'+
-		               '<td>{$seqno}</td>'+
-		               '<td ><p>{$desc}=<font color="red"><label id="bonus{$seqno}">{$bonus}</label></font></p></td>'+
-		               '<td><font color="red"><label id="tbonus{$seqno}">{$tbonus}</label></font></td>'+
-		               '<td><a onclick="return P.decMulity({$seqno});"><img src="/images/jc/ds_14.gif"/></a></td>'+
-		               '<td><input id="txtm{$seqno}" type="text" class="text1" value="{$muli}" onchange="P.numChange({$seqno})" /></td>'+
-		               '<td><a onclick="return P.incMulity({$seqno});"><img src="/images/jc/ds_11.gif" /></td>'+
-		               '<td><div id="mc{$seqno}" style="display:none">{$code}</div></td>'+
-			           '</tr>'
-	    		];
+		 var tableTp2=[
+		   			'<tr teamval={$teamval}>'+
+		   					'<td >{$seqno}<div id="mc{$seqno}" style="display:none">{$code}</div></td>'+
+		   					
+		   					'<td>{$gg}</td>'+
+		   					
+		   					'<th><div class="ie">{$bets}</div></th>'+
+		   					
+		   					'<td><font color="red"><label id="tbonus{$seqno}">{$tbonus}</label></font></td>'+					
+		   					
+		   					'<td id="txtm{$seqno}" yhzs="{$muli}">{$muli}</td>'+
+		   					
+		   					'<td><p class="dc_qr"><i><a onclick="return P.decMulity({$seqno});"></a>'+
+		   					
+		   					'<input class="mul" type="text" value="{$tbonus}" id="yhjj{$seqno}" onchange="P.numChange({$seqno})" maxlength="6" yhjj="{$tbonus}">'+
+		   					
+		   					'<a onclick="return P.incMulity({$seqno});"></a></i></p></td>'+
+		   			'</tr>'
+		   		               
+
+		   	    		];
 		 
-		 var tableTp3=['<tr>'+
-		               '<td>{$mnum}</td>'+
-		               '<td>{$znum}</td>'+
-		               '<td><font color="{$mincolor}"><label id="mmin">{$mmin}</label></font></td>'+
-		               '<td><font color="{$maxcolor}"><label id="mmax">{$mmax}</label></font></td>'+
-			           '</tr>'
+		 var tableTp3=[
+'<span id="mmin"><font color="{$mincolor}">{$mmin}~</font></span>'+
+'<span id="mmax"><font color="{$maxcolor}">{$mmax}</font></span>'
+			          
 	    		];
 
 		 var obj = eval("(" + data.text + ")");
@@ -275,7 +391,7 @@ Class( {
 		 if(!this.isArray(rr)){rr=new Array(rr);}
 
 		 Y.get("#cnum").html(rj.length);
-		 
+		 var betdata=[];
 		 rt.each(function(row,o) {
 			 row.c3 = "h_br";
 			 row.c0 = "h_br";
@@ -292,7 +408,7 @@ Class( {
 				 row.c0 = "g_br";
 			 }
 
-			 //var spf=row.spf.split(",");
+			 var cbf=row.cbf.split(",");
 			 //row.sp3=spf[0];
 			 //row.sp1=spf[1];
 			 //row.sp0=spf[2];
@@ -304,14 +420,26 @@ Class( {
 			 } else {
 				row.close="";
 			 }
+			
+			var jqbet=""
+			 var jqs=row.sdesc.match(/\((\S+)\)/)[1];
+			 if(jqs.split("/").length>1){
+				 jqs.split("/").each(function(e,Y){
+					 jqbet+='<em data-val="'+e+'">'+e+'('+cbf[$_sys.getcbfindex(e,0)]+')</em>'
+					 
+				 })
+			 }else{
+				 jqbet+='<em data-val="'+jqs+'">'+jqs+'('+cbf[$_sys.getcbfindex(jqs,0)]+')</em>'
+			 }
+			 row.jqbet=jqbet;
+			 betdata.push([row.itemid,row.hn.substr(0,4)]);
+			 
 			 html[html.length] = tableTp1[0].tpl(row);
 		 });
 		 Y.get("#vsTable").html(html.join(''));
 		
-		rj.each(function(rw,o) {
-			htm[htm.length] = tableTp2[0].tpl(rw);
-		});
-		Y.get("#jjTable").html(htm.join(''));
+		
+		
 		
 		rr.each(function(rw,o) {
 			if ( rw.mmin > Y.get("#sjmm").html() ) {
@@ -327,9 +455,172 @@ Class( {
 			}
 			
 			
-			htmRow[htmRow.length] = tableTp3[0].tpl(rw);
+			
 		});
-		Y.get("#mzTable").html(htmRow.join(''));
+		$_sys.betname = function(f,n) {
+			 if (typeof(n)=='undefined'){n=1;};
+			 for ( var i = 0; i < betdata.length; i++) {
+				 if (betdata[i][0] == f) {
+				 return betdata[i][n];
+				 }
+			 }
+		 }; 
+		
+		 var yhgg=[];
+			rj.each(function(rw,o) {
+				var bet=""
+				
+				var codearr=rw.code.split("|")[0].split(",");
+				rw.teamval=codearr;
+				if(codearr.length>1){
+					codearr.each(function(x,y){
+						rw.bhn=$_sys.betname(x.split("=")[0]);
+						rw.bet=(x.split("=")[1]);
+						rw.gg=rw.code.split("|")[1].replace("*","串");
+						yhgg.push(rw.gg);
+						bet+='<b><i>'+rw.bet+'</i>'+rw.bhn+'</b>';
+					})
+				}else{
+					codearr=codearr[0];
+					rw.bhn=$_sys.betname(codearr.split("=")[0]);
+					rw.bet=(codearr.split("=")[1]);
+					rw.gg=rw.code.split("|")[1].replace("*","串");
+					yhgg.push(rw.gg);
+					bet+='<b><i>'+rw.bet+'</i>'+rw.bhn+'</b>';
+				}
+				
+				
+				rw.bets=bet;
+				
+				htm[htm.length] = tableTp2[0].tpl(rw);
+			});
+			yhgg=$_base_s.uniq(yhgg);
+			Y.get("#yhgg").html(yhgg);
+			Y.get("#jjTable").html(htm.join(''));
+			
+			rr.each(function(rw,o) {
+				if ( rw.mmin > Y.get("#sjmm").html() ) {
+					rw.mincolor ="red";
+				} else {
+					rw.mincolor ="red";
+				}
+				
+				if ( rw.mmax > Y.get("#sjmm").html() ) {
+					rw.maxcolor ="red";
+				} else {
+					rw.maxcolor ="red";
+				}
+				
+				if(o==0){
+					htmRow[htmRow.length] = tableTp3[0].tpl(rw);
+				}
+				
+			});
+			Y.get("#mzTable").html(htmRow.join(''));
+//			$("#jjTable tr").each(function(e,Y){
+//			$(this).click(function(){
+////				P.betStyleUpdate($(this).attr("teamval"));
+//				alert("12")
+//			})
+		//	
+		//});
+			$("#jjTable tr").hover(function(){
+				$(this).addClass("hover");
+				P.betStyleUpdate($(this).attr("teamval"));
+			},function(){
+				$(this).removeClass("hover");
+				$("#vsTable em[data-val]").removeClass("pad-red");
+			})
+			
+		},
+		getHeaderW:function(){
+			var betTitleObj = $("#betbottom");
+			var betTitleHeight = betTitleObj.offset().top;
+			var H=$(".opt-t-right").offset().left
+			var nowClientHeigth = document.documentElement.clientHeight;
+			if (betTitleHeight > nowClientHeigth) {
+				betTitleObj.addClass("yhBet");
+				betTitleObj.css('left', H);
+
+				return false;
+			}else {
+				betTitleObj.removeClass("yhBet");
+				betTitleObj.css('left', 'auto');
+				return false
+			}
+		},
+		betFooterLocate : function(footerId, showId, className) {
+			var betTitleObj = $("#" + footerId);
+			var betTitleHeight = betTitleObj.height();
+			var betObj = $("#" + showId);
+			var betTop = betObj.offset().top;
+			var H=$(".opt-t-right").offset().left
+			function getlocate() {
+				var scrollTop = Number($(document).scrollTop());
+				var nowClientHeigth = document.documentElement.clientHeight;
+				var betHeight = betObj.height();
+				if (scrollTop + nowClientHeigth - 48 < betTop + betHeight) {
+					if (betTitleObj.hasClass(className)) return false;
+					betTitleObj.addClass(className);
+					betTitleObj.css('left', H);
+				} else {
+					if (!betTitleObj.hasClass(className)) return false;
+					betTitleObj.removeClass(className);
+					betTitleObj.css('left', 'auto');
+				}
+			}
+			$(window).scroll(getlocate);
+		}
+
+	} );
+	$(window).scroll(function() {
+		if ($('div[dzlistbox]').height() < $(window).height()) return;
+		var top = $(window).scrollTop();
+//		var betTitleHeight = Y.get("#betbottom").getXY().y;
+		
+
+		if ($.browser.isIe6) {
+			if (top > 120) {
+				var ol = $('#qhyhObj').offset().left;
+				$('#qhyhObj').addClass('yhmenuDiv').css('left', ol);
+				$('#leftdiv').addClass('xuanxbox');
+				resizeLeft();
+			} else {
+				$('#qhyhObj').removeClass('yhmenuDiv'),
+				$('#leftdiv').removeClass('xuanxbox');
+				$('#scoll-team').css('height', 'auto');
+			}
+		} else {
+			if (top > 120) {
+				$('#qhyhObj').css({
+					position: 'fixed',
+					top: '0px',
+					zIndex: 1000
+					
+				});
+				$('#leftdiv').css({
+					position: 'fixed',
+					top: '0px',
+					zIndex: 1000
+					
+				});
+				resizeLeft();
+				var lheight = $('#leftdiv').height(),
+				btop = $('.footer').offset().top - top - 11;
+				if (btop < lheight) {
+					$('#leftdiv').css('top', btop - lheight);
+				}
+			} else {
+				$('#qhyhObj,#leftdiv').css({
+					position: '',
+					top: ''
+				});
+				$('#scoll-team').css('height', 'auto');
+			}
+			
+		}
+	});
+	function resizeLeft() {
+		var wh = $(window).height(); ($('#leftdiv').height() > wh) && ($('#scoll-team').height(wh - $('#box').height() - 47));
 	}
 
-} );

@@ -85,7 +85,7 @@ Class( {
 			var num = parseInt(Y.get("#cnum").html());
 			var s = "";
 			for ( var i=1;i<=num;i++) {
-				var muli = Y.get("#txtm" + i).val();
+				var muli = Y.get("#txtm" + i).html();
 				var cccc = Y.get("#mc" + i).html();
 				if ( muli > 0 ) {
 					s += 'JQS|' + cccc + "_" + muli + ";";
@@ -107,7 +107,7 @@ Class( {
 			var num = parseInt(Y.get("#cnum").html());
 			var s = "";
 			for ( var i=1;i<=num;i++) {
-				var muli = Y.get("#txtm" + i).val();
+				var muli = Y.get("#txtm" + i).html();
 				var cccc = Y.get("#mc" + i).html();
 				if ( muli > 0 ) {
 					s += 'JQS|' + cccc + "_" + muli + ";";
@@ -218,14 +218,14 @@ Class( {
 			dlen = dataArr.length; d < dlen; d++) {
 				var betData = dataArr[d].split("=");
 				if (Number(dataTeamval) == Number(dataArr[d].split("=")[0])) {
-					var BetObj = betTrObj.eq(i).find("td[data-val=\"" + (dataArr[d].split("=")[1]) + "\"]");
+					var BetObj = betTrObj.eq(i).find("em[data-val=\"" + (dataArr[d].split("=")[1]) + "\"]");
 					var LotteryType = $("#LotteryType").val();
 					if (LotteryType == "SportteryBasketMix" || LotteryType == "SportterySoccerMix") {
 						BetObj.addClass("widthxuanxbg");
 					} else {
 						
 					}
-					BetObj.addClass("tohover");
+					BetObj.addClass("pad-red");
 
 				}
 			}
@@ -299,11 +299,11 @@ Class( {
 		 var html = [];
 		 var htm = [];
 		 var htmRow = [];
-		 var tableTp1=['<tr>'+
+		 var tableTp1=['<tr teamval="{$itemid}">'+
 			           '<td>{$name}</td>'+
 			           '<td>{$hn}{$close}</td>'+
 			           '<td>{$gn}</td>'+
-			           '<td>{$jqbet}</td>'+
+			           '<th>{$jqbet}</th>'+
 			         
 			           '</tr>'
 	    		];
@@ -365,7 +365,7 @@ Class( {
 				 row.c0 = "g_br";
 			 }
 
-			 //var spf=row.spf.split(",");
+			 var jqs=row.jqs.split(",");
 			 //row.sp3=spf[0];
 			 //row.sp1=spf[1];
 			 //row.sp0=spf[2];
@@ -379,12 +379,14 @@ Class( {
 			 }
 			
 			var jqbet=""
-			 var jqs=row.sdesc.match(/\((\S+)\)/)[1];
-			 if(jqs.split("/").length>1){
-				 jqs.split("/").each(function(e,Y){
-					 jqbet+='<em data-val="'+e+'">'+e+'球</em>'
+			 var jq=row.sdesc.match(/\((\S+)\)/)[1];
+			 if(jq.split("/").length>1){
+				 jq.split("/").each(function(e,Y){
+					 jqbet+='<em data-val="'+e+'">'+e+'球('+jqs[e*1]+')</em>'
 					 
 				 })
+			 }else{
+				 jqbet+='<em data-val="'+jq+'">'+jq+'球('+jqs[jq*1]+')</em>'
 			 }
 			 row.jqbet=jqbet;
 			 betdata.push([row.itemid,row.hn.substr(0,4)]);
@@ -435,6 +437,13 @@ Class( {
 						yhgg.push(rw.gg);
 						bet+='<b><i>'+rw.bet+'</i>'+rw.bhn+'</b>';
 					})
+				}else{
+					codearr=codearr[0];
+					rw.bhn=$_sys.betname(codearr.split("=")[0]);
+					rw.bet=(codearr.split("=")[1])+"球";
+					rw.gg=rw.code.split("|")[1].replace("*","串");
+					yhgg.push(rw.gg);
+					bet+='<b><i>'+rw.bet+'</i>'+rw.bhn+'</b>';
 				}
 				
 				
@@ -477,7 +486,7 @@ Class( {
 				P.betStyleUpdate($(this).attr("teamval"));
 			},function(){
 				$(this).removeClass("hover");
-				$("#vsTable td[data-val]").removeClass("tohover");
+				$("#vsTable em[data-val]").removeClass("pad-red");
 			})
 			
 		},

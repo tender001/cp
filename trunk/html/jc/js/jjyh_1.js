@@ -373,11 +373,11 @@ Class( {
 		 $_sys.betname = function(f,n) {
 			 if (typeof(n)=='undefined'){n=1;};
 			 for ( var i = 0; i < betdata.length; i++) {
-			 if (betdata[i][0] == f) {
-			 return betdata[i][n];
+				 if (betdata[i][0] == f) {
+				 return betdata[i][n];
+				 }
 			 }
-			 }
-			 }; 
+		 }; 
 		 Y.get("#vsTable").html(html.join(''));
 		 var yhgg=[];
 		rj.each(function(rw,o) {
@@ -393,6 +393,13 @@ Class( {
 					yhgg.push(rw.gg);
 					bet+='<b><i>'+rw.bet+'</i>'+rw.bhn+'</b>';
 				})
+			}else{
+				codearr=codearr[0];
+				rw.bhn=$_sys.betname(codearr.split("=")[0]);
+				rw.bet=(codearr.split("=")[1]).replace(3,"胜").replace(1,"平").replace(0,"负");
+				rw.gg=rw.code.split("|")[1].replace("*","串");
+				yhgg.push(rw.gg);
+				bet+='<b><i>'+rw.bet+'</i>'+rw.bhn+'</b>';
 			}
 			
 			
@@ -430,13 +437,13 @@ Class( {
 //		})
 	//	
 	//});
-	$("#jjTable tr").hover(function(){
-		$(this).addClass("hover");
-		P.betStyleUpdate($(this).attr("teamval"));
-	},function(){
-		$(this).removeClass("hover");
-		$("#vsTable td[data-val]").removeClass("tohover");
-	})
+		$("#jjTable tr").hover(function(){
+			$(this).addClass("hover");
+			P.betStyleUpdate($(this).attr("teamval"));
+		},function(){
+			$(this).removeClass("hover");
+			$("#vsTable td[data-val]").removeClass("tohover");
+		})
 		
 	},
 	getHeaderW:function(){
