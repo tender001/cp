@@ -2269,7 +2269,7 @@ p.yh em,p.yh s,p.yh a.dg-btn{background: url("../images/bg/jc-yh.png") no-repeat
 .opt-t-right table tbody th{width: 231px;}
 th .ie{width: 230px;zoom: 1}
 .opt-t-right table tbody th b{float:left;width:100px;height:22px;line-height:22px;margin:0 0 8px 6px;font-weight:normal;text-align:center;text-indent:0;overflow:hidden;border: 1px solid #398fe5;_display: inline;}
-.opt-t-right table tbody th strong{margin-top: 10px}
+/*.opt-t-right table tbody th strong{margin-top: 10px}*/
 .opt-t-right table tbody th i{float:right;width:40px;color:#fff;background-color: #398fe5}
 p.yh1{float: right;line-height:28px;margin: 10px 0 0;position:relative;}
 p.yh1 b{margin-right:3px;font-size:16px;font-weight:700;color: #f00;}
