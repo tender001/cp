@@ -18,7 +18,7 @@
 .m_l1 ul{height: 456px;border: 2px solid #ebebeb;}
 .m_l1 li{width:199px;padding-left:10px;float: left;border-bottom: 1px solid #ccc;}
 .m_l1 li.kp{border:0;}
-.m_l1 li span{width: 100%;height: 21px;line-height: 21px; padding-top:11px;display: block;font-size: 14px;font-weight:bold;color: #333;}
+.m_l1 li span{display: block;width: 100%;height: 21px;line-height: 21px; padding-top:11px;font-size: 14px;font-weight:bold;color: #333;}
 .m_l1 li span s{width: 20px;height: 20px; display: inline-block;margin-right:3px;background-position: -2px -88px;vertical-align: middle;}
 .m_l1 li.sz span s{background-position: -23px -88px;}
 .m_l1 li.kp span s{background-position: -44px -88px;}
@@ -95,7 +95,8 @@
 .mob_buy .body dt,.mob_buy .body dd{float: left;}
 .pic-cai{width: 103px;height: 103px;padding-right: 5px;background-position:0 -77px}
 /*.pic-cai img{width:100%;height:100%;}*/
-.mob_buy .body dd a{width: 86px;height: 30px;display: block;background-position: -1px -188px;}
+.mob_buy .body dd a{display:block;width:86px;height:28px;border:1px solid transparent;background-position:-1px -188px;_border-color: #f5f5f5}
+.mob_buy .body dd a:hover{border:1px solid #f60}
 .mob_buy .body dd a.android{background-position: -87px -188px;margin-top: 6px;}
 .mob_buy .body dd a.touch{background-position: -71px -260px;margin-top: 6px;}
 /**/
@@ -104,7 +105,7 @@
 .center{width: 546px;margin-left: 7px;zoom:1;_display: inline;}
 div.center .body{width:96%;height:320px;}
 .center .body ul{margin-bottom: -1px;*margin-bottom: -4px;}
-.center .body li{height: 106px;*height: 107px;overflow: hidden;border-bottom: 1px dashed #c5c5c5;}
+.center .body li{height: 106px;border-bottom:1px dashed #c5c5c5;overflow:hidden;}
 .center .body li p{float: left;width: 48.9%;height: 32px; line-height: 34px;font-size: 14px;color: #8c8c8c;word-break: break-all;word-wrap: break-word; padding-right: 1%;overflow: hidden;/* white-space: nowrap; text-overflow: ellipsis; */}
 .center .body li p:nth-of-type(even){width: 49%;padding:0}
 .center .body li p a.f60{padding-left: 6px;}
