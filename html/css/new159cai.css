@@ -2061,7 +2061,7 @@ a.sz_cmt{background: url(../images/cai888/nwx5_112.jpg);width:137px;height:33px}
 .ball b.blue{background-position: -156px -5px !important;color: #fff;}
 .ball-right ul li i{width: 44px;height: 24px;line-height: 24px;float: left;margin-right: 3px;text-indent: 11px;color: #b8b1c2;}
 .ball-right p{padding-top: 12px;}
-.ball-right p span,.ball-right p em{height: 18px;line-height: 18px;display: inline-block;*display: inline;*zoom: 1;padding: 0 5px;border: 1px solid #ddd;background-color: #fefefe;cursor: pointer;}
+.ball-right p span,.ball-right p em{height: 18px;line-height: 18px;padding:0 5px;border: 1px solid #ddd;background-color: #fefefe;cursor: pointer;display: inline-block;*display: inline;*zoom:1;}
 .ball-right p select{font-size: 100%;vertical-align: middle;height: 20px;}
 .ball-right p span{margin:0 7px 0 4px;}
 .ball-right .l p span a{color: #900;}
@@ -2078,7 +2078,7 @@ a.sz_cmt{background: url(../images/cai888/nwx5_112.jpg);width:137px;height:33px}
 .choose-show .ball-bool .r_a_p{width: 585px;color: #000;}
 .choose-show .ball-bool .r_a_p span{float: left;}
 .choose-show .ball-bool .r_a_p span.span1{padding-left: 15px;width: 70px;}
-.choose-show .ball-bool .r_a_p span.span2{width: 400px;font-family: '\5b8b\4f53';font-weight: 700;}
+.choose-show .ball-bool .r_a_p span.span2{width: 400px;font-family: '\5b8b\4f53';font-weight:700;}
 .choose-show .ball-bool .r_a_p span.span2 b{color: #ba1414;}
 .choose-show .ball-bool .r_a_p span.span2 em{color: #1e72c6}
 .choose-show .ball-bool .r_a_p span.span3{float: right;}
@@ -2249,8 +2249,8 @@ label.red {color:red}
 .jc-opt-t tbody .cur{background: url("http://www.159cai.com/images/cai888/ban4.jpg") repeat;}
 .jc-opt-t tbody .tohover{font-weight: bold;color: #f00}
 .jc-opt table tbody th{font-weight: 400;text-align: left;text-indent: 5px;}
-.jc-opt table tbody th em{margin:0 4px}
-.pad-red{padding:2px;color: #fff;background-color: #e52e04}
+.jc-opt table tbody th em{margin:0 2px;padding:2px}
+.pad-red{color: #fff;background-color: #e52e04}
 .pad-red strong{color: #fff !important}
 .opt-t-left p{line-height: 50px;font-size: 14px;text-indent: 12px}
 .yh_s{height: 18px;overflow: hidden}
