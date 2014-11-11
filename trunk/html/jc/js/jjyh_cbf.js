@@ -432,7 +432,7 @@ Class( {
 				 jqbet+='<em data-val="'+jqs+'">'+jqs+'('+cbf[$_sys.getcbfindex(jqs,0)]+')</em>'
 			 }
 			 row.jqbet=jqbet;
-			 betdata.push([row.itemid,row.hn.substr(0,4)]);
+			 betdata.push([row.itemid,row.hn.substr(0,6)]);
 			 
 			 html[html.length] = tableTp1[0].tpl(row);
 		 });
