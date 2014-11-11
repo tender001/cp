@@ -11,6 +11,7 @@
 .updo li .xia p a:hover{background: none;margin: 0;text-decoration: underline;}
 .updo1 li .xia{width: 102px;}
 /**/
+.pic-cai,.safe-state li{background: url("../images/bg/img_bg.png") no-repeat}
 .menu{width:998px;margin: 10px auto;border-bottom:1px solid #ccc;overflow: hidden;}
 .m_l1,.m_mid{float: left;}
 .m_l1{width:213px;height: 460px;border:1px solid #ccc;border-bottom:0;background: #fffbe6;}
@@ -75,10 +76,10 @@
 .m_r p.user .dlu span{margin-left: -7px;}
 .m_r p.user .dlu span a{margin: 0 5px;}
 .m_r .tab{height: 219px;border: 1px solid #ccc;border-bottom: 0;padding-bottom:2px;}
-.m_r .tab .title{height: 28px;line-height: 28px;margin-left: -1px;color: #333;background-color: #f6f6f6;background-position: 0 -378px;overflow: visible;}
+.m_r .tab .title{height: 28px;line-height: 28px;margin-left: -1px;color: #333;background-color: #f6f6f6;background-position: 0 -378px;overflow: hidden}
 .m_r .tab .title span{float: left;width:109px;height: 28px;border-left: 1px solid #ddd;border-bottom: 1px solid #ddd;text-align: center;cursor: pointer;}
 .m_r .tab .title span.hover{background-color: #fff;border-bottom-color: #fff;font-weight: bold;}
-.m_r .tab .bod{margin: 11px 0;overflow: hidden;zoom: 1;*margin: 0;*padding:11px 0;}
+.m_r .tab .bod{padding:11px 0;overflow: hidden;zoom: 1;}
 .m_r .tab .bod div{width:200px;margin: 0 auto;line-height:24px;display: none;zoom: 1;}
 .m_r .tab .bod div.hover{display: block;}
 .m_r .tab .bod div ul{height: 156px;overflow: hidden;}
@@ -92,8 +93,8 @@
 .mob_buy{border-bottom: 0;background-color: #f5f5f5;}
 .mob_buy .body{padding: 26px 0;}
 .mob_buy .body dt,.mob_buy .body dd{float: left;}
-.mob_buy .body dt div{width: 103px;height: 103px;padding-right: 5px;}
-.mob_buy .body dt div img{width: 100%;height: 100%;}
+.pic-cai{width: 103px;height: 103px;padding-right: 5px;background-position:0 -77px}
+/*.pic-cai img{width:100%;height:100%;}*/
 .mob_buy .body dd a{width: 86px;height: 30px;display: block;background-position: -1px -188px;}
 .mob_buy .body dd a.android{background-position: -87px -188px;margin-top: 6px;}
 .mob_buy .body dd a.touch{background-position: -71px -260px;margin-top: 6px;}
@@ -119,8 +120,11 @@ div.center .body{width:96%;height:320px;}
 .zx table td,.zx table th{height:34px;text-align: center;}
 .zx table td:first-of-type{text-align: left;}
 .zx table th{font-weight: 400;color: #f00;text-align: right;}
-.zx .cn li{float: left;width: 62px;height: 74px;margin-right: 4px;display: inline;}
-.zx .cn li img{width: 100%;height: 100%;}
+.safe-state li{float: left;width: 62px;height: 74px;margin-right: 4px;display: inline;}
+.safe-state .safe-state1{background-position:0 0}
+.safe-state .safe-state2{background-position:-64px 0}
+.safe-state .safe-state3{background-position:-128px 0}
+/*.zx .cn li img{width: 100%;height: 100%;}*/
 .zx .cn .body{padding: 10px 0;}
 .hot{width: 1000px;margin: 10px auto;}
 .hm{width: 776px;float: right;border-bottom: 0;height: 345px;}
