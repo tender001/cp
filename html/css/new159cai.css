@@ -2242,7 +2242,7 @@ label.red {color:red}
 .jc-opt .bor{border: 1px solid #6ca7d3;}
 .jc-opt table{width:100%;border-collapse: collapse;}
 .jc-opt table thead th{height: 28px;font-weight: 400;border-bottom: 1px solid #6ca7d3;background-color: #bce4f8;}
-.jc-opt table .t-left-last{width: 55%;text-align: left;text-indent: 25px;}
+/*.jc-opt table .t-left-last{width: 55%;text-align: left;text-indent: 25px;}*/
 .jc-opt table tbody tr.odd td,.jc-opt table tbody tr.odd th{background-color: #f5f5f5}
 .jc-opt table tbody tr.hover td,.jc-opt table tbody tr.hover th{background-color: #fefeca}
 .jc-opt table tbody th,.jc-opt table tbody td{height: auto;padding:6px 0;text-align: center;border: 1px solid #e1e1e1;}
