@@ -1675,6 +1675,7 @@ a.jcq_kcur {background: url(../images/njc/jcy_17.jpg) no-repeat;}
 a.a_catha, a.a_hm_buya{background: url("/images/cai888/jcbtn_03.jpg") no-repeat scroll 0 0;height:36px;line-height:36px;width:104px}
 a.a_catha:hover, a.a_hm_buya:hover{background-position:-110px 0;text-decoration: none;}
 .tdlh{width:64px;height:34px;line-height:34px;position:relative;overflow:visible;z-index:9;}
+.sel_view{display:none !important}
 .tdlh p{line-height:34px;}
 .tdab{position:absolute;left:-638px;top:34px;padding:5px 0 5px 265px}
 .tdab td{border-left:1px solid #ddd}
