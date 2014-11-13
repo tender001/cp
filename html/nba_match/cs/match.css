@@ -1,0 +1,83 @@
+﻿@charset "utf-8";
+{margin:0;padding:0}
+body,h3,h4,h2,h1,h5,table,td,th,ul,li,ol,dd,dt,dl,div,span,p,b,i,s,em,thead,tbody,font,select,input,option{margin:0;padding:0}
+body{font-size:12px; font-family: Arial,simsun; background:url(../img/match.png) 50% 0 no-repeat;height:2066px}
+a{text-decoration:none;outline:none;cursor:pointer} 
+a:hover{ text-decoration:underline;}
+em,i,s,b{ font-style:normal; text-decoration:none}
+img{border:none;}
+body a{outline:none;blr:expression(this.onFocus=this.blur());}
+div,ul,li{ list-style-type:none;overflow:hidden}
+.match{width:1000px;margin:0 auto; position:relative}
+.m_top{padding-top:12px;}
+.m_top a.m_log{display:block;width:75px;height:40px;float:left;margin-left:25px}
+.m_top p{line-height:40px;color:#fff;font-size:12px;padding-left:10px;float:left}
+.m_top p a{color:#fff;margin:0 5px}
+a.m_ctic{width:347px;height:69px;display:block;margin:435px 0 0px 310px;_margin:475px 0 0 310px}
+a.m_ctic:hover{background:url(../img/tzov.png)}
+.m_vs{height:1050px; position:relative}
+.m_vs_col{float:left;width:103px; position:relative}
+.m_vs_a{margin-left:37px;_margin-left:18px}
+.m_vs_b{padding:79px 0 0 28px;}
+.m_vs_c{padding:374px 0 0 15px}
+.m_vs_e{padding:375px 0 0 35px}
+.m_vs_f{padding:79px 0 0 14px;}
+.m_vs_g{margin:0 0 0 28px;_margin-left:29px}
+.vs_ao{width:103px;height:235px;position:relative}
+.vs_a1{}
+.vs_a2{margin-top:22px}
+.vs_a3{margin-top:28px}
+.vs_a4{margin-top:22px}
+.ab_bg{width:93px;height:92px;display:block;bottom:-1px;position:relative}
+.ab_bg span{ position:absolute;color:#fff;font-size:12px;left:9px;top:9px;font-weight:bold}
+.a_bg1{ background:url(../img/lq2_03.png);margin:2px auto}
+.a_bg2{ background:url(../img/lq2_09.png);position:absolute;left:5px}
+.a_bg3{ background:url(../img/lq_13.png);margin:2px auto}
+.a_bg4{ background:url(../img/lq_09.png);position:absolute;left:5px}
+.b_bg1{ background:url(../img/lq2_05.png);margin:2px auto}
+.b_bg2{ background:url(../img/lq2_10.png);position:absolute;left:5px}
+.b_bg3{ background:url(../img/lq_15.png);margin:2px auto}
+.b_bg4{ background:url(../img/lq_10.png);position:absolute;left:5px}
+
+.ab_a{display:block;width:75px;height:69px;margin:12px auto 0}
+p.vs_p1{color:#fff;text-align:center;font-size:12px;line-height:16px;margin-top:-6px; position:relative;z-inde:999;height:46px;display:block}
+p.vs_p1 a{color:#fff}
+p.vs_p1 em{color:#ffe400;font-weight:bold; font-family:Arial;font-size:16px}
+p.vs_sj{line-height:14px;color:#111;font-size:12px;padding:4px 3px 0 3px;width:92px; font-family:Arial}
+.vs_sj span{line-height:14px;color:#111;padding-left:10px;width:82px;display:block;height:14px}
+.vs_ao p.vs_p1{line-height:17px}
+.vs_bo{width:103px;height:341px;position:relative}
+.vs_b1{}
+.vs_b2{margin-top:179px}
+.m_vs_d{margin:327px 0 0 28px;float:left;width:160px;height:430px;}
+.vs_d{position:relative;height:430px}
+.d_bg1{width:78px;height:78px; background-img:url(../img/unk.gif);margin:2px auto;;overflow:visible}
+.d_bg2{width:78px;height:78px; background-img:url(../img/unk.gif);position:absolute;left:40px;bottom:0px;overflow:visible}
+.d_a{display:block;width:75px;height:69px;margin:4px auto 0; position:relative;overflow:visible}
+.d_a img{margin:4px auto}
+.vs_d h1{font-size:14px;line-height:45px;font-weight:100;color:#fff;text-align:center;padding-top:20px}
+p.vs_p2{line-height:15px;color:#fff;font-size:12px;padding:12px 0 0 42px;font-family:Arial}
+.hot_news{height:190px;padding:95px 0 0 12px}
+.hot_news img{display:block;width:230px;height:145px}
+.hot_news a{display:block;float:left;margin-left:10px;width:230px;height:190px;line-height:28px;color:#fff;font-size:14px;text-align:center}
+.match_fot{ text-align:center;color:#ff490f;line-height:28px;padding-top:115px}
+.match_fot a{color:#ff490f}
+.z_tab{position:absolute;width:103px;height:235px;background:url(../img/lq_03.png) 0 0 no-repeat;z-index:9999;display:none}
+.a1_tab{left:0;top:0}
+.a2_tab{left:0;top:258px}
+.a3_tab{left:0;top:521px}
+.a4_tab{left:0;top:778px}
+.z_tab p.vs_p1{margin-top:15px}
+.z_tab p.vs_sj{line-height:20px;padding:15px 3px 0 5px}
+.z_tab p.vs_sj span{line-height:20px}
+
+.x_tab{position:absolute;width:103px;height:235px;background:url(../img/lq_05.png) 0 0 no-repeat;z-index:9999;display:none}
+.b1_tab{left:0;top:0}
+.b2_tab{left:0;top:258px}
+.b3_tab{left:0;top:521px}
+.b4_tab{left:0;top:778px}
+.x_tab p.vs_p1{margin-top:15px;height:}
+.x_tab p.vs_sj{line-height:20px;padding:15px 3px 0 5px}
+.x_tab p.vs_sj span{line-height:20px;}
+.winer{width:254px;height:184px; background:url(../img/guanjun01.png); position: absolute;top:31px;left:373px}
+.winer img{display:block;width:75px;height:69px;margin:106px 0 0 92px}
