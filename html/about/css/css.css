@@ -1,0 +1,36 @@
+﻿@charset "utf-8";
+{margin:0;padding:0}
+body,h3,h4,h2,h1,h5,table,td,th,ul,li,ol,dd,dt,dl,div,span,p,b,i,s,em,thead,tbody,font,select,input,option{margin:0;padding:0;font-weight:100}
+body{font-size:12px; font-family: Arial,simsun; }
+a{text-decoration:none;outline:none;cursor:pointer;} 
+em,i,s,b{ font-style:normal; text-decoration:none}
+img{border:none;}
+body a{outline:none;blr:expression(this.onFocus=this.blur());}
+div,ul,li{ list-style-type:none;overflow:hidden}
+.header{width:100%;height:80px; background:url(../images/qyz_04.jpg)}
+.head{width:1000px;margin:0 auto}
+.head img{float:left;display:block;}
+.headr{float:right;margin:15px 16px 0 0 ; background:url(../images/qyz_07.jpg);width:195px;height:53px;padding-top:7px}
+.headr a{display:block;width:40px;float:left;margin-right:8px;height:40px;}
+.contain{width:1000px;margin:0 auto}
+.banner{width:1000px;height:160px;margin-bottom:10px}
+.left{width:193px;float:left;margin-bottom:60px}
+.left h1{width:193px;height:46px; background:url(../images/qyz_13.jpg);margin-bottom:12px}
+.left a{margin-bottom:7px;width:131px;height:34px; background:url(../images/qyz_23.jpg);padding-left:45px;line-height:34px;color:#985201;margin-left:8px;display:block;}
+.left a.cur,.left a:hover{background:url(../images/qyz_20.jpg);color:#fff;font-size:14px;font-weight:bold}
+.right{width:793px;float:right;margin-bottom:60px;min-height:400px;}
+.right h1{width:793px;height:29px; background:url(../images/qyz_16.jpg);line-height:29px;padding-left:30px;color:#ff6600;font-weight:bold;font-size:14px;}
+.right h2{padding:20px 0 0 30px;line-height:30px;color:#000;font-size:16px;font-weight:bold}
+.right p{font-size:12px;line-height:24px; text-indent:36px;color:#333;padding-left:30px}
+.foot{text-align:center;background:url(../images/qyz_26.jpg);height:67px;clear:both;padding-top:20px;line-height:24px;color:#888;}
+.foot a{color:#888}
+.foot a:hover{color:#ff6600}
+.webs{padding-bottom:20px}
+.webs h2{height:28px;border:1px solid #ddd;background:url(../images/webs_08.jpg);padding:0}
+.webs h2 span{display:block;float:left;width:125px;height:28px;background:url(../images/webb_03.jpg) no-repeat;line-height:27px;color:#ff6600;font-weight:bold;padding-left:30px;font-size:14px}
+.webs h2 span.cur{background:url(../images/webs_07.jpg) no-repeat;width:202px}
+.webs h2 a{display:block;float:right;width:106px;height:28px;background:url(../images/webs_11.jpg);width:15px;height:15px;margin:6px 10px 0 0 }
+.websm{border:1px solid #ddd;line-height:24px;padding:10px 15px 10px 25px;border-top:none;font-size:12px}
+.websm a{color:#222;margin:0 8px}
+.websm a:hover{color:#ff6600; text-decoration:underline}
+.webshow{height:12px;background:url(../images/webs_15.jpg)}
