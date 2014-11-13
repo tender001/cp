@@ -143,17 +143,26 @@
     						
 						
 					            arrCodes = ccodes.split(';').map(function (c){
+					            	var newd=[];
 					            	var rb = c.split(':'),
 					                d= rb[0] ? rb[0] : [];
 					                d = d.split(","); 
 					                var zs = 1;
-					                zs = Math.c(d.length, 5);
-   			    	             	
-//   			    	              zs = Math.c(d.length, 5);
-   			    	             d.each(function (item, n){
+					                	d.each(function (item, n){
        			    	                zs *= item.length;
        			    	            });
-				    	                return [[[d],zs]];
+					               for(var i=0;i<d.length;i++){
+					            	 
+					            	   if(d[i].length>1){
+					            		   newd[i]=d[i].split("");
+					            	   }else{
+					            		   newd[i]=[d[i]*1];
+					            	   }
+					            	   
+					               }
+					               newd.push(zs);
+					               
+				    	                return [newd];
 					            }).filter(function (c){
 					                if (c[c.length - 1] == 0) {//zs
 					                    short_code = c//残缺号码
@@ -162,9 +171,10 @@
 					                }
 					            });
 					            if (arrCodes.length) {//完整号码显示到列表
+//					            	
 					            	 this.moveToBuy();
 					                 for(var i=0;i<arrCodes.length;i++){
-    			    	            		this.postMsg('msg_put_code',arrCodes[i]);
+					                	 this.postMsg('msg_put_code',arrCodes[i]);
     			    	            	}
 					            }
 					            if (short_code && short_code.length) {// 残缺号码显示到球区
