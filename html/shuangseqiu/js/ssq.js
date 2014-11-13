@@ -608,6 +608,10 @@ Class('CodeList>CodeList_dt', {
         		    			Y.alert("您不是该方案的发起人，不能再次购买本方案");
         		    			return false;
         		    		}
+        		    		if(ccodes.indexOf("$")!=-1){
+        						Y.alert("胆拖再次追号不支持");
+        						return false;
+        					}
         					if(ccodes.indexOf("$")==-1){
         						if(ccodes.indexOf("|")==-1){
         							
@@ -755,7 +759,7 @@ Class('CodeList>CodeList_dt', {
         					var r = obj.Resp.row;
         					
         					var ccodes =r.ccodes===undefined?r[0].ccodes:r.ccodes;// 投注号码
-        					ccodes = ccodes.split(':')[0];
+//        					ccodes = ccodes.split(':')[0];
         					var mulity =r.imulity===undefined?r[0].imulity:r.imulity;// 投注号码 ;// 倍数
         					if(mulity>1){
         						$("#beishu").val(mulity);
@@ -766,10 +770,52 @@ Class('CodeList>CodeList_dt', {
         		    			Y.alert("您不是该方案的发起人，不能再次购买本方案");
         		    			return false;
         		    		}
+        		    		
         					if(ccodes.indexOf("$")==-1){
-        				
+        						if(ccodes.indexOf("|")==-1){
+        							Y.ajax({
+        				    			url : "/cpdata/pupload/01/"+periodid+"/"+ccodes+"",
+        				    			type : "GET",
+        				    			end: function(d) {
+        				    				var obj =  d.text;
+        				    				re = /[\r\n]+/g;
+        				    				re2= /^\;|\;$/g;
+        				    				obj=obj.replace(re,";").replace(re2,"");
+        				    				if(obj.split(";").length>100){
+        				    					Y.alert("单式方案注数超过100");
+        				    				}else{
+        				    					Yobj.get('#codes').val(obj);
+        				    					 if (import_code = Yobj.get('#codes').val()) {
+        				   			    				if (typeof this.dejson(import_code) == 'object') return;
+        				   			    	            if (/\b0\b/.test(import_code)) {
+        				   			    	                return
+        				   			    	            }
+        				   			    	            arrCodes = import_code.split(';').map(function (c){
+        				   			    	                var rb = c.split('|'),
+        				   			    	                    r = rb[0] ? rb[0].split(',') : [],
+        				   			    	                    b = rb[1] ? rb[1].split(":")[0].split(",") : [],
+        				   			    	                    zs = Math.c(r.length, 6) * Math.c(b.length, 1);
+        				   			    	                return [r, b, zs];
+        				   			    	            }).filter(function (c){
+        				   			    	                if (c[c.length - 1] == 0) {//zs
+        				   			    	                    short_code = c;//残缺号码
+        				   			    	                }else{
+        				   			    	                    return true;
+        				   			    	                }
+        				   			    	            });
+        				   			    	            if (arrCodes.length) {//完整号码显示到列表
+        				   			    	                 this.postMsg('msg_put_code', arrCodes);
+        				   			    	                 this.moveToBuy();
+        				   			    	            }
+        				   			    	            if (short_code && short_code.length) {// 残缺号码显示到球区
+        				   			    	                this.postMsg('msg_redraw_code', short_code);
+        				   			    	            }
+        										   }
+        				    				}
+        				    			}
+        							});
+        						}else{
         							Yobj.get('#codes').val(ccodes);
-        						
     							   if (import_code = Yobj.get('#codes').val()) {
     	   			    				if (typeof this.dejson(import_code) == 'object') return;
     	   			    	            if (/\b0\b/.test(import_code)) {
@@ -796,7 +842,7 @@ Class('CodeList>CodeList_dt', {
     	   			    	                this.postMsg('msg_redraw_code', short_code);
     	   			    	            }
     							   }
-        						
+        						}
         					}else{ 
         						Yobj.get('#codes').val(ccodes);
         						 playTabs.focus(1);
