@@ -574,11 +574,9 @@ Class('CodeList>Z6CodeList', {
         if(zid!=""&&typeof(zid) != 'undefined'){
     		Y.postMsg('msg_login', function (){
     			location.href='#page_zh';
+    			
     			buyTabs.focus(2);
-    			 if($("#subPlayTabs a").focus(2)){
-						Y.alert("3D和值不支持再次追号");
-						return false;
-					}
+    			 
                 setTimeout(function() {
                     Y.lib.ZhOptions();
                 },99);   
@@ -622,6 +620,10 @@ Class('CodeList>Z6CodeList', {
 //					                }else if(c.split(':')[1] == 3){
 //					                	type="Z6"
 //					                }
+					                if(c.split(':')[2] == 4){
+					                	Y.alert("3D和值不支持再次追号");
+				    					return false;
+					                }
 					               
 					                switch(c.split(':')[1]){
 					                    case '2':
@@ -643,6 +645,7 @@ Class('CodeList>Z6CodeList', {
 					                        zs = q.length*b.length*g.length;
 					                        return [[q.sort(Array.up), b.sort(Array.up), g.sort(Array.up), zs]]
 					                }
+					               
 					                
 					            }).filter(function (c){
 					                if (c[c.length - 1] == 0) {//zs
