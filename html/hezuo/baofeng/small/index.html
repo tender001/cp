@@ -1,0 +1,177 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="css/oder.css"  rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="js/oder.js"></script>
+<title>暴风小弹框</title>
+</head>
+<body>
+<div class="oder">
+ <div class="ssq">
+  <img  src="images/ssq.jpg" />
+  <div class="ssq_m">
+   <p><strong>双色球</strong>第<em id="expect">2012083</em>期</p>
+   <div id="codes"><b>02</b><b>05</b><b>06</b><b>15</b><b>19</b><b>20</b><b class="blue">08</b></div>
+   <p><span>奖池：<em id="gpool">177,229,420</em>元</span><a href="javascript:void(0);" onclick="LotteryNum();">换一注</a></p>
+  </div>
+  <span class="aspan">截止时间：<span id="endtime">07月19日 06:22</span><a href="javascript:void(0);" onclick="LotteryBuy();">立即投注</a></span>
+ </div>
+ <div class="cz" id="Lotterytype">
+   <div class="cz_co cz_w"  >
+   <div class="cz_co1"  id="div1">
+    <b class="g_dlt"></b>
+    <span>
+    <h3>大乐透</h3>
+    <p><em>2元可中1000万</em></p></span>
+   </div>
+    <a href="http://www.159cai.com/from.phpx?comeFrom=baofeng&backurl=/daletou/" target="_blank" class="cz_co2 cz_n" style="display:none" id="a1">
+    <h3>大乐透</h3>
+    <p>奖池滚存：123322513元<br />
+每周1/2/4开奖</p> 
+	<b class="g_tz">投一注</b>
+   </a>
+   </div><div class="cz_co cz_w">
+   <div class="cz_co1"  id="div2">
+    <b class="g_3d"></b>
+    <span>
+    <h3>福彩3D</h3>
+    <p>猜中3个号码赢千元</p></span>
+   </div>
+    <a href="http://www.159cai.com/from.phpx?comeFrom=baofeng&backurl=/3d/" target="_blank" class="cz_co2 cz_n" style="display:none" id="a2">
+    <h3>福彩3D</h3>
+    <p>猜中3个号码赢千元<br />
+每天20:30开奖</p> 
+<b class="g_tz">投一注</b>
+   </a>
+   </div><div class="cz_co cz_w">
+   <div class="cz_co1"  id="div3">
+    <b class="g_ssc"></b>
+    <span>
+    <h3>时时彩</h3>
+    <p>最高奖11.6万</p></span>
+   </div>
+    <a  href="http://www.159cai.com/from.phpx?comeFrom=baofeng&backurl=/ssc/" target="_blank"class="cz_co2 cz_n" style="display:none" id="a3">
+    <h3>时时彩</h3>
+    <p>最高奖11.6万<br />120期/天</p> 
+<b class="g_tz">投一注</b>
+   </a>
+   </div><div class="cz_co cz_w">
+   <div class="cz_co1"  id="div4">
+    <b class="g_p3"></b>
+    <span>
+    <h3>排列三</h3>
+    <p>每天20:30开奖</p></span>
+   </div>
+    <a href="http://www.159cai.com/from.phpx?comeFrom=baofeng&backurl=/paisan/" target="_blank" class="cz_co2 cz_n" style="display:none" id="a4">
+    <h3>排列三</h3>
+    <p>天天开奖，轻松赢千元<br />
+每天20:30开奖</p> 
+<b class="g_tz">投一注</b>
+   </a>
+   </div><div class="cz_co cz_w">
+   <div class="cz_co1"  id="div5">
+    <b class="g_sfc"></b>
+    <span>
+    <h3>胜负彩</h3>
+    <p>最高可中500万</p></span>
+   </div>
+    <a href="http://www.159cai.com/from.phpx?comeFrom=baofeng&backurl=/zc/" target="_blank" class="cz_co2 cz_n cz_mn" style="display:none" id="a5">
+    <h3>胜负彩</h3>
+    <p>竞猜14场足球比赛<br />
+最高可中500万</p> 
+<b class="g_tz">投一注</b>
+   </a>
+   </div><div class="cz_co cz_w">
+   <div class="cz_co1"  id="div6">
+    <b class="g_11x5"></b>
+    <span>
+    <h3>11选5</h3>
+    <p>返奖率高达59%</p></span>
+   </div>
+    <a href="http://www.159cai.com/from.phpx?comeFrom=baofeng&backurl=/11x5/" target="_blank" class="cz_co2 cz_n" style="display:none" id="a6">
+    <h3>11选5</h3>
+    <p>返奖率高达59%<br />
+10分钟一期</p> 
+<b class="g_tz">投一注</b>
+   </a>
+   </div><div class="cz_co cz_w">
+   <div class="cz_co1"  id="div7">
+    <b class="g_jc"></b>
+    <span>
+    <h3>竞彩足球</h3>
+    <p>返奖率高达69%</p></span>
+   </div>
+    <a href="http://www.159cai.com/from.phpx?comeFrom=baofeng&backurl=/jc/" target="_blank" class="cz_co2 cz_n cz_mn" style="display:none" id="a7">
+    <h3>竞彩足球</h3>
+    <p>返奖率高达69%<br />
+过关固定奖金</p> 
+<b class="g_tz">投一注</b>
+   </a>
+   </div><div class="cz_co cz_w">
+   <div class="cz_co1"  id="div8">
+    <b class="g_lc"></b>
+    <span>
+    <h3>竞彩蓝球</h3>
+    <p>返奖率高达69%</p></span>
+   </div>
+    <a href="http://www.159cai.com/from.phpx?comeFrom=baofeng&backurl=/lc/" target="_blank" class="cz_co2 cz_n cz_mn" style="display:none" id="a8">
+    <h3>竞彩蓝球</h3>
+    <p>返奖率高达69%<br />
+过关固定奖金</p> 
+<b class="g_tz">投一注</b>
+   </a>
+   </div><div class="cz_co cz_w">
+   <div class="cz_co1"  id="div9">
+    <b class="g_dc"></b>
+    <span>
+    <h3>北京单场</h3>
+    <p>猜对一场就有奖</p></span>
+   </div>
+    <a href="http://www.159cai.com/from.phpx?comeFrom=baofeng&backurl=/bj/" target="_blank" class="cz_co2 cz_n cz_mn" style="display:none" id="a9">
+    <h3>北京单场</h3>
+    <p>多种过关组合方式<br />
+猜对一场就有奖</p> 
+<b class="g_tz">投一注</b>
+   </a>
+   </div>
+ </div>
+</div>
+ <script type="text/javascript">
+
+var codes="";
+function LotteryNum(){
+
+ var a=[];
+ var b=[]; 
+ var c=[];
+ var n;
+ var m;
+ for(var i=1;i<17;i++) {
+ c.push(i<10 ? "0"+i : i); 
+}
+ m = c.splice(Math.floor(Math.random() * c.length),1); 
+ c.push(m);
+ for(var i=1;i<34;i++)  { 
+ a.push(i<10 ? "0"+i : i) ;
+ }
+ for(var i=0;i<6;i++){  
+ n = a.splice(Math.floor(Math.random() * a.length),1)  
+
+ b.push(n);  }  
+
+ var codeshtml=document.getElementById("codes");
+ codes=b.sort()+"|"+m;
+ var html='<b>'+b.sort()[0]+'</b><b>'+b.sort()[1]+'</b><b>'+b.sort()[2]+'</b><b>'+b.sort()[3]+'</b><b>'+b.sort()[4]+'</b><b>'+b.sort()[5]+'</b><b class="blue">'+m+'</b>'
+ codeshtml.innerHTML=html;
+
+
+}
+function LotteryBuy(){
+window.open ('http://www.159cai.com/from.phpx?comeFrom=baofeng&backurl=/shuangseqiu/?codes='+codes+'');  
+}
+LotteryNum();
+ </script>  
+<div style="display:none"> <script src="http://s22.cnzz.com/stat.php?id=4998776&web_id=4998776&show=pic1" language="JavaScript"></script></div>
+</body>
+</html>
