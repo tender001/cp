@@ -1511,7 +1511,7 @@ a.jcq_kcur {background: url(../images/njc/jcy_17.jpg) no-repeat;}
 .onlkjp{padding-top:5px}
 .fxgj h2{background:#f5f5f5;height:30px;line-height:30px;font-weight:bold}
 .onlkj{border:1px solid #ddd;clear:both;zoom:1}
-.onlkj h3{height:32px;line-height:32px;padding-left:10px;}
+.onlkj h3{height:32px;line-height:32px;padding-left:0;text-indent: 10px}
 .onlkj h3 span{float:left;font-size:14px}
 .onlkj h3 a{float:right;color:#145fab;margin-right:12px;font-weight:400;font-size:12px;_display: inline;}
 .onlkj p em,.onlkj h3 a:hover{color:#f00}
@@ -1525,8 +1525,8 @@ a.jcq_kcur {background: url(../images/njc/jcy_17.jpg) no-repeat;}
 .onlkj .jc_xqy div{float:left;padding-left:5px;line-height:24px;color:#333;font-size:12px;_padding-left:2px}
 .onlkj .jc_xqy div strong{font-weight:bold}
 .onlkj .jc_xqy div a{float:left;height:25px;line-height:25px;margin-top:6px;padding:0 10px;color:#fff;background:#f60;margin-left:10px;}
-.onlkjplist{padding:7px 0 10px 10px}
-.onlkjplist a{display:block;height:24px;line-height:24px;padding-left:16px;color:#333;background: url(../images/cai888/news2_03.jpg) left 10px no-repeat;}
+.onlkjplist{width:94%;margin: 2px auto 9px}
+.onlkjplist a{display:block;height:24px;line-height:24px;padding-left:16px;color:#333;white-space:nowrap;background: url(../images/cai888/news2_03.jpg) left 10px no-repeat;}
 .onlkjplist a:hover,.newsc2list a:hover{color:#f60;text-decoration:underline}
 .dc_table td label{}
 .dc_r{background:#fff}
