@@ -6,7 +6,7 @@ Class.C('lot_name_ch', '十一运夺金');
 Class.C('lot_name_en', '11ydj');
 Class.C('lot_id', '56');
 Class.C('price', 2);
-Class.C('playid', 249);
+Class.C('playid', 255);
 Class.C('fsfq', $_trade.url.pcast);
 Class.C('fszh', $_trade.url.zcast);
 Class.C('casttype', 0);
@@ -836,46 +836,46 @@ Class.extend('exportCode', function (){
 	if(showid!=""&&typeof(showid) != 'undefined'){
 		Yobj.get('#codes').val(showid);
 		location.href='#page_buy';
-		
+		if(type==""||typeof(type) == 'undefined' || type =="rx8"){
+			type="255";
+			Y.postMsg('msg_force_change_playtabs', 7,1);
+		}else if(type=="rx5"){
+			type ="252";
+			Y.postMsg('msg_force_change_playtabs', 4,1);
+		}else if(type =="rx3"){
+			type ="250";
+			Y.postMsg('msg_force_change_playtabs', 2,1);
+		}else if(type =="zx3"){
+			type ="246";
+//			Y.postMsg('msg_force_change_playtabs', 11,3);
+		}
+	    var import_code, arrCodes, short_code;
+	    if (import_code = Yobj.get('#codes').val()) {
+			if (typeof this.dejson(import_code) == 'object') return;
+	        if (/\b0\b/.test(import_code)) {
+	            return
+	        }
+	       
+//	        if(type ==246){
+//	        	import_code=import_code.splist(",");
+//	        	import_code.each(function (arr){
+//					if(arr!=""){
+//					
+//						arr[0] = arr[0].concat('', '-', '-', '|' '-').slice(0, 5);
+//						
+////					   arr[0] = String.zero(arr[0].join('|'));
+//					
+//					}
+//					
+//				});
+//	        }
+	        arrCodes= [import_code,type,1];
+	        if (arrCodes.length) {//完整号码显示到列表
+	             Y.postMsg('msg_put_code', arrCodes);
+	        }
 	}
 
-	if(type==""||typeof(type) == 'undefined' || type =="rx8"){
-		type="255";
-		Y.postMsg('msg_force_change_playtabs', 7,1);
-	}else if(type=="rx5"){
-		type ="252";
-		Y.postMsg('msg_force_change_playtabs', 4,1);
-	}else if(type =="rx3"){
-		type ="250";
-		Y.postMsg('msg_force_change_playtabs', 2,1);
-	}else if(type =="zx3"){
-		type ="246";
-//		Y.postMsg('msg_force_change_playtabs', 11,3);
-	}
-    var import_code, arrCodes, short_code;
-    if (import_code = Yobj.get('#codes').val()) {
-		if (typeof this.dejson(import_code) == 'object') return;
-        if (/\b0\b/.test(import_code)) {
-            return
-        }
-       
-//        if(type ==246){
-//        	import_code=import_code.splist(",");
-//        	import_code.each(function (arr){
-//				if(arr!=""){
-//				
-//					arr[0] = arr[0].concat('', '-', '-', '|' '-').slice(0, 5);
-//					
-////				   arr[0] = String.zero(arr[0].join('|'));
-//				
-//				}
-//				
-//			});
-//        }
-        arrCodes= [import_code,type,1];
-        if (arrCodes.length) {//完整号码显示到列表
-             Y.postMsg('msg_put_code', arrCodes);
-        }
+	
     };
     if(zid!=""&&typeof(zid) != 'undefined'){
 
@@ -899,57 +899,19 @@ Class.extend('exportCode', function (){
 				if (code == "0") {
 					var r = obj.Resp.row;
 					var ccodes =r.ccodes===undefined?r[0].ccodes:r.ccodes;// 投注号码
-					ccodes = ccodes.split(':')[0];
-					var mulity =r.imulity===undefined?r[0].imulity:r.imulity;// 投注号码 ;// 倍数
-					var ss = r[0].ccodes;// 投注号码
-					ss = ss.split(':')[1];
-					zhushu = r[0].icmoney*1/2;
-					//ss = ccodes.split(':')[1];
-					
+					var mulity =r.imulity===undefined?r[0].imulity:r.imulity;// 倍数
+					var icmoney = r.icmoney===undefined?r[0].icmoney:r.icmoney;
 					//var periodid = r.periodid;//期次
 					if(mulity>1){
 						$("#beishu").val(mulity);
 					}
+					if(ccodes.indexOf("$")!=-1){
+						Y.alert("胆拖再次追号不支持");
+						return false;
+					}
 					//Y.postMsg('msg_force_change_playtabs',0,1);
 //					ss = ss * 1 ;
-					if(ss==1){
-						type="244";
-						Y.postMsg('msg_force_change_playtabs', 0,1);
-					}
-					else if(ss==2){
-						type="249";
-						Y.postMsg('msg_force_change_playtabs', 1,1);
-					}else if(ss == 3){
-						type="250";
-						Y.postMsg('msg_force_change_playtabs', 2,1);
-					}else if(ss == 4){
-						type="251";
-						Y.postMsg('msg_force_change_playtabs', 3,1);
-					}else if(ss == 5){
-						type="252";
-						Y.postMsg('msg_force_change_playtabs', 4,1);
-					}else if(ss == 6){
-						type="253";
-						Y.postMsg('msg_force_change_playtabs', 5,1);
-					}else if(ss == 7){
-						type="254";
-						Y.postMsg('msg_force_change_playtabs', 6,1);
-					}else if(ss == 8){
-						type="255";
-						Y.postMsg('msg_force_change_playtabs', 7,1);
-					}else if(ss == 11){
-						type="247";
-						Y.postMsg('msg_force_change_playtabs', 8,1);
-					}else if(ss == 12){
-						type="248";
-						Y.postMsg('msg_force_change_playtabs', 9,1);
-					}else if(ss == 9){
-						type="245";
-						Y.postMsg('msg_force_change_playtabs', 10,2);
-					}else if(ss == 10){
-						type="248";
-						Y.postMsg('msg_force_change_playtabs',11,3);
-					}
+					
 					//type=type;
 					if(ccodes==""){
 		    			Y.alert("您不是该方案的发起人，不能再次购买本方案");
@@ -958,35 +920,111 @@ Class.extend('exportCode', function (){
 					if(ccodes.split(':')[0]){
 						$("#zjtz23").attr("checked",'true');
 					}
-					
-//					if(ccodes.indexOf("$")==-1){
-//						
-//							Yobj.get('#codes').val(ccodes);
-//							var import_code, arrCodes, short_code;
-//						    if (import_code = Yobj.get('#codes').val()) {
-//								if (typeof this.dejson(import_code) == 'object') return;
-//						        if (/\b0\b/.test(import_code)) {
-//						            return
-//						        }
-//						        arrCodes= [import_code,type,zhushu];
-//						        if (arrCodes.length) {//完整号码显示到列表
-//						             Y.postMsg('msg_put_code', arrCodes);
-//						        }
-//						        if (short_code && short_code.length) {// 残缺号码显示到球区
-//   			    	                this.postMsg('msg_redraw_code', short_code);
-//   			    	            }
-//						    }
-//						}  
+				
 					if(ccodes.indexOf("$")==-1){
 						
-						Yobj.get('#codes').val(ccodes);
-							
-						ccodes= type == "244" ? [ccodes].concat('-', '-', '-', '-', '-').slice(0,5).join('|') : ccodes;
-					        arrCodes= [[ccodes,type,zhushu]];
-					       
-					        if (arrCodes.length) {//完整号码显示到列表
-					             Y.postMsg('msg_put_code', arrCodes);
-					        }
+						arrCodes = ccodes.split(';').map(function (c){
+	    	                var rb = c.split(':'),
+	    	                    d= rb[0] ? rb[0] : [],
+	    	                    ss= rb[1] ? rb[1] : [],
+    	                    	zs=1;
+	    	                  
+                    		if(ss==1){
+	    						type=244;
+	    						Y.postMsg('msg_force_change_playtabs', 0,1);
+	    						d=[d].concat('-', '-', '-', '-', '-').slice(0,5).join('|');
+	    						zs = Math.c(d.split(',').length, Class.C('lot_data')[type][2]);
+	    					}
+	    					else if(ss==2){
+	    						type=249;
+	    						Y.postMsg('msg_force_change_playtabs', 1,1);
+	    						zs = Math.c(d.split(',').length, Class.C('lot_data')[type][2]);
+	    					}else if(ss == 3){
+	    						type=250;
+	    						Y.postMsg('msg_force_change_playtabs', 2,1);
+	    						zs = Math.c(d.split(',').length, Class.C('lot_data')[type][2]);
+	    					}else if(ss == 4){
+	    						type=251;
+	    						Y.postMsg('msg_force_change_playtabs', 3,1);
+	    						zs = Math.c(d.split(',').length, Class.C('lot_data')[type][2]);
+	    					}else if(ss == 5){
+	    						type=252;
+	    						Y.postMsg('msg_force_change_playtabs', 4,1);
+	    						zs = Math.c(d.split(',').length, Class.C('lot_data')[type][2]);
+	    					}else if(ss == 6){
+	    						type=253;
+	    						Y.postMsg('msg_force_change_playtabs', 5,1);
+	    						zs = Math.c(d.split(',').length, Class.C('lot_data')[type][2]);
+	    					}else if(ss == 7){
+	    						type=254;
+	    						Y.postMsg('msg_force_change_playtabs', 6,1);
+	    						zs = Math.c(d.split(',').length, Class.C('lot_data')[type][2]);
+	    					}else if(ss == 8){
+	    						type=255;
+	    						Y.postMsg('msg_force_change_playtabs', 7,1);
+	    						zs = Math.c(d.split(',').length, Class.C('lot_data')[type][2]);
+	    					}else if(ss == 11){
+	    						type=247;
+	    						Y.postMsg('msg_force_change_playtabs', 8,1);
+	    						zs = Math.c(d.split(',').length, Class.C('lot_data')[type][2]);
+	    					}else if(ss == 12){
+	    						type=248;
+	    						Y.postMsg('msg_force_change_playtabs', 9,1);
+	    						zs = Math.c(d.split(',').length, Class.C('lot_data')[type][2]);
+	    					}else if(ss == 9){
+	    						type=245;
+	    						Y.postMsg('msg_force_change_playtabs', 10,2);
+	    					
+                    			d=[d].concat('-', '-', '-').slice(0,5).join('|');
+                    			 var p, len, id, a, b, c, sum, i, j, k, bad, yes;
+                                 sum = 0;
+                                 bad = [];
+                                 yes = [];
+                                 a = d.split("|")[0].split(",");
+                                 b = d.split("|")[1].split(",");
+                                     for (i =  a.length; i--;) {
+                                         for (j =  b.length; j--;) {
+                                             if (a[i]!==b[j]) {
+                                                 yes[yes.length] = [a[i], b[j]];
+                                                 sum+=1
+                                             }else{
+                                                 bad[bad.length] = [a[i], b[j]]
+                                             }
+                                         }                
+                                     }            
+	    					}else if(ss == 10){
+	    						type=246;
+	    						Y.postMsg('msg_force_change_playtabs',11,3);
+	    						var p, len, id, a, b, c, sum, i, j, k, bad, yes;
+                                sum = 0;
+                                bad = [];
+                                yes = [];
+                    			d=[d].concat('-', '-').slice(0,5).join('|');
+                    			c =  d.split("|")[0].split(",");
+                                
+                                for (k =  c.length; k--;) {
+                                        yes[yes.length] = [c[k]];
+                                        sum+=1;
+                                }   
+                         
+            			zs = sum;
+                    			
+	    					}
+	                    		
+//                   
+	    	                return [[d,type,zs]];
+	    	            }).filter(function (c){
+	    	                if (c[c.length - 1] == 0) {//zs
+	    	                    short_code = c;//残缺号码
+	    	                }else{
+	    	                    return true;
+	    	                }
+	    	            });
+				        if (arrCodes.length) {//完整号码显示到列表
+				        	for(var i=0;i<arrCodes.length;i++){
+		    	            		this.postMsg('msg_put_code',arrCodes[i]);
+		    	            	}
+				        }
 					}  
 				}else if(code=='2002'){
 					Y.alert("您不是该方案的发起人，不能再次购买本方案");
@@ -1004,9 +1042,25 @@ Class.extend('exportCode', function (){
 	});
 
 	}
+
+
+if(type==""||typeof(type) == 'undefined' || type =="rx8"){
+	type="255";
+	Y.postMsg('msg_force_change_playtabs', 7,1);
+}else if(type=="rx5"){
+	type ="252";
+	Y.postMsg('msg_force_change_playtabs', 4,1);
+}else if(type =="rx3"){
+	type ="250";
+	Y.postMsg('msg_force_change_playtabs', 2,1);
+}else if(type =="zx3"){
+	type ="246";
+//	Y.postMsg('msg_force_change_playtabs', 11,1);
+}else if(type =="rx2"){
+	type ="249";
+	Y.postMsg('msg_force_change_playtabs', 1,1);
+}
 });
-
-
 //主程序
 Class('App', {
     use: 'tabs, mask, dataInput, countDown',
@@ -1243,8 +1297,8 @@ Class('App', {
         this.lib.Multi({
             items: '#q2zx span.nsbool',  //球
             group: '#ballMulti2 em',
-            focusCss: 'cur',
-            hoverCss: '',
+            focusCss: 'red',
+            hoverCss: 'hover',
             showbar: '#Multi_bar2',//奖金 盈利
             put: '#s2_put',//选好了
             clear:'#s2_clear',
@@ -1257,8 +1311,8 @@ Class('App', {
         this.lib.Multi({
             items: '#q3zx span.nsbool',
             group: '#ballMulti3 em',
-            focusCss: 'cur',
-            hoverCss: '',
+            focusCss: 'red',
+            hoverCss: 'hover',
             showbar: '#Multi_bar3',
             put: '#s3_put',
             clear:'#s3_clear',
@@ -1299,64 +1353,70 @@ Class('App', {
         });*/
 //        alert('addTabs_1');
         playTabs.onchange= function (a, b){
-        	
+        	//$("#num_header_1").hide();
         	$("#num_header_1").css('height','0');
         	$("#span5").removeClass("span5c");
         	
+        	
         	var pid = this.get('#play_tabs a').slice(b, b+1).attr("value");
+//        	var pid = this.get('#play_tabs a[class=cur]').attr("value");
+        	Class.C('playid', pid);
         	var nl = Y.getopencodelength(pid);//当前的
-            Class.C('playid', pid);
-            var ol = Y.getopencodelength(Class.C('playid'));//上一个的
-//            Y.get("#shili").attr("data-help",Class.C('lot_data_dome')[pid]);
+        	
+        	var ol = Y.getopencodelength(Class.C('playid'));//上一个的
             Y.get("#wanfatishi").html(Class.C('lot_data_wanfa')[pid]);
             Y.get("#shil s").attr("data-help",Class.C('lot_data_dome')[pid]);
+            
             Y.postMsg('playtabs_onchange'); 
             Y.postMsg('danma_onchange');
             Y.postMsg('msg_buy_succeed');
 			Y.get("#inputtext").val("");
 			$("#sdinput").show();
-			// if(pid>248&&pid<256){
-				// Y.get("#sdinput").show();
-			// }else{
-				// Y.get("#sdinput").hide();
-			// }
             if(ol!=nl){
             	Y.postMsg('show_opencodelist', 2);
             }
             if(nl == 6){
-            	$("#num_header_1").hide();
+//            	$("#num_header_1").hide();
             	$("#opencodelist").hide();
-            	$("#num_header_2").show();
+            	//$("#num_header_2").show();
             	$("#opencodelist_2").show();
-            	$("#num_header_3").hide();
+            	//$("#num_header_3").hide();
 	        	$("#opencodelist_3").hide();
-//	        	$("#win_today").show();
+	        	$("#win_today").show();
 	        	$("#setdanma_i").hide();
 	        	$("#setdanma").hide();
 	        	$("#haoma_1").hide();
+//	        	$("#q3zx span b").removeClass("cur");
+	        	Y.postMsg('show_opencodelist', 2);
 	        	$("#haoma_2").show();
 	        	$("#haoma_3").hide();
 //	        	$("#11x5_hd").show();
+	        	
             }else if(nl ==7){
-            	$("#num_header_1").hide();
+            	$("#haoma_3").show();
+//            	
+//            	$("#num_header_1").hide();
 	        	$("#opencodelist").hide();
-	        	$("#num_header_2").hide();
+	        	//$("#num_header_2").hide();
 	        	$("#opencodelist_2").hide();
-	        	$("#num_header_3").show();
+	        	//$("#num_header_3").show();
 	        	$("#opencodelist_3").show();
 //	        	$("#win_today").hide();
 	        	$("#setdanma_i").hide();
 	        	$("#setdanma").hide();
 	        	$("#haoma_1").hide();
 	        	$("#haoma_2").hide();
-	        	$("#haoma_3").show();
+	        	Y.postMsg('show_opencodelist', pid);
+//	        	$("#q3zx span b").removeClass("cur");
+//	        	
+	        	
 //	        	$("#11x5_hd").hide();
             }else{
-            	$("#num_header_1").hide();
+//            	$("#num_header_1").hide();
 	        	$("#opencodelist").show();
-	        	$("#num_header_2").hide();
+	        	//$("#num_header_2").hide();
 	        	$("#opencodelist_2").hide();
-	        	$("#num_header_3").hide();
+	        	//$("#num_header_3").hide();
 	        	$("#opencodelist_3").hide();
 //	        	$("#win_today").show();
 	        	$("#renxuan").show();
@@ -2282,7 +2342,12 @@ Class('openCodeList', {
 			this.getlistdata(this.postlist);
 		});
 		this.onMsg('show_opencodelist', function(n) {
-			this.showlist(n);
+//			this.showlist(n);
+//			  setInterval("",5000);
+			var P=this
+			setTimeout(function() {
+				 P.showlist(n);
+				},300);
 		});
 		this.onMsg('update_opencodelist', function() {
 			this.checkpid();
@@ -2322,10 +2387,10 @@ Class('openCodeList', {
    
     showlist: function (n){//显示开奖号码列表 球
     	clearInterval(window.refreshKjTime);
-    	var pid = this.getPlayId();
+    	var pid = n>200?n:this.getPlayId();
     	var dl = this.listdata.length;
-    	var lpid = this.listdata[dl-1];// 获取listdata里面的最后一个的（ 遗漏） 
-    	var llpid = this.listdata[dl-1];// 获取listdata里面的最后一个的（ 遗漏） 
+    	var lpid = this.listdata[this.listdata.length-1];// 获取listdata里面的最后一个的（ 遗漏） 
+    	var llpid = this.listdata[this.listdata.length-1];// 获取listdata里面的最后一个的（ 遗漏） 
     	var npid = this.getnextpid(lpid.p);//准备开奖的期次	2013022608
     	var net;
     	if((npid+"").substr(8,2)=="01"){
@@ -2490,7 +2555,7 @@ Class('openCodeList', {
         	});
     	}else{
     		opencodeli = this.get('td', ul).slice(13,14);//填写开奖号码的位置
-    		opentimetd = this.get('td', ul).slice(14,15);//填写开奖时间的位置
+    		var opentimetd = this.get('td', ul).slice(14,15);//填写开奖时间的位置
     		var newxh=xuanhao.slice(2,13)
     		newxh.each(function (li, i){
         		this.get(li).html(omiss_arr[i]);
