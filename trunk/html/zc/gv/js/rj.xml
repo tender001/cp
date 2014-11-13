@@ -1,0 +1,18 @@
+<Resp code="0" desc="查询成功[来自缓存]">
+<list total="14">
+<vs itemid="1" hostteam="巴恩斯" visitteam="考文垂" matchdate="2014-01-04 23:00" bet3="2.2100" bet1="3.2700" bet0="2.9800" risk="0" matchstate="0"></vs>
+<vs itemid="2" hostteam="博尔顿" visitteam="布莱浦" matchdate="2014-01-04 23:00" bet3="2.1100" bet1="3.2700" bet0="3.1900" risk="0" matchstate="0"></vs>
+<vs itemid="3" hostteam="布赖顿" visitteam="雷　丁" matchdate="2014-01-04 23:00" bet3="2.1200" bet1="3.2400" bet0="3.1800" risk="0" matchstate="0"></vs>
+<vs itemid="4" hostteam="布里斯" visitteam="沃特福" matchdate="2014-01-04 23:00" bet3="4.0700" bet1="3.5000" bet0="1.7800" risk="0" matchstate="0"></vs>
+<vs itemid="5" hostteam="唐卡斯" visitteam="斯蒂文" matchdate="2014-01-04 23:00" bet3="1.6900" bet1="3.5200" bet0="4.6100" risk="0" matchstate="0"></vs>
+<vs itemid="6" hostteam="埃弗顿" visitteam="巡游者" matchdate="2014-01-04 23:00" bet3="1.3100" bet1="4.6500" bet0="8.8400" risk="0" matchstate="0"></vs>
+<vs itemid="7" hostteam="伊普斯" visitteam="普雷斯" matchdate="2014-01-04 23:00" bet3="1.7300" bet1="3.5200" bet0="4.3100" risk="0" matchstate="0"></vs>
+<vs itemid="8" hostteam="米德尔" visitteam="赫尔城" matchdate="2014-01-04 23:00" bet3="2.6700" bet1="3.1700" bet0="2.4800" risk="0" matchstate="0"></vs>
+<vs itemid="9" hostteam="阿森纳" visitteam="热　刺" matchdate="2014-01-05 01:15" bet3="1.8500" bet1="3.3900" bet0="3.9000" risk="0" matchstate="0"></vs>
+<vs itemid="10" hostteam="南安普" visitteam="伯恩利" matchdate="2014-01-04 23:00" bet3="1.4800" bet1="3.8400" bet0="6.3500" risk="0" matchstate="0"></vs>
+<vs itemid="11" hostteam="马拉加" visitteam="马竞技" matchdate="2014-01-04 23:00" bet3="6.6100" bet1="3.9000" bet0="1.5100" risk="0" matchstate="0"></vs>
+<vs itemid="12" hostteam="巴利亚" visitteam="贝蒂斯" matchdate="2014-01-05 01:00" bet3="2.2700" bet1="3.2600" bet0="3.0900" risk="0" matchstate="0"></vs>
+<vs itemid="13" hostteam="巴伦西" visitteam="莱万特" matchdate="2014-01-05 03:00" bet3="1.4900" bet1="4.0800" bet0="6.6200" risk="0" matchstate="0"></vs>
+<vs itemid="14" hostteam="阿尔梅" visitteam="格拉纳" matchdate="2014-01-05 05:00" bet3="2.3600" bet1="3.1700" bet0="2.9400" risk="0" matchstate="0"></vs>
+</list>
+</Resp>
