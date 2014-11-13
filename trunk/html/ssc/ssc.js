@@ -1995,10 +1995,6 @@ Class.extend('exportCode', function (){
 		Y.postMsg('msg_login', function (){
 			location.href='#page_zh';
 			zhTabs.focus(1);
-    		
-			/* setTimeout(function() {
-                Y.lib.ZhOptions();
-            },99);   */
 		var data = $_trade.key.gid + "=" + encodeURIComponent("04") + "&tid=" + encodeURIComponent(zid) + "&rnd=" + Math.random();
 		Y.ajax({
 			url :$_user.url.xchase,
@@ -2017,8 +2013,6 @@ Class.extend('exportCode', function (){
 					if(mulity>1){
 						$("#beishu").val(mulity);
 					}
-					
-//					
 					if(ccodes.indexOf("$")!=-1){
 						Y.alert("胆拖再次追号不支持");
 						return false;
@@ -2033,26 +2027,28 @@ Class.extend('exportCode', function (){
 		    	                    sss= rb[2] ? rb[2] : [],
 		    	                   
 		    	                    ss = ss+','+sss;
+		    	                    var sum = 1;
+	    							 d.split(",").each(function (ball){
+		    					            sum*=ball.length
+		    					        })
+		    							 zs = sum;
 		    						if(ss=='7,3'){
 		    							type=116;
 		    							Y.postMsg('msg_force_change_playtabs', 0,1);
-		    						}
-		    						else if(ss=='5,1'){
-		    							
+		    							zs = Math.c(d.split(',').length, Class.C('lot_data')[type][2]);
+		    						}else if(ss=='5,1'){
 		    							type=107;
 		    							Y.postMsg('msg_force_change_playtabs', 3,1);
 		    							d = ['-,-,-,-'].concat(d).slice(-5).join(',');
-		    						}
-		    						else if(ss == '4,1'){
+		    						}else if(ss == '4,1'){
 		    							type=106;
 		    							Y.postMsg('msg_force_change_playtabs', 4,1);
 		    							d = ['-,-,-'].concat(d).slice(-5).join(',');
-			    	                	   zs = Math.c(rb[1].split(',').length, Class.C('lot_data')[type][3]);
+			    	                	  
 		    						}else if(ss == '3,1'){
 		    							type=105;
 		    							Y.postMsg('msg_force_change_playtabs', 5,1);
 		    							  d = ['-,-'].concat(d).slice(-5).join(',');
-			    	                	   zs = Math.c(rb[1].split(',').length, Class.C('lot_data')[type][4]);
 		    						}else if(ss == '1,1'){
 		    							type=104;
 		    							Y.postMsg('msg_force_change_playtabs', 6,1);
@@ -2063,13 +2059,15 @@ Class.extend('exportCode', function (){
 		    							type=118;
 		    							Y.alert("二星和值不支持再次追号");
 		    							return false;
-		    						}
-		    						else if(ss == '6,1'){
+		    						}else if(ss == '6,1'){
 		    							type=111;
-		    							Y.postMsg('msg_force_change_playtabs',9,1);
+//		    							Y.postMsg('msg_force_change_playtabs',9,1);
+//		    							zs = Math.c(d.split(',').length, Class.C('lot_data')[type][2]);
+		    							Y.alert("大小单双再次追号不支持");
+		    							return false;
 		    						}
-		    						 zs = Math.c(rb[1].split(',').length, Class.C('lot_data')[type][3]);
-		    	                    return [d,type,zs];
+		    						 
+		    	                    return [[d,type,zs]];
 		    	                
 		    	            }).filter(function (c){
 		    	                if (c[c.length - 1] == 0) {//zs
