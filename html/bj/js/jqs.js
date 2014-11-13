@@ -100,7 +100,7 @@ Class( 'LineSelector', {
 		Y.addClass(ck.parentNode.parentNode, 'label_cd');
 //		this.vsCheckAll.checked = this.getData().length == this.vsOptions.length;
 		if(this.getData().length==8){
-			this.a.innerHTML="清";
+//			this.a.innerHTML="清";
 		}
 		this.changed();
 	},
@@ -112,7 +112,7 @@ Class( 'LineSelector', {
 		Y.removeClass(ck.parentNode.parentNode, 'label_cd');
 //		this.vsCheckAll.checked && (this.vsCheckAll.checked = false);
 		if(this.getData().length!=8){
-			this.a.innerHTML="全";
+//			this.a.innerHTML="全";
 		}
 		this.changed();
 	},
@@ -138,7 +138,7 @@ Class( 'LineSelector', {
 			//this.vsOptions[i].parentNode.style.backgroundColor = '';
 			Y.removeClass(this.vsOptions[i].parentNode, 'label_cd');
 		}
-		this.a.innerHTML="全";
+//		this.a.innerHTML="全";
 		this.changed();
 	},
 
