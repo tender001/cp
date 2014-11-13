@@ -712,114 +712,119 @@ Class.extend('exportCode', function () {
 				if (code == "0") {
 					var r = obj.Resp.row;
 					var ccodes =r.ccodes===undefined?r[0].ccodes:r.ccodes;// 投注号码
-					ccodes = ccodes.split(':')[0];
-					var mulity =r.imulity===undefined?r[0].imulity:r.imulity;// 投注号码 ;// 倍数
-					var ss = r[0].ccodes;// 投注号码
-					ss = ss.split(':')[1];
-					zhushu = r[0].icmoney*1/2;
-					//ss = ccodes.split(':')[1];
+//					ccodes = ccodes.split(':')[0];
+					var mulity =r.imulity===undefined?r[0].imulity:r.imulity;// 倍数
 					
-					//var periodid = r.periodid;//期次
+					
+					var icmoney =r.icmoney===undefined?r[0].icmoney:r.icmoney;// 投注号码 ;// 倍数
+					
+					
+
+					
+					
 					if(mulity>1){
 						$("#beishu").val(mulity);
 					}
-					//Y.postMsg('msg_force_change_playtabs',0,1);
-//					ss = ss * 1 ;
-					if(ss=='07'){
-						type="249";
-						Y.postMsg('msg_force_change_playtabs', 0,1);
+					if(ccodes.indexOf("$")!=-1){
+						Y.alert("胆拖再次追号不支持");
+						return false;
 					}
-					else if(ss=='08'){
-						type="250";
-						Y.postMsg('msg_force_change_playtabs', 1,1);
-					}else if(ss == '09'){
-						type="251";
-						Y.postMsg('msg_force_change_playtabs', 2,1);
-					}else if(ss == '10'){
-						type="252";
-						Y.postMsg('msg_force_change_playtabs', 3,1);
-					}else if(ss == '11'){
-						type="253";
-						Y.postMsg('msg_force_change_playtabs', 4,1);
-					}else if(ss == '01'){
-						type="254";
-						Y.postMsg('msg_force_change_playtabs', 5,1);
-					}else if(ss == '02'){
-						type="255";
-						Y.postMsg('msg_force_change_playtabs', 6,1);
-					}else if(ss == '03'){
-						type="256";
-						Y.postMsg('msg_force_change_playtabs', 7,1);
-					}else if(ss == '04'){
-						type="257";
-						Y.postMsg('msg_force_change_playtabs', 8,1);
-					}else if(ss == '05'){
-						type="258";
-						Y.postMsg('msg_force_change_playtabs', 9,1);
-					}else if(ss == '06'){
-						type="259";
-						Y.postMsg('msg_force_change_playtabs', 10,1);
-					}
-					if(ss == '12'){
-						if(ccodes == '07'){
+						 arrCodes = ccodes.split(';').map(function (c){
+   	                var rb = c.split(':'),
+	                    d= rb[0] ? rb[0] : [],
+	                    ss= rb[1] ? rb[1] : [];
+	                    var zs = 1;
+	                    if(ss=='07'){
 							type="249";
 							Y.postMsg('msg_force_change_playtabs', 0,1);
-							arrCodes= [['00',type,zhushu]];
-							if (arrCodes.length) {//完整号码显示到列表
-					             Y.postMsg('msg_put_code', arrCodes);
-					        }
-						}else if(ccodes == '08'){
+							 zs = Math.c(d.split(':').length, Class.C('lot_data')[type][2]);
+						}
+						else if(ss=='08'){
 							type="250";
 							Y.postMsg('msg_force_change_playtabs', 1,1);
-							arrCodes= [['00',type,zhushu]];
-							if (arrCodes.length) {//完整号码显示到列表
-					             Y.postMsg('msg_put_code', arrCodes);
-					        }
-						}else if(ccodes == '09'){
+							 zs = Math.c(d.split(':').length, Class.C('lot_data')[type][2]);
+						}else if(ss == '09'){
 							type="251";
 							Y.postMsg('msg_force_change_playtabs', 2,1);
-							arrCodes= [['00',type,zhushu]];
-							if (arrCodes.length) {//完整号码显示到列表
-					             Y.postMsg('msg_put_code', arrCodes);
-					        }
-						}else if(ccodes == '11'){
+							 zs = Math.c(d.split(':').length, Class.C('lot_data')[type][2]);
+						
+						}else if(ss == '11'){
 							type="253";
 							Y.postMsg('msg_force_change_playtabs', 4,1);
-							arrCodes= [['00',type,zhushu]];
-							if (arrCodes.length) {//完整号码显示到列表
-					             Y.postMsg('msg_put_code', arrCodes);
-					        }
+							 zs = Math.c(d.split(':').length, Class.C('lot_data')[type][2]);
+						}else if(ss == '01'){
+							type="254";
+							Y.postMsg('msg_force_change_playtabs', 5,1);
+							 zs = Math.c(d.split(',').length, Class.C('lot_data')[type][2]);
+						}else if(ss == '02'){
+							type="255";
+							Y.postMsg('msg_force_change_playtabs', 6,1);
+							 zs = Math.c(d.split(',').length, Class.C('lot_data')[type][2]);
+						}else if(ss == '03'){
+							type="256";
+							Y.postMsg('msg_force_change_playtabs', 7,1);
+							 zs = Math.c(d.split(',').length, Class.C('lot_data')[type][2]);
+						}else if(ss == '04'){
+							type="257";
+							Y.postMsg('msg_force_change_playtabs', 8,1);
+							zs = Math.c(d.split(',').length, Class.C('lot_data')[type][2]);
+						}else if(ss == '05'){
+							type="258";
+							Y.postMsg('msg_force_change_playtabs', 9,1);
+							zs = Math.c(d.split(',').length, Class.C('lot_data')[type][2]);
+						}else if(ss == '06'){
+							type="259";
+							Y.postMsg('msg_force_change_playtabs', 10,1);
+							zs = Math.c(d.split(',').length, Class.C('lot_data')[type][2]);
 						}
-						
-							
-					}else{
-						if(ccodes==""){
-			    			Y.alert("您不是该方案的发起人，不能再次购买本方案");
-			    			return false;
-			    		}
-						if(ccodes.split(':')[0]){
-							$("#zjtz23").attr("checked",'true');
+	                   
+	                    if(ss == '12'){
+							if(ccodes.split(':')[0] == '07'){
+								type="249";
+								d="00";
+								Y.postMsg('msg_force_change_playtabs', 0,1);
+//								得到 =  [["00",type,zs]];
+							}
+							if(ccodes.split(':')[0] == '08'){
+								type="250";
+								d="00";
+								Y.postMsg('msg_force_change_playtabs', 1,1);
+//								arrCodes =  [["00",type,zs]];
+							}
+							if(ccodes.split(':')[1] == '09'){
+								type="251";
+								d="00";
+								Y.postMsg('msg_force_change_playtabs', 2,1);
+//								arrCodes =  [["00",type,zs]];
+							}
+							if(ccodes.split(':')[1] == '11'){
+								type="252";
+								d="00";
+								Y.postMsg('msg_force_change_playtabs', 4,1);
+//								arrCodes =  [["00",type,zs]];
+							}
 						}
+	                    
+	                    	return [[d,type,zs]];
+//	                    }
+	                    
+	                
+	            }).filter(function (c){
+	                if (c[c.length - 1] == 0) {//zs
+	                    short_code = c;//残缺号码
+	                }else{
+	                    return true;
+	                }
+	            });
+						 if (arrCodes.length) {
+					        	for(var i=0;i<arrCodes.length;i++){
+		   	            		this.postMsg('msg_put_code',arrCodes[i]);
+		   	            	}
+						 }
 						
-						if(ccodes.indexOf("$")==-1){
-							
-								Yobj.get('#codes').val(ccodes);
-								var import_code, arrCodes, short_code;
-							    if (import_code = Yobj.get('#codes').val()) {
-									if (typeof this.dejson(import_code) == 'object') return;
-							        if (/\b0\b/.test(import_code)) {
-							            return
-							        }
-							        arrCodes= [[import_code,type,zhushu]];
-							        if (arrCodes.length) {//完整号码显示到列表
-							             Y.postMsg('msg_put_code', arrCodes);
-							        }
-							    }
-							} 
-					}
+					
 					//type=type;
 					 
-					
 				}else if(code=='2002'){
 					Y.alert("您不是该方案的发起人，不能再次购买本方案");
 					return false;
@@ -1224,7 +1229,7 @@ Class('App', {
             var ol = Y.getopencodelength(Class.C('playid'));//上一个的
             Y.get("#wanfatishi").html(Class.C('lot_data_wanfa')[pid]);
 //            Y.get("#shil s").attr("data-help",Class.C('lot_data_dome')[pid]);
-
+//            Y.postMsg('opencodelist_getlistdata');
             Y.postMsg('playtabs_onchange');
             Y.postMsg('danma_onchange');
             Y.postMsg('msg_buy_succeed');
