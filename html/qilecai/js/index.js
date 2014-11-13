@@ -213,7 +213,6 @@ Class('CodeList>SingeCodeList', {
     				if (code == "0") {
     					var r = obj.Resp.row;
     					var ccodes =r.ccodes===undefined?r[0].ccodes:r.ccodes;// 投注号码
-    					ccodes = ccodes.split(':')[0];
     					var mulity =r.imulity===undefined?r[0].imulity:r.imulity;// 投注号码 ;// 倍数
     					var periodid = r.cperiodid;//期次
     					
@@ -229,7 +228,10 @@ Class('CodeList>SingeCodeList', {
 							$("#zjtz23").attr("checked",'true');
 							Y.processAddPrice(true);
 						}
-						if(ccodes.indexOf("$")==-1){
+						if(ccodes.indexOf("$")!=-1){
+							Y.alert("胆拖再次追号不支持");
+							return false;
+						}
 							var import_code, arrCodes, short_code;
 							Yobj.get('#codes').val(ccodes);
 						
@@ -250,18 +252,34 @@ Class('CodeList>SingeCodeList', {
 //						                    return true
 //						                }
 //						            });
-								 	arrCodes=[[import_code.split(","),1]];
+								 arrCodes = ccodes.split(';').map(function (c){
+       			    	             var rb = c.split(':'),
+       			    	             	d= rb[0] ? rb[0] : [];
+       			    	             	d = d.split(",");
+       			    	             	
+       			    	              zs = Math.c(d.length, 7);
+			    	                return [[d,zs]];
+       			    	            }).filter(function (c){
+       			    	                if (c[c.length - 1] == 0) {//zs
+       			    	                    short_code = c;//残缺号码
+       			    	                }else{
+       			    	                    return true;
+       			    	                }
+       			    	            });
+//								 	arrCodes=[[import_code.split(","),1]];
 						            if (arrCodes.length) {//完整号码显示到列表
 						            	
 //						                 this.postMsg('msg_put_code', arrCodes);
-						                 Y.postMsg('msg_put_code', arrCodes);
-						                 this.moveToBuy();
+						            	this.moveToBuy();
+       			    	            	for(var i=0;i<arrCodes.length;i++){
+       			    	            		this.postMsg('msg_put_code',arrCodes[i]);
+       			    	            	}
 						                 
 						            }
 						            if (short_code && short_code.length) {// 残缺号码显示到球区
 						                this.postMsg('msg_redraw_code', short_code)
 						            }
-							   }
+							   
     					}
 			    	     
     				}else if(code=='2002'){
