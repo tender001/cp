@@ -87,6 +87,12 @@ Class({
 	   		    	$("#zh_jd").append("已追" + (parseInt(r.success) + parseInt(r.failure)) + "期/共" + r.pnums + "期");
 	   		    	$("#zh_state").append(r.finish == '1' ? "追号已完成" : "追号进行中");
 	   		    	$("#zh_memo").append(r.zhflag == '0' ? "中奖后不停止" : (r.zhflag == '1' ? "中奖后停止" : "盈利后停止"));
+	   		    	if(r.finish == '0'){
+	   		    		$("#xx").hide();
+	   		    	}else{
+	   		    		$("#xx").attr("href",$_sys.getlotdir(lotid)+"?zid="+zid);
+	   		    	}
+	   		    	
 	   		    }else{
 	   		    	log(desc);
 	   		    }
@@ -130,7 +136,7 @@ Class({
 	   		    		html += "<td><input type='checkbox' id='zhd_"+rt.idetailid+"' value='"+rt.idetailid+"'" + ( rt.istate != 0 ? ' disabled' : 'visible=0' ) + "/></td>";
 	   		    		html += "<td>" + rt.cperiodid + "</td>";
 	   		    		html += "<td>" + rt.imulity + "倍</td>";
-	   		    		html += "<td>" + rt.cawardcode + "</td>";
+	   		    		html += "<td style='color:#F60'>" + rt.cawardcode + "</td>";
 	   		    		html += "<td>" + rt.icmoney + "元</td>";
 	   		    		html += "<td>" + (rt.istate == '0' ? '未投注' : (rt.istate == '1' ? '投注中' :(rt.istate == '2' ? '已投注' : '已退款'))) + "</td>";
 	   		    		var win = "--";
