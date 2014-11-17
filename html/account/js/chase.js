@@ -152,16 +152,10 @@ Class({
 							}					
 							html += "<td>"+adddate+"</td>";
 							html += "<td><a href=\"xchase.html?zid="+zhid+"&lotid=" + gameid +"\" class=\"a1\">详情</a>";
-							
-							if(finish==0){
-								if(gameid==1||gameid==50||gameid==54||gameid==52||gameid==53||gameid==51||gameid==07||gameid==03||gameid==56||gameid==04||gameid==58){
-									html +="&nbsp;<a style=\"display:none\"  href=\""+$_sys.getlotdir(gameid)+"?zid="+zhid+"\" target=_blank>再次追号</a>";
-								}
-							}else{
-								if(gameid==1||gameid==50||gameid==54||gameid==52||gameid==53||gameid==51||gameid==07||gameid==03||gameid==56||gameid==04||gameid==58){
-									html +="&nbsp;<a id=\"zai\"  href=\""+$_sys.getlotdir(gameid)+"?zid="+zhid+"\" target=_blank>再次追号</a>";
-								}
+							if(gameid==1||gameid==50||gameid==54||gameid==52||gameid==53||gameid==51||gameid==07||gameid==03||gameid==56||gameid==04||gameid==58){
+								html +="&nbsp;<a id=\"zai\"  href=\""+$_sys.getlotdir(gameid)+"?zid="+zhid+"\" target=_blank>再次追号</a>";
 							}
+							
 							
 							/*if(gameid==54||gameid==58 || gameid==56){
 								html +="&nbsp;<a href=\""+$_sys.getlotdir(gameid)+"?zid="+zhid+"\" target=_blank>再次追号</a>";
