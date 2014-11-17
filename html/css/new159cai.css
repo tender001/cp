@@ -129,7 +129,7 @@ input[type="text"]:focus{border-color: rgb(255,113,0) !important}
 .nav1 ul li .xia{width: 96px;}
 /*.nav1 ul li.hover a.a1{padding-right: 24px;padding-left: 17px;}*/
 .updo li{position: relative;z-index: 99;}
-.updo li s{width: 11px;height: 11px;display: block;position: absolute;right: 4px;top: 12px;background-position: -277px -56px;cursor: pointer;}
+.updo li s{width: 11px;height: 11px;display: block;position: absolute;right:8px;top: 12px;background-position: -277px -56px;cursor: pointer;}
 /*.updo li.hover s{background: transparent url(../images/bg/nav_xia1.jpg)}*/
 .updo li.hover a.a1{background: #e52e04;}
 .updo li .xia{display: none;width: 93px;background: #fff;position: absolute;left: -1px;top: 38px;z-index: 102;}
