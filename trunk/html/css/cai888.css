@@ -397,7 +397,7 @@ a.czbtnhui{color:#666;background:url(../images/cai888/user_03hui.jpg);border:1px
 .aqcc{border-bottom:1px solid #eee;height:85px;margin-top:0px;}
 .aqcc b{float:left;width:80px;height:95px;}
 .aqcc img{display:block;margin:30px auto;}
-.aqcc span{float:left;width:110px;height:30px;margin-top:32px;border-right:1px solid #eee;line-height:30px;color:#666; font-family:"寰蒋闆呴粦";color:#666;font-size:20px}
+.aqcc span{float:left;width:110px;height:30px;margin-top:32px;border-right:1px solid #eee;font:20px/30px "Microsoft YaHei";color:#666;}
 .aqcc p{float:left;width:480px;height:95px;padding-left:15px;color:#444;font-size:12px;line-height:95px;}
 .aqcc s{float:left;height:32px;margin-top:30px;color:#444;font-size:12px;text-align:center;line-height:32px;}
 .aqcc s.cur{width:65px;height:32px;font-size:16px;font-weight:bold;text-align:center;color:#fff;border:1px solid #ff6702;background:url(../images/cai888/user_03.jpg);}
@@ -423,12 +423,16 @@ a.czbtnhui{color:#666;background:url(../images/cai888/user_03hui.jpg);border:1px
 .confitp a{color:#145fab; text-decoration:underline}
 .confitp a:hover{color:#f60}
 .confitp a.confita{display:block;height:32px;width:98px;text-decoration:none;line-height:32px;text-align:center;color:#fff;font-size:14px;font-weight:bold;margin:10px 0 0 135px;background:url(../images/cai888/user_03.jpg);border:1px solid #ff6702;margin:40px 0 0 62px}
-.zh_xq_tb{padding:10px 0 5px 20px}
+.zh-xq{width: 822px;margin: 0 auto}
+.zh_xq_tb{width:100%;}
 .zh_xq_tb td{line-height:25px;color:#444;}
+.zh_xq_tb td .more{color:#00abf9}
+.zh-list{width:100%;border-top: 4px solid #b4b4b4;}
+.zh-list .zh-list-t{float: left;width:204px;height:28px;line-height:28px;margin:-1px -1px 0 0;text-align:center;border: 1px solid #b4b4b4;}
 .tk_tan_2{border-top:none;padding:25px 0 0 20px}
 .tk_tan_2 img{display:block;width:74px;height:65px;margin:0px auto 15px}
 .tk_tan_2 p.p1{line-height:30px;color:#444;font-size:14px;text-align:center;font-weight:bold}
-.tk_tan_2 p.p1 font{color:#ff6600;font-size:14px}
+.tk_tan_2 p.p1 font{color:#f60;font-size:14px}
 .tk_tan_2 p.p1  a{color:#145fab;font-size:12px}
 .tk_tan_2 p.p1  a:hover{color:#f60; text-decoration:underline}
 .tk_t_ts{width:385px;*zoom:1;border:1px solid #ddd; background-color:#f4f4f4;padding:10px 15px;margin:10px auto 15px}
