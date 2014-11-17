@@ -101,28 +101,28 @@ div,ul,li{ list-style-type:none;overflow:hidden}
 .qk_1{ background-image: url(../images/qk_01.gif);width:98px;height:28px;line-height:28px;float:left;}
 .qk_1 span{padding-left:15px;font-size:14px;font-weight:bold;color:#343434}
 .qk_2{ background-image: url(../images/qk_02.gif);width:91px;height:28px;line-height:28px;float:left;}
-.qk_2 span{padding-left:25px;font-size:14px;font-weight:100;color:#343434;color:#fff}
+.qk_2 span{padding-left:25px;font-size:14px;font-weight:100;color:#fff}
 .qk_3{ background-image: url(../images/qk_03.gif);width:92px;height:28px;line-height:28px;float:left;}
-.qk_3 span{padding-left:25px;font-size:14px;font-weight:100;color:#343434;color:#830500}
+.qk_3 span{padding-left:25px;font-size:14px;font-weight:100;color:#830500}
 .qk_4{ background-image: url(../images/qk_04.gif);width:113px;height:28px;line-height:28px;float:left;}
-.qk_4 span{padding-left:25px;font-size:14px;font-weight:100;color:#343434;color:#830500}
+.qk_4 span{padding-left:25px;font-size:14px;font-weight:100;color:#830500}
 .qk2_1{ background-image: url(../images/kq2_01.gif);width:98px;height:28px;line-height:28px;float:left;}
 .qk2_1 span{padding-left:15px;font-size:14px;font-weight:bold;color:#343434}
 .qk2_2{ background-image: url(../images/kq2_02.gif);width:91px;height:28px;line-height:28px;float:left;}
-.qk2_2 span{padding-left:25px;font-size:14px;font-weight:100;color:#343434;color:#830500}
+.qk2_2 span{padding-left:25px;font-size:14px;font-weight:100;color:#830500}
 .qk2_3{ background-image: url(../images/kq2_03.gif);width:92px;height:28px;line-height:28px;float:left;}
-.qk2_3 span{padding-left:25px;font-size:14px;font-weight:100;color:#343434;color:#fff}
+.qk2_3 span{padding-left:25px;font-size:14px;font-weight:100;color:#fff}
 .qk2_4{ background-image: url(../images/kq2_04.gif);width:113px;height:28px;line-height:28px;float:left;}
-.qk2_4 span{padding-left:25px;font-size:14px;font-weight:100;color:#343434;color:#830500}
+.qk2_4 span{padding-left:25px;font-size:14px;font-weight:100;color:#830500}
 .qk3_1{ background-image: url(../images/kq3_01.gif);width:98px;height:28px;line-height:28px;float:left;}
 .qk3_1 span{padding-left:15px;font-size:14px;font-weight:bold;color:#343434}
 .qk3_2{ background-image: url(../images/kq3_02.gif);width:91px;height:28px;line-height:28px;float:left;}
-.qk3_2 span{padding-left:25px;font-size:14px;font-weight:100;color:#343434;color:#830500}
+.qk3_2 span{padding-left:25px;font-size:14px;font-weight:100;color:#830500}
 .qk3_3{ background-image: url(../images/kq3_03.gif);width:92px;height:28px;line-height:28px;float:left;}
-.qk3_3 span{padding-left:25px;font-size:14px;font-weight:100;color:#343434;color:#830500}
+.qk3_3 span{padding-left:25px;font-size:14px;font-weight:100;color:#830500}
 .qk3_4{ background-image: url(../images/kq3_04.gif);width:113px;height:28px;line-height:28px;float:left;}
-.qk3_4 span{padding-left:25px;font-size:14px;font-weight:100;color:#343434;color:#fff}
-.quick_main{ background-image: url(../images/ksbg.gif);width:520px;height:193px;margin-left:0px}
+.qk3_4 span{padding-left:25px;font-size:14px;font-weight:100;color:#fff}
+.quick_main{ background-image: url(../images/ksbg.gif);width:520px;height:193px;margin-left:0}
 .ks_cm{float:left;width:105px;height:165px;margin:15px 10px 0 15px;_margin:15px 10px 0 7px}
 .ks_cm img{width:104px;height:102px}
 .ks_cm p{text-align:center;line-height:20px;color:#434343;font-size:14px}
@@ -136,7 +136,7 @@ div,ul,li{ list-style-type:none;overflow:hidden}
 .ks_main p em{font-size:12px; font-family:Arial, Helvetica, sans-serif}
 .ks_main p strong{font-weight:bold;font-size:16px;font-family:Arial, Helvetica, sans-serif}
 .ks_main p font{color:#434343;font-size:12px}
-.ks_main a{display:block;float:left;margin:0 20px 0 0px}
+.ks_main a{display:block;float:left;margin:0 20px 0 0}
 .rig_t_right{float:left;width:230px;margin-left:10px}
 .sy_gg{border:1px solid #ddd}
 .sy_gg ul li{float:left;width:113px;height:26px;font:14px/26px "Microsoft YaHei";text-align:center;border-right:1px solid #ddd;border-bottom:1px solid #ddd;background-image:url(../images/index_122.gif);cursor:pointer;}
