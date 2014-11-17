@@ -30,7 +30,7 @@ input[type="text"]:focus{border-color: rgb(255,113,0) !important}
 .top dl dt s,.top dl.ali dd a,.top dl dd li s,.m_l li span s,.m_l1 li span s,.tit,.m_mid .tab .title,.m_mid .tab .bod b s,.m_mid .tab .bod b em,.m_mid .tab .bod b i,.m_mid .tab .bod b strong,.mob_buy .body dd a,.today .bod li p a.fr,.center .body li p span em,.m_r .tab .title{background: url(../images/bg/index_bg0.png);_background-image: url(../images/bg/index_bg0-ie6.png);}
 .onlkj p b,.newsrc p b{background: url("../images/bg/ball-gai.jpg") no-repeat;}
 .hm_help .bod li s,.hm_right_t s,.hm-tit a{background: url("../images/bg/buy-me.png");}
-.top_logo .fr s,.nav1_buy{background:url("../images/bg/top-bg.png") no-repeat}
+.top_logo .fr s,.nav1_buy,.nav-bg,.updo li s{background:url("../images/bg/top-bg.png") no-repeat}
 .top{height: 32px; line-height: 32px; background-color: #f7f7f7; border-top: 1px solid #e8ecef; border-bottom: 1px solid #ddd;overflow:visible;}
 .top .fl{width: 360px;overflow:visible;_width: 362px;}
 .ie_fl{float: left;}
@@ -80,9 +80,9 @@ input[type="text"]:focus{border-color: rgb(255,113,0) !important}
 .top_logo .fr s{width:290px;height: 52px;display: inline-block;background-position:0 0}
 /*.top_logo .fr a img{width: 110px;height: 52px;margin: 0 0 0 8px;}*/
 /*购买彩票 弹出菜单*/
-.nav1_buy{width: 215px;height: 38px;float: left;position: relative;overflow: visible;background-color:#e52e04;background-position:0 -52px;z-index: 99;border: 1px solid #ffa366;border-width: 0 1px;}
-.nav1_buy a.nav1_gm{width: 215px;height: 38px;line-height: 38px;font-size: 14px;display: block;text-align: center;color: #fff;font-weight: bold;}
-.nav1_buy a.nav1_gm:hover{text-decoration: none;}
+.nav1_buy{float: left;width: 215px;height: 38px;background-color:#e52e04;background-position:0 -52px;position: relative;overflow: visible;z-index: 99;border: 1px solid #ffa366;border-width: 0 1px;}
+.nav1_buy a.nav1_gm{display: block;width: 215px;height: 38px;line-height: 38px;font-size: 14px;text-align: center;color: #fff;font-weight: bold;}
+/*.nav1_buy a.nav1_gm:hover{text-decoration: none;}*/
 .m_l{width:213px;height: 460px;border:1px solid #ddd;border-bottom:0;background: #fffbe6;}
 .m_l{display: none;float: left;position: absolute;left: 0;top: 38px;z-index: 99;}
 /*.nav1_buy.hover .m_l{display: block;border-bottom: 3px solid #f60;}*/
@@ -129,8 +129,8 @@ input[type="text"]:focus{border-color: rgb(255,113,0) !important}
 .nav1 ul li .xia{width: 96px;}
 /*.nav1 ul li.hover a.a1{padding-right: 24px;padding-left: 17px;}*/
 .updo li{position: relative;z-index: 99;}
-.updo li s{width: 11px;height: 11px;display: block;position: absolute;right: 4px;top: 12px;background: transparent url(../images/bg/nav_xia.jpg);cursor: pointer;}
-.updo li.hover s{background: transparent url(../images/bg/nav_xia1.jpg)}
+.updo li s{width: 11px;height: 11px;display: block;position: absolute;right: 4px;top: 12px;background-position: -277px -56px;cursor: pointer;}
+/*.updo li.hover s{background: transparent url(../images/bg/nav_xia1.jpg)}*/
 .updo li.hover a.a1{background: #e52e04;}
 .updo li .xia{display: none;width: 93px;background: #fff;position: absolute;left: -1px;top: 38px;z-index: 102;}
 .updo li .xia{border: 1px solid #e52f05;border-top: 0;}
@@ -970,7 +970,7 @@ a.g_a_t{ background:#e52e04;font-size:14px;font-weight:bold;color:#fff;line-heig
 .jckj_tb table.co1 tr:hover{background-color:#fefecb}
 .nav ul li.li_asj{position:relative}
 .nav ul li.li_asj img{position:absolute;right:0;top:0}
-.nav-bg{background:#f60 url(../images/bg/nav_li.jpg) repeat;overflow: visible;zoom:1}
+.nav-bg{background-color:#f60;background-position:0 -91px;background-repeat:repeat-x;overflow: visible;zoom:1}
 .nav-bg:after{display:table;content:"";clear:both}
 .nav ul li.li_asj,.nav ul,.nav{overflow: visible;}
 .main_tan_1{width:807px;*zoom:1}
