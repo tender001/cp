@@ -102,12 +102,12 @@
 div.center .body{width:96%;height:320px;}
 .center .body ul{margin-bottom: -1px;*margin-bottom: -4px;}
 .center .body li{height: 106px;border-bottom:1px dashed #c5c5c5;overflow:hidden;}
-.center .body li p{float: left;width: 48.9%;height: 32px; line-height: 34px;font-size: 14px;color: #8c8c8c;word-break: break-all;word-wrap: break-word; padding-right: 1%;overflow: hidden;/* white-space: nowrap; text-overflow: ellipsis; */}
+.center .body li p{float: left;width: 48.9%;height: 32px; line-height: 34px;font-size: 14px;color: #8c8c8c;word-break: break-all;word-wrap: break-word; padding-right: 1%;overflow: hidden}
 .center .body li p:nth-of-type(even){width: 49%;padding:0}
 .center .body li p a.f60{padding-left: 6px;}
 .center .body li p span{display: inline-block;width: 46px; height: 18px;line-height: 18px;font-size: 12px;color: #fff;text-align: center;background-color: #e52e04;vertical-align: middle;margin-right: 8px;position: relative;_margin-top: 5px;}
 .center .body li p span em{position: absolute;top: 18px;left: 49%;background-position: -164px -177px; width: 6px;height: 3px;}
-.center .body li div{clear:both;height: 32px; line-height: 34px;font-size: 14px;color: #8c8c8c;word-break: break-all;word-wrap: break-word;overflow: hidden;/*white-space: nowrap;text-overflow:ellipsis;*/}
+.center .body li div{clear:both;height: 32px; line-height: 34px;font-size: 14px;color: #8c8c8c;word-break: break-all;word-wrap: break-word;overflow: hidden}
 .center .body li div .fl{float:none}
 .center .body li div a{clear:both;margin:0 4px 0 0;}
 .center .body li a:hover{color: #e62e04 !important;}
@@ -121,7 +121,6 @@ div.center .body{width:96%;height:320px;}
 .safe-state .safe-state1{background-position:0 0}
 .safe-state .safe-state2{background-position:-64px 0}
 .safe-state .safe-state3{background-position:-128px 0}
-/*.zx .cn li img{width: 100%;height: 100%;}*/
 .zx .cn .body{padding: 10px 0;}
 .hot{width: 1000px;margin: 10px auto;}
 .hm{width: 776px;float: right;border-bottom: 0;height: 345px;}
@@ -143,7 +142,6 @@ div.center .body{width:96%;height:320px;}
 .hm table td .x_jdt em{display: block;height: 4px;background-color: #f60;margin: -1px -1px -1px 0;}
 .hm table td input{width: 38px;border: 1px solid #ddd;color: #333;height: 18px;line-height:18px;padding: 1px 0;text-align: center;*margin-top: -1px;}
 .hm table td .shouye a{vertical-align: middle;}
-/*.hm table td .shouye a img{height: 19px;}*/
 .hm table td a{color: #10429E}
 .hm table td a.buy{width: 45px;height: 20px;line-height: 20px;display: block;background-color: #f60;color: #fff;margin: auto;}
 
