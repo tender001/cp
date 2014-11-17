@@ -1352,18 +1352,20 @@ Class('LoadExpect',{
 					
 					var html='';
 					var find = false;
-					var nowexpect='';
+					var nowexpect=""
+					var nowdate=new Date();
+					nowdate=nowdate.getTime()
 					if (expectlist.length>0){
 						for ( var i = 0; i < expectlist.length; i++) {
-							if (i==0){
+							if(nowdate<new Date(expectlist[i][1].substr(0,10)).getTime()){
 								nowexpect=expectlist[i][0];
-								Class.config('nowexpect', nowexpect);  //当前期号	
-								html+='<option value="'+expectlist[i][0]+'|'+expectlist[i][1]+'|2"  style="color:red">'+expectlist[i][0]+'当前期</option>';
+								html+='<option value="'+expectlist[i][0]+'|'+expectlist[i][1]+'|2"  mark='+expectlist[i][0]+'>'+expectlist[i][0]+'</option>';
+								Class.config('nowexpect', nowexpect);  //当前期号
 							}else{
 								if(this.get("#expect").val()==expectlist[i][0]){
-									html+='<option value="'+expectlist[i][0]+'|'+expectlist[i][1]+'|1"  style="color:#888888" selected="selected">'+expectlist[i][0]+'</option>';
+									html+='<option value="'+expectlist[i][0]+'|'+expectlist[i][1]+'|1"  style="color:#888888" selected="selected" mark='+expectlist[i][0]+'>'+expectlist[i][0]+'</option>';
 								}else{
-								html+='<option value="'+expectlist[i][0]+'|'+expectlist[i][1]+'|1"  style="color:#888888">'+expectlist[i][0]+'</option>';
+								html+='<option value="'+expectlist[i][0]+'|'+expectlist[i][1]+'|1"  style="color:#888888" mark='+expectlist[i][0]+'>'+expectlist[i][0]+'</option>';
 								}
 							}
 							if (this.get("#expect").val()==expectlist[i][0]){
@@ -1372,6 +1374,10 @@ Class('LoadExpect',{
 						}		
 					}
 					this.get("#expect_select").html(html);	
+					if(Class.config('nowexpect')){
+						this.get("#expect_select option[mark="+Class.config('nowexpect')+"]").attr("selected", true);
+						this.get("#expect_select option[mark="+Class.config('nowexpect')+"]").html("当前期"+Class.config('nowexpect'));
+					}
 					
 					if (this.get("#expect").val()==''){
 						this.get("#expect").attr("value",nowexpect);
