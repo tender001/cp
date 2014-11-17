@@ -418,16 +418,15 @@ a.czbtnhui{color:#666;background:url(../images/cai888/user_03hui.jpg);border:1px
 .aqcc b.mibac{ background:url(../images/cai888/aqtbx_15.jpg) 0 0 no-repeat}
 .aqcc b.mibacur{ background:url(../images/cai888/rzyb_14.jpg) 0 0 no-repeat}
 .aqcc b.mailcur{ background:url(../images/cai888/rzyb_12.jpg) 0 0 no-repeat}
-
 .confitp{background:url(../images/cai888/yes_06.jpg) 200px 55px no-repeat;padding:70px 0 30px 275px;line-height:30px;color:#444;font-size:14px;}
 .confitp a{color:#145fab; text-decoration:underline}
 .confitp a:hover{color:#f60}
 .confitp a.confita{display:block;height:32px;width:98px;text-decoration:none;line-height:32px;text-align:center;color:#fff;font-size:14px;font-weight:bold;margin:10px 0 0 135px;background:url(../images/cai888/user_03.jpg);border:1px solid #ff6702;margin:40px 0 0 62px}
-.zh-xq{width: 822px;margin: 0 auto}
+.zh-xq{width: 822px;margin: 0 auto 8px}
 .zh_xq_tb{width:100%;}
 .zh_xq_tb td{line-height:25px;color:#444;}
 .zh_xq_tb td .more{color:#00abf9}
-.zh-list{width:100%;border-top: 4px solid #b4b4b4;}
+.zh-list{width:100%;border:1px solid #b4b4b4;border-top-width:4px}
 .zh-list .zh-list-t{float: left;width:204px;height:28px;line-height:28px;margin:-1px -1px 0 0;text-align:center;border: 1px solid #b4b4b4;}
 .tk_tan_2{border-top:none;padding:25px 0 0 20px}
 .tk_tan_2 img{display:block;width:74px;height:65px;margin:0px auto 15px}
