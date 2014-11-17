@@ -426,7 +426,8 @@ a.czbtnhui{color:#666;background:url(../images/cai888/user_03hui.jpg);border:1px
 .zh_xq_tb{width:100%;}
 .zh_xq_tb td{line-height:25px;color:#444;}
 .zh_xq_tb td .more{color:#00abf9}
-.zh-list{width:100%;border:1px solid #b4b4b4;border-top-width:4px}
+.zh-list{float:left;width:auto;border:1px solid #b4b4b4;border-top-width:4px;overflow:visible;zoom:1}
+.zh-list:after{display: table;content: "";clear: both}
 .zh-list .zh-list-t{float: left;width:204px;height:28px;line-height:28px;margin:-1px -1px 0 0;text-align:center;border: 1px solid #b4b4b4;}
 .tk_tan_2{border-top:none;padding:25px 0 0 20px}
 .tk_tan_2 img{display:block;width:74px;height:65px;margin:0px auto 15px}
