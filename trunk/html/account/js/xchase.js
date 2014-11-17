@@ -114,14 +114,15 @@ Class({
 	   		    if(code == '0'){
 	   		    	if(!this.isArray(r)){r=new Array(r);}
 	   		    	var bcode = r[0].ccodes.split(";");
-	   		    	var xcode = "";
+	   		    	var xcode = "<ul class='zh-list'>";
 	   		    	bcode.each(function(i,o){
-	   		    		if((o+1)%3==0){
-	   		    			xcode += i.substring(0,i.indexOf(":")) + "<br/>";
+	   		    		if((o+1)%4==0){
+	   		    			xcode += "<li class='zh-list-t'>" + i.substring(0,i.indexOf(":")) + "</li>";
 	   		    		}else{
-	   		    			xcode += i.substring(0,i.indexOf(":")) + "；";
+	   		    			xcode += "<li class='zh-list-t'>"+i.substring(0,i.indexOf(":")) + "</li>";
 	   		    		}
 	   		    	});
+	   		    	xcode += "</ul>";
 	   		    	$("#zh_code").append(xcode);
 	   		    	
 	   		    	r.each(function(rt,o){
