@@ -87,11 +87,11 @@ Class({
 	   		    	$("#zh_jd").append("已追" + (parseInt(r.success) + parseInt(r.failure)) + "期/共" + r.pnums + "期");
 	   		    	$("#zh_state").append(r.finish == '1' ? "追号已完成" : "追号进行中");
 	   		    	$("#zh_memo").append(r.zhflag == '0' ? "中奖后不停止" : (r.zhflag == '1' ? "中奖后停止" : "盈利后停止"));
-	   		    	if(r.finish == '0'){
-	   		    		$("#xx").hide();
-	   		    	}else{
+//	   		    	if(r.finish == '0'){
+//	   		    		$("#xx").hide();
+//	   		    	}else{
 	   		    		$("#xx").attr("href",$_sys.getlotdir(lotid)+"?zid="+zid);
-	   		    	}
+//	   		    	}
 	   		    	
 	   		    }else{
 	   		    	log(desc);
