@@ -1243,7 +1243,7 @@
                         if(ty[1]>1){
                         	return this.alert('奖金优化仅支持N串1！');
                         }
-                        Y.get('#pnum').val(ty[0]);
+                        Y.get('#pnum').val(1);
                         Y.get('#danma').val(danma.join('/'));//胆码
                         Y.get('#zhushu').val(Y.get('#zs').html());
                         Y.get('#muli').val(Y.get('#bs').val());
