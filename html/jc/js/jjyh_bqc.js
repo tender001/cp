@@ -452,7 +452,7 @@ Class( {
 					codearr.each(function(x,y){
 						rw.bhn=$_sys.betname(x.split("=")[0]);
 						rw.bet=(x.split("=")[1]).replaceAll(3,"胜").replaceAll(1,"平").replaceAll(0,"负");
-						rw.gg=rw.code.split("|")[1].replace("*","串");
+						rw.gg=rw.code.split("|")[1].replace("1*1","单关").replace("*","串");
 						yhgg.push(rw.gg);
 						bet+='<b><i>'+rw.bet+'</i>'+rw.bhn+'</b>';
 					})
@@ -460,7 +460,7 @@ Class( {
 					codearr=codearr[0];
 					rw.bhn=$_sys.betname(codearr.split("=")[0]);
 					rw.bet=(codearr.split("=")[1]).replaceAll(3,"胜").replaceAll(1,"平").replaceAll(0,"负");
-					rw.gg=rw.code.split("|")[1].replace("*","串");
+					rw.gg=rw.code.split("|")[1].replace("1*1","单关").replace("*","串");
 					yhgg.push(rw.gg);
 					bet+='<b><i>'+rw.bet+'</i>'+rw.bhn+'</b>';
 				}
