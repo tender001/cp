@@ -69,10 +69,10 @@ img{vertical-align:top;}
 .top_logo .fr s{width: 120px;height: 44px;display: inline-block;background-position: 0 -37px;margin-top: 8px;}
 .top_logo .fr a img{width: 120px;height: 52px;margin-top: 4px;}
 /*nav*/
-.nav{height: 38px;line-height: 38px;background: #f60 url(../images/bg/nav.jpg) repeat-x;}
-.nav ul li{float: left;background: url(../images/bg/nav_li.jpg) right center no-repeat;}
-.nav ul li a{height:38px;display:block;font-size:14px;font-weight:bold;color:#fff;padding:0 22px;float: left;}
-.nav ul li a:hover{background: #e52e04;margin: 0 -2px;padding:0 24px;text-decoration: none;color:#fff;}
+/*.nav{height: 38px;line-height: 38px;background: #f60 url(../images/bg/nav.jpg) repeat-x;}*/
+/*.nav ul li{float: left;background: url(../images/bg/nav_li.jpg) right center no-repeat;}*/
+/*.nav ul li a{height:38px;display:block;font-size:14px;font-weight:bold;color:#fff;padding:0 22px;float: left;}*/
+/*.nav ul li a:hover{background: #e52e04;margin: 0 -2px;padding:0 24px;text-decoration: none;color:#fff;}*/
 /*title相似*/
 .basic{border:1px solid #ddd;}
 .tit{height:30px;color: #333;font: 700 14px/30px "\5b8b\4f53";overflow: hidden;border-bottom: 1px solid #ddd;background-color: #f6f6f6;}
