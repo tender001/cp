@@ -1,6 +1,6 @@
 ﻿@charset "utf-8";
 div,ul,li{ list-style-type:none;overflow:hidden}
-html,body,div,iframe,h1,h2,h3,h4,h5,h6,p,img,q,s,small,i,center,dl,dt,dd,ol,ul,li,form,table,tbody,tr,th,td{margin:0;padding:0;border:0;}
+html,body,div,iframe,h1,h2,h3,h4,h5,h6,p,img,q,s,small,center,dl,dt,dd,ol,ul,li,form,table,tbody,tr,th,td{margin:0;padding:0}
 html{color:#000;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%}
 *html{background-image:url(about:blank);background-attachment:fixed;}
 body{background-color:#fff;font:12px/150% Arial,Verdana,"\5b8b\4f53";color:#6c6c6c; min-width:1000px;}
@@ -77,7 +77,7 @@ input[type="text"]:focus{border-color: rgb(255,113,0) !important}
 .logo_right{float: left;padding-left: 5px;}
 .logo1 img{width: 100%;height: 100%;}
 .top_logo div.fr{padding-top:8px;}
-.top_logo .fr s{width:290px;height: 52px;display: inline-block;background-position:0 0}
+.top_logo .fr s{display: inline-block;width:290px;height: 52px;}
 /*.top_logo .fr a img{width: 110px;height: 52px;margin: 0 0 0 8px;}*/
 /*购买彩票 弹出菜单*/
 .nav1_buy{float: left;width: 215px;height: 38px;background-color:#e52e04;background-position:0 -52px;position: relative;overflow: visible;z-index: 99;border: 1px solid #ffa366;border-width: 0 1px;}
@@ -200,7 +200,7 @@ input[type="text"]:focus{border-color: rgb(255,113,0) !important}
 .menu_link p a:hover{color: #e52e04;}
 .menu_link .link_mid{float: left;width: 864px;height: 24px;overflow: hidden;}
 /*.menu_link .link_mid a{float: left;}*/
-.menu_link .link_more{float: left;padding-right: 15px;color: #145fab;position: relative;cursor: pointer;-webkit-user-select: none;-moz-user-select: none;-o-user-select: none;user-select: none;}
+.menu_link .link_more{float: left;padding-right: 15px;color: #145fab;position: relative;cursor: pointer;-webkit-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;}
 .menu_link .link_more s{margin-top: 7px;}
 .menu_link .click{height: auto;}
 /*.menu_link .mar{margin-top: 24px;}*/
@@ -226,7 +226,7 @@ div.p-buy-btn{margin-top:-1px;padding-bottom:12px;border:1px solid #ddd}
 #bf_xl ul li:hover{ background-color:#E62E04;color:#fff}
 a.t_a_qc b{display: block;width: 115px;height: 35px;margin:10px auto;font: 400 16px/34px "\5fae\8f6f\96c5\9ed1";text-align: center;color: #fff;background-image: url(../images/cdbg/reg_07.gif);}
 .dc_qr{padding-top:3px}
-.dc_qr i{display:inline-block;width:89px;height:22px;margin: 0 2px;background-image:url(../images/bg/jc-a.jpg);vertical-align: middle;-webkit-user-select: none;-moz-user-select: none;-o-user-select: none;user-select: none;}
+.dc_qr i{display:inline-block;width:89px;height:22px;margin: 0 2px;background-image:url(../images/bg/jc-a.jpg);vertical-align: middle;-webkit-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;}
 .dc_qr i a{display: inline-block;width: 21px;height: 100%;background: transparent;vertical-align: top;}
 .dc_qr i .mul{width:45px;height:20px;line-height:20px;border:0;background-color:transparent;margin:1px 0 0 0;text-align: center;}
 .dc_qr span a{color: #145fab;margin-right: 10px;position: relative;}
@@ -1310,7 +1310,7 @@ p.p_p2p{width:260px;text-align:left;font-weight:bold;}
 p.p_p2p font{color:#f00;font-weight:bold;font-size:14px; font-family:Arial;padding:0 3px }
 span.s_psp a{float:left;display:block;margin:25px 0 0 20px;color:#145fab}
 span.s_psp a:hover{color:#f00; text-decoration:underline}
-span.s_psp a.p_a{display:block;width:115px;height:35px;line-height:35px;color:#fff;text-align:center;font-size:14px; background:url(../images/cdbg/reg_07.gif) 0 0px no-repeat;margin:15px 0 0 160px;_margin-left:80px}
+span.s_psp a.p_a{display:block;width:115px;height:35px;line-height:35px;color:#fff;text-align:center;font-size:14px; background:url(../images/cdbg/reg_07.gif) no-repeat;margin:15px 0 0 160px;_margin-left:80px}
 span.s_psp a.p_a:hover{background:url(../images/cdbg/reg_10.gif) 0 0 no-repeat;color:#fff; text-decoration:none}
 p.cz_opd{padding:30px 0 20px 35px;font-size:14px;color:#444;line-height:27px;text-align:left;}
 p.cz_opd strong{font-weight:bold;font-size:14px}
