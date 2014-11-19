@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/gamecacher"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/gameplugin"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/gamesplit"/>
+	<classpathentry kind="lib" path="/builder/lib/org.json.jar"/>
+	<classpathentry kind="lib" path="/builder/lib/alipaylogin.jar"/>
+	<classpathentry kind="lib" path="/builder/lib/t_util.jar"/>
+	<classpathentry kind="lib" path="/builder/framework/rbc_s3.jar"/>
+	<classpathentry kind="output" path="classes"/>
+</classpath>
