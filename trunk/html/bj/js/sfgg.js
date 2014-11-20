@@ -1354,10 +1354,9 @@ Class('LoadExpect',{
 					var find = false;
 					var nowexpect=""
 					var nowdate=new Date();
-					nowdate=nowdate.getTime()
 					if (expectlist.length>0){
 						for ( var i = 0; i < expectlist.length; i++) {
-							if(nowdate<new Date(expectlist[i][1].substr(0,10)).getTime()){
+							if(nowdate<Y.getDate(expectlist[i][1])){
 								nowexpect=expectlist[i][0];
 								html+='<option value="'+expectlist[i][0]+'|'+expectlist[i][1]+'|2"  mark='+expectlist[i][0]+'>'+expectlist[i][0]+'</option>';
 								Class.config('nowexpect', nowexpect);  //当前期号
@@ -1380,7 +1379,7 @@ Class('LoadExpect',{
 					}
 					
 					if (this.get("#expect").val()==''){
-						this.get("#expect").attr("value",nowexpect);
+						this.get("#expect").val(nowexpect);
 						this.get("#expect_select").get(0).selectedIndex=0;
 						find=true;
 					}else{
@@ -1409,6 +1408,7 @@ Class('LoadExpect',{
 							return ;
 						}
 					}
+					
 					this.postMsg('msg_get_expect_suc',this.get("#expect").val());
 			},
 			error : function() {
