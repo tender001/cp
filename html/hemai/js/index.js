@@ -874,7 +874,8 @@ $(document).ready(function(){
 			$(".top-caiz").remove();
 			$(".hm_right_t").show();
 			$(".annotation").hide();
-			$(".annotations").hide();
+			$(".annotations,#expectem").hide();
+			
 			loadHotProj();
 			$("#start_hms").click(function(){
 					location.href=$_sys.getlotdir(Class.C('lotid'));
@@ -884,7 +885,7 @@ $(document).ready(function(){
 			$(".top-caiz").show();
 			$(".hemai").hide();
 			$(".annotation").hide();
-			$(".annotations").show();
+			$(".annotations,#expectem").show();
 			$(".hm_right_t").show();
 			cachePeriod();
 			$("#start_hm").click(function(){
@@ -909,7 +910,7 @@ $(document).ready(function(){
 
 			$(".top-caiz").show();
 			$(".hemai").hide();
-			$(".annotation").show();
+			$(".annotation,#expectem").show();
 			if(Class.C('lotid') ==50||Class.C('lotid')== 1){
 				$(".annotation").html("注：单个方案合买成功盈利超过10000元（含10000元），则获得一个钻石，当期方案个数不限。")
 			}
@@ -952,12 +953,14 @@ $(document).ready(function(){
 		
 		}
 		else{
-			$(".annotation").hide();
+			$(".annotations,#expectem").hide();
 			$(".annotations").show();
 			$(".nhmrtop").remove();
+			
 			$(".hm_right_t").show();
 			if(Class.C('lotid') == 31||Class.C('lotid') == 32||(Class.C('lotid')<98&&Class.C('lotid')>89 )||Class.C('lotid') == 70||Class.C('lotid') == 71||Class.C('lotid') == 72){
 				$(".top-caiz").remove();
+				
 				$("#start_hms").click(function(){
 				if(Class.C('lotid') == 31){	
 					location.href=$_sys.getlotdir(70);}
