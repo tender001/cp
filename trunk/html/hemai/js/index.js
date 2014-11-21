@@ -885,8 +885,7 @@ $(document).ready(function(){
 			$(".top-caiz").show();
 			$(".hemai").hide();
 			$(".annotation").hide();
-			$(".annotations,#expectem").show();
-			$(".hm_right_t").show();
+			$(".hm_right_t,#expectem,.annotations").show();
 			cachePeriod();
 			$("#start_hm").click(function(){
 				if(Class.C('lotid') == 30){
@@ -953,7 +952,7 @@ $(document).ready(function(){
 		
 		}
 		else{
-			$(".annotations,#expectem").hide();
+			$(".annotation,#expectem").hide();
 			$(".annotations").show();
 			$(".nhmrtop").remove();
 			
