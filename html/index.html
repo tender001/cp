@@ -14,34 +14,38 @@
 <script type="text/javascript" src="/public/jq.js"></script>
 <script type="text/javascript" src="/public/jq2.js"></script>
 
-<script >
-$(document).ready(function() {
-function redirect(){
-	location.href = href;
-	}
-
-	var url_parts = document.URL.split('?');
-	var query = url_parts.length == 2 ? ('?' + url_parts[1]) : '';
-	var href = '/';
-	var ua = navigator.userAgent.toLowerCase();
-
-	if (/iphone|ipad|ipod/.test(ua)) {
-		location.href = 'http://www.159cai.com/m.html';
-	} else if (/android/.test(ua)) {
-		location.href = 'http://www.159cai.com/m.html';
-	} else if (/windows phone|blackberry/.test(ua)) {
-	Y.alert('抱歉，暂不支持您的系统');
-	location.href = '/';
-	} else {
-// 	location.href = '/';
-	}
-	
-});
-
-</script>
 <script type="text/javascript" src="/public/159cp.js"></script>
 	
 <script type="text/javascript" src="/public/chklogin.js"></script>
+<script language="javascript">
+
+function is_mobile() {
+	   var regex_match = /(nokia|iphone|android|motorola|^mot-|softbank|foma|docomo|kddi|up.browser|up.link|htc|dopod|blazer|netfront|helio|hosin|huawei|novarra|CoolPad|webos|techfaith|palmsource|blackberry|alcatel|amoi|ktouch|nexian|samsung|^sam-|s[cg]h|^lge|ericsson|philips|sagem|wellcom|bunjalloo|maui|symbian|smartphone|midp|wap|phone|windows ce|iemobile|^spice|^bird|^zte-|longcos|pantech|gionee|^sie-|portalmmm|jigs browser|hiptop|^benq|haier|^lct|operas*mobi|opera*mini|320x320|240x320|176x220)/i;
+	   var u = navigator.userAgent;
+	   if (null == u) {
+	      return true;
+	   }
+	   var result = regex_match.exec(u);
+	   if (null == result) {
+	      return false;
+	   } else {
+	      return true;
+	   }
+	}
+	
+var _NTES_COOKIE_WAP_JUMP_PAGES = getcookie("_NTES_CAIPIAO_WAP_JUMP_PAGES");
+if (typeof(_NTES_COOKIE_WAP_JUMP_PAGES) == 'undefined' || _NTES_COOKIE_WAP_JUMP_PAGES == null || _NTES_COOKIE_WAP_JUMP_PAGES == "") {
+	if (/(iPhone|iPad|iPod|iOS)/i.test(navigator.userAgent)) {
+		window.location.href= 'http://www.159cai.com/m.html';
+	}else if(/(Android)/i.test(navigator.userAgent)){
+		window.location.href= 'http://www.159cai.com/m.html';
+	}else  if(is_mobile()){
+		window.location.href= 'http://www.159cai.com/m.html';
+	}
+}else if(_NTES_COOKIE_WAP_JUMP_PAGES=="ntes_m_jump_flag"&&is_mobile()){
+	window.location.href= 'http://m.159cai.com';
+}
+</script>
 </head>
 <body>
 <!-- 头部内容 -->  
