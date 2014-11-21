@@ -13,6 +13,32 @@
 <link rel="stylesheet" type="text/css" href="/css/index.css">
 <script type="text/javascript" src="/public/jq.js"></script>
 <script type="text/javascript" src="/public/jq2.js"></script>
+
+<script >
+$(document).ready(function() {
+function redirect(){
+	location.href = href;
+	}
+
+	var url_parts = document.URL.split('?');
+	var query = url_parts.length == 2 ? ('?' + url_parts[1]) : '';
+	var href = '/';
+	var ua = navigator.userAgent.toLowerCase();
+
+	if (/iphone|ipad|ipod/.test(ua)) {
+		location.href = 'http://www.159cai.com/m.html';
+	} else if (/android/.test(ua)) {
+		location.href = 'http://www.159cai.com/m.html';
+	} else if (/windows phone|blackberry/.test(ua)) {
+	Y.alert('抱歉，暂不支持您的系统');
+	location.href = '/';
+	} else {
+// 	location.href = '/';
+	}
+	
+});
+
+</script>
 <script type="text/javascript" src="/public/159cp.js"></script>
 	
 <script type="text/javascript" src="/public/chklogin.js"></script>
