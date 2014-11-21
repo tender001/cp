@@ -9,6 +9,7 @@ a{ color:#464646; text-decoration:none;outline:0;cursor: pointer;}
 a:hover{color:#00abf9;text-decoration:underline}
 ol,ul,li{list-style:none;}
 i,em{font-style:normal;}
+b,strong{font-weight: normal}
 input{outline:0}
 .fn-clear{zoom:1;}
 .fn-clear:after{visibility:hidden;display:block;font-size:0;content:" ";clear:both;}
@@ -414,8 +415,9 @@ a.a_auto{margin:0 auto 20px auto}
 .hm-tit a{display: inline-block;height: 24px;line-height: 24px; text-align: center;color: #323232;background-position: 0 -33px;}
 .hm-tit a:hover{background-position: 0 -58px;text-decoration: none;}
 .hm-tit span a{width: 50px;border-left: 1px solid #cbcbcb;}
-.hm-tit b{float: right;font-weight: 400;}
+.hm-tit b{float: right;}
 .hm-tit b a{width: 70px;margin-right: 8px;border: 1px solid #cbcbcb;}
+.hm-tit b select{height:24px;line-height:24px;margin: 0 8px 0}
 .dz_dv span b.exy_l{margin-left:6px}
 .cm_center{position:relative}
 .logo img{width:145px;height:53px;}
