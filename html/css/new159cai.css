@@ -17,7 +17,7 @@ input{outline:0}
 .fn-hide{display:none}
 .fl{float:left}
 .fr{float:right}
-img{vertical-align:top}
+img{border:0 none;vertical-align:top}
 .w1000{width: 1000px; margin:0 auto;overflow:visible;}
 .width980{ width:980px; margin:0 auto;}
 .width980{ width:960px; margin:0 auto;}
