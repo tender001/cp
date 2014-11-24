@@ -290,7 +290,7 @@ span.ye_say{ background:url(../images/cdbg/yet.gif) center 40px no-repeat;line-h
 p.qq_say{ line-height:30px;font-size:16px;font-weight:bold;padding:50px 0 10px 0;color:#444;height:41px;text-align:center}
 p.bd_say{ line-height:25px;font-size:14px;padding:40px 0 10px 20px;color:#333;text-align:left;}
 p.bd_say em{color:#999;font-size:12px}
-p.bd_say input{height:24px;text-algin:center;border:1px solid #ddd;padding-top:4px\9;height:20px\9;margin:0 5px}
+p.bd_say input{height:24px;text-align:center;border:1px solid #ddd;padding-top:4px\9;height:20px\9;margin:0 5px}
 :root p.bd_say input{padding:0;height:24px}
 p.bd_say font{color:#790500;font-size:12px}
 a.t_a_qx{float:left;width:98px;height:34px;margin:12px 0 0 130px;font:16px/34px "\5fae\8f6f\96c5\9ed1";text-align:center;color:#333; background-image:url(../images/cdbg/login_10.gif);text-decoration:none;_margin-left:70px}
