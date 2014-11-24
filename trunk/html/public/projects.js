@@ -519,20 +519,20 @@ var showmyjoin = function(lotid,projid){
 						var amoney = rt.amoney;// 认购金额
 						var cancel = Y.getInt(rt.cancel);// 是否撤销(0 未撤销 1 本人撤销 2 系统撤销）
 						
-						myjoinhtml += '<span>';
-						myjoinhtml += buydate.substr(5,11)+"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"
-						myjoinhtml += parseFloat(bmoney).rmb(true) ;
+						myjoinhtml += '<table class="myjoin"><tr class="kj"><td>';
+						myjoinhtml += buydate.substr(5,11)+"</td><td>"
+						myjoinhtml += parseFloat(bmoney).rmb(true)+"</td>";
 				
 						if(o==0&&iscancel&&cnickid==nickid&&cancel==0&&(cp_istate==1||cp_istate==0)){
 							myjoinhtml +='<a onclick="return main_return_confirm();" href="javascript:void(0);">我要撤单</a>'
 						}else{
-							myjoinhtml += cancel==0?(iscancel?(cnickid==nickid?'&nbsp':'<a href="javascript:void(0);" onclick="user_return_confirm(\''+buyid+'\')" class="a1">撤资</a>'):'&nbsp;'):(cancel==1?'<em>本人撤销</em> ':'<em>系统撤销</em>');
+							myjoinhtml += cancel==0?(iscancel?(cnickid==nickid?'':'<a href="javascript:void(0);" onclick="user_return_confirm(\''+buyid+'\')" class="a1">撤资</a>'):''):(cancel==1?'<td class="blue">本人撤销</td> ':'<td class="blue">系统撤销</td>');
 						}
 						if(amoney>0){
-							myjoinhtml += '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font  class="fontred">' + parseFloat(amoney).rmb(true) + '</font>';
+							myjoinhtml += '<td class="fontred">' + parseFloat(amoney).rmb(true) + '</td>';
 						}
 //						<span>03-11 14:32 4元（100%）<a href="#">方案撤单</a></span>
-						myjoinhtml += ' </span>';
+						myjoinhtml += ' </tr></table>';
 					
 						mynickid=nickid;
 					});

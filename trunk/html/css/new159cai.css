@@ -374,9 +374,6 @@ a.a_auto{margin:0 auto 20px auto}
 .inacout p.p3 a {float: left;height: 22px;line-height: 22px;margin: 0 5px;color: #004398;}
 .inacout p.p3 b{float: left;color: #f60;font-weight:400;margin-left: 5px;padding-left: 20px;background:transparent url(../images/cdbg/scj.png) -509px -157px no-repeat;cursor: pointer;}
 .inacout p.p3 b.cur{ background-position: -509px -184px;color: #2D9300;}
-/*.nav ul li{width:auto}*/
-/*.nav ul li:hover{ background:none}*/
-/*.nav ul li.li_a:hover{ background:none}*/
 .nav_main{padding: 0 0 5px}
 .lefter{width:230px}
 .news_img{height:220px}
