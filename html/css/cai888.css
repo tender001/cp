@@ -290,7 +290,7 @@ font.cm_red{color:#f60}
 .userzhmx{margin:0 20px 15px;border:1px solid #ddd;padding:5px 20px ;border-top:3px solid #ddd;}
 .userzhmx em{color:#E52E04;font-weight:bold}
 .userzhmx td{color:#666;line-height:24px}
-.userzhmx th{color:#333;line-height:24px;text-align:left}
+.userzhmx th{color:#333;line-height:24px;text-align:left;font-weight:400}
 .usertitle a.a1{float:right;line-height:31px;margin-right:20px;color:#145fab;}
 .usertitle a.a1:hover{color:#f60; text-decoration: underline}
 .czsay{border:1px solid #ddd;color:#333;font-size:12px;line-height:30px;height:30px;margin:10px 20px 20px;padding-left:35px; background:url(../images/cai888/czat_03.jpg) 6px 4px no-repeat #f4f4f4}
