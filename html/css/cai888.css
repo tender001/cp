@@ -184,17 +184,20 @@ p.fotpp a:hover{color:#f60;text-decoration:underline}
 /**/
 .jcxqa p{float:right}
 .hm_timep{ position: absolute;right:40px;bottom:10px;width:205px;height:20px;line-height:20px}
-.hm_top_1 p b{ width:70px;height:23px;line-height:20px;display:block;background:url(../images/cai888/jczt.png);line-height:22px;text-align:center;color:#888;font-size:12px;margin-left:80px}
+.hm_top_1 p b{ width:70px;height:23px;display:block;background:url(../images/cai888/jczt.png);line-height:22px;text-align:center;color:#888;font-size:12px;margin-left:80px}
 .hm_top_1 p b.cur{ background-position:-83px 0;color:#f00}
 .hm_timep i{float:left;color:#444;}
 .hm_timep span{float:left;padding-left:5px;}
-.hm_timep em{float:left;height:20px;line-height:20px;font-family:Arial;margin:0px 2px 0;padding:0 5px;color:#9cff00;background:url(../images/newimg/newsq_08.jpg);}
-.hm_myrg{clear:both;margin:0px 0 5px;border-bottom:1px dashed #bbb;padding:5px 0 5px;line-height:26px;color:#333;}
+.hm_timep em{float:left;height:20px;line-height:20px;font-family:Arial;margin:0 2px 0;padding:0 5px;color:#9cff00;background:url(../images/newimg/newsq_08.jpg);}
+.hm_myrg{clear:both;max-height:320px;margin:0 0 5px;border-bottom:1px dashed #bbb;padding:5px 0 5px;line-height:26px;color:#333;overflow-y:auto;*width:270px;}
 .hm_myrg strong{font-weight:bold;color:#555;display:block}
 .hm_myrg a{color:#145fab;margin-left:50px;_margin-left:25px}
 .hm_myrg a:hover{color:#e52e04; text-decoration:underline}
-.hm_myrg em{color:#145fab;margin-left:50px;_margin-left:25px}
-.hm_myrg span{display:block}
+/*.hm_myrg em{color:#145fab;margin-left:50px;_margin-left:25px}*/
+.myjoin{display: table;width:100%}
+.myjoin .kj{display:table-row}
+.kj b{display:table-cell}
+.kj .blue{color:#145fab}
 .xqtabm .sscmxq table strong{color:#f60;font-size:12px;font-weight:bold}
 .xqtabm .sscmxq table{clear:both;border:1px solid #ccc;border-bottom:none}
 .xqtabm .sscmxq table thead td{border-bottom:1px solid #ccc;line-height:32px; background-color:#f6f6f6}
