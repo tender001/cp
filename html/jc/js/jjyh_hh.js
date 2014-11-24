@@ -330,7 +330,7 @@ Class( {
 		   					
 		   					'<th>{$desc}</th>'+
 		   					
-		   					'<td><font color="red"><label id="tbonus{$seqno}">{$tbonus}</label></font></td>'+					
+		   					'<td><font color="red"><label id="tbonus{$seqno}">{$bonus}</label></font></td>'+					
 		   					
 		   					'<td id="txtm{$seqno}" yhzs="{$muli}">{$muli}</td>'+
 		   					
