@@ -519,7 +519,7 @@ var showmyjoin = function(lotid,projid){
 						var amoney = rt.amoney;// 认购金额
 						var cancel = Y.getInt(rt.cancel);// 是否撤销(0 未撤销 1 本人撤销 2 系统撤销）
 						
-						myjoinhtml += '<table class="myjoin"><tr class="kj"><td>';
+						myjoinhtml += '<tr class="kj"><td>';
 						myjoinhtml += buydate.substr(5,11)+"</td><td>"
 						myjoinhtml += parseFloat(bmoney).rmb(true)+"</td>";
 				
@@ -532,7 +532,7 @@ var showmyjoin = function(lotid,projid){
 							myjoinhtml += '<td class="fontred">' + parseFloat(amoney).rmb(true) + '</td>';
 						}
 //						<span>03-11 14:32 4元（100%）<a href="#">方案撤单</a></span>
-						myjoinhtml += ' </tr></table>';
+						myjoinhtml += ' </tr>';
 					
 						mynickid=nickid;
 					});
@@ -542,7 +542,7 @@ var showmyjoin = function(lotid,projid){
 					
 					$("#myjoin").hide();
 				}else{
-					$('#myjoin div').html(myjoinhtml).parent().show();
+					$('#myjoin div').html('<table class="myjoin">'+myjoinhtml+'</table>').parent().show();
 				}
 				
 			}
