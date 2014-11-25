@@ -9,7 +9,6 @@ a{ color:#464646; text-decoration:none;outline:0;cursor: pointer;}
 a:hover{color:#00abf9;text-decoration:underline}
 ol,ul,li{list-style:none;}
 i,em{font-style:normal;}
-b,strong{font-weight: normal}
 input{outline:0}
 .fn-clear{zoom:1;}
 .fn-clear:after{visibility:hidden;display:block;font-size:0;content:" ";clear:both;}
