@@ -167,7 +167,7 @@ for (int j=0;j<cs.length;j++){
 ratelist=ratelist.substring(0,ratelist.length()-1);
 %>
   <tr>
-    <td colspan="5" class="sum">投注<font>${beishu}</font>倍&nbsp;&nbsp;&nbsp;&nbsp; 过关方式：<font>${sgtypename}</font></td>
+    <td colspan="5" class="sum">投注<font>${beishu}</font>倍&nbsp;&nbsp;&nbsp;&nbsp; 过关方式：<font>${sgtypename}</font><span class="annot">方案奖金以出票时官网奖金为准</span></td>
   </tr>
   <tr>
     <td colspan="5" class="last">方案注数<font>${zhushu}</font>注，您需要支付<font>${totalmoney}</font>元</td>

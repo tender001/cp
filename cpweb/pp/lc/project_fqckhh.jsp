@@ -192,6 +192,7 @@ ratelist="";
 	<%} else {%>
     	(<font color="red">允许单一玩法串投注</font>)
     <%}%>
+    <span class="annot">方案奖金以出票时官网奖金为准</span>
     </td>
   </tr>
   </tbody>
