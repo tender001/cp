@@ -1,6 +1,6 @@
 function addmoney(){
-    if ($("#addmoney").val()<1){
-    	showTips('存入金额至少为1元');
+    if ($("#addmoney").val()<10){
+    	showTips('存入金额至少为10元');
 		$("#addmoney").focus();
 		return false;
 	}
