@@ -613,30 +613,6 @@ a.goyh2:hover {background-position: -95px -59px;}
 .czje{padding-bottom:0;border:none}
 em.uf{ background-image:url(../images/159/uf.gif)}
 .header img.logo{width:145px;height:53px}
-.bank_tan{width:715px}
-.bank_zj ul li{float: left;height: 36px;width: 157px;margin:5px;padding:0;border: 1px solid #ccc;cursor: pointer;}
-.bank_zj ul li.cur{ background:url(../images/159/hoverk.png);border:none;width:159px;height:38px}
-.bank_zj ul li em{display: block;width:142px;height:28px;margin:5px auto;border:0;background:url(../images/159/bank_ico.png);}
-.bank_zj ul li em.zfb{background-position:-2px -5px}
-.bank_zj ul li em.kq{background-position:-2px -1285px}
-.bank_zj ul li em.uf{background-position:-18px -1242px}
-.bank_zj ul li em.gh{background-position:-6px -91px}
-.bank_zj ul li em.jh{background-position:-6px -46px}
-.bank_zj ul li em.nh{background-position:-6px -137px}
-.bank_zj ul li em.cx{background-position:-10px -357px}
-.bank_zj ul li em.zh{background-position:-6px -180px}
-.bank_zj ul li em.jth{background-position:-8px -269px}
-.bank_zj ul li em.zxh{background-position:-7px -622px}
-.bank_zj ul li em.gfh{background-position:-6px -401px}
-.bank_zj ul li em.zgh{background-position:-6px -224px}
-.bank_zj ul li em.pfh{background-position:-6px -665px}
-.bank_zj ul li em.gdh{background-position:-6px -445px}
-.bank_zj ul li em.sfh{background-position:-10px -977px}
-.bank_zj ul li em.xyh{background-position:-6px -579px}
-.bank_zj ul li em.msh{background-position:-6px -712px}
-.bank_zj ul li em.pah{background-position:-6px -535px}
-.bank_zj ul li em.qth{background-position:-6px -1285px}
-.bank_zj ul li em.hzh{background-position:-6px -848px}
 .pagination li{float:left;margin-right:6px;font-size:12px;color:#444;line-height:18px;padding:0 3px}
 .pagination li strong{color:#f60}
 .nhmrtop{border-left:1px solid #ddd;border-right:1px solid #ddd;margin-left:7px}
