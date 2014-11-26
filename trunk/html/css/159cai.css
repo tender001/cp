@@ -1122,6 +1122,7 @@ a.a_inner{width:166px;height:128px;display:block;margin:4px auto 0}
 .gm_msg table tr.first td{ background-color:#f8f3eb}
 .gm_msg table td.sum{font-size:14px;line-height:41px}
 .gm_msg table td.last{padding-top:10px;font-size:14px;}
+.sum .annot{padding-left:15px;font-size:12px;color:#f60}
 a.gm_but{display:block;width:190px;height:42px;margin:10px auto 25px;font:16px/42px "Microsoft YaHei UI","微软雅黑";text-align:center;color:#fff;background-image:url(../images/cdbg/gm_11.gif);}
 a.gm_but:hover{background-image:url(../images/cdbg/gm_14.gif);text-decoration:none;color:#fff;}
 .gm_msg table font{color:#f60;font-size:16px; font-family:Arial, Helvetica, sans-serif; font-weight:bold;padding:0 5px}

@@ -68,6 +68,7 @@ div,ul,li{ list-style-type:none;overflow:hidden}
 .jd_b_font p.p3 {width: 130px;text-align:right}
 .jd_b_font p.p4 {width:155px;text-align:right}
 .xqtab1{padding-top:20px;border-bottom:1px solid #ccc;height:31px;overflow:visible;position:relative;zoom:1}
+.xqtab1 .annot{float:right;padding:8px 4px 0 0;color:#f60}
 .xqtab1 b{display:block;height:30px;font:400 14px/30px Tahoma,Helvetica;border:1px solid #ccc; background:#fde9d9;padding:0 15px;color:#444;cursor:pointer;z-index:9;position:absolute;bottom:-1px;_bottom:-2px}
 .xqtab1 b.cur{ background:#fff;border-bottom:1px solid #fff}
 .xqtabm{padding-top:14px;clear:both}
