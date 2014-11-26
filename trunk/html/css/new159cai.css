@@ -821,7 +821,8 @@ span.sz_a_l a.cu{background:url(../images/159/nx5s_09z.jpg) repeat scroll 0 0 }
 .card_bg table input{float:left;}
 .card_bg table img{display:block;float:left;margin:5px 0 0 5px}
 .sz_xuh ul li b.b_r,.qx_xuh ul li b.b_r{background-position:0 -241px;}
-.tgdiv{padding:100px 0 80px 30px}
+.tgdiv{padding:100px 0 80px 30px;overflow:visible;position: relative}
+.tgdiv .QR-code{width:100px;height:100px;position: absolute;top:-30px;left:490px}
 .tgdiv h4{float:left;line-height:25px;font-size:14px;font-weight:100;color:#444;}
 .tgdiv input{display:block;float:left;width:260px;border:1px solid #bbb;height:22px;font-size:12px;color:#333;padding:3px 0 0 5px\9;height:19px\9;margin:0 5px}
 :root .tgdiv input{height:22px;padding:0 0 0 5px}
