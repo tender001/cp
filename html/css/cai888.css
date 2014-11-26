@@ -68,7 +68,6 @@ div,ul,li{ list-style-type:none;overflow:hidden}
 .jd_b_font p.p3 {width: 130px;text-align:right}
 .jd_b_font p.p4 {width:155px;text-align:right}
 .xqtab1{padding-top:20px;border-bottom:1px solid #ccc;height:31px;overflow:visible;position:relative;zoom:1}
-.xqtab1 .annot{float:right;padding:8px 4px 0 0;color:#f60}
 .xqtab1 b{display:block;height:30px;font:400 14px/30px Tahoma,Helvetica;border:1px solid #ccc; background:#fde9d9;padding:0 15px;color:#444;cursor:pointer;z-index:9;position:absolute;bottom:-1px;_bottom:-2px}
 .xqtab1 b.cur{ background:#fff;border-bottom:1px solid #fff}
 .xqtabm{padding-top:14px;clear:both}
@@ -298,7 +297,7 @@ font.cm_red{color:#f60}
 .czsay{border:1px solid #ddd;color:#333;font-size:12px;line-height:30px;height:30px;margin:10px 20px 20px;padding-left:35px; background:url(../images/cai888/czat_03.jpg) 6px 4px no-repeat #f4f4f4}
 .czje{*zoom:1;margin-left:55px;border:none;clear:both;font-size:14px;color:#444;}
 .czje p{color:#444;line-height:40px;font-size:14px}
-.czje input{width:100px;height:30px;border:1px solid #ccc;margin:0 10px;font-size:14px;color:#444;padding-left:5px;padding:10px 0 0 5px\9;height:23px\9}
+.czje input{width:100px;height:30px;border:1px solid #ccc;margin:0 10px 0 0;font-size:14px;color:#444;padding-left:5px;padding:10px 0 0 5px\9;height:23px\9}
 :root .czje input{width:100px;height:30px;padding: 0 0 0 5px}
 .czje span {font-size:14px}
 .czje span em {color: #f60;font-size:14px}
@@ -306,40 +305,41 @@ font.cm_red{color:#f60}
 .bank_main a.cz_but{display:block;width:124px;height:44px; background-image:url(../images/bank/bank_48.gif);margin:17px auto}
 .bank_main a.cz_but:hover{ background-image:url(../images/bank/bank_51.gif)}
 .bank_tan{display:none;width:655px;padding:15px 20px 30px;position:absolute;top:61px;left:85px;z-index:99999;border:1px solid #ddd;background-color:#fff ;*zoom:1;}
-.bank_zj p{line-height:35px;color:#444;float:left;font-size:14px;padding-right:5px;_padding-right:0px}
+.bank_zj p{font:700 12px/35px "simsun";color:#444;padding-right:5px;}
+.bank_zj p span{float:right;padding:0 36px 0 0;font-size:12px;font-weight:400;color: #f60}
 .bank_tan{width:715px}
-.bank_zj ul li{border: 1px solid #ccc;float: left;height: 36px;margin:5px;width: 157px;padding:0;cursor: pointer;}
-.bank_zj ul li.cur{ background:url(../images/159/hoverk.png);border:none;width:159px;height:38px}
-.bank_zj ul li em{display: block;width:142px;height:28px;margin:5px auto;border:none;background:url(../images/159/bank_ico.png);}
-.bank_zj ul li em.zfb{background-position:-2px -5px}
-.bank_zj ul li em.kq{background-position:-2px -1285px}
-.bank_zj ul li em.uf{background-position:-18px -1242px}
-.bank_zj ul li em.gh{background-position:-6px -91px}
-.bank_zj ul li em.jh{background-position:-6px -46px}
-.bank_zj ul li em.nh{background-position:-6px -137px}
-.bank_zj ul li em.cx{background-position:-10px -357px}
-.bank_zj ul li em.zh{background-position:-6px -180px}
-.bank_zj ul li em.jth{background-position:-8px -269px}
-.bank_zj ul li em.zxh{background-position:-7px -622px}
-.bank_zj ul li em.gfh{background-position:-6px -401px}
-.bank_zj ul li em.zgh{background-position:-6px -224px}
-.bank_zj ul li em.pfh{background-position:-6px -665px}
-.bank_zj ul li em.gdh{background-position:-6px -445px}
-.bank_zj ul li em.sfh{background-position:-10px -977px}
-.bank_zj ul li em.xyh{background-position:-6px -579px}
-.bank_zj ul li em.msh{background-position:-6px -712px}
-.bank_zj ul li em.pah{background-position:-6px -535px}
-.bank_zj ul li em.qth{background-position:-6px -1285px}
-.bank_zj ul li em.hzh{background-position:-6px -848px}
+.ae_card ul li{border: 1px solid #ccc;float: left;height: 36px;margin:5px;width: 157px;padding:0;cursor: pointer;}
+.ae_card ul li.cur{ background:url(../images/159/hoverk.png);border:none;width:159px;height:38px}
+.ae_card ul li em{display: block;width:142px;height:28px;margin:5px auto;border:none;background:url(../images/159/bank_ico.png);}
+.ae_card ul li em.zfb{background-position:-2px -5px}
+.ae_card ul li em.kq{background-position:-2px -1285px}
+.ae_card ul li em.uf{background-position:-18px -1242px}
+.ae_card ul li em.gh{background-position:-6px -91px}
+.ae_card ul li em.jh{background-position:-6px -46px}
+.ae_card ul li em.nh{background-position:-6px -137px}
+.ae_card ul li em.cx{background-position:-10px -357px}
+.ae_card ul li em.zh{background-position:-6px -180px}
+.ae_card ul li em.jth{background-position:-8px -269px}
+.ae_card ul li em.zxh{background-position:-7px -622px}
+.ae_card ul li em.gfh{background-position:-6px -401px}
+.ae_card ul li em.zgh{background-position:-6px -224px}
+.ae_card ul li em.pfh{background-position:-6px -665px}
+.ae_card ul li em.gdh{background-position:-6px -445px}
+.ae_card ul li em.sfh{background-position:-10px -977px}
+.ae_card ul li em.xyh{background-position:-6px -579px}
+.ae_card ul li em.msh{background-position:-6px -712px}
+.ae_card ul li em.pah{background-position:-6px -535px}
+.ae_card ul li em.qth{background-position:-6px -1285px}
+.ae_card ul li em.hzh{background-position:-6px -848px}
 .un_b_k{ background-image:url(../images/bank/bank2_03.gif);height:324px;width:5px;float:left;margin-left:10px}
-.un_b_main{padding:10px 20px 0px 55px;}
-a.czbtn{display:block;height:32px;width:98px;line-height:32px;text-align:center;color:#fff;font-size:14px;font-weight:bold;margin:10px 0 0 121px;background:url(../images/cai888/user_03.jpg);border:1px solid #ff6702;float:left;_display:inline;}
+.un_b_main{padding:10px 20px 0 128px;}
+a.czbtn{float:left;width:98px;height:32px;line-height:32px;text-align:center;color:#fff;font-size:14px;font-weight:bold;margin:10px 0 0 132px;background:url(../images/cai888/user_03.jpg);border:1px solid #ff6702;_display:inline;}
 a.czbtnhui{color:#666;background:url(../images/cai888/user_03hui.jpg);border:1px solid #B6B6B6 }
 .userp1 b{color:#333;line-height:25px}
 .user{ background:url(../images/cai888/czbj_03.jpg) repeat-y;border:1px solid #ddd;}
 /* .user div{ overflow:visible;} */
 .xyksay{  color: #444;line-height: 30px;padding:5px 0 15px 54px;}
-.sm_bk{ background:url(../images/njc/bk_sz.gif) no-repeat scroll right -29px transparent;cursor:pointer;font-size:14px;font-weight:bold;color:#145fab;width:110px;margin:20px 0 15px;clear:both;margin: 10px 0px 5px 135px;}
+.sm_bk{clear:both;background:url(../images/njc/bk_sz.gif) no-repeat scroll right -29px transparent;cursor:pointer;font-size:14px;font-weight:bold;color:#145fab;width:110px;margin: 10px 0px 5px 135px;}
 .sm_bkcur{ background-position:right 7px}
 .sm_bkm{width:597px;border:1px solid #ddd;height:180px;overflow-y:auto;margin-left:135px;margin-top:10px}
 .sm_bkm a{padding-left:10px;display:block;height:30px;line-height:30px;color:#333;border-right:1px dashed #dfdfdf;border-bottom:1px dashed #dfdfdf;width:134px;float:left}
