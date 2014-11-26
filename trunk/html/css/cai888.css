@@ -279,9 +279,9 @@ font.cm_red{color:#f60}
 .usercodgd{margin-top:10px}
 .usertitgd p{padding-right:0}
 .usertitab{float:left;height:32px;}
-.usertitab b{float:left;height:32px;line-height:32px;margin-top:2px;margin-left:8px;border:1px solid #ddd;background:#efefef;cursor:pointer;position:relative;}
+.usertitab b{float:left;height:32px;line-height:32px;margin-top:2px;margin-left:8px;font-weight:400;border:1px solid #ddd;background:#efefef;cursor:pointer;position:relative;}
 .usertitab b s{display:block;width:106px; height:21px;background:url(../images/cai888/kj.png) no-repeat; position:absolute; left:-5px; top:-10px; z-index:10;}
-.usertitab b.cur{border-bottom:2px solid #fff; background:#fff}
+.usertitab b.cur{font-weight:700;border-bottom:2px solid #fff; background:#fff}
 .usertitab b a{float: left;height: 100%;padding:0 20px;}
 .usertitab b a:hover{color: #444;text-decoration: none;}
 .userp1{line-height:22px;color:#666;width:790px;padding:50px 0 10px 30px;clear:both;font-size:12px}
