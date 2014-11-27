@@ -1296,7 +1296,7 @@ a.a_ta:hover{color:#ff0000; text-decoration:underline;}
 table.col_tab{margin:15px auto 0}
 table.col_tab td{padding:13px 0;text-align:right;line-height:25px;border-bottom:1px solid #ccc;color:#444}
 table.col_tab input.box{vertical-align: -2px;_vertical-align: -1px;margin-right:5px;}
-table.col_tab input.text{width:45px;height:22px;border:1px solid #ddd;text-align:center;margin-left:7px;padding-top:3px\9;height:19px\9}
+table.col_tab input.text{width:36px;height:22px;border:1px solid #ddd;text-align:center;margin-left:7px;padding-top:3px\9;height:19px\9}
 :root table.col_tab td input.text{height:22px;padding-top:0}
 .caix5k{padding:5px 0 0 30px}
 .caix5k h5{line-height:30px;color:#444;font-size:12px;font-weight:400}
