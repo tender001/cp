@@ -157,8 +157,8 @@ Class('App', {
     										}
     									});
     						        });
-    							 }else{
-    							
+    							 }else if(u.bank!=""){
+    								 $("#banktrip").show();
     							 }
     							 
     							
