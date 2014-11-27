@@ -205,7 +205,7 @@ p.fotpp a:hover{color:#f60;text-decoration:underline}
 .xqtabm p.ggtype{line-height:30px;color:#444;}
 .zcmxq table{border-left:1px solid #ddd;border-bottom:1px solid #ddd}
 .xqtabm .zcmxq td{padding:3px 14px; vertical-align: middle;color:#333;line-height:20px;border-right:1px solid #ddd;*padding:3px 12px}
-.xqtabm .zcmxq tr.tr1 td{ background:#e9e9e9;border-top:1px solid #ddd;border-bottom:1px solid #ddd;border-right:1px solid #ddd}
+.xqtabm .zcmxq tr.tr1 td{ background:#e9e9e9;border:1px solid #ddd;border-left-width:0}
 .xqtabm .zcmxq tr.tr3 td{padding:3px 0;height:16px}
 .xqtabm .zcmxq tr.tr4 td{padding:3px 0; background-color:#f3f3f3}
 .xqtabm .zcmxq font{color:#f00}
@@ -306,10 +306,10 @@ font.cm_red{color:#f60}
 .bank_main a.cz_but:hover{ background-image:url(../images/bank/bank_51.gif)}
 .bank_tan{display:none;width:655px;padding:15px 20px 30px;position:absolute;top:61px;left:85px;z-index:99999;border:1px solid #ddd;background-color:#fff ;*zoom:1;}
 .bank_zj p{font:700 12px/35px "simsun";color:#444;padding-right:5px;}
-.bank_zj p span{float:right;padding:0 36px 0 0;font-size:12px;font-weight:400;color: #f60}
+.bank_zj p span{float:right;padding:0 36px 0 0;font-weight:400;color: #f60}
 .bank_tan{width:715px}
-.ae_card ul li{border: 1px solid #ccc;float: left;height: 36px;margin:5px;width: 157px;padding:0;cursor: pointer;}
-.ae_card ul li.cur{ background:url(../images/159/hoverk.png);border:none;width:159px;height:38px}
+.ae_card ul li{float: left;width: 157px;height: 36px;margin:5px;padding:0;border: 1px solid #ccc;cursor: pointer;}
+.ae_card ul li.cur{width:159px;height:38px;border:0 none;background:url(../images/159/hoverk.png)}
 .ae_card ul li em{display: block;width:142px;height:28px;margin:5px auto;border:none;background:url(../images/159/bank_ico.png);}
 .ae_card ul li em.zfb{background-position:-2px -5px}
 .ae_card ul li em.kq{background-position:-2px -1285px}
