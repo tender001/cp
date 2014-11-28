@@ -341,7 +341,7 @@ a.czbtnhui{color:#666;background:url(../images/cai888/user_03hui.jpg);border:1px
 .user{ background:url(../images/cai888/czbj_03.jpg) repeat-y;border:1px solid #ddd;}
 /* .user div{ overflow:visible;} */
 .xyksay{  color: #444;line-height: 30px;padding:5px 0 15px 54px;}
-.sm_bk{clear:both;background:url(../images/njc/bk_sz.gif) no-repeat scroll right -29px transparent;cursor:pointer;font-size:14px;font-weight:bold;color:#145fab;width:110px;margin: 10px 0px 5px 135px;}
+.sm_bk{clear:both;background:url(../images/njc/bk_sz.gif) no-repeat scroll right -29px transparent;cursor:pointer;font-size:14px;font-weight:bold;color:#145fab;width:110px;margin: 10px 0 5px 135px;}
 .sm_bkcur{ background-position:right 7px}
 .sm_bkm{width:597px;border:1px solid #ddd;height:180px;overflow-y:auto;margin-left:135px;margin-top:10px}
 .sm_bkm a{padding-left:10px;display:block;height:30px;line-height:30px;color:#333;border-right:1px dashed #dfdfdf;border-bottom:1px dashed #dfdfdf;width:134px;float:left}
@@ -350,11 +350,11 @@ a.czbtnhui{color:#666;background:url(../images/cai888/user_03hui.jpg);border:1px
 .cz_step p{float:left;padding-left:15px;font:bold 14px/27px arial;color:#222;}
 .cz_step p em{color:#f00;font-size:12px;font-weight:100}
 .cz_step p em.cur{color: #e62e04;}
-.phone_pp{padding:0px 40px 0px 80px}
+.phone_pp{padding:0 40px 0 80px}
 .phone_pp ul li{float:left;width:153px;height:50px;margin-right:10px;color:#444;border:1px solid #ddd ;cursor:pointer;_display:inline;}
 .phone_pp ul li.cur{width:155px;height:52px;background:url(../images/cai888/czas_03.jpg);border:none}
 .phone_pp ul li img{display:block;margin:8px auto 0}
-.cz_mz{padding:2px 40px 0px 80px}
+.cz_mz{padding:2px 40px 0 80px}
 .cz_mz ul li{float:left;width:258px;height:38px;color:#333;font:12px/38px arial;text-align:left;margin:0 30px 10px 0;padding-left:44px;border:1px solid #ddd;cursor:pointer}
 .cz_mz ul li.cur{width:260px;height:40px;border:0 none;background:url(../images/cai888/sjczbj_13.jpg);}
 .cz_mz ul li strong{color:#e52e04;font-weight:bold}
@@ -372,7 +372,7 @@ a.czbtnhui{color:#666;background:url(../images/cai888/user_03hui.jpg);border:1px
 .draw_main table input.text1 {width: 135px;height: 30px;padding-left: 5px;border: 1px solid #ddd;}
 :root .draw_main table input.text1 {width: 135px;height: 30px;padding: 0 0 0 5px; }
 .draw_main font{color:#f60;font-size:14px;font-weight:bold}
-.erwm{width:120px;height:205px;border:1px solid #ddd; position:fixed;right:10px;bottom:0px; background:#fff}
+.erwm{width:120px;height:205px;border:1px solid #ddd; position:fixed;right:10px;bottom:0; background:#fff}
 .erwm a.a1{float:right;width:46px;height:24px;background:url(../images/cai888/smiao_02.jpg);}
 .erwmtab{height:24px; background:#efefef;border-top:1px solid #ddd;clear:both}
 .erwmtab b{float:left;width:44px;line-height:24px;text-align:Center;color:#333;cursor:pointer}
@@ -380,7 +380,7 @@ a.czbtnhui{color:#666;background:url(../images/cai888/user_03hui.jpg);border:1px
 .erwmimg{clear:both}
 .erwmimg img{display:block;width:120px;height:112px;}
 .erwm a.a2{display:block;width:88px;height:24px;margin:2px auto;background:url(../images/cai888/smiao_07.jpg);}
-.rztab{padding:20px 0 20px 0px}
+.rztab{padding:20px 0 20px 0}
 .rztab td{line-height:45px;height:45px;text-align:right;color:#444;font-size:14px;}
 .rztab td.td1{color:#444;font-size:12px;height:25px;line-height:25px}
 .rztab input.text{float:left;width:200px;height:28px;font-size:14px;color:#444;border:1px solid #ccc;padding:7px 0 0 5px\9;height:21px\9}
@@ -394,11 +394,11 @@ a.czbtnhui{color:#666;background:url(../images/cai888/user_03hui.jpg);border:1px
 .rztab p em{color:#f60;font-size:14px;font-weight:bold}
 .rztab p  a{color:#145fab;font-size:14px;margin-left:30px}
 .rztab span {display: block;font-size: 14px;font-weight: bold;padding-right:20px;}
-.rztab b{display: block;width: 80px;height: 26px;line-height: 26px;font-weight: bold;text-align: center;color: #333;background: url(../images/njc/bindbg1.jpg) repeat scroll -30px -11px ;}
+.rztab b{display: block;width: 80px;height: 26px;line-height: 26px;font-weight: bold;text-align: center;color: #333;background: url(../images/njc/bindbg1.jpg) repeat scroll -30px -11px;}
 .usertitle p.ppdj{float:right}
 .usertitle p.ppdj span{padding:0}
 .usertitle p.ppdj span.fontred{color:#f60}
-.aqcc{border-bottom:1px solid #eee;height:85px;margin-top:0px;}
+.aqcc{border-bottom:1px solid #eee;height:85px;margin-top:0;}
 .aqcc b{float:left;width:80px;height:95px;}
 .aqcc img{display:block;margin:30px auto;}
 .aqcc span{float:left;width:110px;height:30px;margin-top:32px;border-right:1px solid #eee;font:20px/30px "Microsoft YaHei";color:#666;}
@@ -411,7 +411,7 @@ a.czbtnhui{color:#666;background:url(../images/cai888/user_03hui.jpg);border:1px
 .aqcc s.cur a:hover{ text-decoration: none;color:#fff;}
 .aqcenter{padding:0 20px;}
 .aqcc em{color:#f60;font-size:16px;font-weight:bold}
-.aqcc b{width:50px;height:50px;margin:23px 10px 0px 20px}
+.aqcc b{width:50px;height:50px;margin:23px 10px 0 20px}
 .aqcc b.cardc{ background:url(../images/cai888/aqtbx_03.jpg) 0 0 no-repeat}
 .aqcc b.cardcur{ background:url(../images/cai888/rzyb_03.jpg) 0 0 no-repeat}
 .aqcc b.telc{ background:url(../images/cai888/aqtbx_07.jpg) 0 0 no-repeat}
@@ -425,7 +425,7 @@ a.czbtnhui{color:#666;background:url(../images/cai888/user_03hui.jpg);border:1px
 .confitp{background:url(../images/cai888/yes_06.jpg) 200px 55px no-repeat;padding:70px 0 30px 275px;line-height:30px;color:#444;font-size:14px;}
 .confitp a{color:#145fab; text-decoration:underline}
 .confitp a:hover{color:#f60}
-.confitp a.confita{display:block;height:32px;width:98px;text-decoration:none;line-height:32px;text-align:center;color:#fff;font-size:14px;font-weight:bold;margin:10px 0 0 135px;background:url(../images/cai888/user_03.jpg);border:1px solid #ff6702;margin:40px 0 0 62px}
+.confitp a.confita{display:block;height:32px;width:98px;text-decoration:none;line-height:32px;text-align:center;color:#fff;font-size:14px;font-weight:bold;background:url(../images/cai888/user_03.jpg);border:1px solid #ff6702;margin:40px 0 0 62px;}
 .zh-xq{width: 822px;margin: 0 auto 8px}
 .zh_xq_tb{width:100%;}
 .zh_xq_tb td{line-height:25px;color:#444;}
@@ -433,7 +433,7 @@ a.czbtnhui{color:#666;background:url(../images/cai888/user_03hui.jpg);border:1px
 .zh-list:after{display: table;content: "";clear: both}
 .zh-list .zh-list-t{float: left;width:204px;height:28px;line-height:28px;margin:-1px -1px 0 0;text-align:center;border: 1px solid #b4b4b4;}
 .tk_tan_2{border-top:none;padding:25px 0 0 20px}
-.tk_tan_2 img{display:block;width:74px;height:65px;margin:0px auto 15px}
+.tk_tan_2 img{display:block;width:74px;height:65px;margin:0 auto 15px}
 .tk_tan_2 p.p1{line-height:30px;color:#444;font-size:14px;text-align:center;font-weight:bold}
 .tk_tan_2 p.p1 font{color:#f60;font-size:14px}
 .tk_tan_2 p.p1  a{color:#145fab;font-size:12px}
@@ -452,7 +452,7 @@ a.czbtnhui{color:#666;background:url(../images/cai888/user_03hui.jpg);border:1px
 .dialog01 .dialog-title .dialog-close{float:right;display:inline;cursor:pointer;overflow:hidden;color:#fff;font-size:16px}
 .filter_box h3{background:#e7e7e7;color:#444}
 .filter_box .step2{background:#fff}
-.youhua{border:1px solid #ccc;border-top:2px solid #ccc}
+.youhua{border:1px solid #ccc;border-top-width:2px}
 .aut_btn{border:none}
 .aut_red{border:none;background:#f60}
 .aut_red span{border:none}                    
@@ -462,13 +462,13 @@ a.czbtnhui{color:#666;background:url(../images/cai888/user_03hui.jpg);border:1px
 .aut_blue span{border:none}
 .gl_tab .see_all{color:#145fab}
 .gl_tab .see_all:hover,.loghed p a:hover{color:#f60; text-decoration:underline}
-.youhua .tab_team_mix th,.youhua .tab_team_mix td{boder-left:none}
+.youhua .tab_team_mix th,.youhua .tab_team_mix td{border-left:0 none}
 .condition_select .open_up, .condition_select .fold{width:117px}
 .loghedm{background:#fff}
-.loghed{width:960px;margin:0px auto;padding:15px 0;}
+.loghed{width:960px;margin:0 auto;padding:15px 0;}
 .loghed .log{display:block;float:left;width:177px;height:70px}
 .loghed p{float:right;line-height:30px;color:#444;text-align:right;padding-top:10px}
-.loghed p a{color:444;margin:0 5px;}
+.loghed p a{color:#444;margin:0 5px;}
 .loghed p img{display:block;width:218px;height:35px;margin-top:5px}
 .loginm{ background:url(../images/cai888/login_11.jpg) 50% 0  no-repeat #ff912c;height:400px;width:100%}
 .logm{width:960px;margin:0 auto}
