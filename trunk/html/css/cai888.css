@@ -308,6 +308,8 @@ font.cm_red{color:#f60}
 .bank_zj p{font:700 12px/35px "simsun";color:#444;padding-right:5px;}
 .bank_zj p span{float:right;padding:0 36px 0 0;font-weight:400;color: #f60}
 .bank_tan{width:715px}
+.ae_card{overflow: visible;zoom: 1}
+.ae_card:after{display: table;content: "";clear: both}
 .ae_card ul li{float: left;width: 157px;height: 36px;margin:5px;padding:0;border: 1px solid #ccc;cursor: pointer;}
 .ae_card ul li.cur{width:159px;height:38px;border:0 none;background:url(../images/159/hoverk.png)}
 .ae_card ul li em{display: block;width:142px;height:28px;margin:5px auto;border:none;background:url(../images/159/bank_ico.png);}
