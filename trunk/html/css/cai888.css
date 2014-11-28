@@ -1,6 +1,6 @@
 ﻿@charset "utf-8";
 /*body,h3,h4,h2,h1,h5,table,td,th,ul,li,ol,dd,dt,dl,div,span,p,b,i,s,em,thead,tbody,font,select,input,option{margin:0;padding:0}*/
-body{font-size:12px; font-family: Arial,simsun;}
+body{font:12px Arial,simsun;}
 em,i,s{ font-style:normal; text-decoration:none;}
 img{border:none;}
 body a{blr:expression(this.onFocus=this.blur());text-decoration:none;color:#444;outline:0 none;cursor:pointer}
@@ -47,8 +47,8 @@ div,ul,li{ list-style-type:none;overflow:hidden}
 .hmtb1 td em{color:#e52e04;font-weight:bold}
 .hmtb1 b{float:left;display:block;width:71px;height:23px;line-height:23px;margin-right:10px;font-weight:400;text-align:Center;color:#145fab;background:url(../images/cai888/cai8_07.jpg);cursor: pointer}
 .hmtb1 b:hover{color:#f60}
-.jindu .bgprocess,.jindu .bgprocess em,.jindu .bgprocess em.fq,.jindu .bgprocess em.my{ background-image:url(../images/cai888/faxq1.gif); background-repeat:no-repeat;}
-.jindu{ width:650px; margin:35px auto 0; position:relative; padding-bottom:5px; height:auto; clear:both; overflow:visible;height:46px}
+.jindu .bgprocess,.jindu .bgprocess em,.jindu .bgprocess em.fq,.jindu .bgprocess em.my{ background:url(../images/cai888/faxq1.gif) no-repeat}
+.jindu{clear:both;width:650px;height:46px;margin:35px auto 0;position:relative;padding-bottom:5px;overflow:visible;}
 .jindu .bgprocess{ width:46px; height:46px; float:left; margin-left:-5px; background:url(../images/cai888/faxq1.gif) -108px 0 no-repeat;}
 .jindu .bgprocess em{ width:36px; height:36px; margin:5px; display:block; text-align:center; line-height:36px; color:#fff; background-position:0 0;}
 .jindu .bgprocess em.fq{ background-position:-72px 0;}
@@ -100,11 +100,11 @@ p.fotpp a:hover{color:#f60;text-decoration:underline}
 .hmcg{ background:#fedfb6;padding:2px}
 .hmcg table{border:1px solid #fdbf4e;width:266px;border-right:none}
 .hmcg td{font:18px/34px "Microsoft YaHei";text-align:Center;color:#111;border-right:1px solid #fdbf4e;background:#fff5d4;}
-.hmcg tr.tr1 td{height:27px;line-height:27px ;font-family:simsun;font-size:12px}
+.hmcg tr.tr1 td{height:27px;font:12px/27px simsun}
 .hm_rpxq{margin:15px 0 8px 0;border-top:1px dashed #bbb;border-bottom:1px dashed #bbb;padding:9px 0 7px;line-height:35px;color:#444}
-.hm_rpxq strong{font-weight:bold;font-size:18px;padding:0 3px; font-family:"Microsoft YaHei"}
+.hm_rpxq strong{font-weight:bold;font-size:18px;padding:0 3px;font-family:"Microsoft YaHei"}
 .hm_rpxq span{float:left;}
-.hm_rpxq input{border:1px solid #ccc; background:#fff;width:62px;font-size:18px;color:#444;padding:3px 0 0 3px\9;display:block;float:left;margin:3px 4px 0;height:21px\9;font-family:"Microsoft YaHei";font-weight:bold}
+.hm_rpxq input{display:block;float:left;width:62px;font-size:18px;color:#444;font-family:"Microsoft YaHei";font-weight:bold;border:1px solid #ccc; background:#fff;padding:3px 0 0 3px\9;margin:3px 4px 0;height:21px\9;}
 .hm_rpxq em{color:#e52e04;font-weight:bold}
 :root .hm_rpxq input{padding:0 0 0 3px;height:24px;}
 .hm_right p.p1{line-height:22px;color:#444;}
@@ -220,7 +220,7 @@ p.fotpp a:hover{color:#f60;text-decoration:underline}
 font.blue{color:#145fab}
 font.cm_red{color:#f60}
 .user_left{width:134px;float:left; background-color:#f8f8f8;height:520px}
-.user_left h1{font-size:18px;height:40px;line-height:40px; text-align:center;color:#fff;font-family:"Microsoft YaHei"; background:#f60}
+.user_left h1{height:40px;font:18px/40px "Microsoft YaHei";text-align:center;color:#fff;background:#f60}
 .user_left a{display:block;height:32px; background:url(../images/cai888/user_18.jpg) 19px 12px no-repeat;line-height:32px}
 .user_left a em{color:#444;font-size:14px;display:block;margin:0 8px;padding-left:23px;border-bottom:1px solid #ddd;height:32px;line-height:32px}
 .user_left a:hover,.user_left a.cur{background:url(../images/cai888/user_30.jpg) 19px 11px no-repeat #ffdac1;text-decoration: none;}
@@ -233,7 +233,7 @@ font.cm_red{color:#f60}
 .uacname span{float:left}
 .uacjd{display:block;width:80px;height:8px;margin:9px 6px;background:#b8b8b8;overflow:hidden }
 .uacjd em{display:block;width:50%;height:8px;background:#f60;}
-.uacname p a{display:block;float:left;height:21px;margin-top:2px;line-height:21px;color:#888;padding:0 0px 0 18px;margin-left:14px}
+.uacname p a{display:block;float:left;height:21px;margin-top:2px;line-height:21px;color:#888;padding:0 0 0 18px;margin-left:14px}
 .uacname p a.a1{ background:url(../images/cai888/user_13.jpg) left 0 no-repeat;}
 .uacname p a.a2{ background:url(../images/cai888/user_08.jpg) left 0 no-repeat;}
 .uacname p a.a3{ background:url(../images/cai888/user_10.jpg) left 0 no-repeat;padding-left:24px}
@@ -254,11 +254,11 @@ font.cm_red{color:#f60}
 .uacnop p strong{font-size:14px;color:#E52E04;font-weight:bold;display:block}
 .uacnop a{display:block;float:left;height:27px;padding:0 15px;line-height:27px;text-align:center;color:#fff;font-size:14px;font-weight:bold;margin-top:10px;background:url(../images/cai888/user1_13.jpg);border:1px solid #ff6702;}
 .uacnop a:hover{text-decoration: none;}
-.user_right h2{line-height:32px;height:32px;clear:both;padding-left:25px;color:#444;font-weight:bold;font-size:20px;font-family:"Microsoft YaHei";}
-.usercod{border:1px solid #ddd;border-top:3px solid #ddd;margin:0 20px;}
+.user_right h2{clear:both;height:32px;padding-left:25px;color:#444;font:bold 20px/32px "Microsoft YaHei";}
+.usercod{border:1px solid #ddd;border-top-width:3px;margin:0 20px;}
 .usercod td{text-align:center;color:#444;line-height:35px; background:#f8f8f8;}
 .usercodtab{margin:0 20px;border-right:1px solid #ddd;border-left:1px solid #ddd}
-.usercodtab table thead td{border-bottom:1px solid #ccc;text-align:center;color:#444;line-height:35px; background:#f8f8f8;border-top:1px solid #ddd;border-bottom:1px solid #ddd}
+.usercodtab table thead td{text-align:center;color:#444;line-height:35px; background:#f8f8f8;border-top:1px solid #ddd;border-bottom:1px solid #ddd}
 .usercodtab table tbody td{text-align:center;color:#444;line-height:30px; font-family:Arial, Helvetica, sans-serif;border-bottom:1px solid #ddd}
 .usercodtab table tr.odd td{background:#f8f8f8;}
 .usercodtab table span{color:#f60}
@@ -288,7 +288,7 @@ font.cm_red{color:#f60}
 .userp1 a{color:#145fab;margin-left:40px}
 .userp1 a:hover{color:#f60; text-decoration:underline}
 .userp1 em,.usercodtab font{color:#f60}
-.userzhmx{margin:0 20px 15px;border:1px solid #ddd;padding:5px 20px ;border-top:3px solid #ddd;}
+.userzhmx{margin:0 20px 15px;padding:5px 20px;border:1px solid #ddd;border-top-width:3px;}
 .userzhmx em{color:#E52E04;font-weight:bold}
 .userzhmx td{color:#666;line-height:24px}
 .userzhmx th{color:#333;line-height:24px;text-align:left;font-weight:400}
