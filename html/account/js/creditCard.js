@@ -22,9 +22,9 @@ Class('App', {
     			$("#remind").html("(最低<em>10</em>元)");
     		}else if(money >= 10 && money <= 2000){
     			//$("#remind").html("(实际到账 <em>"+fmoney+"</em> 元)");
-    		}else if(money > 10000){
-    			$("#addmoney").val('10000');
-    			$("#remind").html("(最高<em>10000</em>元)");
+    		}else if(money > 5000){
+    			$("#addmoney").val('5000');
+    			$("#remind").html("(最高<em>5000</em>元)");
     		}
     	});
 		
@@ -115,9 +115,8 @@ showSafe : function(){
 								   		    var code = obj.Resp.code;
 								   		    var desc = obj.Resp.desc;
 											if (code == "0") {	
-											
-												smrz.close();
-												Y.alert(desc)
+											 smrz.close();
+    												Y.alert(desc);	
 											} else {
 												cmerror.html(desc).parent().show();
 											}
@@ -203,8 +202,8 @@ showSafe : function(){
 				Y.alert('充值金额最低不能小于10元');
 				return false;
 			}
-   			if ($("#addmoney").val()>10000){
-   				Y.alert('充值金额最高不能超过10000元');
+   			if ($("#addmoney").val()>5000){
+   				Y.alert('充值金额最高不能超过5000元');
    				return false;
    			}
    			if (Y.getInt($("#addmoney").val()) == '0'){
