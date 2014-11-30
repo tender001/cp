@@ -1352,10 +1352,12 @@ Class('LoadExpect',{
 					
 					var html='';
 					var find = false;
-					var nowexpect=""
+					var nowexpect="";
+					var firstexpect="";
 					var nowdate=new Date();
 					if (expectlist.length>0){
 						for ( var i = 0; i < expectlist.length; i++) {
+							firstexpect=expectlist[0][0]
 							if(nowdate<Y.getDate(expectlist[i][1])){
 								nowexpect=expectlist[i][0];
 								html+='<option value="'+expectlist[i][0]+'|'+expectlist[i][1]+'|2"  mark='+expectlist[i][0]+'>'+expectlist[i][0]+'</option>';
@@ -1379,7 +1381,12 @@ Class('LoadExpect',{
 					}
 					
 					if (this.get("#expect").val()==''){
-						this.get("#expect").val(nowexpect);
+						if(nowexpect==""){
+							this.get("#expect").val(firstexpect);
+						}else{
+							this.get("#expect").val(nowexpect);
+						}
+						
 						this.get("#expect_select").get(0).selectedIndex=0;
 						find=true;
 					}else{
