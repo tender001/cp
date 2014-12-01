@@ -1359,7 +1359,7 @@ table.co1 font{font-size:12px;color:#a91e24;font-weight:bold; font-family:Arial}
 h2.help_gz_cm{text-align:center;font:700 20px/40px "Microsoft YaHei";color:#333;padding:25px}
 .help_right h4 { border-bottom: 1px solid #ddd;color: #666;font-size: 12px;font-weight: bold;
 line-height:30px;}
-.help_wfgz p{ text-indent:24px;color:#444;font-size:12px;line-height:25px}
+.help_wfgz p{text-indent:2em;color:#444;font-size:12px;line-height:25px}
 .help_wfgz h5{font-size:12px;color:#666;font-weight:bold;line-height:25px;padding:5px 0 0 0 }
 .flink a{color:#145fab;}
 .flink a:hover{color:#f60; text-decoration:underline}
@@ -2392,7 +2392,7 @@ a.x_in_hm{line-height:32px;font-size:12px;color:#145fab;float:right;margin-right
 .b_gg_lgg span.dc_jqs{background-position:-657px -64px}
 .b_gg_lgg span.dc_bf{background-position:-657px -294px}
 .b_gg_lgg span.dc_bqc{background-position:-657px -138px}
-.b_top_gg h1{float:left;width:100px;padding:25px 0 0 40px;color:#f60;font-family:"微软雅黑";font-size:20px;font-weight:100;}
+.b_top_gg h1{float:left;width:100px;padding:25px 0 0 40px;color:#f60;font-family:"Microsoft YaHei";font-size:20px;font-weight:100;}
 .b_top_ul p{color:#777;float:right;padding-right:30px;line-height:20px;padding-top:10px}
 .gg_mist{ position:absolute;bottom:0;padding-left:20px;width:970px;clear:both;_bottom:-1px}
 .gg_mist ul{float:left;}
