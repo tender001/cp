@@ -255,8 +255,8 @@ var changdiv=function(divnum){
 				});
 					
 				if(bankid==20){
-					 bankid = "8";
-					 banktype = "CIB";
+//					 bankid = "8";
+//					 banktype = "CIB";
 					 bconfig= "1";
 				}
 						Y.get("#bankid").val(bconfig);
