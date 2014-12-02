@@ -1467,6 +1467,9 @@ a.jcq_kcur {background: url(../images/njc/jcy_17.jpg) no-repeat;}
 .hhtdtk table span{float:left;width:64px;height:28px;line-height:28px;border-left:1px solid #ccc;color:#444;text-align:center;}
 .dc_r_m{clear:both}
 .dc_table td{height:34px;}
+.span-vs{float:left;padding-left:5px}
+span.vs{width:95px;white-space:nowrap;overflow: hidden}
+.sp-ve{float: right;padding-right:4px}
 .news_left table td{height:35px;line-height:35px;}
 .news_left thead td,.news_left thead th{background:#f5f5f5;}
 .news_left table a:hover{color:#f00}
