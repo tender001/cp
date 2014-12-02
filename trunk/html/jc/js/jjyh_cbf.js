@@ -344,7 +344,7 @@ Class( {
 		 var htmRow = [];
 		 var tableTp1=['<tr teamval="{$itemid}">'+
 			           '<td>{$name}</td>'+
-			           '<td>{$hn}{$close}</td>'+
+			           '<td>{$hn}</td>'+
 			           '<td>{$gn}</td>'+
 			           '<th>{$jqbet}</th>'+
 			         
