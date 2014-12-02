@@ -1743,8 +1743,8 @@ Class('Main', {
                  				$("#oy"+u.items.xid).attr("href","http://odds.159cai.com/match/asia/"+u.items.oddsmid+"?lotyid=6");
             				var hm=isNaN(u.items.hm)||u.items.hm==""?"":u.items.hm<10?'0'+u.items.hm:u.items.hm;
 	            				var am=isNaN(u.items.am)||u.items.hm==""?"":u.items.am<10?'0'+u.items.am:u.items.am;
-	            				$("#hn"+u.items.xid).parent().find("i").html(hm==""|| typeof hm == undefined?"&nbsp;":'['+hm+']');
-	            				$("#gn"+u.items.xid).parent().find("i").html(am=="" || typeof am == undefined?"&nbsp;":'['+am+']');	
+	            				$("#hn"+u.items.xid).parent().parent().find("span[mark=hm]").html(hm==""|| typeof hm == undefined?"&nbsp;":'['+hm+']');
+	            				$("#gn"+u.items.xid).parent().parent().find("cite[mark=gm]").html(am=="" || typeof am == undefined?"&nbsp;":'['+am+']');	
 	            				   Y.get("#oh"+u.items.xid).html(u.items.oh);
 	           					Y.get("#od"+u.items.xid).html(u.items.od);
 	           					Y.get("#oa"+u.items.xid).html(u.items.oa);
