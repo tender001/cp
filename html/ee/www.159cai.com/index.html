@@ -13,9 +13,39 @@
 <link rel="stylesheet" type="text/css" href="/css/index.css">
 <script type="text/javascript" src="/public/jq.js"></script>
 <script type="text/javascript" src="/public/jq2.js"></script>
+
 <script type="text/javascript" src="/public/159cp.js"></script>
 	
 <script type="text/javascript" src="/public/chklogin.js"></script>
+<script language="javascript">
+
+function is_mobile() {
+	   var regex_match = /(nokia|iphone|android|motorola|^mot-|softbank|foma|docomo|kddi|up.browser|up.link|htc|dopod|blazer|netfront|helio|hosin|huawei|novarra|CoolPad|webos|techfaith|palmsource|blackberry|alcatel|amoi|ktouch|nexian|samsung|^sam-|s[cg]h|^lge|ericsson|philips|sagem|wellcom|bunjalloo|maui|symbian|smartphone|midp|wap|phone|windows ce|iemobile|^spice|^bird|^zte-|longcos|pantech|gionee|^sie-|portalmmm|jigs browser|hiptop|^benq|haier|^lct|operas*mobi|opera*mini|320x320|240x320|176x220)/i;
+	   var u = navigator.userAgent;
+	   if (null == u) {
+	      return true;
+	   }
+	   var result = regex_match.exec(u);
+	   if (null == result) {
+	      return false;
+	   } else {
+	      return true;
+	   }
+	}
+	
+var _NTES_COOKIE_WAP_JUMP_PAGES = getcookie("_NTES_CAIPIAO_WAP_JUMP_PAGES");
+if (typeof(_NTES_COOKIE_WAP_JUMP_PAGES) == 'undefined' || _NTES_COOKIE_WAP_JUMP_PAGES == null || _NTES_COOKIE_WAP_JUMP_PAGES == "") {
+	if (/(iPhone|iPad|iPod|iOS)/i.test(navigator.userAgent)) {
+		window.location.href= 'http://www.159cai.com/m.html';
+	}else if(/(Android)/i.test(navigator.userAgent)){
+		window.location.href= 'http://www.159cai.com/m.html';
+	}else  if(is_mobile()){
+		window.location.href= 'http://www.159cai.com/m.html';
+	}
+}else if(_NTES_COOKIE_WAP_JUMP_PAGES=="ntes_m_jump_flag"&&is_mobile()){
+	window.location.href= 'http://m.159cai.com';
+}
+</script>
 </head>
 <body>
 <!-- 头部内容 -->  
@@ -80,7 +110,7 @@
 						<li class="dc">
 							<div><s></s>北单</div>
 							<p>
-				<a href="/bj/sfgg.html" target="_blank" class="happy-pok">胜负过关<i></i></a><a href="/bj/" >胜平负</a><a href="/bj/jqs.html" >总进球</a><a href="/bj/sxds.html" >上下单双</a><a href="/bj/cbf.html" >比分</a><a href="/bj/bqc.html" >半全场</a>
+				<a href="/bj/" >胜平负</a><a href="/bj/jqs.html" >总进球</a><a href="/bj/sxds.html" >上下单双</a><a href="/bj/cbf.html" >比分</a><a href="/bj/bqc.html" >半全场</a><a href="/bj/sfgg.html" target="_blank" class="happy-pok">胜负过关<i></i></a>
 							</p>
 						</li>
 						<li class="lc">
