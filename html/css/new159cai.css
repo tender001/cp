@@ -1468,7 +1468,7 @@ a.jcq_kcur {background: url(../images/njc/jcy_17.jpg) no-repeat;}
 .dc_r_m{clear:both}
 .dc_table td{height:34px;}
 .span-vs{float:left;padding-left:5px}
-span.vs{float:left;width:95px;padding-left:5px;white-space:nowrap;overflow: hidden}
+span.vs{width:auto;padding-left:5px;white-space:nowrap;overflow: hidden}
 .sp-ve{float: right;padding-right:4px}
 .news_left table td{height:35px;line-height:35px;}
 .news_left thead td,.news_left thead th{background:#f5f5f5;}
@@ -2159,6 +2159,8 @@ a.sz_cmt{background: url(../images/cai888/nwx5_112.jpg);width:137px;height:33px}
 .numcai .nxmiddle h2 p{padding-left:105px;}
 .numcai .nx3span{padding-left:25px;padding-top:0}
 .nxyl{clear:both;height:18px;}
+.nxyl1{margin-left:-56px;padding:6px 0 0}
+.nxyl1 span{margin:0 !important}
 .nxhm .nxyl span{line-height:18px;height:24px;width:49px;text-align:Center;color:#b1b1b1;margin:0 30px 0 0}
 .nxhm .nxyl div{float:left}
 .nxhm .nxyl i{ float:left;width:44px;height:24px;margin-right:3px;font:12px/18px Arial;text-align:center;color:#888;}
