@@ -2237,7 +2237,7 @@ label.red {color:red}
 .jc-opt-t tbody .cur{background: url("http://www.159cai.com/images/cai888/ban4.jpg") repeat;}
 .jc-opt-t tbody .tohover{font-weight: bold;color: #f00}
 .jc-opt table tbody th{font-weight: 400;text-align: left;text-indent: 5px;}
-.jc-opt table tbody th em{margin:0 2px;padding:2px}
+.jc-opt table tbody th em{float:left;margin:0 2px;padding:2px}
 .pad-red{color: #fff;background-color: #e52e04}
 .pad-red strong{color: #fff !important}
 .opt-t-left p{line-height: 50px;font-size: 14px;text-indent: 12px}
