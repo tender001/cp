@@ -521,10 +521,10 @@ var showmyjoin = function(lotid,projid){
 						
 						myjoinhtml += '<tr class="kj"><td>';
 						myjoinhtml += buydate.substr(5,11)+"</td><td>"
-						myjoinhtml += parseFloat(bmoney).rmb(true)+"</td>";
+						myjoinhtml += parseFloat(bmoney).rmb(true)+"</td><td>";
 				
 						if(o==0&&iscancel&&cnickid==nickid&&cancel==0&&(cp_istate==1||cp_istate==0)){
-							myjoinhtml +='<a onclick="return main_return_confirm();" href="javascript:void(0);">我要撤单</a>'
+							myjoinhtml +='<a onclick="return main_return_confirm();" href="javascript:void(0);">我要撤单</a></td>'
 						}else{
 							myjoinhtml += cancel==0?(iscancel?(cnickid==nickid?'':'<a href="javascript:void(0);" onclick="user_return_confirm(\''+buyid+'\')" class="a1">撤资</a>'):''):(cancel==1?'<td class="blue">本人撤销</td> ':'<td class="blue">系统撤销</td>');
 						}
