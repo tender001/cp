@@ -144,9 +144,9 @@ public class BankBeanStub {
 					if(bean.getAddmoney()<10){
 						bean.setBusiErrCode(-100);
 						bean.setBusiErrDesc("充值金额不能少于10元");
-					}else if(bean.getAddmoney()>1000){
+					}else if(bean.getAddmoney()>5000){
 						bean.setBusiErrCode(-100);
-						bean.setBusiErrDesc("充值金额不能大于1000元");
+						bean.setBusiErrDesc("充值金额不能大于5000元");
 					}else{
 						//信用卡充值不扣除手续费
 						double handmoney = Math.round(bean.getAddmoney() * 0.0065 * 100) / 100.0;
