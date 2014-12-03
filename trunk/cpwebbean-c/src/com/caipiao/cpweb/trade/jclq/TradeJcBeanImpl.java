@@ -361,7 +361,9 @@ public class TradeJcBeanImpl extends BaseImpl {
 						mb.setSpv(xml.getStringValue("row[" + i + "].@dxf"));
 						break;
 					case 4:
-						mb.setSpv(xml.getStringValue("row[" + i + "].@sf") + "," + xml.getStringValue("row[" + i + "].@rfsf") + "," + xml.getStringValue("row[" + i + "].@dxf") + "," + xml.getStringValue("row[" + i + "].@sfc"));
+						String sf = xml.getStringValue("row[" + i + "].@sf");
+						if(sf.trim().equals("")) sf = "-,-";
+						mb.setSpv(sf + "," + xml.getStringValue("row[" + i + "].@rfsf") + "," + xml.getStringValue("row[" + i + "].@dxf") + "," + xml.getStringValue("row[" + i + "].@sfc"));
 						break;
 					default:
 						break;
