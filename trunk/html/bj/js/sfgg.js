@@ -1342,11 +1342,13 @@ Class('LoadExpect',{
 				var obj = eval("(" + d.text + ")");
 				var r = obj.period.row;
 				var expectlist = [];
+				var st='';
 				r.each(function(rt,o) {
 					var pid = rt.pid;
 					var et = rt.et;
 					var fet = rt.fet;
 					var flag = rt.flag;
+					st=rt.st;
 					expectlist[expectlist.length] = [ pid, et, fet, flag ];
 				});
 					
@@ -1358,7 +1360,7 @@ Class('LoadExpect',{
 					if (expectlist.length>0){
 						for ( var i = 0; i < expectlist.length; i++) {
 							firstexpect=expectlist[0][0]
-							if(nowdate<Y.getDate(expectlist[i][1])){
+							if(nowdate<Y.getDate(expectlist[i][1])&&st=='1'){
 								nowexpect=expectlist[i][0];
 								html+='<option value="'+expectlist[i][0]+'|'+expectlist[i][1]+'|2"  mark='+expectlist[i][0]+'>'+expectlist[i][0]+'</option>';
 								Class.config('nowexpect', nowexpect);  //当前期号
