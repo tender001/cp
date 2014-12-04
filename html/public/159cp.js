@@ -452,7 +452,7 @@ $_sys.showcode = function (lotid,ccodes,oc){
 var matchopencode2 = function (lotid, pm, cd, win){
 	var rc = "";
 	var wf = $_sys.getplayname(lotid, pm, 0);
-	if(pm=="12"){
+	if(pm=="12"&&lotid=='58'){
 		  if(cd=="07"){
 			  wf="同花包选";
 		  }else if(cd=="08"){
