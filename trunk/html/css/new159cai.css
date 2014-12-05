@@ -656,11 +656,13 @@ em.uf{ background-image:url(../images/159/uf.gif)}
 .pad-l .nxyl i{width:49px}
 .pad-ssc .nxyl{padding:0 0 0 68px}
 #haoma .nxyl{margin:0 0 0 -2px}
-#haoma .nxyl *{color:#333 !important}
 #haoma .nxyl span{width:2em}
-#haoma .nxyl i{width:60px;margin-right:11px;_display:inline}
+#haoma .nxyl i{width:60px;margin-right:11px;color:#333 !important;_display:inline}
 .pok .nxyl{height:auto;position:absolute;top:70px;left:83px;overflow:visible}
 .pok .nxyl i{width:70px;margin-right:36px;margin-bottom:70px;color:#333}
+.pok-yl{padding-bottom:10px}
+.pok-yl .nxyl{top:126px;left:190px}
+.pok .nxyl i{width:98px;margin-right:36px;}
 .nstime{width:130px;padding:0 15px 0 10px;font-size:12px;color:#000;padding-top:5px;_padding-top:8px;display:block;height:38px;line-height:38px; position:absolute;top:51px;left:0}
 .nstime b{display:inline-block;width:22px;height:20px;margin:0 2px;font:16px/20px Arial;color:#333;background: url(../images/159/nx_38.jpg);}
 /*.nsbool b{background:url(../images/159/nx_33.jpg);width:37px;height:38px;margin-right:13px;float:left;color:#000;font:22px/38px Arial;cursor:pointer;-webkit-user-select: none;-moz-user-select: none;-o-user-select: none;-ms-user-select: none;user-select: none;}*/
