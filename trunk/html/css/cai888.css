@@ -214,7 +214,7 @@ p.fotpp a:hover{color:#f60;text-decoration:underline}
 .xqtabm .zcmxq .bcqxqtb tr.tr5 td{line-height:16px;padding:0;height:16px}
 .xqtabm .zcmxq .bcqxqtb tr.tr6 td{border-top:1px solid #ddd;color:#f00}
 .xqtabm .zcmxq .jqcxqtb  td{padding:3px 27px}
-.xqtbpa{padding:35px 0 35px; text-align:center;font-size:24px;color:#777; font-family:"Microsoft YaHei"; background:#eee}
+.xqtbpa{min-height:90px;padding:35px 0 35px; text-align:center;font-size:24px;color:#777; font-family:"Microsoft YaHei"; background-color:#eee}
 .xqtbpa a{color:#145fab;font-size:24px;}
 .xqtbpa a:hover{color:#f60; text-decoration:underline}
 font.blue{color:#145fab}
