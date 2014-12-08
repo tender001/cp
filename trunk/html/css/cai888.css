@@ -498,8 +498,8 @@ a.czbtnhui{color:#666;background:url(../images/cai888/user_03hui.jpg);border:1px
 .regleft th{height:60px;text-align:right;color:#333; vertical-align:top;font-size:14px;line-height:40px}
 .regleft td{height:60px;text-align:left;color:#444; vertical-align:top;line-height:40px}
 .regleft td input:focus{border-color:#f60 !important;outline: 1px solid #f60;box-shadow: inset 3px 3px 8px rgba(255,121,0,0.3)}
-.regleft td input.text{border:1px solid #bbb; background:none;display:block;width:235px;height:38px;font-size:16px;color:#444;padding:11px 0 0 5px\9;height:27px\9;float:left;}
-:root .regleft td input.text{padding:0 0 0 5px;height:38px;}
+.regleft td input.text{float:left;display:block;width:235px;height:38px;line-height:38px;padding:0 0 0 0.5em;font-size:16px;color:#444;border:1px solid #bbb;box-shadow:inset 2px 2px 8px rgba(0,0,0,0.2)}
+/*:root .regleft td input.text{padding:0 0 0 5px;height:38px;}*/
 .regleft  a{color:#145fab;}
 .regleft  a:hover{color:#f60; text-decoration:underline}
 .regleft  img{display:block;float:left;width:90px;height:35px;margin:2px 0 0 12px}

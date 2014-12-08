@@ -659,14 +659,13 @@ em.uf{ background-image:url(../images/159/uf.gif)}
 #haoma .nxyl span{width:2em}
 #haoma .nxyl i{width:60px;margin-right:11px;color:#333 !important;_display:inline}
 .pok .nxyl{height:auto;position:absolute;top:70px;left:83px;overflow:visible}
-.pok .nxyl i{width:70px;margin-right:36px;margin-bottom:70px;color:#333}
+#haoma_3 .nxyl i{width:93px;margin-right:36px;margin-bottom:70px;color:#333}
+#haoma_5 .nxyl i{width:72px;margin-right:36px;margin-bottom:70px}
 .pok-yl{padding-bottom:10px}
 .pok-yl .nxyl{top:126px;left:190px}
-.pok .nxyl i{width:98px;margin-right:36px;}
-.nstime{width:130px;padding:0 15px 0 10px;font-size:12px;color:#000;padding-top:5px;_padding-top:8px;display:block;height:38px;line-height:38px; position:absolute;top:51px;left:0}
+.pok-yl .nxyl i{width:98px;margin-right:36px;}
+.nstime{width:130px;padding:5px 15px 0 10px;font-size:12px;color:#000;_padding-top:8px;display:block;height:38px;line-height:38px; position:absolute;top:51px;left:0}
 .nstime b{display:inline-block;width:22px;height:20px;margin:0 2px;font:16px/20px Arial;color:#333;background: url(../images/159/nx_38.jpg);}
-/*.nsbool b{background:url(../images/159/nx_33.jpg);width:37px;height:38px;margin-right:13px;float:left;color:#000;font:22px/38px Arial;cursor:pointer;-webkit-user-select: none;-moz-user-select: none;-o-user-select: none;-ms-user-select: none;user-select: none;}*/
-/*.nsbool b.cur{ background:url(../images/159/nx_30.jpg);color:#fff}*/
 .nsopr{ background:url(../images/159/nx_36.jpg) 0 3px no-repeat;width:205px;height:32px;margin-left:40px;padding-left:24px;padding-top:3px;overflow:hidden}
 .nsopr b{ background:url(../images/159/nx5s_03.jpg);width:25px;height:25px;line-height:25px;text-align:center;color:#e52e04;float:left;margin-left:5px;margin-top:4px;font-weight:100; cursor:pointer}
 .nsopr b:hover{background:url(../images/159/nx5s_06.jpg)}
@@ -677,7 +676,6 @@ em.uf{ background-image:url(../images/159/uf.gif)}
 .nxsd input{display:inline;margin:5px 11px 0 20px;zoom:1;*margin:5px 9px 0 14px; }
 *html .nxsd input{*margin:5px 8px 0 13px; }
 .xh_text em{color:#f60;font-weight:bold}
-/*a.sz_cmt{background:url(../images/159/nx5s_09.jpg);width:137px;height:34px;}*/
 a.sz_cmtcur{background:url(../images/159/nx5s_11.jpg);}
 a.qc_xh:hover{color:#145fab;}
 p.xh_text{padding:10px 0;font-size:12px}
