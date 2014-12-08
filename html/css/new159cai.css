@@ -1082,8 +1082,7 @@ a.a_inner{width:166px;height:128px;display:block;margin:4px auto 0}
 .caitanm p.p1{line-height:30px;padding:8px 0 2px 22px;color:#333;font-size:14px;font-weight:bold}
 .caitanm td{font-size:14px;line-height:24px;color:#444;text-align:left;padding:5px 0}
 .caitanm select{height:22px;border:1px solid #bbb}
-.caitanm  input.text1{float:left;width:245px;height:30px;background:transparent url(../images/cai888/getw_07.jpg) no-repeat;border:none;padding:8px 0 0 3px\9;height:22px\9;font-size:14px;color:#444;border-right:1px solid #ddd}
-:root .caitanm  input.text1{padding:0 0 0 3px;height:30px}
+.caitanm  input.text1{float:left;width:245px;height:30px;line-height:30px;padding:0 0 0 0.5em;font-size:13px;color:#444;border:1px solid #ddd;box-shadow:inset 0 0 8px rgba(0,0,0,0.2)}
 .caitanm a.btn{display:block;width:103px;height:34px;font:14px/34px "Microsoft YaHei";color:#fff;text-align:Center;background: url(../images/cai888/getw_10.jpg)}
 .caitanm em{font-size:14px;color:#f60}
 .caitanm td.td1{color:#f00;font-size:12px;line-height:20px;padding:0}
