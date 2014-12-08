@@ -2423,6 +2423,162 @@ Class('openCodeList', {
     	
     	
     	var ld = this.listdata.slice(dl-(9-0), dl);//列表里面的所以值 都在ld里面
+    	var lastmiss=ld[ld.length-1];
+    	if(pid == 245){//前二
+    		var ctp2 = ' <i>{1}</i><i>{2}</i><i>{3}</i><i>{4}</i><i>{5}</i><i>{6}</i><i>{7}</i><i>{8}</i><i>{9}</i><i>{10}</i><i>{11}</i>';
+			var llcc=llpid.m1.split(",");
+			$("#haoma_2 #q2zx s.ball-yl").html(ctp2.format(llcc[0],llcc[1],llcc[2],llcc[3],llcc[4],llcc[5],llcc[6],llcc[7],llcc[8],llcc[9],llcc[10]));
+//			var ctp3 = ' <i>{1}</i><i>{2}</i><i>{3}</i><i>{4}</i><i>{5}</i><i>{6}</i><i>{7}</i><i>{8}</i><i>{9}</i><i>{10}</i><i>{11}</i>';
+			var llcc=llpid.m4.split(",");
+			$("#haoma_2 #q2zx s.ball-yl").html(ctp2.format(llcc[0],llcc[1],llcc[2],llcc[3],llcc[4],llcc[5],llcc[6],llcc[7],llcc[8],llcc[9],llcc[10]));
+			lastmiss1=lastmiss.m1;
+			lastmiss4=lastmiss.m4;
+			lastmiss1 = lastmiss1.split(",");
+			lastmiss4 = lastmiss4.split(",");
+//			for(var i = 0;i < lastmiss.length;i++){
+////				if(lastmiss[i] >= 20){
+//					if (i in lastmiss) {
+//                    el.innerHTML = lastmiss[i];
+//                    curMax = max[Y.getInt(i/width)];
+//                    lastmiss[i].style.color = vals[i] == curMax ? 'red' : '#B1B1B1'                    
+////                }
+//				}
+			var curMax1  ,max1,width1,curMax4  ,max4,width4;
+			 max1 = [];
+			 max4 = [];
+			 width1 = ~~lastmiss1.width || lastmiss1.length;
+			 width4 = ~~lastmiss4.width || lastmiss4.length;
+			 for (var i = 0; i < lastmiss1.length; i+=width1) {//多位排列进行折算行最大值
+                 max1.push(Math.max.apply(Math.max,lastmiss1.slice(i,i+width1)))
+             }
+			 for (var i = 0; i < lastmiss4.length; i+=width4) {//多位排列进行折算行最大值
+                 max4.push(Math.max.apply(Math.max,lastmiss4.slice(i,i+width4)))
+             }
+			 Y.get("#haoma_2 #q2zx span s.ball-yl i").each(function (el, i){//填充到页面
+                 if (i in lastmiss1) {
+                     el.innerHTML = lastmiss1[i];
+                     curMax1 = max1[Y.getInt(i/width1)];
+                     if(curMax1 >= 20){
+                    	 el.style.color = lastmiss1[i] == curMax1 ? 'red' : '#B1B1B1' 
+                     }
+                                        
+                 }
+             });
+			 Y.get("#haoma_2 #q2zx span #ss i").each(function (el, i){//填充到页面
+                 if (i in lastmiss4) {
+                     el.innerHTML = lastmiss4[i];
+                     curMax4 = max4[Y.getInt(i/width4)];
+                     if(curMax4 >= 20){
+                    	 el.style.color = lastmiss4[i] == curMax4 ? 'red' : '#B1B1B1' 
+                     }
+                                        
+                 }
+             });       
+//    		haoma_2
+		}else if(pid == 246){//前三
+			var ctp2 = ' <i>{1}</i><i>{2}</i><i>{3}</i><i>{4}</i><i>{5}</i><i>{6}</i><i>{7}</i><i>{8}</i><i>{9}</i><i>{10}</i><i>{11}</i>';
+			var llcc=llpid.m1.split(",");
+			$("#haoma_3 #q3zx s.ball-yl").html(ctp2.format(llcc[0],llcc[1],llcc[2],llcc[3],llcc[4],llcc[5],llcc[6],llcc[7],llcc[8],llcc[9],llcc[10]));
+//			var ctp3 = ' <i>{1}</i><i>{2}</i><i>{3}</i><i>{4}</i><i>{5}</i><i>{6}</i><i>{7}</i><i>{8}</i><i>{9}</i><i>{10}</i><i>{11}</i>';
+			var llcc=llpid.m4.split(",");
+			$("#haoma_3 #q3zx span #ss").html(ctp2.format(llcc[0],llcc[1],llcc[2],llcc[3],llcc[4],llcc[5],llcc[6],llcc[7],llcc[8],llcc[9],llcc[10]));
+			var llcc=llpid.m5.split(",");
+			$("#haoma_3 #q3zx span #sss").html(ctp2.format(llcc[0],llcc[1],llcc[2],llcc[3],llcc[4],llcc[5],llcc[6],llcc[7],llcc[8],llcc[9],llcc[10]));
+			lastmiss1=lastmiss.m1;
+			lastmiss4=lastmiss.m4;
+			lastmiss5=lastmiss.m5;
+			lastmiss1 = lastmiss1.split(",");
+			lastmiss4 = lastmiss4.split(",");
+			lastmiss5 = lastmiss5.split(",");
+//			for(var i = 0;i < lastmiss.length;i++){
+////				if(lastmiss[i] >= 20){
+//					if (i in lastmiss) {
+//                    el.innerHTML = lastmiss[i];
+//                    curMax = max[Y.getInt(i/width)];
+//                    lastmiss[i].style.color = vals[i] == curMax ? 'red' : '#B1B1B1'                    
+////                }
+//				}
+			var curMax1  ,max1,width1,curMax4  ,max4,width4,curMax5  ,max5,width5;
+			 max1 = [];
+			 max4 = [];
+			 max5 = [];
+			 width1 = ~~lastmiss1.width || lastmiss1.length;
+			 width4 = ~~lastmiss4.width || lastmiss4.length;
+			 width5 = ~~lastmiss5.width || lastmiss5.length;
+			 for (var i = 0; i < lastmiss1.length; i+=width1) {//多位排列进行折算行最大值
+                 max1.push(Math.max.apply(Math.max,lastmiss1.slice(i,i+width1)))
+             }
+			 for (var i = 0; i < lastmiss4.length; i+=width4) {//多位排列进行折算行最大值
+                 max4.push(Math.max.apply(Math.max,lastmiss4.slice(i,i+width4)))
+             }
+			 for (var i = 0; i < lastmiss5.length; i+=width5) {//多位排列进行折算行最大值
+                 max5.push(Math.max.apply(Math.max,lastmiss5.slice(i,i+width5)))
+             }
+			 Y.get("#haoma_3 #q3zx span s.ball-yl i").each(function (el, i){//填充到页面
+                 if (i in lastmiss1) {
+                     el.innerHTML = lastmiss1[i];
+                     curMax1 = max1[Y.getInt(i/width1)];
+                     if(curMax1 >= 20){
+                    	 el.style.color = lastmiss1[i] == curMax1 ? 'red' : '#B1B1B1' 
+                     }
+                                        
+                 }
+             });
+			 Y.get("#haoma_3 #q3zx span #ss i").each(function (el, i){//填充到页面
+                 if (i in lastmiss4) {
+                     el.innerHTML = lastmiss4[i];
+                     curMax4 = max4[Y.getInt(i/width4)];
+                     if(curMax4 >= 20){
+                    	 el.style.color = lastmiss4[i] == curMax4 ? 'red' : '#B1B1B1' 
+                     }
+                                        
+                 }
+             });       
+			 Y.get("#haoma_3 #q3zx span #sss i").each(function (el, i){//填充到页面
+                 if (i in lastmiss5) {
+                     el.innerHTML = lastmiss5[i];
+                     curMax5 = max5[Y.getInt(i/width5)];
+                     if(curMax5 >= 20){
+                    	 el.style.color = lastmiss5[i] == curMax5 ? 'red' : '#B1B1B1' 
+                     }
+                                        
+                 }
+             });       
+		}else{
+			var ctp2 = ' <i>{1}</i><i>{2}</i><i>{3}</i><i>{4}</i><i>{5}</i><i>{6}</i><i>{7}</i><i>{8}</i><i>{9}</i><i>{10}</i><i>{11}</i>';
+			var llcc=llpid.m0.split(",");
+			$("#haoma_1 div.nxyl div").html(ctp2.format(llcc[0],llcc[1],llcc[2],llcc[3],llcc[4],llcc[5],llcc[6],llcc[7],llcc[8],llcc[9],llcc[10]))
+	    	
+			lastmiss=lastmiss.m0;
+			lastmiss = lastmiss.split(",");
+//			for(var i = 0;i < lastmiss.length;i++){
+////				if(lastmiss[i] >= 20){
+//					if (i in lastmiss) {
+//                    el.innerHTML = lastmiss[i];
+//                    curMax = max[Y.getInt(i/width)];
+//                    lastmiss[i].style.color = vals[i] == curMax ? 'red' : '#B1B1B1'                    
+////                }
+//				}
+			var curMax  ,max,width;
+			 max = [];
+			 width = ~~lastmiss.width || lastmiss.length;
+			 for (var i = 0; i < lastmiss.length; i+=width) {//多位排列进行折算行最大值
+                 max.push(Math.max.apply(Math.max,lastmiss.slice(i,i+width)))
+             }
+			
+			 Y.get("#haoma_1 div.nxyl div i").each(function (el, i){//填充到页面
+                 if (i in lastmiss) {
+                     el.innerHTML = lastmiss[i];
+                     curMax = max[Y.getInt(i/width)];
+                     if(curMax >= 20){
+                    	 el.style.color = lastmiss[i] == curMax ? 'red' : '#B1B1B1' 
+                     }
+                                        
+                 }
+             });       
+			
+			
+		}
     	for(var i=0; i<ld.length; i++){
     		var ul = "";
     		if(pid == 245){//前二

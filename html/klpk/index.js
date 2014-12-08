@@ -712,119 +712,79 @@ Class.extend('exportCode', function () {
 				if (code == "0") {
 					var r = obj.Resp.row;
 					var ccodes =r.ccodes===undefined?r[0].ccodes:r.ccodes;// 投注号码
-//					ccodes = ccodes.split(':')[0];
-					var mulity =r.imulity===undefined?r[0].imulity:r.imulity;// 倍数
+					ccodes = ccodes.split(':')[0];
+					var mulity =r.imulity===undefined?r[0].imulity:r.imulity;// 投注号码 ;// 倍数
+					var ss = r[0].ccodes;// 投注号码
+					ss = ss.split(':')[1];
+					zhushu = r[0].icmoney*1/2;
+					//ss = ccodes.split(':')[1];
 					
-					
-					var icmoney =r.icmoney===undefined?r[0].icmoney:r.icmoney;// 投注号码 ;// 倍数
-					
-					
-
-					
-					
+					//var periodid = r.periodid;//期次
 					if(mulity>1){
 						$("#beishu").val(mulity);
 					}
-					if(ccodes.indexOf("$")!=-1){
-						Y.alert("胆拖再次追号不支持");
-						return false;
+					//Y.postMsg('msg_force_change_playtabs',0,1);
+//					ss = ss * 1 ;
+					if(ss=='07'){
+						type="249";
+						Y.postMsg('msg_force_change_playtabs', 0,1);
 					}
-						 arrCodes = ccodes.split(';').map(function (c){
-   	                var rb = c.split(':'),
-	                    d= rb[0] ? rb[0] : [],
-	                    ss= rb[1] ? rb[1] : [];
-	                    var zs = 1;
-	                    if(ss=='07'){
-							type="249";
-							Y.postMsg('msg_force_change_playtabs', 0,1);
-							 zs = Math.c(d.split(':').length, Class.C('lot_data')[type][2]);
-						}
-						else if(ss=='08'){
-							type="250";
-							Y.postMsg('msg_force_change_playtabs', 1,1);
-							 zs = Math.c(d.split(':').length, Class.C('lot_data')[type][2]);
-						}else if(ss == '09'){
-							type="251";
-							Y.postMsg('msg_force_change_playtabs', 2,1);
-							 zs = Math.c(d.split(':').length, Class.C('lot_data')[type][2]);
-						
-						}else if(ss == '11'){
-							type="253";
-							Y.postMsg('msg_force_change_playtabs', 4,1);
-							 zs = Math.c(d.split(':').length, Class.C('lot_data')[type][2]);
-						}else if(ss == '01'){
-							type="254";
-							Y.postMsg('msg_force_change_playtabs', 5,1);
-							 zs = Math.c(d.split(',').length, Class.C('lot_data')[type][2]);
-						}else if(ss == '02'){
-							type="255";
-							Y.postMsg('msg_force_change_playtabs', 6,1);
-							 zs = Math.c(d.split(',').length, Class.C('lot_data')[type][2]);
-						}else if(ss == '03'){
-							type="256";
-							Y.postMsg('msg_force_change_playtabs', 7,1);
-							 zs = Math.c(d.split(',').length, Class.C('lot_data')[type][2]);
-						}else if(ss == '04'){
-							type="257";
-							Y.postMsg('msg_force_change_playtabs', 8,1);
-							zs = Math.c(d.split(',').length, Class.C('lot_data')[type][2]);
-						}else if(ss == '05'){
-							type="258";
-							Y.postMsg('msg_force_change_playtabs', 9,1);
-							zs = Math.c(d.split(',').length, Class.C('lot_data')[type][2]);
-						}else if(ss == '06'){
-							type="259";
-							Y.postMsg('msg_force_change_playtabs', 10,1);
-							zs = Math.c(d.split(',').length, Class.C('lot_data')[type][2]);
-						}
-	                   
-	                    if(ss == '12'){
-							if(ccodes.split(':')[0] == '07'){
-								type="249";
-								d="00";
-								Y.postMsg('msg_force_change_playtabs', 0,1);
-//								得到 =  [["00",type,zs]];
-							}
-							if(ccodes.split(':')[0] == '08'){
-								type="250";
-								d="00";
-								Y.postMsg('msg_force_change_playtabs', 1,1);
-//								arrCodes =  [["00",type,zs]];
-							}
-							if(ccodes.split(':')[1] == '09'){
-								type="251";
-								d="00";
-								Y.postMsg('msg_force_change_playtabs', 2,1);
-//								arrCodes =  [["00",type,zs]];
-							}
-							if(ccodes.split(':')[1] == '11'){
-								type="252";
-								d="00";
-								Y.postMsg('msg_force_change_playtabs', 4,1);
-//								arrCodes =  [["00",type,zs]];
-							}
-						}
-	                    
-	                    	return [[d,type,zs]];
-//	                    }
-	                    
-	                
-	            }).filter(function (c){
-	                if (c[c.length - 1] == 0) {//zs
-	                    short_code = c;//残缺号码
-	                }else{
-	                    return true;
-	                }
-	            });
-						 if (arrCodes.length) {
-					        	for(var i=0;i<arrCodes.length;i++){
-		   	            		this.postMsg('msg_put_code',arrCodes[i]);
-		   	            	}
-						 }
-						
-					
+					else if(ss=='08'){
+						type="250";
+						Y.postMsg('msg_force_change_playtabs', 1,1);
+					}else if(ss == '09'){
+						type="251";
+						Y.postMsg('msg_force_change_playtabs', 2,1);
+					}else if(ss == '10'){
+						type="252";
+						Y.postMsg('msg_force_change_playtabs', 3,1);
+					}else if(ss == '11'){
+						type="253";
+						Y.postMsg('msg_force_change_playtabs', 4,1);
+					}else if(ss == '01'){
+						type="254";
+						Y.postMsg('msg_force_change_playtabs', 5,1);
+					}else if(ss == '02'){
+						type="255";
+						Y.postMsg('msg_force_change_playtabs', 6,1);
+					}else if(ss == '03'){
+						type="256";
+						Y.postMsg('msg_force_change_playtabs', 7,1);
+					}else if(ss == '04'){
+						type="257";
+						Y.postMsg('msg_force_change_playtabs', 8,1);
+					}else if(ss == '05'){
+						type="258";
+						Y.postMsg('msg_force_change_playtabs', 9,1);
+					}else if(ss == '06'){
+						type="259";
+						Y.postMsg('msg_force_change_playtabs', 10,1);
+					}
 					//type=type;
-					 
+					if(ccodes==""){
+		    			Y.alert("您不是该方案的发起人，不能再次购买本方案");
+		    			return false;
+		    		}
+					if(ccodes.split(':')[0]){
+						$("#zjtz23").attr("checked",'true');
+					}
+					
+					if(ccodes.indexOf("$")==-1){
+						
+							Yobj.get('#codes').val(ccodes);
+							var import_code, arrCodes, short_code;
+						    if (import_code = Yobj.get('#codes').val()) {
+								if (typeof this.dejson(import_code) == 'object') return;
+						        if (/\b0\b/.test(import_code)) {
+						            return
+						        }
+						        arrCodes= [[import_code,type,zhushu]];
+						        if (arrCodes.length) {//完整号码显示到列表
+						             Y.postMsg('msg_put_code', arrCodes);
+						        }
+						    }
+						}  
+					
 				}else if(code=='2002'){
 					Y.alert("您不是该方案的发起人，不能再次购买本方案");
 					return false;
@@ -1223,14 +1183,15 @@ Class('App', {
             $("#num_header_1").css('height', '0');
             $("#span5").removeClass("span5c");
            
-            var pid = this.get('#play_tabs a').slice(b, b + 1).attr("value");
-            var nl = Y.getopencodelength(pid);//当前的
-            Class.C('playid', pid);
             var ol = Y.getopencodelength(Class.C('playid'));//上一个的
+        	var pid = this.get('#play_tabs a').slice(b, b+1).attr("value");
+        	var nl = Y.getopencodelength(pid);//当前的
+            Class.C('playid', pid);
+            
             Y.get("#wanfatishi").html(Class.C('lot_data_wanfa')[pid]);
-//            Y.get("#shil s").attr("data-help",Class.C('lot_data_dome')[pid]);
-//            Y.postMsg('opencodelist_getlistdata');
-            Y.postMsg('playtabs_onchange');
+            Y.get("#shil s").attr("data-help",Class.C('lot_data_dome')[pid]);
+            
+            Y.postMsg('playtabs_onchange'); 
             Y.postMsg('danma_onchange');
             Y.postMsg('msg_buy_succeed');
             Y.get("#inputtext").val("");
@@ -2368,6 +2329,136 @@ Class('openCodeList', {
 
 
         var ld = this.listdata.slice(dl - (9 - 0), dl);//列表里面的所以值 都在ld里面
+        var lastmiss=ld[ld.length-1];
+       if(pid == 249){
+        	var ctp2 = ' <i>{1}</i><i>{2}</i><i>{3}</i><i>{4}</i><i>{5}</i>';
+			var llcc1=llpid.m6.split(",");
+			var llcc=llpid.m1.split(",");
+			$("#haoma_1 div.nxyl div").html(ctp2.format(llcc1[0],llcc[1],llcc[2],llcc[3],llcc[4]))
+	    	lastmiss6=lastmiss.m6;
+			lastmiss1=lastmiss.m1 ;
+			lastmiss1 = lastmiss6 +","+ lastmiss1; 
+			lastmiss1 = lastmiss1.split(",");
+			var curMax1  ,max1,width1;
+			 max1 = [];
+			 width1 = ~~lastmiss1.width || lastmiss1.length;
+			 for (var i = 1; i < lastmiss1.length; i+=width1) {//多位排列进行折算行最大值
+                 max1.push(Math.max.apply(Math.max,lastmiss1.slice(i,i+width1)))
+             }
+			
+			 Y.get("#haoma_1 div.nxyl div i").each(function (el, i){//填充到页面
+                 if (i in lastmiss1) {
+                     el.innerHTML = lastmiss1[i];
+                     curMax1 = max1[Y.getInt(i/width1)];
+                     if(curMax1 >= 20){
+                    	 el.style.color = lastmiss1[i] == curMax1 ? 'red' : '#B1B1B1' 
+                     }
+                                        
+                 }
+             });      
+        }else if(pid == 250){
+        	var ctp2 = ' <i>{1}</i><i>{2}</i><i>{3}</i><i>{4}</i><i>{5}</i>';
+			var llcc1=llpid.m7.split(",");
+			var llcc=llpid.m2.split(",");
+			$("#haoma_2 div.nxyl div").html(ctp2.format(llcc1[0],llcc[1],llcc[2],llcc[3],llcc[4]));
+	    	lastmiss7=lastmiss.m7;
+			lastmiss2=lastmiss.m2 ;
+			lastmiss2 = lastmiss7 +","+ lastmiss2; 
+			lastmiss2 = lastmiss2.split(",");
+			var curMax2  ,max2,width2;
+			 max2 = [];
+			 width2 = ~~lastmiss2.width || lastmiss2.length;
+			 for (var i = 1; i < lastmiss2.length; i+=width2) {//多位排列进行折算行最大值
+                 max2.push(Math.max.apply(Math.max,lastmiss2.slice(i,i+width2)))
+             }
+			
+			 Y.get("#haoma_2 div.nxyl div i").each(function (el, i){//填充到页面
+                 if (i in lastmiss2) {
+                     el.innerHTML = lastmiss2[i];
+                     curMax2 = max2[Y.getInt(i/width2)];
+                     if(curMax2 >= 20){
+                    	 el.style.color = lastmiss2[i] == curMax2 ? 'red' : '#B1B1B1';
+                     }
+                                        
+                 }
+             });      
+        }else if(pid == 251){
+        	var ctp2 = ' <i>{1}</i><i>{2}</i><i>{3}</i><i>{4}</i><i>{5}</i><i>{6}</i><i>{7}</i><i>{8}</i><i>{9}</i><i>{10}</i><i>{11}</i><i>{12}</i><i>{13}</i>';
+			var llcc1=llpid.m8.split(",");
+			var llcc=llpid.m3.split(",");
+			$("#haoma_3 div.nxyl div").html(ctp2.format(llcc1[0],llcc[0],llcc[1],llcc[2],llcc[3],llcc[4],llcc[5],llcc[6],llcc[7],llcc[8],llcc[9],llcc[10],llcc[11]));
+	    	lastmiss8=lastmiss.m8
+			lastmiss3=lastmiss.m3 ;
+			lastmiss3 = lastmiss8 +","+ lastmiss3; 
+			lastmiss3 = lastmiss3.split(",");
+			var curMax3  ,max3,width3;
+			 max3 = [];
+			 width3 = ~~lastmiss3.width || lastmiss3.length;
+			 for (var i = 1; i < lastmiss3.length; i+=width3) {//多位排列进行折算行最大值
+                 max3.push(Math.max.apply(Math.max,lastmiss3.slice(i,i+width3)))
+             }
+			
+			 Y.get("#haoma_2 div.nxyl div i").each(function (el, i){//填充到页面
+                 if (i in lastmiss3) {
+                     el.innerHTML = lastmiss3[i];
+                     curMax3 = max3[Y.getInt(i/width3)];
+                     if(curMax3>= 20){
+                    	 el.style.color = lastmiss3[i] == curMax3 ? 'red' : '#B1B1B1';
+                     }
+                                        
+                 }
+             });      
+        }else if(pid == 253){
+        	var ctp2 = ' <i>{1}</i><i>{2}</i><i>{3}</i><i>{4}</i><i>{5}</i><i>{6}</i><i>{7}</i><i>{8}</i><i>{9}</i><i>{10}</i><i>{11}</i><i>{12}</i><i>{13}</i><i>{14}</i>';
+			var llcc1=llpid.m10.split(",");
+			var llcc=llpid.m5.split(",");
+			$("#haoma_5 div.nxyl div").html(ctp2.format(llcc1[0],llcc[0],llcc[1],llcc[2],llcc[3],llcc[4],llcc[5],llcc[6],llcc[7],llcc[8],llcc[9],llcc[10],llcc[11],llcc[12]));
+	    	lastmiss10=lastmiss.m10;
+			lastmiss5=lastmiss.m5 ;
+			lastmiss5 = lastmiss10 +","+ lastmiss5; 
+			lastmiss5 = lastmiss5.split(",");
+			var curMax5  ,max5,width5;
+			 max5 = [];
+			 width5 = ~~lastmiss5.width || lastmiss5.length;
+			 for (var i = 1; i < lastmiss5.length; i+=width5) {//多位排列进行折算行最大值
+                 max5.push(Math.max.apply(Math.max,lastmiss5.slice(i,i+width5)))
+             }
+			
+			 Y.get("#haoma_5 div.nxyl div i").each(function (el, i){//填充到页面
+                 if (i in lastmiss5) {
+                     el.innerHTML = lastmiss5[i];
+                     curMax5 = max5[Y.getInt(i/width5)];
+                     if(curMax5>= 20){
+                    	 el.style.color = lastmiss5[i] == curMax5 ? 'red' : '#B1B1B1';
+                     }
+                                        
+                 }
+             });      
+        }else{
+        	var ctp2 = ' <i>{1}</i><i>{2}</i><i>{3}</i><i>{4}</i><i>{5}</i><i>{6}</i><i>{7}</i><i>{8}</i><i>{9}</i><i>{10}</i><i>{11}</i><i>{12}</i><i>{13}</i>';
+			var llcc=llpid.m0.split(",");
+			$("#haoma div.nxyl div").html(ctp2.format(llcc[0],llcc[1],llcc[2],llcc[3],llcc[4],llcc[5],llcc[6],llcc[7],llcc[8],llcc[9],llcc[10],llcc[11],llcc[12]))
+	    	
+			lastmiss0=lastmiss.m0;
+			lastmiss0 = lastmiss0.split(",");
+			var curMax0  ,max0,width0;
+			 max0 = [];
+			 width0 = ~~lastmiss0.width || lastmiss0.length;
+			 for (var i = 0; i < lastmiss0.length; i+=width0) {//多位排列进行折算行最大值
+                 max0.push(Math.max.apply(Math.max,lastmiss0.slice(i,i+width0)))
+             }
+			
+			 Y.get("#haoma div.nxyl div i").each(function (el, i){//填充到页面
+                 if (i in lastmiss0) {
+                     el.innerHTML = lastmiss0[i];
+                     curMax0 = max0[Y.getInt(i/width0)];
+                     if(curMax0 >= 20){
+                    	 el.style.color = lastmiss0[i] == curMax0 ? 'red' : '#B1B1B1' 
+                     }
+                                        
+                 }
+             });      
+        }
         for (var i = 0; i < ld.length; i++) {
             var ul = "";
             if (pid == 249) {//同花

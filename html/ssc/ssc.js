@@ -2212,6 +2212,378 @@ Class('openCodeList', {
 		if(cc[4]<5){ds4="小"}else{ds4="大"}
     	
     	var ld = this.listdata.slice(dl-8, dl);
+    	var lastmiss=ld[ld.length-1];
+    	if(pid == 107){//一星直选
+    		var ctp2 = ' <i>{1}</i><i>{2}</i><i>{3}</i><i>{4}</i><i>{5}</i><i>{6}</i><i>{7}</i><i>{8}</i><i>{9}</i><i>{10}</i>';
+			var llcc=llpid.m0.split(",");
+			$("#yxzx_area div.nxyl div").html(ctp2.format(llcc[0],llcc[1],llcc[2],llcc[3],llcc[4],llcc[5],llcc[6],llcc[7],llcc[8],llcc[9]))
+	    	
+			lastmiss4=lastmiss.m4;
+			lastmiss4 = lastmiss4.split(",");
+			var curMax4  ,max4,width4;
+			 max4 = [];
+			 width4 = ~~lastmiss4.width || lastmiss4.length;
+			 for (var i = 0; i < lastmiss4.length; i+=width4) {//多位排列进行折算行最大值
+                 max4.push(Math.max.apply(Math.max,lastmiss4.slice(i,i+width4)))
+             }
+			
+			 Y.get("#yxzx_area div.nxyl div i").each(function (el, i){//填充到页面
+                 if (i in lastmiss4) {
+                     el.innerHTML = lastmiss4[i];
+                     curMax4 = max4[Y.getInt(i/width4)];
+                     if(curMax4 >= 20){
+                    	 el.style.color = lastmiss4[i] == curMax4 ? 'red' : '#B1B1B1' 
+                     }
+                                        
+                 }
+             });       
+    	}else if(pid == 116){
+    		var ctp2 = ' <i>{1}</i><i>{2}</i><i>{3}</i><i>{4}</i><i>{5}</i><i>{6}</i><i>{7}</i><i>{8}</i><i>{9}</i><i>{10}</i><i>{11}</i>';
+			var llcc=llpid.m6.split(",");
+			$("#exzux_area div.nxyl div").html(ctp2.format(llcc[0],llcc[1],llcc[2],llcc[3],llcc[4],llcc[5],llcc[6],llcc[7],llcc[8],llcc[9],llcc[10]))
+	    	
+			lastmiss6=lastmiss.m6;
+			lastmiss6 = lastmiss6.split(",");
+			var curMax6  ,max6,width6;
+			 max6 = [];
+			 width6 = ~~lastmiss6.width || lastmiss6.length;
+			 for (var i = 0; i < lastmiss6.length; i+=width6) {//多位排列进行折算行最大值
+                 max6.push(Math.max.apply(Math.max,lastmiss6.slice(i,i+width6)))
+             }
+			
+			 Y.get("#yxzx_area div.nxyl div i").each(function (el, i){//填充到页面
+                 if (i in lastmiss6) {
+                     el.innerHTML = lastmiss6[i];
+                     curMax6 = max6[Y.getInt(i/width6)];
+                     if(curMax6 >= 20){
+                    	 el.style.color = lastmiss6[i] == curMax6 ? 'red' : '#B1B1B1' 
+                     }
+                                        
+                 }
+             });       
+    	}else if(pid == 106){
+    		var ctp2 = ' <i>{1}</i><i>{2}</i><i>{3}</i><i>{4}</i><i>{5}</i><i>{6}</i><i>{7}</i><i>{8}</i><i>{9}</i><i>{10}</i>';
+			var llcc=llpid.m3.split(",");
+			$("#exzx_area div.nxyl div").html(ctp2.format(llcc[0],llcc[1],llcc[2],llcc[3],llcc[4],llcc[5],llcc[6],llcc[7],llcc[8],llcc[9]));
+//			var ctp3 = ' <i>{1}</i><i>{2}</i><i>{3}</i><i>{4}</i><i>{5}</i><i>{6}</i><i>{7}</i><i>{8}</i><i>{9}</i><i>{10}</i>';
+			var llcc=llpid.m4.split(",");
+			$("#exzx_area #nxyls div").html(ctp2.format(llcc[0],llcc[1],llcc[2],llcc[3],llcc[4],llcc[5],llcc[6],llcc[7],llcc[8],llcc[9]));
+	    	lastmiss3=lastmiss.m3;
+			lastmiss4=lastmiss.m4;
+			lastmiss3 = lastmiss3.split(",");
+			lastmiss4 = lastmiss4.split(",");
+			var curMax3  ,max3,width3,curMax4  ,max4,width4;
+			 max3 = [];
+			 max4 = [];
+			 width3 = ~~lastmiss3.width || lastmiss3.length;
+			 width4 = ~~lastmiss4.width || lastmiss4.length;
+			 for (var i = 0; i < lastmiss3.length; i+=width3) {//多位排列进行折算行最大值
+                 max3.push(Math.max.apply(Math.max,lastmiss3.slice(i,i+width3)))
+             }
+			 for (var i = 0; i < lastmiss4.length; i+=width4) {//多位排列进行折算行最大值
+                 max4.push(Math.max.apply(Math.max,lastmiss4.slice(i,i+width4)))
+             }
+			 Y.get("#exzx_area div.nxyl div i").each(function (el, i){//填充到页面
+                 if (i in lastmiss3) {
+                     el.innerHTML = lastmiss3[i];
+                     curMax3 = max3[Y.getInt(i/width3)];
+                     if(curMax3 >= 20){
+                    	 el.style.color = lastmiss3[i] == curMax3 ? 'red' : '#B1B1B1' 
+                     }
+                                        
+                 }
+             });       
+			 Y.get("#exzx_area #nxyls div i").each(function (el, i){//填充到页面
+                 if (i in lastmiss4) {
+                     el.innerHTML = lastmiss4[i];
+                     curMax4 = max4[Y.getInt(i/width4)];
+                     if(curMax4 >= 20){
+                    	 el.style.color = lastmiss4[i] == curMax4 ? 'red' : '#B1B1B1' 
+                     }
+                                        
+                 }
+             });       
+    	}else if(pid == 105){
+    		var ctp2 = ' <i>{1}</i><i>{2}</i><i>{3}</i><i>{4}</i><i>{5}</i><i>{6}</i><i>{7}</i><i>{8}</i><i>{9}</i><i>{10}</i><i>{11}</i>';
+			var llcc=llpid.m2.split(",");
+			$("#sxzx_area div.nxyl div").html(ctp2.format(llcc[0],llcc[1],llcc[2],llcc[3],llcc[4],llcc[5],llcc[6],llcc[7],llcc[8],llcc[9],llcc[10]));
+			var llcc=llpid.m3.split(",");
+			$("#sxzx_area #sanxi div").html(ctp2.format(llcc[0],llcc[1],llcc[2],llcc[3],llcc[4],llcc[5],llcc[6],llcc[7],llcc[8],llcc[9],llcc[10]));
+			var llcc=llpid.m4.split(",");
+			$("#sxzx_area #sxnxing div").html(ctp2.format(llcc[0],llcc[1],llcc[2],llcc[3],llcc[4],llcc[5],llcc[6],llcc[7],llcc[8],llcc[9],llcc[10]));
+	    	lastmiss2=lastmiss.m2;
+			lastmiss3=lastmiss.m3;
+			lastmiss4=lastmiss.m4;
+			lastmiss2 = lastmiss2.split(",");
+			lastmiss3 = lastmiss3.split(",");
+			lastmiss4 = lastmiss4.split(",");
+			var curMax2  ,max2,width2,curMax3  ,max3,width3,curMax4  ,max4,width4;
+			max2 = [];
+			 max3 = [];
+			 max4 = [];
+			 width2 = ~~lastmiss2.width || lastmiss2.length;
+			 width3 = ~~lastmiss3.width || lastmiss3.length;
+			 width4 = ~~lastmiss4.width || lastmiss4.length;
+			 for (var i = 0; i < lastmiss2.length; i+=width2) {//多位排列进行折算行最大值
+                 max2.push(Math.max.apply(Math.max,lastmiss2.slice(i,i+width2)))
+             }
+			 for (var i = 0; i < lastmiss3.length; i+=width3) {//多位排列进行折算行最大值
+                 max3.push(Math.max.apply(Math.max,lastmiss3.slice(i,i+width3)))
+             }
+			 for (var i = 0; i < lastmiss4.length; i+=width4) {//多位排列进行折算行最大值
+                 max4.push(Math.max.apply(Math.max,lastmiss4.slice(i,i+width4)))
+             }
+			 Y.get("#sxzx_area div.nxyl div i").each(function (el, i){//填充到页面
+                 if (i in lastmiss2) {
+                     el.innerHTML = lastmiss2[i];
+                     curMax2 = max2[Y.getInt(i/width2)];
+                     if(curMax2 >= 20){
+                    	 el.style.color = lastmiss2[i] == curMax2 ? 'red' : '#B1B1B1' 
+                     }
+                                        
+                 }
+             });       
+			 Y.get("#sxzx_area #sanxi div i").each(function (el, i){//填充到页面
+                 if (i in lastmiss3) {
+                     el.innerHTML = lastmiss3[i];
+                     curMax3 = max3[Y.getInt(i/width3)];
+                     if(curMax3 >= 20){
+                    	 el.style.color = lastmiss3[i] == curMax3 ? 'red' : '#B1B1B1' 
+                     }
+                                        
+                 }
+             });       
+			 Y.get("#sxzx_area #sxnxing div i").each(function (el, i){//填充到页面
+                 if (i in lastmiss4) {
+                     el.innerHTML = lastmiss4[i];
+                     curMax4 = max4[Y.getInt(i/width4)];
+                     if(curMax4 >= 20){
+                    	 el.style.color = lastmiss4[i] == curMax4 ? 'red' : '#B1B1B1' 
+                     }
+                                        
+                 }
+             });       
+    	}else if(pid == 104){
+    		var ctp2 = ' <i>{1}</i><i>{2}</i><i>{3}</i><i>{4}</i><i>{5}</i><i>{6}</i><i>{7}</i><i>{8}</i><i>{9}</i><i>{10}</i><i>{11}</i>';
+    		var llcc=llpid.m0.split(",");
+			$("#wxzx_area #wan div").html(ctp2.format(llcc[0],llcc[1],llcc[2],llcc[3],llcc[4],llcc[5],llcc[6],llcc[7],llcc[8],llcc[9],llcc[10]));
+			var llcc=llpid.m1.split(",");
+			$("#wxzx_area #qian div").html(ctp2.format(llcc[0],llcc[1],llcc[2],llcc[3],llcc[4],llcc[5],llcc[6],llcc[7],llcc[8],llcc[9],llcc[10]));
+			var llcc=llpid.m2.split(",");
+			$("#wxzx_area #bai div").html(ctp2.format(llcc[0],llcc[1],llcc[2],llcc[3],llcc[4],llcc[5],llcc[6],llcc[7],llcc[8],llcc[9],llcc[10]));
+			var llcc=llpid.m3.split(",");
+			$("#wxzx_area #shi div").html(ctp2.format(llcc[0],llcc[1],llcc[2],llcc[3],llcc[4],llcc[5],llcc[6],llcc[7],llcc[8],llcc[9],llcc[10]));
+			var llcc=llpid.m4.split(",");
+			$("#wxzx_area #ge div").html(ctp2.format(llcc[0],llcc[1],llcc[2],llcc[3],llcc[4],llcc[5],llcc[6],llcc[7],llcc[8],llcc[9],llcc[10]));
+			lastmiss0=lastmiss.m0;
+			lastmiss1=lastmiss.m1;
+			lastmiss2=lastmiss.m2;
+			lastmiss3=lastmiss.m3;
+			lastmiss4=lastmiss.m4;
+			lastmiss0 = lastmiss0.split(",");
+			lastmiss1 = lastmiss1.split(",");
+			lastmiss2 = lastmiss2.split(",");
+			lastmiss3 = lastmiss3.split(",");
+			lastmiss4 = lastmiss4.split(",");
+			var curMax0  ,max0,width0,curMax1  ,max1,width1,curMax2  ,max2,width2,curMax3  ,max3,width3,curMax4  ,max4,width4;
+			max0 = [];
+			max1 = [];
+			max2 = [];
+			 max3 = [];
+			 max4 = [];
+			 width0 = ~~lastmiss0.width || lastmiss0.length;
+			 width1 = ~~lastmiss1.width || lastmiss1.length;
+			 width2 = ~~lastmiss2.width || lastmiss2.length;
+			 width3 = ~~lastmiss3.width || lastmiss3.length;
+			 width4 = ~~lastmiss4.width || lastmiss4.length;
+			 for (var i = 0; i < lastmiss0.length; i+=width0) {//多位排列进行折算行最大值
+                 max0.push(Math.max.apply(Math.max,lastmiss0.slice(i,i+width0)))
+             }
+			 for (var i = 0; i < lastmiss1.length; i+=width1) {//多位排列进行折算行最大值
+                 max1.push(Math.max.apply(Math.max,lastmiss1.slice(i,i+width1)))
+             }
+			 for (var i = 0; i < lastmiss2.length; i+=width2) {//多位排列进行折算行最大值
+                 max2.push(Math.max.apply(Math.max,lastmiss2.slice(i,i+width2)))
+             }
+			 for (var i = 0; i < lastmiss3.length; i+=width3) {//多位排列进行折算行最大值
+                 max3.push(Math.max.apply(Math.max,lastmiss3.slice(i,i+width3)))
+             }
+			 for (var i = 0; i < lastmiss4.length; i+=width4) {//多位排列进行折算行最大值
+                 max4.push(Math.max.apply(Math.max,lastmiss4.slice(i,i+width4)))
+             }
+			 Y.get("#wxzx_area #wan div i").each(function (el, i){//填充到页面
+                 if (i in lastmiss0) {
+                     el.innerHTML = lastmiss0[i];
+                     curMax0 = max0[Y.getInt(i/width0)];
+                     if(curMax0 >= 20){
+                    	 el.style.color = lastmiss0[i] == curMax0 ? 'red' : '#B1B1B1' 
+                     }
+                                        
+                 }
+             });     
+			 Y.get("#wxzx_area #qian div i").each(function (el, i){//填充到页面
+                 if (i in lastmiss1) {
+                     el.innerHTML = lastmiss1[i];
+                     curMax1 = max1[Y.getInt(i/width1)];
+                     if(curMax1 >= 20){
+                    	 el.style.color = lastmiss1[i] == curMax1 ? 'red' : '#B1B1B1' 
+                     }
+                                        
+                 }
+             });     
+			 Y.get("#wxzx_area #bai div i").each(function (el, i){//填充到页面
+                 if (i in lastmiss2) {
+                     el.innerHTML = lastmiss2[i];
+                     curMax2 = max2[Y.getInt(i/width2)];
+                     if(curMax2 >= 20){
+                    	 el.style.color = lastmiss2[i] == curMax2 ? 'red' : '#B1B1B1' 
+                     }
+                                        
+                 }
+             });       
+			 Y.get("#wxzx_area #shi div i").each(function (el, i){//填充到页面
+                 if (i in lastmiss3) {
+                     el.innerHTML = lastmiss3[i];
+                     curMax3 = max3[Y.getInt(i/width3)];
+                     if(curMax3 >= 20){
+                    	 el.style.color = lastmiss3[i] == curMax3 ? 'red' : '#B1B1B1' 
+                     }
+                                        
+                 }
+             });       
+			 Y.get("#wxzx_area #ge div i").each(function (el, i){//填充到页面
+                 if (i in lastmiss4) {
+                     el.innerHTML = lastmiss4[i];
+                     curMax4 = max4[Y.getInt(i/width4)];
+                     if(curMax4 >= 20){
+                    	 el.style.color = lastmiss4[i] == curMax4 ? 'red' : '#B1B1B1' 
+                     }
+                                        
+                 }
+             });       
+    	}else if(pid == 124){
+    		var ctp2 = ' <i>{1}</i><i>{2}</i><i>{3}</i><i>{4}</i><i>{5}</i><i>{6}</i><i>{7}</i><i>{8}</i><i>{9}</i><i>{10}</i><i>{11}</i>';
+		var llcc=llpid.m0.split(",");
+		$("#wxtx_area #wan div").html(ctp2.format(llcc[0],llcc[1],llcc[2],llcc[3],llcc[4],llcc[5],llcc[6],llcc[7],llcc[8],llcc[9],llcc[10]));
+		var llcc=llpid.m1.split(",");
+		$("#wxtx_area #qian div").html(ctp2.format(llcc[0],llcc[1],llcc[2],llcc[3],llcc[4],llcc[5],llcc[6],llcc[7],llcc[8],llcc[9],llcc[10]));
+		var llcc=llpid.m2.split(",");
+		$("#wxtx_area #bai div").html(ctp2.format(llcc[0],llcc[1],llcc[2],llcc[3],llcc[4],llcc[5],llcc[6],llcc[7],llcc[8],llcc[9],llcc[10]));
+		var llcc=llpid.m3.split(",");
+		$("#wxtx_area #shi div").html(ctp2.format(llcc[0],llcc[1],llcc[2],llcc[3],llcc[4],llcc[5],llcc[6],llcc[7],llcc[8],llcc[9],llcc[10]));
+		var llcc=llpid.m4.split(",");
+		$("#wxtx_area #ge div").html(ctp2.format(llcc[0],llcc[1],llcc[2],llcc[3],llcc[4],llcc[5],llcc[6],llcc[7],llcc[8],llcc[9],llcc[10]));
+		lastmiss0=lastmiss.m0;
+		lastmiss1=lastmiss.m1;
+		lastmiss2=lastmiss.m2;
+		lastmiss3=lastmiss.m3;
+		lastmiss4=lastmiss.m4;
+		lastmiss0 = lastmiss0.split(",");
+		lastmiss1 = lastmiss1.split(",");
+		lastmiss2 = lastmiss2.split(",");
+		lastmiss3 = lastmiss3.split(",");
+		lastmiss4 = lastmiss4.split(",");
+		var curMax0  ,max0,width0,curMax1  ,max1,width1,curMax2  ,max2,width2,curMax3  ,max3,width3,curMax4  ,max4,width4;
+		max0 = [];
+		max1 = [];
+		max2 = [];
+		 max3 = [];
+		 max4 = [];
+		 width0 = ~~lastmiss0.width || lastmiss0.length;
+		 width1 = ~~lastmiss1.width || lastmiss1.length;
+		 width2 = ~~lastmiss2.width || lastmiss2.length;
+		 width3 = ~~lastmiss3.width || lastmiss3.length;
+		 width4 = ~~lastmiss4.width || lastmiss4.length;
+		 for (var i = 0; i < lastmiss0.length; i+=width0) {//多位排列进行折算行最大值
+             max0.push(Math.max.apply(Math.max,lastmiss0.slice(i,i+width0)))
+         }
+		 for (var i = 0; i < lastmiss1.length; i+=width1) {//多位排列进行折算行最大值
+             max1.push(Math.max.apply(Math.max,lastmiss1.slice(i,i+width1)))
+         }
+		 for (var i = 0; i < lastmiss2.length; i+=width2) {//多位排列进行折算行最大值
+             max2.push(Math.max.apply(Math.max,lastmiss2.slice(i,i+width2)))
+         }
+		 for (var i = 0; i < lastmiss3.length; i+=width3) {//多位排列进行折算行最大值
+             max3.push(Math.max.apply(Math.max,lastmiss3.slice(i,i+width3)))
+         }
+		 for (var i = 0; i < lastmiss4.length; i+=width4) {//多位排列进行折算行最大值
+             max4.push(Math.max.apply(Math.max,lastmiss4.slice(i,i+width4)))
+         }
+		 Y.get("#wxtx_area #wan div i").each(function (el, i){//填充到页面
+             if (i in lastmiss0) {
+                 el.innerHTML = lastmiss0[i];
+                 curMax0 = max0[Y.getInt(i/width0)];
+                 if(curMax0 >= 20){
+                	 el.style.color = lastmiss0[i] == curMax0 ? 'red' : '#B1B1B1' 
+                 }
+                                    
+             }
+         });     
+		 Y.get("#wxtx_area #qian div i").each(function (el, i){//填充到页面
+             if (i in lastmiss1) {
+                 el.innerHTML = lastmiss1[i];
+                 curMax1 = max1[Y.getInt(i/width1)];
+                 if(curMax1 >= 20){
+                	 el.style.color = lastmiss1[i] == curMax1 ? 'red' : '#B1B1B1' 
+                 }
+                                    
+             }
+         });     
+		 Y.get("#wxtx_area #bai div i").each(function (el, i){//填充到页面
+             if (i in lastmiss2) {
+                 el.innerHTML = lastmiss2[i];
+                 curMax2 = max2[Y.getInt(i/width2)];
+                 if(curMax2 >= 20){
+                	 el.style.color = lastmiss2[i] == curMax2 ? 'red' : '#B1B1B1' 
+                 }
+                                    
+             }
+         });       
+		 Y.get("#wxtx_area #shi div i").each(function (el, i){//填充到页面
+             if (i in lastmiss3) {
+                 el.innerHTML = lastmiss3[i];
+                 curMax3 = max3[Y.getInt(i/width3)];
+                 if(curMax3 >= 20){
+                	 el.style.color = lastmiss3[i] == curMax3 ? 'red' : '#B1B1B1' 
+                 }
+                                    
+             }
+         });       
+		 Y.get("#wxtx_area #ge div i").each(function (el, i){//填充到页面
+             if (i in lastmiss4) {
+                 el.innerHTML = lastmiss4[i];
+                 curMax4 = max4[Y.getInt(i/width4)];
+                 if(curMax4 >= 20){
+                	 el.style.color = lastmiss4[i] == curMax4 ? 'red' : '#B1B1B1' 
+                 }
+                                    
+             }
+         });       
+	}else if(pid == 118){
+    		var ctp2 = ' <i>{1}</i><i>{2}</i><i>{3}</i><i>{4}</i><i>{5}</i><i>{6}</i><i>{7}</i><i>{8}</i><i>{9}</i><i>{10}</i><i>{11}</i><i>{12}</i><i>{13}</i><i>{14}</i><i>{15}</i><i>{16}</i><i>{17}</i><i>{18}</i><i>{19}</i>';
+			var llcc=llpid.m9.split(",");
+			$("#exzxhz_area div.nxyl div").html(ctp2.format(llcc[0],llcc[1],llcc[2],llcc[3],llcc[4],llcc[5],llcc[6],llcc[7],llcc[8],llcc[9],llcc[10],llcc[11],llcc[12],llcc[13],llcc[14],llcc[15],llcc[16],llcc[17],llcc[18],llcc[19]))
+	    	
+			lastmiss9=lastmiss.m9;
+			lastmiss9 = lastmiss9.split(",");
+			var curMax9  ,max9,width9;
+			 max9 = [];
+			 width9 = ~~lastmiss9.width || lastmiss9.length;
+			 for (var i = 0; i < lastmiss9.length; i+=width9) {//多位排列进行折算行最大值
+                 max9.push(Math.max.apply(Math.max,lastmiss9.slice(i,i+width9)))
+             }
+			
+			 Y.get("#exzxhz_area div.nxyl div i").each(function (el, i){//填充到页面
+                 if (i in lastmiss9) {
+                     el.innerHTML = lastmiss9[i];
+                     curMax9 = max9[Y.getInt(i/width9)];
+                     if(curMax9 >= 20){
+                    	 el.style.color = lastmiss9[i] == curMax9 ? 'red' : '#B1B1B1' 
+                     }
+                                        
+                 }
+             });       
+    	}
     	for(var i=0; i<ld.length; i++){
         	var ul = this.get('.opencodebox',Class.C('lot_sub')[this.getPlayId()][1]).slice(i);
         	if(i%1==0){
