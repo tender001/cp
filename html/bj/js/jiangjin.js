@@ -30,7 +30,9 @@ Class( 'PrizePredict', {
 		this.prizePredictDialog.noMask = self != top;
 		this.prizePredictDialog.addClose('#close1');
 		this.prizePredictWrapper.find('.tantop').drag(this.prizePredictWrapper);
-
+		this.onMsg('msg_predict_max_prize', function() {
+			return this.predictMaxPrize();
+		});
 		this.get('#see_prize_predict').click( function(e) {
 			Y.C('clientY', e.clientY);  //记录下以便跨域时调整弹窗的位置
 			Y.nb = Y.postMsg('msg_get_touzhu_codes').data;
@@ -65,6 +67,83 @@ Class( 'PrizePredict', {
 			Y.showTable3(Y.get(this).attr('value'));
 		} );
 
+	},
+	predictMaxPrize : function() {
+		var Y= this;
+		Y.nb = Y.postMsg('msg_get_touzhu_codes').data;
+		if (Y.nb.length == 0) {
+			this.get('#maxmoney').html('￥0');
+			return;
+		}
+		Y.data = Y.postMsg('msg_get_data_4_prize_predict').data;
+		Y.count = Y.need('#match_num').html();
+		var gg_info = Y.postMsg('msg_get_gg_info_more').data;
+		Y.ggtype = gg_info.gggroup;
+		Y.ggmode = gg_info.sgtypename;
+		if (Y.ggmode == '') {
+			this.get('#maxmoney').html('￥0');
+			return;
+		}
+		var danma = Y.postMsg('msg_get_danma').data;
+		Y.nb.each( function(item) {
+			item.dan = danma[item.index]; //存储胆码
+		} );
+		Y.zhushu = parseInt(Y.need('#zhushu').html());
+		Y.beishu = parseInt(Y.need('#beishu_input').val());
+		if (Y.zhushu == 0 || !Y.beishu) return;
+		Y.base = 2 * 0.65 * Y.beishu;
+		Y.ar = Y.ggtype==3 ? Y.arrayEach(Y.ggmode.split(','),function(s){return Y.type2nm[s].n},[]).reverse() : Y.ggm2num[Y.ggmode];
+		this.showTable1();
+		var Y = this;
+		this.nocutlist = {max:null,min:null};
+		//if(this.pageType=='info')while(sg_bonus.ar[0]>MMM)sg_bonus.ar.shift();
+//		var ti = this.arrayEach(this.ar, function(i){return '<td>'+Y.num2ggm[i]+'</td>'}, []);
+		var html = [], n, o, minb, maxb, mina, maxa, minn, maxn, num, tn;
+//		html[0] = '<tr><td class="td1" rowspan="2">命中场数</td><td colspan="'+ti.length+'" class="td2">中奖注数</td><td rowspan="2" class="td1">倍数</td><td colspan="2" class="td2">奖金范围</td></tr>';
+//		html[1] = '<tr>'+ti.join("")+'<td>最大奖金</td><td>最小奖金</td></tr>';
+		var iscut = this.ggtype==3 || this.iscut;
+		var mMax = 0, mMin = 999999999;
+		var _i = 0;
+		var j=0;
+		if (j==0){
+			n = this.count-j, minb = "0", maxb = "0", minn=0, maxn=0;
+			//if(sg_vote.pageType=='info' && n!=MMM)continue;
+			maxa = this.getX(Y.sp.max.d, Y.sp.max.t, Y.ar, iscut, n, "max");
+			mina = this.getX(Y.sp.min.d, Y.sp.min.t, Y.ar, iscut, n, "min");
+			num = {};
+			this.ar.each( function(n){num[n]=0} )
+			for (var k=0; k<maxa.length; k++){
+				tn = this.arrayMultiple(this.arrayEach(maxa[k],function(s){return Y.spn[s]},[]));
+				if (tn>0){
+					++num[maxa[k].length];
+					maxn += tn;
+				}
+			}
+			for (var k=0; k<maxa.length; k++){
+				minn += this.arrayMultiple(this.arrayEach(mina[k],function(s){return Y.spn[s]},[]));
+			}
+			num = this.objectEach(num, function(n){return '<td>'+n+'注</td>'}, []).join("");
+			if (maxn>0){
+				if(maxn*this.base>mMax)mMax = maxn*this.base;
+				maxb = "￥"+ (maxn*this.base).toFixed(2) ;
+			}
+			
+		}
+		this.get('#maxmoney').html( maxb );
+//		if (this.hitItem.length==0||allIsBadDan){
+//			this.get('#see_prize_predict').html('0-0');
+//			this.table2.empty();
+//			this.get('<tr class="last_tr"><td class="last_td" colspan="5"><span class="red">当前缺少sp值，暂时无法计算奖金。</span></td></tr>').insert(this.table2);
+//			return false;
+//		}else{
+//			if(this.ggmode == '单关'){
+//				var mn = this.zhushu * 2;
+//				mMin = mMin<mn?mn:mMin;
+//				mMax = mMax<mn?mn:mMax;
+//			}
+//			this.get('#see_prize_predict').html( [mMin.toFixed(), mMax.toFixed()].join('-') );
+//		}
+	
 	},
 
 	showPrizePredict : function() {

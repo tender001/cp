@@ -1219,6 +1219,7 @@ Class( 'TouzhuResult', {
 		this.zhushu = this.countZhushu();
 		this.totalSum = this.zhushu * this.beishu * 2;
 		this.updateHtml();
+		this.postMsg('msg_predict_max_prize');//
 	},
 
 	updateHtml : function() {
@@ -1233,7 +1234,42 @@ Class( 'TouzhuResult', {
 		this.totalSumTag.html(this.totalSum.rmb(true, 0)); //更新投注金额
 //		log('选号耗时：' + (new Date - Class.config('d')))
 	},
+	arrayEach : function(a, cb, r){
+		if(r) for(var i=0,t,l=a.length;i<l;i++)(t=cb(a[i],i))!=undefined&&r.push(t);
+		else for(var i=a.length-1;i>=0;i--)(a[i]=cb(a[i],i))==undefined&&a.splice(i,1);
+		return r||a;
+	},
 
+	//设置SP值
+	setSP : function(sp){
+		var Y = this;
+		this.sp = {min:{d:[],t:[]}, max:{d:[],t:[]}};
+		this.spn = {};
+		sp.each( function(a, i){
+			//if(sg_vote.pageType=='info' && a[1] == 0 && a[2] == 0)return;
+			this.MMM++;
+			var min = "[" + a[0]+"]" + a[1];
+			var max = "[" + a[0]+"]" + a[2];
+			this.spn[min] = +a[1];
+			this.spn[max] = +a[2];
+			this.sp.min[a[3]?"d":"t"].push(min);
+			this.sp.max[a[3]?"d":"t"].push(max);
+		}, this );
+		var f1 = function(a,b){return Y.spn[a]-Y.spn[b]};
+		var f2 = function(a,b){return Y.spn[b]-Y.spn[a]};
+		this.sp.min.d.sort(f1);
+		this.sp.min.t.sort(f1);
+		this.sp.max.d.sort(f2);
+		this.sp.max.t.sort(f2);
+	},
+
+	//获取串
+	getX : function(spd, spt, ggmode, iscut, hitnum, m){
+		var dn = spd.length;
+		var tn = spt.length;
+		var n = hitnum - dn;
+		return this.getByIsCut(spd.slice(0, n>0?dn:dn+n), spt.slice(0,n>0?n:0), ggmode);
+	},
 	getTouzhuResult4Submit : function() {
 		return {
 			zhushu : this.zhushu,

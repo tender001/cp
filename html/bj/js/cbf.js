@@ -1520,6 +1520,7 @@ Class( 'TouzhuResult', {
 		this.zhushu = this.countZhushu();
 		this.totalSum = this.zhushu * this.beishu * 2;
 		this.updateHtml();
+		this.postMsg('msg_predict_max_prize');//
 	},
 
 	updateHtml : function() {
