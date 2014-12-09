@@ -2351,7 +2351,7 @@ Class('openCodeList', {
                      el.innerHTML = lastmiss1[i];
                      curMax1 = max1[Y.getInt(i/width1)];
                      if(curMax1 >= 20){
-                    	 el.style.color = lastmiss1[i] == curMax1 ? 'red' : '#B1B1B1' 
+                    	 el.style.color = lastmiss1[i] == curMax1 ? '#e52e04' : '#B1B1B1';
                      }
                                         
                  }
@@ -2377,7 +2377,7 @@ Class('openCodeList', {
                      el.innerHTML = lastmiss2[i];
                      curMax2 = max2[Y.getInt(i/width2)];
                      if(curMax2 >= 20){
-                    	 el.style.color = lastmiss2[i] == curMax2 ? 'red' : '#B1B1B1';
+                    	 el.style.color = lastmiss2[i] == curMax2 ? 'red' : '#ccc';
                      }
                                         
                  }
@@ -2403,7 +2403,7 @@ Class('openCodeList', {
                      el.innerHTML = lastmiss3[i];
                      curMax3 = max3[Y.getInt(i/width3)];
                      if(curMax3>= 20){
-                    	 el.style.color = lastmiss3[i] == curMax3 ? 'red' : '#B1B1B1';
+                    	 el.style.color = lastmiss3[i] == curMax3 ? '#e52e04' : '#ccc';
                      }
                                         
                  }
@@ -2429,7 +2429,7 @@ Class('openCodeList', {
                      el.innerHTML = lastmiss5[i];
                      curMax5 = max5[Y.getInt(i/width5)];
                      if(curMax5>= 20){
-                    	 el.style.color = lastmiss5[i] == curMax5 ? 'red' : '#B1B1B1';
+                    	 el.style.color = lastmiss5[i] == curMax5 ? '#e52e04' : '#ccc';
                      }
                                         
                  }
@@ -2453,7 +2453,7 @@ Class('openCodeList', {
                      el.innerHTML = lastmiss0[i];
                      curMax0 = max0[Y.getInt(i/width0)];
                      if(curMax0 >= 20){
-                    	 el.style.color = lastmiss0[i] == curMax0 ? 'red' : '#B1B1B1' 
+                    	 el.style.color = lastmiss0[i] == curMax0 ? '#e52e04' : '#ccc' ;
                      }
                                         
                  }
