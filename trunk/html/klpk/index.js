@@ -2387,7 +2387,7 @@ Class('openCodeList', {
 			var llcc1=llpid.m8.split(",");
 			var llcc=llpid.m3.split(",");
 			$("#haoma_3 div.nxyl div").html(ctp2.format(llcc1[0],llcc[0],llcc[1],llcc[2],llcc[3],llcc[4],llcc[5],llcc[6],llcc[7],llcc[8],llcc[9],llcc[10],llcc[11]));
-	    	lastmiss8=lastmiss.m8
+	    	lastmiss8=lastmiss.m8;
 			lastmiss3=lastmiss.m3 ;
 			lastmiss3 = lastmiss8 +","+ lastmiss3; 
 			lastmiss3 = lastmiss3.split(",");
@@ -2395,10 +2395,10 @@ Class('openCodeList', {
 			 max3 = [];
 			 width3 = ~~lastmiss3.width || lastmiss3.length;
 			 for (var i = 1; i < lastmiss3.length; i+=width3) {//多位排列进行折算行最大值
-                 max3.push(Math.max.apply(Math.max,lastmiss3.slice(i,i+width3)))
+                 max3.push(Math.max.apply(Math.max,lastmiss3.slice(i,i+width3)));
              }
 			
-			 Y.get("#haoma_2 div.nxyl div i").each(function (el, i){//填充到页面
+			 Y.get("#haoma_3 div.nxyl div i").each(function (el, i){//填充到页面
                  if (i in lastmiss3) {
                      el.innerHTML = lastmiss3[i];
                      curMax3 = max3[Y.getInt(i/width3)];
