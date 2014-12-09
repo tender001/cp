@@ -648,7 +648,7 @@ em.uf{ background-image:url(../images/159/uf.gif)}
 .head_r ul li{padding:0 3px}
 .jckj_tb p.note{ background-image:none;padding-left:20px}
 .tkts p{background-image:none;}
-.nxhm span{float:left;height:38px;line-height:38px}
+.nxhm span{float:left;height: 38px;line-height: 38px}
 .pad-l .ball{padding-left:104px}
 .pad-l .ball b{margin-right:8px}
 .pad-l .nsopr{margin:0}
@@ -673,8 +673,9 @@ em.uf{ background-image:url(../images/159/uf.gif)}
 .nsopr b.bem{color:#e52e04;float:left;margin-left:10px;cursor:pointer;width:24px;background:none}
 .nsopr b.bem:hover{ text-decoration:underline;color:#000;background:none}
 .nxsd{clear:both;padding-top:4px;padding-bottom:0;_padding-top:0;height:24px;margin-left:-56px}
-.nxsd span{width:49px;height:24px;float:left; background:url(../images/159/nx_45.jpg);cursor:pointer}
-.nxsd input{display:inline;margin:5px 11px 0 20px;zoom:1;*margin:5px 9px 0 14px; }
+.nxsd span{float:left;width:46px;height:14px;line-height:14px;background:url(../images/bg/dan-bg.jpg) 23px 0 no-repeat;cursor:pointer;-webkit-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;}
+.nxsd span.cur{background-position:23px -13px}
+.nxsd input{display:inline;margin:5px 11px 0 20px;zoom:1;*margin:5px 9px 0 14px;}
 *html .nxsd input{*margin:5px 8px 0 13px; }
 .xh_text em{color:#f60;font-weight:bold}
 a.sz_cmtcur{background:url(../images/159/nx5s_11.jpg);}
