@@ -657,6 +657,7 @@ em.uf{ background-image:url(../images/159/uf.gif)}
 .pad-ssc .nxyl{padding:0 0 0 68px}
 #haoma .nxyl{margin:0 0 0 -2px}
 #haoma .nxyl span{width:2em}
+.w_con .nxyl span{color:#fff !important}
 #haoma .nxyl i{width:60px;margin-right:11px;color:#333 !important;_display:inline}
 .pok .nxyl{height:auto;position:absolute;top:70px;left:83px;overflow:visible}
 #haoma_3 .nxyl i{width:93px;margin-right:36px;margin-bottom:70px;color:#333}
@@ -1863,7 +1864,7 @@ a.sz_cmt{background: url(../images/cai888/nwx5_112.jpg);width:137px;height:33px}
 .w_con .nxmiddle{background: url(../images/ssc_bg/w_bg_2.jpg) repeat;}
 .w_con .nxmiddle h2 p{float: none;padding-left: 35px;color: #ccc;}
 .w_con .nxmiddle h2 p em{color: #efd41f;}
-.w_con .nx3span{width: 965px;padding:20px 0;margin: 0 auto;background-color: #05a06f;overflow:visible;zoom:1}
+.w_con .nx3span{width: 965px;margin: 0 auto;padding:20px 0 20px 8px;background-color: #05a06f;overflow:visible;zoom:1}
 .w_con .nx3span:after{display:table;content:"";clear:both}
 .w_con .nxhm span{height: auto;margin-left: 20px;padding:0 !important;zoom:1;}
 .w_con .nxhm span:after{visibility:hidden;display:block;font-size:0;content:" ";clear:both;height: 0;}
