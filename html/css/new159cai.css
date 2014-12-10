@@ -673,7 +673,7 @@ em.uf{ background-image:url(../images/159/uf.gif)}
 .nsopr b.bem{color:#e52e04;float:left;margin-left:10px;cursor:pointer;width:24px;background:none}
 .nsopr b.bem:hover{ text-decoration:underline;color:#000;background:none}
 .nxsd{clear:both;padding-top:4px;padding-bottom:0;_padding-top:0;height:24px;margin-left:-56px}
-.nxsd span{float:left;width:46px;height:14px;line-height:14px;margin:3px 0 0;background:url(../images/bg/dan-bg.jpg) 27px 0 no-repeat;cursor:pointer;-webkit-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;}
+.nxsd span{float:left;width:46px;height:14px;line-height:14px;margin:3px 0 0;color:#b1b1b1;background:url(../images/bg/dan-bg.jpg) 27px 0 no-repeat;cursor:pointer;-webkit-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;}
 .nxsd span.cur{background-position:27px -13px}
 .nxsd input{display:inline;margin:5px 11px 0 20px;zoom:1;*margin:5px 9px 0 14px;}
 *html .nxsd input{*margin:5px 8px 0 13px; }
