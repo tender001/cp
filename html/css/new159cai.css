@@ -659,9 +659,9 @@ em.uf{ background-image:url(../images/159/uf.gif)}
 #haoma .nxyl span{width:2em}
 .w_con .nxyl span{color:#fff !important}
 #haoma .nxyl i{width:60px;margin-right:11px;color:#ccc !important;_display:inline}
-.pok .nxyl{height:auto;position:absolute;top:70px;left:83px;overflow:visible}
-#haoma_3 .nxyl i{width:93px;margin-right:36px;margin-bottom:70px;color:#333}
-#haoma_5 .nxyl i{width:72px;margin-right:36px;margin-bottom:70px;color:#333}
+.pok .nxyl{height:auto;position:absolute;top:70px;left:83px;z-index:10;overflow:visible}
+#haoma_3 .nxyl i{width:93px;margin-right:36px;margin-bottom:70px;padding-bottom:15px;color:#333}
+#haoma_5 .nxyl i{width:72px;margin-right:36px;margin-bottom:70px;padding-bottom:15px;color:#333}
 .pok-yl{padding-bottom:10px}
 .pok-yl .nxyl{top:126px;left:190px}
 .pok-yl .nxyl i{width:98px;margin-right:36px;}
@@ -699,12 +699,12 @@ a.asz_tz{margin:0 auto}
 .kc_td_kj table thead td{font-size:12px}
 .nx3span{clear:both;padding:8px 0 0 90px;zoom:1;}
 .szzx{padding-left: 135px}
-.nxhm span.nsbools{width:340px;height:auto;padding-bottom:15px;padding-right:20px;position:relative}
-.nxhm span.nsbools b{margin-bottom:15px;margin-right:4px;}
+.nxhm span.nsbools{width:340px;height:auto;padding-bottom:15px;padding-right:20px;position:relative;z-index:9}
+.nxhm span.nsbools b{margin-bottom:15px;margin-right:4px;position:relative;z-index:15}
 .nxhm span.nsboolss{width:280px;padding-right:0;height:auto}
 .nxhm span.nsboolss b{margin-right:1px;}
 .nsbools span{float: left;line-height:24px;position:absolute;top:40px;left:-25px;}
-.nsbools s{position:absolute;top:40px;left:-3px;}
+.nsbools s{position:absolute;top:40px;left:-3px;z-index:10}
 .ball-yl i{float: left;width: 45px;height: 24px;line-height:24px;margin:0 3px 34px 0;text-align: center}
 .nsboolss .ball-yl i{margin-right: 0}
 .tan_top_r{background-image: url(../images/cdbg/m_tan_06.png)}
@@ -1971,7 +1971,7 @@ a.sz_cmt{background: url(../images/cai888/nwx5_112.jpg);width:137px;height:33px}
 .w_con .p_time em{display: block;height: 5px;background-color: #efd41f;overflow: hidden;}
 .xh_tonghua{overflow: visible;zoom: 1;}
 .xh_tonghua:after{visibility:hidden;display:block;font-size:0;content:" ";clear:both;}
-.pok{padding-left: 40px;overflow: visible;position:relative;zoom: 1;}
+.pok{padding-left: 40px;overflow: visible;position:relative;z-index:9;zoom: 1;}
 .pok:after{visibility:hidden;display:block;font-size:0;content:" ";clear:both;}
 .pok dl{margin-top: 12px;zoom:1;}
 /*.pok dl:after{visibility:hidden;display:block;font-size:0;content:" ";clear:both;}*/
@@ -1994,7 +1994,7 @@ a.sz_cmt{background: url(../images/cai888/nwx5_112.jpg);width:137px;height:33px}
 .xh_duizi .pok dl.pok_hua dt{height: 120px;width: 65px;}
 .xh_tonghua .pok dl dd{height:132px;margin-right: 37px;background: url("../images/ssc_bg/3.png") no-repeat;_display: inline;}
 .xh_tonghua .pok dl dd.cur,.xh_tonghua .pok dl dd:hover{background: url("../images/ssc_bg/3hover.png") no-repeat;}
-.xh_duizi .pok dl.pok_hua dd{width: 72px;height: 73px;margin: 0 0 24px 36px;background: url("../images/ssc_bg/1.png") no-repeat;}
+.xh_duizi .pok dl.pok_hua dd{width: 72px;height: 73px;margin: 0 0 39px 36px;background: url("../images/ssc_bg/1.png") no-repeat;position:relative;z-index:15}
 .xh_duizi .pok dl.pok_hua dd.cur,.xh_duizi .pok dl.pok_hua dd:hover{background: url("../images/ssc_bg/1hover.png") no-repeat;}
 .xh_duizi .pok dl.pok_hua_3 dd{width: 93px;background: url("../images/ssc_bg/2.png") no-repeat;}
 .xh_duizi .pok dl.pok_hua_3 dd.cur,.xh_duizi .pok dl.pok_hua_3 dd:hover{background: url("../images/ssc_bg/2hover.png") no-repeat;}
