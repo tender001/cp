@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head><title>
+	中奖列表-159彩票网
+</title>
+<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=1' name='viewport' />
+<meta content='yes' name='apple-mobile-web-app-capable' />
+<meta content='black' name='apple-mobile-web-app-status-bar-style' />
+<meta content='telephone=no' name='format-detection' />
+<script src='/js/jquery.js'></script>
+<script src='/js/159cp.js'></script>
+<script src='/js/base.js'></script>
+<script src='/js/login.js'></script>
+<script src='/js/pzlist.js'></script>
+<link rel='stylesheet' href='/style/main.css' />
+<link href="/images/touch-icon.png" rel="apple-touch-icon-precomposed" /> 
+<style>
+.list td{line-height:30px;padding:2px;border-top:1px solid #A7BCCD;}
+.red{color:Red;font-weight:bold;}
+</style>
+</head>
+<body>
+<!--#include virtual="/cc/login.html"-->
+<script>
+$(document).ready(function() {
+	chklogin();
+	loadprize();
+});
+</script>
+<div class="bar red">中奖列表
+<div style="float:right;"><select name="ddlType" id="ddlType" onchange="changePrizeGame(this)">
+	<option value="01" id="g01">双色球</option>
+	<option value="03" id="g03">福彩3D</option>
+	<option value="07" id="g07">七乐彩</option>
+	<option value="50" id="g50">超级大乐透</option>
+	<option value="51" id="g51">七星彩</option>
+	<option value="53" id="g53">排列3</option>
+	<option value="52" id="g50">排列5</option>
+	
+	<option value="90" id="g90">竞彩胜平负</option>
+	<option value="72" id="g72">竞彩让球胜平负</option>
+	<option value="93" id="g93">竞彩进球数</option>
+	<option value="92" id="g92">竞彩半全场</option>
+	<option value="91" id="g91">竞彩比分</option>
+	<option value="70" id="g70" selected="selected">竞彩混合过关</option>
+	
+	<option value="94" id="g94">篮彩胜负</option>
+	<option value="95" id="g95">篮彩让分胜负</option>
+	<option value="96" id="g96">篮彩胜分差</option>
+	<option value="97" id="g97">篮彩大小分</option>
+	<option value="71" id="g71">篮彩混合过关</option>
+	
+	<option value="80" id="g80">胜负彩</option>
+	<option value="81" id="g81">任选九</option>
+	<option value="83" id="g82">六场半全场</option>
+	<option value="82" id="g83">四场进球</option>
+	
+	<option value="85" id="g85">单场胜平负</option>
+	<option value="86" id="g86">单场比分</option>
+	<option value="87" id="g87">单场半全场</option>
+	<option value="88" id="g88">单场上下单双</option>
+	<option value="89" id="g89">单场总进球数</option>
+</select>
+<select name="ddlIssue" id="ddlIssue" onchange="changePrizeExpect(this)">
+</select></div>
+</div>
+<div style="padding-bottom:5px;" id="prizelist">
+	加载中,请稍候...
+</div>
+<div style="padding-bottom:10px;">
+	<div id="page" style="width:100%;text-align:left;">
+		
+	</div>
+</div>
+<!--#include virtual="/cc/footer.html"-->
+</form>
+</body>
+</html>
