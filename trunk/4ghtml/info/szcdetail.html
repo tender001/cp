@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html><head><title>
+	开奖查询-手机159彩票网
+</title>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=1;">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="format-detection" content="telephone=no">
+<script src='/js/jquery.js'></script>
+<script src='/js/159cp.js'></script>
+<script src='/js/base.js'></script>
+<script src='/js/login.js'></script>
+<script src="/js/szcdetail.js"></script>
+<link rel='stylesheet' href='/style/main.css' />
+<link href="/images/touch-icon.png" rel="apple-touch-icon-precomposed" /> 
+<style>
+    .list td { text-align: left; line-height: 25px; padding-left: 5px; }
+#info { padding: 5px; margin-bottom: 5px; }
+#info table { background-color: #E0E0E0;width:100%; }
+#info th { background: #F8E9BD;padding:2px; }
+#info td { background: #fff; } 
+</style>
+</head>
+<body>
+<!--#include virtual="/cc/login.html"-->
+<script>
+$(document).ready(function() {
+	chklogin();
+	resultdetail2();
+// 	goexpect();
+});
+</script>
+
+
+<div class="bar">
+<span id="type1">双色球开奖</span><div style="float:right;">
+			<select onchange="location.href=this.options[this.selectedIndex].value;" id="sel"></select>期
+		</div>
+</div>
+
+<div id="info">
+		<div id="details"></div>
+		<div id="details2">
+		</div>
+			开奖情况：<br>
+		
+		<table border="0" cellspacing="1" cellpadding="1" class="bonus">
+			<tbody><tr>
+				<th>奖项</th><th>中奖注数</th><th>单注奖金(元)</th>
+			</tr>
+			</tbody><tbody id="tbody"></tbody>
+			<tbody id="tbody2">
+			</tbody>
+		</table>
+</div>
+	<!-- 页脚内容 -->
+  <!--#include virtual="/cc/footer.html"-->
+
+</body></html>

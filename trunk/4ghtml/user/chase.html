@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head><title>
+	追号记录-手机159彩票网
+</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=1;' name='viewport' />
+<meta content='yes' name='apple-mobile-web-app-capable' />
+<meta content='black' name='apple-mobile-web-app-status-bar-style' />
+<meta content='telephone=no' name='format-detection' />
+<script src='/js/jquery.js'></script>
+<script src='/js/159cp.js'></script>
+<script src='/js/base.js'></script>
+<script src='/js/login.js'></script>
+<script src='/js/chase.js'></script>
+<link rel='stylesheet' href='/style/main.css' />
+<link href="/images/apple-touch-icon.png" rel="apple-touch-icon-precomposed" /> 
+<link rel='stylesheet' href='/style/user.css' /></head>
+<body>
+<!--#include virtual="/cc/login.html"-->
+<div class="title"><div class="title"><a href="/">首页</a>><a href="/user/account.html">用户中心</a>>追号记录</div></div>
+<div class="arearound">
+<select name="gid" id="gid" style="width:75px;">
+	<option value="">全部彩种</option>
+	<option value="1">双色球</option>
+	<option value="3">福彩3D </option>
+	<option value="7">七乐彩</option>
+	<option value="50">超级大乐透</option>
+	<option value="51">七星彩</option>
+	<option value="52">排列5</option>
+	<option value="53">排列3</option>
+	<option value="54">11选5</option>
+</select>
+<select name="type" id="type">
+	<option value="2" selected>全部</option>
+	<option value="0">进行中</option>
+	<option value="1">已完成</option>
+</select>
+<select name="sDate" id="sDate">
+	<option value="7" selected="selected">近一周</option>
+	<option value="30">近一月</option>
+	<option value="90">近三月</option>
+</select>
+<a href="javascript:void(0);" class="btn"  id="btnsearch">查询</a>
+</div>
+<div id="divShowList">
+	<div class="topround" id="div_nodata">
+	    <font color="#F18D8D"><b>该时间段没有记录</b></font>
+	</div>
+	<div id="div_data" style="display:none;">
+		<table cellpadding="0" cellspacing="0" border=0 style="width:100%;">
+		   <tbody id="tdata">
+		   </tbody>
+		</table>
+	</div>
+	<div class="topround" id="page"></div>
+</div>
+<!--#include virtual="/cc/footer.html"-->
+<div class="clear"></div>
+</body>
+</html>
