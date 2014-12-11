@@ -1,0 +1,62 @@
+@CHARSET "UTF-8";
+* {
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+
+.xlsj {
+	padding-bottom: 60px;
+}
+
+.xlsj label {
+	display: block;
+	color: #777;
+	padding: 0 10px;
+	margin-top: 6px;
+}
+
+.xlsj b {
+	display: block;
+	padding-bottom: 6px;
+	font-size: 1.3em;
+	padding: 0 10px;
+	color: #000;
+	margin-top: 12px;
+}
+
+.xlsj img {
+	display: block;
+	width: 100%;
+}
+
+
+.ops-btn {
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+	float: left;
+}
+
+.xlsj button:hover {
+	background-color: #EDEDED;
+}
+
+.ui-btn {
+	cursor: pointer;
+	display: block;
+	font-size: 16px;
+	overflow: hidden;
+	padding: 0.7em 1em;
+	text-align: center;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	border-style: solid;
+	border-color: #DDDDDD;
+	border-width: 1px;
+	font-weight: 700;
+	background-color: #F6F6F6;
+	float: left;
+	width: 50%;
+	color: #232323;
+}
