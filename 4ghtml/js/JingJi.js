@@ -79,7 +79,7 @@ function LoadMatchList() {
                         					+'<li class="tz-true"><em>vs<br>平</em><span>赔率'+jj.wl1+'</span></li>'
                         					+'<li class="tz-true"><em>'+ jj.home  +'<br>胜</em><span>赔率'+jj.wl0+'</span></li>'
                         	}else{
-                        		newmatchHTML+='<li class="tz-true"><em onclick="ChooseMatch(this)" n="3" value="1" name="'+jj.ID+'">'+ jj.home +''+ (typeID >= 110 || jj.rq == "0" ? "" : "<span style='color:" + (jj.rq.indexOf("-") == -1 ? "red" : "green") + "'>(" +(jj.rq.indexOf("-") == -1 ? "+" : "")+ jj.rq + ")</span>") +'<br>胜</em><span>赔率'+jj.wl3+'</span></li>'
+                        		newmatchHTML+='<li class="tz-true"><em onclick="ChooseMatch(this)" n="3" value="1" name="'+jj.ID+'">'+ jj.home +''+ (typeID >= 110 || jj.rq == "0" ? "" : "<i style='color:" + (jj.rq.indexOf("-") == -1 ? "red" : "green") + "'>(" +(jj.rq.indexOf("-") == -1 ? "+" : "")+ jj.rq + ")</i>") +'<br>胜</em><span>赔率'+jj.wl3+'</span></li>'
             					+'<li class="tz-true" ><em onclick="ChooseMatch(this)" n="1" value="2" name="'+jj.ID+'">vs<br>平</em><span>赔率'+jj.wl1+'</span></li>'
             					+'<li class="tz-true" ><em onclick="ChooseMatch(this)" n="0" value="3" name="'+jj.ID+'">'+ jj.guest +'<br>胜</em><span>赔率'+jj.wl0+'</span></li>'
 							}
@@ -250,8 +250,14 @@ function ChooseMatch(obj) {
                 obj.className = '';
                 return;
             }
-            chooseArray.push([n, $(obj).attr("value").toString(), '0']);
+//            var bets=[]
+//            $(obj).parent().parent().find("li").each(function(i,em){
+//            	bets.push($(em).find('em'))
+//            })
+            chooseArray.push([n, $(obj).attr("value").toString(), '0', $(obj).parent().parent()]);
+//            addbetinfo($(obj).parent());
             if (byID("op_" + n)) byID("op_" + n).innerHTML = "已选1项";
+            $('#betnum').html(chooseArray.length)
         }
     }
     else {
@@ -289,6 +295,39 @@ function ChooseMatch(obj) {
 //        }
 //    }
     CountLot();
+}
+//确认投注
+function betconfirm(){
+//	var bethtml=$("xx");
+//	if(bool){
+//		bethtml.append(obj);
+//	}else{
+////		if()
+//		$(removeid).remove();
+//	}
+	
+//	 chooseArray.push([n, $(obj).attr("value").toString(), '0',bets]);
+	if(chooseArray.length<2){
+		showTips('至少选择两个场次投注!');
+		return;
+	}
+    for (var i = 0; i < chooseArray.length; i++) {
+		var 
+		cList='<ul class="spfNum list-r fn-clearfix" bet="'+chooseArray[i][0]+'"><cite class="errorBg" onClick="Reone('+chooseArray[i][0]+')"><em class="error2"></em></cite>'+ $(chooseArray[i][3]).html()+'</ul>'
+		$("#confirmhtml").append(cList)
+    }
+    showbuy(true);
+    
+	
+}
+function showbuy(istrue){
+    if(istrue){
+    	$("#matchList,#buyFooter1").hide();
+    	$("#content_home").show();
+    }else{
+    	$("#matchList,#buyFooter1").show();
+    	$("#content_home").hide();
+    }
 }
 //选胆
 function ChooseDan(obj) {
@@ -676,6 +715,25 @@ setTimeout("LoadMatchList();$('body').append('<div></div>'); ", 1);
 function ReChoose() {
     ReloadInit();
     LoadMatchList();
+}
+function Reconfirm(){
+	$("em[n]").removeClass("cur");
+	$("#betnum").html(0);
+	chooseArray=[];
+}
+function Reone(id){
+	$("ul[bet="+id+"]").remove();
+
+	for(var ele in chooseArray){
+		if(chooseArray[ele]===undefined){
+			return;
+		}
+		if(chooseArray[ele][0]==id){
+			chooseArray.remove(ele);
+		}
+		
+	}
+	$("#betnum").html(chooseArray.length);
 }
 function DisplayFilter() {
     if (allSclass) {
