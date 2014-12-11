@@ -65,25 +65,25 @@ function LoadMatchList() {
 					}
 					
                     var matchHTML = "";
+                    var newmatchHTML = "";
 					var leftTime = "<font class='timeSpn'>"+jj.MID+"<br>"+jj.Time.replace(" ", "<br>")+"</font>";
                     if (typeID == 5 || typeID == 101 || typeID == 105 || typeID == 111 || typeID == 112 || typeID == 114 ) {
-                        matchHTML += "<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" class=\"match\">"
-							+ "<tr><td rowspan=\"3\" class='matchL'><div style=\"background-color:" + jj.color + ";\" class=\"Sclass Fillet\">" + jj.sclass + "</div>"
-							+ leftTime + "</td>";
-							if(typeID == 111 || typeID == 112|| typeID == 114|| typeID == 113){
-								matchHTML+= "<td> " + jj.guest + " " + (typeID >= 110 || jj.rq == "0" ? "VS" : "<span style='color:" + (jj.rq.indexOf("-") == -1 ? "red" : "green") + "'>" +(jj.rq.indexOf("-") == -1 ? "+" : "")+ jj.rq + "</span>") +"" + jj.home + " (<font color=red>主</font>)</td>";
-							}else{
-								matchHTML+= "<td>" + jj.home + " " + (typeID >= 110 || jj.rq == "0" ? "VS" : "<span style='color:" + (jj.rq.indexOf("-") == -1 ? "red" : "green") + "'>" +(jj.rq.indexOf("-") == -1 ? "+" : "")+ jj.rq + "</span>") + " " + jj.guest + "</td>";
+                    	newmatchHTML += '<div class="tz">'
+                        	+'<section class="tz-list">'
+                        	+'<p class="list-l"><em>'+jj.MID+'</em><cite>'+ jj.sclass +'</cite><i>'+jj.Time.split(" ")[1]+'&nbsp;截止</i></p>'
+                        	+'<ul class="list-r">'
+                        	if(typeID == 111 || typeID == 112|| typeID == 114|| typeID == 113){
+                        		newmatchHTML+='<li class="tz-true"><em class="cur">'+ jj.guest +'<br>胜</em><span>赔率1.04</span></li>'
+                        					+'<li class="tz-true"><em>vs<br>平</em><span>赔率1.04</span></li>'
+                        					+'<li class="tz-true"><em>'+ jj.home  +'<br>胜</em><span>赔率1.04</span></li>'
+                        	}else{
+                        		newmatchHTML+='<li class="tz-true"><em class="cur">'+ jj.home +'<br>胜</em><span>赔率1.04</span></li>'
+            					+'<li class="tz-true"><em>vs<br>平</em><span>赔率1.04</span></li>'
+            					+'<li class="tz-true"><em>'+ jj.guest +'<br>胜</em><span>赔率1.04</span></li>'
 							}
-						
-							matchHTML+=  "<td width='20%'><div class=\"mXi\">"+jj.MID+"</div></td></tr>"
-							+"<tr><td>"+oddsHTML+"</td><td class='md'>"+(typeID==112?"亚赔":typeID==114?"大小":"欧赔")+"</td></tr>"
-							+ "<tr><td>";
-                        for (var l = 0; l < kList.length; l++) {
-                            matchHTML += "<div class='mBTN' name='" + jj.ID + "' value='" + (l + 1) + "' n='" + cList[l] + "' onclick='ChooseMatch(this)'>" + nList[l] + "<span class='odds'>"+jj[kList[l]] + "</span></div>";
-							if(l==0 && typeID >=112) matchHTML += "<div class='mo'><span style='color:" + (jj.rq.indexOf("-") == -1 ? "red" : "green") + "'>" + jj.rq + "</span></div>"
-                        }
-                        matchHTML += "</td><td>" + (OddsType == 2 ? "<div class='mDan1' id='D" + jj.ID + "' onclick='ChooseDan(this)'>胆</div>" : "") + "</td></tr></table>";
+                    		newmatchHTML+='</ul></section></div>'
+                    			
+							
                     }
 					else if(typeID == 100 || typeID == 110)
 					{
@@ -203,7 +203,7 @@ function LoadMatchList() {
                         if (nHTML != "") matchHTML += "<div>" + nHTML + "</div>";
                         matchHTML += "</td></tr></table>";
                     }
-                    $("#matchList").append(matchHTML);
+                    $("#matchList").append(newmatchHTML);
                     lastID = jj.ID;
 
                     matchArray.push(jj);
