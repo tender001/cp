@@ -18,3 +18,6 @@ table{border-collapse:collapse;border-spacing:0}
 .fn-show{display:block}
 .fn-hide{display:none}
 @media screen and (-webkit-min-device-pixel-ratio:0){input{line-height:normal !important}}
+/*右-点击*/
+.ico-click i{float:right;width:1em;height:1em;margin-right:1.4em;border-top:3px solid #b0b0b0;border-right:3px solid #b0b0b0;position:relative;-webkit-transform: rotate(-45deg);-moz-transform: rotate(-45deg);-o-transform: rotate(-45deg);transform:rotate(-45deg)}
+.ico-click .cur{top:-0.3em;-webkit-transform: rotate(135deg);-moz-transform: rotate(135deg);-o-transform: rotate(135deg);transform:rotate(135deg)}
