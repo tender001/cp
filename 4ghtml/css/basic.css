@@ -1,0 +1,20 @@
+@charset "utf-8";
+body,section,footer,header,menu,nav,button,dd,dl,dt,fieldset,form,h1,h2,h3,h4,h5,h6,hr,input,legend,li,ul,ol,p,pre,th,td,textarea{margin:0;padding:0}
+html{color:#000;-webkit-backface-visibility: hidden;-webkit-font-smoothing: antialiased;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%}
+body{font:75%/1.5 sans-serif,Helvetica,Arial,"Hiragino Sans GB";background-color:#fff;}
+article,aside,details,figcaption,figure,footer,header,menu,nav,section{display:block}
+h1,h2,h3,h4,h5,h6{font-size:100%}
+button,input,select,textarea{font-size:100%}
+a{text-decoration:none;outline:0;}
+a:hover{text-decoration:underline}
+ol,ul,li{list-style:none;}
+i,em,cite{font-style:normal}
+img{border:0 none;vertical-align:top}
+fieldset{border:0 none}
+table{border-collapse:collapse;border-spacing:0}
+.fn-clear{zoom:1;}
+.fn-clear:after{visibility:hidden;display:block;font-size:0;content:" ";clear:both}
+.fn-clearfix:after{content:"";display:table;clear:both}
+.fn-show{display:block}
+.fn-hide{display:none}
+@media screen and (-webkit-min-device-pixel-ratio:0){input{line-height:normal !important}}
