@@ -66,20 +66,22 @@ function LoadMatchList() {
 					
                     var matchHTML = "";
                     var newmatchHTML = "";
+                    jj.guest=jj.guest.substr(0,5);
+                    jj.home=jj.home.substr(0,5);
 					var leftTime = "<font class='timeSpn'>"+jj.MID+"<br>"+jj.Time.replace(" ", "<br>")+"</font>";
                     if (typeID == 5 || typeID == 101 || typeID == 105 || typeID == 111 || typeID == 112 || typeID == 114 ) {
                     	newmatchHTML += '<div class="tz">'
                         	+'<section class="tz-list">'
-                        	+'<p class="list-l"><em>'+jj.MID+'</em><cite>'+ jj.sclass +'</cite><i>'+jj.Time.split(" ")[1]+'&nbsp;截止</i></p>'
+                        	+'<p class="list-l"><em>'+jj.MID+'</em><cite style="color:'+ jj.color +'">'+ jj.sclass +'</cite><i>'+jj.Time.split(" ")[1]+'&nbsp;截止</i></p>'
                         	+'<ul class="list-r">'
                         	if(typeID == 111 || typeID == 112|| typeID == 114|| typeID == 113){
-                        		newmatchHTML+='<li class="tz-true"><em class="cur">'+ jj.guest +'<br>胜</em><span>赔率1.04</span></li>'
-                        					+'<li class="tz-true"><em>vs<br>平</em><span>赔率1.04</span></li>'
-                        					+'<li class="tz-true"><em>'+ jj.home  +'<br>胜</em><span>赔率1.04</span></li>'
+                        		newmatchHTML+='<li class="tz-true"><em >'+ jj.guest +'<br>胜</em><span>赔率'+jj.wl3+'</span></li>'
+                        					+'<li class="tz-true"><em>vs<br>平</em><span>赔率'+jj.wl1+'</span></li>'
+                        					+'<li class="tz-true"><em>'+ jj.home  +'<br>胜</em><span>赔率'+jj.wl0+'</span></li>'
                         	}else{
-                        		newmatchHTML+='<li class="tz-true"><em class="cur">'+ jj.home +'<br>胜</em><span>赔率1.04</span></li>'
-            					+'<li class="tz-true"><em>vs<br>平</em><span>赔率1.04</span></li>'
-            					+'<li class="tz-true"><em>'+ jj.guest +'<br>胜</em><span>赔率1.04</span></li>'
+                        		newmatchHTML+='<li class="tz-true"><em onclick="ChooseMatch(this)" n="3" value="1" name="'+jj.ID+'">'+ jj.home +''+ (typeID >= 110 || jj.rq == "0" ? "" : "<span style='color:" + (jj.rq.indexOf("-") == -1 ? "red" : "green") + "'>(" +(jj.rq.indexOf("-") == -1 ? "+" : "")+ jj.rq + ")</span>") +'<br>胜</em><span>赔率'+jj.wl3+'</span></li>'
+            					+'<li class="tz-true" ><em onclick="ChooseMatch(this)" n="1" value="2" name="'+jj.ID+'">vs<br>平</em><span>赔率'+jj.wl1+'</span></li>'
+            					+'<li class="tz-true" ><em onclick="ChooseMatch(this)" n="0" value="3" name="'+jj.ID+'">'+ jj.guest +'<br>胜</em><span>赔率'+jj.wl0+'</span></li>'
 							}
                     		newmatchHTML+='</ul></section></div>'
                     			
@@ -228,8 +230,8 @@ function LoadMatchList() {
 //选号
 function ChooseMatch(obj) {
     var n = $(obj).attr("name").toString();
-    if (obj.className == "mBTN") {
-        obj.className = 'mBtnCheck';
+    if (obj.className == "") {
+        obj.className = 'cur';
         //<DIV class="mBtnCheck" n="1" value="2" name="182051">平2.95</DIV>
         var isNew = true;
         for (var i = 0; i < chooseArray.length; i++) {
@@ -245,7 +247,7 @@ function ChooseMatch(obj) {
         if (isNew) {
             if (typeID >= 100 && chooseArray.length >= 10) {
                 showTips("不能超过" + (typeID >= 100 ? "10" : "15") + "场！");
-                obj.className = 'mBTN';
+                obj.className = '';
                 return;
             }
             chooseArray.push([n, $(obj).attr("value").toString(), '0']);
@@ -253,7 +255,7 @@ function ChooseMatch(obj) {
         }
     }
     else {
-        obj.className = 'mBTN';
+        obj.className = '';
         for (var i = 0; i < chooseArray.length; i++) {
             var curL = chooseArray[i];
             if (curL[0] == n) {
@@ -268,24 +270,24 @@ function ChooseMatch(obj) {
         }
     }
 
-    if (OddsType == 2 && (byID("D" + n).className == "mDan1" && obj.className == 'mBtnCheck' || byID("D" + n).className != "mDan1" && obj.className == 'mBTN')) {
-        if (obj.className == 'mBtnCheck') byID("D" + n).className = "mDan";
-        else {
-            var list = byName(n);
-            var c = true;
-            for (var i = 0; i < list.length; i++) {
-                if (byID("D" + n).className == "mDan1" && list[i].className == "mBtnCheck") {
-                    byID("D" + n).className = "mDan";
-                    break;
-                }
-                if (byID("D" + n).className != "mDan1" && list[i].className == 'mBtnCheck') {
-                    c = false;
-                    break;
-                }
-            }
-            if (c && byID("D" + n).className != "mDan1") byID("D" + n).className = "mDan1";
-        }
-    }
+//    if (OddsType == 2 && (byID("D" + n).className == "mDan1" && obj.className == 'mBtnCheck' || byID("D" + n).className != "mDan1" && obj.className == '')) {
+//        if (obj.className == 'mBtnCheck') byID("D" + n).className = "mDan";
+//        else {
+//            var list = byName(n);
+//            var c = true;
+//            for (var i = 0; i < list.length; i++) {
+//                if (byID("D" + n).className == "mDan1" && list[i].className == "mBtnCheck") {
+//                    byID("D" + n).className = "mDan";
+//                    break;
+//                }
+//                if (byID("D" + n).className != "mDan1" && list[i].className == 'mBtnCheck') {
+//                    c = false;
+//                    break;
+//                }
+//            }
+//            if (c && byID("D" + n).className != "mDan1") byID("D" + n).className = "mDan1";
+//        }
+//    }
     CountLot();
 }
 //选胆
@@ -369,7 +371,7 @@ function CountLot() {
     $("#passModeList").html(html == "" ? "请选择" + (typeID <= 9 ? "1-15" : "2-10") + "场投注，已选" + chooseArray.length + "场" : html);
 
     //$("#footPreView").html(chooseArray.length>0?"共选择"+chooseArray.length+"场":"请选择投注内容");
-    calcLot();
+//    calcLot();
 }
 //计算
 function calcLot() {
