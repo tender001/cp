@@ -1,20 +1,37 @@
-.header,.tz-menu,.tz-list{width:100%;padding:1.2em 0;overflow:hidden}
+.header,.notice,.tz-menu,.tz-list{width:100%;padding:1.2em 0;overflow:hidden}
 .header .user{float: right;}
 .user .app,.user .user-login{display: inline-block;width:30px;height:30px;margin-right:0.5em;text-indent:-999em;background-image:url("../img/app-icon-index.png");background-repeat:no-repeat;background-size:30px}
 .user .app{background-position: 0 0}
 .user .user-login{background-position: 0 -29px}
 .header .m-logo{display:block;width: 23.6%;margin-left:1.2em}
-
+.img-list{width: 100%;height: auto;}
+.img-list-body img{width:100%;max-height:220px;}
 .tz-menu{font:0.7em/1.5 sans-serif,Helvetica,Arial;color:#5c5c5c;text-indent:1em;background-color:#f2f2f2;border:1px solid #E4E4E4;border-width:1px 0}
 .tz-list{font-size: 0.9em;line-height: 1.2em;color: #5c5c5c;text-align:center;border-bottom: 1px solid #e4e4e4}
 .tz-list .list-l{float:left;width:19%;}
 .tz-list .list-l *{display: block;line-height: 1.8em}
 .list-l i{color: #aaa}
 .tz-list .list-r{float:right;display: table;width:80.5%;box-sizing:border-box}
-.list-r .tz-true{float:left;width: 28%;margin-left: 1em}
+.list-r .tz-true{float:left;width: 26%;margin-left: 1em}
 .tz-true em{display: block;line-height:1.8em;text-align: center;color: #78c600;border: 1px solid #78c600;border-radius: 0.5em}
 .tz-true em.cur{background-color: #78c600;color: #fff}
-.tz-true span{display: block;line-height: 2em;color: #aaa}
+.tz-true span{display: block;line-height: 2em;color: #aaa;text-align: center}
 
+.handBtn{ width:46%; line-height:2.1em; text-align:center; color:#f6851f; border:none; background:none; font-size:1.3em; border:1px solid #e2e2e2; background:#fff; font-weight:bold; margin:.5rem 0; border-radius:.2rem; -webkit-border-radius:.2rem; -moz-border-radius:.2rem}
 
+.clearBtn{ width:40%; text-align:left;padding-left: 5%}
+.clearBtn:before{display:inline-table;content:"";width:.91em;height:.95em;padding:0 1em 0 0;background:url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB8AAAAgCAMAAADdXFNzAAAAb1BMVEUAAAD2hR/2hR/2hR/2hR/2hR/2hR/2hR/2hR/2hR/2hR/2hR/2hR/2hR/2hR/2hR/2hR/2hR/2hR/2hR/2hR/2hR/2hR/2hR/2hR/2hR/2hR/2hR/2hR/2hR/2hR/2hR/2hR/2hR/2hR/2hR/2hR+fb35gAAAAJHRSTlMALVXdd/rufzYFI65qYMly505CGdMUopuSKQ703Ly3jdqGScB0rpRtAAABPUlEQVQoz22SWaKCMAxFI9JWkFEmcQDU7H+NryQh+IT7cVs4aZM2BVVZG2SZuoSNetMGi1rTb3hyh1X3RKdHkcXjKrTLDMLwacN92SEMASC3sK8ipyHFaJ+blIY3NvOwBOm8wTd9nLAnj70f8OA9xpP61xdzjhXnfUrvN3LmJTaSl4QpV6M8NVw3sGzOp1GeF/B97uk1ez0qH2vwcpPwrJv92SnvnuB1zYQP59nPZ+EyhXYQ3kq48uxKy1rhY0bpHsonR2lH4e44e2KVW2r/w/17GgFGwiMMYIlSAheshFd4AY0SImg1aChKG0irCEl8jyfhse5HnPJp+7h1XA9zqbfE2/qQ+DzE+SakifoQ6daYy8XnhfKaGlj5/aI48vkq8HrVyj8dbNV9aNDWqbY/U+OCXzmTgMoV+KvCEfkDRvAZr3Q+gJcAAAAASUVORK5CYII=") no-repeat center; background-size:.91em .95em; -webkit-background-size:.91em .95em}
 
+.tzNum,.spfNum{padding:1em 0;border-top:1px solid #e4e4e4; border-bottom:1px solid #e4e4e4;}
+.spfNum{width: 100%;position: relative}
+.tzNum,.spfNum li{}
+.tzNum p i{ float:left; color:#8e8e8e; font-size:.91rem; width:4.375rem}
+.tzNum p span{ float:left; font-size:.97rem; color:#f03d3d; width:11.5rem}
+.tzNum p span cite,.zfNum p cite{ color:#177ffc; padding-left:.4rem}
+.pact{ padding:.6rem 0 0 .8rem; font-size:.9rem; color:#8e8e8e}
+.zfText{ border:1px solid #dcdcdc; background:#fff; line-height:1.3rem; margin-top:.5rem; padding:.5rem .87rem .5rem 1.25rem}
+.zfNum p{ color:#f03d3d; word-break:break-all}
+.spfNum .errorBg{ top:1.3rem}
+.spfNum .spfzpk span{ width:26%}
+.errorBg{ position:absolute; padding:.7rem .5rem .6rem .9rem; right:0; top:0}
+.errorBg .error2{ display:block; width:1.06rem; height:1.06rem; background:url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACMAAAAjCAMAAAApB0NrAAAAQlBMVEUAAADc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nz////p6eno6Ojx8fHi4uLCn5nCAAAAEHRSTlMA8UL2iOjg0HwnFgYDhbm4g6GjowAAAPJJREFUOMuVlO0OgyAMRQtDxKmzgL7/qy5zlsuHCdv5ZcyJrZcWylj0+rKKlX2teqE7nmZgMJhnY8zuwSUPN5fKNHLLOOWKVnyH0pmCOlW9JE34So26ys3opWX8Nu5YOG4kd+aSmtl9lMewp5Y+Oa1QvEjB+yQZomWQQv5DvBRIw0KahSjSqfgg73UqBUkUFNu4lkQRNrKcS1CApTLjCAVZExcEn/4OkKqUVlJkK6WVLG21EmIlbcgH0VWSId0oIh2SM85rvxSRAs6LDM4duUQ8mnJ+sugOzE8+h/e4n+e5vxf9/ervaX/f+/fGX/dP/x57A/nLPBMWHWWgAAAAAElFTkSuQmCC") no-repeat center; background-size:1.06rem 1.06rem; -webkit-background-size:1.06rem 1.06rem; -moz-background-size:1.06rem 1.06rem}
