@@ -1,11 +1,15 @@
+.header,.tz-menu,.tz-list{width:100%;padding:1.2em 0;overflow:hidden}
+.header .user{float: right;}
+.user .app,.user .user-login{display: inline-block;width:30px;height:30px;margin-right:0.5em;text-indent:-999em;background-image:url("../img/app-icon-index.png");background-repeat:no-repeat;background-size:30px}
+.user .app{background-position: 0 0}
+.user .user-login{background-position: 0 -29px}
+.header .m-logo{display:block;width: 23.6%;margin-left:1.2em}
 
-
-.tz-menu,.tz-list{width:100%;padding:1.2em 0;overflow:hidden}
 .tz-menu{font:0.7em/1.5 sans-serif,Helvetica,Arial;color:#5c5c5c;text-indent:1em;background-color:#f2f2f2;border:1px solid #E4E4E4;border-width:1px 0}
 .tz-list{font-size: 0.9em;line-height: 1.2em;color: #5c5c5c;text-align:center;border-bottom: 1px solid #e4e4e4}
-.tz-list .list-l{float:left;width:16%;}
+.tz-list .list-l{float:left;width:19%;}
 .tz-list .list-l *{display: block;line-height: 1.8em}
-.tz-list .list-r{float:right;display: table;width:81.5%;margin:0 0 0 2%;box-sizing:border-box}
+.tz-list .list-r{float:right;display: table;width:80.5%;box-sizing:border-box}
 .list-r .tz-true{float:left;width: 28%;margin-left: 1em}
 .tz-true em{display: block;line-height:1.8em;text-align: center;color: #78c600;border: 1px solid #78c600;border-radius: 0.5em}
 .tz-true em.cur{background-color: #78c600;color: #fff}
