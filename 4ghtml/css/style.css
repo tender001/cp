@@ -9,11 +9,12 @@
 .tz-list{font-size: 0.9em;line-height: 1.2em;color: #5c5c5c;text-align:center;border-bottom: 1px solid #e4e4e4}
 .tz-list .list-l{float:left;width:19%;}
 .tz-list .list-l *{display: block;line-height: 1.8em}
+.list-l i{color: #aaa}
 .tz-list .list-r{float:right;display: table;width:80.5%;box-sizing:border-box}
 .list-r .tz-true{float:left;width: 28%;margin-left: 1em}
 .tz-true em{display: block;line-height:1.8em;text-align: center;color: #78c600;border: 1px solid #78c600;border-radius: 0.5em}
 .tz-true em.cur{background-color: #78c600;color: #fff}
-.tz-true span{display: block;line-height: 2em;}
+.tz-true span{display: block;line-height: 2em;color: #aaa}
 
 
 
