@@ -1,7 +1,7 @@
+
+
 .tz-menu,.tz-list{width:100%;padding:1.2em 0;overflow:hidden}
 .tz-menu{font:0.7em/1.5 sans-serif,Helvetica,Arial;color:#5c5c5c;text-indent:1em;background-color:#f2f2f2;border:1px solid #E4E4E4;border-width:1px 0}
-.tz-menu .ico{float:right;width:1em;height:1em;margin-right:1.4em;border-top:3px solid #b0b0b0;border-right:3px solid #b0b0b0;position:relative;-webkit-transform: rotate(-45deg);-moz-transform: rotate(-45deg);-o-transform: rotate(-45deg);transform:rotate(-45deg)}
-.tz-menu .cur{top:-0.3em;-webkit-transform: rotate(135deg);-moz-transform: rotate(135deg);-o-transform: rotate(135deg);transform:rotate(135deg)}
 .tz-list{font-size: 0.9em;line-height: 1.2em;color: #5c5c5c;text-align:center;border-bottom: 1px solid #e4e4e4}
 .tz-list .list-l{float:left;width:16%;}
 .tz-list .list-l *{display: block;line-height: 1.8em}
