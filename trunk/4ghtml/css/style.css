@@ -6,7 +6,7 @@
 .header .m-logo{display:block;width: 23.6%;margin-left:1.2em}
 .img-list{width: 100%;height: auto;}
 .img-list-body img{width:100%;max-height:220px;}
-.notice{width:96%;height:3.5em;line-height:3.5em;padding:0 2%;font-size:1.2em;color:#f60;background-color:#fff;overflow: hidden}
+.notice{width:96%;height:3.5em;line-height:3.5em;padding:0 2%;font-size:1.1em;color:#f60;background-color:#fff;overflow: hidden}
 .notice span{padding-right:3px;color: #333}
 .nav{width:100%;padding: 10px 0;border-top:1px solid #ccc;background-color: #f0f0f0}
 .nav table{width: 100%;background-color: #fff}
@@ -14,6 +14,10 @@
 .nav-list{color: #333}
 .nav-list h3{display:inline-block;width: 30px;height: 30px;-webkit-background-size: 30px;-moz-background-size: 30px;background-size: 30px}
 .top-fixed{position: fixed;top: 0;left: 0;padding: 0}
+.nav-list .login{background-position:0 -59px}
+.nav-list .reg{background-position:0 -88px}
+.nav-list .hm{background-position:0 -116px}
+.nav-list .kj{background-position:0 -146px}
 .cp-list{border-bottom: .2em solid #ccc}
 .cp-list li{border-top: 1px solid #ccc;vertical-align: top;overflow: hidden}
 .caipiao-ap{float: left;width:60px;margin:0 2%}
@@ -21,19 +25,22 @@
 .caipiao-tit{float: left;width: 75%;font-size: 1.3em;font-family: \5fae\8f6f\96c5\9ed1}
 .caipiao-tit em{display: block;height: 1.6em;padding-top: 10px}
 .caipiao-tit cite{display: block;height: 1.6em;font-size:0.7em;}
-.cp-news{padding: 10px 0;font-size:1.2em;background-color: #f0f0f0}
+.cp-news{padding: 10px 0;font-size:1.1em;background-color: #f0f0f0}
 .cp-news-tit{width: 96%;height:3.5em;line-height:3.5em;padding: 0 2%;border-top:1px solid #ccc;background-color: #fff}
 .cp-news-list{background-color: #fff;overflow: hidden;border-bottom: .2em solid #ccc}
 .cp-news-list li{border-top:1px solid #ccc;vertical-align: top}
-.cp-news-list .ico-click i{-webkit-transform: rotate(45deg);-moz-transform: rotate(45deg);-o-transform: rotate(45deg);transform:rotate(45deg)}
-.cp-news-list a{display:block;overflow: hidden}
+.cp-news-list .ico-click{position: relative}
+.cp-news-list .ico-click i{margin-top:0.91em;-webkit-transform: rotate(45deg);-moz-transform: rotate(45deg);-o-transform: rotate(45deg);transform:rotate(45deg)}
+.cp-news-list a{display:block;height:3.0em;line-height:3.0em;overflow: hidden}
 .cp-news-list span{color: #999;padding:0 6px 0 8px}
-.cp-news-list em{width: 78%;height: 1.2em}
-
-.nav-list .login{background-position:0 -59px}
-.nav-list .reg{background-position:0 -88px}
-.nav-list .hm{background-position:0 -116px}
-.nav-list .kj{background-position:0 -146px}
+.caipiao-pay{width: 100%;height: 3.5em;line-height: 3.5em;font-size:1.1em;color:#fff;background-color: #3e3e3e}
+.caipiao-pay a{padding:0 1em;color:#fff;}
+.index-footer{padding: .7em;background-color: #f0f0f0}
+.index-footer .footer-app{padding:.3em 0;text-align: center;line-height:1.8em;font-size: 1.1em;}
+.index-footer .version{color: #444;}
+.version a{color: #444;padding:0 1em}
+.index-footer .call-center a{margin:.6em;padding: .5em;color:#969696;border: .1em solid #bcbcbc;border-radius:.4em;background-color: #fff}
+.index-footer .ICP{color:#a2a2a2}
 .tz-menu{font:0.7em/1.5 sans-serif,Helvetica,Arial;color:#5c5c5c;text-indent:1em;background-color:#f2f2f2;border:1px solid #E4E4E4;border-width:1px 0}
 .tz-list{font-size: 0.9em;line-height: 1.2em;color: #5c5c5c;text-align:center;border-bottom: 1px solid #e4e4e4}
 .tz-list .list-l{float:left;width:19%;}
