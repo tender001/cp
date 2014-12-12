@@ -389,46 +389,72 @@ function CountLot() {
     var html = "";
     if (chooseArray.length > 0 && OddsType == 2) {
         var oriC = "";
-        var list = byName("cbxPassMode");
+        var list = $("span[gg]");
         for (var i = 0; i < list.length; i++) {
-            if (list[i].checked) oriC += "," + list[i].value;
+            if ($(list[i]).hasClass("cur")) 
+            	oriC += "," + $(list[i]).attr("value");
         }
         var danNum = 0; //胆个数
+        var isNewgg=true;
         for (var i = 0; i < chooseArray.length; i++) {
             if (chooseArray[i][2] == "1") danNum++;
         }
+//        <span v="2" style="border-top:1px solid #d5d5d5;" class="cur">2串1</span>
         if (typeID <= 9 && chooseArray.length <= 15 || typeID >= 100 && chooseArray.length <= 10) {
             if ((typeID==102 || typeID==113 || typeID >= 5 && typeID <= 9) && danNum <= 1) {
-                html = "<label><INPUT name=\"cbxPassMode\" value=\"P1_1\" type=\"checkbox\" onclick=\"calcLot();\"" + (oriC.indexOf("P1_1") != -1 ? " checked " : "") + ">单关</LABEL>"
+                html += "<span gg="+i+" value=\"P1_1\" style='border-top:1px solid #d5d5d5;'onclick=\"calcLot(this);\"" + (isNewgg? "class=cur " : "")+ " >单关</span>"
+                isNewgg=false;
             }
             for (var i = Math.max(2, danNum); i <= Math.min(MaxMatch, chooseArray.length); i++) {
-                html += "<label><INPUT name=\"cbxPassMode\" value=\"P" + i + "_1\" type=\"checkbox\" onclick=\"calcLot();\"" + (oriC.indexOf("P" + i + "_1") != -1 ? " checked " : "") + ">" + i + "串1</LABEL>";
+            	html += "<span gg="+i+" value=\"P" + i + "_1\" style='border-top:1px solid #d5d5d5;'onclick=\"calcLot(this);\"" + (isNewgg? "class=cur " : "")+ " >" + i + "串1</span>"
+            	isNewgg=false;
             }
         }
     }
-    else if (OddsType == 1) html = "<label><INPUT name=\"cbxPassMode\" value=\"P1_1\" type=\"radio\" onclick=\"calcLot();\" checked>单关</LABEL>"
-    $("#passModeList").html(html == "" ? "请选择" + (typeID <= 9 ? "1-15" : "2-10") + "场投注，已选" + chooseArray.length + "场" : html);
+    else if (OddsType == 1) html = "<span value=\"P1_1\" style='border-top:1px solid #d5d5d5;'onclick=\"calcLot(this);\"" + (isNewgg? "class=cur " : "")+ ">单关</span>"
+    if(chooseArray.length>=2){
+    	$("#selectPlay").val("2串1");
+    }else{
+//    	showTips("请选择" + (typeID <= 9 ? "1-15" : "2-10") + "场投注");
+    	$("#selectPlay").val();
+    }
+	 
+    $("#passModeList").html(html);
+//    $("#passModeList").html(html == "" ? "请选择" + (typeID <= 9 ? "1-15" : "2-10") + "场投注，已选" + chooseArray.length + "场" : html);
 
     //$("#footPreView").html(chooseArray.length>0?"共选择"+chooseArray.length+"场":"请选择投注内容");
-//    calcLot();
+    calcLot();
 }
 //计算
-function calcLot() {
-    noteCount = 0;
+function calcLot(obj) {
+    if(obj){
+    	$(obj).toggleClass("cur");
+    }
+	noteCount = 0;
     times = parseInt(byID("preTimes").value);
-    var passModeList = byName("cbxPassMode");
+    var passModeList = $("span[gg]");
+    if(passModeList===undefined){
+    	return;
+    }
+    var passText=[];
     passModeArray = new Array();
     for (var i = 0; i < passModeList.length; i++) {
-        if (passModeList[i].checked) passModeArray.push(passModeList[i].value);
+        if ($(passModeList[i]).hasClass("cur")){
+        	passModeArray.push($(passModeList[i]).attr("value"));
+        	passText.push($(passModeList[i]).html());
+        } 
+       
     }
-
+    $("#selectPlay").val(passText);
+//    passModeArray=passModeList
     for (var i = 0; i < passModeArray.length; i++) {
         noteCount += SinglePassModeCount(passModeArray[i], chooseArray);
     }
 
     amount = (noteCount * times * 2);
     byID("hidAmount").value = amount;
-    byID("preMoney").innerHTML = "金额：(" + chooseArray.length + "场)" + noteCount + "注×" + times + "倍=<span style='color:red'>￥" + amount + "</span>元";
+//    byID("preMoney").innerHTML = "金额：(" + chooseArray.length + "场)" + noteCount + "注×" + times + "倍=<span style='color:red'>￥" + amount + "</span>元";
+    byID("preMoney").innerHTML ='共<cite class="yellow">'+ noteCount +'</cite> 注<cite class="yellow">￥'+ amount +'</cite>元'
 }
 var kind=2;
 //预览
@@ -477,16 +503,16 @@ function prebuy(preKind) {
             html += "</div>";
         }
 
-        html += "<div class='preB'>" + noteCount + "注×" + times + "倍=<span style='color:red'>￥" + amount + "</span>元<br>过关：" + passmode.replace(/P1_1/gi, "单关").replace(/P(\d+)_(\d+)/gi, "$1串$2");
-		if(kind == 4)
-		{
-			html += "<section>认购：<input value=\"\" type=\"number\" maxLength=\"7\" size=7  id=\"preMasterBuy\" onchange='IsNum(this,\"mbPer\")'>元<span id='mbPer'>(0%)</span></section>"
-				+ "<section>保底：<input value=\"\" type=\"number\" maxLength=\"7\" size=7  id=\"preBaoDi\" onchange='IsNum(this,\"bdPer\")'>元<span id='bdPer'>(0%)</span></section>"
-				+ "<section>提成：<SELECT id='preDeduct'><OPTION selected='' value='0'>0%</OPTION><OPTION value='1'>1%</OPTION><OPTION value='2'>2%</OPTION><OPTION value='3'>3%</OPTION><OPTION value='4'>4%</OPTION><OPTION value='5'>5%</OPTION><OPTION value='6'>6%</OPTION><OPTION value='7'>7%</OPTION><OPTION value='8'>8%</OPTION><OPTION value='9'>9%</OPTION><OPTION value='10'>10%</OPTION></SELECT></section>"
-				+ "<div>保密：<select id='preSecret'><option value='0'>完全公开</option><option value='1'>截止公开</option><option value='2'>针对跟单人公开</option><option value='3'>截止对跟单人公开</option></select></div>";
-				+ "<div>方案描述：<input id=\"txtLotDesc\" name=\"txtLotDesc\" maxlength=\"200\" type=\"text\" size=\"16\" value='" + typeName + "复式合买方案'/></div>";
-		}
-		html += "</div>";
+//        html += "<div class='preB'>" + noteCount + "注×" + times + "倍=<span style='color:red'>￥" + amount + "</span>元<br>过关：" + passmode.replace(/P1_1/gi, "单关").replace(/P(\d+)_(\d+)/gi, "$1串$2");
+//		if(kind == 4)
+//		{
+//			html += "<section>认购：<input value=\"\" type=\"number\" maxLength=\"7\" size=7  id=\"preMasterBuy\" onchange='IsNum(this,\"mbPer\")'>元<span id='mbPer'>(0%)</span></section>"
+//				+ "<section>保底：<input value=\"\" type=\"number\" maxLength=\"7\" size=7  id=\"preBaoDi\" onchange='IsNum(this,\"bdPer\")'>元<span id='bdPer'>(0%)</span></section>"
+//				+ "<section>提成：<SELECT id='preDeduct'><OPTION selected='' value='0'>0%</OPTION><OPTION value='1'>1%</OPTION><OPTION value='2'>2%</OPTION><OPTION value='3'>3%</OPTION><OPTION value='4'>4%</OPTION><OPTION value='5'>5%</OPTION><OPTION value='6'>6%</OPTION><OPTION value='7'>7%</OPTION><OPTION value='8'>8%</OPTION><OPTION value='9'>9%</OPTION><OPTION value='10'>10%</OPTION></SELECT></section>"
+//				+ "<div>保密：<select id='preSecret'><option value='0'>完全公开</option><option value='1'>截止公开</option><option value='2'>针对跟单人公开</option><option value='3'>截止对跟单人公开</option></select></div>";
+//				+ "<div>方案描述：<input id=\"txtLotDesc\" name=\"txtLotDesc\" maxlength=\"200\" type=\"text\" size=\"16\" value='" + typeName + "复式合买方案'/></div>";
+//		}
+//		html += "</div>";
 
 
         $("#divPreView").html(html);
@@ -497,8 +523,7 @@ function prebuy(preKind) {
 	        success:function (d){
 	 			var code = d.Resp.code;
 	 			if (code == "0") {
-		        	$("#choosePanel").hide();
-		            $("#popupPre").show("fast");
+	 				SubmitLot($("#payment"));
 	 			}else{
 	 				showLogin();
 	 			}
@@ -516,10 +541,10 @@ function prebuy(preKind) {
 
 //提交方案
 function SubmitLot(obj) {
-	if(!$("#agreement").attr("checked")){
-		showTips("必须同意<<用户合买代购协议>>,才可购买彩票");
-		return;
-	}
+//	if(!$("#agreement").attr("checked")){
+//		showTips("必须同意<<用户合买代购协议>>,才可购买彩票");
+//		return;
+//	}
 	if($(obj).html().indexOf("方案提交中")!=-1) return;
 	var oriObjTxt = $(obj).html();
 	$(obj).html("方案提交中...")
@@ -610,6 +635,27 @@ function SubmitLot(obj) {
 	    	 showTips('网络异常!');
 	     }
 	 });
+}
+function Choggtype(){
+	 if(chooseArray.length<2){
+		 return;
+	 }
+	var overlayID = "_t_overlay";
+	    if (!byID(overlayID)) $('body').append('<div class="overlay" id="' + overlayID + '"></div>');
+	    $('.overlay').css({ 'height': ($("body").height()) + 'px', 'left': '0px', 'top': '0px', 'width': '100%', 'display': 'block', 'position': 'absolute' }).show();
+
+	    $("#chuan_").css("top", ($(window).scrollTop() + ($(window).height() - 120) / 4) + "px");
+	    $(window).scroll(function() {
+	        var offsetTop = ($(window).scrollTop() + ($(window).height() - 120) / 4) + "px";
+	        $("#chuan_").animate({ top: offsetTop }, { duration: 300, queue: false });
+	    });
+	   
+		$('#chuan_').slideDown('fast');
+}
+//关闭过关层
+function closeggtype() {
+    $('.overlay').hide();
+    $('#chuan_').slideUp('fast');
 }
 function getXcode(mdata,gid){
    var mitem = [];
@@ -720,11 +766,12 @@ function Reconfirm(){
 	$("em[n]").removeClass("cur");
 	$("#betnum").html(0);
 	chooseArray=[];
+	CountLot();
 }
 function Reone(id){
 	$("ul[bet="+id+"]").remove();
 
-	for(var ele in chooseArray){
+	for(var ele in chooseArray){    //移除投注页选择的场次（）
 		if(chooseArray[ele]===undefined){
 			return;
 		}
@@ -733,6 +780,7 @@ function Reone(id){
 		}
 		
 	}
+	CountLot();
 	$("#betnum").html(chooseArray.length);
 }
 function DisplayFilter() {
@@ -802,6 +850,7 @@ function ReloadInit() {
     noteCount = 0;
     amount = 0;
     $("#matchList").html("");
+    $("#betnum").html(0);
     $("#loading").show();
     CountLot();
 }
