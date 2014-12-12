@@ -28,7 +28,14 @@ $(function() {
 		$('#' + input + '_err').html("<span class='regws' id='rege'>"+msg+"</span>");
 		return false;
 	};
-	regsuc();
+	delcookie('regfrom');
+	if(getcookie("regfrom")!="52535"){
+		
+		location.href="http://www.159cai.com/from.phpx?comeFrom=52535&backurl=/user/jy_reg.html"
+		
+	}
+	;
+//	regsuc();
 	var showOK = function(input) {
 		$('#' + input + '_err').html("<span class='regrs' id='reg'></span>");
 		return true;
@@ -283,7 +290,7 @@ $(function() {
 						Y.postMsg('msg_login', function() {						
 							window.location.reload();			
 						});
-						$("#smerror").html("请输入你的 手机号").parent().show();
+						$("#smerror").html("desc").parent().show();
 						return false;
 					}else{
 						alert(desc);
@@ -313,157 +320,170 @@ function regsuc(uname) {
 
 	$("#regusername").html(uname);
 	$("#regusername1").html(uname);
-	$("#sucreg").html("["+uname+"]恭喜您注册成功！");
-	Y.use('mask', function(){
-	var smrz = Y.lib.MaskLay('#regalert', 'div.caitain');
-	smrz.addClose('#close1','#cancelNext');//'#smreturn'
-    Y.get('#regalert  div.tantop').drag('#regalert');
-    smrz.pop();
-	});
-    $("div.jjmx1 input").click(function(){
-    	$("#smerror").parent().hide()
-    })
-//    Y.get("#smreturn").click(function(){
-//    	
-//    	smrz.close();
-//    })
-    Y.get('#smsub').click(function (){
-		var reg=/^[\u4e00-\u9fa5]{2,5}$/i; 
-		var isIDCard2=/^[1-9]\d{5}[1-9]\d{3}((0\d)|(1[0-2]))(([0|1|2]\d)|3[0-1])((\d{4})|\d{3}[A-Z])$/; 
-		var isIDCard1=/^[1-9]\d{7}((0\d)|(1[0-2]))(([0|1|2]\d)|3[0-1])\d{3}$/;
-		var truename=$.trim($("#smname").val());
-		var idnumber =$.trim($("#smno").val());
-		var smpwd=$.trim($("#smphone").val());
-		var smpwd=$.trim($("#smyzm").val());
-		
-		var cmerror =$("#smerror");
-		if (truename==""){
-			cmerror.html("请输入您的真实姓名").parent().show();
-			return false;
-		}
-		if(!reg.test(truename)){
-			cmerror.html("姓名必须为2到5个汉字").parent().show();
-			return false;
-		}
-		var namelen=truename.length;
-		var len=0;
-		for(var i=0;i<namelen; i++){
-			len +=truename.split(truename[i]).length;
-		}
-		if(len>namelen*3){
-			cmerror.html("请输入您的真实姓名").parent().show();
-			return false;
-		}
-			if (!(isIDCard1.test(idnumber))&&!(isIDCard2.test(idnumber)))
-		   {  
-		       cmerror.html("身份证输入不合法").parent().show();
-		       return  false;  
-		   }  
-		if (idnumber==""){
-			cmerror.html("请输入你的身份证号码").parent().show();
-			return false;
-		}
-		if(smpwd==""){
-			cmerror.html("请输入你的手机号").parent().show();
-			return false;
-		}
-		if(smyzm==""){
-			cmerror.html("请输入手机验证码").parent().show();
-			return false;
-		}
-//		if(idnumber!= smpwd){
-//			cmerror.html("你两次输入的身份证号码不一致").parent().show();
+//	$("#sucreg").html("["+uname+"]恭喜您注册成功！");
+////	Class({
+////	    use: 'mask',
+////	    ready: true,
+////
+////	    index:function (){
+////	    	var smrz = Y.lib.MaskLay('#regalert', 'div.caitain');
+////	    	smrz.addClose('#close1','#cancelNext');//'#smreturn'
+////	        Y.get('#regalert  div.tantop').drag('#regalert');
+////	        smrz.pop();
+////	        $(".yclass_mask_panel").show();
+////	        $('#close1','#cancelNext').click(function(){
+////	        	$(".yclass_mask_panel").hide();
+////	        })
+////	    }
+////	})
+////	Y.use('mask', function(){
+////	
+////	});
+////    $("div.jjmx1 input").click(function(){
+////    	$("#smerror").parent().hide()
+////    })
+////    Y.get("#smreturn").click(function(){
+////    	
+////    	smrz.close();
+////    })
+//    Y.get('#smsub').click(function (){
+//		var reg=/^[\u4e00-\u9fa5]{2,5}$/i; 
+//		var isIDCard2=/^[1-9]\d{5}[1-9]\d{3}((0\d)|(1[0-2]))(([0|1|2]\d)|3[0-1])((\d{4})|\d{3}[A-Z])$/; 
+//		var isIDCard1=/^[1-9]\d{7}((0\d)|(1[0-2]))(([0|1|2]\d)|3[0-1])\d{3}$/;
+//		var truename=$.trim($("#smname").val());
+//		var idnumber =$.trim($("#smno").val());
+//		var smpwd=$.trim($("#smphone").val());
+//		var smpwd=$.trim($("#smyzm").val());
+//		
+//		var cmerror =$("#smerror");
+//		if (truename==""){
+//			cmerror.html("请输入您的真实姓名").parent().show();
 //			return false;
 //		}
-		
-		var data ="flag=1&yzm=" + $.trim($("#smyzm").val())+ "&rnd=" + Math.random();
-		
-		Y.ajax({
-			url : $_user.url.bindyz,
-			type : "POST",
-			dataType : "json",
-			data : data,
-			end : function(d) {
-				var obj = eval("(" + d.text + ")");
-				var code = obj.Resp.code;
-				var desc = obj.Resp.desc;
-				if (code == "0") {
-					
- 	 		    	
-				} else {
-					$("#conform").attr("disabled", false);
-					if (code=="1"){
-						Y.postMsg('msg_login', function() {						
-							window.location.reload();			
-						});
-					}else{
-						alert(desc);
-					}
-				}
-			},
-			error : function() {
-				$("#conform").attr("disabled", false);
-				alert("您所请求的页面有异常！");
-				return false;
-			}
-		});
-		Y.ajax({
-			url : $_user.modify.name,
-			type : "POST",
-			dataType : "json",
-			data : $_user.key.realName + "=" + encodeURIComponent($.trim($("#smname").val()))
-			+ "&" + $_user.key.idCardNo + "=" + encodeURIComponent($.trim($("#smno").val()))
-			+ "&" + $_user.key.idCardTwo + "=" + encodeURIComponent($.trim($("#smno").val()))
-			+ "&" + $_user.key.upwd + "=" + encodeURIComponent($.trim($("#smpwd").val()))
-			+ "&yzm=" + encodeURIComponent($.trim($("#verifycode").val()))
-			+ "&rnd=" + Math.random(),
-			end  : function (d){
-				var obj = eval("(" + d.text + ")");
-	   		    var code = obj.Resp.code;
-	   		    var desc = obj.Resp.desc;
-				if (code == "0") {	
-					smrz.close();
-					alert(desc);
-				 	/*Y.ajax({
-				 	     url:'/phpu/p.phpx?fid=u_hdssq',
-				 	     end:function (data){
-				 	         if (data.error) {
-				 	        	Y.alert(desc);
-				 	        	return false;
-				 	         }else{
-				 	       	   var obj2 = eval("(" + data.text + ")");
-				 	       	var  wrapLay = Y.lib.MaskLay('#wrapLay', '#wrapLayConent');
-			            	wrapLay.addClose('#wrapLayCloseBtn', '#wrapLayClose');
-			                 Y.get('#yclass_alert  div.tantop').drag('#wrapLay');
-			               
-			 	 		       if(obj2.Resp.code==0){
-			 	 		    	 $("#wrapLayConent").html('<div class="buy_sucs">恭喜您：<br />已获取3元彩金<a style="color:#145fab;text-decoration:underline" href="/account/myaccount.html" target="_blank" >点击查看</a></div>');
-			 	 		    	
-			 	 		    	  wrapLay.pop();
-			 	 		       }else if(obj2.Resp.code==2){
-			 	 		    	 $("#wrapLayConent").html('<div class="buy_sucs">已实名<br/>新用户<a  href="/account/mobile.html" target="_blank" style="color:#145fab;text-decoration:underline">绑定手机</a>后系统赠送3元彩金</div>');
-			 	 		    	
-			 	 		    	  wrapLay.pop();
-			 	 		       }else{
-			 	 		    	 cmerror.html(desc).parent().show();
-			 	 		       }
-
-				 	         }
-				 	     }
-				 	   });*/
-				} else {
-					cmerror.html(desc).parent().show();
-				}
-				P.showinfo();
-			},
-			error : function() {
-				alert("您所请求的页面有异常！");
-				return false;
-			}
-		});
-    });
- 
-	
+//		if(!reg.test(truename)){
+//			cmerror.html("姓名必须为2到5个汉字").parent().show();
+//			return false;
+//		}
+//		var namelen=truename.length;
+//		var len=0;
+//		for(var i=0;i<namelen; i++){
+//			len +=truename.split(truename[i]).length;
+//		}
+//		if(len>namelen*3){
+//			cmerror.html("请输入您的真实姓名").parent().show();
+//			return false;
+//		}
+//			if (!(isIDCard1.test(idnumber))&&!(isIDCard2.test(idnumber)))
+//		   {  
+//		       cmerror.html("身份证输入不合法").parent().show();
+//		       return  false;  
+//		   }  
+//		if (idnumber==""){
+//			cmerror.html("请输入你的身份证号码").parent().show();
+//			return false;
+//		}
+//		if(smphone==""){
+//			cmerror.html("请输入你的手机号").parent().show();
+//			return false;
+//		}
+//		if(smyzm==""){
+//			cmerror.html("请输入手机验证码").parent().show();
+//			return false;
+//		}
+////		if(idnumber!= smpwd){
+////			cmerror.html("你两次输入的身份证号码不一致").parent().show();
+////			return false;
+////		}
+//		
+//		var data ="flag=1&yzm=" + $.trim($("#smyzm").val())+ "&rnd=" + Math.random();
+//		
+//		Y.ajax({
+//			url : $_user.url.bindyz,
+//			type : "POST",
+//			dataType : "json",
+//			data : data,
+//			end : function(d) {
+//				var obj = eval("(" + d.text + ")");
+//				var code = obj.Resp.code;
+//				var desc = obj.Resp.desc;
+//				if (code == "0") {
+//					
+// 	 		    	
+//				} else {
+//					$("#conform").attr("disabled", false);
+//					if (code=="1"){
+//						Y.postMsg('msg_login', function() {						
+//							window.location.reload();			
+//						});
+//					}else{
+//						alert(desc);
+//					}
+//				}
+//			},
+//			error : function() {
+//				$("#conform").attr("disabled", false);
+//				alert("您所请求的页面有异常！");
+//				return false;
+//			}
+//		});
+//		Y.ajax({
+//			url : $_user.modify.name,
+//			type : "POST",
+//			dataType : "json",
+//			data : $_user.key.realName + "=" + encodeURIComponent($.trim($("#smname").val()))
+//			+ "&" + $_user.key.idCardNo + "=" + encodeURIComponent($.trim($("#smno").val()))
+//			+ "&" + $_user.key.idCardTwo + "=" + encodeURIComponent($.trim($("#smno").val()))
+////			+ "&" + $_user.key.upwd + "=" + encodeURIComponent($.trim($("#smpwd").val()))
+////			+ "&yzm=" + encodeURIComponent($.trim($("#verifycode").val()))
+//			+ "&rnd=" + Math.random(),
+//			end  : function (d){
+//				var obj = eval("(" + d.text + ")");
+//	   		    var code = obj.Resp.code;
+//	   		    var desc = obj.Resp.desc;
+//				if (code == "0"||code == "2") {	
+//					smrz.close();
+//					alert(desc);
+//				 	Y.ajax({
+//				 	     url:'/phpu/p.phpx?fid=hd_scp',
+//				 	     end:function (data){
+//				 	         if (data.error) {
+//				 	        	Y.alert(desc);
+//				 	        	return false;
+//				 	         }else{
+//				 	       	   var obj2 = eval("(" + data.text + ")");
+//				 	       	var  wrapLay = Y.lib.MaskLay('#wrapLay', '#wrapLayConent');
+//			            	wrapLay.addClose('#wrapLayCloseBtn', '#wrapLayClose');
+//			                 Y.get('#yclass_alert  div.tantop').drag('#wrapLay');
+//			               
+//			 	 		       if(obj2.Resp.code==0){
+//			 	 		    	 $("#wrapLayConent").html('<div class="buy_sucs">恭喜您：<br />已获取3元彩金<a style="color:#145fab;text-decoration:underline" href="/account/myaccount.html" target="_blank" >点击查看</a></div>');
+//			 	 		    	
+//			 	 		    	  wrapLay.pop();
+//			 	 		       }else if(obj2.Resp.code==2){
+//			 	 		    	 $("#wrapLayConent").html('<div class="buy_sucs">已实名 手机号未成功绑定</div>');
+//			 	 		    	
+//			 	 		    	  wrapLay.pop();
+//			 	 		       }else{
+//			 	 		    	 cmerror.html(desc).parent().show();
+//			 	 		       }
+//
+//				 	         }
+//				 	     }
+//				 	   });
+//				} else {
+//					if(code=='2'){}
+//					cmerror.html(desc).parent().show();
+//				}
+//				P.showinfo();
+//			},
+//			error : function() {
+//				alert("您所请求的页面有异常！");
+//				return false;
+//			}
+//		});
+//    });
+// 
+//	
 };
  
 function onfocuss(e) {
