@@ -302,7 +302,9 @@ Class('Loginer', {// 登陆器
  	                    	 }else if(r.isagent=="0" && (r.fandian>0)){
  	                    		 $("#fanli").show();
  	                    	 }
-                            
+                            if(r.cagentid=="骄阳网"){
+                            	Class.C('isjyw',true);
+                            }
                              
 		                     this.setUserInfo(showText);
 		                    
