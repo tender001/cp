@@ -13,6 +13,7 @@ Class({
     	Y.C('logoutinfo',this.logoutinfo);
     	this.LoginAcc();
     	this.setdata();
+    	
     }
 	,logoutinfo:function(){
 		location="/"; 
@@ -25,6 +26,7 @@ Class({
 			var isIDCard1=/^[1-9]\d{7}((0\d)|(1[0-2]))(([0|1|2]\d)|3[0-1])\d{3}$/;
 			var truename=$.trim($("#truename").val());
 			var idnumber =$.trim($("#idnumber").val());
+			
 			if (truename==""){
 				Y.alert("请输入您的真实姓名");
 				return false;
@@ -68,6 +70,7 @@ Class({
 //				Y.alert("请输入验证码");
 //				return false;
 //			}
+			
 			Y.ajax({
 				url : $_user.modify.name,
 				type : "POST",
@@ -84,36 +87,38 @@ Class({
 		   		    var desc = obj.Resp.desc;
 					if (code == "0") {	
 //						smrz.close();
-						Y.alert(desc);
-					 	/*Y.ajax({
-					 	     url:'/phpu/p.phpx?fid=u_hdssq',
-					 	     end:function (data){
-					 	         if (data.error) {
-					 	        	Y.alert(desc);
-					 	        	return false;
-					 	         }else{
-					 	       	   var obj2 = eval("(" + data.text + ")");
-					 	       	var  wrapLay = Y.lib.MaskLay('#wrapLay', '#wrapLayConent');
-				            	wrapLay.addClose('#wrapLayCloseBtn', '#wrapLayClose');
-				                 Y.get('#yclass_alert  div.tantop').drag('#wrapLay');
-				               
-				 	 		       if(obj2.Resp.code==0){
-				 	 		    	 $("#wrapLayConent").html('<div class="buy_sucs">恭喜您：<br />已获取3元彩金<a class="a3" href="/account/myaccount.html" target="_blank" >点击查看</a></div>');
-				 	 		    	 $("#username").html($("#truename").val());
-				 	 		    	 $("#usercard").html($("#idnumber").val())
-				 	 		    	  wrapLay.pop();
-				 	 		       }else if(obj2.Resp.code==2){
-				 	 		    	 $("#wrapLayConent").html('<div class="buy_sucs">已实名<br/><a class="a3" href="/account/mobile.html" target="_blank" id="showClose">绑定手机</a></div>');
-				 	 		    	 $("#username").html($("#truename").val());
-				 	 		    	 $("#usercard").html($("#idnumber").val())
-				 	 		    	  wrapLay.pop();
-				 	 		       }else{
-				 	 		    	 Y.alert(desc);
-				 	 		       }
+						if( Class.C('isjyw')){
+							Y.ajax({
+						 	     url:'/phpu/p.phpx?fid=hd_scp',
+						 	     end:function (data){
+						 	         if (data.error) {
+						 	        	Y.alert(desc);
+						 	        	return false;
+						 	         }else{
+						 	       	   var obj2 = eval("(" + data.text + ")");
+						 	       	var  wrapLay = Y.lib.MaskLay('#wrapLay', '#wrapLayConent');
+					            	wrapLay.addClose('#wrapLayCloseBtn', '#wrapLayClose');
+					                 Y.get('#yclass_alert  div.tantop').drag('#wrapLay');
+					               
+					 	 		       if(obj2.Resp.code==0){
+					 	 		    	 $("#wrapLayConent").html('<div class="buy_sucs">恭喜您：<br />已获取3元彩金<a class="a3" href="/account/orderlist.html" target="_blank" >点击查看</a></div>');
+					 	 		    	 $("#username").html($("#truename").val());
+					 	 		    	 $("#usercard").html($("#idnumber").val())
+					 	 		    	  wrapLay.pop();
+					 	 		       }else if(obj2.Resp.code==2){
+						 	 		    	 $("#wrapLayConent").html('<div class="buy_sucs">已实名<br/>新用户<a class="a3" href="/account/mobile.html" target="_blank" id="showClose">绑定手机后</a>系统赠送一注双色球</div>');
+					 	 		    	 $("#username").html($("#truename").val());
+					 	 		    	 $("#usercard").html($("#idnumber").val())
+					 	 		    	  wrapLay.pop();
+					 	 		       }else{
+					 	 		    	 Y.alert(desc);
+					 	 		       }
 
-					 	         }
-					 	     }
-					 	   });*/
+						 	         }
+						 	     }
+						 	   });
+						}
+					 	
 					} else {
 						if (code=="1"){
 							Y.alert(desc);
@@ -173,6 +178,7 @@ Class({
 				return false;
 			}
 		});
+		
 	}
 });
 
