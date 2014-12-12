@@ -31,7 +31,7 @@
 .cp-news-list{background-color: #fff;overflow: hidden;border-bottom: .2em solid #ccc}
 .cp-news-list li{border-top:1px solid #ccc;vertical-align: top}
 .cp-news-list .ico-click{position: relative}
-.cp-news-list .ico-click i{margin-top:0.91em;-webkit-transform: rotate(45deg);-moz-transform: rotate(45deg);-o-transform: rotate(45deg);transform:rotate(45deg)}
+.list .ico-click i{margin-top:0.91em;-webkit-transform: rotate(45deg);-moz-transform: rotate(45deg);-o-transform: rotate(45deg);transform:rotate(45deg)}
 .cp-news-list a{display:block;height:3.0em;line-height:3.0em;overflow: hidden}
 .cp-news-list span{color: #999;padding:0 6px 0 8px}
 .caipiao-pay{width: 100%;height: 3.5em;line-height: 3.5em;font-size:1.1em;color:#fff;background-color: #3e3e3e}
@@ -79,7 +79,6 @@
 .cz_icon7{background-position:0 -234px;}
 .cz_icon8{background-position:0 -274px;}
 .cz_icon1,.cz_icon2,.cz_icon3,.cz_icon4,.cz_icon5,.cz_icon6,.cz_icon7,.cz_icon8{background-image:url(../img/cz_icon.png);background-repeat:no-repeat; background-size:36px 315px;}
-.pay-money{margin-top:2.6rem;padding: 10px 0;font-size: 1.14em;background-color: #f1f1f1;}
 .pay-money .pay-money-in{width: 94%;margin: 0 auto;padding:0 3%;background-color: #fff}
 .pay-money-in p{padding:1.2em 0 1.0em;border-bottom: 1px dotted #000;position: relative}
 .pay-money-in input{width:60%;height: 1.3em;margin:0 0 0 1%;padding:5px 0 5px 5px;border:0 none;outline: 0}
@@ -97,7 +96,14 @@
 .bank-about{color: #888}
 .pay-tip{padding:1.4em 10px;font-size: 1.14em;color: #808080;background-color: #f0f0f0}
 .pay-submit{padding: 1.3em;background-color: #e3e3e3}
-/**/
+/*开奖*/
+.kj-menu{padding-bottom: 0}
+.kj-menu .kj-menu-b{padding: 1em 0;border-top:1px solid #ccc;border-bottom:1px solid #ccc;background-color: #fff}
+.kj-menu-b ul{display: table;width: 94.44%;margin:0 auto;border: 0.14em solid #f60;border-radius: 6px}
+.kj-menu-b ul li{display: table-cell;padding:0.7em 0;letter-spacing:0.14em;color:#f60;text-align: center}
+.kj-menu-b ul li.cur{color:#fff;background-color: #f60}
+
+
 
 
 /*快乐扑克*/

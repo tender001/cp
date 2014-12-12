@@ -24,11 +24,13 @@ table{border-collapse:collapse;border-spacing:0}
 .fixed{position:fixed;bottom:0;left:0;z-index:99;width:100%}
 .more{float: right;color: #999}
 /*@media screen and (-webkit-min-device-pixel-ratio:0){input{line-height:normal !important}}*/
+.top-mar{margin-top:2.6rem;padding: 10px 0;font-size: 1.14em;background-color: #f1f1f1;}
 .user a,.nav-list h3,.go-top-ico{background-image:url("../img/app-icon-index.png");background-repeat:no-repeat;}
 /*gotop*/
 .go-top{position: relative}
 .go-top-ico{position: absolute;top: 0.78em;right: 1em;display:block;width: 25px;height: 25px;background-position:-2px -191px;background-size: 33px}
 /*右-点击*/
+.list .ico-click i{margin-top:0.91em;-webkit-transform: rotate(45deg);-moz-transform: rotate(45deg);-o-transform: rotate(45deg);transform:rotate(45deg)}
 .ico-click i{float:right;width:0.8em;height:0.8em;margin-right:1.4em;border-top:3px solid #b0b0b0;border-right:3px solid #b0b0b0;position:relative;-webkit-transform: rotate(-45deg);-moz-transform: rotate(-45deg);-o-transform: rotate(-45deg);transform:rotate(-45deg)}
 .ico-click .cur{top:-0.2em;-webkit-transform: rotate(135deg);-moz-transform: rotate(135deg);-o-transform: rotate(135deg);transform:rotate(135deg)}
 /*充值选择*/
