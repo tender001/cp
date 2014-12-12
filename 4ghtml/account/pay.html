@@ -9,53 +9,192 @@
     <title>充值_159彩票网</title>
     <link rel="stylesheet" href="/css/basic.css" type="text/css"/>
     <link rel="stylesheet" href="/css/style.css" type="text/css"/>
+     <script src='/js/jquery.js'></script>
+	<script src='/js/159cp.js'></script>
+	<script src='/js/base.js'></script>
+	<script src='/js/login.js'></script>
+    
 </head>
 <body>
+ <script type="text/javascript">
+        var hasBindYt = false;//连连是否绑卡
+        chklogin(1);
+        $(document).ready(function(){
+            $("#moneys li em").click(function(){
+                if(!$(this).hasClass("cur")){
+                    $(this).parent().find("em").removeClass("cur");
+                    $(this).addClass("cur");
+                    $("#money").val($(this).attr("data-target"));
+                }
+            });
+            setInterval(function(){
+                var _money = $("#money").val();
+                $("#moneys li em").removeClass("cur");
+                $("#"+_money).addClass("cur");
+                if(/^[1-9]\d{0,}$/.test(_money)){
+                    $("#submit").removeClass("action_no")
+                }else{
+                    $("#submit").addClass("action_no");
+                }
+            },100);
+
+            $("#chargetypeTab ul").click(function(){
+               if(!$(this).find('em.true-icon').hasClass("true-icon-cur")){
+                   $("ul em.true-icon").removeClass("true-icon-cur");
+                   $(this).find('em.true-icon').addClass("true-icon-cur");
+               }
+            });
+
+            (function(){
+                var lastUsed = ""//Cookies.get("wifi.159cai.com.recharge.lastUsed");
+                if(lastUsed == "yt"){
+                    if(hasBindYt){
+                        $("#"+lastUsed).remove();
+                        $("#used").html($("#yt-list").html());
+                        $("#yt_cards").remove();
+                        $("#used li").first().trigger("click")
+                    }
+                }else if(lastUsed){
+                    $("li.charge_type").removeClass("select");
+                    $("#"+lastUsed).addClass("select").remove().appendTo($("#used"));
+                    $("#used").find("li .czfs_name").css("margin-left","9px");
+                }else{
+                    $("#h10").remove();
+                }
+            })();
+
+            var CallRecharge = {
+                zfb:function(money){
+//                     window.location.href="/recharge/alipay/ci?amount="+money;
+                    $("#payform").attr("action","/pwap/addmoney.phpx");
+                    $("#banktype").val("00");
+                    $("#bankid").val("3");
+                    $("#addmoney").val(money);
+                    if ($("#addmoney").val()<10){
+            	    	showTips('存入金额至少为10元');
+            			$("#money").focus();
+            			return false;
+            		}else if($("#addmoney").val()>5000000){
+            			showTips('存入金额最高不能超过500万元人民币');
+            			return false;
+            		}else{
+            			$("#payform").submit();
+            			$("#money").focus();
+            		}
+                    
+                },
+                cft:function(money){
+                    window.location.href="/recharge/tenpay/ci?amount="+money;
+                },
+                mcard:function(money){
+                    window.location.href="/recharge/wx/ci?amount="+money;
+                },
+               /* bankcard:function(money){
+                    window.location.href="/recharge/bankcard/index?amount="+money;
+                },*/
+                yt:{
+                    newcard:function(money){
+                        window.location.href="/recharge/lianlian/newcard?amount="+money;
+                    },
+                    usedCard:function(money,cardno,agreeno){
+                        $("#amount").val(money);
+                        $("#card_no").val(cardno);
+                        $("#no_agree").val(agreeno);
+                        $("#ytform").submit();
+                    }
+                },
+                baidu:function(money){
+                    window.location.href="/recharge/baifubao/index.html?allmoney="+money;
+                },
+                mcard:function(money){
+                    window.location.href="/recharge/mobile/card"
+                }
+            };
+
+            $("#yt").click(function(){
+                if($("#yt_cards").is(':visible')){
+                    $("#yt_cards").hide();
+                    $("#card_flag").removeClass("czfs_up");
+                }else{
+                    $("#yt_cards").show();
+                    $("#card_flag").addClass("czfs_up");
+                }
+            });
+
+            $("#submit").click(function(){
+                if(!$(this).hasClass("action_no")){
+                    var _money = $("#money").val();
+                    var $eliment = $("em.true-icon-cur");
+                    var typename = $eliment.attr("data-type");
+
+//                     Cookies.set("wifi.159cai.com.recharge.lastUsed",typename,{path:"/"});
+
+                    if(typename == "kjcz"){
+                        var cardno = $eliment.attr("data-cardno");
+                        var agreeno = $eliment.attr("data-agreeno");
+                        if(cardno && agreeno){
+                            CallRecharge[typename].usedCard(_money,cardno,agreeno);
+                        }else{
+                            CallRecharge[typename].newcard(_money);
+                        }
+                    }else{
+                        CallRecharge[typename](_money);
+                    }
+                }
+            });
+        })
+    </script>
 <section class="buyHeader">
-    <h1>竞彩足球-投注</h1>
-    <a href="#" class="backIco2"></a>
+    <h1>充值</h1>
+    <a href="javascript:history.go(-1);" class="backIco2"></a>
     <a href="/" class="goHome"></a>
 </section>
 <div class="top-mar pay-money">
     <div class="pay-money-in">
-        <p>充值金额<input type="text" placeholder="请输入充值金额"/><i>元</i></p>
-        <ul class="pay-money-ch">
-            <li><em class="cur">50元</em></li>
-            <li><em>100元</em></li>
-            <li><em>300元</em></li>
-            <li><em>500元</em></li>
+        <p>充值金额<input type="tel" value="" placeholder="请输入充值金额"  maxlength="6" id="money"><i>元</i></p>
+        <ul class="pay-money-ch" id="moneys">
+            <li><em class="cur" data-target="50" id="50">50元</em></li>
+            <li><em data-target="100" id="100">100元</em></li>
+            <li><em data-target="300" id="300">300元</em></li>
+            <li><em data-target="500" id="300">500元</em></li>
         </ul>
     </div>
 </div>
-<div class="pay-bank">
-    <ul>
-        <li class="bank-ico"><em class="cz_icon1"></em></li>
+<div style="display: none;">
+                    <ul id="used">
+
+                    </ul>
+                    
+                </div>
+<div class="pay-bank" id="chargetypeTab">
+    <ul >
+        <li class="bank-ico" pay="1"><em class="cz_icon1"></em></li>
         <li>
             <p class="bank-tit">支付宝</p>
             <p class="bank-about">畅快充值，0手续费</p>
         </li>
         <li class="bank-true">
-            <em class="true-icon true-icon-cur"><i></i></em>
+            <em class="true-icon true-icon-cur" id="zfb" data-type="zfb"><i></i></em>
         </li>
     </ul>
-    <ul>
+    <ul >
         <li><em class="cz_icon8"></em></li>
         <li>
             <p class="bank-tit">快捷支付</p>
             <p class="bank-about">银联收取0.6%的手续费，最低0.1元/笔</p>
         </li>
         <li>
-            <em class="true-icon"><i></i></em>
+            <em class="true-icon" id="kjzf" data-type="kjzf"><i></i></em>
         </li>
     </ul>
-    <ul>
+    <ul >
         <li><em class="cz_icon6"></em></li>
         <li>
             <p class="bank-tit">手机卡充值</p>
             <p class="bank-about">服务商收取4%手续费</p>
         </li>
         <li>
-            <em class="true-icon"><i></i></em>
+            <em class="true-icon" id="mcard" data-type="mcard"><i></i></em>
         </li>
     </ul>
 </div>
@@ -64,6 +203,11 @@
     为防止套现和洗钱，单笔充值后需消费30%才能提现。
 </p>
 
-<div class="pay-submit"><a class="btn btn-true" href="#">确认充值</a></div>
+<div class="pay-submit"><a class="btn btn-true" id="submit">确认充值</a></div>
+<form name="payform" method="post" action="/pwap/addmoney.phpx" id="payform">
+    <input type="hidden" name="banktype" id="banktype" value="00" /> 
+    <input type="hidden" name="bankid" id="bankid"	value="3" />
+    <input name="addmoney" type="hidden" id="addmoney" size="6"/>
+</form>
 </body>
 </html>
