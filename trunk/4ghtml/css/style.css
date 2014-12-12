@@ -100,7 +100,7 @@
 .kj-menu{padding-bottom: 0}
 .kj-menu .kj-menu-b{padding: 1em 0;border-top:1px solid #ccc;border-bottom:1px solid #ccc;background-color: #fff}
 .kj-menu-b ul{display: table;width: 94.44%;margin:0 auto;border: 0.14em solid #f60;border-radius: 6px}
-.kj-menu-b ul li{display: table-cell;padding:0.7em 0;letter-spacing:0.14em;color:#f60;text-align: center}
+.kj-menu-b ul li{display: table-cell;padding:0.7em 0;letter-spacing:0.14em;color:#f60;text-align: center;border-left:0.14em solid #f60}
 .kj-menu-b ul li.cur{color:#fff;background-color: #f60}
 .kj-list{border-bottom: 1px solid #ccc;margin-bottom: 4em}
 .kj-list ul{width: 97%;margin:-1px auto 0;overflow: hidden}
