@@ -6,6 +6,14 @@ getcookie=function(name) {
 			(cookie_end > cookie_start ? cookie_end : document.cookie.length)));
 };
 
+delcookie=function (name) {  
+	var exp = new Date(); //当前时间   
+    exp.setTime(exp.getTime() - 1); //删除cookie 只需将cookie设置为过去的时间    
+    var cval = getcookie(name);  
+   
+        document.cookie = name + "=" + cval + ";expires="+ exp.toGMTString();  
+}
+
 setcookie=function(name,value) {
 	var Days = 30;
     var exp = new Date();
