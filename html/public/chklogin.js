@@ -302,6 +302,7 @@ Class('Loginer', {// 登陆器
  	                    	 }else if(r.isagent=="0" && (r.fandian>0)){
  	                    		 $("#fanli").show();
  	                    	 }
+                            
                              
 		                     this.setUserInfo(showText);
 		                    
