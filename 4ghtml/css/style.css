@@ -23,9 +23,9 @@
 .cp-list li{border-top: 1px solid #ccc;vertical-align: top;overflow: hidden}
 .caipiao-ap{float: left;width:60px;margin:0 2%}
 .caipiao-ap img{width: 100%;}
-.caipiao-tit{float: left;width: 75%;font-size: 1.3em;font-family: \5fae\8f6f\96c5\9ed1}
+.caipiao-tit{float: left;width: 75%;font-size: 1.3em;font-family: \5fae\8f6f\96c5\9ed1;color: #040c0f}
 .caipiao-tit em{display: block;height: 1.6em;padding-top: 10px}
-.caipiao-tit cite{display: block;height: 1.6em;font-size:0.7em;}
+.caipiao-tit cite{display: block;height: 1.6em;font-size:0.7em;color:#888}
 .cp-news{padding: 10px 0;font-size:1.1em;background-color: #f0f0f0}
 .cp-news-tit{width: 96%;height:3.5em;line-height:3.5em;padding: 0 2%;border-top:1px solid #ccc;background-color: #fff}
 .cp-news-list{background-color: #fff;overflow: hidden;border-bottom: .2em solid #ccc}
@@ -33,6 +33,7 @@
 .cp-news-list .ico-click{position: relative}
 .cp-news-list a{display:block;height:3.0em;line-height:3.0em;overflow: hidden}
 .cp-news-list span{color: #999;padding:0 6px 0 8px}
+.cp-news-list em{color: #444}
 .caipiao-pay{width: 100%;height: 3.5em;line-height: 3.5em;font-size:1.1em;color:#fff;background-color: #3e3e3e}
 .caipiao-pay a{padding:0 1em;color:#fff;}
 .index-footer{padding: .7em;background-color: #f0f0f0}
@@ -101,7 +102,12 @@
 .kj-menu-b ul{display: table;width: 94.44%;margin:0 auto;border: 0.14em solid #f60;border-radius: 6px}
 .kj-menu-b ul li{display: table-cell;padding:0.7em 0;letter-spacing:0.14em;color:#f60;text-align: center}
 .kj-menu-b ul li.cur{color:#fff;background-color: #f60}
-.kj-list ul{width: 96%;margin: 0 auto}
+.kj-list ul{width: 97%;margin: 0 auto;overflow: hidden}
+.kj-list ul li{border-bottom: 1px solid #ccc}
+.kj-list ul li a{color: #999}
+.kj{width: 92%;}
+.kj-tit strong{paddingfont-size: 1.14em;color: #333}
+
 
 
 
