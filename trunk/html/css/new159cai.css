@@ -1280,6 +1280,7 @@ p.jjz{width:635px;line-height:20px;margin:15px auto 30px;padding:20px 30px 65px;
 .gs_stp p a:hover{color:#f60; text-decoration:underline}
 .gs_stp p input{margin-right:10px}
 .buy_sucs{ background:url(../images/cai888/gttd.jpg) 60px 30px no-repeat;padding:40px 0 0 120px;line-height:26px;color:#444;font-size:14px;}
+.buy_sucs a{padding:0 4px;color:#f60}
 .buy_sucs span{line-height:30px;font-size:16px;font-weight:bold;color:#e7640b;display:block;height:30px}
 .buy_sucs p{text-align:left;font-size:14px;color:#444;padding-bottom:10px;line-height:24px}
 .buy_sucs p font{font-weight:bold;font-size:14px;color:#ff0000;padding:0 3px}
