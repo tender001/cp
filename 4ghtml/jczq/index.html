@@ -44,7 +44,7 @@
 <!-- </div> -->
 <div class="buyFooter" id='buyFooter1'>
 	<div class="buyFloat fixed">
-		<em class="deleted"></em>
+		<em class="deleted"  onclick="ReChoose();"></em>
 		<span>已选择<cite class="yellow" id="betnum">0</cite>场比赛</span>
 		<a href="javascript:betconfirm()" class="ture" id="isOk_">确 认</a>
 	</div>
@@ -60,24 +60,24 @@
 </style>
     <section class="zfPop chuan_" style="display:none;position: fixed; z-index: 1000; left:50%; top:50%;margin-left:-9.25rem;" id="chuan_">
         <h4>自由过关</h4>
-        <div class="ww_">
-            <!-- <span v="1" style='border-top:1px solid #d5d5d5;'>单关</span> -->
-            <span class="cur" style="border-top:1px solid #d5d5d5;" v="2">2串1</span>
-            <span style="border-top:1px solid #d5d5d5;" v="3">3串1</span>
-            <span style="border-top:1px solid #d5d5d5;" v="4">4串1</span>
-            <span v="5">5串1</span>
-            <span v="6">6串1</span>
-            <span v="7">7串1</span>
-            <span v="8">8串1</span>
-            <div class="clear"></div>
+        <div class="ww_" id="passModeList">
+<!--             <span v="1" style='border-top:1px solid #d5d5d5;'>单关</span> -->
+<!--             <span class="cur" style="border-top:1px solid #d5d5d5;" v="2">2串1</span> -->
+<!--             <span style="border-top:1px solid #d5d5d5;" v="3">3串1</span> -->
+<!--             <span style="border-top:1px solid #d5d5d5;" v="4">4串1</span> -->
+<!--             <span v="5">5串1</span> -->
+<!--             <span v="6">6串1</span> -->
+<!--             <span v="7">7串1</span> -->
+<!--             <span v="8">8串1</span> -->
+<!--             <div class="clear"></div> -->
         </div>
-        <a href="javascript:;" class="tureBtn">确定</a>
+        <a href="javascript:closeggtype();" class="tureBtn">确定</a>
     </section>
     <article>
         <header class="tzHeader">
             <section class="buyHeader">
                 <h1>竞彩足球-投注</h1>
-                <a class="backIco2" href="#"></a>
+                <a class="backIco2" href="javascript:showbuy(false)"></a>
             </section>
         </header>
         <div class="pdLfrt09">
@@ -90,18 +90,24 @@
         <footer class="buyFooter">
             <div class="fixed">
 <!--                 <p class="spfjj">若中奖，理论奖金 <em class="yellow" id="rangeMoney">7.84~3457.43</em>元</p> -->
-                <div class="double clearfix"><input type="text" v="2" class="left spfinput" readonly="" value="" id="selectPlay"><span class="right">投<input type="tel" value="1" name="bs" id="bs_">倍</span> </div>
+                <div class="double clearfix">
+                <input type="text" v="2" class="left spfinput" readonly="" value="" id="selectPlay" onclick="Choggtype()">
+<!-- 				<section id="cbxPassMode"><option value="P2_1" selected>2串1</option></section> -->
+                
+                <span class="right">投<input type="tel" onchange="TimesNum(this,1,99999)" size="5" maxlength="5" value="1" name="bs" id="preTimes">倍</span> </div>
                 <div class="buyFloat">
-                    <input type="hide" value="发起合买" class="fqhm" id="fqhm">
-                    <p id="count_">共<cite class="yellow">0</cite>注<cite class="yellow">0</cite>元</p>
-                    <a id="payment" class="ture" href="javascript:;">投 注</a>
+                    <input type="hidden" value="发起合买" class="fqhm" id="fqhm">
+                    <p id="preMoney">共<cite class="yellow">0</cite>注<cite class="yellow">0</cite>元</p>
+                    <a id="payment" class="ture" href="javascript:prebuy(2);">投 注</a>
                 </div>
             </div>
         </footer>
     </article>
     
     </article>
-
+<input type="hidden" id="hidAmount" value="0">
+<input type="hidden" value="竞彩让球胜平负" id="hidTypeName">
+<input id="gid" type="hidden" value="72">
 </body>
 </html>
 <script type="text/javascript" src='/js/310JQ.js'></script>
