@@ -385,6 +385,8 @@ a.czbtnhui{color:#666;background:url(../images/cai888/user_03hui.jpg);border:1px
 .rztab td.td1{color:#444;font-size:12px;height:25px;line-height:25px}
 .rztab input.text{float:left;width:200px;height:28px;font-size:14px;color:#444;border:1px solid #ccc;padding:7px 0 0 5px\9;height:21px\9}
 :root .rztab input.text{height:28px;padding:0 0 0 5px;}
+.rztab th{text-align: left}
+.rztab th i{padding-left:2em;line-height: 30px;color:#f60;vertical-align: middle}
 .rztab  label{float:left;padding-right:40px;text-align:left}
 .rztab  label a{color:#145fab;}
 .rztab  label a:hover,.rztab p  a:hover{color:#f60; text-decoration:underline}
