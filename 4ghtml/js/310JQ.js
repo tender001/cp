@@ -8,7 +8,8 @@ function TimesNum(obj, minN, maxN) {
     times = parseInt(obj.value);
     amount = (noteCount * times * 2);
     byID("hidAmount").value = amount;
-    byID("preMoney").innerHTML = "金额：(" + chooseArray.length + "场)" + noteCount + "注×" + times + "倍=<span style='color:red'>￥" + amount + "</span>元";
+//    byID("preMoney").innerHTML = "金额：(" + chooseArray.length + "场)" + noteCount + "注×" + times + "倍=<span style='color:red'>￥" + amount + "</span>元";
+    byID("preMoney").innerHTML ='共<cite class="yellow">'+ noteCount +'</cite> 注<cite class="yellow">￥'+ amount +'</cite>元'
 }
 //切换代购、合买
 function switchKind(k) {
