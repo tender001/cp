@@ -97,6 +97,8 @@
 .bank-about{color: #888}
 .pay-tip{padding:1.4em 10px;font-size: 1.14em;color: #808080;background-color: #f0f0f0}
 .pay-submit{padding: 1.3em;background-color: #e3e3e3}
+/**/
+
 
 /*快乐扑克*/
 .S_icon:before,.C_icon:before,.H_icon:before,.D_icon:before{ position:absolute;left:4px;top:1px; background-position:0 0; width:13px; height:13px; content:"";}
