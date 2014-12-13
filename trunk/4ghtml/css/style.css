@@ -45,15 +45,15 @@
 /*投注*/
 .tz-menu{font:0.7em/1.5 sans-serif,Helvetica,Arial;color:#5c5c5c;text-indent:1em;background-color:#f2f2f2;border:1px solid #E4E4E4;border-width:1px 0}
 .tz-list{font-size: 0.9em;line-height: 1.2em;color: #5c5c5c;text-align:center;border-bottom: 1px solid #e4e4e4}
-.tz-list .list-l{float:left;width:19%;}
-.tz-list .list-l *{display: block;line-height: 1.8em}
-.list-l i{color: #aaa}
-.tz-list .list-r{float:right;display: table;width:80.5%;box-sizing:border-box}
-.list-r .tz-true{float:left;width: 26%;margin-left: 1em}
+.tz-list .list-l{float:left;width:18%;}
+.tz-list .list-l *{display: block;height:1.8em;line-height: 1.8em;overflow: hidden}
+.list-l i{font-size:0.8em;color: #aaa;white-space: normal}
+.tz-list .list-r{float:right;display: table;width:81.8%;box-sizing:border-box}
+.list-r .tz-true{float:left;width: 31%;margin-left:0.3em}
 .tz-true em{display: block;line-height:1.8em;text-align: center;color: #78c600;border: 1px solid #78c600;border-radius: 0.5em}
 .tz-true em.cur{background-color: #78c600;color: #fff}
 .tz-true span{display: block;line-height: 2em;color: #aaa;text-align: center}
-.handBtn{ width:46%; line-height:2.1em; text-align:center; color:#f6851f; border:none; background:none; font-size:1.3em; border:1px solid #e2e2e2; background:#fff; font-weight:bold; margin:.5rem 0; border-radius:.2rem; -webkit-border-radius:.2rem; -moz-border-radius:.2rem}
+.handBtn{ width:46%; line-height:2.1em; text-align:center; color:#f6851f;background:none; font-size:1.3em; border:1px solid #e2e2e2; background:#fff; font-weight:bold; margin:.5rem 0; border-radius:.2rem; -webkit-border-radius:.2rem; -moz-border-radius:.2rem}
 .clearBtn{ width:40%; text-align:left;padding-left: 5%}
 .clearBtn:before{display:inline-table;content:"";width:.91em;height:.95em;padding:0 1em 0 0;background:url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB8AAAAgCAMAAADdXFNzAAAAb1BMVEUAAAD2hR/2hR/2hR/2hR/2hR/2hR/2hR/2hR/2hR/2hR/2hR/2hR/2hR/2hR/2hR/2hR/2hR/2hR/2hR/2hR/2hR/2hR/2hR/2hR/2hR/2hR/2hR/2hR/2hR/2hR/2hR/2hR/2hR/2hR/2hR/2hR+fb35gAAAAJHRSTlMALVXdd/rufzYFI65qYMly505CGdMUopuSKQ703Ly3jdqGScB0rpRtAAABPUlEQVQoz22SWaKCMAxFI9JWkFEmcQDU7H+NryQh+IT7cVs4aZM2BVVZG2SZuoSNetMGi1rTb3hyh1X3RKdHkcXjKrTLDMLwacN92SEMASC3sK8ipyHFaJ+blIY3NvOwBOm8wTd9nLAnj70f8OA9xpP61xdzjhXnfUrvN3LmJTaSl4QpV6M8NVw3sGzOp1GeF/B97uk1ez0qH2vwcpPwrJv92SnvnuB1zYQP59nPZ+EyhXYQ3kq48uxKy1rhY0bpHsonR2lH4e44e2KVW2r/w/17GgFGwiMMYIlSAheshFd4AY0SImg1aChKG0irCEl8jyfhse5HnPJp+7h1XA9zqbfE2/qQ+DzE+SakifoQ6daYy8XnhfKaGlj5/aI48vkq8HrVyj8dbNV9aNDWqbY/U+OCXzmTgMoV+KvCEfkDRvAZr3Q+gJcAAAAASUVORK5CYII=") no-repeat center; background-size:.91em .95em; -webkit-background-size:.91em .95em}
 .tzNum,.spfNum{padding:1em 0;border-top:1px solid #e4e4e4; border-bottom:1px solid #e4e4e4;}
@@ -95,7 +95,6 @@
 .bank-true{width: 30px}
 .bank-about{color: #888}
 .pay-tip{padding:1.4em 10px;font-size: 1.14em;color: #808080;background-color: #f0f0f0}
-.pay-submit{padding: 1.3em;background-color: #e3e3e3}
 /*开奖*/
 .kj-menu{padding-bottom: 0}
 .kj-menu .kj-menu-b{padding: 1em 0;border-top:1px solid #ccc;border-bottom:1px solid #ccc;background-color: #fff}
@@ -124,6 +123,12 @@
 .H_icon:before{ background-position:0 -19px; width:12px; height:13px;}
 .D_icon:before{ background-position:0 -54px; width:9px; height:12px;}
 .S_icon:before,.C_icon:before,.H_icon:before,.D_icon:before{ background-image:url(../img/huase_icon.png); background-size:13px 70px;}
+/*新闻资讯*/
+.news-top{margin-top: 3.3rem;padding: 10px 3%;border-top:1px solid #ccc}
+.news-tit{padding:0 0 0.4em;border-bottom: 1px dotted #ccc}
+.news-tit h1{height:2em;line-height:2em;font-size: 1.14em;overflow: hidden;text-align: center}
+.news-tit strong{font-size:0.8em;font-weight:400;color:#777}
+.news-top p{padding: 1.2em 0 0;text-indent:2em;color:#444;}
 
 
 
