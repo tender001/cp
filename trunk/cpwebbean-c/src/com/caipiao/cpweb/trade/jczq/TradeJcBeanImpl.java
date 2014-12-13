@@ -317,6 +317,11 @@ public class TradeJcBeanImpl extends BaseImpl {
     }
 
     public static void main(String[] args) throws Exception {
+    	
+    	boolean flag = new TradeJcBeanImpl().isOpenPlay("141206008>SPF=3,141206009>RSPF=3",new HashMap(),new HashMap());
+    	System.out.println(flag);
+    	
+    	
         String spf = "3.20,3.60,2.4000";
         System.out.println(getsp(spf, "1"));
         System.out.println(MD5Util.compute("121220" + "_" + "20121220225241" + "_" + PythonFilterUtil.CUSPWD));
@@ -1031,6 +1036,31 @@ public class TradeJcBeanImpl extends BaseImpl {
         }
         return true;
     }
+    
+    private boolean isOpenPlay(String code,HashMap<String,MatchBean> spfMatchMap,HashMap<String,MatchBean> rspfMatchMap) throws Exception {
+    	String[] codes = code.split("\\|");
+    	if(codes.length > 1){
+	    	String[] items = codes[1].split(",");
+	    	for(int i=0;i<items.length;i++){
+	    		String itemid = items[i].substring(0,9);
+	    		String wf = items[i].substring(items[i].indexOf(">")+1,items[i].indexOf("="));
+	    		System.out.println(itemid);
+	    		System.out.println(wf);
+	    		if(wf.equalsIgnoreCase("spf")){
+	    			if(!spfMatchMap.keySet().contains(itemid)){
+	    				throw new Exception("比赛场次: " + itemid + " 未开胜平负玩法!");
+	    			}
+	    		}else if(wf.equalsIgnoreCase("rspf")){
+	    			if(!rspfMatchMap.keySet().contains(itemid)) {
+	    				throw new Exception("比赛场次: " + itemid + " 未开让球胜平负玩法!");
+	    			}
+	    		}
+	    	}
+    	}else{
+    		throw new Exception("投注号码格式不正确!");
+    	}
+        return true;
+    }
 
     /**
      * 成功发起方案后的文件处理
@@ -1156,6 +1186,111 @@ public class TradeJcBeanImpl extends BaseImpl {
             upload.setFileName(UPFILE, filename);
             file = upload.getFile(UPFILE);
             int total = 0;
+            
+            
+            Cache cache = null;
+            CacheManager cm = CacheManager.getCacheManager();
+
+            System.out.println(gid);
+
+            cache = cm.getCacheMatch(gid, bean.getExpect());
+            
+            HashMap spfMatchMap = new HashMap<String,MatchBean>();
+            HashMap rspfMatchMap = new HashMap<String,MatchBean>();
+
+            //if (cache == null || cache.isExpired()) {
+
+                //String[] fn = new String[] { "jczq_spf.xml", "jczq_cbf.xml", "jczq_bqc.xml", "jczq_jqs.xml",
+                //        "jczq_rspf.xml" };
+                
+                String[] fn = new String[] { "jczq_spf.xml", "jczq_cbf.xml", "jczq_bqc.xml", "jczq_jqs.xml", "jczq_hh.xml",
+                "jczq_rspf.xml" };
+
+                int value = Integer.parseInt(gid) - 90;
+                if (value < 0) {
+                    if(gid.equals("72")) value = 5;
+                    else if(gid.equals("70")) value = 4;
+                }
+                JXmlWapper xml = JXmlWapper.parse(new File("/opt/export/cpdata/match/jczq", fn[value]));
+                int count = xml.countXmlNodes("row");
+                System.out.println(count);
+                List<MatchBean> mList = new ArrayList<MatchBean>();
+                for (int i = 0; i < count; i++) {
+                    String mid = xml.getStringValue("row[" + i + "].@itemid");
+                    String hn = xml.getStringValue("row[" + i + "].@hn");
+                    String gn = xml.getStringValue("row[" + i + "].@gn");
+                    String bt = xml.getStringValue("row[" + i + "].@mt");
+                    String et = xml.getStringValue("row[" + i + "].@et");
+
+                    String fet = "";
+                    Date tmpet = DateUtil.parserDateTime(et);
+                    tmpet.setTime(tmpet.getTime() - 1000 * 60 * Fetdiff);
+                    fet = DateUtil.getDateTime(tmpet.getTime());
+
+                    String b3 = xml.getStringValue("row[" + i + "].@bet3");
+                    String b1 = xml.getStringValue("row[" + i + "].@bet1");
+                    String b0 = xml.getStringValue("row[" + i + "].@bet0");
+                    int close = xml.getIntValue("row[" + i + "].@close", 0);
+                    String mname = xml.getStringValue("row[" + i + "].@name");
+
+                    MatchBean mb = new MatchBean();
+                    mb.setItemid(mid);
+                    mb.setHn(hn);
+                    mb.setGn(gn);
+                    mb.setBt(bt);
+                    mb.setEt(fet);
+                    mb.setB3(b3);
+                    mb.setB1(b1);
+                    mb.setB0(b0);
+                    mb.setClose(close);
+                    mb.setMname(mname);
+
+                    switch (value) {
+                        case 0:
+                            mb.setSpv(xml.getStringValue("row[" + i + "].@spf"));
+                            break;
+                        case 1:
+                            mb.setSpv(xml.getStringValue("row[" + i + "].@cbf"));
+                            break;
+                        case 2:
+                            mb.setSpv(xml.getStringValue("row[" + i + "].@bqc"));
+                            break;
+                        case 3:
+                            mb.setSpv(xml.getStringValue("row[" + i + "].@jqs"));
+                            break;
+                        case 4:
+                            mb.setSpv(xml.getStringValue("row[" + i + "].@bqc") + ","
+                                    + xml.getStringValue("row[" + i + "].@cbf") + ","
+                                    + xml.getStringValue("row[" + i + "].@jqs") + ","
+                                    + xml.getStringValue("row[" + i + "].@spf") + ","
+                                    + xml.getStringValue("row[" + i + "].@rspf"));
+                            
+                            String spf = xml.getStringValue("row[" + i + "].@spf");
+                            String rspf = xml.getStringValue("row[" + i + "].@rspf");
+                            
+                            if(!spf.replaceAll(",", "").trim().equals("")) spfMatchMap.put(mid, mb);
+                            if(!rspf.replaceAll(",", "").trim().equals("")) rspfMatchMap.put(mid, mb);
+                            
+                            break;
+                        case 5:
+                            mb.setSpv(xml.getStringValue("row[" + i + "].@rspf"));
+                            break;
+                        default:
+                            break;
+                    }
+                    mList.add(mb);
+
+                }
+                Cache ca = new Cache(gid + bean.getExpect(), mList, System.currentTimeMillis() + 1000 * 60, false);
+                cm.putCacheMatch(gid, bean.getExpect(), ca);
+                System.out.println(gid + "_" + bean.getExpect() + "本地缓存更新");
+                cache = ca;
+
+            //} else {
+            //    System.out.println(gid + "_" + bean.getExpect() + "来源本地缓存");
+            //}
+            
+            
             if (file != null) {// 如果有上传文件的话
                 codes = file.getName().toLowerCase();
                 System.out.println("文件解析：" + DateUtil.getCurrentDateTime());
@@ -1206,8 +1341,10 @@ public class TradeJcBeanImpl extends BaseImpl {
                             }
 
                             FilterBase.doFilterJc(codebean, result);
+                            
+                            boolean isOpen = isOpenPlay(codestring[0],spfMatchMap,rspfMatchMap);
 
-                            if (isValid(result.getCurrentCode())) {
+                            if (isValid(result.getCurrentCode()) && isOpen) {
                                 try {
                                     GameCastCode gcc = plugin.parseGameCastCode(result.getCurrentCode());
                                     total += gcc.getCastMoney() * bs;
@@ -1252,85 +1389,7 @@ public class TradeJcBeanImpl extends BaseImpl {
             // periodbean.setGid("5");
             // periodbean.setPid("");
 
-            Cache cache = null;
-            CacheManager cm = CacheManager.getCacheManager();
 
-            System.out.println(gid);
-
-            cache = cm.getCacheMatch(gid, bean.getExpect());
-
-            if (cache == null || cache.isExpired()) {
-
-                String[] fn = new String[] { "jczq_spf.xml", "jczq_cbf.xml", "jczq_bqc.xml", "jczq_jqs.xml",
-                        "jczq_rspf.xml" };
-
-                int value = Integer.parseInt(gid) - 90;
-                if (value < 0) {
-                    value = 4;
-                }
-                JXmlWapper xml = JXmlWapper.parse(new File("/opt/export/cpdata/match/jczq", fn[value]));
-                int count = xml.countXmlNodes("row");
-                System.out.println(count);
-                List<MatchBean> mList = new ArrayList<MatchBean>();
-                for (int i = 0; i < count; i++) {
-                    String mid = xml.getStringValue("row[" + i + "].@itemid");
-                    String hn = xml.getStringValue("row[" + i + "].@hn");
-                    String gn = xml.getStringValue("row[" + i + "].@gn");
-                    String bt = xml.getStringValue("row[" + i + "].@mt");
-                    String et = xml.getStringValue("row[" + i + "].@et");
-
-                    String fet = "";
-                    Date tmpet = DateUtil.parserDateTime(et);
-                    tmpet.setTime(tmpet.getTime() - 1000 * 60 * Fetdiff);
-                    fet = DateUtil.getDateTime(tmpet.getTime());
-
-                    String b3 = xml.getStringValue("row[" + i + "].@bet3");
-                    String b1 = xml.getStringValue("row[" + i + "].@bet1");
-                    String b0 = xml.getStringValue("row[" + i + "].@bet0");
-                    int close = xml.getIntValue("row[" + i + "].@close", 0);
-                    String mname = xml.getStringValue("row[" + i + "].@name");
-
-                    MatchBean mb = new MatchBean();
-                    mb.setItemid(mid);
-                    mb.setHn(hn);
-                    mb.setGn(gn);
-                    mb.setBt(bt);
-                    mb.setEt(fet);
-                    mb.setB3(b3);
-                    mb.setB1(b1);
-                    mb.setB0(b0);
-                    mb.setClose(close);
-                    mb.setMname(mname);
-
-                    switch (value) {
-                        case 0:
-                            mb.setSpv(xml.getStringValue("row[" + i + "].@spf"));
-                            break;
-                        case 1:
-                            mb.setSpv(xml.getStringValue("row[" + i + "].@cbf"));
-                            break;
-                        case 2:
-                            mb.setSpv(xml.getStringValue("row[" + i + "].@bqc"));
-                            break;
-                        case 3:
-                            mb.setSpv(xml.getStringValue("row[" + i + "].@jqs"));
-                            break;
-                        case 4:
-                            mb.setSpv(xml.getStringValue("row[" + i + "].@rspf"));
-                            break;
-                        default:
-                            break;
-                    }
-                    mList.add(mb);
-                }
-                Cache ca = new Cache(gid + bean.getExpect(), mList, System.currentTimeMillis() + 1000 * 60, false);
-                cm.putCacheMatch(gid, bean.getExpect(), ca);
-                System.out.println(gid + "_" + bean.getExpect() + "本地缓存更新");
-                cache = ca;
-
-            } else {
-                System.out.println(gid + "_" + bean.getExpect() + "来源本地缓存");
-            }
 
             if (cache != null) {
 
@@ -2027,6 +2086,108 @@ public class TradeJcBeanImpl extends BaseImpl {
             }
 
             int total = 0;
+            
+            Cache cache = null;
+            CacheManager cm = CacheManager.getCacheManager();
+
+            System.out.println(gid);
+
+            cache = cm.getCacheMatch(gid, bean.getExpect());
+            
+            HashMap spfMatchMap = new HashMap<String,MatchBean>();
+            HashMap rspfMatchMap = new HashMap<String,MatchBean>();
+
+            //if (cache == null || cache.isExpired()) {
+
+            	String[] fn = new String[] { "jczq_spf.xml", "jczq_cbf.xml", "jczq_bqc.xml", "jczq_jqs.xml", "jczq_hh.xml",
+                "jczq_rspf.xml" };
+
+                int value = Integer.parseInt(gid) - 90;
+                if (value < 0) {
+                    if(gid.equals("72")) value = 5;
+                    else if(gid.equals("70")) value = 4;
+                }
+                
+                JXmlWapper xml = JXmlWapper.parse(new File("/opt/export/cpdata/match/jczq", fn[value]));
+                int count = xml.countXmlNodes("row");
+                System.out.println(count);
+                List<MatchBean> mList = new ArrayList<MatchBean>();
+                for (int i = 0; i < count; i++) {
+                    String mid = xml.getStringValue("row[" + i + "].@itemid");
+                    String hn = xml.getStringValue("row[" + i + "].@hn");
+                    String gn = xml.getStringValue("row[" + i + "].@gn");
+                    String bt = xml.getStringValue("row[" + i + "].@mt");
+                    String et = xml.getStringValue("row[" + i + "].@et");
+
+                    String fet = "";
+                    Date tmpet = DateUtil.parserDateTime(et);
+                    tmpet.setTime(tmpet.getTime() - 1000 * 60 * Fetdiff);
+                    fet = DateUtil.getDateTime(tmpet.getTime());
+
+                    String b3 = xml.getStringValue("row[" + i + "].@bet3");
+                    String b1 = xml.getStringValue("row[" + i + "].@bet1");
+                    String b0 = xml.getStringValue("row[" + i + "].@bet0");
+                    int close = xml.getIntValue("row[" + i + "].@close", 0);
+                    String mname = xml.getStringValue("row[" + i + "].@name");
+
+                    MatchBean mb = new MatchBean();
+                    mb.setItemid(mid);
+                    mb.setHn(hn);
+                    mb.setGn(gn);
+                    mb.setBt(bt);
+                    mb.setEt(fet);
+                    mb.setB3(b3);
+                    mb.setB1(b1);
+                    mb.setB0(b0);
+                    mb.setClose(close);
+                    mb.setMname(mname);
+
+                    switch (value) {
+                        case 0:
+                            mb.setSpv(xml.getStringValue("row[" + i + "].@spf"));
+                            break;
+                        case 1:
+                            mb.setSpv(xml.getStringValue("row[" + i + "].@cbf"));
+                            break;
+                        case 2:
+                            mb.setSpv(xml.getStringValue("row[" + i + "].@bqc"));
+                            break;
+                        case 3:
+                            mb.setSpv(xml.getStringValue("row[" + i + "].@jqs"));
+                            break;
+                        case 4:
+                            mb.setSpv(xml.getStringValue("row[" + i + "].@bqc") + ","
+                                    + xml.getStringValue("row[" + i + "].@cbf") + ","
+                                    + xml.getStringValue("row[" + i + "].@jqs") + ","
+                                    + xml.getStringValue("row[" + i + "].@spf") + ","
+                                    + xml.getStringValue("row[" + i + "].@rspf"));
+                            
+                            String spf = xml.getStringValue("row[" + i + "].@spf");
+                            String rspf = xml.getStringValue("row[" + i + "].@rspf");
+                            
+                            if(!spf.replaceAll(",", "").trim().equals("")) spfMatchMap.put(mid, mb);
+                            if(!rspf.replaceAll(",", "").trim().equals("")) rspfMatchMap.put(mid, mb);
+                            
+                            break;
+                        case 5:
+                            mb.setSpv(xml.getStringValue("row[" + i + "].@rspf"));
+                            break;
+                        default:
+                            break;
+                    }
+                    mList.add(mb);
+                }
+                Cache ca = new Cache(gid + bean.getExpect(), mList, System.currentTimeMillis() + 1000 * 60, false);
+                cm.putCacheMatch(gid, bean.getExpect(), ca);
+                System.out.println(gid + "_" + bean.getExpect() + "本地缓存更新");
+                cache = ca;
+
+           // } else {
+           //     System.out.println(gid + "_" + bean.getExpect() + "来源本地缓存");
+           // }
+            
+            
+            
             if (file != null) {// 如果有上传文件的话
                 // codes = file.getName().toLowerCase();
                 System.out.println("文件解析：" + DateUtil.getCurrentDateTime());
@@ -2077,8 +2238,10 @@ public class TradeJcBeanImpl extends BaseImpl {
                             }
 
                             FilterBase.doFilterJc(codebean, result);
+                            
+                            boolean isOpen = isOpenPlay(codestring[0],spfMatchMap,rspfMatchMap);
 
-                            if (isValid(result.getCurrentCode())) {
+                            if (isValid(result.getCurrentCode()) && isOpen) {
                                 try {
                                     GameCastCode gcc = plugin.parseGameCastCode(result.getCurrentCode());
                                     total += gcc.getCastMoney() * bs;
@@ -2122,84 +2285,7 @@ public class TradeJcBeanImpl extends BaseImpl {
                 }
             }
 
-            Cache cache = null;
-            CacheManager cm = CacheManager.getCacheManager();
 
-            System.out.println(gid);
-
-            cache = cm.getCacheMatch(gid, bean.getExpect());
-
-            if (cache == null || cache.isExpired()) {
-
-                String[] fn = new String[] { "jczq_spf.xml", "jczq_cbf.xml", "jczq_bqc.xml", "jczq_jqs.xml","jczq_rspf.xml"};
-
-                int value = Integer.parseInt(gid) - 90;
-                if (value < 0) {
-                    value = 4;
-                }
-                //if(Integer.parseInt(gid) == 72) value = 5;
-                //else if (Integer.parseInt(gid) == 70) value = 4;
-                
-                JXmlWapper xml = JXmlWapper.parse(new File("/opt/export/cpdata/match/jczq", fn[value]));
-                int count = xml.countXmlNodes("row");
-                System.out.println(count);
-                List<MatchBean> mList = new ArrayList<MatchBean>();
-                for (int i = 0; i < count; i++) {
-                    String mid = xml.getStringValue("row[" + i + "].@itemid");
-                    String hn = xml.getStringValue("row[" + i + "].@hn");
-                    String gn = xml.getStringValue("row[" + i + "].@gn");
-                    String bt = xml.getStringValue("row[" + i + "].@mt");
-                    String et = xml.getStringValue("row[" + i + "].@et");
-
-                    String fet = "";
-                    Date tmpet = DateUtil.parserDateTime(et);
-                    tmpet.setTime(tmpet.getTime() - 1000 * 60 * Fetdiff);
-                    fet = DateUtil.getDateTime(tmpet.getTime());
-
-                    String b3 = xml.getStringValue("row[" + i + "].@bet3");
-                    String b1 = xml.getStringValue("row[" + i + "].@bet1");
-                    String b0 = xml.getStringValue("row[" + i + "].@bet0");
-                    int close = xml.getIntValue("row[" + i + "].@close", 0);
-                    String mname = xml.getStringValue("row[" + i + "].@name");
-
-                    MatchBean mb = new MatchBean();
-                    mb.setItemid(mid);
-                    mb.setHn(hn);
-                    mb.setGn(gn);
-                    mb.setBt(bt);
-                    mb.setEt(fet);
-                    mb.setB3(b3);
-                    mb.setB1(b1);
-                    mb.setB0(b0);
-                    mb.setClose(close);
-                    mb.setMname(mname);
-
-                    switch (value) {
-                        case 0:
-                            mb.setSpv(xml.getStringValue("row[" + i + "].@spf"));
-                            break;
-                        case 1:
-                            mb.setSpv(xml.getStringValue("row[" + i + "].@cbf"));
-                            break;
-                        case 2:
-                            mb.setSpv(xml.getStringValue("row[" + i + "].@bqc"));
-                            break;
-                        case 3:
-                            mb.setSpv(xml.getStringValue("row[" + i + "].@jqs"));
-                            break;
-                        default:
-                            break;
-                    }
-                    mList.add(mb);
-                }
-                Cache ca = new Cache(gid + bean.getExpect(), mList, System.currentTimeMillis() + 1000 * 60, false);
-                cm.putCacheMatch(gid, bean.getExpect(), ca);
-                System.out.println(gid + "_" + bean.getExpect() + "本地缓存更新");
-                cache = ca;
-
-            } else {
-                System.out.println(gid + "_" + bean.getExpect() + "来源本地缓存");
-            }
 
             if (cache != null) {
 
