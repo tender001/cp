@@ -86,7 +86,7 @@
 .pay-money-in .pay-money-ch{display: table;width: 100%}
 .pay-money-ch li{display: table-cell;text-align: center;padding: 1em 0}
 .pay-money-ch li em{display: inline-block;width: 51%;padding: 1.1em;border: 0.15em solid #b3b3b3;border-radius: 8px;position: relative}
-.pay-money-ch li .cur{color: #f60;border-color: #f60;}
+.pay-money-ch li .cur{color: #f40;border-color: #f40;}
 .pay-money-ch li .cur:after{position: absolute;bottom: -2px;right: -3px;width:28px;height:20px;border-bottom-right-radius:5px;content:"";background: url("../img/cz-true.png") no-repeat;background-size: 100% 100%}
 .pay-bank{display: table;width: 100%;font-size: 1.14em;border-top:1px solid #ccc}
 .pay-bank ul{display: table-row}
@@ -100,8 +100,11 @@
 .kj-menu{padding-bottom: 0}
 .kj-menu .kj-menu-b{padding: 1em 0;border-top:1px solid #ccc;border-bottom:1px solid #ccc;background-color: #fff}
 .kj-menu-b ul{display: table;width: 94.44%;margin:0 auto;border: 0.14em solid #f60;border-radius: 6px}
-.kj-menu-b ul li{display: table-cell;padding:0.7em 0;letter-spacing:0.14em;color:#f60;text-align: center;border-left:0.14em solid #f60}
-.kj-menu-b ul li.cur{color:#fff;background-color: #f60}
+.kj-menu-b ul li{display: table-cell;padding:0.7em 0;letter-spacing:0.14em;text-align: center;border-left:0.13em solid #f40}
+.kj-menu-b ul li:first-of-type{border:0}
+.kj-menu-b ul li.cur{background-color: #f40}
+.kj-menu-b ul li a{color:#f40;}
+.kj-menu-b ul li.cur a{color:#fff}
 .kj-list{border-bottom: 1px solid #ccc;margin-bottom: 4em}
 .kj-list ul{width: 97%;margin:-1px auto 0;overflow: hidden}
 .kj-list ul li{border-top: 1px solid #ccc}
@@ -113,8 +116,9 @@
 .kj cite{display:inline-block;margin-left:4px;padding: 0.3em 0.25em;font-size:1.17em;font-weight:700;color:#e52e04;border: 1px solid #e2e2e2;border-radius: 5px}
 .kj b{}
 .kj-list .ico-click i{margin: 2.9em 0.5em 0 0}
+@media screen and (min-width: 320px) and (max-width: 340px){.kj cite{font-size:1.1em}}
 /*快乐扑克*/
-.pok em{display: inline-block;width: 14px;height: 16px;padding-left: 19px;background: #f5f5f5;color: #000;margin-right: 8px;line-height: 16px;position: relative;}
+.pok em{display: inline-block;width: 14px;height: 16px;padding-left: 19px;background:transparent;color: #000;margin-right: 8px;line-height: 16px;position: relative;}
 .S_icon:before,.C_icon:before,.H_icon:before,.D_icon:before{ position:absolute;left:4px;top:1px; background-position:0 0; width:13px; height:13px; content:"";}
 .C_icon:before{ background-position:0 -36px; width:11px; height:13px;}
 .H_icon:before{ background-position:0 -19px; width:12px; height:13px;}
