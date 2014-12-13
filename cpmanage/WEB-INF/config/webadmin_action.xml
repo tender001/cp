@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="gbk"?>
+
+<rbc-config>
+	<action-mappings>
+		<action name="login" forward="" bean="com.caipiao.cpweb.admin.web.WebAdmin" scope="request" desc="代理登录">
+			<execute method="checkYzm"/>
+			<execute method="set_base_data"/>
+			<execute method="callSp" group="1"/>
+			<execute method="login_result"/>
+		</action>
+		
+		<action name="logout" forward="" bean="com.caipiao.cpweb.admin.web.WebAdmin" scope="request" desc="代理登录">
+			<execute method="login_out"/>
+		</action>
+
+		<action name="qpage" forward="" bean="com.caipiao.cpweb.admin.web.WebAdmin" scope="request" desc="分页查询">
+			<execute method="check_login"/>
+			<execute method="check_auth"/>
+			<execute method="queryPage" group="1"/>
+		</action>
+		<action name="page" forward="" bean="com.caipiao.cpweb.admin.web.WebAdmin" scope="request"  desc="分页查询">
+			<execute method="check_login"/>
+			<execute method="queryPage" group="1"/>
+			<execute method="createExcel"/>
+		</action>
+		<action name="query" forward="" bean="com.caipiao.cpweb.admin.web.WebAdmin" scope="request" desc="一般查询">
+			<execute method="check_login"/>
+			<execute method="check_auth"/>
+			<execute method="query" group="1"/>
+		</action>
+		
+		<action name="update" forward="" bean="com.caipiao.cpweb.admin.web.WebAdmin" scope="request" desc="修改操作">
+			<execute method="check_login"/>
+			<execute method="update" group="1"/>
+		</action>
+		
+		<action name="sp" forward="" bean="com.caipiao.cpweb.admin.web.WebAdmin" scope="request" desc="修改操作">
+			<execute method="check_login"/>
+			<execute method="callSp" group="1"/>
+		</action>
+		
+		<action name="auth" forward="" bean="com.caipiao.cpweb.admin.web.WebAdmin" scope="request" desc="修改操作">
+			<execute method="check_login"/>
+			<execute method="query" group="1"/>
+			<execute method="auth_result"/>
+		</action>
+				
+		<action name="setAuth" forward="" bean="com.caipiao.cpweb.admin.web.WebAdmin" scope="request" desc="修改操作">
+			<execute method="check_login"/>
+			<execute method="setAuth"/>
+			<execute method="update" group="1"/>
+		</action>
+		<action name="ltree" forward="" bean="com.caipiao.cpweb.admin.web.WebAdmin" scope="request" desc="代理树">
+			<execute method="check_login"/>
+			<execute method="loadAgentTree" group="1"/>
+		</action>	
+		<action name="msg" forward="" bean="com.caipiao.cpweb.admin.web.WebAdmin" scope="request" desc="任务列表">
+			<execute method="check_login"/>
+			<execute method="task" group="1"/>
+		</action>
+    </action-mappings>
+</rbc-config>

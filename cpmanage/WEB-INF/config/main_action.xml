@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="gbk"?>
+
+<rbc-config>
+	<action-mappings>
+    	    <action name="notify" forward="" bean="com.caipiao.service.recv.RecvBean" scope="request" desc="接受出票系统通知">
+		<execute method="processWebNotify" />
+	    </action>
+            <action name="recv" forward="" bean="com.caipiao.service.recv.RecvBean" scope="request" desc="接受出票点通知">
+                <execute method="processNotify" />
+            </action>
+        </action-mappings>    	
+</rbc-config>

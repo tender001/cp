@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="gbk"?>
+
+<config desc="接口语句配置">
+    <!-- type: 1 查询语句 2 存储过程 3 更新类语句 -->
+
+	<sql id="query_period" type="1" desc="代理商查询期次列表">
+	<![CDATA[
+		select cperiodid pid, cbegintime bt, cendtime et, ccanceltime ct, cawardtime at from tb_period where cgameid = ? and istate = 1 and cawardtime >= sysdate order by cperiodid
+	]]>
+		<in-parm>
+	   		<parm name="游戏编号" property="gid"/>
+	   	</in-parm>
+	</sql>
+	
+	<sql id="check_batchid" type="1" desc="检查批次是否存在">
+	<![CDATA[
+		select decode(istate,0,1,2) num from tb_cast_#gid# where cbatchid = ? and cagentid = ?
+	]]>
+		<in-parm>
+			<parm name="批次编号" property="bid"/>
+	   		<parm name="代理商号" property="aid"/>
+	   	</in-parm>
+	</sql>
+	
+	<sql id="save_batchid" type="3" desc="保存批次投注信息">
+	<![CDATA[
+		insert into tb_cast_#gid# (iseqid,cbatchid,cperiodid,cidcard,crealname,cmobile,cagentid,icount) 
+		  values (seq_cast.nextval,?,?,?,?,?,?,?)
+	]]>
+		<in-parm>
+			<parm name="批次编号" property="bid"/>
+			<parm name="期次编号" property="pid"/>
+			<parm name="身份证号" property="idCard"/>
+			<parm name="真实姓名" property="realName"/>
+			<parm name="手机号码" property="mobile"/>
+	   		<parm name="代理商号" property="aid"/>
+	   		<parm name="明细数量" property="count"/>
+	   	</in-parm>
+	</sql>
+
+    <sql id="save_batchid_list" type="3" desc="保存批次投注明细信息">
+	<![CDATA[
+		insert into tb_cast_list_#gid# (icastid,cbatchid,cperiodid,cidcard,crealname,cmobile,cagentid,ccodes,imulity,imoney,capplyid) 
+		  values (seq_cast_list.nextval,?,?,?,?,?,?,?,?,?,?)
+	]]>
+		<in-parm>
+			<parm name="批次编号" property="bid"/>
+			<parm name="期次编号" property="pid"/>
+			<parm name="身份证号" property="idCard"/>
+			<parm name="真实姓名" property="realName"/>
+			<parm name="手机号码" property="mobile"/>
+	   		<parm name="代理商号" property="aid"/>
+	   		<parm name="投注号码" property="codes"/>
+			<parm name="投注倍数" property="mulity"/>
+			<parm name="投注金额" property="money"/>
+			<parm name="申请编号" property="seq"/>
+	   	</in-parm>
+	</sql>
+
+	<sql id="sp_agent_cast" type="2" desc="代理商投注存储过程">
+	<![CDATA[
+		sp_agent_cast
+	]]>
+		<in-parm>
+			<parm name="游戏编号" property="gid"/>
+	   		<parm name="期次编号" property="pid"/>
+			<parm name="批次编号" property="bid"/>
+	   		<parm name="代理商号" property="aid"/>
+	   		<parm name="明细数量" property="count"/>
+	   		<parm name="批次金额" property="money"/>
+	   		<parm name="截止时间" property="etime"/>
+	   	</in-parm>
+		<out-parm>
+			<parm name="错误编号" property="errCode"/>
+	   		<parm name="错误描叙" property="errDesc"/>
+			<parm name="余          额" property="balance"/>
+		</out-parm>
+	</sql>
+	
+    <sql id="query_award_code" type="1" desc="查询开奖号码">
+	<![CDATA[
+		select cawardcode, icodeaudit from tb_period where cgameid = ? and cperiodid = ?
+	]]>
+		<in-parm>
+	   		<parm name="游戏编号" property="gid"/>
+	   		<parm name="期次编号" property="pid"/>
+	   	</in-parm>
+	</sql>
+
+    <sql id="query_award_money" type="1" desc="查询开奖公告">
+	<![CDATA[
+		select cawardcode,icodeaudit,cgradeinfo,cgnuminfo,cencashtime,crealsale,crealpool,imoneyaudit from tb_period where cgameid = ? and cperiodid = ?
+	]]>
+		<in-parm>
+	   		<parm name="游戏编号" property="gid"/>
+	   		<parm name="期次编号" property="pid"/>
+	   	</in-parm>
+	</sql>
+	
+	
+    <sql id="query_award_count" type="1" desc="查询中奖名单汇总数据">
+	<![CDATA[
+		select count(*) num from tb_bingo_#gid# where cagentid = ? and cperiodid = ?
+	]]>
+		<in-parm>
+	   		<parm name="代理商号" property="aid"/>
+	   		<parm name="期次编号" property="pid"/>
+	   	</in-parm>
+	</sql>
+	
+	
+	<sql id="query_award_list" type="1" desc="查询中奖名单">
+	<![CDATA[
+		select cbatchid bid, capplyid idx, cticketid tid, cwininfo info, ibonus bonus, ibig big ,itax tax
+		   from tb_bingo_#gid# where cagentid = ? and cperiodid = ?
+	]]>
+		<in-parm>
+	   		<parm name="代理商号" property="aid"/>
+	   		<parm name="期次编号" property="pid"/>
+	   	</in-parm>
+	</sql>
+	
+	<sql id="query_award_batch" type="1" desc="查询批次中奖名单">
+	<![CDATA[
+		select cbatchid bid, capplyid idx, cticketid tid, cwininfo info, ibonus bonus, itax tax, ibig big 
+		   from tb_cast_list_#gid# where cagentid = ? and cbatchid = ? and ibingo = 1
+	]]>
+		<in-parm>
+	   		<parm name="代理商号" property="aid"/>
+	   		<parm name="批次编号" property="bid"/>
+	   	</in-parm>
+	</sql>
+	
+	<sql id="check_award_batch" type="1" desc="检查批次记奖是否完成">
+	<![CDATA[
+		select count(*) num from tb_cast_list_#gid# where cagentid = ? and cbatchid = ? and iaward != 2
+	]]>
+		<in-parm>
+	   		<parm name="代理商号" property="aid"/>
+	   		<parm name="批次编号" property="bid"/>
+	   	</in-parm>
+	</sql>
+ 
+    <sql id="query_cast_info" type="1" desc="查询投注">
+	<![CDATA[
+		select * from tb_cast_#gid# where cagentid = ? and cbatchid = ?
+	]]>
+		<in-parm>
+	   		<parm name="代理商号" property="aid"/>
+	   		<parm name="批次编号" property="bid"/>
+	   	</in-parm>
+	</sql>
+    
+    <sql id="query_cast_list" type="1" desc="查询投注明细">
+	<![CDATA[
+		select * from tb_cast_list_#gid# where cagentid = ? and cbatchid = ? and istate = 3
+	]]>
+		<in-parm>
+	   		<parm name="代理商号" property="aid"/>
+	   		<parm name="批次编号" property="bid"/>
+	   	</in-parm>
+	</sql>
+	
+	<sql id="query_period_state" type="1" desc="查询期次状态">
+	<![CDATA[
+		select istate from tb_period where cgameid = ? and cperiodid = ?
+	]]>
+		<in-parm>
+			<parm name="游戏编号" property="gid"/>
+	   		<parm name="期次编号" property="pid"/>
+	   	</in-parm>
+	</sql>
+	
+	
+	
+	<sql id="query_period_stat" type="1" desc="查询期次统计">
+	<![CDATA[
+		select * from tb_period_stat where cgameid = ? and cperiodid = ? and cagentid = ?
+	]]>
+		<in-parm>
+			<parm name="游戏编号" property="gid"/>
+	   		<parm name="期次编号" property="pid"/>
+	   		<parm name="代理商号" property="aid"/>
+	   	</in-parm>
+	</sql>
+	
+	
+    <sql id="query_jczq_match_state" type="1" desc="查询竞彩足球状态">
+	<![CDATA[
+		select istate from tb_match_jczq where citemid = ?
+	]]>
+		<in-parm>
+	   		<parm name="场次编号" property="pid"/>
+	   	</in-parm>
+	</sql>
+	
+    <sql id="query_jczq_match" type="1" desc="查询竞彩足球对阵">
+	<![CDATA[
+		select * from tb_match_jczq where citemid = ?
+	]]>
+		<in-parm>
+	   		<parm name="场次编号" property="pid"/>
+	   	</in-parm>
+	</sql>
+	
+    <sql id="query_jclq_match_state" type="1" desc="查询竞彩篮球状态">
+	<![CDATA[
+		select istate from tb_match_jclq where citemid = ?
+	]]>
+		<in-parm>
+	   		<parm name="场次编号" property="pid"/>
+	   	</in-parm>
+	</sql>
+	
+    <sql id="query_jclq_match" type="1" desc="查询竞彩篮球对阵">
+	<![CDATA[
+		select * from tb_match_jclq where citemid = ?
+	]]>
+		<in-parm>
+	   		<parm name="场次编号" property="pid"/>
+	   	</in-parm>
+	</sql>
+	
+    <sql id="query_jcmc_match_state" type="1" desc="查询竞彩名次状态">
+	<![CDATA[
+		select istate from tb_match_jcmc where cgameid = ? and citemid = ?
+	]]>
+		<in-parm>
+	   		<parm name="赛事类型" property="gid"/>
+	   		<parm name="场次编号" property="pid"/>
+	   	</in-parm>
+	</sql>
+	
+	<sql id="query_jcmc_match" type="1" desc="查询竞彩名次对阵">
+	<![CDATA[
+		select * from tb_match_jcmc where cgameid = ? and citemid = ?
+	]]>
+		<in-parm>
+			<parm name="赛事类型" property="gid"/>
+	   		<parm name="场次编号" property="pid"/>
+	   	</in-parm>
+	</sql>
+ 
+    <sql id="query_beid_match_state" type="1" desc="查询北单对阵状态">
+	<![CDATA[
+		select istate from tb_match_bd where cperiodid = ? and imatchid = ?
+	]]>
+		<in-parm>
+	   		<parm name="期次编号" property="pid"/>
+	   		<parm name="场次编号" property="bid"/>
+	   	</in-parm>
+	</sql>
+ 
+    <sql id="query_beid_match" type="1" desc="查询北单对阵">
+	<![CDATA[
+		select * from tb_match_bd where cperiodid = ? and imatchid = ?
+	]]>
+		<in-parm>
+	   		<parm name="期次编号" property="pid"/>
+	   		<parm name="场次编号" property="bid"/>
+	   	</in-parm>
+	</sql>
+
+	<sql id="query_bdsf_match_state" type="1" desc="查询北单对阵状态">
+	<![CDATA[
+		select istate from tb_match_bdsf where cperiodid = ? and imatchid = ?
+	]]>
+		<in-parm>
+	   		<parm name="期次编号" property="pid"/>
+	   		<parm name="场次编号" property="bid"/>
+	   	</in-parm>
+	</sql>
+ 
+    <sql id="query_bdsf_match" type="1" desc="查询北单对阵">
+	<![CDATA[
+		select * from tb_match_bdsf where cperiodid = ? and imatchid = ?
+	]]>
+		<in-parm>
+	   		<parm name="期次编号" property="pid"/>
+	   		<parm name="场次编号" property="bid"/>
+	   	</in-parm>
+	</sql>
+</config>

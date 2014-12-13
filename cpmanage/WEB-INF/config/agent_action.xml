@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="gbk"?>
+
+<rbc-config>
+	<action-mappings>
+
+		<action name="login" forward="" bean="com.rbc.ticket.agent.AgentAdmin" scope="request" desc="代理登录">
+			<execute method="checkYzm"/>
+			<execute method="login" group="2"/>
+			<execute method="login_result"/>
+		</action>
+		
+		<action name="qpage" forward="" bean="com.rbc.ticket.agent.AgentAdmin" scope="request" desc="分页查询">
+			<execute method="set_base_data"/>
+			<execute method="queryPage" group="2"/>
+		</action>
+		
+		<action name="query" forward="" bean="com.rbc.ticket.agent.AgentAdmin" scope="request" desc="一般查询">
+			<execute method="set_base_data"/>
+			<execute method="query" group="2"/>
+		</action>
+
+
+		<action name="update" forward="" bean="com.rbc.ticket.agent.AgentAdmin" scope="request" desc="修改操作">
+			<execute method="set_base_data"/>
+			<execute method="update" group="2"/>
+		</action>
+    </action-mappings>
+</rbc-config>
