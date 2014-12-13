@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="gbk"?>
+
+<rbc-config userName="admin" passWord="admin">
+
+	<group id="1" desc="网站后台管理">
+	  	<node id="1" ip="192.168.9.105" port="4300" /> 
+	  	<node id="2" ip="192.168.9.105" port="4300" />
+	</group>
+	<group id="2" desc="分票系统管理">
+                <node id="1" ip="192.168.9.105" port="4111" />
+                <node id="2" ip="192.168.9.105" port="4111" />
+        </group>
+
+	<!-- 数据源配置 --> 
+	<dataSource name="default" desc="彩票数据源"
+		driverName="oracle.jdbc.driver.OracleDriver" dbUrl="jdbc:oracle:thin:@//WX006:1521/lottery"
+		userName="cpticket" passWord="ticket2014begin" checkSql="select 1+2 FROM dual"
+		interval="1" startNum="5" maxNum="15" maxCallNum="0" serverType="ORACLE"
+		dbUrlBak="">
+		 <map file="sql_service.xml"/>  
+	</dataSource>
+
+        <dataSource name="web" desc="彩票数据源"
+                 driverName="oracle.jdbc.driver.OracleDriver" dbUrl="jdbc:oracle:thin:@//WX006:1521/lottery"
+                 userName="cpweb" passWord="web2014start" checkSql="select 1+2 FROM dual"
+                 interval="1" startNum="5" maxNum="15" maxCallNum="0" serverType="ORACLE"
+                 dbUrlBak="">
+        </dataSource>
+
+	<action-modules>
+		<module name=""       file="main_action.xml"/>
+		<module name="tagent"  file="agent_action.xml"/>
+                <module name="ticket" file="ticket_action.xml"/>
+                <module name="manage"  file="webadmin_action.xml"/>
+                <module name="webagent"  file="webagent_action.xml"/>
+	</action-modules>
+
+	<service-config>
+		<service sid="1000" className="com.caipiao.service.query.QueryPeriodListService" desc="期次下载业务" />
+		<service sid="1001" className="com.caipiao.service.query.QueryCastResultService" desc="查询订单" />
+		<service sid="1002" className="com.caipiao.service.query.QueryAwardCodeService"  desc="查询开奖号码" />
+		<service sid="1003" className="com.caipiao.service.query.QueryAwardMoneyService" desc="查询开奖公告" />
+		<service sid="1004" className="com.caipiao.service.query.QueryAwardCountService" desc="中奖名单汇总" />
+		<service sid="1005" className="com.caipiao.service.query.QueryAwardListService"  desc="中奖名单列表" />
+		<service sid="1006" className="com.caipiao.service.query.QueryPeriodStatService" desc="查询期次统计" />
+		<service sid="1007" className="com.caipiao.service.query.QueryBatchAwardService" desc="查询批次中奖" />
+
+		<service sid="3001" className="com.caipiao.service.jczq.QueryJczqMatchService"      desc="查询竞彩足球场次状态" />
+		<service sid="3002" className="com.caipiao.service.jczq.QueryJczqMatchStatService"  desc="查询竞彩足球场次统计" />
+		<service sid="3003" className="com.caipiao.service.jclq.QueryJclqMatchService"      desc="查询竞彩篮球场次状态" />
+        <service sid="3004" className="com.caipiao.service.jclq.QueryJclqMatchStatService"  desc="查询竞彩篮球场次统计" />
+        <service sid="3005" className="com.caipiao.service.beid.QueryBeiDanMatchService"    desc="查询北京单场场次统计" />
+		<service sid="3007" className="com.caipiao.service.beid.QueryBDSFMatchService"    desc="查询北单胜负过关场次统计" />
+		<service sid="3006" className="com.caipiao.service.jcmc.QueryJcmcTeamService"      desc="查询竞彩名次球队状态" />
+
+                <service sid="2000" className="com.caipiao.service.cast.AgentSzcCastService"       desc="数字彩收单业务" />
+                <service sid="2001" className="com.caipiao.service.jczq.AgentJczqCastDbService"      desc="竞彩足球收单业务" />
+                <service sid="2002" className="com.caipiao.service.jclq.AgentJclqCastDbService"      desc="竞彩篮球收单业务" />
+                <service sid="2003" className="com.caipiao.service.jcmc.AgentJcmcCastService"      desc="竞彩名次收单业务" />
+                <service sid="2004" className="com.caipiao.service.beid.AgentBeiDanCastService"    desc="北京单场收单业务" />
+
+		<service sid="0000" className="com.rbc.frame.http.system.TimeService" desc="时间服务" />
+		<service sid="0001" className="com.rbc.frame.http.system.EchoService" desc="测试服务" />
+	</service-config>
+
+	<message-resources parameter="MessageResources" />
+</rbc-config>
