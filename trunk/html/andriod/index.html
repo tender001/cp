@@ -1,42 +1,50 @@
-﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+﻿<!DOCTYPE html>
+<html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=1;' name='viewport' />
-<meta content='yes' name='apple-mobile-web-app-capable' />
-<meta content='black' name='apple-mobile-web-app-status-bar-style' />
-<meta content='telephone=no' name='format-detection' />
-<title>Andriod客户端下载</title>
-
-<style type="text/css">
-{margin:0;padding:0}
-body,h3,h4,h2,h1,h5,table,td,th,ul,li,ol,dd,dt,dl,div,span,p,b,i,s,em,thead,tbody,font,select,input,option{margin:0;padding:0}
-　body {
-　　　　font: normal 100% Helvetica, Arial, sans-serif; 
-　　}
-a{text-decoration:none;outline:none;cursor:pointer} 
-img{border:none;}
-body a{outline:none;blr:expression(this.onFocus=this.blur());} 
-div,ul,li{ list-style-type:none;overflow:hidden}
-h1,h2,h3,h4,h5,h6,em,i,s,b{font-style:normal; text-decoration:none;font-size:0.8em;font-weight:100;color:#333} 
-
-</style>
+    <meta charset="UTF-8">
+    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=1' name='viewport'/>
+    <meta content='yes' name='apple-mobile-web-app-capable'/>
+    <meta content='black' name='apple-mobile-web-app-status-bar-style'/>
+    <meta content='telephone=no' name='format-detection'/>
+    <title>Andriod客户端下载</title>
+    <style type="text/css">
+        body,section,footer,header,menu,nav,button,dd,dl,dt,fieldset,form,h1,h2,h3,h4,h5,h6,hr,input,legend,li,ul,ol,p,pre,th,td,textarea,center{margin:0;padding:0}
+        html{color:#000;-webkit-backface-visibility: hidden;-webkit-font-smoothing: antialiased;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%}
+        body{font:75%/1.5 sans-serif,Helvetica,Arial,"Hiragino Sans GB";background-color:#fff;}
+        article,aside,details,figcaption,figure,footer,header,menu,nav,section{display:block}
+        h1,h2,h3,h4,h5,h6{font-size:100%}
+        button,input,select,textarea{font-size:100%}
+        a{text-decoration:none;outline:0;}
+        /*a:hover{text-decoration:underline}*/
+        ol,ul,li{list-style:none;}
+        i,em,cite{font-style:normal}
+        img{max-width:100%;border:0 none;vertical-align:top}
+        h1{background: none repeat scroll 0 0 #A10A23;border-bottom: 1px solid #79071A;color: #FFFFFF;font-family: 'Microsoft YaHei','黑体';font-size: 1.3em;font-weight: normal;line-height: 1.8em;text-align: center;}
+        .bann img{width:100%;max-height:300px}
+        .app-download ul{display: table;width: 100%}
+        .app-download ul li{display: table-cell;text-align: center;padding: 1em 0}
+        .app-download p{width: 100%;}
+        .app-download a{display:block;width: 70%;margin:1.5em auto}
+    </style>
  <script type="text/javascript" src="/public/jq2.js"></script>
 </head>
 <body>
-<h1 style="background: none repeat scroll 0 0 #A10A23;
-    border-bottom: 1px solid #79071A;
-    color: #FFFFFF;
-    font-family: 'Microsoft YaHei','黑体';
-    font-size: 1.3em;
-    font-weight: normal;
-    line-height: 1.8em;
-    text-align: center;">159彩票网android客户端</h1>
-<div  style="width:100%;max-width:640px;margin:0 auto; position:relative">
-<img src="adrbg.jpg"  style="width:100%">
-<a href="http://www.159cai.com/download/159cai_shouji.apk" target="_blank"  id="download"><img src="adr_03.jpg"  style=" position:absolute;bottom:6.7em;right:0.7cm;width:150px"/></a>
-<a href="http://www.159cai.com/uploads/cai159_shouji_1.5.apk" target="_blank"><img src="adr_04.jpg"  style=" position:absolute;bottom:3.4em;right:0.7cm;width:150px"/></a>
-<p   style=" position:absolute;bottom:0.7em;right:1.1cm;width:40%;text-align:center;font-size:12px;color:#444;line-height:18px;"><a href="http://m.159cai.com" style="font-size:12px;color:#444; text-decoration:underline">手机访问159彩票网</a><br />(http://m.159cai.com)</p>
+<h1>159彩票网android客户端</h1>
+<div class="bann"><img src="adrbg_01.png" alt=""/></div>
+<div class="app-download">
+    <ul>
+        <li><img src="adrbg_02.png" alt=""/></li>
+        <li>
+            <p><img src="adrbg_03.png" alt=""/></p>
+            <p>
+                <a class="v2" id="download" href="http://www.159cai.com/download/159cai_shouji.apk"><img
+                        src="adr_03.jpg" alt=""/></a>
+                <a class="v1.5" href="http://www.159cai.com/uploads/cai159_shouji_1.5.apk"><img
+                        src="adr_04.jpg" alt=""/></a>
+            </p>
+            <div class="m159"><a href="http://m.159cai.com">手机访问159彩票网<br>(m.159cai.com)}</a></div>
+        </li>
+    </ul>
 </div>
 <script>
 $(document).ready(function() {
@@ -51,8 +59,8 @@ function getCookie(c_name)
 {
 if(document.cookie.length>0){
    c_start=document.cookie.indexOf(c_name + "=")
-   if(c_start!=-1){ 
-     c_start=c_start + c_name.length+1 
+   if(c_start!=-1){
+     c_start=c_start + c_name.length+1
      c_end=document.cookie.indexOf(";",c_start)
      if(c_end==-1) c_end=document.cookie.length
      return unescape(document.cookie.substring(c_start,c_end))
