@@ -1,0 +1,310 @@
+<?xml version="1.0" encoding="gbk"?>
+
+<config desc="用户中心（前台网站SQL配置）">
+	<!-- type: 1 查询语句 2 存储过程 3 更新类语句 -->
+
+	<!--  对阵及期次管理 -->
+
+	<sql id="periodlist" type="1" desc="查询期次列表" order=" order by cperiodid  ">
+	<![CDATA[
+	    select cgameid gid,cperiodid pid,cbegintime stime, cendtime etime, cawardtime atime, istate state 
+	    from tb_period where cgameid = ? and istate <= 1 
+	]]>
+		<in-parm>
+			<parm name="游戏编号" property="gid"/>
+			<parm name="期次编号" property="pid" sql=" and cperiodid like '%' || ? || '%'"/>
+	   	</in-parm>
+	</sql>
+	
+	<sql id="sale_period" type="3" desc="切换销售状态">
+	<![CDATA[
+	    update tb_period set istate = decode(istate,0,1,0) where cgameid = ? and cperiodid = ? 
+	    and istate =  decode(istate,1,1,0,0,-1)
+	]]>
+		<in-parm>
+			<parm name="游戏编号" property="gid"/>
+			<parm name="期次编号" property="pid"/>
+	   	</in-parm>
+	</sql>
+
+	<sql id="jczq_mlist" type="1" desc="竞彩足彩对阵" order=" order by citemid desc ">
+	<![CDATA[
+	    select citemid tid,cname tname,imatchid mid,cmname mname, csname sname, cmscore ms, csscore ss, chmscore hms, 
+	    chsscore hss, close lose, cendtime etime, istate state, cmatchtime mtime, iaudit, 
+	    decode(iaudit,1,'已审核','未审核') aname, decode(icancel,1,'已取消','未取消') cancel, 
+	    decode(isale,0,'暂停销售',15,'正在销售','部分销售') sale,isale from tb_match_jczq where 1=1
+	]]>
+		<in-parm>
+			<parm name="是否审核" property="vid" sql=" and iaudit = ? "/>
+			<parm name="开始时间" property="sdate" sql=" and cendtime &gt;= to_date(?,'yyyy-MM-dd') "/>
+			<parm name="结束时间" property="edate" sql=" and cendtime &lt;= to_date(?,'yyyy-MM-dd') + 1 "/>
+	   	</in-parm>
+	</sql>
+
+	<sql id="audit_jczq" type="3" desc="审核竞彩足彩">
+	<![CDATA[
+	    update tb_match_jczq set iaudit = 1, cauditdate = sysdate, cauditor = ? where citemid = ?
+	]]>
+		<in-parm>
+			<parm name="审核人员" property="uid"/>
+			<parm name="场次编号" property="tid"/>
+	   	</in-parm>
+	</sql>
+	
+	<sql id="cancel_jczq" type="3" desc="取消竞彩足彩">
+	<![CDATA[
+	    update tb_match_jczq set icancel = 1 where citemid = ?
+	]]>
+		<in-parm>
+			<parm name="场次编号" property="tid"/>
+	   	</in-parm>
+	</sql>
+	
+	<sql id="sale_jczq" type="3" desc="切换销售状态">
+	<![CDATA[
+		update tb_match_jczq set isale = ?, cauditor = ? where  citemid = ?  
+	]]>
+		<in-parm>
+			<parm name="销售状态" property="state" />
+			<parm name="用户编号" property="uid" />
+			<parm name="场次编号" property="tid" />
+		</in-parm>
+	</sql>
+	
+	<sql id="jclq_mlist" type="1" desc="竞彩蓝彩对阵" order=" order by citemid desc ">
+	<![CDATA[  
+	    select citemid tid,cname tname,imatchid mid,cmname mname, csname sname, cmscore ms, csscore ss, zclose zlose, 
+	    close lose, cendtime etime, istate state, cmatchtime mtime, iaudit, decode(iaudit,1,'已审核','未审核') aname, 
+	    decode(icancel,1,'已取消','未取消') cancel, decode(isale,0,'正在销售','暂停销售') sale from tb_match_jclq where 1=1
+	]]>
+		<in-parm>
+			<parm name="是否审核" property="vid" sql=" and iaudit = ? "/>
+			<parm name="开始时间" property="sdate" sql=" and cendtime &gt;= to_date(?,'yyyy-MM-dd') "/>
+			<parm name="结束时间" property="edate" sql=" and cendtime &lt;= to_date(?,'yyyy-MM-dd') + 1 "/>
+	   	</in-parm>
+	</sql>
+	
+	<sql id="audit_jclq" type="3" desc="审核竞彩蓝彩">
+	<![CDATA[
+	    update tb_match_jclq set iaudit = 1, cauditdate = sysdate, cauditor = ? where citemid = ?
+	]]>
+		<in-parm>
+			<parm name="审核人员" property="uid"/>
+			<parm name="场次编号" property="tid"/>
+	   	</in-parm>
+	</sql>
+	
+	<sql id="cancel_jclq" type="3" desc="取消竞彩蓝彩">
+	<![CDATA[
+	    update tb_match_jclq set icancel = 1 where citemid = ?
+	]]>
+		<in-parm>
+			<parm name="场次编号" property="tid"/>
+	   	</in-parm>
+	</sql>
+	
+	<sql id="sale_jclq" type="3" desc="切换销售状态">
+	<![CDATA[
+	    update tb_match_jclq set isale = decode(isale,1,0,1) where citemid = ?
+	]]>
+		<in-parm>
+			<parm name="场次编号" property="tid"/>
+	   	</in-parm>
+	</sql>
+
+	<sql id="zhucai_mlist" type="1" desc="老足彩对阵" order=" order by imatchid ">
+	<![CDATA[  
+	    select imatchid tid,cmname mname, csname sname, cmscore ms, csscore ss, chmscore hms, chsscore hss, 
+	    cendtime etime, cbegintime mtime, cresult result, ccolor,istate state from tb_match_zc 
+	    where cgameid = ? and cperiodid = ? 
+	]]>
+		<in-parm>
+			<parm name="游戏编号" property="gid" />
+			<parm name="期次编号" property="pid"/>
+	   	</in-parm>
+	</sql>
+	
+	<sql id="beidan_mlist" type="1" desc="北京单场对阵" order=" order by imatchid ">
+	<![CDATA[
+	    select cperiodid pid, imatchid mid,cmname mname, csname sname, cmscore ms, csscore ss, chmscore hms, 
+	    chsscore hss, close lose, cendtime etime, cresult,ccolor,istate state, cmatchtime mtime, iaudit, 
+	    decode(iaudit,1,'已审核','未审核') aname, decode(icancel,1,'已取消','未取消') cancel, 
+	    decode(isale,0,'正在销售','暂停销售') sale from tb_match_bd where cperiodid = ?
+	]]>
+		<in-parm>
+	   		<parm name="期次编号" property="pid"/>
+			<parm name="是否审核" property="vid" sql=" and iaudit = ? "/>
+	   	</in-parm>
+	</sql>
+
+	<sql id="audit_beidan" type="3" desc="审核北京单场">
+	<![CDATA[
+	    update tb_match_bd set iaudit = 1, cauditdate = sysdate, cauditor = ? where cperiodid = ? and imatchid = ?
+	]]>
+		<in-parm>
+			<parm name="审核人员" property="uid"/>
+			<parm name="期次编号" property="pid"/>
+			<parm name="场次编号" property="mid"/>
+	   	</in-parm>
+	</sql>
+	
+	<sql id="cancel_beidan" type="3" desc="取消北京单场">
+	<![CDATA[
+	    update tb_match_bd set icancel = 1 where cperiodid = ? and imatchid = ?
+	]]>
+		<in-parm>
+			<parm name="期次编号" property="pid"/>
+			<parm name="场次编号" property="mid"/>
+	   	</in-parm>
+	</sql>
+	
+	<sql id="sale_beidan" type="3" desc="切换销售状态">
+	<![CDATA[
+	    update tb_match_bd set isale = decode(isale,1,0,1) where cperiodid = ? and imatchid = ?
+	]]>
+		<in-parm>
+			<parm name="期次编号" property="pid"/>
+			<parm name="场次编号" property="mid"/>
+	   	</in-parm>
+	</sql>
+	
+	
+	<!-- 开奖业务管理 -->
+	<sql id="needed_awardcode_list" type="1" desc="需要设置开奖号">
+	<![CDATA[
+	    select cgameid gid,cperiodid pid,cbegintime stime, cendtime etime, cawardtime atime, istate state, 
+	    cawardcode awardcode  from tb_period where icodeaudit = 0 
+	    and cawardtime < sysdate and (cgameid < '85' or cgameid > '89') 
+	]]>
+		<in-parm>
+	   	</in-parm>
+	</sql>
+	
+	<sql id="set_awardcode" type="3" desc="设置开奖号">
+	<![CDATA[
+	    update tb_period set cawardcode = ? where cgameid = ? and cperiodid = ? 
+	]]>
+		<in-parm>
+			<parm name="开奖号码" property="aid"/>
+			<parm name="游戏编号" property="gid"/>
+			<parm name="期次编号" property="pid"/>
+	   	</in-parm>
+	</sql>
+	
+	<sql id="audit_awardcode_list" type="1" desc="需要审核开奖号">
+	<![CDATA[
+	    select cgameid gid,cperiodid pid,cbegintime stime, cendtime etime, cawardtime atime, istate state,
+	    cawardcode awardcode from tb_period where icodeaudit = 0 and cawardtime < sysdate and cawardcode is not null 
+	]]>
+		<in-parm>
+	   	</in-parm>
+	</sql>
+
+	<sql id="audit_awardcode" type="3" desc="审核开奖号">
+	<![CDATA[
+	    update tb_period set icodeaudit = 1, cawardor = ?, ccodeauditdate = sysdate where cgameid = ? and cperiodid = ? 
+	]]>
+		<in-parm>
+			<parm name="用户编号" property="uid"/>
+			<parm name="游戏编号" property="gid"/>
+			<parm name="期次编号" property="pid"/>
+	   	</in-parm>
+	</sql>
+
+	
+	<sql id="needed_awardmoney_list" type="1" desc="需要设置开奖公告">
+	<![CDATA[
+	    select cgameid gid,cperiodid pid, cawardtime atime, istate state, cawardcode awardcode, cgradeinfo ginfo, 
+	    cgnuminfo gnums, crealsale gsale, crealmoney gpool  from tb_period where icodeaudit = 1 and imoneyaudit = 0  
+	]]>
+		<in-parm>
+	   	</in-parm>
+	</sql>
+	
+	<sql id="audit_awardmoney_list" type="1" desc="需要设置开奖公告">
+	<![CDATA[
+	    select cgameid gid,cperiodid pid, cawardtime atime, istate state, cawardcode awardcode, 
+	    cgradeinfo ginfo, cgnuminfo gnums, crealsale gsale, crealmoney gpool 
+	     from tb_period where icodeaudit = 1 and imoneyaudit = 0 and cgradeinfo is not null 
+	]]>
+		<in-parm>
+	   	</in-parm>
+	</sql>
+	
+	<sql id="set_awardmoney" type="3" desc="设置开奖公告">
+	<![CDATA[
+	    update tb_period set cgradeinfo = ?, cgnuminfo = ?, crealsale = ?, crealmoney = ?
+	     where cgameid = ? and cperiodid = ? 
+	]]>
+		<in-parm>
+			<parm name="开奖公告" property="bid"/>
+			<parm name="中奖注数" property="vid"/>
+			<parm name="全国销量" property="did"/>
+			<parm name="全国奖池" property="pwd"/>
+			<parm name="游戏编号" property="gid"/>
+			<parm name="期次编号" property="pid"/>
+	   	</in-parm>
+	</sql>
+	
+	<sql id="query_gamegrade" type="1" desc="查询游戏奖级">
+	<![CDATA[
+	    select igrade grade, cname name, imoney money, t1.crealsale gsale, t1.crealmoney gpool from tb_grade_def t, 
+	    tb_period t1 where  t.cgameid = ? and t1.cperiodid = ? and t1.cgameid (+)= t.cgameid order by t.igrade 
+	]]>
+		<in-parm>
+			<parm name="游戏编号" property="gid"/>
+			<parm name="期次编号" property="pid"/>
+	   	</in-parm>
+	</sql>
+	
+	<sql id="audit_awardmoney" type="3" desc="审核开奖公告">
+	<![CDATA[
+	    update tb_period set imoneyaudit = 1, cmoneyor = ?, cmoneyauditdate = sysdate 
+	    where cgameid = ? and cperiodid = ? 
+	]]>
+		<in-parm>
+			<parm name="用户编号" property="uid"/>
+			<parm name="游戏编号" property="gid"/>
+			<parm name="期次编号" property="pid"/>
+	   	</in-parm>
+	</sql>
+	
+	<!-- 合买名人 -->
+	<sql id="query_hotuser" type="1" desc="合买名人">
+	<![CDATA[
+		select t1.cgameid, t.cnickid,t1.cname from tb_hot_user t, tb_game t1 
+		where t.cgameid (+)= t1.cgameid order by cgameid
+	]]>
+		<in-parm>
+		</in-parm>
+	</sql>
+	<sql id="update_hotuser" type="3" desc="修改合买名人">
+	<![CDATA[
+		update tb_hot_user set cnickid = ? where cgameid = ?
+	]]>
+		<in-parm>
+			<parm name="合买名人" property="memo" />
+			<parm name="游戏编号" property="gid" />
+		</in-parm>
+	</sql>
+	
+	<!-- 彩种销售配置 -->
+	<sql id="query_gamelist" type="1" desc="查询所有彩种的列表">
+	<![CDATA[
+		select cgameid gid,cname name,isale,decode(isale,0,'停售',1,'在售',2,'白名单','未知') sale 
+		from tb_game where istate=1 order by cgameid
+	]]>
+	</sql>
+	<sql id="set_gameconfig" type="3" desc="更新彩种销售状态">
+	<![CDATA[
+		update tb_game set isale = to_number(?) where cgameid=?
+	]]>
+		<in-parm>
+			<parm name="游戏编号" property="bid" />
+			<parm name="游戏编号" property="gid" />
+		</in-parm>
+	</sql>
+	
+	
+	
+</config>

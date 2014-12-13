@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="gbk"?>
+
+<config desc="合买代购（后台引擎SQL配置）">
+    <!-- type: 1 查询语句 2 存储过程 3 更新类语句 -->
+
+	<sql id="i_jczq_match" type="3" desc="新增对阵信息">
+	<![CDATA[
+		insert into tb_match_jczq (citemid,imatchid,cmname,csname,close,cendtime,cmatchtime,cmatchname,ccolor,cname,isale)  
+		values (?,?,?,?,?,to_date(?,'yyyy-MM-dd hh24:mi:ss')+1/24/60,to_date(?,'yyyy-MM-dd hh24:mi:ss'),?,?,?,31)
+	]]>
+		<in-parm>
+	   		<parm name="场次编号" property="itemID"/>
+	   		<parm name="官方编号" property="matchID"/>
+	   		<parm name="主队名称" property="mname"/>
+	   		<parm name="客队名称" property="sname"/>
+	   		<parm name="让球数量" property="lose"/>
+	   		<parm name="截止时间" property="endTime"/>
+	   		<parm name="比赛时间" property="matchTime"/>
+	   		<parm name="联赛名称" property="matchName"/>
+	   		<parm name="显示颜色" property="color"/>
+	   		<parm name="场次名称" property="itemName"/>
+	   	</in-parm>
+	</sql>
+
+	<sql id="u_jczq_match" type="3" desc="修改对阵信息">
+	<![CDATA[
+	    update tb_match_jczq set cmname = ?, csname = ?, cendtime = to_date(?,'yyyy-MM-dd hh24:mi:ss')+1/24/60,
+	    cmatchtime = to_date(?,'yyyy-MM-dd hh24:mi:ss'), close = ?, cmatchname = ?, ccolor = ?, cname = ? ,
+	    cupdate = sysdate where imatchid = ?
+	]]> 
+		<in-parm>
+	   		<parm name="主队名称" property="mname"/>
+	   		<parm name="客队名称" property="sname"/>
+	   		<parm name="截止时间" property="endTime"/>
+	   		<parm name="比赛时间" property="matchTime"/>
+	   		<parm name="让球数量" property="lose"/>
+	   		<parm name="联赛名称" property="matchName"/>
+	   		<parm name="显示颜色" property="color"/>
+	   		<parm name="场次名称" property="itemName"/>
+	   		<parm name="官方编号" property="matchID"/>
+		</in-parm>
+	</sql>
+	
+   	<sql id="u_jczq_match_sp_spf" type="3" desc="修改对阵信息">
+	<![CDATA[
+	    update tb_match_jczq set cspf = ? where citemid = ?
+	]]> 
+		<in-parm>
+	   		<parm name="胜平负" property="spf"/>
+	   		<parm name="场次编号" property="itemID"/>
+		</in-parm>
+	</sql>
+	
+   	<sql id="u_jczq_match_sp_rspf" type="3" desc="修改对阵信息">
+	<![CDATA[
+	    update tb_match_jczq set crspf = ? where citemid = ?
+	]]> 
+		<in-parm>
+	   		<parm name="胜平负" property="rspf"/>
+	   		<parm name="场次编号" property="itemID"/>
+		</in-parm>
+	</sql>
+	
+	<sql id="u_jczq_match_sp_rspf" type="3" desc="修改对阵信息">
+	<![CDATA[
+	    update tb_match_jczq set crspf = ? where citemid = ?
+	]]> 
+		<in-parm>
+	   		<parm name="胜平负" property="rspf"/>
+	   		<parm name="场次编号" property="itemID"/>
+		</in-parm>
+	</sql>
+    
+   	<sql id="u_jczq_match_sp_cbf" type="3" desc="修改对阵信息">
+	<![CDATA[
+	    update tb_match_jczq set ccbf = ? where citemid = ?
+	]]> 
+		<in-parm>
+	   		<parm name="猜比分" property="cbf"/>
+	   		<parm name="场次编号" property="itemID"/>
+		</in-parm>
+	</sql>
+    
+   	<sql id="u_jczq_match_sp_bqc" type="3" desc="修改对阵信息">
+	<![CDATA[
+	    update tb_match_jczq set cbqc = ? where citemid = ?
+	]]> 
+		<in-parm>
+	   		<parm name="半全场" property="bqc"/>
+	   		<parm name="场次编号" property="itemID"/>
+		</in-parm>
+	</sql>
+    
+   	<sql id="u_jczq_match_sp_jqs" type="3" desc="修改对阵信息">
+	<![CDATA[
+	    update tb_match_jczq set cjqs = ? where citemid = ?
+	]]> 
+		<in-parm>
+	   		<parm name="进球数" property="jqs"/>
+	   		<parm name="场次编号" property="itemID"/>
+		</in-parm>
+	</sql>
+
+    <sql id="c_sp_jczq" type="1" desc="查询sp是否存在">
+	<![CDATA[
+	    select count(1) num from tb_sp_jczq where cgameid=? and citemid=? and cadddate=to_date(?,'yyyy-MM-dd hh24:mi:ss')
+	]]>
+		<in-parm>
+	   		<parm name="赔率类型" property="gameID"/>
+	   		<parm name="场次编号" property="itemID"/>
+	   		<parm name="赔率时间" property="endTime"/>
+	   	</in-parm>
+	</sql>
+
+
+	<sql id="q_jczq_award_list" type="1" desc="查询指定日期的开奖公告">
+	<![CDATA[
+	    select citemid tid, imatchid mid, cmname mn,csname sn,cmscore ms,csscore ss,chmscore hms,chsscore hss,close lose,cmatchname mname,cmatchtime mt,
+	    ccolor cl, cname cid,icancel ic, istate st, cresult rs
+	    from tb_match_jczq where (iaudit = 1 or icancel = 1) and citemid like ? order by citemid desc
+	]]>
+		<in-parm>
+			<parm name="场次编号" property="itemID"/>
+	   	</in-parm>
+	</sql>
+
+	<sql id="q_jczq_day_list" type="1" desc="查询指定日期的开奖公告">
+	<![CDATA[
+		select * from (
+		select substr(citemid,0,6) did, '1' type from tb_match_jczq where istate != 0 and iaudit = 1 group by  substr(citemid,0,6) order by substr(citemid,0,6) desc
+		) where rownum < 50
+	]]>
+		<in-parm>
+	   	</in-parm>
+	</sql>
+	
+	
+	<sql id="q_jczq_match_info" type="1" desc="查询指定编号的场次信息">
+	<![CDATA[
+	    select citemid tid, imatchid mid, cmname mn,csname sn,cmscore ms,csscore ss,chmscore hms,chsscore hss,close lose,cmatchname mname,cmatchtime mt,
+	    ccolor cl, cname cid,icancel ic, istate st, cresult rs
+	    from tb_match_jczq where citemid = ?
+	]]>
+		<in-parm>
+			<parm name="场次编号" property="itemID"/>
+	   	</in-parm>
+	</sql>
+	
+	<sql id="q_jczq_match_info_mid" type="1" desc="查询指定编号的场次信息">
+	<![CDATA[
+	    select citemid tid, imatchid mid, cmname mn,csname sn,cmscore ms,csscore ss,chmscore hms,chsscore hss,close lose,cmatchname mname,cmatchtime mt,
+	    ccolor cl, cname cid,icancel ic, istate st, cresult rs,isale
+	    from tb_match_jczq where imatchid = ?
+	]]>
+		<in-parm>
+			<parm name="官方编号" property="matchID"/>
+	   	</in-parm>
+	</sql>
+	
+
+	<sql id="i_sp_jczq" type="3" desc="保存对阵的SP值">
+	<![CDATA[
+	    insert into tb_sp_jczq (cgameid,citemid,cvalue,cadddate) values (?,?,?,to_date(?,'yyyy-MM-dd hh24:mi:ss'))
+	]]>
+		<in-parm>
+	   		<parm name="赔率类型" property="gameID"/>
+	   		<parm name="场次编号" property="itemID"/>
+	   		<parm name="赔率数据" property="value"/>
+	   		<parm name="赔率时间" property="endTime"/>
+	   	</in-parm>
+	</sql>
+	
+</config>

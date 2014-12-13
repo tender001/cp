@@ -1,0 +1,1078 @@
+<?xml version="1.0" encoding="gbk"?>
+
+<config desc="用户中心（前台网站SQL配置）">
+	<!-- type: 1 查询语句 2 存储过程 3 更新类语句 -->
+	
+	<sql id="change_user_pwd" type="3" desc="修改密码">
+	<![CDATA[
+	    update tblusers set cpassword = ? where cuserid = ? and cpassword = ?
+	]]>
+		<in-parm>
+			<parm name="新密码" property="vid"/>
+			<parm name="用户号" property="uid"/>
+			<parm name="老密码" property="pwd"/>
+	   	</in-parm>
+	</sql>
+	
+	
+	<sql id="change_agent_pwd" type="3" desc="修改代理密码">
+	<![CDATA[
+	    update tb_agent set cpassword = ? where cagentid = ? and cpassword = ?
+	]]>
+		<in-parm>
+			<parm name="新密码" property="vid"/>
+			<parm name="用户号" property="uid"/>
+			<parm name="老密码" property="pwd"/>
+	   	</in-parm>
+	</sql>
+	
+	<!-- 用户登录 -->
+	<sql id="u_login" type="2" desc="后台管理用户登录">
+	<![CDATA[
+	   cpadmin.sp_admin_userlogin
+	]]>
+		<in-parm>
+	   		<parm name="用户编号"  property="uid"/>
+	   		<parm name="用户密码"  property="pwd"/>
+	   		<parm name="登录地址"  property="ipAddr"/>
+	   	</in-parm>
+	   	<out-parm>
+	   		<parm name="错误号码"  property="busiErrCode"/>
+	   		<parm name="错误描写"  property="busiErrDesc"/>
+	   	</out-parm>
+	</sql>
+
+	<!-- 日统计 -->
+	<sql id="query_statday" type="1" desc="查询日统计数据" order=" order by cstatday desc ">
+	<![CDATA[
+        select cstatday statday, ibalance balance, ifreeze freeze, iusers rusers, isales sale,iawards award, ireturn rate, ifills fill,
+        icashs cash, itaxs tax, ifusers fusers,iactive-iusers+ifusers active from tb_stat_day where cstatday >= ? and cstatday <= ?
+    ]]>
+		<in-parm>
+			<parm name="开始时间" property="sdate" />
+			<parm name="结束时间" property="edate" />
+		</in-parm>
+	</sql>
+
+	<sql id="query_statday_t" type="1" desc="查询日统计数据">
+	<![CDATA[
+        select '汇总' statday,sum(iusers) rusers, sum(isales) sale, sum(iawards) award,sum(ireturn) rate,sum(ifills) fill,
+        sum(icashs) cash,sum(itaxs) tax,sum(ifusers) fusers,sum(iactive-iusers+ifusers) active from tb_stat_day where cstatday >= ? and cstatday <= ?
+    ]]>
+		<in-parm>
+			<parm name="开始时间" property="sdate" />
+			<parm name="结束时间" property="edate" />
+		</in-parm>
+	</sql>
+	
+	<!-- 彩种销售统计 -->
+	<sql id="query_gamestat" type="1" desc="查询游戏统计数据" order=" order by cstatday desc ">
+	<![CDATA[
+        select cstatday statday, isale+izhsale sale, iaward+izhaward award, itax+izhtax tax from tb_game_stat where cgameid = ? and cstatday >= ? and cstatday <= ?
+    ]]>
+		<in-parm>
+			<parm name="游戏编号" property="gid" />
+			<parm name="开始时间" property="sdate" />
+			<parm name="结束时间" property="edate" />
+		</in-parm>
+	</sql>
+
+	<sql id="query_gamestat_t" type="1" desc="查询游戏汇总数据">
+	<![CDATA[
+        select '汇总' statday, sum(isale+izhsale) sale, sum(iaward+izhaward) award, sum(itax+izhtax) tax from tb_game_stat where cgameid = ? and cstatday >= ? and cstatday <= ?
+    ]]>
+		<in-parm>
+			<parm name="游戏编号" property="gid" />
+			<parm name="开始时间" property="sdate" />
+			<parm name="结束时间" property="edate" />
+		</in-parm>
+	</sql>
+	
+	<!-- 后台日志查看 -->
+	<sql id="admin_logs" type="1" desc="查询后台日志" order=" order by irecid desc ">
+	<![CDATA[
+        select * from tbladminlog where cadddate >= to_date(?,'yyyy-MM-dd') and cadddate <= to_date(?,'yyyy-MM-dd') + 1
+    ]]>
+		<in-parm>
+			<parm name="开始时间" property="sdate" />
+			<parm name="结束时间" property="edate" />
+			<parm name="用户编号" property="nid" sql=" and cuserid = ? "/>
+		</in-parm>
+	</sql>
+	
+	<sql id="user_logs" type="1" desc="查询用户日志" order=" order by irecid desc ">
+	<![CDATA[
+        select * from tb_user_log where cadddate >= to_date(?,'yyyy-MM-dd') and cadddate <= to_date(?,'yyyy-MM-dd') + 1
+    ]]>
+		<in-parm>
+			<parm name="开始时间" property="sdate" />
+			<parm name="结束时间" property="edate" />
+			<parm name="用户编号" property="nid" sql=" and cnickid = ? "/>
+		</in-parm>
+	</sql>
+	
+	
+	
+	<!-- 管理后台代理商配置 -->
+    <sql id="query_agentlist" type="1" desc="查询代理商列表" order=" order by CCREATEDATE  ">
+	<![CDATA[
+		select  cagentid,cagentname,caddress,crealname,ctelephone,cmail,ccreatedate,cloginip,clastdate,istate,
+		cparentid,ibalance,itransfer,icash,ihfill,irfill,izfill,cbankno,cbankname,cnickid,
+		decode(istate,0,'正常','冻结') state from tb_agent where 1=1
+	]]>
+		<in-parm>
+			<parm name="代理商编号名称" property="nid" sql=" and (cagentid = ? or " />
+			<parm name="代理商名称" property="nid" sql=" cagentname=?)" />
+			<parm name="开始时间" property="sdate" sql=" and ccreatedate &gt;= to_date(?,'yyyy-mm-dd') " />
+			<parm name="结束时间" property="edate" sql=" and ccreatedate &lt; to_date(?,'yyyy-mm-dd')+1 " />
+		</in-parm>
+	</sql>
+	
+	<sql id="query_agentcashorder" type="1" desc="查询代理商提款列表" order=" order by tac.cadddate  ">
+	<![CDATA[
+		select decode(tac.istate,0,'未处理',1,'未处理',2,'已处理',3,'取消') state,tac.icashid,ta.cagentid,ta.cagentname,
+		tac.imoney,tac.cadddate,tac.istate,tac.cbankno,tac.cbankname,tac.crealname,tac.cprocessdate,tac.cprocessor,
+		tac.cmemo from tb_agent_cash tac,tb_agent ta where tac.cagentid = ta.cagentid
+	]]>
+		<in-parm>
+			<parm name="处理状态" property="state" sql=" and tac.istate = ? " />
+			<parm name="代理商编号" property="nid" sql=" and (ta.cagentid = ? or" />
+			<parm name="代理商名称" property="nid" sql=" ta.cagentname=?)" />
+			<parm name="开始时间" property="sdate" sql=" and tac.cadddate &gt;= to_date(?,'yyyy-MM-dd') " />
+			<parm name="结束时间" property="edate" sql=" and tac.cadddate &lt; to_date(?,'yyyy-MM-dd')+1 " />
+		</in-parm>
+	</sql>	
+	
+	<sql id="query_agentcashorder_1" type="1" desc="查询代理商提款列表" order=" order by tac.cprocessdate  ">
+	<![CDATA[
+		select decode(tac.istate,0,'未处理',1,'未处理',2,'已处理',3,'取消') state,tac.icashid,ta.cagentid,ta.cagentname,
+		tac.imoney,tac.cadddate,tac.istate,tac.cbankno,tac.cbankname,tac.crealname,tac.cprocessdate,tac.cprocessor,
+		tac.cmemo from tb_agent_cash tac,tb_agent ta where tac.cagentid = ta.cagentid
+	]]>
+		<in-parm>
+			<parm name="处理状态" property="state" sql=" and tac.istate = ? " />
+			<parm name="代理商编号" property="nid" sql=" and (ta.cagentid = ? or" />
+			<parm name="代理商名称" property="nid" sql=" ta.cagentname=?)" />
+			<parm name="开始时间" property="sdate" sql=" and tac.cprocessdate &gt;= to_date(?,'yyyy-MM-dd') " />
+			<parm name="结束时间" property="edate" sql=" and tac.cprocessdate &lt; to_date(?,'yyyy-MM-dd')+1 " />
+		</in-parm>
+	</sql>	
+
+	<sql id="query_agenttransfer" type="1" desc="查询代理商转款" order=" order by tac.cadddate  ">
+	<![CDATA[
+		select tac.cagentid,ta.cagentname,tac.imoney,tac.cadddate,tac.cprojid uname from tb_agent ta,
+		 tb_agent_charge tac where ta.cagentid = tac.cagentid and tac.iopertype=4
+	]]>
+		<in-parm>
+			<parm name="代理商编号名称" property="nid" sql=" and (tac.cagentid = ? or " />
+			<parm name="代理商名称" property="nid" sql=" ta.cagentname=?)" />
+			<parm name="购彩用户名" property="oid" sql=" and tac.cprojid=?" />
+			<parm name="开始时间" property="sdate" sql=" and tac.cadddate &gt;= to_date(?,'yyyy-MM-dd') " />
+			<parm name="结束时间" property="edate" sql=" and tac.cadddate &lt; to_date(?,'yyyy-MM-dd')+1 " />
+		</in-parm>
+	</sql>
+	
+	<sql id="query_agenttransfer_1" type="1" desc="查询代理商转款汇总" order="">
+	<![CDATA[
+		select '汇总' cagentid ,'' cagentname,sum(tac.imoney) imoney,'' cadddate,'' uname from tb_agent ta,
+		tb_agent_charge tac where ta.cagentid = tac.cagentid and tac.iopertype=4
+	]]>
+		<in-parm>
+			<parm name="代理商编号名称" property="nid" sql=" and (tac.cagentid = ? or " />
+			<parm name="代理商名称" property="nid" sql=" ta.cagentname=?)" />
+			<parm name="购彩用户名" property="oid" sql=" and tac.cprojid=?" />
+			<parm name="开始时间" property="sdate" sql=" and tac.cadddate &gt;= to_date(?,'yyyy-MM-dd') " />
+			<parm name="结束时间" property="edate" sql=" and tac.cadddate &lt; to_date(?,'yyyy-MM-dd')+1 " />
+		</in-parm>
+	</sql>
+	
+	<sql id="admin_add_agent" type="3" desc="管理后台新增加代理商">
+	<![CDATA[
+	   insert into tb_agent (cagentid,cagentname,ccreatedate,cpassword,istate,cparentid) values (?,?,sysdate,'888888',0,?)
+	]]>
+		<in-parm>
+			<parm name="代理商ID" property="aid" />
+			<parm name="代理商昵称" property="nid" />
+			<parm name="上级代理商ID" property="memo" />
+		</in-parm>
+	</sql>
+	
+	<sql id="query_adminlist" type="1" desc="查询管理员列表">
+	<![CDATA[
+		select cuserid from tblusers order by cuserid
+	]]>
+	</sql>
+	
+	<sql id="query_admin_auths" type="1" desc="查询管理员权限">
+	<![CDATA[
+		select cauth from tblusers where cuserid = ?
+	]]>
+		<in-parm>
+			<parm name="管理员名称" property="nid" />
+		</in-parm>
+	</sql>
+
+	<sql id="set_admin_auth" type="3" desc="修改管理员权限">
+	<![CDATA[
+		update tblusers set cauth=? where cuserid = ?
+	]]>
+		<in-parm>
+			<parm name="权限列表值" property="memo" />
+			<parm name="管理员名称" property="nid" />
+		</in-parm>
+	</sql>
+	
+	<sql id="query_auditsale" type="1" desc="出票数据核对">
+		<![CDATA[
+		select t.*,t1.cname cgamename from tb_ticket_period t, tb_game t1 where t.cgameid = t1.cgameid and t.istate = 4 and t.iflag = 1 order by t.cadddate
+		]]>
+	</sql>
+	
+	<sql id="audit_period_sale" type="3" desc="设置期次可派奖">
+		<![CDATA[
+	    update tb_period set isaleaudit = 1 , cauditdate = sysdate, cauditmemo = ? where cgameid = ? and cperiodid = ?
+	    ]]>
+		<in-parm>
+			<parm name="审核人" property="uid" />
+			<parm name="游戏编号" property="gid" />
+			<parm name="期次编号" property="pid" />
+		</in-parm>
+	</sql>
+	
+	<sql id="audit_ticket_period" type="3" desc="出票期次已审核">
+		<![CDATA[
+		update tb_ticket_period set istate = 5 where cgameid = ? and cperiodid = ?
+		]]>
+		<in-parm>
+			<parm name="游戏编号" property="gid" />
+			<parm name="期次编号" property="pid" />
+		</in-parm>
+	</sql>
+<!-- 
+
+
+	<sql id="a_get_menu" type="1" desc="获取功能菜单">
+	<![CDATA[
+	   SELECT cMenuID, cMenuName, cMenuDesc, cMenuHref, cHrefTarget, cMenuImage, cParentID, iOrderID, iDispFlag FROM tblMenu WHERE cParentID = ? AND iDispFlag = 1 AND cMenuID IN (SELECT cMenuID FROM tblMenuAssign WHERE cRoleID IN (SELECT cRoleID FROM tblRoleUser WHERE cUserID = ?) ) Order By iOrderID
+	    ]]>
+		<in-parm>
+			<parm name="父编号" property="pid" />
+			<parm name="用户编号" property="uid" />
+		</in-parm>
+	</sql>
+	
+	<sql id="query_adminlist" type="1" desc="查询管理员列表">
+	<![CDATA[
+		select cuserid from tblusers order by cuserid
+	]]>
+	</sql>
+	
+	<sql id="set_admin_menu" type="3" desc="修改管理员菜单">
+	<![CDATA[
+		update tblusers set cmenu=? where cuserid = ?
+	]]>
+		<in-parm>
+			<parm name="菜单列表" property="memo" />
+			<parm name="管理员名称" property="nid" />
+		</in-parm>
+	</sql>
+	
+	<sql id="set_admin_auth" type="3" desc="修改管理员权限">
+	<![CDATA[
+		update tblusers set cauth=? where cuserid = ?
+	]]>
+		<in-parm>
+			<parm name="权限列表值" property="memo" />
+			<parm name="管理员名称" property="nid" />
+		</in-parm>
+	</sql>
+	
+	<sql id="edit_period_info" type="3" desc="修改期次时间">
+	<![CDATA[
+		update tb_period set cfendtime=to_date(?,'yyyy-MM-dd hh24:mi:ss'), cendtime=to_date(?,'yyyy-MM-dd hh24:mi:ss') where cgameid=? and cperiodid=?
+	]]>
+		<in-parm>
+			<parm name="单式截止时间" property="oldValue" />
+			<parm name="复式截止时间" property="newValue" />
+			<parm name="彩种" property="gid" />
+			<parm name="期次" property="pid" />
+		</in-parm>
+	</sql>
+
+	<sql id="alipay_money" type="2" desc="支付宝回调更新付款订单">
+		cpadmin.sp_alipay_money
+		<in-parm>
+			<parm name="订单编号" property="did" />
+			<parm name="支付宝账号" property="emailaddr" />
+			<parm name="成功-失败状态" property="muli" />
+		</in-parm>
+		<out-parm>
+			<parm name="错误编号" property="busiErrCode" />
+			<parm name="错误描叙" property="busiErrDesc" />
+		</out-parm>
+	</sql>
+
+   <sql id="query_sms" type="1" desc="查询手机发送列表" order=" order by cadddate desc  ">
+	<![CDATA[
+		select ismsid,crecphone crec,'手机发送信息保密' title,'手机发送' itype,cadddate addtime,csenddate sendtime,decode(iflag,0,'未发送',1,'发送成功','状态异常') flag from tb_sms where 1 = 1
+	]]>
+		<in-parm>
+			<parm name="手机" property="oid" sql=" and crecphone = ? " />
+			<parm name="是否处理" property="state" sql=" and iflag = ? " />
+			<parm name="开始时间" property="sdate" sql=" and cadddate &gt;= to_date(?,'yyyy-MM-dd') " />
+			<parm name="结束时间" property="edate" sql=" and cadddate &lt; to_date(?,'yyyy-MM-dd')+1 " />
+		</in-parm>
+	</sql>
+
+   <sql id="query_sms_ct" type="1" desc="查询手机发送内容">
+	<![CDATA[
+		select ccontents ct from tb_sms where ismsid = ?
+	]]>
+		<in-parm>
+			<parm name="标识id" property="oid" />
+		</in-parm>
+	</sql>
+	
+	<sql id="count_sms" type="1" desc="统计手机发送方案">
+	<![CDATA[
+		select count(*) num from tb_sms where 1 = 1
+	]]>
+		<in-parm>
+			<parm name="手机" property="oid" sql=" and crecphone = ? " />
+			<parm name="是否处理" property="state" sql=" and iflag = ? " />
+			<parm name="开始时间" property="sdate" sql=" and cadddate &gt;= to_date(?,'yyyy-MM-dd') " />
+			<parm name="结束时间" property="edate" sql=" and cadddate &lt; to_date(?,'yyyy-MM-dd')+1 " />
+		</in-parm>
+	</sql>
+	
+	<sql id="query_email" type="1" desc="查询邮箱发送列表" order=" order by cadddate desc  ">
+	<![CDATA[
+		select crecmail crec,ctitle title,'邮箱发送' itype,cadddate addtime,csenddate sendtime,decode(iflag,0,'未发送',1,'发送成功','状态异常') flag from tb_mail where 1 = 1
+	]]>
+		<in-parm>
+			<parm name="邮箱" property="oid" sql=" and crecmail = ? " />
+			<parm name="是否处理" property="state" sql=" and iflag = ? " />
+			<parm name="开始时间" property="sdate" sql=" and cadddate &gt;= to_date(?,'yyyy-MM-dd') " />
+			<parm name="结束时间" property="edate" sql=" and cadddate &lt; to_date(?,'yyyy-MM-dd')+1 " />
+		</in-parm>
+	</sql>
+	
+	<sql id="count_email" type="1" desc="统计邮箱发送方案">
+	<![CDATA[
+		select count(*) num from tb_mail where 1 = 1
+	]]>
+		<in-parm>
+			<parm name="邮箱" property="oid" sql=" and crecmail = ? " />
+			<parm name="是否处理" property="state" sql=" and iflag = ? " />
+			<parm name="开始时间" property="sdate" sql=" and cadddate &gt;= to_date(?,'yyyy-MM-dd') " />
+			<parm name="结束时间" property="edate" sql=" and cadddate &lt; to_date(?,'yyyy-MM-dd')+1 " />
+		</in-parm>
+	</sql>
+	
+	
+	
+	<sql id="query_mybanklist" type="1" desc="查询我的银行批付列表" order=" order by ccashdate  ">
+	<![CDATA[
+		select icashid,cnickid,crealname,cbankpro,cbankcity,cbankcode,cbankname,cbankcard,imoney,irate,ccashdate,cmemo,coperator,cconfdate,decode(istate,0,'未处理',1,'已处理','其他') state,isuccess,decode(isuccess,0,'未处理',1,'提款成功',2,'拒绝提款',3,'银行处理失败',4,'支付宝批付中',5,'成功',6,'失败',7,'银行批付中','其他') success from tb_user_cash where isuccess=7 and coperator = ?
+	]]>
+		<in-parm>
+			<parm name="操作人用户编号" property="uid" />
+		</in-parm>
+	</sql>
+	
+	<sql id="query_mybanklist_t" type="1" desc="查询我的银行批付汇总">
+	<![CDATA[
+		select '汇总' icashid,'' cnickid,'' crealname,'' cbankpro,'' cbankcity,'' cbankcode,'' cbankname,'' cbankcard,sum(imoney) imoney,'' irate,'' ccashdate,'' cmemo,'' coperator,'' cconfdate,'' state,'' isuccess,'' success from tb_user_cash where isuccess=7 and coperator = ?
+	]]>
+		<in-parm>
+			<parm name="操作人用户编号" property="uid" />
+		</in-parm>
+	</sql>
+
+	<sql id="create_proj_task" type="3" desc="生成方案任务">
+		<![CDATA[
+		insert into tb_proj_task (cgameid,cperiodid,cprojid,itype,cmemo) values (?,?,?,?,?)
+		]]>
+		<in-parm>
+			<parm name="彩种编号" property="gid" />
+			<parm name="期次编号" property="pid" />
+			<parm name="方案编号" property="hid" />
+			<parm name="任务类型" property="type" />
+			<parm name="任务描叙" property="memo" />
+		</in-parm>
+	</sql>
+
+	<sql id="query_all_period" type="1" desc="查询期次">
+	<![CDATA[
+		select * from tb_period where istate >= 1 and cgameid = ? order by cperiodid desc
+	]]>
+		<in-parm>
+			<parm name="彩种编号" property="gid" />
+		</in-parm>
+	</sql>
+	<sql id="count_all_period" type="1" desc="统计方案">
+	<![CDATA[
+		select count(*) num from tb_period where istate >= 1 and cgameid = ?
+	]]>
+		<in-parm>
+			<parm name="彩种编号" property="gid" />
+		</in-parm>
+	</sql>
+
+
+	<sql id="query_mticket" type="1" desc="出票监控">
+		<![CDATA[
+		select * from tb_new_ticket where istate = 0
+		]]>
+		<in-parm>
+			<parm name="期次编号" property="pid" sql=" and cperiodid = ? " />
+			<parm name="方案编号" property="hid" sql=" and cprojid = ?" />
+		</in-parm>
+	</sql>
+	<sql id="count_mticket" type="1" desc="统计出票监控">
+		<![CDATA[
+		select count(*) num from tb_new_ticket where istate = 0
+		]]>
+		<in-parm>
+			<parm name="期次编号" property="pid" sql=" and cperiodid = ? " />
+			<parm name="方案编号" property="hid" sql=" and cprojid = ?" />
+		</in-parm>
+	</sql>
+
+	
+	<sql id="update_newsms" type="3" desc="发送一条短信">
+		<![CDATA[
+		insert into tb_sms (ismsid,crecphone,ccontents) values (seq_sms.nextval,?,?)
+		]]>
+		<in-parm>
+		    <parm name="手机号码" property="pid" />
+			<parm name="短信内容" property="memo" />
+		</in-parm>
+	</sql>
+
+
+
+	<sql id="query_kp_proj" type="1" desc="查询快频率方案"
+		order=" order by cperiodid desc, ijiesuan,icast,cprojid ">
+	<![CDATA[
+		select cgameid,cperiodid,cprojid,decode(itype,0,'代购','合买') tname,imulity,itmoney,inums,ijindu,cnickid,istate,icast,iplay,ipnum,
+		decode(istate,0,'暂停认购',1,'认购中',2,'已满员',3,'未满撤销',4,'发起人撤销','出票失败撤销') sname,
+		decode(ijiesuan,2,'已结算','未结算') jname,ijiesuan,ifile,iupload,itype,cendtime,cadddate,
+		decode(icast,0,'未处理',1,'处理中',2,'出票中',3,'已出票') cname,
+		decode(ireturn,0,'未派奖',1,'派奖中',2,'已派奖','其他') pname,
+		ibonus from tb_proj_#gameid# where (istate <= 2 or istate = 5) 
+	]]>
+		<in-parm>
+			<parm name="开始期次编号" property="aid" sql=" and cperiodid &gt;= ? "/>
+			<parm name="结束期次编号" property="pid" sql=" and cperiodid &lt;= ? " />
+			<parm name="撤销状态" property="state" sql=" and itype=0 and istate=4+?" />
+			<parm name="出票状态" property="type" sql=" and icast = ? " />
+			<parm name="用户昵称" property="oid" sql=" and cnickid=?" />
+			<parm name="方案编号" property="hid" sql=" and cprojid=?" />
+		</in-parm>
+	</sql>
+	
+
+	<sql id="query_kp_proj_t" type="1" desc="查询快频率方案">
+	<![CDATA[
+		select sum(itmoney) itmoney,sum(ibonus) ibonus from tb_proj_#gameid# where (istate <= 2 or istate = 5) 
+	]]>
+		<in-parm>
+			<parm name="开始期次编号" property="aid" sql=" and cperiodid &gt;= ? "/>
+			<parm name="结束期次编号" property="pid" sql=" and cperiodid &lt;= ? " />
+			<parm name="撤销状态" property="state" sql=" and itype=0 and istate=4+?" />
+			<parm name="出票状态" property="type" sql=" and icast = ? " />
+			<parm name="用户昵称" property="oid" sql=" and cnickid=?" />
+			<parm name="方案编号" property="hid" sql=" and cprojid=?" />
+		</in-parm>
+	</sql>
+
+	<sql id="query_mp_proj" type="1" desc="查询慢频率方案" order=" order by icast,ireturn,ijiesuan,cprojid desc">
+	<![CDATA[
+		select cgameid,cperiodid,cprojid,decode(itype,0,'代购','合买') tname,imulity,itmoney,inums,ijindu,cnickid,istate,icast,iplay,ipnum,ilnum,
+		decode(istate,0,'暂停认购',1,'认购中',2,'已满员',3,'未满撤销',4,'发起人撤销','出票失败撤销') sname,
+		decode(ijiesuan,2,'已结算','未结算') jname,ijiesuan,ifile,iupload,itype,cendtime,decode(iupload,0,'未上传','已上传') upname,
+		decode(icast,0,'未出票',1,'需出票',2,'出票中',3,'已出票') cname,ccastdate,cadddate,
+		decode(ireturn,0,'未派奖',1,'派奖中',2,'已派奖','其他') pname,
+		ibonus from tb_proj_#gameid# 
+		where (istate <= 2 or istate = 5) 
+	]]>
+		<in-parm>
+			<parm name="开始期次编号" property="aid" sql=" and cperiodid &gt;= ? "/>
+			<parm name="结束期次编号" property="pid" sql=" and cperiodid &lt;= ? " />
+			<parm name="用户昵称" property="oid" sql=" and cnickid=?" />
+			<parm name="方案编号" property="hid" sql=" and cprojid=?" />
+			<parm name="撤销状态" property="state" sql=" and istate &gt;= 2+? and istate &lt;= 5" />
+			<parm name="方案状态" property="type" sql=" and icast = ? " />
+			<parm name="结算状态" property="memo" sql=" and ireturn = 2 and ijiesuan &lt; ? " />
+			<parm name="用户编号" property="nid" sql=" and cnickid = ?" />
+			<parm name="场次编号" property="zid" sql=" and cmatchs like ?" />
+			<parm name="开始时间" property="sdate"
+				sql=" and cadddate &gt;= to_date(?,'yyyy-MM-dd') " />
+			<parm name="结束时间" property="edate"
+				sql=" and cadddate &lt; to_date(?,'yyyy-MM-dd')+1 " />
+		</in-parm>
+	</sql>
+	
+
+
+	<sql id="query_mp_proj_t" type="1" desc="查询慢频率方案">
+	<![CDATA[
+		select sum(itmoney) itmoney,sum(ibonus) ibonus from tb_proj_#gameid# where (istate <= 2 or istate = 5) 
+	]]>
+		<in-parm>
+			<parm name="开始期次编号" property="aid" sql=" and cperiodid &gt;= ? "/>
+			<parm name="结束期次编号" property="pid" sql=" and cperiodid &lt;= ? " />
+			<parm name="用户昵称" property="oid" sql=" and cnickid=?" />
+			<parm name="方案编号" property="hid" sql=" and cprojid=?" />
+			<parm name="撤销状态" property="state" sql=" and istate &gt;= 2+? and istate &lt;= 5" />
+			<parm name="方案状态" property="type" sql=" and icast = ? " />
+			<parm name="结算状态" property="memo" sql=" and ireturn = 2 and ijiesuan &lt; ? " />
+			<parm name="用户编号" property="nid" sql=" and cnickid = ?" />
+			<parm name="场次编号" property="zid" sql=" and cmatchs like ?" />
+			<parm name="开始时间" property="sdate" sql=" and cadddate &gt;= to_date(?,'yyyy-MM-dd') " />
+			<parm name="结束时间" property="edate" sql=" and cadddate &lt; to_date(?,'yyyy-MM-dd')+1 " />
+		</in-parm>
+	</sql>
+
+	<sql id="query_xcp_proj" type="1" desc="查询慢频率方案" order=" order by icast,ireturn,ijiesuan,cprojid desc">
+	<![CDATA[
+		select cgameid,cperiodid,cprojid,decode(itype,0,'代购','合买') tname,ccodes,imulity,itmoney,inums,ijindu,cnickid,istate,icast,iplay,ipnum,ilnum,
+		decode(istate,0,'暂停认购',1,'认购中',2,'已满员',3,'未满撤销',4,'发起人撤销','出票失败撤销') sname,
+		decode(ijiesuan,2,'已结算','未结算') jname,ijiesuan,ifile,iupload,itype,cendtime,decode(iupload,0,'未上传','已上传') upname,
+		decode(icast,0,'未出票',1,'需出票',2,'出票中',3,'已出票') cname,cadddate,ccastdate,
+		decode(ireturn,0,'未派奖',1,'派奖中',2,'已派奖','其他') pname,
+		ibonus from tb_proj_#gameid# 
+		where (ijindu+ipnum*100/inums) >= 90 and icast != 3 and istate<3 and iupload=1
+	]]>
+		<in-parm>
+			<parm name="开始期次编号" property="aid" sql=" and cperiodid  &gt;= ? "/>
+			<parm name="结束期次编号" property="pid" sql=" and cperiodid &lt;= ? " />
+			<parm name="用户编号" property="nid" sql=" and cnickid = ?" />
+			<parm name="开始时间" property="sdate" sql=" and cadddate &gt;= to_date(?,'yyyy-MM-dd') " />
+			<parm name="结束时间" property="edate" sql=" and cadddate &lt; to_date(?,'yyyy-MM-dd')+1 " />
+		</in-parm>
+	</sql>
+	
+
+
+	<sql id="query_xcp_proj_t" type="1" desc="查询慢频率方案">
+	<![CDATA[
+		select sum(itmoney) itmoney, sum(ibonus) ibonus from tb_proj_#gameid# where (ijindu+ipnum*100/inums) >= 90 and icast != 3 and istate<3 and iupload=1
+	]]>
+		<in-parm>
+			<parm name="开始期次编号" property="aid" sql=" and cperiodid  &gt;= ? "/>
+			<parm name="结束期次编号" property="pid" sql=" and cperiodid &lt;= ? " />
+			<parm name="用户编号" property="nid" sql=" and cnickid = ?" />
+			<parm name="开始时间" property="sdate" sql=" and cadddate &gt;= to_date(?,'yyyy-MM-dd') " />
+			<parm name="结束时间" property="edate" sql=" and cadddate &lt; to_date(?,'yyyy-MM-dd')+1 " />
+		</in-parm>
+	</sql>
+
+	<sql id="query_wsc_proj" type="1" desc="查询慢频率方案" order=" order by icast,ireturn,ijiesuan,cprojid desc">
+	<![CDATA[
+		select cgameid,cperiodid,cprojid,decode(itype,0,'代购','合买') tname,ccodes,imulity,itmoney,inums,ijindu,cnickid,istate,icast,iplay,ipnum,ilnum,
+		decode(istate,0,'暂停认购',1,'认购中',2,'已满员',3,'未满撤销',4,'发起人撤销','出票失败撤销') sname,
+		decode(ijiesuan,2,'已结算','未结算') jname,ijiesuan,ifile,iupload,itype,cendtime,decode(iupload,0,'未上传','已上传') upname,
+		decode(icast,0,'未出票',1,'需出票',2,'出票中',3,'已出票') cname,cadddate,ccastdate,
+		decode(ireturn,0,'未派奖',1,'派奖中',2,'已派奖','其他') pname,
+		ibonus from tb_proj_#gameid# 
+		where iupload=0
+	]]>
+		<in-parm>
+			<parm name="开始期次编号" property="aid" sql=" and cperiodid  &gt;= ? "/>
+			<parm name="结束期次编号" property="pid" sql=" and cperiodid &lt;= ? " />
+			<parm name="用户编号" property="nid" sql=" and cnickid = ?" />
+			<parm name="开始时间" property="sdate" sql=" and cadddate &gt;= to_date(?,'yyyy-MM-dd') " />
+			<parm name="结束时间" property="edate" sql=" and cadddate &lt; to_date(?,'yyyy-MM-dd')+1 " />
+		</in-parm>
+	</sql>
+	
+
+
+	<sql id="query_wsc_proj_t" type="1" desc="查询慢频率方案">
+	<![CDATA[
+		select sum(itmoney) itmoney, sum(ibonus) ibonus from tb_proj_#gameid# where iupload=0
+	]]>
+		<in-parm>
+			<parm name="开始期次编号" property="aid" sql=" and cperiodid  &gt;= ? "/>
+			<parm name="结束期次编号" property="pid" sql=" and cperiodid &lt;= ? " />
+			<parm name="用户编号" property="nid" sql=" and cnickid = ?" />
+			<parm name="开始时间" property="sdate" sql=" and cadddate &gt;= to_date(?,'yyyy-MM-dd') " />
+			<parm name="结束时间" property="edate" sql=" and cadddate &lt; to_date(?,'yyyy-MM-dd')+1 " />
+		</in-parm>
+	</sql>
+
+	<sql id="query_all_proj" type="1" desc="查询方案" order=" order by icast,ireturn,ijiesuan,cprojid desc">
+	<![CDATA[
+		select cgameid,cperiodid,cprojid,decode(itype,0,'代购','合买') tname,ccodes,imulity,itmoney,inums,ijindu,cnickid,istate,icast,iplay,ipnum,ilnum,
+		decode(istate,0,'暂停认购',1,'认购中',2,'已满员',3,'未满撤销',4,'发起人撤销',5,'系统撤销','其他') sname,
+		decode(ijiesuan,2,'已结算','未结算') jname,ijiesuan,ifile,iupload,itype,cendtime,decode(iupload,0,'未上传','已上传') upname,
+		decode(icast,0,'未处理',1,'处理中',2,'出票中',3,'已出票') cname,ccastdate,cadddate,
+		decode(ireturn,0,'未派奖',1,'派奖中',2,'已派奖','其他') pname,cmatchs,cname ctitle,cdesc,
+		ibonus from tb_proj_#gameid# where 1=1
+	]]>
+		<in-parm>
+			<parm name="开始期次编号" property="aid" sql=" and cperiodid &gt;= ? "/>
+			<parm name="结束期次编号" property="pid" sql=" and cperiodid &lt;= ? " />
+			<parm name="用户昵称" property="oid" sql=" and cnickid=?" />
+			<parm name="方案编号" property="hid" sql=" and cprojid=?" />
+			<parm name="场次编号" property="zid" sql=" and cmatchs like ?" />
+			<parm name="开始时间" property="sdate" sql=" and cadddate &gt;= to_date(?,'yyyy-MM-dd') " />
+			<parm name="结束时间" property="edate" sql=" and cadddate &lt; to_date(?,'yyyy-MM-dd')+1 " />
+		</in-parm>
+	</sql>
+	
+
+
+	<sql id="query_all_proj_t" type="1" desc="查询方案">
+	<![CDATA[
+		select sum(itmoney) itmoney,sum(ibonus) ibonus from tb_proj_#gameid# where 1=1
+	]]>
+		<in-parm>
+			<parm name="开始期次编号" property="aid" sql=" and cperiodid &gt;= ? "/>
+			<parm name="结束期次编号" property="pid" sql=" and cperiodid &lt;= ? " />
+			<parm name="用户昵称" property="oid" sql=" and cnickid=?" />
+			<parm name="方案编号" property="hid" sql=" and cprojid=?" />
+			<parm name="场次编号" property="zid" sql=" and cmatchs like ?" />
+			<parm name="开始时间" property="sdate" sql=" and cadddate &gt;= to_date(?,'yyyy-MM-dd') " />
+			<parm name="结束时间" property="edate" sql=" and cadddate &lt; to_date(?,'yyyy-MM-dd')+1 " />
+		</in-parm>
+	</sql>
+
+
+	<sql id="query_proj_wm" type="1" desc="查询方案" order=" order by cprojid desc ">
+	<![CDATA[
+		select cgameid,cperiodid,cprojid,decode(itype,0,'代购','合买') tname,ccodes,imulity,itmoney,inums,ijindu,cnickid,istate,icast,iplay,ipnum,ilnum,
+		decode(istate,0,'暂停认购',1,'认购中',2,'已满员',3,'未满撤销',4,'发起人撤销',5,'系统撤销','其他') sname,
+		decode(ijiesuan,2,'已结算','未结算') jname,ijiesuan,ifile,iupload,itype,cendtime,decode(iupload,0,'未上传','已上传') upname,
+		decode(icast,0,'未处理',1,'处理中',2,'出票中',3,'已出票') cname,decode(ireturn,0,'未派奖',1,'派奖中',2,'已派奖','其他') pname,ibonus from tb_proj_#gameid# where (istate = 0 or istate = 1)
+	]]>
+		<in-parm>
+			<parm name="期次编号" property="aid" sql=" and cperiodid = ? " />
+			<parm name="用户编号" property="nid" sql=" and cnickid = ?" />
+			<parm name="方案编号" property="hid" sql=" and cprojid = ?" />
+		</in-parm>
+	</sql>
+	
+
+
+
+	<sql id="query_proj_xcd" type="1" desc="需撤单" order=" order by cprojid desc ">
+	<![CDATA[
+		select cgameid,cperiodid,cprojid,decode(itype,0,'代购','合买') tname,ccodes,imulity,itmoney,inums,ijindu,cnickid,istate,icast,iplay,ipnum,ilnum,
+		decode(istate,0,'暂停认购',1,'认购中',2,'已满员',3,'未满撤销',4,'发起人撤销',5,'系统撤销','其他') sname,
+		decode(ijiesuan,2,'已结算','未结算') jname,ijiesuan,ifile,iupload,itype,cendtime,decode(iupload,0,'未上传','已上传') upname,
+		decode(icast,0,'未处理',1,'处理中',2,'出票中',3,'已出票') cname,decode(ireturn,0,'未派奖',1,'派奖中',2,'已派奖','其他') pname,ibonus from tb_proj_#gameid# 
+		where istate <= 2 and icast != 3 and iupload=0 and cendtime<sysdate
+	]]>
+		<in-parm>
+			<parm name="期次编号" property="aid" sql=" and cperiodid = ? " />
+			<parm name="用户编号" property="nid" sql=" and cnickid = ?" />
+			<parm name="方案编号" property="hid" sql=" and cprojid = ?" />
+		</in-parm>
+	</sql>
+	
+
+
+
+	<sql id="query_proj_dcp" type="1" desc="查询方案需监控" order=" order by cprojid desc ">
+	<![CDATA[
+		select cgameid,cperiodid,cprojid,decode(itype,0,'代购','合买') tname,ccodes,imulity,itmoney,inums,ijindu,cnickid,istate,icast,iplay,ipnum,ilnum,
+		decode(istate,0,'暂停认购',1,'认购中',2,'已满员',3,'未满撤销',4,'发起人撤销',5,'系统撤销','其他') sname,
+		decode(ijiesuan,2,'已结算','未结算') jname,ijiesuan,ifile,iupload,itype,cendtime,decode(iupload,0,'未上传','已上传') upname,
+		decode(icast,0,'未处理',1,'处理中',2,'出票中',3,'已出票') cname,decode(ireturn,0,'未派奖',1,'派奖中',2,'已派奖','其他') pname,ibonus from tb_proj_#gameid# 
+		where (ijindu+ipnum*100/inums) >= 90 and icast != 3 and istate<3
+	]]>
+		<in-parm>
+			<parm name="期次编号" property="aid" sql=" and cperiodid = ? " />
+			<parm name="用户编号" property="nid" sql=" and cnickid = ?" />
+			<parm name="方案编号" property="hid" sql=" and cprojid = ?" />
+		</in-parm>
+	</sql>
+	
+
+
+
+	<sql id="query_proj_jiesuan" type="1" desc="查询方案需结算" order=" order by cprojid desc ">
+	<![CDATA[
+		select cgameid,cperiodid,cprojid,decode(itype,0,'代购','合买') tname,ccodes,imulity,itmoney,inums,ijindu,cnickid,istate,icast,iplay,ipnum,ilnum,
+		decode(istate,0,'暂停认购',1,'认购中',2,'已满员',3,'未满撤销',4,'发起人撤销',5,'系统撤销','其他') sname,
+		decode(ijiesuan,2,'已结算','未结算') jname,ijiesuan,ifile,iupload,itype,cendtime,decode(iupload,0,'未上传','已上传') upname,
+		decode(icast,0,'未处理',1,'处理中',2,'出票中',3,'已出票') cname,decode(ireturn,0,'未派奖',1,'派奖中',2,'已派奖','其他') pname,ibonus from tb_proj_#gameid# 
+		where (ijindu+ipnum*100/inums) >= 90 and ireturn = 2 and ijiesuan<2
+	]]>
+		<in-parm>
+			<parm name="期次编号" property="aid" sql=" and cperiodid = ? " />
+			<parm name="用户编号" property="nid" sql=" and cnickid = ?" />
+			<parm name="方案编号" property="hid" sql=" and cprojid = ?" />
+		</in-parm>
+	</sql>
+	
+
+
+	<sql id="query_proj_cpz" type="1" desc="查询方案" order=" order by cprojid desc ">
+	<![CDATA[
+		select cgameid,cperiodid,cprojid,decode(itype,0,'代购','合买') tname,ccodes,imulity,itmoney,inums,ijindu,cnickid,istate,icast,iplay,ipnum,ilnum,
+		decode(istate,0,'暂停认购',1,'认购中',2,'已满员',3,'未满撤销',4,'发起人撤销',5,'系统撤销','其他') sname,
+		decode(ijiesuan,2,'已结算','未结算') jname,ijiesuan,ifile,iupload,itype,cendtime,decode(iupload,0,'未上传','已上传') upname,
+		decode(icast,0,'未处理',1,'处理中',2,'出票中',3,'已出票') cname,ibonus from tb_proj_#gameid# where (icast = 1 or icast = 2)
+	]]>
+		<in-parm>
+			<parm name="期次编号" property="aid" sql=" and cperiodid = ? " />
+			<parm name="用户编号" property="nid" sql=" and cnickid = ?" />
+			<parm name="方案编号" property="hid" sql=" and cprojid = ?" />
+		</in-parm>
+	</sql>
+	
+
+
+	<sql id="query_proj_ycp" type="1" desc="查询方案" order=" order by cprojid desc ">
+	<![CDATA[
+		select cgameid,cperiodid,cprojid,decode(itype,0,'代购','合买') tname,ccodes,imulity,itmoney,inums,ijindu,cnickid,istate,icast,iplay,ipnum,ilnum,
+		decode(istate,0,'暂停认购',1,'认购中',2,'已满员',3,'未满撤销',4,'发起人撤销',5,'系统撤销','其他') sname,
+		decode(ijiesuan,2,'已结算','未结算') jname,ijiesuan,ifile,iupload,itype,cendtime,decode(iupload,0,'未上传','已上传') upname,
+		decode(icast,0,'未处理',1,'处理中',2,'出票中',3,'已出票') cname,decode(ireturn,0,'未派奖',1,'派奖中',2,'已派奖','其他') pname,ibonus from tb_proj_#gameid# where icast = 3
+	]]>
+		<in-parm>
+			<parm name="期次编号" property="aid" sql=" and cperiodid = ? " />
+			<parm name="用户编号" property="nid" sql=" and cnickid = ?" />
+			<parm name="方案编号" property="hid" sql=" and cprojid = ?" />
+		</in-parm>
+	</sql>
+	
+
+
+	<sql id="query_proj_cancel" type="1" desc="查询方案" order=" order by cprojid desc ">
+	<![CDATA[
+		select cgameid,cperiodid,cprojid,decode(itype,0,'代购','合买') tname,ccodes,imulity,itmoney,inums,ijindu,cnickid,istate,icast,iplay,ipnum,ilnum,
+		decode(istate,0,'暂停认购',1,'认购中',2,'已满员',3,'未满撤销',4,'发起人撤销',5,'系统撤销','其他') sname,
+		decode(ijiesuan,2,'已结算','未结算') jname,ijiesuan,ifile,iupload,itype,cendtime,decode(iupload,0,'未上传','已上传') upname,
+		decode(icast,0,'未处理',1,'处理中',2,'出票中',3,'已出票') cname,decode(ireturn,0,'未派奖',1,'派奖中',2,'已派奖','其他') pname,ibonus from tb_proj_#gameid# where (istate = 3 or istate = 4 or istate = 5)
+	]]>
+		<in-parm>
+			<parm name="期次编号" property="aid" sql=" and cperiodid = ? " />
+			<parm name="用户编号" property="nid" sql=" and cnickid = ?" />
+			<parm name="方案编号" property="hid" sql=" and cprojid = ?" />
+		</in-parm>
+	</sql>
+	
+
+
+	<sql id="query_proj_nupload" type="1" desc="查询方案"
+		order=" order by cprojid desc ">
+	<![CDATA[
+		select cgameid,cperiodid,cprojid,decode(itype,0,'代购','合买') tname,ccodes,imulity,itmoney,inums,ijindu,cnickid,istate,icast,iplay,ipnum,ilnum,
+		decode(istate,0,'暂停认购',1,'认购中',2,'已满员',3,'未满撤销',4,'发起人撤销',5,'系统撤销','其他') sname,
+		decode(ijiesuan,2,'已结算','未结算') jname,ijiesuan,ifile,iupload,itype,cendtime,decode(iupload,0,'未上传','已上传') upname,
+		decode(icast,0,'未处理',1,'处理中',2,'出票中',3,'已出票') cname,decode(ireturn,0,'未派奖',1,'派奖中',2,'已派奖','其他') pname,ibonus from tb_proj_#gameid# where iupload = 0
+	]]>
+		<in-parm>
+			<parm name="期次编号" property="aid" sql=" and cperiodid = ? " />
+			<parm name="用户编号" property="nid" sql=" and cnickid = ?" />
+			<parm name="方案编号" property="hid" sql=" and cprojid = ?" />
+		</in-parm>
+	</sql>
+	
+
+
+	<sql id="query_proj_zhdetail" type="1" desc="查询追号明细"
+		order=" order by idetailid desc ">
+    <![CDATA[
+        select idetailid,czhid,cperiodid,cnickid,ccodes,icmoney,imulity,iamoney,istate,
+		decode(istate,0,'未投注',1,'出票中',2,'已出票',3,'中奖撤销',4,'用户取消',5,'失败取消') sname,
+		decode(isreturn,0,'未派奖',1,'派奖中',2,'已派奖','其他') pname
+		from tb_zh_detail_#gameid# where istate != 3
+	]]>
+		<in-parm>
+			<parm name="期次编号" property="aid" sql=" and cperiodid = ? " />
+			<parm name="用户编号" property="oid" sql=" and cnickid = ?" />
+			<parm name="方案编号" property="hid" sql=" and czhid = ?" />
+		</in-parm>
+	</sql>
+	
+
+
+	<sql id="query_kp_zhdetail" type="1" desc="查询快频追号明细"
+		order=" order by cperiodid desc,istate,idetailid ">
+	<![CDATA[
+        select idetailid,czhid,cperiodid,cnickid,ccodes,icmoney,imulity,iamoney,istate,
+		decode(istate,0,'未投注',1,'出票中',2,'已出票',3,'中奖撤销',4,'用户取消',5,'失败取消') sname,
+		decode(IJIESUAN,0,'未结算',1,'处理中',2,'结算中',3,'已结算','其他') jname,cadddate,
+		decode(isreturn,0,'未派奖',1,'派奖中',2,'已派奖','其他') pname,cawardcode
+		from tb_zh_detail_#gameid# where (istate <= 2 or istate = 5) 
+	]]>
+		<in-parm>
+			<parm name="开始期次编号" property="aid" sql=" and cperiodid &gt;= ? "/>
+			<parm name="结束期次编号" property="pid" sql=" and cperiodid &lt;= ? " />
+			<parm name="用户编号" property="oid" sql=" and cnickid = ?" />
+			<parm name="方案编号" property="hid" sql=" and czhid = ?" />
+			<parm name="追号明细" property="bid" sql=" and idetailid = ?" />
+			<parm name="撤销标识" property="state" sql=" and istate = 4+?" />
+		</in-parm>
+	</sql>
+	
+
+	<sql id="query_kp_zhdetail_t" type="1" desc="查询快频追号明细">
+	<![CDATA[
+        select sum(icmoney) icmoney,sum(iamoney) iamoney from tb_zh_detail_#gameid# where (istate <= 2 or istate = 5) 
+	]]>
+		<in-parm>
+			<parm name="开始期次编号" property="aid" sql=" and cperiodid &gt;= ? "/>
+			<parm name="结束期次编号" property="pid" sql=" and cperiodid &lt;= ? " />
+			<parm name="用户编号" property="oid" sql=" and cnickid = ?" />
+			<parm name="方案编号" property="hid" sql=" and czhid = ?" />
+			<parm name="追号明细" property="bid" sql=" and idetailid = ?" />
+			<parm name="撤销标识" property="state" sql=" and istate = 4+?" />
+		</in-parm>
+	</sql>
+
+	<sql id="query_mp_zhdetail" type="1" desc="查询慢频追号明细" order=" order by istate,idetailid ">
+	<![CDATA[
+        select idetailid,czhid,cperiodid,cnickid,ccodes,icmoney,imulity,iamoney,istate,
+		decode(istate,0,'未投注',1,'出票中',2,'已出票',3,'中奖撤销',4,'用户取消',5,'失败取消') sname,
+		decode(IJIESUAN,0,'未结算',1,'处理中',2,'结算中',3,'已结算','其他') jname,cadddate,
+		decode(isreturn,0,'未派奖',1,'派奖中',2,'已派奖','其他') pname
+		from tb_zh_detail_#gameid# where (istate <= 2 or istate = 5) 
+	]]>
+		<in-parm>
+			<parm name="开始期次编号" property="aid" sql=" and cperiodid  &gt;= ? "/>
+			<parm name="结束期次编号" property="pid" sql=" and cperiodid &lt;= ? " />
+			<parm name="用户编号" property="oid" sql=" and cnickid = ?" />
+			<parm name="方案编号" property="hid" sql=" and czhid = ?" />
+			<parm name="追号明细" property="bid" sql=" and idetailid = ?" />
+			<parm name="撤销标识" property="state" sql=" and istate = 4+?" />
+		</in-parm>
+	</sql>
+
+
+
+	<sql id="query_mp_zhdetail_t" type="1" desc="查询慢频追号明细" order=" order by istate,idetailid ">
+	<![CDATA[
+        select sum(icmoney) icmoney,sum(iamoney) iamoney from tb_zh_detail_#gameid# where (istate <= 2 or istate = 5) 
+	]]>
+		<in-parm>
+			<parm name="开始期次编号" property="aid" sql=" and cperiodid  &gt;= ? "/>
+			<parm name="结束期次编号" property="pid" sql=" and cperiodid &lt;= ? " />
+			<parm name="用户编号" property="oid" sql=" and cnickid = ?" />
+			<parm name="方案编号" property="hid" sql=" and czhid = ?" />
+			<parm name="追号明细" property="bid" sql=" and idetailid = ?" />
+			<parm name="撤销标识" property="state" sql=" and istate = 4+?" />
+		</in-parm>
+	</sql>
+
+	<sql id="admin_zhuihao_cancel" type="2" desc="追号撤销">
+		cpadmin.sp_admin_zhuihao_cancel
+		<in-parm>
+			<parm name="游戏编号" property="gid" />
+			<parm name="期次编号" property="pid" />
+			<parm name="追号编号" property="zid" />
+			<parm name="明细编号" property="did" />
+		</in-parm>
+		<out-parm>
+			<parm name="错误编号" property="busiErrCode" />
+			<parm name="错误描叙" property="busiErrDesc" />
+		</out-parm>
+	</sql>
+
+	<sql id="admin_proj_upload" type="2" desc="后台上传方案号码">
+		cpadmin.sp_admin_proj_upload
+		<in-parm>
+			<parm name="游戏编号" property="gid" />
+			<parm name="方案编号" property="hid" />
+			<parm name="投注号码" property="fileName" />
+			<parm name="方案金额" property="money" />
+		</in-parm>
+		<out-parm>
+			<parm name="错误编号" property="busiErrCode" />
+			<parm name="错误描叙" property="busiErrDesc" />
+		</out-parm>
+	</sql>
+
+	
+
+	
+	
+	<sql id="query_ally" type="1" desc="查询日统计数据便捷登录绑定" order=" order by to_char(addtime,'yyyy-MM-dd') desc">
+	<![CDATA[
+		select decode(type,1,'支付宝',2,'QQ','其他') type,to_char(addtime,'yyyy-MM-dd') day,count(1) num, (select count(1) from tb_ally_log where itype=t.type and addtime = to_char(t.addtime,'yyyy-MM-dd')) xnum from tb_ally t where istate=0 and addtime>=to_date(?,'yyyy-MM-dd') and addtime<=to_date(?,'yyyy-MM-dd') and type=? group by type,to_char(addtime,'yyyy-MM-dd')
+    ]]>
+		<in-parm>
+			<parm name="开始时间" property="sdate" />
+			<parm name="结束时间" property="edate" />
+			<parm name="类型" property="oid" />
+		</in-parm>
+	</sql>
+
+	<sql id="query_ally_t" type="1" desc="查询日统计数据便捷登录绑定汇总">
+	<![CDATA[
+		select decode(type,1,'支付宝',2,'QQ','其他') type,'' day, count(1) num, (select count(1) from tb_ally_log where itype=t.type and addtime>=? and addtime<=?) xnum from tb_ally t where istate=0 and addtime>=to_date(?,'yyyy-MM-dd') and addtime<=to_date(?,'yyyy-MM-dd') and type=? group by type
+    ]]>
+		<in-parm>
+			<parm name="开始时间" property="sdate" />
+			<parm name="结束时间" property="edate" />
+			<parm name="开始时间" property="sdate" />
+			<parm name="结束时间" property="edate" />
+			<parm name="类型" property="oid" />
+		</in-parm>
+	</sql>
+
+	
+
+	<sql id="admin_change_password" type="3" desc="管理后台修改密码">
+	<![CDATA[
+	   update tblusers set cpassword = ? where cuserid = ? and cpassword = ?
+	]]>
+		<in-parm>
+			<parm name="新密码" property="pwd" />
+			<parm name="用户编号" property="uid" />
+			<parm name="老密码" property="opass" />
+		</in-parm>
+	</sql>
+
+
+	<sql id="admin_agentid_isexist" type="1" desc="查询代理商id是否存在">
+	<![CDATA[
+	   select cagentid from tb_agent where cagentid = ?
+	]]>
+		<in-parm>
+			<parm name="上级代理商ID" property="memo" />
+		</in-parm>
+	</sql>
+
+	
+
+	<sql id="query_ticket_err" type="1" desc="出票奖金异常跟踪" order=" order by cprojid  desc">
+	<![CDATA[
+	   select cprojid,cgameid,cperiodid,icount,
+	   decode(istate,3,'已派奖','未派奖') sname,
+	   cadddate,cfinishdate,itmoney,iamoney,irmoney,(iamoney-irmoney) as churu
+	   from tb_new_ticket where cgameid=? and cadddate>=to_date(?,'yyyy-MM-dd') and cadddate<=to_date(?,'yyyy-MM-dd')+1 and   abs((iamoney-irmoney))>0.1
+	]]>
+		<in-parm>
+			<parm name="彩种编号" property="gid" />
+			<parm name="开始时间" property="sdate" />
+			<parm name="结束时间" property="edate" />
+			<parm name="期次编号" property="pid" sql=" and cperiodid=? "/>
+		</in-parm>
+	</sql>
+	
+	<sql id="query_teshu_charge" type="1" desc="特殊账户的账务" order=" order by cprojid  desc">
+	<![CDATA[
+	select cprojid,cgameid,cperiodid,itmoney,izmoney,ibmoney,itbonus,izbonus,ibbonus,iobonus,cadddate,cnickid,irate,irmoney  
+	from tb_teshu_charge where cgameid=? and cadddate>=to_date(?,'yyyy-MM-dd') and cadddate<=to_date(?,'yyyy-MM-dd')+1 
+	]]>
+		<in-parm>
+			<parm name="彩种编号" property="gid" />
+			<parm name="开始时间" property="sdate" />
+			<parm name="结束时间" property="edate" />
+		</in-parm>
+	</sql>
+
+	<sql id="query_teshu_charge_1" type="1" desc="特殊账户的账务汇总" order=" order by cprojid  desc">
+	<![CDATA[
+	select '' cprojid,'' cgameid,'' cperiodid,sum(itmoney) itmoney,sum(izmoney) izmoney,sum(ibmoney) ibmoney,sum(itbonus) itbonus,sum(izbonus) izbonus,sum(ibbonus) ibbonus,sum(iobonus) iobonus,'' cadddate,'' cnickid,'' irate,sum(irmoney) irmoney  
+	from tb_teshu_charge where cgameid=? and cadddate>=to_date(?,'yyyy-MM-dd') and cadddate<=to_date(?,'yyyy-MM-dd')+1 
+	]]>
+		<in-parm>
+			<parm name="彩种编号" property="gid" />
+			<parm name="开始时间" property="sdate" />
+			<parm name="结束时间" property="edate" />
+		</in-parm>
+	</sql>
+	
+	<sql id="query_ticket_detail" type="1" desc="查询方案出票明细" order=" order by capplyid ">
+	<![CDATA[
+	select cprojid,cgameid,cperiodid,capplyid,decode(istate,0,'未投注',1,'已提交',2,'已出票',3,'奖金已核对') istate,cadddate,cticketid,cticketdate,cerrcode,cerrdesc,imulity,ccodes,iomoney,itmoney,ibmoney,cbilldate,cpostdate,iseqid,iwmoney,cwindate 
+	from tb_new_ticket_detail  where 1=1 
+	]]>
+		<in-parm>
+			<parm name="彩种编号" property="gid" sql=" and cgameid = ?" />
+			<parm name="方案编号" property="hid" sql=" and cprojid = ?" />
+		</in-parm>
+	</sql>
+	<sql id="count_ticket_detail" type="1" desc="汇总查询方案出票明细">
+		<![CDATA[
+		select count(*) num from tb_new_ticket_detail where 1=1
+		]]>
+		<in-parm>
+			<parm name="彩种编号" property="gid" sql=" and cgameid = ?" />
+			<parm name="方案编号" property="hid" sql=" and cprojid = ?" />
+		</in-parm>
+	</sql>	
+	<sql id="edit_project_info" type="3" desc="修改方案描述">
+		<![CDATA[
+		update tb_proj_#gameid# set cname=?, cdesc=? where cprojid=? 
+		]]>
+		<in-parm>
+			<parm name="方案标题" property="memo" />
+			<parm name="方案描述" property="newValue" />
+			<parm name="方案编号" property="hid" />
+		</in-parm>
+	</sql>
+
+	<sql id="query_alipayoradedetail" type="1" desc="查询付款到支付宝明细列表" order=" order by ccashdate  ">
+	<![CDATA[
+		select icashid,cnickid,crealname,calipayid,imoney,ccashdate,coperator,decode(istate,0,'未处理',1,'已处理','其他') state,isuccess,decode(isuccess,0,'未处理',1,'提交到支付宝',2,'付款成功',3,'付款失败','其他') success  from tb_alipay_detail where 1 = 1
+	]]>
+		<in-parm>
+			<parm name="订单编号" property="oid" sql=" and icashid = ? " />
+			<parm name="是否处理" property="state" sql=" and istate = ? " />
+			<parm name="订单状态" property="success" sql=" and isuccess = ? " />
+			<parm name="用户编号" property="nid" sql=" and cnickid = ? " />
+			<parm name="开始时间" property="sdate"
+				sql=" and ccashdate &gt;= to_date(?,'yyyy-MM-dd') " />
+			<parm name="结束时间" property="edate"
+				sql=" and ccashdate &lt; to_date(?,'yyyy-MM-dd')+1 " />
+			<parm name="操作人" property="qagent" sql=" and coperator = ? " />
+		</in-parm>
+	</sql>
+	
+	<sql id="query_alipayoradelist" type="1" desc="查询付款到支付宝批次列表" order=" order by isuccess,cpay_date  ">
+	<![CDATA[
+		select cbatchid,cdetail_data,ibatch_num,ibatch_fee,cpay_date,csuccess_details,cfail_details,cconfdate,coperator,decode(isuccess,0,'未处理',1,'提交到支付宝',2,'付款成功','其他') success from tb_alipay_list where 1 = 1
+	]]>
+		<in-parm>
+			<parm name="批次号" property="oid" sql=" and cbatchid = ? " />
+			<parm name="订单状态" property="success" sql=" and isuccess = ? " />
+			<parm name="开始时间" property="sdate"
+				sql=" and cpay_date &gt;= to_date(?,'yyyy-MM-dd') " />
+			<parm name="结束时间" property="edate"
+				sql=" and cpay_date &lt; to_date(?,'yyyy-MM-dd')+1 " />
+			<parm name="操作人" property="qagent" sql=" and coperator = ? " />
+		</in-parm>
+	</sql>
+	
+	<sql id="q_alipay_detail" type="1" desc="根据订单号查询订单信息">
+	<![CDATA[
+		select icashid,cnickid,crealname,calipayid,imoney,ccashdate,coperator,istate,isuccess from tb_alipay_detail where 1 = 1
+	]]>
+		<in-parm>
+			<parm name="批次号" property="oid" sql=" and icashid in(?) " />
+		</in-parm>
+	</sql>	
+	
+	<sql id="query_buy_detail" type="1" desc="认购记录" order=" order by cbuydate">
+	<![CDATA[
+		select ibuyid,cnickid,ibnum,cbuydate,ibmoney,decode(icancel,0,'正常',1,'用户撤销',2,'系统撤销','其他') icancel,iamoney,
+		decode(ireturn,0,'未派奖',1,'待派奖',2,'派奖中',3,'已派奖','未知') ireturn,iumoney,
+		decode(ijiesuan,0,'未返点',1,'待返点',2,'返点中',3,'已返点','未知') ijiesuan
+		from tb_proj_buy_#gameid# where cprojid=?
+	]]>
+		<in-parm>
+			<parm name="方案编号" property="hid"/>
+			<parm name="用户昵称" property="nid" sql="and cnickid = ?"/>
+		</in-parm>	
+	</sql>
+	
+	<sql id="count_buy_detail" type="1" desc="统计认购记录">
+	<![CDATA[
+		select count(1) num from tb_proj_buy_#gameid# where cprojid=?
+	]]>
+		<in-parm>
+			<parm name="方案编号" property="hid"/>
+			<parm name="用户昵称" property="nid" sql="and cnickid = ?"/>
+		</in-parm>	
+	</sql>
+	 -->
+</config>

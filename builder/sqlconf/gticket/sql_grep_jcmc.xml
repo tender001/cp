@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="gbk"?>
+<config desc="竞彩名称抓取">
+<!-- type: 1 查询语句 2 存储过程 3 更新类语句 -->
+	<sql id="u_jcmc_match" type="3" desc="修改对阵信息">
+	<![CDATA[
+		update tb_match_jcmc set citemid =?,cname=?,csp=?,czcl=?,cgl=?,iresult=?,icancel=?,isale=?,cdata=? 
+		where cgameid=? and cperiodid = ? and imatchid=?
+	]]> 
+		<in-parm>
+	   		<parm name="场次编号" property="itemID"/>
+	   		<parm name="球队名称" property="teamName"/>
+	   		<parm name="赔  率  值 " property="sp"/>
+	   		<parm name="支  持  率 " property="zcl"/>
+	   		<parm name="胜出概率" property="gl"/>
+	   		<parm name="比赛赛果" property="result"/>
+	   		<parm name="是否取消" property="icancel"/>
+	   		<parm name="是否销售" property="isale"/>
+	   		<parm name="球队数据" property="data"/>
+	   		
+	   		<parm name="游戏编号" property="gameID"/>
+	   		<parm name="期次编号" property="periodID"/>
+	   		<parm name="官方编号" property="matchID"/>
+		</in-parm>
+	</sql>
+	
+	<sql id="i_jcmc_match" type="3" desc="新增对阵信息">
+	<![CDATA[
+		insert into tb_match_jcmc (cgameid,cperiodid,imatchid,citemid,cname,csp,czcl,cgl,iresult,icancel,isale,cdata) values(?,?,?,?,?,?,?,?,?,?,?,?)
+	]]>
+		<in-parm>
+	   		<parm name="游戏编号" property="gameID"/>
+	   		<parm name="期次编号" property="periodID"/>
+	   		<parm name="官方编号" property="matchID"/>
+
+	   		<parm name="场次编号" property="itemID"/>
+	   		<parm name="球队名称" property="teamName"/>
+	   		<parm name="赔  率  值 " property="sp"/>
+	   		<parm name="支  持  率 " property="zcl"/>
+	   		<parm name="胜出概率" property="gl"/>
+	   		<parm name="比赛赛果" property="result"/>
+	   		<parm name="是否取消" property="icancel"/>
+	   		<parm name="是否销售" property="isale"/>
+	   		<parm name="球队数据" property="data"/>
+		</in-parm>
+	</sql>
+	
+	
+
+	
+	<sql id="q_sp_jcmc" type="1" desc="查询对阵的SP值">
+	<![CDATA[
+	    select * from tb_sp_jcmc where cgameid = ? and cperiodid = ? and citemid = ? order by cadddate desc
+	]]>
+		<in-parm>
+	   		<parm name="游戏编号" property="gameID"/>
+	   		<parm name="期次编号" property="gameID"/>
+	   		<parm name="场次编号" property="itemID"/>
+	   	</in-parm>
+	</sql>
+
+	<sql id="i_sp_jcmc" type="3" desc="保存对阵的SP值">
+	<![CDATA[
+	    insert into tb_sp_jcmc (cgameid,cperiodid,citemid,cvalue,cadddate) values (?,?,?,?,sysdate)
+	]]>
+		<in-parm>
+	   		<parm name="赔率类型" property="gameID"/>
+	   		<parm name="赔率类型" property="periodID"/>
+	   		<parm name="场次编号" property="itemID"/>
+	   		<parm name="赔率数据" property="sp"/>
+	   	</in-parm>
+	</sql>
+</config>

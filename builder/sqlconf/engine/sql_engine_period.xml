@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="gbk"?>
+
+<config desc="合买代购（后台引擎SQL配置）">
+    <!-- type: 1 查询语句 2 存储过程 3 更新类语句 -->
+
+	<sql id="ep_load_game_conf" type="1" desc="加载游戏配置">
+		select t.* from TB_GAME_CONFIG t, tb_game t1 where t.cgameid = t1.cgameid and t1.istate = 1 order by t.cgameid
+	</sql>
+	
+	<sql id="ep_open_period" type="3" desc="开启期次">
+	    update tb_period Set ISTATE = 1 Where CBEGINTIME &lt; Sysdate + (select nvl(IOPENNUM,0) from TB_GAME_CONFIG where cgameid = ?) AND cgameid = ? And ISTATE = 0
+		<in-parm>
+	   		<parm name="游戏编号" property="gid"/>
+	   		<parm name="游戏编号" property="gid"/>
+		</in-parm>	    
+	</sql>
+	
+	<sql id="ep_monitor_period_list" type="1" desc="获取监控期次列表">
+	    select * from tb_period where cgameid = ? and istate &gt; 0 and istate &lt; 100 order by cperiodid
+		<in-parm>
+	   		<parm name="游戏编号" property="gid"/>
+		</in-parm>	    	    
+	</sql>
+	
+	<sql id="ep_create_period_task" type="3" desc="生成期次任务">
+		insert into tb_period_task (cgameid,cperiodid,itype,cmemo,iflag) values (?,?,?,?,0)
+		<in-parm>
+	   		<parm name="游戏编号" property="gid"/>
+	   		<parm name="期次编号" property="pid"/>
+	   		<parm name="任务类型" property="type"/>
+	   		<parm name="附加信息" property="memo"/>
+	   	</in-parm>
+	</sql>
+
+	<sql id="ep_change_period_task" type="3" desc="生成期次任务">
+		update tb_period_task set iflag = 0,cmemo = ? where cgameid = ? and cperiodid = ? and itype = ? 
+		<in-parm>
+	   		<parm name="附加信息" property="memo"/>
+	   		<parm name="游戏编号" property="gid"/>
+	   		<parm name="期次编号" property="pid"/>
+	   		<parm name="任务类型" property="type"/>
+	   	</in-parm>
+	</sql>
+
+
+
+	<sql id="ep_change_period_state" type="3" desc="更新期次状态">
+		update tb_period set istate = ? where cgameid = ? and cperiodid = ?
+		<in-parm>
+	   		<parm name="期次状态" property="state"/>
+	   		<parm name="游戏编号" property="gid"/>
+	   		<parm name="期次编号" property="pid"/>
+	   	</in-parm>
+	</sql>
+	
+	<sql id="ep_check_period_task" type="1" desc="检查期次任务是否完成">
+		select count(*) num from tb_period_task where cgameid = ? and cperiodid = ? and itype = ? and iflag = 1
+		<in-parm>
+	   		<parm name="游戏编号" property="gid"/>
+	   		<parm name="期次编号" property="pid"/>
+	   		<parm name="任务类型" property="type"/>
+	   	</in-parm>		
+	</sql>
+
+	<sql id="ep_check_period_audit" type="1" desc="检查期次对帐是否完成">
+		select count(*) num from tb_period where cgameid = ? and cperiodid = ? and isaleaudit = 1
+		<in-parm>
+	   		<parm name="游戏编号" property="gid"/>
+	   		<parm name="期次编号" property="pid"/>
+	   	</in-parm>		
+	</sql>
+
+   	<sql id="ep_proj_return" type="2" desc="后台发起人提成派奖">
+		cpengine.sp_proj_return
+		<in-parm>
+	   		<parm name="方案编号" property="hid"/>
+	   		<parm name="游戏编号" property="gid"/>
+	   	</in-parm>
+	   	<out-parm>
+	   		<parm name="错误编号" property="busiErrCode"/>
+	   		<parm name="错误描叙" property="busiErrDesc"/>
+	   		<parm name="派奖金额" property="pmoney"/>
+	   		<parm name="用户余额" property="balance"/>
+	   	</out-parm>
+	</sql>
+
+   	<sql id="ep_proj_add_return" type="2" desc="后台发起人提成派奖">
+		cpengine.sp_proj_add_return
+		<in-parm>
+	   		<parm name="方案编号" property="hid"/>
+	   		<parm name="游戏编号" property="gid"/>
+	   	</in-parm>
+	   	<out-parm>
+	   		<parm name="错误编号" property="busiErrCode"/>
+	   		<parm name="错误描叙" property="busiErrDesc"/>
+	   		<parm name="派奖金额" property="pmoney"/>
+	   		<parm name="用户余额" property="balance"/>
+	   	</out-parm>
+	</sql>
+	
+	<sql id="ep_join_return" type="2" desc="参与人员派奖">
+		cpengine.sp_proj_join_return
+		<in-parm>
+	   		<parm name="方案编号" property="hid"/>
+	   		<parm name="购买编号" property="bid"/>
+	   		<parm name="游戏编号" property="gid"/>
+	   		<parm name="方案类型" property="type"/>
+	   	</in-parm>
+	   	<out-parm>
+	   		<parm name="错误编号" property="busiErrCode"/>
+	   		<parm name="错误描叙" property="busiErrDesc"/>
+	   		<parm name="派奖金额" property="pmoney"/>
+	   		<parm name="用户余额" property="balance"/>
+	   	</out-parm>
+	</sql>
+	
+	<sql id="ep_create_cache_task" type="3" desc="生成缓存任务">
+		insert into tb_cache_task (itaskid,cgameid,cperiodid,itype,cmemo) values (seq_cache_task.nextval,?,?,?,?)
+		<in-parm>
+	   		<parm name="游戏编号" property="gid"/>
+	   		<parm name="期次编号" property="pid"/>
+	   		<parm name="任务类型" property="type"/>
+	   		<parm name="任务描叙" property="memo"/>
+	   	</in-parm>
+	</sql>
+	
+   <sql id="ep_zhuihao_return" type="2" desc="追号派奖">
+		cpengine.sp_zhuihao_return
+		<in-parm>
+	   		<parm name="游戏编号" property="gid"/>
+	   		<parm name="期次编号" property="pid"/>
+	   		<parm name="追号编号" property="hid"/>
+	   		<parm name="明细编号" property="memo"/>	   		
+	   	</in-parm>
+	   	<out-parm>
+	   		<parm name="错误编号" property="busiErrCode"/>
+	   		<parm name="错误描叙" property="busiErrDesc"/>
+	   		<parm name="派奖金额" property="pmoney"/>
+	   		<parm name="用户余额" property="balance"/>
+	   		<parm name="追号状态" property="state"/>
+	   	</out-parm>
+	</sql>
+	
+   <sql id="ep_zhuihao_add_return" type="2" desc="追号加奖派奖">
+		cpengine.sp_zhuihao_add_return
+		<in-parm>
+	   		<parm name="游戏编号" property="gid"/>
+	   		<parm name="期次编号" property="pid"/>
+	   		<parm name="追号编号" property="hid"/>
+	   		<parm name="明细编号" property="memo"/>	   		
+	   	</in-parm>
+	   	<out-parm>
+	   		<parm name="错误编号" property="busiErrCode"/>
+	   		<parm name="错误描叙" property="busiErrDesc"/>
+	   		<parm name="派奖金额" property="pmoney"/>
+	   		<parm name="用户余额" property="balance"/>
+	   	</out-parm>
+	</sql>
+	
+</config>

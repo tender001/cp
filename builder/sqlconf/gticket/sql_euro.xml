@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="gbk"?>
+<config desc="合买代购（后台引擎SQL配置）">
+<!-- type: 1 查询语句 2 存储过程 3 更新类语句 -->
+	<sql id="u_top_match" type="3" desc="修改对阵信息">
+	<![CDATA[
+		update tb_top_match set cindex =?,teamname=?,isale=?,csp=?,czcl=?,cgl=?,cresult=?,icancel=?,cdata=? where itype=? and cmatchid = ? and cmid=?
+	]]> 
+		<in-parm>
+	   		<parm name="序          号" property="index"/>
+	   		<parm name="球          队" property="teamName"/>
+	   		<parm name="销售状态" property="isale"/>
+	   		<parm name="赔  率  值 " property="sp"/>
+	   		<parm name="支  持  率 " property="zcl"/>
+	   		<parm name="胜出概率" property="gl"/>
+	   		<parm name="比赛赛果" property="result"/>
+	   		<parm name="是否取消" property="icancel"/>
+	   		<parm name="球队数据" property="data"/>
+	   		<parm name="比赛类型" property="itype"/>
+	   		<parm name="比赛标识" property="matchID"/>
+	   		<parm name="官方标识" property="mid"/>
+		</in-parm>
+	</sql>
+	
+	<sql id="i_top_match" type="3" desc="新增对阵信息">
+	<![CDATA[
+		insert into tb_top_match(cmatchid,cmid,cindex,teamname,isale,csp,czcl,cgl,itype,cresult,icancel,cdata) values(?,?,?,?,?,?,?,?,?,?,?,?)
+	]]>
+		<in-parm>
+	   		<parm name="比赛标识" property="matchID"/>
+	   		<parm name="官方标识" property="mid"/>
+	   		<parm name="序          号" property="index"/>
+	   		<parm name="球          队" property="teamName"/>
+	   		<parm name="销售状态" property="isale"/>
+	   		<parm name="赔  率  值 " property="sp"/>
+	   		<parm name="支  持  率 " property="zcl"/>
+	   		<parm name="胜出概率" property="gl"/>
+	   		<parm name="比赛类型" property="itype"/>
+	   		<parm name="比赛赛果" property="result"/>
+	   		<parm name="是否取消" property="icancel"/>
+	   		<parm name="球队数据" property="data"/>
+		</in-parm>
+	</sql>
+
+</config>

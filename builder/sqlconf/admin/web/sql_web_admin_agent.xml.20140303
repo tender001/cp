@@ -1,0 +1,417 @@
+<?xml version="1.0" encoding="gbk"?>
+
+<config desc="用户中心（前台网站SQL配置）">
+    <!-- type: 1 查询语句 2 存储过程 3 更新类语句 -->
+
+	<!-- 代理登录 -->
+	<sql id="a_login" type="2" desc="代理登录">
+	<![CDATA[
+	   cpagent.sp_agent_login
+	]]>
+		<in-parm>
+	   		<parm name="用户编号"  property="uid"/>
+	   		<parm name="用户密码"  property="pwd"/>
+	   		<parm name="登录地址"  property="ipAddr"/>
+	   	</in-parm>
+	   	<out-parm>
+	   		<parm name="错误号码"  property="busiErrCode"/>
+	   		<parm name="错误描写"  property="busiErrDesc"/>
+	   	</out-parm>
+	</sql>
+
+	<sql id="agent_transfer" type="2" desc="代理商转款">
+	   cpagent.sp_agent_transfer
+		<in-parm>
+	   		<parm name="代理商编号"  property="uid"/>
+	   		<parm name="新密码"      property="pwd"/>
+	   		<parm name="转款金额"    property="money"/>
+	   	</in-parm>
+	   	<out-parm>
+	   		<parm name="错误号码"  property="busiErrCode"/>
+	   		<parm name="错误描写"  property="busiErrDesc"/>
+	   	</out-parm>
+	</sql>
+
+	<sql id="agent_cash" type="2" desc="代理商提款">
+	   cpagent.sp_agent_cash
+		<in-parm>
+	   		<parm name="代理商编号"  property="uid"/>
+	   		<parm name="新密码"      property="pwd"/>
+	   		<parm name="提款金额"    property="money"/>
+	   	</in-parm>
+	   	<out-parm>
+	   		<parm name="错误号码"  property="busiErrCode"/>
+	   		<parm name="错误描写"  property="busiErrDesc"/>
+	   	</out-parm>
+	</sql>
+	
+	<sql id="agent_deductmoney" type="2" desc="代理商扣款">
+	   cpadmin.sp_agent_deduct_money
+		<in-parm>
+	   		<parm name="代理商编号"  property="aid"/>
+	   		<parm name="提款金额"    property="money"/>
+	   		<parm name="提款金额"    property="memo"/>
+	   		<parm name="提款金额"    property="uid"/>
+	   	</in-parm>
+	   	<out-parm>
+	   		<parm name="错误号码"  property="busiErrCode"/>
+	   		<parm name="错误描写"  property="busiErrDesc"/>
+	   	</out-parm>
+	</sql>
+	
+	<sql id="agent_setvip" type="2" desc="代理商发展vip用户">
+	   cpagent.sp_agent_setvip
+		<in-parm>
+	   		<parm name="代理商编号"  property="agent"/>
+	   		<parm name="前台用户名"  property="qagent"/>	   		
+	   	</in-parm>
+	   	<out-parm>
+	   		<parm name="错误号码"  property="busiErrCode"/>
+	   		<parm name="错误描写"  property="busiErrDesc"/>
+	   	</out-parm>
+	</sql>
+	
+	<sql id="agent_change_password" type="3" desc="代理商修改密码">
+	   update tb_agent set cpassword = ? where cagentid = ? and cpassword = ?
+		<in-parm>
+	   		<parm name="新密码"     property="newValue"/>
+	   		<parm name="代理商编号" property="agent"/>
+	   		<parm name="老密码"     property="oldValue"/>
+	   	</in-parm>
+	</sql>
+	
+	<!-- 查询类 -->
+	<sql id="query_agent_info" type="1" desc="查询代理商信息">
+	    select t.*, (ihfill+izfill+irfill) ifill,decode(istate,0,'正常','冻结') state
+	     from tb_agent t where t.cagentid = ?
+		<in-parm>
+	   		<parm name="代理商编号" property="qagent"/>
+	   	</in-parm>
+	</sql>
+	
+	<sql id="query_agent_father" type="1" desc="查询代理商父信息">
+	   select cagentid from tb_agent connect by cagentid=prior cparentid start with cagentid= ?
+		<in-parm>
+	   		<parm name="代理商编号" property="qagent"/>
+	   	</in-parm>
+	</sql>
+	
+	<sql id="agent_query_child" type="1" desc="查询子代理商列表">
+	   select * from tb_agent where cparentid = ?
+		<in-parm>
+	   		<parm name="代理商编号" property="qagent"/>
+	   	</in-parm>
+	</sql>
+	
+	<sql id="query_agent_charge" type="1" desc="查询资金流水" order=" order by ichargeid desc ">
+	<![CDATA[
+	    select ichargeid cid, decode(itype,0,imoney,'') jmoney, decode(itype,1,imoney,'') cmoney,cnickid cuid,
+	    cadddate adddate,decode(iopertype,4,'转账',5,'提款',6,'代理商之间转款',7,'销售扣款','交易佣金') otype, 
+	    cgameid gid,cperiodid pid,decode(iopertype,3,czhid,cprojid) mid, decode(iopertype,3,cdetailid,cbuyid) sid,
+	    irate rate from tb_agent_charge where cagentid = ? and 
+	    cadddate >= to_date(?,'yyyy-mm-dd') and cadddate <= to_date(?,'yyyy-mm-dd')+1 		
+	]]>
+		<in-parm>
+	   		<parm name="代理商编号" property="qagent"/>
+	   		<parm name="开始时间"   property="sdate"/>
+	   		<parm name="结束时间"   property="edate"/>
+	   		<parm name="交易类型"   property="type" sql=" and decode(iopertype,4,4,5,5,6,6,7,7,0) = to_number(?) "/>
+	   	</in-parm>
+	</sql>
+	
+	
+	<sql id="query_count_agent_charge" type="1" desc="统计资金流水数">
+	<![CDATA[
+	    select count(*) num from tb_agent_charge where cagentid = ? and cadddate >= to_date(?,'yyyy-mm-dd') 
+	    and cadddate <= to_date(?,'yyyy-mm-dd') + 1 
+	]]>	
+		<in-parm>
+	   		<parm name="代理商编号" property="qagent"/>
+	   		<parm name="开始时间"   property="sdate"/>
+	   		<parm name="结束时间"   property="edate"/>
+	   		<parm name="交易类型"   property="type" sql=" and decode(iopertype,4,4,5,5,0) = to_number(?) "/>
+	   	</in-parm>
+	</sql>
+	
+	
+	<sql id="query_agent_charge_t" type="1" desc="查询资金流水汇总" order=" order by ichargeid desc ">
+	<![CDATA[
+	    select '汇总：' cid, sum(imoney) jmoney,  '' cmoney,'' cuid,'' adddate,
+	    '' otype, '' gid,'' pid,'' mid, 
+	    '' sid,'' rate from tb_agent_charge where cagentid = ? and 
+	    cadddate >= to_date(?,'yyyy-mm-dd') and cadddate <= to_date(?,'yyyy-mm-dd')+1 and itype=0
+	]]>
+		<in-parm>
+	   		<parm name="代理商编号" property="qagent"/>
+	   		<parm name="开始时间"   property="sdate"/>
+	   		<parm name="结束时间"   property="edate"/>
+	   		<parm name="交易类型"   property="type" sql=" and decode(iopertype,4,4,5,5,0) = to_number(?) "/>
+	   	</in-parm>
+	</sql>
+	
+	<sql id="query_agent_charge_all" type="1" desc="查询资金流水汇总" order="">
+	<![CDATA[
+	    select '汇总：' cid,(select sum(im) from (select iopertype,sum(imoney) im from tb_agent_charge 
+	    where cagentid = ? and cadddate >= to_date(?,'yyyy-mm-dd') and cadddate <= to_date(?,'yyyy-mm-dd')+1 
+	    group by iopertype) a where a.iopertype<=3) jmoney, (select sum(im) from (select iopertype,sum(imoney) im
+	     from tb_agent_charge where cagentid = ? and cadddate >= to_date(?,'yyyy-mm-dd') 
+	     and cadddate <= to_date(?,'yyyy-mm-dd')+1 group by iopertype) a where a.iopertype>3) cmoney,'' cuid,
+	     '' adddate,'' otype, '' gid,'' pid,'' mid,'' sid,'' rate from dual 
+	]]>
+		<in-parm>
+	   		<parm name="代理商编号" property="qagent"/>
+	   		<parm name="开始时间"   property="sdate"/>
+	   		<parm name="结束时间"   property="edate"/>
+	   		<parm name="代理商编号" property="qagent"/>
+	   		<parm name="开始时间"   property="sdate"/>
+	   		<parm name="结束时间"   property="edate"/>
+	   	</in-parm>
+	</sql>
+	
+	<sql id="query_umoney_list" type="1" desc="查询用户列表" order=" order by ibalance desc">
+	<![CDATA[
+	    select cnickid,ibalance from tb_user_acct where ibalance>1
+	]]>
+		<in-parm>
+	   	</in-parm>
+	</sql>
+	
+	<sql id="query_umoney_list_l" type="1" desc="查询用户列表(汇总)">
+	<![CDATA[
+	    select '' cnickid,sum(ibalance) ibalance from tb_user_acct where ibalance>0
+	]]>
+		<in-parm>
+	   	</in-parm>
+	</sql>
+	
+	<sql id="query_agent_user" type="1" desc="查询用户列表" order=" order by cadddate desc ">
+	<![CDATA[
+	    select t.cnickid,t.crealname,t.cadddate,t.istate,t1.ibalance,decode(t1.ifill,0,'否','是') cfill
+	     from tb_user t, tb_user_acct t1 where t.cnickid = t1.cnickid and 
+	    t.cagentid = ? and t.cadddate >= to_date(?,'yyyy-mm-dd') and t.cadddate <= to_date(?,'yyyy-mm-dd')+1 
+	]]>
+		<in-parm>
+	   		<parm name="代理商编号" property="qagent"/>
+	   		<parm name="开始时间"   property="sdate"/>
+	   		<parm name="结束时间"   property="edate"/>
+	   		<parm name="用户名"	 property="nid" sql=" and t1.cnickid = ? "/>
+	   		<parm name="充值金额"   property="money" sql=" and t1.ifill > to_number(?) "/>
+	   	</in-parm>
+	</sql>
+	
+	<sql id="query_count_agent_user" type="1" desc="统计用户数">
+	<![CDATA[
+	    select count(t.cnickid) num from tb_user t, tb_user_acct t1 where t.cnickid = t1.cnickid and t.cagentid = ? 
+	    and t.cadddate >= to_date(?,'yyyy-mm-dd') and t.cadddate <= to_date(?,'yyyy-mm-dd')+1
+	]]> 
+		<in-parm>
+	   		<parm name="代理商编号" property="qagent"/>
+	   		<parm name="开始时间"   property="sdate"/>
+	   		<parm name="结束时间"   property="edate"/>
+	   		<parm name="用户名"	 property="nid" sql=" and t1.cnickid = ? "/>
+	   		<parm name="充值金额"   property="money" sql=" and t1.ifill > to_number(?) "/>
+	   	</in-parm>
+	</sql>
+	
+	<sql id="query_agent_user_hz" type="1" desc="统计用户数">
+	<![CDATA[
+		select xxx, count(1) num from ( select case when t1.ifill > 1 then 1 else 0 end xxx  from tb_user t, 
+		tb_user_acct t1 where t.cnickid = t1.cnickid and t.cagentid = ? and t.cadddate >= to_date(?,'yyyy-mm-dd') 
+		and t.cadddate <= to_date(?,'yyyy-mm-dd')+1) group by xxx
+	]]> 
+		<in-parm>
+	   		<parm name="代理商编号" property="qagent"/>
+	   		<parm name="开始时间"   property="sdate"/>
+	   		<parm name="结束时间"   property="edate"/>
+	   	</in-parm>
+	</sql>
+	
+	<sql id="query_agent_rate" type="1" desc="查询代理商返点列表">
+	<![CDATA[
+	   	select cgameid gid, nvl((select irate from tb_agent_rate where cagentid = ? and cgameid=t.cgameid),0) irate from tb_game t where istate=1 order by cgameid
+	]]>
+		<in-parm>
+	   		<parm name="代理商编号" property="qagent"/>
+	   	</in-parm>
+	</sql>
+
+	<sql id="update_agent_bankname" type="3" desc="修改银行名称">
+	<![CDATA[
+		update tb_agent set cbankname = ? where cagentid = ? 
+	]]>		
+		<in-parm>
+	   		<parm name="修改内容"   property="newValue"/>		
+	   		<parm name="代理商编号" property="qagent"/>
+	   	</in-parm>
+	</sql>
+
+	<sql id="update_agent_realname" type="3" desc="修改真实姓名">
+	<![CDATA[
+		update tb_agent set crealname = ? where cagentid = ? 
+	]]>		
+		<in-parm>
+	   		<parm name="修改内容"   property="newValue"/>		
+	   		<parm name="代理商编号" property="qagent"/>
+	   	</in-parm>
+	</sql>		
+
+	<sql id="update_agent_bankno" type="3" desc="修改银行卡号">
+	<![CDATA[
+		update tb_agent set cbankno = ? where cagentid = ? 
+	]]>		
+		<in-parm>
+	   		<parm name="修改内容"   property="newValue"/>		
+	   		<parm name="代理商编号" property="qagent"/>
+	   	</in-parm>
+	</sql>
+	
+	<sql id="update_setagentpwd" type="3" desc="修改代理商密码">
+	<![CDATA[
+		update tb_agent set cpassword = ? where cagentid = ? 
+	]]>		
+		<in-parm>
+	   		<parm name="修改内容"   property="newValue"/>		
+	   		<parm name="代理商编号" property="qagent"/>
+	   	</in-parm>
+	</sql>
+	
+
+	<sql id="update_mdfagentparentid" type="3" desc="修改上级代理商">
+	<![CDATA[
+		update tb_agent set cparentid = ?,
+		idepth = (select idepth + 1 from tb_agent where cagentid = ?)  
+		 where cagentid = ? and (select count(1) from tb_agent where cagentid=?) > 0
+	]]>		
+		<in-parm>
+	   		<parm name="修改内容"   property="newValue"/>
+	   		<parm name="修改内容"   property="newValue"/>
+	   		<parm name="代理商编号" property="qagent"/>
+	   		<parm name="修改内容"   property="newValue"/>
+	   	</in-parm>
+	</sql>
+
+<!-- 	
+	<sql id="update_mdfagentparentid" type="3" desc="修改代理商密码">
+	<![CDATA[
+		update tb_agent set cparentid = ? where cagentid = ? and (select count(1) from tb_agent where cagentid=?) > 0
+	]]>		
+		<in-parm>
+	   		<parm name="修改内容"   property="newValue"/>
+	   		<parm name="代理商编号" property="qagent"/>
+	   		<parm name="修改内容"   property="newValue"/>
+	   	</in-parm>
+	</sql>
+ -->
+ 
+	<sql id="update_agent_nickid" type="3" desc="修改绑定用户">
+	<![CDATA[
+		update tb_agent set cnickid = ? where cagentid = ? and (cnickid = ? or cnickid is null)
+	]]>
+		<in-parm>
+	   		<parm name="修改内容"   property="newValue"/>		
+	   		<parm name="代理商编号" property="qagent"/>
+	   		<parm name="原内容" property="oldValue"/>
+	   	</in-parm>
+	</sql>
+
+	<sql id="update_agentphone" type="3" desc="修改用户号码">
+	<![CDATA[
+		update tb_agent set ctelephone = ? where cagentid = ? 
+	]]>
+		<in-parm>
+	   		<parm name="修改内容"   property="newValue"/>		
+	   		<parm name="代理商编号" property="qagent"/>
+	   	</in-parm>
+	</sql>
+
+
+	<sql id="agent_set_gamerate" type="2" desc="更新代理商的返点比率">
+		cpagent.sp_agent_set_gamerate
+		<in-parm>
+	   		<parm name="代理商编号" property="qagent"/>
+	   		<parm name="游戏编号"   property="gid"/>
+	   		<parm name="返点比率"   property="money"/>
+	   	</in-parm>
+	   	<out-parm>
+	   		<parm name="错误号码"  property="busiErrCode"/>
+	   		<parm name="错误描写"  property="busiErrDesc"/>
+	   	</out-parm>
+	</sql>
+
+    <sql id="query_agent_salestat" type="1" desc="查询代理商销量统计" order=" order by cstatday desc ">
+	<![CDATA[
+	    select cstatday statday, cgameid gid, isales sales from tb_agent_day 
+	    where cagentid = ? and cstatday >= ? and cstatday <= ?
+	]]>
+		<in-parm>
+	   		<parm name="代理商编号" property="qagent"/>
+	   		<parm name="开始时间"   property="sdate"/>
+	   		<parm name="结束时间"   property="edate"/>
+	   		<parm name="彩种编号"   property="gid" sql=" and cgameid = ? "/>
+	   	</in-parm>
+	</sql>
+
+    <sql id="query_xagent_salestat" type="1" desc="查询代理商销量统计" order=" order by cstatday desc ">
+	<![CDATA[
+		select cstatday statday, cgameid gid, isales sales,td.cagentid,t.apath from tb_agent_day td,(select cagentid,sys_connect_by_path(cagentid,'/') apath from tb_agent start with cagentid=? connect by prior cagentid = cparentid) t where td.cagentid=t.cagentid and cstatday >= ? and cstatday <= ?
+	]]>
+		<in-parm>
+	   		<parm name="代理商编号" property="qagent"/>
+	   		<parm name="开始时间"   property="sdate"/>
+	   		<parm name="结束时间"   property="edate"/>
+	   		<parm name="彩种编号"   property="gid" sql=" and cgameid = ? "/>
+	   	</in-parm>
+	</sql>
+
+    <sql id="query_agent_salestat_t" type="1" desc="查询代理商销量汇总" order="">
+	<![CDATA[
+	    select '汇总：' statday, ' ' gid, sum(isales) sales from tb_agent_day 
+	    where cagentid = ? and cstatday >= ? and cstatday <= ? 
+	]]>
+		<in-parm>
+	   		<parm name="代理商编号" property="qagent"/>
+	   		<parm name="开始时间"   property="sdate"/>
+	   		<parm name="结束时间"   property="edate"/>
+	   		<parm name="彩种编号"   property="gid" sql="  and cgameid = ?  " />
+	   	</in-parm>
+	</sql>
+
+    <sql id="query_xagent_salestat_t" type="1" desc="查询代理商销量汇总" order="">
+	<![CDATA[
+	    select '汇总：' statday, ' ' gid, sum(isales) sales from tb_agent_day td,(select cagentid,sys_connect_by_path(cagentid,'/') apath from tb_agent start with cagentid=? connect by prior cagentid = cparentid) t where td.cagentid=t.cagentid and cstatday >= ? and cstatday <= ?
+	]]>
+		<in-parm>
+	   		<parm name="代理商编号" property="qagent"/>
+	   		<parm name="开始时间"   property="sdate"/>
+	   		<parm name="结束时间"   property="edate"/>
+	   		<parm name="彩种编号"   property="gid" sql="  and cgameid = ?  " />
+	   	</in-parm>
+	</sql>
+
+    <sql id="query_agent_count_salestat" type="1" desc="查询代理商销量统计" order=" order by t.cgameid,t.cstatday desc ">
+	<![CDATA[
+	    select t.cstatday statday, t.cgameid gid, t.cagentid, t.isales sales from tb_agent_day t,tb_agent ta 
+	    where t.cagentid = ta.cagentid and ta.cparentid=? and t.cstatday >= ? and t.cstatday <= ?     
+	]]>
+		<in-parm>
+	   		<parm name="代理商编号" property="qagent"/>
+	   		<parm name="开始时间"   property="sdate"/>
+	   		<parm name="结束时间"   property="edate"/>
+	   		<parm name="彩种编号"   property="gid" sql=" and t.cgameid = ? "/>
+	   	</in-parm>
+	</sql>
+
+    <sql id="query_agent_count_salestat_t" type="1" desc="查询代理商销量汇总" order="">
+	<![CDATA[
+	    select '汇总：' statday, ' ' gid, sum(t.isales) sales from tb_agent_day t,tb_agent ta 
+	    where t.cagentid = ta.cagentid and ta.cparentid=? and t.cstatday >= ? and t.cstatday <= ?
+	]]>
+		<in-parm>
+	   		<parm name="代理商编号" property="qagent"/>
+	   		<parm name="开始时间"   property="sdate"/>
+	   		<parm name="结束时间"   property="edate"/>
+	   		<parm name="彩种编号"   property="gid" sql=" and t.cgameid = ? "/>
+	   	</in-parm>
+	</sql>
+
+</config>

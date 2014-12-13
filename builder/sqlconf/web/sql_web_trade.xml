@@ -1,0 +1,406 @@
+<?xml version="1.0" encoding="gbk"?>
+
+<config desc="彩票交易（前台网站SQL配置）">
+    <!-- type: 1 查询语句 2 存储过程 3 更新类语句 -->
+    
+    <sql id="t_proj_cast" type="2" desc="发起方案">
+	   cpgame.sp_web_proj_cast
+		<in-parm>
+	   		<parm name="用户编号" property="uid"/>
+	   		<parm name="登录密码" property="pwd"/>
+	   		<parm name="游戏编号" property="gid"/>
+	   		<parm name="期次编号" property="pid"/>
+	   		<parm name="玩法编号" property="play"/>
+	   		<parm name="投注号码" property="codes"/>
+	   		<parm name="投注倍数" property="muli"/>
+	   		<parm name="是否文件" property="fflag"/>
+	   		<parm name="方案类型" property="type"/>
+	   		<parm name="方案标题" property="name"/>
+	   		<parm name="方案描叙" property="desc"/>
+	   		<parm name="方案金额" property="money"/>
+	   		<parm name="方案份数" property="tnum"/>
+	   		<parm name="购买份数" property="bnum"/>
+	   		<parm name="保底份数" property="pnum"/>
+	   		<parm name="公开标志" property="oflag"/>
+	   		<parm name="提成比率" property="wrate"/>
+	   		<parm name="方案来源" property="comeFrom"/>
+	   		<parm name="投注来源" property="source"/>
+	   		<parm name="截止时间" property="endTime"/>
+	   		<parm name="选择场次" property="zid"/>
+	   		<parm name="开奖场次" property="awardMatch"/>
+	   	</in-parm>
+	   	<out-parm>
+	   		<parm name="错误编号" property="busiErrCode"/>
+	   		<parm name="错误描叙" property="busiErrDesc"/>
+	   		<parm name="方案编号" property="hid"/>
+	   		<parm name="用户余额" property="balance"/>
+	   	</out-parm>
+	</sql>
+	
+	    
+    <sql id="t_proj_fcast" type="2" desc="发起方案">
+	   cpgame.sp_web_proj_fcast
+		<in-parm>
+	   		<parm name="用户编号" property="uid"/>
+	   		<parm name="登录密码" property="pwd"/>
+	   		<parm name="游戏编号" property="gid"/>
+	   		<parm name="期次编号" property="pid"/>
+	   		<parm name="玩法编号" property="play"/>
+	   		<parm name="投注号码" property="codes"/>
+	   		<parm name="投注倍数" property="muli"/>
+	   		<parm name="是否文件" property="fflag"/>
+	   		<parm name="方案类型" property="type"/>
+	   		<parm name="方案标题" property="name"/>
+	   		<parm name="方案描叙" property="desc"/>
+	   		<parm name="方案金额" property="money"/>
+	   		<parm name="方案份数" property="tnum"/>
+	   		<parm name="购买份数" property="bnum"/>
+	   		<parm name="保底份数" property="pnum"/>
+	   		<parm name="公开标志" property="oflag"/>
+	   		<parm name="提成比率" property="wrate"/>
+	   		<parm name="方案来源" property="comeFrom"/>
+	   		<parm name="投注来源" property="source"/>
+	   		<parm name="截止时间" property="endTime"/>
+	   		<parm name="选择场次" property="zid"/>
+	   		<parm name="开奖场次" property="awardMatch"/>
+	   	</in-parm>
+	   	<out-parm>
+	   		<parm name="错误编号" property="busiErrCode"/>
+	   		<parm name="错误描叙" property="busiErrDesc"/>
+	   		<parm name="方案编号" property="hid"/>
+	   		<parm name="用户余额" property="balance"/>
+	   	</out-parm>
+	</sql>
+    
+    <sql id="t_proj_join" type="2" desc="参与方案">
+	   cpgame.sp_web_proj_join
+		<in-parm>
+	   		<parm name="用户编号" property="uid"/>
+	   		<parm name="登录密码" property="pwd"/>
+	   		<parm name="方案编号" property="hid"/>
+	   		<parm name="购买份数" property="bnum"/>
+	   		<parm name="游戏编号" property="gid"/>	   		
+	   		<parm name="方案来源" property="comeFrom"/>
+	   		<parm name="投注来源" property="source"/>
+	   	</in-parm>
+	   	<out-parm>
+	   		<parm name="错误编号" property="busiErrCode"/>
+	   		<parm name="错误描叙" property="busiErrDesc"/>
+	   		<parm name="购买编号" property="bid"/>
+	   		<parm name="用户余额" property="balance"/>
+	   	</out-parm>
+	</sql>
+    
+    
+    <sql id="t_proj_shbd" type="2" desc="事后保底">
+	   cpgame.sp_web_proj_shbd
+		<in-parm>
+	   		<parm name="用户编号" property="uid"/>
+	   		<parm name="登录密码" property="pwd"/>
+	   		<parm name="游戏编号" property="gid"/>
+	   		<parm name="方案编号" property="hid"/>
+	   		<parm name="购买份数" property="bnum"/>
+	   		<parm name="投注来源" property="source"/>
+	   	</in-parm>
+	   	<out-parm>
+	   		<parm name="错误编号" property="busiErrCode"/>
+	   		<parm name="错误描叙" property="busiErrDesc"/>
+	   		<parm name="用户余额" property="balance"/>
+	   	</out-parm>
+	</sql>
+	
+	<sql id="t_proj_b2g" type="2" desc="保底转认购">
+	   cpgame.sp_web_proj_b2g
+		<in-parm>
+	   		<parm name="用户编号" property="uid"/>
+	   		<parm name="登录密码" property="pwd"/>
+	   		<parm name="游戏编号" property="gid"/>
+	   		<parm name="方案编号" property="hid"/>
+	   		<parm name="购买份数" property="bnum"/>
+	   		<parm name="投注来源" property="source"/>
+	   	</in-parm>
+	   	<out-parm>
+	   		<parm name="错误编号" property="busiErrCode"/>
+	   		<parm name="错误描叙" property="busiErrDesc"/>
+	   		<parm name="用户余额" property="balance"/>
+	   	</out-parm>
+	</sql>
+    
+    
+    <sql id="t_proj_upload" type="2" desc="上传方案号码">
+	   cpgame.sp_web_proj_upload
+		<in-parm>
+	   		<parm name="用户编号" property="uid"/>
+	   		<parm name="登录密码" property="pwd"/>
+	   		<parm name="游戏编号" property="gid"/>
+	   		<parm name="方案编号" property="hid"/>
+	   		<parm name="投注号码" property="codes"/>
+	   		<parm name="方案金额" property="money"/>	   		
+	   		<parm name="截止时间" property="endTime"/>
+	   		<parm name="对阵列表" property="zid"/>
+	   		<parm name="期次编号" property="pid"/>
+	   		<parm name="投注来源" property="source"/>
+	   		<parm name="开奖场次" property="awardMatch"/>
+	   	</in-parm>
+	   	<out-parm>
+	   		<parm name="错误编号" property="busiErrCode"/>
+	   		<parm name="错误描叙" property="busiErrDesc"/>
+	   	</out-parm>
+	   
+	</sql>
+
+    <sql id="t_proj_cancel" type="2" desc="撤销方案">
+	   cpgame.sp_web_proj_cancel
+		<in-parm>
+	   		<parm name="用户编号" property="uid"/>
+	   		<parm name="登录密码" property="pwd"/>
+	   		<parm name="游戏编号" property="gid"/>
+	   		<parm name="方案编号" property="hid"/>
+	   	</in-parm>
+	   	<out-parm>
+	   		<parm name="错误编号" property="busiErrCode"/>
+	   		<parm name="错误描叙" property="busiErrDesc"/>
+	   	</out-parm>
+	</sql>
+
+    <sql id="t_join_cancel" type="2" desc="撤销认购">
+	   cpgame.sp_web_join_cancel
+		<in-parm>
+	   		<parm name="用户编号" property="uid"/>
+	   		<parm name="登录密码" property="pwd"/>
+	   		<parm name="方案编号" property="hid"/>
+	   		<parm name="购买编号" property="bid"/>
+	   		<parm name="游戏编号" property="gid"/>
+	   	</in-parm>
+	   	<out-parm>
+	   		<parm name="错误编号" property="busiErrCode"/>
+	   		<parm name="错误描叙" property="busiErrDesc"/>
+	   		<parm name="用户余额" property="balance"/>
+	   	</out-parm>	   
+	</sql>
+
+    <sql id="t_cast_zh" type="2" desc="发起追号">
+    	cpgame.sp_web_zhuihao_cast
+		<in-parm>
+	   		<parm name="用户编号" property="uid"/>
+	   		<parm name="登录密码" property="pwd"/>
+	   		<parm name="游戏编号" property="gid"/>
+	   		<parm name="期次数量" property="pnum"/>
+	   		<parm name="追号标志" property="zflag"/>
+	   		<parm name="追号金额" property="money"/>
+	   		<parm name="期次列表" property="pid"/>
+	   		<parm name="投注号码" property="codes"/>
+	   		<parm name="投注倍数" property="mulitys"/>
+	   		<parm name="投注来源" property="source"/>
+	   	</in-parm>
+	   	<out-parm>
+	   		<parm name="错误编号" property="busiErrCode"/>
+	   		<parm name="错误描叙" property="busiErrDesc"/>
+	   		<parm name="追号编号" property="zid"/>
+	   		<parm name="用户余额" property="balance"/>
+	   	</out-parm>
+	</sql>
+
+    <sql id="t_cancel_zh" type="2" desc="撤销追号">
+ 	    cpgame.sp_web_zhuihao_cancel
+		<in-parm>
+	   		<parm name="用户编号" property="uid"/>
+	   		<parm name="登录密码" property="pwd"/>
+	   		<parm name="游戏编号" property="gid"/>
+	   		<parm name="追号编号" property="zid"/>
+	   		<parm name="明细编号" property="did"/>	   		
+	   	</in-parm>
+	   	<out-parm>
+	   		<parm name="错误编号" property="busiErrCode"/>
+	   		<parm name="错误描叙" property="busiErrDesc"/>
+	   		<parm name="用户余额" property="balance"/>
+	   	</out-parm>
+	</sql>
+	
+	
+    
+    <sql id="t_huodong_cast" type="2" desc="发起活动方案[欧洲杯]">
+	   cpgame.sp_web_huodong_cast
+		<in-parm>
+	   		<parm name="用户编号" property="uid"/>
+	   		<parm name="登录密码" property="pwd"/>
+	   		<parm name="游戏编号" property="gid"/>
+	   		<parm name="期次编号" property="pid"/>
+	   		<parm name="投注号码" property="codes"/>
+	   		<parm name="方案来源" property="comeFrom"/>
+	   	</in-parm>
+	   	<out-parm>
+	   		<parm name="错误编号" property="busiErrCode"/>
+	   		<parm name="错误描叙" property="busiErrDesc"/>
+	   		<parm name="方案编号" property="hid"/>
+	   	</out-parm>
+	</sql>
+
+	<sql id="t_proj_fanli" type="2" desc="方案返利任务">
+	   cpgame.sp_web_proj_fanli
+		<in-parm>
+	   		<parm name="用户编号" property="uid"/>
+	   		<parm name="登录密码" property="pwd"/>
+	   		<parm name="游戏编号" property="gid"/>
+	   		<parm name="方案编号" property="hid"/>
+	   		<parm name="方案金额" property="money"/>
+	   		<parm name="方案类型" property="type"/>
+	   		<parm name="代理" property="func"/>
+	   		<parm name="来源" property="comeFrom"/>
+	   	</in-parm>
+	   	<out-parm>
+	   		<parm name="错误编号" property="state"/>
+	   		<parm name="错误描叙" property="func"/>
+	   	</out-parm>
+	</sql>
+
+    <sql id="t_query_pinfo" type="1" desc="查询方案信息">
+        <![CDATA[ 
+    	select cprojid projid,cnickid cnickid,cgameid gameid,
+		cperiodid periodid,cname cname,cdesc cdesc,ccodes ,imulity mulity,iplay play,itype itype,ifile ifile,itmoney tmoney,ismoney smoney,inums nums,
+		ionum onum,ipnum pnum,ilnum lnum,iopen iopen,iwrate wrate,ijindu jindu,iviews views,cendtime endtime,cadddate adddate,cmydate mydate,
+		istate istate,iupload upload,cloaddate loaddate,iclear iclear,ccleardate clearedate,icast icast,ccastdate castdate,ibingo bingo,cbgdate bgdate,
+		cwininfo wininfo,iaward award,cawarddate awarddate,ibonus bonus,itax tax,iowins owins,ioreturn oreturn,coretdate oretdate,ireturn ireturn,
+		cretdate retdate,izhanji zhanji,iaunum aunum,iagnum agnum,igaunum gaunum,igagnum gagnum,isource source,caddmoney addmoney
+  		from tb_proj_#gid# where cprojid = ?
+   		]]>
+		<in-parm>
+	   		<parm name="方案编号" property="hid"/>
+	   	</in-parm>
+	</sql>
+	
+    <sql id="t_query_filter" type="1" desc="查询过滤信息">
+        <![CDATA[
+        select * from tb_game_filter where gid=? and hid=?
+   		]]>
+   		<in-parm>
+	   		<parm name="彩种" property="gid"/>
+	   		<parm name="方案编号" property="hid"/>
+	   	</in-parm>
+	</sql>
+	    
+	
+    <sql id="t_query_jinfo" type="1" desc="查询方案的参与人员" order=" order by ibuyid desc">
+    	<![CDATA[
+ 	    select ibuyid buyid,cnickid nickid,ibnum bnum,cbuydate buydate,ibmoney bmoney,icancel cancel,
+ 	    ccanceldate canceldate,iaward award,cawarddate awarddate,iamoney amoney,ireturn ireturn,cretdate retdate,
+ 	    irmoney rmoney,isource source from tb_proj_buy_#gid# where cprojid = ?
+ 	     ]]>
+		<in-parm>
+	   		<parm name="方案编号" property="hid"/>
+	   	</in-parm>
+	</sql>
+    <sql id="t_query_jinfo_count" type="1" desc="统计方案的参与人员">
+ 	    select count(*) num from tb_proj_buy_#gid# where cprojid = ?
+		<in-parm>
+	   		<parm name="方案编号" property="hid"/>
+	   	</in-parm>
+	</sql>
+	
+    <sql id="t_query_my_jinfo" type="1" desc="查询方案的我的参与记录" order=" order by ibuyid desc">
+    	<![CDATA[
+ 	    select ibuyid buyid,cnickid nickid,ibnum bnum,cbuydate buydate,ibmoney bmoney,icancel cancel,
+ 	    ccanceldate canceldate,iaward award,cawarddate awarddate,iamoney amoney,ireturn ireturn,cretdate retdate,
+ 	    irmoney rmoney,isource source from tb_proj_buy_#gid# where cprojid = ? and cnickid = ? 
+ 	     ]]>
+		<in-parm>
+	   		<parm name="方案编号" property="hid"/>
+	   		<parm name="用户编号" property="uid"/>
+	   	</in-parm>
+	</sql>
+
+	<sql id="query_award" type="1" desc="查询用户的奖牌记录">
+	<![CDATA[
+		select * from tb_user_zhanji where cnickid = ? and cgameid = ? and isuccess = 0  order by cperiodid desc,iwmoney desc
+	]]>
+	<in-parm>
+	   		<parm name="用户编号" property="uid"/>
+	   		<parm name="游戏编号" property="gid"/>
+	   	</in-parm>
+	</sql> 
+	<sql id="query_count_award" type="1" desc="查询用户的奖牌记录">
+	<![CDATA[
+		select count(*) num from tb_user_zhanji where cnickid = ? and cgameid = ? and isuccess = 0 
+	]]>
+	<in-parm>
+	   		<parm name="用户编号" property="uid"/>
+	   		<parm name="游戏编号" property="gid"/>
+	   	</in-parm>
+	</sql>
+	
+	<sql id="query_jp" type="1" desc="查询用户的奖牌记录">
+	<![CDATA[
+		select * from tb_user_zhanji where cnickid = ? and cgameid = ? and isuccess = 0 and iaunum > 0 order by cperiodid desc,iwmoney desc
+	]]>
+	<in-parm>
+	   		<parm name="用户编号" property="uid"/>
+	   		<parm name="游戏编号" property="gid"/>
+	   	</in-parm>
+	</sql> 
+	<sql id="query_count_jp" type="1" desc="查询用户的奖牌记录">
+	<![CDATA[
+		select count(*) num from tb_user_zhanji where cnickid = ? and cgameid = ? and isuccess = 0 and iaunum > 0
+	]]>
+	<in-parm>
+	   		<parm name="用户编号" property="uid"/>
+	   		<parm name="游戏编号" property="gid"/>
+	   	</in-parm>
+	</sql> 
+	<sql id="query_tjp" type="1" desc="查询用户的奖牌汇总数据">
+	<![CDATA[ 
+		select nvl(sum(iaunum),0) aunum from tb_user_zhanji where cnickid = ? and cgameid = ?
+	]]>
+	<in-parm>
+	   		<parm name="用户编号" property="uid"/>
+	   		<parm name="游戏编号" property="gid"/>
+	   	</in-parm>
+	</sql> 
+	<sql id="query_tauto" type="1" desc="查询用户的跟单汇总数据">
+	<![CDATA[ 
+		select count(*) anum from tb_user_auto where cnickid = ? and cgameid = ?
+	]]>
+	<in-parm>
+	   		<parm name="用户编号" property="uid"/>
+	   		<parm name="游戏编号" property="gid"/>
+	   	</in-parm>
+	</sql> 
+
+	<sql id="query_jcm" type="1" desc="按日期查询竞彩对阵">
+	<![CDATA[ 
+		select citemid itemid,imatchid mid,cmname hn,csname gn,cendtime et, cmatchtime mt,cbet3 b3,cbet1 b1,cbet0 b0,cmscore ms, csscore ss, cresult rs,cspf,ccbf,cjqs,cbqc,cfspf,cfcbf,cfjqs,cfbqc,close,cmatchname mname,cname name from tb_match_jczq where cmatchtime >= to_date(?,'yyyy-MM-dd') and cmatchtime <= to_date(?,'yyyy-MM-dd')+1 and cmatchtime < sysdate
+	]]>
+	<in-parm>
+	   	<parm name="日期" property="pid"/>
+	   	<parm name="日期" property="pid"/>
+	</in-parm>
+	</sql> 
+
+    <sql id="query_huodong_cast" type="1" desc="查询竞猜名次有奖活动">
+    	<![CDATA[
+ 	    select ccodes codes,cadddate adddate,cwininfo wininfo from tb_jingcai_huodong where cnickid = ? 
+ 	     ]]>
+		<in-parm>
+	   		<parm name="用户编号" property="uid"/>
+	   	</in-parm>
+	</sql>
+	
+    <sql id="query_huodong_mc" type="1" desc="查询竞猜名次有奖活动名次">
+    	<![CDATA[
+ 	    select count(*) corder from  tb_jingcai_huodong where cwininfo=2 and cadddate < to_date(?,'yyyy-MM-dd HH24:mi:ss') 
+ 	     ]]>
+		<in-parm>
+	   		<parm name="结束时间" property="endTime"/>
+	   	</in-parm>
+	</sql>
+
+	<sql id="query_fanli" type="1" desc="yiqifa方案返利查询">
+	<![CDATA[ 
+		select * from tb_fanli_task where addtime>= to_date(?,'yyyy-MM-dd') and addtime <= to_date(?,'yyyy-MM-dd')+1
+	]]>
+	<in-parm>
+	   	<parm name="日期" property="pid"/>
+	   	<parm name="日期" property="pid"/>
+	</in-parm>
+	</sql>
+
+</config>

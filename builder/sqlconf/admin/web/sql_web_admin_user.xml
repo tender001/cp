@@ -1,0 +1,697 @@
+<?xml version="1.0" encoding="gbk"?>
+
+<config desc="用户中心（前台网站SQL配置）">
+	<!-- type: 1 查询语句 2 存储过程 3 更新类语句 -->
+
+	<!-- 用户管理 -->
+	<sql id="query_user" type="1" desc="用户查询" order=" order by cadddate desc ">
+	<![CDATA[
+		select t.cnickid,t.crealname,t.cidcard,t.cagentid,t.cadddate,t.cactivedate,t1.ibalance,
+		decode(t.cmobileno,null,'',substr(t.cmobileno,1,3) || '****' || substr(t.cmobileno,length(t.cmobileno)-3,4)) cmobileno,
+		decode(t.cemailaddr,null,'',substr(t.cemailaddr,1,3) || '******' || substr(t.cemailaddr,length(t.cemailaddr)-6,7)) cemailaddr,
+		decode(t.istate,1,'禁用','正常') state 
+		 from tb_user t, tb_user_acct t1 where t.cnickid = t1.cnickid
+	]]>
+		<in-parm>
+			<parm name="用户编号" property="nid" sql=" and t.cnickid = ? "/>
+			<parm name="真实姓名" property="rname" sql=" and t.crealname = ? "/>
+			<parm name="身份号码" property="idcard" sql=" and t.cidcard = ? "/>
+			<parm name="手机号码" property="mobileno" sql=" and t.cmobileno = ? "/>
+			<parm name="电子邮件" property="emailaddr" sql=" and t.cemailaddr = ? "/>
+			<parm name="联系电话" property="telephone" sql=" and t.ctelephone = ? "/>
+			<parm name="开始时间" property="sdate" sql=" and t.cadddate &gt;= to_date(?,'yyyy-MM-dd') "/>
+			<parm name="结束时间" property="edate" sql=" and t.cadddate &lt;= to_date(?,'yyyy-MM-dd')+1 "/>
+			<parm name="代理商的" property="aid" sql=" and t.cagentid = ? "/>
+			<parm name="支付宝帐号" property="bid" sql=" and t.calipay_email = ? "/>
+			<parm name="是否充值" property="money" sql=" and t1.ifill >= to_number(?) "/>
+		</in-parm>
+	</sql>
+	
+	<sql id="query_user_info" type="1" desc="查询用户的基本信息">
+	<![CDATA[
+		select cnickid, crealname, '****' cpassword, cidcard, imailbind,iopen,
+		decode(cmobileno,null,'',substr(cmobileno,1,3) || '****' || substr(cmobileno,length(cmobileno)-3,4)) cmobileno,
+		decode(cemailaddr,null,'',substr(cemailaddr,1,3) || '******' || substr(cemailaddr,length(cemailaddr)-6,7)) cemailaddr,
+		cagentid,istate,ilevel,cadddate,cactivedate,crequest,'保密' canswer,decode(igender,0,'保密',1,'男','女') igender,
+		decode(ctelephone,null,'',substr(ctelephone,1,3) || '****' || substr(ctelephone,length(ctelephone)-3,4)) ctelephone , 
+		'*****' cimno,caddrpro,caddrcity,caddress,cbankcode,cbankcard,cbankname,cbankpro,cbankcity,itype,imobbind,
+		decode(calipay_email,null,'',substr(calipay_email,1,3) || '****' || substr(calipay_email,length(calipay_email)-6,7)) calipay_email
+		  from tb_user where cnickid = ?
+	]]>
+		<in-parm>
+			<parm name="用户编号" property="nid"/>
+		</in-parm>	
+	</sql>
+	
+	<sql id="query_user_account" type="1" desc="查询用户的账户信息">
+	<![CDATA[
+		select * from tb_user_acct where cnickid = ?
+	]]>
+		<in-parm>
+			<parm name="用户编号" property="nid"/>
+		</in-parm>	
+	</sql>
+	
+	
+	<sql id="query_user_info_mobileno" type="1" desc="查询查询用户信息(手机号码)">
+	<![CDATA[
+		select cmobileno from tb_user where cnickid = ?
+	]]>
+		<in-parm>
+			<parm name="用户编号" property="nid"/>
+		</in-parm>	
+	</sql>
+	<sql id="query_user_info_emailaddr" type="1" desc="查询查询用户信息(邮件地址)">
+		select cemailaddr from tb_user where cnickid = ?
+		<in-parm>
+			<parm name="用户编号" property="nid"/>
+		</in-parm>	
+	</sql>
+	<sql id="query_user_info_telephone" type="1" desc="查询查询用户信息(联系电话)">
+		select ctelephone from tb_user where cnickid = ?
+		<in-parm>
+			<parm name="用户编号" property="nid"/>
+		</in-parm>	
+	</sql>
+	<sql id="query_user_info_imno" type="1" desc="查询查询用户信息(QQ号码)">
+		select cimno from tb_user where cnickid = ?
+		<in-parm>
+			<parm name="用户编号" property="nid"/>
+		</in-parm>	
+	</sql>
+	<sql id="query_user_info_alipay_email" type="1" desc="查询查询用户信息(支付宝账号)">
+		select calipay_email from tb_user where cnickid = ?
+		<in-parm>
+			<parm name="用户编号" property="nid"/>
+		</in-parm>	
+	</sql>
+
+	
+	<sql id="query_user_charge" type="1" desc="查询用户资金流水" order=" order by ichargeid desc">
+		select ichargeid,decode(itype,0,imoney,'') m1, decode(itype,1,imoney,'') m2,cadddate,ibiztype,
+		ioldmoney,ibalance,cmemo from TB_USER_CHARGE where cnickid = ? 
+		<in-parm>
+			<parm name="用户编号" property="nid"/>
+			<parm name="方案编号" property="pid" sql=" and cmemo like ?" />
+			<parm name="开始时间" property="sdate" sql=" and cadddate &gt;= to_date(?,'yyyy-MM-dd') " />
+			<parm name="结束时间" property="edate" sql=" and cadddate &lt;= to_date(?,'yyyy-MM-dd')+1 " />
+			<parm name="交易类型" property="bid" sql=" and ibiztype = ? "/>
+		</in-parm>	
+	</sql>
+	<sql id="count_user_charge" type="1" desc="统计用户资金流水">
+		select count(*) num from tb_user_charge where cnickid = ? 
+		<in-parm>
+			<parm name="用户编号" property="nid"/>
+			<parm name="方案编号" property="pid" sql=" and cmemo like ?" />
+			<parm name="开始时间" property="sdate" sql=" and cadddate &gt;= to_date(?,'yyyy-MM-dd') " />
+			<parm name="结束时间" property="edate" sql=" and cadddate &lt;= to_date(?,'yyyy-MM-dd')+1 " />
+			<parm name="交易类型" property="bid" sql=" and ibiztype = ? "/>
+		</in-parm>	
+	</sql>
+	
+	<sql id="query_user_charge_t" type="1" desc="查询用户资金流水汇总" order=" group by itype">
+			select itype, sum(imoney) m from TB_USER_CHARGE where cnickid = ? 
+		<in-parm>
+			<parm name="用户编号" property="nid"/>
+			<parm name="方案编号" property="pid" sql=" and cmemo like ?" />
+			<parm name="开始时间" property="sdate" sql=" and cadddate &gt;= to_date(?,'yyyy-MM-dd') " />
+			<parm name="结束时间" property="edate" sql=" and cadddate &lt;= to_date(?,'yyyy-MM-dd')+1 " />
+			<parm name="交易类型" property="bid" sql=" and ibiztype = ? "/>
+		</in-parm>	
+	</sql>
+	
+	<sql id="query_user_proj" type="1" desc="查询用户发起的方案" order=" order by cprojid desc">
+	select cperiodid,cprojid,decode(itype,0,'代购','合买') tname,imulity,itmoney,inums,ijindu,
+	    decode(istate,0,'暂停认购',1,'认购中',2,'已满员',3,'未满撤销',4,'发起人撤销','其他') sname,
+	    decode(icast,0,'未处理',1,'处理中',2,'已拆票',3,'已出票') cname,ibonus,cadddate,
+	    decode(ijiesuan,0,'未结算',1,'结算中',2,'已结算','其他') jiesuan,cjsdate from tb_proj_#gid# 
+	    where cnickid = ?
+		<in-parm>
+			<parm name="用户编号" property="nid"/>
+			<parm name="开始时间" property="sdate" sql=" and cadddate &gt;= to_date(?,'yyyy-MM-dd') " />
+			<parm name="结束时间" property="edate" sql=" and cadddate &lt;= to_date(?,'yyyy-MM-dd')+1 " />
+			<parm name="方案编号" property="pid" sql=" and cprojid=?"/>
+		</in-parm>	
+	</sql>
+	<sql id="count_user_proj" type="1" desc="统计用户发起的方案">
+		select count(*) num from tb_proj_#gid# where cnickid = ?
+		<in-parm>
+			<parm name="用户编号" property="nid"/>
+			<parm name="开始时间" property="sdate" sql=" and cadddate &gt;= to_date(?,'yyyy-MM-dd') " />
+			<parm name="结束时间" property="edate" sql=" and cadddate &lt;= to_date(?,'yyyy-MM-dd')+1 " />
+			<parm name="方案编号" property="pid" sql=" and cprojid=?"/>
+		</in-parm>	
+	</sql>
+	
+	<sql id="query_proj_buy" type="1" desc="查询用户购买记录" order=" order by t.ibuyid desc">
+		select t.*, decode(t.icancel,0,'成功',1,'用户撤销',2,'系统撤销') cname, 
+		decode(t.ijiesuan,2,'返点中',3,'已返点','未返点') jname, 
+		(select cnickid from tb_proj_#gid# where cprojid=t.cprojid) fname
+		from tb_proj_buy_#gid# t where t.cnickid = ?
+		<in-parm>
+			<parm name="用户编号" property="nid"/>
+			<parm name="开始时间" property="sdate" sql=" and cbuydate &gt;= to_date(?,'yyyy-MM-dd') " />
+			<parm name="结束时间" property="edate" sql=" and cbuydate &lt;= to_date(?,'yyyy-MM-dd')+1 " />
+			<parm name="方案编号" property="pid" sql=" and cprojid=?"/>
+		</in-parm>	
+	</sql>
+	<sql id="count_proj_buy" type="1" desc="统计用户的购买">
+		select count(*) num from tb_proj_buy_#gid# where cnickid = ?
+		<in-parm>
+			<parm name="用户编号" property="nid"/>
+			<parm name="开始时间" property="sdate" sql=" and cbuydate &gt;= to_date(?,'yyyy-MM-dd') " />
+			<parm name="结束时间" property="edate" sql=" and cbuydate &lt;= to_date(?,'yyyy-MM-dd')+1 " />
+			<parm name="方案编号" property="pid" sql=" and cprojid=?"/>
+		</in-parm>	
+	</sql>
+	
+	<sql id="query_user_zhuihao" type="1" desc="查询用户的追号记录" order=" order by czhid desc ">
+		select czhid,cgameid,ipnums,decode(izhflag,0,'中奖后不停止',1,'中奖后停止',2,'盈利后停止') zname,
+		decode(ifinish,0,'未完成',1,'已完成') fname,isuccess,ifailure,cadddate,itmoney,
+		decode(ireason,0,' ',1,'投注完成',2,'中奖停止',3,'用户主动停止') rname,ibonus,icasts 
+		 from tb_zhuihao_#gid# where cnickid = ?
+		<in-parm>
+			<parm name="用户编号" property="nid"/>
+			<parm name="方案编号" property="pid" sql=" and czhid=?"/>
+			<parm name="开始时间" property="sdate" sql=" and cadddate &gt;= to_date(?,'yyyy-MM-dd') " />
+			<parm name="结束时间" property="edate" sql=" and cadddate &lt;= to_date(?,'yyyy-MM-dd')+1 " />
+		</in-parm>	
+	</sql>
+	<sql id="count_user_zhuihao" type="1" desc="统计用户的追号记录">
+		select count(*) num from tb_zhuihao_#gid# where cnickid = ?
+		<in-parm>
+			<parm name="用户编号" property="nid"/>
+			<parm name="方案编号" property="pid" sql=" and czhid=?"/>
+		</in-parm>	
+	</sql>
+	<sql id="query_zh_detail" type="1" desc="查询追号明细记录">
+		select idetailid,cperiodid,ccodes,imulity,icmoney,cadddate,ccastdate,
+		decode(istate,0,'未投注',1,'出票中',2,'已出票',3,'中奖撤销',4,'用户取消',5,'失败取消') sname,
+		iamoney,itax from tb_zh_detail_#gid# where czhid = ? order by idetailid 
+		<in-parm>
+			<parm name="追号编号" property="zid"/>
+		</in-parm>	
+	</sql>
+
+	
+	<sql id="query_user_pay" type="1" desc="查询用户的充值申请记录">
+		select capplyid,imoney,irate,capplydate,decode(istate,0,'未处理',1,'已处理','其他') sname,
+		cconfdate,cbankid,cmemo,decode(isuccess,0,'未处理',1,'已成功',2,'未成功','其他') nsuccess 
+		 from tb_user_pay where cnickid = ? and isuccess = ? order by ipayid desc
+		<in-parm>
+			<parm name="用户编号" property="nid"/>
+			<parm name="是否成功" property="success"/>
+		</in-parm>	
+	</sql>
+	<sql id="count_user_pay" type="1" desc="统计用户的充值申请记录">
+		select count(*) num from tb_user_pay where cnickid = ? and isuccess = ? 
+		<in-parm>
+			<parm name="用户编号" property="nid"/>
+			<parm name="是否成功" property="success"/>
+		</in-parm>	
+	</sql>
+	
+	<sql id="query_bar_ip" type="1" desc="网吧业主IP记录">
+		select barid,cnickid,barname,startip,endip,adminname,addtime,decode(isflag,0,'否',1,'是','--') isflag
+		 from tb_interbar  where cnickid = ? and isflag = ? order by barid desc
+		<in-parm>
+			<parm name="用户编号" property="nid"/>
+			<parm name="是否成功" property="success"/>
+		</in-parm>	
+	</sql>
+	<sql id="count_bar_ip" type="1" desc="统计网吧业主IP记录">
+		select count(*) num from tb_interbar  where cnickid = ? and isflag = ?
+		<in-parm>
+			<parm name="用户编号" property="nid"/>
+			<parm name="是否成功" property="success"/>
+		</in-parm>	
+	</sql>
+	
+	<sql id="query_user_cash" type="1" desc="查询用户的提现申请记录">
+		select t.*, decode(istate,0,'未处理','已处理') sname,
+		decode(isuccess,0,'未处理',1,'提款成功',2,'提款失败',4,'提款中',5,'提款成功',6,'提款失败','其他') nsuccess  
+		 from tb_user_cash t where t.cnickid = ? order by t.icashid desc
+		<in-parm>
+			<parm name="用户编号" property="nid"/>
+		</in-parm>
+	</sql>
+	<sql id="count_user_cash" type="1" desc="统计用户的提现申请记录">
+		select count(*) num from tb_user_cash where cnickid = ?
+		<in-parm>
+			<parm name="用户编号" property="nid"/>
+		</in-parm>	
+	</sql>
+	
+	
+	<sql id="query_user_zhanji" type="1" desc="查询用户的战绩记录">
+		select * from tb_user_zhanji where cnickid = ? order by irecid desc
+		<in-parm>
+			<parm name="用户编号" property="nid"/>
+		</in-parm>
+	</sql>
+	<sql id="count_user_zhanji" type="1" desc="统计用户的战绩记录">
+		select count(*) num from tb_user_zhanji where cnickid = ?
+		<in-parm>
+			<parm name="用户编号" property="nid"/>
+		</in-parm>	
+	</sql>
+	
+	
+	<sql id="query_user_auto" type="1" desc="查询用户的跟单记录">
+		select cowner,cgameid,decode(istate,0,'启用','禁用') sname,decode(ilimit,0,'无限制','有限制') lname,
+		iminmoney,imaxmoney,cadddate,decode(itype,0,ibmoney,'0') ibmoney,decode(itype,0,'固定','比例') itype,
+		decode(itype,1,irate,'0') irate,decode(ibuy,0,'否','是') ibuy
+		 from tb_user_auto where cnickid = ? order by cadddate desc
+		<in-parm>
+			<parm name="用户编号" property="nid"/>
+		</in-parm>
+	</sql>
+	<sql id="count_user_auto" type="1" desc="统计用户的跟单记录">
+		select count(*) num from tb_user_auto where cnickid = ?
+		<in-parm>
+			<parm name="用户编号" property="nid"/>
+		</in-parm>	
+	</sql>
+	
+	
+	<sql id="query_user_autoed" type="1" desc="查询跟我的单记录">
+		select cnickid,cowner,cgameid,decode(istate,0,'启用','禁用') sname,decode(ilimit,0,'无限制','有限制') lname,
+		iminmoney,imaxmoney,cadddate,decode(itype,0,ibmoney,'0') ibmoney,decode(itype,0,'固定','比例') itype,
+		decode(itype,1,irate,'0') irate,decode(ibuy,0,'否','是') ibuy
+		 from tb_user_auto where cowner = ? order by cadddate desc
+		<in-parm>
+			<parm name="用户编号" property="nid"/>
+		</in-parm>
+	</sql>
+	<sql id="count_user_autoed" type="1" desc="统计跟我的单记录">
+		select count(*) num from tb_user_auto where cowner = ?
+		<in-parm>
+			<parm name="用户编号" property="nid"/>
+		</in-parm>	
+	</sql>
+	
+	<sql id="query_user_autorec" type="1" desc="查询用户跟单记录" order=" order by cadddate desc">
+		select cnickid,cprojid,decode(itype,0,imoney,'0') imoney,decode(istate,0,'未处理','已处理') istate,
+		decode(isuccess,0,'不成功','成功') isuccess,cadddate,cgameid,cerrdesc,cowner,decode(itype,0,'固定','比例') itype,
+		decode(itype,1,irate,'0') irate,decode(ibuy,0,'否','是') ibuy from tb_auto_log where cnickid = ?
+		<in-parm>
+			<parm name="用户编号" property="nid"/>
+			<parm name="方案编号" property="hid" sql=" and cprojid = ?"/>
+			<parm name="开始时间" property="sdate" sql=" and cadddate &gt;= to_date(?,'yyyy-MM-dd') " />
+			<parm name="结束时间" property="edate" sql=" and cadddate &lt;= to_date(?,'yyyy-MM-dd')+1 " />
+		</in-parm>
+	</sql>
+	<sql id="count_user_autorec" type="1" desc="统计用户跟单记录">
+		select count(*) num from tb_auto_log where cnickid = ?
+		<in-parm>
+			<parm name="用户编号" property="nid"/>
+		</in-parm>	
+	</sql>
+	
+	<sql id="query_user_allylist" type="1" desc="查询绑定列表">
+		select allyid,type,decode(type,1,'支付宝','QQ') itype,istate state,decode(istate,0,'可用','停用') istate,
+		addtime,logintimes,host,memo,canceltime,decode(ially_type,0,'普通','金账户') ally_type,
+		decode(ihuodong,0,'NO','YES') huodong,creturninfo from tb_ally where nickid = ?
+		<in-parm>
+			<parm name="用户编号" property="nid"/>
+		</in-parm>
+	</sql>
+	<sql id="count_user_allylist" type="1" desc="统计绑定列表">
+		select count(*) num from tb_ally where nickid = ?
+		<in-parm>
+			<parm name="用户编号" property="nid"/>
+		</in-parm>	
+	</sql>
+	
+	<sql id="query_user_hdlist" type="1" desc="查询活动列表">
+		select cjoin from tb_user where cnickid = ?
+		<in-parm>
+			<parm name="用户编号" property="nid"/>
+		</in-parm>
+	</sql>
+	
+
+	<!-- 修改用户信息 -->
+	<sql id="update_cancelally" type="3" desc="解除绑定">
+		update tb_ally set istate = 1,canceltime=sysdate where nickid = ? and type = ? and host = ? and istate = 0
+		<in-parm>
+			<parm name="用户编号" property="nid"/>
+			<parm name="类型" property="aid"/>
+			<parm name="域名" property="gid"/>
+		</in-parm>	
+	</sql>
+	<!-- 修改用户信息 -->
+	<sql id="update_realname" type="3" desc="修改用户真实姓名">
+		update tb_user set crealname = ? where cnickid = ?
+		<in-parm>
+			<parm name="新的内容" property="newValue"/>
+			<parm name="用户编号" property="nid"/>
+		</in-parm>	
+	</sql>
+	
+	<sql id="update_agentstate" type="3" desc="修改状态">
+	<![CDATA[
+		update tb_agent set istate=decode(istate,0,1,1,0) where cagentid = ? 
+	]]>		
+		<in-parm>		
+	   		<parm name="代理商编号" property="qagent"/>
+	   	</in-parm>
+	</sql>	
+	
+	<sql id="update_agentphone" type="3" desc="修改联系电话">
+	<![CDATA[
+		update tb_agent set ctelephone = ? where cagentid = ? 
+	]]>		
+		<in-parm>
+	   		<parm name="修改内容"   property="newValue"/>		
+	   		<parm name="代理商编号" property="qagent"/>
+	   	</in-parm>
+	</sql>
+	<sql id="update_idcard" type="3" desc="修改用户身份证号码">
+		update tb_user set cidcard = ? where cnickid = ?
+		<in-parm>
+			<parm name="新的内容" property="newValue"/>
+			<parm name="用户编号" property="nid"/>
+		</in-parm>	
+	</sql>
+	<sql id="update_mobileno" type="3" desc="修改用户绑定手机号码">
+		update tb_user set cmobileno = ? where cnickid = ? and cmobileno = ?
+		<in-parm>
+			<parm name="新的内容" property="newValue"/>
+			<parm name="用户编号" property="nid"/>
+			<parm name="老的内容" property="oldValue"/>
+		</in-parm>	
+	</sql>
+	<sql id="update_emailaddr" type="3" desc="修改用户的邮件地址">
+		update tb_user set cemailaddr = ? where cnickid = ? and cemailaddr = ?
+		<in-parm>
+			<parm name="新的内容" property="newValue"/>
+			<parm name="用户编号" property="nid"/>
+			<parm name="老的内容" property="oldValue"/>
+		</in-parm>	
+	</sql>
+	<sql id="update_agentid" type="3" desc="修改用户的代理商等级">
+		update tb_user set cagentid=(select cagentid from tb_agent where cagentid= ?) where cnickid=? and (cagentid=? or cagentid is null)
+		<in-parm>
+			<parm name="新的内容" property="newValue"/>
+			<parm name="用户编号" property="nid"/>
+			<parm name="老的内容" property="oldValue"/>
+		</in-parm>	
+	</sql>
+	<sql id="update_iopen" type="3" desc="修改用户白名单">
+		update tb_user set iopen=1-iopen where cnickid=? 
+		<in-parm>
+			<parm name="用户编号" property="nid"/>
+		</in-parm>	
+	</sql>
+	<sql id="update_istate" type="3" desc="修改用户的状态">
+		update tb_user set istate = ? where cnickid = ? 
+		<in-parm>
+			<parm name="新的内容" property="newValue"/>
+			<parm name="用户编号" property="nid"/>
+		</in-parm>	
+	</sql>
+	<sql id="update_level" type="3" desc="修改用户的等级">
+		update tb_user set ilevel = to_number(?) where cnickid = ? 
+		<in-parm>
+			<parm name="新的内容" property="newValue"/>
+			<parm name="用户编号" property="nid"/>
+		</in-parm>	
+	</sql>
+	<sql id="update_addbar" type="3" desc="增加网吧业主IP信息">
+		insert into tb_interbar(barid,cnickid,barname,startip,endip,adminname,addtime,isflag) values 
+		 (seq_barid.nextval,?,?,?,?,?,sysdate,?)
+		<in-parm>
+			<parm name="用户编号" property="nid"/>
+			<parm name="网吧名称" property="rname"/>
+			<parm name="起始ip" property="oldValue"/>
+			<parm name="终止IP" property="newValue"/>
+			<parm name="管理员" property="uid"/>
+			<parm name="是否有效" property="gid"/>
+		</in-parm>	
+	</sql>
+	<sql id="update_editbar" type="3" desc="修改网吧业主IP信息">
+		update tb_interbar set barname =?,startip=?,endip=?,addtime=sysdate,isflag=?,adminname=? 
+		where barid = ? and cnickid=?
+		<in-parm>
+		    <parm name="网吧名称" property="rname"/>
+		    <parm name="起始ip" property="oldValue"/>
+			<parm name="终止IP" property="newValue"/>
+			<parm name="是否有效" property="gid"/>
+			<parm name="管理员" property="uid"/>
+			<parm name="记录编号" property="aid"/>
+			<parm name="用户编号" property="nid"/>
+		</in-parm>	
+	</sql>
+	
+	<sql id="update_request" type="3" desc="修改用户的密码保护问题">
+		update tb_user set crequest = ? where cnickid = ? 
+		<in-parm>
+			<parm name="新的内容" property="newValue"/>
+			<parm name="用户编号" property="nid"/>
+		</in-parm>	
+	</sql>
+	<sql id="update_answer" type="3" desc="修改用户的密码保护问题">
+		update tb_user set canswer = ? where cnickid = ? 
+		<in-parm>
+			<parm name="新的内容" property="newValue"/>
+			<parm name="用户编号" property="nid"/>
+		</in-parm>	
+	</sql>
+	<sql id="update_telephone" type="3" desc="修改用户的联系电话">
+		update tb_user set ctelephone = ? where cnickid = ? 
+		<in-parm>
+			<parm name="新的内容" property="newValue"/>
+			<parm name="用户编号" property="nid"/>
+		</in-parm>	
+	</sql>
+	<sql id="update_imno" type="3" desc="修改用户的qq号码">
+		update tb_user set cimno = ? where cnickid = ? 
+		<in-parm>
+			<parm name="新的内容" property="newValue"/>
+			<parm name="用户编号" property="nid"/>
+		</in-parm>	
+	</sql>
+	<sql id="update_addrpro" type="3" desc="修改用户的居住省份">
+		update tb_user set caddrpro = ? where cnickid = ? 
+		<in-parm>
+			<parm name="新的内容" property="newValue"/>
+			<parm name="用户编号" property="nid"/>
+		</in-parm>	
+	</sql>
+	<sql id="update_addrcity" type="3" desc="修改用户的居住城市">
+		update tb_user set caddrcity = ? where cnickid = ? 
+		<in-parm>
+			<parm name="新的内容" property="newValue"/>
+			<parm name="用户编号" property="nid"/>
+		</in-parm>	
+	</sql>
+	<sql id="update_address" type="3" desc="修改用户的居住地址">
+		update tb_user set caddress = ? where cnickid = ? 
+		<in-parm>
+			<parm name="新的内容" property="newValue"/>
+			<parm name="用户编号" property="nid"/>
+		</in-parm>	
+	</sql>
+
+	<sql id="update_bankcard" type="3" desc="修改用户的银行卡号">
+		update tb_user set cbankcard = ? where cnickid = ? 
+		<in-parm>
+			<parm name="新的内容" property="newValue"/>
+			<parm name="用户编号" property="nid"/>
+		</in-parm>	
+	</sql>
+	<sql id="update_bankname" type="3" desc="修改用户的银行名称">
+		update tb_user set cbankname = ? where cnickid = ? 
+		<in-parm>
+			<parm name="新的内容" property="newValue"/>
+			<parm name="用户编号" property="nid"/>
+		</in-parm>	
+	</sql>
+	<sql id="update_bankcode" type="3" desc="修改用户的银行名称">
+		update tb_user set cbankcode = ? where cnickid = ? 
+		<in-parm>
+			<parm name="新的内容" property="newValue"/>
+			<parm name="用户编号" property="nid"/>
+		</in-parm>	
+	</sql>
+	<sql id="update_bankpro" type="3" desc="修改用户的银行卡所在省份">
+		update tb_user set cbankpro = ? where cnickid = ? 
+		<in-parm>
+			<parm name="新的内容" property="newValue"/>
+			<parm name="用户编号" property="nid"/>
+		</in-parm>	
+	</sql>
+	<sql id="update_bankcity" type="3" desc="修改用户的银行卡所在城市">
+	<![CDATA[
+		update tb_user set cbankcity = ? where cnickid = ? 
+	]]>
+		<in-parm>
+			<parm name="新的内容" property="newValue"/>
+			<parm name="用户编号" property="nid"/>
+		</in-parm>	
+	</sql>
+	
+	<sql id="update_userpass" type="3" desc="重置用户密码">
+	<![CDATA[
+		update tb_user set cpassword = '8eeb4834a2b7de7d80000f6ec72f6773' where cnickid = ? 
+	]]>
+		<in-parm>
+			<parm name="用户编号" property="nid"/>
+		</in-parm>	
+	</sql>
+	
+	<sql id="update_setuserhd" type="3" desc="设置活动">
+	<![CDATA[
+		update tb_user set cjoin = ? where cnickid = ?
+	]]> 
+		<in-parm>
+			<parm name="用户名" property="oid"/>
+			<parm name="活动值" property="aid"/>
+		</in-parm>	
+	</sql>
+	
+	
+	<sql id="query_alog" type="1" desc="后台日志查询" order=" order by irecid desc ">
+		select * from tbladminlog where 1=1  
+		<in-parm>
+			<parm name="操作用户" property="nid" sql=" and cuserid = ? "/>
+			<parm name="操作类型" property="newValue" sql=" and ctype = ? "/>
+			<parm name="开始时间" property="sdate" sql=" and cadddate &gt;= to_date(?,'yyyy-MM-dd') "/>
+			<parm name="结束时间" property="edate" sql=" and cadddate &lt;= to_date(?,'yyyy-MM-dd')+1 "/>
+		</in-parm>
+	</sql>
+	<sql id="count_alog" type="1" desc="后台日志查询">
+		select count(*) num from tbladminlog where 1 = 1
+		<in-parm>
+			<parm name="操作用户" property="nid" sql=" and cuserid = ? "/>
+			<parm name="操作类型" property="newValue" sql=" and ctype = ? "/>
+			<parm name="开始时间" property="sdate" sql=" and cadddate &gt;= to_date(?,'yyyy-MM-dd') "/>
+			<parm name="结束时间" property="edate" sql=" and cadddate &lt;= to_date(?,'yyyy-MM-dd')+1 "/>
+		</in-parm>
+	</sql>
+	
+	<sql id="query_ulog" type="1" desc="后台日志查询" order=" order by irecid desc ">
+		select * from tb_user_log where 1=1  
+		<in-parm>
+			<parm name="操作用户" property="nid" sql=" and cnickid = ? "/>
+			<parm name="开始时间" property="sdate" sql=" and cadddate &gt;= to_date(?,'yyyy-MM-dd') "/>
+			<parm name="结束时间" property="edate" sql=" and cadddate &lt;= to_date(?,'yyyy-MM-dd')+1 "/>
+		</in-parm>
+	</sql>
+	<sql id="count_ulog" type="1" desc="后台日志查询">
+		select count(*) num from tb_user_log where 1 = 1
+		<in-parm>
+			<parm name="操作用户" property="nid" sql=" and cnickid = ? "/>
+			<parm name="开始时间" property="sdate" sql=" and cadddate &gt;= to_date(?,'yyyy-MM-dd') "/>
+			<parm name="结束时间" property="edate" sql=" and cadddate &lt;= to_date(?,'yyyy-MM-dd')+1 "/>
+		</in-parm>
+	</sql>
+	
+	
+	<sql id="query_qnotwinnotmoney" type="1" desc="不中不要钱活动查询" order=" order by cadddate desc ">
+		select * from tb_notwin_notmoney where 1=1  
+		<in-parm>
+			<parm name="操作用户" property="nid" sql=" and cnickid = ? "/>
+			<parm name="开始时间" property="sdate" sql=" and cadddate &gt;= to_date(?,'yyyy-MM-dd') "/>
+			<parm name="结束时间" property="edate" sql=" and cadddate &lt;= to_date(?,'yyyy-MM-dd')+1 "/>
+		</in-parm>
+	</sql>
+	<sql id="count_qnotwinnotmoney" type="1" desc="不中不要钱活动查询">
+		select count(*) num from tb_notwin_notmoney where 1 = 1
+		<in-parm>
+			<parm name="操作用户" property="nid" sql=" and cnickid = ? "/>
+			<parm name="开始时间" property="sdate" sql=" and cadddate &gt;= to_date(?,'yyyy-MM-dd') "/>
+			<parm name="结束时间" property="edate" sql=" and cadddate &lt;= to_date(?,'yyyy-MM-dd')+1 "/>
+		</in-parm>
+	</sql>
+	
+	<sql id="query_qgyjhuodong" type="1" desc="冠亚军活动查询" order=" order by cwininfo desc,cadddate">
+		select * from tb_jingcai_huodong where 1=1  
+		<in-parm>
+			<parm name="操作用户" property="nid" sql=" and cnickid = ? "/>
+			<parm name="身份证号" property="idcard" sql=" and cidcard = ? "/>
+			<parm name="手机号码" property="mobileno" sql=" and cmobileno = ? "/>
+			<parm name="开始时间" property="sdate" sql=" and cadddate &gt;= to_date(?,'yyyy-MM-dd') "/>
+			<parm name="结束时间" property="edate" sql=" and cadddate &lt;= to_date(?,'yyyy-MM-dd')+1 "/>
+		</in-parm>
+	</sql>
+	<sql id="count_qgyjhuodong" type="1" desc="冠亚军活动查询">
+		select count(*) num from tb_jingcai_huodong where 1 = 1
+		<in-parm>
+			<parm name="操作用户" property="nid" sql=" and cnickid = ? "/>
+			<parm name="开始时间" property="sdate" sql=" and cadddate &gt;= to_date(?,'yyyy-MM-dd') "/>
+			<parm name="结束时间" property="edate" sql=" and cadddate &lt;= to_date(?,'yyyy-MM-dd')+1 "/>
+		</in-parm>
+	</sql>
+	<sql id="query_user_sms" type="1" desc="获取用户短信定制">
+		select * from tb_user_services where cnickid = ?
+		<in-parm>
+			<parm name="用户编号" property="nid"/>
+		</in-parm>	
+	</sql>
+	<sql id="set_user_sms_game" type="3" desc="取消用户短信定制">
+		update tb_user_services set inotice=? where cnickid = ?
+		<in-parm>
+			<parm name="定制值" property="newValue"/>
+			<parm name="用户编号" property="nid"/>
+		</in-parm>	
+	</sql>
+	<sql id="query_qjifenbaohuodong" type="1" order=" order by cadddate desc" desc="查询集分宝活动列表">
+		select cnickid,capplyid,imoney,cadddate,ijfamount,clogin_id,cjfapplyid,cpsdate,cbiz_no,cbalance,
+		decode(istate,0,'未派送','已派送') state from tb_jifenbao_huodong where 1 = 1
+		<in-parm>
+			<parm name="操作用户" property="nid" sql=" and cnickid = ? "/>
+			<parm name="充值订单号" property="oid" sql=" and capplyid = ? "/>
+			<parm name="支付宝流水号" property="bid" sql=" and cbiz_no = ? "/>
+			<parm name="支付宝账号" property="emailaddr" sql=" and clogin_id = ? "/>
+			<parm name="开始时间" property="sdate" sql=" and cadddate &gt;= to_date(?,'yyyy-MM-dd') "/>
+			<parm name="结束时间" property="edate" sql=" and cadddate &lt;= to_date(?,'yyyy-MM-dd')+1 "/>
+		</in-parm>
+	</sql>
+	<sql id="count_qjifenbaohuodong" type="1" desc="统计集分宝活动列表">
+		select count(*) num from tb_jifenbao_huodong where 1 = 1
+		<in-parm>
+			<parm name="操作用户" property="nid" sql=" and cnickid = ? "/>
+			<parm name="充值订单号" property="oid" sql=" and capplyid = ? "/>
+			<parm name="支付宝流水号" property="bid" sql=" and cbiz_no = ? "/>
+			<parm name="支付宝账号" property="emailaddr" sql=" and clogin_id = ? "/>
+			<parm name="开始时间" property="sdate" sql=" and cadddate &gt;= to_date(?,'yyyy-MM-dd') "/>
+			<parm name="结束时间" property="edate" sql=" and cadddate &lt;= to_date(?,'yyyy-MM-dd')+1 "/>
+		</in-parm>	
+	</sql>
+	<sql id="query_caijinpaisong" type="1" order=" order by cadddate desc" desc="查询活动派送彩金列表">
+		select ccardid,imoney,itype,cadddate,cexpireddate,cactivedate,cactivenick,cactiveip,cactivesn from tb_card where 1 = 1
+		<in-parm>
+			<parm name="用户" property="nid" sql=" and cactivenick = ? "/>
+			<parm name="卡号" property="oid" sql=" and ccardid = ? "/>
+			<parm name="开始时间" property="sdate" sql=" and cactivedate &gt;= to_date(?,'yyyy-MM-dd') "/>
+			<parm name="结束时间" property="edate" sql=" and cactivedate &lt;= to_date(?,'yyyy-MM-dd')+1 "/>
+		</in-parm>
+	</sql>
+	<sql id="count_caijinpaisong" type="1" desc="查询活动派送彩金列表">
+		select count(*) num from tb_card where 1 = 1
+		<in-parm>
+			<parm name="用户" property="nid" sql=" and cactivenick = ? "/>
+			<parm name="卡号" property="oid" sql=" and ccardid = ? "/>
+			<parm name="开始时间" property="sdate" sql=" and cactivedate &gt;= to_date(?,'yyyy-MM-dd') "/>
+			<parm name="结束时间" property="edate" sql=" and cactivedate &lt;= to_date(?,'yyyy-MM-dd')+1 "/>
+		</in-parm>	
+	</sql>
+	
+	
+	<sql id="spuserchangeagent" type="2" desc="用户转代理">
+	<![CDATA[
+		cpadmin.sp_change_user_to_agent
+	]]>
+		<in-parm>
+			<parm name="用户编号" property="nid"/>
+			<parm name="代理编号" property="aid"/>
+			<parm name="登录用户" property="uid"/>
+		</in-parm>
+		<out-parm>
+			<parm name="错误编号" property="busiErrCode"/>
+			<parm name="错误描叙" property="busiErrDesc"/>
+		</out-parm>
+	</sql>
+</config>
