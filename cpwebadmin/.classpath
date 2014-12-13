@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="/builder/lib/jdom.jar"/>
+	<classpathentry kind="lib" path="/builder/lib/poi-3.6-20091214.jar"/>
+	<classpathentry kind="lib" path="/builder/lib/servlet-api.jar"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/cpwebfilter"/>
+	<classpathentry kind="lib" path="/builder/framework/rbc_s3.jar"/>
+	<classpathentry kind="lib" path="/builder/framework/rbc_f3.jar"/>
+	<classpathentry kind="output" path="classes"/>
+</classpath>
