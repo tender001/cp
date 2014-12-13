@@ -88,3 +88,5 @@ input.fqhmGray{ background:#ebebeb}
 .pkHeader{ background:#004329; border-bottom:1px solid #004329}
 .zcHeader{ background:#399e5c}
 .pdLfrt09{ padding:.1rem .9rem 0 .9rem}
+/*底部logo*/
+.foot-logo{height: 10em;background:url("../img/m-logo.png") center 1.2em no-repeat;background-size:170px 65px;opacity: 0.17}

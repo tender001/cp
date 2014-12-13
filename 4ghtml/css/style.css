@@ -7,6 +7,14 @@
 .header .m-logo{display:block;width: 23.6%;margin-left:1.2em}
 .img-list{width: 100%;height: auto;}
 .img-list-body img{width:100%;max-height:220px;}
+.focus{  height:150px;  margin:0 auto; position:relative; overflow:hidden;   }
+.focus .hd{ width:100%; height:5px;  position:absolute; z-index:1; bottom:0; text-align:center;  }
+.focus .hd ul{ overflow:hidden; display:-moz-box; display:-webkit-box;height:5px; background-color:rgba(51,51,51,0.5);   }
+.focus .hd ul li{ -moz-box-flex:1; -webkit-box-flex:1;box-flex:1; }
+.focus .hd ul .on{ background-color:#FF4000;  }
+.focus .bd{ position:relative; z-index:0; }
+.focus .bd li img{ width:100%; height:150px;}
+.app-notice{height:3.5em;overflow: hidden}
 .notice{width:96%;height:3.5em;line-height:3.5em;padding:0 2%;font-size:1.1em;color:#f60;background-color:#fff;overflow: hidden}
 .notice span{padding-right:3px;color: #333}
 .nav{width:100%;padding: 10px 0;border-top:1px solid #ccc;background-color: #f0f0f0}
@@ -124,14 +132,21 @@
 .D_icon:before{ background-position:0 -54px; width:9px; height:12px;}
 .S_icon:before,.C_icon:before,.H_icon:before,.D_icon:before{ background-image:url(../img/huase_icon.png); background-size:13px 70px;}
 /*新闻资讯*/
-.news-top{margin-top: 3.3rem;padding: 10px 3%;border-top:1px solid #ccc}
+.news-top,.m-reg{margin-top: 3.3rem;padding: 10px 3%;border-top:1px solid #ccc}
 .news-tit{padding:0 0 0.4em;border-bottom: 1px dotted #ccc}
 .news-tit h1{height:2em;line-height:2em;font-size: 1.14em;overflow: hidden;text-align: center}
 .news-tit strong{font-size:0.8em;font-weight:400;color:#777}
 .news-top p{padding: 1.2em 0 0;text-indent:2em;color:#444;}
-
-
-
+/*登录-注册*/
+.m-reg{border-bottom: 2px solid #ccc}
+.m-reg .reg{width: 88%;margin: 0 auto;}
+.reg li{vertical-align: middle;padding:0.4em 0;}
+.reg li:first-of-type{border-bottom: 1px solid #ddd}
+.reg li:first-of-type{}
+.reg label{padding: 0 1em 0}
+.reg input{width:80%;height: 1.2em;line-height: 1.2em;padding: 0.6em 0;border: 0 none}
+.reg-read{padding:0 0 0.5em;text-align: center;color:#888}
+.reg-read
 
 
 
