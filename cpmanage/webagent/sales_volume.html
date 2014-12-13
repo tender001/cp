@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->
+<!--[if !IE]><!--> <html lang="en"> <!--<![endif]-->
+<!-- BEGIN HEAD -->
+<head>
+	<meta charset="utf-8" />
+	<title>销量查询</title>
+	<meta content="width=device-width, initial-scale=1.0" name="viewport" />
+	<meta content="" name="description" />
+	<meta content="" name="author" />
+	<link type="text/css" rel="stylesheet" href="css/common/jquery-ui.css" />
+	<link href="assets/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+	<link href="assets/css/metro.css" rel="stylesheet" />
+	<link href="assets/bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet" />
+	<link href="assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
+	<link href="assets/css/style.css" rel="stylesheet" />
+	<link href="assets/css/style_responsive.css" rel="stylesheet" />
+	<link href="assets/css/style_default.css" rel="stylesheet" id="style_color" />
+    <link href="assets/fancybox/source/jquery.fancybox.css" rel="stylesheet" />
+	<link rel="stylesheet" type="text/css" href="assets/gritter/css/jquery.gritter.css" />
+	<link rel="stylesheet" type="text/css" href="assets/uniform/css/uniform.default.css" />
+	<link rel="stylesheet" type="text/css" href="assets/bootstrap-daterangepicker/daterangepicker.css" />
+	<link href="assets/fullcalendar/fullcalendar/bootstrap-fullcalendar.css" rel="stylesheet" />
+	<link href="assets/jqvmap/jqvmap/jqvmap.css" media="screen" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="assets/bootstrap-tree/bootstrap-tree/css/bootstrap-tree.css" />
+    <link rel="stylesheet" type="text/css" href="assets/chosen-bootstrap/chosen/chosen.css" />
+    <link href="assets/glyphicons_halflings/css/halflings.css" rel="stylesheet" />
+    <link rel="stylesheet" href="assets/data-tables/DT_bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="assets/bootstrap-datepicker/css/datepicker.css" />
+    <link rel="stylesheet" type="text/css" href="css/normaltable.css" />
+    <link rel="stylesheet" type="text/css" href="css/sales_volume.css" />
+	<link rel="shortcut icon" href="favicon.ico" />
+	<script type="text/javascript" src="assets/js/jquery-1.8.3.min.js"></script>
+	<script type="text/javascript" src="assets/breakpoints/breakpoints.js"></script>	
+	<script type="text/javascript" src="assets/bootstrap/js/bootstrap.min.js"></script>		
+	<script type="text/javascript" src="assets/js/jquery.blockui.js"></script>
+	<script type="text/javascript" src="assets/js/jquery.cookie.js"></script>
+	<!-- ie8 fixes -->
+	<!--[if lt IE 9]>
+	<script type="text/javascript" src="assets/js/excanvas.js"></script>
+	<script type="text/javascript" src="assets/js/respond.js"></script>
+	<![endif]-->
+	<script type="text/javascript" src="assets/uniform/jquery.uniform.min.js"></script>	
+	<script type="text/javascript" src="js/common/jquery-ui.min.js"></script>
+  	<script type="text/javascript" src="assets/chosen-bootstrap/chosen/chosen.jquery.min.js"></script>
+   	<script type="text/javascript" src="js/date-zh-CN.js"></script>
+	<script type="text/javascript" src="assets/js/app.js"></script>	
+	<script type="text/javascript" src="js/common.js"></script>
+	<script type="text/javascript" src="js/sales_volume.js"></script>
+	<script type="text/javascript" src="js/tool.js?v=1.1.0.0"></script>		
+</head>
+<!-- END HEAD -->
+<!-- BEGIN BODY -->
+<body class="fixed-top">
+	<!-- BEGIN HEADER -->
+	<div class="header navbar navbar-inverse navbar-fixed-top">
+		<!-- BEGIN TOP NAVIGATION BAR -->
+		<div class="navbar-inner">
+			<div class="container-fluid">
+				<!-- BEGIN LOGO -->
+				<a class="brand" href="index.html">
+				<img src="assets/img/logo-big.png" alt="logo" />
+				</a>
+				<!-- END LOGO -->
+				<!-- BEGIN RESPONSIVE MENU TOGGLER -->
+				<a href="javascript:;" class="btn-navbar collapsed" data-toggle="collapse" data-target=".nav-collapse">
+				<img src="assets/img/menu-toggler.png" alt="" />
+				</a>          
+				<!-- END RESPONSIVE MENU TOGGLER -->				
+				<!-- BEGIN TOP NAVIGATION MENU -->					
+				<button type="button" class="btn green pull-right" id="logoutbtn">
+       				退出 
+       	</button>
+				<!-- END TOP NAVIGATION MENU -->	
+			</div>
+		</div>
+		<!-- END TOP NAVIGATION BAR -->
+	</div>
+	<!-- END HEADER -->
+	<!-- BEGIN CONTAINER -->
+	<div class="page-container row-fluid">
+		<!-- BEGIN SIDEBAR -->
+		<div class="page-sidebar nav-collapse collapse">
+			<!-- BEGIN SIDEBAR MENU -->        	
+			<ul>
+				<li>
+					<!-- BEGIN SIDEBAR TOGGLER BUTTON -->
+					<div class="sidebar-toggler hidden-phone"></div>
+					<!-- BEGIN SIDEBAR TOGGLER BUTTON -->
+				</li>
+				<li>
+					&nbsp;
+				</li>
+				<li class="start ">
+					<a href="index.html">
+					<i class="icon-home"></i> 
+					<span class="title">首页</span>
+					<span class=""></span>
+					</a>
+				</li>
+                <li class="has-sub ">
+					<a href="account.html">
+					<i class="icon-barcode"></i> 
+					<span class="title">账户查询</span>
+					<span class=""></span>
+					</a>
+				</li>
+                <li class="has-sub ">
+					<a href="commission.html">
+					<i class="icon-bar-chart"></i> 
+					<span class="title">佣金比例</span>
+					<span class=""></span>
+					</a>
+				</li>
+                <li class="has-sub">
+					<a href="fund_detail.html">
+					<i class="icon-table"></i> 
+					<span class="title">资金明细</span>
+					<span class=""></span>
+					</a>
+				</li>
+                <li class="has-sub ">
+					<a href="user.html">
+					<i class="icon-group"></i> 
+					<span class="title">用户查询</span>
+					<span class="selected"></span>
+					</a>
+				</li>
+				<li class="has-sub">
+					<a href="userActive.html">
+					<i class="icon-group"></i> 
+					<span class="title">活动时间查询</span>
+					<span class=""></span>
+					</a>
+				</li>
+                <li class="has-sub active">
+					<a href="sales_volume.html">
+					<i class="icon-bar-chart"></i> 
+					<span class="title">销量查询</span>
+					<span class="selected"></span>
+					</a>
+				</li>
+                <li class="has-sub ">
+					<a href="lower_sales.html">
+					<i class="icon-sitemap"></i> 
+					<span class="title">下级销量查询</span>
+					<span class=""></span>
+					</a>
+				</li>
+				<li class="has-sub ">
+					<a href="lowerlists.html">
+					<i class="icon-sitemap"></i> 
+					<span class="title">下级代理列表</span>
+					<span class=""></span>
+					</a>
+				</li>
+			</ul>
+			<!-- END SIDEBAR MENU -->
+		</div>
+		<!-- END SIDEBAR -->
+		<!-- BEGIN PAGE -->
+		<div class="page-content">
+			<!-- BEGIN SAMPLE PORTLET CONFIGURATION MODAL FORM-->
+			<div id="portlet-config" class="modal hide">
+				<div class="modal-header">
+					<button data-dismiss="modal" class="close" type="button"></button>
+					<h3>portlet Settings</h3>
+				</div>
+				<div class="modal-body">
+					<p>Here will be a configuration form</p>
+				</div>
+			</div>
+			<!-- END SAMPLE PORTLET CONFIGURATION MODAL FORM-->
+			<!-- BEGIN PAGE CONTAINER-->			
+			<div class="container-fluid">
+				<!-- BEGIN PAGE HEADER-->
+				<div class="row-fluid">
+					<div class="span12">
+						<!-- BEGIN PAGE TITLE & BREADCRUMB-->			
+						<h3 class="page-title">
+							欢迎使用				
+							<small>代理商管理中心</small>
+						</h3>
+						<ul class="breadcrumb">
+							<li>
+								<i class="icon-home"></i>
+								<a href="index.html" id="content-accountid">代理商vip4</a>
+                                <i class="icon-angle-right"></i> 
+							</li>
+							<li>
+								<span>销量查询</span>
+							</li>
+						</ul>
+						<!-- END PAGE TITLE & BREADCRUMB-->
+					</div>
+				</div>
+				<!-- END PAGE HEADER-->
+				<!-- BEGIN PAGE CONTENT-->
+				<div class="row-fluid">
+					<div class="span12">
+						<!-- BEGIN EXAMPLE TABLE PORTLET-->
+						<div class="portlet box purple">
+							<div class="portlet-title">
+                            	<h4 id="porlet-title-accountid"><i class="halflings-icon white user"></i>admin销量查询</h4>
+								<div class="tools">
+									<a href="javascript:;" class="reload" id="reloadsail"></a>
+								</div>
+							</div>
+							<div class="portlet-body">
+								<div class="clearfix">
+									<div id="sdatediv">
+										<label>开始时间：</label>
+                    					<input id="sdate" class="m-wrap m-ctrl-medium" type="text" style="width:100px;" />
+									</div>
+									<div id="edatediv">
+										<label>结束时间：</label>
+                     					<input id="edate" class="m-wrap m-ctrl-medium" type="text" style="width:100px;" />
+									</div>
+									<div id="selectdiv">
+                	  <label>彩种：</label>
+                    <select class="small m-wrap" id="gidselect" tabindex="1">
+                       <option value="Category 1">全部</option>
+                       <option value="Category 2">佣金</option>
+                       <option value="Category 3">转账</option>
+                       <option value="Category 4">提款</option>
+                       <option value="Category 5">代理商转款</option>
+                       <option value="Category 6">销售扣款</option>
+                    </select>
+                 	</div>
+                 	<div id="checkdiv">
+                 		<label>汇总：</label>
+                 	  <input type="checkbox" id="ishz" value=""  />
+                 	</div>
+                 	<div id="btndiv">
+                     <button id="searchbtn" class="btn purple">
+                       查询 <i class="halflings-icon white search"></i>
+                     </button>
+                 	</div>
+								</div>
+								<table id="saillist" class="normal-table table-hover" cellpadding="0" cellspacing="0">
+									<thead><tr>
+										<th>日期</th>
+										<th>彩种名称</th>
+										<th>销售金额</th>
+									</tr></thead>
+									<tbody>
+										<tr>
+											<td>2014-06-11</td>
+											<td>双色球</td>
+											<td>￥342</td>
+										</tr>
+										<tr>
+											<td>2014-06-12</td>
+											<td>大乐透</td>
+											<td>￥342</td>
+										</tr>
+									</tbody>
+									<tfoot><tr>
+										<td colspan="3">
+											<div class="paging">
+												<div class="show-num-info">
+													显示&nbsp;<span class="min-count">X</span>
+													&nbsp;到&nbsp;<span class="max-count">Y</span>
+													&nbsp;共<span class="sub-count">Z</span>&nbsp;条
+												</div>
+												<div class="paging-btn pagination">
+													<ul>
+														<li class="prev-btn"><a>上一页</a></li>
+														<li class="prev-num"><a>1</a></li>
+														<li class="cur-num active"><a>2</a></li>
+														<li class="next-num"><a>3</a></li>
+														<li class="next-btn"><a>下一页</a></li>
+													</ul>
+												</div>
+											</div>
+										</td>
+									</tr></tfoot>
+								</table>
+							</div>
+						</div>
+						<!-- END EXAMPLE TABLE PORTLET-->
+					</div>
+				</div>
+				<!-- END PAGE CONTENT-->
+			</div>
+			<!-- END PAGE CONTAINER-->
+		</div>
+		<!-- END PAGE -->
+	</div>
+	<!-- END CONTAINER -->
+	<!-- BEGIN FOOTER -->
+	<div class="footer">
+		Copyright © 2013-2014 www.159cai.com.
+		<div class="span pull-right">
+			<span class="go-top"><i class="icon-angle-up"></i></span>
+		</div>
+	</div>
+	<!-- END FOOTER -->
+	
+	<div id="warningdialog" title="友情提示">
+		<p></p>
+	</div>
+</body>
+<!-- END BODY -->
+</html>

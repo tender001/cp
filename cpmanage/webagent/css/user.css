@@ -1,0 +1,60 @@
+@charset "utf-8";
+#userlist th,
+#userlist td {
+	text-align: center;
+}
+
+#sdatediv,
+#edatediv,
+#ncdiv,
+#checkdiv,
+#btndiv {
+	float: left;
+	margin-left: 5px;
+}
+
+#sdatediv,
+#edatediv {
+	width: 240px;
+}
+
+#ncdiv {
+	width: 235px;
+}
+
+#checkdiv {
+	width: 120px;
+}
+
+#sdatediv > *,
+#edatediv > *,
+#ncdiv > *,
+#checkdiv > *,
+#btndiv > * {
+	margin-right: 5px;
+	float: left;
+}
+
+#sdatediv > label,
+#edatediv > label,
+#ncdiv > label,
+#checkdiv > label,
+#btndiv > label {
+	margin-top: 6px;
+}
+
+#checkdiv > .checker {
+	margin-top: 7px;
+}
+
+.xiayi-tubiao {
+	margin-top: 4px;
+}
+
+.ui-datepicker-trigger {
+	margin-left: -6px;
+	height: 34px;
+	-moz-border-radius: 0;
+    -webkit-border-radius: 0;
+    border-radius: 0; 
+}

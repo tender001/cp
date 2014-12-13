@@ -1,0 +1,9 @@
+@charset "utf-8";
+#money-pct-info th,
+#money-pct-info td {
+	text-align: center;
+}
+
+.xiayi-tubiao {
+	margin-top: 4px;
+}

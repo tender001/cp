@@ -1,0 +1,216 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>方案信息查询</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="../images/skin.css" rel="stylesheet" type="text/css" />
+<link type="text/css" rel="stylesheet" href="../css/jquery.modaldialog.css" />
+<link rel="stylesheet" type="text/css" href="../jquery.confirm/jquery.confirm.css" />
+<link type='text/css' href='../css/basic.css' rel='stylesheet' media='screen' />
+<style type="text/css">
+<!--
+body {
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	background-color: #EEF2FB;
+	font-size: 12px;
+}
+-->
+</style>
+<script type="text/javascript" src="../js/jquery-1.5.2.js"></script>
+<script type="text/javascript" language="JavaScript" src="../jquery.confirm/jquery.confirm.js"></script>
+<script type="text/javascript" language="JavaScript" src="../js/jquery.modaldialog.js"></script>
+<script type="text/javascript" language="JavaScript" src="../js/jquery.simplemodal.js"></script>
+<script type="text/javascript" language="JavaScript" src="../js/jquery.xmlext.js"></script>
+<script type="text/javascript" src="../js/datepicker/WdatePicker.js" ></script>
+<script type="text/javascript" src="../js/tool.js?v=1.1.0.0"></script>
+<script type="text/javascript" src="../js/project/pinfo.js"></script>
+<script type="text/javascript" language="javascript">
+
+</script>
+</head>
+<body>
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+  <tr>
+    <td width="17" valign="top" background="../images/mail_leftbg.gif"><img src="../images/left-top-right.gif" width="17" height="29" /></td>
+    <td valign="top" background="../images/content-bg.gif"><table width="100%" height="31" border="0" cellpadding="0" cellspacing="0" class="left_topbg" id="table2">
+      <tr>
+        <td height="31"><div class="titlebt" style="text-indent:5px">方案信息查询</div></td>
+      </tr>
+    </table></td>
+    <td width="16" valign="top" background="../images/mail_rightbg.gif"><img src="../images/nav-right-bg.gif" width="16" height="29" /></td>
+  </tr>
+  <tr>
+    <td valign="middle" background="../images/mail_leftbg.gif">&nbsp;</td>
+    <td valign="top" bgcolor="#F7F8F9" height="500">
+    <table width="98%" border="0" align="center" cellpadding="0" cellspacing="0">
+      <tr>
+        <td valign="top" height="550">
+          <TABLE width=20% border=0 cellPadding=0 cellSpacing=0 id=secTable>
+            <TBODY>
+              <TR align=middle height=20>
+                <TD align="center" class=sec2 onclick=secBoard(0)>基本信息</TD>
+                <TD align="center" class=sec1 onclick=secBoard(1)>认购记录</TD>
+              </TR>
+            </TBODY>
+          </TABLE>
+          <TABLE class=main_tab id=mainTable cellSpacing=0 cellPadding=0 width=100% border=0>
+          	<input type="hidden" id="h_gid" /><input type="hidden" id="h_hid" />
+            <TBODY style="DISPLAY: block">
+               <TR>
+                 <TD height="25" bgcolor="#FAFBFC" width='930'>【基本信息查询】 &nbsp;<input type='button' id='btn_project' value='查询' /></TD>
+               </TR>
+               <TR><td height="2"><table width="100%" height="1" border="0" cellpadding="0" cellspacing="0" bgcolor="#CCCCCC"><tr><td></td></tr></table></td></TR>
+               <TR><TD height="25" bgcolor="#FAFBFC"></TD></TR>
+               <TR>
+                 <TD height="25" bgcolor="#FAFBFC">
+                 	<table border=1 class="xtable" width="100%" id='table_project'>
+                 		<tr align="center">
+	                 		<td width='10%'>期次编号</td>
+	                 		<td width='40%' id='cperiodid'></td>
+	                 		<td width='10%'>是否派奖</td>
+	                 		<td width='40%' id='pname'></td>
+                 		</tr>
+                 		<tr align="center">
+	                 		<td width='10%'>方案编号</td>
+	                 		<td width='40%' id='cprojid'></td>
+	                 		<td width='10%'>中奖金额</td>
+	                 		<td width='40%' id='ibonus'></td>
+                 		</tr>
+                 		<tr align="center">
+	                 		<td width='10%'>发起人</td>
+	                 		<td width='40%' id='cnickid'></td>
+	                 		<td width='10%'>投注倍数</td>
+	                 		<td width='40%' id='imulity'></td>
+                 		</tr>
+                 		<tr align="center">
+	                 		<td width='10%'>方案金额</td>
+	                 		<td width='40%' id='itmoney'></td>
+	                 		<td width='10%'>截至时间</td>
+	                 		<td width='40%' id='cendtime'></td>
+                 		</tr>
+                 		<tr align="center">
+	                 		<td width='10%'>是否结算</td>
+	                 		<td width='40%' id='jname'></td>
+	                 		<td width='10%'>是否出票</td>
+	                 		<td width='40%' id='cname'></td>
+                 		</tr>
+                 		<tr align="center">
+	                 		<td width='10%'>是否上传</td>
+	                 		<td width='40%' id='upname'></td>
+	                 		<td width='10%'>投注时间</td>
+	                 		<td width='40%' id='cadddate'></td>
+                 		</tr>
+                 		<tr align="center">
+	                 		<td width='10%'>方案进度</td>
+	                 		<td width='40%' id='ijindu'></td>
+	                 		<td width='10%'>方案状态</td>
+	                 		<td width='40%' id='sname'></td>
+                 		</tr>
+                 		<tr align="center">
+	                 		<td width='10%'>投注号码</td>
+	                 		<td width='90%' id='ccodes' colspan="3"></td>
+                 		</tr>
+                 		<tr align="center">
+	                 		<td width='10%'>投注场次</td>
+	                 		<td width='90%' id='cmatchs' colspan="3"></td>
+                 		</tr>
+                 		<tr align="center">
+	                 		<td width='10%'>方案标题</td>
+	                 		<td width='40%'>
+	                 		<textarea rows="3" id="ctitle"></textarea>
+	                 		</td>
+	                 		<td width='10%'>方案描述</td>
+	                 		<td width='40%'>
+	                 		<textarea rows="3" id="cdesc"></textarea>
+	                 		</td>
+                 		</tr>
+                 		<tr align="center">
+	                 		<td colspan="4"><input type="button" id="btnTDChange" value="修改(标题,描述)" /></td>
+                 		</tr>
+                 	</table>
+                 	<table border=1 class="xtable" width="100%" style="display: none" id='table_zh'>
+                 		<tr align="center">
+	                 		<td width='10%'>期次编号</td>
+	                 		<td width='40%' id='cperiodid'></td>
+	                 		<td width='10%'>投注金额</td>
+	                 		<td width='40%' id='icmoney'></td>
+                 		</tr>
+                 		<tr align="center">
+	                 		<td width='10%'>明细编号</td>
+	                 		<td width='40%' id='idetailid'></td>
+	                 		<td width='10%'>投注时间</td>
+	                 		<td width='40%' id='cadddate'></td>
+                 		</tr>
+                 		<tr align="center">
+	                 		<td width='10%'>追号编号</td>
+	                 		<td width='40%' id='czhid'></td>
+	                 		<td width='10%'>追号状态</td>
+	                 		<td width='40%' id='sname'></td>
+                 		</tr>
+                 		<tr align="center">
+	                 		<td width='10%'>发起人</td>
+	                 		<td width='40%' id='cnickid'></td>
+	                 		<td width='10%'>是否结算</td>
+	                 		<td width='40%' id='jname'></td>
+                 		</tr>
+                 		<tr align="center">
+	                 		<td width='10%'>投注倍数</td>
+	                 		<td width='40%' id='imulity'></td>
+	                 		<td width='10%'>是否派奖</td>
+	                 		<td width='40%' id='pname'></td>
+                 		</tr>
+                 		<tr align="center">
+	                 		<td width='10%'>中奖金额</td>
+	                 		<td width='40%' id='iamoney'></td>
+	                 		<td width='10%'>开奖号码</td>
+	                 		<td width='40%' id='cawardcode'></td>
+                 		</tr>
+                 		<tr align="center">
+	                 		<td width='10%'>投注号码</td>
+	                 		<td width='90%' id='ccodes' colspan="3"></td>
+                 		</tr>
+                 	</table>
+                 </TD>
+               </TR>
+            </TBODY>
+            <TBODY style="DISPLAY: none">
+               <TR>
+                 <TD height="25" bgcolor="#FAFBFC" width='930'>【购买记录】 &nbsp;
+				 &nbsp;用户名:<input type="text" id="txtUid" />
+                 <input type='button' id='btn_buy' value='查询' /></TD>
+               </TR>
+               <TR><td height="2"><table width="100%" height="1" border="0" cellpadding="0" cellspacing="0" bgcolor="#CCCCCC"><tr><td></td></tr></table></td></TR>
+               <TR><TD height="25" bgcolor="#FAFBFC"></TD></TR>
+               <TR>
+                 <TD height="500" bgcolor="#FAFBFC" valign="top" id="table_buy_detail">
+                 	
+                 </TD>
+               </TR>
+            </TBODY>
+          </TABLE>
+        </td>
+      </tr>
+      <tr>
+        <td height="10"><table width="100%" height="1" border="0" cellpadding="0" cellspacing="0" bgcolor="#CCCCCC">
+          <tr>
+            <td></td>
+          </tr>
+        </table></td>
+      </tr>
+      <tr>
+        <td class="left_txt">说明：</td>
+      </tr>
+    </table></td>
+    <td background="../images/mail_rightbg.gif">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="bottom" background="../images/mail_leftbg.gif"><img src="../images/buttom_left2.gif" width="17" height="17" /></td>
+    <td background="../images/buttom_bgs.gif"><img src="../images/buttom_bgs.gif" width="17" height="17"></td>
+    <td valign="bottom" background="../images/mail_rightbg.gif"><img src="../images/buttom_right2.gif" width="16" height="17" /></td>
+  </tr>
+</table>
+</body>
+</html>

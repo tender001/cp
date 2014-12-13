@@ -1,0 +1,552 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>用户信息</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="../images/skin.css" rel="stylesheet" type="text/css" />
+<link type="text/css" rel="stylesheet" href="../css/jquery.modaldialog.css" />
+<link rel="stylesheet" type="text/css" href="../jquery.confirm/jquery.confirm.css" />
+<link type='text/css' href='../css/basic.css' rel='stylesheet' media='screen' />
+<style type="text/css">
+<!--
+body {
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	background-color: #EEF2FB;
+	font-size: 12px;
+}
+-->
+</style>
+<script type="text/javascript" src="../js/jquery-1.5.2.js"></script>
+<script type="text/javascript" language="JavaScript" src="../jquery.confirm/jquery.confirm.js"></script>
+<script type="text/javascript" language="JavaScript" src="../js/jquery.modaldialog.js"></script>
+<script type="text/javascript" language="JavaScript" src="../js/jquery.simplemodal.js"></script>
+<script type="text/javascript" language="JavaScript" src="../js/jquery.xmlext.js"></script>
+<script type="text/javascript" src="../js/datepicker/WdatePicker.js" ></script>
+<script type="text/javascript" src="../js/tool.js?v=1.1.0.0"></script>
+<script type="text/javascript" src="../js/user/user.js"></script>
+<script type="text/javascript" language="javascript">
+
+</script>
+</head>
+<body>
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+  <tr>
+    <td width="17" valign="top" background="../images/mail_leftbg.gif"><img src="../images/left-top-right.gif" width="17" height="29" /></td>
+    <td valign="top" background="../images/content-bg.gif"><table width="100%" height="31" border="0" cellpadding="0" cellspacing="0" class="left_topbg" id="table2">
+      <tr>
+        <td height="31"><div class="titlebt">用户信息</div></td>
+      </tr>
+    </table></td>
+    <td width="16" valign="top" background="../images/mail_rightbg.gif"><img src="../images/nav-right-bg.gif" width="16" height="29" /></td>
+  </tr>
+  <tr>
+    <td valign="middle" background="../images/mail_leftbg.gif">&nbsp;</td>
+    <td valign="top" bgcolor="#F7F8F9" height="500">
+    <table width="98%" border="0" align="center" cellpadding="0" cellspacing="0">
+      <tr>
+        <td valign="top" height="550">
+          <TABLE width=72% border=0 cellPadding=0 cellSpacing=0 id=secTable>
+            <TBODY>
+              <TR align=middle height=20>
+                <TD align="center" class=sec2 onclick=secBoard(0)>基本信息</TD>
+                <TD align="center" class=sec1 onclick=secBoard(1)>账户信息</TD>
+                <TD align="center" class=sec1 onclick=secBoard(2)>账户明细</TD>
+                <TD align="center" class=sec1 onclick=secBoard(3)>充值信息</TD>
+                <TD align="center" class=sec1 onclick=secBoard(4)>提现信息</TD>
+                <TD align="center" class=sec1 onclick=secBoard(5)>投注记录</TD>
+                <TD align="center" class=sec1 onclick=secBoard(6)>认购记录</TD>
+                <TD align="center" class=sec1 onclick=secBoard(7)>追号信息</TD>
+                <TD align="center" class=sec1 onclick=secBoard(8)>战绩信息</TD>
+                <TD align="center" class=sec1 onclick=secBoard(9)>我的跟单</TD>
+                <TD align="center" class=sec1 onclick=secBoard(10)>跟我的单</TD>
+                <TD align="center" class=sec1 onclick=secBoard(11)>自动跟单记录</TD>
+              </TR>
+            </TBODY>
+          </TABLE>
+          <TABLE class=main_tab id=mainTable cellSpacing=0 cellPadding=0 width=100% border=0>
+            <TBODY style="DISPLAY: block">
+               <TR>
+                 <TD height="25" bgcolor="#FAFBFC" width='930'>
+                 	【用户信息查询】 &nbsp;<input type='button' id='btn_user' value='查询' />&nbsp;&nbsp;&nbsp;&nbsp;
+                 	发展代理：&nbsp;&nbsp;代理商名称:<input type='text' id='tagent' /><input type='button' id='btn_charge_agent' value='发展代理' />
+                 </TD>
+               </TR>
+               <TR><td height="2"><table width="100%" height="1" border="0" cellpadding="0" cellspacing="0" bgcolor="#CCCCCC"><tr><td></td></tr></table></td></TR>
+               <TR><TD height="25" bgcolor="#FAFBFC"></TD></TR>
+               <TR>
+                 <TD height="25" bgcolor="#FAFBFC">
+                 	<table border=1 class="xtable" width="100%" id='td_userinfo'>
+                 		<tr align="center">
+	                 		<td width='10%'>登录昵称</td>
+	                 		<td width='20%' id='cnickid'></td>
+	                 		<td width='10%'></td>
+	                 		<td width='10%'></td>
+	                 		<td width='10%'>密码保护答案</td>
+	                 		<td width='20%' id='canswer'></td>
+	                 		<td width='10%'><input type='button' value='修改' onclick="user_mdf('update_answer','canswer','修改密码保护答案')"/></td>
+	                 		<td width='10%'></td>
+                 		</tr>
+                 		<tr align="center">
+	                 		<td>用户姓名</td>
+	                 		<td id='crealname'></td>
+	                 		<td><input type='button' value='修改' onclick="user_mdf('update_realname','crealname','修改真实姓名')"/></td>
+	                 		<td></td>
+	                 		<td>用户性别</td>
+	                 		<td id='igender'></td>
+	                 		<td></td>
+	                 		<td></td>
+                 		</tr>
+                 		<tr align="center">
+	                 		<td>登录密码</td>
+	                 		<td id='cpassword'></td>
+	                 		<td><input type='button' value='重置' onclick="user_resetpwd('update_userpass')"/></td>
+	                 		<td></td>
+	                 		<td>联系电话</td>
+	                 		<td id='ctelephone'></td>
+	                 		<td><input type='button' value='修改' onclick="user_mdf('update_telephone','ctelephone','修改联系电话')"/></td>
+	                 		<td><input type='button' value='查询' onclick="user_get('query_user_info_telephone','ctelephone')"/></td>
+                 		</tr>
+                 		<tr align="center">
+	                 		<td>身份证号码</td>
+	                 		<td id='cidcard'></td>
+	                 		<td><input type='button' value='修改' onclick="user_mdf('update_idcard','cidcard','修改身份证号码')"/></td>
+	                 		<td></td>
+	                 		<td>QQ号码</td>
+	                 		<td id='cimno'></td>
+	                 		<td><input type='button' value='修改' onclick="user_mdf('update_imno','cimno','修改QQ号码')"/></td>
+	                 		<td><input type='button' value='查询' onclick="user_get('query_user_info_imno','cimno')"/></td>
+                 		</tr>
+                 		<tr align="center">
+	                 		<td id="imobbind">手机号码</td>
+	                 		<td id='cmobileno'></td>
+	                 		<td><input type='button' value='修改' onclick="user_mdf('update_mobileno','cmobileno','修改绑定手机号码')"/></td>
+	                 		<td><input type='button' value='查询' onclick="user_get('query_user_info_mobileno','cmobileno')"/></td>
+	                 		<td>居住地省份</td>
+	                 		<td id='caddrpro'></td>
+	                 		<td><input type='button' value='修改' onclick="user_mdf('update_addrpro','caddrpro','修改居住省份')"/></td>
+	                 		<td></td>
+                 		</tr>
+                 		<tr align="center">
+	                 		<td id="imailbind">邮件地址</td>
+	                 		<td id='cemailaddr'></td>
+	                 		<td><input type='button' value='修改' onclick="user_mdf('update_emailaddr','cemailaddr','修改邮件地址')"/></td>
+	                 		<td><input type='button' value='查询' onclick="user_get('query_user_info_emailaddr','cemailaddr')"/></td>
+	                 		<td>居住地市</td>
+	                 		<td id='caddrcity'></td>
+	                 		<td><input type='button' value='修改' onclick="user_mdf('update_addrcity','caddrcity','修改居住城市')"/></td>
+	                 		<td></td>
+                 		</tr>
+                 		<tr align="center">
+	                 		<td>代理商编号</td>
+	                 		<td id='cagentid'></td>
+	                 		<td><input type='button' value='修改' onclick="user_mdf('update_agentid','cagentid','修改代理商编号')"/></td>
+	                 		<td></td>
+	                 		<td>居住地址</td>
+	                 		<td id='caddress'></td>
+	                 		<td><input type='button' value='修改' onclick="user_mdf('update_address','caddress','修改联系地址')"/></td>
+	                 		<td></td>
+                 		</tr>
+                 		<tr align="center">
+	                 		<td>账户状态</td>
+	                 		<td id='istate'></td>
+	                 		<td><input type='button' value='修改' onclick="user_mdf('update_istate','istate','修改用户状态')"/></td>
+	                 		<td></td>
+	                 		<td>银行名称</td>
+	                 		<td id='cbankcode'></td>
+	                 		<td></td>
+	                 		<td></td>
+                 		</tr>
+                 		<tr align="center">
+	                 		<td>用户等级</td>
+	                 		<td id='ilevel'></td>
+	                 		<td></td>
+	                 		<td></td>
+	                 		<td>银行卡号</td>
+	                 		<td id='cbankcard'></td>
+	                 		<td><input type='button' value='修改' onclick="user_mdf('update_bankcard','cbankcard','修改银行卡号')"/></td>
+	                 		<td></td>
+                 		</tr>
+                 		<tr align="center">
+	                 		<td>注册日期</td>
+	                 		<td id='cadddate'></td>
+	                 		<td></td>
+	                 		<td></td>
+	                 		<td>支行名称</td>
+	                 		<td id='cbankname'></td>
+	                 		<td><input type='button' value='修改' onclick="user_mdf('update_bankname','cbankname','修改银行名称')"/></td>
+	                 		<td></td>
+                 		</tr>
+                 		<tr align="center">
+	                 		<td>活动日期</td>
+	                 		<td id='cactivedate'></td>
+	                 		<td></td>
+	                 		<td></td>
+	                 		<td>银行所在省份</td>
+	                 		<td id='cbankpro'></td>
+	                 		<td></td>
+	                 		<td></td>
+                 		</tr>
+                 		<tr align="center">
+	                 		<td>密码保护问题</td>
+	                 		<td id='crequest'></td>
+	                 		<td><input type='button' value='修改' onclick="user_mdf('update_request','crequest','修改密码保护问题')"/></td>
+	                 		<td></td>
+	                 		<td>银行所在市</td>
+	                 		<td id='cbankcity'></td>
+	                 		<td></td>
+	                 		<td></td>
+                 		</tr>
+                 		<tr align="center">
+	                 		<td>白名单</td>
+	                 		<td id='iopen'></td>
+	                 		<td><input type='button' value='修改' onclick="user_mdf('update_iopen','iopen','修改白名单')"/></td>
+	                 		<td></td>
+	                 		<td>银行所在市</td>
+	                 		<td id='cbankcity'></td>
+	                 		<td></td>
+	                 		<td></td>
+                 		</tr>
+                 	</table>
+                 </TD>
+               </TR>
+            </TBODY>
+            <TBODY style="DISPLAY: none">
+               <TR>
+                 <TD height="25" bgcolor="#FAFBFC" width='930'>【用户账户查询】 &nbsp;<input type='button' id='btn_user_account' value='查询' /></TD>
+               </TR>
+               <TR><td height="2"><table width="100%" height="1" border="0" cellpadding="0" cellspacing="0" bgcolor="#CCCCCC"><tr><td></td></tr></table></td></TR>
+               <TR><TD height="25" bgcolor="#FAFBFC"></TD></TR>
+               <TR>
+                 <TD height="25" bgcolor="#FAFBFC">
+                 	<table border=1 class="xtable" width="100%" id='td_user_account'>
+                 		<tr align="center">
+	                 		<td width='20%'>账户余额</td>
+	                 		<td width='30%' id='ibalance'></td>
+	                 		<td width='20%'>代购中奖</td>
+	                 		<td width='30%' id='iaward'></td>
+                 		</tr>
+                 		<tr align="center">
+	                 		<td>冻结金额</td>
+	                 		<td id='ifreeze'></td>
+	                 		<td>合买中奖</td>
+	                 		<td id='ihmaward'></td>
+                 		</tr>
+                 		<tr align="center">
+	                 		<td>代购总额</td>
+	                 		<td id='idaigou'></td>
+	                 		<td>追号中奖</td>
+	                 		<td id='izhaward'></td>
+                 		</tr>
+                 		<tr align="center">
+	                 		<td>合买金额</td>
+	                 		<td id='ihemai'></td>
+	                 		<td>合买提成</td>
+	                 		<td id='ihmget'></td>
+                 		</tr>
+                 		<tr align="center">
+	                 		<td>追号金额</td>
+	                 		<td id='izhuihao'></td>
+	                 		<td>充值总额</td>
+	                 		<td id='ifill'></td>
+                 		</tr>
+                 		<tr align="center">
+	                 		<td>认购总额</td>
+	                 		<td id='ijoin'></td>
+	                 		<td>提现总额</td>
+	                 		<td id='icash'></td>
+                 		</tr>
+                 	</table>
+                 </TD>
+               </TR>
+            </TBODY>
+            <TBODY style="DISPLAY: none">
+               <TR>
+                 <TD height="25" bgcolor="#FAFBFC" width='930'>
+					<table width="100%" height="60" border="0" cellpadding="0" cellspacing="0" id="table_user_charge_where">
+			          <tr>
+			            <td>
+	                 	【用户资金查询】 &nbsp;&nbsp;
+	                 	</td>
+	                 	<td>
+		            	开始时间：<input type="text" size="20" class="Wdate" onclick="WdatePicker({minDate:'%y-#{%M-3}-%d',maxDate:'%y-%M-%d'})" value="" id="f_date" name="f_date"/> &nbsp;&nbsp;
+		            	结束时间：<input type="text" size="20" class="Wdate" onclick="WdatePicker({minDate:'%y-#{%M-3}-%d',maxDate:'%y-%M-%d'})" value="" id="t_date" name="t_date"/> &nbsp;&nbsp;
+		            	方案：<input type="text" size="20" id='txtProj' />&nbsp;&nbsp;
+			            </td>
+			          </tr>
+			          <tr>
+			            <td>&nbsp;</td>
+	                 	<td>
+		            	交易类型：<select id='cboBiztype'></select>&nbsp;&nbsp;
+		            	汇总：<input type="checkbox" id="chk" />&nbsp;&nbsp;
+	                 	<input type='button' id='btn_user_charge' value='查询' />
+			            </td>
+			          </tr>
+			        </table>
+			      </TD>
+               </TR>
+               <TR><td height="2"><table width="100%" height="1" border="0" cellpadding="0" cellspacing="0" bgcolor="#CCCCCC"><tr><td></td></tr></table></td></TR>
+               <TR><TD height="25" bgcolor="#FAFBFC"></TD></TR>
+               <TR>
+                 <TD height="400" bgcolor="#FAFBFC" id='table_user_charge' valign="top">
+                 	
+                 </TD>
+               </TR>
+            </TBODY>
+            <TBODY style="DISPLAY: none">
+               <TR>
+                 <TD height="25" bgcolor="#FAFBFC" width='930'>
+					<table width="100%" height="60" border="0" cellpadding="0" cellspacing="0" id="table_user_pay_where">
+			          <tr>
+			            <td>
+	                 	【用户充值查询】 &nbsp;&nbsp;
+		            	是否成功：<input type="checkbox" id="chk" />&nbsp;&nbsp;
+	                 	<input type='button' id='btn_user_pay' value='查询' />
+			            </td>
+			          </tr>
+			        </table>
+                 </TD>
+               </TR>
+               <TR><td height="2"><table width="100%" height="1" border="0" cellpadding="0" cellspacing="0" bgcolor="#CCCCCC"><tr><td></td></tr></table></td></TR>
+               <TR><TD height="25" bgcolor="#FAFBFC"></TD></TR>
+               <TR>
+                 <TD height="400" bgcolor="#FAFBFC" id='table_user_pay' valign="top">
+                 	
+                 </TD>
+               </TR>
+            </TBODY>
+            <TBODY style="DISPLAY: none">
+               <TR>
+                 <TD height="25" bgcolor="#FAFBFC" width='930'>【用户提现查询】 &nbsp;<input type='button' id='btn_user_cash' value='查询' /></TD>
+               </TR>
+               <TR><td height="2"><table width="100%" height="1" border="0" cellpadding="0" cellspacing="0" bgcolor="#CCCCCC"><tr><td></td></tr></table></td></TR>
+               <TR><TD height="25" bgcolor="#FAFBFC"></TD></TR>
+               <TR>
+                 <TD height="400" bgcolor="#FAFBFC" id='table_user_cash' valign="top">
+                 	
+                 </TD>
+               </TR>
+            </TBODY>
+            <TBODY style="DISPLAY: none">
+               <TR>
+                 <TD height="25" bgcolor="#FAFBFC" width='930'>
+                 	<table width="100%" height="60" border="0" cellpadding="0" cellspacing="0" id="table_user_project_where">
+			          <tr>
+			            <td>
+	                 	【用户方案查询】 &nbsp;&nbsp;
+	                 	</td>
+	                 	<td>
+	                 	彩种：<select id="cboName"></select>
+		            	开始时间：<input type="text" size="20" class="Wdate" onclick="WdatePicker({minDate:'%y-#{%M-3}-%d',maxDate:'%y-%M-%d'})" value="" id="f_date" name="f_date"/> &nbsp;&nbsp;
+		            	结束时间：<input type="text" size="20" class="Wdate" onclick="WdatePicker({minDate:'%y-#{%M-3}-%d',maxDate:'%y-%M-%d'})" value="" id="t_date" name="t_date"/> &nbsp;&nbsp;
+			            </td>
+			          </tr>
+			          <tr>
+			            <td>&nbsp;</td>
+	                 	<td>
+		            	方案：<input type="text" size="20" id='txtProj' />&nbsp;&nbsp;
+		            	<input type='button' id='btn_user_project' value='查询' />
+			            </td>
+			          </tr>
+			        </table>
+                 </TD>
+               </TR>
+               <TR><td height="2"><table width="100%" height="1" border="0" cellpadding="0" cellspacing="0" bgcolor="#CCCCCC"><tr><td></td></tr></table></td></TR>
+               <TR><TD height="25" bgcolor="#FAFBFC"></TD></TR>
+               <TR>
+                 <TD height="400" bgcolor="#FAFBFC" id='table_user_project' valign="top">
+                 	
+                 </TD>
+               </TR>
+            </TBODY>
+            <TBODY style="DISPLAY: none">
+               <TR>
+                 <TD height="25" bgcolor="#FAFBFC" width='930'>
+                 	<table width="100%" height="60" border="0" cellpadding="0" cellspacing="0" id="table_user_probuy_where">
+			          <tr>
+			            <td>
+	                 	【用户购彩查询】 &nbsp;&nbsp;
+	                 	</td>
+	                 	<td>
+	                 	彩种：<select id="cboName"></select>
+		            	开始时间：<input type="text" size="20" class="Wdate" onclick="WdatePicker({minDate:'%y-#{%M-3}-%d',maxDate:'%y-%M-%d'})" value="" id="f_date" name="f_date"/> &nbsp;&nbsp;
+		            	结束时间：<input type="text" size="20" class="Wdate" onclick="WdatePicker({minDate:'%y-#{%M-3}-%d',maxDate:'%y-%M-%d'})" value="" id="t_date" name="t_date"/> &nbsp;&nbsp;
+			            </td>
+			          </tr>
+			          <tr>
+			            <td>&nbsp;</td>
+	                 	<td>
+		            	方案：<input type="text" size="20" id='txtProj' />&nbsp;&nbsp;
+		            	<input type='button' id='btn_user_probuy' value='查询' />
+			            </td>
+			          </tr>
+			        </table>
+                 </TD>
+               </TR>
+               <TR><td height="2"><table width="100%" height="1" border="0" cellpadding="0" cellspacing="0" bgcolor="#CCCCCC"><tr><td></td></tr></table></td></TR>
+               <TR><TD height="25" bgcolor="#FAFBFC"></TD></TR>
+               <TR>
+                 <TD height="400" bgcolor="#FAFBFC" id='table_user_probuy' valign="top">
+                 	
+                 </TD>
+               </TR>
+            </TBODY>
+            <TBODY style="DISPLAY: none">
+               <TR>
+                 <TD height="25" bgcolor="#FAFBFC" width='930'>
+                 	<table width="100%" height="60" border="0" cellpadding="0" cellspacing="0" id="table_user_zh_where">
+			          <tr>
+			            <td>
+	                 	【用户追号查询】 &nbsp;&nbsp;
+	                 	</td>
+	                 	<td>
+	                 	彩种：<select id="cboName"></select>
+		            	开始时间：<input type="text" size="20" class="Wdate" onclick="WdatePicker({minDate:'%y-#{%M-3}-%d',maxDate:'%y-%M-%d'})" value="" id="f_date" name="f_date"/> &nbsp;&nbsp;
+		            	结束时间：<input type="text" size="20" class="Wdate" onclick="WdatePicker({minDate:'%y-#{%M-3}-%d',maxDate:'%y-%M-%d'})" value="" id="t_date" name="t_date"/> &nbsp;&nbsp;
+			            </td>
+			          </tr>
+			          <tr>
+			            <td>&nbsp;</td>
+	                 	<td>
+		            	方案：<input type="text" size="20" id='txtProj' />&nbsp;&nbsp;
+		            	<input type='button' id='btn_user_zh' value='查询' />
+			            </td>
+			          </tr>
+			        </table>
+                 </TD>
+               </TR>
+               <TR><td height="2"><table width="100%" height="1" border="0" cellpadding="0" cellspacing="0" bgcolor="#CCCCCC"><tr><td></td></tr></table></td></TR>
+               <TR><TD height="25" bgcolor="#FAFBFC"></TD></TR>
+               <TR>
+                 <TD height="400" bgcolor="#FAFBFC" id='table_user_zh' valign="top">
+                 	
+                 </TD>
+               </TR>
+            </TBODY>
+            <TBODY style="DISPLAY: none">
+               <TR>
+                 <TD height="25" bgcolor="#FAFBFC" width='930'>【用户战绩查询】 &nbsp;<input type='button' id='btn_user_zhanji' value='查询' /></TD>
+               </TR>
+               <TR><td height="2"><table width="100%" height="1" border="0" cellpadding="0" cellspacing="0" bgcolor="#CCCCCC"><tr><td></td></tr></table></td></TR>
+               <TR><TD height="25" bgcolor="#FAFBFC"></TD></TR>
+               <TR>
+                 <TD height="400" bgcolor="#FAFBFC" id='table_user_zhanji' valign="top">
+                 	
+                 </TD>
+               </TR>
+            </TBODY>
+            <TBODY style="DISPLAY: none">
+               <TR>
+                 <TD height="25" bgcolor="#FAFBFC" width='930'>【用户跟单查询】 &nbsp;<input type='button' id='btn_user_autobuy' value='查询' /></TD>
+               </TR>
+               <TR><td height="2"><table width="100%" height="1" border="0" cellpadding="0" cellspacing="0" bgcolor="#CCCCCC"><tr><td></td></tr></table></td></TR>
+               <TR><TD height="25" bgcolor="#FAFBFC"></TD></TR>
+               <TR>
+                 <TD height="400" bgcolor="#FAFBFC" id='table_user_autobuy' valign="top">
+                 	
+                 </TD>
+               </TR>
+            </TBODY>
+            <TBODY style="DISPLAY: none">
+               <TR>
+                 <TD height="25" bgcolor="#FAFBFC" width='930'>【用户被跟单查询】 &nbsp;<input type='button' id='btn_user_autoed' value='查询' /></TD>
+               </TR>
+               <TR><td height="2"><table width="100%" height="1" border="0" cellpadding="0" cellspacing="0" bgcolor="#CCCCCC"><tr><td></td></tr></table></td></TR>
+               <TR><TD height="25" bgcolor="#FAFBFC"></TD></TR>
+               <TR>
+                 <TD height="400" bgcolor="#FAFBFC" id='table_user_autoed' valign="top">
+                 	
+                 </TD>
+               </TR>
+            </TBODY>
+            <TBODY style="DISPLAY: none">
+               <TR>
+                 <TD height="25" bgcolor="#FAFBFC" width='930'>
+                 	<table width="100%" height="60" border="0" cellpadding="0" cellspacing="0" id="table_user_autorec_where">
+			          <tr>
+			            <td>
+	                 	【用户自动跟单记录查询】 &nbsp;&nbsp;
+	                 	</td>
+	                 	<td>
+		            	开始时间：<input type="text" size="20" class="Wdate" onclick="WdatePicker({minDate:'%y-#{%M-3}-%d',maxDate:'%y-%M-%d'})" value="" id="f_date" name="f_date"/> &nbsp;&nbsp;
+		            	结束时间：<input type="text" size="20" class="Wdate" onclick="WdatePicker({minDate:'%y-#{%M-3}-%d',maxDate:'%y-%M-%d'})" value="" id="t_date" name="t_date"/> &nbsp;&nbsp;
+			            </td>
+			          </tr>
+			          <tr>
+			            <td>&nbsp;</td>
+	                 	<td>
+		            	方案：<input type="text" size="20" id='txtProj' />&nbsp;&nbsp;
+		            	<input type='button' id='btn_user_autorec' value='查询' />
+			            </td>
+			          </tr>
+			        </table>
+                 </TD>
+               </TR>
+               <TR><td height="2"><table width="100%" height="1" border="0" cellpadding="0" cellspacing="0" bgcolor="#CCCCCC"><tr><td></td></tr></table></td></TR>
+               <TR><TD height="25" bgcolor="#FAFBFC"></TD></TR>
+               <TR>
+                 <TD height="400" bgcolor="#FAFBFC" id='table_user_autorec' valign="top">
+                 	
+                 </TD>
+               </TR>
+            </TBODY>
+          </TABLE>
+        </td>
+      </tr>
+      <tr>
+        <td height="10"><table width="100%" height="1" border="0" cellpadding="0" cellspacing="0" bgcolor="#CCCCCC">
+          <tr>
+            <td></td>
+          </tr>
+        </table></td>
+      </tr>
+      <tr>
+        <td class="left_txt">说明：请先查询,再操作修改类操作</td>
+      </tr>
+    </table></td>
+    <td background="../images/mail_rightbg.gif">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="bottom" background="../images/mail_leftbg.gif"><img src="../images/buttom_left2.gif" width="17" height="17" /></td>
+    <td background="../images/buttom_bgs.gif"><img src="../images/buttom_bgs.gif" width="17" height="17"></td>
+    <td valign="bottom" background="../images/mail_rightbg.gif"><img src="../images/buttom_right2.gif" width="16" height="17" /></td>
+  </tr>
+</table>
+<div id="user-mdf-content" style="display: none;">
+	<p><span id='title' style='font-size: 18px;font-weight: bold;'>&nbsp;</span></p>
+	<input type='hidden' id='func' /><input type='hidden' id='tid' />
+	<p>原始值:<span id='oldval'></span></p>
+	<p>设定值:<input type='text' id='newval' /></p>
+	<p><input type='button' value='更新' onclick='user_do_mdf()' /></p>
+</div>
+<div id="user-zh-detail-content" style="display:none;overflow-y: scroll; height: 500px;">
+<table width="100%" height="480" border="0" cellpadding="0" cellspacing="0">
+  <tr>
+    <td width="17" valign="top" background="../images/mail_leftbg.gif"><img src="../images/left-top-right.gif" width="17" height="29" /></td>
+    <td valign="top" background="../images/content-bg.gif">
+	    <table width="100%" height="31" border="0" cellpadding="0" cellspacing="0" class="left_topbg" id="table2">
+	      <tr>
+	        <td height="31"><div class="titlebt">追号明细</div></td>
+	      </tr>
+	    </table>
+    </td>
+    <td width="16" valign="top" background="../images/mail_rightbg.gif"><img src="../images/nav-right-bg.gif" width="16" height="29" /></td>
+  </tr>
+  <tr>
+    <td valign="middle" background="../images/mail_leftbg.gif">&nbsp;</td>
+    <td valign="top" bgcolor="#F7F8F9" height="420" id="table_zh_detail">
+    	
+    </td>
+    <td background="../images/mail_rightbg.gif">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="bottom" background="../images/mail_leftbg.gif"><img src="../images/buttom_left2.gif" width="17" height="17" /></td>
+    <td background="../images/buttom_bgs.gif"><img src="../images/buttom_bgs.gif" width="17" height="17"></td>
+    <td valign="bottom" background="../images/mail_rightbg.gif"><img src="../images/buttom_right2.gif" width="16" height="17" /></td>
+  </tr>
+</table>
+</div>
+</body>
+</html>
