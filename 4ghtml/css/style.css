@@ -57,7 +57,8 @@
 .tz-list .list-l *{display: block;height:1.8em;line-height: 1.8em;overflow: hidden}
 .list-l i{font-size:0.8em;color: #aaa;white-space: normal}
 .tz-list .list-r{float:right;display: table;width:81.8%;box-sizing:border-box}
-.list-r .tz-true{float:left;width: 31%;margin-left:0.3em}
+.list-r .tz-true{float:left;width: 37.7%;margin-left:0.3em}
+.list-r .tz-true-middle{width:4em}
 .tz-true em{display: block;line-height:1.8em;text-align: center;color: #78c600;border: 1px solid #78c600;border-radius: 0.5em}
 .tz-true em.cur{background-color: #78c600;color: #fff}
 .tz-true span{display: block;line-height: 2em;color: #aaa;text-align: center}
