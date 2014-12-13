@@ -72,16 +72,17 @@ function LoadMatchList() {
                     if (typeID == 5 || typeID == 101 || typeID == 105 || typeID == 111 || typeID == 112 || typeID == 114 ) {
                     	newmatchHTML += '<div class="tz">'
                         	+'<section class="tz-list">'
-                        	+'<p class="list-l"><em>'+jj.MID+'</em><cite style="color:'+ jj.color +'">'+ jj.sclass +'</cite><i>'+jj.Time.split(" ")[1]+'&nbsp;截止</i></p>'
+                        	+'<p class="list-l"><em>'+jj.MID+'</em><cite style="color:'+ jj.color +'">'+ jj.sclass +'</cite><i>'+jj.Time.split(" ")[1]+'截止</i></p>'
                         	+'<ul class="list-r">'
                         	if(typeID == 111 || typeID == 112|| typeID == 114|| typeID == 113){
                         		newmatchHTML+='<li class="tz-true"><em >'+ jj.guest +'<br>胜</em><span>赔率'+jj.wl3+'</span></li>'
                         					+'<li class="tz-true"><em>vs<br>平</em><span>赔率'+jj.wl1+'</span></li>'
                         					+'<li class="tz-true"><em>'+ jj.home  +'<br>胜</em><span>赔率'+jj.wl0+'</span></li>'
                         	}else{
-                        		newmatchHTML+='<li class="tz-true"><em onclick="ChooseMatch(this)" n="3" value="1" name="'+jj.ID+'">'+ jj.home +''+ (typeID >= 110 || jj.rq == "0" ? "" : "<i style='color:" + (jj.rq.indexOf("-") == -1 ? "red" : "green") + "'>(" +(jj.rq.indexOf("-") == -1 ? "+" : "")+ jj.rq + ")</i>") +'<br>胜</em><span>赔率'+jj.wl3+'</span></li>'
-            					+'<li class="tz-true" ><em onclick="ChooseMatch(this)" n="1" value="2" name="'+jj.ID+'">vs<br>平</em><span>赔率'+jj.wl1+'</span></li>'
-            					+'<li class="tz-true" ><em onclick="ChooseMatch(this)" n="0" value="3" name="'+jj.ID+'">'+ jj.guest +'<br>胜</em><span>赔率'+jj.wl0+'</span></li>'
+                        		
+                        		newmatchHTML+='<li class="tz-true"><em onclick="ChooseMatch(this)" n="3" value="1" name="'+jj.ID+'">'+ jj.home +''+ (typeID >= 110 || jj.rq == "0" ? "" : "<i style='color:" + (jj.rq.indexOf("-") == -1 ? "red" : "green") + "'>(" +(jj.rq.indexOf("-") == -1 ? "+" : "")+ jj.rq + ")</i>") +'<br>胜</em><span>赔率'+jj[kList[0]]+'</span></li>'
+            					+'<li class="tz-true" ><em onclick="ChooseMatch(this)" n="1" value="2" name="'+jj.ID+'">vs<br>平</em><span>赔率'+jj[kList[1]]+'</span></li>'
+            					+'<li class="tz-true" ><em onclick="ChooseMatch(this)" n="0" value="3" name="'+jj.ID+'">'+ jj.guest +'<br>胜</em><span>赔率'+jj[kList[2]]+'</span></li>'
 							}
                     		newmatchHTML+='</ul></section></div>'
                     			
