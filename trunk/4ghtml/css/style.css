@@ -22,7 +22,7 @@
 .nav table td{text-align: center;padding: .6em 0;border:1px solid #ccc}
 .nav-list{color: #333}
 .nav-list h3{display:inline-block;width: 30px;height: 30px;-webkit-background-size: 30px;-moz-background-size: 30px;background-size: 30px}
-.top-fixed{display:none;position: fixed;top: 0;left: 0;padding: 0}
+.top-fixed{position: fixed;top: 0;left: 0;padding: 0}
 .nav-list .login{background-position:0 -59px}
 .nav-list .reg{background-position:0 -88px}
 .nav-list .hm{background-position:0 -116px}
