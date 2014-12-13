@@ -140,7 +140,7 @@
 /*登录-注册*/
 .m-reg{border-bottom: 2px solid #ccc}
 .m-reg .reg{width: 88%;margin: 0 auto;}
-.reg li{vertical-align:top;padding:0.4em 0;}
+.reg li{vertical-align:top;padding:0.3em 0;font-size:1.14em}
 .reg li:first-of-type{border-bottom: 1px solid #ddd}
 .reg label{padding: 0 1em 0;vertical-align:middle}
 .reg input{width:70%;height: 1.2em;line-height: 1.2em;padding: 0.6em 0;border: 0 none}
