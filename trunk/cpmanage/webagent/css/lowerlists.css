@@ -1,0 +1,115 @@
+@charset "utf-8";
+#shtree {
+	font-size: 15px;
+}
+
+.xiayi-tubiao {
+	margin-top: 4px;
+}
+
+#shtreediv,
+#childshdiv {
+	border-width: 0;
+	width: 100%;
+}
+
+#account-wide-info .explain-text {
+	font-size: .8em;
+	color: #666666;
+}
+
+#money-pct-info th,
+#money-pct-info td {
+	text-align: center;
+}
+#money-pct-info input[type=text] {
+	width: 100px;
+	padding: 0;
+	margin: 0;
+}
+
+#moneylist th,
+#moneylist td {
+	text-align: center;
+}
+
+#userlist th,
+#userlist td {
+	text-align: center;
+}
+
+#saillist th,
+#saillist td {
+	text-align: center;
+}
+
+#sublayersaillist th,
+#sublayersaillist td {
+	text-align: center;
+}
+
+#chidshaccordion .ui-accordion-header {
+	-moz-border-radius: 0;
+    -webkit-border-radius: 0;
+    border-radius: 0; 
+    line-height: 0;
+    font-size: 1.5em;
+}
+#chidshaccordion .ui-accordion-content {
+	min-height: 315px;
+	_height: 315px;
+}
+
+.sdatediv,
+.edatediv,
+.selectdiv,
+.checkdiv,
+#ncdiv,
+.btndiv {
+	float: left;
+	margin-left: 5px;
+}
+.sdatediv,
+.edatediv {
+	width: 240px;
+}
+.selectdiv {
+	width: 230px;
+}
+.checkdiv {
+	width: 90px;
+}
+#ncdiv {
+	width: 235px;
+}
+.sdatediv > *,
+.edatediv > *,
+.selectdiv > *,
+.checkdiv > *,
+#ncdiv > *,
+.btndiv > * {
+	margin-right: 5px;
+	float: left;
+}
+.sdatediv > label,
+.edatediv > label,
+.selectdiv > label,
+.checkdiv > label,
+#ncdiv > label,
+.btndiv > label {
+	margin-top: 6px;
+}
+.checkdiv > .checker {
+	margin-top: 7px;
+}
+.checkdiv > input[type=checkbox] {
+	margin-top: 7px;
+}
+
+.ui-datepicker-trigger {
+	margin-left: -6px;
+	height: 34px;
+	-moz-border-radius: 0;
+    -webkit-border-radius: 0;
+    border-radius: 0; 
+}

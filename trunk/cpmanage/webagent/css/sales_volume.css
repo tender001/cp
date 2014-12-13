@@ -1,0 +1,60 @@
+@charset "utf-8";
+#saillist th,
+#saillist td {
+	text-align: center;
+}
+
+#sdatediv,
+#edatediv,
+#selectdiv,
+#checkdiv,
+#btndiv {
+	float: left;
+	margin-left: 5px;
+}
+
+#sdatediv,
+#edatediv {
+	width: 240px;
+}
+
+#selectdiv {
+	width: 230px;
+}
+
+#checkdiv {
+	width: 90px;
+}
+
+#sdatediv > *,
+#edatediv > *,
+#selectdiv > *,
+#checkdiv > *,
+#btndiv > * {
+	margin-right: 5px;
+	float: left;
+}
+
+#sdatediv > label,
+#edatediv > label,
+#selectdiv > label,
+#checkdiv > label,
+#btndiv > label {
+	margin-top: 6px;
+}
+
+#checkdiv > .checker {
+	margin-top: 7px;
+}
+
+.xiayi-tubiao {
+	margin-top: 4px;
+}
+
+.ui-datepicker-trigger {
+	margin-left: -6px;
+	height: 34px;
+	-moz-border-radius: 0;
+    -webkit-border-radius: 0;
+    border-radius: 0; 
+}

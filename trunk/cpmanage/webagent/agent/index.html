@@ -1,0 +1,315 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>代理商详情</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="../images/skin.css" rel="stylesheet" type="text/css" />
+<link type="text/css" rel="stylesheet" href="../css/jquery.modaldialog.css" />
+<link rel="stylesheet" type="text/css" href="../jquery.confirm/jquery.confirm.css" />
+<link type='text/css' href='../css/basic.css' rel='stylesheet' media='screen' />
+<style type="text/css">
+<!--
+body {
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	background-color: #EEF2FB;
+	font-size: 12px;
+}
+-->
+</style>
+<script type="text/javascript" src="../js/jquery-1.5.2.js"></script>
+<script type="text/javascript" language="JavaScript" src="../jquery.confirm/jquery.confirm.js"></script>
+<script type="text/javascript" language="JavaScript" src="../js/jquery.modaldialog.js"></script>
+<script type="text/javascript" language="JavaScript" src="../js/jquery.simplemodal.js"></script>
+<script type="text/javascript" language="JavaScript" src="../js/jquery.xmlext.js"></script>
+<script type="text/javascript" src="../js/datepicker/WdatePicker.js" ></script>
+<script type="text/javascript" src="../js/tool.js?v=1.1.0.0"></script>
+<script type="text/javascript" src="../js/agent/index.js"></script>
+<script type="text/javascript" language="javascript">
+
+</script>
+</head>
+<body>
+<table width="100%">
+	<tr>
+		<td valign="top">
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+  <tr>
+    <td width="17" valign="top" background="../images/mail_leftbg.gif"><img src="../images/left-top-right.gif" width="17" height="29" /></td>
+    <td valign="top" background="../images/content-bg.gif"><table width="100%" height="31" border="0" cellpadding="0" cellspacing="0" class="left_topbg" id="table2">
+      <tr>
+        <td height="31"><div class="titlebt" style="text-indent:8px" id="div_agent">代理商详情</div></td>
+      </tr>
+    </table></td>
+    <td width="16" valign="top" background="../images/mail_rightbg.gif"><img src="../images/nav-right-bg.gif" width="16" height="29" /></td>
+  </tr>
+  <tr>
+    <td valign="middle" background="../images/mail_leftbg.gif">&nbsp;</td>
+    <td valign="top" bgcolor="#F7F8F9" height="500">
+    <table width="98%" border="0" align="center" cellpadding="0" cellspacing="0">
+      <tr>
+        <td valign="top" height="550">
+          <TABLE width=72% border=0 cellPadding=0 cellSpacing=0 id=secTable>
+            <TBODY>
+              <TR align=middle height=20>
+                <TD align="center" class=sec2 onclick=secBoard(0)>账户查询</TD>
+                <TD align="center" class=sec1 onclick=secBoard(1)>佣金比例</TD>
+                <TD align="center" class=sec1 onclick=secBoard(2)>资金明细</TD>
+                <TD align="center" class=sec1 onclick=secBoard(3)>用户查询</TD>
+                <TD align="center" class=sec1 onclick=secBoard(4)>销量查询</TD>
+                <TD align="center" class=sec1 onclick=secBoard(5)>下级销量查询</TD>
+              </TR>
+            </TBODY>
+          </TABLE>
+          <TABLE class=main_tab id=mainTable cellSpacing=0 cellPadding=0 width=100% border=0>
+            <TBODY style="DISPLAY: block">
+               <TR>
+                 <TD height="25" bgcolor="#FAFBFC" width='930'>【账户查询】 &nbsp;<input type='button' id='btn_agent' value='查询' /></TD>
+               </TR>
+               <TR><td height="2"><table width="100%" height="1" border="0" cellpadding="0" cellspacing="0" bgcolor="#CCCCCC"><tr><td></td></tr></table></td></TR>
+               <TR><TD height="25" bgcolor="#FAFBFC"></TD></TR>
+               <TR>
+                 <TD height="25" bgcolor="#FAFBFC">
+                 	<table border=1 class="xtable" width="100%" id='table_agent_info'>
+                 		<tr align="center">
+	                 		<td width='20%'>推广地址</td>
+	                 		<td width='80%' colspan="3" id='cagentseq' data="http://www.159cai.com/"></td>
+                 		</tr>
+                 		<tr align="center">
+	                 		<td width='20%'>代理商ID</td>
+	                 		<td width='30%' id='cagentid'></td>
+	                 		<td width='10%'>
+	                 			<input type='button' value='重置密码' onclick="agent_mdf('update_setagentpwd','','重置代理商密码')"/>
+	                 		</td>
+	                 		<td width='40%'>&nbsp;</td>
+                 		</tr>
+                 		<tr align="center">
+	                 		<td >父代理商ID</td>
+	                 		<td id='cparentid'></td>
+	                 		<td>&nbsp;</td>
+	                 		<td>&nbsp;</td>
+                 		</tr>
+                 		<tr align="center">
+	                 		<td>账户余额</td>
+	                 		<td id='ibalance' colspan="3"></td>
+                 		</tr>
+                 		<tr align="center">
+	                 		<td>佣金总额</td>
+	                 		<td id='ifill'></td>
+	                 		<td>&nbsp;</td>
+	                 		<td>历史佣金总额</td>
+                 		</tr>
+                 		<tr align="center">
+	                 		<td>提款总额</td>
+	                 		<td id='icash'></td>
+	                 		<td>&nbsp;</td>
+	                 		<td>历史提款金额总和</td>
+                 		</tr>
+                 		<tr align="center">
+	                 		<td>转帐总额</td>
+	                 		<td id='itransfer'></td>
+	                 		<td>&nbsp;</td>
+	                 		<td>从代理商账户转账至购彩账户的金额总和</td>
+                 		</tr>
+                 		<tr align="center">
+	                 		<td>绑定的购彩账户</td>
+	                 		<td id='cnickid'></td>
+	                 		<td><input type='button' value='修改' onclick="agent_mdf('update_agent_nickid','cnickid','修改代理商绑定购彩用户名')"/></td>
+	                 		<td>绑定购彩用户名</td>
+                 		</tr>
+                 		<tr align="center">
+	                 		<td>提款卡号</td>
+	                 		<td id='cbankno'></td>
+	                 		<td><input type='button' value='修改' onclick="agent_mdf('update_agent_bankno','cbankno','修改代理商银行卡号')"/></td>
+	                 		<td>提款银行卡号</td>
+                 		</tr>
+                 		<tr align="center">
+	                 		<td>银行开户行</td>
+	                 		<td id='cbankname'></td>
+	                 		<td><input type='button' value='修改' onclick="agent_mdf('update_agent_bankname','cbankname','修改代理商银行开户行')"/></td>
+	                 		<td>提款银行卡的开户行</td>
+                 		</tr>
+                 		<tr align="center">
+	                 		<td>联系电话</td>
+	                 		<td id='ctelephone'></td>
+	                 		<td><input type='button' value='修改' onclick="agent_mdf('update_agentphone','ctelephone','修改代理商联系电话')"/></td>
+	                 		<td>&nbsp;</td>
+                 		</tr>
+                 		<tr align="center">
+	                 		<td>收款人</td>
+	                 		<td id='crealname'></td>
+	                 		<td><input type='button' value='修改' onclick="agent_mdf('update_agent_realname','crealname','修改代理商收款人')"/></td>
+	                 		<td>必须和提款银行卡开户人一致</td>
+                 		</tr>
+                 		<tr align="center">
+	                 		<td>最后登录IP</td>
+	                 		<td id='cloginip' colspan="3"></td>
+                 		</tr>
+                 		<tr align="center">
+	                 		<td>最后登录时间</td>
+	                 		<td id='clastdate' colspan="3"></td>
+                 		</tr>
+                 		<tr align="center">
+	                 		<td>状态</td>
+	                 		<td id='state'></td>
+	                 		<td>&nbsp;</td>
+	                 		<td></td>
+                 		</tr>
+                 	</table>
+                 </TD>
+               </TR>
+            </TBODY>
+            <TBODY style="DISPLAY: none">
+               <TR>
+                 <TD height="25" bgcolor="#FAFBFC" width='930'>【佣金比例】 &nbsp;
+                 <input type='button' id='btn_agent_rate' value='查询' />&nbsp;&nbsp;
+                 <input type='button' id='btn_update_agent_rate' value='批量设置' />&nbsp;&nbsp;
+                 </TD>
+               </TR>
+               <TR><td height="2"><table width="100%" height="1" border="0" cellpadding="0" cellspacing="0" bgcolor="#CCCCCC"><tr><td></td></tr></table></td></TR>
+               <TR><TD height="25" bgcolor="#FAFBFC"></TD></TR>
+               <TR>
+                 <TD height="25" bgcolor="#FAFBFC" valign="top" id="table_agent_rate">
+                 	
+                 </TD>
+               </TR>
+            </TBODY>
+            <TBODY style="DISPLAY: none">
+               <TR>
+                 <TD height="25" bgcolor="#FAFBFC" width='930'>
+					<table width="100%" height="30" border="0" cellpadding="0" cellspacing="0" id="table_agent_charge_where">
+			          <tr>
+			            <td>
+	                 	【资金明细】 &nbsp;&nbsp;
+	                 	</td>
+	                 	<td>
+		            	开始时间：<input type="text" size="20" class="Wdate" onclick="WdatePicker({minDate:'%y-#{%M-3}-%d',maxDate:'%y-%M-%d'})" value="" id="f_date" name="f_date"/> &nbsp;&nbsp;
+		            	结束时间：<input type="text" size="20" class="Wdate" onclick="WdatePicker({minDate:'%y-#{%M-3}-%d',maxDate:'%y-%M-%d'})" value="" id="t_date" name="t_date"/> &nbsp;&nbsp;
+		            	交易类型：<select id="cboName"></select>&nbsp;&nbsp;
+		            	汇总：<input type="checkbox" id="chk" />&nbsp;&nbsp;
+	                 	<input type='button' id='btn_agent_charge' value='查询' />
+			            </td>
+			          </tr>
+			        </table>
+			      </TD>
+               </TR>
+               <TR><td height="2"><table width="100%" height="1" border="0" cellpadding="0" cellspacing="0" bgcolor="#CCCCCC"><tr><td></td></tr></table></td></TR>
+               <TR><TD height="25" bgcolor="#FAFBFC"></TD></TR>
+               <TR>
+                 <TD height="400" bgcolor="#FAFBFC" id='table_agent_charge' valign="top">
+                 	
+                 </TD>
+               </TR>
+            </TBODY>
+            <TBODY style="DISPLAY: none">
+               <TR>
+                 <TD height="25" bgcolor="#FAFBFC" width='930'>
+					<table width="100%" height="60" border="0" cellpadding="0" cellspacing="0" id="table_agent_user_where">
+			          <tr>
+			            <td>
+	                 	【用户查询】 &nbsp;&nbsp;
+		            	开始时间：<input type="text" size="20" class="Wdate" onclick="WdatePicker({minDate:'%y-#{%M-3}-%d',maxDate:'%y-%M-%d'})" value="" id="f_date" name="f_date"/> &nbsp;&nbsp;
+		            	结束时间：<input type="text" size="20" class="Wdate" onclick="WdatePicker({minDate:'%y-#{%M-3}-%d',maxDate:'%y-%M-%d'})" value="" id="t_date" name="t_date"/> &nbsp;&nbsp;
+		            	用户昵称：<input type="text" size="20" value="" id="txtNid" name="txtNid"/> &nbsp;&nbsp;
+		            	充值用户：<input type="checkbox" id="chk" />&nbsp;&nbsp;
+	                 	<input type='button' id='btn_agent_user' value='查询' />
+			            </td>
+			          </tr>
+			        </table>
+                 </TD>
+               </TR>
+               <TR><td height="2"><table width="100%" height="1" border="0" cellpadding="0" cellspacing="0" bgcolor="#CCCCCC"><tr><td></td></tr></table></td></TR>
+               <TR><TD height="25" bgcolor="#FAFBFC"></TD></TR>
+               <TR>
+                 <TD height="400" bgcolor="#FAFBFC" id='table_agent_user' valign="top">
+                 	
+                 </TD>
+               </TR>
+            </TBODY>
+            <TBODY style="DISPLAY: none">
+               <TR>
+                 <TD height="25" bgcolor="#FAFBFC" width='930'>
+					<table width="100%" height="60" border="0" cellpadding="0" cellspacing="0" id="table_agent_sale_where">
+			          <tr>
+			            <td>
+	                 	【销量查询】 &nbsp;&nbsp;
+	                 	彩种：<select id="cboName"></select>
+		            	开始时间：<input type="text" size="20" class="Wdate" onclick="WdatePicker({minDate:'%y-#{%M-3}-%d',maxDate:'%y-%M-%d'})" value="" id="f_date" name="f_date"/> &nbsp;&nbsp;
+		            	结束时间：<input type="text" size="20" class="Wdate" onclick="WdatePicker({minDate:'%y-#{%M-3}-%d',maxDate:'%y-%M-%d'})" value="" id="t_date" name="t_date"/> &nbsp;&nbsp;
+		            	汇总：<input type="checkbox" id="chk" />&nbsp;&nbsp;
+	                 	<input type='button' id='btn_agent_sale' value='查询' />
+			            </td>
+			          </tr>
+			        </table>
+                 </TD>
+               </TR>
+               <TR><td height="2"><table width="100%" height="1" border="0" cellpadding="0" cellspacing="0" bgcolor="#CCCCCC"><tr><td></td></tr></table></td></TR>
+               <TR><TD height="25" bgcolor="#FAFBFC"></TD></TR>
+               <TR>
+                 <TD height="400" bgcolor="#FAFBFC" id='table_agent_sale' valign="top">
+                 	
+                 </TD>
+               </TR>
+            </TBODY>
+            <TBODY style="DISPLAY: none">
+               <TR>
+                 <TD height="25" bgcolor="#FAFBFC" width='930'>
+					<table width="100%" height="60" border="0" cellpadding="0" cellspacing="0" id="table_xagent_sale_where">
+			          <tr>
+			            <td>
+	                 	【下级销量查询】 &nbsp;&nbsp;
+	                 	彩种：<select id="cboName"></select>
+		            	开始时间：<input type="text" size="20" class="Wdate" onclick="WdatePicker({minDate:'%y-#{%M-3}-%d',maxDate:'%y-%M-%d'})" value="" id="f_date" name="f_date"/> &nbsp;&nbsp;
+		            	结束时间：<input type="text" size="20" class="Wdate" onclick="WdatePicker({minDate:'%y-#{%M-3}-%d',maxDate:'%y-%M-%d'})" value="" id="t_date" name="t_date"/> &nbsp;&nbsp;
+		            	汇总：<input type="checkbox" id="chk" />&nbsp;&nbsp;
+	                 	<input type='button' id='btn_xagent_sale' value='查询' />
+			            </td>
+			          </tr>
+			        </table>
+                 </TD>
+               </TR>
+               <TR><td height="2"><table width="100%" height="1" border="0" cellpadding="0" cellspacing="0" bgcolor="#CCCCCC"><tr><td></td></tr></table></td></TR>
+               <TR><TD height="25" bgcolor="#FAFBFC"></TD></TR>
+               <TR>
+                 <TD height="400" bgcolor="#FAFBFC" id='table_xagent_sale' valign="top">
+                 	
+                 </TD>
+               </TR>
+            </TBODY>
+
+          </TABLE>
+        </td>
+      </tr>
+      <tr>
+        <td height="10"><table width="100%" height="1" border="0" cellpadding="0" cellspacing="0" bgcolor="#CCCCCC">
+          <tr>
+            <td></td>
+          </tr>
+        </table></td>
+      </tr>
+      <tr>
+        <td class="left_txt">说明：请先查询,再操作修改类操作</td>
+      </tr>
+    </table></td>
+    <td background="../images/mail_rightbg.gif">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="bottom" background="../images/mail_leftbg.gif"><img src="../images/buttom_left2.gif" width="17" height="17" /></td>
+    <td background="../images/buttom_bgs.gif"><img src="../images/buttom_bgs.gif" width="17" height="17"></td>
+    <td valign="bottom" background="../images/mail_rightbg.gif"><img src="../images/buttom_right2.gif" width="16" height="17" /></td>
+  </tr>
+</table>
+		</td>
+	</tr>
+</table>
+<div id="agent-mdf-content" style="display: none;">
+	<p><span id='title' style='font-size: 18px;font-weight: bold;'>&nbsp;</span></p>
+	<input type='hidden' id='func' /><input type='hidden' id='tid' />
+	<p>原始值:<span id='oldval'></span></p>
+	<p>设定值:<input type='text' id='newval' /></p>
+	<p><input type='button' value='更新' onclick='agent_do_mdf()' /></p>
+</div>
+</body>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->
+<!--[if !IE]><!--> <html lang="en"> <!--<![endif]-->
+<!-- BEGIN HEAD -->
+<head>
+  <meta charset="utf-8" />
+  <title>欢迎登陆159彩票代理商管理中心</title>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <meta content="" name="description" />
+  <meta content="" name="author" />
+  <link type="text/css" rel="stylesheet" href="css/common/jquery-ui.css" />
+  <link type="text/css" rel="stylesheet" href="css/jquery.modaldialog.css" />
+  <link href="assets/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="assets/css/metro.css" rel="stylesheet" />
+  <link href="assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
+  <link href="assets/css/style.css" rel="stylesheet" />
+  <link href="assets/css/style_responsive.css" rel="stylesheet" />
+  <link href="assets/css/style_default.css" rel="stylesheet" id="style_color" />
+  <link rel="stylesheet" type="text/css" href="assets/uniform/css/uniform.default.css" />
+  <link rel="shortcut icon" href="favicon.ico" />
+  <script type="text/javascript" src="assets/js/jquery-1.8.3.min.js"></script>
+  <script type="text/javascript" src="js/common/jquery-ui.min.js"></script>
+  <script type="text/javascript" src="assets/jquery-validation/dist/jquery.validate.min.js"></script>
+  <script type="text/javascript" src="assets/js/app.js"></script>
+  <script type="text/javascript" src="js/tool.js?v=1.1.0.0"></script>
+  <script type="text/javascript" src="js/login/login.js"></script>
+  <script>
+    jQuery(document).ready(function() {     
+      App.initLogin();
+    });
+  </script>
+</head>
+<body class="login">
+  <div class="logo">
+    <img src="assets/img/logo-big.png" alt="" /> 
+  </div>
+
+  <div class="content">
+    <!-- BEGIN LOGIN FORM -->
+    <form class="form-vertical login-form" action="index.html">
+      <h3 class="form-title">代理商登陆窗口</h3>
+      <div class="alert alert-error hide">
+        <button class="close" data-dismiss="alert"></button>
+        <span>请输入代理商账号和密码</span>
+      </div>
+
+      <div class="control-group">
+        <!--ie8, ie9 does not support html5 placeholder, so we just show field title for that-->
+        <label class="control-label visible-ie8 visible-ie9">代理商账好</label>
+        <div class="controls">
+          <div class="input-icon left">
+            <i class="icon-user"></i>
+            <input class="m-wrap placeholder-no-fix" type="text" placeholder="代理商账号" name="username" id="uid"/>
+          </div>
+        </div>
+      </div>
+
+      <div class="control-group">
+        <label class="control-label visible-ie8 visible-ie9">密码</label>
+        <div class="controls">
+          <div class="input-icon left">
+            <i class="icon-lock"></i>
+            <input class="m-wrap placeholder-no-fix" type="password" placeholder="密码" name="password" id="pwd"/>
+          </div>
+        </div>
+      </div>
+
+	<div class="control-group" style="height:34px;">
+        <label class="control-label visible-ie8 visible-ie9">验证码</label>
+        <div class="controls">
+          <div class="input-icon left pull-left">
+            <i class="icon-lock"></i>
+            <input class="m-wrap placeholder-no-fix" style="width:170px;" type="text" placeholder="验证码" name="yzm" id="yzm"/>
+          </div>
+		  <img id="yzmimg" class="pull-right" style="height:32px;width:73px;margin-left:5px;" src="yzm.jo" onclick='freshYZM(this)' /> 
+        </div>
+      </div>
+
+      <div class="form-actions" style="text-align:center;"> 
+        <button id="loginbtn" type="submit" class="btn green">
+       		 登录 <i class="m-icon-swapright m-icon-white"></i>
+        </button>            
+      </div>
+		</form>
+	</div>
+
+  	<div class="copyright">
+    	Copyright © 2013-2014 www.159cai.com
+  	</div>
+  <!-- END COPYRIGHT -->
+
+	<div id="warningdialog" title="友情提示">
+		<p></p>
+	</div>
+</body>
+<!-- END BODY -->
+</html>

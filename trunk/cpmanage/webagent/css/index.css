@@ -1,0 +1,55 @@
+@charset "utf-8";
+#indextable {
+	width: 80%;
+	min-width: 200px;
+	_width: 200px;
+	margin: 0 auto;
+}
+
+.index-info-table {
+	width: 100%;
+	color: #ffffff;
+}
+.index-info-table.green-table {
+	background-color: #28b779;
+}
+.index-info-table.yellow-table {
+	background-color: #ffb848;
+}
+.index-info-table .info-head .info-head-img {
+	font-size: 60px;
+}
+.index-info-table .info-head .info-head-zh {
+	font-size: 30px;
+	height:33px;
+}
+.index-info-table .info-head .info-head-en {
+	font-size: 18px;
+}
+.index-info-table .info-value {
+	font-size: 18px;
+	height: 22px;
+}
+.index-info-table.green-table .info-value {
+	background-color: #10a062;
+}
+.index-info-table.yellow-table .info-value {
+	background-color: #cb871b;
+}
+
+#extensionrow {
+	height: 60px;
+}
+#extensionrow div {
+	height: 30px;
+	line-height: 30px;
+	font-size: 18px;
+	width: 100%;
+	background-color: #4B8DF8;
+}
+#extensionrow .extension-nature {
+	font-weight: bold;
+}
+#extensionrow .extension-value {
+	color: #E02222;
+}

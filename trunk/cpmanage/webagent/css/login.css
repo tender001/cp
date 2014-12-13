@@ -1,0 +1,93 @@
+@charset "utf-8";
+body {
+	background-color: #3D3D3D;
+}
+
+#logoimg {
+	margin: 20px auto;
+}
+
+#logindiv {
+    width: 100%;
+    height: auto;
+    text-align: left;
+    padding: 0 5px;;
+    background-color: #ffffff;
+}
+
+#logintitle {
+	font-size: 25px;
+	font-weight: bold;
+	height: 70px;
+	line-height: 95px;
+	padding-left: 12px;
+}
+
+#logindiv > p {
+	height: 28px;
+	margin-top: 20px;
+}
+
+#logindiv > p > * {
+	float:left;
+}
+
+#logindiv > p > .login-icon {
+	position: absolute !important;
+	margin-left: 17px;
+	margin-top: 7.5px;
+	z-index: 1;
+	background-image: url("../image/glyphicons-halflings.png");
+	display: block;
+	background-repeat: no-repeat;
+	height: 18px;
+	width: 18px;
+}
+
+#user-icon {
+	background-position: -168px 0px;
+}
+
+#password-icon {
+	background-position: -287px -24px;
+}
+
+#yzm-icon {
+	background-position: -432px -24px;
+}
+
+#username, #password, #yzm {
+	margin-left: 13px;
+	padding-left: 18px;
+	height: 25px;
+	border-left-color: #32CD32;
+	border-left-width: 2px;
+}
+#username, #password {
+	width: 233px;
+}
+#yzm {
+	width: 155px;
+}
+#yzmimg {
+	margin-left: 5px;
+	width: 73px;
+	height: 27px;
+}
+
+#loginbtn {
+	margin-right: 5px;
+}
+
+#bottom-text {
+	font-size: .8em;
+	color: #A6C9E2;
+}
+
+#errdiv {
+	width:100%;
+	text-align:center;
+	margin-top: 30px;
+	font-size: .8em;
+	color: #CD0A0A;
+}

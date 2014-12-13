@@ -1,0 +1,88 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>按日统计报表</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="../images/skin.css" rel="stylesheet" type="text/css" />
+<link type="text/css" rel="stylesheet" href="../css/jquery.modaldialog.css" />
+<link rel="stylesheet" type="text/css" href="../jquery.confirm/jquery.confirm.css" />
+<link type='text/css' href='../css/basic.css' rel='stylesheet' media='screen' />
+<style type="text/css">
+<!--
+body {
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	background-color: #EEF2FB;
+	font-size: 12px;
+}
+-->
+</style>
+<script type="text/javascript" src="../js/jquery-1.5.2.js"></script>
+<script type="text/javascript" language="JavaScript" src="../jquery.confirm/jquery.confirm.js"></script>
+<script type="text/javascript" language="JavaScript" src="../js/jquery.modaldialog.js"></script>
+<script type="text/javascript" language="JavaScript" src="../js/jquery.simplemodal.js"></script>
+<script type="text/javascript" language="JavaScript" src="../js/jquery.xmlext.js"></script>
+<script type="text/javascript" src="../js/datepicker/WdatePicker.js" ></script>
+<script type="text/javascript" src="../js/tool.js?v=1.1.0.0"></script>
+<script type="text/javascript" src="../js/data/day.js"></script>
+<script type="text/javascript" language="javascript">
+
+</script>
+</head>
+<body>
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+  <tr>
+    <td width="17" valign="top" background="../images/mail_leftbg.gif"><img src="../images/left-top-right.gif" width="17" height="29" /></td>
+    <td valign="top" background="../images/content-bg.gif"><table width="100%" height="31" border="0" cellpadding="0" cellspacing="0" class="left_topbg" id="table2">
+      <tr>
+        <td height="31"><div class="titlebt" style="text-indent:5px">按日统计报表</div></td>
+      </tr>
+    </table></td>
+    <td width="16" valign="top" background="../images/mail_rightbg.gif"><img src="../images/nav-right-bg.gif" width="16" height="29" /></td>
+  </tr>
+  <tr>
+    <td valign="middle" background="../images/mail_leftbg.gif">&nbsp;</td>
+    <td valign="top" bgcolor="#F7F8F9">
+    <table width="98%" border="0" align="center" cellpadding="0" cellspacing="0" id="table_con_day">
+      <tr>
+        <td colspan="4" valign="top">
+	        <table width="100%" height="30" border="0" cellpadding="0" cellspacing="0">
+	          <tr>
+	            <td>
+	            	开始时间：<input type="text" class="Wdate" onclick="WdatePicker({minDate:'%y-#{%M-3}-%d',maxDate:'%y-%M-%d'})" value="" id="f_date" name="f_date"/> &nbsp;&nbsp;
+	            	结束时间：<input type="text" class="Wdate" onclick="WdatePicker({minDate:'%y-#{%M-3}-%d',maxDate:'%y-%M-%d'})" value="" id="t_date" name="t_date"/> &nbsp;&nbsp;
+					汇总：<input type="checkbox" id="chk" />&nbsp;&nbsp;
+	            	&nbsp;&nbsp;<input type="button" id="btnSelect" value="查询" />
+	            </td>
+	          </tr>
+	        </table>
+        </td>
+      </tr>
+      <tr>
+        <td height="10" colspan="4"><table width="100%" height="1" border="0" cellpadding="0" cellspacing="0" bgcolor="#CCCCCC"><tr><td></td></tr></table></td>
+      </tr>
+      <tr>
+        <td colspan="4" id="table_day" style='height: 350px' valign="top">&nbsp;</td>
+      </tr>
+      <tr>
+        <td height="10" colspan="4"><table width="100%" height="1" border="0" cellpadding="0" cellspacing="0" bgcolor="#CCCCCC"><tr><td></td></tr></table></td>
+      </tr>
+      <tr>
+        <td width="2%">&nbsp;</td>
+        <td width="51%" class="left_txt">说明：</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+      </tr>
+    </table></td>
+    <td background="../images/mail_rightbg.gif">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="bottom" background="../images/mail_leftbg.gif"><img src="../images/buttom_left2.gif" width="17" height="17" /></td>
+    <td background="../images/buttom_bgs.gif"><img src="../images/buttom_bgs.gif" width="17" height="17"></td>
+    <td valign="bottom" background="../images/mail_rightbg.gif"><img src="../images/buttom_right2.gif" width="16" height="17" /></td>
+  </tr>
+</table>
+</body>
+</html>
