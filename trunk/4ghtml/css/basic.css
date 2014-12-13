@@ -7,7 +7,7 @@ h1,h2,h3,h4,h5,h6{font-size:100%}
 button,input,select,textarea{font-size:100%}
 input,button{background-color:transparent}
 /*input:focus{outline:0}*/
-a{text-decoration:none;outline:0;}
+a{text-decoration:none;outline:0}
 /*a:hover{text-decoration:underline}*/
 ol,ul,li{list-style:none;}
 i,em,cite{font-style:normal}
