@@ -5,6 +5,8 @@ body{font:75%/1.5 sans-serif,Helvetica,Arial,"Hiragino Sans GB";background-color
 article,aside,details,figcaption,figure,footer,header,menu,nav,section{display:block}
 h1,h2,h3,h4,h5,h6{font-size:100%}
 button,input,select,textarea{font-size:100%}
+input,button{background-color:transparent}
+/*input:focus{outline:0}*/
 a{text-decoration:none;outline:0;}
 /*a:hover{text-decoration:underline}*/
 ol,ul,li{list-style:none;}
@@ -34,18 +36,18 @@ table{border-collapse:collapse;border-spacing:0}
 .ball .blue{background-color: #125ea9}
 /*右-点击*/
 .list .ico-click i{margin-top:0.91em;-webkit-transform: rotate(45deg);-moz-transform: rotate(45deg);-o-transform: rotate(45deg);transform:rotate(45deg)}
-.ico-click i{float:right;width:0.8em;height:0.8em;margin-right:1.4em;border-top:3px solid #b0b0b0;border-right:3px solid #b0b0b0;position:relative;-webkit-transform: rotate(-45deg);-moz-transform: rotate(-45deg);-o-transform: rotate(-45deg);transform:rotate(-45deg)}
+.ico-click i{float:right;width:0.8em;height:0.8em;margin-right:1.4em;border-top:2px solid #ccc;border-right:2px solid #ccc;position:relative;-webkit-transform: rotate(-45deg);-moz-transform: rotate(-45deg);-o-transform: rotate(-45deg);transform:rotate(-45deg)}
 .ico-click .cur{top:-0.2em;-webkit-transform: rotate(135deg);-moz-transform: rotate(135deg);-o-transform: rotate(135deg);transform:rotate(135deg)}
 /*充值选择*/
 .true-icon{display: block;width: 25px;height: 25px;line-height:22px;text-align:center;border: 0.18em solid #ccc;border-radius: 25px;background-color: transparent;overflow: hidden}
 .true-icon-cur{border-color:#0a9a2e;background-color: #0a9a2e;}
 .true-icon-cur i{display: inline-block;width: 15px;height: 6px;border-left: 3px solid #fff;border-bottom: 3px solid #fff;-webkit-transform: rotate(-40deg);-moz-transform: rotate(-30deg);-o-transform: rotate(-30deg);transform: rotate(-40deg);}
 /*底部灰色*/
-.pay-submit{padding: 1.3em;background-color: #e3e3e3}
+.pay-submit{padding: 1.3em 0;background-color: #e3e3e3}
 /*点击按钮*/
 .btn{display: block;padding:0.8em 0;letter-spacing:0.16em;text-align: center;border-radius:5px;box-shadow: 1px 1px 5px rgba(0,0,0,0.5)}
 .btn-true{width: 90%;margin:0 auto 12px;font-size:1.3em;color:#fff;background-color: #f60;background-image: -webkit-linear-gradient(top,#f60,#f20);background-image: -moz-linear-gradient(top,#f60,#f20);background-image: -o-linear-gradient(top,#f60,#f20);background-image: linear-gradient(top,#f60,#f20)}
-.btn-reg{width: 90%;margin:0 auto;font-size:1.2em;background-color: #fff;}
+.btn-reg{width: 90%;margin:0 auto;font-size:1.2em;color:#666;background-color: #fff;}
 /*投注footer*/
 .buyFooter,.buyFooter1{ padding-top:5rem}
 .buyFloat{ text-align:center; line-height:3.1em; font-size:.95rem; background:#f9f9f9; border-top:1px solid #d5d5d5}
@@ -89,4 +91,4 @@ input.fqhmGray{ background:#ebebeb}
 .zcHeader{ background:#399e5c}
 .pdLfrt09{ padding:.1rem .9rem 0 .9rem}
 /*底部logo*/
-.foot-logo{height: 10em;background:url("../img/m-logo.png") center 1.2em no-repeat;background-size:170px 65px;opacity: 0.17}
+.foot-logo{height: 10em;padding-bottom:36%;background:url("../img/m-logo.png") center 1.2em no-repeat;background-size:170px 65px;opacity: 0.17}

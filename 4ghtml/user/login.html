@@ -1,48 +1,34 @@
 <!DOCTYPE html>
 <html>
-<head><title>
-	登录-159彩票网
-</title>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=1;' name='viewport' />
-<meta content='yes' name='apple-mobile-web-app-capable' />
-<meta content='black' name='apple-mobile-web-app-status-bar-style' />
-<meta content='telephone=no' name='format-detection' />
-<script src='/js/jquery.js'></script>
-<script src='/js/159cp.js'></script>
-<script src='/js/base.js'></script>
-<script src='/js/login.js'></script>
-<link rel='stylesheet' href='/style/main.css' />
-<link href="/images/apple-touch-icon.png" rel="apple-touch-icon-precomposed" /> 
-<link rel='stylesheet' href='/style/user.css' />
-    <style>
-    td{line-height:35px;text-align:center;}
-    input{height:30px;}
-    </style>
+<head>
+    <meta charset="UTF-8">
+    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=1' name='viewport'/>
+    <meta content='yes' name='apple-mobile-web-app-capable'/>
+    <meta content='black' name='apple-mobile-web-app-status-bar-style'/>
+    <meta content='telephone=no' name='format-detection'/>
+    <title>注册_159彩票网</title>
+    <link rel="stylesheet" href="/css/basic.css?v201412134" type="text/css"/>
+    <link rel="stylesheet" href="/css/style.css" type="text/css"/>
 </head>
 <body>
-<header>
-<div id="webtop">
-<a href="/"><img src="/images/159logo.png" height="35" /></a>
+<section class="buyHeader">
+    <h1>登录</h1>
+    <a href="#" class="backIco2"></a>
+    <a href="/" class="goHome"></a>
+</section>
+<div class="m-reg">
+    <ul class="reg">
+        <li><label>账号</label><input type="text" placeholder="手机号/4-16个字符"/></li>
+        <li><label>密码</label><input type="password" placeholder="6-20个字符"/></li>
+    </ul>
 </div>
-</header>
-<table align="center" border="0" cellpadding="2" cellspacing="0" style="margin:10px auto 10px auto;">
-    <tr>
-    	<td><label>账户&nbsp;</label></td>
-   		<td><input id="auth_userId" name="auth_userId" type="text" value="" style="width:150px;" placeholder="159彩用户名" /></td>
-   	</tr>
-    <tr>
-    	<td>密码&nbsp;</td>
-    	<td><input id="auth_passwd" name="auth_passwd" type="password" value="" style="width:150px;" placeholder="登录密码" /></td>
-    </tr>      
-    <tr>
-        <td colspan=2>
-            <input value="2" type="hidden" id="logintype" />
-            <input value="登录" onclick="MiniLogin();" type="submit" class="btn"  />
-            <input type="button" onclick="location.href='/user/reg.html'" value="免费注册" class="btn" />
-        </td>
-    </tr>
-</table>
-<!--#include virtual="/cc/footer.html"-->
+
+
+<div class="app-footer pay-submit">
+    <p class="reg-read re-pass"><a href="#">忘记密码？</a></p>
+    <a class="btn btn-true" href="#">登&nbsp;录</a>
+    <a class="btn btn-reg" href="/user/reg.html">没有帐号？马上注册</a>
+    <div class="foot-logo"></div>
+</div>
 </body>
 </html>
