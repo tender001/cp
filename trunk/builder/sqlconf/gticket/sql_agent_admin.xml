@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="gbk"?>
+
+<config desc="合买代购（后台引擎SQL配置）">
+    <!-- type: 1 查询语句 2 存储过程 3 更新类语句 -->
+
+	<sql id="q_agentinfo" type="1" desc="查询代理商信息">
+	<![CDATA[
+	    select * from tb_agent where cagentid = ?
+	]]>
+		<in-parm>
+			<parm name="代理商编号" property="aid"/>
+	   	</in-parm>
+	</sql>
+	
+	
+	<sql id="q_password" type="1" desc="查询代理商信息">
+	<![CDATA[
+	    select cpassword pwd from tb_agent where cagentid = ?
+	]]>
+		<in-parm>
+			<parm name="代理商编号" property="aid"/>
+	   	</in-parm>
+	</sql>
+
+    <sql id="q_projlist" type="1" desc="查询方案列表" order=" order by cadddate desc ">
+	<![CDATA[
+	    select '#gid#' gid,cperiodid pid,cbatchid bid, icount tnum, cadddate cdate, istate state, iflag flag, cerrcode ecode, cerrdesc edesc
+	    from tb_cast_#gid# where cagentid = ? and cadddate >= to_date(?,'yyyy-MM-dd') and cadddate <= to_date(?,'yyyy-MM-dd')
+	]]>
+		<in-parm>
+			<parm name="代理编号" property="aid"/>
+			<parm name="开始时间" property="sdate"/>
+			<parm name="结束时间" property="edate"/>
+			<parm name="期次编号" property="pid" sql=" and cperiodid = ?"/>
+			<parm name="批次编号" property="bid" sql=" and cbatchid = ? "/>
+			<parm name="是否通知" property="flag" sql=" and iflag = ? "/>
+	   	</in-parm>
+	</sql>
+	
+    <sql id="c_projlist" type="1" desc="查询方案列表">
+	<![CDATA[
+	    select count(*) num from tb_cast_#gid# where cagentid = ? and cadddate >= to_date(?,'yyyy-MM-dd') and cadddate <= to_date(?,'yyyy-MM-dd')
+	]]>
+		<in-parm>
+			<parm name="代理编号" property="aid"/>
+			<parm name="开始时间" property="sdate"/>
+			<parm name="结束时间" property="edate"/>
+			<parm name="期次编号" property="pid" sql=" and cperiodid = ?"/>
+			<parm name="批次编号" property="bid" sql=" and cbatchid = ? "/>
+			<parm name="是否通知" property="flag" sql=" and iflag = ? "/>
+	   	</in-parm>
+	</sql>
+	
+	<sql id="q_projdetail" type="1" desc="查询方案明细" order=" order by cadddate desc ">
+	<![CDATA[
+	    select '#gid#' gid,cperiodid pid,cbatchid bid, capplyid did, cticketid tid, cticketdate tdate, imulity muli, imoney money, cadddate cdate, ccodes codes, cerrcode ecode, 
+	    cerrdesc edesc  from tb_cast_list_#gid# where cagentid = ? and cadddate >= to_date(?,'yyyy-MM-dd') and cadddate <= to_date(?,'yyyy-MM-dd')
+	]]>
+		<in-parm>
+			<parm name="代理编号" property="aid"/>
+			<parm name="开始时间" property="sdate"/>
+			<parm name="结束时间" property="edate"/>
+			<parm name="批次编号" property="bid" sql=" and cbatchid = ? "/>
+			<parm name="明细编号" property="did" sql=" and capplyid = ? "/>
+	   	</in-parm>
+	</sql>
+	
+	<sql id="c_projdetail" type="1" desc="查询方案明细">
+	<![CDATA[
+	    select count(*) num from tb_cast_list_#gid# where cagentid = ? and cadddate >= to_date(?,'yyyy-MM-dd') and cadddate <= to_date(?,'yyyy-MM-dd')
+	]]>
+		<in-parm>
+			<parm name="代理编号" property="aid"/>
+			<parm name="开始时间" property="sdate"/>
+			<parm name="结束时间" property="edate"/>
+			<parm name="批次编号" property="bid" sql=" and cbatchid = ? "/>
+			<parm name="明细编号" property="did" sql=" and capplyid = ? "/>
+	   	</in-parm>
+	</sql>
+	
+	
+	<sql id="q_bingo" type="1" desc="查询中奖" order=" order by cwdate desc ">
+	<![CDATA[
+	    select '#gid#' gid,cperiodid pid,cbatchid bid, capplyid did, cticketid tid, cwdate wdate, ibonus bonus, itax tax, cwininfo winfo, ibig big 
+	    from tb_bingo_#gid# where cagentid = ? and cwdate >= to_date(?,'yyyy-MM-dd') and cwdate <= to_date(?,'yyyy-MM-dd')
+	]]>
+		<in-parm>
+			<parm name="代理编号" property="aid"/>
+			<parm name="开始时间" property="sdate"/>
+			<parm name="结束时间" property="edate"/>
+			<parm name="期次编号" property="pid" sql=" and cperiodid = ? "/>
+			<parm name="批次编号" property="bid" sql=" and cbatchid  = ? "/>
+	   	</in-parm>
+	</sql>
+	
+	<sql id="c_bingo" type="1" desc="查询中奖">
+	<![CDATA[
+	    select count(*) num from tb_bingo_#gid# where cagentid = ? and cwdate >= to_date(?,'yyyy-MM-dd') and cwdate <= to_date(?,'yyyy-MM-dd')
+	]]>
+		<in-parm>
+			<parm name="代理编号" property="aid"/>
+			<parm name="开始时间" property="sdate"/>
+			<parm name="结束时间" property="edate"/>
+			<parm name="期次编号" property="pid" sql=" and cperiodid = ? "/>
+			<parm name="批次编号" property="bid" sql=" and cbatchid = ? "/>
+	   	</in-parm>
+	</sql>
+	
+	
+	<sql id="q_periodstat" type="1" desc="查询期次销量" order=" order by cperiodid desc ">
+	<![CDATA[
+	    select cgameid gid,cperiodid pid,isales sales, ismalls smalls, ibig bigs, itax taxs 
+	    from tb_period_stat where cagentid = ?
+	]]>
+		<in-parm>
+			<parm name="代理编号" property="aid"/>
+			<parm name="游戏编号" property="gid" sql=" and cgameid = ? "/>
+			<parm name="期次编号" property="pid" sql=" and cperiodid = ? "/>
+	   	</in-parm>
+	</sql>
+	
+	<sql id="c_periodstat" type="1" desc="查询期次销量">
+	<![CDATA[
+	    select count(*) num from tb_period_stat where cagentid = ? 
+	]]>
+		<in-parm>
+			<parm name="代理编号" property="aid"/>
+			<parm name="游戏编号" property="gid" sql=" and cgameid = ? "/>
+			<parm name="期次编号" property="pid" sql=" and cperiodid = ? "/>
+	   	</in-parm>
+	</sql>
+	
+	<sql id="q_periodlist" type="1" desc="查询期次列表" order=" order by cperiodid desc ">
+	<![CDATA[
+	    select cgameid gid,cperiodid pid,cbegintime stime, cendtime etime, cawardtime atime, istate state from tb_period where cgameid = ? and istate = 1 
+	]]>
+		<in-parm>
+			<parm name="游戏编号" property="gid"/>
+			<parm name="期次编号" property="pid" sql=" and cperiodid like '%' || ? || '%'"/>
+	   	</in-parm>
+	</sql>
+	
+	<sql id="c_periodlist" type="1" desc="查询期次列表">
+	<![CDATA[
+	    select count(*) num from tb_period where cgameid = ? and istate = 1
+	]]>
+		<in-parm>
+			<parm name="游戏编号" property="gid"/>
+			<parm name="期次编号" property="pid" sql=" and cperiodid like '%' || ? || '%'"/>
+	   	</in-parm>
+	</sql>
+</config>

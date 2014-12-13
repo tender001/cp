@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config desc="合买代购（后台引擎SQL配置）">
+	<sql id="i_basket_match" type="3" desc="新增对阵信息">
+	<![CDATA[
+		insert into tb_match_jclq (citemid,imatchid,cmname,csname,cendtime,cmatchtime,cmatchname,ccolor,cname)  
+		values (?,?,?,?,to_date(?,'yyyy-MM-dd hh24:mi:ss')+1/24/60,to_date(?,'yyyy-MM-dd hh24:mi:ss'),?,?,?)
+	]]>
+		<in-parm>
+	   		<parm name="场次编号" property="itemID"/>
+	   		<parm name="官方编号" property="matchID"/>
+	   		<parm name="主队名称" property="mname"/>
+	   		<parm name="客队名称" property="sname"/>
+	   		<parm name="截止时间" property="endTime"/>
+	   		<parm name="比赛时间" property="matchTime"/>
+	   		<parm name="联赛名称" property="matchName"/>
+	   		<parm name="显示颜色" property="color"/>
+	   		<parm name="场次名称" property="itemName"/>
+	   	</in-parm>
+	</sql>
+
+	<sql id="u_basket_match" type="3" desc="修改对阵信息">
+	<![CDATA[
+	    update tb_match_jclq set cmname = ?, csname = ?, cendtime = to_date(?,'yyyy-MM-dd hh24:mi:ss')+1/24/60,
+	    cmatchtime = to_date(?,'yyyy-MM-dd hh24:mi:ss'), cmatchname = ?, ccolor = ?, cname = ? ,
+	    cupdate = sysdate where imatchid = ?
+	]]> 
+		<in-parm>
+	   		<parm name="主队名称" property="mname"/>
+	   		<parm name="客队名称" property="sname"/>
+	   		<parm name="截止时间" property="endTime"/>
+	   		<parm name="比赛时间" property="matchTime"/>
+	   		<parm name="联赛名称" property="matchName"/>
+	   		<parm name="显示颜色" property="color"/>
+	   		<parm name="场次名称" property="itemName"/>
+	   		<parm name="官方编号" property="matchID"/>
+		</in-parm>
+	</sql>
+
+	<sql id="q_basket_match_info" type="1" desc="查询指定编号的场次信息">
+	<![CDATA[
+	    select citemid tid, imatchid mid, cmname mn,csname sn,cmscore ms,csscore ss,close lose,zclose zlose,cmatchname mname,cmatchtime mt,
+	    ccolor cl, cname cid,icancel ic, istate st, cresult rs
+	    from tb_match_jclq where citemid = ?
+	]]>
+		<in-parm>
+			<parm name="场次编号" property="itemID"/>
+	   	</in-parm>
+	</sql>
+
+	<sql id="q_basket_match_info_mid" type="1" desc="查询指定编号的场次信息">
+	<![CDATA[
+	    select citemid tid, imatchid mid, cmname mn,csname sn,cmscore ms,csscore ss,close lose,zclose zlose,cmatchname mname,cmatchtime mt,
+	    ccolor cl, cname cid,icancel ic, istate st, cresult rs,isale
+	    from tb_match_jclq where imatchid = ?
+	]]>
+		<in-parm>
+			<parm name="官方编号" property="matchID"/>
+	   	</in-parm>
+	</sql>
+	
+   	<sql id="u_jc_match_sp_sf" type="3" desc="修改对阵信息">
+	<![CDATA[
+	    update tb_match_jclq set csf = ? where citemid = ? and istate=0
+	]]> 
+		<in-parm>
+	   		<parm name="胜负" property="sf"/>
+	   		<parm name="场次编号" property="itemID"/>
+		</in-parm>
+	</sql>
+	
+   	<sql id="u_jc_match_sp_fd_sf" type="3" desc="修改对阵信息">
+	<![CDATA[
+	    update tb_match_jclq set cfsf = ? where imatchid = ? and istate=0
+	]]> 
+		<in-parm>
+	   		<parm name="胜负" property="sf"/>
+	   		<parm name="场次编号" property="itemID"/>
+		</in-parm>
+	</sql>
+	
+   	<sql id="u_jc_match_sp_rfsf" type="3" desc="修改对阵信息">
+	<![CDATA[
+	    update tb_match_jclq set crfsf = ?, close=? where citemid = ? and istate=0
+	]]> 
+		<in-parm>
+	   		<parm name="让分胜负" property="rfsf"/>
+	   		<parm name="让分值" property="lose"/>
+	   		<parm name="场次编号" property="itemID"/>
+		</in-parm>
+	</sql>
+	
+   	<sql id="u_jc_match_sp_fd_rfsf" type="3" desc="修改对阵信息">
+	<![CDATA[
+	    update tb_match_jclq set cfrfsf = ?, cflose=? where imatchid = ? and istate=0
+	]]> 
+		<in-parm>
+	   		<parm name="让分胜负" property="rfsf"/>
+	   		<parm name="让分值" property="lose"/>
+	   		<parm name="场次编号" property="itemID"/>
+		</in-parm>
+	</sql>
+	
+   	<sql id="u_jc_match_sp_sfc" type="3" desc="修改对阵信息">
+	<![CDATA[
+	    update tb_match_jclq set csfc = ? where citemid = ? and istate=0
+	]]> 
+		<in-parm>
+	   		<parm name="胜分差" property="sfc"/>
+	   		<parm name="场次编号" property="itemID"/>
+		</in-parm>
+	</sql>
+	
+   	<sql id="u_jc_match_sp_dxf" type="3" desc="修改对阵信息">
+	<![CDATA[
+	    update tb_match_jclq set cdxf = ?,zclose=? where citemid = ? and istate=0
+	]]> 
+		<in-parm>
+	   		<parm name="大小分" property="dxf"/>
+	   		<parm name="预设总分" property="zlose"/>
+	   		<parm name="场次编号" property="itemID"/>
+		</in-parm>
+	</sql>
+	
+   	<sql id="u_jc_match_sp_fd_dxf" type="3" desc="修改对阵信息">
+	<![CDATA[
+	    update tb_match_jclq set cfdxf = ?,zfclose=? where imatchid = ? and istate=0
+	]]> 
+		<in-parm>
+	   		<parm name="大小分" property="dxf"/>
+	   		<parm name="预设总分" property="zlose"/>
+	   		<parm name="场次编号" property="itemID"/>
+		</in-parm>
+	</sql>
+
+	<sql id="c_sp_jclq" type="1" desc="查询sp是否存在">
+	<![CDATA[
+	    select count(1) num from tb_sp_jclq where cgameid=? and citemid=? and cadddate=to_date(?,'yyyy-MM-dd hh24:mi:ss')
+	]]>
+		<in-parm>
+	   		<parm name="赔率类型" property="gameID"/>
+	   		<parm name="场次编号" property="itemID"/>
+	   		<parm name="赔率时间" property="endTime"/>
+	   	</in-parm>
+	</sql>
+	
+	<sql id="q_sp_jclq" type="1" desc="查询对阵的SP值">
+	<![CDATA[
+	    select * from tb_sp_jclq where citemid = ? and cgameid = ? order by cadddate desc
+	]]>
+		<in-parm>
+	   		<parm name="场次编号" property="itemID"/>
+	   		<parm name="赔率类型" property="gameID"/>
+	   	</in-parm>
+	</sql>
+	
+	<sql id="i_sp_jclq" type="3" desc="保存对阵的SP值">
+	<![CDATA[
+	    insert into tb_sp_jclq (cgameid,citemid,cvalue,cadddate) values (?,?,?,to_date(?,'yyyy-MM-dd hh24:mi:ss'))
+	]]>
+		<in-parm>
+	   		<parm name="赔率类型" property="gameID"/>
+	   		<parm name="场次编号" property="itemID"/>
+	   		<parm name="赔率数据" property="value"/>
+	   		<parm name="赔率时间" property="endTime"/>
+	   	</in-parm>
+	</sql>
+	
+	<sql id="q_basket_award_list" type="1" desc="查询指定日期的开奖公告">
+	<![CDATA[
+		select citemid tid, imatchid mid, cmname mn,csname sn,cmscore ms,csscore ss,close lose, zclose,cmatchname mname,cmatchtime mt,
+		ccolor cl, cname cid,icancel ic, istate st, cresult rs
+		from tb_match_jclq where (iaudit = 1 or icancel = 1) and citemid like ? order by citemid desc
+	]]>
+		<in-parm>
+			<parm name="场次编号" property="itemID"/>
+	   	</in-parm>
+	</sql>
+	
+	<sql id="q_basket_day_list" type="1" desc="查询开奖公告日期的列表">
+	<![CDATA[
+		select * from (
+	    select substr(citemid,0,6) did, '1' type from tb_match_jclq where istate != 0 and iaudit = 1 group by  substr(citemid,0,6) order by substr(citemid,0,6) desc
+	    ) where rownum < 50
+	]]>
+		<in-parm>
+	   	</in-parm>
+	</sql>
+	
+	
+</config>

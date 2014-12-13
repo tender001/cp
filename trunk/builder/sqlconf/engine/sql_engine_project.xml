@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="gbk"?>
+
+<config desc="合买代购（后台引擎SQL配置）">
+    <!-- type: 1 查询语句 2 存储过程 3 更新类语句 -->
+
+    <sql id="e_task_list" type="1" desc="查询未完成任务">
+	   select * from tb_proj_task where iflag = 0 and cgameid = ? order by cadddate
+		<in-parm>
+	   		<parm name="游戏编号" property="gid"/>
+	   	</in-parm>
+	</sql>
+	
+    <sql id="e_update_task_flag" type="3" desc="更新任务状态">
+	   update tb_proj_task set iflag = 1, cfinishdate = sysdate where cprojid = ? and itype = ?
+		<in-parm>
+	   		<parm name="方案编号" property="hid"/>
+	   		<parm name="任务类型" property="type"/>	   		
+	   	</in-parm>
+	</sql>
+	
+    <sql id="e_proj_info" type="1" desc="查询方案信息">
+	   select * from tb_proj_#gameid# where cprojid = ?
+		<in-parm>
+	   		<parm name="方案编号" property="hid"/>	   		
+	   	</in-parm>
+	</sql>
+	
+    <sql id="e_delete_auto_log" type="3" desc="删除未处理完成的自动跟单记录">
+	   delete from tb_auto_log where cprojid = ?
+		<in-parm>
+	   		<parm name="方案编号" property="hid"/>	   		
+	   	</in-parm>
+	</sql>
+	
+	
+    <sql id="e_create_auto" type="3" desc="生成自动跟单记录">
+    <![CDATA[
+	   	insert into tb_auto_log (cnickid,cprojid,cgameid,ibnum,imoney,cowner,cadddate,itype,irate,ibuy) select cnickid, ?, ?, 
+	   	trunc(ibmoney/?,0),trunc(ibmoney/?,0) * ?,cowner,cadddate,itype,irate,ibuy 
+	   	from tb_user_auto where cowner = ? and istate = 0 and cgameid = ? 
+	   	and (ilimit = 0 or (ilimit = 1 and iminmoney < ? and imaxmoney > ?))
+	]]>
+		<in-parm>
+	   		<parm name="方案编号" property="hid"/>
+	   		<parm name="游戏编号" property="gid"/>
+	   		<parm name="每份金额" property="smoney"/>
+	   		<parm name="每份金额" property="smoney"/>
+	   		<parm name="每份金额" property="smoney"/>
+	   		<parm name="发起人" property="uid"/>
+	   		<parm name="游戏编号" property="gid"/>
+	   		<parm name="方案金额" property="tmoney"/>
+	   		<parm name="方案金额" property="tmoney"/>
+	   	</in-parm>
+	</sql>
+	
+    <sql id="e_create_task" type="3" desc="生成方案处理任务">
+		insert into tb_proj_task (cprojid,cgameid,cperiodid,itype,cmemo) values (?,?,?,?,?)
+		<in-parm>
+	   		<parm name="方案编号" property="hid"/>
+	   		<parm name="游戏编号" property="gid"/>
+	   		<parm name="期次编号" property="pid"/>
+	   		<parm name="任务类型" property="type"/>
+	   		<parm name="任务备注" property="memo"/>
+	   	</in-parm>
+	</sql>
+	
+    <sql id="e_select_auto_log" type="1" desc="查询未处理的跟单记录">
+		select * from tb_auto_log where cprojid = ? and cgameid = ? and istate = 0 order by cadddate
+		<in-parm>
+	   		<parm name="方案编号" property="hid"/>
+	   		<parm name="游戏编号" property="gid"/>
+	   	</in-parm>
+	</sql>
+
+    <sql id="e_count_auto_log" type="1" desc="统计未处理的跟单记录">
+		select count(*) num from tb_auto_log where cprojid = ? and cgameid = ? and istate = 0
+		<in-parm>
+	   		<parm name="方案编号" property="hid"/>
+	   		<parm name="游戏编号" property="gid"/>
+	   	</in-parm>
+	</sql>
+
+    <sql id="e_update_proj_stat" type="3" desc="更新方案状态">
+	   update tb_proj_#gameid# set istate = 1 where cprojid = ? and istate = 0
+		<in-parm>
+	   		<parm name="游戏编号" property="hid"/>
+	   	</in-parm>
+	</sql>
+	
+	
+    <sql id="e_proj_buy_list" type="1" desc="查询未撤单的购买">
+	   select * from tb_proj_buy_#gameid# where cprojid = ? and icancel = 0
+		<in-parm>
+	   		<parm name="方案编号" property="hid"/>	
+	   	</in-parm>
+	</sql>
+	
+    <sql id="e_count_join_cancel" type="1" desc="统计未处理的跟单记录">
+		select count(*) num from tb_proj_buy_#gameid# where cprojid = ? and icancel = 0
+		<in-parm>
+	   		<parm name="方案编号" property="hid"/>
+	   	</in-parm>
+	</sql>
+	
+	
+
+    <sql id="e_proj_auto_join" type="2" desc="后台系统自动跟单">
+	   cpengine.sp_proj_auto_join
+		<in-parm>
+	   		<parm name="用户编号" property="uid"/>
+	   		<parm name="方案编号" property="hid"/>
+	   		<parm name="购买份数" property="bnum"/>
+	   		<parm name="游戏编号" property="gid"/>	   		
+	   		<parm name="方案来源" property="comeFrom"/>
+	   		<parm name="投注来源" property="source"/>
+	   		<parm name="发起人" property="memo"/>
+	   		<parm name="跟单类型固定or比例" property="type"/>
+	   		<parm name="跟单比例" property="smoney"/>
+	   		<parm name="剩余方案金额不足是否认购" property="state"/>
+	   	</in-parm>
+	   	<out-parm>
+	   		<parm name="错误编号" property="busiErrCode"/>
+	   		<parm name="错误描叙" property="busiErrDesc"/>
+	   		<parm name="购买编号" property="bid"/>
+	   		<parm name="用户余额" property="balance"/>
+	   	</out-parm>
+	</sql>
+
+    <sql id="e_join_auto_cancel" type="2" desc="后台系统撤销购买">
+	   cpengine.sp_join_auto_cancel
+		<in-parm>
+	   		<parm name="用户编号" property="uid"/>
+	   		<parm name="方案编号" property="hid"/>
+	   		<parm name="购买编号" property="bid"/>
+	   		<parm name="游戏编号" property="gid"/>
+	   	</in-parm>
+	   	<out-parm>
+	   		<parm name="错误编号" property="busiErrCode"/>
+	   		<parm name="错误描叙" property="busiErrDesc"/>
+	   		<parm name="用户余额" property="balance"/>
+	   	</out-parm>
+	</sql>
+
+	<sql id="e_proj_clear" type="2" desc="后台方案清保">
+		cpengine.sp_proj_auto_clear
+		<in-parm>
+	   		<parm name="方案编号" property="hid"/>
+	   		<parm name="游戏编号" property="gid"/>
+	   	</in-parm>
+	   	<out-parm>
+	   		<parm name="错误编号" property="busiErrCode"/>
+	   		<parm name="错误描叙" property="busiErrDesc"/>
+	   		<parm name="保底金额" property="pmoney"/>
+	   		<parm name="用户余额" property="balance"/>
+	   	</out-parm>
+	</sql>
+</config>

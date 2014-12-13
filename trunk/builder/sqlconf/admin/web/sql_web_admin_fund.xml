@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="gbk"?>
+
+<config desc="用户中心（前台网站SQL配置）">
+	<!-- type: 1 查询语句 2 存储过程 3 更新类语句 -->
+
+	<!-- 提款处理配置 -->
+	<sql id="query_cashorder" type="1" desc="查询提款列表" order=" order by ccashdate  ">
+	<![CDATA[
+		select icashid,cnickid,crealname,cbankpro,cbankcity,cbankcode,cbankname,cbankcard,imoney,irate,ccashdate,
+		cmemo,coperator,cconfdate,decode(istate,0,'未处理',1,'已处理','其他') state,isuccess,
+		decode(isuccess,0,'未处理',1,'提款成功',2,'拒绝提款',3,'银行处理失败',4,'快钱批付中',5,'成功',6,'失败',7,'银行批付中','其他')  
+		success from tb_user_cash where 1 = 1
+	]]>
+		<in-parm>
+			<parm name="订单编号" property="oid" sql=" and icashid = ? " />
+			<parm name="是否处理" property="state" sql=" and istate = ? " />
+			<parm name="订单状态" property="success" sql=" and isuccess = ? " />
+			<parm name="提款类型" property="type" sql=" and itype = ? " />
+			<parm name="用户编号" property="nid" sql=" and cnickid = ? " />
+			<parm name="开始时间" property="sdate" sql=" and ccashdate &gt;= to_date(?,'yyyy-MM-dd') " />
+			<parm name="结束时间" property="edate" sql=" and ccashdate &lt; to_date(?,'yyyy-MM-dd')+1 " />
+			<parm name="操作人" property="qagent" sql=" and coperator = ? " />
+			<parm name="银行" property="bid" sql=" and cbankcode = ? " />
+			<parm name="银行" property="did" sql=" and cbankcode != '1' and cbankcode != '2' and cbankcode != '3' and cbankcode != '4' and cbankcode != ? and cbankcode != '13' " />
+		</in-parm>
+	</sql>
+	
+	<sql id="query_cashorder_1" type="1" desc="查询提款列表汇总" >
+	<![CDATA[
+		select icashid,cnickid,crealname,cbankpro,cbankcity,cbankcode,cbankname,cbankcard,imoney,irate,ccashdate,
+		cmemo,coperator,cconfdate,decode(istate,0,'未处理',1,'已处理','其他') state,isuccess,
+		decode(isuccess,0,'未处理',1,'提款成功',2,'拒绝提款',3,'银行处理失败','其他') success from tb_user_cash where 1 = 1
+		
+	]]>
+		<in-parm>
+			<parm name="订单编号" property="oid" sql=" and icashid = ? " />
+			<parm name="是否处理" property="state" sql=" and istate = ? " />
+			<parm name="订单状态" property="success" sql=" and isuccess = ? " />
+			<parm name="提款类型" property="type" sql=" and itype = ? " />
+			<parm name="用户编号" property="nid" sql=" and cnickid = ? " />
+			<parm name="开始时间" property="sdate" sql=" and ccashdate &gt;= to_date(?,'yyyy-MM-dd') " />
+			<parm name="结束时间" property="edate" sql=" and ccashdate &lt; to_date(?,'yyyy-MM-dd')+1 " />
+			<parm name="操作人" property="qagent" sql=" and coperator = ? " />
+			<parm name="银行" property="bid" sql=" and cbankcode = ? " />
+			<parm name="银行" property="did" sql=" and cbankcode != '1' and cbankcode != '2' and cbankcode != '3' and cbankcode != '4' and cbankcode != ? and cbankcode != '13' " />
+		</in-parm>
+	</sql>
+	
+	<sql id="query_cashorder_t" type="1" desc="查询提款列表处理时间" order=" order by ccashdate  ">
+	<![CDATA[
+        select '汇总' icashid,'' cnickid,'' crealname,'' cbankpro,'' cbankcity,'' cbankcode,'' cbankname,'' cbankcard, 
+		sum(imoney) imoney,sum(irate) irate,'' ccashdate,'' cmemo, '' coperator,'' cconfdate,'' state,'' success
+		 from tb_user_cash where 1 = 1	
+	]]>
+		<in-parm>
+			<parm name="订单编号" property="oid" sql=" and icashid = ? " />
+			<parm name="是否处理" property="state" sql=" and istate = ? " />
+			<parm name="订单状态" property="success" sql=" and isuccess = ? " />
+			<parm name="提款类型" property="type" sql=" and itype = ? " />
+			<parm name="用户编号" property="nid" sql=" and cnickid = ? " />
+			<parm name="开始时间" property="sdate" sql=" and cconfdate &gt;= to_date(?,'yyyy-MM-dd') " />
+			<parm name="结束时间" property="edate" sql=" and cconfdate &lt; to_date(?,'yyyy-MM-dd')+1 " />
+			<parm name="操作人" property="qagent" sql=" and coperator = ? " />
+		</in-parm>
+	</sql>
+		
+	
+	<sql id="query_cashorder_t_1" type="1" desc="查询提款列表汇总" >
+	<![CDATA[
+		select '汇总' icashid,'' cnickid,'' crealname,'' cbankpro,'' cbankcity,'' cbankcode,'' cbankname,'' cbankcard, 
+		sum(imoney) imoney,sum(irate) irate,'' ccashdate,'' cmemo,'' coperator,'' cconfdate,'' state,'' success
+		 from tb_user_cash where 1 = 1
+	]]>
+		<in-parm>
+			<parm name="订单编号" property="oid" sql=" and icashid = ? " />
+			<parm name="是否处理" property="state" sql=" and istate = ? " />
+			<parm name="订单状态" property="success" sql=" and isuccess = ? " />
+			<parm name="提款类型" property="type" sql=" and itype = ? " />
+			<parm name="用户编号" property="nid" sql=" and cnickid = ? " />
+			<parm name="开始时间" property="sdate" sql=" and cconfdate &gt;= to_date(?,'yyyy-MM-dd') " />
+			<parm name="结束时间" property="edate" sql=" and cconfdate &lt; to_date(?,'yyyy-MM-dd')+1 " />
+			<parm name="操作人"   property="qagent" sql=" and coperator = ? " />
+		</in-parm>
+	</sql>
+
+	<sql id="cash_confirm" type="2" desc="提款处理">
+	<![CDATA[
+		cpadmin.sp_admin_cash_confirm
+	]]>
+		<in-parm>
+			<parm name="提现编号" property="oid" />
+			<parm name="提现备注" property="memo" />
+			<parm name="处理用户" property="uid" />
+			<parm name="是否成功" property="success" />
+		</in-parm>
+		<out-parm>
+			<parm name="错误编号" property="busiErrCode" />
+			<parm name="错误描叙" property="busiErrDesc" />
+		</out-parm>
+	</sql>
+	
+	<sql id="agent_cash_confirm" type="2" desc="提款处理">
+	<![CDATA[
+		cpagent.sp_agent_cash_confirm
+	]]>
+		<in-parm>
+			<parm name="提现编号" property="oid" />
+			<parm name="提现备注" property="memo" />
+			<parm name="处理用户" property="uid" />
+			<parm name="是否成功" property="success" />
+		</in-parm>
+		<out-parm>
+			<parm name="错误编号" property="busiErrCode" />
+			<parm name="错误描叙" property="busiErrDesc" />
+		</out-parm>
+	</sql>
+	
+	<!-- 充值订单管理 -->
+	<sql id="query_fillorder" type="1" desc="查询充值列表" order=" order by  capplydate desc ">
+	<![CDATA[
+		select t.ipayid,t.cnickid,t.capplyid,t.imoney,t.capplydate,t.irate,t.cconfirmid,t.cconfdate, t.capplyinfo cmemo,
+		decode(t.isuccess,1,'成功','') cflag,t.cbankid,t.isuccess , t.capplyinfo
+		 from tb_user_pay t,tb_user_acct t1 where t.cnickid = t1.cnickid
+	]]>
+		<in-parm>
+			<parm name="是否成功" property="success" sql=" and t.isuccess = ? " />
+			<parm name="支付网关" property="bid" sql=" and t.cbankid = ? " />
+			<parm name="用户编号" property="nid" sql=" and t.cnickid = ? " />
+			<parm name="开始时间" property="sdate" sql=" and t.capplydate &gt;= to_date(?,'yyyy-MM-dd') " />
+			<parm name="结束时间" property="edate" sql=" and t.capplydate &lt; to_date(?,'yyyy-MM-dd')+1 " />
+			<parm name="订单编号" property="oid" sql=" and t.capplyid = ? " />
+			<parm name="银行编号" property="bid" sql=" and t.cbankid = ? " />
+			<parm name="未充值" property="money" sql=" and t1.ifill = to_number(?)  "/>
+		</in-parm>
+	</sql>
+	
+	<sql id="query_fillorder_1" type="1" desc="查询充值列表-到时时间"
+		order=" order by  cconfdate desc ">
+		<![CDATA[
+		select t.ipayid,t.cnickid,t.capplyid,t.imoney,t.capplydate,t.irate,t.cconfirmid,t.cconfdate, t.capplyinfo cmemo,
+		decode(t.isuccess,1,'成功','') cflag,t.cbankid,t.isuccess 
+		 from tb_user_pay t,tb_user_acct t1  where  t.cnickid = t1.cnickid
+		]]>
+		<in-parm>
+			<parm name="是否成功" property="success" sql=" and t.isuccess = ? " />
+			<parm name="支付网关" property="bid" sql=" and t.cbankid = ? " />
+			<parm name="用户编号" property="nid" sql=" and t.cnickid = ? " />
+			<parm name="开始时间" property="sdate" sql=" and t.cconfdate &gt;= to_date(?,'yyyy-MM-dd') " />
+			<parm name="结束时间" property="edate" sql=" and t.cconfdate &lt; to_date(?,'yyyy-MM-dd')+1 " />
+			<parm name="订单编号" property="oid" sql=" and t.capplyid = ? " />
+			<parm name="银行编号" property="bid" sql=" and t.cbankid = ? " />
+			<parm name="未充值" property="money" sql=" and t1.ifill = to_number(?)  "/>
+		</in-parm>
+	</sql>
+	
+	<sql id="query_fillorder_t" type="1" desc="查询充值列表汇总">
+	<![CDATA[
+		select '' ipayid,'' cnickid,'汇总' capplyid,sum(t.imoney) imoney,'' capplydate,sum(t.irate) irate,
+		'' cconfirmid,'' cconfdate,'' cmemo, ''cflag, '' cbankid,'' isuccess 
+		from tb_user_pay t,tb_user_acct t1  where  t.cnickid = t1.cnickid
+	]]>
+		<in-parm>
+			<parm name="是否成功" property="success" sql=" and t.isuccess = ? " />
+			<parm name="支付网关" property="bid" sql=" and t.cbankid = ? " />
+			<parm name="用户编号" property="nid" sql=" and t.cnickid = ? " />
+			<parm name="开始时间" property="sdate" sql=" and t.capplydate &gt;= to_date(?,'yyyy-MM-dd') " />
+			<parm name="结束时间" property="edate" sql=" and t.capplydate &lt; to_date(?,'yyyy-MM-dd')+1 " />
+			<parm name="订单编号" property="oid" sql=" and t.capplyid = ? " />
+			<parm name="银行编号" property="bid" sql=" and t.cbankid = ? " />
+			<parm name="未充值" property="money" sql=" and t1.ifill = to_number(?)  "/>
+		</in-parm>
+	</sql>
+	
+	<sql id="query_fillorder_t_1" type="1" desc="查询充值列表汇总">
+	<![CDATA[
+		select '' ipayid,'' cnickid,'汇总' capplyid,sum(t.imoney) imoney,'' capplydate,sum(t.irate) irate,
+		'' cconfirmid,'' cconfdate,'' cmemo, ''cflag, '' cbankid,'' isuccess 
+		 from tb_user_pay t,tb_user_acct t1  where  t.cnickid = t1.cnickid
+	]]>
+		<in-parm>
+			<parm name="是否成功" property="success" sql=" and t.isuccess = ? " />
+			<parm name="支付网关" property="bid" sql=" and t.cbankid = ? " />
+			<parm name="用户编号" property="nid" sql=" and t.cnickid = ? " />
+			<parm name="开始时间" property="sdate" sql=" and t.cconfdate &gt;= to_date(?,'yyyy-MM-dd') " />
+			<parm name="结束时间" property="edate" sql=" and t.cconfdate &lt; to_date(?,'yyyy-MM-dd')+1 " />
+			<parm name="订单编号" property="oid" sql=" and t.capplyid = ? " />
+			<parm name="银行编号" property="bid" sql=" and t.cbankid = ? " />
+			<parm name="未充值" property="money" sql=" and t1.ifill = to_number(?)  "/>
+		</in-parm>
+	</sql>
+	
+	<sql id="fill_confirm" type="2" desc="管理后台补单">
+	<![CDATA[
+		cpadmin.sp_admin_fill_confirm
+	]]>
+		<in-parm>
+			<parm name="订单编号" property="oid" />
+			<parm name="补单备注" property="memo" />
+			<parm name="补单用户" property="uid" />
+		</in-parm>
+		<out-parm>
+			<parm name="错误编号" property="busiErrCode" />
+			<parm name="错误描叙" property="busiErrDesc" />
+		</out-parm>
+	</sql>
+	
+	<sql id="add_money" type="2" desc="管理后台加款">
+	<![CDATA[
+		cpadmin.sp_admin_add_money
+	]]>
+		<in-parm>
+			<parm name="用户编号" property="nid" />
+			<parm name="加款金额" property="money" />
+			<parm name="加款备注" property="memo" />
+			<parm name="加款用户" property="uid" />
+		</in-parm>
+		<out-parm>
+			<parm name="错误编号" property="busiErrCode" />
+			<parm name="错误描叙" property="busiErrDesc" />
+		</out-parm>
+	</sql>
+	
+	<sql id="sp_comp_to_user" type="2" desc="账户赔偿">
+	<![CDATA[
+		cpadmin.sp_comp_to_user
+	]]>
+		<in-parm>
+			<parm name="用户编号" property="nid" />
+			<parm name="赔偿金额" property="money" />
+			<parm name="赔偿备注" property="memo" />
+			<parm name="操作用户" property="uid" />
+		</in-parm>
+		<out-parm>
+			<parm name="错误编号" property="busiErrCode" />
+			<parm name="错误描叙" property="busiErrDesc" />
+		</out-parm>
+	</sql>
+	
+	<sql id="sp_agent_deduct_money" type="2" desc="代理商扣款">
+	<![CDATA[
+		cpadmin.sp_agent_deduct_money
+	]]>
+		<in-parm>
+			<parm name="用户编号" property="aid" />
+			<parm name="扣款金额" property="money" />
+			<parm name="赔偿备注" property="memo" />
+			<parm name="操作用户" property="uid" />
+		</in-parm>
+		<out-parm>
+			<parm name="错误编号" property="busiErrCode" />
+			<parm name="错误描叙" property="busiErrDesc" />
+		</out-parm>
+	</sql>
+	
+	
+	<sql id="dec_money" type="2" desc="管理后台扣款">
+	<![CDATA[
+		cpadmin.sp_admin_dec_money
+	]]>
+		<in-parm>
+			<parm name="用户编号" property="nid" />
+			<parm name="加款金额" property="money" />
+			<parm name="加款备注" property="memo" />
+			<parm name="加款用户" property="uid" />
+		</in-parm>
+		<out-parm>
+			<parm name="错误编号" property="busiErrCode" />
+			<parm name="错误描叙" property="busiErrDesc" />
+		</out-parm>
+	</sql>
+
+</config>
