@@ -157,11 +157,11 @@ public class BankBeanStub {
 				break;
 			}
 			case BankBean.BANK_LLPAY:{
-				//double handmoney = Math.round(bean.getAddmoney() * 0.0060 * 100) / 100.0;
-				//if(handmoney < 0.10D) handmoney = 0.10D;//最少0.10
-				//bean.setAddmoney(bean.getAddmoney()*1-handmoney);
-				//bean.setHandmoney(handmoney);
-				bean.setHandmoney(0);
+				double handmoney = Math.round(bean.getAddmoney() * 0.0060 * 100) / 100.0;
+				if(handmoney < 0.10D) handmoney = 0.10D;//最少0.10
+				bean.setAddmoney(bean.getAddmoney()*1-handmoney);
+				bean.setHandmoney(handmoney);
+				//bean.setHandmoney(0);
 				break;
 			}
 			default: {
