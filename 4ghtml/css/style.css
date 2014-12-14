@@ -108,7 +108,7 @@
 .news-top,.m-reg{margin-top: 3.3rem;padding: 10px 3%;border-top:1px solid #ddd}
 .news-top{margin-bottom:4.6rem}
 .news-tit{padding:0 0 0.4em;border-bottom: 1px dotted #ccc}
-.news-tit h1{height:2em;line-height:2em;font-size: 1.3em;overflow: hidden;}
+.news-tit h1{max-height:4em;line-height:2em;font-size: 1.3em;overflow: hidden;}
 .news-tit strong{font-size:0.8em;font-weight:400;color:#777}
 .news-top p{padding: 1.15em 0 0;font-size: 1.15em;line-height:1.66;text-indent:2em;color:#444;}
 .app-footer{padding-top:1em;background-color: #e3e3e3;}
@@ -130,10 +130,11 @@
 .tz-list .list-l *{display: block;height:1.8em;line-height: 1.8em;overflow: hidden}
 .list-l i{font-size:0.8em;color: #aaa;white-space: normal}
 .tz-list .list-r{float:right;display: table;width:81.8%;box-sizing:border-box}
-.list-r .tz-true{float:left;width: 37.7%;margin-left:0.3em}
-.list-r .tz-true-middle{width:4em}
-.tz-true em{display: block;line-height:1.8em;text-align: center;color: #78c600;border: 1px solid #78c600;border-radius: 0.5em}
-.tz-true em.cur{background-color: #78c600;color: #fff}
+.list-r .tz-true{float:left;width: 35.7%;margin-left:0.3em}
+.list-r .tz-true:first-of-type{margin:0}
+.list-r .tz-true-middle{width:5em}
+.tz-true em{display: block;line-height:1.8em;text-align:center;color:#f40;border: 1px solid #f40;border-radius: 0.5em}
+.tz-true em.cur{background-color: #f40;color:#fff}
 .tz-true span{display: block;line-height: 2em;color: #aaa;text-align: center}
 .handBtn{ width:46%; line-height:2.1em; text-align:center; color:#f6851f;background:none; font-size:1.3em; border:1px solid #e2e2e2; background:#fff; font-weight:bold; margin:.5rem 0; border-radius:.2rem; -webkit-border-radius:.2rem; -moz-border-radius:.2rem}
 .clearBtn{ width:40%; text-align:left;padding-left: 5%}
@@ -152,23 +153,23 @@
 .errorBg{ position:absolute; padding:.7rem .5rem .6rem .9rem; right:-1.2em; top:0}
 .errorBg .error2{ display:block; width:1.06rem; height:1.06rem; background:url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACMAAAAjCAMAAAApB0NrAAAAQlBMVEUAAADc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nz////p6eno6Ojx8fHi4uLCn5nCAAAAEHRSTlMA8UL2iOjg0HwnFgYDhbm4g6GjowAAAPJJREFUOMuVlO0OgyAMRQtDxKmzgL7/qy5zlsuHCdv5ZcyJrZcWylj0+rKKlX2teqE7nmZgMJhnY8zuwSUPN5fKNHLLOOWKVnyH0pmCOlW9JE34So26ys3opWX8Nu5YOG4kd+aSmtl9lMewp5Y+Oa1QvEjB+yQZomWQQv5DvBRIw0KahSjSqfgg73UqBUkUFNu4lkQRNrKcS1CApTLjCAVZExcEn/4OkKqUVlJkK6WVLG21EmIlbcgH0VWSId0oIh2SM85rvxSRAs6LDM4duUQ8mnJ+sugOzE8+h/e4n+e5vxf9/ervaX/f+/fGX/dP/x57A/nLPBMWHWWgAAAAAElFTkSuQmCC") no-repeat center; background-size:1.06rem 1.06rem; -webkit-background-size:1.06rem 1.06rem; -moz-background-size:1.06rem 1.06rem}
 .sfcxs{ border-bottom:1px solid #e4e4e4; padding:.9em 0 .5rem 0; overflow:hidden; zoom:1}
-.sfcxs li{float:left;width:78.5%;font-size:.8em; color:#343434}
-.spfpl span{ display:inline-block; width:39%; color:#aaa; font-size:.75rem; text-align:center; margin-top:.2rem}
+.sfcxs li{float:left;width:78.5%;color:#343434}
+.spfpl span{ display:inline-block;width:39%;color:#aaa;font-size:1.12em; text-align:center; margin-top:.2rem}
 .spfpl span.spfvs,.spfNum .spfpl span.spfvs{ width:22%}
-.spfzpk span{ float:left;width:30%;text-align:center;margin:0.6em 1.2% 0;height:2em;line-height:2em;font-size:1.15em;color:#f40;border:1px solid #f40;border-radius:5px;overflow:hidden;-webkit-border-radius:5px;-moz-border-radius:5px}
+.spfzpk span{ float:left;width:30%;text-align:center;margin:0.6em 1.2% 0;height:2em;line-height:2em;font-size:1.13em;color:#f40;border:1px solid #f40;border-radius:5px;overflow:hidden;-webkit-border-radius:5px;-moz-border-radius:5px}
 .spfzpk span.cur{background-color:#f40;color:#fff}
 .bfpk span{ width:96%}
-.sfcxs li:first-child{ width:4.2rem; text-align:center; line-height:1rem; color:#5c5c5c}
+.sfcxs li:first-child{ width:5.3em;text-align:center;color:#5c5c5c}
 .sfcxs li:first-child p{font-size:1.12em}
-.sfcxs li:first-child cite{ display:block; font-size:.75rem; color:#aaa}
+.sfcxs li:first-child cite{ display:block;color:#aaa}
 .sfcxs li:last-child{ margin-right:0}
-.spfzpkNum span{ float:left; text-align:center; width:40%}
+.spfzpkNum span{width:40%;float:left;text-align:center;}
 .spfzpkNum span.spfvs{ width:18%}
 .spfzpkNum span em{color:#177ffc}
-.spfzpk,.spfzpkNum{ overflow:hidden; zoom:1}
+.spfzpk,.spfzpkNum{overflow:hidden; zoom:1}
 .hhzpk li{ position:relative}
 .hhzpk li:first-child,.jqzpk li:first-child{ margin-top:2em}
-.hhzpk .spfzpk span{ width:23%; height:3em; line-height:3em; margin-top:.5em}
+.hhzpk .spfzpk span{ width:23%; height:2.62em; line-height:2.62em; margin-top:.5em}
 .hhzpk .spfzpk em,.hhNum .spfzpk em{ float:left; width:1em; padding:.15em 1%; height:2.2rem; margin:.5em 1% 0 0; text-align:center; line-height:1; background:#ff9898; color:#fff; font-size:.75em; border-radius:.2em}
 .hhzpk .spfzpk em.rq,.hhNum .spfzpk em.rq{ padding:.5em 1%; height:2.3em; background:#98c5ff}
 .hhzpk .spfzpkNum span.spfvs{ width:10%}
@@ -179,6 +180,7 @@
 .jclqhh .spfzpk em.rq{ background:#ff9898}
 .jclqhh .hhmore{ top:.5rem}
 /*篮彩*/
+.jclqDxf .sfcxs li:first-child{margin-top:0.7em}
 .spfzpk2 span{ width:35%; font-size:.75rem;height:2.4em;line-height:1.4em;margin-top:0;padding:.4em 0;}
 .spfzpk2 span.spfvs,.spfNum .spfzpk2 span.spfvs{width:20%}
 .spfzpk2 span cite{ display:block;}
@@ -187,24 +189,10 @@
 .jclqVs .spfzpk2 b{ float:left;width:8%;padding-top:1em;font-size:.75em;font-weight:400;text-align:center;color:#343434;}
 .jclqVs .spfpl span{ width:43.8%; margin:0 9.2% 0 1.2%}
 .jclqVs .spfpl span:last-child,.jclqDxf .spfpl span:last-child,.jclqDxf .spfzpk span:last-child,.jclqhh .spfzpk span:last-child{margin-right:0}
-/*.jclqDxf .spfpl span{ width:41%; margin:0 17% 0 0}*/
-/*.jclqVs .spfpl span:last-child,.jclqDxf .spfpl span:last-child,.jclqDxf .spfzpk span:last-child,.jclqhh .spfzpk span:last-child{ margin-right:0}*/
-/*.jclqDxf .spfzpk span{ width:40%; margin:.4rem 17% 0 0}*/
-/*.jclqDxf .spfzpkNum{ font-size:.95rem}*/
-/*.jclqDxf .spfzpkNum span.spfvs{ font-size:.75rem}*/
-/*.jclqhh .sfcxs{ padding-top:0}*/
-/*.jclqhh .spfzpk span{ width:36.5%; font-size:.75rem}*/
-/*.jclqhh .spfzpk span b,.jclqhh .spfzpk span cite{ display:block; font-weight:normal; line-height:.5rem; margin-top:.5rem}*/
-/*.jclqhh .spfzpk em{ background:#98c5ff}*/
-/*.jclqhh .spfzpk em.rq{ background:#ff9898}*/
-/*.jclqhh .hhmore{ top:.5rem}*/
-/*.jclqhhtz .spfzpk span{ width:37.5%}*/
-/*.jclqsftz .spfzpk2 span{ width:38%}*/
-/*.jclqsftz .spfpl span{ width:39%}*/
-/*.jclqDxftz .spfzpk span{ width:35%}*/
-/*.jclqDxftz .spfpl span{ width:40%}*/
-/*.jclqVs .sfcxs li:first-child{ margin-top:.4rem}*/
-/*.jclqDxf .sfcxs li:first-child{ margin-top:.7rem}*/
+.jclqDxf .spfzpk span{ width:40%; margin:.4rem 17% 0 0}
+.jclqDxf .spfzpkNum{ font-size:.95em}
+/*.jclqDxf .spfzpkNum span.spfvs{}*/
+.jclqDxf .spfpl span{width: 41%;margin: 0 17% 0 0}
 /*双色球*/
 .ssqkjlist{padding:.4em 0; background:#f9f9f9; border-bottom:1px solid #e2e2e2}
 .ssqkjlist ul{line-height:1.6;font-size:1.15em;color:#8d8d8d;text-align:left;overflow:hidden;zoom:1}
@@ -224,13 +212,15 @@
 .ssqText{ padding-top:.8em; background:linear-gradient(top,#e2e2e2 0.2%,#e8e8e8 0.5%,#f3f3f3 .9%,#f7f7f7 95%); background:-webkit-linear-gradient(top,#e2e2e2 0.1%,#e8e8e8 0.2%,#f3f3f3 .5%,#f7f7f7 95%); background:-moz-linear-gradient(top,#e2e2e2 0.2%,#e8e8e8 0.5%,#f3f3f3 .9%,#f7f7f7 95%)}
 .ssqText p{line-height:1.6; padding-left:.7em; font-size:1.11em}
 .pdLeft08{padding-left:.8em}
-.ssqBall cite{ display:inline-block; background:#fff; color:#db150b; font-size:1rem; width:2.2rem; text-align:center; line-height:2.2rem; margin:.47rem .47rem .6rem 0; font-weight:normal; box-shadow:0 0 0 1px #d6d6d6 inset; -webkit-box-shadow:0 0 0 1px #d6d6d6 inset; -moz-box-shadow:0 0 0 1px #d6d6d6 inset; border-radius:2.2rem; -webkit-border-radius:2.2rem; -moz-border-radius:2.2rem }
+.ssqBall cite{display:inline-block; background:#fff;color:#db150b;font-size:1rem;width:2.2rem;text-align:center;line-height:2.2rem; margin:.47rem .47rem .6rem 0;border-radius:2.2rem; box-shadow:0 0 0 1px #d6d6d6 inset; -webkit-box-shadow:0 0 0 1px #d6d6d6 inset; -moz-box-shadow:0 0 0 1px #d6d6d6 inset;}
+.ssqblueBall cite{color: #106fe5}
 .ssqBall cite.redBall{ background:#db150b; color:#fff; box-shadow:0 0 0 1px #db150b inset; -webkit-box-shadow:0 0 0 1px #db150b inset; -moz-box-shadow:0 0 0 1px #db150b inset}
 .ssqBall cite.blueBall{ background:#106fe5; color:#fff; box-shadow:0 0 0 1px #106fe5 inset; -webkit-box-shadow:0 0 0 1px #106fe5 inset; -moz-box-shadow:0 0 0 1px #106fe5 inset}
 .ssqBall cite:last-child,.omitnum cite:last-child{ margin-right:0}
 .omitnum{ position:absolute; top:2.35rem; z-index:-1}
 .omitnum cite{ display:inline-block; color:#bababa; width:2.2rem;margin:0 .47rem 2.1rem 0;; height:.9rem; padding-top:.3rem; text-align:center; font-size:.65rem}
 .ssqxhblue{border-top:1px solid #e8e8e8; margin-top:.75rem}
+
 
 
 
