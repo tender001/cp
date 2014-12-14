@@ -182,7 +182,7 @@
 .relative{position:relative}
 .shakeIco2{background-image:url(/img/fc/shake.png)}
 .omitIco2{background-image:url(/img/fc/omitHover.png)}
-.shakeomit{ position:absolute; width:9.6em;font-size:.75em; right:0; top:0}
+.shakeomit{ position:absolute; width:9.6em;right:0; top:0}
 .shakeomit cite{float:left; margin-top:.8em}
 .shakeico{float:left;width:23px;height:18px;margin:.7em .15em 0 0;background-image:url(/img/fc/shake2.png);background-size:23px 18px}
 .omitico,.omitico2{ float:left;width:17px;height:14px;margin:.8em .05em 0 .5em;background-image:url(/img/fc/omit2.png);background-size:17px 14px}
