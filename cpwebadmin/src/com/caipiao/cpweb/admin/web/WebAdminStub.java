@@ -247,13 +247,19 @@ public class WebAdminStub {
 				logger.info(bean.getPn()+"");
 				
 				JdbcRecordSet jrs = null;
-				int count = 0;
+				JdbcRecordSet jrsc = null;
+				boolean flag = true;
 				if(!StringUtil.isEmpty(bean.getXagent())){
-					count = JdbcSqlMapping.executeUpdate("query_agent_user_ishave", bean, map, jcn);
-				}else{
-					count = 1;
+					jrsc = JdbcSqlMapping.executeQuery("query_agent_user_ishave", bean, map, jcn);
+					if(jrsc != null&&jrsc.size() > 0){
+						flag = true;
+						jrsc.clear();
+						jrsc = null;
+					}else{
+						flag = false;
+					}
 				}
-				logger.info("---------是否存在下级-------------count="+count);
+				logger.info("---------是否存在下级-------------flag="+flag);
 				
 //				if("query_agent_salestat".equals(bean.getFid())){
 //					String sql = "select cstatday statday, cgameid gid, isales sales,td.cagentid,t.apath"
@@ -269,7 +275,7 @@ public class WebAdminStub {
 
 //					jrs = JdbcSqlMapping.executeQuery(qkey, bean, map, bean.getPs(), bean.getPn(), jcn);
 //				}
-				if(count!=0){
+				if(flag){
 					jrs = JdbcSqlMapping.executeQuery(qkey, bean, map, bean.getPs(), bean.getPn(), jcn);
 				}
 				if (jrs != null) {
