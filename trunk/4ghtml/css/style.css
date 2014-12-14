@@ -171,6 +171,11 @@
 .hhzpk .spfzpk em.rq,.hhNum .spfzpk em.rq{ padding:.5em 1%; height:2.3em; background:#98c5ff}
 .hhzpk .spfzpkNum span.spfvs{ width:10%}
 .hhzpk .spfzpkNum span:last-child{ width:30%}
+.jclqhh .spfzpk span{ width:36.5%; font-size:.75rem}
+.jclqhh .spfzpk span b,.jclqhh .spfzpk span cite{ display:block; font-weight:normal; line-height:.5rem; margin-top:.5rem}
+.jclqhh .spfzpk em{ background:#98c5ff}
+.jclqhh .spfzpk em.rq{ background:#ff9898}
+.jclqhh .hhmore{ top:.5rem}
 /*双色球*/
 .ssqkjlist{padding:.4em 0; background:#f9f9f9; border-bottom:1px solid #e2e2e2}
 .ssqkjlist ul{line-height:1.6;font-size:1.15em;color:#8d8d8d;text-align:left;overflow:hidden;zoom:1}
