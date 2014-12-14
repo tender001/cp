@@ -76,7 +76,7 @@
 .zfNum p{ color:#f03d3d; word-break:break-all}
 .spfNum .errorBg{ top:1.3rem}
 .spfNum .spfzpk span{ width:26%}
-.errorBg{ position:absolute; padding:.7rem .5rem .6rem .9rem; right:0; top:0}
+.errorBg{ position:absolute; padding:.7rem .5rem .6rem .9rem; right:-1.2em; top:0}
 .errorBg .error2{ display:block; width:1.06rem; height:1.06rem; background:url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACMAAAAjCAMAAAApB0NrAAAAQlBMVEUAAADc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nz////p6eno6Ojx8fHi4uLCn5nCAAAAEHRSTlMA8UL2iOjg0HwnFgYDhbm4g6GjowAAAPJJREFUOMuVlO0OgyAMRQtDxKmzgL7/qy5zlsuHCdv5ZcyJrZcWylj0+rKKlX2teqE7nmZgMJhnY8zuwSUPN5fKNHLLOOWKVnyH0pmCOlW9JE34So26ys3opWX8Nu5YOG4kd+aSmtl9lMewp5Y+Oa1QvEjB+yQZomWQQv5DvBRIw0KahSjSqfgg73UqBUkUFNu4lkQRNrKcS1CApTLjCAVZExcEn/4OkKqUVlJkK6WVLG21EmIlbcgH0VWSId0oIh2SM85rvxSRAs6LDM4duUQ8mnJ+sugOzE8+h/e4n+e5vxf9/ervaX/f+/fGX/dP/x57A/nLPBMWHWWgAAAAAElFTkSuQmCC") no-repeat center; background-size:1.06rem 1.06rem; -webkit-background-size:1.06rem 1.06rem; -moz-background-size:1.06rem 1.06rem}
 /*充值*/
 .cz_icon1,.cz_icon2,.cz_icon3,.cz_icon4,.cz_icon5,.cz_icon6,.cz_icon7,.cz_icon8{display:inline-block;width:36px;height:36px;background-position:0 0; vertical-align:middle;}
