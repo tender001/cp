@@ -112,18 +112,16 @@ function drawLowerSailTbody($rows,$table,ep) {
 	var tbody = '';
 	if (ep) {
 		$rows.each(function(){
-			var statday = $(this).attr('statday');
 			var cagentid = textVal($(this).attr('cagentid'));
 			var apath = textVal($(this).attr('apath'));
 			var gid = textVal($(this).attr('gid'));
 			var sales = $(this).attr('sales');
-			tbody += '<tr><td>' + statday + '</td>'
-				+ '<td>' + cagentid + '</td>'
+			tbody += '<td>' + cagentid + '</td>'
 				+ '<td>' + apath + '</td>'
 				+ '<td>' + FormatMoneyZh(sales) + '</td></tr>';
 		});	
 	} else {
-		tbody = '<tr><td colspan="4">对不起，当前无数据！</td></tr>';
+		tbody = '<tr><td colspan="3">对不起，当前无数据！</td></tr>';
 	}
 	$('tbody',$table).html(tbody);
 	setZebraTable($table);	
