@@ -29,6 +29,8 @@ var _rc3 = 0;
 var _sdate4 = '2014-02-01';
 var _edate4 = '2014-06-30';
 var _gid4 = '';
+var _nid4 = '';
+var _dl4 = '';
 var _ischeck4 = false;
 var _pn4 = 1;
 var _ps4 = 20;
@@ -143,6 +145,8 @@ function initPublicVal() {
 	_nc = '';
 	_gid3 = '';
 	_gid4 = '';
+	_nid = '';
+	_dl = '';
 	_pn1 = 1;
 	_pn2 = 1;
 	_pn3 = 1;
@@ -592,6 +596,11 @@ function getLowerSails(pn) {
 	senddata.sdate = _sdate4;
 	senddata.edate = _edate4;
 	senddata.gid = _gid4;
+	senddata.nid =_nid4;
+	if(_dl4!=''){
+		senddata.qagent = _dl4;
+	}
+	senddata.xagent = _dl4;
 	senddata.pn = pn;
 	senddata.ps = _ps4;
 		
@@ -1043,6 +1052,8 @@ function searchLowerSails() {
 	_sdate4 = $.trim($('#lowersdate').val());
 	_edate4 = $.trim($('#loweredate').val());
 	_gid4 = $('#lowergidselect').val();
+	_nid4 = $('#lncname').val();
+	_dl4 = $('#ldlsbh').val();
 	if ($('#lowerishz')[0].checked) {
 		_ischeck4 = true;
 	} else {

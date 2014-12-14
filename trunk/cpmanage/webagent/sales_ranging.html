@@ -5,7 +5,7 @@
 <!-- BEGIN HEAD -->
 <head>
 	<meta charset="utf-8" />
-	<title>资金明细</title>
+	<title>下级销量排名</title>
 	<meta content="width=device-width, initial-scale=1.0" name="viewport" />
 	<meta content="" name="description" />
 	<meta content="" name="author" />
@@ -28,8 +28,8 @@
     <link href="assets/glyphicons_halflings/css/halflings.css" rel="stylesheet" />
     <link rel="stylesheet" href="assets/data-tables/DT_bootstrap.css" />
     <link rel="stylesheet" type="text/css" href="assets/bootstrap-datepicker/css/datepicker.css" />
-	<link rel="stylesheet" type="text/css" href="css/normaltable.css" />
-	<link rel="stylesheet" type="text/css" href="css/fund_detail.css" />
+    <link rel="stylesheet" type="text/css" href="css/normaltable.css" />
+    <link rel="stylesheet" type="text/css" href="css/lower_sales.css" />
 	<link rel="shortcut icon" href="favicon.ico" />
 	<script type="text/javascript" src="assets/js/jquery-1.8.3.min.js"></script>
 	<script type="text/javascript" src="assets/breakpoints/breakpoints.js"></script>	
@@ -41,14 +41,14 @@
 	<script type="text/javascript" src="assets/js/excanvas.js"></script>
 	<script type="text/javascript" src="assets/js/respond.js"></script>
 	<![endif]-->
-	<script type="text/javascript" src="assets/uniform/jquery.uniform.min.js"></script>
-	<script type="text/javascript" src="js/common/jquery-ui.min.js"></script>	
-	<script type="text/javascript" src="assets/chosen-bootstrap/chosen/chosen.jquery.min.js"></script>
-	<script type="text/javascript" src="js/date-zh-CN.js"></script>	
+	<script type="text/javascript" src="assets/uniform/jquery.uniform.min.js"></script>	
+	<script type="text/javascript" src="js/common/jquery-ui.min.js"></script>
+   	<script type="text/javascript" src="assets/chosen-bootstrap/chosen/chosen.jquery.min.js"></script>
+   	<script type="text/javascript" src="js/date-zh-CN.js"></script>
+	<script type="text/javascript" src="assets/js/app.js"></script>
 	<script type="text/javascript" src="js/common.js"></script>
-	<script type="text/javascript" src="js/fund_detail.js"></script>
-	<script type="text/javascript" src="assets/js/app.js"></script>	
-	<script type="text/javascript" src="js/tool.js?v=1.1.0.0"></script>	
+	<script type="text/javascript" src="js/sales_ranging.js"></script>
+	<script type="text/javascript" src="js/tool.js?v=1.1.0.0"></script>			
 </head>
 <!-- END HEAD -->
 <!-- BEGIN BODY -->
@@ -68,11 +68,9 @@
 				<img src="assets/img/menu-toggler.png" alt="" />
 				</a>          
 				<!-- END RESPONSIVE MENU TOGGLER -->				
-				<!-- BEGIN TOP NAVIGATION MENU -->					
 				<button type="button" class="btn green pull-right" id="logoutbtn">
        				退出 
        	</button>
-				<!-- END TOP NAVIGATION MENU -->	
 			</div>
 		</div>
 		<!-- END TOP NAVIGATION BAR -->
@@ -113,18 +111,18 @@
 					<span class=""></span>
 					</a>
 				</li>
-                <li class="has-sub active">
+                <li class="has-sub">
 					<a href="fund_detail.html">
 					<i class="icon-table"></i> 
 					<span class="title">资金明细</span>
-					<span class="selected"></span>
+					<span class=""></span>
 					</a>
 				</li>
                 <li class="has-sub ">
 					<a href="user.html">
 					<i class="icon-group"></i> 
 					<span class="title">用户查询</span>
-					<span class=""></span>
+					<span class="selected"></span>
 					</a>
 				</li>
                 <li class="has-sub ">
@@ -134,18 +132,18 @@
 					<span class=""></span>
 					</a>
 				</li>
-				<li class="has-sub">
+				<li class="has-sub active">
 					<a href="sales_ranging.html">
 					<i class="icon-sitemap"></i> 
 					<span class="title">下级销量排名</span>
 					<span class="selected"></span>
 					</a>
 				</li>
-                <li class="has-sub ">
+                <li class="has-sub">
 					<a href="lower_sales.html">
 					<i class="icon-sitemap"></i> 
 					<span class="title">下级销量查询</span>
-					<span class=""></span>
+					<span class="selected"></span>
 					</a>
 				</li>
 				<li class="has-sub ">
@@ -189,7 +187,7 @@
                                 <i class="icon-angle-right"></i> 
 							</li>
 							<li>
-								<span>资金明细</span>
+								<a href="#">下级销量排名查询</a>
 							</li>
 						</ul>
 						<!-- END PAGE TITLE & BREADCRUMB-->
@@ -200,11 +198,11 @@
 				<div class="row-fluid">
 					<div class="span12">
 						<!-- BEGIN EXAMPLE TABLE PORTLET-->
-						<div class="portlet box green">
+						<div class="portlet box darkslategray">
 							<div class="portlet-title">
-                            	<h4 id="porlet-title-accountid"><i class="halflings-icon white user"></i>admin资金明细</h4>
+                            	<h4 id="porlet-title-accountid"><i class="halflings-icon white user"></i>admin下级销量排名查询</h4>
 								<div class="tools">
-									<a href="javascript:;" class="reload" id="reloadfunddetail"></a>
+									<a href="javascript:;" class="reload" id="reloadlowersales"></a>
 								</div>
 							</div>
 							<div class="portlet-body">
@@ -215,152 +213,64 @@
 									</div>
 									<div id="edatediv">
 										<label>结束时间：</label>
-                     					<input id="edate" class="m-wrap m-ctrl-medium" type="text" style="width:100px;" />
+                      					<input id="edate" class="m-wrap m-ctrl-medium" type="text" style="width:100px;" />
 									</div>
-									<div id="selectdiv">
-                	  <label>交易类型：</label>
-                    <select class="small m-wrap" id="transselect" tabindex="1">
-                       <option value="Category 1">全部</option>
-                       <option value="Category 2">佣金</option>
-                       <option value="Category 3">转账</option>
-                       <option value="Category 4">提款</option>
-                       <option value="Category 5">代理商转款</option>
-                       <option value="Category 6">销售扣款</option>
-                    </select>
-                 	</div>
-                 	<div id="checkdiv">
-                 		<label>汇总：</label>
-                 	  <input type="checkbox" id="ishz" value=""  />
-                 	</div>
-                 	<div id="btndiv">
-                     <button id="searchbtn" class="btn green">
-                       查询 <i class="halflings-icon white search"></i>
-                     </button>&nbsp;<button id="exportbtn" class="btn green">导出 <i class="halflings-icon white"></i></button>
-                 	</div>
+									<div id="ncdiv">
+				                	  <label>用户名：</label>
+				                    <input class="m-wrap small" id="ncname" type="text" />
+				                 	</div>
+									<div id="ncdiv">
+				                	  <label>代理商编号：</label>
+				                    <input class="m-wrap small" id="dlsbh" type="text" />
+				                 	</div>
+				                 	<div id="btndiv">
+				                     <button id="searchbtn" class="btn darkslategray">
+				                       		查询 <i class="halflings-icon white search"></i>
+				                     </button>
+				                 	</div>
 								</div>
-								<table id="moneylist" class="normal-table table-hover" cellpadding="0" cellspacing="0">
-				<thead><tr>
-					<th>流水号</th>
-					<th>进账</th>
-					<th>出账</th>
-					<th>用户</th>
-					<th>交易类型</th>
-					<th>发生时间</th>
-					<th>变化前</th>
-					<th>变化后</th>
-					<th>业务数据</th>
-				</tr></thead>
-				<tbody>
-					<tr>
-						<td>001</td>
-						<td>￥3542</td>
-						<td>￥3542</td>
-						<td>a</td>
-						<td>合买</td>
-						<td>2012-01-12</td>
-						<td>双色球</td>
-						<td>21231232</td>
-						<td>20%</td>
-					</tr>
-					<tr>
-						<td>002</td>
-						<td>￥7542</td>
-						<td>￥3542</td>
-						<td>a</td>
-						<td>合买</td>
-						<td>2012-01-12</td>
-						<td>双色球</td>
-						<td>21231232</td>
-						<td>20%</td>
-					</tr>
-					<tr>
-						<td>003</td>
-						<td>￥3542</td>
-						<td>￥3842</td>
-						<td>a</td>
-						<td>合买</td>
-						<td>2012-01-12</td>
-						<td>双色球</td>
-						<td>21231232</td>
-						<td>20%</td>
-					</tr>
-					<tr>
-						<td>004</td>
-						<td>￥3542</td>
-						<td>￥3542</td>
-						<td>a</td>
-						<td>合买</td>
-						<td>2012-01-12</td>
-						<td>双色球</td>
-						<td>21231232</td>
-						<td>20%</td>
-					</tr>
-					<tr>
-						<td>005</td>
-						<td>￥3542</td>
-						<td>￥3542</td>
-						<td>a</td>
-						<td>合买</td>
-						<td>2012-01-12</td>
-						<td>双色球</td>
-						<td>21231232</td>
-						<td>20%</td>
-					</tr>
-					<tr>
-						<td>006</td>
-						<td>￥3542</td>
-						<td>￥3542</td>
-						<td>a</td>
-						<td>合买</td>
-						<td>2012-01-12</td>
-						<td>双色球</td>
-						<td>21231232</td>
-						<td>20%</td>
-					</tr>
-					<tr>
-						<td>007</td>
-						<td>￥3542</td>
-						<td>￥3542</td>
-						<td>a</td>
-						<td>合买</td>
-						<td>2012-01-12</td>
-						<td>双色球</td>
-						<td>21231232</td>
-						<td>20%</td>
-					</tr>
-					<tr>
-						<td>008</td>
-						<td>￥3542</td>
-						<td>￥3542</td>
-						<td>a</td>
-						<td>合买</td>
-						<td>2012-01-12</td>
-						<td>双色球</td>
-						<td>21231232</td>
-						<td>20%</td>
-					</tr>
-				</tbody>
-				<tfoot><tr>
-					<td colspan="9">
-						<div class="paging">
-							<div class="show-num-info">
-								显示&nbsp;<span class="min-count">X</span>
-								&nbsp;到&nbsp;<span class="max-count">Y</span>
-								&nbsp;共<span class="sub-count">Z</span>&nbsp;条
-							</div>
-							<div class="paging-btn pagination">
-								<ul>
-									<li class="prev-btn"><a>上一页</a></li>
-									<li class="prev-num"><a>1</a></li>
-									<li class="cur-num active"><a>2</a></li>
-									<li class="next-num"><a>3</a></li>
-									<li class="next-btn"><a>下一页</a></li>
-								</ul>
-							</div>
-						</div>
-					</td>
-				</tr></tfoot>
-			</table>
+								<table id="sublayersaillist" class="normal-table table-hover" cellpadding="0" cellspacing="0">
+									<thead><tr>
+										<th>日期</th>
+										<th>代理名称</th>
+										<th>代理层级</th>
+										<th>销售金额</th>
+									</tr></thead>
+									<tbody>
+										<tr>
+											<td>2014-06-11</td>
+											<td>vip1</td>
+											<td>1级</td>
+											<td>￥342</td>
+										</tr>
+										<tr>
+											<td>2014-06-12</td>
+											<td>vip2</td>
+											<td>2级</td>
+											<td>￥342</td>
+										</tr>
+									</tbody>
+									<tfoot><tr>
+										<td colspan="4">
+											<div class="paging">
+												<div class="show-num-info">
+													显示&nbsp;<span class="min-count">X</span>
+													&nbsp;到&nbsp;<span class="max-count">Y</span>
+													&nbsp;共<span class="sub-count">Z</span>&nbsp;条
+												</div>
+												<div class="paging-btn pagination">
+								  					<ul>
+														<li class="prev-btn"><a>上一页</a></li>
+														<li class="prev-num"><a>1</a></li>
+														<li class="cur-num active"><a>2</a></li>
+														<li class="next-num"><a>3</a></li>
+														<li class="next-btn"><a>下一页</a></li>
+													</ul>
+												</div>
+											</div>
+										</td>
+									</tr></tfoot>
+								</table>
 							</div>
 						</div>
 						<!-- END EXAMPLE TABLE PORTLET-->

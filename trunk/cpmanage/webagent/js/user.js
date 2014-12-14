@@ -68,8 +68,11 @@ function getUid() {
 
 function getUserList(pn) {
 	var senddata = new Object();
-	senddata.qagent = _dl;
 	senddata.agent = _uid;
+	if(_dl!=""){
+		senddata.agent = _dl;
+	}
+	senddata.xagent = _dl;
 	senddata.fid = "query_agent_user";
 	if (_ischeck) {
 		senddata.money = "1";
@@ -118,6 +121,7 @@ function drawUserTbody($rows,$table,ep) {
 			var cfill = $(this).attr('cfill');
 			var cadddate = $(this).attr('cadddate');
 			var cactivedate = $(this).attr('cactivedate');
+			var consumedate = $(this).attr('consumedate');
 			var cparentid= $(this).attr('cparentid');
 			var cagentid= $(this).attr('cagentid');
 			var daili = $(this).attr('daili');
@@ -134,19 +138,20 @@ function drawUserTbody($rows,$table,ep) {
 			}
 			if(cidcard==""){shezhi="未实名";ty="普通用户";}
 			
-			tbody += '<tr><td color="bule"><a href="/cpmanage/webagent/sales_volume.html?uid='+cagentid+'" target="_blank"><font color="green">' + cnickid + '</font></a></td>'
+			tbody += '<tr><td color="bule"><a href="/cast/webagent/sales_volume.html?uid='+cagentid+'" target="_blank"><font color="green">' + cnickid + '</font></a></td>'
 				+ '<td>' + textVal(crealname) + '</td>'
 				+ '<td>' + cparentid + '</td>'
 				+ '<td>' + FormatMoneyZh(ibalance) + '</td>'
 				+ '<td>' + textVal(cfill) + '</td>'
 				+ '<td>' + cadddate + '</td>'
 				+ '<td>' + cactivedate + '</td>'
+				+ '<td>' + consumedate + '</td>'
 				+ '<td>' + ty + '</td>'
 				+ '<td>' + shezhi + '</td>'
 				+'</tr>';
 		});	
 	} else {
-		tbody = '<tr><td colspan="9">对不起，当前无数据.</td></tr>';
+		tbody = '<tr><td colspan="10">对不起，当前无数据.</td></tr>';
 	}
 	$('tbody',$table).html(tbody);
 	setZebraTable($table);	
