@@ -155,11 +155,11 @@
 .sfcxs li{float:left;width:78.5%;font-size:.8em; color:#343434}
 .spfpl span{ display:inline-block; width:39%; color:#aaa; font-size:.75rem; text-align:center; margin-top:.2rem}
 .spfpl span.spfvs,.spfNum .spfpl span.spfvs{ width:22%}
-.spfzpk span{ float:left;width:30%;text-align:center;margin:0.6em 1.2% 0;height:2em;line-height:2em;overflow:hidden;font-size:.9em; color:#f40;border:1px solid #f40;border-radius:5px;-webkit-border-radius:5px;-moz-border-radius:5px}
+.spfzpk span{ float:left;width:30%;text-align:center;margin:0.6em 1.2% 0;height:2em;line-height:2em;font-size:1.15em;color:#f40;border:1px solid #f40;border-radius:5px;overflow:hidden;-webkit-border-radius:5px;-moz-border-radius:5px}
 .spfzpk span.cur{background-color:#f40;color:#fff}
 .bfpk span{ width:96%}
 .sfcxs li:first-child{ width:4.2rem; text-align:center; line-height:1rem; color:#5c5c5c}
-.sfcxs li:first-child p{ font-size:.9rem}
+.sfcxs li:first-child p{font-size:1.12em}
 .sfcxs li:first-child cite{ display:block; font-size:.75rem; color:#aaa}
 .sfcxs li:last-child{ margin-right:0}
 .spfzpkNum span{ float:left; text-align:center; width:40%}
