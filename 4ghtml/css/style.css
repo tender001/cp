@@ -156,7 +156,7 @@
 .sfcxs li{float:left;width:78.5%;color:#343434}
 .spfpl span{ display:inline-block;width:39%;color:#aaa;font-size:1.12em; text-align:center; margin-top:.2rem}
 .spfpl span.spfvs,.spfNum .spfpl span.spfvs{ width:22%}
-.spfzpk span{ float:left;width:30%;text-align:center;margin:0.6em 1.2% 0;height:2.4em;line-height:2.4em;font-size:1.13em;color:#f40;border:1px solid #f40;border-radius:5px;overflow:hidden;-webkit-border-radius:5px;-moz-border-radius:5px}
+.spfzpk span{ float:left;width:30%;text-align:center;margin:0.6em 1.2% 0;height:2em;line-height:2em;font-size:1.13em;color:#f40;border:1px solid #f40;border-radius:5px;overflow:hidden;-webkit-border-radius:5px;-moz-border-radius:5px}
 .spfzpk span.cur{background-color:#f40;color:#fff}
 .bfpk span{ width:96%}
 .sfcxs li:first-child{ width:5.3em;text-align:center;color:#5c5c5c}
@@ -174,14 +174,14 @@
 .hhzpk .spfzpk em.rq,.hhNum .spfzpk em.rq{ padding:.5em 1%; height:2.3em; background:#98c5ff}
 .hhzpk .spfzpkNum span.spfvs{ width:10%}
 .hhzpk .spfzpkNum span:last-child{ width:30%}
-.jclqhh .spfzpk span{ width:36.5%; font-size:.75rem}
+.jclqhh .spfzpk span{width:36.5%}
 .jclqhh .spfzpk span b,.jclqhh .spfzpk span cite{ display:block; font-weight:normal; line-height:.5rem; margin-top:.5rem}
 .jclqhh .spfzpk em{ background:#98c5ff}
 .jclqhh .spfzpk em.rq{ background:#ff9898}
 .jclqhh .hhmore{ top:.5rem}
 /*篮彩*/
 .jclqDxf .sfcxs li:first-child{margin-top:0.7em}
-.spfzpk2 span{ width:35%;height:2.4em;line-height:1.4em;margin-top:0;padding:.4em 0;}
+.spfzpk2 span{ width:35%; font-size:.75em;height:2.4em;line-height:1.4em;margin-top:0;padding:.4em 0;}
 .spfzpk2 span.spfvs,.spfNum .spfzpk2 span.spfvs{width:20%}
 .spfzpk2 span cite{ display:block;}
 .spfzpk2 span.cur i{ color:#fff}
