@@ -40,6 +40,7 @@ public class WebAdmin extends BaseBean {
 	private String newValue = "";
 	
 	private String agent = "";
+	private String xagent = "";
 	
 	public String getAgent() {
 		return agent;
@@ -47,6 +48,15 @@ public class WebAdmin extends BaseBean {
 
 	public void setAgent(String agent) {
 		this.agent = agent;
+	}
+
+	
+	public String getXagent() {
+		return xagent;
+	}
+
+	public void setXagent(String xagent) {
+		this.xagent = xagent;
 	}
 
 	public String getOldValue() {
