@@ -59,7 +59,7 @@ function getUid() {
 			if (code == '0') {
 				_uid = $('uid',$resp).text();
 				$('#content-accountid').text('代理商' + _uid);
-				$('#porlet-title-accountid').text(_uid + '下级销量查询')
+				$('#porlet-title-accountid').text(_uid + '下级销量排名查询')
 					.prepend('<i class="icon-sitemap halflings-icon white xiayi-tubiao"></i>');
 				getLowerSails(1);
 			} else {
@@ -116,7 +116,7 @@ function drawLowerSailTbody($rows,$table,ep) {
 			var apath = textVal($(this).attr('apath'));
 			var gid = textVal($(this).attr('gid'));
 			var sales = $(this).attr('sales');
-			tbody += '<td>' + cagentid + '</td>'
+			tbody += '<tr><td>' + cagentid + '</td>'
 				+ '<td>' + apath + '</td>'
 				+ '<td>' + FormatMoneyZh(sales) + '</td></tr>';
 		});	
