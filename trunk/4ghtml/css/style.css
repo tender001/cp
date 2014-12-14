@@ -156,7 +156,7 @@
 .sfcxs li{float:left;width:78.5%;color:#343434}
 .spfpl span{ display:inline-block;width:39%;color:#aaa;font-size:1.12em; text-align:center; margin-top:.2rem}
 .spfpl span.spfvs,.spfNum .spfpl span.spfvs{ width:22%}
-.spfzpk span{ float:left;width:30%;text-align:center;margin:0.6em 1.2% 0;height:2em;line-height:2em;font-size:1.13em;color:#f40;border:1px solid #f40;border-radius:5px;overflow:hidden;-webkit-border-radius:5px;-moz-border-radius:5px}
+.spfzpk span{ float:left;width:30%;text-align:center;margin:0.6em 1.2% 0;height:2.4em;line-height:2.4em;font-size:1.13em;color:#f40;border:1px solid #f40;border-radius:5px;overflow:hidden;-webkit-border-radius:5px;-moz-border-radius:5px}
 .spfzpk span.cur{background-color:#f40;color:#fff}
 .bfpk span{ width:96%}
 .sfcxs li:first-child{ width:5.3em;text-align:center;color:#5c5c5c}
@@ -181,7 +181,7 @@
 .jclqhh .hhmore{ top:.5rem}
 /*篮彩*/
 .jclqDxf .sfcxs li:first-child{margin-top:0.7em}
-.spfzpk2 span{ width:35%; font-size:.75rem;height:2.4em;line-height:1.4em;margin-top:0;padding:.4em 0;}
+.spfzpk2 span{ width:35%;height:2.4em;line-height:1.4em;margin-top:0;padding:.4em 0;}
 .spfzpk2 span.spfvs,.spfNum .spfzpk2 span.spfvs{width:20%}
 .spfzpk2 span cite{ display:block;}
 .spfzpk2 span.cur i{ color:#fff}
@@ -189,7 +189,7 @@
 .jclqVs .spfzpk2 b{ float:left;width:8%;padding-top:1em;font-size:.75em;font-weight:400;text-align:center;color:#343434;}
 .jclqVs .spfpl span{ width:43.8%; margin:0 9.2% 0 1.2%}
 .jclqVs .spfpl span:last-child,.jclqDxf .spfpl span:last-child,.jclqDxf .spfzpk span:last-child,.jclqhh .spfzpk span:last-child{margin-right:0}
-.jclqDxf .spfzpk span{ width:40%; margin:.4rem 17% 0 0}
+.jclqDxf .spfzpk span{ width:40%;margin:.4em 17% 0 0}
 .jclqDxf .spfzpkNum{ font-size:.95em}
 /*.jclqDxf .spfzpkNum span.spfvs{}*/
 .jclqDxf .spfpl span{width: 41%;margin: 0 17% 0 0}
