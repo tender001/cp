@@ -27,7 +27,7 @@ table{border-collapse:collapse;border-spacing:0}
 .more{float: right;color: #999}
 /*@media screen and (-webkit-min-device-pixel-ratio:0){input{line-height:normal !important}}*/
 .top-mar{margin-top:2.6rem;padding: 10px 0;font-size: 1.14em;background-color: #f1f1f1;}
-.top-margin{margin-top:2.7rem;}
+.top-margin{margin-top:2.75rem;}
 .user a,.nav-list h3,.go-top-ico{background-image:url("../img/app-icon-index.png");background-repeat:no-repeat;}
 /*gotop*/
 .go-top{position: relative}
