@@ -78,24 +78,29 @@
 .spfNum .spfzpk span{ width:26%}
 .errorBg{ position:absolute; padding:.7rem .5rem .6rem .9rem; right:-1.2em; top:0}
 .errorBg .error2{ display:block; width:1.06rem; height:1.06rem; background:url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACMAAAAjCAMAAAApB0NrAAAAQlBMVEUAAADc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nz////p6eno6Ojx8fHi4uLCn5nCAAAAEHRSTlMA8UL2iOjg0HwnFgYDhbm4g6GjowAAAPJJREFUOMuVlO0OgyAMRQtDxKmzgL7/qy5zlsuHCdv5ZcyJrZcWylj0+rKKlX2teqE7nmZgMJhnY8zuwSUPN5fKNHLLOOWKVnyH0pmCOlW9JE34So26ys3opWX8Nu5YOG4kd+aSmtl9lMewp5Y+Oa1QvEjB+yQZomWQQv5DvBRIw0KahSjSqfgg73UqBUkUFNu4lkQRNrKcS1CApTLjCAVZExcEn/4OkKqUVlJkK6WVLG21EmIlbcgH0VWSId0oIh2SM85rvxSRAs6LDM4duUQ8mnJ+sugOzE8+h/e4n+e5vxf9/ervaX/f+/fGX/dP/x57A/nLPBMWHWWgAAAAAElFTkSuQmCC") no-repeat center; background-size:1.06rem 1.06rem; -webkit-background-size:1.06rem 1.06rem; -moz-background-size:1.06rem 1.06rem}
-.sfcxs{ border-bottom:1px solid #e4e4e4; padding:.9em 0 .5em 0; overflow:hidden; zoom:1}
-.sfcxs li{ float:left; font-size:.8em; color:#343434; width:78.5%}
-.spfzpk span{float:left;width:30%;text-align:center;margin:0.6em 1.2% 0; height:2rem; line-height:2em; overflow:hidden; font-size:.9em; color:#78c600; border:1px solid #78c600;border-radius:.2em;}
-.spfzpk span.cur{background-color:#78c600; color:#fff}
+.sfcxs{ border-bottom:1px solid #e4e4e4; padding:.9em 0 .5rem 0; overflow:hidden; zoom:1}
+.sfcxs li{float:left;width:78.5%;font-size:.8em; color:#343434}
+.spfzpk span{ float:left; width:30%; text-align:center; margin:0 1.2%; height:2em; line-height:2em; overflow:hidden; font-size:.9em; color:#78c600; margin-top:.6em; border:1px solid #78c600; border-radius:.2em; -webkit-border-radius:.2em; -moz-border-radius:.2em}
+.spfzpk span.cur{background-color:#f40;color:#fff}
 .bfpk span{ width:96%}
-.sfcxs li:first-child{ width:4.2em; text-align:center; line-height:1em; color:#5c5c5c}
-.sfcxs li:first-child p{ font-size:.9em}
-.sfcxs li:first-child cite{ display:block; font-size:.75em; color:#aaa}
+.sfcxs li:first-child{ width:4.2rem; text-align:center; line-height:1rem; color:#5c5c5c}
+.sfcxs li:first-child p{ font-size:.9rem}
+.sfcxs li:first-child cite{ display:block; font-size:.75rem; color:#aaa}
 .sfcxs li:last-child{ margin-right:0}
 .spfzpkNum span{ float:left; text-align:center; width:40%}
 .spfzpkNum span.spfvs{ width:18%}
+.spfzpkNum span em{color:#177ffc}
 .spfzpk,.spfzpkNum{ overflow:hidden; zoom:1}
-.spfzpk2 span{ width:35%; font-size:.75em; height:2.1em; padding:.4em 0; line-height:1.2em; margin-top:0}
-.spfzpk2 span.spfvs,.spfNum .spfzpk2 span.spfvs{ width:20%}
-.spfzpk2 span cite{ display:block; font-size:.95em}
-.spfzpk2 span.cur i{ color:#fff}
-.spfpl span{ display:inline-block; width:39%; color:#aaa; font-size:.75rem; text-align:center; margin-top:.2rem}
-.spfpl span.spfvs,.spfNum .spfpl span.spfvs{ width:22%}
+
+
+.hhzpk li{ position:relative}
+.hhzpk li:first-child,.jqzpk li:first-child{ margin-top:2em}
+.hhzpk .spfzpk span{ width:23%; height:3em; line-height:3em; margin-top:.5em}
+.hhzpk .spfzpk em,.hhNum .spfzpk em{ float:left; width:6%; padding:.15em 1%; height:2.2rem; margin:.5em 1% 0 0; text-align:center; line-height:1; background:#ff9898; color:#fff; font-size:.75em; border-radius:.2em}
+.hhzpk .spfzpk em.rq,.hhNum .spfzpk em.rq{ padding:.5em 1%; height:2.3em; background:#98c5ff}
+.hhzpk .spfzpkNum span.spfvs{ width:10%}
+.hhzpk .spfzpkNum span:last-child{ width:30%}
+
 
 /*充值*/
 .cz_icon1,.cz_icon2,.cz_icon3,.cz_icon4,.cz_icon5,.cz_icon6,.cz_icon7,.cz_icon8{display:inline-block;width:36px;height:36px;background-position:0 0; vertical-align:middle;}
@@ -152,11 +157,13 @@
 .D_icon:before{ background-position:0 -54px; width:9px; height:12px;}
 .S_icon:before,.C_icon:before,.H_icon:before,.D_icon:before{ background-image:url(../img/huase_icon.png); background-size:13px 70px;}
 /*新闻资讯*/
-.news-top,.m-reg{margin-top: 3.3rem;padding: 10px 3%;border-top:1px solid #ccc}
+.news-top,.m-reg{margin-top: 3.3rem;padding: 10px 3%;border-top:1px solid #ddd}
+.news-top{margin-bottom:4.6rem}
 .news-tit{padding:0 0 0.4em;border-bottom: 1px dotted #ccc}
-.news-tit h1{height:2em;line-height:2em;font-size: 1.15em;overflow: hidden;text-align: center}
+.news-tit h1{height:2em;line-height:2em;font-size: 1.3em;overflow: hidden;}
 .news-tit strong{font-size:0.8em;font-weight:400;color:#777}
-.news-top p{padding: 1.2em 0 0;font-size: 1.1em;text-indent:2em;color:#444;}
+.news-top p{padding: 1.15em 0 0;font-size: 1.15em;line-height:1.66;text-indent:2em;color:#444;}
+.app-footer{padding-top:1em;background-color: #e3e3e3;}
 /*登录-注册*/
 .m-reg{border-bottom: 2px solid #ccc}
 .m-reg .reg{width: 88%;margin: 0 auto;}
