@@ -28,7 +28,6 @@ $(function(){
 	
 	App.init();
 	App.setPage('ui_tree');
-	initGidTypeSelect();
 
 	$('#reloadlowersales').click(function(){
 		getLowerSails(1);
@@ -44,17 +43,7 @@ $(function(){
 	//getLowerSails(_uid,false,'2012-01-12','2012-01-13','',1);
 });
 
-function initGidTypeSelect() {
-	var gidlen = SYS_CONFIG.game.length;
-	var selectopt = '';
-	for(var i = 0; i < gidlen; i++){
-		var gidopt = SYS_CONFIG.game[i];
-		selectopt += '<option value="' + gidopt[0] + '">'
-			+ gidopt[1] + '</option>';
-	}
-	$('#gidselect').empty().append(selectopt);
-	App.initChosenSelect('#gidselect');
-}
+
 
 function getUid() {
 	$.ajax({
@@ -83,14 +72,9 @@ function getUid() {
 function getLowerSails(pn) {
 	var senddata = new Object();
 	senddata.qagent = _uid;
-	if (_ischeck) {
-		senddata.fid = "query_xagent_salestat_t";
-	} else {
-		senddata.fid = "query_xagent_salestat";
-	}
+	senddata.fid = "query_xagent_salesRanging";
 	senddata.sdate = _sdate;
 	senddata.edate = _edate;
-	senddata.gid = _gid;
 	senddata.nid =_nid;
 	if(_dl!=''){
 		senddata.qagent = _dl;
@@ -136,11 +120,10 @@ function drawLowerSailTbody($rows,$table,ep) {
 			tbody += '<tr><td>' + statday + '</td>'
 				+ '<td>' + cagentid + '</td>'
 				+ '<td>' + apath + '</td>'
-				+ '<td>' + SYS_CONFIG.getGame(gid) + '</td>'
 				+ '<td>' + FormatMoneyZh(sales) + '</td></tr>';
 		});	
 	} else {
-		tbody = '<tr><td colspan="5">对不起，当前无数据！</td></tr>';
+		tbody = '<tr><td colspan="4">对不起，当前无数据！</td></tr>';
 	}
 	$('tbody',$table).html(tbody);
 	setZebraTable($table);	
@@ -234,14 +217,8 @@ function initDateRange() {
 function searchLowerSails() {
 	_sdate = $.trim($('#sdate').val());
 	_edate = $.trim($('#edate').val());
-	_gid = $('#gidselect').val();
 	_nid = $('#ncname').val();
 	_dl = $('#dlsbh').val();
-	if ($('#ishz')[0].checked) {
-		_ischeck = true;
-	} else {
-		_ischeck = false;
-	}
 	getLowerSails(1);
 }
 
