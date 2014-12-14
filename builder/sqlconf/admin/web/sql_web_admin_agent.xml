@@ -251,7 +251,7 @@
 	   	</in-parm>
 	</sql> -->
 	
-	<sql id="query_agent_user" type="1" desc="查询用户列表" >
+	<sql id="query_agent_user" type="1" desc="查询用户列表" order ="order by m.cadddate desc">
 	<![CDATA[
 		select m.*,(select count(*) from tb_agent_rate where cagentid=(select cagentid from tb_agent where cnickid=m.cnickid)) as fandian from 
 		(select a.cparentid,b.cnickid,b.crealname,b.cadddate,b.cactivedate,b.cagentid,b.idaigou,b.ihemai,b.izhuihao,b.ijoin,b.ibalance,a.isdaili daili,b.cidcard,b.ifill,decode(b.ifill,0,'否','是') cfill,b.consumedate from (select u.cmobileno,u.CIDCARD,u.crealname,u.cadddate,u.cactivedate,u.cconsumedate consumedate,u.cagentid,UA.* from tb_user u left join tb_user_acct ua on u.cnickid=ua.cnickid) b left join tb_agent a on a.cnickid=b.cnickid  
@@ -269,7 +269,6 @@
 	   		<parm name="结束时间"   property="edate"/>
 	   		<parm name="搜索用户"   property="nid" sql=" and m.cnickid = ? "/>
 	   		<parm name="充值金额"   property="money" sql=" and m.ifill > to_number(?) "/>
-	   		<parm name="用户编号"   property="agent"  sql=" order by m.cadddate desc"/>				   		
 	   	</in-parm>		 
 	</sql>
 	
