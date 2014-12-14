@@ -308,10 +308,12 @@ function betconfirm(){
 //	}
 	
 //	 chooseArray.push([n, $(obj).attr("value").toString(), '0',bets]);
-	if(chooseArray.length<2){
+	var minimum=typeID=="5"?1:2;
+	if(chooseArray.length<minimum){
 		showTips('至少选择两个场次投注!');
 		return;
 	}
+	$("#buyHeader h1").html($_sys.getlotname($("#gid").val())+"_投注")
     for (var i = 0; i < chooseArray.length; i++) {
 		var 
 		cList='<ul class="spfNum list-r fn-clearfix" bet="'+chooseArray[i][0]+'"><cite class="errorBg" onClick="Reone('+chooseArray[i][0]+')"><em class="error2"></em></cite>'+ $(chooseArray[i][3]).html()+'</ul>'
