@@ -254,11 +254,11 @@
 	<sql id="query_agent_user" type="1" desc="查询用户列表" >
 	<![CDATA[
 		select m.*,(select count(*) from tb_agent_rate where cagentid=(select cagentid from tb_agent where cnickid=m.cnickid)) as fandian from 
-		(select a.cparentid,b.cnickid,b.crealname,b.cadddate,b.cactivedate,b.cagentid,b.idaigou,b.ihemai,b.izhuihao,b.ijoin,b.ibalance,a.isdaili daili,b.cidcard,b.ifill,decode(b.ifill,0,'否','是') cfill from (select u.cmobileno,u.CIDCARD,u.crealname,u.cadddate,u.cactivedate,u.cagentid,UA.* from tb_user u left join tb_user_acct ua on u.cnickid=ua.cnickid) b left join tb_agent a on a.cnickid=b.cnickid  
+		(select a.cparentid,b.cnickid,b.crealname,b.cadddate,b.cactivedate,b.cagentid,b.idaigou,b.ihemai,b.izhuihao,b.ijoin,b.ibalance,a.isdaili daili,b.cidcard,b.ifill,decode(b.ifill,0,'否','是') cfill,b.consumedate from (select u.cmobileno,u.CIDCARD,u.crealname,u.cadddate,u.cactivedate,u.cconsumedate consumedate,u.cagentid,UA.* from tb_user u left join tb_user_acct ua on u.cnickid=ua.cnickid) b left join tb_agent a on a.cnickid=b.cnickid  
 		where b.cagentid=? and b.cadddate >= to_date(?,'yyyy-mm-dd') and b.cadddate  <= to_date(?,'yyyy-mm-dd')+1 
 		union all
-		select a.cparentid,a.cnickid,b.crealname,a.ccreatedate,b.cactivedate,a.cagentid,b.idaigou,b.ihemai,b.izhuihao,b.ijoin,b.ibalance,a.isdaili daili,b.cidcard,b.ifill,decode(b.ifill,0,'否','是') cfill from tb_agent a left join (select u.cmobileno,u.CIDCARD,u.crealname,u.cactivedate,UA.* from tb_user u left join tb_user_acct ua on u.cnickid=ua.cnickid) b on a.cnickid=b.cnickid  
-		where a.cparentid in (select t.cagentid from tb_agent t connect by t.cparentid=prior t.cagentid start with t.cagentid=?) and a.ccreatedate >= to_date(?,'yyyy-mm-dd') and a.ccreatedate  <= to_date(?,'yyyy-mm-dd')+1) m where 1=1
+		select a.cparentid,a.cnickid,b.crealname,a.ccreatedate,b.cactivedate,a.cagentid,b.idaigou,b.ihemai,b.izhuihao,b.ijoin,b.ibalance,a.isdaili daili,b.cidcard,b.ifill,decode(b.ifill,0,'否','是') cfill,b.consumedate from tb_agent a left join (select u.cmobileno,u.CIDCARD,u.crealname,u.cactivedate,u.cconsumedate consumedate,UA.* from tb_user u left join tb_user_acct ua on u.cnickid=ua.cnickid) b on a.cnickid=b.cnickid  
+		where a.cparentid = ? and a.ccreatedate >= to_date(?,'yyyy-mm-dd') and a.ccreatedate  <= to_date(?,'yyyy-mm-dd')+1) m where 1=1
     ]]>
 		<in-parm>
 			<parm name="用户编号"   property="agent" />
@@ -269,9 +269,7 @@
 	   		<parm name="结束时间"   property="edate"/>
 	   		<parm name="搜索用户"   property="nid" sql=" and m.cnickid = ? "/>
 	   		<parm name="充值金额"   property="money" sql=" and m.ifill > to_number(?) "/>
-	   		<parm name="代理商编号" property="qagent" sql=" and m.cparentid = (select cagentid from tb_agent where cagentseq =? ) "/>
-	   		<parm name="代理商编号" property="qagent" sql=" or m.cagentid = (select cagentid from tb_agent where cagentseq =? ) "/>
-	   		<parm name="用户编号"   property="agent"  sql=" order by case cparentid when ? then 1 else 2 end,m.cparentid,m.cadddate desc"/>				   		
+	   		<parm name="用户编号"   property="agent"  sql=" order by m.cadddate desc"/>				   		
 	   	</in-parm>		 
 	</sql>
 	
@@ -440,7 +438,7 @@
 	   	</out-parm>
 	</sql>
 
-    <!-- <sql id="query_agent_salestat" type="1" desc="查询代理商销量统计" order=" order by cstatday desc ">
+    <sql id="query_agent_salestat" type="1" desc="查询代理商销量统计" order=" order by cstatday desc ">
 	<![CDATA[
 	    select cstatday statday, cgameid gid, isales sales from tb_agent_day 
 	    where cagentid = ? and cstatday >= ? and cstatday <= ?
@@ -451,9 +449,9 @@
 	   		<parm name="结束时间"   property="edate"/>
 	   		<parm name="彩种编号"   property="gid" sql=" and cgameid = ? "/>
 	   	</in-parm>
-	</sql> -->
+	</sql> 
 	
-	<sql id="query_agent_salestat" type="1" desc="查询代理商销量统计" order=" order by cstatday desc ">
+	<!-- <sql id="query_agent_salestat" type="1" desc="查询代理商销量统计" order=" order by cstatday desc ">
 	<![CDATA[
 		select cstatday statday, cgameid gid, isales sales,td.cagentid,t.apath from tb_agent_day td,(select cagentid,sys_connect_by_path(cagentid,'/') apath from tb_agent start with cagentid=? connect by prior cagentid = cparentid) t where td.cagentid=t.cagentid
 	]]>
@@ -463,7 +461,7 @@
 	   		<parm name="结束时间"   property="edate" sql=" and td.cstatday &lt;= ? "/>
 	   		<parm name="彩种编号"   property="gid" sql=" and cgameid = ? "/>
 	   	</in-parm>
-	</sql>
+	</sql>-->
 
     <!-- <sql id="query_xagent_salestat" type="1" desc="查询代理商销量统计" order=" order by cstatday desc ">
 	<![CDATA[
@@ -479,18 +477,18 @@
 	
 	<sql id="query_xagent_salestat" type="1" desc="查询代理商销量统计" order=" order by cstatday desc ">
 	<![CDATA[
-		select cstatday statday, cgameid gid, isales sales,td.cagentid,t.apath from tb_agent_day td,(select cagentid,sys_connect_by_path(cagentid,'/') apath from tb_agent start with cagentid=? connect by prior cagentid = cparentid) t where td.cagentid=t.cagentid and cstatday >= ? and cstatday <= ?
+		select cstatday statday, cgameid gid, isales sales,td.cagentid,t.apath from tb_agent_day td,(select cagentid,sys_connect_by_path(cagentid,'/') apath from tb_agent where cparentid=? ) t where td.cagentid=t.cagentid and cstatday >= ? and cstatday <= ?
 	]]>
 		<in-parm>
 	   		<parm name="代理商编号" property="qagent"/>
 	   		<parm name="开始时间"   property="sdate"/>
 	   		<parm name="结束时间"   property="edate"/>
 	   		<parm name="彩种编号"   property="gid" sql=" and cgameid = ? "/>
-	   		<parm name="代理商编号" property="qagent" sql=" and t.cagentid not in (?) "/>
+	   		<parm name="代理用户" property="nid" sql=" and t.cagentid = ? "/>
 	   	</in-parm>
 	</sql>
 
-    <!-- <sql id="query_agent_salestat_t" type="1" desc="查询代理商销量汇总" order="">
+    <sql id="query_agent_salestat_t" type="1" desc="查询代理商销量汇总" order="">
 	<![CDATA[
 	    select '汇总：' statday, ' ' gid, sum(isales) sales from tb_agent_day 
 	    where cagentid = ? and cstatday >= ? and cstatday <= ? 
@@ -501,9 +499,9 @@
 	   		<parm name="结束时间"   property="edate"/>
 	   		<parm name="彩种编号"   property="gid" sql="  and cgameid = ?  " />
 	   	</in-parm>
-	</sql> -->
+	</sql> 
 	
-	<sql id="query_agent_salestat_t" type="1" desc="查询代理商销量汇总" order="">
+	<!-- <sql id="query_agent_salestat_t" type="1" desc="查询代理商销量汇总" order="">
 	<![CDATA[
 	    select '汇总：' statday, ' ' gid, sum(isales) sales from tb_agent_day td,(select cagentid,sys_connect_by_path(cagentid,'/') apath from tb_agent start with cagentid=? connect by prior cagentid = cparentid) t where td.cagentid=t.cagentid and cstatday >= ? and cstatday <= ?
 	]]>
@@ -512,6 +510,30 @@
 	   		<parm name="开始时间"   property="sdate"/>
 	   		<parm name="结束时间"   property="edate"/>
 	   		<parm name="彩种编号"   property="gid" sql="  and cgameid = ?  " />
+	   	</in-parm>
+	</sql>-->
+	
+	
+	<sql id="query_xagent_salesRanging" type="1" desc="查询代理商销量排名" order=" GROUP BY td.cagentid,t.apath order by sales desc ">
+	<![CDATA[
+		select sum(isales) sales,td.cagentid,t.apath from tb_agent_day td,(select cagentid,sys_connect_by_path(cagentid,'/') apath from tb_agent where cparentid=?) t where td.cagentid=t.cagentid and cstatday >= ? and cstatday <= ?  
+	]]>
+		<in-parm>
+	   		<parm name="代理商编号" property="qagent"/>
+	   		<parm name="开始时间"   property="sdate"/>
+	   		<parm name="结束时间"   property="edate"/>
+	   		<parm name="代理用户" property="nid" sql=" and t.cagentid = ? "/>
+	   	</in-parm>
+	</sql>
+	
+	
+	<sql id="query_agent_user_ishave" type="1" desc="">
+	<![CDATA[
+	    select count(*) from ( select cagentid from tb_agent start with cagentid=? connect by prior cagentid = cparentid ) t1 where 1=1
+	]]> 
+		<in-parm>
+	   		<parm name="代理商编号" property="qagent"/>
+	   		<parm name="用户名"	 property="xagent" sql=" and t1.cagentid = ? "/>
 	   	</in-parm>
 	</sql>
 
@@ -529,14 +551,14 @@
 	
 	<sql id="query_xagent_salestat_t" type="1" desc="查询代理商销量汇总" order="">
 	<![CDATA[
-	    select '汇总：' statday, ' ' gid, sum(isales) sales from tb_agent_day td,(select cagentid,sys_connect_by_path(cagentid,'/') apath from tb_agent start with cagentid=? connect by prior cagentid = cparentid) t where td.cagentid=t.cagentid and cstatday >= ? and cstatday <= ?
+	    select '汇总：' statday, ' ' gid, sum(isales) sales from tb_agent_day td,(select cagentid,sys_connect_by_path(cagentid,'/') apath from tb_agent where cparentid = ?) t where td.cagentid=t.cagentid and cstatday >= ? and cstatday <= ?
 	]]>
 		<in-parm>
 	   		<parm name="代理商编号" property="qagent"/>
 	   		<parm name="开始时间"   property="sdate"/>
 	   		<parm name="结束时间"   property="edate"/>
 	   		<parm name="彩种编号"   property="gid" sql="  and cgameid = ?  " />
-	   		<parm name="代理商编号" property="qagent" sql=" and t.cagentid not in (?) "/>
+	   		<parm name="代理商用户" property="nid" sql=" and t.cagentid = ? "/>
 	   	</in-parm>
 	</sql>
 
