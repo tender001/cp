@@ -240,25 +240,36 @@ public class WebAdminStub {
 				
 				logger.info(bean.getFid());
 				logger.info(bean.getQagent());
+				logger.info(bean.getXagent());
 				logger.info(bean.getSdate());
 				logger.info(bean.getEdate());
 				logger.info(bean.getPs()+"");
 				logger.info(bean.getPn()+"");
 				
 				JdbcRecordSet jrs = null;
-				
-				if("query_agent_salestat".equals(bean.getFid())){
-					String sql = "select cstatday statday, cgameid gid, isales sales,td.cagentid,t.apath"
-							+ " from tb_agent_day td,(select cagentid,sys_connect_by_path(cagentid,'/') apath from tb_agent start with cagentid=? connect by prior cagentid = cparentid) t"
-							+ " where td.cagentid=t.cagentid and td.cstatday >= ? and td.cstatday <= ?";
-					jrs = jcn.executeQuery(sql, new Object[]{bean.getQagent(),bean.getSdate(),bean.getEdate()},bean.getPs(), bean.getPn());
-				}else if("query_xagent_salestat".equals(bean.getFid())){
-					String sql = "select cstatday statday, cgameid gid, isales sales,td.cagentid,t.apath "
-							+ " from tb_agent_day td,(select cagentid,sys_connect_by_path(cagentid,'/') apath from tb_agent start with cagentid=? connect by prior cagentid = cparentid) t "
-							+ " where td.cagentid=t.cagentid and cstatday >= ? and cstatday <= ?";
-					jrs = jcn.executeQuery(sql, new Object[]{bean.getQagent(),bean.getSdate(),bean.getEdate()},bean.getPs(), bean.getPn());
+				int count = 0;
+				if(!StringUtil.isEmpty(bean.getXagent())){
+					count = JdbcSqlMapping.executeUpdate("query_agent_user_ishave", bean, map, jcn);
 				}else{
+					count = 1;
+				}
+				logger.info("---------是否存在下级-------------count="+count);
+				
+//				if("query_agent_salestat".equals(bean.getFid())){
+//					String sql = "select cstatday statday, cgameid gid, isales sales,td.cagentid,t.apath"
+//							+ " from tb_agent_day td,(select cagentid,sys_connect_by_path(cagentid,'/') apath from tb_agent start with cagentid=? connect by prior cagentid = cparentid) t"
+//							+ " where td.cagentid=t.cagentid and td.cstatday >= ? and td.cstatday <= ?";
+//					jrs = jcn.executeQuery(sql, new Object[]{bean.getQagent(),bean.getSdate(),bean.getEdate()},bean.getPs(), bean.getPn());
+//				}else if("query_xagent_salestat".equals(bean.getFid())){
+//					String sql = "select cstatday statday, cgameid gid, isales sales,td.cagentid,t.apath "
+//							+ " from tb_agent_day td,(select cagentid,sys_connect_by_path(cagentid,'/') apath from tb_agent start with cagentid=? connect by prior cagentid = cparentid) t "
+//							+ " where td.cagentid=t.cagentid and cstatday >= ? and cstatday <= ?";
+//					jrs = jcn.executeQuery(sql, new Object[]{bean.getQagent(),bean.getSdate(),bean.getEdate()},bean.getPs(), bean.getPn());
+//				}else{
 
+//					jrs = JdbcSqlMapping.executeQuery(qkey, bean, map, bean.getPs(), bean.getPn(), jcn);
+//				}
+				if(count!=0){
 					jrs = JdbcSqlMapping.executeQuery(qkey, bean, map, bean.getPs(), bean.getPn(), jcn);
 				}
 				if (jrs != null) {
