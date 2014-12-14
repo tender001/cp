@@ -124,7 +124,7 @@
 .reg-read input{vertical-align: middle;vertical-align: -3px;margin: 0 0.3em 0 0}
 .reg-read a{color:#f40}
 /*投注*/
-.tz-menu{font:0.7em/1.5 sans-serif,Helvetica,Arial;color:#5c5c5c;text-indent:1em;background-color:#f2f2f2;border:1px solid #E4E4E4;border-width:1px 0}
+.tz-menu{color:#5c5c5c;text-indent:1em;background-color:#f2f2f2;border:1px solid #E4E4E4;border-width:1px 0}
 .tz-list{font-size: 0.9em;line-height: 1.2em;color: #5c5c5c;text-align:center;border-bottom: 1px solid #e4e4e4}
 .tz-list .list-l{float:left;width:18%;}
 .tz-list .list-l *{display: block;height:1.8em;line-height: 1.8em;overflow: hidden}
