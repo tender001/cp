@@ -90,50 +90,45 @@ function LoadMatchList() {
                     }
 					else if(typeID == 100 || typeID == 110)
 					{
-						matchHTML += "<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" class=\"match\">"
-							+ "<tr><td rowspan=\"3\" class='matchL'><div style=\"background-color:" + jj.color + ";\" class=\"Sclass Fillet\">" + jj.sclass + "</div>"
-							+ leftTime + "</td>";
-							if(typeID ==110){
-								matchHTML+= "<td> " + jj.guest + " " + (typeID >= 110 || jj.rq == "0" ? "VS" : "<span style='color:" + (jj.rq.indexOf("-") == -1 ? "red" : "green") + "'>" +(jj.rq.indexOf("-") == -1 ? "+" : "")+ jj.rq + "</span>") +"" + jj.home + " (<font color=red>主</font>)</td>";
-							}else{
-								matchHTML+="<td>" + jj.home + " "+(typeID == 110 || jj.rq == "0" ? "VS" : "<span style='color:" + (jj.rq.indexOf("-") == -1 ? "red" : "green") + "'>" +(jj.rq.indexOf("-") == -1 ? "+" : "")+ jj.rq + "</span>")+" " + jj.guest + "</td>";
-							}
-							
-							matchHTML+= "<td width='20%'><div class=\"mXi\">"+jj.MID+"</div></td></tr>"
-							+"<tr><td>"+oddsHTML+"</td><td class='md'>欧赔</td></tr>"
-							+ "<tr><td><div class='btn' style='width:150px' id='op_" + jj.ID + "' onclick='openC(" + jj.ID + ")'>展开投注选项</div></td>"
-							+ "<td>" + (OddsType == 2 ? "<div class='mDan1' id='D" + jj.ID + "' onclick='ChooseDan(this)'>胆</div>" : "") + "</td></tr>";
-						matchHTML += "<tr id='ch_" + jj.ID + "' class='chooseL' style='display:none;'><td colspan='3'>";
+					
 						if(typeID == 100)//3 + 31 + 8 + 9
 						{
 							//比分的主胜 平 主负
-							var rqSpfHTML = "",spfHTML="",jqsHTML="",bqcHTML="",sHTML = "",pHTML = "",fHTML = "";
-							for (var l = 0; l < kList.length; l++) {
-								var subHTML = "<div{add} class='mBTN' name='" + jj.ID + "' value='" + (l + 1) + "' n='" + cList[l] + "' onclick='ChooseMatch(this)'>" + nList[l] + "<br><span class='odds'>" + jj[kList[l]] + "</span></div>";
-								if (l>=3&&l<3+31) {
-									var subL = nList[l].replace(/胜其.+/gi, "1:0").replace(/平其.+/gi, "0:0").replace(/负其.+/gi, "0:1").split(':');
-									if (parseInt(subL[0]) > parseInt(subL[1])) sHTML += subHTML.replace("{add}", " style='color:red;' ");
-									else if (parseInt(subL[0]) == parseInt(subL[1])) pHTML += subHTML.replace("{add}", " style='color:blue;' ");
-									else fHTML += subHTML.replace("{add}", " style='color:green;' ");
+						
+
+						    newmatchHTML +='<ul class="sfcxs hhzpk">'
+						    	+'<li class="li_weige"><em>'+jj.MID+'</em> <p style="color:'+ jj.color +'">'+ jj.sclass +'</p><cite>'+jj.Time.split(" ")[1]+'截止</cite></li>'
+						    	+'<li>'
+						    	+'<p class="spfzpkNum">'
+						    	+'<span>'+jj.home+''+"<em style='color:" + (jj.rq.indexOf("-") == -1 ? "red" : "green") + "'>(" +(jj.rq.indexOf("-") == -1 ? "+" : "")+ jj.rq + ")</em>"+'</span>'
+						    	+'<span class="spfvs">VS</span>'
+						    	+'<span>'+jj.guest+'</span></p>'
+//						    	onclick="ChooseMatch(this)" n="3" value="1" name="141214001"
+						    	if(jj["sfStop"] == 0){
+									newmatchHTML +='<p class="spfzpk"><em>非让球</em>'
+										+' <span onclick="ChooseMatch(this)" n="3" value="52" name="'+ jj.ID +'">胜 '+jj.sf3+'</span>'
+										+' <span onclick="ChooseMatch(this)" n="1" value="53" name="'+ jj.ID +'">平 '+jj.sf1+'</span>'
+										+' <span onclick="ChooseMatch(this)" n="0" value="54" name="'+ jj.ID +'">胜  '+jj.sf0+'</span>'
+								}else{
+									newmatchHTML +='<p class="spfzpk"><em>非让球</em>'
+										+' <span>-</span>'
+										+' <span>未开售</span>'
+										+' <span>-</span>'
 								}
-								else
-								{
-									if(l<3) rqSpfHTML += subHTML.replace("{add}", " style='height:28px;line-height:28px;'").replace("<br>", "");
-									else if(l>=3+31 && l<3+31+8) jqsHTML += subHTML.replace("{add}", "").replace("<br>", "球<br>");
-									else if(l>=3+31+8 && l<3+31+8+9) bqcHTML += subHTML.replace("{add}", "");
-									else if(l>=3+31+8+9 && l<3+31+8+9+3) spfHTML += subHTML.replace("{add}", " style='height:28px;line-height:28px;'").replace("<br>", "");
+							    if(jj["wlStop"] == 0){
+									newmatchHTML +='<p class="spfzpk"><em class="rq">让球</em>'
+										+' <span  onclick="ChooseMatch(this)" n="3" value="1" name="'+ jj.ID +'">胜 '+jj.wl3+'</span>'
+										+' <span  onclick="ChooseMatch(this)" n="1" value="2" name="'+ jj.ID +'">平  '+jj.wl1+'</span>'
+										+' <span  onclick="ChooseMatch(this)" n="0" value="3" name="'+ jj.ID +'">胜  '+jj.wl0+'</span>'
+								}else{
+									newmatchHTML +='<p class="spfzpk"><em class="rq">让球</em>'
+										+' <span>-</span>'
+										+' <span>未开售</span>'
+										+' <span>-</span>'
 								}
-							}
-							if (rqSpfHTML != "" && parseFloat(jj["wl3"])>0 && jj["wlStop"] == 0) 
-								matchHTML += "<div class='hunheType'><span style='font-size:12px;'>让球<span style='color:" + (jj.rq.indexOf("-") == -1 ? "red" : "green") + "'>" +(jj.rq.indexOf("-") == -1 ? "+" : "")+ jj.rq + "</span></span>" + rqSpfHTML + "</div>";
-							if (spfHTML != "" && parseFloat(jj["sf3"])>0 && jj["sfStop"] == 0) 
-								matchHTML += "<div class='hunheType'><span style='font-size:12px;'>胜平负</span>" + spfHTML + "</div>";
-							if (jqsHTML != "" && parseFloat(jj["t0"])>0 && jj["tStop"] == 0) 
-								matchHTML += "<div class='hunheType'>" + jqsHTML + "</div>";
-							if (bqcHTML != "" && parseFloat(jj["ht33"])>0 && jj["htStop"] == 0) 
-								matchHTML += "<div class='hunheType'>" + bqcHTML + "</div>";
-							if (sHTML != "" && parseFloat(jj["sw10"])>0 && jj["sStop"] == 0) 
-								matchHTML += "<div class='hunheType'>"+sHTML+pHTML+fHTML+"</div>";
+						    	
+							
+							
 						}
 						else//2 + 2 + 12 + 2
 						{
@@ -660,6 +655,13 @@ function closeggtype() {
     $('.overlay').hide();
     $('#chuan_').slideUp('fast');
 }
+$(".jc-more").click(function() {
+    $(this).children().toggle();
+});
+$("#chowanfa").click(function() {
+    $(this).toggleClass("cur");
+    $(".hmPull").toggle()
+});
 function getXcode(mdata,gid){
    var mitem = [];
    var ditem = [];
