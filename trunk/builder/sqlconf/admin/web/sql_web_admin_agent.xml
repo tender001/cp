@@ -476,7 +476,7 @@
 	
 	<sql id="query_xagent_salestat" type="1" desc="查询代理商销量统计" order=" order by cstatday desc ">
 	<![CDATA[
-		select cstatday statday, cgameid gid, isales sales,td.cagentid,t.apath from tb_agent_day td,(select cagentid,sys_connect_by_path(cagentid,'/') apath from tb_agent where cparentid=? ) t where td.cagentid=t.cagentid and cstatday >= ? and cstatday <= ?
+		select cstatday statday, cgameid gid, isales sales,td.cagentid,t.apath from tb_agent_day td,(select cagentid,cparentid apath from tb_agent where cparentid=? ) t where td.cagentid=t.cagentid and cstatday >= ? and cstatday <= ?
 	]]>
 		<in-parm>
 	   		<parm name="代理商编号" property="qagent"/>
@@ -515,7 +515,7 @@
 	
 	<sql id="query_xagent_salesRanging" type="1" desc="查询代理商销量排名" order=" GROUP BY td.cagentid,t.apath order by sales desc ">
 	<![CDATA[
-		select sum(isales) sales,td.cagentid,t.apath from tb_agent_day td,(select cagentid,sys_connect_by_path(cagentid,'/') apath from tb_agent where cparentid=?) t where td.cagentid=t.cagentid and cstatday >= ? and cstatday <= ?  
+		select sum(isales) sales,td.cagentid,t.apath from tb_agent_day td,(select cagentid,cparentid apath from tb_agent where cparentid=?) t where td.cagentid=t.cagentid and cstatday >= ? and cstatday <= ?  
 	]]>
 		<in-parm>
 	   		<parm name="代理商编号" property="qagent"/>
@@ -550,7 +550,7 @@
 	
 	<sql id="query_xagent_salestat_t" type="1" desc="查询代理商销量汇总" order="">
 	<![CDATA[
-	    select '汇总：' statday, ' ' gid, sum(isales) sales from tb_agent_day td,(select cagentid,sys_connect_by_path(cagentid,'/') apath from tb_agent where cparentid = ?) t where td.cagentid=t.cagentid and cstatday >= ? and cstatday <= ?
+	    select '汇总：' statday, ' ' gid, sum(isales) sales from tb_agent_day td,(select cagentid,cparentid apath from tb_agent where cparentid = ?) t where td.cagentid=t.cagentid and cstatday >= ? and cstatday <= ?
 	]]>
 		<in-parm>
 	   		<parm name="代理商编号" property="qagent"/>
