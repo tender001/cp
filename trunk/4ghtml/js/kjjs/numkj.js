@@ -1,9 +1,37 @@
 $(document).ready(function(){
 		 loadcode();
-//		 getlistdata();
-//		 this = Y;
+		 $("#jjc").click(function(){
+			 $("#ss2").addClass("cur");
+			 $("#ss1").removeClass("cur");
+			 $("#ss3").removeClass("cur");
+	    	 $("#jjcs").show();
+	    	 $("#szcs").hide();
+	    	 $("#kpcs").hide();
+	    });
+		 $("#szc").click(function(){
+			 $("#ss1").addClass("cur");
+			 $("#ss2").removeClass("cur");
+			 $("#ss3").removeClass("cur");
+	    	 $("#jjcs").hide();
+	    	 $("#szcs").show();
+	    	 $("#kpcs").hide();
+	    });
+		 $("#kpc").click(function(){
+			 $("#ss3").addClass("cur");
+			 $("#ss2").removeClass("cur");
+			 $("#ss1").removeClass("cur");
+	    	 $("#jjcs").hide();
+	    	 $("#szcs").hide();
+	    	 $("#kpcs").show();
+	    });
 		});
-       
+//Qbuy=function(){
+//	 this.lib.Tabs({
+//           items: 'div.kj-menu-b li',
+//           focusCss: 'cur',
+//           contents: '#szc,#jjc,#kpc',
+//       }); 
+//};
 	loadcode = function(){//查询开奖公告	        	
      	$.ajax({
     		url : "/cpdata/game/aopencode.json",
@@ -135,6 +163,7 @@ $(document).ready(function(){
             }
     	}); 
     };
+   
 //    getlistdata= function () {
 //        $.ajax({
 //            url: this.omissionurl,
