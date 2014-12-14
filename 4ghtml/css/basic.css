@@ -46,7 +46,7 @@ table{border-collapse:collapse;border-spacing:0}
 /*底部灰色*/
 .pay-submit{padding: 1.3em 0;background-color: #e3e3e3}
 /*点击按钮*/
-.btn{display: block;padding:0.8em 0;letter-spacing:0.16em;text-align: center;border-radius:5px;box-shadow: 1px 1px 5px rgba(0,0,0,0.5)}
+.btn{display: block;padding:0.6em 0;letter-spacing:0.16em;text-align: center;border-radius:5px;box-shadow: 1px 1px 5px rgba(0,0,0,0.5)}
 .btn-true{width: 90%;margin:0 auto 12px;font-size:1.3em;color:#fff;background-color: #f60;background-image: -webkit-linear-gradient(top,#f60,#f20);background-image: -moz-linear-gradient(top,#f60,#f20);background-image: -o-linear-gradient(top,#f60,#f20);background-image: linear-gradient(top,#f60,#f20)}
 .btn-reg{width: 90%;margin:0 auto;font-size:1.2em;color:#666;background-color: #fff;}
 /*投注footer*/
@@ -75,7 +75,13 @@ input.fqhmGray{ background:#ebebeb}
 .buyHeader h1 s cite{position:absolute;top:8px;left:4px;border:6px solid #fff;border-width:6px 6px 0 6px;border-color:#fff transparent #fff transparent}
 .buyHeader h1 s.cur cite{top:6px;border:6px solid #fff;border-width:0 6px 6px 6px;border-color:transparent transparent #fff transparent}
 .fcHeader{ background:#db150b; border-bottom:1px solid #d5d5d5}
-.fcHeader h1,.pkHeader h1,.zcHeader h1{ color:#fff}
+.fcHeader h1,.pkHeader h1,.zcHeader h1{color:#fff}
+.hmPull{ position:absolute; z-index:1; border-left:1px solid #d5d5d5; margin-left:1px; top:2.68rem; width:100%; background:#fff}
+.hmPull a,.competitions span{float:left; position:relative; font-size:1em;line-height:3em; width:33%; text-align:center;color:#333;border-right:1px solid #ddd;border-bottom:1px solid #ddd}
+.hmPull a.cur,.hmSort li.cur,.competitions span.cur{ color:#f6851f}
+.hmPull a.cur:before,.competitions span.cur:before{ content:""; position:absolute; left:-1px; top:-1px; width:100%; height:3em; border:1px solid #f6851f}
+.hmPull a.cur:after,.competitions span.cur:after{ content:""; position:absolute; bottom:-1px; right:-1px; width:1.4em; height:1.4em; background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAC0AAAAtCAYAAAA6GuKaAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAHlSURBVGhD1dm9TsMwEADgvAkDExsbL8Az8AjwBjwAEmJgqNSNGVaYYGJAQgxMLAztghADCxJIDG0gpDkcK4nin+Rsx+e4lipVqmp9vp7vqkuSrMECgP2/hyksjzf4K3oyB99PZjU4erQOHDW6Cxwtug8cJRoDR4c2AUeFNgVHg7YBR4G2BY+OdgGPinYFj4YeAh4FPRQcHO0DHBTtCxwM7RMcBO0bTI6mAJOiqcBkaEowCZoa7B0dAuwVTQFOT7dg9XIHP2e7zfjAG5oM/PbItgYoFp8CfPDcgwK8PNnkEW6vFTuAl2FNKHDx9QrpdGc4ug+cTraFHGxPh3rfswjnsxshwsX3uwB2zuk+cHZ9qOSgEboEP18pYPkSOqExMBS59vJg8PzpQgRLl895loflsGmk5APYgK0ijYE5xDAn2+hyhCusbKHUZfmQRiXPCFzNjnXlSr79NUILPt9DLzGKtgL3wT/m0K4qrmA0PZzAFZy34Kqj1T9/UcGz2yM1JQwijDaXIeB6cy2c1V2xTOTwe3mApgRaPXyA2/AywtrFyqMtWJsePsENnHVIBe4IVtAU4C542TmxhtP1eVM9KMENnP3pKS/nEHAT6RBg16jqvpesG5hHWn6w6DMiVHslVBtT7ruW6H9W8ppOm5u6EQAAAABJRU5ErkJggg==) no-repeat center; background-size:1.4em 1.4em; -webkit-background-size:1.4em 1.4em; -moz-background-size:1.4em 1.4em}
+
 .backLink,.backIco2{ position:absolute; top:.9rem; left:1.1rem; color:#f6851f; font-size:.91rem}
 .backIco,.backIco2{ display:inline-block; background:none; margin-right:.01rem; width:.7rem; height:.65rem; border-left:.2rem solid #fff; border-bottom:.2rem solid #fff; transform:rotate(-315deg); -webkit-transform:rotate(-315deg); -moz-transform:rotate(-315deg)}
 .fcbackLink,.fcbackIco2{ position:absolute; top:.9rem; left:1.1rem; color:#fff; font-size:.91rem}
