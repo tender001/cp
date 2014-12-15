@@ -2,7 +2,7 @@ var tID = 10;
 var GameName = new Array("双色球", "超级大乐透", "七星彩", "排列3", "排列5", "福彩3D", "十一运夺金", "快乐十分", "快乐8", "江西11选5", "时时彩", "七乐彩");
 var GameID = new Array(10, 20, 25, 26, 27, 44, 115, 116, 118, 119, 120, 7);
 var Sindex = new Array(0, 0, 0, 0, 0, 0, 2, 0, 0, 2, 0, 0);
-var BallStyle = new Array("redball", "redball_s", "blueball", "blueball_s", "gpball", "gpball_s");
+var BallStyle = new Array("redBall", "", "blueBall", "", "", "redBall");
 function getIndex(id){
 	for(var i = 0; i < GameID.length;i++){
 		if(GameID[i] == id){
@@ -130,19 +130,19 @@ function createBallPanle(kind) {
         }
     }
     if (kID == 2) {//手选
-        html.push("<div id=\"divred\" class=\"number2\">");
+//        html.push("<div id=\"divred\" class=\"number2\">");
         if (tID == 10 || tID == 20 || tID == 7) {
-            html.push("<div style=\"padding-left:10px;background:#E3F0F9; line-height:26px; font-size: 14px;\" >");
-            html.push("<span style=\"float:right;padding-right:10px;\">");
-            html.push("<select id=\"redselect\">");
-            for (var i = start; i <= end; i++)
-                html.push("<option value=\"" + i.toString() + "\" " + (i == start ? "selected=\"selected\"" : "") + " >" + i.toString() + "个</option>");
-            html.push("</select> ");
+//            html.push("<div style=\"padding-left:10px;background:#E3F0F9; line-height:26px; font-size: 14px;\" >");
+//            html.push("<span style=\"float:right;padding-right:10px;\">");
+//            html.push("<select id=\"redselect\">");
+//            for (var i = start; i <= end; i++)
+//                html.push("<option value=\"" + i.toString() + "\" " + (i == start ? "selected=\"selected\"" : "") + " >" + i.toString() + "个</option>");
+//            html.push("</select> ");
 
-            html.push("<a class=\"button\" onclick=\"machineSelect(" + tID + ",'red');\" href=\"javascript:void(0)\">机选" + (tID == 10 ? "红球" : "前区") + "</a></span>请至少选择" + (tID == 20 ? "5" : tID == 10 ? "6" : "7") + "个号码<span id=\"redNotice\" style=\"color:Red;\"></span></div>");
+//            html.push("<cite  onclick=\"machineSelect(" + tID + ",'red');\" 摇一摇" + (tID == 10 ? "红球" : "前区") + "</a></span>请至少选择" + (tID == 20 ? "1" : tID == 10 ? "6" : "7") + "个号码<span id=\"redNotice\" style=\"color:Red;\"></></div>");
         }
 
-        html.push("<div id=\"redArea\">");
+//        html.push("<div id=\"redArea\">");
         if (tID == 10 || tID == 20 || tID == 7)
             html.push(createballpanle_ssq_dlt(minLength, maxLength, "red"));
         else if (tID == 25 || tID == 27)
@@ -161,33 +161,33 @@ function createBallPanle(kind) {
             html.push(createballpanle_happy8(1, 1));
         else if (tID == 120)
             html.push(createballpanle_ssc(1, 1));
-        
-        html.push("</div>");
-        
-        html.push("</div> ");
+//        
+//        html.push("</div>");
+//        
+//        html.push("</div> ");
         
         if (tID == 10 || tID == 20) {
-            html.push("<div id=\"divblue\" class=\"number2\">");
-            html.push("<div style=\"padding-left:10px;background:#E3F0F9;line-height:26px;font-size:14px;\">");
-            html.push("<span style=\"float:right; padding-right:10px;\">");
+//            html.push("<div id=\"divblue\" class=\"number2\">");
+//            html.push("<div  cclass=\"ssqxhblue relative pdLeft08\" style=\"z-index:5\" id=\"xzlq\">");
+//            html.push("<span style=\"float:right; padding-right:10px;\">");
             start = tID == 10 ? 1 : 2;
             end = tID == 10 ? 16 : 8;
             maxLength = tID == 10 ? 16 : 12;
-            html.push("<select id=\"blueselect\">");
-            for (var i = start; i <= end; i++)
-                html.push("<option value=\"" + i.toString() + "\" " + (i == start ? "selected=\"selected\"" : "") + " >" + i.toString() + "个</option>");
-            html.push("</select> ");
-            html.push("<a class=\"button2\" onclick=\"machineSelect(" + tID + ",'blue');\" href=\"javascript:void(0)\">机选" + (tID == 10 ? "蓝球" : "后区") + "</a></span>请至少选择" + (tID == 10 ? "1" : "2") + "个号码<span id=\"blueNotice\" style=\"color:Red;\"></span></div>");
-            html.push("<div id=\"blueArea\">");
+//            html.push("<select id=\"blueselect\">");
+//            for (var i = start; i <= end; i++)
+//                html.push("<option value=\"" + i.toString() + "\" " + (i == start ? "selected=\"selected\"" : "") + " >" + i.toString() + "个</option>");
+//            html.push("</select> ");
+//            html.push("<a class=\"button2\" onclick=\"machineSelect(" + tID + ",'blue');\" href=\"javascript:void(0)\">机选" + (tID == 10 ? "蓝球" : "后区") + "</a></span>请至少选择" + (tID == 10 ? "1" : "2") + "个号码<span id=\"blueNotice\" style=\"color:Red;\"></span></div>");
+//            html.push("<div id=\"blueArea\">");
             html.push(createballpanle_ssq_dlt(minLength, maxLength,"blue"));
-            html.push("</div>");
-            html.push("</div>");
+//            html.push("</div>");
+//            html.push("</div>");
         }
     }
     else if (kID == 1) { //机选
-    html.push("<div id=\"divMachine\" class=\"number\" style=\"padding-left:10px; padding-top:5px;\" >机选：<input type=\"text\" id=\"caseNotes\" class=\"textWH\" maxlength=\"2\" size=\"2\" value=\"5\" onkeyup=\"getParsetInt(this);\" /> <input type=\"button\" id=\"btnMachine\" onclick=\"machineRandom();\" value=\"开始机选\" /></div>");
-        html.push("<div id=\"divMachineCase\" class=\"number3\" style=\"padding-left:10px; padding-top:5px; font-weight:normal;\"></div>");
-        
+    html.push("<div id=\"divMachine\" class=\"number\" style=\"padding-left:10px; padding-top:5px;display:none;\" >摇一摇：<input type=\"text\" id=\"caseNotes\" class=\"textWH\" maxlength=\"2\" size=\"2\" value=\"1\" onkeyup=\"getParsetInt(this);\" /> <input type=\"button\" id=\"btnMachine\" onclick=\"machineRandom();\" value=\"摇一摇\" /></div>");
+//        html.push("<div id=\"divMachineCase\" class=\"number3\" style=\"padding-left:10px; padding-top:5px; font-weight:normal;\"></div>");
+//        
     }
     else if (kID == 3) { //胆拖
     }
@@ -291,6 +291,7 @@ function reCancelGame() {
 
 //selectBall
 function selectBall(ball, color) {
+
     var classnmae = color == "red" ? (tID > 114 ? BallStyle[4] : BallStyle[0]) : BallStyle[2];
     var classnmae_s = color == "red" ? (tID > 114 ? BallStyle[5] : BallStyle[1]) : BallStyle[3];
 
@@ -309,7 +310,7 @@ function selectBall(ball, color) {
         var ballList = $("#redArea").children("ul");
         var playtype = parseInt($("#PlayType").attr("value"));
         for (var i = 0; i < ballList.length; i++) {
-            var ball_sub = $($(ballList[i])[0]).children().children("span");
+            var ball_sub = $($(ballList[i])[0]).children().children("div.ssqBall");
             var value = "";
             for (var j = 0; j < ball_sub.length; j++) {
                 if ($(ball_sub[j]).attr("class").toString() == classnmae_s) {
@@ -346,7 +347,7 @@ function selectBall(ball, color) {
             if ((count < 1 && playtype == 8) || (count < 2 && playtype == 9))
                 valueList = "";
         } else {
-            if (count != $("#redArea").children("ul").length)
+            if (count != $("#xzhq cite").length)
                 valueList = "";
         }
     }
@@ -355,21 +356,21 @@ function selectBall(ball, color) {
         if (tID == 116 || tID == 120)
             playtype = parseInt($("#PlayType").attr("value"));//选一红投
         playtype = tID == 120 && playtype == 6 ? 6 : 0;
-        var ballList = $($(ball).parent().parent()[0]).children().children("span");
+        var ballList = $($(ball).parent().parent()[0]).children().children("cite");
         if (playtype == 2) {
             if (ball.className == classnmae) {
                 for (var i = 0; i < ballList.length; i++)
                     $(ballList[i]).attr("class", classnmae);
             }
-            else if (ball.className == classnmae_s) {
+            else if (ball.className == classnmae) {
                 for (var i = 0; i < ballList.length; i++) {
-                    $(ballList[i]).attr("class", classnmae_s);
+                    $(ballList[i]).attr("class", classnmae);
                     valueList += $(ballList[i]).text() + ",";
                 }
             }
         } else {
             for (var i = 0; i < ballList.length; i++) {
-                if ($(ballList[i]).attr("class").toString() == classnmae_s) {
+                if ($(ballList[i]).attr("class").toString() == classnmae) {
                     if (tID == 120 && playtype != 6 )
                         valueList += $(ballList[i]).text();
                     else
@@ -404,12 +405,12 @@ function machineSelect(type, color) {
         var maxlength = type == 10 ? 33 : type == 20 ? 35 : 30;
         var redNum = Random(maxlength);
         for (var i = 1; i <= maxlength; i++)
-            $("#redball_" + i.toString()).attr("class", "redball");
+            $("#redball_" + i.toString()).attr("class", "redBall");
 
         $("#RedBallValue").attr("value", "");
         var redvalue = "";
         for (var i = 0; i < selectlength; i++) {
-            $("#redball_" + redNum[i]).attr("class", "redball_s");
+            $("#redball_" + redNum[i]).attr("class", "redBall");
             redvalue += ((redNum[i] < 10 ? "0" + redNum[i].toString() : redNum[i]) + ",");
         }
 
@@ -420,22 +421,22 @@ function machineSelect(type, color) {
         }
     }
     else {
-        var selectlength = parseInt($("#blueselect").val());
+//        var selectlength = parseInt($("#blueselect").val());
         var maxlength = type == 10 ? 16 : 12;
         var blueNum = Random(maxlength);
         for (var i = 1; i <= maxlength; i++)
-            $("#blueball_" + i.toString()).attr("class", "blueball");
+            $("#blueball_" + i.toString()).attr("class", "blueBall");
 
         $("#BlueBallValue").attr("value", "");
         var bluevalue = "";
         for (var i = 0; i < selectlength; i++) {
-            $("#blueball_" + blueNum[i]).attr("class", "blueball_s");
+            $("#blueball_" + blueNum[i]).attr("class", "blueBall");
             bluevalue += ((blueNum[i] < 10 ? "0" + blueNum[i].toString() : blueNum[i]) + ",");
         }
         if (bluevalue != "") {
             bluevalue = reSort(bluevalue.substring(0, bluevalue.length - 1));
             $("#BlueBallValue").attr("value", bluevalue);
-            //$("#blueNotice").html("(已选择" + bluevalue.split(/\,/gi).length + "号码)");
+//            $("#blueNotice").html("(已选择" + bluevalue.split(/\,/gi).length + "号码)");
         }
     }
     countMoney();
@@ -449,20 +450,20 @@ function countNotes() {
     }
     else {
         if (tID == 10 || tID == 20) {//双色球,大乐透
-            if ($("#RebBallValue").attr("value") != "" && $("#BlueBallValue").attr("value") != "") {
+            if ($("#RedBallValue").attr("value") != "" && $("#BlueBallValue").attr("value") != "") {
                 var rebcount = $("#RedBallValue").attr("value").toString().split(/\,/gi).length;
                 var bluecount = $("#BlueBallValue").attr("value").toString().split(/\,/gi).length;
-                varNotes = count(rebcount, tID == 10 ? 6 : 5) * count(bluecount, tID == 10 ? 1 : 2);
+                varNotes = count(rebcount, tID == 10 ? 6 : 1) * count(bluecount, tID == 10 ? 1 : 1);
             }
         }
         else {
-            if ($("#RebBallValue").attr("value") != "" && $("#RedBallValue").attr("value").toString().length != 0) {
+            if ($("#RedBallValue").attr("value") != "" && $("#RedBallValue").attr("value").toString().length != 0) {
                 var playtype = parseInt($("#PlayType").attr("value"));
                 var numberlist = tID == 115 || tID == 116 || tID == 119 ? $("#RedBallValue").attr("value").toString().split(/\|/gi) : $("#RedBallValue").attr("value").toString().split(/\,/gi);
                 var isPass = true;
                 if (tID == 44 && (playtype == 8 || playtype == 9))//直选按位玩法,除福彩3D--1D,2D玩法外
                     isPass = false;
-                if ($("#redArea").children("ul").length > 1 && isPass) {
+                if ($("#redArea").children("cite").length > 1 && isPass) {
                     if (((tID == 115 || tID == 119) && (playtype == 4 || playtype == 7) || ((tID == 116) && (playtype == 5 || playtype == 8)))) {
                         if (playtype == 4 || playtype == 5) {//前二直选 //选二连直
                             for (var i = 0; i < numberlist[0].split(/\,/gi).length; i++) {
@@ -660,16 +661,17 @@ function upateFollowInfo(obj) {
 
 //机选号码
 function machineRandom() {
-    $("#btnMachine").attr("value", "重新机选");
-    $("#divMachineCase").html("");
+    $("#btnMachine").attr("value", "摇一摇");
+//    $("#jixuan").html("");
     $("#RedBallValue").attr("value", "");
+    $("#BlueBallValue").attr("value", "");
     var count = parseInt($("#caseNotes").attr("value"));
     for (var c = 0; c < count; c++) {
         var numberlist = "";
         if (tID == 10 || tID == 20) {
             var rednumber = Random(tID == 10 ? 33 : 35);
             var bluenumber = Random(tID == 10 ? 16 : 12);
-            var redlength = tID == 10 ? 6 : 5;
+            var redlength = tID == 10 ? 6 : 1;
             var bluelength = tID == 10 ? 1 : 2;
             var red = new Array();
             var blue = new Array();
@@ -754,7 +756,7 @@ function machineRandom() {
             if ((tID == 116 && (playtype == 5 || playtype == 8)) || ((tID == 115 || tID == 119) && (playtype == 4 || playtype == 7))) {
                 for (var i = 0; i < red.length; i++) {
                     if (i == 0) numberlist = (red[i].toString().length == 1 ? "0" + red[i].toString() : red[i].toString());
-                    else numberlist += "|" + (red[i].toString().length == 1 ? "0" + red[i].toString() : red[i].toString());
+                    else numberlist += "|" + (blue[i].toString().length == 1 ? "0" + red[i].toString() : red[i].toString());
                 }
             }
             else {
@@ -767,12 +769,12 @@ function machineRandom() {
             }
         }
 
-        if ($("#divMachineCase").html() == "") {
-            $("#divMachineCase").html(numberlist);
+        if ($("#btnMachine").html() == "") {
+            $("#btnMachine").html(numberlist);
             $("#RedBallValue").attr("value", numberlist);
         }
         else {
-            $("#divMachineCase").html($("#divMachineCase").html() + "<br />" + numberlist);
+            $("#btnMachine").html($("#btnMachine").html() + "<br />" + numberlist);
             $("#RedBallValue").attr("value", $("#RedBallValue").attr("value") + ";" + numberlist);
         }
     }
@@ -843,7 +845,7 @@ function reSort(s_numberList) {
 function preBuy(bk) {
     var redValue = $("#RedBallValue").attr("value");
     if (redValue == "" || redValue.length == 0) {
-        showMS("请先选择号码,再投注!");
+    	showTips("请先选择号码,再投注!");
         return;
     }
     var vardata = redValue;
