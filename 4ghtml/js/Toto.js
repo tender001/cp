@@ -1,13 +1,14 @@
 var noteCount = 0, amount = 0, times = 1, tag = "";
 var choose = ""; //选择列表[赛程ID，选择内容(含定胆情况)]
+var chooseinfo;
 var len = (typeID == 3 ? 12 : typeID == 4 ? 8 : 14);
 //选号
 function ChooseMatch(obj) {
     var n = $(obj).attr("name").toString();
-    obj.className = (obj.className == "mBTN" ? 'mBtnCheck' : 'mBTN');
+    obj.className = (obj.className == "" ? 'cur' : '');
     if (typeID == 2) {
         var list = new Array();
-        $('.mBtnCheck').each(function(index) {
+        $('.cur').each(function(index) {
             var name = $(this).attr("name");
             if (list.indexOf(name) == -1) list.push(name);
         });
@@ -25,7 +26,7 @@ function ChooseMatch(obj) {
             });
         }
     }
-    CountLot();
+    CountLot(obj);
 }
 //选胆
 function ChooseDan(obj) {
@@ -39,12 +40,13 @@ function ChooseDan(obj) {
     CountLot();
 }
 
-function CountLot() {
+function CountLot(obj) {
     var cArray = new Array(len);
     for (var i = 0; i < len; i++)
         cArray[i] = "";
     var list = new Array();
-    $('.mBtnCheck').each(function(index) {
+    var listinfo = new Array();
+    $('em.cur').each(function(index) {
         var name = $(this).attr("name");
         if (!isNaN(name)) {
             cArray[parseInt(name) - 1] += $(this).attr("value");
@@ -59,7 +61,8 @@ function CountLot() {
     choose = cArray.join(",");
     for (var i = 0; i < cArray.length; i++) {
         if (cArray[i] != "") {
-            list.push([i + 1, cArray[i].replace("d", "").split('').join(","), (cArray[i].indexOf("d") != -1 ? "1" : "0")]);
+            list.push([i + 1, cArray[i].replace("d", "").split('').join(","), (cArray[i].indexOf("d") != -1 ? "1" : "0"),$(obj).parent().parent()]);
+            listinfo.push([i + 1,$(obj).parent().parent()]);
         }
     }
     if (typeID == 2) {
@@ -81,7 +84,36 @@ function CountLot() {
     }
     amount = (noteCount * times * 2);
     byID("hidAmount").value = amount;
-    byID("preMoney").innerHTML = "金额：(" + list.length + "场)" + noteCount + "注×" + times + "倍=<span style='color:red'>￥" + amount + "</span>元";
+    byID("betnum").innerHTML=list.length;
+    byID("preMoney").innerHTML ='共<cite class="yellow">'+ noteCount +'</cite> 注<cite class="yellow">￥'+ amount +'</cite>元';
+//    chooseLen=list.length;
+    chooseinfo=listinfo;
+}
+//确认投注
+function betconfirm(){
+
+	
+	if(chooseinfo.length<MinLen){
+		showTips('至少选择'+MinLen+'场次投注!');
+		return;
+	}
+	$("#buyHeader h1").html($_sys.getlotname($("#gid").val())+"_投注")
+    for (var i = 0; i < chooseinfo.length; i++) {
+		var cList='<ul class="spfNum list-r fn-clearfix" bet="'+chooseinfo[i][0]+'"><cite class="errorBg" onClick="Reone('+chooseinfo[i][0]+')"><em class="error2"></em></cite>'+ $(chooseinfo[i][1]).html()+'</ul>'
+		$("#confirmhtml").append(cList)
+    }
+    showbuy(true);
+    
+	
+}
+function showbuy(istrue){
+    if(istrue){
+    	$("#matchList,#buyFooter1").hide();
+    	$("#content_home").show();
+    }else{
+    	$("#matchList,#buyFooter1").show();
+    	$("#content_home").hide();
+    }
 }
 
 function prebuy(preKind) {
@@ -116,8 +148,9 @@ function prebuy(preKind) {
 	        success:function (d){
 	 			var code = d.Resp.code;
 	 			if (code == "0") {
-		        	$("#choosePanel").hide();
-		            $("#popupPre").show("fast");
+//		        	$("#choosePanel").hide();
+//		            $("#popupPre").show("fast");
+	 				SubmitLot($("#payment"));
 	 			}else{
 	 				showLogin();
 	 			}
@@ -160,10 +193,10 @@ function updatePublicBuyInfo() {
 
 //提交方案
 function SubmitLot(obj) {
-	if(!$("#agreement").attr("checked")){
-		showTips("必须同意<<用户合买代购协议>>,才可购买彩票");
-		return;
-	}
+//	if(!$("#agreement").attr("checked")){
+//		showTips("必须同意<<用户合买代购协议>>,才可购买彩票");
+//		return;
+//	}
 	if($(obj).html().indexOf("方案提交中")!=-1) return;
 	var oriObjTxt = $(obj).html();
 	$(obj).html("方案提交中...")
@@ -264,7 +297,7 @@ function ClearChoose() {
     noteCount = 0, amount = 0, times = 1, tag = "";
     choose = "";
     $('.mBtnCheck').each(function(index) {
-        $(this).removeClass("mBtnCheck").addClass("mBTN");
+        $(this).removeClass("mBtnCheck").addClass("");
     });
     $('.mDanCheck').each(function(index) {
         $(this).removeClass("mDanCheck").addClass("mDan1");
