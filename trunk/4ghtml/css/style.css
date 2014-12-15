@@ -1,5 +1,5 @@
 /*主页*/
-.header,.cp-list li,.tz-menu,.tz-list{width:100%;padding:0.5em 0;overflow:hidden}
+.header,.cp-list li,.tz-menu,.tz-list{width:100%;padding:0.3em 0;overflow:hidden}
 .header .user{float: right;}
 .user .app,.user .user-login{display: inline-block;width:30px;height:30px;margin-right:0.5em;text-indent:-999em;background-size:30px}
 .user .app{background-position: 0 0}
@@ -220,10 +220,35 @@
 .omitnum{ position:absolute; top:2.35rem; z-index:-1}
 .omitnum cite{ display:inline-block; color:#bababa; width:2.2rem;margin:0 .47rem 2.1rem 0;; height:.9rem; padding-top:.3rem; text-align:center; font-size:.65rem}
 .ssqxhblue{border-top:1px solid #e8e8e8; margin-top:.75rem}
+/*11选5*/
+.syx5Tab{padding-top:.5em; border-bottom:1px solid #e9e9e9; background:#fff}
+.syx5Tab li{width:4em; margin:0 .5em; height:1.6em; color:#5c5c5c}
+.syx5Tab li.cur{height:1.5em; color:#db150b; border-bottom:2px solid #db150b}
+
+.k3kj{border-bottom:1px solid #d9d9d9;color:#a4a4a4}
+.k3kjtext{ float:left; height:3.5em; width:43%; padding:.5em 0 0 7%; border-right:1px solid #e2e2e2}
+.k3kjtext p cite{ padding-left:.7rem}
+.kpTab{width:60em;height:100%;float:left;padding-top:.4em;font-size:.8em;background:#f8f8f8;border-bottom:1px dotted #cecece}
+.kpTab li{ display:block;float:left;width:4.1em;height:2.1em;color:#a9a9a9;text-align:center;margin:0 .4em}
+.kpTab li h2{font-weight:normal}
+.kpTab li.cur{color:#f6851f; height:2em; border-bottom:2px solid #f6851f}
+.syx5kj{ background:#f9f9f9; border-bottom:1px solid #e9e9e9}
+.syx5kj .k3kjtext{ width:46%;padding-left:2%;border-right:1px solid #e9e9e9}
+.syx5kj .k3kjtext p{text-align:center}
+.syx5kj .k3waitkj{ width:90%; padding:.6em 0 0 10%}
+.syx5kj .kjdice b{ float:left; width:1.8em;height:1.8em;line-height:1.8em;font-size:1.05em;text-align:center;color:#fff;background-color:#db150b;margin:.2em .15em 0 0; border-radius:1.3em}
+
+.syx5kj .kjup{ margin:-.2rem 0 0 .2rem}
+.syx5kj .kjdown{ margin:.36rem 0 0 .15rem}
+.kjup,.kjdown,.p5kjup,.p5kjdown{ float:left; margin-top:-.1rem; border-width:.6rem; border-style:solid; border-color:transparent transparent #d0cece transparent; -webkit-border-color:transparent transparent #d0cece transparent; -moz-border-color:transparent transparent #d0cece transparent}
+.kjdown,.p5kjdown{ margin-top:.5rem; border-color:#d0cece transparent transparent transparent; -webkit-border-color:#d0cece transparent transparent transparent; -moz-border-color:#d0cece transparent transparent transparent}
+.p5kjup,.p5kjdown{ border-width:.42rem; margin:.5rem 0 0 .3rem}
+.p5kjdown{ margin-top:.9rem}
 
 
 
-
+.k3kjnum{ float:left; width:49.6%; text-align:center; padding-top:.5em}
+.k3kjnum strong{font-size:1.8em; color:#8e8e8e}
 
 
 
