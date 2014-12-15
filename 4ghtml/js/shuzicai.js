@@ -25,6 +25,23 @@ function createGameSelect() {
     createBallPanle(2);
     loadexp();
 }
+function deleteball(){
+	var maxlength = type == 10 ? 33 : type == 20 ? 35 : 30;
+	 $("#notes").html(0);
+     $("#times2").html(0);
+     $("#money").html(0);
+  for (var i = 1; i <= maxlength; i++){
+      $("#redball_" + i.toString()).attr("class", "");
+      $("#RedBallValue").val("");
+	}
+var maxlength = type == 10 ? 16 : 12;
+for (var i = 1; i <= maxlength; i++){
+    $("#blueball_" + i.toString()).attr("class", "");
+	 $("#BlueBallValue").val("");
+	 
+}
+//countMoney();
+}
 var stopState =1;
 var countexp =0;
 var explist = [];
@@ -453,7 +470,7 @@ function countNotes() {
             if ($("#RedBallValue").attr("value") != "" && $("#BlueBallValue").attr("value") != "") {
                 var rebcount = $("#RedBallValue").attr("value").toString().split(/\,/gi).length;
                 var bluecount = $("#BlueBallValue").attr("value").toString().split(/\,/gi).length;
-                varNotes = count(rebcount, tID == 10 ? 6 : 1) * count(bluecount, tID == 10 ? 1 : 1);
+                varNotes = count(rebcount, tID == 10 ? 6 : 5) * count(bluecount, tID == 10 ? 1 : 2);
             }
         }
         else {
