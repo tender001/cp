@@ -118,7 +118,7 @@
 .reg li{vertical-align:top;padding:0.3em 0;font-size:1.14em}
 .reg li:first-of-type{border-bottom: 1px solid #ddd}
 .reg label{padding: 0 1em 0;vertical-align:middle}
-.reg input{width:70%;height: 1.2em;line-height: 1.2em;padding: 0.6em 0;border: 0 none}
+.reg input{width:70%;height: 1.2em;line-height: 1.2em;padding: 0.6em 0;border: 0 none;}
 .reg-read{padding:0 0 0.7em;text-align: center;color:#888}
 .re-pass{width:90%;margin:0 auto;text-align: right !important}
 .reg-read input{vertical-align: middle;vertical-align: -3px;margin: 0 0.3em 0 0}
