@@ -74,7 +74,7 @@ $(document).ready(function() {
 
 <div class="buyFooter">
     <div class="buyFloat fixed">
-        <em class="deleted"></em>
+        <em class="deleted" onclick="deleteball();"></em>
         <span>共<cite id="notes" style="color:red">0</cite>注&nbsp;<cite style="display: none;" id="times2" style="color:red"></cite><cite id="money" style="color:red">0</cite>元</span>
         <a href="javascript:void(0)" class="ture" onclick="preBuy(0);">确 认</a>
     </div>
@@ -82,7 +82,7 @@ $(document).ready(function() {
 <div id="divshowprebuy" name="divshowprebuy" style="position:absolute; display: none;width: 100%; margin:0 auto; z-index: 1100;"></div>
 <input type="hidden" id="TypeID" name="TypeID" value="10" />
 <input type="hidden" id="RedBallValue" name="RedBallValue" value="" />
-<input type="hidden" id="times" maxlength="2" value="1" size="2" class="textWH" onkeyup="countTimes(this);" />
+<input type="hidden" id="times" value="1"  class="textWH"  />
 <input type="hidden" id="BlueBallValue" name="BlueBallValue" value="" />
 <input type="hidden" id="PlayType" name="PlayType" value="1" />
 <input type="hidden" id="Kind" name="Kind" value="2" />
