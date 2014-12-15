@@ -2,16 +2,45 @@ var levelNameOne = new Array("一", "二", "三", "四", "五", "六", "七");
 var levelNameTwo = new Array("万", "千", "百", "十", "个");
 //大乐透,双色球
 function createballpanle_ssq_dlt(minL, maxL, color) {
-    var html = new Array();
-    html.push("<ul class=\"ball\">");
+//    var html = new Array();
+//    html.push('');
+//    if(color == "red"){
+//    	html.push("<div id=\"xzhq\" style=\"z-index:5\" class=\"relative pdLeft08\"> <div class=\"ssqBall\">");
+//    	 for (var i = minL; i <= maxL; i++) {
+//    	        
+//             html.push("<cite id=\"redball_" + i.toString() + "\" class=\"" + BallStyle[0] + "\" onclick=\"selectBall(this,'red')\" >" + (i > 9 ? i.toString() : ("0" + i.toString())) + "</cite>");
+//    	 }
+//    	 html.push("</div></div>");
+//    }else if(color == "blue"){
+//    	html.push("<div class=\"ssqBall ssqblueBall\">");
+//    	 for (var i = minL; i <= maxL; i++) {
+// 	        
+//    		 html.push("<cite id=\"blueball_" + i.toString() + "\" class=\"" + BallStyle[2] + "\"  onclick=\"selectBall(this,'blue');\" >" + (i > 9 ? i.toString() : ("0" + i.toString())) +  "</cite>");
+//    	 }
+//    	 html.push("</div>");
+//    }
+//   
+//    
+    
+    
+    
+  var html = new Array();
+  if (color == "red"){
+	  html.push('<div class="relative pdLeft08" style="z-index:5" id="xzhq"><div class="ssqBall">');
+  }else{
+	  html.push('<div class="ssqxhblue relative pdLeft08" style="z-index:5" id="xzlq"><div class="ssqBall ssqblueBall">');
+  }
+  
     for (var i = minL; i <= maxL; i++) {
         if (color == "red")
-            html.push("<li><span id=\"redball_" + i.toString() + "\" class=\"" + BallStyle[0] + "\" onclick=\"selectBall(this,'red')\" >" + (i > 9 ? i.toString() : ("0" + i.toString())) + "</span></li>");
+        	html.push("<cite id=\"redball_" + i.toString() + "\" class=\"" + BallStyle[1] + "\" onclick=\"selectBall(this,'red')\" >" + (i > 9 ? i.toString() : ("0" + i.toString())) + "</cite>");
         else
-            html.push("<li><span id=\"blueball_" + i.toString() + "\" class=\"" + BallStyle[2] + "\"  onclick=\"selectBall(this,'blue');\" >" + (i > 9 ? i.toString() : ("0" + i.toString())) + "</span></li>");
+        	html.push("<cite id=\"blueball_" + i.toString() + "\" class=\"" + BallStyle[3] + "\"  onclick=\"selectBall(this,'blue');\" >" + (i > 9 ? i.toString() : ("0" + i.toString())) +  "</cite>");
     }
-    html.push("</ul>");
-
+    html.push('</div></div>');
+   
+//    html=redhtml+bluehtml
+//    html=redhtml+bluehtml
     return html.join("");
 }
 
@@ -64,10 +93,10 @@ function createballpanle_pl3(level,rKind) {
         if (varlength == 3)
             html.push("<br />");
     }
-    if (rKind == 1)
-        return html.join("");
-    else
-        $("#redArea").html(html.join(""));
+//    if (rKind == 1)
+//        return html.join("");
+//    else
+//        $("#redArea").html(html.join(""));
 }
 
 //福彩3D
