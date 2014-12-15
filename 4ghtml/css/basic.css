@@ -49,7 +49,48 @@ table{border-collapse:collapse;border-spacing:0}
 .btn-true{width: 90%;margin:0 auto 12px;font-size:1.3em;color:#fff;background-color: #f60;background-image: -webkit-linear-gradient(top,#f60,#f20);background-image: -moz-linear-gradient(top,#f60,#f20);background-image: -o-linear-gradient(top,#f60,#f20);background-image: linear-gradient(top,#f60,#f20)}
 .btn-reg{width: 90%;margin:0 auto;font-size:1.2em;color:#666;background-color: #fff;}
 /*投注footer*/
-.check,.nocheck{ display:inline-block; width:.87rem; height:.87rem; background:url(/img/check.png) no-repeat center; background-size:.87rem .87rem; -webkit-background-size:.87rem .87rem; -moz-background-size:.87rem .87rem; margin:.1rem .2rem 0 0}
+.ssqbtn {
+    width: 95%;
+    margin: 0 auto;
+}
+.ssqbtn-handBtn {
+    width: 31%;
+    float: left;
+    line-height: 2rem;
+    text-align: center;
+    color: #333;
+    background: none;
+    font-size: .875rem;
+    border: 1px solid #dcdcdc;
+    background: #fff;
+    font-weight: bold;
+    margin: .69em 3% .5rem 0;
+    border-radius: .2rem;
+    -webkit-border-radius: .2rem;
+    -moz-border-radius: .2rem;
+}
+.ssqbtn span.ssqbtn-handBtn{margin-right:0}
+.ssqbtn .clearBtn{width:30%;text-align:left;padding-left:0.8%}
+.ssqNum{ border-top:1px solid #e4e4e4; border-bottom:1px solid #e4e4e4; background:#fff}
+.ssqtzNum{ position:relative; width:94%; margin-left:3%; padding:.75rem 0 .5rem 3%; border-bottom:1px solid #e6e6e6}
+.ssqtzNum:last-child{ border-bottom:none}
+.ssqtzNum span{ display:inline-block; font-size:.94rem; width:85%; line-height:1.2rem; color:#db150b; letter-spacing:.1rem}
+.ssqtzNum span cite{ color:#106fe5; padding-left:.6rem}
+.ssqtzNum p{ color:#8e8e8e; font-size:.81rem; padding-top:.4rem}
+.ssqtzNum .errorBg{ position:absolute; padding:.5rem; right:.25rem; top:24%}
+.ssqtzNum .errorBg .error2{ display:block; width:1.06rem; height:1.06rem; background:url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACMAAAAjCAMAAAApB0NrAAAAQlBMVEUAAADc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nz////p6eno6Ojx8fHi4uLCn5nCAAAAEHRSTlMA8UL2iOjg0HwnFgYDhbm4g6GjowAAAPJJREFUOMuVlO0OgyAMRQtDxKmzgL7/qy5zlsuHCdv5ZcyJrZcWylj0+rKKlX2teqE7nmZgMJhnY8zuwSUPN5fKNHLLOOWKVnyH0pmCOlW9JE34So26ys3opWX8Nu5YOG4kd+aSmtl9lMewp5Y+Oa1QvEjB+yQZomWQQv5DvBRIw0KahSjSqfgg73UqBUkUFNu4lkQRNrKcS1CApTLjCAVZExcEn/4OkKqUVlJkK6WVLG21EmIlbcgH0VWSId0oIh2SM85rvxSRAs6LDM4duUQ8mnJ+sugOzE8+h/e4n+e5vxf9/ervaX/f+/fGX/dP/x57A/nLPBMWHWWgAAAAAElFTkSuQmCC") no-repeat center; background-size:1.06rem 1.06rem; -webkit-background-size:1.06rem 1.06rem; -moz-background-size:1.06rem 1.06rem}
+.ssqdouble{ line-height:1.875rem; background:#f2f2f2; border-top:1px solid #dcdcdc}
+.ssqdouble li{ float:left; padding:.375rem 3%; color:#444; border-right:1px solid #e4e4e4; width:43.7%}
+.ssqdouble li:last-child{ border-right:none}
+.ssqdouble cite,.gddgdouble div cite,.jjyhdouble cite{ float:left}
+.ssqdouble li span,.gddgdouble div span,.jjyhdouble span{ overflow:hidden; zoom:1; float:left; border:1px solid #d3d3d3; width:72%; margin:0 .25rem; height:1.7rem; background:#efefef; border-radius:.3rem; -webkit-border-radius:.3rem; -moz-border-radius:.3rem}
+.ssqdouble li span em,.gddgdouble div span em,.jjyhdouble span em{ float:left; width:25%; text-align:center; font-size:1.5rem; color:#888}
+.ssqdouble li span em:first-child,.gddgdouble div span em:first-child,.jjyhdouble span em:first-child{ font-size:2rem; line-height:1.6rem}
+.ssqdouble input,.gddgdouble input,.jjyhdouble input{float:left; width:47%; text-align:center; font-size:.875rem; color:#b1b1b1; line-height:1.7rem; border:none; border-left:1px solid #d9d9d9; border-right:1px solid #d9d9d9; background:#fff}
+
+
+
+.check,.nocheck{display:inline-block; width:.87rem; height:.87rem; background:url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAMAAABF0y+mAAAAaVBMVEUAAACSkpKSkpL2hR/2hR/2hR/2hR/2hR/2hR/2hR/2hR/2hR/2hR/2hR/2hR/2hR/2hR/2hR+SkpL2hR/2hR/2hR/fiDr2hR/2hR/2hR/2hR/2hR/2hR/2hR/2hR/2hR+ZkYr2hR/2hR8F4jpaAAAAInRSTlMAzNL895YRButuQScc4sSrYjL2i1gC8tK7s39lSwna2dWgRU6oWQAAAMxJREFUKM91z+tygjAQhuHPQgLhDBW1Htr63f9FqsnuOEPc9wcDPCywMFunYFo3cLKsqcmrYfuS5GxYwWftR7tGY/fJ5pK0Jn3PVINlt+1A6YwvbArUjhm2pVDhugwHsb4BFKcTYhexwUNxHsh9/NM62U8FQe9eS/+9rr+TjRUSrhd5egK6UucEz5T6Ci6eHG5QxHwSDWnw9x9vBEJ6W+3isZUFBNEeqRUNNojbqBiQIVYnSyBHXbH3GYrGDxqIOx1MrEZvY35r2WUtag/2cxrwNcWxsQAAAABJRU5ErkJggg==") no-repeat center; background-size:.87rem .87rem; -webkit-background-size:.87rem .87rem; -moz-background-size:.87rem .87rem; margin:.1rem .2rem 0 0}
 .buyFooter,.buyFooter1{padding-top:7.5em}
 .buyFloat{ text-align:center; line-height:3.1em; font-size:.95rem; background:#f9f9f9; border-top:1px solid #d5d5d5}
 .buyFloat p{ line-height:3rem}
