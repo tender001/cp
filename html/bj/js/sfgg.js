@@ -693,7 +693,7 @@ Class( 'TableSelector', {
 			arr_tbody.nodes.each( function(item, index) {
 				if (this.get(item).getSize().offsetHeight == 0) {
 					document.getElementById('switch_for_' + item.id).getElementsByTagName('a')[0].style.visibility = 'hidden';
-				//	this.get('#switch_for_' + item.id).parent('tbody').hide(); //其他归属日期下所有的比赛均截止时，该tbody同样要隐藏
+					this.get('#switch_for_' + item.id).parent('tbody').hide(); //其他归属日期下所有的比赛均截止时，该tbody同样要隐藏
 				}
 			}, this );
 		}
@@ -1483,7 +1483,7 @@ Class('LoadExpect',{
 		 var html = [];
 
 		 var tableTpl=['<colgroup><col width="50"><col width="70"><col width="111"><col width="80"><col width="175"><col width="62"><col width="175"><col></colgroup>',//0
-		'<tr id="switch_for_{$enddate}">'+
+		'<tr id="switch_for_{$enddate}" style="{$Ishow}">'+
 		'<td colspan="12" class="dc_hstd" style="height:32px"><div class=dc_hs style="text-align: left; padding-left: 10px;border-bottom:0px;">'+
 		'<strong>{$enddate} {$weekday} (10：00--次日10：00)</strong>&nbsp;'+
 		'<a href="javascript:void(0)" onclick="Yobj.postMsg(\'msg_show_or_hide_matches\', \'{$enddate}\', this)">隐藏<s class="c_up"></s></a>'+
