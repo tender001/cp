@@ -64,27 +64,38 @@ function LoadMatchList() {
 							oddsHTML = "<div class='mo'>"+ot.join("</div><div class='mo'>")+"</div>";
 					}
 					
+			       
+			           
+					
                     var matchHTML = "";
                     var newmatchHTML = "";
                     jj.guest=jj.guest.substr(0,5);
                     jj.home=jj.home.substr(0,5);
 					var leftTime = "<font class='timeSpn'>"+jj.MID+"<br>"+jj.Time.replace(" ", "<br>")+"</font>";
                     if (typeID == 5 || typeID == 101 || typeID == 105 || typeID == 111 || typeID == 112 || typeID == 114 ) {
-                    	newmatchHTML += '<div class="tz">'
-                        	+'<section class="tz-list">'
-                        	+'<p class="list-l"><em>'+jj.MID+'</em><cite style="color:'+ jj.color +'">'+ jj.sclass +'</cite><i>'+jj.Time.split(" ")[1]+'截止</i></p>'
-                        	+'<ul class="list-r">'
+                    	
                         	if(typeID == 111 || typeID == 112|| typeID == 114|| typeID == 113){
-                        		newmatchHTML+='<li class="tz-true"><em >'+ jj.guest +'<br>胜</em><span>赔率'+jj.wl3+'</span></li>'
-                        					+'<li class="tz-true tz-true-middle"><em>vs<br>平</em><span>赔率'+jj.wl1+'</span></li>'
-                        					+'<li class="tz-true"><em>'+ jj.home  +'<br>胜</em><span>赔率'+jj.wl0+'</span></li>'
+                        		newmatchHTML+='<ul class="sfcxs"> <li><em>'+jj.MID+'</em>'
+                        			+'<p style="color:'+ jj.color +'">'+ jj.sclass +'</p><cite>'+jj.Time.split(" ")[1]+'截止</cite></li>'
+                        			+'<li><p class="spfzpk spfzpk2">'
+                        			+'<span onclick="ChooseMatch(this)" n="0" value="1" name="'+jj.ID+'"><em>'+ jj.guest +'</em><cite>胜</cite></span>'
+                        			+'<b>VS</b>'
+                        			+'<span onclick="ChooseMatch(this)" n="3" value="2" name="'+jj.ID+'"><em>'+ jj.home +''+ ( jj.rq == "0" ? "" : "<i style='color:" + (jj.rq.indexOf("-") == -1 ? "red" : "green") + "'>(" +(jj.rq.indexOf("-") == -1 ? "" : "")+ jj.rq + ")</i>") +'</em><cite>胜</cite></span></p>'
+                        			+'<p class="spfpl"><span>赔率'+ jj[kList[0]] +'</span><span>赔率'+ jj[kList[1]] +'</span></p></li></ul>'
+                        					
+                        					
+            					
                         	}else{
-                        		
-                        		newmatchHTML+='<li class="tz-true"><em onclick="ChooseMatch(this)" n="3" value="1" name="'+jj.ID+'">'+ jj.home +''+ (typeID >= 110 || jj.rq == "0" ? "" : "<i style='color:" + (jj.rq.indexOf("-") == -1 ? "red" : "green") + "'>(" +(jj.rq.indexOf("-") == -1 ? "+" : "")+ jj.rq + ")</i>") +'<br>胜</em><span>赔率'+jj[kList[0]]+'</span></li>'
-            					+'<li class="tz-true tz-true-middle" ><em onclick="ChooseMatch(this)" n="1" value="2" name="'+jj.ID+'">vs<br>平</em><span>赔率'+jj[kList[1]]+'</span></li>'
-            					+'<li class="tz-true" ><em onclick="ChooseMatch(this)" n="0" value="3" name="'+jj.ID+'">'+ jj.guest +'<br>胜</em><span>赔率'+jj[kList[2]]+'</span></li>'
-							}
-                    		newmatchHTML+='</ul></section></div>'
+                        		newmatchHTML += '<div class="tz">'
+                                	+'<section class="tz-list">'
+                                	+'<p class="list-l"><em>'+jj.MID+'</em><cite style="color:'+ jj.color +'">'+ jj.sclass +'</cite><i>'+jj.Time.split(" ")[1]+'截止</i></p>'
+                                	+'<ul class="list-r">'
+	                        		+'<li class="tz-true"><em onclick="ChooseMatch(this)" n="3" value="1" name="'+jj.ID+'">'+ jj.home +''+ (typeID >= 110 || jj.rq == "0" ? "" : "<i style='color:" + (jj.rq.indexOf("-") == -1 ? "red" : "green") + "'>(" +(jj.rq.indexOf("-") == -1 ? "+" : "")+ jj.rq + ")</i>") +'<br>胜</em><span>赔率'+jj[kList[0]]+'</span></li>'
+	            					+'<li class="tz-true tz-true-middle" ><em onclick="ChooseMatch(this)" n="1" value="2" name="'+jj.ID+'">vs<br>平</em><span>赔率'+jj[kList[1]]+'</span></li>'
+	            					+'<li class="tz-true" ><em onclick="ChooseMatch(this)" n="0" value="3" name="'+jj.ID+'">'+ jj.guest +'<br>胜</em><span>赔率'+jj[kList[2]]+'</span></li>'
+	            					+'</ul></section></div>'
+                        	}
+                    		
                     			
 							
                     }
@@ -93,7 +104,7 @@ function LoadMatchList() {
 					
 						if(typeID == 100)//3 + 31 + 8 + 9
 						{
-							//比分的主胜 平 主负
+							//竞彩足球混投
 						
 
 						    newmatchHTML +='<ul class="sfcxs hhzpk">'
@@ -132,38 +143,33 @@ function LoadMatchList() {
 						}
 						else//2 + 2 + 12 + 2
 						{
-							var sfHTML = "",rfHTML="",dxHTML="",sfcHTML = "";
-							for (var l = 0; l < kList.length; l++) {
-								var subHTML = "<div{add} class='mBTN' name='" + jj.ID + "' value='" + (l + 1) + "' n='" + cList[l] + "' onclick='ChooseMatch(this)'>" + nList[l] + "<br><span class='odds'>" + jj[kList[l]] + "</span></div>";
-								if (l<2) {
-									sfHTML += subHTML.replace("{add}", " style='height:28px;line-height:28px;'").replace("<br>", "");
-								}
-								else if (l>=2&&l<2+2) {
-									rfHTML += subHTML.replace("{add}", " style='height:28px;line-height:28px;'").replace("<br>", "");
-									if(l==2)
-										rfHTML += "<div class='mo'><span style='color:" + (jj.rf.indexOf("-") == -1 ? "red" : "green") + "'>" + jj.rf + "</span></div>"
-								}
-								else if (l>=2+2+12) {
-									dxHTML += subHTML.replace("{add}", " style='height:28px;line-height:28px;'").replace("<br>", "");
-									if(l==2+2+12)
-										dxHTML += "<div class='mo'><span style='color:" + (jj.zf.indexOf("-") == -1 ? "red" : "green") + "'>" + jj.zf + "</span></div>"
-								}
-								else
-								{
-									sfcHTML += subHTML.replace("{add}", " style='font-size:14px;'");
-								}
-							}
-							if (sfHTML != "" && parseFloat(jj["wl3"])>0 && jj["wlStop"] == 0)
-								matchHTML += "<div class='hunheType'>" + sfHTML + "</div>";
-							if (rfHTML != "" && jj["rf"] != "" && jj["rfStop"] == 0) 
-								matchHTML += "<div class='hunheType'>" + rfHTML + "</div>";
-							if (dxHTML != "" && jj["zf"] != "" && jj["zfStop"] == 0) 
-								matchHTML += "<div class='hunheType'>" + dxHTML + "</div>";
-							if (sfcHTML != "" && parseFloat(jj["w1_5"])>0 && jj["fcStop"] == 0) 
-								matchHTML += "<div class='hunheType'>" + sfcHTML + "</div>";
+							
+							//竞彩篮球混投
+							
+							newmatchHTML +='<ul class="sfcxs hhzpk">'
+						    	+'<li class="li_weige"><em>'+jj.MID+'</em> <p style="color:'+ jj.color +'">'+ jj.sclass +'</p><cite>'+jj.Time.split(" ")[1]+'截止</cite></li>'
+						    	+'<li>'
+						    	+'<p class="spfzpk"><em class="rq">让分</em>'
+						    	if(jj["rfStop"] == 0){
+						    		newmatchHTML +='<span onclick="ChooseMatch(this)" n="0" value="3" name="'+ jj.ID +'"><b>'+jj.guest+'</b><cite>'+jj.rf0+'</cite></span>'
+							    		+'<span onclick="ChooseMatch(this)" n="3" value="4" name="'+ jj.ID +'"><b>'+jj.home+''+"<i style='color:" + (jj.rf.indexOf("-") == -1 ? "red" : "blue") + "'>(" +(jj.rf.indexOf("-") == -1 ? "" : "")+ jj.rf + ")</i>"+'</b><cite>'+jj.rf3+'</cite></span>'
+						    	}else{
+						    		
+						    	}
+						    	
+							newmatchHTML +='</p>'
+								+'<p class="spfzpk"><em>大小分</em>'
+								if(jj["zfStop"] == 0){
+						    		newmatchHTML +='<span onclick="ChooseMatch(this)" n="1" value="17" name="'+ jj.ID +'"><b>&gt;'+jj.zf+'</b><cite>'+jj.zfd+'</cite></span>'
+							    		+'<span onclick="ChooseMatch(this)" n="0" value="18" name="'+ jj.ID +'"><b>&lt;'+jj.zf+'</b><cite>'+jj.zfx+'</cite></span>'
+						    	}else{
+						    		
+						    	}
+							newmatchHTML +='</p></li></ul>';
+						    
 						}
 						
-						matchHTML += "</td></tr></table>";
+						
 					}
                     else {
                         matchHTML += "<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" class=\"match\">"
@@ -657,10 +663,12 @@ function closeggtype() {
 }
 $(".jc-more").click(function() {
     $(this).children().toggle();
+    $(".hmPull").hide();
 });
-$("#chowanfa").click(function() {
-    $(this).toggleClass("cur");
+$("#buyFooter1 h1").click(function() {
+    $("#chowanfa").toggleClass("cur");
     $(".hmPull").toggle()
+    $(".jc-more cite").hide();
 });
 function getXcode(mdata,gid){
    var mitem = [];
