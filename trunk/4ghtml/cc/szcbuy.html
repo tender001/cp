@@ -1,0 +1,38 @@
+<div id="szcbuy" style="display: none;">
+<section class="buyHeader" id="buyHeader">
+    <h1>投注列表</h1>
+    <a  class="backIco2"  href="javascript:showbuy(false)"></a>
+    <a href="/" class="goHome"></a>
+</section>
+<div class="top-margin">
+    <div class="clearfix ssqbtn">
+        <input type="submit" value="+ 自选一注" class="ssqbtn-handBtn" onclick="showbuy(false)">
+        <input id="random_" type="submit" value="+ 机选一注" class="ssqbtn-handBtn">
+        <span class="ssqbtn-handBtn relative clearBtn" id="clearAll" onclick="Reconfirm()">清空号码</span>
+    </div>
+    <div class="ssqNum" id="code_list">
+<!--         <div class="ssqtzNum"> -->
+<!--             <cite class="errorBg"><em class="error2"></em></cite> -->
+<!--             <span class="revise_ww"> -->
+<!--                 <span>07 09</span> -->
+<!--                 <p>前一直选 &nbsp;&nbsp;&nbsp;2注4元</p> -->
+<!--             </span> -->
+<!--         </div> -->
+      
+    </div>
+    <p class="pact clearfix"><em class="left check"></em>我已阅读并同意《用户购彩服务协议》</p>
+</div>
+
+<footer class="ssqFooter">
+    <div class="fixed">
+        <ul class="ssqdouble clearfix">
+            <li><cite>投</cite><span><em class="bminus" onclick="bminus()">-</em><input type="tel" name="bs" id="times" value="1"><em class="bplus" onclick="bplus()">+</em></span><cite>倍</cite></li>
+        </ul>
+<!--         <div class="zjStop" style="display:none"><em class="left check" id="zj_stop"></em>中奖后停止追号</div> -->
+        <div class="buyFloat">
+            <span id="preMoney">共<cite class="yellow">0</cite>注  <cite class="yellow">0</cite>元</span>
+          
+            <a href="javascript:preBuy(0);" class="ture" id="isOk_">提 交</a>
+        </div>
+    </div>
+</footer></div>
