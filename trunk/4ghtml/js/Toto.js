@@ -307,5 +307,46 @@ function ClearChoose() {
     });
     CountLot();
 }
+$(".jc-more").click(function() {
+    $(this).children().toggle();
+    $(".hmPull").hide();
+});
+//$("#topHeader h1").click(function() {
+//    $("#chowanfa").toggleClass("cur");
+//    $(".hmPull").toggle()
+//    $(".jc-more cite").hide();
+//});
 
+$("#topHeader h1").click(function() {
+    if ($(this).hasClass("cur")) {
+       
+        $('.hmPull').slideUp('fast');
+        $(this).removeClass('cur');
+        return;
+    }
+    $(".jc-more cite").hide();
+//    closeLogin();
+//    $("#spnPanelTitle").html($(this).text());
+//    var txt = $(this).text();
+//    $(".yellow").each(function(index) {
+//        if ($(this).text() == txt) $(this).removeClass("switchOff").removeClass("switchOn").addClass("switchOn");
+//        else $(this).removeClass("switchOn").removeClass("switchOn").addClass("switchOff");
+//    });
+//    if ($(this).text().indexOf("玩法") != -1) {
+//        $(".filterContent").hide();
+//        $(".switchWF").show();
+//    }
+//    else {
+//        $(".filterContent").show();
+//        $(".switchWF").hide();
+//    }
+    if ($('.hmPull').is(':hidden')) {
+    	$(this).addClass('cur');
+        $('.hmPull').css("top", ($(this).position().top + $(this).height()) + "px");
+        $('.hmPull').slideDown('fast');
+    }
+    //else $('#Filter_Panel').slideUp('fast');
+
+    return false;
+});
 setTimeout("$('body').append('<div></div>'); ", 1);

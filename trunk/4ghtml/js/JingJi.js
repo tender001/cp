@@ -74,7 +74,7 @@ function LoadMatchList() {
 					var leftTime = "<font class='timeSpn'>"+jj.MID+"<br>"+jj.Time.replace(" ", "<br>")+"</font>";
                     if (typeID == 5 || typeID == 101 || typeID == 105 || typeID == 111 || typeID == 112 || typeID == 114 ) {
                     	
-                        	if(typeID == 111 || typeID == 112|| typeID == 114|| typeID == 113){
+                        	if(typeID == 111 || typeID == 112|| typeID == 113){
                         		newmatchHTML+='<ul class="sfcxs"> <li><em>'+jj.MID+'</em>'
                         			+'<p style="color:'+ jj.color +'">'+ jj.sclass +'</p><cite>'+jj.Time.split(" ")[1]+'截止</cite></li>'
                         			+'<li><p class="spfzpk spfzpk2">'
@@ -83,8 +83,17 @@ function LoadMatchList() {
                         			+'<span onclick="ChooseMatch(this)" n="3" value="2" name="'+jj.ID+'"><em>'+ jj.home +''+ ( jj.rq == "0" ? "" : "<i style='color:" + (jj.rq.indexOf("-") == -1 ? "red" : "green") + "'>(" +(jj.rq.indexOf("-") == -1 ? "" : "")+ jj.rq + ")</i>") +'</em><cite>胜</cite></span></p>'
                         			+'<p class="spfpl"><span>赔率'+ jj[kList[0]] +'</span><span>赔率'+ jj[kList[1]] +'</span></p></li></ul>'
                         					
-                        					
             					
+                        	}else if(typeID==114){
+                        		newmatchHTML+='<ul class="sfcxs"> <li><em>'+jj.MID+'</em>'
+                    			+'<p style="color:'+ jj.color +'">'+ jj.sclass +'</p><cite>'+jj.Time.split(" ")[1]+'截止</cite></li>'
+                    			+'<li><p class="spfzpkNum">'
+                    			+'<span >'+ jj.guest +'</span>'
+                    			+'<span class="spfvs">VS</span>'
+                    			+'<span >'+ jj.home +'</span></p>'
+                    			+'<p class="spfzpk"><span onclick="ChooseMatch(this)" n="1" value="1" name="'+jj.ID+'">总分&gt;'+jj.rq+'</span>'
+                    			+'<span onclick="ChooseMatch(this)" n="0" value="2" name="'+jj.ID+'">总分&lt;'+jj.rq+'</span></p>'
+                    			+'<p class="spfpl"><span>赔率'+ jj[kList[0]] +'</span><span>赔率'+ jj[kList[1]] +'</span></p></li></ul>'
                         	}else{
                         		newmatchHTML += '<div class="tz">'
                                 	+'<section class="tz-list">'
@@ -661,15 +670,7 @@ function closeggtype() {
     $('.overlay').hide();
     $('#chuan_').slideUp('fast');
 }
-$(".jc-more").click(function() {
-    $(this).children().toggle();
-    $(".hmPull").hide();
-});
-$("#buyFooter1 h1").click(function() {
-    $("#chowanfa").toggleClass("cur");
-    $(".hmPull").toggle()
-    $(".jc-more cite").hide();
-});
+
 function getXcode(mdata,gid){
    var mitem = [];
    var ditem = [];
@@ -737,30 +738,43 @@ function getXcode(mdata,gid){
    return getJcPrefix(gid)+"|"+code+"|"+pass;
 }
 
-$(".yellow").click(function() {
-    if ($(this).hasClass("switchOn")) {
-        $(".closeR").click();
+$(".jc-more").click(function() {
+    $(this).children().toggle();
+    $(".hmPull").hide();
+});
+//$("#topHeader h1").click(function() {
+//    $("#chowanfa").toggleClass("cur");
+//    $(".hmPull").toggle()
+//    $(".jc-more cite").hide();
+//});
+
+$("#topHeader h1").click(function() {
+    if ($(this).hasClass("cur")) {
+       
+        $('.hmPull').slideUp('fast');
+        $(this).removeClass('cur');
         return;
     }
-    closeLogin();
-    $("#spnPanelTitle").html($(this).text());
-    var txt = $(this).text();
-    $(".yellow").each(function(index) {
-        if ($(this).text() == txt) $(this).removeClass("switchOff").removeClass("switchOn").addClass("switchOn");
-        else $(this).removeClass("switchOn").removeClass("switchOn").addClass("switchOff");
-    });
-    if ($(this).text().indexOf("玩法") != -1) {
-        $(".filterContent").hide();
-        $(".switchWF").show();
-    }
-    else {
-        $(".filterContent").show();
-        $(".switchWF").hide();
-    }
-    if ($('#Filter_Panel').is(':hidden')) {
-        if (!$('filterContent').is(':hidden')) DisplayFilter();
-        $('#Filter_Panel').css("top", ($(this).position().top + $(this).height()) + "px");
-        $('#Filter_Panel').slideDown('fast');
+    $(".jc-more cite").hide();
+//    closeLogin();
+//    $("#spnPanelTitle").html($(this).text());
+//    var txt = $(this).text();
+//    $(".yellow").each(function(index) {
+//        if ($(this).text() == txt) $(this).removeClass("switchOff").removeClass("switchOn").addClass("switchOn");
+//        else $(this).removeClass("switchOn").removeClass("switchOn").addClass("switchOff");
+//    });
+//    if ($(this).text().indexOf("玩法") != -1) {
+//        $(".filterContent").hide();
+//        $(".switchWF").show();
+//    }
+//    else {
+//        $(".filterContent").show();
+//        $(".switchWF").hide();
+//    }
+    if ($('.hmPull').is(':hidden')) {
+    	$(this).addClass('cur');
+        $('.hmPull').css("top", ($(this).position().top + $(this).height()) + "px");
+        $('.hmPull').slideDown('fast');
     }
     //else $('#Filter_Panel').slideUp('fast');
 
