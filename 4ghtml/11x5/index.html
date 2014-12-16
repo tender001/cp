@@ -6,19 +6,32 @@
     <meta content='yes' name='apple-mobile-web-app-capable'/>
     <meta content='black' name='apple-mobile-web-app-status-bar-style'/>
     <meta content='telephone=no' name='format-detection'/>
-    <title>11选5_159彩票网</title>
+    <title>江西11选5_159彩票网</title>
     <link rel="stylesheet" href="/css/basic.css" type="text/css"/>
     <link rel="stylesheet" href="/css/style.css" type="text/css"/>
+    <script src='/js/jquery.js'></script>
+	<script src='/js/159cp.js'></script>
+	<script src='/js/base.js'></script>
+	<script src='/js/login.js'></script>
+	<script type ="text/javascript" src ="/js/public/ballpanle.js"></script>
+	<script type ="text/javascript" src ="/js/public/shuzicai.js"></script>
 </head>
 <body>
-<section class="buyHeader">
+<script>
+$(document).ready(function() {
+    chklogin();
+    createGameSelect();
+});
+</script>
+<!--#include virtual="/cc/header.html"-->
+<section class="buyHeader" id="buyFooter1">
     <h1>11选5</h1>
     <a href="javascript:history.go(-1)" class="backIco2"></a>
     <em class="goHome jc-more">
-        <cite style="display:none"><a class="cur" href="/ssq/index.html">选号</a><a href="#">开奖结果</a><a href="#">玩法帮助</a></cite>
+        <cite style="display:none"><a class="cur" href="javascript:void(0);">选号</a><a href="#">开奖结果</a><a href="#">玩法帮助</a></cite>
     </em>
 </section>
-<div class="top-margin">
+<div class="top-margin" id="betpage">
     <nav>
         <div class="kpTab syx5Tab clearfix" style="float: none;width: 100%;overflow: hidden;">
             <ul class="clearfix"
@@ -40,14 +53,14 @@
     </nav>
     <article>
         <div class="k3kj syx5kj clearfix">
-            <div class="k3kjtext"><p>03期开奖</p>
+            <div class="k3kjtext"><p>期开奖</p>
 
-                <div class="kjdice pdTop03 clearfix"><b>05</b><b>09</b><b>03</b><b>11</b><b>08</b><em
+                <div class="kjdice pdTop03 clearfix"><em
                         class="kjup kjdown"></em></div>
             </div>
-            <div class="k3kjnum"><p>距04期截止</p><strong>已截止</strong></div>
+            <div class="k3kjnum"><p  >距<i id="span_issuenum"></i>期截止</p><strong id="span_stoptime"></strong></div>
         </div>
-        <div class="ssqkjlist" style="display:block">
+        <div class="ssqkjlist" style="display:none;">
             <ul>
                 <li class="first">02期</li>
                 <li><span class="red">03 09 01 08 10</span></li>
@@ -147,8 +160,8 @@
         <section class="relative" style="z-index:1">
             <!-- 选11个号码start -->
             <div style="overflow: hidden; width: 320px;">
-                <div id="content" style="width: 10000px; position: relative; left: 0;">
-                    <div id="rx" style="float: left; width: 320px;">
+                <div id="divballarea" style="width: 10000px; position: relative; left: 0;">
+                    <div  style="float: left; width: 320px;">
                         <div class="ssqBall pdLeft08"><cite>01</cite><cite>02</cite><cite>03</cite><cite>04</cite><cite>05</cite><cite>06</cite><cite>07</cite><cite>08</cite><cite>09</cite><cite>10</cite><cite>11</cite></div>
                         <div class="omitnum pdLeft08" hidden="" style="width: 320px;display: block"><cite>23</cite><cite>4</cite><cite>24</cite><cite>14</cite><cite>3</cite><cite>14</cite><cite>48</cite><cite>8</cite><cite>37</cite><cite>3</cite><cite>14</cite></div>
                     </div>
@@ -158,12 +171,12 @@
                         <p class="gray center pdTop06">第一位</p>
                         <div class="relative">
                             <div class="ssqBall pdLeft08"><cite>01</cite><cite>02</cite><cite>03</cite><cite>04</cite><cite>05</cite><cite>06</cite><cite>07</cite><cite>08</cite><cite>09</cite><cite>10</cite><cite>11</cite></div>
-                            <div class="omitnum pdLeft08" hidden="" style="width: 320px;"><cite>23</cite><cite>4</cite><cite>24</cite><cite>14</cite><cite>3</cite><cite>14</cite><cite>48</cite><cite>8</cite><cite>37</cite><cite>3</cite><cite>14</cite></div>
+<!--                             <div class="omitnum pdLeft08" hidden="" style="width: 320px;"><cite>23</cite><cite>4</cite><cite>24</cite><cite>14</cite><cite>3</cite><cite>14</cite><cite>48</cite><cite>8</cite><cite>37</cite><cite>3</cite><cite>14</cite></div> -->
                         </div>
                         <p class="gray center pdTop06">第二位</p>
                         <div class="relative">
                             <div class="ssqBall pdLeft08"><cite>01</cite><cite>02</cite><cite>03</cite><cite>04</cite><cite>05</cite><cite>06</cite><cite>07</cite><cite>08</cite><cite>09</cite><cite>10</cite><cite>11</cite></div>
-                            <div class="omitnum pdLeft08" hidden="" style="width: 320px;"><cite>23</cite><cite>4</cite><cite>24</cite><cite>14</cite><cite>3</cite><cite>14</cite><cite>48</cite><cite>8</cite><cite>37</cite><cite>3</cite><cite>14</cite></div>
+<!--                             <div class="omitnum pdLeft08" hidden="" style="width: 320px;"><cite>23</cite><cite>4</cite><cite>24</cite><cite>14</cite><cite>3</cite><cite>14</cite><cite>48</cite><cite>8</cite><cite>37</cite><cite>3</cite><cite>14</cite></div> -->
                         </div>
                     </div>
                     <!-- 前2直选end -->
@@ -172,17 +185,17 @@
                         <p class="gray center pdTop06">第一位</p>
                         <div class="relative">
                             <div class="ssqBall pdLeft08"><cite>01</cite><cite>02</cite><cite>03</cite><cite>04</cite><cite>05</cite><cite>06</cite><cite>07</cite><cite>08</cite><cite>09</cite><cite>10</cite><cite>11</cite></div>
-                            <div class="omitnum pdLeft08" hidden="" style="width: 320px;"><cite>23</cite><cite>4</cite><cite>24</cite><cite>14</cite><cite>3</cite><cite>14</cite><cite>48</cite><cite>8</cite><cite>37</cite><cite>3</cite><cite>14</cite></div>
+<!--                             <div class="omitnum pdLeft08" hidden="" style="width: 320px;"><cite>23</cite><cite>4</cite><cite>24</cite><cite>14</cite><cite>3</cite><cite>14</cite><cite>48</cite><cite>8</cite><cite>37</cite><cite>3</cite><cite>14</cite></div> -->
                         </div>
                         <p class="gray center pdTop06">第二位</p>
                         <div class="relative">
                             <div class="ssqBall pdLeft08"><cite>01</cite><cite>02</cite><cite>03</cite><cite>04</cite><cite>05</cite><cite>06</cite><cite>07</cite><cite>08</cite><cite>09</cite><cite>10</cite><cite>11</cite></div>
-                            <div class="omitnum pdLeft08" hidden="" style="width: 320px;"><cite>23</cite><cite>4</cite><cite>24</cite><cite>14</cite><cite>3</cite><cite>14</cite><cite>48</cite><cite>8</cite><cite>37</cite><cite>3</cite><cite>14</cite></div>
+<!--                             <div class="omitnum pdLeft08" hidden="" style="width: 320px;"><cite>23</cite><cite>4</cite><cite>24</cite><cite>14</cite><cite>3</cite><cite>14</cite><cite>48</cite><cite>8</cite><cite>37</cite><cite>3</cite><cite>14</cite></div> -->
                         </div>
                         <p class="gray center pdTop06">第三位</p>
                         <div class="relative">
                             <div class="ssqBall pdLeft08"><cite>01</cite><cite>02</cite><cite>03</cite><cite>04</cite><cite>05</cite><cite>06</cite><cite>07</cite><cite>08</cite><cite>09</cite><cite>10</cite><cite>11</cite></div>
-                            <div class="omitnum pdLeft08" hidden="" style="width: 320px;"><cite>23</cite><cite>4</cite><cite>24</cite><cite>14</cite><cite>3</cite><cite>14</cite><cite>48</cite><cite>8</cite><cite>37</cite><cite>3</cite><cite>14</cite></div>
+<!--                             <div class="omitnum pdLeft08" hidden="" style="width: 320px;"><cite>23</cite><cite>4</cite><cite>24</cite><cite>14</cite><cite>3</cite><cite>14</cite><cite>48</cite><cite>8</cite><cite>37</cite><cite>3</cite><cite>14</cite></div> -->
                         </div>
                     </div>
                     <!-- 前3直选end -->
@@ -192,12 +205,26 @@
     </article>
 </div>
 
-<div class="buyFooter">
+
+<div class="buyFooter" mark="buyfooter">
     <div class="buyFloat fixed">
         <em class="deleted"></em>
-        <span>共0注&nbsp;0元</span>
+        <span >共<cite mark="betnum" class="yellow">0</cite>注&nbsp;<cite mark="betmoney" class="yellow">0</cite>元</span>
         <a href="javascript:betconfirm()" class="ture">确 认</a>
     </div>
 </div>
+<span style="display:none;" id="span_add"><input type="checkbox" onclick="countMoney();" class="textWH" id="addcount">追加</span>
+<!--#include virtual="/cc/szcbuy.html"-->
+<div id="divshowprebuy" style="position: absolute; width: 100%; margin: 0px auto; z-index: 1100; top: 120.75px; left: 0px; display: none;" name="divshowprebuy"></div>
+<input type="hidden" id="TypeID" name="TypeID" value="119" />
+<input type="hidden" id="RedBallValue" name="RedBallValue" value="" />
+<input type="hidden" id="BlueBallValue" name="BlueBallValue" value="" />
+<input type="hidden" id="PlayType" name="PlayType" value="1" />
+<input type="hidden" id="Kind" name="Kind" value="2" />
+<input type="hidden" id="expect" name="expect" value="" />
+<input type="hidden" id="oldt" name="oldt" value="1" />
+<input type="hidden" id="buymoney" name="buymoney" value="0" />
+<input type="hidden" id="buyzs" name="buyzs" value="0" />
+<input type="hidden" id="hidTypeName" value="11选5" />
 </body>
 </html>
