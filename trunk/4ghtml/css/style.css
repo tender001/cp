@@ -305,6 +305,34 @@
 .ico-click .state{float: right;margin-right: 0.5em;padding-top:6px;}
 .user-tz-his p b{font-weight:normal}
 .user-tz-his p span{display: block;color: #888}
+.user-setting{margin-top: 2.6rem;padding:10px 0 7rem;font-size:1.14em;background-color:#f0f0f0;}
+.user-setting a{color: #333}
+.user-setting .ico-click{height:2.5em;line-height:2.5em;padding: 0.5em 0;border-bottom:1px solid #ddd;background-color: #fff;overflow: hidden}
+.user-setting .list-4{margin-bottom: 10px;border-bottom: 0}
+.set-icon{float:left;display:inline-block;width:35px;height:30px;margin-top:2px;background: url("/img/set-icon.png") no-repeat;background-size:35px 228px}
+.set-icon1{background-position: 0 -1px}
+.set-icon2{background-position: 0 -33px}
+.set-icon3{background-position: 0 -70px}
+.set-icon4{background-position: 0 -112px}
+.set-icon5{background-position: 0 -151px}
+.set-icon6{background-position: 0 -188px}
+.user-padding{margin-top:2.5rem;padding: 1em 2% 5em;font-size: 1.14em;background-color: #f0f0f0}
+.user-padding p{color: #666}
+.user-padding .mar{margin-top:0.7em}
+.user-input{margin-top:10px;padding:10px 0 10px 0.7em;border: 1px solid #ccc;background-color: #fff}
+.user-input input{min-width:80%;border: 0 none}
+.user-input input:focus{outline: 0}
+.user-padding .btn{width: 100%;margin-top: 1.5em}
+.foot-phone{text-align: center}
+.foot-phone a{padding: 0.5em 1em;color:#666;border: 1px solid #ccc;border-radius:5px}
+.yz-tel-num .btn{display:inline-block;width: 47.4%}
+.btn-true-re{margin-left:5%;background-color: #999;background-image: none}
+.tit-000{color:#000 !important}
+.choose-select{margin-top: 10px}
+.choose-select select{height: 3em;border:1px solid #ccc;background-color: #fff;/*-webkit-appearance:none;*/}
+.choose-bank select{width: 100%}
+.select-wh select{width: 47.4%}
+.select-wh select:last-of-type{margin-left: 5%}
 
 
 
