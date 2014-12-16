@@ -329,7 +329,7 @@
 .btn-true-re{margin-left:5%;background-color: #999;background-image: none}
 .tit-000{color:#000 !important}
 .choose-select{margin-top: 10px}
-.choose-select select{height: 3em;border:1px solid #ccc;background-color: #fff;/*-webkit-appearance:none;*/}
+.choose-select select{height: 3em;border:1px solid #ccc;background-color: #fff;-webkit-appearance:none;}
 .choose-bank select{width: 100%}
 .select-wh select{width: 47.4%}
 .select-wh select:last-of-type{margin-left: 5%}
