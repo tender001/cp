@@ -300,11 +300,14 @@
 .user-tz-history ul{overflow: hidden;border:0.15em solid #f40;border-radius:4px}
 .user-tz-history ul li{float:left;width:50%;padding:0.5em 0;color:#f40;text-align:center;}
 .user-tz-history ul li.cur{color:#fff;background-color:#f40}
+.user-tz{padding-top: 10px;background-color: #a9e9eb;}
 .user-tz-his .list{padding: 2%;}
 .user-tz-his .list .ico-click{line-height:1.5em;padding:0.35em 0;font-size:1.14em;border-bottom:1px solid #eee;overflow: hidden}
 .ico-click .state{float: right;margin-right: 0.5em;padding-top:6px;}
 .user-tz-his p b{font-weight:normal}
 .user-tz-his p span{display: block;color: #888}
+.user-tz-his p cite{display:inline-block;width:8em;color: #f40}
+.user-tz-his .money{display:inline-block;width:8em;}
 .user-setting{margin-top: 2.6rem;padding:10px 0 7rem;font-size:1.14em;background-color:#f0f0f0;}
 .user-setting a{color: #333}
 .user-setting .ico-click{height:2.5em;line-height:2.5em;padding: 0.5em 0;border-bottom:1px solid #ddd;background-color: #fff;overflow: hidden}
@@ -345,25 +348,6 @@
 .zf-pay-true p{line-height: 2.5em;text-align: center}
 .zf-pay-true .true-icon{display: inline-block;margin-right:10px;vertical-align: middle}
 .zf-pay-true .yz-tel-num .btn{width: 46.5%}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
