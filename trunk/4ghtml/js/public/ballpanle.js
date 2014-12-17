@@ -319,17 +319,22 @@ function clearData() {
 
 //设置提示窗口
 function showMS(ms,fn) {
-    $("#divshowprebuy").html("<div class=\"ball_h2\">温馨提示</div><div class=\"mini\">内容：" + ms + "</div>");
-    $("#divshowprebuy").css({
-        "top": ($(window).height() / 4 + $(window).scrollTop()) + "px",
-        'left': "0px",
+    $("#divshowprebuy").html("<div class=\"alert\"><div class=\"alert-tips\"><h2>温馨提示</h2><p>" + ms + "</p><div class=\"alert-btn\" onclick='showBuyMini(2)'>确定</div></div></div>");
+//    $("#divshowprebuy").css({
+//        "top": ($(window).height() / 4 + $(window).scrollTop()) + "px",
+//        'left': "0px",
+//    });
+    $(".alert-tips").css({
+        "margin-top": ($(window).height() / 4 + $(window).scrollTop()) + "px",
+       
     });
     showBuyMini(1);
-    setTimeout(function() { showBuyMini(2); }, (2 * 1000));
+    setTimeout(function() { showBuyMini(2); }, (6 * 1000));
     if(fn != null && fn != undefined){
     	fn.call(this);
     }
 }
+
 
 //是否显示提示窗口
 function showBuyMini(kind) {

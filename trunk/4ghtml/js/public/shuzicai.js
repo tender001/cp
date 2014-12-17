@@ -534,17 +534,44 @@ function betconfirm(rnd){
     
 //    preBuy(0);
 }
-function addCode(code,zs,money){
-	
+function payconfirm(){
+	var notes=parseInt($("#buymoney").val());
+	var expect=$("#expect").val();
+	var hidTypeName=$("#hidTypeName").val();
+	 
+     
+	$(".tz-pay").html('<p>'+hidTypeName+' 第'+expect+'期</p><p>应付金额<em>'+notes+'</em>元</p>')
+	ispay(true);
 }
-function showbuy(istrue){
+
+function ispay(ispay){
+	if(ispay){
+    	$("#betpage,#buyFooter1,[mark=buyfooter],#szcbuy,#issuc").hide();
+    	$("#paybet").show();
+    }else{
+    	$("#szcbuy").show();
+    	$("#paybet").hide();
+    }
+}
+function issuc(ispay){
+	 if(issuc){
+	    	$("#betpage,#buyFooter1,[mark=buyfooter],#szcbuy,#paybet").hide();
+	    	$("#issuc").show();
+	    }else{
+	    	$("#paybet").show();
+	    	$("#issuc").hide();
+	    }
+}
+function showbuy(istrue,ispay,issuc){
     if(istrue){
-    	$("#betpage,#buyFooter1,[mark=buyfooter]").hide();
+    	$("#betpage,#buyFooter1,[mark=buyfooter],#issuc,#paybet").hide();
     	$("#szcbuy").show();
     }else{
     	$("#betpage,#buyFooter1,[mark=buyfooter]").show();
     	$("#szcbuy").hide();
     }
+    
+   
 }
 //random
 function machineSelect(type, color) {
@@ -1219,19 +1246,26 @@ function preBuy(bk) {
              if(code == 0){
              	if (!!d.Resp.result){
              		xproid = d.Resp.result.projid;
-             		showMS("购买成功,祝君好运中大奖!",function(){
-             			setTimeout(function() { window.location.href = "/user/project.html?lotid="+gid+"&projid="+xproid;}, (2 * 1000));
-             		});
+//             		showMS("购买成功,祝君好运中大奖!",function(){
+//             			setTimeout(function() { window.location.href = "/user/project.html?lotid="+gid+"&projid="+xproid;}, (2 * 1000));
+//             		});
+             		$("#issuc a.btn-true").attr("href","/user/project.html?lotid="+gid+"&projid="+xproid)
+             		issuc(true);
+             	
+             	
+             	
              	} else {
              		zhid = d.Resp.zhuihao.id;
-             		showMS("购买成功,祝君好运中大奖!",function(){
-             			setTimeout(function() { window.location.href = "/user/xchase.html?lotid="+gid+"&tid="+zhid;}, (2 * 1000));
-             		});
+//             		showMS("购买成功,祝君好运中大奖!",function(){
+//             			setTimeout(function() { window.location.href = "/user/xchase.html?lotid="+gid+"&tid="+zhid;}, (2 * 1000));
+//             		});
+             		$("#cpid").attr("href","/user/project.html?lotid="+gid+"&projid="+xproid)
+             		issuc(true);
              	}
              } else {
              	if(desc.indexOf("余额") > 0){
              		showMS("您的余额不足，请去充值!", function(){
-    					setTimeout(function() { window.location.href = "/user/addmoney.html"; }, (2 * 1000));
+    					setTimeout(function() { window.location.href = "/account/pay.html"; }, (2 * 1000));
              		});
              	} else {
              		showMS(desc);
