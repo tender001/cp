@@ -309,20 +309,13 @@ function ChooseMatch(obj) {
 }
 //确认投注
 function betconfirm(){
-//	var bethtml=$("xx");
-//	if(bool){
-//		bethtml.append(obj);
-//	}else{
-////		if()
-//		$(removeid).remove();
-//	}
-	
-//	 chooseArray.push([n, $(obj).attr("value").toString(), '0',bets]);
+
 	var minimum=typeID=="5"?1:2;
 	if(chooseArray.length<minimum){
 		showTips('至少选择两个场次投注!');
 		return;
 	}
+	$("#confirmhtml").html("");
 	$("#buyHeader h1").html($_sys.getlotname($("#gid").val())+"_投注")
     for (var i = 0; i < chooseArray.length; i++) {
 		var 
@@ -333,13 +326,39 @@ function betconfirm(){
     
 	
 }
+function payconfirm(){
+//	var expect=$("#expect").val();
+	var hidTypeName=$("#hidTypeName").val();
+	 
+     
+	$(".tz-pay").html('<p>'+hidTypeName+' </p><p>应付金额<em>'+amount+'</em>元</p>')
+	ispay(true);
+}
+function ispay(ispay){
+	if(ispay){
+    	$("#matchList,#buyFooter1,#szcbuy,#issuc,#content_home").hide();
+    	$("#paybet").show();
+    }else{
+    	$("#szcbuy").show();
+    	$("#paybet").hide();
+    }
+}
+function issuc(ispay){
+	 if(issuc){
+	    	$("#matchList,#buyFooter1,#szcbuy,#paybet,#content_home").hide();
+	    	$("#issuc").show();
+	    }else{
+	    	$("#content_home").show();
+	    	$("#issuc").hide();
+	    }
+}
 function showbuy(istrue){
     if(istrue){
-    	$("#matchList,#buyFooter1").hide();
+    	$("#matchList,#buyFooter1,#szcbuy,#paybet,#issuc").hide();
     	$("#content_home").show();
     }else{
     	$("#matchList,#buyFooter1").show();
-    	$("#content_home").hide();
+    	$("#content_home,#szcbuy,#paybet").hide();
     }
 }
 //选胆
@@ -562,7 +581,7 @@ function SubmitLot(obj) {
 	var oriObjTxt = $(obj).html();
 	$(obj).html("方案提交中...")
 	setTimeout(function(){$(obj).html(oriObjTxt)},3000);
-	showTips("提交中...");
+//	showTips("提交中...");
 	
 	var name ="手机代购";
 	var desc ="手机代购";
@@ -629,13 +648,15 @@ function SubmitLot(obj) {
 			var desc = d.Resp.desc;
 			if (code == "0") {
 				var projid = d.Resp.result.projid;
-				window.location.href="/user/project.html?lotid="+gid+"&projid="+projid;
+			
+				$("#cpid").attr("href","/user/project.html?lotid="+gid+"&projid="+projid)
+         		issuc(true);
 	         }else{
 	        	 if(desc.indexOf("余额不足")!=-1){
 	        		 showTips("您的余额不足，请去充值!",function(){
 	        				clearTimeout(tipsTs);
 	        				tipsTs = setTimeout(function(){
-	        					window.location.href="/user/addmoney.html";
+	        					window.location.href="/account/pay.html";
 	        				}, 1000);
 	        		 });
 	        	 }else{
