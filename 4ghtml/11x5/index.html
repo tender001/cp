@@ -20,6 +20,7 @@
 <script>
 $(document).ready(function() {
     chklogin();
+    createGamePanle(119)
     createGameSelect();
 });
 </script>
@@ -34,20 +35,20 @@ $(document).ready(function() {
 <div class="top-margin" id="betpage">
     <nav>
         <div class="kpTab syx5Tab clearfix" style="float: none;width: 100%;overflow: hidden;">
-            <ul class="clearfix"
+            <ul class="clearfix" id="kpTab"
                 style="list-style: none; display: block; width: 60rem; height: 100%; padding: 0px; transition: transform 0ms; -webkit-transition: transform 0ms; transform-origin: 0px 0px 0px; transform: translate(-8px, 0px) scale(1) translateZ(0px);">
-                <li class="cur">选第1位</li>
-                <li>选2全中</li>
-                <li>选3全中</li>
-                <li>选4全中</li>
-                <li>选5全中</li>
-                <li>选6中5</li>
-                <li>选7中5</li>
-                <li>选8中5</li>
-                <li>前2直选</li>
-                <li>前3直选</li>
-                <li>前2组选</li>
-                <li>前3组选</li>
+<!--                 <li class="cur">选第1位</li> -->
+<!--                 <li>选2全中</li> -->
+<!--                 <li>选3全中</li> -->
+<!--                 <li>选4全中</li> -->
+<!--                 <li>选5全中</li> -->
+<!--                 <li>选6中5</li> -->
+<!--                 <li>选7中5</li> -->
+<!--                 <li>选8中5</li> -->
+<!--                 <li>前2直选</li> -->
+<!--                 <li>前3直选</li> -->
+<!--                 <li>前2组选</li> -->
+<!--                 <li>前3组选</li> -->
             </ul>
         </div>
     </nav>
@@ -159,45 +160,45 @@ $(document).ready(function() {
         </div>
         <section class="relative" style="z-index:1">
             <!-- 选11个号码start -->
-            <div style="overflow: hidden; width: 320px;">
-                <div id="divballarea" style="width: 10000px; position: relative; left: 0;">
-                    <div  style="float: left; width: 320px;">
+            <div style="overflow: hidden;">
+                <div id="divballarea" style="width: 100%; position: relative; left: 0;">
+                    <div  style="float: left; ">
                         <div class="ssqBall pdLeft08"><cite>01</cite><cite>02</cite><cite>03</cite><cite>04</cite><cite>05</cite><cite>06</cite><cite>07</cite><cite>08</cite><cite>09</cite><cite>10</cite><cite>11</cite></div>
                         <div class="omitnum pdLeft08" hidden="" style="width: 320px;display: block"><cite>23</cite><cite>4</cite><cite>24</cite><cite>14</cite><cite>3</cite><cite>14</cite><cite>48</cite><cite>8</cite><cite>37</cite><cite>3</cite><cite>14</cite></div>
                     </div>
                     <!-- 选11个号码end -->
                     <!-- 前2直选start -->
-                    <div id="qe" style="float: left; width: 320px;">
-                        <p class="gray center pdTop06">第一位</p>
-                        <div class="relative">
-                            <div class="ssqBall pdLeft08"><cite>01</cite><cite>02</cite><cite>03</cite><cite>04</cite><cite>05</cite><cite>06</cite><cite>07</cite><cite>08</cite><cite>09</cite><cite>10</cite><cite>11</cite></div>
-<!--                             <div class="omitnum pdLeft08" hidden="" style="width: 320px;"><cite>23</cite><cite>4</cite><cite>24</cite><cite>14</cite><cite>3</cite><cite>14</cite><cite>48</cite><cite>8</cite><cite>37</cite><cite>3</cite><cite>14</cite></div> -->
-                        </div>
-                        <p class="gray center pdTop06">第二位</p>
-                        <div class="relative">
-                            <div class="ssqBall pdLeft08"><cite>01</cite><cite>02</cite><cite>03</cite><cite>04</cite><cite>05</cite><cite>06</cite><cite>07</cite><cite>08</cite><cite>09</cite><cite>10</cite><cite>11</cite></div>
-<!--                             <div class="omitnum pdLeft08" hidden="" style="width: 320px;"><cite>23</cite><cite>4</cite><cite>24</cite><cite>14</cite><cite>3</cite><cite>14</cite><cite>48</cite><cite>8</cite><cite>37</cite><cite>3</cite><cite>14</cite></div> -->
-                        </div>
-                    </div>
-                    <!-- 前2直选end -->
-                    <!-- 前3直选start -->
-                    <div id="qs" style="float: left; width: 320px;">
-                        <p class="gray center pdTop06">第一位</p>
-                        <div class="relative">
-                            <div class="ssqBall pdLeft08"><cite>01</cite><cite>02</cite><cite>03</cite><cite>04</cite><cite>05</cite><cite>06</cite><cite>07</cite><cite>08</cite><cite>09</cite><cite>10</cite><cite>11</cite></div>
-<!--                             <div class="omitnum pdLeft08" hidden="" style="width: 320px;"><cite>23</cite><cite>4</cite><cite>24</cite><cite>14</cite><cite>3</cite><cite>14</cite><cite>48</cite><cite>8</cite><cite>37</cite><cite>3</cite><cite>14</cite></div> -->
-                        </div>
-                        <p class="gray center pdTop06">第二位</p>
-                        <div class="relative">
-                            <div class="ssqBall pdLeft08"><cite>01</cite><cite>02</cite><cite>03</cite><cite>04</cite><cite>05</cite><cite>06</cite><cite>07</cite><cite>08</cite><cite>09</cite><cite>10</cite><cite>11</cite></div>
-<!--                             <div class="omitnum pdLeft08" hidden="" style="width: 320px;"><cite>23</cite><cite>4</cite><cite>24</cite><cite>14</cite><cite>3</cite><cite>14</cite><cite>48</cite><cite>8</cite><cite>37</cite><cite>3</cite><cite>14</cite></div> -->
-                        </div>
-                        <p class="gray center pdTop06">第三位</p>
-                        <div class="relative">
-                            <div class="ssqBall pdLeft08"><cite>01</cite><cite>02</cite><cite>03</cite><cite>04</cite><cite>05</cite><cite>06</cite><cite>07</cite><cite>08</cite><cite>09</cite><cite>10</cite><cite>11</cite></div>
-<!--                             <div class="omitnum pdLeft08" hidden="" style="width: 320px;"><cite>23</cite><cite>4</cite><cite>24</cite><cite>14</cite><cite>3</cite><cite>14</cite><cite>48</cite><cite>8</cite><cite>37</cite><cite>3</cite><cite>14</cite></div> -->
-                        </div>
-                    </div>
+<!--                     <div id="qe" style="float: left; width: 320px;"> -->
+<!--                         <p class="gray center pdTop06">第一位</p> -->
+<!--                         <div class="relative"> -->
+<!--                             <div class="ssqBall pdLeft08"><cite>01</cite><cite>02</cite><cite>03</cite><cite>04</cite><cite>05</cite><cite>06</cite><cite>07</cite><cite>08</cite><cite>09</cite><cite>10</cite><cite>11</cite></div> -->
+<!-- <!--                             <div class="omitnum pdLeft08" hidden="" style="width: 320px;"><cite>23</cite><cite>4</cite><cite>24</cite><cite>14</cite><cite>3</cite><cite>14</cite><cite>48</cite><cite>8</cite><cite>37</cite><cite>3</cite><cite>14</cite></div> --> 
+<!--                         </div> -->
+<!--                         <p class="gray center pdTop06">第二位</p> -->
+<!--                         <div class="relative"> -->
+<!--                             <div class="ssqBall pdLeft08"><cite>01</cite><cite>02</cite><cite>03</cite><cite>04</cite><cite>05</cite><cite>06</cite><cite>07</cite><cite>08</cite><cite>09</cite><cite>10</cite><cite>11</cite></div> -->
+<!-- <!--                             <div class="omitnum pdLeft08" hidden="" style="width: 320px;"><cite>23</cite><cite>4</cite><cite>24</cite><cite>14</cite><cite>3</cite><cite>14</cite><cite>48</cite><cite>8</cite><cite>37</cite><cite>3</cite><cite>14</cite></div> -->
+<!--                         </div> -->
+<!--                     </div> -->
+<!--                     前2直选end -->
+<!--                     前3直选start -->
+<!--                     <div id="qs" style="float: left; width: 320px;"> -->
+<!--                         <p class="gray center pdTop06">第一位</p> -->
+<!--                         <div class="relative"> -->
+<!--                             <div class="ssqBall pdLeft08"><cite>01</cite><cite>02</cite><cite>03</cite><cite>04</cite><cite>05</cite><cite>06</cite><cite>07</cite><cite>08</cite><cite>09</cite><cite>10</cite><cite>11</cite></div> -->
+<!-- <!--                             <div class="omitnum pdLeft08" hidden="" style="width: 320px;"><cite>23</cite><cite>4</cite><cite>24</cite><cite>14</cite><cite>3</cite><cite>14</cite><cite>48</cite><cite>8</cite><cite>37</cite><cite>3</cite><cite>14</cite></div> --> 
+<!--                         </div> -->
+<!--                         <p class="gray center pdTop06">第二位</p> -->
+<!--                         <div class="relative"> -->
+<!--                             <div class="ssqBall pdLeft08"><cite>01</cite><cite>02</cite><cite>03</cite><cite>04</cite><cite>05</cite><cite>06</cite><cite>07</cite><cite>08</cite><cite>09</cite><cite>10</cite><cite>11</cite></div> -->
+<!-- <!--                             <div class="omitnum pdLeft08" hidden="" style="width: 320px;"><cite>23</cite><cite>4</cite><cite>24</cite><cite>14</cite><cite>3</cite><cite>14</cite><cite>48</cite><cite>8</cite><cite>37</cite><cite>3</cite><cite>14</cite></div> --> 
+<!--                         </div> -->
+<!--                         <p class="gray center pdTop06">第三位</p> -->
+<!--                         <div class="relative"> -->
+<!--                             <div class="ssqBall pdLeft08"><cite>01</cite><cite>02</cite><cite>03</cite><cite>04</cite><cite>05</cite><cite>06</cite><cite>07</cite><cite>08</cite><cite>09</cite><cite>10</cite><cite>11</cite></div> -->
+<!-- <!--                             <div class="omitnum pdLeft08" hidden="" style="width: 320px;"><cite>23</cite><cite>4</cite><cite>24</cite><cite>14</cite><cite>3</cite><cite>14</cite><cite>48</cite><cite>8</cite><cite>37</cite><cite>3</cite><cite>14</cite></div> --> 
+<!--                         </div> -->
+<!--                     </div> -->
                     <!-- 前3直选end -->
                 </div>
             </div>
@@ -208,7 +209,7 @@ $(document).ready(function() {
 
 <div class="buyFooter" mark="buyfooter">
     <div class="buyFloat fixed">
-        <em class="deleted"></em>
+        <em class="deleted" onclick="Reconfirm()"></em>
         <span >共<cite mark="betnum" class="yellow">0</cite>注&nbsp;<cite mark="betmoney" class="yellow">0</cite>元</span>
         <a href="javascript:betconfirm()" class="ture">确 认</a>
     </div>
