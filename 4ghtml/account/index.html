@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=1' name='viewport'/>
+    <meta content='yes' name='apple-mobile-web-app-capable'/>
+    <meta content='black' name='apple-mobile-web-app-status-bar-style'/>
+    <meta content='telephone=no' name='format-detection'/>
+    <title>用户中心_159彩票网</title>
+    <link rel="stylesheet" href="/css/basic.css" type="text/css"/>
+    <link rel="stylesheet" href="/css/style.css" type="text/css"/>
+    <script src='/js/jquery.js'></script>
+	<script src='/js/159cp.js'></script>
+	<script src='/js/base.js'></script>
+	<script src='/js/login.js'></script>
+	<script src='/js/account/index.js'></script>
+</head>
+<body>
+<!--#include virtual="/cc/header.html"-->
+<input type="hidden" id='logintype' value="1">
+
+
+
+<section class="buyHeader">
+    <h1>用户中心</h1>
+    <a href="javascript:history.go(-1)" class="backIco2"></a>
+    <a href="/account/set.html" class="goHome goHome-user"></a>
+</section>
+
+<div class="user-set list">
+    <div class="ico-click">
+        <i></i><span class="user-money">账户余额:<em id="useramount"></em></span>
+        <div class="user"><img src="/img/caipiao.png" alt=""/><cite id="username"></cite></div>
+    </div>
+</div>
+<div class="user-pay"><a href="/account/pay.html">充值</a><a href="/account/draw.html">提现</a></div>
+<div class="user-tz-history">
+    <div class="ul-padd">
+        <ul>
+            <li id="rec" class="cur">投注记录</li>
+            <li id="keeprec">追号记录</li>
+        </ul>
+    </div>
+</div>
+<div class="user-tz-his">
+    <ul class="list" id="betlist">
+<!--         <li class="ico-click"><i></i><span class="state">未结算</span> -->
+
+<!--             <p><b>竞彩足球</b><span>11-26<em>代购订单</em>8.00元</span></p> -->
+<!--         </li> -->
+    </ul>
+</div>
+
+</body>
+</html>
