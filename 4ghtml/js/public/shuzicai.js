@@ -568,7 +568,7 @@ function showbuy(istrue,ispay,issuc){
     	$("#szcbuy").show();
     }else{
     	$("#betpage,#buyFooter1,[mark=buyfooter]").show();
-    	$("#szcbuy").hide();
+    	$("#szcbuy,#szcbuy,#paybet,#issuc").hide();
     }
     
    
