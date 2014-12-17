@@ -13,7 +13,7 @@
 	<script src='/js/159cp.js'></script>
 	<script src='/js/base.js'></script>
 	<script src='/js/login.js'></script>
-    <script src='/js/bankcardmanager.js'></script>
+    <script src='js/bankcardmanager.js'></script>
 </head>
 <body>
 	<script>
@@ -32,6 +32,9 @@
 			$("#btnSumit").click(function() {
 				bdyh();
 			});
+			$("#btnSumit").click(function() {
+				bdyh();
+			});
 			$("#cardnumber").keyup(function(){
 	    		this.value=this.value.replace(/\D/g,''); //只能输数字
 // 	            this.value =this.value.replace(/\s/g,'').replace(/(\d{4})(?=\d)/g,"$1 ");//四位数字一空格
@@ -42,12 +45,20 @@
 <div class="topround" id="div3" style="display: none;">
 	<font color="#F18D8D"><b>您好 请先登录！</b></font>
 </div>
-<section class="buyHeader">
+<section class="buyHeader" >
     <h1>绑定银行卡</h1>
     <a href="javascript:history.go(-1)" class="backIco2"></a>
     <a href="/" class="goHome"></a>
 </section>
-<section class="user-padding">
+<div class="user-padding mycard" id="div1">
+    <p><span>银行卡号</span><i id="lbBankNumV"></i></p>
+    <p><span>开户行</span><i id="lbBankAreaV"></i></p>
+<!--     <p><span>开户地</span><i  id="lbBankCityV"></i></p> -->
+    <p><span>开户支行</span ><i id="lbBankAddrV"></i></p>
+    <div class="explain">如需修改银行卡号，请联系在线客服，并提供身份证和银行卡扫描件或者数码照。客服电话 400-0696-159</div>
+<!--     <a class="btn btn-true"  onclick="revisebank()">修改开户行信息</a> -->
+</div>
+<section class="user-padding" id="div2">
     <p class="tit-000">开户行</p>
     <p class="choose-select choose-bank">
         <select  name="selBankName" id="selBankName">
