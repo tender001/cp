@@ -16,6 +16,11 @@ function ckinfo() {
 				var prov = r.prov;
 				var city = r.city;
 				var card = r.card;
+				if (card!=""){
+					$("#cardnumber").attr("disabled",true);
+					$("#bankType").attr("disabled",true);
+					$("#cardnumber").attr("hide","yes");
+				}
 				if (name == "") {
 					$("#div1").hide();
 					$("#div2").show();
@@ -41,6 +46,11 @@ function ckinfo() {
 		}
 	});
 }
+function revisebank(){
+	$("#div1").hide();
+	$("#div2").show();
+}
+
 function city() {
 	if ($("#drpProvinceList").val() != "") {
 		var txt = $("#drpProvinceList").val()
@@ -66,14 +76,33 @@ function bdyh() {
 		var cityid = $.trim($("#city").val());
 		var provid = $.trim($("#drpProvinceList").val());
 		var data = "";
-		data = $_user.key.bankCode + "=" + encodeURIComponent(bankCode) + "&"
-				+ $_user.key.bankCard + "=" + encodeURIComponent(bankCard)
-				+ "&" + $_user.key.provid + "=" + encodeURIComponent(provid)
-				+ "&" + $_user.key.cityid + "="
-				+ encodeURIComponent(cityid.replace()) + "&"
-				+ $_user.key.bankName + "=" + encodeURIComponent(bankName)
-				+ "&" + $_user.key.upwd + "=" + encodeURIComponent(upwd)
-				+ "&rnd=" + Math.random();
+		if (Y.get("#cardnumber").attr("disabled")){//修改银行卡信息
+			data = $_user.key.bankCode + "=" + encodeURIComponent(Y.get("#bankType").val().trim())
+			+ "&" + $_user.key.provid + "=" + encodeURIComponent(province.replace(/\-/g,""))
+			+ "&" + $_user.key.cityid + "=" + encodeURIComponent(city.replace(/\-/g,""))
+			+ "&" + $_user.key.bankName + "=" + encodeURIComponent(Y.get("#bankname").val().trim())
+//			+ "&" + $_user.key.upwd + "=" + encodeURIComponent(Y.get("#password").val().trim())
+			+ "&" + $_user.key.tid + "=1"
+			+ "&rnd=" + Math.random();
+			
+		}else{//设置银行卡信息
+			data = $_user.key.bankCode + "=" + encodeURIComponent(Y.get("#bankType").val().trim())
+	
+			+ "&" + $_user.key.bankCard + "=" + encodeURIComponent(cardnumber)
+			+ "&" + $_user.key.provid + "=" + encodeURIComponent(province.replace(/\-/g,""))
+			+ "&" + $_user.key.cityid + "=" + encodeURIComponent(city.replace(/\-/g,""))
+			+ "&" + $_user.key.bankName + "=" + encodeURIComponent(Y.get("#bankname").val().trim())
+//			+ "&" + $_user.key.upwd + "=" + encodeURIComponent(Y.get("#password").val().trim())
+			+ "&rnd=" + Math.random();
+		}					
+//		data = $_user.key.bankCode + "=" + encodeURIComponent(bankCode) + "&"
+//				+ $_user.key.bankCard + "=" + encodeURIComponent(bankCard)
+//				+ "&" + $_user.key.provid + "=" + encodeURIComponent(provid)
+//				+ "&" + $_user.key.cityid + "="
+//				+ encodeURIComponent(cityid.replace()) + "&"
+//				+ $_user.key.bankName + "=" + encodeURIComponent(bankName)
+//				+ "&" + $_user.key.upwd + "=" + encodeURIComponent(upwd)
+//				+ "&rnd=" + Math.random();
 		$.ajax({
 			url : $_user.modify.card,
 			type : "POST",
@@ -85,7 +114,7 @@ function bdyh() {
 				var desc = R.desc;
 				if (code == "0") {
 					var result = "bdbank"
-					location.href = "/user/showresult.html?result=" + result;
+					location.href = "/account/showresult.html?result=" + result;
 				} else {
 					showTips(desc);
 				}
