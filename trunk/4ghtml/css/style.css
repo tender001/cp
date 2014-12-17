@@ -333,6 +333,7 @@
 .choose-bank select{width: 100%}
 .select-wh select{width: 47.4%}
 .select-wh select:last-of-type{margin-left: 5%}
-
-
-
+.mycard p{padding-top:0.6em;color:#111;letter-spacing:0.05em}
+.mycard p span{display:inline-block;width:8em;color: #8e8e8e}
+.mycard .explain{padding-top:0.6em;color: #f40}
+.tel em{color:#f40}
