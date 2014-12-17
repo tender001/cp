@@ -149,20 +149,22 @@ function createballpanle_11s5(level, rKind) {
         varlength = 3;
     var html = new Array();
     for (var l = 1; l <= varlength; l++) {
-        if (varlength == 2 || varlength == 3)
-            html.push("<div class=\"stitle\">第" + levelNameOne[l - 1] + "位：</div>");
-        html.push("<div class='ssqBall pdLeft08' id=\"ulnumber_" + l + "\"><div  style=\"float: left; width: 320px;\">");
+        if (varlength == 2 || varlength == 3){
+        	html.push("<p class=\"gray center pdTop06\">第" + levelNameOne[l - 1] + "位</p>"); 
+        }
+            
+        html.push("<div  class=\"ssqBall pdLeft08\" id=\"ulnumber_" + l + "\">");
         for (var i = startmin; i <= endmax; i++) {
             html.push("<cite id=\"redball_" + l.toString() + "_" + i.toString() + "\" class=\"" + BallStyle[4] + "\" onclick=\"selectBall(this,'red')\" >" + (i > 9 ? i.toString() : ("0" + i.toString())) + "</cite>");
         }
-        html.push("</div></div>");
-        if (varlength == 2 || varlength == 3)
-            html.push("<br />");
+        html.push("</div>");
+       
+           
     }
     if (rKind == 1)
         return html.join("");
-    else
-        $("#rx").html(html.join(""));
+    else 
+        $("#redArea").html(html.join(""));
 }
 //快乐十分
 var gameName_happyten = new Array("", "选一数投", "选一红投", "选二任选", "选二连组", "选二连直", "选三任选", "选三前组", "选三前直", "选四任选", "选五任选");
@@ -238,27 +240,38 @@ function createballpanle_ssc(level, rKind) {
     	endmax = 18;
 
     var html = new Array();
-    for (var l = varlength; l >= 1; l--) {
+
+	 for (var l = varlength; l >= 1; l--) {
     	if(level == 5 || level == 6){
-            html.push("<div class=\"stitle\">" + levelNameOne[l - 1] + "位：</div>");
-    	} else {
-            html.push("<div class=\"stitle\">" + levelNameTwo[5 - l] + "位：</div>");
+    		html.push("<p class=\"gray center pdTop06\">" + levelNameOne[l - 1] + "位</p>"); 
+    	}else{
+    		html.push("<p class=\"gray center pdTop06\">" + levelNameTwo[5 - l] + "位</p>"); 
     	}
-        html.push("<ul id=\"ulnumber_" + l + "\" class=\"ball\">");
-        for (var i = startmin; i <= endmax; i++) {
-            html.push("<li><span id=\"redball_" + l.toString() + "_" + i.toString() + "\" class=\"" + BallStyle[4] + "\" onclick=\"selectBall(this,'red')\" >" + (level == 8 ? gameName_ssc_subname[i] : i.toString()) + "</span></li>");
-        }
-        html.push("</ul><br />")
-    }
-    if (rKind == 1)
+    	 html.push("<div  class=\"ssqBall pdLeft08\" id=\"ulnumber_" + l + "\">");
+         for (var i = startmin; i <= endmax; i++) {
+             html.push("<cite id=\"redball_" + l.toString() + "_" + i.toString() + "\" class=\"" + BallStyle[4] + "\" onclick=\"selectBall(this,'red')\" >" +(level == 8 ? gameName_ssc_subname[i] : i.toString()) + "</cite>");
+         }
+         html.push("</div>");
+    	
+	 }
+	 if (rKind == 1)
         return html.join("");
     else
-        $("#redArea").html(html.join(""));
+        $("#redArea").html(html.join(""));    
+       
+       
+           
+  
+    
+    
+    
+    
+    
 }
 
 //生成Input[radio]按钮
 function createInputChecked(name,click,indexid,indexname,ischeck) {
-    var varinput = "<label id=\"lb_" + indexid + "\" " + (ischeck ? "class=\"btnD\";" : "class=\"btn\";") + " style=\"cursor:pointer;\" onclick=\"updateballpanelstate('" + name + "',this);" + click + "\" ><input type=\"radio\" value=\"" + indexid + "\" " + (ischeck ? "checked=\"checked\"" : "") + " style='display:none;' />" + indexname + "</label>&nbsp;&nbsp;";
+    var varinput = "<li id=\"lb_" + indexid + "\" " + (ischeck ? "class=\"cur\";" : "") + " style=\"cursor:pointer;\" onclick=\"updateballpanelstate('" + name + "',this);" + click + "\" ><input type=\"radio\" value=\"" + indexid + "\" " + (ischeck ? "checked=\"checked\"" : "") + " style='display:none;' />" + indexname + "</li>";
     return varinput;
 }
 
@@ -269,10 +282,12 @@ function updateballpanelstate(name,obj) {
         if ($(bpList[i]).children("input").length > 0 ) {
             $(bpList[i]).children("input")[0].checked = false;
         }
-        $(bpList[i]).attr("class", "btn");
+        $(bpList[i]).attr("class", "");
     }
+    $("#bonus_ div").siblings().slideUp();
+    $("#bonus_ div").eq($(obj).index()).slideDown();
     $(obj).children("input")[0].checked = true;
-    $(obj).attr("class", "btnD");
+    $(obj).attr("class", "cur");
     $("#PlayType").attr("value", $(obj).children("input")[0].value); //重置玩法ID
     if (tID == 118 && ($(obj).children("input")[0].value == "8" || $(obj).children("input")[0].value == "9")) {
         $("#span_add").hide();
@@ -292,6 +307,9 @@ function clearData() {
     $("#notes").html(0);
     $("#times2").html(0);
     $("#money").html(0);
+    vardata=[];
+    $("[mark=betnum],[mark=betmoney]").html(0);
+    $("#preMoney").html("共<cite class=\"yellow\">0</cite>注<cite class=\"yellow\">0</cite>元")
     if ($("#viewPriceInfo")) {
         $("#viewPriceInfo").html("1～1元，最低1元，最高方案金额的20%");
         $("#viewPrice").attr("value", "1");
@@ -331,11 +349,8 @@ function showBuyMini(kind) {
 
 //设置玩法窗口
 function showGP(ms) {
-    $("#divshowprebuy").html("<div class=\"ball_h2\">玩法设置</div><div class=\"mini\" id=\"gamePanle\">" + ms + "</div>");
-    $("#divshowprebuy").css({
-        "top": ($(window).height() / 4 + $(window).scrollTop()) + "px",
-        "left": "0px"
-    });
+    $("#kpTab").html(ms);
+  
     showBuyMini(1);
 }
 

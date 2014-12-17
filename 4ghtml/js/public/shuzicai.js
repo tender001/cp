@@ -105,7 +105,7 @@ loadOpencode = function(){
 					var m0 = $(ele).attr("m0");
 					
                 	
-                	var pid = pid.substr(0,8);
+//                	var pid = pid.substr(0,10);
 //              
                 	
 //                	alert("pd="+pd+" day="+day);
@@ -137,7 +137,8 @@ function Reconfirm(){
 	 $("[mark=betnum]").html(0);
      $("[mark=betmoney]").html(0);
 	$("#code_list").html("");
-    $("#buymoney").val(0)
+    $("#buymoney").val(0);
+    vardata=[];
     $("#preMoney").html('共<cite class="yellow">0</cite>注<cite class="yellow">0</cite>元')
 	createGameSelect();
 }
@@ -270,45 +271,45 @@ function createGamePanle(tID) {
         if (tID == 26) {
         	var varr = [0,1,3,5,8];
             for (var i = 1; i < varr.length; i++) {
-                if (i % 2 != 0 && i != 1) html.push("<br />");
+//                if (i % 2 != 0 && i != 1) html.push("<br />");
             	var c = varr[i];
-                html.push(createInputChecked("gamePanle", "createballpanle_pl3(" + c + ",2);", c, gameName_pl3[c], c == index ? true : false));
+                html.push(createInputChecked("kpTab", "createballpanle_pl3(" + c + ",2);", c, gameName_pl3[c], c == index ? true : false));
             }
         }
         else if (tID == 44) {
         	var varr = [0,1,2,3,4,5,6];
             for (var i = 1; i < varr.length; i++) {
-                if (i % 2 != 0 && i != 1) html.push("<br />");
+//                if (i % 2 != 0 && i != 1) html.push("<br />");
                 var c = varr[i];
-                html.push(createInputChecked("gamePanle", "createballpanle_3D(" + c + ",2);", c, gameName_3D[c], c == index ? true : false));
+                html.push(createInputChecked("kpTab", "createballpanle_3D(" + c + ",2);", c, gameName_3D[c], c == index ? true : false));
             }
         }
         else if (tID == 56) {//
             for (var c = 1; c <= 7; c++) {
-                if (c == 3 || c == 5 || c == 7) html.push("<br />");
-                html.push(createInputChecked("gamePanle", "createballpanle_36s7(" + gameName_36s7_subID[c] + ",2);", gameName_36s7_subID[c], gameName_36s7_subName[c], gameName_36s7_subID[c] == index ? true : false));
+//                if (c == 3 || c == 5 || c == 7) html.push("<br />");
+                html.push(createInputChecked("kpTab", "createballpanle_36s7(" + gameName_36s7_subID[c] + ",2);", gameName_36s7_subID[c], gameName_36s7_subName[c], gameName_36s7_subID[c] == index ? true : false));
             }
 
         } else if (tID == 115 || tID == 119) {//
             for (var c = 1; c <= 12; c++) {
-                if (c % 2 == 1 && c != 1) html.push("<br />");
-                html.push(createInputChecked("gamePanle", "createballpanle_11s5(" + gameName_11s5_subID[c] + ",2);", gameName_11s5_subID[c], gameName_11s5_subName[c], gameName_11s5_subID[c] == index ? true : false));
+//                if (c % 2 == 1 && c != 1) html.push("<br />");
+                html.push(createInputChecked("kpTab", "createballpanle_11s5(" + gameName_11s5_subID[c] + ",2);", gameName_11s5_subID[c], gameName_11s5_subName[c], gameName_11s5_subID[c] == index ? true : false));
             }
         } else if (tID == 116) {//
             for (var c = 1; c <= 10; c++) {
-                if (c % 2 == 1 && c != 1) html.push("<br />");
-                html.push(createInputChecked("gamePanle", "createballpanle_happyten(" + gameName_happyten_subID[c] + ",2);", gameName_happyten_subID[c], gameName_happyten_subName[c], gameName_happyten_subID[c] == index ? true : false));
+//                if (c % 2 == 1 && c != 1) html.push("<br />");
+                html.push(createInputChecked("kpTab", "createballpanle_happyten(" + gameName_happyten_subID[c] + ",2);", gameName_happyten_subID[c], gameName_happyten_subName[c], gameName_happyten_subID[c] == index ? true : false));
             }
         } else if (tID == 118) {
             for (var c = 1; c <= 9; c++) {
-                if (c % 2 == 1 && c != 1) html.push("<br />");
-                html.push(createInputChecked("gamePanle", "createballpanle_happy8(" + c + ",2);", c, gameName_happy8[c], c == index ? true : false));
+//                if (c % 2 == 1 && c != 1) html.push("<br />");
+                html.push(createInputChecked("kpTab", "createballpanle_happy8(" + c + ",2);", c, gameName_happy8[c], c == index ? true : false));
             }
         } else if (tID == 120) {
         
             for (var c = 1; c <= 8; c++) {
-                if (c % 2 == 1 && c != 1) html.push("<br />");
-                html.push(createInputChecked("gamePanle", "createballpanle_ssc(" + c + ",2);", c, gameName_ssc[c], c == index ? true : false));
+//                if (c % 2 == 1 && c != 1) html.push("<br />");
+                html.push(createInputChecked("kpTab", "createballpanle_ssc(" + c + ",2);", c, gameName_ssc[c], c == index ? true : false));
             }
         }
     }
@@ -366,12 +367,13 @@ function selectBall(ball, color) {
         $("#RedBallValue").attr("value", "");
     else if (color == "blue")
         $("#BlueBallValue").attr("value", "");
-    if ($("#redArea").children("ul").length > 1) {//直选按位
+    if ($("#redArea").children("div").length > 1) {//直选按位
         var count = 0;
-        var ballList = $("#redArea").children("ul");
+        var ballList = $("#redArea").children("div");
         var playtype = parseInt($("#PlayType").attr("value"));
         for (var i = 0; i < ballList.length; i++) {
-            var ball_sub = $($(ballList[i])[0]).children().children("span");
+            var ball_sub = $($(ballList[i])[0]).children("cite");
+           
             var value = "";
             for (var j = 0; j < ball_sub.length; j++) {
                 if ($(ball_sub[j]).attr("class").toString() == classnmae_s) {
@@ -408,7 +410,7 @@ function selectBall(ball, color) {
             if ((count < 1 && playtype == 8) || (count < 2 && playtype == 9))
                 valueList = "";
         } else {
-            if (count != $("#redArea").children("ul").length)
+            if (count != $("#redArea").children("div").length)
                 valueList = "";
         }
     }
@@ -459,8 +461,13 @@ function selectBall(ball, color) {
     countMoney();
 }
 
-function betconfirm(){
-	 var redValue = $("#RedBallValue").attr("value");
+function betconfirm(rnd){
+	 
+	if(rnd) {
+		$("#buyzs").val(parseInt($("#buyzs").val())+rnd);
+	    $("#buymoney").val(parseInt($("#buymoney").val())+(rnd*2));
+	}else{
+		var redValue = $("#RedBallValue").attr("value");
 	    if (redValue == "" || redValue.length == 0) {
 	        showMS("请先选择号码,再投注!");
 	        return;
@@ -475,10 +482,10 @@ function betconfirm(){
 	        }
 	        codedata += "|" + blueValue;
 	    }
-	    var isadd = !!$("#addcount").attr("checked");
+	   
 	    vardata[vardata.length]=codedata;
-	    var playtype = parseInt($("#PlayType").attr("value"));
-	    var times = parseInt($("#times").val());
+	   
+	   
 	    var notes = parseInt($("[mark=betnum]").text());
 	    var money = parseInt($("[mark=betmoney]").text());
 	    $("#buyzs").val(parseInt($("#buyzs").val())+notes);
@@ -487,13 +494,17 @@ function betconfirm(){
 	        showMS("投注方案不完整,请核实投注内容!");
 	        return;
 	    }
+	}
+	 var isadd = !!$("#addcount").attr("checked");
+	var playtype = parseInt($("#PlayType").attr("value"));
+	var times = parseInt($("#times").val());
 //	$("#buyHeader h1").html($_sys.getlotname($("#gid").val())+"_投注列表");
 	    
 	    var html="";
 	    var varString=vardata.join(";")
 	    if (varString.split(';').length > 1) {
 	    	for (var i = 0; i < varString.split(';').length; i++) {
-	    		html+='<div class="ssqtzNum"><cite class="errorBg"><em class="error2"></em></cite>'
+	    		html+='<div class="ssqtzNum"><cite class="errorBg"><em class=""></em></cite>'
     		    	+'<span class="revise_ww"><span>'
 //	    		
             	
@@ -600,7 +611,7 @@ function countNotes() {
                 var isPass = true;
                 if (tID == 44 && (playtype == 8 || playtype == 9))//直选按位玩法,除福彩3D--1D,2D玩法外
                     isPass = false;
-                if ($("#redArea").children("ul").length > 1 && isPass) {
+                if ($("#redArea").children("div").length > 1 && isPass) {
                     if (((tID == 115 || tID == 119) && (playtype == 4 || playtype == 7) || ((tID == 116) && (playtype == 5 || playtype == 8)))) {
                         if (playtype == 4 || playtype == 5) {//前二直选 //选二连直
                             for (var i = 0; i < numberlist[0].split(/\,/gi).length; i++) {
@@ -818,11 +829,11 @@ function bplus(){
 	countMoney();
 }
 //机选号码
-function machineRandom() {
+function machineRandom(val) {
     $("#btnMachine").attr("value", "重新机选");
     $("#divMachineCase").html("");
     $("#RedBallValue").attr("value", "");
-    var count = parseInt($("#caseNotes").attr("value"));
+    var count = val;
     for (var c = 0; c < count; c++) {
         var numberlist = "";
         if (tID == 10 || tID == 20) {
@@ -926,17 +937,20 @@ function machineRandom() {
             }
         }
 
-        if ($("#divMachineCase").html() == "") {
-            $("#divMachineCase").html(numberlist);
-            $("#RedBallValue").attr("value", numberlist);
-        }
-        else {
-            $("#divMachineCase").html($("#divMachineCase").html() + "<br />" + numberlist);
-            $("#RedBallValue").attr("value", $("#RedBallValue").attr("value") + ";" + numberlist);
-        }
+//        if ($("#divMachineCase").html() == "") {
+//            $("#divMachineCase").html(numberlist);
+//            $("#RedBallValue").attr("value", numberlist);
+//        }
+//        else {
+//            $("#divMachineCase").html($("#divMachineCase").html() + "<br />" + numberlist);
+//            $("#RedBallValue").attr("value", $("#RedBallValue").attr("value") + ";" + numberlist);
+//        }
+        vardata[vardata.length]=numberlist;
+        betconfirm(1);
+        
     }
 
-    countMoney();
+//    countMoney();
 }
 
 //生成随机数
@@ -1000,7 +1014,7 @@ function reSort(s_numberList) {
 
 //购买预览
 function preBuy(bk) {
-    var redValue = $("#RedBallValue").attr("value");
+    var redValue = vardata;
     if (redValue == "" || redValue.length == 0) {
         showMS("请先选择号码,再投注!");
         return;
