@@ -8,25 +8,117 @@
 <meta content='yes' name='apple-mobile-web-app-capable' />
 <meta content='black' name='apple-mobile-web-app-status-bar-style' />
 <meta content='telephone=no' name='format-detection' />
-<script src='/js/jquery.js'></script>
-<script src='/js/159cp.js'></script>
-<script src='/js/base.js'></script>
-<script src='/js/login.js'></script>
+  <link rel="stylesheet" href="/css/basic.css" type="text/css"/>
+    <link rel="stylesheet" href="/css/style.css" type="text/css"/>
+ <script src='/js/jquery.js'></script>
+	<script src='/js/159cp.js'></script>
+	<script src='/js/base.js'></script>
+	<script src='/js/login.js'></script>
 <script type ="text/javascript" src ="/js/ballpanle.js"></script>
-<script type ="text/javascript" src ="/js/shuzicai.js"></script>
-<link rel='stylesheet' href='/style/main.css' />
-<link href="/images/touch-icon.png" rel="apple-touch-icon-precomposed" /> 
-<link href="/style/shuzicai.css" rel="stylesheet" type="text/css" />
-</head>
-<body>
-<div id="divDisable" name="divDisable" style="display:none;width:100%;height:100%; z-index:1000; position:absolute;left: 0px; top: 0px;filter:alpha(opacity=80); -moz-opacity:.1;opacity:0.8; background-color:#303030;"></div>
-<!--#include virtual="/cc/login.html"-->
+<script type="text/javascript" src="/js/shuzicai.js"></script>
 <script>
 $(document).ready(function() {
-	chklogin();
+    chklogin();
+    createGamePanle(44)
     createGameSelect();
 });
 </script>
+</head>
+<body>
+<section class="buyHeader" id="buyFooter1">
+    <h1>福彩3D</h1>
+    <a href="javascript:history.go(-1)" class="backIco2"></a>
+    <em class="goHome jc-more">
+        <cite style="display:none"><a class="cur" href="/ssq/index.html">选号</a><a href="#">合买跟单</a><a
+                href="#">开奖结果</a><a href="#">玩法帮助</a></cite>
+    </em>
+</section>
+<div class="top-margin tz-menu ico-click" id="betpage">
+	
+    <article>
+    <i class="cur" ></i><span class="fr">历史开奖&nbsp;</span><span id="span_issuenum">145</span>期 <span id="span_stoptime" ></span>截止
+    <div class="ssqkjlist" style="display:block">
+    <ul>
+        <li class="first">144期</li>
+        <li><span>03 05 06 09 10 27</span><em>14</em></li>
+    </ul>
+    <ul>
+        <li class="first">143期</li>
+        <li><span>03 12 18 20 25 26</span><em>16</em></li>
+    </ul>
+    <ul>
+        <li class="first">142期</li>
+        <li><span>06 21 22 23 25 28</span><em>13</em></li>
+    </ul>
+   
+</div>
+ </article>
+</div>
+<div class="ssqText relative" style="display:block">
+	<nav>
+        <div class="kpTab syx5Tab clearfix" style="float: none;width: 100%;overflow: hidden;">
+            <ul class="clearfix" id="kpTab"
+                style="list-style: none; display: block; width: 60rem; height: 100%; padding: 0px; transition: transform 0ms; -webkit-transition: transform 0ms; transform-origin: 0px 0px 0px; transform: translate(-8px, 0px) scale(1) translateZ(0px);">
+<!--                 <li class="cur">选第1位</li> -->
+<!--                 <li>选2全中</li> -->
+<!--                 <li>选3全中</li> -->
+<!--                 <li>选4全中</li> -->
+<!--                 <li>选5全中</li> -->
+<!--                 <li>选6中5</li> -->
+<!--                 <li>选7中5</li> -->
+<!--                 <li>选8中5</li> -->
+<!--                 <li>前2直选</li> -->
+<!--                 <li>前3直选</li> -->
+<!--                 <li>前2组选</li> -->
+<!--                 <li>前3组选</li> -->
+            </ul>
+        </div>
+    </nav>
+	<div class="relative ssqText gray syx5Title" id="bonus_">
+            <div class="jxssctitle">
+                <p>至少选3个号码</p>
+                <p>全部猜中奖金<em class="red">1,040元</em></p>
+            </div>
+            <div class="jxssctitle" style="display:none">
+                <p>请至少选择3个</p>
+                <p>猜中3个开奖号码（顺序不限）奖金<em class="red">1,73元</em></p>
+            </div>
+            <div class="jxssctitle" style="display:none">
+                <p>请至少选择2个号码</p>
+                <p>猜中2个开奖号码(顺序不限)，且开奖号码有任意两位相同 奖金<em class="red">346元</em></p>
+            </div>
+            
+    <div class="shakeomit" ><span class="fl red"  onclick="machineRandom();" id="btnMachine"><em class="shakeico"></em><cite   >摇一注</cite></span><span
+            class="fl gray"  onclick="xianshiyilu();" id="btnMachine"><em class="omitico"></em><cite>遗漏</cite></span></div>
+    <p class="gray" style="display: none;">至少选择<em class="red">6个红球</em>，<em class="blue">1个蓝球</em></p>
+
+    <p class="gray" style="display:none;" id="yilu">遗漏值：该号码自上次开出到本期间隔期数</p>
+<!--  <div id="divballarea"></div> -->
+    <div id="divballarea">
+<!--         <div class="relative pdLeft08" style="z-index:5" id="xzhq"> -->
+<!--             <div class="ssqBall"><cite -->
+<!--                     class="" id="redball_1" onclick="selectBall(this,'red')" >01</cite><cite id="redball_2" onclick="selectBall(this,'red')">02</cite><cite id="redball_3" onclick="selectBall(this,'red')">03</cite><cite id="redball_4" onclick="selectBall(this,'red')">04</cite><cite id="redball_5" onclick="selectBall(this,'red')">05</cite><cite id="redball_6" onclick="selectBall(this,'red')">06</cite><cite id="redball_7">07</cite><cite id="redball_8">08</cite><cite id="redball_9">09</cite><cite id="redball_10">10</cite><cite id="redball_11">11</cite><cite id="redball_12">12</cite><cite id="redball_13">13</cite><cite id="redball_14">14</cite><cite id="redball_15">15</cite><cite id="redball_16">16</cite><cite id="redball_17">17</cite><cite id="redball_18">18</cite><cite id="redball_19">19</cite><cite id="redball_20">20</cite><cite id="redball_21">21</cite><cite id="redball_22">22</cite><cite id="redball_23">23</cite><cite id="redball_24">24</cite><cite id="redball_25">25</cite><cite id="redball_26">26</cite><cite id="redball_27">27</cite><cite id="redball_28">28</cite><cite id="redball_29">29</cite><cite id="redball_30">30</cite><cite id="redball_31">31</cite><cite id="redball_32">32</cite><cite id="redball_33">33</cite> -->
+<!--             </div> -->
+<!--             <div class="omitnum"   id="yilus"> -->
+<!--                 <cite>5</cite><cite>9</cite><cite>0</cite><cite>6</cite><cite>0</cite><cite>0</cite><cite>16</cite><cite>3</cite><cite>0</cite><cite>0</cite><cite>3</cite><cite>1</cite><cite>6</cite><cite>4</cite><cite>5</cite><cite>3</cite><cite>4</cite><cite>1</cite><cite>8</cite><cite>1</cite><cite>2</cite><cite>2</cite><cite>2</cite><cite>3</cite><cite>1</cite><cite>1</cite><cite>0</cite><cite>2</cite><cite>5</cite><cite>11</cite><cite>6</cite><cite>8</cite><cite>4</cite> -->
+<!--             </div> -->
+<!--         </div> -->
+<!--         <div class="ssqxhblue relative pdLeft08" style="z-index:5" id="xzlq"> -->
+<!--             <div class="ssqBall ssqblueBall"><cite class="" id="blueball_1" onclick="selectBall(this,'blue')">01</cite><cite id="blueball_2" onclick="selectBall(this,'blue')">02</cite><cite id="blueball_3" onclick="selectBall(this,'blue')">03</cite><cite id="blueball_4" onclick="selectBall(this,'blue')">04</cite><cite id="blueball_5" onclick="selectBall(this,'blue')">05</cite><cite id="blueball_6" onclick="selectBall(this,'blue')">06</cite><cite id="blueball_7" onclick="selectBall(this,'blue')">07</cite><cite id="blueball_8" onclick="selectBall(this,'blue')">08</cite><cite id="blueball_9" onclick="selectBall(this,'blue')">09</cite><cite id="blueball_10" onclick="selectBall(this,'blue')">10</cite><cite id="blueball_11" onclick="selectBall(this,'blue')">11</cite><cite id="blueball_12" onclick="selectBall(this,'blue')">12</cite><cite id="blueball_13" onclick="selectBall(this,'blue')">13</cite><cite id="blueball_14" onclick="selectBall(this,'blue')">14</cite><cite id="blueball_15" onclick="selectBall(this,'blue')">15</cite><cite id="blueball_16" onclick="selectBall(this,'blue')">16</cite> -->
+<!--             </div> -->
+<!--             <div class="omitnum" style="display:none"><cite>9</cite><cite>10</cite><cite>26</cite><cite>20</cite><cite>21</cite><cite>4</cite><cite>31</cite><cite>12</cite><cite>7</cite><cite>3</cite><cite>5</cite><cite>17</cite><cite>2</cite><cite>0</cite><cite>38</cite><cite>1</cite> -->
+<!--             </div> -->
+<!--         </div> -->
+    </div>
+</div>
+<div class="buyFooter" mark="buyfooter">
+    <div class="buyFloat fixed">
+        <em class="deleted" onclick="deleteball();"></em>
+        <span>共<cite id="notes" style="color:red" mark="betnum">0</cite>注&nbsp;<cite style="display: none;" id="times2" style="color:red" ></cite><cite id="money" style="color:red" mark="betmoney">0</cite>元</span>
+        <a href="javascript:betconfirm()" class="ture" >确 认</a>
+    </div>
+</div>
+<!--#include virtual="/cc/szcbuy.html"-->
 <div id="divshowprebuy" name="divshowprebuy" style="position:absolute; display: none;width: 100%; margin:0 auto; z-index: 1100;"></div>
 <input type="hidden" id="TypeID" name="TypeID" value="44" />
 <input type="hidden" id="RedBallValue" name="RedBallValue" value="" />
@@ -34,23 +126,26 @@ $(document).ready(function() {
 <input type="hidden" id="PlayType" name="PlayType" value="1" />
 <input type="hidden" id="Kind" name="Kind" value="2" />
 <input type="hidden" id="expect" name="expect" value="" />
-<div id="divGameKind" style="background:#E3F0F9;"></div> 
-<div style="background:#EEF5FD; border-top:1px solid #B7D5EA">
-<div style="padding:5px 5px 5px 10px;">
-	<span style="float:right;">剩余时间：<span id="span_stoptime" class="counttime">加载中...</span></span>
-	期号：<span id="span_issuenum" style="color:Red;">加载中...</span>
-</div>
-</div>
- <div class="step">第一步：选择号码</div>
- <div id="divballarea"></div>
-    <div class="step">第二步：确认投注信息</div>
-    <div id="divbuyarea">
-    <div id="divtimes" class="divselected">方案倍数：<input type="text" id="times" maxlength="2" value="1" size="2" class="textWH" onkeyup="countTimes(this);" /><span style="color:#999">(最大999倍)</span> <span id="span_add" style="display:none;"><input type="checkbox" id="addcount" class="textWH" onclick="countMoney();" />追加</span> </div>
-    <div id="divMoney" class="divselected">方案金额：<span id="notes" style="color:red">0</span>注×<span id="times2" style="color:red">0</span>倍=￥<span id="money" style="color:red">0</span>元</div>
-    <div id="dibbtn" class="divselected"><input type="button" value="发起代购" onclick="preBuy(0);" class ="btnC" /><input id="pbbtn" type="button" value="发起合买" onclick="preBuy(1);" class ="btnC" /></div>
-</div>
+<input type="hidden" id="times" value="1"  class="textWH"  />
+<input type="hidden" id="buyzs" name="buyzs" value="0" />
+<input type="hidden" id="buymoney" name="buymoney" value="0" />
+<!-- <div id="divGameKind" style="background:#E3F0F9;"></div>  -->
+<!-- <div style="background:#EEF5FD; border-top:1px solid #B7D5EA"> -->
+<!-- <div style="padding:5px 5px 5px 10px;"> -->
+<!-- 	<span style="float:right;">剩余时间：<span id="span_stoptime" class="counttime">加载中...</span></span> -->
+<!-- 	期号：<span id="span_issuenum" style="color:Red;">加载中...</span> -->
+<!-- </div> -->
+<!-- </div> -->
+<!--  <div class="step">第一步：选择号码</div> -->
+<!--  <div id="divballarea"></div> -->
+<!--     <div class="step">第二步：确认投注信息</div> -->
+<!--     <div id="divbuyarea"> -->
+<!--     <div id="divtimes" class="divselected">方案倍数：<input type="text" id="times" maxlength="2" value="1" size="2" class="textWH" onkeyup="countTimes(this);" /><span style="color:#999">(最大999倍)</span> <span id="span_add" style="display:none;"><input type="checkbox" id="addcount" class="textWH" onclick="countMoney();" />追加</span> </div> -->
+<!--     <div id="divMoney" class="divselected">方案金额：<span id="notes" style="color:red">0</span>注×<span id="times2" style="color:red">0</span>倍=￥<span id="money" style="color:red">0</span>元</div> -->
+<!--     <div id="dibbtn" class="divselected"><input type="button" value="发起代购" onclick="preBuy(0);" class ="btnC" /><input id="pbbtn" type="button" value="发起合买" onclick="preBuy(1);" class ="btnC" /></div> -->
+<!-- </div> -->
+
 <input type="hidden" id="hidTypeName" value="福彩3D" />
-<!--#include virtual="/cc/footer.html"-->
 <input type="hidden" id="oldt" name="oldt" value="1" />
 </body>
 </html>
