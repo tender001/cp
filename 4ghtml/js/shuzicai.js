@@ -167,6 +167,33 @@ showbuy(true);
 
 	
 }
+function payconfirm(){
+	var notes=parseInt($("#buymoney").val());
+	var expect=$("#expect").val();
+	var hidTypeName=$("#hidTypeName").val();
+	 
+     
+	$(".tz-pay").html('<p>'+hidTypeName+' 第'+expect+'期</p><p>应付金额<em>'+notes+'</em>元</p>')
+	ispay(true);
+}
+function ispay(ispay){
+	if(ispay){
+    	$("#betpage,#buyFooter1,[mark=buyfooter],#szcbuy,#issuc").hide();
+    	$("#paybet").show();
+    }else{
+    	$("#szcbuy").show();
+    	$("#paybet").hide();
+    }
+}
+function issuc(ispay){
+	 if(issuc){
+	    	$("#betpage,#buyFooter1,[mark=buyfooter],#szcbuy,#paybet").hide();
+	    	$("#issuc").show();
+	    }else{
+	    	$("#paybet").show();
+	    	$("#issuc").hide();
+	    }
+}
 function showbuy(istrue){
     if(istrue){
     	$("#betpage,#buyFooter1,[mark=buyfooter],div.ssqText,div.ssqkjlist").hide();
@@ -270,7 +297,7 @@ function createBallPanle(kind) {
     //玩法类型
     if (tID > 25 && tID != 27) {
         if (!((tID == 26 || tID == 44) && kID == 1)) {
-            html.push("<div id=\"divGamePanel\" class=\"number\" style=\"padding-left:10px;line-height:26px;font-size:14px;\">");
+//            html.push("<div id=\"divGamePanel\" class=\"number\" style=\"padding-left:10px;line-height:26px;font-size:14px;\">");
         }
         var varname = "";
         if (tID == 26 && kID == 2)
@@ -289,7 +316,7 @@ function createBallPanle(kind) {
             varname = gameName_ssc[1];
 
         if (!((tID == 26 || tID == 44) && kID == 1)){
-            html.push("玩法选择：<label style=\"cursor:pointer;color:Red;\" onclick=\"createGamePanle(" + tID + ");\">" + varname + " <img src=\"/images/yy.gif\" alt=\"下拉\" /></label></div>");
+//            html.push("玩法选择：<label style=\"cursor:pointer;color:Red;\" onclick=\"createGamePanle(" + tID + ");\">" + varname + " <img src=\"/images/yy.gif\" alt=\"下拉\" /></label></div>");
         }
     }
     if (kID == 2) {//手选
@@ -365,7 +392,7 @@ function createGamePanle(tID) {
             for (var i = 1; i < varr.length; i++) {
                 if (i % 2 != 0 && i != 1) html.push("<br />");
                 var c = varr[i];
-                html.push(createInputChecked("gamePanle", "createballpanle_3D(" + c + ",2);", c, gameName_3D[c], c == index ? true : false));
+                html.push(createInputChecked("kpTab", "createballpanle_3D(" + c + ",2);", c, gameName_3D[c], c == index ? true : false));
             }
         }
         else if (tID == 56) {//
@@ -452,12 +479,12 @@ function selectBall(ball, color) {
         $("#RedBallValue").attr("value", "");
     else if (color == "blue")
         $("#BlueBallValue").attr("value", "");
-    if ($("#redArea").children("ul").length > 1) {//直选按位
+    if ($("#divballarea").children("div") > 1) {//直选按位
         var count = 0;
-        var ballList = $("#redArea").children("ul");
+        var ballList = $("#redArea").children("div");
         var playtype = parseInt($("#PlayType").attr("value"));
         for (var i = 0; i < ballList.length; i++) {
-            var ball_sub = $($(ballList[i])[0]).children().children("div.ssqBall");
+            var ball_sub = $($(ballList[i])[0]).children("cite");
             var value = "";
             for (var j = 0; j < ball_sub.length; j++) {
                 if ($(ball_sub[j]).attr("class").toString() == classnmae_s) {
@@ -610,7 +637,7 @@ function countNotes() {
                 var isPass = true;
                 if (tID == 44 && (playtype == 8 || playtype == 9))//直选按位玩法,除福彩3D--1D,2D玩法外
                     isPass = false;
-                if ($("#redArea").children("cite").length > 1 && isPass) {
+                if ($("#divballarea cite").length > 1 && isPass) {
                     if (((tID == 115 || tID == 119) && (playtype == 4 || playtype == 7) || ((tID == 116) && (playtype == 5 || playtype == 8)))) {
                         if (playtype == 4 || playtype == 5) {//前二直选 //选二连直
                             for (var i = 0; i < numberlist[0].split(/\,/gi).length; i++) {

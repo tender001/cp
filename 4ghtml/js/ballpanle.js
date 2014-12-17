@@ -117,12 +117,13 @@ function createballpanle_3D(level, rKind) {
     var html = new Array();
     for (var l = 1; l <= varlength; l++) {
         if (varlength == 3)
-            html.push("<div class=\"stitle\">" + levelNameTwo[l + 1] + "位：</div>");
-        html.push("<ul id=\"ulnumber_" + l + "\" class=\"ball\">");
+            html.push("<p class=\"gray center pdTop06\">" + levelNameTwo[l + 1] + "位：</p>");
+        html.push("<div  class=\"ssqBall pdLeft08\" id=\"ulnumber_" + l + "\">");
+//        html.push("<ul id=\"ulnumber_" + l + "\" class=\"ball\">");
         for (var i = startmin; i <= endmax; i++) {
-            html.push("<li><span id=\"redball_" + l.toString() + "_" + i.toString() + "\" class=\"" + BallStyle[0] + "\" onclick=\"selectBall(this,'red')\" >" + i.toString() + "</span></li>");
+            html.push("<cite id=\"redball_" + l.toString() + "_" + i.toString() + "\" class=\"" + BallStyle[1] + "\" onclick=\"selectBall(this,'red')\" >" + i.toString() + "</cite>");
         }
-        html.push("</ul>");
+        html.push("</div>");
         if (varlength == 3)
             html.push("<br />");
     }
@@ -361,11 +362,12 @@ function showBuyMini(kind) {
 
 //设置玩法窗口
 function showGP(ms) {
-    $("#divshowprebuy").html("<div class=\"ball_h2\">玩法设置</div><div class=\"mini\" id=\"gamePanle\">" + ms + "</div>");
-    $("#divshowprebuy").css({
-        "top": ($(window).height() / 4 + $(window).scrollTop()) + "px",
-        "left": "0px"
-    });
+	 $("#kpTab").html(ms);
+//    $("#divshowprebuy").html("<div class=\"ball_h2\">玩法设置</div><div class=\"mini\" id=\"gamePanle\">" + ms + "</div>");
+//    $("#divshowprebuy").css({
+//        "top": ($(window).height() / 4 + $(window).scrollTop()) + "px",
+//        "left": "0px"
+//    });
     showBuyMini(1);
 }
 
