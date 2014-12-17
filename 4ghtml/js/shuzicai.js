@@ -22,7 +22,7 @@ function createGameSelect() {
         $("#pbbtn").hide();
 
     if (tID == 20 || tID == 118)
-        $("#span_add").show(); 
+        $("#span_add").hide(); 
     $("#buymoney,#buyzs").val(0);
     createBallPanle(2);
     loadexp();
@@ -37,6 +37,7 @@ function Reconfirm(){
     
 	$("#code_list").html("");
    $("#buymoney").val(0)
+   ssqArray = [];
    $("#times").val(0)
    $("#preMoney").html('共<cite class="yellow">0</cite>注<cite class="yellow">0</cite>元')
 	createGameSelect();
@@ -85,12 +86,11 @@ function jianpt_addbs(){
 	
 };
 //确认投注
-function betconfirm(){
-//	$("div.top-margin").hide();
-//	
-//	$("div.ssqkjlist").hide();
-//	$("div.ssqText").hide();
-//	$("div.buyFooter").hide();
+function betconfirm(rnd){
+	if(rnd){
+		$("#buyzs").val(parseInt($("#buyzs").val())+rnd);
+	    $("#buymoney").val(parseInt($("#buymoney").val())+(rnd*2));
+	}else{
 	var redValue = $("#RedBallValue").attr("value");
     if (redValue == "" || redValue.length == 0) {
     	showTips("请先选择号码,再投注!");
@@ -117,7 +117,11 @@ function betconfirm(){
     if (notes == 0 || money == 0) {
     	showTips("投注方案不完整,请核实投注内容!");
         return;
-    }
+    	}
+	}
+	 var isadd = !!$("#addcount").attr("checked");
+		var playtype = parseInt($("#PlayType").attr("value"));
+		var times = parseInt($("#times").val());
     var html="";
     var varString=ssqArray.join(";");
     
@@ -128,7 +132,7 @@ function betconfirm(){
 //      		html +='<span class="revise_ww"><em>'+varStrings+'</em><cite>'+varStringd+'</cite></span>';
 //        		 rednum = varString.split('|')[0];
 //        		 bluenum = varString.split("|")[1];
-    		 html+='<div class="ssqtzNum"><cite class="errorBg"><em class="error2"></em></cite><span class="revise_ww">';
+    		 html+='<div class="ssqtzNum"><span class="revise_ww">';
     		 html+='<em>'+varStrings+'</em>';
     		 html+='<cite>'+varStringd+'</cite>';
     		 html +="</span>";
@@ -136,41 +140,7 @@ function betconfirm(){
          	html +='</span></div>'
 	    	}
          	
-//         	html += varString.split(';')[i];
-//         	if (i < varString.split(';').length - 1){
-//             	html += "<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
-//         	}
-//    		 html = varString.split(';')[i];
-//    		 var varStrings = varString.split("|")[0];
-//	     		var varStringd = varString.split("|")[1];
-//	     		 varString = varString.split(';')[i];
-////    		 html += "<em>"+ ;
-// 		    	
-//	     		
-// 		    	if (i < varStrings.split(';').length - 1){
-//                	html += "<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
-//            	}
-//	     		 
-//// 	     		html += varStrings+'</em>';
-//	     		
-// 	     		 html += "<cite>";
-// 	     		varStringd = varStringd.split(';')[i].split("|")[0];
-//	     		 varStringd = varStringd.split(';')[i].split("|")[1];
-//  		    	
-////  		    	if (i < varStringd.split(';').length - 1){
-////                 	html += "<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
-////             	}
-//  		    	
-//  	     		html += varStringd+'</cite>';
-//  	     		
- 	     		
-// 	     		'+varStringd+'</cite>
-//            	if (i < varString.split(';').length - 1){
-//                	html += "<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
-//            	}
-            	
-//         	html +=""
-            	
+//         
     	
      }else{
     	 html='<div class="ssqtzNum"><cite class="errorBg"><em class="error2"></em></cite>';
@@ -194,100 +164,7 @@ function betconfirm(){
 	$("#code_list").html(html);
 //	$("#RedBallValue").val();
 showbuy(true);
-//    var buykind = parseInt();
-//    var times = parseInt($("#times").attr("value"));
 
-//    chklogin(function(d){
-//		if (d.Resp.code == 0) {
-//        	$("#divshowprebuy").html("");
-//        	 $("#buyHeader").html("h1" + "_投注");
-//        	var html = "<div class=\"top-margin\"> <div class=\"clearfix ssqbtn\">";
-//        		html += "<input type=\"submit\" value=\"+ 自选一注\" class=\"ssqbtn-handBtn\" onclick=\"zixuan();\">";
-//        		html += "<input id=\"random_\" type=\"submit\" value=\"+ 机选一注\" class=\"ssqbtn-handBtn\">";
-//        		html += "<span class=\"ssqbtn-handBtn relative clearBtn\" id=\"clearAll\">清空号码</span></div>";
-//        		html += "<div class=\"ssqNum\" id=\"code_list\"><div class=\"ssqtzNum\">";
-//        		html += " <cite class=\"errorBg\"><em class=\"error2\"></em></cite>";
-//        		html += "<span class=\"revise_ww\">";
-//        		for(var m in ssqArray){
-//        			for(var i = 0; i < ssqArray[m].length ; i++){
-//        				var vardata = ssqArray[m]
-//            			vardata = vardata.split(",").join(" ");
-//            			html += "<em>"+vardata+"</em>";
-//            		}
-//        		}
-//        		
-//        		for(var i = 0; i < blueValue.split(";").length ; i++){
-//        			blueValue = blueValue.split(",").join(" ");
-//        			html += "<cite>"+blueValue+"</cite>";
-//        		}
-//        		
-        		
-//        		
-//        	html += "<div class=\"mini\">彩种：" + GameName[getGameIndex(tID)] + " [" + (buykind == 0 ? "代购" : buykind == 1 ? "合买" : "追号") + "]</div>";
-//        	html += "<div class=\"mini\">玩法：" + (tID < 26 || tID == 27 ? "普通投注" : tID == 26 ? gameName_pl3[playtype] : tID == 44 ? gameName_3D[playtype] : tID == 56 ? gameName_36s7[playtype - 1] : tID == 115 || tID == 119 ? gameName_11s5[playtype] : tID == 116 ? gameName_happyten[playtype] : tID == 118 ? gameName_happy8[playtype] : gameName_ssc[playtype]) + (isadd && tID == 118 ? "[快乐飞盘]" : isadd ? "[追加]" : "") + "</div>";
-//        	if (vardata.split(',').length > 1 &&  blueValue >= 1) {
-//            
-////            		html += "<em>10 19 20 22 31 32</em>";
-////            		html += "<cite>02</cite></span>";
-//            
-////            <p>前一直选 &nbsp;&nbsp;&nbsp;2注4元</p>
-////            html += "</div>方案：";
-//            	for (var i = 0; i < vardata.split(';').length; i++) {
-//                	if (i == 5) {
-//                    	html += "…………";
-//                    	break;
-//                	}
-//                	
-//                	if (i < vardata.split(';').length - 1){
-//                    	html += "<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
-//                	}
-//                	html += "<em>"+vardata.split(';')[i]+"</em>";
-//            	}
-//            	for (var i = 0; i < blueValue.split(';').length; i++) {
-//                	
-//                	
-//                	if (i < blueValue.split(';').length - 1){
-//                    	html += "<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
-//                	}
-//                	html += "em"+vardata.split(';')[i]+"em";
-//            	}
-//        		var money = notes * times * 2;
-//            	html += "</span><p class=\"mini\">普通投注 &nbsp;" + notes + "注" + money + "元</p></div>";
-//            	html += "<p class=\"pact clearfix\"><em class=\"left check\"></em>我已阅读并同意《用户购彩服务协议》</p>";
-//            	html += "</div><footer class=\"ssqFooter\"><div class=\"fixed\"> <ul class=\"ssqdouble clearfix\"><li><cite>投</cite>";
-//            	
-//            	html += " <span><em class=\"bminus\" onclick=\"jianpt_addbs();\">-</em><input type=\"tel\" name=\"bs\" id=\"bs_\" value=\"1\"><em class=\"bplus\" id=\"pt_addbs\" onclick=\"addpt_addbs();\"> +</em></span><cite>倍</cite>";
-//             
-//            	html += "</li></ul><div class=\"buyFloat\">";
-//            	notes = notes;
-//            	money = money;
-////        	}  <div class="buyFloat">
-//            	html += " <span id=\"zs_list\">共<cite class=\"yellow\">"+notes+"</cite>注  <cite class=\"yellow\">"+money+"</cite>元</span>";
-//            	html += "<a href=\"javascript:;\" class=\"ture\" id=\"isOk_\">提 交</a> </div>";
-//           
-//            html += "</div></footer>";
-            	//else {
-//            	html += "<div class=\"mini\">方案：" + vardata + "</div>";
-//        	}
-        	
-        	
-//        	html += createTwoPanle();
-        	
-//        	html += "<div id=\"noticeInfo\" class=\"mini\" style=\"display:none;color:Red;\" ></div>";
-
-//        	html += "<div class=\"mini\"><input type=\"button\" value=\"确认购买\" onclick=\"passBuy('" + vardata + "'," + times + "," + buykind + ");\" class =\"btnC\" /> <input type=\"button\" value=\"取消\" onclick=\"showBuyMini(2);\" class =\"btnC\" /></div>";
-//        	html += "</div>";
-//        	$("#divshowprebuy").html(html);
-//        	$("#divshowprebuy").css({
-////            	'top': ($(window).height() / 4 + $(window).scrollTop()) + 'px'
-//        		'top': -10 + 'px'
-//        	});
-        	showBuyMini(1);
-//		} else {
-//			showLogin();
-//		}
-//	});
-    
 	
 }
 function showbuy(istrue){
@@ -378,7 +255,7 @@ function recreatePanale(kind) {
     $("#RedBallValue").attr("value", "");
     $("#BlueBallValue").attr("value", "");
     if (tID == 20 || tID == 118)
-        $("#span_add").show(); 
+        $("#span_add").hide(); 
     createBallPanle(kind);
 }
 
@@ -416,19 +293,9 @@ function createBallPanle(kind) {
         }
     }
     if (kID == 2) {//手选
-//        html.push("<div id=\"divred\" class=\"number2\">");
         if (tID == 10 || tID == 20 || tID == 7) {
-//            html.push("<div style=\"padding-left:10px;background:#E3F0F9; line-height:26px; font-size: 14px;\" >");
-//            html.push("<span style=\"float:right;padding-right:10px;\">");
-//            html.push("<select id=\"redselect\">");
-//            for (var i = start; i <= end; i++)
-//                html.push("<option value=\"" + i.toString() + "\" " + (i == start ? "selected=\"selected\"" : "") + " >" + i.toString() + "个</option>");
-//            html.push("</select> ");
-
-//            html.push("<cite  onclick=\"machineSelect(" + tID + ",'red');\" 摇一摇" + (tID == 10 ? "红球" : "前区") + "</a></span>请至少选择" + (tID == 20 ? "1" : tID == 10 ? "6" : "7") + "个号码<span id=\"redNotice\" style=\"color:Red;\"></></div>");
         }
 
-//        html.push("<div id=\"redArea\">");
         if (tID == 10 || tID == 20 || tID == 7)
             html.push(createballpanle_ssq_dlt(minLength, maxLength, "red"));
         else if (tID == 25 || tID == 27)
@@ -459,12 +326,6 @@ function createBallPanle(kind) {
             start = tID == 10 ? 1 : 2;
             end = tID == 10 ? 16 : 8;
             maxLength = tID == 10 ? 16 : 12;
-//            html.push("<select id=\"blueselect\">");
-//            for (var i = start; i <= end; i++)
-//                html.push("<option value=\"" + i.toString() + "\" " + (i == start ? "selected=\"selected\"" : "") + " >" + i.toString() + "个</option>");
-//            html.push("</select> ");
-//            html.push("<a class=\"button2\" onclick=\"machineSelect(" + tID + ",'blue');\" href=\"javascript:void(0)\">机选" + (tID == 10 ? "蓝球" : "后区") + "</a></span>请至少选择" + (tID == 10 ? "1" : "2") + "个号码<span id=\"blueNotice\" style=\"color:Red;\"></span></div>");
-//            html.push("<div id=\"blueArea\">");
             html.push(createballpanle_ssq_dlt(minLength, maxLength,"blue"));
 //            html.push("</div>");
 //            html.push("</div>");
@@ -472,7 +333,7 @@ function createBallPanle(kind) {
     }
     else if (kID == 1) { //机选
     html.push("<div id=\"divMachine\" class=\"number\" style=\"padding-left:10px; padding-top:5px;display:none;\" >摇一摇：<input type=\"text\" id=\"caseNotes\" class=\"textWH\" maxlength=\"2\" size=\"2\" value=\"1\" onkeyup=\"getParsetInt(this);\" /> <input type=\"button\" id=\"btnMachine\" onclick=\"machineRandom();\" value=\"摇一摇\" /></div>");
-//        html.push("<div id=\"divMachineCase\" class=\"number3\" style=\"padding-left:10px; padding-top:5px; font-weight:normal;\"></div>");
+        html.push("<div id=\"divMachineCase\" class=\"number3\" style=\"padding-left:10px; padding-top:5px; font-weight:normal;\"></div>");
 //        
     }
     else if (kID == 3) { //胆拖
@@ -967,18 +828,18 @@ function bplus(){
 	countMoney();
 }
 //机选号码
-function machineRandom() {
-    $("#btnMachine").attr("value", "摇一摇");
-//    $("#jixuan").html("");
+function machineRandom(val) {
+    $("#btnMachine").attr("value", "重新机选");
+    $("#divMachineCase").html("");
     $("#RedBallValue").attr("value", "");
     $("#BlueBallValue").attr("value", "");
-    var count = parseInt($("#caseNotes").attr("value"));
+    var count = val;
     for (var c = 0; c < count; c++) {
         var numberlist = "";
         if (tID == 10 || tID == 20) {
             var rednumber = Random(tID == 10 ? 33 : 35);
             var bluenumber = Random(tID == 10 ? 16 : 12);
-            var redlength = tID == 10 ? 6 : 1;
+            var redlength = tID == 10 ? 6 : 5;
             var bluelength = tID == 10 ? 1 : 2;
             var red = new Array();
             var blue = new Array();
@@ -1076,17 +937,19 @@ function machineRandom() {
             }
         }
 
-        if ($("#btnMachine").html() == "") {
-            $("#btnMachine").html(numberlist);
-            $("#RedBallValue").attr("value", numberlist);
-        }
-        else {
-            $("#btnMachine").html($("#btnMachine").html() + "<br />" + numberlist);
-            $("#RedBallValue").attr("value", $("#RedBallValue").attr("value") + ";" + numberlist);
-        }
+//        if ($("#btnMachine").html() == "") {
+//            $("#btnMachine").html(numberlist);
+//            $("#RedBallValue").attr("value", numberlist);
+//        }
+//        else {
+//            $("#btnMachine").html($("#btnMachine").html() + "<br />" + numberlist);
+//            $("#RedBallValue").attr("value", $("#RedBallValue").attr("value") + ";" + numberlist);
+//        }
+        ssqArray[ssqArray.length]=numberlist;
+        betconfirm(1);
     }
 
-    countMoney();
+//    countMoney();
 }
 
 //生成随机数
@@ -1180,39 +1043,7 @@ function preBuy(bk) {
 			if (d.Resp.code == 0) {
 	        	
 				
-				passBuy(vardata.join(";"),times,buykind);
-//				$("#divshowprebuy").html("");
-//	        	var html = "<div class=\"ball_h2\">购买预览信息</div>";
-//	        	html += "<div class=\"mini\">彩种：" + GameName[getGameIndex(tID)] + " [" + (buykind == 0 ? "代购" : buykind == 1 ? "合买" : "追号") + "]</div>";
-//	        	html += "<div class=\"mini\">玩法：" + (tID < 26 || tID == 27 ? "普通投注" : tID == 26 ? gameName_pl3[playtype] : tID == 44 ? gameName_3D[playtype] : tID == 56 ? gameName_36s7[playtype - 1] : tID == 115 || tID == 119 ? gameName_11s5[playtype] : tID == 116 ? gameName_happyten[playtype] : tID == 118 ? gameName_happy8[playtype] : gameName_ssc[playtype]) + (isadd && tID == 118 ? "[快乐飞盘]" : isadd ? "[追加]" : "") + "</div>";
-//	        	if (vardata.split(';').length > 1) {
-//	            	html += "<div class=\"mini\">方案：";
-//	            	for (var i = 0; i < vardata.split(';').length; i++) {
-//	                	if (i == 5) {
-//	                    	html += "…………";
-//	                    	break;
-//	                	}
-//	                	html += vardata.split(';')[i];
-//	                	if (i < vardata.split(';').length - 1){
-//	                    	html += "<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
-//	                	}
-//	            	}
-//	            	html += "</div>";
-//	        	} else {
-//	            	html += "<div class=\"mini\">方案：" + vardata + "</div>";
-//	        	}
-//	        	html += "<div class=\"mini\">金额：" + notes + "注×" + times + "倍=￥" + (notes * times * (isadd && tID == 118 ? 4 : isadd ? 3 : 2)) + "元</div>";
-//	        	html += createTwoPanle(buykind);
-//	        	
-//	        	html += "<div id=\"noticeInfo\" class=\"mini\" style=\"display:none;color:Red;\" ></div>";
-	//
-//	        	html += "<div class=\"mini\"><input type=\"button\" value=\"确认购买\" onclick=\"passBuy('" + vardata + "'," + times + "," + buykind + ");\" class =\"btnC\" /> <input type=\"button\" value=\"取消\" onclick=\"showBuyMini(2);\" class =\"btnC\" /></div>";
-	//
-//	        	$("#divshowprebuy").html(html);
-//	        	$("#divshowprebuy").css({
-//	            	'top': ($(window).height() / 4 + $(window).scrollTop()) + 'px'
-//	        	});
-//	        	showBuyMini(1);
+				passBuy(ssqArray.join(";"),times,buykind);
 			} else {
 				showLogin();
 			}
@@ -1220,7 +1051,7 @@ function preBuy(bk) {
 }
 
 //确认购买
- function passBuy(vardata, times, bk) {
+ function passBuy(ssqArray, times, bk) {
  	 var url = $_trade.url.pcast;
      var buykind = bk, data = [];
      var money = parseInt($("#money").text());
@@ -1234,7 +1065,7 @@ function preBuy(bk) {
      var gid = $_sys.get139Gid($("#TypeID").attr("value"));
      data.gid = gid;
      data.source = 100;
-     data.codes = getszccodes(vardata,tID,parseInt($("#PlayType").val()));
+     data.codes = getszccodes(ssqArray,tID,parseInt($("#PlayType").val()));
      var pids = [];
      var muls = [];
      if (isfollow){//追号
