@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=1' name='viewport'/>
+    <meta content='yes' name='apple-mobile-web-app-capable'/>
+    <meta content='black' name='apple-mobile-web-app-status-bar-style'/>
+    <meta content='telephone=no' name='format-detection'/>
+    <title>绑定银行卡_159彩票网</title>
+    <link rel="stylesheet" href="/css/basic.css" type="text/css"/>
+    <link rel="stylesheet" href="/css/style.css" type="text/css"/>
+    <script src='/js/jquery.js'></script>
+	<script src='/js/159cp.js'></script>
+	<script src='/js/base.js'></script>
+	<script src='/js/login.js'></script>
+    <script src='/js/bankcardmanager.js'></script>
+</head>
+<body>
+	<script>
+		function loginHdl() {
+			$('#Filter_Panel').slideUp('fast');
+			if ($('#Login_Panel').is(':hidden'))
+				showLogin(true);
+			else
+				closeLogin()
+			return false;
+		}
+		$(document).ready(function() {
+			chklogin(1);
+			ckinfo();
+			
+			$("#btnSumit").click(function() {
+				bdyh();
+			});
+			$("#cardnumber").keyup(function(){
+	    		this.value=this.value.replace(/\D/g,''); //只能输数字
+// 	            this.value =this.value.replace(/\s/g,'').replace(/(\d{4})(?=\d)/g,"$1 ");//四位数字一空格
+	    	});
+		});
+		 
+	</script>
+<div class="topround" id="div3" style="display: none;">
+	<font color="#F18D8D"><b>您好 请先登录！</b></font>
+</div>
+<section class="buyHeader">
+    <h1>绑定银行卡</h1>
+    <a href="javascript:history.go(-1)" class="backIco2"></a>
+    <a href="/" class="goHome"></a>
+</section>
+<section class="user-padding">
+    <p class="tit-000">开户行</p>
+    <p class="choose-select choose-bank">
+        <select  name="selBankName" id="selBankName">
+           <option value="" selected="selected">请选择银行</option>
+			<option value="1">招商银行</option>
+			<option value="2">工商银行</option>
+			<option value="3">建设银行</option>
+			<option value="4">中国银行</option>
+			<option value="6">交通银行</option>
+			<option value="8">中信银行</option>
+			<option value="9">兴业银行</option>
+			<option value="10">光大银行</option>
+			<option value="11">华夏银行</option>
+			<option value="12">中国民生银行</option>
+			<option value="13">中国农业银行</option>
+			<option value="15">农村信用合作社</option>
+			<option value="16">农村商业银行</option>
+			<option value="17">农村合作银行</option>
+			<option value="18">城市商业银行</option>
+			<option value="19">城市信用合作社</option>
+			<option value="22">恒丰银行</option>
+			<option value="23">平安银行</option>
+			<option value="24">渤海银行</option>
+			<option value="25">中国邮政储蓄银行</option>
+			<option value="1000">广东发展银行</option>
+			<option value="1001">深圳发展银行</option>
+			<option value="1002">广州银行</option>
+			<option value="1003">珠海南通银行</option>
+			<option value="2000">北京银行</option>
+			<option value="3000">天津银行</option>
+			<option value="4000">上海浦东发展银行</option>
+			<option value="4001">上海银行</option>
+			<option value="5000">浙商银行</option>
+			<option value="5001">浙江商业银行</option>
+			<option value="5002">宁波国际银行</option>
+			<option value="5003">宁波银行</option>
+			<option value="5004">温州银行</option>
+			<option value="6000">南京银行</option>
+			<option value="6001">常熟农村商业银行</option>
+			<option value="7000">福建亚洲银行</option>
+			<option value="7001">福建兴业银行</option>
+			<option value="7002">徽商银行</option>
+			<option value="7003">厦门国际银行</option>
+			<option value="8000">青岛市商业银行</option>
+			<option value="8001">济南市商业银行</option>
+			<option value="9000">重庆银行</option>
+			<option value="10000">成都市商业银行</option>
+			<option value="11000">哈尔滨银行</option>
+			<option value="12000">包头市商业银行</option>
+			<option value="13000">南昌市商业银行</option>
+			<option value="14000">贵阳商业银行</option>
+			<option value="15000">兰州市商业银行</option>
+        </select></p>
+    <p class="choose-select select-wh">
+        <select name="drpProvinceList" id="drpProvinceList"onchange="changeProvince(this.options[this.selectedIndex].value, 'city', 'city')">
+            <option selected="selected" value="" >请选择省份</option>
+								<option value="北京">北京</option>
+								<option value="上海">上海</option>
+								<option value="天津">天津</option>
+								<option value="重庆">重庆</option>
+								<option value="河北">河北</option>
+								<option value="山西">山西</option>
+								<option value="内蒙古">内蒙古</option>
+								<option value="辽宁">辽宁</option>
+								<option value="吉林">吉林</option>
+								<option value="黑龙江">黑龙江</option>
+								<option value="江苏">江苏</option>
+								<option value="浙江">浙江</option>
+								<option value="安徽">安徽</option>
+								<option value="福建">福建</option>
+								<option value="江西">江西</option>
+								<option value="山东">山东</option>
+								<option value="河南">河南</option>
+								<option value="湖北">湖北</option>
+								<option value="湖南">湖南</option>
+								<option value="广东">广东</option>
+								<option value="广西">广西</option>
+								<option value="海南">海南</option>
+								<option value="四川">四川</option>
+								<option value="贵州">贵州</option>
+								<option value="云南">云南</option>
+								<option value="西藏">西藏</option>
+								<option value="陕西">陕西</option>
+								<option value="甘肃">甘肃</option>
+								<option value="宁夏">宁夏</option>
+								<option value="青海">青海</option>
+								<option value="新疆">新疆</option>
+        </select><select name="city" id="city">
+           <option value="">请选择城市</option>
+       
+        </select></p>
+    <div class="user-input">
+        <input type="text" placeholder="请输入支行名称" name="bankname" id="bankname"/></div>
+    <div class="user-input">
+        <lable>开户名</lable>
+        <input type="text" placeholder="请输入开户姓名"/></div>
+    <div class="user-input">
+        <lable>卡　号</lable>
+        <input type="tel" placeholder="请输入卡号" name="cardnumber" id="cardnumber"/></div>
+    <a class="btn btn-true" id="btnSumit" href="javascript:void(0);">提交</a>
+</section>
+</body>
+</html>
