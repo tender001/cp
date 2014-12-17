@@ -1,10 +1,25 @@
 function loadLogin() {
-    $(".loginContent").html("账户 <input style='width:150px' id='auth_userId' name='auth_userId' type='text' value='' /><br>" +
-    		"密码 <input style='width:150px' id='auth_passwd' name='auth_passwd' type='password' value='' /><br>" +
-    		"<input type='submit' id='divLogin' class='mBtnCheck' onclick='MiniLogin()' value='登录' />&nbsp;" +
-    		"<input type='button' onclick=\"location.href='/user/reg.html'\" style='width:70px;' class='mBTN' value='免费注册' />&nbsp;"
-    		);
-    
+//    $(".alert-login").html("账户 <input style='width:150px' id='auth_userId' name='auth_userId' type='text' value='' /><br>" +
+//    		"密码 <input style='width:150px' id='auth_passwd' name='auth_passwd' type='password' value='' /><br>" +
+//    		"<input type='submit' id='divLogin' class='mBtnCheck' onclick='MiniLogin()' value='登录' />&nbsp;" +
+//    		"<input type='button' onclick=\"location.href='/user/reg.html'\" style='width:70px;' class='mBTN' value='免费注册' />&nbsp;"
+//    		);
+//    
+    $(".alert-login").html("<h2>亲~请登录</h2><div class=\"m-reg\"><ul class=\"reg\"><li><label>账号</label><input " +
+    		"type=\"text\" placeholder=\"手机号/4-16个字符\" id='auth_userId'></li><li><label>密码</label><input " +
+    		"type=\"password\" placeholder=\"6-20个字符\"  id='auth_passwd'></li> </ul></div><a class=\"btn btn-true\" " +
+			"onclick='MiniLogin()'>登录</a><p class=\"alert-login-more\"><a href=\"/user/reg.html\">免费注册</a></p>")
+
+	  
+      
+          
+              
+              
+         
+      
+      
+      
+      
     $("#headlogintd").html("<input type=button id=\"headLogin\" onclick='loginHdl()' class='mBTN' value='登录' style='width:60px' />" +
     		"<input type=button onclick=\"location.href='/user/reg.html'\" class='mBTN' value='注册' style='width:60px' />");
 }
@@ -53,7 +68,7 @@ function MiniLogin() {
     }
 }
 function showLogin() {
-    if ($(".loginContent").html().indexOf("加载中..") != -1 || $(".loginContent").html().indexOf("退出") != -1) loadLogin();
+    if ($(".alert-login").html().indexOf("加载中..") != -1 || $(".alert-login").html().indexOf("退出") != -1) loadLogin();
     var overlayID = "_t_overlay";
     if (!byID(overlayID)) $('body').append('<div class="overlay" id="' + overlayID + '"></div>');
     $('.overlay').css({ 'height': ($("body").height()) + 'px', 'left': '0px', 'top': '0px', 'width': '100%', 'display': 'block', 'position': 'absolute' }).show();
@@ -111,6 +126,10 @@ function UserMoney() {
 	        	var r = d.Resp.row;
 				var uname = r.nickid;
 				var umoney = r.usermoeny;
+				
+				$("#username").html(uname);
+				$("#useramount").html(umoney+"元");
+				
 				$(".uinfo").html("欢迎您："+"<font color=\"#00f\" id=\"c_username\">"+uname+"</font>"+"余额：￥"+"<font color=\"#f00\" id=\"c_money\">"+umoney+"</font>"+"元");
 				if($("#p_uname"))$("#p_uname").html(uname);
 			    $("#headlogintd").html("<a href=\"/user/account.html\" id=\"usname\">" + uname + "</a>&nbsp;<a onclick=\"location.href='/user/addmoney.html'\" class='mBTN'>充值</a><a onclick='logout()' class='mBTN'>退出</a>");

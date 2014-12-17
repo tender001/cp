@@ -97,6 +97,7 @@ function betconfirm(){
 		showTips('至少选择'+MinLen+'场次投注!');
 		return;
 	}
+	$("#confirmhtml").html("");
 	$("#buyHeader h1").html($_sys.getlotname($("#gid").val())+"_投注")
     for (var i = 0; i < chooseinfo.length; i++) {
 		var cList='<ul class="spfNum list-r fn-clearfix" bet="'+chooseinfo[i][0]+'"><cite class="errorBg" onClick="Reone('+chooseinfo[i][0]+')"><em class="error2"></em></cite>'+ $(chooseinfo[i][1]).html()+'</ul>'
@@ -106,13 +107,39 @@ function betconfirm(){
     
 	
 }
+function payconfirm(){
+//	var expect=$("#expect").val();
+	var hidTypeName=$("#hidTypeName").val();
+	 
+     
+	$(".tz-pay").html('<p>'+hidTypeName+' </p><p>应付金额<em>'+amount+'</em>元</p>')
+	ispay(true);
+}
+function ispay(ispay){
+	if(ispay){
+    	$("#matchList,#buyFooter1,#szcbuy,#issuc,#content_home").hide();
+    	$("#paybet").show();
+    }else{
+    	$("#szcbuy").show();
+    	$("#paybet").hide();
+    }
+}
+function issuc(ispay){
+	 if(issuc){
+	    	$("#matchList,#buyFooter1,#szcbuy,#paybet,#content_home").hide();
+	    	$("#issuc").show();
+	    }else{
+	    	$("#content_home").show();
+	    	$("#issuc").hide();
+	    }
+}
 function showbuy(istrue){
     if(istrue){
-    	$("#matchList,#buyFooter1").hide();
+    	$("#matchList,#buyFooter1,#szcbuy,#paybet,#issuc").hide();
     	$("#content_home").show();
     }else{
     	$("#matchList,#buyFooter1").show();
-    	$("#content_home").hide();
+    	$("#content_home,#szcbuy,#paybet").hide();
     }
 }
 
@@ -271,13 +298,14 @@ function SubmitLot(obj) {
 			var desc = d.Resp.desc;
  			if (code == "0") {
 				var projid = d.Resp.result.projid;
-				window.location.href="/user/project.html?lotid="+gid+"&projid="+projid;
+				$("#cpid").attr("href","/user/project.html?lotid="+gid+"&projid="+projid)
+         		issuc(true);
              }else{
 	        	 if(desc.indexOf("余额不足")!=-1){
 	        		 showTips("您的余额不足，请去充值!",function(){
 	        				clearTimeout(tipsTs);
 	        				tipsTs = setTimeout(function(){
-	        					window.location.href="/user/addmoney.html";
+	        					window.location.href="/account/pay.html";
 	        				}, 1000);
 	        		 });
 	        	 }else{
