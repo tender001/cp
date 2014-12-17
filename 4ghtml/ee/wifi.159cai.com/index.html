@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=1' name='viewport'/>
+    <meta content='yes' name='apple-mobile-web-app-capable'/>
+    <meta content='black' name='apple-mobile-web-app-status-bar-style'/>
+    <meta content='telephone=no' name='format-detection'/>
+    <title>159彩票网</title>
+    <link rel="stylesheet" href="/css/basic.css" type="text/css"/>
+    <link rel="stylesheet" href="/css/style.css" type="text/css"/>
+	
+	<script src='/js/jquery.js'></script>
+	<script src='/js/159cp.js'></script>
+	<script src='/js/base.js'></script>
+	<script src='/js/login.js'></script>
+	<script src='/js/public/TouchSlide.1.1.js'></script>
+</head>
+<body>
+<div class="header">
+    <p class="user"><a class="app" id="appdown" href="http://www.159cai.com/m/">下载159彩票客户端</a><a class="user-login" onclick="loginHdl()">用户登录</a></p>
+    <a class="m-logo" href="/"><img src="img/m-logo.png" alt="159彩票"/></a>
+</div>
+<!-- <div class="img-list" id="slideBox"> -->
+<!--     <div class="bd" ><ul class="img-list-body"> -->
+<!--         <li><a href="#"><img src="img/imglist/img-list-1.png" alt=""/></a></li> -->
+<!--         <li><a href="#"><img src="img/imglist/img-list-1.png" alt=""/></a></li> -->
+<!--         <li><a href="#"><img src="img/imglist/img-list-1.png" alt=""/></a></li> -->
+<!--     	</ul></div> -->
+<!--     <div class="hd2"><ul> -->
+<!--     <li class=""></li><li class=""></li><li class=""></li> -->
+<!--     </ul></div> -->
+<!-- </div> -->
+<!-- <div id="focus" class="focus"> -->
+<!-- 				<div class="hd"> -->
+<!-- 					<ul></ul> -->
+<!-- 				</div> -->
+<!-- 				<div class="bd"> -->
+<!-- 					<ul> -->
+<!-- 							<li><a href="#"><img src="img/imglist/img-list-1.png" /></a></li> -->
+<!-- 							<li><a href="#"><img src="img/imglist/img-list-1.png" /></a></li> -->
+<!-- 							<li><a href="#"><img src="img/imglist/img-list-1.png" /></a></li> -->
+<!-- 					</ul> -->
+<!-- 				</div> -->
+<!-- 			</div> -->
+<!-- 			<script type="text/javascript"> -->
+				
+<!-- 			</script> -->
+			
+			
+				<div id="focus" class="focus" ontouchend="tend(event)" ontouchstart="tstart(event)">
+				<div class="hd">
+					<ul> <li class=""></li><li class=""></li><li class=""></li></ul>
+				</div>
+				<div class="bd" style="position: relative;overflow: hidden;">
+					<ul >
+							<li style="float: left;"><a href="#"><img src="img/imglist/img-list-1.png" /></a></li>
+							<li style="float: left;"><a href="#"><img src="img/imglist/img-list-1.png" /></a></li>
+							<li style="float: left;"><a href="#"><img src="img/imglist/img-list-1.png" /></a></li>
+					</ul>
+				</div>
+			</div>
+
+	<script type="text/javascript">
+
+ 		var ul_left=-100;
+ 		var n=0;
+ 		var i=$("#focus .bd li").length;
+ 		$(".bd ul").children("li").css("width",$(".bd").width()+'px');
+ 		$(".bd").css("width",$(".bd").width()*i+'px');
+ 		
+ 		$(function(){
+	 		var time=setInterval("lb()",5000); 
+	 		
+
+	 		$(".hd li").click(function(){
+	 			$(".bd").animate({
+ 				left: -$(this).index()*100+'%'},300);
+ 				$(this).removeClass().addClass('cur').siblings().removeClass('cur');
+	 		});
+			
+ 		});
+ 		function lb(){
+ 			$(".bd").animate({
+ 				left: ul_left+'%'},300);
+ 		
+ 			ul_left=-100*(n);
+ 			n+=1;
+ 			$(".hd li").eq(n).removeClass().addClass('cur').siblings().removeClass('cur');
+ 			if(n>i-1){n=0;}
+
+			
+ 			//$(".hd li").eq(n).removeClass().addClass('cur').siblings().removeClass('cur');
+
+ 		}
+	
+		 var down = 0;
+ var up = 0;
+ var index=0;
+ var w = 64;
+ function tstart(event)
+ {
+	 clearTimeout(time)
+  down=event.changedTouches[0].pageX;//获取手指刚触摸时的x坐标
+  }
+ function tend(event)
+ {
+	 
+  up=event.changedTouches[0].pageX;//获取手指离开时的x坐标
+  ul_obj = $("#roll");
+  if(down>up)
+   {//向左
+	$(".bd").animate({
+		left: -n*100+'%'
+	},300);
+	n+=1;
+	if(n>i-1){n=0;}
+	$(".hd li").eq(n).removeClass().addClass('cur').siblings().removeClass('cur');
+   }
+  else if(down<up)
+   {//向右
+	n-=1;
+	if(n<0){n=i-1;}
+    $(".bd ").animate({
+		
+		left: -n*100+'%'
+	},300);
+	
+	$(".hd li").eq(n).removeClass().addClass('cur').siblings().removeClass('cur');
+  }
+  }
+ 	</script> 
+
+ <div class="app-notice">
+     <div class="zj_tipBox"><div>      <table width="100%" border="0" cellspacing="0">
+					<colgroup>
+						<col width="33%">
+						<col width="33%">
+						<col width="33%">
+					</colgroup>
+					
+					<tbody >
+					<!--#include virtual="/cc/module/zuixin.html"-->
+					
+					</tbody>
+				
+				</table>
+    </div></div>
+    
+ </div>
+
+<div class="nav" id="nav_fixed">
+    <table>
+        <tr>
+            <td>
+                <a class="nav-list" href="/user/login.html">
+                    <h3 class="login"></h3>
+                    <p>登录</p></a>
+            </td>
+            <td>
+                <a class="nav-list" href="/user/reg.html">
+                    <h3 class="reg"></h3>
+                    <p>注册</p></a>
+            </td>
+            <td>
+                <a class="nav-list" href="/hemai/">
+                    <h3 class="hm"></h3>
+                    <p>合买</p></a>
+            </td>
+            <td>
+                <a class="nav-list" href="kj/numkj.html">
+                    <h3 class="lokj"></h3>
+                    <p>开奖</p></a>
+            </td>
+        </tr>
+    </table>
+</div>
+<div class="nav top-fixed" id="index_nav" style="display: none;">
+    <table>
+        <tr>
+            <td>
+                <a class="nav-list" onclick="loginHdl()">
+                    <p>登录</p></a>
+            </td>
+           <td>
+                <a class="nav-list" href="/user/reg.html">
+                    <h3 class="reg"></h3>
+                    <p>注册</p></a>
+            </td>
+            <td>
+                <a class="nav-list" href="/hemai/">
+                    <h3 class="hm"></h3>
+                    <p>合买</p></a>
+            </td>
+            <td>
+                <a class="nav-list" href="/kj/">
+                    <h3 class="kj"></h3>
+                    <p>开奖</p></a>
+            </td>
+        </tr>
+    </table>
+</div>
+<ul class="cp-list">
+    <li>
+        <a href="/jczq/">
+            <div class="caipiao-ap"><img src="img/caipiao.png" alt=""/></div>
+            <p class="caipiao-tit"><em>竞彩足球</em><cite>返奖69%，人气爆棚的足球彩票</cite></p>
+        </a>
+    </li>
+    <li>
+        <a href="/bd/">
+            <div class="caipiao-ap"><img src="img/caipiao.png" alt=""/></div>
+            <p class="caipiao-tit"><em>北京单场</em><cite>返奖69%，人气爆棚的足球彩票</cite></p>
+        </a>
+    </li>
+</ul>
+<div class="cp-news">
+    <p class="cp-news-tit"><a class="more" href="#">更多</a>最新资讯</p>
+	<!--#include virtual="/dedeinc/4g_zuixinzx.html"-->
+
+</div>
+<div class="caipiao-pay go-top"><i class="go-top-ico"></i><a href="/account/pay.html">充值</a>|<a href="#">提款</a></div>
+<div class="index-footer">
+    <div class="footer-app version"><a id="appdown2" href="http://www.159cai.com/m/">客户端</a>|<a href="/" style="color:#f60">触屏版</a>|<a href="http://www.159cai.com/">PC版</a></div>
+    <div class="footer-app call-center"><a href="#">在线客服</a><a href="tel:4000696159">客服热线</a></div>
+    <p class="footer-app ICP">泸ICP备13044715号-1</p>
+</div>
+
+<script src='/js/index/index.js'></script>
+</body>
+</html>
