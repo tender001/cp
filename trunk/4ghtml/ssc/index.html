@@ -6,311 +6,172 @@
     <meta content='yes' name='apple-mobile-web-app-capable'/>
     <meta content='black' name='apple-mobile-web-app-status-bar-style'/>
     <meta content='telephone=no' name='format-detection'/>
-    <title>11选5_159彩票网</title>
+    <title>重庆时时彩_159彩票网</title>
     <link rel="stylesheet" href="/css/basic.css" type="text/css"/>
     <link rel="stylesheet" href="/css/style.css" type="text/css"/>
+    <script src='/js/jquery.js'></script>
+	<script src='/js/159cp.js'></script>
+	<script src='/js/base.js'></script>
+	<script src='/js/login.js'></script>
+	<script type ="text/javascript" src ="/js/public/ballpanle.js"></script>
+	<script type ="text/javascript" src ="/js/public/shuzicai.js"></script>
 </head>
 <body>
-<section class="buyHeader">
-    <h1>11选5</h1>
+<script>
+$(document).ready(function() {
+    chklogin();
+    createGamePanle(120)
+    createGameSelect();
+});
+</script>
+<!--#include virtual="/cc/header.html"-->
+<section class="buyHeader" id="buyFooter1">
+    <h1>时时彩</h1>
     <a href="javascript:history.go(-1)" class="backIco2"></a>
     <em class="goHome jc-more">
-        <cite style="display:none"><a class="cur" href="/ssq/index.html">选号</a><a href="#">开奖结果</a><a href="#">玩法帮助</a></cite>
+        <cite style="display:none"><a class="cur" href="javascript:void(0);">选号</a><a href="#">开奖结果</a><a href="#">玩法帮助</a></cite>
     </em>
 </section>
-<nav class="clearfix top-margin">
-    <div id="secNav" class="jxsscTab" style="overflow: hidden; width: 100%;">
-        <ul id="play_tabs"
-            style="list-style: none; display: block; float: left; width: 1184px; height: 100%; padding: 0px; transition: transform 0ms; -webkit-transition: transform 0ms; transform-origin: 0px 0px 0px; transform: translate(0px, 0px) translateZ(0px);">
-            <li>大小单双</li>
-            <li class="cur">一星直选</li>
-            <li>二星直选</li>
-            <li>三星直选</li>
-            <li>五星直选</li>
-            <li>五星通选</li>
-            <li>二星组选</li>
-            <li>三星组三</li>
-            <li>三星组六</li>
-            <li>二星和值</li>
-        </ul>
-    </div>
-</nav>
-<article>
-    <div class="k3kj clearfix" id="c_c">
-        <div class="k3kjtext" id="kj_">
-            <p>
+<div class="top-margin" id="betpage">
+    <nav>
+        <div class="kpTab syx5Tab clearfix" style="float: none;width: 100%;overflow: hidden;">
+            <ul class="clearfix" id="kpTab"
+                style="list-style: none; display: block; width: 60rem; height: 100%; padding: 0px; transition: transform 0ms; -webkit-transition: transform 0ms; transform-origin: 0px 0px 0px; transform: translate(-8px, 0px) scale(1) translateZ(0px);">
+<!--                 <li class="cur">选第1位</li> -->
+<!--                 <li>选2全中</li> -->
+<!--                 <li>选3全中</li> -->
+<!--                 <li>选4全中</li> -->
+<!--                 <li>选5全中</li> -->
+<!--                 <li>选6中5</li> -->
+<!--                 <li>选7中5</li> -->
+<!--                 <li>选8中5</li> -->
+<!--                 <li>前2直选</li> -->
+<!--                 <li>前3直选</li> -->
+<!--                 <li>前2组选</li> -->
+<!--                 <li>前3组选</li> -->
+            </ul>
+        </div>
+    </nav>
+    <article>
+        <div class="k3kj syx5kj clearfix">
+            <div class="k3kjtext"><p>期开奖</p>
 
-            <p class="pdLeft06">05期开奖中…</p></p>
-            <div class="pdTop03 k3waitkj clearfix"><cite class="k3time"></cite><span class="left">等待开奖</span><em
-                    id="kjup" class="kjup"></em></div>
-        </div>
-        <div class="k3kjnum" id="jxssc">
-            <p>距<em id="c_expect">06</em>期截止</p>
-            <strong>已截止</strong>
-        </div>
-    </div>
-    <div id="kj_code">
-        <ul class="k3listtt">
-            <li class="wb20">期号</li>
-            <li class="jxsscwb18">开奖结果</li>
-            <li class="wb21">十位</li>
-            <li class="wb21">个位</li>
-            <li class="wb21">后三</li>
-        </ul>
-        <div class="k3kjlist">
-            <ul>
-                <li class="wb20">04期</li>
-                <li class="jxsscdice jxsscwb18"><b>9</b><b>0</b><b>6</b><b>2</b><b class="red">4</b></li>
-                <li class="wb21">小双</li>
-                <li class="wb21">小双</li>
-                <li class="wb19">组六</li>
-            </ul>
-            <ul>
-                <li class="wb20">03期</li>
-                <li class="jxsscdice jxsscwb18"><b>6</b><b>0</b><b>6</b><b>3</b><b class="red">3</b></li>
-                <li class="wb21">小单</li>
-                <li class="wb21">小单</li>
-                <li class="wb19">组三</li>
-            </ul>
-            <ul>
-                <li class="wb20">02期</li>
-                <li class="jxsscdice jxsscwb18"><b>9</b><b>4</b><b>9</b><b>8</b><b class="red">2</b></li>
-                <li class="wb21">大双</li>
-                <li class="wb21">小双</li>
-                <li class="wb19">组六</li>
-            </ul>
-            <ul>
-                <li class="wb20">01期</li>
-                <li class="jxsscdice jxsscwb18"><b>6</b><b>9</b><b>6</b><b>8</b><b class="red">3</b></li>
-                <li class="wb21">大双</li>
-                <li class="wb21">小单</li>
-                <li class="wb19">组六</li>
-            </ul>
-            <ul>
-                <li class="wb20">84期</li>
-                <li class="jxsscdice jxsscwb18"><b>2</b><b>4</b><b>3</b><b>1</b><b class="red">9</b></li>
-                <li class="wb21">小单</li>
-                <li class="wb21">大单</li>
-                <li class="wb19">组六</li>
-            </ul>
-            <ul>
-                <li class="wb20">83期</li>
-                <li class="jxsscdice jxsscwb18"><b>6</b><b>1</b><b>4</b><b>2</b><b class="red">8</b></li>
-                <li class="wb21">小双</li>
-                <li class="wb21">大双</li>
-                <li class="wb19">组六</li>
-            </ul>
-            <ul>
-                <li class="wb20">82期</li>
-                <li class="jxsscdice jxsscwb18"><b>6</b><b>3</b><b>8</b><b>9</b><b class="red">1</b></li>
-                <li class="wb21">大单</li>
-                <li class="wb21">小单</li>
-                <li class="wb19">组六</li>
-            </ul>
-            <ul>
-                <li class="wb20">81期</li>
-                <li class="jxsscdice jxsscwb18"><b>0</b><b>2</b><b>8</b><b>9</b><b class="red">3</b></li>
-                <li class="wb21">大单</li>
-                <li class="wb21">小单</li>
-                <li class="wb19">组六</li>
-            </ul>
-            <ul>
-                <li class="wb20">80期</li>
-                <li class="jxsscdice jxsscwb18"><b>2</b><b>4</b><b>4</b><b>2</b><b class="red">1</b></li>
-                <li class="wb21">小双</li>
-                <li class="wb21">小单</li>
-                <li class="wb19">组六</li>
-            </ul>
-        </div>
-    </div>
-</article>
-<article>
-    <div id="bonus_" class="relative k3xh">
-        <div style="display: none;">猜中十位、个位属性,奖金<em class="yellow">4</em>元</div>
-        <div style="display: block;">猜中个位号码，奖金<em class="yellow">11</em>元</div>
-        <div style="display: none;">按顺序猜中十位、个位，奖金<em class="yellow">116</em>元</div>
-        <div style="display: none;">按顺序猜中百位、十位、个位，奖金<em class="yellow">1160</em>元</div>
-        <div style="display: none;">按顺序猜中全部5位，奖金<em class="yellow">116000</em>元</div>
-        <div class="jxssctitle" style="display: none;">
-            <p>按顺序猜中全部5位，奖金<em class="yellow">20460</em>元</p>
-            <p>按顺序猜中全部前3位或后3位，奖金<em class="yellow">230</em>元</p>
-            <p>按顺序猜中前2位或后2位，奖金<em class="yellow">30</em>元</p>
-        </div>
-        <div class="jxssctitle" style="display: none;">
-            <p>选2个号,猜中后2位组合(顺序不限)，奖金<em class="yellow">58</em>元</p>
-            <p>3个号以上为复试选号(包含对子)，奖金<em class="yellow">116</em>元</p>
-        </div>
-        <div class="jxssctitle" style="display: none;">
-            <p>选2个号,猜中后3位组三号码，奖金<em class="yellow">385</em>元</p>
-            <p>组三:3个号码中有2个相同，如:353</p>
-        </div>
-        <div class="jxssctitle" style="display: none;">
-            <p>选3个号,猜中后3位组六号码，奖金<em class="yellow">190</em>元</p>
-            <p>组六:3个号码各不相同，如:865</p>
-        </div>
-        <div class="jxssctitle" style="display: none;">
-            <p>&nbsp;&nbsp;猜中十位、个位之和,奖金<em class="yellow">58</em>元</p>
-            <p>（若开奖号后2位相同，中奖<em class="yellow">116</em>元）</p>
-        </div>
-        <p class="shakeomit"><span id="shake" class="right red"><em class="shakeico"></em><cite>摇一注&nbsp;&nbsp;&nbsp;</cite></span></p>
-    </div>
-    <!-- 大小单双start -->
-    <div id="dxds" style="display: none;" class="jxsscxhlist jxsscdxds">
-        <ul class="clearfix">
-            <li class="cur" v="十位" m="y"><span>十位</span></li>
-            <li class="cur" v="个位" m="y"><span>个位</span></li>
-        </ul>
-        <div class="jxsscxhBall mgTop03 clearfix">
-            <div>
-                <p><b v="大">大</b><b v="小">小</b></p>
-                <p><b v="单">单</b><b v="双">双</b></p>
+                <div class="kjdice pdTop03 clearfix"><em
+                        class="kjup kjdown"></em></div>
             </div>
-            <div>
-                <p><b v="大">大</b><b v="小">小</b></p>
-                <p><b v="单">单</b><b v="双">双</b></p>
+            <div class="k3kjnum"><p  >距<i id="span_issuenum"></i>期截止</p><strong id="span_stoptime"></strong></div>
+        </div>
+        <div class="ssqkjlist" style="display:none;">
+            <ul>
+                <li class="first">02期</li>
+                <li><span class="red">03 09 01 08 10</span></li>
+                <li class="last"></li>
+            </ul>
+            
+        </div>
+    </article>
+    <article>
+   
+        <div class="relative k3xh" id="bonus_">
+<!--             	<div style="display:none">猜中十位、个位属性,奖金<em class="yellow">4</em>元</div> -->
+            	<div>猜中个位号码，奖金<em class="yellow">10</em>元</div>
+            	<div style="display:none">按顺序猜中十位、个位，奖金<em class="yellow">100</em>元</div>
+                <div style="display:none">按顺序猜中百位、十位、个位，奖金<em class="yellow">1000</em>元</div>
+                <div style="display:none">按顺序猜中全部5位，奖金<em class="yellow">100000</em>元</div>
+                <div style="display:none" class="jxssctitle">
+                	<p>选2个号,猜中后2位组合(顺序不限)，奖金<em class="yellow">50</em>元</p>
+                	<p>3个号以上为复试选号(包含对子)，奖金<em class="yellow">100</em>元</p>
+                </div>
+                <div style="display:none" class="jxssctitle">
+                	<p>&nbsp;&nbsp;猜中十位、个位之和,奖金<em class="yellow">50</em>元</p>
+                	<p>（若开奖号后2位相同，中奖<em class="yellow">100</em>元）</p>
+                </div>
+                <div style="display:none" class="jxssctitle">
+                	<p>按顺序猜中全部5位，奖金<em class="yellow">20440</em>元</p>
+                	<p>按顺序猜中全部前3位或后3位，奖金<em class="yellow">220</em>元</p>
+                	<p>按顺序猜中前2位或后2位，奖金<em class="yellow">20</em>元</p>
+                </div>
+                
+<!--                 <div style="display:none" class="jxssctitle"> -->
+<!--                 	<p>选2个号,猜中后3位组三号码，奖金<em class="yellow">220</em>元</p> -->
+<!--                 	<p>组三:3个号码中有2个相同，如:353</p> -->
+<!--                 </div> -->
+<!--                 <div style="display:none" class="jxssctitle"> -->
+<!--                 	<p>选3个号,猜中后3位组六号码，奖金<em class="yellow">190</em>元</p> -->
+<!--                 	<p>组六:3个号码各不相同，如:865</p> -->
+<!--                 </div> -->
+                
+                <div style="display:none">猜中十位、个位属性,奖金<em class="yellow">4</em>元</div>
+                <p class="shakeomit"><span class="right red" id="shake"><em class="shakeico"></em><cite>摇一注&nbsp;&nbsp;&nbsp;</cite></span></p>
             </div>
-        </div>
-    </div>
-    <!-- 大小单双end -->
-    <!-- 一星直选start -->
-    <div id="yzx" class="jxsscxhlist" style="display: block;">
-        <ul class="clearfix">
-            <li><span>万位</span></li>
-            <li><span>千位</span></li>
-            <li><span>百位</span></li>
-            <li><span>十位</span></li>
-            <li class="cur2" v="个位" m="y"><span><em>0</em></span></li>
-        </ul>
-        <div class="jxsscxhBall mgTop03 clearfix">
-            <span>个位</span>
-            <p><b class="red">0</b><b>1</b><b>2</b><b>3</b><b>4</b><b>5</b><b>6</b><b>7</b><b>8</b><b>9</b></p>
-        </div>
-    </div>
-    <!-- 一星直选end -->
-    <!-- 二星直选start -->
-    <div id="ezx" style="display: none;" class="jxsscxhlist">
-        <ul class="clearfix">
-            <li><span>万位</span></li>
-            <li><span>千位</span></li>
-            <li><span>百位</span></li>
-            <li class="cur" v="十位" m="y"><span>十位</span></li>
-            <li class="cur" v="个位" m="y"><span>个位</span></li>
-        </ul>
-        <div class="jxsscxhBall mgTop03 jxsscline clearfix">
-            <span>十位</span>
-            <p><b>0</b><b>1</b><b>2</b><b>3</b><b>4</b><b>5</b><b>6</b><b>7</b><b>8</b><b>9</b></p>
-        </div>
-        <div class="jxsscxhBall mgTop03 clearfix">
-            <span>个位</span>
-            <p><b>0</b><b>1</b><b>2</b><b>3</b><b>4</b><b>5</b><b>6</b><b>7</b><b>8</b><b>9</b></p>
-        </div>
-    </div>
-    <!-- 二星直选end -->
-    <!-- 三星直选start -->
-    <div id="szx" style="display: none;" class="jxsscxhlist">
-        <ul class="clearfix">
-            <li><span>万位</span></li>
-            <li><span>千位</span></li>
-            <li class="cur" v="百位" m="y"><span>百位</span></li>
-            <li class="cur" v="十位" m="y"><span>十位</span></li>
-            <li class="cur" v="个位" m="y"><span>个位</span></li>
-        </ul>
-        <div class="jxsscxhBall mgTop03 jxsscline clearfix">
-            <span>百位</span>
-            <p><b>0</b><b>1</b><b>2</b><b>3</b><b>4</b><b>5</b><b>6</b><b>7</b><b>8</b><b>9</b></p>
-        </div>
-        <div class="jxsscxhBall mgTop03 jxsscline clearfix">
-            <span>十位</span>
-            <p><b>0</b><b>1</b><b>2</b><b>3</b><b>4</b><b>5</b><b>6</b><b>7</b><b>8</b><b>9</b></p>
-        </div>
-        <div class="jxsscxhBall mgTop03 clearfix">
-            <span>个位</span>
-            <p><b>0</b><b>1</b><b>2</b><b>3</b><b>4</b><b>5</b><b>6</b><b>7</b><b>8</b><b>9</b></p>
-        </div>
-    </div>
-    <!-- 三星直选end -->
-    <!-- 五星直选start -->
-    <div id="wzx" style="display: none;" class="jxsscxhlist">
-        <ul class="clearfix">
-            <li class="cur" v="万位" m="y"><span>万位</span></li>
-            <li class="cur" v="千位" m="y"><span>千位</span></li>
-            <li class="cur" v="百位" m="y"><span>百位</span></li>
-            <li class="cur" v="十位" m="y"><span>十位</span></li>
-            <li class="cur" v="个位" m="y"><span>个位</span></li>
-        </ul>
-        <div class="jxsscxhBall mgTop03 jxsscline clearfix">
-            <span>万位</span>
-            <p><b>0</b><b>1</b><b>2</b><b>3</b><b>4</b><b>5</b><b>6</b><b>7</b><b>8</b><b>9</b></p>
-        </div>
-        <div class="jxsscxhBall mgTop03 jxsscline clearfix">
-            <span>千位</span>
-            <p><b>0</b><b>1</b><b>2</b><b>3</b><b>4</b><b>5</b><b>6</b><b>7</b><b>8</b><b>9</b></p>
-        </div>
-        <div class="jxsscxhBall mgTop03 jxsscline clearfix">
-            <span>百位</span>
-            <p><b>0</b><b>1</b><b>2</b><b>3</b><b>4</b><b>5</b><b>6</b><b>7</b><b>8</b><b>9</b></p>
-        </div>
-        <div class="jxsscxhBall mgTop03 jxsscline clearfix">
-            <span>十位</span>
-            <p><b>0</b><b>1</b><b>2</b><b>3</b><b>4</b><b>5</b><b>6</b><b>7</b><b>8</b><b>9</b></p>
-        </div>
-        <div class="jxsscxhBall mgTop03 clearfix">
-            <span>个位</span>
-            <p><b>0</b><b>1</b><b>2</b><b>3</b><b>4</b><b>5</b><b>6</b><b>7</b><b>8</b><b>9</b></p>
-        </div>
-    </div>
-    <!-- 五星直选end -->
-    <!-- 五星通选start -->
-    <div id="wtx" style="display: none;" class="jxsscxhlist">
-        <ul class="clearfix">
-            <li class="cur" v="万位" m="y"><span>万位</span></li>
-            <li class="cur" v="千位" m="y"><span>千位</span></li>
-            <li class="cur" v="百位" m="y"><span>百位</span></li>
-            <li class="cur" v="十位" m="y"><span>十位</span></li>
-            <li class="cur" v="个位" m="y"><span>个位</span></li>
-        </ul>
-        <div class="jxsscxhBall mgTop03 jxsscline clearfix">
-            <span>万位</span>
-            <p><b>0</b><b>1</b><b>2</b><b>3</b><b>4</b><b>5</b><b>6</b><b>7</b><b>8</b><b>9</b></p>
-        </div>
-        <div class="jxsscxhBall mgTop03 jxsscline clearfix">
-            <span>千位</span>
-            <p><b>0</b><b>1</b><b>2</b><b>3</b><b>4</b><b>5</b><b>6</b><b>7</b><b>8</b><b>9</b></p>
-        </div>
-        <div class="jxsscxhBall mgTop03 jxsscline clearfix">
-            <span>百位</span>
-            <p><b>0</b><b>1</b><b>2</b><b>3</b><b>4</b><b>5</b><b>6</b><b>7</b><b>8</b><b>9</b></p>
-        </div>
-        <div class="jxsscxhBall mgTop03 jxsscline clearfix">
-            <span>十位</span>
-            <p><b>0</b><b>1</b><b>2</b><b>3</b><b>4</b><b>5</b><b>6</b><b>7</b><b>8</b><b>9</b></p>
-        </div>
-        <div class="jxsscxhBall mgTop03 clearfix">
-            <span>个位</span>
-            <p><b>0</b><b>1</b><b>2</b><b>3</b><b>4</b><b>5</b><b>6</b><b>7</b><b>8</b><b>9</b></p>
-        </div>
-    </div>
-    <!-- 五星直通选end -->
-    <!-- 二星组选start -->
-    <div id="ezux" style="display: none;" class="jxsscxhBall jxsscxhBall2 clearfix"><b>0</b><b>1</b><b>2</b><b>3</b><b>4</b><b>5</b><b>6</b><b>7</b><b>8</b><b>9</b></div>
-    <!-- 二星组选end -->
-    <!-- 三星组三start -->
-    <div id="szs" style="display: none;" class="jxsscxhBall jxsscxhBall2 clearfix"><b>0</b><b>1</b><b>2</b><b>3</b><b>4</b><b>5</b><b>6</b><b>7</b><b>8</b><b>9</b></div>
-    <!-- 三星组三end -->
-    <!-- 三星组六start -->
-    <div id="szl" style="display: none;" class="jxsscxhBall jxsscxhBall2 clearfix"><b>0</b><b>1</b><b>2</b><b>3</b><b>4</b><b>5</b><b>6</b><b>7</b><b>8</b><b>9</b></div>
-    <!-- 三星组六end -->
-    <!-- 二星和值start -->
-    <div id="ehz" style="display: none;" class="jxsscxhBall jxsscxhBall2 clearfix"><b>0</b><b>1</b><b>2</b><b>3</b><b>4</b><b>5</b><b>6</b><b>7</b><b>8</b><b>9</b><b>10</b><b>11</b><b>12</b><b>13</b><b>14</b><b>15</b><b>16</b><b>17</b><b>18</b></div>
-    <!-- 二星和值end -->
-</article>
+        <section class="relative" style="z-index:1">
+            <!-- 选11个号码start -->
+            <div style="overflow: hidden;">
+                <div id="divballarea" style="width: 100%; position: relative; left: 0;">
+                    <div  style="float: left; ">
+                        <div class="ssqBall pdLeft08"><cite>01</cite><cite>02</cite><cite>03</cite><cite>04</cite><cite>05</cite><cite>06</cite><cite>07</cite><cite>08</cite><cite>09</cite><cite>10</cite><cite>11</cite></div>
+                        <div class="omitnum pdLeft08" hidden="" style="width: 320px;display: block"><cite>23</cite><cite>4</cite><cite>24</cite><cite>14</cite><cite>3</cite><cite>14</cite><cite>48</cite><cite>8</cite><cite>37</cite><cite>3</cite><cite>14</cite></div>
+                    </div>
+                    <!-- 选11个号码end -->
+                    <!-- 前2直选start -->
+<!--                     <div id="qe" style="float: left; width: 320px;"> -->
+<!--                         <p class="gray center pdTop06">第一位</p> -->
+<!--                         <div class="relative"> -->
+<!--                             <div class="ssqBall pdLeft08"><cite>01</cite><cite>02</cite><cite>03</cite><cite>04</cite><cite>05</cite><cite>06</cite><cite>07</cite><cite>08</cite><cite>09</cite><cite>10</cite><cite>11</cite></div> -->
+<!-- <!--                             <div class="omitnum pdLeft08" hidden="" style="width: 320px;"><cite>23</cite><cite>4</cite><cite>24</cite><cite>14</cite><cite>3</cite><cite>14</cite><cite>48</cite><cite>8</cite><cite>37</cite><cite>3</cite><cite>14</cite></div> --> 
+<!--                         </div> -->
+<!--                         <p class="gray center pdTop06">第二位</p> -->
+<!--                         <div class="relative"> -->
+<!--                             <div class="ssqBall pdLeft08"><cite>01</cite><cite>02</cite><cite>03</cite><cite>04</cite><cite>05</cite><cite>06</cite><cite>07</cite><cite>08</cite><cite>09</cite><cite>10</cite><cite>11</cite></div> -->
+<!-- <!--                             <div class="omitnum pdLeft08" hidden="" style="width: 320px;"><cite>23</cite><cite>4</cite><cite>24</cite><cite>14</cite><cite>3</cite><cite>14</cite><cite>48</cite><cite>8</cite><cite>37</cite><cite>3</cite><cite>14</cite></div> -->
+<!--                         </div> -->
+<!--                     </div> -->
+<!--                     前2直选end -->
+<!--                     前3直选start -->
+<!--                     <div id="qs" style="float: left; width: 320px;"> -->
+<!--                         <p class="gray center pdTop06">第一位</p> -->
+<!--                         <div class="relative"> -->
+<!--                             <div class="ssqBall pdLeft08"><cite>01</cite><cite>02</cite><cite>03</cite><cite>04</cite><cite>05</cite><cite>06</cite><cite>07</cite><cite>08</cite><cite>09</cite><cite>10</cite><cite>11</cite></div> -->
+<!-- <!--                             <div class="omitnum pdLeft08" hidden="" style="width: 320px;"><cite>23</cite><cite>4</cite><cite>24</cite><cite>14</cite><cite>3</cite><cite>14</cite><cite>48</cite><cite>8</cite><cite>37</cite><cite>3</cite><cite>14</cite></div> --> 
+<!--                         </div> -->
+<!--                         <p class="gray center pdTop06">第二位</p> -->
+<!--                         <div class="relative"> -->
+<!--                             <div class="ssqBall pdLeft08"><cite>01</cite><cite>02</cite><cite>03</cite><cite>04</cite><cite>05</cite><cite>06</cite><cite>07</cite><cite>08</cite><cite>09</cite><cite>10</cite><cite>11</cite></div> -->
+<!-- <!--                             <div class="omitnum pdLeft08" hidden="" style="width: 320px;"><cite>23</cite><cite>4</cite><cite>24</cite><cite>14</cite><cite>3</cite><cite>14</cite><cite>48</cite><cite>8</cite><cite>37</cite><cite>3</cite><cite>14</cite></div> --> 
+<!--                         </div> -->
+<!--                         <p class="gray center pdTop06">第三位</p> -->
+<!--                         <div class="relative"> -->
+<!--                             <div class="ssqBall pdLeft08"><cite>01</cite><cite>02</cite><cite>03</cite><cite>04</cite><cite>05</cite><cite>06</cite><cite>07</cite><cite>08</cite><cite>09</cite><cite>10</cite><cite>11</cite></div> -->
+<!-- <!--                             <div class="omitnum pdLeft08" hidden="" style="width: 320px;"><cite>23</cite><cite>4</cite><cite>24</cite><cite>14</cite><cite>3</cite><cite>14</cite><cite>48</cite><cite>8</cite><cite>37</cite><cite>3</cite><cite>14</cite></div> --> 
+<!--                         </div> -->
+<!--                     </div> -->
+                    <!-- 前3直选end -->
+                </div>
+            </div>
+        </section>
+    </article>
+</div>
 
-<div class="buyFooter">
+
+<div class="buyFooter" mark="buyfooter">
     <div class="buyFloat fixed">
-        <em class="deleted"></em>
-        <span>共0注&nbsp;0元</span>
+        <em class="deleted" onclick="Reconfirm()"></em>
+        <span >共<cite mark="betnum" class="yellow">0</cite>注&nbsp;<cite mark="betmoney" class="yellow">0</cite>元</span>
         <a href="javascript:betconfirm()" class="ture">确 认</a>
     </div>
 </div>
+<span style="display:none;" id="span_add"><input type="checkbox" onclick="countMoney();" class="textWH" id="addcount">追加</span>
+<!--#include virtual="/cc/szcbuy.html"-->
+<div id="divshowprebuy" style="position: absolute; width: 100%; margin: 0px auto; z-index: 1100; top: 120.75px; left: 0px; display: none;" name="divshowprebuy"></div>
+<input type="hidden" id="oldt" name="oldt" value="1" />
+<input type="hidden" id="buymoney" name="buymoney" value="0" />
+<input type="hidden" id="buyzs" name="buyzs" value="0" />
+<input type="hidden" id="hidTypeName" value="时时彩" />
+<input type="hidden" id="TypeID" name="TypeID" value="120" />
+<input type="hidden" id="RedBallValue" name="RedBallValue" value="" />
+<input type="hidden" id="BlueBallValue" name="BlueBallValue" value="" />
+<input type="hidden" id="PlayType" name="PlayType" value="1" />
+<input type="hidden" id="Kind" name="Kind" value="2" />
+<input type="hidden" id="expect" name="expect" value="" />
 </body>
 </html>
