@@ -111,7 +111,7 @@ $_trade.key = {
 	did : "did"//明细编号
 	
 };
-
+var $_cache ={};//缓存相关
 $_trade.url = {
 	pcast : "/phpt/t.phpx?fid=pcast",// 发起方案
 	fcast : "/phpt/t.phpx?fid=fcast",// 过滤发起
@@ -139,7 +139,27 @@ $_trade.url = {
 	systime : "/phpt/t.phpx?fid=time",// 获取服务器时间	
 	filecast:"/filecast.phpx"//单式文本发起方案	
 };
-
+$_cache.qcode = function(gid, pid) {
+	var cawardcode = "";
+	var data = $_trade.key.gid + "=" + encodeURIComponent(gid) + "&" + $_trade.key.pid + "=" + encodeURIComponent(pid) + "&rnd=" + Math.random();
+	$.ajax({
+		url : $_trade.url.qcode,
+		type : "POST",
+		dataType : "json",
+		async:false,
+		data : data,		
+		success : function(d) {
+			var R = d.Resp;
+			var code = R.code;
+			if (code == "0") {
+				var r = R.row;
+				cawardcode = r.cawardcode;
+//				$("#"+gid+"_"+pid+"cawardcode").html(cawardcode);
+			}
+		}
+	});
+	return cawardcode;
+};
 String.prototype.isDate = function() {
 	var r = this.match(/^(\d{1,4})(-|\/)(\d{1,2})\2(\d{1,2})$/);
 	if (r == null)
