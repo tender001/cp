@@ -4,7 +4,7 @@ var GameID = new Array(10, 20, 25, 26, 27, 44, 115, 116, 118, 119, 120, 7);
 var Sindex = new Array(0, 0, 0, 0, 0, 0, 2, 0, 0, 2, 0, 0);
 var vardata=new Array();
 //var BallStyle = new Array("redball", "redball_s", "blueball", "blueball_s", "gpball", "gpball_s");
-var BallStyle = new Array("redball", "redBall", "blueball", "blueball_s", "", "redBall");
+var BallStyle = new Array("redball", "redBall", "blueball", "blueBall", "", "redBall");
 function getIndex(id){
 	for(var i = 0; i < GameID.length;i++){
 		if(GameID[i] == id){
@@ -95,7 +95,7 @@ loadOpencode = function(){
 //		http://www.159cai.com/cpdata/omi/53/yilou/omission.xml
 //			http://www.159cai.com/tdata/53/last_10.xml?rnd=0.6145406365868701
 	}
-	if(gid==53){
+	if(gid==53||gid==52||gid==51||gid==50||gid==07||gid==03||gid==01){
 		chksale(gid, function(){
 			url = "/tdata/"+gid+"/last_10.xml?rnd=" + Math.random();
 			$.ajax({
@@ -110,13 +110,24 @@ loadOpencode = function(){
 						var c = $(ele).attr("cc");
 						var pid = $(ele).attr("cp");
 //						var m0 = $(ele).attr("m0");
+						c=c.split("|");
 						
 	                	if(index==0&&c!==""){
 	                		$(".k3kjtext p").html(pid+"期开奖")
-	                		$(".pdTop03 ").html('<b>'+c.split(',').join('</b><b>')+'</b>')
+	                		if(c.length==2){
+								$(".pdTop03 ").html('<b>'+c[0].split(',').join('</b><b>')+'</b><b class="blueBall">'+c[1].split(',').join('</b><b>')+'</b>')
+							}else{
+								$(".pdTop03 ").html('<b>'+c[0].split(',').join('</b><b>')+'</b>');
+							}
+	                		
 	                	}
 	                	if(c!==""){
-	                		$(".ssqkjlist").append('<ul> <li class="first">'+pid+'期</li><li><span class="red">'+c.split(',').join(" ")+'</span></li><li class="last"></li></ul>')
+	                		if(c.length==2){
+	                			$(".ssqkjlist").append('<ul> <li class="first">'+pid+'期</li><li><span class="red">'+c[0].split(',').join(" ")+'</span><span class="blue">'+c[1].split(',').join(" ")+'</span></li><li class="last"></li></ul>')
+							}else{
+								$(".ssqkjlist").append('<ul> <li class="first">'+pid+'期</li><li><span class="red">'+c[0].split(',').join(" ")+'</span></li><li class="last"></li></ul>')
+							}
+	                		
 	                	}
 	                	
 	                	
@@ -231,14 +242,14 @@ function createBallPanle(kind) {
     if (kID == 2) {//手选
         html.push("<div id=\"divred\" class=\"number2\">");
         if (tID == 10 || tID == 20 || tID == 7) {
-            html.push("<div style=\"padding-left:10px;background:#E3F0F9; line-height:26px; font-size: 14px;\" >");
-            html.push("<span style=\"float:right;padding-right:10px;\">");
-            html.push("<select id=\"redselect\">");
-            for (var i = start; i <= end; i++)
-                html.push("<option value=\"" + i.toString() + "\" " + (i == start ? "selected=\"selected\"" : "") + " >" + i.toString() + "个</option>");
-            html.push("</select> ");
+//            html.push("<div style=\"padding-left:10px;background:#E3F0F9; line-height:26px; font-size: 14px;\" >");
+//            html.push("<span style=\"float:right;padding-right:10px;\">");
+//            html.push("<select id=\"redselect\">");
+//            for (var i = start; i <= end; i++)
+//                html.push("<option value=\"" + i.toString() + "\" " + (i == start ? "selected=\"selected\"" : "") + " >" + i.toString() + "个</option>");
+//            html.push("</select> ");
 
-            html.push("<a class=\"button\" onclick=\"machineSelect(" + tID + ",'red');\" href=\"javascript:void(0)\">机选" + (tID == 10 ? "红球" : "前区") + "</a></span>请至少选择" + (tID == 20 ? "5" : tID == 10 ? "6" : "7") + "个号码<span id=\"redNotice\" style=\"color:Red;\"></span></div>");
+//            html.push("<a class=\"button\" onclick=\"machineSelect(" + tID + ",'red');\" href=\"javascript:void(0)\">机选" + (tID == 10 ? "红球" : "前区") + "</a></span>请至少选择" + (tID == 20 ? "5" : tID == 10 ? "6" : "7") + "个号码<span id=\"redNotice\" style=\"color:Red;\"></span></div>");
         }
 
         html.push("<div id=\"redArea\">");
@@ -266,26 +277,26 @@ function createBallPanle(kind) {
         html.push("</div> ");
         
         if (tID == 10 || tID == 20) {
-            html.push("<div id=\"divblue\" class=\"number2\">");
-            html.push("<div style=\"padding-left:10px;background:#E3F0F9;line-height:26px;font-size:14px;\">");
-            html.push("<span style=\"float:right; padding-right:10px;\">");
+//            html.push("<div id=\"divblue\" class=\"number2\">");
+//            html.push("<div style=\"padding-left:10px;background:#E3F0F9;line-height:26px;font-size:14px;\">");
+//            html.push("<span style=\"float:right; padding-right:10px;\">");
             start = tID == 10 ? 1 : 2;
             end = tID == 10 ? 16 : 8;
             maxLength = tID == 10 ? 16 : 12;
-            html.push("<select id=\"blueselect\">");
-            for (var i = start; i <= end; i++)
-                html.push("<option value=\"" + i.toString() + "\" " + (i == start ? "selected=\"selected\"" : "") + " >" + i.toString() + "个</option>");
-            html.push("</select> ");
-            html.push("<a class=\"button2\" onclick=\"machineSelect(" + tID + ",'blue');\" href=\"javascript:void(0)\">机选" + (tID == 10 ? "蓝球" : "后区") + "</a></span>请至少选择" + (tID == 10 ? "1" : "2") + "个号码<span id=\"blueNotice\" style=\"color:Red;\"></span></div>");
-            html.push("<div id=\"blueArea\">");
+////            html.push("<select id=\"blueselect\">");
+////            for (var i = start; i <= end; i++)
+////                html.push("<option value=\"" + i.toString() + "\" " + (i == start ? "selected=\"selected\"" : "") + " >" + i.toString() + "个</option>");
+////            html.push("</select> ");
+////            html.push("<a class=\"button2\" onclick=\"machineSelect(" + tID + ",'blue');\" href=\"javascript:void(0)\">机选" + (tID == 10 ? "蓝球" : "后区") + "</a></span>请至少选择" + (tID == 10 ? "1" : "2") + "个号码<span id=\"blueNotice\" style=\"color:Red;\"></span></div>");
+////            html.push("<div id=\"blueArea\">");
             html.push(createballpanle_ssq_dlt(minLength, maxLength,"blue"));
-            html.push("</div>");
-            html.push("</div>");
+//            html.push("</div>");
+//            html.push("</div>");
         }
     }
     else if (kID == 1) { //机选
-    html.push("<div id=\"divMachine\" class=\"number\" style=\"padding-left:10px; padding-top:5px;\" >机选：<input type=\"text\" id=\"caseNotes\" class=\"textWH\" maxlength=\"2\" size=\"2\" value=\"5\" onkeyup=\"getParsetInt(this);\" /> <input type=\"button\" id=\"btnMachine\" onclick=\"machineRandom();\" value=\"开始机选\" /></div>");
-        html.push("<div id=\"divMachineCase\" class=\"number3\" style=\"padding-left:10px; padding-top:5px; font-weight:normal;\"></div>");
+//    html.push("<div id=\"divMachine\" class=\"number\" style=\"padding-left:10px; padding-top:5px;\" >机选：<input type=\"text\" id=\"caseNotes\" class=\"textWH\" maxlength=\"2\" size=\"2\" value=\"5\" onkeyup=\"getParsetInt(this);\" /> <input type=\"button\" id=\"btnMachine\" onclick=\"machineRandom();\" value=\"开始机选\" /></div>");
+//        html.push("<div id=\"divMachineCase\" class=\"number3\" style=\"padding-left:10px; padding-top:5px; font-weight:normal;\"></div>");
         
     }
     else if (kID == 3) { //胆拖
@@ -1285,7 +1296,7 @@ function preBuy(bk) {
 //             		showMS("购买成功,祝君好运中大奖!",function(){
 //             			setTimeout(function() { window.location.href = "/user/project.html?lotid="+gid+"&projid="+xproid;}, (2 * 1000));
 //             		});
-             		$("#issuc a.btn-true").attr("href","/user/project.html?lotid="+gid+"&projid="+xproid)
+             		$("#cpid").attr("href","/user/project.html?lotid="+gid+"&projid="+xproid)
              		issuc(true);
              	
              	
