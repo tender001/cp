@@ -9,38 +9,44 @@
     <title>合买详情_159彩票网</title>
     <link rel="stylesheet" href="/css/basic.css" type="text/css"/>
     <link rel="stylesheet" href="/css/style.css" type="text/css"/>
+    <script src='/js/jquery.js'></script>
+	<script src='/js/159cp.js'></script>
+	<script src='/js/base.js'></script>
+	<script src='/js/login.js'></script>
+	<script src='/js/public/project.js'></script>
 </head>
 <body>
+<!--#include virtual="/cc/header.html"-->
 <section class="buyHeader">
-    <h1>合买详情</h1>
+    <h1>方案详情</h1>
     <a href="#" class="backIco2"></a>
     <a href="/" class="goHome"></a>
 </section>
 
 <div class="top-margin">
     <section>
-        <div class="hemai">
+        <div class="hemai" id="tobuy">
             <div class="pd063">
-                <p class="yellow" style="display:block">亲，您的合买已发起成功，祝您中大奖！</p>
+                <p class="yellow" style="display:none;">亲，您的合买已发起成功，祝您中大奖！</p>
 
                 <div class="clearfix pdTop08">
-                    <h2 class="left fontSize1">竞彩-胜平负</h2>
-                    <cite class="left gray pdLeft06">20141219期</cite>
-                    <a href="javascript:main_return_confirm();" style="display:block;" class="cance right">撤单</a>
+                    <h2 class="left fontSize1" mark="title"></h2>
+                    <cite class="left gray pdLeft06" mark="expect"></cite>
+                    <a href="javascript:main_return_confirm();" style="display:none;" class="cance right">撤单</a>
                 </div>
             </div>
-            <div class="hmTxt"><em class="fontSize095">中国竞彩研究团队</em> <cite class="gray pdLeft04">L746</cite>
+            <div class="hmTxt"><em class="fontSize095" id="mainname"></em> <cite class="gray pdLeft04" id="mainzhanji">L0</cite>
             </div>
             <div class="hmTxt relative clearfix" style="padding-right:0">
         	<span class="left w3_6 mgTop04">
             	<cite class="per" id="rg">69%</cite>
-                <em class="pro mgTop06" id="bd">保55%</em>
+                <em class="pro mgTop06" id="baoodi"></em>
             </span>
 
                 <div class="gray left w15">
-                    <p id="rgDetail">总额<em class="yellow">18888元</em>(保底10500元，提成10%)</p>
+                    <p id="rgDetail">总额<em class="yellow">元</em>(保底元，提成%)</p>
 
-                    <p class="pdTop08">剩余<em class="yellow">56753元</em></p>
+                    <p class="pdTop08" id="surplus">剩余<em class="yellow">元</em></p>
                 </div>
             </div>
             <div class="progress relative mgTop2 mgLeft05">
@@ -68,12 +74,16 @@
             <p class="progressTxt pdTop03"><span>发起</span><cite>出票成功</cite>
                 <s>开奖</s>
                 <i>派奖</i></p>
-            <div class="since mgTop06 clearfix" style="display:block"><i>开奖号码</i><span
-                    class="sinceTxt">233363232323</span></div>
-            <div class="since mgTop06 clearfix" style="display:block"><i>中奖情况</i><span
+            <div class="since mgTop06 clearfix" style="display:none;" id="zgCode"><i>开奖号码</i><span
+                    class="sinceTxt"></span></div>
+            <div class="since mgTop06 clearfix" style="display:none;" id="zgzjSituation"><i>中奖情况</i><span
                     class="sinceTxt">中奖了，是不可能的</span></div>
-            <a href="javascript:;" class="hmTxt hmTxt2 mgTop06 clearfix"><span class="left">投注内容</span>
+            <a href="javascript:;" class="hmTxt hmTxt2 mgTop06 clearfix" id="zgContent"><span class="left">投注内容</span>
                 <cite class="right black">截止后对跟单用户公开</cite><em class="hmArrow"></em></a>
+                
+                
+                
+            <div class="pd063 lcbetText" id="clasli"></div>
             <a href="javascript:partake();" class="hmTxt hmTxt2 clearfix"><span class="left">跟单用户</span> <cite
                     class="yellow right">2675人</cite><em class="hmArrow"></em></a>
             <a href="javascript:record();" class="hmTxt hmTxt2">我的认购<em class="hmArrow"></em></a>
@@ -144,6 +154,9 @@
 
 </div>
 
-
+<input type="hidden" id="lotid" value="0" />
+<input type="hidden" id="proid" value="0" />
+<input type="hidden" id="lnums" value="0" />
+<input type="hidden" id="baodi" value="0" />
 </body>
 </html>
