@@ -368,10 +368,10 @@
 .progressHover cite{position:absolute;display:block;width:0.85rem;height:0.85rem;border-radius:0.85rem;background-color:#f40}
 .progressHover s{position:absolute;display:block;height:0.33rem;width:5.34rem;background-color:#f40;border-top:0;top:.36rem}
 .progressTxt{margin-left:.5rem}
-.progressTxt span,.progressTxt cite,.progressTxt o,.progressTxt i{display:inline-block;color:#606060;}
+.progressTxt span,.progressTxt cite,.progressTxt s,.progressTxt i{display:inline-block;color:#606060;}
 .progressTxt span{width:5.0rem}
 .progressTxt cite{width:6.5rem}
-.progressTxt o{width:5.5rem}
+.progressTxt s{width:5.5rem}
 .since{ background:#f3f3f3; border-bottom:1px solid #fff;font-size:1.12em}
 .since i,.sinceTxt{ float:left; padding:.625rem 0}
 .since i{ text-align:center; width:4.6rem; color:#606060}
