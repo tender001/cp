@@ -107,18 +107,17 @@
 /*新闻资讯*/
 .news-nav{width: 100%;height:2.7em;line-height:2.6em;overflow: hidden;}
 .news-nav .news-title{font-size: 1.14em;}
-.news-title a{padding:0.5em 0.6em;color: #333;}
-.news-title .cur{color: #f40;border-bottom: 2px solid #f40}
+.news-title a{padding:0.5em 0.6em;color: #333;border-bottom: 2px solid transparent;position: relative;bottom:-0.05em}
+.news-title .cur{color: #f40;border-color: #f40}
 .news-nav .more-news{float:right;width:0;margin-top:8px;font-size:0;border-width:7px 10px;border-style:solid;border-color: transparent transparent transparent #999}
-.news-bann{padding:10px 2%;border-top: 1px solid #ccc;}
+.news-bann{padding:10px 2% 0;border-top: 1px solid #ccc;}
 .news-bann img{width: 100%;max-height: 230px}
 .news-list-all a{color: #333}
 .news-list-all div{padding:0.8em 2%;border-bottom: 1px solid #ccc}
 .news-list-all h2{font-size: 1.13em;font-weight: normal;}
-.news-list-all span{color: #999;font-size: 1.12em;}
-.news-list-all span em{float: right}
-.news-list-all span strong{font-weight: normal}
-
+.news-list-all span{display:block;height:24px;color: #999;font-size: 1.12em;line-height: 2;;overflow: hidden}
+.news-list-all span em{float: right;padding-left:0.6em}
+.news-list-all span strong{font-weight: normal;}
 .news-top,.m-reg{margin-top: 3.3rem;padding: 10px 3%;border-top:1px solid #ddd}
 .news-top{margin-bottom:4.6rem}
 .news-tit{padding:0 0 0.4em;border-bottom: 1px dotted #ccc}
@@ -401,5 +400,23 @@ a.hmTxt2{ display:block; color:#606060; padding-right:1.4rem; position:relative}
 .hmbuyInput{border:1px solid #d5d5d5}
 .hm-xq .hmbuyInput{line-height:1.5em;font-size: 1.14em;vertical-align:baseline}
 .kjFloat{padding-top:1em;background-color: #f0f0f0}
+/*合买*/
+.hm-search{padding: 1em 4%;overflow: hidden}
+.hm-search li{float: left;text-align: right}
+.hm-search li:first-of-type{width: 80%;}
+.hm-search li:last-of-type{width: 20%;}
+.hm-search li input{width:98.8%;padding: 0.6em 0 0.6em 0.7em;border:1px solid #ccc;background-color: transparent;vertical-align: top}
+.hm-search li a{display:inline-block;width:3em;height:28px;line-height:28px;font-size: 1.14em;color:#333;text-align:center;border: 1px solid #ccc;background-color: #f0f0f0}
+.fa-hm-list nav{display: table;width:100%;border-top: 1px solid #ccc;border-bottom: 1px solid #ccc}
+.fa-hm-list nav a{display: table-cell;padding: 0.6em 0;font-size: 1.14em;color:#333;text-align:center;background-color: #f0f0f0}
+.hm-list{width: 100%;padding:0.4em 0;overflow: hidden;border-bottom: 1px solid #ccc;position: relative}
+.hm-list .fl{width: 25%;}
+.hm-list dl{float: right;width: 75%;font-size: 1.14em}
+.peo-name{display: block;padding-top: 10px;color: #f40}
+.peo-name em{margin-left:0.5em;padding: 1px 3px;border: 1px solid #f40}
+.peo-hm{display:table;width:100%}
+.peo-hm span{display: table-cell;width: 33%;padding:0.3em 0;text-align: center}
+.peo-hm span:first-of-type{text-align: left}
+.hm-list i{position:absolute;top:2em;right:10px;width:8px;height: 8px;overflow: hidden;border-width:2px;border-style: solid;border-color:transparent #ccc #ccc transparent;-webkit-transform: rotate(45deg);-moz-transform: rotate(45deg);-o-transform: rotate(45deg);transform: rotate(45deg);}
 
 
