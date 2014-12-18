@@ -1,93 +1,149 @@
 <!DOCTYPE html>
 <html>
-<head><title>
-	方案详情-159彩票网
-</title>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=1;' name='viewport' />
-<meta content='yes' name='apple-mobile-web-app-capable' />
-<meta content='black' name='apple-mobile-web-app-status-bar-style' />
-<meta content='telephone=no' name='format-detection' />
-<script src='/js/jquery.js'></script>
-<script src='/js/159cp.js'></script>
-<script src='/js/base.js'></script>
-<script src='/js/login.js'></script>
-<script src='/js/project.js'></script>
-<link rel='stylesheet' href='/style/main.css' />
-<link href="/images/apple-touch-icon.png" rel="apple-touch-icon-precomposed" /> 
-<link rel='stylesheet' href='/style/user.css' /></head>
-<style>
-        section div { padding: 2px 0px 2px 5px; }
-.title{line-height:30px;padding-left:5px;border-top:1px solid #B3D2F2;font-weight:bold;background:#D6EBCA;background: -webkit-gradient(linear,0 0,0 100%,from(#F1FBFE),to(#DAEEFD));border-bottom:1px solid #B3D2F2; font-size:18px}
-        label { color: Blue; padding: 2px 0px 2px 0px; }
-        .spitems { color: white; background-color: #F56202; display: inline-block; border: 1px solid #D55500; line-height: 20px; margin: 0 2px; padding: 0 2px; word-break: keep-all; white-space: nowrap; }
-        .spitems2 { color: white; background-color: #999; border: 1px solid black; line-height: 20px; display: inline-block; margin: 0 2px; padding: 0 2px; }
-        .ni0 { background: #EBEFF1; padding: 5px; line-height: 22px; word-break:break-all; }
-        .ni1 { padding: 5px; line-height: 22px;word-break:break-all; }
-</style>
+<head>
+    <meta charset="UTF-8">
+    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=1' name='viewport'/>
+    <meta content='yes' name='apple-mobile-web-app-capable'/>
+    <meta content='black' name='apple-mobile-web-app-status-bar-style'/>
+    <meta content='telephone=no' name='format-detection'/>
+    <title>合买详情_159彩票网</title>
+    <link rel="stylesheet" href="/css/basic.css" type="text/css"/>
+    <link rel="stylesheet" href="/css/style.css" type="text/css"/>
 </head>
 <body>
-<!--#include virtual="/cc/login.html"-->
-<section>
-	<div id="dvLotDesc" class="title">方案描述</div>
-    <div id="dvLotDesCont" style="padding:6px"><span id="pdesc" style="color:Blue;">&nbsp;</span></div>
+<section class="buyHeader">
+    <h1>合买详情</h1>
+    <a href="#" class="backIco2"></a>
+    <a href="/" class="goHome"></a>
 </section>
-<section>
-	<div class="title">方案详情</div>
-    <div style="padding:6px">
-        <label>彩种：</label><span style="color:blue;" id="gname"></span><br/>
-        <label>发起人：</label><span style="color:Red;" id="mainname"></span><br/>
-        <label>金额：</label><span id="tmoney"></span><br/>
-        <label>已认购：</label><span style="color:Red" class="bmoney">-</span>元(<span style="color:Red" class="proc">-</span>)
-        <br/><label>保底：</label><span style='color:red' class="pnum" id="pnum"></span><span id="baoodi"></span><br/>
-        <label>发起人提成：</label><span id="rate"></span><br/>
-        <label>发起：</label><span id="ptime"></span><br/>
-        <label>状态：</label><span id="state"></span><br/>
-    </div>
-</section>
-<section id="bymain" style="display:none;">
-    <div class="title">方案操作</div>
-    <div style="padding:6px">
-        <input type="button" class="btnC" onclick="JQConfirm('确定撤销方案吗？','maincal()')" value="撤销方案" />
-   </div>
-</section>
-<section id="tobuy" style="display:none;">
-    <div class="title">我要认购</div>
-    <div style="padding:6px">
-		方案总金额<span style="color:Red" id="pmoney">-</span>元<br>
-		已认购<span style="color:Red" class="bmoney">-</span>元(<span style="color:Red" class="proc">20%</span>)<br />
-    	<label>还可以认购<span style="color:Red" class="lnum">-</span>元</label><br/>
-    	我要认购<input id="hmRenGou" size="10" type="text" onkeydown="getParsetInt(this);" value="1"/>元<br/>
-        <input type="button" class="btnC" onclick="JQConfirm('确定认购吗？','tobuy()')" value="确定认购" />
-   </div>
-</section>
-<section id="tobd" style="display:none;">
-    <div class="title">追加保底</div>
-    <div style="padding:6px">
-		<label>可保底<span style="color:Red" class="lnum">-</span>元</label><br/>
-		追加保底<input id="hmBaoDi" size="10" type="text" onkeydown="getParsetInt(this);" value="1"/>元<br/>
-		<input type="button" class="btnC" onclick="JQConfirm('确定保底？','tobaodi()')" value="确认" />
-    </div>
-</section>
-<section id="tocontent">
-    <div class="title">投注内容</div>
-    <div style="padding:6px;" id="content">加载中...</div>
-</section>
-<section id="wins" style="display:none;">
-    <div class="title">中奖情况</div>
-    <div id="windetail"></div>
-</section>
-<section id="prodetail">
-    <div class="title">代购详情</div>
-    <div id="buyrec">
-    	您的认购记录如下：<br/>加载中...
-    </div>
-</section>
-<!--#include virtual="/cc/footer.html"-->
-<input type="hidden" id="lotid" value="0" />
-<input type="hidden" id="proid" value="0" />
-<input type="hidden" id="lnums" value="0" />
-<input type="hidden" id="baodi" value="0" />
-</body>
 
+<div class="top-margin">
+    <section>
+        <div class="hemai">
+            <div class="pd063">
+                <p class="yellow" style="display:block">亲，您的合买已发起成功，祝您中大奖！</p>
+
+                <div class="clearfix pdTop08">
+                    <h2 class="left fontSize1">竞彩-胜平负</h2>
+                    <cite class="left gray pdLeft06">20141219期</cite>
+                    <a href="javascript:main_return_confirm();" style="display:block;" class="cance right">撤单</a>
+                </div>
+            </div>
+            <div class="hmTxt"><em class="fontSize095">中国竞彩研究团队</em> <cite class="gray pdLeft04">L746</cite>
+            </div>
+            <div class="hmTxt relative clearfix" style="padding-right:0">
+        	<span class="left w3_6 mgTop04">
+            	<cite class="per" id="rg">69%</cite>
+                <em class="pro mgTop06" id="bd">保55%</em>
+            </span>
+
+                <div class="gray left w15">
+                    <p id="rgDetail">总额<em class="yellow">18888元</em>(保底10500元，提成10%)</p>
+
+                    <p class="pdTop08">剩余<em class="yellow">56753元</em></p>
+                </div>
+            </div>
+            <div class="progress relative mgTop2 mgLeft05">
+                <em></em>
+                <i></i>
+                <em></em>
+                <i></i>
+                <em></em>
+                <i></i>
+                <em></em>
+
+                <div class="clear"></div>
+                <cite class="waitKj" id="s_paint" style="left: 2rem;">等待出票</cite>
+
+                <div class="progressHover" id="f_paint" style="width: 3.5rem;">
+                    <cite></cite>
+                    <s class="barLine"></s>
+                    <cite class="barCircle2"></cite>
+                    <s class="barLine2"></s>
+                    <cite class="barCircle3"></cite>
+                    <s class="barLine3"></s>
+                    <cite class="barCircle4"></cite>
+                </div>
+            </div>
+            <p class="progressTxt pdTop03"><span>发起</span><cite>出票成功</cite>
+                <o>开奖</o>
+                <i>派奖</i></p>
+            <div class="since mgTop06 clearfix" style="display:block"><i>开奖号码</i><span
+                    class="sinceTxt">233363232323</span></div>
+            <div class="since mgTop06 clearfix" style="display:block"><i>中奖情况</i><span
+                    class="sinceTxt">中奖了，是不可能的</span></div>
+            <a href="javascript:;" class="hmTxt hmTxt2 mgTop06 clearfix"><span class="left">投注内容</span>
+                <cite class="right black">截止后对跟单用户公开</cite><em class="hmArrow"></em></a>
+            <a href="javascript:partake();" class="hmTxt hmTxt2 clearfix"><span class="left">跟单用户</span> <cite
+                    class="yellow right">2675人</cite><em class="hmArrow"></em></a>
+            <a href="javascript:record();" class="hmTxt hmTxt2">我的认购<em class="hmArrow"></em></a>
+
+            <div class="hmTxt gray mgTop06 line-h-15">
+                方案宣言:刚刚精选18万单子没有意外再度拿下37万奖金，18万最靠谱，稳扎稳打发起一票周中德甲分红单再度稳稳拿下40万奖金，中奖2千多列网站榜首，是网站第一高手。认准榜首，定制跟单，兄弟们一起继续合买分红！中国竞彩研究团队研究足彩10余载，擅长分析足彩盘路和水位，对个联赛球队实力资深研究，究根究底，收集足坛最近资讯。,一直坚持发稳单重注奖金优化翻倍盈利，对广大跟单朋友负责。是本网站最稳妥的合买！
+            </div>
+            <div class="pd063 gray" id="tDetail"><p>编号 :72HM2014121697929084</p>
+
+                <p>时间 : 2014-12-16 15:23:54</p></div>
+        </div>
+        <!--<div id="zigou" style="display: none;">
+        <p class="yellow pdLeft06 pdTop06" style="display:none;">亲，您已购彩成功，祝你中大奖</p>
+        <p class="clearfix pd063 fontSize095"></p>
+        <div class="progress relative mgTop2 mgLeft05">
+            <em></em>
+            <i></i>
+            <em></em>
+            <i></i>
+            <em></em>
+            <i></i>
+            <em></em>
+            <div class="clear"></div>
+            <cite style="left: 1rem;" id="s_paint_zg" class="waitKj"></cite>
+            <div id="f_paint_zg" class="progressHover" style="width: 2.2rem;">
+                <cite></cite>
+                <o class="barLine"></o>
+                <cite class="barCircle2"></cite>
+                <o class="barLine2"></o>
+                <cite class="barCircle3"></cite>
+                <o class="barLine3"></o>
+                <cite class="barCircle4"></cite>
+            </div>
+        </div>
+
+        <p class="progressTxt pdTop03"><span>发起</span><cite>出票成功</cite><o>开奖</o><i>派奖</i></p>
+        <div class="since mgTop06 clearfix" id="faje"><i>方案金额</i><span class="gray sinceTxt"></span></div>
+        <div class="since clearfix yellow" id="zgzjSituation"><i>中奖情况</i><span class="sinceTxt"></span></div>
+        <div class="since mgTop06 clearfix" id="zgCode"><i>开奖号码</i><span class="sinceTxt"></span></div>
+        <div class="since clearfix" id="zgContent">
+            <i>投注内容</i>
+            <div class="gray sinceTxt">
+            </div>
+        </div>
+        <div class="pd063 lcbetText" id="clasli">
+        </div>
+        <p class="pdLeft08" id="jcts" style="display:none;">*上述sp值仅为投注时的参考值，非计奖sp值</p>
+        <div id="zgDetail">
+            <p class="pdLeft08 pdTop03">编号 <em class="gray"></em></p>
+            <p class="pdLeft08">时间  <em class="gray"></em></p>
+        </div>
+        <div class="pd063" style="display:none;"><a href="recharge.html" class="payment">继续购买此方案</a></div>
+    </div>-->
+    </section>
+    <footer class="buyFooter hm-xq">
+        <div class="fixed buyFloat">
+            <span class="left pdLeft06">认购
+                <input type="number" value="1" class="hmbuyInput"  onfocus="this.select()">元</span>
+            <a href="javascript:;" class="ture">购买</a>
+        </div>
+    </footer>
+
+    <footer class="buyFooter1" style="display:none;">
+        <div class="fixed kjFloat">
+            <a  href="#" class="btn btn-true">去投注</a>
+        </div>
+    </footer>
+
+</div>
+
+
+</body>
 </html>
