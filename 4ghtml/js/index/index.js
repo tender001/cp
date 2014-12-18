@@ -3,14 +3,14 @@ $(document).ready(function() {
 	init();
 });
 var init=function() {
-	TouchSlide({ 
-		slideCell:"#focus",
-		titCell:".hd ul", //开启自动分页 autoPage:true ，此时设置 titCell 为导航元素包裹层
-		mainCell:".bd ul", 
-		effect:"leftLoop", 
-		autoPlay:true,//自动播放
-		autoPage:true //自动分页
-	});
+//	TouchSlide({ 
+//		slideCell:"#focus",
+//		titCell:".hd ul", //开启自动分页 autoPage:true ，此时设置 titCell 为导航元素包裹层
+//		mainCell:".bd ul", 
+//		effect:"leftLoop", 
+//		autoPlay:true,//自动播放
+//		autoPage:true //自动分页
+//	});
 	setInterval(function() {
         autoScroll()
     },4e3);
@@ -19,6 +19,16 @@ var init=function() {
     })
 	
 };
+//var getImageWidth=function (fun){
+//	var winWidth = $(".focus").width();
+//	var width_img =  $(".bd li").length;
+//	$(".bd li").width(winWidth);
+//	$("#focus").width(winWidth);
+//	$(".bd").width((width_img * winWidth));
+//	var winheight = $(".bd li:eq(0)").height();
+//	$("#focus").height(winheight);
+//	if(fun instanceof Function)fun(-winWidth*len,-winheight);
+//}
 var  autoScroll=function() {
     this.$(".zj_tipBox").animate({
         marginTop: "-28px"
