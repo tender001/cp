@@ -149,6 +149,8 @@ Class({
 								else if(success==0){
 									html +="<td>" +"处理中"+ "</td>";
 								
+								}else if(success==4){
+									html +="<td>" +"银行付款中"+ "</td>";
 								}
 								else{
 									html +="<td>" +"失败"+ "</td>";
