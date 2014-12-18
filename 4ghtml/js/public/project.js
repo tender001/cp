@@ -51,7 +51,7 @@ showproj = function(option){
 	title.push(option.data.Resp.row.itype == 0 ? "自购" : "合买");
 	$("#gname").html(title.join(""));
 	var gid,lotid=$("#lotid").val();
-	var periodid =option.data.Resp.row.periodid;
+	var periodid,pid =option.data.Resp.row.periodid;
 	var zhanji = option.data.Resp.row.zhanji;
 	$("[mark=title]").html($_sys.getlotname($("#lotid").val()));
 	$("[mark=expect]").html(periodid);
@@ -68,6 +68,8 @@ showproj = function(option){
 	var hid = option.data.Resp.row.projid;
 	var award = option.data.Resp.row.award;
 	var ifile = option.data.Resp.row.ifile;
+	var ccodes = option.data.Resp.row.ccodes;
+	var source = option.data.Resp.row.source
 	$("#tmoney").html((nums/2)+"注 "+mulity+"倍 <span style=\"color:Red;\">"+nums+"</span>元");
 	$("#pmoney").html(nums);
 	$.each($(".bmoney"),function(o,lt){
@@ -211,16 +213,17 @@ showproj = function(option){
                 wininfostr = "<font class='yellow'>此方案共中奖" + rmoney + "元</font>"
             }
             wininfostr += "<br/>(" + "税前<font class='yellow'>" + parseFloat(rmoney) + "元</font>,税后<font class='yellow'>" + parseFloat(tax) + "元</font>)";
-            var zj = $_sys_getwininfo(gid, wininfo, pid);
-            for (var i = 0; i < zj.length; i++) {
-                wininfostr += "<br/>" + zj[i][0] + " " + zj[i][1] + "注"
-            }
+//            var zj = $_sys_getwininfo(gid, wininfo, pid);
+//            for (var i = 0; i < zj.length; i++) {
+//                wininfostr += "<br/>" + zj[i][0] + " " + zj[i][1] + "注"
+//            }
             if (itype == 1 && istate != 3 && istate != 4) {
                 wininfostr += "<br />发起人提成:" + parseFloat(owins) + "元,每元中" + parseFloat(avg) + "元"
             }
         } else {
             wininfostr += "未中奖"
         }
+        $("#surplus").hide();
         $("#zgzjSituation").show();
         $("#zgzjSituation span").html(wininfostr)
     } else {
@@ -235,7 +238,8 @@ showproj = function(option){
             $("#zgCode").hide();
             $("#zgContent").hide();
             $("#clasli").show();
-            bd_jc_clasli(lotid, pid, hid, ccodes, source)
+            
+//            bd_jc_clasli(lotid, pid, hid, ccodes, source)
         } else if (lotid == 80 || lotid == 81 || lotid == 82 || lotid == 83) {
             $("#zgCode").hide();
             $("#zgContent").hide();
@@ -383,7 +387,7 @@ showcode=function(option){
 			}
 		}else{
 			html.push(PIOPEN[iopen]);
-			$("#content").html(html.join("<br/>"));
+			$("#content").html(html.join(""));
 		}
 	}
 };
@@ -617,40 +621,61 @@ showjccode=function(option){
 		var lls = new String(r.lose).split("|");
 		var lose = lls.length > 1 ? (gid == 95 ? lls[1] : lls[2]) : r.lose;
 		var cancel = r.cancel;
-		var html = "<div class='ni" + i%2 + "'>";
+		var id = r.id;
+		var id2 = id.substring("6", "9");
+		var name = r.name;
+		
+//		<tr id="141217001">
+//			<td width="15%" rowspan="2">周三<br>001</td>
+//			<td width="70%">泰国<em class="fontSize07">VS</em>马来西亚<span style="color:red" id="dan141217001"></span></td>
+//			<td width="15%" class="r9last" rowspan="2">半0:0<br>全2:0</td>
+//		</tr>
+		
+		var html = "<tr id="+id+">";
+		html += "<td width=\"15%\" rowspan=\"2\">"+(r.name==undefined?r.id:name.split(id2)[0])+"<br>"+id2+"</td>"
 		if(lose == 0 || gid == 91 || gid == 92 || gid == 93 | gid==70  || gid == 90){
 			if( gid == 94 || gid==96 || gid == 71){
-				html += "<label>["+(r.name==undefined?r.id:r.name)+"] "+r.vn+" VS "+r.hn+"</label><br>";
+				html += "<td width=\"70%\" >"+r.vn+"<em class=\"fontSize07\">VS</em>"+r.hn+"<span style=\"color:red\" id=\"dan"+id+"\"></span></td>";
 			}else{
-				html += "<label>["+(r.name==undefined?r.id:r.name)+"] "+r.hn+" VS "+r.vn+"</label><br>";
+				html += "<td width=\"70%\" >"+r.hn+"<em class=\"fontSize07\">VS</em>"+r.vn+"<span style=\"color:red\" id=\"dan"+id+"\"></span></td>";
 			}
 			
 		} else {
 			if( gid == 95){
-				html += "<label>["+(r.name==undefined?r.id:r.name)+"] "+r.vn+" ";
-				html += (parseFloat(lose) > 0) ? "<span style='color:Red'>(<b>+"+lose+"</b>)</span>" : "<span style='color:green'>(<b>"+lose+"</b>)</span>";
-				html += r.hn+" </label><br>";
+				html += "<td width=\"70%\" > "+r.vn+" ";
+				html += (parseFloat(lose) > 0) ? "<em class=\"fontSize07\" style='color:Red'>("+lose+")</em>" : "<em class=\"fontSize07\" style='color:green'>("+lose+")</em>";
+				html += r.hn+" <span style=\"color:red\" id=\"dan"+id+"\"></span></td>";
 			}else{
-				html += "<label>["+(r.name==undefined?r.id:r.name)+"] "+r.hn+" ";
-				html += (parseFloat(lose) > 0) ? "<span style='color:Red'>(<b>+"+lose+"</b>)</span>" : "<span style='color:green'>(<b>"+lose+"</b>)</span>";
-				html += r.vn+" </label><br>";
+				html += "<td width=\"70%\" >"+r.hn+" ";
+				html += (parseFloat(lose) > 0) ? "<em class=\"fontSize07\" style='color:Red'>(+"+lose+"</b>)</em>" : "<em class=\"fontSize07\" style='color:green'>("+lose+"</)</em>";
+				html += r.vn+" <span style=\"color:red\" id=\"dan"+id+"\"></span></td>";
 			}
 			
 		}
-		html += "<div>比赛时间: "+bt.toDate().format('MM-DD hh:mm')+"</div>";
+//		html += "</tr>";
+//		html += "<div>比赛时间: "+bt.toDate().format('MM-DD hh:mm')+"</div>";
 		var rst = false;
+		if(cancel == 0){
+			if(new String(r.hs).length > 0 && new String(r.vs).length > 0 && new String(r.hss).length > 0 && new String(r.vss).length > 0 ){
+				rst = true;
+			}
+		} else {
+			rst = true;
+			mrs = "*";
+		}
+		html += "<td width=\"15%\" class=\"r9last\" rowspan=\"2\">";
+		if(rst){
+			mrs = mrs == "*" ? mrs : getjcrs(gg, r.hs, r.vs, r.hhs, r.hvs, (gg==97?lls[3]:lose));
+			html += "半" + "(" + r.hhs + ":" + r.hvs + ")"+ (gg == 92 ? "全：("+r.hs+":"+r.vs+")" : "") +  " 赛果：<span style='color:Red'>" + $_sys.getJJCode(gg,"K" + mrs) + "</span><br/>";
+		}else{
+			
+		}
+		html += "</td>";
 		var mrs = "";
 		if(gid == 70 || gid == 71){
-			if(cancel == 0){
-				if(new String(r.hs).length > 0 && new String(r.vs).length > 0 && new String(r.hss).length > 0 && new String(r.vss).length > 0 ){
-					rst = true;
-				}
-			} else {
-				rst = true;
-				mrs = "*";
-			}
 			
-			html += "<div class='hunheItem'>";
+//			<td width="15%" class="r9last" rowspan="2">半0:0<br>全2:0</td>
+			html += "<tr><td><div class=\"tdleft gray\">";
 			for(var k = 0; k < jcobj.item.length;k++){
 				if(jcobj.item[k][0] == r.id){
 					var cc = jcobj.item[k][1].split("+");
@@ -665,13 +690,13 @@ showjccode=function(option){
 							mrs = mrs == "*" ? mrs : getjcrs(gg, r.hs, r.vs, r.hhs, r.hvs, (gg==97?lls[3]:lose));
 							
 						}
-						html += "玩法:<span style='color:green'>" + $_sys.getlotname(gg,2) + "</span>";
+						html += "玩法:<em style='color:green'>" + $_sys.getlotname(gg,2) + "</em>";
 						if(gg == 72 || gg == 95 || gg == 97){
 							if(lose != 0){
-								html += (parseFloat(lose)>0 ? "<span style='color:Red'>(<b>+"+lose+"</b>)</span>" : "<span style='color:green'>(<b>"+lose+"</b>)</span>");
+								html += (parseFloat(lose)>0 ? "<em style='color:Red'>(<b>+"+lose+"</b>)</em>" : "<em style='color:green'>(<b>"+lose+"</b>)</em>");
 							}
 						}
-						html += "<br/>";
+					
 						html += "投注:";
 						var cs = ps[1].split("/");
 						for(var n = 0; n < cs.length; n++){
@@ -684,14 +709,12 @@ showjccode=function(option){
 						if(jcobj.item[k][2]==1){
 							html += "<span style='color:red'>(胆)</span>";
 						}
-						html += "<br/>";
-						if(rst){
-							html += "比分：" + "(" + r.hs + ":" + r.vs + ")"+ (gg == 92 ? "半场比分：("+r.hhs+":"+r.hvs+")" : "") +  " 赛果：<span style='color:Red'>" + $_sys.getJJCode(gg,"K" + mrs) + "</span><br/>";
-						}
+						html += "</td>";
+						
 					}
 				}
 			}
-			html += "</div>";
+			html += "</tr>";
 		} else {
 			var hss = r.hss == undefined ? r.hhs : r.hss;
 			var vss = r.vss == undefined ? r.hvs : r.vss;
@@ -704,8 +727,8 @@ showjccode=function(option){
 				rst = true;
 				mrs = "*";
 			}
-			html += "<div class='hunheItem'>";
-			html += "投注：";
+			html += "<tr><td><div class=\"tdleft gray\">";
+		
 			for(var k = 0; k < jcobj.item.length;k++){
 				if(jcobj.item[k][0] == r.id){
 					var cc = jcobj.item[k][1].split("/");
@@ -723,19 +746,28 @@ showjccode=function(option){
 					break;
 				}
 			}
-			if(rst){
-				html += "比分：" + "(" + r.hs + ":" + r.vs + ")"+ ((gid == 87 || gid == 92) ? "半场比分：("+hss+":"+vss+")" : "") +  " 赛果：<span style='color:Red'>" + $_sys.getJJCode(gid,"K" + mrs) + "</span>";
-			}
-			html += "</div>";
+			
+			html += "</td></tr>";
 		}
-		html += "</div>";
+		
 		match.push(html);
 	});
-	match.push("<div>过关方式:<span style='color:red'>" + jcobj.pass + "</span></div>");
+//	match.push("<div>过关方式:<span style='color:red'>" + jcobj.pass + "</span></div>");
+	jcobj.pass=(jcobj.pass).replace(/\*/g, "串").replace(/1串1/g, "单关")
 	if(jcobj.filter == 1){
 		match.push("<div><span style='color:Red'>去除单一玩法串</span></div>");
 	}
-	$("#content").html(match.join(""));
+	if(gid==71||gid==94||gid==95||gid==96){
+		$("#content").append('<table width="100%" cellspacing="0" cellpadding="0" border="0" class="lcbetTitle mgTop06"><tbody><tr><td width="15%">场次</td><td width="70%">主队VS客队/投注选项</td><td width="15%" style="border-right:none">'+$_sys.getlotname(gid)+'</td></tr></tbody></table>')
+	}else{
+		$("#content").append('<table width="100%" cellspacing="0" cellpadding="0" border="0" class="lcbetTitle mgTop06"><tbody><tr><td width="15%">场次</td><td width="70%">客队VS主队/投注选项</td><td width="15%" style="border-right:none">'+$_sys.getlotname(gid)+'</td></tr></tbody></table>')
+	}
+	$("#jcts").show();
+	$("#content").append('<table width="100%" cellspacing="0" cellpadding="0" border="0" class="lcbetTable" id="tcont"><tbody>'+match.join("")+'</tbody></table>')
+	$("#content").append('<table width="100%" cellspacing="0" cellpadding="0" border="0" class="lcbetFooter"><tbody><tr><td>过关方式:   '+jcobj.pass+'</td></tr></tbody></table>')
+//	<tr id="141217001"><td width="15%" rowspan="2">周三<br>001</td><td width="70%">泰国<em class="fontSize07">VS</em>马来西亚<span style="color:red" id="dan141217001"></span></td><td width="15%" class="r9last" rowspan="2">半0:0<br>全2:0</td></tr><tr><td><div class="tdleft gray">&nbsp;<span><em class="yellow">胜</em>(1.28)</span></div></td></tr><tr id="141217003"><td rowspan="2">周三<br>003</td><td>马里迪莫<em class="fontSize07">VS</em>里斯本东方<span style="color:red" id="dan141217003"></span></td><td class="r9last" rowspan="2">半1:0<br>全1:1</td></tr><tr><td><div class="tdleft gray">&nbsp;<span>胜(1.23)</span></div></td></tr></tbody></table>
+	
+	//	$("#content").html('<table width="100%" cellspacing="0" cellpadding="0" border="0" class="lcbetTitle mgTop06"><tbody>'+match.join("")+'</tbody></table>');
 };
 tobuy = function(){
 	var bnum = parseInt($("#hmRenGou").val());
@@ -947,17 +979,17 @@ bd_jc_clasli = function(lotid, expect, projid, codes, source) {
                 html += '<table id="tcont" width="100%" border="0" cellpadding="0" cellspacing="0" class="lcbetTable">';
                 var r = R.find("row");
                 r.each(function(aa) {
-                    var id = $(this).attr("id");
-                    var name = $(this).attr("name");
-                    var hn = $(this).attr("hn");
-                    var gn = $(this).attr("gn");
-                    var hs = $(this).attr("hs");
-                    var gs = $(this).attr("gs");
-                    var hhs = $(this).attr("hhs");
-                    var hgs = $(this).attr("hgs");
-                    var isdan = $(this).attr("isdan");
-                    var lose = $(this).attr("lose");
-                    var ccodes = $(this).attr("ccodes");
+                    var id = aa.id;
+                    var name = aa.name;
+                    var hn = aa.hn;
+                    var gn = aa.gn;
+                    var hs = aa.hs;
+                    var gs = aa.gs;
+                    var hhs = aa.hhs;
+                    var hgs = aa.hgs;
+                    var isdan = aa.isdan;
+                    var lose = aa.lose;
+                    var ccodes = aa.ccodes;
                     var quan = "",
                     ban = "";
                     if (hs != "" && gs != "") {
@@ -993,15 +1025,15 @@ bd_jc_clasli = function(lotid, expect, projid, codes, source) {
         })
     } else {
         $.ajax({
-            url: "/data/guoguan/" + lotid + "/" + expect + "/proj/" + projid.toLowerCase() + ".xml",
+            url: "/cpdata/guoguan/" + lotid + "/" + expect + "/proj/" + projid.toLowerCase() + ".json",
             type: "GET",
-            dataType: "xml",
+            dataType: "json",
             cache: false,
-            success: function(xml) {
-                var R = $(xml).find("items");
-                var pid = R.attr("pid");
+            success: function(data) {
+                var R = data.items;
+                var pid = R.pid;
                 var wk = ["日", "一", "二", "三", "四", "五", "六"];
-                var r = R.find("item");
+                var r = R.item;
                 var chuan = codes.split("|")[2].replace(/\*/g, "串").replace(/1串1/g, "单关");
                 var html = "";
                 html = '<table width="100%" border="0" cellpadding="0" cellspacing="0" class="lcbetTitle mgTop06"><tr>';
@@ -1018,15 +1050,15 @@ bd_jc_clasli = function(lotid, expect, projid, codes, source) {
                     var jqsstr = ["0", "1", "2", "3", "4", "5", "6", "7"];
                     var bqcstr = ["3-3", "3-1", "3-0", "1-3", "1-1", "1-0", "0-3", "0-1", "0-0"];
                     r.each(function(a) {
-                        var hn = $(this).attr("hn");
-                        var vn = $(this).attr("vn");
-                        var lose = $(this).attr("lose");
-                        var c = parseInt($(this).attr("cancel"));
-                        var hs = $(this).attr("hs");
-                        var vs = $(this).attr("vs");
-                        var hhs = $(this).attr("hhs");
-                        var hvs = $(this).attr("hvs");
-                        var spvalue = $(this).attr("spvalue");
+                        var hn = a.hn;
+                        var vn = a.vn;
+                        var lose = a.lose;
+                        var c = parseInt(a.cancel);
+                        var hs = a.hs;
+                        var vs = a.vs;
+                        var hhs = a.hhs;
+                        var hvs = a.hvs;
+                        var spvalue = a.spvalue;
                         var spvalues = spvalue.split("|");
                         var quan = "",
                         ban = "";
@@ -1044,10 +1076,10 @@ bd_jc_clasli = function(lotid, expect, projid, codes, source) {
                                 rq = "(<font color='red'>" + lose + "</font>)"
                             }
                         }
-                        var hsstr = $(this).attr("hs").trim();
+                        var hsstr = a.hs.trim();
                         var result = "";
                         var lose1 = parseFloat(lose);
-                        var id = $(this).attr("id");
+                        var id = a.id;
                         var tDATE = "20" + id.substr(0, 2) + "-" + id.substr(2, 2) + "-" + id.substr(4, 2);
                         tDATE = new Date(tDATE);
                         var wk2 = "周" + wk[tDATE.getDay()];
@@ -1252,9 +1284,9 @@ bd_jc_clasli = function(lotid, expect, projid, codes, source) {
                     var dxfstr = ["3", "0"];
                     var sfcstr = ["11", "12", "13", "14", "15", "16", "01", "02", "03", "04", "05", "06"];
                     r.each(function(a) {
-                        var hn = $(this).attr("hn");
-                        var vn = $(this).attr("vn");
-                        var lose = $(this).attr("lose");
+                        var hn = a.hn;
+                        var vn = a.vn;
+                        var lose = a.lose;
                         var rq = "";
                         if (lose != "" && codes.indexOf("RFSF") != -1) {
                             if (lose.split("|")[1] == 0) {
@@ -1267,10 +1299,10 @@ bd_jc_clasli = function(lotid, expect, projid, codes, source) {
                                 }
                             }
                         }
-                        var c = parseInt($(this).attr("cancel"));
-                        var hs = $(this).attr("hs");
-                        var vs = $(this).attr("vs");
-                        var spvalue = $(this).attr("spvalue");
+                        var c = parseInt(a.cancel);
+                        var hs = a.hs;
+                        var vs = a.vs;
+                        var spvalue = a.spvalue;
                         var spvalues = spvalue.split("|");
                         var bfen = "";
                         if (hs != "" && vs != "") {
@@ -1278,9 +1310,9 @@ bd_jc_clasli = function(lotid, expect, projid, codes, source) {
                             hs = parseFloat(hs);
                             vs = parseFloat(vs)
                         }
-                        var hsstr = $(this).attr("hs").trim();
+                        var hsstr = a.hs.trim();
                         var result = "";
-                        var id = $(this).attr("id");
+                        var id = a.id;
                         var tDATE = "20" + id.substr(0, 2) + "-" + id.substr(2, 2) + "-" + id.substr(4, 2);
                         tDATE = new Date(tDATE);
                         var wk2 = "周" + wk[tDATE.getDay()];
@@ -1486,10 +1518,10 @@ bd_jc_clasli = function(lotid, expect, projid, codes, source) {
                     $("#jcts").show()
                 } else if (lotid == "90" || lotid == "93" || lotid == "91" || lotid == "92" || lotid == "94" || lotid == "95" || lotid == "97" || lotid == "96" || lotid == "72") {
                     r.each(function(aa) {
-                        var hs = $(this).attr("hs");
-                        var vs = $(this).attr("vs");
-                        var hhs = $(this).attr("hhs");
-                        var hvs = $(this).attr("hvs");
+                        var hs = a.hs;
+                        var vs = a.vs;
+                        var hhs = a.hhs;
+                        var hvs = a.hvs;
                         var quan = "",
                         ban = "";
                         if (hs != "" && vs != "") {
@@ -1498,9 +1530,9 @@ bd_jc_clasli = function(lotid, expect, projid, codes, source) {
                         if (hs != "" && vs != "") {
                             ban = "半" + hhs + ":" + hvs
                         }
-                        var hsstr = $(this).attr("hs").trim();
-                        var c = $(this).attr("cancel");
-                        var spvalue = $(this).attr("spvalue");
+                        var hsstr = a.hs.trim();
+                        var c = a.cancel;
+                        var spvalue = a.spvalue;
                         var spvalues = spvalue.split("|");
                         if (lotid == 90) {
                             spvalue = spvalues.length == 1 ? spvalue: spvalues[0]
@@ -1524,9 +1556,9 @@ bd_jc_clasli = function(lotid, expect, projid, codes, source) {
                         spvalue = spvalue.split(",");
                         var hn = "";
                         var vn = "";
-                        hn = $(this).attr("hn");
-                        vn = $(this).attr("vn");
-                        var lose2 = $(this).attr("lose");
+                        hn = a.hn;
+                        vn = a.vn;
+                        var lose2 = a.lose;
                         var lose = lose2;
                         var loses = lose.split("|");
                         if (lotid == "94") {
@@ -1566,7 +1598,7 @@ bd_jc_clasli = function(lotid, expect, projid, codes, source) {
                                 rq = "(<font color='red'>" + lose + "</font>)"
                             }
                         }
-                        var id = $(this).attr("id");
+                        var id = a.id;
                         var id2 = id.substring("6", "9");
                         var tDATE = "20" + id.substr(0, 2) + "-" + id.substr(2, 2) + "-" + id.substr(4, 2);
                         tDATE = new Date(tDATE);
@@ -1986,13 +2018,13 @@ bd_jc_clasli = function(lotid, expect, projid, codes, source) {
                     }
                 } else if (lotid == "84" || lotid == "85" || lotid == "89" || lotid == "86" || lotid == "87" || lotid == "88") {
                     r.each(function() {
-                        var id = $(this).attr("id");
-                        var hn = $(this).attr("hn");
-                        var vn = $(this).attr("vn");
-                        var hs = $(this).attr("hs");
-                        var vs = $(this).attr("vs");
-                        var hhs = $(this).attr("hhs");
-                        var hvs = $(this).attr("hvs");
+                        var id = a.id;
+                        var hn = a.hn;
+                        var vn = a.vn;
+                        var hs = a.hs;
+                        var vs = a.vs;
+                        var hhs = a.hhs;
+                        var hvs = a.hvs;
                         var quan = "",
                         ban = "";
                         if (hs != "" && vs != "") {
@@ -2001,19 +2033,19 @@ bd_jc_clasli = function(lotid, expect, projid, codes, source) {
                         if (hs != "" && vs != "") {
                             ban = "半" + hhs + ":" + hvs
                         }
-                        var id = $(this).attr("id");
-                        var result = $(this).attr("result");
+                        var id = a.id;
+                        var result = a.result;
                         var ststr = "";
                         if (result != "") {
                             ststr = result.split(";")
                         }
                         var cup = "";
                         if (lotid == 84) {
-                            cup = $(this).attr("cup")
+                            cup = a.cup;
                         }
                         var ball = ["足球", "篮球", "冰球", "网球", "羽毛球", "排球", "橄榄球", "曲棍球", "乒乓球", "沙滩排球", "手球", "水球"];
                         var ball2 = ["球", "分", "球", "局", "局", "局", "分", "球", "局", "局", "球", "球"];
-                        var lose = $(this).attr("lose");
+                        var lose = a.lose;
                         if (lose == 0 || lose == "" || lotid == 89) {
                             lose = ""
                         } else {
@@ -2246,6 +2278,12 @@ showjoin = function(option){
 	$("#buyrec").html(buyhtml);
 	$("#prodetail").show();
 };
+function partake() {
+    window.location.href = "/user/inuser.html?lotid=" + $("#lotid").val() + "&projid=" + $("#proid").val() + "&chedan=" + 1 + "&title=partake"
+}
+function record() {
+    window.location.href = "/user/inuser.html?lotid=" + $("#lotid").val() + "&projid=" + $("#proid").val() + "&chedan=" + 1 + "&title=myRecord"
+}
 $(document).ready(function() {
 	chklogin();
 	loadProj();
