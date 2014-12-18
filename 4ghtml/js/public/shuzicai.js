@@ -546,11 +546,15 @@ function betconfirm(rnd){
 	var playtype = parseInt($("#PlayType").attr("value"));
 	var times = parseInt($("#times").val());
 //	$("#buyHeader h1").html($_sys.getlotname($("#gid").val())+"_投注列表");
-	    
+//	<span class="revise_ww"><em>08,09,10,11,12,15</em><cite>14</cite></span>
 	    var html="";
 	    var varString=vardata.join(";")
 	    if (varString.split(';').length > 1) {
 	    	for (var i = 0; i < varString.split(';').length; i++) {
+	    		var Ball=varString.split(';')[i].split('|')[i]
+	    		if(Ball.length==2){
+	    			
+	    		}
 	    		html+='<div class="ssqtzNum"><cite class="errorBg"><em class=""></em></cite>'
     		    	+'<span class="revise_ww"><span>'
 //	    		
