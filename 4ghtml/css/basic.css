@@ -141,5 +141,14 @@ input.fqhmGray{ background:#ebebeb}
 .pkHeader{ background:#004329; border-bottom:1px solid #004329}
 .zcHeader{ background:#399e5c}
 .pdLfrt09{ padding:.1rem .9rem 0 .9rem}
+/* 参与用户 */
+.inUser{ border:1px solid #dedede; color:#aeacab; border-radius:.5rem; -webkit-border-radius:.5rem; -moz-border-radius:.5rem}
+.inUser li{ height:1.9rem; line-height:1.9rem; border-bottom:1px solid #ebebeb; overflow:hidden; zoom:1}
+.inUser li:last-child{ border-bottom:none}
+.inUser li span{ float:left; width:33%; text-align:center; border-right:1px solid #ebebeb}
+.inUser li span.inFirst{ width:40%}
+.inUser li span.inLast{ width:26%; border-right:none; line-height:.5rem; font-size:.75rem}
+.inUser2 li span.inLast{ width:33%}
+.inUser li span.inLast em,.inUser li span.inLast cite{ display:block; padding-top:.3rem}
 /*底部logo*/
 .foot-logo{height: 10em;padding-bottom:36%;background:url("../img/m-logo.png") center 1.2em no-repeat;background-size:170px 65px;opacity: 0.17}
