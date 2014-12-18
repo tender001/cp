@@ -105,6 +105,20 @@
 .D_icon:before{ background-position:0 -54px; width:9px; height:12px;}
 .S_icon:before,.C_icon:before,.H_icon:before,.D_icon:before{ background-image:url(../img/huase_icon.png); background-size:13px 70px;}
 /*新闻资讯*/
+.news-nav{width: 100%;height:2.7em;line-height:2.6em;overflow: hidden;}
+.news-nav .news-title{font-size: 1.14em;}
+.news-title a{padding:0.5em 0.6em;color: #333;}
+.news-title .cur{color: #f40;border-bottom: 2px solid #f40}
+.news-nav .more-news{float:right;width:0;margin-top:8px;font-size:0;border-width:7px 10px;border-style:solid;border-color: transparent transparent transparent #999}
+.news-bann{padding:10px 2%;border-top: 1px solid #ccc;}
+.news-bann img{width: 100%;max-height: 230px}
+.news-list-all a{color: #333}
+.news-list-all div{padding:0.8em 2%;border-bottom: 1px solid #ccc}
+.news-list-all h2{font-size: 1.13em;font-weight: normal;}
+.news-list-all span{color: #999;font-size: 1.12em;}
+.news-list-all span em{float: right}
+.news-list-all span strong{font-weight: normal}
+
 .news-top,.m-reg{margin-top: 3.3rem;padding: 10px 3%;border-top:1px solid #ddd}
 .news-top{margin-bottom:4.6rem}
 .news-tit{padding:0 0 0.4em;border-bottom: 1px dotted #ccc}
@@ -367,6 +381,12 @@
 .progressHover{position:absolute;height:.9rem;overflow:hidden;left:.2rem;top:.1rem}
 .progressHover cite{position:absolute;display:block;width:0.85rem;height:0.85rem;border-radius:0.85rem;background-color:#f40}
 .progressHover s{position:absolute;display:block;height:0.33rem;width:5.34rem;background-color:#f40;border-top:0;top:.36rem}
+.barLine{ left:.84rem}
+.barCircle2{ left:6rem}
+.barLine2{ left:6.8rem}
+.barCircle3{ left:12rem}
+.barLine3{ left:12.8rem}
+.barCircle4{ left:17.94rem}
 .progressTxt{margin-left:.5rem}
 .progressTxt span,.progressTxt cite,.progressTxt s,.progressTxt i{display:inline-block;color:#606060;}
 .progressTxt span{width:5.0rem}
