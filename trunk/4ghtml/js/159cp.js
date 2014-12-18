@@ -434,6 +434,43 @@ $_sys.lottype.istype = function (lotid,type){
 	}
 	return false;
 };
+$_sys.getgrade = function(f, n) {
+	if (typeof (n) == 'undefined') {
+		n = 1;
+	};
+	for ( var i = 0; i < $_sys.grade_def.length; i++) {
+		if ($_sys.grade_def[i][0] == f) {
+			return $_sys.grade_def[i][n].split(",");
+		}
+	}
+};
+$_sys_getwininfo = function(lotid, wininfo) {
+	var tmp = [];
+	if (lotid==85||lotid==86||lotid==87||lotid==88||lotid==89
+			||lotid==90
+			||lotid==91
+			||lotid==92
+			||lotid==93||lotid==94||lotid==95||lotid==96||lotid==97||lotid==70||lotid==71||lotid==72
+			){		
+		wininfo = wininfo.split("|");
+		if (wininfo.length>=3){
+			tmp.push([ "", "共<font class='cm_red'>"+wininfo[1]+"</font>场, 过关方式：<font class='cm_red'> "+wininfo[2].replaceAll("\\*", "串")+"</font>, 中<font class='cm_red'>"+wininfo[0]+"</font>" ]);
+		}		
+	}else{
+		if(wininfo.length > 0){
+			wininfo = wininfo.split(",");
+			var grade = $_sys.getgrade(lotid);
+			if (wininfo.length > 0 && wininfo.length <= grade.length) {
+				for ( var i = 0; i < wininfo.length; i++) {
+					if (wininfo[i] > 0) {
+						tmp.push([ grade[i], wininfo[i] ]);
+					}
+				}
+			}
+		}
+	}	
+	return tmp;
+};
 Array.prototype.remove=function(dx)
 {
 　if(isNaN(dx)||dx>this.length){return false;}
