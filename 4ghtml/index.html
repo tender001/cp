@@ -9,11 +9,12 @@
     <title>159彩票网</title>
     <link rel="stylesheet" href="/css/basic.css" type="text/css"/>
     <link rel="stylesheet" href="/css/style.css" type="text/css"/>
-	<script src='/js/public/TouchSlide.1.1.js'></script>
+	
 	<script src='/js/jquery.js'></script>
-<!-- 	<script src='/js/159cp.js'></script> -->
-<!-- 	<script src='/js/base.js'></script> -->
-<!-- 	<script src='/js/login.js'></script> -->
+	<script src='/js/159cp.js'></script>
+	<script src='/js/base.js'></script>
+	<script src='/js/login.js'></script>
+	<script src='/js/public/TouchSlide.1.1.js'></script>
 </head>
 <body>
 <div class="header">
@@ -47,20 +48,88 @@
 <!-- 			</script> -->
 			
 			
-<!-- 				<div id="focus" class="focus"> -->
-<!-- 				<div class="hd"> -->
-<!-- 					<ul></ul> -->
-<!-- 				</div> -->
-<!-- 				<div class="bd"> -->
-<!-- 					<ul> -->
-<!-- 							<li><a href="#"><img src="img/imglist/img-list-1.png" /></a></li> -->
-<!-- 							<li><a href="#"><img src="img/imglist/img-list-1.png" /></a></li> -->
-<!-- 							<li><a href="#"><img src="img/imglist/img-list-1.png" /></a></li> -->
-<!-- 					</ul> -->
-<!-- 				</div> -->
-<!-- 			</div> -->
+				<div id="focus" class="focus" ontouchend="tend(event)" ontouchstart="tstart(event)">
+				<div class="hd">
+					<ul> <li class=""></li><li class=""></li><li class=""></li></ul>
+				</div>
+				<div class="bd" style="position: relative;overflow: hidden;">
+					<ul >
+							<li style="float: left;"><a href="#"><img src="img/imglist/img-list-1.png" /></a></li>
+							<li style="float: left;"><a href="#"><img src="img/imglist/img-list-1.png" /></a></li>
+							<li style="float: left;"><a href="#"><img src="img/imglist/img-list-1.png" /></a></li>
+					</ul>
+				</div>
+			</div>
 
-			<!--#include virtual="/dedeinc/4g_syimages.html"-->
+	<script type="text/javascript">
+
+ 		var ul_left=-100;
+ 		var n=0;
+ 		var i=$("#focus .bd li").length;
+ 		$(".bd ul").children("li").css("width",$(".bd").width()+'px');
+ 		$(".bd").css("width",$(".bd").width()*i+'px');
+ 		
+ 		$(function(){
+	 		var time=setInterval("lb()",5000); 
+	 		
+
+	 		$(".hd li").click(function(){
+	 			$(".bd").animate({
+ 				left: -$(this).index()*100+'%'},300);
+ 				$(this).removeClass().addClass('cur').siblings().removeClass('cur');
+	 		});
+			
+ 		});
+ 		function lb(){
+ 			$(".bd").animate({
+ 				left: ul_left+'%'},300);
+ 		
+ 			ul_left=-100*(n);
+ 			n+=1;
+ 			$(".hd li").eq(n).removeClass().addClass('cur').siblings().removeClass('cur');
+ 			if(n>i-1){n=0;}
+
+			
+ 			//$(".hd li").eq(n).removeClass().addClass('cur').siblings().removeClass('cur');
+
+ 		}
+	
+		 var down = 0;
+ var up = 0;
+ var index=0;
+ var w = 64;
+ function tstart(event)
+ {
+	 clearTimeout(time)
+  down=event.changedTouches[0].pageX;//获取手指刚触摸时的x坐标
+  }
+ function tend(event)
+ {
+	 
+  up=event.changedTouches[0].pageX;//获取手指离开时的x坐标
+  ul_obj = $("#roll");
+  if(down>up)
+   {//向左
+	$(".bd").animate({
+		left: -n*100+'%'
+	},300);
+	n+=1;
+	if(n>i-1){n=0;}
+	$(".hd li").eq(n).removeClass().addClass('cur').siblings().removeClass('cur');
+   }
+  else if(down<up)
+   {//向右
+	n-=1;
+	if(n<0){n=i-1;}
+    $(".bd ").animate({
+		
+		left: -n*100+'%'
+	},300);
+	
+	$(".hd li").eq(n).removeClass().addClass('cur').siblings().removeClass('cur');
+  }
+  }
+ 	</script> 
 
  <div class="app-notice">
      <div class="zj_tipBox"><div>      <table width="100%" border="0" cellspacing="0">
