@@ -52,17 +52,28 @@ function createballpanle_pl3(level,rKind) {
     else if (level == 10)
     { startmin = 2 }
 
+    
+//    if (varlength == 2 || varlength == 3){
+//    	html.push("<p class=\"gray center pdTop06\">第" + levelNameOne[l - 1] + "位</p>"); 
+//    }
+//        
+//    html.push("<div  class=\"ssqBall pdLeft08\" id=\"ulnumber_" + l + "\">");
+//    for (var i = startmin; i <= endmax; i++) {
+//        html.push("<cite id=\"redball_" + l.toString() + "_" + i.toString() + "\" class=\"" + BallStyle[4] + "\" onclick=\"selectBall(this,'red')\" >" + (i > 9 ? i.toString() : ("0" + i.toString())) + "</cite>");
+//    }
+//    html.push("</div>");
+    
     var html = new Array();
     for (var l = 1; l <= varlength; l++) {
         if (varlength == 3)
-            html.push("<div class=\"stitle\">" + levelNameTwo[l + 1] + "位：</div>");
-        html.push("<ul id=\"ulnumber_" + l + "\" class=\"ball\">");
+            html.push("<p class=\"gray center pdTop06\">" + levelNameTwo[l + 1] + "位：</p>");
+        html.push("<div  class=\"ssqBall pdLeft08\" id=\"ulnumber_" + l + "\" >");
         for (var i = startmin; i <= endmax; i++) {
-            html.push("<li><span id=\"redball_" + l.toString() + "_" + i.toString() + "\" class=\"" + BallStyle[0] + "\" onclick=\"selectBall(this,'red')\" >" + i.toString() + "</span></li>");
+            html.push("<cite id=\"redball_" + l.toString() + "_" + i.toString() + "\" class=\"" + BallStyle[0] + "\" onclick=\"selectBall(this,'red')\" >" + i.toString() + "</cite>");
         }
-        html.push("</ul>");
-        if (varlength == 3)
-            html.push("<br />");
+        html.push("</div>");
+//        if (varlength == 3)
+//            html.push("<br />");
     }
     if (rKind == 1)
         return html.join("");

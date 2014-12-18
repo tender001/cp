@@ -4,7 +4,7 @@ var GameID = new Array(10, 20, 25, 26, 27, 44, 115, 116, 118, 119, 120, 7);
 var Sindex = new Array(0, 0, 0, 0, 0, 0, 2, 0, 0, 2, 0, 0);
 var vardata=new Array();
 //var BallStyle = new Array("redball", "redball_s", "blueball", "blueball_s", "gpball", "gpball_s");
-var BallStyle = new Array("redball", "redball_s", "blueball", "blueball_s", "", "redBall");
+var BallStyle = new Array("redball", "redBall", "blueball", "blueball_s", "", "redBall");
 function getIndex(id){
 	for(var i = 0; i < GameID.length;i++){
 		if(GameID[i] == id){
@@ -84,48 +84,84 @@ loadexp = function(){
 	});
 };
 loadOpencode = function(){
-
+	
 	var listdata=[];
 	var gid = $_sys.get139Gid($("#TypeID").attr("value"));
-	chksale(gid, function(){
-		var url = "/cpdata/omi/" + gid + "/yilou/miss.xml?rnd=" + Math.random();
-		
-		$.ajax({
-			url:url,
-			type:'GET',
-			dataType:'xml',
-			cache: false, 
-			success:function(xml){
-//				var curdate = Date.parse(XHR.getResponseHeader("Date"));
-//				var day = Date.parse(xml.getResponseHeader("Date")).format('YYMMDD');
-				$(xml).find("R").find("p").each(function(index, ele) {
-					
-					var c = $(ele).attr("c");
-					var pid = $(ele).attr("p");
-					var m0 = $(ele).attr("m0");
-					
-                	
-//                	var pid = pid.substr(0,10);
-//              
-                	
-//                	alert("pd="+pd+" day="+day);
-//                	if(pd==day){
-//                		$("#dopencode"+pid).html(c);
-//                		
-//                	}
-                	if (c!=""){
-                		$(".k3kjtext p").html(pid+"期开奖")
-                		$(".pdTop03 ").html('<b>'+c.split(',').join('</b><b>')+'</b>')
-                	}
-                	
-				})
+	var url='';
+	if(gid<10){
+		url = "/cpdata/omi/" + gid + "/miss.xml?rnd=" + Math.random();
+	}else{
+		url = "/cpdata/omi/" + gid + "/yilou/miss.xml?rnd=" + Math.random();
+//		http://www.159cai.com/cpdata/omi/53/yilou/omission.xml
+//			http://www.159cai.com/tdata/53/last_10.xml?rnd=0.6145406365868701
+	}
+	if(gid==53){
+		chksale(gid, function(){
+			url = "/tdata/"+gid+"/last_10.xml?rnd=" + Math.random();
+			$.ajax({
+				url:url,
+				type:'GET',
+				dataType:'xml',
+				cache: false, 
+				success:function(xml){
 
-			},
-			error:function(){
-				showTips('网络错误');
-			}
+					$(xml).find("xml").find("row").each(function(index, ele) {
+						
+						var c = $(ele).attr("cc");
+						var pid = $(ele).attr("cp");
+//						var m0 = $(ele).attr("m0");
+						
+	                	if(index==0&&c!==""){
+	                		$(".k3kjtext p").html(pid+"期开奖")
+	                		$(".pdTop03 ").html('<b>'+c.split(',').join('</b><b>')+'</b>')
+	                	}
+	                	if(c!==""){
+	                		$(".ssqkjlist").append('<ul> <li class="first">'+pid+'期</li><li><span class="red">'+c.split(',').join(" ")+'</span></li><li class="last"></li></ul>')
+	                	}
+	                	
+	                	
+					})
+
+				},
+				error:function(){
+					showTips('网络错误');
+				}
+			});
 		});
-	});
+	}else{
+		chksale(gid, function(){
+			
+			$.ajax({
+				url:url,
+				type:'GET',
+				dataType:'xml',
+				cache: false, 
+				success:function(xml){
+
+					$(xml).find("R").find("p").each(function(index, ele) {
+						
+						var c = $(ele).attr("c");
+						var pid = $(ele).attr("p");
+						var m0 = $(ele).attr("m0");
+						
+	                	
+
+	                	if (c!=""){
+	                		$(".k3kjtext p").html(pid+"期开奖")
+	                		$(".pdTop03 ").html('<b>'+c.split(',').join('</b><b>')+'</b>')
+	                	}
+	                	
+					})
+
+				},
+				error:function(){
+					showTips('网络错误');
+				}
+			});
+		});
+	}
+	
+	
 	if(listdata.length>0){
 		$(".k3kjtext p").html(listdata[listdata.length-1][0]+"期开奖")
 		$(".pdTop03 ").html(listdata[listdata.length-1][1].split(",").join("<b></b>"))
@@ -735,7 +771,7 @@ function countMoney() {
     	 $("[mark=betnum]").html(0);
          $("[mark=betmoney]").html(0);
     	
-        $("#buymoney").val(0)
+//        $("#buymoney").val(0);
         $("#preMoney").html('共<cite class="yellow">0</cite>注<cite class="yellow">0</cite>元')
     }
 }
