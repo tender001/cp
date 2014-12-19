@@ -134,9 +134,55 @@ function drawLowerTree($allsh) {
 	if (branchslen > 0) {
 		treedata = getTreeBanch($branchs);
 	}
-	var setting = {view:{showIcon:false,showLine:false}};
+	var setting = {
+			view:{showIcon:false,showLine:false},
+			data:{ keep:{parent:true}},
+			callback: { onExpand : onExpand,onCollapse:onCollapse }
+	};
 	$.fn.zTree.init($("#shtree"), setting, treedata);
 	$("#shtreediv .msg").hide();
+}
+
+function onExpand (event, treeId, treeNode){
+var param = "rname=" + treeNode.name;
+$.ajax({
+		url: 'tree.aspx',
+		type: 'POST',
+		data:param,
+		dataType: 'xml',
+		error: function(){
+			alert("加载下级代理出错");
+		},
+		success: function(result){
+			var $resp = $(result).find("Resp");
+			var code = $resp.attr("code");
+			if (code == '0') {
+				var $agent = $resp.children('agent');
+				drawChildrenTree($agent,treeNode);
+			} else {
+				alert("加载下级代理出错。");
+			}
+		}
+	});
+
+}
+
+function onCollapse (event, treeId, treeNode){
+
+	var treeObj = $.fn.zTree.getZTreeObj("shtree");
+	treeObj.removeChildNodes(treeNode);
+}
+
+function drawChildrenTree($allsh,treeNode) {
+	var $branchs = $allsh.children('node');
+	var branchslen = $branchs.length;
+	var treedata = [];
+	if (branchslen > 0) {
+		treedata = getTreeBanch($branchs);
+	}
+	var treeObj = $.fn.zTree.getZTreeObj("shtree");
+	
+	treeObj.addNodes(treeNode,treedata);
 }
 
 function initPublicVal() {
@@ -158,6 +204,14 @@ function getTreeBanch($xml) {
 	$xml.each(function(){
 		var el = {};
 		el.name = $(this).attr('id');
+		var flag = $(this).attr('isParent');
+		
+		if(flag=="1"){
+			el.isParent = true;
+		}else{
+			el.isParent = false;
+		}
+		
 		var $branchs = $(this).children('node');
 		var branchslen = $branchs.length;
 		if (branchslen > 0) {
