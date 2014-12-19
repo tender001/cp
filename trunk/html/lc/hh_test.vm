@@ -77,8 +77,9 @@
  				<table width="100%" cellspacing="0" cellpadding="0" style="width:438px;float:right" class="lchhtab">
  						<colgroup><col width="45"><col></colgroup>
  						<tbody>
+ 						<tr class="tr2"><td>&nbsp;</td><td><span>胜1-5</span><span>胜6-10</span><span>胜11-15</span><span>胜16-20</span><span>胜21-25</span><span>胜26+</span></td></tr>
 								#if($match.sfcSale > 0)
-											<tr class="tr2"><td>&nbsp;</td><td><span>胜1-5</span><span>胜6-10</span><span>胜11-15</span><span>胜16-20</span><span>胜21-25</span><span>胜26+</span></td></tr>
+											
 											<tr>
 												<td>客胜</td>
 												<td style="border-left:1px solid #ccc">
