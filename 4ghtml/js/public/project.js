@@ -1,3 +1,4 @@
+var $_nickid="";
 loadProj=function(){
 	var lotid = location.search.getParam('lotid');
 	var proid = location.search.getParam('projid');
@@ -64,12 +65,15 @@ showproj = function(option){
 	var rate = option.data.Resp.row.wrate;
 	var ireturn= option.data.Resp.row.ireturn;
 	var cdesc = option.data.Resp.row.cdesc;
-	var btime = option.data.Resp.row.bgdate;
+	var btime = option.data.Resp.row.adddate;
+//	var btime = option.data.Resp.row.bgdate;
 	var hid = option.data.Resp.row.projid;
 	var award = option.data.Resp.row.award;
 	var ifile = option.data.Resp.row.ifile;
 	var ccodes = option.data.Resp.row.ccodes;
-	var source = option.data.Resp.row.source
+	var source = option.data.Resp.row.source;
+	var cnickid = option.data.Resp.row.cnickid;
+	var itype = option.data.Resp.row.itype;
 	$("#tmoney").html((nums/2)+"注 "+mulity+"倍 <span style=\"color:Red;\">"+nums+"</span>元");
 	$("#pmoney").html(nums);
 	$.each($(".bmoney"),function(o,lt){
@@ -94,6 +98,23 @@ showproj = function(option){
 	var tax = option.data.Resp.row.tax;
 	
     var isflg = 0;
+    var baodi = "";
+    if (Storage.Get("LoginUN_cookie")==cnickid && istate == 1) {
+        $(".buyFooter a").html("继续购买");
+        $("#cancelD").show();
+        if (itype == 1) {
+            if (istate > 0 && istate < 2) {
+                if (Storage.Get("LoginUN_cookie")==cnickid  && istate != 0) {
+                    if (pnum == 0) {
+                        baodi = '<a class="fqhm" href="javascript:;" onclick=\'baodi(' + lnum + ")'>我要保底</a>"
+                    } else {
+                        baodi = "<a class=\"fqhm\" href=\"javascript:;\" onclick=\"JQConfirm('确定转认购？','btg()')\">保底转认购</a>"
+                    }
+                }
+            }
+        }
+    }
+    $("#ww_bdi").append(baodi);
     var kj = 0;
     kj = isKj(award, btime);
     if (istate > 0) {
@@ -230,9 +251,18 @@ showproj = function(option){
         $("#zgzjSituation").hide()
     }
     var lo = ["01", "50", "81", "80", "54", "20", "56", "58", "06", "84", "70", "72", "90", "91", "71", "94", "95", "97", "85", "86", "89"];
+
     if (lo.indexOf(lotid) >= 0) {
         $(".buyFooter1").show()
     }
+    if (Storage.Get("LoginUN_cookie")==cnickid  && istate != 0) {
+    	 $(".buyFooter").show();
+         $(".buyFooter1").hide()
+    }else{
+    	 $(".buyFooter").hide();
+         $(".buyFooter1").show()
+    }
+    $("#payment").attr("href", "" + $_sys.getlotname(lotid,4) + "");
     if (ifile == "0") {
         if (lotid == 84 || lotid == 85 || lotid == 86 || lotid == 87 || lotid == 88 || lotid == 89 || lotid == 90 || lotid == 91 || lotid == 92 || lotid == 93 || lotid == 70 || lotid == 72 || lotid == 94 || lotid == 95 || lotid == 96 || lotid == 97 || lotid == 71) {
             $("#zgCode").hide();
@@ -260,11 +290,11 @@ showproj = function(option){
     } else if (ifile == "1") {
         $("#zgCode").hide();
         if (source == 6 || source == 7) {
-            $("#zgContent div").html('奖金优化方案&nbsp;<a href="#class=url&xo=viewpath/content.html&lotid=' + lotid + "&projid=" + hid + '">点击查看</a>');
+//            $("#zgContent div").html('奖金优化方案&nbsp;<a href="#class=url&xo=viewpath/content.html&lotid=' + lotid + "&projid=" + hid + '">点击查看</a>');
             $("#clasli").show();
             jjyh(lotid, pid, hid, ccodes)
         } else {
-            $("#zgContent div").html('单式上传方案&nbsp;<a href="#class=url&xo=viewpath/content.html&lotid=' + lotid + "&projid=" + hid + '">点击查看</a>')
+//            $("#zgContent div").html('单式上传方案&nbsp;<a href="#class=url&xo=viewpath/content.html&lotid=' + lotid + "&projid=" + hid + '">点击查看</a>')
         }
     }
 	
@@ -655,6 +685,7 @@ showjccode=function(option){
 //		html += "</tr>";
 //		html += "<div>比赛时间: "+bt.toDate().format('MM-DD hh:mm')+"</div>";
 		var rst = false;
+		var mrs = "";
 		if(cancel == 0){
 			if(new String(r.hs).length > 0 && new String(r.vs).length > 0 && new String(r.hss).length > 0 && new String(r.vss).length > 0 ){
 				rst = true;
@@ -664,12 +695,30 @@ showjccode=function(option){
 			mrs = "*";
 		}
 		html += "<td width=\"15%\" class=\"r9last\" rowspan=\"2\">";
-		if(rst){
-			mrs = mrs == "*" ? mrs : getjcrs(gg, r.hs, r.vs, r.hhs, r.hvs, (gg==97?lls[3]:lose));
-			html += "半" + "(" + r.hhs + ":" + r.hvs + ")"+ (gg == 92 ? "全：("+r.hs+":"+r.vs+")" : "") +  " 赛果：<span style='color:Red'>" + $_sys.getJJCode(gg,"K" + mrs) + "</span><br/>";
-		}else{
-			
+		for(var k = 0; k < jcobj.item.length;k++){
+			if(jcobj.item[k][0] == r.id){
+				var cc = jcobj.item[k][1].split("+");
+				for(var f = 0; f < cc.length; f++){
+					var ps = cc[f].split("=");
+					var gg = getJcPlay(gid, ps[0]);
+					lose = lls.length > 1 ? (gg == 95 ? lls[0] : lls[2]) : r.lose;
+//					if(gg==97){
+//						lose = lls.length > 1?lls[3]: r.lose;
+//					}
+					if(rst){
+						mrs = mrs == "*" ? mrs : getjcrs(gg, r.hs, r.vs, r.hhs, r.hvs, (gg==97?lls[3]:lose));
+						
+					}
+					var cs = ps[1].split("/");
+					if(rst){
+						html += "比分：" + "(" + r.hs + ":" + r.vs + ")"+ (gg == 92 ? "半场比分：("+r.hhs+":"+r.hvs+")" : "") +  " 赛果：<span style='color:Red'>" + $_sys.getJJCode(gg,"K" + mrs) + "</span><br/>";
+					}
+				}
+			}
 		}
+
+		
+
 		html += "</td>";
 		var mrs = "";
 		if(gid == 70 || gid == 71){
@@ -697,19 +746,19 @@ showjccode=function(option){
 							}
 						}
 					
-						html += "投注:";
+						html += "[";
 						var cs = ps[1].split("/");
 						for(var n = 0; n < cs.length; n++){
 							if(cs[n] == mrs || mrs=="*"){
-								html += "<span class='spitems'>" + $_sys.getJJCode(gg,"K" + cs[n]) + "</span>";
+								html += "<em class='yellow'>" + $_sys.getJJCode(gg,"K" + cs[n]) + "</em>";
 							} else {
-								html += "<span class='spitems2'>" + $_sys.getJJCode(gg,"K" + cs[n]) + "</span>";
+								html += "<em>" + $_sys.getJJCode(gg,"K" + cs[n]) + "</em>";
 							}
 						}
 						if(jcobj.item[k][2]==1){
 							html += "<span style='color:red'>(胆)</span>";
 						}
-						html += "</td>";
+						html += "]</td>";
 						
 					}
 				}
@@ -758,9 +807,9 @@ showjccode=function(option){
 		match.push("<div><span style='color:Red'>去除单一玩法串</span></div>");
 	}
 	if(gid==71||gid==94||gid==95||gid==96){
-		$("#content").append('<table width="100%" cellspacing="0" cellpadding="0" border="0" class="lcbetTitle mgTop06"><tbody><tr><td width="15%">场次</td><td width="70%">主队VS客队/投注选项</td><td width="15%" style="border-right:none">'+$_sys.getlotname(gid)+'</td></tr></tbody></table>')
+		$("#content").append('<table width="100%" cellspacing="0" cellpadding="0" border="0" class="lcbetTitle mgTop06"><tbody><tr><td width="15%">场次</td><td width="70%">主队VS客队/投注选项</td><td width="15%" style="border-right:none">赛果</td></tr></tbody></table>')
 	}else{
-		$("#content").append('<table width="100%" cellspacing="0" cellpadding="0" border="0" class="lcbetTitle mgTop06"><tbody><tr><td width="15%">场次</td><td width="70%">客队VS主队/投注选项</td><td width="15%" style="border-right:none">'+$_sys.getlotname(gid)+'</td></tr></tbody></table>')
+		$("#content").append('<table width="100%" cellspacing="0" cellpadding="0" border="0" class="lcbetTitle mgTop06"><tbody><tr><td width="15%">场次</td><td width="70%">客队VS主队/投注选项</td><td width="15%" style="border-right:none">赛果</td></tr></tbody></table>')
 	}
 	$("#jcts").show();
 	$("#content").append('<table width="100%" cellspacing="0" cellpadding="0" border="0" class="lcbetTable" id="tcont"><tbody>'+match.join("")+'</tbody></table>')
@@ -2283,6 +2332,68 @@ function partake() {
 }
 function record() {
     window.location.href = "/user/inuser.html?lotid=" + $("#lotid").val() + "&projid=" + $("#proid").val() + "&chedan=" + 1 + "&title=myRecord"
+}
+function baodi(lnum) {
+   
+        $("#zj_bd").show();
+        $("#zhezhao").show();
+        $("#zj_bd").css({
+            left: parseInt(document.documentElement.clientWidth / 2 - $("#zj_bd").width() / 2),
+            top: parseInt(document.documentElement.clientHeight / 2 - $("#zj_bd").height())
+        });
+        $("#zj_bd input").select();
+        $("#zj_bd input").val("1")
+
+    $("#zj_bd input").keyup(function() {
+        this.value = this.value.replace(/\D/g, "");
+        if ($(this).val() > lnum) {
+            $(this).val(lnum)
+        }
+    });
+    $("#zj_bd input").blur(function() {
+        if ($(this).val() == "" || $(this).val() == "0") {
+            $(this).val(1)
+        }
+    });
+    $("#qx_bd,#zhezhao").click(function() {
+        $("#zhezhao").hide();
+        $("#zj_bd").hide()
+    })
+}
+function qdbaodi() {
+    $("#zj_bd").hide();
+    var rg = $("#zj_bd input").val();
+    var lotid = $("#lotid").val();
+    var proid = $("#proid").val();
+    chklogin(function(d){
+    	var c = d.Resp.code;
+    	if(c == 0){
+    		$.ajax({
+    			url:$_trade.url.pshbd,
+    			type:'POST',
+    			data:{
+    				gid:lotid,
+    				hid:proid,
+    				bnum:rg
+    			},
+    			dataType:'json',
+    			success:function(j){
+    				var code = j.Resp.code;
+    				if(code == 0){
+    					showTips("保底成功!");
+    					window.location.reload();
+    				}else{
+    					showTips(j.Resp.desc);
+    				}
+    			},
+    			error:function(){
+	        	  showTips('网络异常');
+	        	}
+    		});
+    	} else {
+    		showLogin();
+    	}
+    });
 }
 $(document).ready(function() {
 	chklogin();
