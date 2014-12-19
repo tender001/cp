@@ -413,7 +413,10 @@ a.hmTxt2{ display:block; color:#606060; padding-right:1.4rem; position:relative}
 .fa-hm-list nav{display: table;width:100%;border-top: 1px solid #ccc;border-bottom: 1px solid #ccc}
 .fa-hm-list nav a{display: table-cell;padding: 0.6em 0;font-size: 1.14em;color:#333;text-align:center;background-color: #f0f0f0}
 .hm-list{width: 100%;padding:0.4em 0;overflow: hidden;border-bottom: 1px solid #ccc;position: relative}
-.hm-list .fl{width: 25%;}
+.hm-list .fl{width: 25%;text-align: center}
+.hm-list .fl h2{width:100%;font-size: 1.14em;font-weight: normal;}
+.hm-list .fl strong{font-size: 2em;color: #f40}
+.hm-list .fl b{font-size:14px}
 .hm-list dl{float: right;width: 75%;font-size: 1.14em}
 .peo-name{display: block;padding-top: 10px;color: #f40}
 .peo-name em{margin-left:0.5em;padding: 1px 3px;border: 1px solid #f40}
@@ -421,5 +424,31 @@ a.hmTxt2{ display:block; color:#606060; padding-right:1.4rem; position:relative}
 .peo-hm span{display: table-cell;width: 33%;padding:0.3em 0;text-align: center}
 .peo-hm span:first-of-type{text-align: left}
 .hm-list i{position:absolute;top:2em;right:10px;width:8px;height: 8px;overflow: hidden;border-width:2px;border-style: solid;border-color:transparent #ccc #ccc transparent;-webkit-transform: rotate(45deg);-moz-transform: rotate(45deg);-o-transform: rotate(45deg);transform: rotate(45deg);}
+/*开奖页面*/
+.buyTab{ line-height:2.1rem; background-color:#f8f8f8; border-bottom:1px solid #d9d9d9; display:-webkit-box; display:-moz-box}
+.buyTab li{ box-flex:1;-webkit-box-flex:1;-moz-box-flex:1; text-align:center}
+.buyTab li h3,.buyTab li a{ display:block;width:6.8rem; margin:0 auto; color:#a9a9a9;font-size: 1.14em; font-weight:normal}
+.buyTab li.cur h3,.buyTab li.cur a{ display:block; color:#f6851f; border-bottom:.12rem solid #f6851f}
+.kjall a{ height:3.3em; padding-top:.7em}
+
+.all a{ display:block; position:relative; height:4.2em; padding:0.5em 0 0 .91em; border-bottom:1px solid #ebebeb}
+.all a:hover{ color:#222}
+.all a dd{ padding:.65em 0 0 5.58em}
+.all a dd h2{ font-size:1.1em; font-weight:normal}
+.all a dd cite{ display:block; font-size:.85em; color:#787878; padding-top:.35em}
+.rightArrow,.hmArrow{ position:absolute; width:.45em; height:.45em; background:#fff; right:1em; top:2em; border-bottom:.16em solid #ccc; border-right:0.16em solid #ccc; transform:rotate(-45deg); -webkit-transform:rotate(-45deg); -moz-transform:rotate(-45deg)}
+.kjTit{ margin-bottom:.2em}
+.kjTit h2{ float:left; font-size:1em; font-weight:normal}
+.kjTit span{ color:#a4a4a4; float:left; font-size:.9em; margin:.2em 0 0 .8em}
+.kjBall cite{ margin:.4em .3em 0 0}
+.kjBall cite{ display:inline-block; background:#f03d3d; color:#fff; width:1.9em; line-height:1.9em; text-align:center; margin:.4em .3em 0 0; font-size:1em; border-radius:1.9em; -webkit-border-radius:1.9em; -moz-border-radius:1.9em}
+.kjBall cite.blueBall{ background:#177ffc}
+.kjBox cite,.kjBox b{ display:inline-block; width:.9em; text-align:center; line-height:1.8em; color:#f03d3d; font-size:.92em; margin:.4em .2em 0 0; border:1px solid #e3e3e3; border-radius:.2em; -webkit-border-radius:.2em; -moz-border-radius:.2em}
+.kjFooter{ padding-top:2.5em; width:80%}
+.kjAll a{ height:4.4em; padding-top:0.7em}
+.kjBox b{ width:1.05em; line-height:1.5em; font-size:1em}
+.sfcall a{ height:3.6em; padding:.7em 0 0 .5em}
+.kjDz em{ display:inline-block; margin:.7em .4em 0 0; color:#8e8e8e; font-size:.9em}
+
 
 
