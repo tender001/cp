@@ -130,7 +130,7 @@ function UserMoney() {
 				$("#username").html(uname);
 				$("#useramount").html(umoney+"元");
 				
-				$(".uinfo").html("欢迎您："+"<font color=\"#00f\" id=\"c_username\">"+uname+"</font>"+"余额：￥"+"<font color=\"#f00\" id=\"c_money\">"+umoney+"</font>"+"元");
+//				$(".uinfo").html("欢迎您："+"<font color=\"#00f\" id=\"c_username\">"+uname+"</font>"+"余额：￥"+"<font color=\"#f00\" id=\"c_money\">"+umoney+"</font>"+"元");
 				if($("#p_uname"))$("#p_uname").html(uname);
 			    $("#headlogintd").html("<a href=\"/user/account.html\" id=\"usname\">" + uname + "</a>&nbsp;<a onclick=\"location.href='/user/addmoney.html'\" class='mBTN'>充值</a><a onclick='logout()' class='mBTN'>退出</a>");
 			    closeLogin();
@@ -162,6 +162,7 @@ function UserInfo() {
          			}
          		 }  
 				
+				$("#isLogin").html('<a class="nav-list" href="/user/login.html"><h3 class="login"></h3><p>登录</p></a>')
 			    $("#headlogintd").html("<a href=\"/user/account.html\" id=\"usname\">" + name + "</a>&nbsp;<a onclick=\"location.href='/user/account.html'\" class='mBTN'>账户</a><a onclick='logout()' class='mBTN'>退出</a>");
 			    closeLogin();	 
         	}else{

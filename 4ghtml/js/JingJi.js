@@ -285,6 +285,7 @@ function ChooseMatch(obj) {
                 break;
             }
         }
+        $('#betnum').html(chooseArray.length)
     }
 
 //    if (OddsType == 2 && (byID("D" + n).className == "mDan1" && obj.className == 'mBtnCheck' || byID("D" + n).className != "mDan1" && obj.className == '')) {
@@ -354,7 +355,7 @@ function issuc(ispay){
 }
 function showbuy(istrue){
     if(istrue){
-    	$("#matchList,#buyFooter1,#szcbuy,#paybet,#issuc").hide();
+    	$("#matchList,#topHeader,#szcbuy,#paybet,#issuc").hide();
     	$("#content_home").show();
     }else{
     	$("#matchList,#buyFooter1").show();
