@@ -160,6 +160,10 @@ $_cache.qcode = function(gid, pid) {
 	});
 	return cawardcode;
 };
+/**
+ * 为方案详情提供目录匹配
+ */
+
 String.prototype.isDate = function() {
 	var r = this.match(/^(\d{1,4})(-|\/)(\d{1,2})\2(\d{1,2})$/);
 	if (r == null)
@@ -279,41 +283,41 @@ $_sys.biztype = function(f) {
 	return "未定义";
 };
 $_sys.lot = [];
-$_sys.lot.push([ 1, "双色球","", "10" ]);
-$_sys.lot.push([ 3, "福彩3D","", "44" ]);
-$_sys.lot.push([ 4, "时时彩","", "120" ]);
-$_sys.lot.push([ 7, "七乐彩","", "7" ]);
+$_sys.lot.push([ 1, "双色球","", "10","/ssq/" ]);
+$_sys.lot.push([ 3, "福彩3D","", "44","/3d/" ]);
+$_sys.lot.push([ 4, "时时彩","", "120",'/ssc/' ]);
+$_sys.lot.push([ 7, "七乐彩","", "7","/qlc/" ]);
 
-$_sys.lot.push([ 50, "超级大乐透","", "20" ]);
-$_sys.lot.push([ 51, "七星彩","", "25" ]);
-$_sys.lot.push([ 52, "排列五","", "27" ]);
-$_sys.lot.push([ 53, "排列三","", "26" ]); 
-$_sys.lot.push([ 54, "11选5","","119" ]);
-$_sys.lot.push([ 56, "十一运夺金","","115" ]);
+$_sys.lot.push([ 50, "超级大乐透","", "20","/dlt/" ]);
+$_sys.lot.push([ 51, "七星彩","", "25","/qxc/" ]);
+$_sys.lot.push([ 52, "排列五","", "27","/p5/" ]);
+$_sys.lot.push([ 53, "排列三","", "26","/p3/" ]); 
+$_sys.lot.push([ 54, "11选5","","119","/11x5/" ]);
+$_sys.lot.push([ 56, "十一运夺金","","115","/11ydj/" ]);
 
-$_sys.lot.push([ 80, "胜负彩","", "1" ]);
-$_sys.lot.push([ 81, "任选九","", "2" ]);
-$_sys.lot.push([ 82, "进球彩","", "4"  ]);
-$_sys.lot.push([ 83, "半全场","", "3"  ]);
+$_sys.lot.push([ 80, "胜负彩","", "1","zc" ]);
+$_sys.lot.push([ 81, "任选九","", "2","/r9/" ]);
+$_sys.lot.push([ 82, "进球彩","", "4" ,"/jq/" ]);
+$_sys.lot.push([ 83, "半全场","", "3" ,"/bq/" ]);
 
-$_sys.lot.push([ 85, "北单胜平负","", "" ]);
-$_sys.lot.push([ 86, "北单猜比分","", "" ]);
-$_sys.lot.push([ 87, "北单半全场","", "" ]);
-$_sys.lot.push([ 88, "北单上下单双","", "" ]);
-$_sys.lot.push([ 89, "北单进球数","", "" ]);
+$_sys.lot.push([ 85, "北单胜平负","", "" ,"/bd/"]);
+$_sys.lot.push([ 86, "北单猜比分","", "","/bd/" ]);
+$_sys.lot.push([ 87, "北单半全场","", "","/bd/" ]);
+$_sys.lot.push([ 88, "北单上下单双","", "" ,"/bd/"]);
+$_sys.lot.push([ 89, "北单进球数","", "","/bd/" ]);
 
-$_sys.lot.push([ 70, "竞彩混合","混投", "" ]);
-$_sys.lot.push([ 90, "竞彩胜平负","胜平负", "" ]);
-$_sys.lot.push([ 72, "竞彩让球胜平负","让球胜平负", "" ]);
-$_sys.lot.push([ 91, "竞彩猜比分","猜比分", "" ]);
-$_sys.lot.push([ 92, "竞彩半全场","半全场", "" ]);
-$_sys.lot.push([ 93, "竞彩进球数","进球数", "" ]);
+$_sys.lot.push([ 70, "竞彩混合","混投", "","/jczq/jchh.html" ]);
+$_sys.lot.push([ 90, "竞彩胜平负","胜平负","", "/jczq/spf.html" ]);
+$_sys.lot.push([ 72, "竞彩让球胜平负","让球胜平负", "","/jczq/" ]);
+$_sys.lot.push([ 91, "竞彩猜比分","猜比分", "" ,"/jczq/"]);
+$_sys.lot.push([ 92, "竞彩半全场","半全场", "" ,"/jczq/"]);
+$_sys.lot.push([ 93, "竞彩进球数","进球数", "","/jczq/" ]);
 
-$_sys.lot.push([ 71, "篮彩混合","混投", "" ]);
-$_sys.lot.push([ 94, "篮彩胜负","胜负", "" ]);
-$_sys.lot.push([ 95, "篮彩让分胜负","让分胜负", "" ]);
-$_sys.lot.push([ 96, "篮彩胜分差","胜分差", "" ]);
-$_sys.lot.push([ 97, "篮彩大小分","大小分", "" ]);
+$_sys.lot.push([ 71, "篮彩混合","混投", "" ,"/jclq/hh.html"]);
+$_sys.lot.push([ 94, "篮彩胜负","胜负", "","/jclq/sf.html" ]);
+$_sys.lot.push([ 95, "篮彩让分胜负","让分胜负", "","/jclq/" ]);
+$_sys.lot.push([ 96, "篮彩胜分差","胜分差", "","/jclq/" ]);
+$_sys.lot.push([ 97, "篮彩大小分","大小分", "","/jclq/dxf.html" ]);
 $_sys.getlotname = function(f,n) {
 	if (typeof(n)=='undefined'){n=1;};
 	for ( var i = 0; i < $_sys.lot.length; i++) {

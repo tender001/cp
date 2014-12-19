@@ -194,7 +194,7 @@ function getJcPlay(gid, pix){
 	}
 	return null;
 }
-var PIOPEN = ["对所有人公开","截止后公开","对参与人员公开","截止后对参与人公开"];
+var PIOPEN = ["对所有人公开","截止后公开","对参与人员公开","截止后对参与人公开","完全保密"];
 var ZHTYPE = ["中奖后不停止","中奖后停止","盈利后停止"];
 $_sys.showsource = function (source){
 	return source=='100' ? "<img src='/images/iphone.png' alt='手机购彩'/>" : "";
