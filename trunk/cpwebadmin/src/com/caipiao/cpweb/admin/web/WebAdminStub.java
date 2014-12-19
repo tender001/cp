@@ -307,6 +307,75 @@ public class WebAdminStub {
 
 	
 
+//	public void loadAgentTree(WebAdmin bean, ServiceContext context) {
+//		JdbcConnect jcn = null;
+//		try {
+//			if(!StringUtil.isEmpty(bean.getRname())){
+//				bean.setQagent(bean.getRname());
+//				bean.setAgent(bean.getRname());
+//			}
+//			jcn = context.getJdbcPoolManager().getJdbcConnect();
+//			JdbcRecordSet jrs = JdbcSqlMapping.executeQuery("query_agent_info", bean, null, jcn);
+//			jrs.first();
+//			
+//			int [] arr = new int[]{0};
+//			JXmlWapper xml = new JXmlWapper("agent");
+//			xml.addStringValue("@id", bean.getAgent());
+//			xml.addStringValue("@name", jrs.get("cagentname") + "[" + bean.getAgent() + "]");
+//			xml.addStringValue("@state", jrs.get("istate"));
+//			xml.addStringValue("@index", "" + arr[0]);
+//			jrs.clear();
+//			if(!StringUtil.isEmpty(bean.getRname())){
+//				JXmlWapper xmlChild = xml.addXmlNode("node");
+//				xmlChild.addStringValue("@id", bean.getAgent());
+//				xmlChild.addStringValue("@name", jrs.get("cagentname") + "[" + bean.getAgent() + "]");
+//				xmlChild.addStringValue("@state", jrs.get("istate"));
+//				xmlChild.addStringValue("@index", "");
+//				load_agent_tree(bean.getQagent(), xmlChild, arr, jcn);
+//			}else{
+//				load_agent_tree(bean.getQagent(), xml, arr, jcn);
+//			}
+//			bean.setBusiErrCode(0);
+//			bean.setBusiErrDesc("成功");
+//			bean.setBusiXml(xml.toXmlString().replaceAll("<\\?.+?\\?>", ""));
+//			
+//		} catch (Exception e) {
+//			logger.error("WebAdminStub::loadAgentTree 异常  aid=" + bean.getAid() ,e);
+//			bean.setBusiErrCode(2);
+//			bean.setBusiErrDesc("调用异常");
+//		} finally {
+//			if (jcn != null) {
+//				jcn.unlock();
+//			}
+//		}
+//	}
+//	
+//	private void load_agent_tree(String agent, JXmlWapper xml, int [] arr, JdbcConnect jcn) throws Exception {
+//		WebAdmin bean = new WebAdmin();
+//		bean.setQagent(agent);
+//		JdbcRecordSet jrs = JdbcSqlMapping.executeQuery("agent_query_child", bean, null, jcn);
+//		if (jrs != null && jrs.size() > 0) {
+//			while (jrs.next()) {
+//				String aid = jrs.get("cagentid");
+//				String name = jrs.get("cagentname");
+//				String state = jrs.get("istate");
+//				String agentseq = jrs.get("cagentseq");
+//				arr[0] += 1;
+//				JXmlWapper xmlChild = xml.addXmlNode("node");
+//				xmlChild.addStringValue("@id", aid);
+//				xmlChild.addStringValue("@name", name + "[" + aid + "]");
+//				xmlChild.addStringValue("@state", state);
+//				xmlChild.addStringValue("@index", "" + arr[0]);
+//				xmlChild.addStringValue("@agentseq", agentseq);
+//
+//				load_agent_tree(aid, xmlChild, arr, jcn);
+//			}
+//			jrs.clear();
+//		}
+//		bean = null;
+//	}
+	
+	
 	public void loadAgentTree(WebAdmin bean, ServiceContext context) {
 		JdbcConnect jcn = null;
 		try {
@@ -325,18 +394,11 @@ public class WebAdminStub {
 			xml.addStringValue("@state", jrs.get("istate"));
 			xml.addStringValue("@index", "" + arr[0]);
 			jrs.clear();
-			if(!StringUtil.isEmpty(bean.getRname())){
-				JXmlWapper xmlChild = xml.addXmlNode("node");
-				xmlChild.addStringValue("@id", bean.getAgent());
-				xmlChild.addStringValue("@name", jrs.get("cagentname") + "[" + bean.getAgent() + "]");
-				xmlChild.addStringValue("@state", jrs.get("istate"));
-				xmlChild.addStringValue("@index", "");
-				load_agent_tree(bean.getQagent(), xmlChild, arr, jcn);
-			}else{
-				load_agent_tree(bean.getQagent(), xml, arr, jcn);
-			}
+			String isParent = load_agent_tree(bean.getQagent(), xml, arr, jcn);
+			xml.addStringValue("@isParent", isParent);
 			bean.setBusiErrCode(0);
 			bean.setBusiErrDesc("成功");
+			logger.info(xml.toXmlString());
 			bean.setBusiXml(xml.toXmlString().replaceAll("<\\?.+?\\?>", ""));
 			
 		} catch (Exception e) {
@@ -350,31 +412,40 @@ public class WebAdminStub {
 		}
 	}
 	
-	private void load_agent_tree(String agent, JXmlWapper xml, int [] arr, JdbcConnect jcn) throws Exception {
+	private String load_agent_tree(String agent, JXmlWapper xml, int [] arr, JdbcConnect jcn) throws Exception {
 		WebAdmin bean = new WebAdmin();
 		bean.setQagent(agent);
+		String flag = "0";
 		JdbcRecordSet jrs = JdbcSqlMapping.executeQuery("agent_query_child", bean, null, jcn);
 		if (jrs != null && jrs.size() > 0) {
 			while (jrs.next()) {
 				String aid = jrs.get("cagentid");
 				String name = jrs.get("cagentname");
 				String state = jrs.get("istate");
-				String agentseq = jrs.get("cagentseq");
 				arr[0] += 1;
 				JXmlWapper xmlChild = xml.addXmlNode("node");
 				xmlChild.addStringValue("@id", aid);
 				xmlChild.addStringValue("@name", name + "[" + aid + "]");
 				xmlChild.addStringValue("@state", state);
 				xmlChild.addStringValue("@index", "" + arr[0]);
-				xmlChild.addStringValue("@agentseq", agentseq);
 
-				load_agent_tree(aid, xmlChild, arr, jcn);
+				WebAdmin cbean = new WebAdmin();
+				cbean.setQagent(aid);
+				int rc = JdbcSqlMapping.getRecordCount("agent_query_child_count", cbean, null, jcn);
+				
+				if(rc >0){
+					xmlChild.addStringValue("@isParent", "1");
+				}else{
+					xmlChild.addStringValue("@isParent", "0");
+				}
+				cbean =null;
 			}
 			jrs.clear();
+			flag = "1";
 		}
 		bean = null;
+		return flag;
 	}
-	
 	
 	public void agentApplyCash(WebAdmin bean, ServiceContext context) {
 		
