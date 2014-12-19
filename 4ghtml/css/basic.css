@@ -23,7 +23,8 @@ table{border-collapse:collapse;border-spacing:0}
 .line-h-15{line-height:1.5 !important}
 .yellow{color:#f6851f}.red{color:#f03d3d}.gray{color:#8e8e8e}.orange{color:#fec502}.blue{color:#177ffc}.black{color:#222}.green{color:#84c73b}
 .wb10{ width:10%}.wb16{width:16%}.wb17{width:17%}.wb18{width:18%}.wb19{width:19%}.wb20{width:20%}.wb21{width:21%}.wb25{width:25%}.wb27{ width:27%}.wb35{width:35%}.wb50{width:50%}
-.pd063{ padding:.63rem}.pdTop08{padding-top:.8rem}.pdLeft06{padding-left: .6rem}.pdLeft04{padding-left:.4rem}.mgTop06{margin-top: .6rem}
+.pd063{ padding:.63rem}.pdTop08{padding-top:.8rem}.pdLeft06{padding-left: .6rem}.pdLeft04{padding-left:.4rem}.mgTop06{margin-top: .6rem}.pdTop06{padding-top: .6rem;}
+.bottom-padding-bottom{padding-bottom:6em}
 .fixed{position:fixed;bottom:0;left:0;z-index:99;width:100%}
 .more{float: right;color: #999}
 /*@media screen and (-webkit-min-device-pixel-ratio:0){input{line-height:normal !important}}*/
