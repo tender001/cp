@@ -103,6 +103,13 @@
 	   	</in-parm>
 	</sql>
 	
+	<sql id="agent_query_child_count" type="1" desc="查询子代理商列表">
+	   select count(*) from tb_agent where cparentid = ?
+		<in-parm>
+	   		<parm name="代理商编号" property="qagent"/>
+	   	</in-parm>
+	</sql>
+	
 	<sql id="query_agent_charge" type="1" desc="查询资金流水" order=" order by ichargeid desc ">
 	<![CDATA[
 	    select ichargeid cid, decode(itype,0,imoney,'') jmoney, decode(itype,1,imoney,'') cmoney,cnickid cuid,
