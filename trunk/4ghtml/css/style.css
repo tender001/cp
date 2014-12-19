@@ -86,7 +86,7 @@
 .kj-menu-b ul li{display: table-cell;padding:0.7em 0;letter-spacing:0.14em;text-align: center;border-left:0.13em solid #f40}
 .kj-menu-b ul li:first-of-type{border:0}
 .kj-menu-b ul li.cur{background-color: #f40}
-.kj-menu-b ul li a{color:#f40;}
+.kj-menu-b ul li a{display:inline-block;width:100%;color:#f40;}
 .kj-menu-b ul li.cur a{color:#fff}
 .kj-list{border-bottom: 1px solid #ccc;margin-bottom: 4em}
 .kj-list ul{width: 97%;margin:-1px auto 0;overflow: hidden}
