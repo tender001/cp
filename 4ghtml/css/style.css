@@ -406,7 +406,10 @@ a.hmTxt2{ display:block; color:#606060; padding-right:1.4rem; position:relative}
 .hm-search li:first-of-type{width: 80%;}
 .hm-search li:last-of-type{width: 20%;}
 .hm-search li input{width:98.8%;padding: 0.6em 0 0.6em 0.7em;border:1px solid #ccc;background-color: transparent;vertical-align: top}
+.hm-buy{background-color: #ddd;background-image:-webkit-linear-gradient(top,#2f2f2f,#666);background-image: -moz-linear-gradient(top,#f60,#f20);background-image: -o-linear-gradient(top,#f60,#f20);background-image: linear-gradient(top,#f60,#f20)}
+.hm-buy li input{float:left;width:75%;background-color: #fff}
 .hm-search li a{display:inline-block;width:3em;height:28px;line-height:28px;font-size: 1.14em;color:#333;text-align:center;border: 1px solid #ccc;background-color: #f0f0f0}
+.hm-search li .btn-hm-buy{float:left;width:15% !important;color:#fff;border-color:#f40;background-color: #f40}
 .fa-hm-list nav{display: table;width:100%;border-top: 1px solid #ccc;border-bottom: 1px solid #ccc}
 .fa-hm-list nav a{display: table-cell;padding: 0.6em 0;font-size: 1.14em;color:#333;text-align:center;background-color: #f0f0f0}
 .hm-list{width: 100%;padding:0.4em 0;overflow: hidden;border-bottom: 1px solid #ccc;position: relative}
