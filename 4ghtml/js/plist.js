@@ -18,7 +18,7 @@ var cacheHTML = "";
 function LoadList(){
 	lotid = location.search.getParam('lotid');
 	pid = location.search.getParam('pid');
-	
+	var hot=100;
 	if(isBDing || loadAll)	{
 		return;
 	}
@@ -33,25 +33,35 @@ function LoadList(){
 	page++;
 	pid = _expect != "" ? _expect : "20130214";
 	var postData = "gid="+lotid+"&pid="+pid+"&fsort="+sorts+"&dsort="+isDescs+"&state="+state+"&find="+key+"&pn="+page+"&ps=20";
+	var url =$_trade.url.plist
+	if (lotid==hot){
+		url =$_trade.url.hlist;
+		postData=""
+	}
 	$.ajax({
-		url:$_trade.url.plist,
+		url:url,
 		data: postData,
 		type: "POST",
 		dataType: "json",
 		success: function(d) {
 			var ori = [];
 			var code = d.Resp.code;
-			var rs = d.Resp.xml;
+			var rs;
+			if(lotid==100){
+				rs= d.Resp;
+			}else{
+				rs= d.Resp.xml;
+			}
 			if(rs) rs = rs.row;
 			if(rs && !isArray(rs)){rs = new Array(rs);}
 			if (code == "0" && rs != undefined) {
 				$.each(rs, function(o,r){
 					var iorder = r.iorder;
 					var lnum = r.lnum;
-					var istate = r.istate;
-					var cprojid = r.cprojid;
+					var istate = lotid==hot?r.state:r.istate;
+					var cprojid = lotid==hot?r.hid:r.cprojid;
 					var nums = r.nums;
-					var cnickid = r.cnickid;
+					var cnickid = lotid==hot?r.nickid:r.cnickid;
 					var pnum = r.pnum;
 	    			var iso = iorder > 0 ? "true" : "false";
 	    			if(lotid>=90 && lotid<=97 || lotid==70 || lotid==71){
