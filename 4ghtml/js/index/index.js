@@ -1,6 +1,6 @@
 
 $(document).ready(function() {
-	indexchklogin();
+	chklogin();
 	init();
 });
 var init=function() {
