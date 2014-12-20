@@ -355,10 +355,10 @@ function issuc(ispay){
 }
 function showbuy(istrue){
     if(istrue){
-    	$("#matchList,#topHeader,#szcbuy,#paybet,#issuc").hide();
+    	$("#matchList,#buyFooter1,#topHeader,#szcbuy,#paybet,#issuc").hide();
     	$("#content_home").show();
     }else{
-    	$("#matchList,#buyFooter1").show();
+    	$("#matchList,#buyFooter1,#topHeader").show();
     	$("#content_home,#szcbuy,#paybet").hide();
     }
 }
