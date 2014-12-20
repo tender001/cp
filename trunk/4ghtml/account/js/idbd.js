@@ -93,7 +93,8 @@ function setdata(){
 				var desc = R.desc;
 				
 				if (code == "0") {
-					
+					var result = "idcard"
+	  					location.href = "/account/showresult.html?result=" + result +"&code=" + R.code;
 //					成功
 				} else {
 					if (code=="1"){

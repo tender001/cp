@@ -101,7 +101,8 @@ function sub() {
 			var code = R.code;
 			var desc = R.desc;
 			if (code == "0") {
-				
+				 var result = "phone"
+	  					location.href = "/account/showresult.html?result=" + result +"&code=" + R.code;
 										
 										
 									} else {
