@@ -148,7 +148,7 @@ keeprec=function(pn){
 						var finish = r.finish;
 						var tmoney = r.tmoney;
 			
-						var html ="<li class=\"ico-click\" onclick=\"location.href='/user/xchase.html?tid="+zhid+"&lotid=" + gameid+"'\" ><i></i>";
+						var html ="<li class=\"ico-click\" onclick=\"location.href='/account/xchase.html?tid="+zhid+"&lotid=" + gameid+"'\" ><i></i>";
 						html +="<span class=\"state\">" + (finish == 1 ? "已完成" : "进行中") + ""
 						
 						html +="</span> <p><b>"+$_sys.getlotname(gameid,1)+"</b><span><em class=\"money\">"+adate+"</em>"+tmoney+"元</span></p> </li>";
