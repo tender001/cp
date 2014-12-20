@@ -423,7 +423,7 @@ a.hmTxt2{ display:block; color:#606060; padding-right:1.4rem; position:relative}
 .hm-list .fl b{font-size:14px}
 .hm-list .fl cite{padding: 1px 7px;font-size:1em;color:#fff;border-radius:0.8em;background-color: #b9b8b8;}
 .hm-list dl{float: right;width: 75%;font-size: 1.14em}
-.peo-name{display: block;padding-top: 10px;color: #f40}
+.peo-name{display: block;padding:5px 0;color: #f40}
 .peo-name em{margin-left:0.5em;padding: 1px 3px;border: 1px solid #f40}
 .peo-hm{display:table;width:100%}
 .peo-hm span{display: table-cell;width: 33%;padding:0.3em 0;text-align: center}
