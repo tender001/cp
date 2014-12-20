@@ -55,7 +55,9 @@ function MiniLogin() {
 				} else if(t == 2){
 					location.href = "/";
 				}
+				
 			}else{
+				
 				showTips(desc);
 			}
 			$("#auth_userId").val("");
@@ -104,8 +106,21 @@ function chklogin(t) {
 					} else if(t == 1){
 						UserMoney();
 					}
+					if($("[mark=isLogin] p")){
+						$("[mark=isLogin] p").html("我的");
+						$("[mark=isPay] p").html("充值");
+						$("[mark=isLogin] a,.user-login").attr("href","/account/");
+						$("[mark=isPay] a").attr("href","/account/pay.html");
+					}
 				}else{
-					 if($(".uinfo"))$(".uinfo").html("您尚未登录，请先"+"<a href=\"javascript:void(0)\" onclick=\"loginHdl()\">登录</a>");
+					if($("[mark=isLogin] p")){
+						$("[mark=isLogin] p").html("登陆");
+						$("[mark=isPay] p").html("注册");
+						$("[mark=isLogin] a,.user-login").attr("href","/user/login.html");
+						$("[mark=isPay] a").attr("href","/user/reg.html"); 
+					}
+					
+					if($(".uinfo"))$(".uinfo").html("您尚未登录，请先"+"<a href=\"javascript:void(0)\" onclick=\"loginHdl()\">登录</a>");
 					 loadLogin();
 				}
 			}
