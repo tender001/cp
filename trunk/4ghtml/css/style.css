@@ -416,7 +416,8 @@ a.hmTxt2{ display:block; color:#606060; padding-right:1.4rem; position:relative}
 .fa-hm-list nav{display: table;width:100%;border-top: 1px solid #ccc;border-bottom: 1px solid #ccc}
 .fa-hm-list nav a{display: table-cell;padding: 0.6em 0;font-size: 1.14em;color:#333;text-align:center;background-color: #f0f0f0}
 .hm-list{width: 100%;padding:0.4em 0;overflow: hidden;border-bottom: 1px solid #ccc;position: relative}
-.hm-list .fl{width: 25%;text-align: center}
+.hm-list .fl{width: 25%;text-align: center;position: relative}
+.hm-list .fl:before{position: absolute;left: 0;top: -0.4em;width: 28px;height: 28px;content:"";background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACsAAAArCAMAAADWg4HyAAAAPFBMVEUAAAD2hR/2hR/2hR/2hR/2hR/2hR/2hR/2hR/2hR/2hR/2hR/2hR/2hR/2hR/2hR/2hR/2hR/2hR/2hR82+HSlAAAAE3RSTlMAgKaI7TT05D36VEYp2sGXIxUFQXwczQAAAK9JREFUOMuV0skOgzAUQ9FLC4R5/P9/7YJSqwok2DtLZ/MG9scpMCgGxaCybde1SSpb9yB8STlpA9DXt1S2rI7W1AmK6IHLSyobBn6phEVlwwLKEGIq2/OXJqay+7ypb/Ml1WzTetZ1uqHa2Th8Jwu3VLd4H+0V0bwVzVvRvBXNW9G8LUjYcUHPIBpbJUkxKAbFoBgUg2JQDIpBMSgGxaAYFINiUAyKQTEoBsWgGPQDwW830pO42UAAAAAASUVORK5CYII=");background-size: 28px}
 .hm-list .fl h2{width:100%;font-size: 1.14em;font-weight: normal;}
 .hm-list .fl strong{display:block;line-height:1;font-size: 2em;color: #f40;letter-spacing: 0.05em}
 .hm-list .fl b{font-size:14px}
