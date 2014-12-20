@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head><title>
+	胜负过关-159彩票网
+</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=1' name='viewport' />
+<meta content='yes' name='apple-mobile-web-app-capable' />
+<meta content='black' name='apple-mobile-web-app-status-bar-style' />
+<meta content='telephone=no' name='format-detection' />
+<link rel="stylesheet" href="/css/basic.css" type="text/css"/>
+<link rel="stylesheet" href="/css/style.css" type="text/css"/>
+<script src='/js/jquery.js'></script>
+<script src='/js/159cp.js'></script>
+<script src='/js/base.js'></script>
+<script src='/js/login.js'></script>
+
+<link href="/img/touch-icon.png" rel="apple-touch-icon-precomposed" /> 
+<script>
+var typeID=5;
+var OddsType=2;
+var SelX="3,0";
+var SelCodes="3,0";
+var SelNames='胜,负';
+var SelKeys="wl0,wl1,wl3";
+var MaxMatch = 15;
+var MaxPowNum = 7;
+<!--#include virtual="/data/bd/wap_spf.html"-->
+</script>
+
+</head>
+<body>
+<!--#include virtual="/cc/header.html"-->
+<section class="buyHeader" id="topHeader">
+    
+      <h1>胜负过关<s id="chowanfa"><cite></cite></s></h1>
+    <a href="javascript:history.go(-1)" class="backIco2"></a>
+<!--     <div class="hmPull" style="display: none;"> -->
+<!--         <a href="/jczq/spf.html" class="cur">胜平负</a> -->
+<!--         <a href="/jczq/jchh.html" >混投</a> -->
+<!--         <a href="javascript:void(0);">让球胜平负</a> -->
+<!--         <a href="/jczq/cbf.html">比分</a> -->
+<!--         <a href="/jczq/jqs.html">总进球</a> -->
+<!--         <a href="/jczq/bqc.html">半全场</a> -->
+
+<!--     </div> -->
+    <em class="goHome jc-more">
+        <cite><a class="cur" href="javascript:void(0);">选择比赛</a><a href="#">合买跟单</a><a href="#">开奖结果</a><a href="#">玩法帮助</a></cite>
+    </em><input id="headLogin" class="mBTN" type="button" style="width:60px" value="登录" onclick="loginHdl()">
+</section>
+<div id="matchList" style="padding:0px;">加载中...</div>
+
+<div class="buyFooter" id='buyFooter1'>
+	<div class="buyFloat fixed">
+		<em class="deleted"  onclick="ReChoose();"></em>
+		<span>已选择<cite class="yellow" id="betnum">0</cite>场比赛</span>
+		<a href="javascript:betconfirm()" class="ture" id="isOk_">确 认</a>
+	</div>
+</div>
+
+<!--#include virtual="/jczq/buy.html"-->
+<input type="hidden" id="hidAmount" />
+<input type="hidden" id="hidTypeName" value="胜负过关" />
+<input id="gid" type="hidden" value="84">
+</body>
+</html>
+<script type="text/javascript" src='/js/310JQ.js'></script>
+<script type="text/javascript" src="/js/JingJi.js"></script>
