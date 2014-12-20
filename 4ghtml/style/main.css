@@ -21,11 +21,11 @@ footer
 .bar{background:#E3F0F9;line-height:36px;color:#000;font-weight:bold; padding:0 10px}
 .arrow { color: #B0C5DB; font-weight: bolder; text-align: right; padding-right: 5px; }
 .list,.listG {
-	background-color: #E1EDF8;
+	/*background-color: #E1EDF8;*/
 	width: 100%;
-	background: -webkit-gradient(linear,0 0,0 100%,from(#FDFEFE),to(#E1EDF8));
+	/*background: -webkit-gradient(linear,0 0,0 100%,from(#FDFEFE),to(#E1EDF8));
 	background:-moz-linear-gradient(top,#FDFEFE,#E1EDF8);
-	background:-o-linear-gradient(top, #FDFEFE, #E1EDF8);
+	background:-o-linear-gradient(top, #FDFEFE, #E1EDF8);*/
 	cursor:pointer;
 	border-top-width: 1px;
 	border-top-style: solid;
