@@ -88,7 +88,7 @@ showproj = function(option){
      $("#tDetail").html("<p>编号 :" + hid + "</p><p>时间 : " + btime + "</p>");
      $("#cdesc").html(cdesc = cdesc == "null" ? "快乐购彩": "方案宣言:" + cdesc);
 	var iclear = option.data.Resp.row.iclear;
-	$("#baoodi").html((pnum!=0 ? ('(<span style="color:Red" >'+parseFloat(parseInt(pnum*100/nums).toFixed(2))+'%) '+(iclear=='2' ? '已清' : '未清'))+"</span>" : '无保底'));
+	$("#baoodi").html((pnum!=0 ? ('<span style="color:Red" >('+parseFloat(parseInt(pnum*100/nums).toFixed(2))+'%) '+(iclear=='2' ? '已清' : '未清'))+"</span>" : '无保底'));
 	
 	var adddate = option.data.Resp.row.adddate;
 	$("#ptime").html(adddate.toDate().format('MM-DD hh:mm'));
