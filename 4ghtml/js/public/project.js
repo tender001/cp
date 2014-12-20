@@ -267,7 +267,7 @@ showproj = function(option){
     if (lo.indexOf(lotid) >= 0) {
         $(".buyFooter1").show()
     }
-    if (Storage.Get("LoginUN_cookie")==cnickid  && istate == 1) {
+    if (istate == 1) {
     	 $(".buyFooter").show();
          $(".buyFooter1").hide()
     }else{
