@@ -116,7 +116,7 @@ function chklogin(t) {
 					if($("[mark=isLogin] p")){
 						$("[mark=isLogin] p").html("登陆");
 						$("[mark=isPay] p").html("注册");
-						$("[mark=isLogin] a,.user-login").attr("href","/user/login.html");
+						$("[mark=isLogin] a,.user-login").attr("href","/user/login.html?bak=1");
 						$("[mark=isPay] a").attr("href","/user/reg.html"); 
 					}
 					
