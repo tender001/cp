@@ -1,8 +1,13 @@
+$(document).ready(function() {
+	chklogin(1);
+	sresult();
+	
+});
 function sresult(){
 	var result = location.search.getParam('result');
 	var code = location.search.getParam('code');
 	if(result == "idcard"){
-		if(code == "5"){
+		if(code == "0"){
 			$("#div2").show();
 		}
 	}else if(result =="code"){

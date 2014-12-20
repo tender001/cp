@@ -1,90 +1,78 @@
 <!DOCTYPE html>
 <html>
 <head><title>
-	账户中心-手机159彩
+	账户中心-159彩票网
 </title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=1;' name='viewport' />
 <meta content='yes' name='apple-mobile-web-app-capable' />
 <meta content='black' name='apple-mobile-web-app-status-bar-style' />
 <meta content='telephone=no' name='format-detection' />
-<script src='/js/jquery.js'></script>
-<script src='/js/159cp.js'></script>
-<script src='/js/base.js'></script>
-<script src='/js/login.js'></script>
-<script src='/js/showresult.js'></script>
-<link rel='stylesheet' href='/style/main.css' />
+    <link rel="stylesheet" href="/css/basic.css" type="text/css"/>
+    <link rel="stylesheet" href="/css/style.css" type="text/css"/>
+    <script src='/js/jquery.js'></script>
+	<script src='/js/159cp.js'></script>
+	<script src='/js/base.js'></script>
+	<script src='/js/login.js'></script>
+<script src='js/showresult.js'></script>
 <link href="/images/apple-touch-icon.png" rel="apple-touch-icon-precomposed" /> 
-<link rel='stylesheet' href='/style/user.css' /></head>
 <body>
-<!--#include virtual="/cc/login.html"-->
+<!--#include virtual="/cc/header.html"-->
+<section class="buyHeader">
+    <h1>恭喜您</h1>
+      <a href="javascript:history.go(-1)" class="backIco2"></a>
+    <a href="/account/" class="goHome"></a>
+</section>
 <input type="hidden" id='logintype' value="1">
-<div style="display: none;" id="Login_Panel" class="header-panel">
-<div style="color:#fff;background:#579DD7;line-height:30px;">
-<div onclick="closeLogin()" class="closeR">关闭</div>
-<span style="margin-left:15px;">用户登录</span></div>
-<form onsubmit="return false;" method="post" action="/users/login.html" autocomplete="off">
-<div class="loginContent">加载中..</div>
-</form>
-</div>
-<script>
-function loginHdl() {
-    $('#Filter_Panel').slideUp('fast');
-    if ($('#Login_Panel').is(':hidden')) showLogin();
-    else closeLogin()
-    return false;
-}
-$(document).ready(function() {
-	chklogin(1);
-	sresult();
-	
-});
-</script>
-<div style="display:none;" id="div1" class="topround">
-     <div class="areac">
-         <font color="#F18D8D"><b>修改成功，请记住新密码</b></font>
+<!-- <div class="user-padding zf-pay-true yz-tel-num"> -->
+<!--     <div class="pay-true"> -->
+<!--         <p><em class="true-icon true-icon-cur" data-type="zfb"><i></i></em>恭喜您，购彩成功！</p> -->
+
+<!-- <!--         <p>预计:12-18 21:45开奖 12-18 22:00派奖</p> --> 
+<!--     </div> -->
+    
+<!-- </div> -->
+
+<div style="display:none;" id="div1" class="user-padding zf-pay-true yz-tel-num">
+     <div class="pay-true">
+         
+          <p><em class="true-icon true-icon-cur" data-type="zfb"><i></i></em>修改成功，请记住新密码</p>
      </div>
-        <input type="button" value="返回首页" onclick="location.href='/'" class="sbtn">&nbsp;
-        <input type="button" value="我的账户" onclick="location.href='/user/account.html'" class="sbtn">
+        <a class="btn btn-true" href="/" id="cpid">返回首页</a><a class="btn btn-true btn-true-re" href="/account/">我的账户</a>
     </div>
-    <div style="display:none;" id="div2" class="topround">
-     <div class="areac">
-         <font color="#F18D8D"><b>身份证绑定成功！</b></font>
+    <div style="display:none;" id="div2" class="user-padding zf-pay-true yz-tel-num">
+     <div class="pay-true">
+         <p><em class="true-icon true-icon-cur" data-type="zfb"><i></i></em>身份证绑定成功！</p>
      </div>
-        <input type="button" value="返回首页" onclick="location.href='/'" class="sbtn">&nbsp;
-        <input type="button" value="我的账户" onclick="location.href='/user/account.html'" class="sbtn">
+         <a class="btn btn-true" href="/" id="cpid">返回首页</a><a class="btn btn-true btn-true-re" href="/account/">我的账户</a>
     </div>
-    <div style="display:none;" id="div3" class="topround">
-     <div class="areac">
-         <font color="#F18D8D"><b>您已成功注册159彩票网账号！</b></font>
+    <div style="display:none;" id="div3" class="user-padding zf-pay-true yz-tel-num">
+     <div class="pay-true">
+         <p><em class="true-icon true-icon-cur" data-type="zfb"><i></i></em>您已成功注册159彩票网账号！</p>
      </div>
-        <input type="button" value="返回首页" onclick="location.href='/'" class="sbtn">&nbsp;
-        <input type="button" value="我的账户" onclick="location.href='/user/account.html'" class="sbtn">
+        <a class="btn btn-true" href="/" id="cpid">返回首页</a><a class="btn btn-true btn-true-re" href="/account/">我的账户</a>
     </div>
-    <div style="display:none;" id="div4" class="topround">
-     <div class="areac">
-         <font color="#F18D8D"><b>您已成功绑定手机！</b></font>
+    <div style="display:none;" id="div4" class="user-padding zf-pay-true yz-tel-num">
+     <div class="pay-true">
+         <p><em class="true-icon true-icon-cur" data-type="zfb"><i></i></em>您已成功绑定手机！</p>
      </div>
-        <input type="button" value="返回首页" onclick="location.href='/'" class="sbtn">&nbsp;
-        <input type="button" value="我的账户" onclick="location.href='/user/account.html'" class="sbtn">
+         <a class="btn btn-true" href="/" id="cpid">返回首页</a><a class="btn btn-true btn-true-re" href="/account/">我的账户</a>
     </div>
-    <div style="display:none;" id="div5" class="topround">
-     <div class="areac">
-         <font color="#F18D8D"><b>您已成功绑定银行！</b></font>
+    <div style="display:none;" id="div5" class="user-padding zf-pay-true yz-tel-num">
+     <div class="pay-true">
+         <p><em class="true-icon true-icon-cur" data-type="zfb"><i></i></em>您已成功绑定银行！</p>
      </div>
-        <input type="button" value="返回首页" onclick="location.href='/'" class="sbtn">&nbsp;
-        <input type="button" value="我的账户" onclick="location.href='/user/account.html'" class="sbtn">
+         <a class="btn btn-true" href="/" id="cpid">返回首页</a><a class="btn btn-true btn-true-re" href="/account/">我的账户</a>
     </div>
-    <div style="display:none;" id="div6" class="topround">
-     <div class="areac">
-         <font color="#F18D8D"><b>您已申请成功，提款处理中！</b></font>
+    <div style="display:none;" id="div6" class="user-padding zf-pay-true yz-tel-num">
+     <div class="pay-true">
+         <p><em class="true-icon true-icon-cur" data-type="zfb"><i></i></em>您已申请成功，提款处理中！</p>
      </div>
-        <input type="button" value="返回首页" onclick="location.href='/'" class="sbtn">&nbsp;
-        <input type="button" value="我的账户" onclick="location.href='/user/account.html'" class="sbtn">
+        <a class="btn btn-true" href="/" id="cpid">返回首页</a><a class="btn btn-true btn-true-re" href="/account/">我的账户</a>
     </div>
-    <div style="display:none;" id="div7" class="topround">
-     <!-- <div class="areac">
-         <font color="#F18D8D"><b>您已申请成功，提款处理中！</b></font>
+    <div style="display:none;" id="div7" class="user-padding zf-pay-true yz-tel-num">
+     <!-- <div class="pay-true">
+         <p><em class="true-icon true-icon-cur" data-type="zfb"><i></i></em>您已申请成功，提款处理中！</p>
      </div>
         <input type="button" value="返回首页" onclick="location.href='/'" class="sbtn">&nbsp;
         <input type="button" value="我的账户" onclick="location.href='/user/account.html'" class="sbtn"> -->
@@ -97,6 +85,6 @@ $(document).ready(function() {
 </div>
 		
     <div id="bottonAn"></div>
-<!--#include virtual="/cc/footer.html"-->
+
 </body>
 </html>
