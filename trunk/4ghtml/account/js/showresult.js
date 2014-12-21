@@ -23,6 +23,8 @@ function sresult(){
 		$("#div5").show();
 	}else if(result =="tikuan"){
 		$("#div6").show();
+	}else if(result =="reg"){
+		$("#div7").show();
 	}
 	/*if(code == "0"){
 		
