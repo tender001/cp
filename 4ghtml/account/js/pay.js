@@ -88,7 +88,7 @@
                     window.location.href="/recharge/baifubao/index.html?allmoney="+money;
                 },
                 mcard:function(money){
-                    window.location.href="/recharge/mobile/card"
+                    window.location.href="/account/phonepay.html"
                 }
             };
 
