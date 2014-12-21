@@ -114,7 +114,7 @@ loadOpencode = function(){
 	                	if(index==0&&c!==""){
 	                		$(".k3kjtext p").html(pid+"期开奖")
 	                		if(c.length==2){
-								$(".pdTop03 ").html('<b>'+c[0].split(',').join('</b><b>')+'</b>'+' <b class="blueBall">'+c[1].split(',').join('</b><b class="blueBall">')+'</b>');
+								$(".pdTop03 ").html('<b>'+c[0].split(',').join('</b><b>')+'</b>'+'<b class="blueBall">'+c[1].split(',').join('</b><b class="blueBall">')+'</b>');
 							}else{
 								$(".pdTop03 ").html('<b>'+c[0].split(',').join('</b><b>')+'</b>');
 							}
