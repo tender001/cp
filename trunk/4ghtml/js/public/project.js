@@ -32,9 +32,9 @@ loadProj=function(){
 					canc=true;
 				}
 				showproj({data:d,canc:canc});
-				showwins({data:d,canc:canc});
+//				showwins({data:d,canc:canc});
 				showcode({data:d,canc:canc});
-				showjoin({data:d,canc:canc});
+//				showjoin({data:d,canc:canc});
 			} else {
 				showTips(desc);
 			}
@@ -96,6 +96,7 @@ showproj = function(option){
 	var istate = option.data.Resp.row.istate;
 	var rmoney = option.data.Resp.row.bonus;
 	var tax = option.data.Resp.row.tax;
+	var wininfo = option.data.Resp.row.wininfo;
 	
     var isflg = 0;
     var baodi = "";
@@ -214,7 +215,7 @@ showproj = function(option){
         break
     }
     $("#kjCodes").show();
-    var acode = $_cache.qcode(gid, periodid);
+    var acode = $_cache.qcode(lotid, periodid);
     if (acode == "") {
         $("#kjCodes").hide()
     } else {
@@ -225,7 +226,7 @@ showproj = function(option){
             }
         } else {
             if (acode != "") {
-                acode = kjcode(acode, gid)
+                acode = kjcode(acode, lotid)
             } else {
 //                if (gid == "01" || gid == "07" || gid == "50" || gid == "03" || gid == "53" || gid == "51" || gid == "52") {
 //                    acode += '<cite class="gray fontSize07 pdLeft06"> ' + kjtime + "开奖</cite>"
@@ -245,16 +246,62 @@ showproj = function(option){
             } else {
                 wininfostr = "<font class='yellow'>此方案共中奖" + rmoney + "元</font>"
             }
-            wininfostr += "<br/>(" + "税前<font class='yellow'>" + parseFloat(rmoney) + "元</font>,税后<font class='yellow'>" + parseFloat(tax) + "元</font>)";
-//            var zj = $_sys_getwininfo(gid, wininfo, pid);
-//            for (var i = 0; i < zj.length; i++) {
-//                wininfostr += "<br/>" + zj[i][0] + " " + zj[i][1] + "注"
-//            }
+           
+            
+            if(wininfo.length > 0){
+    			if(wininfo.indexOf("|") != -1){
+    				ws = wininfo.split("|");
+    				ws[2]=ws[2].replace(/\*/g, "串").replace(/1串1/g, "单关")
+    				if(rmoney > 0){
+    					wininfostr+="<br/><font class='yellow'>共选择" +ws[1]+ "场比赛</font><br/>" +
+    							"<font class='yellow'>过关方式 " +ws[2]+ "</font><br/>" +
+								"<font class='yellow'>共中奖"+ws[0]+"注</font><br/>" ;
+							if(rmoney!=tax){
+								wininfostr+="(" + "税前<font class='yellow'>" + parseFloat(rmoney) + "元</font>,税后<font class='yellow'>" + parseFloat(tax) + "元</font>)";
+							}
+    							
+    				}else{
+    					wininfostr+=">共选择" +ws[1]+ "场比赛<br/>过关方式:" +ws[2]+ "<br/>未中奖";
+    				}
+    			} else {
+    				ws = wininfo.split(",");
+    				var gid = $("#lotid").val();
+    				var grd = $_sys.getGradeDef(gid);
+    				var wss = [];
+    				if(grd != null){
+    					var gs = grd.split(",");
+    					if(gid=='50'){
+    						for(var k = 0; k < 8; k++){
+    							if(ws[k] > 0){
+    								wss.push(gs[k] + " <font class='yellow'>" + ws[k] + "</font> 注" + ((k+9 < gs.length && ws[k+9] > 0) ? "<font class='yellow'>(追加)</font>" : ""));
+    							}
+    						}
+    						if(ws[8] > 0){
+    							wss.push(gs[k] + " <font class='yellow'>" + ws[k] + "</span> 注");
+    						}
+    					} else {
+    						for(var k = 0; k < gs.length; k++){
+    							if(ws[k] > 0){
+    								wss.push(gs[k] + " <font class='yellow'>" + ws[k] + "</span> 注");
+    							}
+    						}
+    					}
+    				}
+    				wininfostr=wss.join("<br/>");
+    				if(rmoney > 0){
+    					if(rmoney!=tax)
+    					wininfostr += "<br/>(" + "税前<font class='yellow'>" + parseFloat(rmoney) + "元</font>,税后<font class='yellow'>" + parseFloat(tax) + "元</font>)";
+    				}
+    				
+    			}
+    		} else {
+    			wininfostr = "未中奖";
+    		}
             if (itype == 1 && istate != 3 && istate != 4) {
-                wininfostr += "<br />发起人提成:" + parseFloat(owins) + "元,每元中" + parseFloat(avg) + "元"
+//                wininfostr += "<br />发起人提成:" + parseFloat(owins) + "元,每元中" + parseFloat(avg) + "元"
             }
         } else {
-            wininfostr += "未中奖"
+            wininfostr = "未中奖"
         }
         $("#surplus").hide();
         $("#zgzjSituation").show();
