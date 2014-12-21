@@ -19,8 +19,7 @@ function resultdetail(){
 //			}
 			$.ajax({
 				url:"/cpdata/game/"+gid+"/c.json?r="+Math.random(),
-//				http://www.159cai.com/cpdata/game/54/s.json?rnd=0.20174545116204878
-//				http://www.159cai.com/cpdata/guoguan/83/index.json
+
 				type : "get",
 				dataType : "json",
 				success : function(d) {
