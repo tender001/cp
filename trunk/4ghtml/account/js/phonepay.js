@@ -11,7 +11,9 @@
  	$("em[name=facevalue]").click(function(){
  		$("em[name=facevalue]").removeClass("cur");
  		$(this).addClass("cur");
- 		$("#cardts").addClass("cur")
+ 		$("#cardts").addClass("cur");
+ 		var str = ($(this).attr("value")*1*0.96+"").substring(0,($(this).attr("value")*1*0.96+"").indexOf(".") + 3);
+ 		$("#redMoney").html(str)
  	})
  })
 var setType=function(cursel,n){
@@ -24,6 +26,7 @@ var setType=function(cursel,n){
 	}
 	var ty=$("#cardtypeid em");
 	ty.removeClass("cur");
+	$("#redMoney").html("0.00");
 	$(ty[cursel-1]).addClass("cur");
 }
 var interCode = function(isc){
@@ -75,19 +78,19 @@ var typecheck =function(){
 }
 var subform =function (){
 	var tempvalue="";
-	$("div.cz_mz").each(function(){
-		if(!$(this).is(":hidden")){
-			$(this).find("li[name=facevalue]").each(function(){
+	$("div[ty]").each(function(){
+//		if(!$(this).is(":hidden")){
+			$(this).find("em[name=facevalue]").each(function(){
 				if($(this).hasClass("cur")){
 					tempvalue=$(this).attr("value");
 				}
 			});
-		}
+//		}
 	})
 	
 	var typevalue="";
 	var typevalue="";
-	$("li[name=cardtype]").each(function(){
+	$("em[name=cardtype]").each(function(){
 		
 		if($(this).hasClass("cur")){
 			if($(this).index()==0){
@@ -104,57 +107,46 @@ var subform =function (){
 	var passid = ($("#passid").val()).replace(/\s+/g,"");
 	if(typevalue==""){
 		showTips('请选择充值卡类型');
-		return false;
+		return ;
 	}else if(tempvalue==""){
 		showTips('请选择充值面值');
-		return false;
+		return ;
 	}else if($("#cardid").val()==""){
 		showTips('充值卡卡号不能为空');
-		return false;		
+		return ;		
 	}else if(isNaN(cardid)){
 		showTips('卡号请输入数字');
-		return false;		
+		return ;		
 	}else if(isNaN(passid)){
 		showTips('密码请输入数字');
-		return false;		
+		return ;		
 	}else if($("#passid").val()==""){
 		showTips('充值卡密码不能为空');
-		return false;		
+		return ;		
 	}
-	var ccts = Y.lib.MaskLay('#ccts', '#cctsdiv');
-	ccts.addClose('[mark=cctsclose]');//'#smreturn'
-    Y.get('#ccts  div.tantop').drag('#ccts');
-    Y.get("#cardtype").html(typevalue)
-    Y.get("#cardmoney").html(tempvalue);
-    Y.get("#czmoney").html(tempvalue*0.96);
-    Y.get("#cardno").html(cardid);
-    Y.get("#cardpwd").html(passid);
-    ccts.pop();
 	
-	$("#surecc").click(function(){
-		ccts.close();
-		Y.ajax({
+
+   
+   
+	
+		
+		$.ajax({
 		url :$_user.url.addmoney,
 		type :"POST",
 		dataType :"json",
 		data :"bankid=9&addmoney="+tempvalue+"&tkMoney="+tempvalue+"&cardnum="+cardid+"&cardpass="+passid+"&dealid="+typevalue+"&v="+Math.random(),
-		end  : function (d){
-			var obj = eval("(" + d.text + ")");
+		success  : function (d){
+			var obj = d;
    		    var code = obj.Resp.code;
    		    var desc = obj.Resp.desc;
 			if (code == "0") {
-				var sdcg = Y.lib.MaskLay('#sdcg', '#sdcgdiv');
-				sdcg.addClose('[mark=sdcgclose]');//'#smreturn'
-			    Y.get('#sdcg  div.tantop').drag('#sdcg');
-				
-			    sdcg.pop();
+				showMS("收单成功");
 			} else {
 				//收单失败
 				showTips(desc);
 			}
 		}
 	});
-	})
 
 	
 }
@@ -184,4 +176,37 @@ function showTips(tips) {
     },2000);
 	$('div.tipsClass').click(function(){$(this).hide()});
 
+}
+function showMS(ms,fn) {
+    $("#divshowprebuy").html("<div class=\"alert\"><div class=\"alert-tips\"><h2>温馨提示</h2><p>" + ms + "</p><div class=\"alert-btn\" onclick='showBuyMini(2)'>确定</div></div></div>");
+//    $("#divshowprebuy").css({
+//        "top": ($(window).height() / 4 + $(window).scrollTop()) + "px",
+//        'left': "0px",
+//    });
+    $(".alert-tips").css({
+        "margin-top": ($(window).height() / 4 + $(window).scrollTop()) + "px",
+       
+    });
+    showBuyMini(1);
+    setTimeout(function() { showBuyMini(2); }, (6 * 1000));
+    if(fn != null && fn != undefined){
+    	fn.call(this);
+    }
+}
+
+
+//是否显示提示窗口
+function showBuyMini(kind) {
+    if (kind == 1) {
+        $("#divshowprebuy").show();
+        $("#divDisable").css({
+            "height": $("#caseForm").height() + 110 + "px",
+            "display": "block"
+        });
+    }
+    else {
+        $("#divshowprebuy").hide();
+        $("#divDisable").hide();
+        $("#divshowprebuy").html("");
+    }
 }
