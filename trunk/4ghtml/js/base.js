@@ -162,6 +162,7 @@ function writeCookie(name, value) {
     document.cookie = name + "=" + value + expire;
 }
 var JC_Config = [];
+JC_Config.push([84, "SF", "bd"]);
 JC_Config.push([85, "SPF", "bd"]);
 JC_Config.push([86, "CBF", "bd"]);
 JC_Config.push([87, "BQC", "bd"]);

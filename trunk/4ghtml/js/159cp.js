@@ -39,6 +39,7 @@ $_user.url = {
 	checklogin : '/phpu/cl.phpx',// 检测用户是否登录
 	checkexist : "/phpu/q.phpx?fid=u_check_user", // 查询用户名是否可用
 	register : "/phpu/reg.phpx", // 注册
+	regnoyzm : "/phpu/regnoyzm.phpx", // 注册
 	login : "/phpu/login.phpx",// 登录
 	loginout : "/phpu/lout.phpx", // 退出登陆
 	base : "/phpu/q.phpx?fid=u_ainfo", // 查询用户登录名、用户余额、冻结款、用户类型
@@ -362,6 +363,7 @@ $_sys.getGradeDef=function(lotid){
 	return null;
 };
 $_sys.jjcode = [];
+$_sys.jjcode.push([84,'{"K*":"取消","K3":"主胜","K0":"客胜"}']);
 $_sys.jjcode.push([85,'{"K*":"取消","K3":"胜","K1":"平","K0":"负"}']);
 $_sys.jjcode.push([86,'{"K*":"取消","K1:0":"1:0","K2:0":"2:0","K2:1":"2:1","K3:0":"3:0","K3:1":"3:1","K3:2":"3:2","K4:0":"4:0","K4:1":"4:1","K4:2":"4:2","K9:0":"9:0","K9:9":"9:9","K0:0":"0:0","K1:1":"1:1","K2:2":"2:2","K3:3":"3:3","K0:1":"0:1","K0:2":"0:2","K1:2":"1:2","K0:3":"0:3","K1:3":"1:3","K2:3":"2:3","K0:4":"0:4","K1:4":"1:4","K2:4":"2:4","K0:9":"0:9"}']);
 $_sys.jjcode.push([87,'{"K*":"取消","K3-3":"胜胜","K3-1":"胜平","K3-0":"胜负","K1-3":"平胜","K1-1":"平平","K1-0":"平负","K0-3":"负胜","K0-1":"负平","K0-0":"负负"}']);
@@ -418,7 +420,7 @@ $_sys.getcastm = function(lotid, key){
 
 $_sys.lottype = [];
 $_sys.lottype.push([ "足 彩", "zc", "80,81,82,83" ]);
-$_sys.lottype.push([ "北京单场", "bjdc", "85,86,87,88,89" ]);
+$_sys.lottype.push([ "北京单场", "bjdc", "85,84,86,87,88,89" ]);
 $_sys.lottype.push([ "竞彩足球", "jczq", "90,72,91,92,93,70" ]);
 $_sys.lottype.push([ "竞彩篮球", "jclq", "94,95,96,97,71" ]);
 $_sys.lottype.push([ "高频彩", "gpc", "4,20,54,56" ]);
