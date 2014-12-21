@@ -300,7 +300,7 @@ $(document).ready(function() {
 	$("#keeprec").click(function(){
 		keeprec(1);
 		$(this).addClass("cur");
-		$("#rec,#keeprec").removeClass("cur");
+		$("#rec,#detail").removeClass("cur");
 	});
 	$("#detail").click(function(){
 		acc(1);
