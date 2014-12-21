@@ -467,7 +467,7 @@ showcode=function(option){
 		$("#content").html(html.join("<br/>"));
 	} else {
 		if(codes !="" && !codes.endWith('.txt')){
-			if(gid == 70 || gid == 71 || gid == 72 || (parseInt(gid)>=90 && parseInt(gid) <= 97) || gid == 85 || gid == 86 || gid == 87 || gid == 88 || gid == 89){
+			if(gid == 70 || gid == 71 || gid == 72 || (parseInt(gid)>=90 && parseInt(gid) <= 97) || gid == 85|| gid == 84 || gid == 86 || gid == 87 || gid == 88 || gid == 89){
 				showjjcode(option);
 			} else if(gid == 1 || gid == 7 || gid == 50 || gid == 51 || gid == 52 || gid == 80|| gid == 81|| gid == 82|| gid == 83){
 				$("#content").html(showszccode(gid, codes, 0));
@@ -656,7 +656,13 @@ getjcrs=function(gid,hs,vs,hss,vss,lose){
 		} else if(parseFloat(hs) + parseFloat(lose) < parseFloat(vs)){
 			rs = "0";
 		}
-	} else if(gid == 96){
+	} else if(gid == 84){
+		if(parseFloat(hs) + parseFloat(lose) > parseFloat(vs)){
+			rs = "3";
+		} else if(parseFloat(hs) + parseFloat(lose) < parseFloat(vs)){
+			rs = "0";
+		}
+	}else if(gid == 96){
 		var val = parseInt(hs) - parseInt(vs);
 		if (val > 0) {
 			if(val > 0 & val <=5){
@@ -731,7 +737,7 @@ showjccode=function(option){
 			}
 			
 		} else {
-			if( gid == 95){
+			if( gid == 95||gid == 84){
 				html += "<td width=\"70%\" > "+r.vn+" ";
 				html += (parseFloat(lose) > 0) ? "<em class=\"fontSize07\" style='color:Red'>("+lose+")</em>" : "<em class=\"fontSize07\" style='color:green'>("+lose+")</em>";
 				html += r.hn+" <span style=\"color:red\" id=\"dan"+id+"\"></span></td>";
@@ -761,7 +767,7 @@ showjccode=function(option){
 				for(var f = 0; f < cc.length; f++){
 					var ps = cc[f].split("=");
 					var gg = getJcPlay(gid, ps[0]);
-					lose = lls.length > 1 ? (gg == 95 ? lls[0] : lls[2]) : r.lose;
+					lose = lls.length > 1 ? ((gg == 95||gg == 84) ? lls[0] : lls[2]) : r.lose;
 //					if(gg==97){
 //						lose = lls.length > 1?lls[3]: r.lose;
 //					}
@@ -769,7 +775,7 @@ showjccode=function(option){
 						mrs = mrs == "*" ? mrs : getjcrs(gg, r.hs, r.vs, r.hhs, r.hvs, (gg==97?lls[3]:lose));
 						
 					}
-					var cs = ps[1].split("/");
+//					var cs = ps[1].split("/");
 					if(rst){
 						html += "比分：" + "(" + r.hs + ":" + r.vs + ")"+ (gg == 92 ? "半场比分：("+r.hhs+":"+r.hvs+")" : "") +  " 赛果：<span style='color:Red'>" + $_sys.getJJCode(gg,"K" + mrs) + "</span><br/>";
 					}
@@ -800,7 +806,7 @@ showjccode=function(option){
 							
 						}
 						html += "玩法:<em style='color:green'>" + $_sys.getlotname(gg,2) + "</em>";
-						if(gg == 72 || gg == 95 || gg == 97){
+						if(gg == 72 || gg == 95 || gg == 97|| gg == 84){
 							if(lose != 0){
 								html += (parseFloat(lose)>0 ? "<em style='color:Red'>(<b>+"+lose+"</b>)</em>" : "<em style='color:green'>(<b>"+lose+"</b>)</em>");
 							}
@@ -866,7 +872,7 @@ showjccode=function(option){
 	if(jcobj.filter == 1){
 		match.push("<div><span style='color:Red'>去除单一玩法串</span></div>");
 	}
-	if(gid==71||gid==94||gid==95||gid==96){
+	if(gid==71||gid==94||gid==95||gid==96||gid==84||gid==85){
 		$("#content").append('<table width="100%" cellspacing="0" cellpadding="0" border="0" class="lcbetTitle mgTop06"><tbody><tr><td width="15%">场次</td><td width="70%">主队VS客队/投注选项</td><td width="15%" style="border-right:none">赛果</td></tr></tbody></table>')
 	}else{
 		$("#content").append('<table width="100%" cellspacing="0" cellpadding="0" border="0" class="lcbetTitle mgTop06"><tbody><tr><td width="15%">场次</td><td width="70%">客队VS主队/投注选项</td><td width="15%" style="border-right:none">赛果</td></tr></tbody></table>')
