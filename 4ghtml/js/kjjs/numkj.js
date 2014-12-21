@@ -62,7 +62,7 @@ $(document).ready(function(){
     							$("#sfc_twomoney").html("二等奖："+row.twonum+"注"+row.twomoney+"元");
     						}
 						
-
+    						$("#sfc_pid").parent().parent().parent("a").attr("href","/kj/detail.html?gid="+row.gid+"&pid="+row.pid+"");
     						$("#sfc_pid").html(row.pid+"期");	
     						
     						$("#sfc_pools").html(row.pools);	
@@ -75,7 +75,8 @@ $(document).ready(function(){
     						row.onemoney = row.money[0] == ''?'0':(parseFloat(row.money[0]));
             			
     						$("#jqcmoney").html("一等奖："+row.onenum+"注"+row.onemoney+"元");
-    						$("#jqc_pid").html(row.pid+"期");		
+    						$("#jqc_pid").html(row.pid+"期");
+    						$("#jqc_pid").parent().parent().parent("a").attr("href","javascript:void(0);");
     						$("#jqc_kjdate").html(row.auditdate);
     						$("#jqc_code").html('<cite>'+row.code.split(',').join('</cite><cite>')+'</cite>');		
     					}else if (row.gid=='83'){	
@@ -84,52 +85,63 @@ $(document).ready(function(){
     						row.onenum = row.nums[0] == ''?'0':(parseFloat(row.nums[0]));
     						row.onemoney = row.money[0] == ''?'0':(parseFloat(row.money[0]));
     						$("#bqcmoney").html("一等奖："+row.onenum+"注"+row.onemoney+"元");
-    						$("#bqc_pid").html(row.pid+"期");		
+    						$("#bqc_pid").html(row.pid+"期");	
+    						$("#bqc_pid").parent().parent().parent("a").attr("href","javascript:void(0);");
+    						$("#ssq_pid").parent().parent().parent("a").attr("href","javascript:void(0);");
     						$("#bqc_kjdate").html(row.auditdate);
     						$("#bqc_code").html('<cite>'+row.code.split(',').join('</cite><cite>')+'</cite>');
     					}else if (row.gid=='50'){	
-    						$("#dlt_pid").html(row.pid+"期");		
+    						$("#dlt_pid").html(row.pid+"期");	
+    						$("#dlt_pid").parent().parent().parent("a").attr("href","/kj/detail.html?gid="+row.gid+"&pid="+row.pid+"");
     						$("#dlt_kjdate").html(row.awardtime);
     						var code=row.code.split('|');		
     						$("#dlt_code").html('<b>'+code[0].split(',').join('</b><b>')+'</b>'+' <b class="blue">'+code[1].split(',').join('</b><b class="blue">')+'</b>');
     					}else if (row.gid=='01'){	
     						$("#ssq_pid").html(row.pid+"期");		
-    						
+    						$("#ssq_pid").parent().parent().parent("a").attr("href","/kj/detail.html?gid="+row.gid+"&pid="+row.pid+"");
     						$("#ssq_kjdate").html(row.awardtime);
     						var code=row.code.split('|');		
     						$("#ssq_code").html('<b>'+code[0].split(',').join('</b><b>')+'</b>'+' <b class="blue">'+code[1].split(',').join('</b><b class="blue">')+'</b>');	
     					}else if (row.gid=='03'){	
     						$("#sd_pid").html(row.pid+"期");		
+    						$("#sd_pid").parent().parent().parent("a").attr("href","/kj/detail.html?gid="+row.gid+"&pid="+row.pid+"");
     						$("#sd_kjdate").html(row.awardtime);
     						$("#sd_code").html('<b>'+row.code.split(',').join('</b><b>')+'</b>');
     					}else if (row.gid=='53'){	
-    						$("#pls_pid").html(row.pid+"期");		
+    						$("#pls_pid").html(row.pid+"期");	
+    						$("#pls_pid").parent().parent().parent("a").attr("href","/kj/detail.html?gid="+row.gid+"&pid="+row.pid+"");
     						$("#pls_kjdate").html(row.awardtime);	
     						$("#pls_code").html('<b>'+row.code.split(',').join('</b><b>')+'</b>');
     					}else if (row.gid=='52'){	
-    						$("#plw_pid").html(row.pid+"期");		
+    						$("#plw_pid").html(row.pid+"期");	
+    						$("#plw_pid").parent().parent().parent("a").attr("href","/kj/detail.html?gid="+row.gid+"&pid="+row.pid+"");
     						$("#plw_kjdate").html(row.awardtime);
     						$("#plw_code").html('<b>'+row.code.split(',').join('</b><b>')+'</b>');
     					}else if (row.gid=='07'){	
     						$("#qlc_pid").html(row.pid+"期");		
+    						$("#qlc_pid").parent().parent().parent("a").attr("href","/kj/detail.html?gid="+row.gid+"&pid="+row.pid+"");
     						$("#qlc_kjdate").html(row.awardtime);
     						var code=row.code.split('|');		
     						$("#qlc_code").html('<b>'+code[0].split(',').join('</b><b>')+'</b>'+' <b class="blue">'+code[1].split(',').join('</b><b class="blue">')+'</b>');
     						
     					}else if (row.gid=='51'){	
-    						$("#qxc_pid").html(row.pid+"期");		
+    						$("#qxc_pid").html(row.pid+"期");	
+    						$("#qxc_pid").parent().parent().parent("a").attr("href","/kj/detail.html?gid="+row.gid+"&pid="+row.pid+"");
     						$("#qxc_kjdate").html(row.awardtime);
     						$("#qxc_code").html('<b>'+row.code.split(',').join('</b><b>')+'</b>');
     					}else if (row.gid=='54'){	
-    						$("#11x5_pid").html(row.pid+"期");		
+    						$("#11x5_pid").html(row.pid+"期");	
+    						$("#11x5_pid").parent().parent().parent("a").attr("href","javascript:void(0);");
     						$("#11x5_kjdate").html(row.awardtime);
     						$("#11x5_code").html('<b>'+row.code.split(',').join('</b><b>')+'</b>');
     					}else if (row.gid=='56'){	
     						$("#11ydj_pid").html(row.pid+"期");		
+    						$("#11ydj_pid").parent().parent().parent("a").attr("href","javascript:void(0);");
     						$("#11ydj_kjdate").html(row.awardtime);
     						$("#11ydj_code").html('<b>'+row.code.split(',').join('</b><b>')+'</b>');
     					}else if (row.gid=='04'){	
     						$("#ssc_pid").html(row.pid+"期");		
+    						$("#ssc_pid").parent().parent().parent("a").attr("href","javascript:void(0);");
     						$("#ssc_kjdate").html(row.awardtime);
     						$("#ssc_code").html('<b>'+row.code.split(',').join('</b><b>')+'</b>');
     					}
