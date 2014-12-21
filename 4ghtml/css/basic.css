@@ -29,7 +29,7 @@ table{border-collapse:collapse;border-spacing:0}
 .more{float: right;color: #999}
 /*@media screen and (-webkit-min-device-pixel-ratio:0){input{line-height:normal !important}}*/
 .top-mar{margin-top:2.6rem;padding: 10px 0;font-size: 1.14em;background-color: #f1f1f1;}
-.top-margin{margin-top:2.75rem;}
+.top-margin{margin-top:2.75rem;}.marbottom0{margin-bottom: 0 !important}
 .rightArrow,.hmArrow{position:absolute;width:.45rem;height:.45rem;background:#fff;right:1rem;top:2rem;border-bottom:.16rem solid #ccc;border-right:.16rem solid #ccc;transform:rotate(-45deg);-webkit-transform:rotate(-45deg);-moz-transform:rotate(-45deg)}
 .user a,.nav-list h3,.go-top-ico{background-image:url("../img/app-icon-index.png");background-repeat:no-repeat;}
 /*gotop*/
@@ -47,7 +47,7 @@ table{border-collapse:collapse;border-spacing:0}
 .true-icon-cur{border-color:#0a9a2e;background-color: #0a9a2e;}
 .true-icon-cur i{display: inline-block;width: 15px;height: 6px;border-left: 3px solid #fff;border-bottom: 3px solid #fff;-webkit-transform: rotate(-40deg);-moz-transform: rotate(-30deg);-o-transform: rotate(-30deg);transform: rotate(-40deg);}
 /*底部灰色*/
-.pay-submit{padding: 1.3em 0;background-color: #e3e3e3}
+.pay-submit{padding: 1.3em 0 0;background-color: #e3e3e3}
 /*点击按钮*/
 .btn{display: block;padding:0.6em 0;letter-spacing:0.16em;text-align: center;border-radius:5px;box-shadow: 1px 1px 5px rgba(0,0,0,0.5)}
 .btn-true{width: 94%;margin:0 auto 12px;font-size:1.3em;color:#fff;background-color: #f60;background-image:-webkit-linear-gradient(top,#f60,#f20);background-image: -moz-linear-gradient(top,#f60,#f20);background-image: -o-linear-gradient(top,#f60,#f20);background-image: linear-gradient(top,#f60,#f20)}
@@ -158,9 +158,9 @@ input.fqhmGray{ background:#ebebeb}
 .lcbetTable{ border-left:1px solid #dedede; border-right:1px solid #dedede; font-size:.8rem}
 .lcbetTitle td,.lcbetTable td{ text-align:center; border-right:1px solid #dedede; border-bottom:1px solid #dedede; padding:.4rem 0; line-height:1rem}
 .lcbetTitle td{ border-bottom:none}
-.lcbetTable td:first-child{ font-size:.9rem; color:#aeacab}
+.lcbetTable td:first-child{color:#aeacab}
 .lcbetTable td.r9last{ border-right:none}
-.tdleft{ text-align:left; padding:0 4%; word-break:break-all}
+.tdleft{display:inline-block;text-align:left; padding:0 4%; word-break:break-all}
 .tdleft span{ margin-right:8%}
 .lcbetFooter{ line-height:2rem; text-indent:.6rem; color:#7f7f7f; border:1px solid #dedede; border-top:none; border-radius:.5rem .5rem 0 0; -webkit-border-radius:0 0 .5rem .5rem; -moz-border-radius:0 0 .5rem .5rem}
 .lcbetTable2{ border:1px solid #dedede; border-top:none; border-radius:.5rem .5rem 0 0; -webkit-border-radius:0 0 .5rem .5rem; -moz-border-radius:0 0 .5rem .5rem}
