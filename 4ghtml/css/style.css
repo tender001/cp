@@ -14,9 +14,10 @@
 .focus .hd ul .on{ background-color:#FF4000;  }
 .focus .bd{ position:relative; z-index:0; }
 .focus .bd li img{ width:100%; height:150px;}*/
-.slide-dragcontainer{height: 180px}
-.slide-dragcontainer .slide-container{height: 180px !important}
-.slide-container .slide-wrapper img{width: 100%;height:100%;max-height: 140px}
+/*.slide-dragcontainer{height: 100px}
+.slide-dragcontainer .slide-container{height: 100px !important}
+.slide-container .slide-wrapper{height: 100px !important}*/
+.slide-container .slide-wrapper img{width: 100%;height:100%;max-height:140px}
 .app-notice{height:3em;overflow: hidden}
 .notice{width:96%;height:3.5em;line-height:3.5em;padding:0 2%;font-size:1.1em;color:#f60;background-color:#fff;overflow: hidden}
 /*.notice span{padding-right:3px;color: #333}*/
@@ -222,8 +223,8 @@
 .relative{position:relative}
 .shakeIco2{background-image:url(/img/fc/shake.png)}
 .omitIco2{background-image:url(/img/fc/omitHover.png)}
-.shakeomit{ position:absolute; width:9.6em;right:0; top:0}
-.shakeomit cite{float:left; margin-top:.8em}
+.shakeOmit{display:none;width:9.6em;position:absolute;right:0; top:0}
+.shakeOmit cite{float:left; margin-top:.8em}
 .shakeico{float:left;width:23px;height:18px;margin:.7em .15em 0 0;background-image:url(/img/fc/shake2.png);background-size:23px 18px}
 .omitico,.omitico2{ float:left;width:17px;height:14px;margin:.8em .05em 0 .5em;background-image:url(/img/fc/omit2.png);background-size:17px 14px}
 .omitico2{background-image:url(/img/fc/omitHover2.png)}
@@ -231,6 +232,7 @@
 .ssqText p{line-height:1.6; padding-left:.7em; font-size:1.11em}
 .pdLeft08{padding-left:.8em}
 .ssqBall cite{display:inline-block; background:#fff;color:#db150b;font-size:1rem;width:2.2rem;text-align:center;line-height:2.2rem; margin:.47rem .47rem .6rem 0;border-radius:2.2rem; box-shadow:0 0 0 1px #d6d6d6 inset; -webkit-box-shadow:0 0 0 1px #d6d6d6 inset; -moz-box-shadow:0 0 0 1px #d6d6d6 inset;}
+.ssqblueBall{border-top: 1px solid #dedede}
 .ssqblueBall cite{color: #106fe5}
 .ssqBall cite.redBall{ background:#db150b; color:#fff; box-shadow:0 0 0 1px #db150b inset; -webkit-box-shadow:0 0 0 1px #db150b inset; -moz-box-shadow:0 0 0 1px #db150b inset}
 .ssqBall cite.blueBall{ background:#106fe5; color:#fff; box-shadow:0 0 0 1px #106fe5 inset; -webkit-box-shadow:0 0 0 1px #106fe5 inset; -moz-box-shadow:0 0 0 1px #106fe5 inset}
@@ -256,6 +258,9 @@
 .syx5kj .k3waitkj{ width:90%; padding:.6em 0 0 10%}
 .syx5kj .kjdice b{ float:left; width:1.8em;height:1.8em;line-height:1.8em;font-size:1.05em;text-align:center;color:#fff;background-color:#db150b;margin:.2em .15em 0 0; border-radius:1.3em}
 .syx5kj .kjdice b.blueBall{background-color:#106fe5}
+.syx5kj .kjdice-ssq{padding: 0.5em 0 0;color:#8e8e8e}
+.syx5kj .kjdice-ssq b{padding:0.4em}
+.syx5kj .kjdice-ssq .blueBall{color:#106fe5}
 .syx5kj .kjup{ margin:-.2rem 0 0 .2rem}
 .syx5kj .kjdown{ margin:.36rem 0 0 .15rem}
 .kjup,.kjdown,.p5kjup,.p5kjdown{ float:left; margin-top:-.1rem; border-width:.6rem; border-style:solid; border-color:transparent transparent #d0cece transparent;}
