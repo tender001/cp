@@ -1,3 +1,15 @@
+//var jczq_kj = {
+//    initail: function() {
+//       
+//        jQuery(".date").attr("class", "date");
+//        jQuery("#txtBirthday").parent().attr("class", "");
+//        jQuery("html").attr("class", "");
+//        jQuery("body").attr("class", "");
+//        jQuery("#delete_parent").parent().attr("class", "");
+//       
+//    }
+//}
+
 function showmatchkj(){
 	var gid = location.search.getParam('gid');
 	var xpid = location.search.getParam('pid');
@@ -8,12 +20,11 @@ function showmatchkj(){
 
 	var gs = [["jczq","竞彩足球开奖"], ["jclq","竞彩篮球开奖"], ["bjdc","北京单场开奖"]];
 
-
+	$("#payment").attr("href",(gid=="bjdc"?"/bd/":"/"+gid+"/"));
 	var flag = false;
 	$.each(gs,function(o,g){
 		if(g[0] == gid){
-			$("em#em").html(g[1]);
-			document.title = g[1] + document.title;
+			$(".buyHeader h1").html(g[1]);
 			flag = true;
 			return;
 		}
@@ -39,25 +50,24 @@ function showmatchkj(){
 						$.each(rs,function(o,r) {
 							var flag = r.flag;
 							var pid = r.pid;
-							if(xpid != '' ){
-							
-								cpid=xpid
-							}else{
+							if(xpid != ''){
+								cpid = xpid;
+							}else if(o==0){
 								cpid = pid;
 							}
-							if(flag == 1){
-								html.push("<option value='/info/football.html?gid=bjdc&="+pid+"' id="+pid+">当前期"+pid+"</option>");
-								if(xpid == ''){
-									cpid = pid;
-								}
-							} else {
-								html.push("<option value='/info/football.html?gid=bjdc&pid="+pid+"' id="+pid+">历史期"+pid+"</option>");
-							}
+//							if(flag == 1){
+//								html.push("<option value='/info/football.html?gid=bjdc&="+pid+"' id="+pid+">当前期"+pid+"</option>");
+//								if(xpid == ''){
+//									cpid = pid;
+//								}
+//							} else {
+//								html.push("<option value='/info/football.html?gid=bjdc&pid="+pid+"' id="+pid+">历史期"+pid+"</option>");
+//							}
 						});
-						html.push("<option value='/history/'>返回列表</option>");
-						$("#listexpect").html(html.join(""));
+//						html.push("<option value='/history/'>返回列表</option>");
+//						$("#listexpect").html(html.join(""));
 						if(cpid != ''){
-							$("#"+cpid).attr("selected","selected");
+//							$("#"+cpid).attr("selected","selected");
 							showmatch(gid, cpid);
 						}
 					}
@@ -82,22 +92,22 @@ function showmatchkj(){
 					var cpid = "";
 					$.each(rs,function(o,r) {
 						var pid =  r.did;
-						var day = pid.substring(0,4) + "-" + pid.substring(4,6) + "-" + pid.substring(6, 8);
+//						var day = pid.substring(0,4) + "-" + pid.substring(4,6) + "-" + pid.substring(6, 8);
 						if(xpid != ''){
 							cpid = xpid;
-						}else{
+						}else if(o==0){
 							cpid = pid;
 						}
 //						http://local.159cai.com/info/football.html?gid=jclq&did=140409
-						html.push("<option value='/info/football.html?gid=" + gid + "&pid="+pid+"' id="+pid+">"+day+"</option>");
-						if(cpid == ''){
-							cpid = pid;
-						}
+//						html.push("<option value='/info/football.html?gid=" + gid + "&pid="+pid+"' id="+pid+">"+day+"</option>");
+//						if(cpid == ''){
+//							cpid = pid;
+//						}
 					});
-					html.push("<option value='/history/'>返回列表</option>");
-					$("#listexpect").html(html.join(""));
+//					html.push("<option value='/history/'>返回列表</option>");
+//					$("#listexpect").html(html.join(""));
 					if(cpid != ''){
-						$("#"+cpid).attr("selected","selected");
+//						$("#"+cpid).attr("selected","selected");
 						showmatch(gid, cpid);
 					}
 				}
@@ -126,7 +136,8 @@ function showmatch(gid, expect){
 					var rs = data.match.row;
 					if(rs && !isArray(rs)){rs = new Array(rs);}
 					if(rs.length > 0){
-						var html = [];
+						var match ="";
+						var num=0;
 						$.each(rs,function(o,r) {
 							var mname = r.mname;
 							var cl = r.cl;
@@ -142,59 +153,61 @@ function showmatch(gid, expect){
 							var result = r.rs;
 							var icancel = r.icancel;
 							
-							var match = [];
-							match.push("<table class='list' border='0' cellSpacing='0' cellPadding='0' >");
-							match.push("<tr><td colspan='6' align=center>场次：<font size=2 color=#999>" + mid + "</font>&nbsp;&nbsp;<font size=2 color="+cl+">" + mname + "</font>&nbsp;&nbsp;<font size=2 color=#999>" + time + "</font></td></tr>");
-							if(icancel == 1){
-								if(close == 0){
-									match.push("<tr><td colspan='2' align='center'>[主]" + hn + "</td><td colspan='2' align='center'><font color='red'>延期</font></td><td colspan='2' align='center'>" + gn + "</td></tr>");
+							num++;
+//							if(11 == 1){
+//								if(lose == 0){
+//									
+//								}else{
+//									
+//								}
+//							}else{
+								
+							
+							match +='<ul class="sfcxs"><li><em>'+ mid +'</em><p color='+cl+'>'+ mname +'</p><cite>'+ time + '</cite></li>'
+							var bc = "-- : --";
+							var qc = "-- : --";
+							
+							if((""+hss).length > 0 && (""+hms).length > 0 && (""+ss).length > 0 && (""+ms).length > 0){
+								bc = hms + " : " + hss;
+								qc = ms + " : " + ss;
+								var rss = result.split(";");
+								var arr = [];
+								if(rss.length == 5){
+									arr.push(rss[0].split(":"));	//spf
+									arr.push(rss[1].split(":"));	//cbf
+									arr.push(rss[2].split(":"));	//bqc
+									arr.push(rss[3].split(":"));	//sxp
+									arr.push(rss[4].split(":"));	//jqs
 								} else {
-									match.push("<tr><td colspan='2' align='center'>[主]" + hn + "(<font color=#3366cc>" + close + "</font>)</td><td colspan='2' align='center'><font color='red'>延期</font></td><td colspan='2' align='center'>" + gn + "</td></tr>");
+									arr.push([getMatchRS("85", ms, ss, hms, hss, close), "--"]);
+									arr.push([getMatchRS("86", ms, ss, hms, hss, close), "--"]);
+									arr.push([getMatchRS("87", ms, ss, hms, hss, close), "--"]);
+									arr.push([getMatchRS("88", ms, ss, hms, hss, close), "--"]);
+									arr.push([getMatchRS("89", ms, ss, hms, hss, close), "--"]);
 								}
-							} else {
-								if(close == 0){
-									match.push("<tr><td colspan='3' align='center'>[主]" + hn + "</td><td colspan='3' align='center'>" + gn + "</td></tr>");
-								} else {
-									match.push("<tr><td colspan='3' align='center'>[主]" + hn + "(<font color=#3366cc>" + close + "</font>)</td><td colspan='3' align='center'>" + gn + "</td></tr>");
-								}
-
-								var bc = "-- : --";
-								var qc = "-- : --";
-								if((""+hss).length > 0 && (""+hms).length > 0 && (""+ss).length > 0 && (""+ms).length > 0){
-									bc = hms + " : " + hss;
-									qc = ms + " : " + ss;
-									
-									match.push("<tr><td align='center' colspan='3'>半场比分&nbsp;<font color='seagreen'>"+bc+"</font></td><td align='center' colspan='3'>全场比分&nbsp;<font color='seagreen'>"+qc+"</font></td></tr>");
-									
-									var rss = result.split(";");
-									var arr = [];
-									if(rss.length == 5){
-										arr.push(rss[0].split(":"));	//spf
-										arr.push(rss[1].split(":"));	//cbf
-										arr.push(rss[2].split(":"));	//bqc
-										arr.push(rss[3].split(":"));	//sxp
-										arr.push(rss[4].split(":"));	//jqs
-									} else {
-										arr.push([getMatchRS("85", ms, ss, hms, hss, close), "--"]);
-										arr.push([getMatchRS("86", ms, ss, hms, hss, close), "--"]);
-										arr.push([getMatchRS("87", ms, ss, hms, hss, close), "--"]);
-										arr.push([getMatchRS("88", ms, ss, hms, hss, close), "--"]);
-										arr.push([getMatchRS("89", ms, ss, hms, hss, close), "--"]);
-									}
-									match.push("<tr><td align='center' colspan='2'><font color='hotpink'>玩法</font></td><td align='center' colspan='2'><font color='hotpink'>彩果</font></td><td align='center' colspan='2'><font color='hotpink'>sp值</font></td>");
-									match.push("<tr><td align='center' colspan='2'>胜平负</td><td align='center' colspan='2'>" + getMatchRT(85, arr[0][0]) + "</td><td align='center' colspan='2'>" + arr[0][1] + "</td>");
-									match.push("<tr><td align='center' colspan='2'>比分</td><td align='center' colspan='2'>" + getMatchRT(86, arr[1][0]) + "</td><td align='center' colspan='2'>" + arr[1][1] + "</td>");
-									match.push("<tr><td align='center' colspan='2'>半全场</td><td align='center' colspan='2'>" + getMatchRT(87, arr[2][0]) + "</td><td align='center' colspan='2'>" + arr[2][1] + "</td>");
-									match.push("<tr><td align='center' colspan='2'>上下单双</td><td align='center' colspan='2'>" + getMatchRT(88, arr[3][0]) + "</td><td align='center' colspan='2'>" + arr[3][1] + "</td>");
-									match.push("<tr><td align='center' colspan='2'>总进球</td><td align='center' colspan='2'>" + getMatchRT(89, arr[4][0]) + "</td><td align='center' colspan='2'>" + arr[4][1] + "</td>");
-								} else {
-									match.push("<tr><td align='center' colspan='6'>比赛未完成</td></tr>");
-								}
+								
+								match +='<li><p class="spfzpkNum"><span>(主)'+ hn +'</span><span class="spfvs">'+qc+'</span><span>'+ gn +'(客)</span></p>'
+									+'<div><p><span>胜平负</span><span>总进球</span><span>半全场</span><span>上下单双</span></p>'
+									+'<p><span >'+ getMatchRT(85, arr[0][0]) +'('+ arr[0][1] + ')</span><span class=" jclqsf">'+ getMatchRT(89, arr[4][0]) +'('+ arr[4][1] +')</span>'
+									+'<span>'+ getMatchRT(87, arr[2][0]) + '('+ arr[2][1] +')</span><span><em> '+ getMatchRT(88, arr[3][0]) +'('+ arr[3][1] +')</em></span></p>'
+									+'</div></li></ul>';
+							}else{
+								match +='<li><p class="spfzpkNum"><span>(主)'+ hn +'</span><span class="spfvs">'+qc+'</span><span>'+ gn +'(客)</span></p>'
+									+'<div><p><span>胜平负</span><span>总进球</span><span>半全场</span><span>上下单双</span></p>'
+									+'<p><span >-</span><span class=" jclqsf">-</span>'
+									+'<span>-</span><span><em> -</em></span></p>'
+									+'</div></li></ul>';
 							}
-							match.push("</table>");
-							html.push(match.join(""));
+								
+							
+//							}
+							
+							
+							
 						});
-						$("#tb").append(html.join(""));
+						var day = "20"+expect.substring(0,2) + "-" + expect.substring(2,4) + "-" + expect.substring(4, 6);
+						$(".jczqkj").html(match);
+						$(".sfcTitle").html(day+'&nbsp;&nbsp;'+num+'场比赛')
 					}
 					
 				} else {
@@ -214,7 +227,8 @@ function showmatch(gid, expect){
 				var rs = data.rows.row;
 				if(rs && !isArray(rs)){rs = new Array(rs);}
 				if(rs.length > 0){
-					var html = [];
+					var match ="";
+					var num=0;
 					$.each(rs,function(o,r) {
 						var mname = r.mname;
 						var sn = r.sn;
@@ -229,160 +243,160 @@ function showmatch(gid, expect){
 						var cl = r.cl;
 						var lose = r.lose;
 						
-						var match = [];
-						match.push("<table class='list' border='0' cellSpacing='0' cellPadding='0' >");
-						match.push("<tr><td colspan='6' align=center><font size=2 color=#999>" + cid + "</font>&nbsp;&nbsp;<font size=2 color="+cl+">" + mname + "</font>&nbsp;&nbsp;<font size=2 color=#999>" + time + "</font></td></tr>");
-						if(ic == 1){
-							if(lose == 0){
-								match.push("<tr><td colspan='2' align='center'>[主]" + mn + "</td><td colspan='2' align='center'><font color='red'>延期</font></td><td colspan='2' align='center'>" + sn + "</td></tr>");
-							} else {
-								match.push("<tr><td colspan='2' align='center'>[主]" + mn + "(<font color=#3366cc>" + lose + "</font>)</td><td colspan='2' align='center'><font color='red'>取消</font></td><td colspan='2' align='center'>" + sn + "</td></tr>");
-							}
-						} else {
-							if(lose == 0){
-								match.push("<tr><td colspan='3' align='center'>[主]" + mn + "</td><td colspan='3' align='center'>" + sn + "</td></tr>");
-							} else {
-								match.push("<tr><td colspan='3' align='center'>[主]" + mn + "(<font color=#3366cc>" + lose + "</font>)</td><td colspan='3' align='center'>" + sn + "</td></tr>");
-							}
-
-							var bc = "-- : --";
-							var qc = "-- : --";
-							if((""+hss).length > 0 && (""+hms).length > 0 && (""+ss).length > 0 && (""+ms).length > 0){
-								bc = hms + " : " + hss;
-								qc = ms + " : " + ss;
-								
-								match.push("<tr><td align='center' colspan='3'>半场比分&nbsp;<font color='seagreen'>"+bc+"</font></td><td align='center' colspan='3'>全场比分&nbsp;<font color='seagreen'>"+qc+"</font></td></tr>");
-								
-								var arr = [];
-								arr.push([getMatchRS("90", ms, ss, hms, hss, lose)]);
-								arr.push([getMatchRS("91", ms, ss, hms, hss, lose)]);
-								arr.push([getMatchRS("92", ms, ss, hms, hss, lose)]);
-								arr.push([getMatchRS("93", ms, ss, hms, hss, lose)]);
-								arr.push([getMatchRS("72", ms, ss, hms, hss, lose)]);
-									
-								match.push("<tr><td align='center' colspan='3'><font color='hotpink'>玩法</font></td><td align='center' colspan='3'><font color='hotpink'>彩果</font></td></tr>");
-								match.push("<tr><td align='center' colspan='3'>胜平负</td><td align='center' colspan='3'>" + getMatchRT(90, arr[0][0]) + "</td></tr>");
-								match.push("<tr><td align='center' colspan='3'>猜比分</td><td align='center' colspan='3'>" + getMatchRT(91, arr[1][0]) + "</td></tr>");
-								match.push("<tr><td align='center' colspan='3'>半全场</td><td align='center' colspan='3'>" + getMatchRT(92, arr[2][0]) + "</td></tr>");
-								match.push("<tr><td align='center' colspan='3'>进球数</td><td align='center' colspan='3'>" + getMatchRT(93, arr[3][0]) + "</td></tr>");
-								match.push("<tr><td align='center' colspan='3'>让球胜平负</td><td align='center' colspan='3'>" + getMatchRT(72, arr[4][0]) + "</td></tr>");
-							} else {
-								match.push("<tr><td align='center' colspan='6'>比赛未完成</td></tr>");
-							}
-						}
-						match.push("</table>");
-						html.push(match.join(""));
-					});
-					$("#tb").append(html.join(""));
-				}
-			},
-			error:function(){
-				showTips('网络异常!');
-			}
-		});
-	} else if(gid == 'jclq'){
-		$.ajax({
-			url :"/cpdata/match/jclq/award/"+expect+"/"+expect+".json",
-			dataType:"json",
-			success:function(data){
-				var rs = data.rows.row;
-				if(rs && !isArray(rs)){rs = new Array(rs);}
-				if(rs.length > 0){
-					var html = [];
-					$.each(rs,function(o,r) {
-						var mname = r.mname;
-						var sn = r.sn;
-						var mn = r.mn;
-						var time = r.mt.substring(5,16);
-						var ms = r.ms;
-						var ss = r.ss;
-						var rs = r.rs;
-						var cid = r.cid;
-						var ic = r.ic;
-						var cl = r.cl;
 						
-						var match = [];
-						match.push("<table class='list' border='0' cellSpacing='0' cellPadding='0' >");
-						match.push("<tr><td colspan='6' align=center><font size=2 color=#999>" + cid + "</font>&nbsp;&nbsp;<font size=2 color="+cl+">" + mname + "</font>&nbsp;&nbsp;<font size=2 color=#999>" + time + "</font></td></tr>");
+						num++;
 						if(ic == 1){
-							match.push("<tr><td colspan='2' align='center'>[主]" + mn + "</td><td colspan='2' align='center'><font color='red'>取消</font></td><td colspan='2' align='center'>" + sn + "</td></tr>");
-						} else {
-							match.push("<tr><td colspan='2' align='center'>[主]" + mn + "(<font color='red'>" + ms + "</font>)</td><td colspan='2' align='center'>&nbsp;</td><td colspan='2' align='center'>" + sn + "(<font color='red'>" + ss + "</font>)</td></tr>");
-							
-							if((""+ms).length > 0 && ("" + ss).length > 0){
-								var rss = rs.split(";");
-								if(rss.length > 4){
-									var arr = [];
-									$.each(rss,function(po,pr){
-										var parts = pr.split(":");
-										if(parts[0] == 'sf'){
-											arr[0] = parts[1];
-										} else if(parts[0] == 'rfsf'){
-											var _arr = parts[1].split(",");
-											var sarr = [];
-											$.each(_arr,function(_o,_r){
-												var rr = _r.split("|");
-												sarr.push([rr[1],rr[0]]);
-											});
-											arr[1] = sarr;
-										} else if(parts[0] == 'sfc'){
-											arr[2] = parts[1];
-										} else if(parts[0] == 'dxf'){
-											var _arr = parts[1].split(",");
-											var sarr = [];
-											$.each(_arr,function(_o,_r){
-												var rr = _r.split("|");
-												sarr.push([rr[1],rr[0]]);
-											});
-											arr[3] = sarr;
-										}
-									});
-									
-									match.push("<tr><td align='center' colspan='2'><font color='hotpink'>玩法</font></td><td align='center' colspan='2'>让分/预设总分</td><td align='center' colspan='2'><font color='hotpink'>彩果</font></td></tr>");
-									match.push("<tr><td align='center' colspan='2'>胜负</td><td align='center' colspan='2'>&nbsp;</td><td align='center' colspan='2'>" + getMatchRT(94, arr[0]) + "</td></tr>");
-									var rfsf_len = arr[1].length;
-									if(rfsf_len == 1){
-										var tr = arr[1][0];
-										match.push("<tr><td align='center' colspan='2'>让分胜负</td><td align='center' colspan='2'>" + tr[0] + "</td><td align='center' colspan='2'>" + getMatchRT(95, tr[1]) + "</td></tr>");
-									} else {
-										var tr = arr[1][0];
-										match.push("<tr><td align='center' rowspan='" + rfsf_len + "' colspan='2'>让分胜负</td><td align='center' colspan='2'>" + tr[0] + "</td><td align='center' colspan='2'>" + getMatchRT(95, tr[1]) + "</td></tr>");
-										for(var i = 1; i < rfsf_len; i++){
-											var tr = arr[1][i];
-											match.push("<tr><td align='center' colspan='2'>" + tr[0] + "</td><td align='center' colspan='2'>" + getMatchRT(95, tr[1]) + "</td></tr>");
-										}
-									}
-									match.push("<tr><td align='center' colspan='2'>胜分差</td><td align='center' colspan='2'>&nbsp;</td><td align='center' colspan='2'>" + getMatchRT(96, arr[2]) + "</td>");
-									var dxf_len = arr[3].length;
-									if(dxf_len == 1){
-										var tr = arr[3][0];
-										match.push("<tr><td align='center' colspan='2'>大小分</td><td align='center' colspan='2'>" + tr[0] + "</td><td align='center' colspan='2'>" + getMatchRT(95, tr[1]) + "</td></tr>");
-									} else {
-										var tr = arr[3][0];
-										match.push("<tr><td align='center' rowspan='" + dxf_len + "' colspan='2'>大小分</td><td align='center' colspan='2'>" + tr[0] + "</td><td align='center' colspan='2'>" + getMatchRT(95, tr[1]) + "</td></tr>");
-										for(var i = 1; i < dxf_len; i++){
-											var tr = arr[3][i];
-											match.push("<tr><td align='center' colspan='2'>" + tr[0] + "</td><td align='center' colspan='2'>" + getMatchRT(95, tr[1]) + "</td></tr>");
-										}
-									}
-								} else {
-									match.push("<tr><td align='center' colspan='6'>尚未获取到赛果</td></tr>");
-								}
-							} else {
-								match.push("<tr><td align='center' colspan='6'>比赛未完成</td></tr>");
+							if(lose == 0){
+								
+							}else{
+								
 							}
+						}else{
+							
+						
+						match +='<ul class="sfcxs"><li><em>'+ cid +'</em><p color='+cl+'>'+ mname +'</p><cite>'+ time + '</cite></li>'
+						var bc = "-- : --";
+						var qc = "-- : --";
+						
+						if((""+hss).length > 0 && (""+hms).length > 0 && (""+ss).length > 0 && (""+ms).length > 0){
+							bc = hms + " : " + hss;
+							qc = ms + " : " + ss;
+							var arr = [];
+							arr.push([getMatchRS("90", ms, ss, hms, hss, lose)]);
+							arr.push([getMatchRS("91", ms, ss, hms, hss, lose)]);
+							arr.push([getMatchRS("92", ms, ss, hms, hss, lose)]);
+							arr.push([getMatchRS("93", ms, ss, hms, hss, lose)]);
+							arr.push([getMatchRS("72", ms, ss, hms, hss, lose)]);
+							
+							match +='<li><p class="spfzpkNum"><span>(主)'+ mn +'</span><span class="spfvs">'+qc+'</span><span>'+ mn +'(客)</span></p>'
+								+'<div><p><span>胜平负</span><span>让球('+lose+')</span><span>总进球</span><span>半全场</span></p>'
+								+'<p><span >'+getMatchRT(90, arr[0][0])+'</span><span class=" jclqsf">'+getMatchRT(72, arr[4][0])+'</span>'
+								+'<span>'+getMatchRT(93, arr[3][0])+'</span><span><em> '+ getMatchRT(92, arr[2][0]) +'</em></span></p>'
+								+'</div></li></ul>';
+						}else{
+							match +='<li><p class="spfzpkNum"><span>(主)'+ mn +'</span><span class="spfvs">'+qc+'</span><span>'+ mn +'(客)</span></p>'
+								+'<div><p><span>胜平负</span><span>让球('+lose+')</span><span>总进球</span><span>半全场</span></p>'
+								+'<p><span >-</span><span class=" jclqsf">-</span>'
+								+'<span>-</span><span><em> -</em></span></p>'
+								+'</div></li></ul>';
 						}
-						match.push("</table>");
-						html.push(match.join(""));
+							
+						
+						}
+						
 					});
-					$("#tb").append(html.join(""));
 				}
+				var day = "20"+expect.substring(0,2) + "-" + expect.substring(2,4) + "-" + expect.substring(4, 6);
+				$(".jczqkj").html(match);
+				$(".sfcTitle").html(day+'&nbsp;&nbsp;'+num+'场比赛')
+				
 			},
 			error:function(){
 				showTips('网络异常!');
 			}
 		});
-	}
+	} else if(gid=="jclq"){
+		
+		var html = "";
+		 $.ajax({
+				url :"/cpdata/match/jclq/award/"+expect+"/"+expect+".json",
+				dataType:"json",
+				success:function(data){
+					var rs = data.rows.row;
+					
+					if(rs && !isArray(rs)){rs = new Array(rs);}
+					if(rs.length > 0){
+						var html = [];
+						var num=0;
+						$.each(rs,function(o,row) {
+							num++;
+							 row.index=row.mid;
+								row.short_mt=row.mt.substring(5,16);
+								row.sname=row.mname.substr(0,4);
+								if(row.cl.length<3){row.cl="blue";}
+								if (parseInt(row.ic)==0){
+									if(row.rs.length>2){//已出赛果
+										row.bf=row.ss+":"+row.ms;
+										    var rsstr=row.rs.split(";");
+											var rt=(row.ms*1-row.ss*1)*1;
+											if(rsstr[0].length>3){if(rt*1>0){row.spf="主胜";}else{row.spf="主负";}}
+
+											if(rsstr[2].length>4){
+											if(rt>0&&rt<6){row.cbf="主胜1-5";}
+											else if(rt>5&&rt<11){row.cbf="主胜6-10";}
+											else if(rt>10&&rt<16){row.cbf="主胜11-15";}
+											else if(rt>15&&rt<21){row.cbf="主胜16-20";}
+											else if(rt>20&&rt<26){row.cbf="主胜21-25";}
+											else if(rt>25){row.cbf="主胜26+";}
+											else if(rt>-6&&rt<0){row.cbf="客胜1-5";}
+											else if(rt>-11&&rt<-5){row.cbf="客胜6-10";}
+											else if(rt<-10&&rt>-16){row.cbf="客胜11-15";}
+											else if(rt<-15&&rt>-21){row.cbf="客胜16-20";}
+											else if(rt<-20&&rt>-26){row.cbf="客胜21-25";}
+											else if(rt<-25){row.cbf="客胜26+";}
+											}
+											
+											rt=rsstr[1];
+											rt=rt.split(":")[1];
+											var rtstr=rt.split(",");
+											row.opstr1="";
+											var r1,r2,temp1;
+											for(ii=0;ii<rtstr.length;ii++){
+												r1=rtstr[ii].split("|")[0];
+												r2=rtstr[ii].split("|")[1];
+												if(ii==0){temp1=r1;}else if(temp1!=r1){row.jqs="<span style='color:red'>"+row.jqs+"</span>";}
+												if(r1*1>1){r1="让分主胜";}else{r1="让分主负";}
+												if(ii==0){row.jqs=r1;}
+												row.opstr1 +='<option value="'+r1+'">'+r2+'</option>';
+											}
+											rt=rsstr[3];
+											rt=rt.split(":")[1];
+											var rtstr=rt.split(",");
+											row.opstr2="";
+											var r3,r4,temp2;
+											for(ii=0;ii<rtstr.length;ii++){
+												r3=rtstr[ii].split("|")[0];
+												r4=rtstr[ii].split("|")[1];
+												if(ii==0){temp2=r3;}else if(temp2!=r3){row.bqc="<span style='color:red'>"+row.bqc+"</span>";}
+												if(r3*1>1){r3="大分";}else{r3="小分";}
+												if(ii==0){row.bqc=r3;}
+												row.opstr2 +='<option value="'+r3+'">'+r4+'</option>';
+											}
+
+									}else{
+										row.bf="开奖中";
+										row.spf="";
+										row.cbf="";
+										row.jqs="";
+										row.bqc="";
+									}
+								
+								}else{//取消
+									row.bf="取消";
+									row.spf="-";
+									row.cbf="-";
+									row.jqs="-";
+									row.bqc="-";
+									row.url='-';
+								}
+								html +='<ul class="sfcxs"><li><em>'+ row.cid +'</em><p color='+row.cl+'>'+ row.mname +'</p><cite>'+ row.short_mt + '</cite></li>'
+								html +='<li><p class="spfzpkNum"><span>(客)'+ row.sn +'</span><span class="spfvs">'+row.bf+'</span><span>'+ row.mn +'(主)</span></p>'
+								+'<div><p><span>胜负</span><span>让分胜负('+row.opstr1+')</span><span>大小分('+row.opstr2+')</span><span>胜分差</span></p>'
+								+'<p><span >'+row.spf+'</span><span class=" jclqsf">'+row.jqs+'</span>'
+								+'<span>'+row.bqc+'</span><span><em> '+ row.cbf +'</em></span></p>'
+								+'</div></li></ul>';
+						           
+//								html[html.length] = tableTpl[0].tpl(row);
+						 
+						})
+						$(".jczqkj").html(html);
+						var day = "20"+expect.substring(0,2) + "-" + expect.substring(2,4) + "-" + expect.substring(4, 6);
+						$(".sfcTitle").html(day+'&nbsp;&nbsp;'+num+'场比赛')
+					}
+				}
+		
+	})
+}
 }
 function getMatchRS(gid,hs,vs,hss,vss,lose){
 	var rs = "";
