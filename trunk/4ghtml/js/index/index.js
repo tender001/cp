@@ -21,7 +21,7 @@ var init=function() {
 	
 };
 
-function indexchklogin(t) {
+function isLogin(t) {
 	   $.ajax({
 	       url: $_user.url.checklogin,
 	       dataType:'json',
