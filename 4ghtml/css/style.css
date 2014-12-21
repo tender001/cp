@@ -193,9 +193,9 @@
 .spfzpk span{ float:left;width:30%;text-align:center;margin:0.6em 1.2% 0;height:2em;line-height:2em;font-size:1.13em;color:#f40;border:1px solid #f40;border-radius:5px;overflow:hidden;-webkit-border-radius:5px;-moz-border-radius:5px}
 .spfzpk span.cur{background-color:#f40;color:#fff}
 .bfpk span{ width:96%}
-.sfcxs li:first-child{ width:5.3em;text-align:center;color:#5c5c5c}
-.sfcxs li:first-child p{font-size:1.12em}
-.sfcxs li:first-child cite{ display:block;color:#aaa}
+.sfcxs li:first-child{width:5.4em;text-align:center;color:#5c5c5c}
+.sfcxs li:first-child p{/*font-size:1.12em*/}
+.sfcxs li:first-child cite{ display:block;color:#aaa;font-size:10px}
 .sfcxs li:last-child{ margin-right:0}
 .spfzpkNum span{width:40%;float:left;text-align:center;}
 .spfzpkNum span.spfvs{ width:18%}
@@ -347,9 +347,9 @@
 .user-tz-his p span{display: block;color: #888}
 .user-tz-his p cite{display:inline-block;width:8em;color: #f40}
 .user-tz-his .money{display:inline-block;width:8em;}
-.user-setting{margin-top: 2.6rem;padding:10px 0 7rem;font-size:1.14em;background-color:#f0f0f0;}
+.user-setting{margin-top: 2.6rem;padding:10px 0 1rem;font-size:1.14em;background-color:#f0f0f0;}
 .user-setting a{color: #333}
-.user-setting .ico-click{height:2.5em;line-height:2.5em;padding: 0.5em 0;border-bottom:1px solid #ddd;background-color: #fff;overflow: hidden}
+.user-setting .ico-click{height:2.5em;line-height:2.5em;padding: 0.5em 0;border-bottom:1px solid #e2e2e2;background-color: #fff;overflow: hidden}
 .user-setting .list-4{margin-bottom: 10px;border-bottom: 0}
 .set-icon{float:left;display:inline-block;width:35px;height:30px;margin-top:2px;background: url("/img/set-icon.png") no-repeat;background-size:35px 228px}
 .set-icon1{background-position: 0 -1px}
@@ -387,6 +387,7 @@
 .zf-pay-true .true-icon{display: inline-block;margin-right:10px;vertical-align: middle}
 .zf-pay-true .yz-tel-num .btn{width: 46.5%}
 .user-tz-his .zd-more{padding:1.5em 2%;text-align:center;border-top:1px solid #ccc;background-color: #f0f0f0}
+.user-setting .btn{margin-top:1.5em;color: #fff}
 /*合买*/
 .hemai h2{margin-top: -.1rem}
 .fontSize1{font-size: 1rem}
@@ -467,7 +468,6 @@ a.hmTxt2{ display:block; color:#606060; padding-right:1.4rem; position:relative}
 .kjTit span{ color:#a4a4a4; float:left; font-size:.9em; margin:.2em 0 0 .8em}
 .kjBall cite{ margin:.4em .3em 0 0}
 .kjBall cite{ display:inline-block; background:#f03d3d; color:#fff; width:1.9em; line-height:1.9em; text-align:center; margin:.4em .3em 0 0; font-size:1em; border-radius:1.9em; -webkit-border-radius:1.9em; -moz-border-radius:1.9em}
-
 .kjList{ border:1px solid #dedede; margin-top:.8rem; border-radius:.4rem; -webkit-border-radius:.4rem; -moz-border-radius:.4rem}
 .kjList li{ text-align:center; line-height:1.9rem; border-bottom:1px solid #ebebeb}
 .kjList li.gray{ color:#aeacab; background:#f7f5f4; border-radius:.3rem .3rem 0 0; -webkit-border-radius:.3rem .3rem 0 0; -moz-border-radius:.3rem .3rem 0 0}
@@ -490,7 +490,23 @@ a.hmTxt2{ display:block; color:#606060; padding-right:1.4rem; position:relative}
 .kjBox b{ width:1.5em; line-height:1.8em; font-size:1em}
 .sfcall a{ height:3.6em; padding:.7em 0 0 .5em}
 .kjDz em{ display:inline-block; margin:.7em .4em 0 0; color:#8e8e8e; font-size:.9em}
+.zx-kj .zx-kj-tit{font-size:1.12em}
+.sfcTitle{position:relative;line-height:2.1rem;font-size:1.14em;color:#5c5c5c;background-color:#f2f2f2;padding:0 .68rem;border-bottom:1px solid #e4e4e4}
+.jczqkj .spfvs{color:#f6851f}
+.jczqkj li{padding-bottom:.35rem}
+.jczqkj .spfvs{color:#f6851f}
+.jczqkj div{width:95%;border:1px solid #c7c7c7;margin-top:.3rem;border-radius:.2rem;-webkit-border-radius:.2rem;-moz-border-radius:.2rem}
+.jczqkj div p{overflow:hidden;zoom:1}
+.jczqkj div p:first-child{background-color:#f2f2f2;color:#aaa;border-radius:.2rem .2rem 0 0;-webkit-border-radius:.2rem .2rem 0 0;-moz-border-radius:.2rem .2rem 0 0}
+.jczqkj div p span{float:left;line-height:1.8rem;width:25%;text-align:center}
+.jclqkj li{font-size:.75rem}
+.jclqkj li:first-child{width:4.7rem}
+.jclqkj li:last-child{width:76%}
+.jclqkj div p span{width:22%}
+.jclqkj div p span.jclqsf{width:28%}
+.jclqkj .spfzpkNum span{width:42%}
+.jclqkj .spfzpkNum .spfvs{width:16%}
 
-.zx-kj .zx-kj-tit{font-size: 1.12em}
+
 
 
