@@ -23,9 +23,9 @@
 /*.notice span{padding-right:3px;color: #333}*/
 .app-notice .zj_tipBox table{width: 80% !important;}
 .app-notice .zj_tipBox td,.app-notice .zj_tipBox th{padding: 0.7em 0;font-weight:400;text-align: center;color: #888}
-.nav{width:100%;padding:6px 0;border-top:1px solid #ccc;background-color: #f0f0f0}
+.nav{width:100%;padding:6px 0;border-top:1px solid #e2e2e2;background-color: #f0f0f0}
 .nav table{width: 100%;background-color: #fff}
-.nav table td{text-align: center;padding: .6em 0;border:1px solid #ccc}
+.nav table td{text-align: center;padding: .6em 0;border:1px solid #e2e2e2}
 .nav-list{color: #333}
 .nav-list h3{display:inline-block;width: 30px;height: 29px;-webkit-background-size: 30px;-moz-background-size: 30px 29px;background-size: 30px}
 .top-fixed{position: fixed;top: 0;left: 0;padding: 0}
@@ -33,17 +33,28 @@
 .nav-list .reg{background-position:0 -88px}
 .nav-list .hm{background-position:0 -117px}
 .nav-list .lokj{background-position:0 -146px}
-.cp-list{border-bottom: .2em solid #ccc}
-.cp-list li{border-top: 1px solid #ccc;vertical-align: top;overflow: hidden}
+.kstz{padding: 0 0 6px;background-color: #f0f0f0;}
+.kstz .kstz-b{padding: 8px 2%;border-top:1px solid #e2e2e2;border-bottom:1px solid #e2e2e2;background-color: #fff}
+.kstz-b .inms{color: #999}
+.kstz-b .inms em{float: right}
+.kstz-b .inms span{color: #f40}
+.kstz-b .inms strong{font-size: 1.13em;color: #333}
+.kstz-b .kstz-choose{padding: 8px 0 0;}
+.kstz-b .kstz-choose a{float: right;padding: 0.2em 0.3em;font-size: 1.12em;color:#fff;border-radius:4px;background-color: #f40;}
+.kstz-b .ks-ball em{display: inline-block;width: 28px;height: 28px;line-height:28px;margin-right:3px;font-size:14px;text-align: center;color:#fff;border-radius:100%;background-color: #f40}
+.kstz-b .ks-ball .blue{background-color: #64a6ea}
+
+.cp-list{border-bottom: .2em solid #e2e2e2}
+.cp-list li{border-top: 1px solid #e2e2e2;vertical-align: top;overflow: hidden}
 .caipiao-ap{float: left;width:60px;margin:0 2%}
 .caipiao-ap img{width: 100%;}
 .caipiao-tit{float: left;width: 75%;font-size: 1.3em;font-family: \5fae\8f6f\96c5\9ed1;color: #040c0f}
 .caipiao-tit em{display: block;height: 1.6em;padding-top: 10px}
 .caipiao-tit cite{display: block;height: 1.6em;font-size:0.7em;color:#888}
 .cp-news{padding:6px 0;font-size:1.1em;background-color: #f0f0f0}
-.cp-news-tit{width: 96%;height:3.5em;line-height:3.5em;padding: 0 2%;border-top:1px solid #ccc;background-color: #fff}
-.cp-news-list{background-color: #fff;overflow: hidden;border-bottom: .2em solid #ccc}
-.cp-news-list li{border-top:1px solid #ccc;vertical-align: top}
+.cp-news-tit{width: 96%;height:3.5em;line-height:3.5em;padding: 0 2%;border-top:1px solid #e2e2e2;background-color: #fff}
+.cp-news-list{background-color: #fff;overflow: hidden;border-bottom: .2em solid #e2e2e2}
+.cp-news-list li{border-top:1px solid #e2e2e2;vertical-align: top}
 .cp-news-list .ico-click{position: relative}
 .cp-news-list a{display:block;height:3.0em;line-height:3.0em;overflow: hidden}
 .cp-news-list span{color: #999;padding:0 6px 0 8px}
@@ -54,7 +65,7 @@
 .index-footer .footer-app{padding:.3em 0;text-align: center;line-height:1.8em;font-size: 1.1em;}
 .index-footer .version{color: #444;}
 .version a{color: #444;padding:0 1em}
-.index-footer .call-center a{margin:.6em;padding: .5em;color:#969696;border: .1em solid #bcbcbc;border-radius:.4em;background-color: #fff}
+.index-footer .call-center a{margin:.6em;padding: .5em;color:#969696;border: .1em solid #e2e2e2;border-radius:.4em;background-color: #fff}
 .index-footer .ICP{color:#a2a2a2}
 /*充值*/
 .cz_icon1,.cz_icon2,.cz_icon3,.cz_icon4,.cz_icon5,.cz_icon6,.cz_icon7,.cz_icon8{display:inline-block;width:36px;height:36px;background-position:0 0; vertical-align:middle;}
