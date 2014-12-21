@@ -1,0 +1,72 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=1' name='viewport'/>
+    <meta content='yes' name='apple-mobile-web-app-capable'/>
+    <meta content='black' name='apple-mobile-web-app-status-bar-style'/>
+    <meta content='telephone=no' name='format-detection'/>
+    <title>开奖详情-159彩票网</title>
+    <link rel="stylesheet" href="/css/basic.css" type="text/css"/>
+    <link rel="stylesheet" href="/css/style.css" type="text/css"/>
+    <script src='/js/jquery.js'></script>
+	<script src='/js/159cp.js'></script>
+	<script src='/js/base.js'></script>
+	<script src='/js/login.js'></script>
+	<script src="/js/szcdetail.js"></script>
+</head>
+<body>
+<!--#include virtual="/cc/header.html"-->
+<script>
+$(document).ready(function() {
+	chklogin();
+	resultdetail2();
+// 	goexpect();
+});
+</script>
+<section class="buyHeader" id="topHeader">
+    <h1 id="type1"></h1>
+    <a href="javascript:history.go(-1)" class="backIco2"></a>
+    <em class="goHome jc-more">
+        <cite><a class="cur" href="/ssq/">选号</a><a >合买跟单</a><a >开奖结果</a><a >玩法帮助</a></cite>
+    </em>
+</section>
+<div class="top-margin kj-nav">
+    <ul class="buyTab clearfix">
+        <li id="new" class="cur"><h3>最新开奖</h3></li>
+        <li id="history" onclick="historydetail2();"><h3>历史开奖</h3></li>
+    </ul>
+</div>
+<section class="bottom-padding-bottom">
+    <!-- 最新开奖start -->
+    <div class="pd063 zx-kj" id="newinfo" style="display:block"><p class="pdTop04 pdLeft04">
+       <div id="sel">
+         </div>       
+        <ul class="kjList" id="tbody">
+            <li class="gray"><em>奖项</em><cite>注数</cite><span>每注金额</span></li>
+            
+        </ul>
+        <div class="gray pdTop06" id="details">
+            
+        </div>
+    </div>
+    <!-- 最新开奖end -->
+    <!-- 历史开奖end -->
+    <div class="all kjall" style="display: none;" id="diva">
+<!--         <a href="#"> -->
+<!--             <div class="clearfix lskjTit">第2014147期&nbsp;2014-12-18 21:30:00</div> -->
+<!--             <div class="kjNum"><b>06</b><b>07</b><b>22</b><b>26</b><b>31</b><b>32</b><b class="blue">10</b></div> -->
+<!--             <i class="rightArrow"></i> -->
+<!--         </a> -->
+
+        
+
+    </div>
+    <!-- 历史开奖end -->
+</section>
+
+<div class="fixed app-footer">
+    <a class="btn btn-true" id="payment">去投注</a>
+</div>
+</body>
+</html>
