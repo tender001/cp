@@ -1,6 +1,7 @@
 function DoLogin() {
     var uname = $("#userId").val();
     var upwd = $("#passwd").val();
+    var bak = location.search.getParam('bak');
     var t =0;
     if($("#logintype")) t = $("#logintype").val();
     if (uname == "") { 
@@ -23,7 +24,14 @@ function DoLogin() {
 			var code = d.Resp.code;
 			var desc = d.Resp.desc;		
 			if (code == "0") {
-				history.go(-1);
+				if(bak=="1"){
+					window.location.href="/account/";
+				}else if(bak=="1"){
+					window.location.href="/account/pay.html";
+				}else{
+					history.go(-1);
+				}
+				
 				
 				
 			}else{
