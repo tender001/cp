@@ -179,6 +179,29 @@ function LoadMatchList() {
 						}
 						
 						
+					}else if(typeID==84){
+					var sfgg_pk=[[["足球"],["球"],["#993333"]],[["篮球"],["分"],["#E54227"]],[["冰球"],["球"],["#0099C0"]],[["网球"],["盘"],["#456C89"]],[["羽毛球"],["局"],["#6969E0"]],[["排球"],["局"],["#F57070"]],[["橄榄球"],["分"],["#BA6F30"]],[["曲棍球"],["球"],["#C98810"]],[["乒乓球"],["局"],["#C85B5B"]],[["沙滩排球"],["局"],["#FD91B5"]],[["手球"],["球"],["#339933"]],[["水球"],["球"],["#339933"]]];
+					if(jj.stype != undefined)
+					{
+						$.each(sfgg_pk,function()
+				    	{
+							if(this[0] == jj.stype)
+			    			{
+			    				jj.pkunit = this[1];
+			    				jj.color = this[2];
+			    				
+			    			}
+			    		});
+					}	
+					jj.sclass=(jj.sclass).replace("14-15","");
+//					<li><em>274&nbsp;足球</em><p style="color:#993333">澳超</p><cite>13:50 截止</cite></li>
+					newmatchHTML+='<ul class="sfcxs"> <li><em>'+jj.MID+'&nbsp;'+jj.stype+'</em>'
+            			+'<p style="color:'+ jj.color +'">'+ jj.sclass +'</p><cite>'+jj.Time.split(" ")[1]+'截止</cite></li>'
+            			+'<li><p class="spfzpk spfzpk2">'
+            			+'<span onclick="ChooseMatch(this)" n="0" value="1" name="'+jj.ID+'"><em>'+ jj.home +'</em><cite>'+ ( jj.rq == "0" ? "" : "<i style='color:" + (jj.rq.indexOf("-") == -1 ? "red" : "green") + "'>(" +(jj.rq.indexOf("-") == -1 ? "" : "")+ jj.rq + ""+jj.pkunit+")</i>") +'胜</cite></span>'
+            			+'<b>VS</b>'
+            			+'<span onclick="ChooseMatch(this)" n="3" value="2" name="'+jj.ID+'"><em>'+ jj.guest +'</em><cite>胜</cite></span></p>'
+            			+'<p class="spfpl"><span>赔率'+ ot[0] +'</span><span>赔率'+ ot[1] +'</span></p></li></ul>'
 					}
                     else {
                         matchHTML += "<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" class=\"match\">"
@@ -312,8 +335,9 @@ function ChooseMatch(obj) {
 function betconfirm(){
 
 	var minimum=typeID=="5"?1:2;
+	minimum=typeID=="84"?3:minimum;
 	if(chooseArray.length<minimum){
-		showTips('至少选择两个场次投注!');
+		showTips('至少选择'+minimum+'场次投注!');
 		return;
 	}
 	$("#confirmhtml").html("");
@@ -442,6 +466,12 @@ function CountLot() {
             	html += "<span gg="+i+" value=\"P" + i + "_1\" style='border-top:1px solid #d5d5d5;'onclick=\"calcLot(this);\"" + (isNewgg? "class=cur " : "")+ " >" + i + "串1</span>"
             	isNewgg=false;
             }
+        }
+        if(typeID==84&& chooseArray.length <= 15){
+        	 for (var i = Math.max(3, danNum); i <= Math.min(MaxMatch, chooseArray.length); i++) {
+             	html += "<span gg="+i+" value=\"P" + i + "_1\" style='border-top:1px solid #d5d5d5;'onclick=\"calcLot(this);\"" + (isNewgg? "class=cur " : "")+ " >" + i + "串1</span>"
+             	isNewgg=false;
+             }
         }
     }
     else if (OddsType == 1) html = "<span value=\"P1_1\" style='border-top:1px solid #d5d5d5;'onclick=\"calcLot(this);\"" + (isNewgg? "class=cur " : "")+ ">单关</span>"
@@ -635,7 +665,7 @@ function SubmitLot(obj) {
 	var param = "gid="+gid+"&source=100" +
 			"&codes="+encodeURIComponent(getXcode(chooseArray,gid))+"&fflag=0&bnum="+selfbuy+"&muli="+times+"&comeFrom=" +
 			"&name="+name+"&desc="+desc+"&play=1&money="+amount+"&tnum="+amount+"&oflag="+isopen+"&type="+type+"&pnum="+baodi+"&wrate="+rate;
-	if(gid >= '85' && gid <= '89'){
+	if(gid >= '84' && gid <= '89'){
 		param += "&pid="+salePeriod;
 	}
     $.ajax({
