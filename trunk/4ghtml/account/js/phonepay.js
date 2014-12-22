@@ -13,7 +13,8 @@
  		$(this).addClass("cur");
  		$("#cardts").addClass("cur");
  		var str = ($(this).attr("value")*1*0.96+"").substring(0,($(this).attr("value")*1*0.96+"").indexOf(".") + 3);
- 		$("#redMoney").html(str)
+ 		$("#redMoney").html(str);
+ 		$("#redcard").html($(this).attr("value"));
  	})
  })
 var setType=function(cursel,n){
@@ -141,6 +142,7 @@ var subform =function (){
    		    var desc = obj.Resp.desc;
 			if (code == "0") {
 				showMS("收单成功");
+				
 			} else {
 				//收单失败
 				showTips(desc);
@@ -208,5 +210,6 @@ function showBuyMini(kind) {
         $("#divshowprebuy").hide();
         $("#divDisable").hide();
         $("#divshowprebuy").html("");
+        document.location.reload();
     }
 }
