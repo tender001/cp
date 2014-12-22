@@ -356,10 +356,12 @@ showszccode = function(gid, codes, type){
 						dan = pps[0];
 						tuo = pps[1];
 					}
+					html +='<p class="gray ">'
+					
 					if(dan.length > 0){
-						html += "<span style='color:red'>前区</span> 胆码:[" + dan + "] 拖码:[" + tuo + "]<br/>";
+						html += "<cite class=\"red\">前区</span> 胆码:[" + dan + "] 拖码:[" + tuo + "]</cite>";
 					} else {
-						html += "<span style='color:red'>前区</span>:[" + tuo + "]<br/>";
+						html += "<cite class=\"red\">" + tuo.split(",").join(" ") + "</cite>";
 					}
 					if(ps[1].indexOf("$") != -1){
 						var pps = ps[1].split("$");
@@ -369,11 +371,12 @@ showszccode = function(gid, codes, type){
 					if(xdan.length > 0){
 						html += "<span style='color:red'>后区</span> 胆码:[" + xdan + "] 拖码:[" + xtuo + "]";
 					} else {
-						html += "<span style='color:red'>后区</span>:[" + xtuo + "]";
+						html += "&nbsp;<cite class=\"blue\">" + xtuo.split(",").join(" ") + "</cite>";
 					}
 					if(cc[1] == '2'){
 						html += "<br/><span style='color:red'>(追加)</span>";
 					}
+					html +='</p>'
 					carr.push(html);
 				}
 			} else if(cc[0].indexOf("$") == -1 && cc[0].indexOf("|") == -1){
@@ -396,7 +399,7 @@ showszccode = function(gid, codes, type){
 					if(dan.length > 0){
 						carr.push("<span style='color:red'>红球</span> 胆码:[" + dan + "] 拖码:[" + tuo + "] <span style='color:blue'>篮球</span>:[" + ps[1] + "]");
 					} else {
-						carr.push("<span style='color:red'>红球</span>:[" + tuo + "] <span style='color:blue'>篮球</span>:[" + ps[1] + "]");
+						carr.push("<p class=\"gray \"><cite class=\"red\">" + tuo.split(",").join(" ") + " </cite>&nbsp;<cite class=\"blue\">" + ps[1].split(",").join(" ") + "</cite></p>");
 					}
 				}
 			}
