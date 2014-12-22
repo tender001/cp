@@ -1,0 +1,67 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=1' name='viewport'/>
+    <meta content='yes' name='apple-mobile-web-app-capable'/>
+    <meta content='black' name='apple-mobile-web-app-status-bar-style'/>
+    <meta content='telephone=no' name='format-detection'/>
+    <title>159彩票网</title>
+    <link rel="stylesheet" href="/css/basic.css" type="text/css"/>
+    <link rel="stylesheet" href="/css/style.css" type="text/css"/>
+    <script src='/js/jquery.js'></script>
+	<script src='/js/159cp.js'></script>
+	<script src='/js/base.js'></script>
+	<script src='/js/login.js'></script>
+
+</head>
+<body>
+<div id="paybet" >
+<section class="buyHeader">
+    <h1>支付</h1>
+    <a  class="backIco2"  href="javascript:ispay(false)"></a>
+    <a href="/" class="goHome"></a>
+</section>
+<div class="user-padding zf-pay">
+    <div class="tz-pay" >
+        <p> 第期</p>
+        <p>应付金额<em>2</em>元</p>
+        <p style="display:none">内容
+        </p>
+        <div id="updownContent">
+	            	<p><cite>1注1倍</cite></p>
+	        		<div class="clearfix">
+	                	<i class="left w2_5" id="cont">内容</i>
+	                    <div class="left zfNum w13_5" id="content">
+	                    <p><span class="dstz"><o></o><cite></cite></span></p></div>
+	                </div>
+	            </div>
+    </div>
+    <p>账号余额  <cite class="blue" id="yue">0.00</cite>  元</p>
+    <a href="javascript:payBtn()" class="btn btn-true">确认支付</a>
+</div>
+</div>
+<div id="issuc" style="display: none;">
+<section class="buyHeader" >
+    <h1>投注结果</h1>
+    <a  class="backIco2"  href="/"></a>
+    <a href="/" class="goHome"></a>
+</section>
+<div class="user-padding zf-pay-true yz-tel-num">
+    <div class="pay-true">
+        <p><em class="true-icon true-icon-cur" id="zfb" data-type="zfb"><i></i></em>恭喜您，购彩成功！</p>
+
+<!--         <p>预计:12-18 21:45开奖 12-18 22:00派奖</p> -->
+    </div>
+    <a class="btn btn-true" href="/account/" id="cpid">查询方案详情</a><a class="btn btn-true btn-true-re" href="javascript:showbuy(false)">继续购买</a>
+</div>
+</div>
+<input name="codes" id="codes" type="hidden" value=''/>
+<input name="zhushu" id="zhushu" type="hidden" value="1"/>
+<input name="beishu" id="beishu" type="hidden" value="1"/>
+<input name="totalmoney" id="totalmoney" type="hidden" value="2"/>
+<input name="lotid" id="lotid" type="hidden" value="01"/>
+<input name="expect" id="expect" type="hidden" value=""/>
+<script src='/js/index/fastbuy.js'></script>
+</body>
+</html>
