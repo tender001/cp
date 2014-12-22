@@ -460,9 +460,9 @@ a.hmTxt2{ display:block; color:#606060; padding-right:1.4rem; position:relative}
 .hm-list .fl{width:32%;text-align: center;position: relative}
 .hm-list .re-top:before{position: absolute;left: 0;top: -0.4em;width:15px;height:15px;content:"";background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACsAAAArCAMAAADWg4HyAAAAPFBMVEUAAAD2hR/2hR/2hR/2hR/2hR/2hR/2hR/2hR/2hR/2hR/2hR/2hR/2hR/2hR/2hR/2hR/2hR/2hR/2hR82+HSlAAAAE3RSTlMAgKaI7TT05D36VEYp2sGXIxUFQXwczQAAAK9JREFUOMuV0skOgzAUQ9FLC4R5/P9/7YJSqwok2DtLZ/MG9scpMCgGxaCybde1SSpb9yB8STlpA9DXt1S2rI7W1AmK6IHLSyobBn6phEVlwwLKEGIq2/OXJqay+7ypb/Ml1WzTetZ1uqHa2Th8Jwu3VLd4H+0V0bwVzVvRvBXNW9G8LUjYcUHPIBpbJUkxKAbFoBgUg2JQDIpBMSgGxaAYFINiUAyKQTEoBsWgGPQDwW830pO42UAAAAAASUVORK5CYII=");background-size:15px}
 .hm-list .fl h2{width:100%;height:26px;line-height:26px;font-size: 1.14em;font-weight: normal;}
-.hm-list .fl strong{display:block;line-height:1;font-size: 2em;color: #f40;letter-spacing: 0.05em}
+.hm-list .fl strong{display:block;line-height:1;font-size: 2em;color: #f40}
 .hm-list .fl b{font-size:14px}
-.hm-list .fl cite{padding: 1px 5px;font-size:12px;font-weight:400;color:#fff;border-radius:0.5em;background-color: #b9b8b8;}
+.hm-list .fl cite{padding: 1px 5px;font-size:12px;font-weight:400;color:#fff;border-radius:0.5em;background-color: #b9b8b8;vertical-align: middle}
 .hm-list dl{float: right;width:66%;font-size: 1.14em}
 .peo-name{display: block;height:21px;line-height:21px;color: #f40;overflow: hidden}
 .hm-list .lv em{padding: 1px 3px;color:#f40;border: 1px solid #f40}
