@@ -46,11 +46,12 @@ loadProj=function(){
 	});
 };
 showproj = function(option){
-	var title = [];
-	title.push($_sys.getlotname($("#lotid").val()) + "  ");
-	title.push(option.data.Resp.row.ifile == 0 ? "复式" : "单式");
-	title.push(option.data.Resp.row.itype == 0 ? "自购" : "合买");
-	$("#gname").html(title.join(""));
+	var itype = option.data.Resp.row.itype;
+	if(itype == 0){
+		$("#followme,#cdesc").hide();
+	}
+			
+	
 	var gid,lotid=$("#lotid").val();
 	var periodid,pid =option.data.Resp.row.periodid;
 	var zhanji = option.data.Resp.row.zhanji;
@@ -287,7 +288,7 @@ showproj = function(option){
     						}
     					}
     				}
-    				wininfostr=wss.join("<br/>");
+    				wininfostr +="<br/>"+wss.join("<br/>");
     				if(rmoney > 0){
     					if(rmoney!=tax)
     					wininfostr += "<br/>(" + "税前<font class='yellow'>" + parseFloat(rmoney) + "元</font>,税后<font class='yellow'>" + parseFloat(tax) + "元</font>)";
@@ -342,8 +343,8 @@ showproj = function(option){
         } else {
             $("#clasli").hide();
 //            var html = $_sys.showcode(gid, ccodes);
-            html = html.replace(/pdTop06/g, "");
-            $("#zgContent div").html(html);
+//            html = html.replace(/pdTop06/g, "");
+//            $("#zgContent div").html(html);
             if (lotid == "01" || lotid == "50" || lotid == "03" || lotid == "53") {}
         }
     } else if (ifile == "1") {
