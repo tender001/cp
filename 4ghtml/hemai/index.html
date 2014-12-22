@@ -19,38 +19,52 @@
 <script>
     $(document).ready(function () {
         chklogin();
+        $("#topHeader h1").click(function() {
+            if ($(this).hasClass("cur")) {
+               
+                $('.hmPull').slideUp('fast');
+                $(this).removeClass('cur');
+                return;
+            }
+
+//          
+            if ($('.hmPull').is(':hidden')) {
+            	$(this).addClass('cur');
+                $('.hmPull').css("top", ($(this).position().top + $(this).height()) + "px");
+                $('.hmPull').slideDown('fast');
+            }
+            //else $('#Filter_Panel').slideUp('fast');
+
+            return false;
+        });
     });
 </script>
 <section class="buyHeader" id="topHeader">
     <h1>合买大厅<s id="chowanfa"><cite></cite></s></h1>
 
-    <div class="hmPull" style="display:none">
-        <a href="/jczq/spf.html" class="cur">胜平负</a>
-        <a href="/jczq/jchh.html">混投</a>
-        <a href="javascript:void(0);">让球胜平负</a>
-        <a href="/jczq/cbf.html">比分</a>
-        <a href="/jczq/jqs.html">总进球</a>
-        <a href="/jczq/bqc.html">半全场</a>
+    <div style="display: none;" class="hmPull">
+            	<a hm="100" href="/hemai/index.html?lotid=100" class="cur">热门合买</a>
+                <a hm="31" href="/hemai/index.html?lotid=31">竞彩足球</a>
+                <a hm="32" href="/hemai/index.html?lotid=32">竞彩篮球</a>
+            	<a hm="80" href="/hemai/index.html?lotid=80">胜负彩</a>
+            	<a hm="81" href="/hemai/index.html?lotid=81">任选九</a>
+                <a hm="30" href="/hemai/index.html?lotid=30">足球单场</a>
+                <a hm="01" href="/hemai/index.html?lotid=01">双色球</a>
+            	<a hm="03" href="/hemai/index.html?lotid=03">福彩3D</a>
+                <a hm="07" href="/hemai/index.html?lotid=07">七乐彩</a>
+                <a hm="50" href="/hemai/index.html?lotid=50">大乐透</a>
+           
+                <a hm="53" href="/hemai/index.html?lotid=53">排列三</a>
+                <a hm="52" href="/hemai/index.html?lotid=52">排列五</a>
     </div>
     <a href="javascript:history.go(-1)" class="backIco2"></a>
     <a href="/" class="goHome"></a>
 </section>
-<div class="top-margin hm-search">
-    <ul>
-        <li><input type="text"/></li>
-        <li><a href="javascript:FilterHM()">查询</a></li>
-    </ul>
-</div>
+
 <div class="fa-hm-list">
     <nav><a href="javascript:void(0);">进度</a><a href="javascript:void(0);">总额</a><a href="javascript:void(0);">余额</a></nav>
 
-    <div class="hm-list" onclick="openLnk(&quot;CP90102071854&quot;)">
-        <div class="fl re-top"><h2>竞彩胜平负</h2><strong>78<b>%</b><cite>未保底</cite></strong></div>
-        <dl>
-            <dt class="peo-name peo-s"><span>李阳阳阳阳阳阳阳</span><span class="lv"><em>Lv150</em></span></dt>
-            <dd class="peo-hm peo-s"><span>600元</span><span>127元</span></dd>
-        </dl>
-        <i></i></div>
+   
     <div id="hmList">
 
         <!--               <div class="hm-list"> -->
