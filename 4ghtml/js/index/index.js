@@ -3,6 +3,7 @@ $(document).ready(function() {
 	chklogin();
 	inits();
 	Home.init();
+	initWindowScroll();
 });
 var inits=function() {
 //	TouchSlide({ 
@@ -13,6 +14,7 @@ var inits=function() {
 //		autoPlay:true,//自动播放
 //		autoPage:true //自动分页
 //	});
+	
 	setInterval(function() {
         autoScroll()
     },4e3);
@@ -22,6 +24,14 @@ var inits=function() {
 	
 	
 };
+initWindowScroll=function() {
+    var n = $("#nav_fixed"),
+    i = $("#index_nav");
+    $(window).scroll(function() {
+        var e = n.offset().top;
+        $(this).scrollTop() > e + 70 ? i.show() : i.hide()
+    })
+}
 Home = function() {
     var j_ = "";
     var n_ = new Date;
