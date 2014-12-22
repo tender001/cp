@@ -87,8 +87,8 @@ Home = function() {
 //            b.bindEvent();
             var t = n_.getHours();
             var wk = n_.getDay();
-//            t = t >= 18 && "Hi,晚上好!" || t >= 14 && "Hi,下午好!" || t >= 11 && "Hi,中午好!" || t >= 5 && "Hi,早上好!" || "Hi,晚上好!";
-//            $("#say_hi").html(t);
+            t = t >= 18 && "晚上好!" || t >= 14 && "下午好!" || t >= 11 && "中午好!" || t >= 5 && "早上好!" || "晚上好!";
+            $("#say_hi").html(t);
             if (wk == "2" || wk == "4" || wk == "0" || wk == "5") {
                 $("#handy strong").html("双色球");
                 wk != "5" && $("#tag_01").find("em").eq(0).addClass("jrkjico")
