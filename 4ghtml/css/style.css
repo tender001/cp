@@ -1,5 +1,5 @@
 /*主页*/
-.header,.cp-list li,.tz-menu,.tz-list{width:100%;padding:0.3em 0;overflow:hidden}
+.header,.cp-list li,.tz-menu,.tz-list{width:100%;padding:0.4em 0;overflow:hidden}
 .header .user{float: right;}
 .user .app,.user .user-login{display: inline-block;width:30px;height:30px;margin-right:0.5em;text-indent:-999em;background-size:30px}
 .user .app{background-position: 0 0}
@@ -17,7 +17,9 @@
 /*.slide-dragcontainer{height: 100px}
 .slide-dragcontainer .slide-container{height: 100px !important}
 .slide-container .slide-wrapper{height: 100px !important}*/
-.slide-container .slide-wrapper img{width: 100%;height:100%;max-height:140px}
+.slide-container{min-height:70px !important}
+.slide-container .slide-wrapper{min-height:70px !important}
+.slide-container .slide-wrapper img{width: 100%;max-height:140px}
 .app-notice{height:3em;overflow: hidden}
 .notice{width:96%;height:3.5em;line-height:3.5em;padding:0 2%;font-size:1.1em;color:#f60;background-color:#fff;overflow: hidden}
 /*.notice span{padding-right:3px;color: #333}*/
@@ -48,8 +50,9 @@
 .cp-list li{border-top: 1px solid #e2e2e2;vertical-align: top;overflow: hidden}
 .caipiao-ap{float: left;width:60px;margin:0 2%}
 .caipiao-ap img{width: 100%;}
-.caipiao-tit{float: left;width: 75%;font-size: 1.3em;font-family: \5fae\8f6f\96c5\9ed1;color: #040c0f}
+.caipiao-tit{float: left;width: 75%;font-size: 1.35em;font-family: \5fae\8f6f\96c5\9ed1;color: #040c0f}
 .caipiao-tit em{display: block;height: 1.6em;padding-top: 10px}
+.caipiao-tit em span{margin-left:4px;padding:0 2px;font-size:12px;color:#fff;background-color: #f40;vertical-align:1px}
 .caipiao-tit cite{display: block;height: 1.6em;font-size:0.7em;color:#888}
 .cp-news{padding:6px 0;font-size:1.1em;background-color: #f0f0f0}
 .cp-news-tit{width: 96%;height:3.5em;line-height:3.5em;padding: 0 2%;border-top:1px solid #e2e2e2;background-color: #fff}
@@ -126,9 +129,10 @@
 .D_icon:before{ background-position:0 -54px; width:9px; height:12px;}
 .S_icon:before,.C_icon:before,.H_icon:before,.D_icon:before{ background-image:url(../img/huase_icon.png); background-size:13px 70px;}
 /*新闻资讯*/
-.news-nav{width: 100%;height:2.7em;line-height:2.6em;overflow: hidden;}
-.news-nav .news-title{font-size: 1.14em;}
-.news-title a{padding:0.5em 0.6em;color: #333;border-bottom: 2px solid transparent;position: relative;bottom:-0.05em}
+.news-nav{width: 100%;height:2.7em;line-height:2.6em;}
+.news-nav .news-title{width:100%;font-size: 1.14em;border-bottom: 1px solid #e2e2e2}
+.news-nav .news-title:after{display: table;content: "";clear: both}
+.news-title a{float: left;width:20%;text-align:center;color: #333;border-bottom: 2px solid transparent;position: relative;bottom:-0.05em}
 .news-title .cur{color: #f40;border-color: #f40}
 .news-nav .more-news{float:right;width:0;margin-top:8px;font-size:0;border-width:7px 10px;border-style:solid;border-color: transparent transparent transparent #999}
 .news-bann{padding:10px 2% 0;border-top: 1px solid #ccc;}
