@@ -862,11 +862,11 @@
             // Set the height of the wrapper to fit the max height of the slides
             maxHeight = $(".slide-wrapper", base.$elem).children().height();
             $(".slide-wrapper", base.$elem).css({
-//                height: maxHeight
+                height: maxHeight
             });
             $(".slide-container", base.$elem).css({
-                width: newwidth
-//                height: maxHeight
+                width: newwidth,
+                height: 105
             });
 
             // Restart playing
