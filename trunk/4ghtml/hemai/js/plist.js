@@ -15,8 +15,8 @@ if(lotid){
 	$("a[hm="+lotid+"]").addClass("cur");
 }
 function openLnk(projid){
-	lotid = location.search.getParam('lotid');
-	var url = "/user/project.html?lotid="+lotid+"&projid="+projid;
+	
+	var url = "/user/project.html?lotid="+projid.substr(2,2)+"&projid="+projid;
 	location.href = url;
 }
 var cacheHTML = "";
@@ -93,13 +93,14 @@ function LoadList(){
 			if( list != undefined && list.length > 0){
 				for(var i=0;i<list.length;i++) {
 					if(list[i]=="") continue;
+					
 					var jsonC = eval('(' + list[i] + ')');
 					var baodi = parseInt(Math.floor(parseFloat(jsonC.BaoDi)*10000/parseFloat(jsonC.Amount))/100);
 			        var zhanji=(jsonC.Aunum=="0"?"":"<em>Lv"+jsonC.Aunum+"</em>");
 //					var wrate=jsonC.Wrate=="0"?
 					var saled =(parseFloat(jsonC.Amount)-parseFloat(jsonC.Saled) )> 0?(parseFloat(jsonC.Amount)-parseFloat(jsonC.Saled))+"元":"已满员";
 					html += "<div class=\"hm-list\" onclick='openLnk(\"" + jsonC.LotteryID + "\")'>"
-					+"<div class=\"" + (jsonC.IsTop == "true" ? "fl re-top" : "fl") + "\"><h2>"+$_sys.getlotname(jsonC.Gid,1)+"</h2><strong>"+(Math.floor(parseFloat(jsonC.Saled) * 100 / parseFloat(jsonC.Amount)))+"<b>%</b>"
+					+"<div class=\"" + ((jsonC.IsTop == "true"&&i<6) ? "fl re-top" : "fl") + "\"><h2>"+$_sys.getlotname(jsonC.Gid,1)+"</h2><strong>"+(Math.floor(parseFloat(jsonC.Saled) * 100 / parseFloat(jsonC.Amount)))+"<b>%</b>"
 					+"<cite>"+(jsonC.BaoDi=="0"?"未保底":"保"+baodi+"%")+"</cite></strong></div>"
 					+"<dl><dt class=\"peo-name peo-s\"><span>"+jsonC.UserName+"</span><span class=\"lv\">"+zhanji+"</span></dt>"
 					+"<dd class=\"peo-hm peo-s\"><span>"+jsonC.Amount+"元</span><span>"+saled+"</span></dd>"
