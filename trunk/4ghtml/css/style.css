@@ -449,6 +449,7 @@ a.hmTxt2{ display:block; color:#606060; padding-right:1.4rem; position:relative}
 .hmbuyInput{border:1px solid #d5d5d5}
 .hm-xq .hmbuyInput{line-height:1.5em;font-size: 1.14em;vertical-align:baseline}
 .kjFloat{padding-top:1em;background-color: #f0f0f0}
+.myMore{ display:block; line-height:3.45rem; background:#fff; text-align:center; color:#f89c49; font-size:1rem; border-top:1px solid #dfdfdf}
 /*合买*/
 .hm-search{padding: 1em 4%;overflow: hidden}
 .hm-search li{float: left;text-align: right}
