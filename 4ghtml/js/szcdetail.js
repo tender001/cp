@@ -15,7 +15,8 @@ function resultdetail2(gid,pid){
 	$("#history").removeClass("cur");
 	
 	$("#new").addClass("cur");
-	
+	$("#newinfo").show();
+	$("#diva").hide();
 	$.ajax({
 		url : "/cpdata/guoguan/" + gid + "/"+ pid +"/"+ pid + ".json",
 		type : "GET",
@@ -266,8 +267,7 @@ function resultdetail2(gid,pid){
 			$("#sel").html(selhtml);
 			$("#details").html(detailshtml);
 			$("#tbody").html(tbhtml);
-			$("#newinfo").show();
-			$("#adiv").hide();
+			
 			
 		},
 		error:function(){
