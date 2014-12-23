@@ -76,23 +76,23 @@ function bdyh() {
 		var cityid = $.trim($("#city").val());
 		var provid = $.trim($("#drpProvinceList").val());
 		var data = "";
-		if (Y.get("#cardnumber").attr("disabled")){//修改银行卡信息
-			data = $_user.key.bankCode + "=" + encodeURIComponent(Y.get("#bankType").val().trim())
-			+ "&" + $_user.key.provid + "=" + encodeURIComponent(province.replace(/\-/g,""))
-			+ "&" + $_user.key.cityid + "=" + encodeURIComponent(city.replace(/\-/g,""))
-			+ "&" + $_user.key.bankName + "=" + encodeURIComponent(Y.get("#bankname").val().trim())
-//			+ "&" + $_user.key.upwd + "=" + encodeURIComponent(Y.get("#password").val().trim())
+		if ($("#cardnumber").attr("disabled")){//修改银行卡信息
+			data = $_user.key.bankCode + "=" + encodeURIComponent($("#selBankName").val().trim())
+			+ "&" + $_user.key.provid + "=" + encodeURIComponent(provid.replace(/\-/g,""))
+			+ "&" + $_user.key.cityid + "=" + encodeURIComponent(cityid.replace(/\-/g,""))
+			+ "&" + $_user.key.bankName + "=" + encodeURIComponent($("#bankname").val().trim())
+//			+ "&" + $_user.key.upwd + "=" + encodeURIComponent($("#password").val().trim())
 			+ "&" + $_user.key.tid + "=1"
 			+ "&rnd=" + Math.random();
 			
 		}else{//设置银行卡信息
-			data = $_user.key.bankCode + "=" + encodeURIComponent(Y.get("#bankType").val().trim())
+			data = $_user.key.bankCode + "=" + encodeURIComponent($("#selBankName").val().trim())
 	
-			+ "&" + $_user.key.bankCard + "=" + encodeURIComponent(cardnumber)
-			+ "&" + $_user.key.provid + "=" + encodeURIComponent(province.replace(/\-/g,""))
-			+ "&" + $_user.key.cityid + "=" + encodeURIComponent(city.replace(/\-/g,""))
-			+ "&" + $_user.key.bankName + "=" + encodeURIComponent(Y.get("#bankname").val().trim())
-//			+ "&" + $_user.key.upwd + "=" + encodeURIComponent(Y.get("#password").val().trim())
+			+ "&" + $_user.key.bankCard + "=" + encodeURIComponent(bankCard)
+			+ "&" + $_user.key.provid + "=" + encodeURIComponent(provid.replace(/\-/g,""))
+			+ "&" + $_user.key.cityid + "=" + encodeURIComponent(cityid.replace(/\-/g,""))
+			+ "&" + $_user.key.bankName + "=" + encodeURIComponent($("#bankname").val().trim())
+//			+ "&" + $_user.key.upwd + "=" + encodeURIComponent($("#password").val().trim())
 			+ "&rnd=" + Math.random();
 		}					
 //		data = $_user.key.bankCode + "=" + encodeURIComponent(bankCode) + "&"
