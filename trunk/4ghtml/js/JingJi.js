@@ -158,7 +158,7 @@ function LoadMatchList() {
 							newmatchHTML +='<ul class="sfcxs hhzpk">'
 						    	+'<li class="li_weige"><em>'+jj.MID+'</em> <p style="color:'+ jj.color +'">'+ jj.sclass +'</p><cite>'+jj.Time.split(" ")[1]+'截止</cite></li>'
 						    	+'<li>'
-						    	+'<p class="spfzpk"><em class="rq">让　分</em>'
+						    	+'<p class="spfzpk lchhzpk"><em class="rq">让　分</em>'
 						    	if(jj["rfStop"] == 0){
 						    		newmatchHTML +='<span onclick="ChooseMatch(this)" n="0" value="3" name="'+ jj.ID +'"><b>'+jj.guest+'</b><cite>'+jj.rf0+'</cite></span>'
 							    		+'<span onclick="ChooseMatch(this)" n="3" value="4" name="'+ jj.ID +'"><b>'+jj.home+''+"<i style='color:" + (jj.rf.indexOf("-") == -1 ? "red" : "blue") + "'>(" +(jj.rf.indexOf("-") == -1 ? "" : "")+ jj.rf + ")</i>"+'</b><cite>'+jj.rf3+'</cite></span>'
@@ -167,7 +167,7 @@ function LoadMatchList() {
 						    	}
 						    	
 							newmatchHTML +='</p>'
-								+'<p class="spfzpk"><em>大小分</em>'
+								+'<p class="spfzpk lchhzpk"><em>大小分</em>'
 								if(jj["zfStop"] == 0){
 						    		newmatchHTML +='<span onclick="ChooseMatch(this)" n="1" value="17" name="'+ jj.ID +'"><b>&gt;'+jj.zf+'</b><cite>'+jj.zfd+'</cite></span>'
 							    		+'<span onclick="ChooseMatch(this)" n="0" value="18" name="'+ jj.ID +'"><b>&lt;'+jj.zf+'</b><cite>'+jj.zfx+'</cite></span>'
