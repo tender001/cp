@@ -35,6 +35,9 @@ rec = function(pn){
 				var scount = 0;
 				var summoney = 0;
 				var rs = d.Resp.row;
+				if(rs===undefined){
+					html ='暂时没有您的投注记录'
+				}else{
 				if(!isArray(rs)){rs = new Array(rs);}
 				$.each(rs, function(o,r){
 					var gid = r.gid;
@@ -75,6 +78,7 @@ rec = function(pn){
 		
 					html +="</span> <p><b>"+$_sys.getlotname(gid)+"</b><span><em class=\"money\">"+bdate+"</em>"+money+"元</span></p> </li>";
 				});
+			}
 				$("#betlist").html(html);
 				$("#div_data").show();
 				$("#div_nodata").hide();
@@ -134,8 +138,12 @@ keeprec=function(pn){
 					$("#div_nodata").show();
 				} else {
 					var rs = d.Resp.row;
-					if(!isArray(rs)){rs = new Array(rs);}
 					var data = [];
+					if(rs===undefined){
+						data ='暂时没有您的追号记录'
+					}else{
+					if(!isArray(rs)){rs = new Array(rs);}
+					
 					$.each(rs,function(i,r) {
 						var zhid = r.zhid;
 						var gameid = r.gameid;
@@ -160,6 +168,7 @@ keeprec=function(pn){
 //						html +="</li>";
 						data.push(html);
 					});
+					}
 					$("#betlist").html(data.join(""));
 					$("#page").html(pages(d.Resp.count.pn,d.Resp.count.ps,d.Resp.count.tp,d.Resp.count.rc));
 					$("#div_data").show();
@@ -205,6 +214,9 @@ acc = function(pn){
 			var code = d.Resp.code;
 			if (code == "0") {
 				var r = d.Resp.row;
+				if(r===undefined){
+					html ='暂时没有您的交易记录'
+				}else{
 				if(!isArray(r)){r = new Array(r);}
 				$.each(r, function(o,_r){
 					var cadddate = _r.cadddate;
@@ -273,6 +285,7 @@ acc = function(pn){
 						"<span><em class=\"money\">"+$_sys.biztype(ibiztype)+"</em>"+ichargeid+"</span></p></li>";
 					}
 				});
+				}
 				$("#betlist").html(html);
 				$("#tdata").show();
 				$("#page").html(pages(d.Resp.count.pn,d.Resp.count.ps,d.Resp.count.tp,d.Resp.count.rc));
