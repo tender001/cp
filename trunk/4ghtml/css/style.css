@@ -96,7 +96,7 @@
 .pay-money-in p i{position: absolute;right: 0;top: 40%;color: #999}
 .pay-money-in .pay-money-ch{display: table;width: 100%}
 .pay-money-ch li{display: table-cell;text-align: center;padding: 1em 0}
-.pay-money-ch li em{display: inline-block;width: 51%;padding: 1.1em;border: 0.15em solid #b3b3b3;border-radius: 8px;position: relative}
+.pay-money-ch li em{display: inline-block;width:75%;padding:0.6em 0;border: 0.15em solid #b3b3b3;border-radius: 8px;position: relative}
 .pay-money-ch li .cur{color: #f40;border-color: #f40;}
 .pay-money-ch li .cur:after{position: absolute;bottom: -2px;right: -3px;width:28px;height:20px;border-bottom-right-radius:5px;content:"";background: url("../img/cz-true.png") no-repeat;background-size: 100% 100%}
 .phone-pay{border-top: 1px solid #ddd;border-bottom: 1px solid #ddd}
