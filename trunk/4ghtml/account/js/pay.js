@@ -11,7 +11,7 @@
             setInterval(function(){
                 var _money = $("#money").val();
                 $("#moneys li em").removeClass("cur");
-                $("#"+_money).addClass("cur");
+//                $("#"+_money).addClass("cur");
                 if(/^[1-9]\d{0,}$/.test(_money)){
                     $("#submit").removeClass("action_no")
                 }else{
@@ -65,10 +65,10 @@
                     
                 },
                 cft:function(money){
-                    window.location.href="/recharge/tenpay/ci?amount="+money;
+//                    window.location.href="/recharge/tenpay/ci?amount="+money;
                 },
                 mcard:function(money){
-                    window.location.href="/recharge/wx/ci?amount="+money;
+//                    window.location.href="/recharge/wx/ci?amount="+money;
                 },
                /* bankcard:function(money){
                     window.location.href="/recharge/bankcard/index?amount="+money;
@@ -85,7 +85,7 @@
                     }
                 },
                 baidu:function(money){
-                    window.location.href="/recharge/baifubao/index.html?allmoney="+money;
+//                    window.location.href="/recharge/baifubao/index.html?allmoney="+money;
                 },
                 mcard:function(money){
                     window.location.href="/account/phonepay.html"
