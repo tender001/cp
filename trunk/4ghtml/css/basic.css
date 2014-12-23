@@ -114,10 +114,8 @@ input.fqhmGray{ background:#ebebeb}
 /*.buyHeader h1 s{position:relative;display:inline-block;width:20px;height:20px;margin-left:3px;border-radius:23px;background-color:#ff812d;box-shadow:0 1px 3px rgba(0,0,0,0.5);vertical-align:middle;vertical-align:-3px;}
 .buyHeader h1 s cite{position:absolute;top:8px;left:4px;border:6px solid #fff;border-width:6px 6px 0 6px;border-color:#fff transparent #fff transparent}*/
 .buyHeader h1 s{position:relative;display:inline-block;width:16px;height:16px;margin-left:3px;border-radius:16px;border:2px solid #fff;background-color:transparent;vertical-align:middle;vertical-align:-4px;}
-.buyHeader h1 s cite{position:absolute;top:3px;left:4px;width:6px;height:6px;border-right:2px solid #fff;border-bottom:2px solid #fff;-webkit-transform: rotate(45deg)}
-
-
-.buyHeader h1 s.cur cite{top:6px;border:6px solid #fff;border-width:0 6px 6px 6px;border-color:transparent transparent #fff transparent}
+.buyHeader h1 s cite{position:absolute;top:3px;left:4px;width:6px;height:6px;border-right:2px solid #fff;border-bottom:2px solid #fff;-webkit-transform: rotate(45deg);-moz-transform: rotate(45deg);-o-transform: rotate(45deg);transform: rotate(45deg)}
+/*.buyHeader h1 s.cur cite{top:6px;border:6px solid #fff;border-width:0 6px 6px 6px;border-color:transparent transparent #fff transparent}*/
 .fcHeader{ background:#db150b; border-bottom:1px solid #d5d5d5}
 .fcHeader h1,.pkHeader h1,.zcHeader h1{color:#fff}
 .hmPull{ position:absolute; z-index:1; border-left:1px solid #d5d5d5; margin-left:1px; top:2.68rem; width:100%; background:#fff}
