@@ -476,8 +476,8 @@ a.hmTxt2{ display:block; color:#606060; padding-right:1.4rem; position:relative}
 .peo-s span:first-of-type{width:60%;text-align: left}
 .hm-list i{position:absolute;top:2.5em;right:10px;width:8px;height: 8px;overflow: hidden;border-width:2px;border-style: solid;border-color:transparent #ccc #ccc transparent;-webkit-transform: rotate(-45deg);-moz-transform: rotate(-45deg);-o-transform: rotate(-45deg);transform: rotate(-45deg);}
 /*开奖页面*/
-.buyTab{ line-height:2.1rem; background-color:#f8f8f8; border-bottom:1px solid #d9d9d9; display:-webkit-box; display:-moz-box}
-.buyTab li{ box-flex:1;-webkit-box-flex:1;-moz-box-flex:1; text-align:center}
+.buyTab{width:100%;line-height:2.1rem; background-color:#f8f8f8; border-bottom:1px solid #d9d9d9;}
+.buyTab li{float:left;width:50%;text-align:center}
 .buyTab li h3,.buyTab li a{ display:block;/*width:6.8rem;*/ margin:0 auto; color:#a9a9a9;font-size: 1.14em; font-weight:normal}
 .buyTab li.cur h3,.buyTab li.cur a{ display:block; color:#f6851f; border-bottom:.12rem solid #f6851f}
 .kjall a{ height:3.3em; padding-top:.7em}
