@@ -111,6 +111,7 @@ function chklogin(t) {
 					if($("[mark=isLogin] p")){
 						$("[mark=isLogin] p").html("我的");
 						$("[mark=isPay] p").html("充值");
+						$("[mark=isPay] h3").attr("class","cz");
 						$("[mark=isLogin] a,.user-login,#toplogin").attr("href","/account/");
 						$("[mark=isPay] a").attr("href","/account/pay.html");
 					}
@@ -118,6 +119,7 @@ function chklogin(t) {
 					if($("[mark=isLogin] p")){
 						$("[mark=isLogin] p").html("登陆");
 						$("[mark=isPay] p").html("注册");
+						$("[mark=isPay] h3").attr("class","reg");
 						$("[mark=isLogin] a,.user-login,#toplogin").attr("href","/user/login.html?bak=1");
 						$("[mark=isPay] a").attr("href","/user/reg.html"); 
 					}
