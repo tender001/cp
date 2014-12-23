@@ -19,6 +19,7 @@
 .app-notice .zj_tipBox td,.app-notice .zj_tipBox th{padding: 0.55em 0.5em;font-weight:400;text-align: center;color: #f40}
 .nav{width:100%;padding:6px 0;border-top:1px solid #e2e2e2;background-color: #f0f0f0}
 .nav table{width: 100%;background-color: #fff}
+#index_nav.nav table{background-color: #f4f4f4}
 .nav table td{text-align: center;padding: .5em 0;font-size:1.124em;border:1px solid #e2e2e2}
 .nav-list{color: #333}
 .nav-list h3{display:inline-block;width:25px;height:25px;-webkit-background-size: 30px;-moz-background-size:25px;background-size:25px}
@@ -40,7 +41,7 @@
 .kstz-b .ks-ball em{display: inline-block;width: 28px;height: 28px;line-height:28px;margin-right:3px;font-size:14px;text-align: center;color:#fff;border-radius:100%;background-color: #f40}
 .kstz-b .ks-ball .blue{background-color: #64a6ea}
 /*css3球滚动*/
-.rotate_jx{-webkit-animation:num .2s linear infinite;-moz-animation:num .2s linear infinite;-o-animation:num .2s linear infinite;-ms-animation:num .2s linear infinite;animation:num .2s linear infinite}
+.rotate_jx{-webkit-animation:num .2s linear infinite;-moz-animation:num .2s linear infinite;-o-animation:num .2s linear infinite;animation:num .2s linear infinite}
 @-webkit-keyframes num{0%{-webkit-transform:rotate(0deg)}
     50%{-webkit-transform:rotate(180deg)}
     100%{-webkit-transform:rotate(360deg)}
@@ -115,7 +116,7 @@
 .kj-menu{padding-bottom: 0}
 .kj-menu .kj-menu-b{padding: 1em 0;border-top:1px solid #ccc;border-bottom:1px solid #ccc;background-color: #fff}
 .kj-menu-b ul{display: table;width: 94.44%;margin:0 auto;border: 0.14em solid #f60;border-radius: 6px}
-.kj-menu-b ul li{display: table-cell;padding:0.7em 0;letter-spacing:0.14em;text-align: center;border-left:0.13em solid #f40}
+.kj-menu-b ul li{display: table-cell;padding:0.4em 0;letter-spacing:0.14em;text-align: center;border-left:0.13em solid #f40}
 .kj-menu-b ul li:first-of-type{border:0}
 .kj-menu-b ul li.cur{background-color: #f40}
 .kj-menu-b ul li a{display:inline-block;width:100%;color:#f40;}
@@ -145,7 +146,7 @@
 .news-nav .news-title:after{display: table;content: "";clear: both}
 .news-title a{float: left;width:20%;text-align:center;color: #333;border-bottom: 2px solid transparent;position: relative;bottom:-0.05em}
 .news-title .cur{color: #f40;border-color: #f40}
-.more-news{float:right;width:0;margin-top:8px;font-size:0;border-width:7px 10px;border-style:solid;border-color: transparent transparent transparent #999}
+.more-news{display:none;float:right;width:0;margin-top:8px;font-size:0;border-width:7px 10px;border-style:solid;border-color: transparent transparent transparent #999}
 .news-bann{padding:10px 2% 0;border-top: 1px solid #ccc;}
 .news-bann img{width: 100%;max-height: 230px}
 .news-list-all a{color: #333}
@@ -277,14 +278,14 @@
 /*11选5*/
 .syx5Tab{padding-top:.5em; border-bottom:1px solid #e9e9e9; background:#fff}
 .syx5Tab li{width:4em; margin:0 .5em; height:1.6em; color:#5c5c5c}
-.syx5Tab li.cur{height:1.5em; color:#db150b; border-bottom:2px solid #db150b}
+/*.syx5Tab li.cur{height:1.5em; color:#db150b; border-bottom:2px solid #db150b}*/
 .k3kj{border-bottom:1px solid #d9d9d9;color:#a4a4a4}
 .k3kjtext{ float:left; height:3.5em; width:43%; padding:.5em 0 0 7%; border-right:1px solid #e2e2e2}
 .k3kjtext p cite{ padding-left:.7rem}
 .kpTab{width:60em;height:100%;float:left;padding-top:.4em;font-size:.8em;background:#f8f8f8;border-bottom:1px dotted #cecece}
-.kpTab li{ display:block;float:left;width:4.1em;height:2.1em;color:#a9a9a9;text-align:center;margin:0 .4em}
+.kpTab li{float:left;width:4.1em;height:2.1em;line-height:2.1em;font-size:1.4em;color:#a9a9a9;text-align:center;margin:0 .4em}
 .kpTab li h2{font-weight:normal}
-.kpTab li.cur{color:#f6851f; height:2em; border-bottom:2px solid #f6851f}
+.kpTab li.cur{ height:2em;color:#f6851f; border-bottom:2px solid #f6851f}
 .syx5kj{ background:#f9f9f9; border-bottom:1px solid #e9e9e9}
 .syx5kj .k3kjtext{ width:53%;padding-left:2%;border-right:1px solid #e9e9e9}
 .syx5kj .k3kjtext p{text-align:center}
@@ -470,7 +471,6 @@ a.hmTxt2{ display:block; color:#606060; padding-right:1.4rem; position:relative}
 .hm-list dl{float: right;width:66%;font-size: 1.14em}
 .peo-name{display: block;height:21px;line-height:21px;color: #f40;overflow: hidden}
 .hm-list .lv em{padding: 1px 3px;color:#f40;border: 1px solid #f40}
-
 .peo-s{display:table;width:100%}
 .peo-s span{display: table-cell;padding:0.3em 0;text-align: center}
 .peo-s span:first-of-type{width:60%;text-align: left}
@@ -529,7 +529,3 @@ a.hmTxt2{ display:block; color:#606060; padding-right:1.4rem; position:relative}
 .jclqkj div p span.jclqsf{width:28%}
 .jclqkj .spfzpkNum span{width:42%}
 .jclqkj .spfzpkNum .spfvs{width:16%}
-
-
-
-
