@@ -218,8 +218,9 @@
 .spfzpk,.spfzpkNum{overflow:hidden; zoom:1}
 .hhzpk li{ position:relative}
 .hhzpk li:first-child,.jqzpk li:first-child{ margin-top:2em}
-.hhzpk .spfzpk span{ width:23%; height:2.62em; line-height:2.62em; margin-top:.5em}
-.hhzpk .spfzpk em,.hhNum .spfzpk em{ float:left; width:1em; padding:.15em 1%; height:2.2rem; margin:.5em 1% 0 0; text-align:center; line-height:1; background:#ff9898; color:#fff; font-size:.75em; border-radius:.2em}
+.hhzpk .spfzpk{padding:0.3em 0}
+.hhzpk .spfzpk span{ width:23%; height:2.62em; line-height:2.62em; margin-top:0}
+.hhzpk .spfzpk em,.hhNum .spfzpk em{ float:left; width:1em; padding:.15em 1%; height:2.2rem; margin:0 1% 0 0; text-align:center; line-height:1; background:#ff9898; color:#fff; font-size:.75em; border-radius:.2em}
 .hhzpk .spfzpk em.rq,.hhNum .spfzpk em.rq{ padding:.5em 1%; height:2.3em; background:#98c5ff}
 .hhzpk .spfzpkNum span.spfvs{ width:10%}
 .hhzpk .spfzpkNum span:last-child{ width:30%}
