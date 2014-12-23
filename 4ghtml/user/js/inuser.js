@@ -28,7 +28,7 @@ $(function() {
         $("#moresult1").bind("click",
         function() {
             $("#loading").show();
-            $("#moresult1").hide();
+//            $("#moresult1").hide();
             LoadList()
         })
     } else if (ititle == "myRecord") {
@@ -37,10 +37,11 @@ $(function() {
         myLoadList()
     }
 });
+
 function LoadList() {
     page++;
     if (page > zys) {
-        $("#loading").hide();
+        $("#loading,#moresult1").hide();
         return false
     }
     var postData = "hid=" + projid + "&gid=" + lotid + "&state=" + chedan + "&pn=" + page + "&ps=20";
@@ -54,7 +55,11 @@ function LoadList() {
 			var desc = obj.Resp.desc;
 			if (code == "0") {
 				var row = obj.Resp.row;
-				var cacheHTML="<li><span class=\"inFirst\">用户</span><span>认购金额(元)</span><span style=\"border-right:none;width:26%\">购买时间</span></li>";
+				var cacheHTML="";
+				if(page==1){
+					cacheHTML="<li><span class=\"inFirst\">用户</span><span>认购金额(元)</span><span style=\"border-right:none;width:26%\">购买时间</span></li>";
+				}
+				
 				var ct =obj.Resp.count;
 			
 				var ps=20;	
@@ -62,6 +67,7 @@ function LoadList() {
 				var r = obj.Resp.row;		
 				var nn=0;
 				var bmoneys=0;
+				zys = obj.Resp.count.tp;
 //				$("#cp_hmlist").html('合买用户<font class="fontred" style="font-size:14px">('+rc+')</font>人');
 //				var jlist = option.data.Resp.myjoins;
 //				var istate = option.data.Resp.row.istate;
@@ -90,7 +96,8 @@ function LoadList() {
 				}
 				if ($("#inUser").html() == "") cacheHTML = "";
 //                cacheHTML += html;
-                $(".inUser").html(cacheHTML);
+				$("#loading").hide();
+                $(".inUser").append(cacheHTML);
 			}
 		}
 	});	
@@ -155,23 +162,29 @@ showjoin = function(option){
 	
 	var jlist = option.data.Resp.myjoins;
 	var istate = option.data.Resp.row.istate;
-	if(jlist)joins = jlist.myjoin;
-	if(!isArray(joins)){joins = new Array(joins);}
-	if(joins == undefined || joins.length < 1){
+	if(jlist)var joins = jlist.myjoin;
+	if(joins === undefined || joins.length < 1){
 		 $("#moresult1").hide();
-         html += '<li class="yellow" style="text-align:center;border-bottom:none;">亲!木有你的认购记录耶</li>'
-	} else {
-		$.each(joins,function(i,r) {
-			var buyid = r.buyid;
-			var buydate = r.buydate;
-			var bmoney = r.bmoney;
-			var cancel = r.cancel;
-			var rmoney = r.rmoney;
-			var isource = r.source;// 
-			 html += '<li "><span class="yellow">' + bmoney + '</span><span class="yellow">' + rmoney + '</span><span class="inLast"><em>' + buydate.substring(2, 10) + "</em><cite>" + buydate.substring(11, 19) + "</cite></span></li>"
-			
-		});
+        html += '<li class="yellow" style="text-align:center;border-bottom:none;">亲!木有你的认购记录耶</li>'
+	} else{
+		if(!isArray(joins)){joins = new Array(joins);}
+		if(joins == undefined || joins.length < 1){
+			 $("#moresult1").hide();
+	         html += '<li class="yellow" style="text-align:center;border-bottom:none;">亲!木有你的认购记录耶</li>'
+		} else {
+			$.each(joins,function(i,r) {
+				var buyid = r.buyid;
+				var buydate = r.buydate;
+				var bmoney = r.bmoney;
+				var cancel = r.cancel;
+				var rmoney = r.rmoney;
+				var isource = r.source;// 
+				 html += '<li "><span class="yellow">' + bmoney + '</span><span class="yellow">' + rmoney + '</span><span class="inLast"><em>' + buydate.substring(2, 10) + "</em><cite>" + buydate.substring(11, 19) + "</cite></span></li>"
+				
+			});
+		}
 	}
+
 	$(".inUser").html(html);
     $("#loading").hide();
     $("#moresult1").hide()
