@@ -228,7 +228,7 @@ acc = function(pn){
 //		            <p><cite>支出100元</cite><b>竞彩足球</b><span><em class="money">11月26日</em>余额8.00元</span></p>
 //		        </li>
 					if(ibiztype =="200"||ibiztype =="300"){
-						html +="<li class=\"ico-click\"><i></i><p>"+str+"<b>余额<font color=red>"+parseFloat(ibalance).rmb(false)+"</font>元</b>" +
+						html +="<li class=\"ico-click\"><p>"+str+"<b>余额<font color=red>"+parseFloat(ibalance).rmb(false)+"</font>元</b>" +
 								"<span><em class=\"money\">"+$_sys.biztype(ibiztype)+"</em>"+ichargeid+"</span></p></li>";
 //						html +="<td>"+idate+"<br>";
 //						html +=str+"<font color=blue>"+parseFloat(imoney).rmb(false)+"</font>元&nbsp;<br>";
@@ -242,7 +242,7 @@ acc = function(pn){
 //						html +=$_sys.biztype(ibiztype);
 //						html +="&nbsp;<font color=green>"+ichargeid+"</font>";
 //						html +="</td></tr>";
-						html +="<li class=\"ico-click\"><i></i><p>"+str+"<b>余额<font color=red>"+parseFloat(ibalance).rmb(false)+"</font>元</b>" +
+						html +="<li class=\"ico-click\"><p>"+str+"<b>余额<font color=red>"+parseFloat(ibalance).rmb(false)+"</font>元</b>" +
 						"<span><em class=\"money\">"+$_sys.biztype(ibiztype)+"</em>"+ichargeid+"</span></p></li>";
 					}else if(ibiztype =="201"||ibiztype =="202"||ibiztype =="203"||ibiztype =="211"||ibiztype =="215"){
 //						html +="<tr onclick=\"location.href=\'/user/project.html?lotid="+gid+"&projid="+projid+"\'\"  class=\"list\">";
