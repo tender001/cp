@@ -159,7 +159,7 @@ function xiugaimbtn(){
 				var desc = R.desc;
 				if (code == "0") {
 //					$("#sendphone").html($.trim($("#phoneNumber").val()));
-					$("#Phone").val(newValue);
+					$("#Phone").val(newPhone);
 				
 					$("#div2").show();
 					$("#div5").hide();
