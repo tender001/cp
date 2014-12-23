@@ -337,6 +337,10 @@ function showMS(ms,fn) {
         "margin-top": ($(window).height() / 4 + $(window).scrollTop()) + "px",
        
     });
+    var overlayID = "_t_overlay";
+    if (!byID(overlayID)) $('body').append('<div class="overlay" id="' + overlayID + '"></div>');
+    
+    $('.overlay').css({ 'height': ($("body").height()) + 'px', 'left': '0px', 'top': '0px', 'width': '100%', 'display': 'block', 'position': 'absolute' }).show();
     showBuyMini(1);
     setTimeout(function() { showBuyMini(2); }, (6 * 1000));
     if(fn != null && fn != undefined){
@@ -353,11 +357,16 @@ function showBuyMini(kind) {
             "height": $("#caseForm").height() + 110 + "px",
             "display": "block"
         });
+        var overlayID = "_t_overlay";
+//        if (!byID(overlayID)) $('body').append('<div class="overlay" id="' + overlayID + '"></div>');
+        
+        $('.overlay').css({ 'height': ($("body").height()) + 'px', 'left': '0px', 'top': '0px', 'width': '100%', 'display': 'block', 'position': 'absolute' }).show();
     }
     else {
         $("#divshowprebuy").hide();
         $("#divDisable").hide();
         $("#divshowprebuy").html("");
+        $('.overlay').hide();
     }
 }
 

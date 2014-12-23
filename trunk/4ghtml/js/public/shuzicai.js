@@ -13,6 +13,7 @@ function getIndex(id){
 	}
 	return 0;
 }
+
 function createGameSelect() {
     tID = parseInt($("#TypeID").attr("value"));
     var html = "<div style=\"padding:5px 5px 10px 10px;\"><span style=\"float:right;\">投注方式：<select name=\"selectKind\" id=\"selectKind\" onchange=\"recreatePanale(this.value);\" ><option selected=\"selected\" value=\"2\">手选</option><option value=\"1\">机选</option></select></span>" + GameName[getGameIndex(tID)] + "</div>";
@@ -113,6 +114,7 @@ loadOpencode = function(){
 						c=c.split("|");
 	                	if(index==0&&c!==""){
 	                		$(".k3kjtext p").html(pid+"期开奖")
+	                		$("a[kj]").attr("href","/kj/detail.html?gid="+gid+"&pid="+pid+"");
 	                		if(c.length==2){
 								$(".pdTop03 ").html('<b>'+c[0].split(',').join('</b><b>')+'</b>'+'<b class="blueBall">'+c[1].split(',').join('</b><b class="blueBall">')+'</b>');
 							}else{
@@ -366,6 +368,10 @@ function createGamePanle(tID) {
         $("#divshowprebuy").html("");
         reCreateGame();
     });
+    $(".jc-more").click(function() {
+ 		$(this).children().toggle();
+ 	   
+ 	});
 }
 
 function reCreateGame() {
@@ -551,9 +557,7 @@ function betconfirm(rnd){
 	    if (varString.split(';').length > 1) {
 	    	for (var i = 0; i < varString.split(';').length; i++) {
 	    		var Ball=varString.split(';')[i].split('|')[i]
-	    		if(Ball.length==2){
-	    			
-	    		}
+	    	
 	    		html+='<div class="ssqtzNum"><cite class="errorBg"><em class=""></em></cite>'
     		    	+'<span class="revise_ww"><span>'
 //	    		
@@ -584,6 +588,7 @@ function betconfirm(rnd){
     
 //    preBuy(0);
 }
+
 function payconfirm(){
 	var notes=parseInt($("#buymoney").val());
 	var expect=$("#expect").val();
