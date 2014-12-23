@@ -197,15 +197,15 @@
 .pact{ padding:.6rem 0 0 .8rem; font-size:.9rem; color:#8e8e8e}
 .zfText{ border:1px solid #dcdcdc; background:#fff; line-height:1.3rem; margin-top:.5rem; padding:.5rem .87rem .5rem 1.25rem}
 .zfNum p{ color:#f03d3d; word-break:break-all}
-.spfNum .errorBg{ top:1.3rem}
-.spfNum .spfzpk span{ width:26%}
+.spfNum .errorBg{ top:5em}
+.spfNum .spfzpk span{ width:26%;margin-top:0.45em}
 .errorBg{ position:absolute; padding:.7rem .5rem .6rem .9rem; right:-1.2em; top:0}
 .errorBg .error2{ display:block; width:1.06rem; height:1.06rem; background:url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACMAAAAjCAMAAAApB0NrAAAAQlBMVEUAAADc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nz////p6eno6Ojx8fHi4uLCn5nCAAAAEHRSTlMA8UL2iOjg0HwnFgYDhbm4g6GjowAAAPJJREFUOMuVlO0OgyAMRQtDxKmzgL7/qy5zlsuHCdv5ZcyJrZcWylj0+rKKlX2teqE7nmZgMJhnY8zuwSUPN5fKNHLLOOWKVnyH0pmCOlW9JE34So26ys3opWX8Nu5YOG4kd+aSmtl9lMewp5Y+Oa1QvEjB+yQZomWQQv5DvBRIw0KahSjSqfgg73UqBUkUFNu4lkQRNrKcS1CApTLjCAVZExcEn/4OkKqUVlJkK6WVLG21EmIlbcgH0VWSId0oIh2SM85rvxSRAs6LDM4duUQ8mnJ+sugOzE8+h/e4n+e5vxf9/ervaX/f+/fGX/dP/x57A/nLPBMWHWWgAAAAAElFTkSuQmCC") no-repeat center; background-size:1.06rem 1.06rem; -webkit-background-size:1.06rem 1.06rem; -moz-background-size:1.06rem 1.06rem}
 .sfcxs{ border-bottom:1px solid #e4e4e4; padding:.9em 0 .9em 0; overflow:hidden; zoom:1}
 .sfcxs li{float:left;width:78.5%;color:#343434}
 .spfpl span{ display:inline-block;width:39%;color:#aaa;font-size:1.12em; text-align:center; margin-top:.2rem}
 .spfpl span.spfvs,.spfNum .spfpl span.spfvs{ width:22%}
-.spfzpk span{ float:left;width:30%;text-align:center;margin:0.6em 1.2% 0;height:2em;line-height:2em;font-size:1.13em;color:#f40;border:1px solid #f40;border-radius:5px;overflow:hidden;-webkit-border-radius:5px;-moz-border-radius:5px}
+.spfzpk span{ float:left;width:30%;text-align:center;margin:0 1.2% 0;height:2em;line-height:2em;font-size:1.13em;color:#f40;border:1px solid #f40;border-radius:5px;overflow:hidden;-webkit-border-radius:5px;-moz-border-radius:5px}
 .spfzpk span.cur{background-color:#f40;color:#fff}
 .bfpk span{ width:96%}
 .sfcxs li:first-child{width:5.4em;text-align:center;color:#5c5c5c}
@@ -218,8 +218,8 @@
 .spfzpk,.spfzpkNum{overflow:hidden; zoom:1}
 .hhzpk li{ position:relative}
 .hhzpk li:first-child,.jqzpk li:first-child{ margin-top:2em}
-.hhzpk .spfzpk{padding:0.3em 0}
-.hhzpk .spfzpk span{ width:23%; height:2.62em; line-height:2.62em; margin-top:0}
+.hhzpk .spfzpk,.hhNum .spfzpk{padding:0.3em 0}
+.hhzpk .spfzpk span{ width:23%; height:2.62em; line-height:2.62em;}
 .hhzpk .spfzpk em,.hhNum .spfzpk em{ float:left; width:1em; padding:.15em 1%; height:2.2rem; margin:0 1% 0 0; text-align:center; line-height:1; background:#ff9898; color:#fff; font-size:.75em; border-radius:.2em}
 .hhzpk .spfzpk em.rq,.hhNum .spfzpk em.rq{ padding:.5em 1%; height:2.3em; background:#98c5ff}
 .hhzpk .spfzpkNum span.spfvs{ width:10%}
@@ -254,9 +254,9 @@
 .relative{position:relative}
 .shakeIco2{background-image:url(/img/fc/shake.png)}
 .omitIco2{background-image:url(/img/fc/omitHover.png)}
-.shakeOmit{display:none;width:9.6em;position:absolute;right:0; top:0}
-.shakeOmit cite{float:left; margin-top:.8em}
-.shakeico{float:left;width:23px;height:18px;margin:.7em .15em 0 0;background-image:url(/img/fc/shake2.png);background-size:23px 18px}
+.shakeOmit{display:none;width:6.6em;position:absolute;right:0; top:0}
+.shakeOmit cite{float:left; margin-top:.4em}
+.shakeico{float:left;width:23px;height:18px;margin:.4em .15em 0 0;background-image:url(/img/fc/shake2.png);background-size:23px 18px}
 .omitico,.omitico2{ float:left;width:17px;height:14px;margin:.8em .05em 0 .5em;background-image:url(/img/fc/omit2.png);background-size:17px 14px}
 .omitico2{background-image:url(/img/fc/omitHover2.png)}
 .ssqText{ padding-top:.8em; background:linear-gradient(top,#e2e2e2 0.2%,#e8e8e8 0.5%,#f3f3f3 .9%,#f7f7f7 95%); background:-webkit-linear-gradient(top,#e2e2e2 0.1%,#e8e8e8 0.2%,#f3f3f3 .5%,#f7f7f7 95%); background:-moz-linear-gradient(top,#e2e2e2 0.2%,#e8e8e8 0.5%,#f3f3f3 .9%,#f7f7f7 95%)}
@@ -265,8 +265,8 @@
 .ssqBall cite{display:inline-block; background:#fff;color:#db150b;font-size:1rem;width:2.2rem;text-align:center;line-height:2.2rem; margin:.47rem .47rem .6rem 0;border-radius:2.2rem; box-shadow:0 0 0 1px #d6d6d6 inset; -webkit-box-shadow:0 0 0 1px #d6d6d6 inset; -moz-box-shadow:0 0 0 1px #d6d6d6 inset;}
 .ssqblueBall{border-top: 1px solid #dedede}
 .ssqblueBall cite{color: #106fe5}
-.ssqBall cite.redBall{ background:#db150b; color:#fff; box-shadow:0 0 0 1px #db150b inset; -webkit-box-shadow:0 0 0 1px #db150b inset; -moz-box-shadow:0 0 0 1px #db150b inset}
-.ssqBall cite.blueBall{ background:#106fe5; color:#fff; box-shadow:0 0 0 1px #106fe5 inset; -webkit-box-shadow:0 0 0 1px #106fe5 inset; -moz-box-shadow:0 0 0 1px #106fe5 inset}
+.ssqBall cite.redBall{ background-color:#f40;color:#fff; box-shadow:0 0 0 1px #f40 inset; -webkit-box-shadow:0 0 0 1px #f40 inset; -moz-box-shadow:0 0 0 1px #f40 inset}
+.ssqBall cite.blueBall{ background-color:#64a6ea; color:#fff; box-shadow:0 0 0 1px #64a6ea inset; -webkit-box-shadow:0 0 0 1px #64a6ea inset; -moz-box-shadow:0 0 0 1px #64a6ea inset}
 .ssqBall cite:last-child,.omitnum cite:last-child{ margin-right:0}
 .omitnum{ position:absolute; top:2.35rem; z-index:-1}
 .omitnum cite{ display:inline-block; color:#bababa; width:2.2rem;margin:0 .47rem 2.1rem 0;; height:.9rem; padding-top:.3rem; text-align:center; font-size:.65rem}
@@ -288,7 +288,7 @@
 .syx5kj .k3waitkj{ width:90%; padding:.6em 0 0 10%}
 .syx5kj .kjdice b{ float:left; width:1.8em;height:1.8em;line-height:1.8em;font-size:1.05em;text-align:center;color:#fff;background-color:#db150b;margin:.2em .15em 0 0; border-radius:1.3em}
 .syx5kj .kjdice b.blueBall{background-color:#106fe5}
-.syx5kj .kjdice-ssq{padding: 0.5em 0 0;color:#8e8e8e}
+.syx5kj .kjdice-ssq{padding: 0.5em 0 0;color:#db150b}
 .syx5kj .kjdice-ssq b{padding:0.4em}
 .syx5kj .kjdice-ssq .blueBall{color:#106fe5}
 .syx5kj .kjup{ margin:-.2rem 0 0 .2rem}
