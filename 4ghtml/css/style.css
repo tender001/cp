@@ -526,6 +526,13 @@ a.hmTxt2{ display:block; color:#606060; padding-right:1.4rem; position:relative}
 .jclqkj .spfzpkNum span{width:42%}
 .jclqkj .spfzpkNum .spfvs{width:16%}
 
+/* 帮助中心 */
+.wap_h{ margin-top:44px; padding-bottom:90px;}
+.help{ overflow:hidden}
+.help_box{ margin:0 14px;}
+.help_title{ padding-left:14px; font-size:16px; height:30px; line-height:30px; background:#eeeeee; margin:25px 0 10px 0}
+.color_f60{ color:#ff6600}
+
 
 
 
