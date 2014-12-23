@@ -478,7 +478,7 @@ a.hmTxt2{ display:block; color:#606060; padding-right:1.4rem; position:relative}
 /*开奖页面*/
 .buyTab{ line-height:2.1rem; background-color:#f8f8f8; border-bottom:1px solid #d9d9d9; display:-webkit-box; display:-moz-box}
 .buyTab li{ box-flex:1;-webkit-box-flex:1;-moz-box-flex:1; text-align:center}
-.buyTab li h3,.buyTab li a{ display:block;width:6.8rem; margin:0 auto; color:#a9a9a9;font-size: 1.14em; font-weight:normal}
+.buyTab li h3,.buyTab li a{ display:block;/*width:6.8rem;*/ margin:0 auto; color:#a9a9a9;font-size: 1.14em; font-weight:normal}
 .buyTab li.cur h3,.buyTab li.cur a{ display:block; color:#f6851f; border-bottom:.12rem solid #f6851f}
 .kjall a{ height:3.3em; padding-top:.7em}
 .all a{ display:block; position:relative; height:4.2em; padding:0.5em 0 0.5em .91em; border-bottom:1px solid #ebebeb}
