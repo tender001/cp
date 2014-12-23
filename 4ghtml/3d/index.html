@@ -15,6 +15,8 @@
 	<script src='/js/login.js'></script>
 	<script type ="text/javascript" src ="/js/public/ballpanle.js"></script>
 	<script type ="text/javascript" src ="/js/public/shuzicai.js"></script>
+	<script type ="text/javascript" src ="/js/public/iscroll.js"></script>
+	
 </head>
 <body>
 <script>
@@ -22,6 +24,7 @@ $(document).ready(function() {
     chklogin();
     createGamePanle(44)
     createGameSelect();
+    topNavInit();
 });
 </script>
 <!--#include virtual="/cc/header.html"-->
@@ -39,7 +42,7 @@ $(document).ready(function() {
                 style="list-style: none; display: block; width: 60rem; height: 100%; padding: 0px; transition: transform 0ms; -webkit-transition: transform 0ms; transform-origin: 0px 0px 0px; transform: translate(-8px, 0px) scale(1) translateZ(0px);">
 <!--                 <li class="cur">选第1位</li> -->
 
-            </ul>
+            </ul><em class="more-news"></em>
         </div>
     </nav>
     <article>
