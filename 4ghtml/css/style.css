@@ -144,7 +144,7 @@
 .news-nav .news-title:after{display: table;content: "";clear: both}
 .news-title a{float: left;width:20%;text-align:center;color: #333;border-bottom: 2px solid transparent;position: relative;bottom:-0.05em}
 .news-title .cur{color: #f40;border-color: #f40}
-.news-nav .more-news{float:right;width:0;margin-top:8px;font-size:0;border-width:7px 10px;border-style:solid;border-color: transparent transparent transparent #999}
+.more-news{float:right;width:0;margin-top:8px;font-size:0;border-width:7px 10px;border-style:solid;border-color: transparent transparent transparent #999}
 .news-bann{padding:10px 2% 0;border-top: 1px solid #ccc;}
 .news-bann img{width: 100%;max-height: 230px}
 .news-list-all a{color: #333}
