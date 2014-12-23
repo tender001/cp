@@ -100,7 +100,7 @@ function betconfirm(){
 	$("#confirmhtml").html("");
 	$("#buyHeader h1").html($_sys.getlotname($("#gid").val())+"_投注")
     for (var i = 0; i < chooseinfo.length; i++) {
-		var cList='<ul class="spfNum list-r fn-clearfix" bet="'+chooseinfo[i][0]+'"><cite class="errorBg" onClick="Reone('+chooseinfo[i][0]+')"><em class="error2"></em></cite>'+ $(chooseinfo[i][1]).html()+'</ul>'
+		var cList='<ul class="spfNum list-r fn-clearfix" bet="'+chooseinfo[i][0]+'">'+ $(chooseinfo[i][1]).html()+'</ul>'
 		$("#confirmhtml").append(cList)
     }
     showbuy(true);
@@ -117,7 +117,7 @@ function payconfirm(){
 }
 function ispay(ispay){
 	if(ispay){
-    	$("#matchList,#buyFooter1,#szcbuy,#issuc,#content_home").hide();
+    	$("#matchList,#buyFooter1,#elist,#topHeader,#szcbuy,#issuc,#content_home").hide();
     	$("#paybet").show();
     }else{
     	$("#szcbuy").show();
@@ -126,7 +126,7 @@ function ispay(ispay){
 }
 function issuc(ispay){
 	 if(issuc){
-	    	$("#matchList,#buyFooter1,#szcbuy,#paybet,#content_home").hide();
+	    	$("#matchList,#buyFooter1,#elist,#topHeader,#szcbuy,#paybet,#content_home").hide();
 	    	$("#issuc").show();
 	    }else{
 	    	$("#content_home").show();
@@ -135,10 +135,10 @@ function issuc(ispay){
 }
 function showbuy(istrue){
     if(istrue){
-    	$("#matchList,#matchnote,#buyFooter1,#szcbuy,#paybet,#issuc").hide();
+    	$("#matchList,#matchnote,#elist,#topHeader,#buyFooter1,#szcbuy,#paybet,#issuc").hide();
     	$("#content_home").show();
     }else{
-    	$("#matchList,#buyFooter1,#matchnote").show();
+    	$("#matchList,#buyFooter1,#matchnote,#elist,#topHeader").show();
     	$("#content_home,#szcbuy,#paybet").hide();
     }
 }
@@ -351,6 +351,27 @@ function ClearChoose() {
         $(this).removeClass("mDan").addClass("mDan1");
     });
     CountLot();
+}
+function Reone(id){
+	$("ul[bet="+id+"]").remove();
+
+	for(var ele in chooseArray){    //移除投注页选择的场次（）
+		if(chooseArray[ele]===undefined){
+			return;
+		}
+		if(chooseArray[ele][0]==id){
+			chooseArray.remove(ele);
+		}
+		
+	}
+	CountLot();
+	$("#betnum").html(chooseArray.length);
+}
+function Reconfirm(){
+	$("em[n]").removeClass("cur");
+	$("#betnum").html(0);
+	chooseArray=[];
+	CountLot();
 }
 $(".jc-more").click(function() {
     $(this).children().toggle();
