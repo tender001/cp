@@ -25,6 +25,7 @@
 .top-fixed{position: fixed;top: 0;left: 0;z-index:88;padding: 0}
 .nav-list .login{background-position:0 -49px}
 .nav-list .reg{background-position:0 -73px}
+.nav-list .cz{background-position:0 2px}
 .nav-list .hm{background-position:0 -97px}
 .nav-list .lokj{background-position:0 -121px}
 .kstz{padding: 0 0 6px;background-color: #f0f0f0;}
