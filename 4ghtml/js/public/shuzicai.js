@@ -28,7 +28,13 @@ function createGameSelect() {
     createBallPanle(2);
     loadexp();
     loadOpencode();
+    
+   
 }
+
+
+
+
 var stopState =1;
 var countexp =0;
 var explist = [];
@@ -84,6 +90,7 @@ loadexp = function(){
 		});
 	});
 };
+
 loadOpencode = function(){
 	
 	var listdata=[];
@@ -372,8 +379,35 @@ function createGamePanle(tID) {
  		$(this).children().toggle();
  	   
  	});
+    if (window.DeviceMotionEvent) {
+        window.addEventListener("devicemotion", deviceMotionHandler, false)
+    }else{
+    }
 }
-
+var SHAKE_THRESHOLD = 500;
+var last_update = 0;
+var x = y = z = last_x = last_y = last_z = 0;
+function deviceMotionHandler(eventData) {
+    var i = eventData.accelerationIncludingGravity;
+    var curTime = (new Date).getTime();
+    if (curTime - last_update > 200) {
+        var diffTime = curTime - last_update;
+        last_update = curTime;
+        x = i.x;
+        y = i.y;
+        z = i.z;
+        var speed = Math.abs(x + y + z - last_x - last_y - last_z) / diffTime * 1e4;
+        if (speed > SHAKE_THRESHOLD) {
+            if ($("#shake").is(":visible")) {
+                stealth();
+                $("#shake").click()
+            }
+        }
+        last_x = x;
+        last_y = y;
+        last_z = z
+    }
+}
 function reCreateGame() {
     var varname = "";
     var index = parseInt($("#PlayType").attr("value"));
@@ -629,6 +663,31 @@ function showbuy(istrue,ispay,issuc){
    
 }
 //random
+//function machineSelect() {
+//    curTime_2 = (new Date).getTime();
+//    if (curTime_2 - curTime_ > "1000") {
+//        try {
+//            navigator.vibrate(300)
+//        } catch(e) {}
+//        nn = 0;
+//        var selectlength_r = "6";
+//        var maxlength_r = "33";
+//        var redNum = Random(maxlength_r);
+//        $("#xzhq .ssqBall cite").removeClass("redBall");
+//        $("#xzlq .ssqBall cite").removeClass("blueBall");
+//        $("#pt_buyChoice cite").removeClass("wei_");
+//        $("#RedBallValue").attr("value", "");
+//        var redNum_ = [];
+//        for (var i = 0; i < selectlength_r; i++) {
+//            redNum_[i] = redNum[i + i * 2]
+//        }
+//        redNum_.sort(function(a, b) {
+//            return a > b ? 1 : -1
+//        });
+//        red_scale(redNum_, parseInt(selectlength_r));
+//        curTime_ = (new Date).getTime()
+//    }
+//}
 function machineSelect(type, color) {
     if (color == "red") {
         var selectlength = parseInt($("#redselect").val());
@@ -640,7 +699,7 @@ function machineSelect(type, color) {
         $("#RedBallValue").attr("value", "");
         var redvalue = "";
         for (var i = 0; i < selectlength; i++) {
-            $("#redball_" + redNum[i]).attr("class", "redball_s");
+            $("#redball_" + redNum[i]).attr("class", "redBall");
             redvalue += ((redNum[i] < 10 ? "0" + redNum[i].toString() : redNum[i]) + ",");
         }
 
@@ -649,8 +708,8 @@ function machineSelect(type, color) {
             $("#RedBallValue").attr("value", redvalue);
             //$("#redNotice").html("(已选择" + redvalue.split(/\,/gi).length + "号码)");
         }
-    }
-    else {
+    }else if(color == "blue"){
+
         var selectlength = parseInt($("#blueselect").val());
         var maxlength = type == 10 ? 16 : 12;
         var blueNum = Random(maxlength);
@@ -660,7 +719,7 @@ function machineSelect(type, color) {
         $("#BlueBallValue").attr("value", "");
         var bluevalue = "";
         for (var i = 0; i < selectlength; i++) {
-            $("#blueball_" + blueNum[i]).attr("class", "blueball_s");
+            $("#blueball_" + blueNum[i]).attr("class", "blueBall");
             bluevalue += ((blueNum[i] < 10 ? "0" + blueNum[i].toString() : blueNum[i]) + ",");
         }
         if (bluevalue != "") {
@@ -668,6 +727,44 @@ function machineSelect(type, color) {
             $("#BlueBallValue").attr("value", bluevalue);
             //$("#blueNotice").html("(已选择" + bluevalue.split(/\,/gi).length + "号码)");
         }
+    
+    }
+    else {
+    	 var redlength = type == 10 ? 6 : type == 20 ? 5 : 5;
+         var maxred = type == 10 ? 33 : type == 20 ? 35 : 30;
+         var redNum = Random(maxred);
+         for (var i = 1; i <= maxred; i++)
+             $("#redball_" + i.toString()).attr("class", "redball");
+
+         $("#RedBallValue").attr("value", "");
+         var redvalue = "";
+         for (var i = 0; i < redlength; i++) {
+             $("#redball_" + redNum[i]).attr("class", "redBall");
+             redvalue += ((redNum[i] < 10 ? "0" + redNum[i].toString() : redNum[i]) + ",");
+         }
+
+         if (redvalue != "") {
+             redvalue = reSort(redvalue.substring(0, redvalue.length - 1));
+             $("#RedBallValue").attr("value", redvalue);
+             //$("#redNotice").html("(已选择" + redvalue.split(/\,/gi).length + "号码)");
+         }
+         var bluelength = type == 10 ? 1 : type == 20 ? 2 : 1;
+         var maxblue = type == 10 ? 16 : 12;
+         var blueNum = Random(maxblue);
+         for (var i = 1; i <= maxblue; i++)
+             $("#blueball_" + i.toString()).attr("class", "blueball");
+
+         $("#BlueBallValue").attr("value", "");
+         var bluevalue = "";
+         for (var i = 0; i < bluelength; i++) {
+             $("#blueball_" + blueNum[i]).attr("class", "blueBall");
+             bluevalue += ((blueNum[i] < 10 ? "0" + blueNum[i].toString() : blueNum[i]) + ",");
+         }
+         if (bluevalue != "") {
+             bluevalue = reSort(bluevalue.substring(0, bluevalue.length - 1));
+             $("#BlueBallValue").attr("value", bluevalue);
+             //$("#blueNotice").html("(已选择" + bluevalue.split(/\,/gi).length + "号码)");
+         }
     }
     countMoney();
 }
