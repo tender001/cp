@@ -55,7 +55,7 @@ table{border-collapse:collapse;border-spacing:0}
 .btn-true{width: 94%;margin:0 auto 12px;font-size:1.3em;color:#fff;background-color: #f60;background-image:-webkit-linear-gradient(top,#f60,#f20);background-image: -moz-linear-gradient(top,#f60,#f20);background-image: -o-linear-gradient(top,#f60,#f20);background-image: linear-gradient(top,#f60,#f20)}
 .btn-reg{width: 90%;margin:0 auto;font-size:1.2em;color:#666;background-color: #fff;}
 /*警告弹框*/
-.alert{width: 100%;height: 100%;background-color: rgba(0,0,0,0.5);position: fixed;top: 0;left: 0;z-index:999}
+.alert{width: 100%;height: 100%;/*background-color: rgba(0,0,0,0.5);*/position: fixed;top: 0;left: 0;z-index:999}
 .alert .alert-tips{width:90%;height: auto;line-height:2rem;margin:0 auto;text-align:center;border-radius:0.7rem;background-color: #fff}
 .alert-tips h2{font-size: 1.1rem;padding:0.8em 0 0.4em}
 .alert-tips p{margin:0 0 1.6em}
@@ -153,8 +153,6 @@ input.fqhmGray{ background:#ebebeb}
 .inUser li span.inLast{ width:26%; border-right:none; line-height:.5rem; font-size:.75rem}
 .inUser2 li span.inLast{ width:33%}
 .inUser li span.inLast em,.inUser li span.inLast cite{ display:block; padding-top:.3rem}
-
-
 .lcbetText h2{ font-weight:normal; font-size:.95rem; padding-left:.4rem}
 .lcbetTitle{ background:#f7f5f4; font-size:.9rem; border:1px solid #dedede; border-radius:.5rem .5rem 0 0; -webkit-border-radius:.5rem .5rem 0 0; -moz-border-radius:.5rem .5rem 0 0}
 .lcbetTable{ border-left:1px solid #dedede; border-right:1px solid #dedede; font-size:.8rem}
@@ -167,6 +165,18 @@ input.fqhmGray{ background:#ebebeb}
 .lcbetFooter{ line-height:2rem; text-indent:.6rem; color:#7f7f7f; border:1px solid #dedede; border-top:none; border-radius:.5rem .5rem 0 0; -webkit-border-radius:0 0 .5rem .5rem; -moz-border-radius:0 0 .5rem .5rem}
 .lcbetTable2{ border:1px solid #dedede; border-top:none; border-radius:.5rem .5rem 0 0; -webkit-border-radius:0 0 .5rem .5rem; -moz-border-radius:0 0 .5rem .5rem}
 .lcbetTable2 tr:last-child td,.lcbetTable td.r9Tr{ border-bottom:none}
+/* 帮助中心 */
+.wap_h{padding-bottom:90px;}
+.help{overflow:hidden}
+.help_box{padding:0 2%;}
+.help_box p{padding-top:0.5em}
+.help_title{margin:15px 0 8px;height:30px;line-height:30px;font-size:14px;text-indent:2%;background-color:#eee}
+.color_f60{color:#f60}
+.color_red{font-size:13px;color: #f00}
+.help-ball-sj{width: 100%;border:1px solid #e2e2e2}
+.help-ball-sj th,.help-ball-sj td{padding:3px 0;text-align:center;border:1px solid #e2e2e2}
+.help-ball-sj td em{margin-left:3px;padding:4px;font-size:0;border-radius:8px;background-color: #f40;}
+.help-ball-sj td .blueball{background-color: #64a6ea}
 /*** 弹框 ***/
 .zhezhao{position:fixed;top:0;left:0;width:100%;height:100%;background-color:rgba(163,163,163,0.5);z-index:999}
 .zfPop{margin-top:3rem;width:18.5rem;border:1px solid #e2e2e2;background-color:#fff;border-radius:.4rem;-webkit-border-radius:.4rem;-moz-border-radius:.4rem}
@@ -178,11 +188,6 @@ input.fqhmGray{ background:#ebebeb}
 .zfRed{max-height:9rem;overflow:hidden;overflow-y:scroll}
 .tureBtn{display:block;line-height:2.5rem;font-size:1.05rem;margin-top:2rem;text-align:center;border-top:1px solid #ccc;color:#f6851f}
 #ckepop{padding:.9rem 0 0 .9rem;overflow:hidden;zoom:1}
+.overlay{background-color:RGBA(0,0,0,0.5);z-index:998}
 /*底部logo*/
 .foot-logo{height: 10em;padding-bottom:36%;background:url("../img/m-logo.png") center 1.2em no-repeat;background-size:170px 65px;opacity: 0.17}
-/* 帮助中心 */
-.wap_h{padding-bottom:90px;}
-.help{overflow:hidden}
-.help_box{padding:0 2%;}
-.help_title{margin:20px 0 10px;height:30px;line-height:30px;font-size:14px;text-indent:2%;background-color:#eee}
-.color_f60{color:#f40}
