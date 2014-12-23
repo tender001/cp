@@ -8,7 +8,7 @@ function loadLogin() {
     $(".alert-login").html("<h2>亲~请登录</h2><div class=\"m-reg\"><ul class=\"reg\"><li><label>账号</label><input " +
     		"type=\"text\" placeholder=\"手机号/4-16个字符\" id='auth_userId'></li><li><label>密码</label><input " +
     		"type=\"password\" placeholder=\"6-20个字符\"  id='auth_passwd'></li> </ul></div><a class=\"btn btn-true\" " +
-			"onclick='MiniLogin()'>登录</a><p class=\"alert-login-more\"><a href=\"/user/reg.html\">免费注册</a></p>")
+			"onclick='MiniLogin()'>登录</a><p class=\"alert-login-more\"><a  class='miss' href=\"/user/reg.html\">免费注册</a></p>")
 
 	  
       
