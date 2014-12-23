@@ -1,7 +1,7 @@
 var gid="";
 var code="";
 $(document).ready(function() {
-	chklogin("need");
+	chklogin();
 	gid = location.search.getParam('gid');
 	init();
 	
