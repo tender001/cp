@@ -22,14 +22,15 @@ $(document).ready(function() {
     chklogin();
     createGamePanle(10);
     createGameSelect();
+    
 });
 </script>
 <!--#include virtual="/cc/header.html"-->
 <section class="buyHeader" id="buyFooter1">
     <h1>双色球</h1>
-    <a href="javascript:history.go(-1)" class="backIco2"></a>
+    <a href="/" class="backIco2"></a>
     <em class="goHome jc-more">
-        <cite style="display:none"><a class="cur" href="javascript:void(0);">选号</a><a href="#">开奖结果</a><a href="#">玩法帮助</a></cite>
+         <cite><a class="cur" href="javascript:void(0);">选择比赛</a><a href="/hemai/index.html?lotid=01">合买跟单</a><a kj="01">开奖结果</a><a href="/help/ssqhelp.html">玩法介绍</a></cite>
     </em>
 </section>
 <div class="top-margin" id="betpage">
@@ -62,7 +63,7 @@ $(document).ready(function() {
                
             
                
-            	<div id="shake" class="shakeOmit"><em class="shakeico"></em><cite class="red">摇一注</cite></div>
+            	<div id="shake" class="shakeOmit" onclick="machineSelect(10,'all')" style="display: block;"><em class="shakeico"></em><cite class="red" >摇一注</cite></div>
             </div>
         <section class="relative" style="z-index:1">
             <!-- 选11个号码start -->
