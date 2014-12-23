@@ -13,6 +13,7 @@ function resultdetail2(gid,pid){
 //	alert(pid1);
 //	alert(gid+""+pid);
 	$("#history").removeClass("cur");
+	
 	$("#new").addClass("cur");
 	
 	$.ajax({
@@ -267,14 +268,23 @@ function resultdetail2(gid,pid){
 			$("#tbody").html(tbhtml);
 			$("#newinfo").show();
 			$("#adiv").hide();
-			$("#payment").attr("href", "" + $_sys.getlotname(lotid,4) + "");
+			
 		},
 		error:function(){
       	  showTips('网络异常！');
 		}
 		
 	});
+	$("#payment").attr("href", "" + $_sys.getlotname(lotid,4) + "");
+	$(".jc-more a").eq(0).attr("href", "" + $_sys.getlotname(lotid,4) + "");
 	
+	$(".jc-more a").eq(1).attr("href", "/hemai/index.html?lotid="+lotid);
+	var helpurl=$_sys.getlotname(lotid,4).replaceAll("\/","");
+	$(".jc-more a").eq(3).attr("href", "/help/"+helpurl+"help.html");
+	$(".jc-more").click(function() {
+	    $(this).children().toggle();
+	    
+	});
 }
 
 function historydetail2(){

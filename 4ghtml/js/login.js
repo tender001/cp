@@ -70,7 +70,9 @@ function MiniLogin() {
     }
 }
 function showLogin() {
-    if ($(".alert-login").html().indexOf("加载中..") != -1 || $(".alert-login").html().indexOf("退出") != -1) loadLogin();
+     loadLogin();
+    
+    
     var overlayID = "_t_overlay";
     if (!byID(overlayID)) $('body').append('<div class="overlay" id="' + overlayID + '"></div>');
     $('.overlay').css({ 'height': ($("body").height()) + 'px', 'left': '0px', 'top': '0px', 'width': '100%', 'display': 'block', 'position': 'absolute' }).show();
@@ -101,7 +103,7 @@ function chklogin(t) {
 			} else {
 				var code = d.Resp.code;
 				if (code == 0) {
-					if(t == undefined || t == 0){
+					if(t == undefined || t == 0||t=="need"){
 						UserInfo();
 					} else if(t == 1){
 						UserMoney();
@@ -109,15 +111,18 @@ function chklogin(t) {
 					if($("[mark=isLogin] p")){
 						$("[mark=isLogin] p").html("我的");
 						$("[mark=isPay] p").html("充值");
-						$("[mark=isLogin] a,.user-login").attr("href","/account/");
+						$("[mark=isLogin] a,.user-login,#toplogin").attr("href","/account/");
 						$("[mark=isPay] a").attr("href","/account/pay.html");
 					}
 				}else{
 					if($("[mark=isLogin] p")){
 						$("[mark=isLogin] p").html("登陆");
 						$("[mark=isPay] p").html("注册");
-						$("[mark=isLogin] a,.user-login").attr("href","/user/login.html?bak=1");
+						$("[mark=isLogin] a,.user-login,#toplogin").attr("href","/user/login.html?bak=1");
 						$("[mark=isPay] a").attr("href","/user/reg.html"); 
+					}
+					if(t=="need"){
+						loginHdl();
 					}
 					
 					if($(".uinfo"))$(".uinfo").html("您尚未登录，请先"+"<a href=\"javascript:void(0)\" onclick=\"loginHdl()\">登录</a>");
@@ -144,7 +149,8 @@ function UserMoney() {
 				
 				$("#username").html(uname);
 				$("#useramount").html(umoney+"元");
-				
+				$("#toplogin").html(uname);
+				$("#yue").html(umoney);
 //				$(".uinfo").html("欢迎您："+"<font color=\"#00f\" id=\"c_username\">"+uname+"</font>"+"余额：￥"+"<font color=\"#f00\" id=\"c_money\">"+umoney+"</font>"+"元");
 				if($("#p_uname"))$("#p_uname").html(uname);
 			    $("#headlogintd").html("<a href=\"/user/account.html\" id=\"usname\">" + uname + "</a>&nbsp;<a onclick=\"location.href='/user/addmoney.html'\" class='mBTN'>充值</a><a onclick='logout()' class='mBTN'>退出</a>");
@@ -168,7 +174,9 @@ function UserInfo() {
         	if(code == 0){
         		var r = d.Resp.row;
 				var name = r.nickid;
-				
+				var umoney = r.usermoeny;
+				$("#toplogin").html(name);
+				$("#yue").html(umoney);
 				if(Storage.Get("LoginUN_cookie")==null){
 					Storage.Set("LoginUN_cookie",name,60*24*30);
          		 }else{
@@ -199,7 +207,8 @@ function logout() {
         dataType:'json',
         success:function (d){
 			$(".uinfo").html("您尚未登录，请先"+"<a href=\"javascript:void(0)\" onclick=\"loginHdl()\">登录</a>");
-			loadLogin();
+//			loadLogin();
+			location.href="/";
         },
         error:function(){
      	   showTips('网络故障!');

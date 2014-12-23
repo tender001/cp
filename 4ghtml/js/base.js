@@ -47,6 +47,14 @@ function isEmail(mai){
 	}
 	return false;
 }
+function stealth() {
+    try {
+        localStorage.setItem("stealth", "stealth")
+    } catch(e) {
+        alert('由于您可能开启了"无痕浏览"模式，导致无法正常访问，请检查浏览器设置后再试，如有问题请致电客服：400-0696-159');
+        return false
+    }
+}
 /**本地存储**/
 var hasStorage = window.localStorage;
 var Storage = {

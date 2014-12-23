@@ -205,9 +205,8 @@ function showmatch(gid, expect){
 							
 							
 						});
-						var day = "20"+expect.substring(0,2) + "-" + expect.substring(2,4) + "-" + expect.substring(4, 6);
 						$(".jczqkj").html(match);
-						$(".sfcTitle").html(day+'&nbsp;&nbsp;'+num+'场比赛')
+						$(".sfcTitle").html(expect+'期&nbsp;&nbsp;'+num+'场比赛')
 					}
 					
 				} else {
@@ -344,10 +343,10 @@ function showmatch(gid, expect){
 											for(ii=0;ii<rtstr.length;ii++){
 												r1=rtstr[ii].split("|")[0];
 												r2=rtstr[ii].split("|")[1];
-												if(ii==0){temp1=r1;}else if(temp1!=r1){row.jqs="<span style='color:red'>"+row.jqs+"</span>";}
+												if(ii==0){temp1=r1;}else if(temp1!=r1){row.jqs=row.jqs;}
 												if(r1*1>1){r1="让分主胜";}else{r1="让分主负";}
 												if(ii==0){row.jqs=r1;}
-												row.opstr1 +='<option value="'+r1+'">'+r2+'</option>';
+												row.opstr1 =r2;
 											}
 											rt=rsstr[3];
 											rt=rt.split(":")[1];
@@ -357,10 +356,10 @@ function showmatch(gid, expect){
 											for(ii=0;ii<rtstr.length;ii++){
 												r3=rtstr[ii].split("|")[0];
 												r4=rtstr[ii].split("|")[1];
-												if(ii==0){temp2=r3;}else if(temp2!=r3){row.bqc="<span style='color:red'>"+row.bqc+"</span>";}
+												if(ii==0){temp2=r3;}else if(temp2!=r3){row.bqc=row.bqc;}
 												if(r3*1>1){r3="大分";}else{r3="小分";}
 												if(ii==0){row.bqc=r3;}
-												row.opstr2 +='<option value="'+r3+'">'+r4+'</option>';
+												row.opstr2 =r4
 											}
 
 									}else{
