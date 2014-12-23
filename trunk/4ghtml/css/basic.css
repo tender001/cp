@@ -166,7 +166,7 @@ input.fqhmGray{ background:#ebebeb}
 .lcbetTable2{ border:1px solid #dedede; border-top:none; border-radius:.5rem .5rem 0 0; -webkit-border-radius:0 0 .5rem .5rem; -moz-border-radius:0 0 .5rem .5rem}
 .lcbetTable2 tr:last-child td,.lcbetTable td.r9Tr{ border-bottom:none}
 /* 帮助中心 */
-.wap_h{padding-bottom:90px;}
+/*.wap_h{padding-bottom:90px;}*/
 .help{overflow:hidden}
 .help_box{padding:0 2%;}
 .help_box p{padding-top:0.5em}
