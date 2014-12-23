@@ -197,8 +197,8 @@
 .pact{ padding:.6rem 0 0 .8rem; font-size:.9rem; color:#8e8e8e}
 .zfText{ border:1px solid #dcdcdc; background:#fff; line-height:1.3rem; margin-top:.5rem; padding:.5rem .87rem .5rem 1.25rem}
 .zfNum p{ color:#f03d3d; word-break:break-all}
-.spfNum .errorBg{ top:5em}
-.spfNum .spfzpk span{ width:26%;margin-top:0.45em}
+.spfNum .errorBg{ top:4em}
+.spfNum .spfzpk span{ width:26%;}
 .errorBg{ position:absolute; padding:.7rem .5rem .6rem .9rem; right:-1.2em; top:0}
 .errorBg .error2{ display:block; width:1.06rem; height:1.06rem; background:url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACMAAAAjCAMAAAApB0NrAAAAQlBMVEUAAADc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nz////p6eno6Ojx8fHi4uLCn5nCAAAAEHRSTlMA8UL2iOjg0HwnFgYDhbm4g6GjowAAAPJJREFUOMuVlO0OgyAMRQtDxKmzgL7/qy5zlsuHCdv5ZcyJrZcWylj0+rKKlX2teqE7nmZgMJhnY8zuwSUPN5fKNHLLOOWKVnyH0pmCOlW9JE34So26ys3opWX8Nu5YOG4kd+aSmtl9lMewp5Y+Oa1QvEjB+yQZomWQQv5DvBRIw0KahSjSqfgg73UqBUkUFNu4lkQRNrKcS1CApTLjCAVZExcEn/4OkKqUVlJkK6WVLG21EmIlbcgH0VWSId0oIh2SM85rvxSRAs6LDM4duUQ8mnJ+sugOzE8+h/e4n+e5vxf9/ervaX/f+/fGX/dP/x57A/nLPBMWHWWgAAAAAElFTkSuQmCC") no-repeat center; background-size:1.06rem 1.06rem; -webkit-background-size:1.06rem 1.06rem; -moz-background-size:1.06rem 1.06rem}
 .sfcxs{ border-bottom:1px solid #e4e4e4; padding:.9em 0 .9em 0; overflow:hidden; zoom:1}
@@ -219,13 +219,15 @@
 .hhzpk li{ position:relative}
 .hhzpk li:first-child,.jqzpk li:first-child{ margin-top:2em}
 .hhzpk .spfzpk,.hhNum .spfzpk{padding:0.3em 0}
-.hhzpk .spfzpk span{ width:23%; height:2.62em; line-height:2.62em;}
+.spfNum .spfzpk span,.hhzpk .spfzpk span{ width:23%; height:2.62em; line-height:2.62em;}
 .hhzpk .spfzpk em,.hhNum .spfzpk em{ float:left; width:1em; padding:.15em 1%; height:2.2rem; margin:0 1% 0 0; text-align:center; line-height:1; background:#ff9898; color:#fff; font-size:.75em; border-radius:.2em}
 .hhzpk .spfzpk em.rq,.hhNum .spfzpk em.rq{ padding:.5em 1%; height:2.3em; background:#98c5ff}
 .hhzpk .spfzpkNum span.spfvs{ width:10%}
 .hhzpk .spfzpkNum span:last-child{ width:30%}
 .jclqhh .spfzpk span{width:36.5%}
-.jclqhh .spfzpk span b,.jclqhh .spfzpk span cite{ display:block; font-weight:normal; line-height:.5rem; margin-top:.5rem}
+.lchhzpk span{width:36.5% !important}
+.spfNum .spfzpk span b,.spfNum .spfzpk span cite,.jclqhh .spfzpk span b,.jclqhh .spfzpk span cite{ display:block; font-weight:normal; line-height:.5rem; margin-top:.5rem}
+.spfzpk2 b{ float:left; width:8%; text-align:center; font-weight:normal; color:#343434;padding-top:1em}
 .jclqhh .spfzpk em{ background:#98c5ff}
 .jclqhh .spfzpk em.rq{ background:#ff9898}
 .jclqhh .hhmore{ top:.5rem}
