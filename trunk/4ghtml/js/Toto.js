@@ -135,10 +135,10 @@ function issuc(ispay){
 }
 function showbuy(istrue){
     if(istrue){
-    	$("#matchList,#buyFooter1,#szcbuy,#paybet,#issuc").hide();
+    	$("#matchList,#matchnote,#buyFooter1,#szcbuy,#paybet,#issuc").hide();
     	$("#content_home").show();
     }else{
-    	$("#matchList,#buyFooter1").show();
+    	$("#matchList,#buyFooter1,#matchnote").show();
     	$("#content_home,#szcbuy,#paybet").hide();
     }
 }
@@ -191,7 +191,24 @@ function prebuy(preKind) {
         showTips("请正确选择投注内容！");
     }
 }
+$("#buyFooter1 h1").click(function() {
+    if ($(this).hasClass("cur")) {
+       
+        $('.hmPull').slideUp('fast');
+        $(this).removeClass('cur');
+        return;
+    }
+    $(".jc-more cite").hide();
 
+    if ($('.hmPull').is(':hidden')) {
+    	$(this).addClass('cur');
+        $('.hmPull').css("top", ($(this).position().top + $(this).height()) + "px");
+        $('.hmPull').slideDown('fast');
+    }
+    //else $('#Filter_Panel').slideUp('fast');
+
+    return false;
+});
 //全额保底
 function updatePublicBuyInfo() {
     var preMasterBuy = new Number($("#preMasterBuy").attr("value"));//认购
