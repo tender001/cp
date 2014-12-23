@@ -381,8 +381,21 @@ function createGamePanle(tID) {
  	});
     if (window.DeviceMotionEvent) {
         window.addEventListener("devicemotion", deviceMotionHandler, false)
-    }else{
     }
+    
+}
+function topNavInit() {
+    setTimeout(function() {
+        var k = $("#secNav ul");
+        var f = 0;
+        navScroll = new iScroll("secNav", {
+            snap: "li",
+            hScrollbar: false,
+            hScroll: true,
+            vScroll: false
+        })
+    },
+    100)
 }
 var SHAKE_THRESHOLD = 500;
 var last_update = 0;
