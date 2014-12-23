@@ -136,12 +136,12 @@ function LoadMatchList() {
 										+' <span>-</span>'
 								}
 							    if(jj["wlStop"] == 0){
-									newmatchHTML +='<p class="spfzpk"><em class="rq">让球</em>'
+									newmatchHTML +='<p class="spfzpk"><em class="rq">让　球</em>'
 										+' <span  onclick="ChooseMatch(this)" n="3" value="1" name="'+ jj.ID +'">胜 '+jj.wl3+'</span>'
 										+' <span  onclick="ChooseMatch(this)" n="1" value="2" name="'+ jj.ID +'">平  '+jj.wl1+'</span>'
 										+' <span  onclick="ChooseMatch(this)" n="0" value="3" name="'+ jj.ID +'">胜  '+jj.wl0+'</span>'
 								}else{
-									newmatchHTML +='<p class="spfzpk"><em class="rq">让球</em>'
+									newmatchHTML +='<p class="spfzpk"><em class="rq">让　球</em>'
 										+' <span>-</span>'
 										+' <span>未开售</span>'
 										+' <span>-</span>'
