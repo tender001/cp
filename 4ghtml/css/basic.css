@@ -6,7 +6,7 @@ article,aside,details,figcaption,figure,footer,header,menu,nav,section{display:b
 h1,h2,h3,h4,h5,h6{font-size:100%}
 button,input,select,textarea{font-size:100%}
 input,button{background-color:transparent;}
-input[type="button"]{-webkit-appearance:none}
+input[type="button"],input[type="submit"]{-webkit-appearance:none}
 a,s{text-decoration:none;outline:0}
 a:active{background-color:transparent}
 ol,ul,li{list-style:none;}
