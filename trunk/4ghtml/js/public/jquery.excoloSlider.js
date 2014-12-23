@@ -866,7 +866,7 @@
             });
             $(".slide-container", base.$elem).css({
                 width: newwidth,
-                height: 105
+                height: 120
             });
 
             // Restart playing
