@@ -9,6 +9,12 @@
 			<execute method="registerUser" group="1" />
 			<execute method="set_login_status" />
 		</action>
+
+		<action name="regnoyzm" forward="" bean="com.caipiao.cpweb.user.UserBean" scope="request" desc="用户注册，无验证码">
+			<execute method="set_base_data" />
+			<execute method="registerUser" group="1" />
+			<execute method="set_login_status" />
+		</action>
 		
 		<action name="login" forward="" bean="com.caipiao.cpweb.user.UserBean" scope="request" desc="代理登录">
 			<!--execute method="checkYzm"/-->

@@ -72,6 +72,10 @@
 			<execute method="project_hsc"  />
 		</action>
 		
+		<action name="jc/step_66" forward="" bean="com.caipiao.cpweb.trade.jczq.TradeJcBean" scope="request" desc="竞彩足球后选方案">
+			<execute method="project_hx"  />
+		</action>
+		
 		<!-- 过滤相关开始 -->
 		<action name="jc/step_7" forward="" bean="com.caipiao.cpweb.trade.jczq.TradeJcBean" scope="request" desc="竞彩足球在线过滤提交参数到">
 			<execute method="sendfilter"  />
