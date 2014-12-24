@@ -104,7 +104,17 @@ function showTips(tips,fn) {
 var confirmDiv_ = "";
 function JQConfirm(msg, eventHdl) {
     if (confirmDiv_ == "") {
-        confirmDiv_ = '<div class="confirmClass"><div id="confirmDiv_" style="padding:5px 0px 5px 0px">' + msg + '</div><div><input id="xxxyyyzzz" type=button value="确定" class="btn001" /><input type=button value="取消" onclick="hideConform()" class="btn001" /></div></div>';
+//        confirmDiv_ = '<div class="confirmClass"><div id="confirmDiv_" style="padding:5px 0px 5px 0px">' + msg + '</div><div><input id="xxxyyyzzz" type=button value="确定" class="btn001" /><input type=button value="取消" onclick="hideConform()" class="btn001" /></div></div>';
+       
+        
+        confirmDiv_ = '<div class="alert" mark="confirmClass"><div class="alert-tips"><h2>温馨提示</h2><p id="confirmDiv_">' + msg + '</p><div class="alert-btn"><span id="xxxyyyzzz">确定</span><span onclick="hideConform()">取消</span></div></div></div>';
+//        <div class="alert">
+//        <div class="alert-tips">
+//            <h2>提示</h2>
+//            <p>对不起，绑定请求次数已超过每天限制次数(3次)！</p>
+//            <div class="alert-btn"><span>确定</span><span>取消</span></div>
+//        </div>
+//    </div>
         $('body').append(confirmDiv_);
     }else {
         byID("confirmDiv_").innerHTML = msg;
@@ -113,25 +123,37 @@ function JQConfirm(msg, eventHdl) {
     	eval(eventHdl);
     	hideConform();
     });
-    $('div.confirmClass').css({
-        'top': ($(window).height() / 2 + $(window).scrollTop()) + 'px',
-        'left': ($(window).width() - 245) / 2 + "px",
-        'border': '2px solid #528ADF',
-        'position': 'absolute',
-        'padding': '5px',
-        'background': '#B0CAF0',
-        'margin': '0 auto',
-        'line-height': '25px',
-        'z-index': '100',
-        'text-align': 'center',
-        'width': '250px',
-        'color': '#6D270A',
-        'opacity': '0.95'
+    $('[mark=confirmClass]').css({
+        'top': ($(window).height() / 2 + $(window).scrollTop()) + 'px'
+//        'left': ($(window).width() - 245) / 2 + "px"
+//        'border': '2px solid #528ADF',
+//        'position': 'absolute',
+//        'padding': '5px',
+//        'background': '#B0CAF0',
+//        'margin': '0 auto',
+//        'line-height': '25px',
+//        'z-index': '100',
+//        'text-align': 'center',
+//        'width': '250px',
+//        'color': '#6D270A',
+//        'opacity': '0.95'
     });
-    $('div.confirmClass').addClass("Fillet");
-    $('div.confirmClass').show();
+    $('[mark=confirmClass]').addClass("Fillet");
+//    $('[mark=confirmClass]').show();
+    var overlayID = "_t_overlay";
+    if (!byID(overlayID)) $('body').append('<div class="overlay" id="' + overlayID + '"></div>');
+    $('.overlay').css({ 'height': ($("body").height()) + 'px', 'left': '0px', 'top': '0px', 'width': '100%', 'display': 'block', 'position': 'absolute' }).show();
+    $(window).scroll(function() {
+        var offsetTop = ($(window).scrollTop() + ($(window).height() - 120) / 4) + "px";
+        $('[mark=confirmClass]').animate({ top: offsetTop }, { duration: 300, queue: false });
+    });
+    $('[mark=confirmClass]').slideDown('fast');
+
 }
-function hideConform(){$('div.confirmClass').hide();}
+function hideConform(){
+	$('.overlay').hide();
+    $('[mark=confirmClass]').slideUp('fast');
+	}
 
 
 function HidTips()
