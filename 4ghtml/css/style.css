@@ -350,7 +350,7 @@
 .user-set .ico-click i{margin-top:1.6em}
 .user-set .user{float: left}
 .user-set .user img{width:50px;height:50px;border-radius:50px}
-.user-set .user cite{margin:0 0 0 1em}
+.user-set .user cite{margin:0 0 0 1em;font-size:1.13em;}
 .user-pay{display: table;width: 100%;border-top:1px solid #bbb;border-bottom:1px solid #bbb;}
 .user-pay a{display: table-cell;padding:1em 0;font-size:1.14em;text-align: center;color: #333}
 .user-pay a:first-of-type{border-right: 1px solid #bbb}
