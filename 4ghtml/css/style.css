@@ -378,7 +378,7 @@
 .set-icon4{background-position: 0 -112px}
 .set-icon5{background-position: 0 -151px}
 .set-icon6{background-position: 0 -188px}
-.user-padding{margin-top:2.5rem;padding: 1em 2% 5em;font-size: 1.14em;background-color: #f0f0f0}
+.user-padding{margin-top:2.5rem;padding: 1em 2% 0;font-size: 1.14em;/*background-color: #f0f0f0*/}
 .user-padding p{color: #666}
 .user-padding .mar{margin-top:0.7em}
 .user-input{margin-top:10px;padding:10px 0 10px 0.7em;border: 1px solid #ccc;background-color: #fff}
@@ -412,6 +412,8 @@
 .zf-pay-true .yz-tel-num .btn{width: 46.5%}
 .user-tz-his .zd-more{padding:1.5em 2%;text-align:center;border-top:1px solid #ccc;background-color: #f0f0f0}
 .user-setting .btn{margin-top:1.5em;color:#f40}
+.ali-pay{margin-top: 15px;padding:0 2%;font-size: 13px;color: gray;}
+.phone_intro{padding: 0 0 1em;text-align: center;color: gray}
 /*合买*/
 .hemai h2{margin-top: -.1rem}
 .fontSize1{font-size: 1rem}
