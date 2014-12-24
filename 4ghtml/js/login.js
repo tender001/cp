@@ -110,18 +110,20 @@ function chklogin(t) {
 					}
 					if($("[mark=isLogin] p")){
 						$("[mark=isLogin] p").html("我的");
-						$("[mark=isPay] p").html("充值");
+						$("#istikuan").html("提款");
+						$("[mark=isPay] p,#ischong").html("充值");
 						$("[mark=isPay] h3").attr("class","cz");
 						$("[mark=isLogin] a,.user-login,#toplogin").attr("href","/account/");
-						$("[mark=isPay] a").attr("href","/account/pay.html");
+						$("[mark=isPay] a,#ischong").attr("href","/account/pay.html");
+						$("#istikuan").attr("href","/account/draw.html");
 					}
 				}else{
 					if($("[mark=isLogin] p")){
-						$("[mark=isLogin] p").html("登陆");
-						$("[mark=isPay] p").html("注册");
+						$("[mark=isLogin] p,#ischong").html("登陆");
+						$("[mark=isPay] p ,#istikuan").html("注册");
 						$("[mark=isPay] h3").attr("class","reg");
-						$("[mark=isLogin] a,.user-login,#toplogin").attr("href","/user/login.html?bak=1");
-						$("[mark=isPay] a").attr("href","/user/reg.html"); 
+						$("[mark=isLogin] a,.user-login,#toplogin,#ischong").attr("href","/user/login.html?bak=1");
+						$("[mark=isPay] a,#istikuan").attr("href","/user/reg.html"); 
 					}
 					if(t=="need"){
 						loginHdl();
@@ -177,7 +179,8 @@ function UserInfo() {
         		var r = d.Resp.row;
 				var name = r.nickid;
 				var umoney = r.usermoeny;
-				$("#toplogin").html(name);
+				$("#toplogin,#username").html(name);
+				$("#useramount").html(umoney+"元");
 				$("#yue").html(umoney);
 				if(Storage.Get("LoginUN_cookie")==null){
 					Storage.Set("LoginUN_cookie",name,60*24*30);
