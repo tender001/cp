@@ -14,8 +14,8 @@ function card(){
 				var city = r.city;
 				var card = r.card;
 				if(name ==""){
-					$("#div1").show();
-					$("#div2").hide();
+					$("#div2").show();
+					$("#div1").hide();
 				}else{
 					
 					var bname="";
