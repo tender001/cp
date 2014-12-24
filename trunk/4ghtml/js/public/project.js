@@ -759,11 +759,13 @@ showjccode=function(option){
 		if(cancel == 0){
 			if(new String(r.hs).length > 0 && new String(r.vs).length > 0 && new String(r.hss).length > 0 && new String(r.vss).length > 0 ){
 				rst = true;
+//				mrs = getjcrs(gid, r.hs, r.vs, hss, vss, lose);
 			}
 		} else {
 			rst = true;
 			mrs = "*";
 		}
+		
 		html += "<td width=\"15%\" class=\"r9last\" rowspan=\"2\">";
 		for(var k = 0; k < jcobj.item.length;k++){
 			if(jcobj.item[k][0] == r.id){
@@ -776,12 +778,22 @@ showjccode=function(option){
 //						lose = lls.length > 1?lls[3]: r.lose;
 //					}
 					if(rst){
-						mrs = mrs == "*" ? mrs : getjcrs(gg, r.hs, r.vs, r.hhs, r.hvs, (gg==97?lls[3]:lose));
+						if(gid==84||gid==85){
+							mrs = mrs == "*" ? mrs : getjcrs(gid, r.hs, r.vs, r.hhs, r.hvs, lose);
+						}else{
+							mrs = mrs == "*" ? mrs : getjcrs(gg, r.hs, r.vs, r.hhs, r.hvs, (gg==97?lls[3]:lose));
+						}
+						
 						
 					}
 //					var cs = ps[1].split("/");
 					if(rst){
-						html += "比分：" + "(" + r.hs + ":" + r.vs + ")"+ (gg == 92 ? "半场比分：("+r.hhs+":"+r.hvs+")" : "") +  " 赛果：<span style='color:Red'>" + $_sys.getJJCode(gg,"K" + mrs) + "</span><br/>";
+						if(gid==84||gid==85){
+							html += "比分：" + "(" + r.hs + ":" + r.vs + ")"+ ((gid == 87 || gid == 92) ? "半场比分：("+hss+":"+vss+")" : "") +  " 赛果：<span style='color:Red'>" + $_sys.getJJCode(gid,"K" + mrs) + "</span>";
+						}else{
+							html += "比分：" + "(" + r.hs + ":" + r.vs + ")"+ (gg == 92 ? "半场比分：("+r.hhs+":"+r.hvs+")" : "") +  " 赛果：<span style='color:Red'>" + $_sys.getJJCode(gg,"K" + mrs) + "</span><br/>";
+						}
+						
 					}
 				}
 			}
