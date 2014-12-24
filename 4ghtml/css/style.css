@@ -4,7 +4,8 @@
 /*.user .app,.user .user-login{display: inline-block;width:30px;height:30px;margin-right:0.5em;text-indent:-999em;background-size:30px}
 .user .app{background-position: 0 0}
 .user .user-login{background-position: 0 -29px}*/
-.top-login{float: right;line-height:28px;font-size:1.12em;padding-right:10px}
+.top-login{float: right;line-height:28px;font-size:1.12em;padding-right:10px;}
+@media screen and (min-width:340px){.top-login{line-height:32px}}
 .top-login a{color:#f40;padding:0 0 0 2px;}
 .header .m-logo{display:block;width: 23.6%;margin-left:1.2em}
 .img-list{width: 100%;height: auto;}
