@@ -843,6 +843,7 @@ function ReChoose() {
 }
 function Reconfirm(){
 	$("em[n]").removeClass("cur");
+	$("span[n]").removeClass("cur");
 	$("#betnum").html(0);
 	chooseArray=[];
 	CountLot();
