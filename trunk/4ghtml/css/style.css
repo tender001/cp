@@ -98,7 +98,7 @@
 .pay-money-in p i{position: absolute;right: 0;top: 40%;color: #999}
 .pay-money-in .pay-money-ch{display: table;width: 100%}
 .pay-money-ch li{display: table-cell;text-align: center;padding: 1em 0}
-.pay-money-ch li em{display: inline-block;width:75%;padding:0.6em 0;border: 0.15em solid #b3b3b3;border-radius: 8px;position: relative}
+.pay-money-ch li em{display: inline-block;width:75%;padding:0.6em 0;border: 0.1em solid #b3b3b3;border-radius: 8px;position: relative}
 .pay-money-ch li .cur{color: #f40;border-color: #f40;}
 .pay-money-ch li .cur:after{position: absolute;bottom: -2px;right: -3px;width:28px;height:20px;border-bottom-right-radius:5px;content:"";background: url("../img/cz-true.png") no-repeat;background-size: 100% 100%}
 .phone-pay{border-top: 1px solid #ddd;border-bottom: 1px solid #ddd}
@@ -116,7 +116,7 @@
 .kj-menu{padding-bottom: 0}
 .kj-menu .kj-menu-b{padding: 1em 0;border-top:1px solid #ccc;border-bottom:1px solid #ccc;background-color: #fff}
 .kj-menu-b ul{display: table;width: 94.44%;margin:0 auto;border: 0.14em solid #f60;border-radius: 6px}
-.kj-menu-b ul li{display: table-cell;padding:0.4em 0;letter-spacing:0.14em;text-align: center;border-left:0.13em solid #f40}
+.kj-menu-b ul li{display: table-cell;padding:0.52em 0;font-size:1.14em;letter-spacing:0.14em;text-align: center;border-left:0.13em solid #f40}
 .kj-menu-b ul li:first-of-type{border:0}
 .kj-menu-b ul li.cur{background-color: #f40}
 .kj-menu-b ul li a{display:inline-block;width:100%;color:#f40;}
@@ -235,7 +235,7 @@
 .jclqhh .hhmore{ top:.5rem}
 /*篮彩*/
 .jclqDxf .sfcxs li:first-child{margin-top:0.7em}
-.spfzpk2 span{ width:35%; font-size:.75em;height:2.4em;line-height:1.4em;margin-top:0;padding:.4em 0;}
+.spfzpk2 span{ width:35%;height:2.4em;line-height:1.4em;margin-top:0;padding:.4em 0;}
 .spfzpk2 span.spfvs,.spfNum .spfzpk2 span.spfvs{width:20%}
 .spfzpk2 span cite{ display:block;}
 .spfzpk2 span.cur i{ color:#fff}
@@ -350,11 +350,11 @@
 .user-set .user{float: left}
 .user-set .user img{width:50px;height:50px;border-radius:50px}
 .user-set .user cite{margin:0 0 0 1em}
-.user-pay{display: table;width: 100%;border-top:1px solid #ddd;border-bottom:1px solid #ddd;}
+.user-pay{display: table;width: 100%;border-top:1px solid #bbb;border-bottom:1px solid #bbb;}
 .user-pay a{display: table-cell;padding:1em 0;font-size:1.14em;text-align: center;color: #333}
-.user-pay a:first-of-type{border-right: 1px solid #ddd}
+.user-pay a:first-of-type{border-right: 1px solid #bbb}
 .user-tz-history{padding-top:10px;background-color:#a9e9eb}
-.user-tz-history .ul-padd{padding:1em 2%;font-size:1.14em;border-top:1px solid #ddd;border-bottom:1px solid #ddd;background-color:#fff}
+.user-tz-history .ul-padd{padding:1em 2%;font-size:1.14em;border-top:1px solid #ddd;border-bottom:2px solid #ddd;background-color:#fff}
 .user-tz-history ul{overflow: hidden;border:0.15em solid #f40;border-radius:4px}
 .user-tz-history ul li{float:left;width:50%;padding:0.5em 0;color:#f40;text-align:center;}
 .user-tz-history ul li.cur{color:#fff;background-color:#f40}
@@ -480,7 +480,7 @@ a.hmTxt2{ display:block; color:#606060; padding-right:1.4rem; position:relative}
 .buyTab{width:100%;line-height:2.1rem; background-color:#f8f8f8; border-bottom:1px solid #d9d9d9;}
 .buyTab li{float:left;width:50%;text-align:center}
 .buyTab li h3,.buyTab li a{ display:block;/*width:6.8rem;*/ margin:0 auto; color:#a9a9a9;font-size: 1.14em; font-weight:normal}
-.buyTab li.cur h3,.buyTab li.cur a{ display:block; color:#f6851f; border-bottom:.12rem solid #f6851f}
+.buyTab li.cur h3,.buyTab li.cur a{ display:block; color:#f6851f; border-bottom:2px solid #f6851f}
 .kjall a{ height:3.3em; padding-top:.7em}
 .all a{ display:block; position:relative; height:4.2em; padding:0.5em 0 0.5em .91em; border-bottom:1px solid #ebebeb}
 .all a:hover{ color:#222}
