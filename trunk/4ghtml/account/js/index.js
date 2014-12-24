@@ -300,7 +300,7 @@ acc = function(pn){
 	});
 };
 $(document).ready(function() {
-	chklogin(1);
+	chklogin("need");
 	rec(1);
 	$("#btnsearch").click(function(){
 		rec(1);

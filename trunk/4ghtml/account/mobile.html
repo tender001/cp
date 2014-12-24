@@ -16,19 +16,12 @@
 <script src='js/mobilebindingset.js'></script>
 </head>
 <body>
-
+<!--#include virtual="/cc/header.html"-->
 <input type="hidden" id='logintype' value="1">
 <script type="text/javascript">
-		function loginHdl() {
-			$("#Filter_Panel").slideUp("fast");
-			if ($("#Login_Panel").is(":hidden"))
-				showLogin(true);
-			else
-				closeLogin()
-			return false;
-		}
+
 		$(document).ready(function() {
-			chklogin(1);
+			chklogin("need");
 			showinfo();
 			$("#conform_btn").click(function() {
 				btnbind();
