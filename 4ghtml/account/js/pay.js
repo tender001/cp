@@ -2,7 +2,8 @@
         chklogin(1);
         $(document).ready(function(){
             $("#moneys li em").click(function(){
-                if(!$(this).hasClass("cur")){
+            	$("#moneys li em").removeClass("cur");
+            	if(!$(this).hasClass("cur")){
                     $(this).parent().find("em").removeClass("cur");
                     $(this).addClass("cur");
                     $("#money").val($(this).attr("data-target"));
@@ -10,7 +11,7 @@
             });
             setInterval(function(){
                 var _money = $("#money").val();
-                $("#moneys li em").removeClass("cur");
+//                $("#moneys li em").removeClass("cur");
 //                $("#"+_money).addClass("cur");
                 if(/^[1-9]\d{0,}$/.test(_money)){
                     $("#submit").removeClass("action_no")
@@ -47,7 +48,7 @@
             var CallRecharge = {
                 zfb:function(money){
 //                     window.location.href="/recharge/alipay/ci?amount="+money;
-                    $("#payform").attr("action","/pwap/addmoney.phpx");
+                    $("#payform").attr("action","/pwap/addmoneynew.phpx");
                     $("#banktype").val("00");
                     $("#bankid").val("3");
                     $("#addmoney").val(money);
