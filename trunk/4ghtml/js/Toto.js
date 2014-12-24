@@ -2,15 +2,28 @@ var noteCount = 0, amount = 0, times = 1, tag = "";
 var choose = ""; //选择列表[赛程ID，选择内容(含定胆情况)]
 var chooseinfo;
 var len = (typeID == 3 ? 12 : typeID == 4 ? 8 : 14);
+var listinfo = new Array();
 //选号
 function ChooseMatch(obj) {
     var n = $(obj).attr("name").toString();
     obj.className = (obj.className == "" ? 'cur' : '');
+    var isNew = true;
+    for (var i = 0; i < listinfo.length; i++) {
+    	 var curL = listinfo[i];
+    	 if (curL[0] == n) {
+    		 isNew = false;
+    	 }
+    }
+    if (isNew) {
+    	listinfo.push([n, $(obj).parent().parent()]);
+    }
     if (typeID == 2) {
         var list = new Array();
         $('.cur').each(function(index) {
             var name = $(this).attr("name");
-            if (list.indexOf(name) == -1) list.push(name);
+            if (list.indexOf(name) == -1) {
+            	list.push(name);
+            }
         });
         if (list.length <= 9) {
             $('.mDanCheck').each(function(index) {
@@ -45,11 +58,12 @@ function CountLot(obj) {
     for (var i = 0; i < len; i++)
         cArray[i] = "";
     var list = new Array();
-    var listinfo = new Array();
+   
     $('em.cur').each(function(index) {
         var name = $(this).attr("name");
         if (!isNaN(name)) {
             cArray[parseInt(name) - 1] += $(this).attr("value");
+            
         }
     });
     $('.mDanCheck').each(function(index) {
@@ -62,7 +76,7 @@ function CountLot(obj) {
     for (var i = 0; i < cArray.length; i++) {
         if (cArray[i] != "") {
             list.push([i + 1, cArray[i].replace("d", "").split('').join(","), (cArray[i].indexOf("d") != -1 ? "1" : "0"),$(obj).parent().parent()]);
-            listinfo.push([i + 1,$(obj).parent().parent()]);
+           
         }
     }
     if (typeID == 2) {
@@ -87,20 +101,20 @@ function CountLot(obj) {
     byID("betnum").innerHTML=list.length;
     byID("preMoney").innerHTML ='共<cite class="yellow">'+ noteCount +'</cite> 注<cite class="yellow">￥'+ amount +'</cite>元';
 //    chooseLen=list.length;
-    chooseinfo=listinfo;
+   
 }
 //确认投注
 function betconfirm(){
 
 	
-	if(chooseinfo.length<MinLen){
+	if(listinfo.length<MinLen){
 		showTips('至少选择'+MinLen+'场次投注!');
 		return;
 	}
 	$("#confirmhtml").html("");
 	$("#buyHeader h1").html($_sys.getlotname($("#gid").val())+"_投注")
-    for (var i = 0; i < chooseinfo.length; i++) {
-		var cList='<ul class="spfNum list-r fn-clearfix" bet="'+chooseinfo[i][0]+'">'+ $(chooseinfo[i][1]).html()+'</ul>'
+    for (var i = 0; i < listinfo.length; i++) {
+		var cList='<ul class="spfNum list-r fn-clearfix" bet="'+listinfo[i][0]+'">'+ $(listinfo[i][1]).html()+'</ul>'
 		$("#confirmhtml").append(cList)
     }
     showbuy(true);
