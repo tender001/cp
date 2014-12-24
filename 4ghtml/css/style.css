@@ -343,7 +343,7 @@
 .jxsscxhBall b{ float:left; font-size:1.06em; width:2.1em; text-align:center; line-height:2.1em; margin:.55em 6% 0 0;box-shadow:0 0 0 1px #d6d6d6 inset; -webkit-box-shadow:0 0 0 1px #d6d6d6 inset;-moz-box-shadow:0 0 0 1px #d6d6d6 inset;border-radius:2.1rem;}
 .jxsscxhBall b.red{ background:#f03d3d; color:#fff; box-shadow:0 0 0 1px #f03d3d inset; -webkit-box-shadow:0 0 0 1px #f03d3d inset; -moz-box-shadow:0 0 0 1px #f03d3d inset}
 /*用户中心*/
-.user-set{margin-top:2.6rem;padding:1.1em 1em;line-height:55px;font-size:1.15em;background-color:#a9e9eb;}
+.user-set{margin-top:2.6rem;padding:1.0em 1em;line-height:55px;font-size:1.165em;background-color:#a9e9eb;}
 .user-set:after{display: table;content: "";clear: both}
 .user-set .user-money{float:right;margin-right:0.5em}
 .user-money em{color:#f40}
