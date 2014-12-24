@@ -126,9 +126,9 @@ function LoadMatchList() {
 //						    	onclick="ChooseMatch(this)" n="3" value="1" name="141214001"
 						    	if(jj["sfStop"] == 0){
 									newmatchHTML +='<p class="spfzpk"><em>非让球</em>'
-										+' <span onclick="ChooseMatch(this)" n="3" value="52" name="'+ jj.ID +'">胜 '+jj.sf3+'</span>'
+										+' <span onclick="ChooseMatch(this)" n="3" value="52" name="'+ jj.ID +'">主胜 '+jj.sf3+'</span>'
 										+' <span onclick="ChooseMatch(this)" n="1" value="53" name="'+ jj.ID +'">平 '+jj.sf1+'</span>'
-										+' <span onclick="ChooseMatch(this)" n="0" value="54" name="'+ jj.ID +'">胜  '+jj.sf0+'</span>'
+										+' <span onclick="ChooseMatch(this)" n="0" value="54" name="'+ jj.ID +'">客胜  '+jj.sf0+'</span>'
 								}else{
 									newmatchHTML +='<p class="spfzpk"><em>非让球</em>'
 										+' <span>-</span>'
@@ -137,9 +137,9 @@ function LoadMatchList() {
 								}
 							    if(jj["wlStop"] == 0){
 									newmatchHTML +='<p class="spfzpk"><em class="rq">让　球</em>'
-										+' <span  onclick="ChooseMatch(this)" n="3" value="1" name="'+ jj.ID +'">胜 '+jj.wl3+'</span>'
+										+' <span  onclick="ChooseMatch(this)" n="3" value="1" name="'+ jj.ID +'">主胜 '+jj.wl3+'</span>'
 										+' <span  onclick="ChooseMatch(this)" n="1" value="2" name="'+ jj.ID +'">平  '+jj.wl1+'</span>'
-										+' <span  onclick="ChooseMatch(this)" n="0" value="3" name="'+ jj.ID +'">胜  '+jj.wl0+'</span>'
+										+' <span  onclick="ChooseMatch(this)" n="0" value="3" name="'+ jj.ID +'">客胜  '+jj.wl0+'</span>'
 								}else{
 									newmatchHTML +='<p class="spfzpk"><em class="rq">让　球</em>'
 										+' <span>-</span>'
