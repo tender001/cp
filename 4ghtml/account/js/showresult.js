@@ -1,5 +1,5 @@
 $(document).ready(function() {
-	chklogin(1);
+	chklogin("account");
 	sresult();
 	
 });

@@ -334,7 +334,7 @@ function showBuyMini(kind,url) {
     }
 }
 $(document).ready(function() {
-	chklogin("need");
+	chklogin("account");
 	rec(1);
 	$("#btnsearch").click(function(){
 		rec(1);
