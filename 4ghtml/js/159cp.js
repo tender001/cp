@@ -316,8 +316,8 @@ $_sys.lot.push([ 92, "竞彩半全场","半全场", "" ,"/jczq/"]);
 $_sys.lot.push([ 93, "竞彩进球数","进球数", "","/jczq/" ]);
 
 $_sys.lot.push([ 71, "篮彩混合","混投", "" ,"/jclq/hh.html"]);
-$_sys.lot.push([ 94, "篮彩胜负","胜负", "","/jclq/sf.html" ]);
-$_sys.lot.push([ 95, "篮彩让分胜负","让分胜负", "","/jclq/" ]);
+$_sys.lot.push([ 94, "篮彩胜负","胜负", "","/jclq/" ]);
+$_sys.lot.push([ 95, "篮彩让分胜负","让分胜负", "","/jclq/rfsf.html" ]);
 $_sys.lot.push([ 96, "篮彩胜分差","胜分差", "","/jclq/" ]);
 $_sys.lot.push([ 97, "篮彩大小分","大小分", "","/jclq/dxf.html" ]);
 $_sys.getlotname = function(f,n) {
