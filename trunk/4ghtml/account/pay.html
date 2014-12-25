@@ -26,7 +26,7 @@
     <div class="pay-money-in">
         <p>充值金额<input type="tel" value="" placeholder="请输入充值金额"  maxlength="6" id="money"><i>元</i></p>
         <ul class="pay-money-ch" id="moneys">
-            <li><em class="cur" data-target="30" id="30">30元</em></li>
+            <li><em  data-target="30" id="30">30元</em></li>
             <li><em data-target="50" id="50">50元</em></li>
             <li><em data-target="100" id="100">100元</em></li>
             <li><em data-target="200" id="200">200元</em></li>
@@ -77,11 +77,12 @@
 </p>
 
 <div class="pay-submit fixed"><a class="btn btn-true" id="submit">确认充值</a></div>
-<form name="payform" method="post" action="/pwap/addmoney.phpx" id="payform">
+<form name="payform" method="post" action="/pwap/addmoney.phpx" id="payform" style="display: none">
     <input type="hidden" name="banktype" id="banktype" value="00" /> 
     <input type="hidden" name="bankid" id="bankid"	value="3" />
     <input name="addmoney" type="hidden" id="addmoney" size="6"/>
 </form>
+<div id="divshowprebuy" style="position: absolute; width: 100%; margin: 0px auto; z-index: 1100; top: 120.75px; left: 0px; display: none;" name="divshowprebuy"></div>
 <script src='js/pay.js'></script>
 </body>
 </html>
