@@ -834,9 +834,9 @@ showjccode=function(option){
 						var cs = ps[1].split("/");
 						for(var n = 0; n < cs.length; n++){
 							if(cs[n] == mrs || mrs=="*"){
-								html += "<em class='yellow'>[" + $_sys.getJJCode(gg,"K" + cs[n]) + "]</em>";
+								html += "<em class='yellow'>" + $_sys.getJJCode(gg,"K" + cs[n]) + "</em>";
 							} else {
-								html += "<em>[" + $_sys.getJJCode(gg,"K" + cs[n]) + "]</em>";
+								html += "<em>" + $_sys.getJJCode(gg,"K" + cs[n]) + "</em>";
 							}
 						}
 						if(jcobj.item[k][2]==1){
@@ -932,7 +932,8 @@ tobuy = function(){
     				var code = j.Resp.code;
     				if(code == 0){
     					showTips("认购成功!");
-    					window.location.reload();
+    					setTimeout(function(){window.location.reload();},400);
+    					
     				}else{
     					showTips(j.Resp.desc);
     				}
