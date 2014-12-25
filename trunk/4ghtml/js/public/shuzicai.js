@@ -893,7 +893,7 @@ function countMoney() {
 //        $("#money").html(varmoney);
         $("[mark=betnum]").html(varcount);
         $("[mark=betmoney]").html(varmoney);
-        
+        $("#buymoney").val(varmoney);
         $("#preMoney").html('共<cite class="yellow">'+varcount+'</cite>注<cite class="yellow">'+varmoney+'</cite>元')
     }
     else {
