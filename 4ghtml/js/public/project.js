@@ -747,7 +747,7 @@ showjccode=function(option){
 				html += r.hn+" <span style=\"color:red\" id=\"dan"+id+"\"></span></td>";
 			}else{
 				html += "<td width=\"70%\" >"+r.hn+" ";
-				html += (parseFloat(lose) > 0) ? "<em class=\"fontSize07\" style='color:Red'>(+"+lose+"</b>)</em>" : "<em class=\"fontSize07\" style='color:green'>("+lose+"</)</em>";
+				html += (parseFloat(lose) > 0) ? "<em class=\"fontSize07\" style='color:Red'>(+"+lose+"</b>)</em>" : "<em class=\"fontSize07\" style='color:green'>("+lose+")</em>";
 				html += r.vn+" <span style=\"color:red\" id=\"dan"+id+"\"></span></td>";
 			}
 			
