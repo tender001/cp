@@ -107,7 +107,7 @@ input.fqhmGray{ background:#ebebeb}
 .spfjj mark{ font-size:.85em; color:#f6851f;background:none}
 /*.double input.spfinput{width:5em}*/
 .double{line-height:2.3em; background:#ebebeb; padding:.3em .6em;position:relative}
-.double s{position: absolute;top: 10px;left:77px;font-size:0;border: 6px solid #f40;border-color: transparent transparent #f40 transparent}
+.double s{position: absolute;top:5px;left:60px;font-size:0;border: 6px solid #f40;border-color: transparent transparent #f40 transparent}
 .double input,.hmbuyInput{ width:3.3em;text-align:center; font-size:1.4em; color:#f6851f; line-height:1.5em; border:none; background:#fff; margin:0 .4em; border-radius:.2em;vertical-align:middle; -webkit-border-radius:.2em; -moz-border-radius:.2em}
 /*** 顶部浮动 ***/
 .tzHeader{ position:relative; margin-bottom:2.6rem; z-index:10}
