@@ -315,6 +315,7 @@ function clearData() {
     $("#BlueBallValue").attr("value", "");
     $("#notes").html(0);
     $("#times2").html(0);
+    $("#times").val(1);
     $("#money").html(0);
     vardata=[];
     $("[mark=betnum],[mark=betmoney]").html(0);
