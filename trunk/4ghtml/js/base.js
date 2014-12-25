@@ -434,7 +434,7 @@ showszccode = function(gid, codes, type){
 				}
 			}
 		} else if(type == 1){
-			var pm = $_sys.getSZCP(gid,"K" + cc[1]);
+			var pm = $_sys.getSZCP(gid,"K" + (cc[1]*1));
 			var cm = $_sys.getcastm(cc[2]);
 			if(gid == 4 && cc[1] == 6){
 				carr.push("[" + pm + cm + "]" + cc[0].replaceAll("2", "大").replaceAll("1", "小").replaceAll("5", "单").replaceAll("4", "双"));
