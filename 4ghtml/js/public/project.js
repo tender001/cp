@@ -787,13 +787,17 @@ showjccode=function(option){
 						
 						
 					}
+					var bifen= "(" + r.hs + ":" + r.vs + ")";
+					if(gid==71||gid==94||gid==95||gid==96||gid==97){
+						bifen = "(" + r.vs + ":" + r.hs + ")";
+					}
 //					var cs = ps[1].split("/");
 					if(rst){
 						if(gid==71||gid==70){
-							html += "" + "(" + r.hs + ":" + r.vs + ")"+ (gg == 92 ? "半场比分：("+r.hhs+":"+r.hvs+")" : "") +  " <br/><em class='yellow'>" + $_sys.getJJCode(gg,"K" + mrs) + "</em>";
+							html += bifen +  " <br/><em class='yellow'>" + $_sys.getJJCode(gg,"K" + mrs) + "</em>";
 							
 						}else{
-							html += "" + "(" + r.hs + ":" + r.vs + ")"+ ((gid == 87 || gid == 92) ? "半场比分：("+hss+":"+vss+")" : "") +  " <br/><em class='yellow'>" + $_sys.getJJCode(gid,"K" + mrs) + "</em>";
+							html += bifen +  " <br/><em class='yellow'>" + $_sys.getJJCode(gid,"K" + mrs) + "</em>";
 						}
 						
 					}

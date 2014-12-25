@@ -317,6 +317,8 @@ function clearData() {
     $("#times2").html(0);
     $("#times").val(1);
     $("#money").html(0);
+    $("#buyzs").val(0);
+    
     vardata=[];
     $("[mark=betnum],[mark=betmoney]").html(0);
     $("#preMoney").html("共<cite class=\"yellow\">0</cite>注<cite class=\"yellow\">0</cite>元")
