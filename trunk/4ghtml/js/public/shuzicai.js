@@ -25,6 +25,8 @@ function createGameSelect() {
     if (tID == 20 || tID == 118)
         $("#span_add").show(); 
     $("#buymoney,#buyzs").val(0);
+    
+    $("#RedBallValue,#BlueBallValue").val("");
     createBallPanle(2);
     loadexp();
     loadOpencode();
@@ -620,7 +622,7 @@ function betconfirm(rnd){
 	    	
 	    }else{
 	    	
-	    	html='<div class="ssqtzNum"><cite class="errorBg"><em class="error2"></em></cite>'
+	    	html='<div class="ssqtzNum"><cite class="errorBg"></em></cite>'
     		html +='<span class="revise_ww"><span>'+varString+'</span>'
         	html +="<p>" + (tID < 26 || tID == 27 ? "普通投注" : tID == 26 ? gameName_pl3[playtype] : tID == 44 ? gameName_3D[playtype] : tID == 56 ? gameName_36s7[playtype - 1] : tID == 115 || tID == 119 ? gameName_11s5[playtype] : tID == 116 ? gameName_happyten[playtype] : tID == 118 ? gameName_happy8[playtype] : gameName_ssc[playtype]) + (isadd && tID == 118 ? "[快乐飞盘]" : isadd ? "[追加]" : "") + "</p>";
         	html +='</span></div>'
@@ -671,6 +673,7 @@ function showbuy(istrue,ispay,issuc){
     }else{
     	$("#betpage,#buyFooter1,[mark=buyfooter]").show();
     	$("#szcbuy,#szcbuy,#paybet,#issuc").hide();
+    	$("#times").val(1);
     }
     
    
@@ -876,12 +879,18 @@ function countTimes(obj) {
     if (isNaN(vartimes) || vartimes.indexOf(".") != -1 || vartimes == "0" || parseInt(vartimes) > maxTimes) {
         obj.value = 1;
     }
-    countMoney();
+//    parseInt($("#buyzs").val())
+    countMoney("changbs");
 }
 
 //money
-function countMoney() {
-    var varcount = countNotes();
+function countMoney(changbs) {
+	var varcount=0;
+	varcount = countNotes();
+	if(changbs){
+		varcount =$("#buyzs").val()*1;
+    }
+	
     if (varcount > 0) {
         var isAdd = !!$("#addcount").attr("checked");
         var vartimes = 0;
@@ -893,7 +902,10 @@ function countMoney() {
 //        $("#money").html(varmoney);
         $("[mark=betnum]").html(varcount);
         $("[mark=betmoney]").html(varmoney);
-        $("#buymoney").val(varmoney);
+        if(changbs){
+        	$("#buymoney").val(varmoney);
+        }
+//        $("#buymoney").val(varmoney);
         $("#preMoney").html('共<cite class="yellow">'+varcount+'</cite>注<cite class="yellow">'+varmoney+'</cite>元')
     }
     else {
@@ -1010,7 +1022,7 @@ function bminus(){
 		times--
 	}
 	$("#times").val(times);
-	countMoney()
+	 countMoney("changbs");
 }
 function bplus(){
 	var times=$("#times").val();
@@ -1018,7 +1030,7 @@ function bplus(){
 		times++
 	}
 	$("#times").val(times);
-	countMoney();
+	 countMoney("changbs");
 }
 //机选号码
 function machineRandom(val) {
