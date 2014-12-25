@@ -26,13 +26,13 @@
 <footer class="ssqFooter">
     <div class="fixed">
         <ul class="ssqdouble clearfix">
-            <li><cite>投</cite><span><em class="bminus" onclick="bminus()">-</em><input type="tel" name="bs" id="times" value="1"><em class="bplus" onclick="bplus()">+</em></span><cite>倍</cite></li>
+            <li><cite>投</cite><span><em class="bminus" onclick="bminus()">-</em><input type="tel" name="bs" id="times" onkeyup="countTimes(this);"  value="1"><em class="bplus" onclick="bplus()">+</em></span><cite>倍</cite></li>
         </ul>
 <!--         <div class="zjStop" style="display:none"><em class="left check" id="zj_stop"></em>中奖后停止追号</div> -->
         <div class="buyFloat">
             <span id="preMoney">共<cite class="yellow">0</cite>注  <cite class="yellow">0</cite>元</span>
           
-            <a href="javascript:payconfirm()" class="ture" id="isOk_">提 交</a>
+            <a href="javascript:payconfirm()" class="ture" id="isOk_">购买</a>
         </div>
     </div>
 </footer></div>
