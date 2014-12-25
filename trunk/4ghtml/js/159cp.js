@@ -81,6 +81,7 @@ $_user.url = {
 	aautobuy : "/phpu/abuy.phpx",// 设置跟单信息	
 	
 	addmoney : "/phpu/addmoney.phpx", // 充值
+	addmoneynew : "/pwap/addmoneynew.phpx", // 触屏充值
 	drawmoney:"/phpu/drawmoney.phpx" //提款	
 };
 
@@ -296,7 +297,7 @@ $_sys.lot.push([ 53, "排列三","", "26","/p3/" ]);
 $_sys.lot.push([ 54, "11选5","","119","/11x5/" ]);
 $_sys.lot.push([ 56, "十一运夺金","","115","/11ydj/" ]);
 
-$_sys.lot.push([ 80, "胜负彩","", "1","zc" ]);
+$_sys.lot.push([ 80, "胜负彩","", "1","/zc/" ]);
 $_sys.lot.push([ 81, "任选九","", "2","/r9/" ]);
 $_sys.lot.push([ 82, "进球彩","", "4" ,"/jq/" ]);
 $_sys.lot.push([ 83, "半全场","", "3" ,"/bq/" ]);
