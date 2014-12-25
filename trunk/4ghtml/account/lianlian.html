@@ -31,8 +31,15 @@
     <a class="btn btn-true" id="submit">下一步，确认充值订单</a>
 </section>
 <form name="ytform" id="yt" method="post" action="/pwap/addmoneynew.phpx" style="display: none">
-    <input type="hidden" id="req_data" name="req_data" value="">
-</form>
+
+<input type="hidden" name="banktype" value="" id="banktype">
+<input type="hidden" name="bankid" value="12" id="bankid">
+<input type="hidden" name="payType" value="DEBITCARD" id="payType">
+<input type="hidden" name="iszfb" value="0" id="iszfb">
+<input type="hidden" name="bid" value="2" id="bid">
+<input type="hidden" name="cardnum" id="card" size="20">
+<input type="hidden" id="money" name="addmoney"/>
+	</form>
 <div id="divshowprebuy" style="position: absolute; width: 100%; margin: 0px auto; z-index: 1100; top: 120.75px; left: 0px; display: none;" name="divshowprebuy"></div>
 <script src='js/lianlian.js'></script>
 </body>
