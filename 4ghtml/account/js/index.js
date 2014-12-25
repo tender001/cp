@@ -368,6 +368,8 @@ $(document).ready(function() {
 						showMS("请先绑定身份证信息","/account/sminfo.html")
 					}else if(card==""){
 						showMS("请先添加一张银行","/account/bankinfo.html");
+					}else{
+						location.href="/account/draw.html";
 					}
 				  
 	        	} else {
