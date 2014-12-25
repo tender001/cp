@@ -25,9 +25,12 @@ var setType=function(cursel,n){
 			$("#face_type" + i).show();
 		}
 	}
+	
 	var ty=$("#cardtypeid em");
+	$("#cardty").html($(ty[cursel-1]).html());
 	ty.removeClass("cur");
 	$("#redMoney").html("0.00");
+	
 	$(ty[cursel-1]).addClass("cur");
 }
 var interCode = function(isc){
