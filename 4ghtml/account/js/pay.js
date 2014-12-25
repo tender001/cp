@@ -61,11 +61,11 @@
             			return false;
             		}else{
             			$("#payform").submit();
-            			$("#money").focus();
+//            			$("#money").focus();
             		}
                     
                 },
-                cft:function(money){
+                kjcz:function(money){
 //                    window.location.href="/recharge/tenpay/ci?amount="+money;
                 },
                 mcard:function(money){
@@ -104,24 +104,83 @@
             });
 
             $("#submit").click(function(){
-                if(!$(this).hasClass("action_no")){
+            	var $eliment = $("em.true-icon-cur");
+            	var typename = $eliment.attr("data-type");
+            	if(!$(this).hasClass("action_no")){
                     var _money = $("#money").val();
-                    var $eliment = $("em.true-icon-cur");
-                    var typename = $eliment.attr("data-type");
+                    
+                    
 
 //                     Cookies.set("wifi.159cai.com.recharge.lastUsed",typename,{path:"/"});
 
-                    if(typename == "kjcz"){
-                        var cardno = $eliment.attr("data-cardno");
-                        var agreeno = $eliment.attr("data-agreeno");
-                        if(cardno && agreeno){
-                            CallRecharge[typename].usedCard(_money,cardno,agreeno);
-                        }else{
-                            CallRecharge[typename].newcard(_money);
-                        }
+                    if(typename == "kjzf"){
+                        
+                        
+                		$.ajax({
+                			url : $_user.url.safe,
+                			type : "POST",
+                			dataType : "json",
+                			success : function(xml) {
+                				var R = xml.Resp;
+                				var code = R.code;
+                				var desc = R.desc;
+                				if (code == "0") {	
+                					var r= R.row;
+                					var rname = r.rname;
+                					var idcard = r.idcard;
+                					if(rname == ""){
+                						showMS("请先绑定身份证信息","/account/sminfo.html");
+                					}else{
+                						window.location.href="/account/lianlian.html?amount="+_money;
+                					}
+                				}else {
+                					showTips(desc);
+                				}
+                				
+                			},
+                			error : function() {
+                				showTips("网络异常！");
+                			}
+                		});
                     }else{
                         CallRecharge[typename](_money);
                     }
+                }else if(typename=="mcard"){
+                	 window.location.href="/account/phonepay.html";
                 }
             });
         })
+        function showMS(ms,url) {
+    $("#divshowprebuy").html("<div class=\"alert\"><div class=\"alert-tips\"><h2>温馨提示</h2><p>" + ms + "</p><div class=\"alert-btn\" onclick='showBuyMini(2,\""+url+"\")'>确定</div></div></div>");
+//    $("#divshowprebuy").css({
+//        "top": ($(window).height() / 4 + $(window).scrollTop()) + "px",
+//        'left': "0px",
+//    });
+    $(".alert-tips").css({
+        "margin-top": ($(window).height() / 4 + $(window).scrollTop()) + "px",
+       
+    });
+    showBuyMini(1);
+//    setTimeout(function() { showBuyMini(2); }, (6 * 1000));
+}
+
+
+//是否显示提示窗口
+function showBuyMini(kind,url) {
+    if (kind == 1) {
+        $("#divshowprebuy").show();
+        $("#divDisable").css({
+            "height": $("#caseForm").height() + 110 + "px",
+            "display": "block"
+        });
+        var overlayID = "_t_overlay";
+        if (!byID(overlayID)) $('body').append('<div class="overlay" id="' + overlayID + '"></div>');
+        $('.overlay').css({ 'height': ($("body").height()) + 'px', 'left': '0px', 'top': '0px', 'width': '100%', 'display': 'block', 'position': 'absolute' }).show();
+    }
+    else {
+        $("#divshowprebuy").hide();
+        $("#divDisable,.overlay").hide();
+        $("#divshowprebuy").html("");
+        location.href=url;
+    }
+}
