@@ -778,20 +778,22 @@ showjccode=function(option){
 //						lose = lls.length > 1?lls[3]: r.lose;
 //					}
 					if(rst){
-						if(gid==84||gid==85){
-							mrs = mrs == "*" ? mrs : getjcrs(gid, r.hs, r.vs, r.hhs, r.hvs, lose);
-						}else{
+						if(gid==70||gid==71){
+							
 							mrs = mrs == "*" ? mrs : getjcrs(gg, r.hs, r.vs, r.hhs, r.hvs, (gg==97?lls[3]:lose));
+						}else{
+							mrs = mrs == "*" ? mrs : getjcrs(gid, r.hs, r.vs, r.hhs, r.hvs, lose);
 						}
 						
 						
 					}
 //					var cs = ps[1].split("/");
 					if(rst){
-						if(gid==84||gid==85){
-							html += "比分：" + "(" + r.hs + ":" + r.vs + ")"+ ((gid == 87 || gid == 92) ? "半场比分：("+hss+":"+vss+")" : "") +  " 赛果：<span style='color:Red'>" + $_sys.getJJCode(gid,"K" + mrs) + "</span>";
+						if(gid==71||gid==70){
+							html += "" + "(" + r.hs + ":" + r.vs + ")"+ (gg == 92 ? "半场比分：("+r.hhs+":"+r.hvs+")" : "") +  " <br/><em class='yellow'>" + $_sys.getJJCode(gg,"K" + mrs) + "</em>";
+							
 						}else{
-							html += "比分：" + "(" + r.hs + ":" + r.vs + ")"+ (gg == 92 ? "半场比分：("+r.hhs+":"+r.hvs+")" : "") +  " 赛果：<span style='color:Red'>" + $_sys.getJJCode(gg,"K" + mrs) + "</span><br/>";
+							html += "" + "(" + r.hs + ":" + r.vs + ")"+ ((gid == 87 || gid == 92) ? "半场比分：("+hss+":"+vss+")" : "") +  " <br/><em class='yellow'>" + $_sys.getJJCode(gid,"K" + mrs) + "</em>";
 						}
 						
 					}
@@ -801,7 +803,7 @@ showjccode=function(option){
 
 		
 
-		html += "</td>";
+		html += "</td></tr>";
 		var mrs = "";
 		if(gid == 70 || gid == 71){
 			
@@ -821,7 +823,7 @@ showjccode=function(option){
 							mrs = mrs == "*" ? mrs : getjcrs(gg, r.hs, r.vs, r.hhs, r.hvs, (gg==97?lls[3]:lose));
 							
 						}
-						html += "玩法:<em style='color:green'>" + $_sys.getlotname(gg,2) + "</em>";
+						html += "<em style='color:green'>" + $_sys.getlotname(gg,2) + "</em>";
 						if(gg == 72 || gg == 95 || gg == 97|| gg == 84){
 							if(lose != 0){
 								html += (parseFloat(lose)>0 ? "<em style='color:Red'>(<b>+"+lose+"</b>)</em>" : "<em style='color:green'>(<b>"+lose+"</b>)</em>");
@@ -832,20 +834,20 @@ showjccode=function(option){
 						var cs = ps[1].split("/");
 						for(var n = 0; n < cs.length; n++){
 							if(cs[n] == mrs || mrs=="*"){
-								html += "<em class='yellow'>" + $_sys.getJJCode(gg,"K" + cs[n]) + "</em>";
+								html += "<em class='yellow'>[" + $_sys.getJJCode(gg,"K" + cs[n]) + "]</em>";
 							} else {
-								html += "<em>" + $_sys.getJJCode(gg,"K" + cs[n]) + "</em>";
+								html += "<em>[" + $_sys.getJJCode(gg,"K" + cs[n]) + "]</em>";
 							}
 						}
 						if(jcobj.item[k][2]==1){
 							html += "<span style='color:red'>(胆)</span>";
 						}
-						html += "]</td>";
+						html += "]";
 						
 					}
 				}
 			}
-			html += "</tr>";
+			html += "</div></td></tr>";
 		} else {
 			var hss = r.hss == undefined ? r.hhs : r.hss;
 			var vss = r.vss == undefined ? r.hvs : r.vss;
@@ -865,15 +867,14 @@ showjccode=function(option){
 					var cc = jcobj.item[k][1].split("/");
 					for(var n = 0; n < cc.length; n++){
 						if(cc[n] == mrs || mrs=="*"){
-							html += "<span class='spitems'>" + $_sys.getJJCode(gid,"K" + cc[n]) + "</span>";
+							html += "<em class='yellow'>[" + $_sys.getJJCode(gid,"K" + cc[n]) + "]</em>";
 						} else {
-							html += "<span class='spitems2'>" + $_sys.getJJCode(gid,"K" + cc[n]) + "</span>";
+							html += "<em >[" + $_sys.getJJCode(gid,"K" + cc[n]) + "]</em>";
 						}
 					}
 					if(jcobj.item[k][2]==1){
-						html += "<span style='color:red'>(胆)</span>";
+						html += "<em style='color:red'>(胆)</em>";
 					}
-					html += "<br/>";
 					break;
 				}
 			}
@@ -888,10 +889,11 @@ showjccode=function(option){
 	if(jcobj.filter == 1){
 		match.push("<div><span style='color:Red'>去除单一玩法串</span></div>");
 	}
-	if(gid==71||gid==94||gid==95||gid==96||gid==84||gid==85){
-		$("#content").append('<table width="100%" cellspacing="0" cellpadding="0" border="0" class="lcbetTitle mgTop06"><tbody><tr><td width="15%">场次</td><td width="70%">主队VS客队/投注选项</td><td width="15%" style="border-right:none">赛果</td></tr></tbody></table>')
+	if(gid==71||gid==94||gid==95||gid==96||gid==97){
+		
+		$("#content").append('<table width="100%" cellspacing="0" cellpadding="0" border="0" class="lcbetTitle mgTop06"><tbody><tr><td width="15%">场次</td><td width="70%">客队VS主队/投注选项</td><td width="15%" style="border-right:none">赛果</td></tr></tbody></table>');
 	}else{
-		$("#content").append('<table width="100%" cellspacing="0" cellpadding="0" border="0" class="lcbetTitle mgTop06"><tbody><tr><td width="15%">场次</td><td width="70%">客队VS主队/投注选项</td><td width="15%" style="border-right:none">赛果</td></tr></tbody></table>')
+		$("#content").append('<table width="100%" cellspacing="0" cellpadding="0" border="0" class="lcbetTitle mgTop06"><tbody><tr><td width="15%">场次</td><td width="70%">主队VS客队/投注选项</td><td width="15%" style="border-right:none">赛果</td></tr></tbody></table>');
 	}
 	$("#jcts").show();
 	$("#content").append('<table width="100%" cellspacing="0" cellpadding="0" border="0" class="lcbetTable" id="tcont"><tbody>'+match.join("")+'</tbody></table>')
