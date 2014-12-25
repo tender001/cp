@@ -712,18 +712,20 @@ function Choggtype(){
 	    if (!byID(overlayID)) $('body').append('<div class="overlay" id="' + overlayID + '"></div>');
 	    $('.overlay').css({ 'height': ($("body").height()) + 'px','background-color':'rgba(0,0,0,.5)', 'left': '0px', 'top': '0px', 'width': '100%', 'display': 'block', 'position': 'absolute' }).show();
 
-	    $("#chuan_").css("top", ($(window).scrollTop() + ($(window).height() - 120) / 4) + "px");
-	    $(window).scroll(function() {
-	        var offsetTop = ($(window).scrollTop() + ($(window).height() - 120) / 4) + "px";
-	        $("#chuan_").animate({ top: offsetTop }, { duration: 300, queue: false });
-	    });
-	   
+	    $("#chuan_").css("top", ($(window).height() / 4 ) + "px");
+//	    $(window).scroll(function() {
+//	        var offsetTop = ($(window).scrollTop() + ($(window).height() - 120) / 4) + "px";
+//	        $("#chuan_").animate({ top: offsetTop }, { duration: 300, queue: false });
+//	    });
+//	   
 		$('#chuan_').slideDown('fast');
+//	    $('#chuan_').show();
 }
 //关闭过关层
 function closeggtype() {
     $('.overlay').hide();
     $('#chuan_').slideUp('fast');
+    $('#chuan_').hide();
 }
 
 function getXcode(mdata,gid){
