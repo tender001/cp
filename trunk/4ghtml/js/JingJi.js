@@ -341,6 +341,9 @@ function betconfirm(){
 		return;
 	}
 	$("#confirmhtml").html("");
+	if(typeID=="114"){
+		$("#confirmhtml").addClass("jclqDxf");
+	}
 	$("#buyHeader h1").html($_sys.getlotname($("#gid").val())+"_投注")
     for (var i = 0; i < chooseArray.length; i++) {
 		var 
