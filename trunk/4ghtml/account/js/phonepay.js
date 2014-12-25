@@ -1,5 +1,5 @@
  $(document).ready(function(){
-	 chklogin(1);
+	 chklogin("account");
 	 $("#cardid").keyup(function(){
  		this.value=this.value.replace(/\D/g,''); //只能数字
          this.value =this.value.replace(/\s/g,'').replace(/(\d{4})(?=\d)/g,"$1 ");//四位一空格

@@ -1,5 +1,5 @@
         var hasBindYt = false;//连连是否绑卡
-        chklogin(1);
+        chklogin("account");
         $(document).ready(function(){
             $("#moneys li em").click(function(){
             	$("#moneys li em").removeClass("cur");
