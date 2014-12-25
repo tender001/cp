@@ -84,6 +84,70 @@ public class Bank_wap_zfb extends BankBeanImpl{
 			return;
 		}
 	}
+	
+	public static void sendNew(BankBean bean, RbcFrameContext context, HttpServletRequest request, HttpServletResponse response) throws Exception {
+		logger.debug("wap-zfb-send");
+		response.setContentType( "text/html;charset=UTF-8");
+		
+		String host = request.getServerName();
+		String rurl = "";
+		if(host == null || host.trim().equals("")){
+			rurl = return_url;
+		}else{
+			rurl = "http://" + host + "/pwap/alipayreceivenew.phpx";
+		}
+		logger.debug(rurl);
+		
+		Map<String, String> reqParams = ZfbUtil.prepareTradeRequestParamsMap(request, bean, notify_url, rurl);
+		//签名类型 
+		String signAlgo = ZfbUtil.SEC_ID;
+		String reqUrl = TradeConfig.REQ_URL;
+		
+		//获取商户MD5 key
+		String key = PartnerConfig.KEY;
+		String sign = ZfbUtil.sign(reqParams,signAlgo,key);
+		reqParams.put("sign", sign);
+		
+		ResponseResult resResult = new ResponseResult();
+		String businessResult = "";
+		try {
+			resResult = ZfbUtil.send(reqParams,reqUrl,signAlgo);
+		} catch (Exception e1) {
+			e1.printStackTrace();
+		}
+		if (resResult.isSuccess()) {
+			businessResult = resResult.getBusinessResult();
+		} else {
+			PrintWriter out = response.getWriter();
+			out.print("出错信息："+resResult.getErrorMessage().getDetail());
+			out.flush();
+			System.out.println("出错信息："+resResult.getErrorMessage().getDetail());
+			return;
+		}
+		DirectTradeCreateRes directTradeCreateRes = null;
+		XMapUtil.register(DirectTradeCreateRes.class);
+		try {
+			directTradeCreateRes = (DirectTradeCreateRes) XMapUtil.load(new ByteArrayInputStream(businessResult.getBytes("UTF-8")));
+		} catch (UnsupportedEncodingException e) {
+		} catch (Exception e) {
+		}
+		// 开放平台返回的内容中取出request_token
+		String requestToken = directTradeCreateRes.getRequestToken();
+		Map<String, String> authParams = ZfbUtil.prepareAuthParamsMap(request, requestToken, bean);
+		//对调用授权请求数据签名
+		String authSign = ZfbUtil.sign(authParams,signAlgo,key);
+		authParams.put("sign", authSign);
+		String redirectURL = "";
+		try {
+			redirectURL = ZfbUtil.getRedirectUrl(authParams,reqUrl);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		if (StringUtil.isNotBlank(redirectURL)) {
+			response.sendRedirect(redirectURL);
+			return;
+		}
+	}
 
 	public int receive(BankBean bean, RbcFrameContext context, HttpServletRequest request, HttpServletResponse response) throws Exception {
 		logger.debug("wap-zfb-receive");
