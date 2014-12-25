@@ -136,12 +136,12 @@ function LoadMatchList() {
 										+' <span>-</span>'
 								}
 							    if(jj["wlStop"] == 0){
-									newmatchHTML +='<p class="spfzpk"><em class="rq">让　球</em>'
+									newmatchHTML +='<p class="spfzpk"><em class="rq">让球　</em>'
 										+' <span  onclick="ChooseMatch(this)" n="3" value="1" name="'+ jj.ID +'">主胜 '+jj.wl3+'</span>'
 										+' <span  onclick="ChooseMatch(this)" n="1" value="2" name="'+ jj.ID +'">平  '+jj.wl1+'</span>'
 										+' <span  onclick="ChooseMatch(this)" n="0" value="3" name="'+ jj.ID +'">客胜  '+jj.wl0+'</span>'
 								}else{
-									newmatchHTML +='<p class="spfzpk"><em class="rq">让　球</em>'
+									newmatchHTML +='<p class="spfzpk"><em class="rq">让球　</em>'
 										+' <span>-</span>'
 										+' <span>未开售</span>'
 										+' <span>-</span>'
@@ -158,7 +158,7 @@ function LoadMatchList() {
 							newmatchHTML +='<ul class="sfcxs hhzpk">'
 						    	+'<li class="li_weige"><em>'+jj.MID+'</em> <p style="color:'+ jj.color +'">'+ jj.sclass +'</p><cite>'+jj.Time.split(" ")[1]+'截止</cite></li>'
 						    	+'<li>'
-						    	+'<p class="spfzpk lchhzpk"><em class="rq">让　分</em>'
+						    	+'<p class="spfzpk lchhzpk"><em class="rq">让分　</em>'
 						    	if(jj["rfStop"] == 0){
 						    		newmatchHTML +='<span onclick="ChooseMatch(this)" n="0" value="3" name="'+ jj.ID +'"><b>'+jj.guest+'</b><cite>'+jj.rf0+'</cite></span>'
 							    		+'<span onclick="ChooseMatch(this)" n="3" value="4" name="'+ jj.ID +'"><b>'+jj.home+''+"<i style='color:" + (jj.rf.indexOf("-") == -1 ? "red" : "blue") + "'>(" +(jj.rf.indexOf("-") == -1 ? "" : "")+ jj.rf + ")</i>"+'</b><cite>'+jj.rf3+'</cite></span>'
