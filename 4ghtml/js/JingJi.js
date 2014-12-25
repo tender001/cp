@@ -85,7 +85,7 @@ function LoadMatchList() {
                         					
             					
                         	}else if(typeID==114){
-                        		newmatchHTML+='<ul class="sfcxs"> <li><em>'+jj.MID+'</em>'
+                        		newmatchHTML+='<ul class="sfcxs jclqDxf"> <li><em>'+jj.MID+'</em>'
                     			+'<p style="color:'+ jj.color +'">'+ jj.sclass +'</p><cite>'+jj.Time.split(" ")[1]+'截止</cite></li>'
                     			+'<li><p class="spfzpkNum">'
                     			+'<span >'+ jj.guest +'</span>'
