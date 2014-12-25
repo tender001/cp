@@ -103,7 +103,7 @@ function chklogin(t) {
 			} else {
 				var code = d.Resp.code;
 				if (code == 0) {
-					if(t == undefined || t == 0||t=="need"){
+					if(t == undefined || t == 0||t=="need"||t=="account"){
 						UserInfo();
 					} else if(t == 1){
 						UserMoney();
@@ -127,6 +127,8 @@ function chklogin(t) {
 					}
 					if(t=="need"){
 						loginHdl();
+					}else if(t=="account"){
+						location.href="/user/login.html";
 					}
 					
 					if($(".uinfo"))$(".uinfo").html("您尚未登录，请先"+"<a href=\"javascript:void(0)\" onclick=\"loginHdl()\">登录</a>");
