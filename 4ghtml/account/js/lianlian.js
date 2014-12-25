@@ -13,11 +13,9 @@ $(document).ready(function(){
 			showTips('存入金额最高不能超过500万元人民币');
 			history.go(-1);
 			return false;
-		}else if (!((cardno.length == 15 || cardno.length == 18) && /^\d{14,}$/.test(cardno))) {
-			
-			showTips('请输入你正确的银行卡号');
-			return false;
 		}else{
+			$("#money").val(amount);
+			$("#card").val(cardno)
 			$("#yt").submit();
 		}
 	})
