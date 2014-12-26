@@ -50,11 +50,26 @@ var MinLen=9;
 <div id="matchList">加载中...</div>
  
 <div class="buyFooter" id='buyFooter1'>
-	<div class="buyFloat fixed">
-		<em class="deleted"  onclick="ReChoose();"></em>
-		<span>已选择<cite class="yellow" id="betnum">0</cite>场比赛</span>
-		<a href="javascript:betconfirm()" class="ture" id="isOk_">确 认</a>
-	</div>
+<!-- 	<div class="buyFloat fixed"> -->
+<!-- 		<em class="deleted"  onclick="ReChoose();"></em> -->
+<!-- 		<span>已选择<cite class="yellow" id="betnum">0</cite>场比赛</span>    <div class="double clearfix"> -->
+                
+<!--                 <span class="right">投<input type="tel" onchange="TimesNum(this,1,99999)" size="5" maxlength="5" value="1" name="bs" id="preTimes">倍</span> </div> -->
+<!-- 		<a href="javascript:betconfirm()" class="ture" id="isOk_">确 认</a> -->
+<!-- 	</div> -->
+	 <div class="buyFloat fixed">
+<!--                 <p class="spfjj">若中奖，理论奖金 <em class="yellow" id="rangeMoney">7.84~3457.43</em>元</p> -->
+                <em class="deleted"  onclick="Reconfirm();"></em>
+                <div class="double clearfix">
+               
+                <span class="right">投<input type="tel" onchange="TimesNum(this,1,99999)" size="5" maxlength="5" value="1" name="bs" id="preTimes">倍</span> </div>
+              
+                <div class="buyFloat">
+                    <input type="hidden" value="发起合买" class="fqhm" id="fqhm">
+                    <p > <span>已选择<cite class="yellow" id="betnum">0</cite>场比赛，</span><span id="preMoney">共<cite class="yellow">0</cite>注<cite class="yellow">0</cite>元</span></p>
+                    <a id="payment" class="ture" href="javascript:payconfirm()">购买</a>
+                </div>
+            </div>
 </div>
 
 
