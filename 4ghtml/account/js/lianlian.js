@@ -4,7 +4,10 @@ $(document).ready(function(){
 	var amount = location.search.getParam('amount');
 	$("#submit").click(function(){
 		var cardno=$("#cardno").val().replace(/\s/g, ""); 
-        
+        if(cardno==""){
+        	showTips('请输入银行卡号');
+			return false;
+        }
 		if (amount<10){
 	    	showTips('存入金额至少为10元');
 	    	history.go(-1)
