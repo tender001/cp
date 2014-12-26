@@ -1,6 +1,7 @@
 @charset "utf-8";
 body,section,footer,header,menu,nav,button,dd,dl,dt,fieldset,form,h1,h2,h3,h4,h5,h6,hr,input,legend,li,ul,ol,p,pre,th,td,textarea,center{margin:0;padding:0}
-html{min-height:100%;color:#000;-webkit-backface-visibility: hidden;-webkit-font-smoothing: antialiased;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%}
+html,body{min-height:100%;}
+html{color:#000;-webkit-backface-visibility: hidden;-webkit-font-smoothing: antialiased;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%}
 body{font:75%/1.5 sans-serif,Helvetica,Arial,"Hiragino Sans GB";background-color:#fff;min-width:320px}
 article,aside,details,figcaption,figure,footer,header,menu,nav,section{display:block}
 h1,h2,h3,h4,h5,h6{font-size:100%}
