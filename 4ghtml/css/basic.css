@@ -44,7 +44,7 @@ table{border-collapse:collapse;border-spacing:0}
 .ball .blue{background-color: #64a6ea}
 /*右-点击*/
 .list .ico-click i{margin-top:0.91em;-webkit-transform: rotate(45deg);-moz-transform: rotate(45deg);-o-transform: rotate(45deg);transform:rotate(45deg)}
-.ico-click i{float:right;width:0.8em;height:0.8em;margin-right:1.4em;border-top:2px solid #ccc;border-right:2px solid #ccc;position:relative;-webkit-transform: rotate(-45deg);-moz-transform: rotate(-45deg);-o-transform: rotate(-45deg);transform:rotate(-45deg)}
+.ico-click i{float:right;width:0.8em;height:0.8em;margin-right:1.4em;border-top:2px solid #ddd;border-right:2px solid #ddd;position:relative;-webkit-transform: rotate(-45deg);-moz-transform: rotate(-45deg);-o-transform: rotate(-45deg);transform:rotate(-45deg)}
 .ico-click .cur{top:-0.2em;-webkit-transform: rotate(135deg);-moz-transform: rotate(135deg);-o-transform: rotate(135deg);transform:rotate(135deg)}
 /*充值选择*/
 .true-icon{display: block;width:18px;height:18px;line-height:15px;text-align:center;border: 0.18em solid #ccc;border-radius: 18px;background-color: transparent;overflow: hidden}
