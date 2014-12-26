@@ -75,7 +75,7 @@ function showLogin() {
     
     var overlayID = "_t_overlay";
     if (!byID(overlayID)) $('body').append('<div class="overlay" id="' + overlayID + '"></div>');
-    $('.overlay').css({ 'height': ($("body").height()) + 'px', 'left': '0px', 'top': '0px', 'width': '100%', 'display': 'block', 'position': 'absolute' }).show();
+    $('.overlay').css({ 'height':  '100%', 'left': '0px', 'top': '0px', 'width': '100%', 'display': 'block', 'position': 'absolute' }).show();
 
     $("#Login_Panel").css("top", ($(window).scrollTop() + ($(window).height() - 120) / 4) + "px");
     $(window).scroll(function() {

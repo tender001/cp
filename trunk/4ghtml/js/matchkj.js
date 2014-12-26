@@ -55,19 +55,19 @@ function showmatchkj(){
 							}else if(o==0){
 								cpid = pid;
 							}
-//							if(flag == 1){
-//								html.push("<option value='/info/football.html?gid=bjdc&="+pid+"' id="+pid+">当前期"+pid+"</option>");
-//								if(xpid == ''){
-//									cpid = pid;
-//								}
-//							} else {
-//								html.push("<option value='/info/football.html?gid=bjdc&pid="+pid+"' id="+pid+">历史期"+pid+"</option>");
-//							}
+							if(flag == 1){
+								html.push("<option value='/info/football.html?gid=bjdc&="+pid+"' id="+pid+">当前期"+pid+"</option>");
+								if(xpid == ''){
+									cpid = pid;
+								}
+							} else {
+								html.push("<option value='/info/football.html?gid=bjdc&pid="+pid+"' id="+pid+">历史期"+pid+"</option>");
+							}
 						});
 //						html.push("<option value='/history/'>返回列表</option>");
-//						$("#listexpect").html(html.join(""));
+						$("#listexpect").html(html.join(""));
 						if(cpid != ''){
-//							$("#"+cpid).attr("selected","selected");
+							$("#"+cpid).attr("selected","selected");
 							showmatch(gid, cpid);
 						}
 					}
@@ -92,22 +92,22 @@ function showmatchkj(){
 					var cpid = "";
 					$.each(rs,function(o,r) {
 						var pid =  r.did;
-//						var day = pid.substring(0,4) + "-" + pid.substring(4,6) + "-" + pid.substring(6, 8);
+						var day = pid.substring(0,4) + "-" + pid.substring(4,6) + "-" + pid.substring(6, 8);
 						if(xpid != ''){
 							cpid = xpid;
 						}else if(o==0){
 							cpid = pid;
 						}
-//						http://local.159cai.com/info/football.html?gid=jclq&did=140409
-//						html.push("<option value='/info/football.html?gid=" + gid + "&pid="+pid+"' id="+pid+">"+day+"</option>");
+//	
+						html.push("<option value='/kj/jingcai.html?gid=" + gid + "&pid="+pid+"' id="+pid+">"+day+"</option>");
 //						if(cpid == ''){
 //							cpid = pid;
 //						}
 					});
 //					html.push("<option value='/history/'>返回列表</option>");
-//					$("#listexpect").html(html.join(""));
+					$("#listexpect").html(html.join(""));
 					if(cpid != ''){
-//						$("#"+cpid).attr("selected","selected");
+						$("#"+cpid).attr("selected","selected");
 						showmatch(gid, cpid);
 					}
 				}
@@ -206,7 +206,7 @@ function showmatch(gid, expect){
 							
 						});
 						$(".jczqkj").html(match);
-						$(".sfcTitle").html(expect+'期&nbsp;&nbsp;'+num+'场比赛')
+						$("#matchnum").html(num);
 					}
 					
 				} else {
@@ -287,7 +287,7 @@ function showmatch(gid, expect){
 				}
 				var day = "20"+expect.substring(0,2) + "-" + expect.substring(2,4) + "-" + expect.substring(4, 6);
 				$(".jczqkj").html(match);
-				$(".sfcTitle").html(day+'&nbsp;&nbsp;'+num+'场比赛')
+				$("#matchnum").html(num);
 				
 			},
 			error:function(){
@@ -381,16 +381,15 @@ function showmatch(gid, expect){
 								html +='<ul class="sfcxs"><li><em>'+ row.cid +'</em><p color='+row.cl+'>'+ row.mname +'</p><cite>'+ row.short_mt + '</cite></li>'
 								html +='<li><p class="spfzpkNum"><span>(客)'+ row.sn +'</span><span class="spfvs">'+row.bf+'</span><span>'+ row.mn +'(主)</span></p>'
 								+'<div><p><span>胜负</span><span>让分胜负('+row.opstr1+')</span><span>大小分('+row.opstr2+')</span><span>胜分差</span></p>'
-								+'<p><span >'+row.spf+'</span><span class=" jclqsf">'+row.jqs+'</span>'
-								+'<span>'+row.bqc+'</span><span><em> '+ row.cbf +'</em></span></p>'
+								+'<p><span >'+(row.spf===undefined?'-':row.spf)+'</span><span class=" jclqsf">'+(row.jqs===undefined?'-':row.jqs)+'</span>'
+								+'<span>'+(row.bqc===undefined?'-':row.bqc)+'</span><span><em> '+ (row.cbf===undefined?'-':row.cbf) +'</em></span></p>'
 								+'</div></li></ul>';
 						           
 //								html[html.length] = tableTpl[0].tpl(row);
 						 
 						})
 						$(".jczqkj").html(html);
-						var day = "20"+expect.substring(0,2) + "-" + expect.substring(2,4) + "-" + expect.substring(4, 6);
-						$(".sfcTitle").html(day+'&nbsp;&nbsp;'+num+'场比赛')
+						$("#matchnum").html(num);
 					}
 				}
 		
