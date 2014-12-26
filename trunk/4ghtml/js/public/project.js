@@ -767,6 +767,11 @@ showjccode=function(option){
 		}
 		
 		html += "<td width=\"15%\" class=\"r9last\" rowspan=\"2\">";
+		var bifen= "(" + r.hs + ":" + r.vs + ")";
+		if(gid==71||gid==94||gid==95||gid==96||gid==97){
+			bifen = "(" + r.vs + ":" + r.hs + ")";
+		}
+		html += bifen ;
 		for(var k = 0; k < jcobj.item.length;k++){
 			if(jcobj.item[k][0] == r.id){
 				var cc = jcobj.item[k][1].split("+");
@@ -787,17 +792,14 @@ showjccode=function(option){
 						
 						
 					}
-					var bifen= "(" + r.hs + ":" + r.vs + ")";
-					if(gid==71||gid==94||gid==95||gid==96||gid==97){
-						bifen = "(" + r.vs + ":" + r.hs + ")";
-					}
+					
 //					var cs = ps[1].split("/");
 					if(rst){
 						if(gid==71||gid==70){
-							html += bifen +  " <br/><em class='yellow'>" + $_sys.getJJCode(gg,"K" + mrs) + "</em>";
+							html +=  " <br/><em class='yellow'>" + $_sys.getJJCode(gg,"K" + mrs) + "</em>";
 							
 						}else{
-							html += bifen +  " <br/><em class='yellow'>" + $_sys.getJJCode(gid,"K" + mrs) + "</em>";
+							html +=  " <br/><em class='yellow'>" + $_sys.getJJCode(gid,"K" + mrs) + "</em>";
 						}
 						
 					}
