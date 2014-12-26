@@ -41,7 +41,8 @@ function LoadList(){
 	var url =$_trade.url.plist
 	if (lotid==hot){
 		url =$_trade.url.hlist;
-		postData=""
+//		http://www.159cai.com/cpdata/phot/1.json?r=0.17740810977489152
+//		postData="fsort="+sorts+"&dsort="+isDescs+"&state="+state+"&find="+key+"&pn="+page+"&ps=20"
 	}
 	$.ajax({
 		url:url,
@@ -137,7 +138,7 @@ page=0;
 isBDing = false;
 loadAll = false;
 $("#hmList").html("");
-LoadList();
+//LoadList();
 $('#Filter_Panel').slideUp('fast');
 }
 function init(){
