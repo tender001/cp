@@ -98,14 +98,10 @@ function card(){
 							return false;
 						}
 					});
-					$("#div1").hide();
-					$("#div2").show();
+					$("#div2").hide();
+					$("#div1").show();
 				}
-			} else if(code =="1"){
-				$("#div1").hide();
-				$("#div2").hide();
-				$("#div3").show();
-			}else{
+			} else{
 				$("#div1").show();
 				$("#div2").hide();
 				showTips(desc);
