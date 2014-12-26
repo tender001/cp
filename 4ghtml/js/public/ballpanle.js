@@ -317,7 +317,7 @@ function clearData() {
     $("#times2").html(0);
     $("#times").val(1);
     $("#money").html(0);
-    $("#buyzs").val(0);
+    $("#buyzs,#buymoney").val(0);
     
     vardata=[];
     $("[mark=betnum],[mark=betmoney]").html(0);
@@ -410,6 +410,7 @@ function funClock_pgc() {   //高频彩
     else { //已截止
         if (stopState && stopState == 1) {
             LeaveClock.html("已停售");
+            location.reload();
         }
         else {
             LeaveClock.html("已截止");
