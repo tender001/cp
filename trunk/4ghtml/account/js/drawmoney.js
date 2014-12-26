@@ -169,7 +169,7 @@ function tikuan(){
 				var desc = R.desc;
 				if (code == "0") {
 					var result="tikuan"
-	    			location.href="/user/showresult.html?result="+result;
+	    			location.href="/account/showresult.html?result="+result;
 				} else {
 					if (code=="1"&&desc=="用户未登录"){
 						$("#div1").hide();
