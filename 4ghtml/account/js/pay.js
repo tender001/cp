@@ -106,13 +106,18 @@
             $("#submit").click(function(){
             	var $eliment = $("em.true-icon-cur");
             	var typename = $eliment.attr("data-type");
+            	var _money = $("#money").val();
+            	if((_money==""||_money<1)&&typename!="mcard"){
+        			showTips('请选择或输入充值金额');
+        			return false;
+        		}
             	if(!$(this).hasClass("action_no")){
-                    var _money = $("#money").val();
+                    
                     
                     
 
 //                     Cookies.set("wifi.159cai.com.recharge.lastUsed",typename,{path:"/"});
-
+            		
                     if(typename == "kjzf"){
                         
                         
