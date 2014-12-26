@@ -8,7 +8,7 @@ button,input,select,textarea{font-size:100%}
 input,button{background-color:transparent;}
 input[type="button"],input[type="submit"]{-webkit-appearance:none}
 a,s{text-decoration:none;outline:0}
-a:active{background-color:transparent}
+a:active{-webkit-tap-highlight-color:rgba(0,0,0,0)}
 ol,ul,li{list-style:none;}
 i,em,cite{font-style:normal}
 img{max-width:100%;border:0 none;vertical-align:top}
