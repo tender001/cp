@@ -1,9 +1,6 @@
 /*主页*/
 .header,.cp-list li,.tz-menu{width:100%;padding:0.4em 0;overflow:hidden}
 .header .user{float: right;}
-/*.user .app,.user .user-login{display: inline-block;width:30px;height:30px;margin-right:0.5em;text-indent:-999em;background-size:30px}
-.user .app{background-position: 0 0}
-.user .user-login{background-position: 0 -29px}*/
 .top-login{float: right;line-height:28px;font-size:1.12em;padding-right:10px;}
 @media screen and (min-width:340px){.top-login{line-height:32px}}
 .top-login a{color:#f40;padding:0 0 0 2px;}
@@ -13,10 +10,8 @@
 .slide-container .slide-wrapper img{width: 100%;height:100%;max-height:140px}
 .app-notice{height:2.4em;overflow: hidden}
 .notice{width:96%;height:3.5em;line-height:3.5em;padding:0 2%;font-size:1.1em;color:#f60;background-color:#fff;overflow: hidden}
-/*.notice span{padding-right:3px;color: #333}*/
 .app-notice .app-notice-tit{float: left;padding:0 2%;line-height: 2.4em;font-weight: 400}
 .app-notice .zj_tipBox{display: inline-block}
-.app-notice .zj_tipBox table{/*width: 80% !important;*/}
 .app-notice .zj_tipBox td,.app-notice .zj_tipBox th{padding: 0.55em 0.5em;font-weight:400;text-align: center;color: #f40}
 .nav{width:100%;padding:6px 0;border-top:1px solid #e2e2e2;background-color: #f0f0f0}
 .nav table{width: 100%;background-color: #fff}
@@ -208,7 +203,7 @@
 .sfcxs li{float:left;width:78.5%;color:#343434}
 .spfpl span{ display:inline-block;width:39%;color:#aaa;font-size:1.12em; text-align:center; margin-top:.2rem}
 .spfpl span.spfvs,.spfNum .spfpl span.spfvs{ width:22%}
-.spfzpk span{ float:left;width:30%;text-align:center;margin:0 1.2% 0;height:3em;line-height:3em;/*font-size:1.13em;*/color:#f40;border:1px solid #f40;border-radius:5px;overflow:hidden;-webkit-border-radius:5px;-moz-border-radius:5px}
+.spfzpk span{ float:left;width:30%;text-align:center;margin:0 1.2% 0;height:3em;line-height:3em;color:#f40;border:1px solid #f40;border-radius:5px;overflow:hidden;-webkit-border-radius:5px;-moz-border-radius:5px}
 .spfzpk span.cur{background-color:#f40;color:#fff}
 .bfpk span{ width:96%}
 .sfcxs li:first-child{width:5.4em;text-align:center;color:#5c5c5c}
@@ -246,7 +241,6 @@
 .jclqVs .spfpl span:last-child,.jclqDxf .spfpl span:last-child,.jclqDxf .spfzpk span:last-child,.jclqhh .spfzpk span:last-child{margin-right:0}
 .jclqDxf .spfzpk span{ width:40%;margin:.4em 17% 0 0}
 .jclqDxf .spfzpkNum{ font-size:.95em}
-/*.jclqDxf .spfzpkNum span.spfvs{}*/
 .jclqDxf .spfpl span{width: 41%;margin: 0 17% 0 0}
 /*双色球*/
 .ssqkjlist{padding:.4em 0; background:#f9f9f9; border-bottom:1px solid #e2e2e2}
@@ -279,7 +273,6 @@
 /*11选5*/
 .syx5Tab{padding-top:.5em; border-bottom:1px solid #e9e9e9; background:#fff}
 .syx5Tab li{width:4em; margin:0 .5em; height:1.6em; color:#5c5c5c}
-/*.syx5Tab li.cur{height:1.5em; color:#db150b; border-bottom:2px solid #db150b}*/
 .k3kj{border-bottom:1px solid #d9d9d9;color:#a4a4a4}
 .k3kjtext{ float:left; height:3.5em; width:43%; padding:.5em 0 0 7%; border-right:1px solid #e2e2e2}
 .k3kjtext p cite{ padding-left:.7rem}
