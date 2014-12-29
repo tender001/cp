@@ -387,7 +387,8 @@
 .user-padding .btn{width: 100%;margin-top: 1.5em}
 .foot-phone{text-align: center}
 .foot-phone a{padding: 0.5em 1em;color:#666;border: 1px solid #ccc;border-radius:5px}
-.yz-tel-num .btn{display:inline-block;width: 47.4%}
+.reg-true-btn{text-align: center}
+.yz-tel-num .btn{display:inline-block;width: 40.4%}
 .btn-true-re{margin-left:5%;background-color: #999;background-image: none}
 .tit-000{color:#000 !important}
 .choose-select{margin-top: 10px}
@@ -407,8 +408,8 @@
 .tz-pay .buy-num i{width: 10%;min-width: 2.3em}
 .tz-pay .buy-num .zfNum{width:80%}
 .buy-num .dstz{padding: 0}
-.zf-pay-true p{line-height: 2.5em;text-align: center}
-.zf-pay-true .true-icon{display: inline-block;margin-right:10px;vertical-align: middle}
+.zf-pay-true p{line-height: 2.5em;font-size:1.12em;text-align: center}
+.zf-pay-true .true-icon{display: inline-block;margin-right:10px;vertical-align: -3px}
 .zf-pay-true .yz-tel-num .btn{width: 46.5%}
 .user-tz-his .zd-more{padding:1.5em 2%;text-align:center;border-top:1px solid #ccc;background-color: #f0f0f0}
 .user-setting .btn{margin-top:1.5em;color:#f40}
