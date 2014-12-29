@@ -160,7 +160,7 @@
 .news-top{margin-bottom:4.6rem}
 .news-tit{padding:0 0 0.4em;border-bottom: 1px dotted #ccc}
 .news-tit h1{max-height:4em;line-height:2em;font-size: 1.3em;overflow: hidden;}
-.news-tit strong{font-size:0.8em;font-weight:400;color:#777}
+.news-tit strong{font-weight:400;color:#777}
 .news-top p{padding: 1.15em 0 0;font-size: 1.15em;line-height:1.66;text-indent:2em;color:#444;}
 .app-footer{padding-top:1em;background-color: #e3e3e3;}
 /*登录-注册*/
@@ -200,7 +200,7 @@
 .pact{ padding:.6rem 0 0 .8rem; font-size:.9rem; color:#8e8e8e}
 .zfText{ border:1px solid #dcdcdc; background:#fff; line-height:1.3rem; margin-top:.5rem; padding:.5rem .87rem .5rem 1.25rem}
 .zfNum p{ color:#f03d3d; word-break:break-all}
-.spfNum .errorBg{ top:4em}
+.spfNum .errorBg{ top:3.5em}
 .spfNum .spfzpk span{ width:26%;}
 .errorBg{ position:absolute; padding:.7rem .5rem .6rem .9rem; right:-1.2em; top:0}
 .errorBg .error2{ display:block; width:1.06rem; height:1.06rem; background:url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACMAAAAjCAMAAAApB0NrAAAAQlBMVEUAAADc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nz////p6eno6Ojx8fHi4uLCn5nCAAAAEHRSTlMA8UL2iOjg0HwnFgYDhbm4g6GjowAAAPJJREFUOMuVlO0OgyAMRQtDxKmzgL7/qy5zlsuHCdv5ZcyJrZcWylj0+rKKlX2teqE7nmZgMJhnY8zuwSUPN5fKNHLLOOWKVnyH0pmCOlW9JE34So26ys3opWX8Nu5YOG4kd+aSmtl9lMewp5Y+Oa1QvEjB+yQZomWQQv5DvBRIw0KahSjSqfgg73UqBUkUFNu4lkQRNrKcS1CApTLjCAVZExcEn/4OkKqUVlJkK6WVLG21EmIlbcgH0VWSId0oIh2SM85rvxSRAs6LDM4duUQ8mnJ+sugOzE8+h/e4n+e5vxf9/ervaX/f+/fGX/dP/x57A/nLPBMWHWWgAAAAAElFTkSuQmCC") no-repeat center; background-size:1.06rem 1.06rem; -webkit-background-size:1.06rem 1.06rem; -moz-background-size:1.06rem 1.06rem}
@@ -208,7 +208,7 @@
 .sfcxs li{float:left;width:78.5%;color:#343434}
 .spfpl span{ display:inline-block;width:39%;color:#aaa;font-size:1.12em; text-align:center; margin-top:.2rem}
 .spfpl span.spfvs,.spfNum .spfpl span.spfvs{ width:22%}
-.spfzpk span{ float:left;width:30%;text-align:center;margin:0 1.2% 0;height:2em;line-height:2em;font-size:1.13em;color:#f40;border:1px solid #f40;border-radius:5px;overflow:hidden;-webkit-border-radius:5px;-moz-border-radius:5px}
+.spfzpk span{ float:left;width:30%;text-align:center;margin:0 1.2% 0;height:3em;line-height:3em;/*font-size:1.13em;*/color:#f40;border:1px solid #f40;border-radius:5px;overflow:hidden;-webkit-border-radius:5px;-moz-border-radius:5px}
 .spfzpk span.cur{background-color:#f40;color:#fff}
 .bfpk span{ width:96%}
 .sfcxs li:first-child{width:5.4em;text-align:center;color:#5c5c5c}
@@ -222,7 +222,7 @@
 .hhzpk li{ position:relative}
 .hhzpk li:first-child,.jqzpk li:first-child{ margin-top:2em}
 .hhzpk .spfzpk,.hhNum .spfzpk{padding:0.3em 0}
-.spfNum .spfzpk span,.hhzpk .spfzpk span{ width:25%; height:2.62em; line-height:2.62em;}
+.spfNum .spfzpk span,.hhzpk .spfzpk span{ width:25%; height:3.1em; line-height:3.1em;}
 .hhzpk .spfzpk em,.hhNum .spfzpk em{ float:left; width:1em; padding:.15em 1%; height:2.2rem; margin:0 1% 0 0; text-align:center; line-height:1; background:#ff9898; color:#fff; font-size:.75em; border-radius:.2em}
 .hhzpk .spfzpk em.rq,.hhNum .spfzpk em.rq{ padding:.5em 1%; height:2.3em; background:#98c5ff}
 .hhzpk .spfzpkNum span.spfvs{ width:10%}
