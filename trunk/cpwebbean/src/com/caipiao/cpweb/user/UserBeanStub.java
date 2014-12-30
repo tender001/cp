@@ -307,6 +307,9 @@ public class UserBeanStub {
 			} else if("u_modi_auto".equals(fid)) {
 				errDesc = "设置自动跟单状态失败";
 				sucDesc = "设置自动跟单状态成功";
+			} else if("u_set_alipay".equals(fid)) {
+				errDesc = "设置支付宝账号失败";
+				sucDesc = "设置支付宝账号成功";
 			}
 			int ret = JdbcSqlMapping.executeUpdate(key, bean, null, jcn);
 			if (ret == 1) {
