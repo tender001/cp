@@ -2,5 +2,7 @@
 <config>
     <sites>
     	<site host="caipiao.gucheng.com" regfrom="10309" name="股城彩票" adddate="2013-09-27"/>
+		<site host="wn.159cai.com" regfrom="52534" name="159彩票" adddate="2014-12-22"/>
+		<site host="wifi.159cai.com" regfrom="52534" name="159彩票" adddate="2014-12-25"/>
     </sites>
 </config>
