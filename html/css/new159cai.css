@@ -24,6 +24,7 @@ img{border:0 none;vertical-align:top}
 .f60{color: #e52e04 !important;font-weight: bold;}
 .ba9{color: #1f5ba9 !important;font-weight: bold;}
 .c3{color: #3c3c3c !important;}
+.c8{color: #8c8c8c !important;}
 input[type="text"]:focus{border-color: rgb(255,113,0) !important}
 @media screen and (-webkit-min-device-pixel-ratio:0){input{line-height:normal !important}}
 .bor-container{border: 1px solid #ccc;border-top: 0;}
