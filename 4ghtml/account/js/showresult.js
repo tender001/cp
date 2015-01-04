@@ -25,6 +25,7 @@ function sresult(){
 		$("#div6").show();
 	}else if(result =="reg"){
 		$("#div7").show();
+		setTimeout("location.href='/'",4000);
 	}
 	/*if(code == "0"){
 		
