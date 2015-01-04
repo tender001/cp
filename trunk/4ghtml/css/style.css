@@ -112,7 +112,7 @@
 .kj-menu{padding-bottom: 0}
 .kj-menu .kj-menu-b{padding: 1em 0;border-top:1px solid #ccc;border-bottom:1px solid #ccc;background-color: #fff}
 .kj-menu-b ul{display: table;width: 94.44%;margin:0 auto;border: 0.14em solid #f60;border-radius: 6px}
-.kj-menu-b ul li{display: table-cell;padding:0.52em 0;font-size:1.14em;letter-spacing:0.14em;text-align: center;border-left:0.13em solid #f40}
+.kj-menu-b ul li{display: table-cell;padding:0.52em 0;font-size:1.14em;letter-spacing:0.14em;text-align: center;border-left:0.11em solid #f40}
 .kj-menu-b ul li:first-of-type{border:0}
 .kj-menu-b ul li.cur{background-color: #f40}
 .kj-menu-b ul li a{display:inline-block;width:100%;color:#f40;}
