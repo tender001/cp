@@ -25,8 +25,8 @@ function DoLogin() {
 			var desc = d.Resp.desc;		
 			if (code == "0") {
 				if(bak=="1"){
-					window.location.href="/account/";
-				}else if(bak=="1"){
+					window.location.href="/";
+				}else if(bak=="2"){
 					window.location.href="/account/pay.html";
 				}else{
 					history.go(-1);
