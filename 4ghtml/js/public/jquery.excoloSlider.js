@@ -864,9 +864,10 @@
             $(".slide-wrapper", base.$elem).css({
                 height: maxHeight
             });
+//            maxHeight = $children.height();$("#sliderA 140").height()
             $(".slide-container", base.$elem).css({
                 width: newwidth,
-                height: 120
+                height: 140
             });
 
             // Restart playing
