@@ -1373,7 +1373,7 @@ a.jc_mtz:hover, a.jc_mhm:hover{background-position:-110px 0;text-decoration: non
 .tzsontab span{float:left;padding-left:20px}
 .tzsontab span a{float:left;height:30px;line-height:30px;padding:0 18px;color:#444;position: relative}
 .tzsontab span a.cur{border:1px solid #ccc;border-bottom:none;background:#fff}
-.tzsontab span a i{top:-2px;right:0;background-position:-64px 0}
+.tzsontab span a i{top:-2px;right:-5px;background-position:-65px 0}
 .tzsontab p{float:right;margin-right:20px;line-height:26px;color:#333}
 .tzsontab p em{color:#e52e04;font-weight:bold;font-family:Arial;margin:0 2px}
 .tzsontab p b,.br1{background:url("/images/cai888/jctop_06.jpg") 0 0 ;height:15px;width:15px;cursor:pointer;display:block;float:left;margin:5px 0 0 3px}
