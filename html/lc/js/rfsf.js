@@ -876,51 +876,103 @@
    		var r = obj.match.row;
    		if(!this.isArray(r)){r=new Array(r);}
    		r.each(function(row,i){
-   			row.classname=i%2==0?"even odd":"even";
-   			row.enddate=(Y.getDate(row.mt).getHours()<12?(Y.getDate(Date.parse(Y.getDate(row.mt))-1000*60*60*24).format('YY-MM-DD')):Y.getDate(row.mt).format('YY-MM-DD'));
-   			if (mathdate.indexOf(row.enddate)<0){
-   				if(mathdate.length>0){numstr[numstr.length]=num;}
-   				num=0;
-   				row.num=numstr.length;
-   				mathdate[mathdate.length]=row.enddate;
-   				row.weekday='周'+wk[Y.getDate(row.enddate).getDay()];
-   				html[html.length] = mathdate.length>1?(tableTpl[5]+tableTpl[1].tpl(row)+tableTpl[2]):tableTpl[1].tpl(row)+tableTpl[2];
-   			};
-   			row.index=row.mid;
-   			row.b3=(row.bet3!=''?(parseFloat(row.bet3).rmb(false,2)):'--');
-   			row.b0=(row.bet0!=''?(parseFloat(row.bet0).rmb(false,2)):'--');	
-   			row.short_et=Y.getDate(row.et).format('MM-DD hh:mm');
-   			row.short_mt=Y.getDate(row.mt).format('MM-DD hh:mm');
-   			
-   			var spstr=row.rfsf.split(",");
-   			row.sp0=(spstr[0]!=''?(parseFloat(spstr[0]).rmb(false,2)):'--');
-   			row.sp3=(spstr[1]!=''?(parseFloat(spstr[1]).rmb(false,2)):'--');
+   		
+   			if($('#dggp').val() == '0'){
+   				if(((row.idanguan*1) & 1 << 1) == (1 << 1)){
+   					row.classname=i%2==0?"even odd":"even";
+   		   			row.enddate=(Y.getDate(row.mt).getHours()<12?(Y.getDate(Date.parse(Y.getDate(row.mt))-1000*60*60*24).format('YY-MM-DD')):Y.getDate(row.mt).format('YY-MM-DD'));
+   		   			if (mathdate.indexOf(row.enddate)<0){
+   		   				if(mathdate.length>0){numstr[numstr.length]=num;}
+   		   				num=0;
+   		   				row.num=numstr.length;
+   		   				mathdate[mathdate.length]=row.enddate;
+   		   				row.weekday='周'+wk[Y.getDate(row.enddate).getDay()];
+   		   				html[html.length] = mathdate.length>1?(tableTpl[5]+tableTpl[1].tpl(row)+tableTpl[2]):tableTpl[1].tpl(row)+tableTpl[2];
+   		   			};
+   		   			row.index=row.mid;
+   		   			row.b3=(row.bet3!=''?(parseFloat(row.bet3).rmb(false,2)):'--');
+   		   			row.b0=(row.bet0!=''?(parseFloat(row.bet0).rmb(false,2)):'--');	
+   		   			row.short_et=Y.getDate(row.et).format('MM-DD hh:mm');
+   		   			row.short_mt=Y.getDate(row.mt).format('MM-DD hh:mm');
+   		   			
+   		   			var spstr=row.rfsf.split(",");
+   		   			row.sp0=(spstr[0]!=''?(parseFloat(spstr[0]).rmb(false,2)):'--');
+   		   			row.sp3=(spstr[1]!=''?(parseFloat(spstr[1]).rmb(false,2)):'--');
 
-   			all_matches++;		
-   			
-   			if (row.close.indexOf("-")==-1){
-   				row.closestr='<STRONG class="eng variable red"><SPAN class=sp_up><STRONG>'+row.close+'</STRONG></SPAN></STRONG>';
+   		   			all_matches++;		
+   		   			
+   		   			if (row.close.indexOf("-")==-1){
+   		   				row.closestr='<STRONG class="eng variable red"><SPAN class=sp_up><STRONG>'+row.close+'</STRONG></SPAN></STRONG>';
+   		   			}else{
+   		   				row.closestr='<STRONG class="eng variable green"><SPAN class=sp_down><STRONG>'+row.close+'</STRONG></SPAN></STRONG>';
+   		   			}
+   		   			if(row.cl.length<3){row.cl="blue";}
+   		   			row.lmname=row.mname;
+   		   			row.lhn=row.hn;
+   		   			row.lgn=row.gn;
+   		   			row.mname=row.mname.substr(0,4);
+   		   			
+   		   			row.name=row.name.trim();
+   		   			if (Y.getDate(data.date)>Y.getDate(row.et)){//已经过期的场次
+   		   				out_of_date_matches++;
+   		   					row.shuju='<a href="#">析</a> <a href="#">亚</a> <a href="#">欧</a>';
+   		   					row.sp3str='<span class="sp_value eng red">'+row.sp3+'</span>';
+   		   					row.sp0str='<span class="sp_value eng red">'+row.sp0+'</span>';
+   		   				html[html.length] = tableTpl[3].tpl(row);
+   		   			}else{//未过期的场次
+   		   				num++;    				
+   		   				html[html.length] = tableTpl[4].tpl(row);
+   		   				lgname.push(row.mname);
+   		   			};
+				}
    			}else{
-   				row.closestr='<STRONG class="eng variable green"><SPAN class=sp_down><STRONG>'+row.close+'</STRONG></SPAN></STRONG>';
+   				row.classname=i%2==0?"even odd":"even";
+   	   			row.enddate=(Y.getDate(row.mt).getHours()<12?(Y.getDate(Date.parse(Y.getDate(row.mt))-1000*60*60*24).format('YY-MM-DD')):Y.getDate(row.mt).format('YY-MM-DD'));
+   	   			if (mathdate.indexOf(row.enddate)<0){
+   	   				if(mathdate.length>0){numstr[numstr.length]=num;}
+   	   				num=0;
+   	   				row.num=numstr.length;
+   	   				mathdate[mathdate.length]=row.enddate;
+   	   				row.weekday='周'+wk[Y.getDate(row.enddate).getDay()];
+   	   				html[html.length] = mathdate.length>1?(tableTpl[5]+tableTpl[1].tpl(row)+tableTpl[2]):tableTpl[1].tpl(row)+tableTpl[2];
+   	   			};
+   	   			row.index=row.mid;
+   	   			row.b3=(row.bet3!=''?(parseFloat(row.bet3).rmb(false,2)):'--');
+   	   			row.b0=(row.bet0!=''?(parseFloat(row.bet0).rmb(false,2)):'--');	
+   	   			row.short_et=Y.getDate(row.et).format('MM-DD hh:mm');
+   	   			row.short_mt=Y.getDate(row.mt).format('MM-DD hh:mm');
+   	   			
+   	   			var spstr=row.rfsf.split(",");
+   	   			row.sp0=(spstr[0]!=''?(parseFloat(spstr[0]).rmb(false,2)):'--');
+   	   			row.sp3=(spstr[1]!=''?(parseFloat(spstr[1]).rmb(false,2)):'--');
+
+   	   			all_matches++;		
+   	   			
+   	   			if (row.close.indexOf("-")==-1){
+   	   				row.closestr='<STRONG class="eng variable red"><SPAN class=sp_up><STRONG>'+row.close+'</STRONG></SPAN></STRONG>';
+   	   			}else{
+   	   				row.closestr='<STRONG class="eng variable green"><SPAN class=sp_down><STRONG>'+row.close+'</STRONG></SPAN></STRONG>';
+   	   			}
+   	   			if(row.cl.length<3){row.cl="blue";}
+   	   			row.lmname=row.mname;
+   	   			row.lhn=row.hn;
+   	   			row.lgn=row.gn;
+   	   			row.mname=row.mname.substr(0,4);
+   	   			
+   	   			row.name=row.name.trim();
+   	   			if (Y.getDate(data.date)>Y.getDate(row.et)){//已经过期的场次
+   	   				out_of_date_matches++;
+   	   					row.shuju='<a href="#">析</a> <a href="#">亚</a> <a href="#">欧</a>';
+   	   					row.sp3str='<span class="sp_value eng red">'+row.sp3+'</span>';
+   	   					row.sp0str='<span class="sp_value eng red">'+row.sp0+'</span>';
+   	   				html[html.length] = tableTpl[3].tpl(row);
+   	   			}else{//未过期的场次
+   	   				num++;    				
+   	   				html[html.length] = tableTpl[4].tpl(row);
+   	   				lgname.push(row.mname);
+   	   			};
    			}
-   			if(row.cl.length<3){row.cl="blue";}
-   			row.lmname=row.mname;
-   			row.lhn=row.hn;
-   			row.lgn=row.gn;
-   			row.mname=row.mname.substr(0,4);
-   			
-   			row.name=row.name.trim();
-   			if (Y.getDate(data.date)>Y.getDate(row.et)){//已经过期的场次
-   				out_of_date_matches++;
-   					row.shuju='<a href="#">析</a> <a href="#">亚</a> <a href="#">欧</a>';
-   					row.sp3str='<span class="sp_value eng red">'+row.sp3+'</span>';
-   					row.sp0str='<span class="sp_value eng red">'+row.sp0+'</span>';
-   				html[html.length] = tableTpl[3].tpl(row);
-   			}else{//未过期的场次
-   				num++;    				
-   				html[html.length] = tableTpl[4].tpl(row);
-   				lgname.push(row.mname);
-   			};
+				
    		});
    		this.get("#lgList").html(lgstr);
    		numstr[numstr.length]=num;
@@ -930,6 +982,9 @@
    			this.get("#num"+ii).html(numstr[ii]);
    		}
    		this.get("#vsTable").show();	
+   		if(this.get("#vsTable").html().trim()==""){
+			this.get("#vsTable").html('<div class="event-no"><p>当前无赛事可投注，请等待官方公布新赛程！<br> <a href="http://bf.159cai.com/basketball/weilai">查看赛程预告&gt;&gt;</a> <a href="/dating/">购买其他彩种&gt;&gt;</a> </p></div>');
+		}
    		//生成联赛列表
    		var arr_league = [];
    		var league_list_html = '';
@@ -1249,9 +1304,13 @@
                     return p+(c.dan==0?0:1)
                 },0);
                 var minVs = this.C('dggp') ? 0 : 1;
-				if (!issfc) {
-					this.lt2_info.show(len < (Y.C('-isdcgg') ? 3 : 2));
-				}				
+                if (this.C('dggp')) {
+                	this.lt2_info.show(len < 1);
+                }else{
+                	if (!issfc) {
+    					this.lt2_info.show(len < (Y.C('-isdcgg') ? 3 : 2));
+    				}
+                }			
                 if (len > minVs) {
                     var type  = this.type.slice(minVs, len).join(',').split(','), first;//取出前面的n个方式
                     this.allType.each(function (lab, i){
@@ -1285,9 +1344,14 @@
             });
             ggTabs.onchange = function (a, b){
                 this.C('-isdcgg', b === 1);
-				if (!issfc) {
-					Y.lt2_info.html('请至少选择'+(b===1?3:2)+'场比赛进行投注。');
-					Y.lt2_info.show(curVsLen < (Y.C('-isdcgg') ? 3 : 2));				
+                if (this.C('dggp')) {
+					Y.lt2_info.html('请至少选择1场比赛进行投注。');
+					Y.lt2_info.show(curVsLen < 1);			
+				}else{
+					if (!issfc) {
+						Y.lt2_info.html('请至少选择'+(b===1?3:2)+'场比赛进行投注。');
+						Y.lt2_info.show(curVsLen < (Y.C('-isdcgg') ? 3 : 2));				
+					}	
 				}
                 allInputs.prop('checked', false);//清空过关方式
                 Y.setCurrentType(false);// 没有过关方式
@@ -1434,6 +1498,7 @@
 					this.C('optKeys', ['0','3']);
 					this.C('single_line', true, true);
 					this.C('spXml', 2);
+					this.C('dggp', this.get('#dggp').val() == '0');//单关固赔
 					break;
 				case 'sfc':
 					this.C('optKeys', ['01','02','03','04','05','06','11','12','13','14','15','16']);
