@@ -102,7 +102,7 @@ input[type="text"]:focus{border-color: rgb(255,113,0) !important}
 .m_l dd{width:150px;}
 .m_l a,.m_l1 a{color:#585858;margin-right: 10px; float: left;white-space: nowrap;line-height: 22px;position: relative;}
 .m_l a:hover{color: #e52e04}
-.m_l a i,.m_l1 a i,.top dl dd li p a i,.dc_qr a s{display:block;width:21px;height:17px;position:absolute;top:-7px;right:-17px;z-index:10;background:url(../images/bg/new.png) no-repeat;}
+.m_l a i,.m_l1 a i,.top dl dd li p a i,.dc_qr a s,.tzsontab span a i{display:block;width:21px;height:17px;position:absolute;top:-7px;right:-17px;z-index:10;background:url(../images/bg/new.png) no-repeat;}
 .m_l a i.hot,.m_l1 a i.hot,.top dl dd li p a i.hot{background-position: -42px 0;margin: 0;}
 .m_l a i.add,.m_l1 a i.add,.top dl dd li p a i.add{background-position: -21px 0;}
 .m_l li p{margin: 9px 0 10px;zoom: 1;}
@@ -1371,8 +1371,9 @@ a.jc_mtz:hover, a.jc_mhm:hover{background-position:-110px 0;text-decoration: non
 .touzcm p a:hover{color:#f00;text-decoration:underline}
 .tzsontab{height:30px;padding-top:8px;}
 .tzsontab span{float:left;padding-left:20px}
-.tzsontab span a{float:left;height:30px;line-height:30px;padding:0 18px;color:#444;}
+.tzsontab span a{float:left;height:30px;line-height:30px;padding:0 18px;color:#444;position: relative}
 .tzsontab span a.cur{border:1px solid #ccc;border-bottom:none;background:#fff}
+.tzsontab span a i{top:-2px;right:0;background-position:-64px 0}
 .tzsontab p{float:right;margin-right:20px;line-height:26px;color:#333}
 .tzsontab p em{color:#e52e04;font-weight:bold;font-family:Arial;margin:0 2px}
 .tzsontab p b,.br1{background:url("/images/cai888/jctop_06.jpg") 0 0 ;height:15px;width:15px;cursor:pointer;display:block;float:left;margin:5px 0 0 3px}
