@@ -58,13 +58,13 @@ h1,h2,h3,h4,h5,h6{font-size:100%}button,input,select,textarea{font-size:100%}inp
 .ssqbtn-handBtn{width:31%;float:left;line-height:2rem;text-align:center;color:#333;background:0;font-size:.875rem;border:1px solid #dcdcdc;background:#fff;font-weight:bold;margin:.69em 3% .5rem 0;border-radius:.2rem;-webkit-border-radius:.2rem;-moz-border-radius:.2rem}
 .ssqbtn span.ssqbtn-handBtn{margin-right:0}
 .ssqbtn .clearBtn{width:30%;text-align:left;padding-left:0.8%}
-.ssqNum{ border-top:1px solid #e4e4e4; border-bottom:1px solid #e4e4e4; background:#fff}
-.ssqtzNum{ position:relative; width:94%; margin-left:3%; padding:.75rem 0 .5rem 3%; border-bottom:1px solid #e6e6e6}
+.ssqNum{ border-top:1px solid #e4e4e4; border-bottom:1px solid #e4e4e4; background-color:#fff}
+.ssqtzNum{padding:.75rem 0 .5rem 3%;border-bottom:1px solid #e6e6e6;position:relative}
 .ssqtzNum:last-child{ border-bottom:none}
-.ssqtzNum span{ display:inline-block; font-size:.94rem; width:85%; line-height:1.2rem; color:#db150b; letter-spacing:.1rem}
+.ssqtzNum span{ display:inline-block;width:98%;font-size:.94rem;line-height:1.2rem; color:#db150b; letter-spacing:.1rem;word-wrap: break-word; word-break: normal;}
 .ssqtzNum span cite{ color:#106fe5; padding-left:.6rem}
 .ssqtzNum p{ color:#8e8e8e; font-size:.81rem; padding-top:.4rem}
-.ssqtzNum .errorBg{ position:absolute; padding:.5rem; right:.25rem; top:24%}
+.ssqtzNum .errorBg{padding:.5rem; right:.25rem; top:24%}
 .ssqtzNum .errorBg .error2{ display:block; width:1.06rem; height:1.06rem; background:url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACMAAAAjCAMAAAApB0NrAAAAQlBMVEUAAADc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nz////p6eno6Ojx8fHi4uLCn5nCAAAAEHRSTlMA8UL2iOjg0HwnFgYDhbm4g6GjowAAAPJJREFUOMuVlO0OgyAMRQtDxKmzgL7/qy5zlsuHCdv5ZcyJrZcWylj0+rKKlX2teqE7nmZgMJhnY8zuwSUPN5fKNHLLOOWKVnyH0pmCOlW9JE34So26ys3opWX8Nu5YOG4kd+aSmtl9lMewp5Y+Oa1QvEjB+yQZomWQQv5DvBRIw0KahSjSqfgg73UqBUkUFNu4lkQRNrKcS1CApTLjCAVZExcEn/4OkKqUVlJkK6WVLG21EmIlbcgH0VWSId0oIh2SM85rvxSRAs6LDM4duUQ8mnJ+sugOzE8+h/e4n+e5vxf9/ervaX/f+/fGX/dP/x57A/nLPBMWHWWgAAAAAElFTkSuQmCC") no-repeat center; background-size:1.06rem 1.06rem; -webkit-background-size:1.06rem 1.06rem; -moz-background-size:1.06rem 1.06rem}
 .ssqdouble{ line-height:1.875rem; background:#f2f2f2; border-top:1px solid #dcdcdc}
 .ssqdouble li{ float:left; padding:.375rem 3%; color:#444; border-right:1px solid #e4e4e4; width:43.7%}
