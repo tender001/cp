@@ -2997,7 +2997,8 @@ showlancai =function (lotid,expect,projid,type,codes,cp){
 					var gg = codes.split(";")[0].split("|")[2].replaceAll("\\*","串");
 					hhhtml += '</tbody>';
 					ggstr= '<font  class="cm_red">'+gg+'</font>';
-					$("#cp_guoguan").html(ggstr);
+					$("#cp_guoguan").html(ggstr.replace("1串1","单关").replace("1单关","11串1"));
+					
 					$("#buy_info").html(hhhtml);
 			}else{
 				var dzhtml = '<thead><tr class="tr1"><td >序号</td>';
@@ -3290,7 +3291,8 @@ showlancai =function (lotid,expect,projid,type,codes,cp){
 					html += '已上传 ';
 				}
 				html += ggstr;
-				$("#cp_guoguan").html(ggstr);
+				$("#cp_guoguan").html(ggstr.replace("1串1","单关").replace("1单关","11串1"));
+				projects.js
 //				html += Class.C("caststate") == 3 ? "&nbsp;&nbsp;<a href='javascript:void(0);' onclick=\'billcode(\""+lotid+"\",\""+projid+"\")\'>出票明细</a>" : "";
 				html += '</p>';
 				if(Class.C("caststate") == 3){
