@@ -91,9 +91,9 @@ $(document).ready(function(){
 		if(!!$("#findstr")){$("#findstr").val(cnickid);}
 		Class.C("findstr",cnickid);
 		if(Class.C("lotid") == '00'){
-			loadHotProj();
+			loadHotProj("select");
 		}else{
-			loadGameProj();
+			loadGameProj("select");
 		}
 	};
 	loadPeriod = function(){
@@ -192,8 +192,14 @@ $(document).ready(function(){
 	gopage = function(){
 		page($("#govalue").val());
 	};
-	loadGameProj = function(){
-		var data={gid:Class.C('lotid'), pid:Class.C("expect"), state:Class.C("state"), find:Class.C("findstr"), fsort:Class.C("fsort"), dsort:Class.C("dsort"), ps:Class.C("ps"), pn:Class.C("pn")};
+	loadGameProj = function(select){
+		var data="";
+		if(select){
+			data={gid:Class.C('lotid'), pid:Class.C("expect"), state:Class.C("state"), find:Class.C("findstr"), fsort:Class.C("fsort"), dsort:Class.C("dsort"), ps:15, pn:Class.C("pn")};
+		}else{
+			data={gid:Class.C('lotid'), pid:Class.C("expect"), state:Class.C("state"), find:Class.C("findstr"), fsort:Class.C("fsort"), dsort:Class.C("dsort"), ps:Class.C("ps"), pn:Class.C("pn")};
+		}
+		
 		$("#table_project_list tr[id]").remove();
 		$(".paginachange").html("");
 		Y.ajax({
@@ -266,67 +272,71 @@ $(document).ready(function(){
 //						for(var i = 1; i <= _pagei.pagesize-r.length;i++){
 //							$("#table_project_list").append("<tr id='"+(r.length + i)+"'><td colspan='9' align='center' >&nbsp;</td></tr>");
 //						}
-						
-						var maxshow=5;
-						
-						var pagehtml='<ul><li style="line-height:27px;color:#444;padding-right:10px">共'+_pagei.records+'条</li><li class="disabled PagedList-skipToFirst"  ><a onclick="page(1)"  href="javascript:void(0)" >首页</a></li>';
-						pagehtml += '<li class="PagedList-skipToNext"><a class="PagedList-skipToNext" title="上一页 " onclick="page('+(Class.C("pn")-1>0?(Class.C("pn")-1):1)+');" href="javascript:void(0)">上一页</a></li>';
-						
-						/*var pagehtml='<a class="disabled PagedList-skipToFirst" style="margin-right:5px" onclick="page(1)"  href="javascript:void(0)"">首页</A>';
-						pagehtml += '<a class="PagedList-skipToNext" style="margin-right:5px" title="上一页 " onclick="page('+(Class.C("pn")-1>0?(Class.C("pn")-1):1)+');" href="javascript:void(0)">上一页</A>';*/
-						var min=0;
-						var max=0;
-						var pn=Class.C("pn")*1;
-						if ( _pagei.tp > maxshow){
-						var pageTemp=parseInt(pn*1/maxshow);
-						max = pageTemp*maxshow+maxshow;
-						min = pageTemp*maxshow;
-						
-						if(max> _pagei.tp){
-						max= _pagei.tp;
-						}
-						if(pn>min){
-							min=min+1;
-						}
-
+						if(select){
+							
 						}else{
-						min = 1;
-						max = _pagei.tp;
-						}
-						var showpage=pn-maxshow>=0?((pn-maxshow)==0?1:(pn-maxshow)):maxshow
-						/*for (var i=min;i<max*1+1;i++){
-						if(min==pn && i==pn &&pageTemp>0){
-							pagehtml+='<a href="javascript:void(0);" id="tp'+i+'" class="a4" onclick="page('+showpage+');">' + i + '</a>';
-						}else if (i==pn){
-							pagehtml+='<a href="javascript:void(0);" id="tp'+i+'" class="a4" onclick="page('+i+');">' + i + '</a>';
-						} else{
-							pagehtml+='<a href="javascript:void(0);" id="tp'+i+'" class="a3" onclick="page('+i+');">' + i + '</a>';
-						}
-						}*/
-								
-								for (var i=min;i<max*1+1;i++){
-									if(min==pn && i==pn &&pageTemp>0){
-										pagehtml+='<li class="active"><a href="javascript:void(0);" id="tp'+i+'" class="a4" onclick="page('+showpage+');">' + i + '</a></li>';
-									}else if (i==pn){
-										pagehtml+='<li class="active"><a href="javascript:void(0);" id="tp'+i+'" class="a4" onclick="page('+i+');">' + i + '</a></li>';
+							var maxshow=5;
+							
+							var pagehtml='<ul><li style="line-height:27px;color:#444;padding-right:10px">共'+_pagei.records+'条</li><li class="disabled PagedList-skipToFirst"  ><a onclick="page(1)"  href="javascript:void(0)" >首页</a></li>';
+							pagehtml += '<li class="PagedList-skipToNext"><a class="PagedList-skipToNext" title="上一页 " onclick="page('+(Class.C("pn")-1>0?(Class.C("pn")-1):1)+');" href="javascript:void(0)">上一页</a></li>';
+							
+							/*var pagehtml='<a class="disabled PagedList-skipToFirst" style="margin-right:5px" onclick="page(1)"  href="javascript:void(0)"">首页</A>';
+							pagehtml += '<a class="PagedList-skipToNext" style="margin-right:5px" title="上一页 " onclick="page('+(Class.C("pn")-1>0?(Class.C("pn")-1):1)+');" href="javascript:void(0)">上一页</A>';*/
+							var min=0;
+							var max=0;
+							var pn=Class.C("pn")*1;
+							if ( _pagei.tp > maxshow){
+							var pageTemp=parseInt(pn*1/maxshow);
+							max = pageTemp*maxshow+maxshow;
+							min = pageTemp*maxshow;
+							
+							if(max> _pagei.tp){
+							max= _pagei.tp;
+							}
+							if(pn>min){
+								min=min+1;
+							}
 
-										
-			/*							pagehtml+='<a href="javascript:void(0);" id="tp'+i+'" class="a4" onclick="page('+i+');">' + i + '</a>';
-			*/						} else{
-										pagehtml+='<li><a href="javascript:void(0);" id="tp'+i+'" class="a3" onclick="page('+i+');">' + i + '</a></li>';
+							}else{
+							min = 1;
+							max = _pagei.tp;
+							}
+							var showpage=pn-maxshow>=0?((pn-maxshow)==0?1:(pn-maxshow)):maxshow
+							/*for (var i=min;i<max*1+1;i++){
+							if(min==pn && i==pn &&pageTemp>0){
+								pagehtml+='<a href="javascript:void(0);" id="tp'+i+'" class="a4" onclick="page('+showpage+');">' + i + '</a>';
+							}else if (i==pn){
+								pagehtml+='<a href="javascript:void(0);" id="tp'+i+'" class="a4" onclick="page('+i+');">' + i + '</a>';
+							} else{
+								pagehtml+='<a href="javascript:void(0);" id="tp'+i+'" class="a3" onclick="page('+i+');">' + i + '</a>';
+							}
+							}*/
+									
+									for (var i=min;i<max*1+1;i++){
+										if(min==pn && i==pn &&pageTemp>0){
+											pagehtml+='<li class="active"><a href="javascript:void(0);" id="tp'+i+'" class="a4" onclick="page('+showpage+');">' + i + '</a></li>';
+										}else if (i==pn){
+											pagehtml+='<li class="active"><a href="javascript:void(0);" id="tp'+i+'" class="a4" onclick="page('+i+');">' + i + '</a></li>';
 
-										
-			/*							pagehtml+='<a href="javascript:void(0);" id="tp'+i+'" class="a3" onclick="page('+i+');">' + i + '</a>';
-			*/						}
-									}
-						pagehtml+='<li class="PagedList-skipToNext"><a onclick="page('+(pn+1>_pagei.tp?_pagei.tp:(pn+1))+');"  href="javascript:void(0)">下一页</a></li>';
-						pagehtml+='<li class="disabled PagedList-skipToNext"><a onclick="page('+_pagei.tp+');" href="javascript:void(0)"> 尾页</a></li></ul>';
+											
+				/*							pagehtml+='<a href="javascript:void(0);" id="tp'+i+'" class="a4" onclick="page('+i+');">' + i + '</a>';
+				*/						} else{
+											pagehtml+='<li><a href="javascript:void(0);" id="tp'+i+'" class="a3" onclick="page('+i+');">' + i + '</a></li>';
+
+											
+				/*							pagehtml+='<a href="javascript:void(0);" id="tp'+i+'" class="a3" onclick="page('+i+');">' + i + '</a>';
+				*/						}
+										}
+							pagehtml+='<li class="PagedList-skipToNext"><a onclick="page('+(pn+1>_pagei.tp?_pagei.tp:(pn+1))+');"  href="javascript:void(0)">下一页</a></li>';
+							pagehtml+='<li class="disabled PagedList-skipToNext"><a onclick="page('+_pagei.tp+');" href="javascript:void(0)"> 尾页</a></li></ul>';
+							
+	/*						pagehtml+='<span class="gy">共'+_pagei.records+'条</span><a class="PagedList-skipToNext" style="margin-left:10px" onclick="page('+(pn+1>_pagei.tp?_pagei.tp:(pn+1))+');"  href="javascript:void(0)">下一页</a><a class="disabled PagedList-skipToFirst" style="margin-left:5px" onclick="page('+_pagei.tp+');" href="javascript:void(0)">尾页</a>';
+	*/					    $('.paginachange').html(pagehtml);
+							
+						  
+						    $("#govalue").val(pn);
+						}
 						
-/*						pagehtml+='<span class="gy">共'+_pagei.records+'条</span><a class="PagedList-skipToNext" style="margin-left:10px" onclick="page('+(pn+1>_pagei.tp?_pagei.tp:(pn+1))+');"  href="javascript:void(0)">下一页</a><a class="disabled PagedList-skipToFirst" style="margin-left:5px" onclick="page('+_pagei.tp+');" href="javascript:void(0)">尾页</a>';
-*/					    $('.paginachange').html(pagehtml);
-						
-					  
-					    $("#govalue").val(pn);
 					    
 					}else{
 						$("div.rig_hm_main").css('padding-bottom','0');
@@ -471,7 +481,7 @@ $(document).ready(function(){
 			}
 		});
 	};
-	loadHotProj = function(){
+	loadHotProj = function(select){
 		$("#table_project_list tr[id]").remove();
 		$("#table_project_list span").remove();
 		$("#table_project_list thead a").each(function(){
@@ -487,8 +497,9 @@ $(document).ready(function(){
 				data : {
 					find : Class.C("findstr"),
 					pn : Class.C("pn"),
-					ps : Class.C("ps")
+					ps : select?15:Class.C("ps")
 				},
+				
 				end : function(d) {
 					var obj = eval("(" + d.text + ")");
 					var rb = !!obj.Resp.row;
@@ -497,56 +508,112 @@ $(document).ready(function(){
 						var _pagei = obj.Resp.recordcount;
 						if(!this.isArray(r)){r=new Array(r);}
 						r.each(function(rt,o){
-							var gameid = rt.gid;
-							//var nickid = rt.nickid;
-							var idx = (o+1) + (Class.C("pn")-1)*Class.C("ps");
-							
-							var cl=o%2==0?"":"odd";
-							var html = '<tr id='+idx+' class = '+cl+'>';
-							html += '<td>';
-							if(rt.iorder > 0 && rt.jindu != 100 && idx <= 15){
-								html += '<img src="/images/index_93.gif" />';
-							}else{
-								html += idx;
-							}
-							html += '</td>';
-							if(rt.nickid=='******'){
-								html += '<th>******</th>';
-							}else{
-								html += '<th>' + $_sys.showzhanjiname(gameid,rt.nickid,'award') + '</th>';
-							}
-							
-							html += '<th class="tdmark">' + (($_sys.showzhanji(rt.aunum,rt.agnum)==''?'':$_sys.showzhanjii(gameid,rt.nickid,rt.aunum,rt.agnum))) + '</th>';
-							
-							html += '<td>' + $_sys.getlotname(gameid).split("-")[0] + '</td>';
-							if(rt.nickid=='******'){
-								html += '<td>******</td>';
-							}else{
-								html += '<td>' + parseFloat(rt.money).rmb(true) + '</td>';
-							}
-							html += '<td><p>' + rt.jindu + '%';
-							if(rt.pnum > 0){
-								html += '<font>(保' + Math.ceil(rt.pnum*100/rt.nums) + '%)</font>';
-							}
-							html += '</p> <p class="x_jdt"><em style="width: ' + rt.jindu + '%"></em></p></td>';
-							html += '<td><font>' + rt.lnum + '</font></td>';
-							if(rt.lnum == 0 || rt.state != 1){
-								if(rt.state > 2){
-									html += '<td>已撤单</td>';
-								}else if(rt.state == 2){
-									html += '<td>已满员</td>';
-								}else {
-									html += '<td></td>';
+							if(select){
+								if(o<15){
+									var gameid = rt.gid;
+									//var nickid = rt.nickid;
+									var idx = (o+1) + (Class.C("pn")-1)*Class.C("ps");
+									
+									var cl=o%2==0?"":"odd";
+									var html = '<tr id='+idx+' class = '+cl+'>';
+									html += '<td>';
+									if(rt.iorder > 0 && rt.jindu != 100 && idx <= 15){
+										html += '<img src="/images/index_93.gif" />';
+									}else{
+										html += idx;
+									}
+									html += '</td>';
+									if(rt.nickid=='******'){
+										html += '<th>******</th>';
+									}else{
+										html += '<th>' + $_sys.showzhanjiname(gameid,rt.nickid,'award') + '</th>';
+									}
+									
+									html += '<th class="tdmark">' + (($_sys.showzhanji(rt.aunum,rt.agnum)==''?'':$_sys.showzhanjii(gameid,rt.nickid,rt.aunum,rt.agnum))) + '</th>';
+									
+									html += '<td>' + $_sys.getlotname(gameid).split("-")[0] + '</td>';
+									if(rt.nickid=='******'){
+										html += '<td>******</td>';
+									}else{
+										html += '<td>' + parseFloat(rt.money).rmb(true) + '</td>';
+									}
+									html += '<td><p>' + rt.jindu + '%';
+									if(rt.pnum > 0){
+										html += '<font>(保' + Math.ceil(rt.pnum*100/rt.nums) + '%)</font>';
+									}
+									html += '</p> <p class="x_jdt"><em style="width: ' + rt.jindu + '%"></em></p></td>';
+									html += '<td><font>' + rt.lnum + '</font></td>';
+									if(rt.lnum == 0 || rt.state != 1){
+										if(rt.state > 2){
+											html += '<td>已撤单</td>';
+										}else if(rt.state == 2){
+											html += '<td>已满员</td>';
+										}else {
+											html += '<td></td>';
+										}
+									}else{
+										html += '<td><div><input type="text" value="1" id="rengou_' + idx + '" /><a href="javascript:void(0);"><img src="/images/index_110.gif" class="gm" onclick="rengou(\''+gameid+'\',\''+rt.hid+'\',\'rengou_' + idx +'\',\''+rt.lnum+'\')"/></a></div></td>';//lotid,projid,id,lnum
+									}
+									if(rt.nickid=='******'){
+										html += '<td>--</td>';
+									}else{
+										html += '<td><a href="' + $_sys.getlotdir(gameid)+$_sys.url.viewpath+'?lotid='+gameid+'&projid='+rt.hid + '" target="_blank">详情</a></td>';
+									}html += '</tr>';
+									$(html).appendTo($("#table_project_list"));
 								}
 							}else{
-								html += '<td><div><input type="text" value="1" id="rengou_' + idx + '" /><a href="javascript:void(0);"><img src="/images/index_110.gif" class="gm" onclick="rengou(\''+gameid+'\',\''+rt.hid+'\',\'rengou_' + idx +'\',\''+rt.lnum+'\')"/></a></div></td>';//lotid,projid,id,lnum
+								var gameid = rt.gid;
+								//var nickid = rt.nickid;
+								var idx = (o+1) + (Class.C("pn")-1)*Class.C("ps");
+								
+								var cl=o%2==0?"":"odd";
+								var html = '<tr id='+idx+' class = '+cl+'>';
+								html += '<td>';
+								if(rt.iorder > 0 && rt.jindu != 100 && idx <= 15){
+									html += '<img src="/images/index_93.gif" />';
+								}else{
+									html += idx;
+								}
+								html += '</td>';
+								if(rt.nickid=='******'){
+									html += '<th>******</th>';
+								}else{
+									html += '<th>' + $_sys.showzhanjiname(gameid,rt.nickid,'award') + '</th>';
+								}
+								
+								html += '<th class="tdmark">' + (($_sys.showzhanji(rt.aunum,rt.agnum)==''?'':$_sys.showzhanjii(gameid,rt.nickid,rt.aunum,rt.agnum))) + '</th>';
+								
+								html += '<td>' + $_sys.getlotname(gameid).split("-")[0] + '</td>';
+								if(rt.nickid=='******'){
+									html += '<td>******</td>';
+								}else{
+									html += '<td>' + parseFloat(rt.money).rmb(true) + '</td>';
+								}
+								html += '<td><p>' + rt.jindu + '%';
+								if(rt.pnum > 0){
+									html += '<font>(保' + Math.ceil(rt.pnum*100/rt.nums) + '%)</font>';
+								}
+								html += '</p> <p class="x_jdt"><em style="width: ' + rt.jindu + '%"></em></p></td>';
+								html += '<td><font>' + rt.lnum + '</font></td>';
+								if(rt.lnum == 0 || rt.state != 1){
+									if(rt.state > 2){
+										html += '<td>已撤单</td>';
+									}else if(rt.state == 2){
+										html += '<td>已满员</td>';
+									}else {
+										html += '<td></td>';
+									}
+								}else{
+									html += '<td><div><input type="text" value="1" id="rengou_' + idx + '" /><a href="javascript:void(0);"><img src="/images/index_110.gif" class="gm" onclick="rengou(\''+gameid+'\',\''+rt.hid+'\',\'rengou_' + idx +'\',\''+rt.lnum+'\')"/></a></div></td>';//lotid,projid,id,lnum
+								}
+								if(rt.nickid=='******'){
+									html += '<td>--</td>';
+								}else{
+									html += '<td><a href="' + $_sys.getlotdir(gameid)+$_sys.url.viewpath+'?lotid='+gameid+'&projid='+rt.hid + '" target="_blank">详情</a></td>';
+								}html += '</tr>';
+								$(html).appendTo($("#table_project_list"));
 							}
-							if(rt.nickid=='******'){
-								html += '<td>--</td>';
-							}else{
-								html += '<td><a href="' + $_sys.getlotdir(gameid)+$_sys.url.viewpath+'?lotid='+gameid+'&projid='+rt.hid + '" target="_blank">详情</a></td>';
-							}html += '</tr>';
-							$(html).appendTo($("#table_project_list"));
+							
 						});
 						
 						var maxshow=5;
