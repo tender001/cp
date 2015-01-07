@@ -610,8 +610,12 @@ function betconfirm(rnd){
 	    		html+='<div class="ssqtzNum"><cite class="errorBg"><em class=""></em></cite>'
     		    	+'<span class="revise_ww"><span>'
 //	    		
+    		    	if(varString.split(';')[i].split("|").length > 1){
+    		    		html +="<em>"+varString.split(';')[i].split("|")[0].replaceAll(","," ")+"</em><cite>"+varString.split(';')[i].split("|")[1].replaceAll(","," ")+"</cite>";
+    		    	}else{
+    		    		html += varString.split(';')[i];
+    		    	}
             	
-            	html += varString.split(';')[i];
 //            	if (i < varString.split(';').length - 1){
 //                	html += "<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
 //            	}
@@ -621,7 +625,9 @@ function betconfirm(rnd){
 	    	}
 	    	
 	    }else{
-	    	
+	    	if(varString.split("|").length > 1){
+	    		varString="<em>"+varString.split("|")[0].replaceAll(","," ")+"</em><cite>"+varString.split("|")[1].replaceAll(","," ")+"</cite>";
+	    	}
 	    	html='<div class="ssqtzNum"><cite class="errorBg"></em></cite>'
     		html +='<span class="revise_ww"><span>'+varString+'</span>'
         	html +="<p>" + (tID < 26 || tID == 27 ? "普通投注" : tID == 26 ? gameName_pl3[playtype] : tID == 44 ? gameName_3D[playtype] : tID == 56 ? gameName_36s7[playtype - 1] : tID == 115 || tID == 119 ? gameName_11s5[playtype] : tID == 116 ? gameName_happyten[playtype] : tID == 118 ? gameName_happy8[playtype] : gameName_ssc[playtype]) + (isadd && tID == 118 ? "[快乐飞盘]" : isadd ? "[追加]" : "") + "</p>";
