@@ -254,10 +254,20 @@ var changdiv=function(divnum){
 			        }  
 				});
 					
-				if(bankid==20){
+				if(bankid==20 || bankid==15|| bankid==4|| bankid==22|| bankid==3|| bankid==16|| bankid==17|| bankid==18|| bankid==7){
 //					 bankid = "8";
-//					 banktype = "CIB";
+//					
 					 bconfig= "1";
+					 
+				}
+				if(bankid==15){
+					 banktype = "CEB";
+				 }
+				if(bankid==18){
+					banktype = "BOC";
+				}
+				if(bankid==22){
+					banktype = "POST";
 				}
 						Y.get("#bankid").val(bconfig);
 						Y.get("#bid").val(bankid);
