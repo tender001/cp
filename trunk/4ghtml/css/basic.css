@@ -61,7 +61,7 @@ h1,h2,h3,h4,h5,h6{font-size:100%}button,input,select,textarea{font-size:100%}inp
 .ssqNum{ border-top:1px solid #e4e4e4; border-bottom:1px solid #e4e4e4; background-color:#fff}
 .ssqtzNum{padding:.75rem 0 .5rem 3%;border-bottom:1px solid #e6e6e6;position:relative}
 .ssqtzNum:last-child{ border-bottom:none}
-.ssqtzNum span{ display:inline-block;width:98%;font-size:.94rem;line-height:1.2rem; color:#db150b; letter-spacing:.1rem;word-wrap: break-word; word-break: normal;}
+.ssqtzNum span{ display:inline-block;width:98%;font-size:.94rem;line-height:1.2rem; color:#db150b; letter-spacing:.1rem;word-wrap: break-word;word-break: normal}
 .ssqtzNum span cite{ color:#106fe5; padding-left:.6rem}
 .ssqtzNum p{ color:#8e8e8e; font-size:.81rem; padding-top:.4rem}
 .ssqtzNum .errorBg{padding:.5rem; right:.25rem; top:24%}
