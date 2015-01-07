@@ -8,7 +8,7 @@
 .img-list{width: 100%;height: auto;}
 .img-list-body img{width:100%;max-height:220px;}
 .slide-container .slide-wrapper img{width: 100%;height:100%;max-height:114px}
-.es-pager{position: absolute;left:45%;bottom:4px}
+.es-pager{position: absolute;left:48%;bottom:4px}
 .es-pager li{display:inline-block;width: 8px;height: 8px;margin:0 3px;background-color:#fff;border-radius: 8px}
 .es-pager .act{background-color: rgba(255,85,1,0.8)}
 .app-notice{height:2.4em;overflow: hidden}
@@ -39,6 +39,7 @@
 .tz-2cai ul{padding:0.5em 0;border-top: 1px solid #e2e2e2}
 .tz-2cai ul:after{display: table;content: "";clear: both}
 .tz-2cai ul li{float:left;width:49.5%}
+.tz-2cai ul li a{display: table;width: 99%}
 .tz-2cai-first{border-right: 1px solid #eee}
 .tz-2cai-first .caipiao-tit em{color:#fe0000}
 .tz-2cai-second .caipiao-tit em{color:#0089d0}
