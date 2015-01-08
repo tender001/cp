@@ -30,9 +30,9 @@ function Getsqq(result){
 		    	
 		    	   showMS("恭喜您成功领取一注双色球");
 		       }else if(code=="3"){
-		    	  showMS("实名后系统赠送一注双色球");
-		       }else if(code=="4"){
-		    	   showMS("绑定手机后系统赠送一注双色球");
+		    	  showMS("请先绑定您的身份证","/account/sminfo.html");
+		       }else if(code=="2"){
+		    	   showMS("请先绑定您的手机号","/account/mobile.html");
 		       }else{
 		    	   showMS(desc);
 		       }
@@ -53,8 +53,13 @@ var  autoScroll=function() {
 }
 
 //设置提示窗口
-function showMS(ms,fn) {
-    $("#divshowprebuy").html("<div class=\"alert\"><div class=\"alert-tips\"><h2>温馨提示</h2><p>" + ms + "</p><div class=\"alert-btn\" onclick='showBuyMini(2)'>确定</div></div></div>");
+function showMS(ms,url) {
+    if(url){
+    	$("#divshowprebuy").html("<div class=\"alert\"><div class=\"alert-tips\"><h2>温馨提示</h2><p>" + ms + "</p><div class=\"alert-btn\" onclick='showBuyMini(2,\""+url+"\")'>确定</div></div></div>");
+    }else{
+    	$("#divshowprebuy").html("<div class=\"alert\"><div class=\"alert-tips\"><h2>温馨提示</h2><p>" + ms + "</p><div class=\"alert-btn\" onclick='showBuyMini(2)'>确定</div></div></div>");
+    }
+	
 //    $("#divshowprebuy").css({
 //        "top": ($(window).height() / 4 + $(window).scrollTop()) + "px",
 //        'left': "0px",
@@ -69,14 +74,14 @@ function showMS(ms,fn) {
     $('.overlay').css({ 'height': ($("body").height()) + 'px', 'left': '0px', 'top': '0px', 'width': '100%', 'display': 'block', 'position': 'absolute' }).show();
     showBuyMini(1);
     setTimeout(function() { showBuyMini(2); }, (6 * 1000));
-    if(fn != null && fn != undefined){
-    	fn.call(this);
-    }
+//    if(fn != null && fn != undefined){
+//    	fn.call(this);
+//    }
 }
 
 
 //是否显示提示窗口
-function showBuyMini(kind) {
+function showBuyMini(kind,url) {
     if (kind == 1) {
         $("#divshowprebuy").show();
         $("#divDisable").css({
@@ -93,5 +98,9 @@ function showBuyMini(kind) {
         $("#divDisable").hide();
         $("#divshowprebuy").html("");
         $('.overlay').hide();
+        if(url){
+        	location.href=url;
+        }
+        
     }
 }
