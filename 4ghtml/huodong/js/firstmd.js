@@ -28,7 +28,7 @@ function Getsqq(result){
 	    	  
 		       if(code== "0"){
 		    	
-		    	   showMS("恭喜您成功领取一注双色球");
+		    	   showMS("恭喜您成功领取一注双色球",0);
 		       }else if(code=="3"){
 		    	  showMS("请先绑定您的身份证","/account/sminfo.html");
 		       }else if(code=="2"){
@@ -54,7 +54,11 @@ var  autoScroll=function() {
 
 //设置提示窗口
 function showMS(ms,url) {
-    if(url){
+    if(url==0){
+    	$("#divshowprebuy").html("<div class=\"alert\"><div class=\"alert-tips\"><h2>温馨提示</h2><p>" + ms + "</p><div class=\"alert-btn\" ><span onclick='location.href=/account/'>查看</span><span onclick='goindex()'>购彩</span></div></div></div>");
+//    	<div class="alert-btn"><span>确定</span><span>取消</span></div>
+    }
+	if(url){
     	$("#divshowprebuy").html("<div class=\"alert\"><div class=\"alert-tips\"><h2>温馨提示</h2><p>" + ms + "</p><div class=\"alert-btn\" onclick='showBuyMini(2,\""+url+"\")'>确定</div></div></div>");
     }else{
     	$("#divshowprebuy").html("<div class=\"alert\"><div class=\"alert-tips\"><h2>温馨提示</h2><p>" + ms + "</p><div class=\"alert-btn\" onclick='showBuyMini(2)'>确定</div></div></div>");
@@ -73,12 +77,14 @@ function showMS(ms,url) {
     
     $('.overlay').css({ 'height': ($("body").height()) + 'px', 'left': '0px', 'top': '0px', 'width': '100%', 'display': 'block', 'position': 'absolute' }).show();
     showBuyMini(1);
-    setTimeout(function() { showBuyMini(2); }, (6 * 1000));
+//    setTimeout(function() { showBuyMini(2); }, (6 * 1000));
 //    if(fn != null && fn != undefined){
 //    	fn.call(this);
 //    }
 }
-
+function goindex(){
+	location.href="/";
+}
 
 //是否显示提示窗口
 function showBuyMini(kind,url) {
@@ -98,7 +104,7 @@ function showBuyMini(kind,url) {
         $("#divDisable").hide();
         $("#divshowprebuy").html("");
         $('.overlay').hide();
-        if(url){
+        if(url&&url!=0){
         	location.href=url;
         }
         
