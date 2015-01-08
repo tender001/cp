@@ -594,18 +594,12 @@ a.hmTxt2{ display:block; color:#606060; padding-right:1.4rem; position:relative}
 .hd-detail h2{width:100%;height:1.4em;font-size: 1.25em;overflow: hidden}
 .hd-detail p{color: #666;font-size: 1.1em;max-height: 3em;overflow: hidden}
 .hd-detail a{display:block;width: 96%;margin-top:0.2em;padding:0.15em 0;font-size:1.5em;text-align:center;color:#fff;background-color: #f9cc05;background-image:-webkit-linear-gradient(top,#f9cc05,#ca6602);box-shadow:0 1px 4px rgba(0,0,0,0.5)}
-
-
-
 .firstmd-bg,.firstmd-bg body{background-color: #e05220}
 .firstmd-top{position: relative}
 .firstmd-top img{width: 100%;max-height: 600px}
 .firstmd-nav{height:1.3em;line-height:1.6em;padding:0.6em 0 0.6em 2%;font-size: 1.2em;color:#fff;background-color: #e01212;overflow: hidden}
 .firstmd-nav em{padding:0 4px;color: #ffde00}
 .firstmd-detail{padding: 15px 2% 3em}
-.firstmd-detail h2{width:4.1em;padding:0.2em 0.8em;font-size: 1.45em;color:rgba(254,223,151,0.8);border:2px solid #fedf97;border-radius:2em;background-color: #e1653c}
+.firstmd-detail h2{width:4.2em;padding:0.2em 0.8em;font-size: 1.45em;color:rgba(254,223,151,0.8);border:2px solid #fedf97;border-radius:1em;background-color: #e1653c}
 .firstmd-detail .md-detail{padding-left: 2.2em;font-size: 1.15em;color: #fff}
 .firstmd-detail .md-detail p{padding-top: 0.4em;text-indent: -2em}
-
-
-
