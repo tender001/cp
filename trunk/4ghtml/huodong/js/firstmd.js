@@ -46,7 +46,7 @@ var  autoScroll=function() {
     function() {
         var i = $(this);
         i.css("margin-top", 0),
-        i.find("p").eq(0).appendTo(i.find("div"))
+        i.find("p").eq(0).appendTo(i.find("nav"))
     })
 }
 
