@@ -52,7 +52,7 @@ h1,h2,h3,h4,h5,h6{font-size:100%}button,input,select,textarea{font-size:100%}inp
 .alert-login .btn{width: 83%;line-height:1.3em}
 .alert-login-more{width:83%;margin:0 auto !important;text-align: left}
 .alert-login-more a{color: #999}
-.alert-login-more .miss{float: right;color: #f40}
+.alert-login-more .miss{float: right;color: #f40;font-size: 1.13em}
 /*投注footer*/
 .ssqbtn{width:95%;margin:0 auto}
 .ssqbtn-handBtn{width:31%;float:left;line-height:2rem;text-align:center;color:#333;background:0;font-size:.875rem;border:1px solid #dcdcdc;background:#fff;font-weight:bold;margin:.69em 3% .5rem 0;border-radius:.2rem;-webkit-border-radius:.2rem;-moz-border-radius:.2rem}
