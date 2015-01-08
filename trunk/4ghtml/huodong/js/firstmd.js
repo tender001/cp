@@ -1,5 +1,7 @@
 $(document).ready(function(){
-	autoScroll();
+	setInterval(function() {
+        autoScroll()
+    },4e3);
 	$("#getSSQ").click(function(){
 		chklogin(function(d){
 			if (d.Resp.code == 0) {
@@ -46,7 +48,7 @@ var  autoScroll=function() {
     function() {
         var i = $(this);
         i.css("margin-top", 0),
-        i.find("p").eq(0).appendTo(i.find("nav"))
+        i.find("p").eq(0).appendTo(i.find("div"))
     })
 }
 
