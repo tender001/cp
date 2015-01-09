@@ -425,7 +425,6 @@ public class TradeBeanStub {
 							FileCastCodeUtil.saveCastCodeToFile(bean, BASE_PATH);// 生成文件
 						}
 						CountCodeUtil.checkCodeCount(gid, bean, jcn);
-
 						if (bean.getBusiErrCode() == 0) {
 							int ret = JdbcSqlMapping.executeUpdate("t_proj_cast", bean, maps, jcn);
 							if (ret == 0) {
@@ -850,6 +849,207 @@ public class TradeBeanStub {
 						logger.info("后上传文件   游戏=" + gid + " 期次=" + pid + " 文件=" + bean.getCodes() + " 不存在  npid=" + npid);
 						bean.setBusiErrCode(7);
 						bean.setBusiErrDesc("上传的文件不存在 " + bean.getCodes());
+					}
+				} else {
+					bean.setBusiErrCode(TradeErrCode.ERR_EXCEPTION);
+					bean.setBusiErrDesc("合买方案不存在 方案号(" + bean.getHid() + ")");
+				}
+
+			}
+
+		} catch (Exception e) {
+			bean.setBusiErrCode(TradeErrCode.ERR_EXCEPTION);
+			bean.setBusiErrDesc(TradeErrCode.getErrDesc(bean.getBusiErrCode()) + ":" + e.getMessage());
+			logger.error("TradeBeanStub::proj_upload", e);
+		} finally {
+			if (jcn != null) {
+				jcn.unlock();
+			}
+		}
+
+	}
+	
+	/**
+	 * 方案上传
+	 * 
+	 * @param bean
+	 * @param pool
+	 * @param tid
+	 */
+	public void proj_hx(TradeBean bean, ServiceContext context) {
+		JdbcConnect jcn = null;
+		try {
+			jcn = context.getJdbcPoolManager().getJdbcConnect();
+
+			String gid = bean.getGid();
+			String npid = bean.getPid();
+
+			HashMap<String, String> maps = new HashMap<String, String>();
+			maps.put("gameid", bean.getGid());
+			maps.put("gid", bean.getGid());
+
+			bean.check(TradeBean.UPLOAD);
+			if (bean.getBusiErrCode() == 0) {
+				JdbcRecordSet jrs = JdbcSqlMapping.executeQuery("t_query_pinfo", bean, maps, jcn);
+				if (jrs != null && jrs.size() > 0) {
+					jrs.first();
+					
+					String pid = jrs.get("periodid");
+					String play = jrs.get("play");
+					int mulity = jrs.getInt("mulity");
+					int tmoney = jrs.getInt("tmoney");
+					String codes = bean.getCodes();
+
+					if (!gid.equalsIgnoreCase("50")) {
+						play = "1";
+					}
+
+					if (!CheckUtil.isNullString(codes)) {
+						if (CheckUtil.isNullString(npid)) {
+							codes = FileCastCodeUtil.getCodesFromFile(bean.getGid(), pid, BASE_PATH, codes, play, logger);
+						} else {
+							codes = FileCastCodeUtil.getCodesFromFile(bean.getGid(), npid, BASE_PATH, codes, play, logger);
+						}
+					}
+
+					if (!CheckUtil.isNullString(codes)) {
+						GamePluginAdapter plugin = GamePluginManager.getDefaultPluginManager().getGamePlugin(gid);
+
+						String [] tmp = StringUtil.splitter(codes, ";");
+						int money = 0;
+						boolean hasSXL = false;
+						if (GameContains.isBeiDan(gid) || GameContains.isFootball(gid) || GameContains.isBasket(gid) || GameContains.isGYJ(gid)) {
+							
+							HashMap<String, Integer> cnums = new HashMap<String, Integer>();
+							for(int i = 0; i < tmp.length; i++){
+								String key = tmp[i];
+								if(!StringUtil.isEmpty(key)){
+									Integer val = cnums.get(key);
+									int _val = (val == null ? 0 : val.intValue()) + 1;
+									cnums.put(key, _val);
+								}
+							}
+							
+							int size = 0;
+							JXmlWapper xml = mcm.getMatchXml(gid, bean.getPid());
+							String endTime = "";
+							String matches = "";
+							String awardMatch = "";
+							HashMap<String, Long> cvals = new HashMap<String, Long>();
+							for (Iterator<String> keys = cnums.keySet().iterator(); keys.hasNext();) {
+								String key = keys.next();
+								int mul = cnums.get(key);
+								GameCastCode gcc = plugin.parseGameCastCode(key);
+								matches += gcc.getMatchID();
+								money += gcc.getCastMoney() * mul;
+								size += gcc.getCombineNum();
+								
+								if(gcc.getItems() != null){
+									for(Object obj : gcc.getItems()){
+										String itemid = obj instanceof JcItemBean ? ((JcItemBean)obj).getItemid() : ((LqItemBean)obj).getItemid();
+										long _code = obj instanceof JcItemBean ? ((JcItemBean)obj).getCode() : ((LqItemBean)obj).getCode();
+										Long lcode = cvals.get(itemid);
+										long lc = (lcode == null ? 0 : lcode.longValue()) | _code;
+										cvals.put(itemid, lc);
+									}
+								}
+							}
+							cnums.clear(); cnums = null;
+							checkItem(gid, xml, cvals);
+							cvals.clear(); cvals = null;
+
+							List<String> lst = new ArrayList<String>();
+							String[] ss = StringUtil.splitter(matches, ",");
+							for (int i = 0; i < ss.length; i++) {
+								if (!lst.contains(ss[i])) {
+									lst.add(ss[i]);
+								}
+							}
+							matches = ",";
+							for (int i = 0; i < lst.size(); i++) {
+								matches += lst.get(i) + ",";
+							}
+							endTime = mcm.getMatchMinEndTime(gid, pid, matches);
+							Date d = DateUtil.parserDateTime(endTime);
+							awardMatch = mcm.getMatchMax(gid, pid, matches);
+							if (GameContains.isFootball(gid)) {
+								long l = d.getTime();
+								endTime = DateUtil.getDateTime(l);
+								try {
+									CountCodeUtil.jc(size, 1, endTime);
+								} catch (Exception e) {
+									bean.setBusiErrCode(-1);
+									bean.setBusiErrDesc(e.getMessage());
+								}
+							} else if (GameContains.isBasket(gid)) {
+								long l = d.getTime();
+								endTime = DateUtil.getDateTime(l);
+							} else {
+								long l = d.getTime() - 1000 * 60 * 10;
+								endTime = DateUtil.getDateTime(l);
+							}
+
+							endTime = getSpecialTimeRange(gid, endTime);
+							bean.setEndTime(endTime);
+							bean.setZid(matches);
+							bean.setAwardMatch(awardMatch);
+							logger.info("后上传文件   游戏=" + gid + " 期次=" + pid + " 文件=" + bean.getCodes() + " 截止时间=" + endTime + " 选择场次=" + matches);
+						} else {
+							for (int i = 0; i < tmp.length; i++) {
+								if(!StringUtil.isEmpty(tmp[i])){
+									GameCastCode gcc = plugin.parseGameCastCode(tmp[i]);
+									money += gcc.getCastMoney();
+									if("50".equals(gid) && gcc.getPlayMethod() == GamePlugin_50.PM_SXL){
+										hasSXL = true;
+									}
+								}
+							}
+						}
+
+						bean.setMoney(tmoney);
+						if (CheckUtil.isNullString(npid)) {
+							bean.setPid(pid);
+						} else {
+							bean.setPid(npid);
+						}
+						if(hasSXL && "2013053".compareTo(bean.getPid()) < 0){
+							throw new Exception("自2013年5月11日20:00起(第2013053期销售截止后)，停止销售中国体育彩票超级大乐透[生肖乐]附加玩法");
+						}
+						bean.setFflag(0);
+
+						CountCodeUtil.checkCodeCount(gid, bean, jcn);
+						if (bean.getBusiErrCode() == 0) {
+							if (bean.getCodes().length() >= 1900) {
+								FileCastCodeUtil.saveCastCodeToFile(bean, BASE_PATH);// 生成文件
+							}
+						}
+
+						if (bean.getBusiErrCode() == 0) {
+							bean.setMoney(money);
+
+							if (money * mulity == tmoney) {
+								int ret = JdbcSqlMapping.executeUpdate("t_proj_hx", bean, maps, jcn);
+								if (ret != 0) {
+									bean.setBusiErrCode(TradeErrCode.ERR_CALL_SP);
+									bean.setBusiErrDesc(TradeErrCode.getErrDesc(bean.getBusiErrCode()));
+								}else{
+									if(bean.getBusiErrCode() == 0){
+										try {
+											saveProjMatchFile(bean, logger);
+										} catch (Exception e) {
+											logger.error("生成方案对阵", e);
+										}
+									}
+								}
+							} else {
+								bean.setBusiErrCode(6);
+								bean.setBusiErrDesc("上传方案中金额和发起金额不同");
+							}
+						}
+					} else {
+						logger.info("后选方案   游戏=" + gid + " 期次=" + pid + " 号码=" + bean.getCodes() + " 不存在  npid=" + npid);
+						bean.setBusiErrCode(7);
+						bean.setBusiErrDesc("没有选择方案不存在 " + bean.getCodes());
 					}
 				} else {
 					bean.setBusiErrCode(TradeErrCode.ERR_EXCEPTION);
