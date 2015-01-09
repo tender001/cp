@@ -94,7 +94,17 @@ function closeLogin() {
 }
 //检查是否登录
 function chklogin(t) {
-   $.ajax({
+	var n=$("#app_xz");
+	if(Storage.Get("Firstopen_cookie")){
+		n.hide();
+	}else{
+		setTimeout(function() {n.addClass("cue")}, 4000);
+		Storage.Set("Firstopen_cookie",1,60*24*30);
+		
+	}
+	
+	
+	$.ajax({
        url: $_user.url.checklogin,
        dataType:'json',
        success:function (d){
