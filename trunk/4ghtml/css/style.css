@@ -560,7 +560,7 @@ a.hmTxt2{ display:block; color:#606060; padding-right:1.4rem; position:relative}
 .eday-kj-money .eday-money{padding:0.1em 0 0.13em;font-size: 3.5em;text-align: center}
 .eday-login{line-height:2.0;padding:0.5em 2%;font-size: 1.14em;border-top: 1px solid rgba(255,255,255,0.2);background-color: #eb4f38}
 .eday-login:after{display: table;content: "";clear: both}
-.eday-login .login{line-height:1.7em;padding:3px 4px;color:rgba(255,255,255,0.6);border: 0.12em solid rgba(255,255,255,0.6);border-radius: 4px}
+.eday-login .login{float:right;line-height:1.7em;padding:3px 4px;color:rgba(255,255,255,0.6);border: 0.12em solid rgba(255,255,255,0.6);border-radius: 4px}
 .eday-partake-bg{margin-bottom:2em;padding:0 8px;background-color: #eee}
 .eday-partake{width: 100%;font-size: 1.14em;border-collapse:separate;background-color: #eee}
 .eday-partake tr{}
