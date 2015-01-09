@@ -14,7 +14,8 @@ h1,h2,h3,h4,h5,h6{font-size:100%}button,input,select,textarea{font-size:100%}inp
 .fixed{position:fixed;bottom:0;left:0;z-index:99;width:100%}
 .more{float: right;color: #999}
 /*@media screen and (-webkit-min-device-pixel-ratio:0){input{line-height:normal !important}}*/
-.slide{display:table;width:100%;height:auto;overflow:hidden}
+.slide img{-webkit-transition: height 0.3s linear;-moz-transition: height 0.3s linear;-o-transition: height 0.3s linear;transition: height 0.3s linear;}
+.cue img{height:0}
 .top-mar{margin-top:2.6rem;padding: 10px 0;font-size: 1.14em;background-color: #f1f1f1;}
 .top-margin{margin-top:2.75rem;}.marbottom0{margin-bottom: 0 !important}
 .rightArrow,.hmArrow{position:absolute;width:.45rem;height:.45rem;background:#fff;right:1rem;top:2rem;border-bottom:.16rem solid #ccc;border-right:.16rem solid #ccc;transform:rotate(-45deg);-webkit-transform:rotate(-45deg);-moz-transform:rotate(-45deg)}
