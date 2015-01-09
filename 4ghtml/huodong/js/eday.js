@@ -37,11 +37,13 @@ function show(){
 function logoutinfo(){
 	$(".eday-login").show();
 	edaylist(false);
+//	$('.eday-money').html("天天领钱");
 }
 function edaylist(isLogin){
 	var html="";
+	var url=isLogin?'/phpu/q.phpx?fid=ttfq_list':'/phpt/q.phpx?func=ttfq_list_ncl';
 	$.ajax({
-	    url:'/phpu/q.phpx?fid=ttfq_list',
+	    url:url,
 	    type : "POST",
 		dataType : "json",
 	    success :function (xml){
@@ -49,7 +51,7 @@ function edaylist(isLogin){
 			var code = R.code;
 			var desc = R.desc;
 	        if(code== "0"){
-	        	var rs = xml.Resp.row;
+	        	var rs = isLogin?xml.Resp.row:xml.Resp.rows.row;
 	        	if(!isArray(rs)){rs = new Array(rs);}
 				$.each(rs, function(o,r){
 
@@ -66,8 +68,12 @@ function edaylist(isLogin){
 					var day=cendtime.substring(5,10);
 					
 					var today=new Date();
-					if(today.getDay==(day.substr(3,2)*1)){
+					if(today.getDate()==(day.substr(3,2)*1)){
 						day="今天"
+					}else if(today.getDate()-(day.substr(3,2)*1)==1){
+						day="昨天"
+					}else if(today.getDate()-(day.substr(3,2)*1)==2){
+						day="前天"
 					}
 					ibonus=(ibonus==""&&iaward==0)?'<td class="kj-time" onclick="showinfo('+cttid+')"><p>'+cawardtime+'</p>开奖</td>':'<td onclick="showinfo('+cttid+')">'+ibonus+'元</td>';
 					var join="";
