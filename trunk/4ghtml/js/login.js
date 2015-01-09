@@ -92,17 +92,11 @@ function closeLogin() {
     $('.overlay').hide();
     $('#Login_Panel').slideUp('fast');
 }
+
+
 //检查是否登录
+
 function chklogin(t) {
-	var n=$("#app_xz");
-	if(Storage.Get("Firstopen_cookie")){
-		n.hide();
-	}else{
-		setTimeout(function() {n.addClass("cue")}, 4000);
-		Storage.Set("Firstopen_cookie",1,60*24*30);
-		
-	}
-	
 	
 	$.ajax({
        url: $_user.url.checklogin,
