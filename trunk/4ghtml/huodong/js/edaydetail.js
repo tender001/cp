@@ -11,7 +11,7 @@ $(document).ready(function(){
 
 function showinfo(tid){ //查看详情
 	$.ajax({
-	     url:'/phpu/q.phpx?fid=ttfq_detail&tid='+tid,
+	     url:'/phpt/q.phpx?func=ttfq_detail&hid='+tid,
 	     type : "POST",
 		 dataType : "json",
 	     success :function (xml){
@@ -19,7 +19,7 @@ function showinfo(tid){ //查看详情
 				var code = R.code;
 				var desc = R.desc;
 		        if(code== "0"){
-		    	   var rs = xml.Resp.row;
+		    	   var rs = xml.Resp.rows.row;
 		        	if(!isArray(rs)){rs = new Array(rs);}
 					$.each(rs, function(o,r){
 						
