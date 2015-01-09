@@ -1,6 +1,6 @@
 @charset "utf-8";
 body,section,footer,header,menu,nav,button,dd,dl,dt,fieldset,form,h1,h2,h3,h4,h5,h6,hr,input,legend,li,ul,ol,p,pre,th,td,textarea,center{margin:0;padding:0}
-html,body{min-height:100%;}
+html{min-height:100%;}
 html{color:#000;-webkit-backface-visibility: hidden;-webkit-font-smoothing: antialiased;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%}
 body{font:75%/1.5 sans-serif,Helvetica,Arial,"Hiragino Sans GB";background-color:#fff;min-width:320px}
 article,aside,details,figcaption,figure,footer,header,menu,nav,section{display:block}
@@ -14,6 +14,7 @@ h1,h2,h3,h4,h5,h6{font-size:100%}button,input,select,textarea{font-size:100%}inp
 .fixed{position:fixed;bottom:0;left:0;z-index:99;width:100%}
 .more{float: right;color: #999}
 /*@media screen and (-webkit-min-device-pixel-ratio:0){input{line-height:normal !important}}*/
+.slide{display:table;width:100%;height:auto;overflow:hidden}
 .top-mar{margin-top:2.6rem;padding: 10px 0;font-size: 1.14em;background-color: #f1f1f1;}
 .top-margin{margin-top:2.75rem;}.marbottom0{margin-bottom: 0 !important}
 .rightArrow,.hmArrow{position:absolute;width:.45rem;height:.45rem;background:#fff;right:1rem;top:2rem;border-bottom:.16rem solid #ccc;border-right:.16rem solid #ccc;transform:rotate(-45deg);-webkit-transform:rotate(-45deg);-moz-transform:rotate(-45deg)}
