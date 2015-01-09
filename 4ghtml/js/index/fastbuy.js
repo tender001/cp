@@ -113,7 +113,7 @@ function issuc(ispay){
 function passBuy(code,gid) {
 	 var url = $_trade.url.pcast;
 	var pid = $("#expect").val();
-	if(pid.indexOf("14")==-1){
+	if(pid.indexOf("15")==-1){
 		showTips("期号投注不明确");
 		return;
 	}else if(code==""){
