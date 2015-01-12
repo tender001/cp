@@ -177,7 +177,7 @@
 .news-tit{padding:0 0 0.4em;border-bottom: 1px dotted #ccc}
 .news-tit h1{max-height:4em;line-height:2em;font-size:1.35em;overflow: hidden;word-wrap:break-word;word-break: break-all;}
 .news-tit strong{font-weight:400;color:#777}
-.news-top p{padding: 1.15em 0 0;font-size: 1.3em;line-height:1.66;text-indent:2em;color:#444;}
+.news-top p{padding:.8em 0 0;font-size: 1.3em;line-height:1.66;text-indent:2em;color:#444;}
 .app-footer{padding-top:1em;background-color: #e3e3e3;}
 /*登录-注册*/
 .m-reg{border-bottom: 2px solid #ccc}
@@ -402,7 +402,7 @@
 .foot-phone{text-align: center}
 .foot-phone a{padding: 0.5em 1em;color:#666;border: 1px solid #ccc;border-radius:5px}
 .reg-true-btn{text-align: center}
-.yz-tel-num .btn{display:inline-block;width: 40.4%}
+.yz-tel-num .btn{display:inline-block;width: 46.4%}
 .btn-true-re{margin-left:5%;background-color: #999;background-image: none}
 .tit-000{color:#000 !important}
 .choose-select{margin-top: 10px}
