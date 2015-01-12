@@ -265,14 +265,14 @@ acc = function(pn){
 //						html +="</td><td class=\"arrow\"><img src=\'/images/arrow.gif\' /></td></tr>";
 						html +="<li class=\"ico-click\" onclick=\"location.href=\'/user/project.html?lotid="+gid+"&projid="+projid+"\'\"><i></i><p>"+str+"<b>余额<font color=red>"+parseFloat(ibalance).rmb(false)+"</font>元</b>" +
 						"<span><em class=\"money\">"+$_sys.biztype(ibiztype)+"</em>"+ichargeid+"</span></p></li>";
-					}else if(ibiztype=="102"){
+					}else if(ibiztype=="102"||ibiztype=="216"){
 //						html +="<tr class=\"list\">";
 //						html +="<td>"+idate+"<br>";
 //						html +=str+"<font color=blue>"+parseFloat(imoney).rmb(false)+"</font>元&nbsp;余额<font color=red>"+parseFloat(ibalance).rmb(false)+"</font>元<br>";
 //						html +=$_sys.biztype(ibiztype);
 //						html +="&nbsp;<font color=green>"+ichargeid+"</font>";
 //						html +="</td><td class=\"arrow\"><img src=\'/images/arrow.gif\' /></td></tr>";
-						html +="<li class=\"ico-click\"><i></i><p>"+str+"<b>余额<font color=red>"+parseFloat(ibalance).rmb(false)+"</font>元</b>" +
+						html +="<li class=\"ico-click\"><p>"+str+"<b>余额<font color=red>"+parseFloat(ibalance).rmb(false)+"</font>元</b>" +
 						"<span><em class=\"money\">"+$_sys.biztype(ibiztype)+"</em>"+ichargeid+"</span></p></li>";
 					}else{
 //						html +="<tr onclick=\"location.href=\'/user/project.html?lotid="+gid+"&projid="+projid+"\'\"  class=\"list\">";
