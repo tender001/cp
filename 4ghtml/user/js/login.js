@@ -28,6 +28,8 @@ function DoLogin() {
 					window.location.href="/";
 				}else if(bak=="2"){
 					window.location.href="/account/pay.html";
+				}else if(bak=="3"){
+					window.location.href="/huodong/eday.html";
 				}else{
 					history.go(-1);
 				}
