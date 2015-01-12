@@ -175,9 +175,9 @@
 .news-top,.m-reg{margin-top: 3.3rem;padding: 10px 3%;border-top:1px solid #ddd}
 .news-top{margin-bottom:4.6rem}
 .news-tit{padding:0 0 0.4em;border-bottom: 1px dotted #ccc}
-.news-tit h1{max-height:4em;line-height:2em;font-size: 1.3em;overflow: hidden;}
+.news-tit h1{max-height:4em;line-height:2em;font-size:1.35em;overflow: hidden;word-wrap:break-word;word-break: break-all;}
 .news-tit strong{font-weight:400;color:#777}
-.news-top p{padding: 1.15em 0 0;font-size: 1.15em;line-height:1.66;text-indent:2em;color:#444;}
+.news-top p{padding: 1.15em 0 0;font-size: 1.3em;line-height:1.66;text-indent:2em;color:#444;}
 .app-footer{padding-top:1em;background-color: #e3e3e3;}
 /*登录-注册*/
 .m-reg{border-bottom: 2px solid #ccc}
