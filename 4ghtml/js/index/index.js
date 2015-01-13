@@ -178,29 +178,26 @@ function Random(count) {
     return arrayList
 }
 //function fastbuy(){}
-function isLogin(t) {
-	   $.ajax({
-	       url: $_user.url.checklogin,
-	       dataType:'json',
-	       success:function (d){
-	    	   	if(t != undefined && isFunction(t)){
-					t.call(this,d);
-				} else {
-					var code = d.Resp.code;
-					if (code == 0) {
-						
-						
-					}else{
-						
-					}
-				}
-	       },
-	       error:function(){
-	    	   showTips('网络故障!');
-	    	   return false;
-	       }
-	   });
+function appdown() {
+	var url_parts = document.URL.split('?');
+	var query = url_parts.length == 2 ? ('?' + url_parts[1]) : '';
+	var href = '/';
+	var ua = navigator.userAgent.toLowerCase();
+
+	if (/iphone|ipad|ipod/.test(ua)) {
+		location.href = '/ios/';
+	} else if (/android/.test(ua)) {
+		location.href = '/andriod/';
+	} else if (/windows phone|blackberry/.test(ua)) {
+		showTips('抱歉，暂不支持您的系统');
+		location.href = '/';
+	} else {
+		location.href = '/';
 	}
+	
+	
+	
+}
 var  autoScroll=function() {
     this.$(".zj_tipBox").animate({
         marginTop: "-28px"
