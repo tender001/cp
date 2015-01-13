@@ -1,4 +1,23 @@
+function appdown() {
+	var url_parts = document.URL.split('?');
+	var query = url_parts.length == 2 ? ('?' + url_parts[1]) : '';
+	var href = '/';
+	var ua = navigator.userAgent.toLowerCase();
 
+	if (/iphone|ipad|ipod/.test(ua)) {
+		location.href = '/ios/';
+	} else if (/android/.test(ua)) {
+		location.href = '/andriod/';
+	} else if (/windows phone|blackberry/.test(ua)) {
+		showTips('抱歉，暂不支持您的系统');
+		location.href = '/';
+	} else {
+		location.href = '/';
+	}
+	
+	
+	
+}
 function showMS(ms,url) {
     $("#divshowprebuy").html("<div class=\"alert\"><div class=\"alert-tips\"><h2>温馨提示</h2><p>" + ms + "</p><div class=\"alert-btn\" onclick='showBuyMini(2,\""+url+"\")'>确定</div></div></div>");
 //    $("#divshowprebuy").css({
