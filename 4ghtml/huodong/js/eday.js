@@ -145,6 +145,11 @@ function joineday(tid){ //参与分钱
 			       if(code== "0"){
 			    	   Onebet=false;
 			    	   showMS("恭喜您成功参与分钱",show());
+			       }else if(code=="4"){
+			    	  
+			    	   showMS("亲，请先绑定手机号","","/account/mobile.html");
+			       }else if(code=="5"){
+			    	   showMS("亲，请先绑定身份证","","/account/sminfo.html");
 			       }else{
 			    	   showMS(desc);
 			       }
@@ -171,9 +176,13 @@ function geteday(tid){
 			       if(code== "0"){
 			    	   showMS("恭喜您领取到奖金",show());
 			    	   
+			       }else if(code=="4"){
+			    	  
+			    	   showMS("亲，请先绑定手机号","","/account/mobile.html");
+			       }else if(code=="5"){
+			    	   showMS("亲，请先绑定身份证","","/account/sminfo.html");
 			       }else{
 			    	   showMS(desc);
-			    	 
 			       }
 			       
 		     }
@@ -227,10 +236,14 @@ function showinfo(tid){ //查看详情
 
 
 //设置提示窗口
-function showMS(ms,fn) {
+function showMS(ms,fn,url) {
 
-	$("#divshowprebuy").html("<div class=\"alert\"><div class=\"alert-tips\"><h2>温馨提示</h2><p>" + ms + "</p><div class=\"alert-btn\" onclick='showBuyMini(2)'>确定</div></div></div>");
 	
+	if(url){
+		$("#divshowprebuy").html("<div class=\"alert\"><div class=\"alert-tips\"><h2>温馨提示</h2><p>" + ms + "</p><div class=\"alert-btn\" onclick='showBuyMini(2,\""+url+"\")'>确定</div></div></div>");
+	}else{
+		$("#divshowprebuy").html("<div class=\"alert\"><div class=\"alert-tips\"><h2>温馨提示</h2><p>" + ms + "</p><div class=\"alert-btn\" onclick='showBuyMini(2)'>确定</div></div></div>");
+	}
 //    $("#divshowprebuy").css({
 //        "top": ($(window).height() / 4 + $(window).scrollTop()) + "px",
 //        'left': "0px",
@@ -245,7 +258,7 @@ function showMS(ms,fn) {
     $('.overlay').css({ 'height': ($("body").height()) + 'px', 'left': '0px', 'top': '0px', 'width': '100%', 'display': 'block', 'position': 'absolute' }).show();
     showBuyMini(1);
     setTimeout(function() { showBuyMini(2); }, (5 * 1000));
-    if(fn != null && fn != undefined){
+    if(fn != null && fn != undefined && fn!=""){
     	fn.call(this);
     }
 }
@@ -271,6 +284,8 @@ function showBuyMini(kind,url) {
         $("#divDisable").hide();
         $("#divshowprebuy").html("");
         $('.overlay').hide();
-        
+        if(url){
+        	location.href=url;
+        }
     }
 }
