@@ -18,8 +18,38 @@ function chklogin(){
 				var code = d.Resp.code;
 				if (code == 0) {
 					show();
+					 $.ajax({
+						 url : $_user.url.safe,
+					        dataType:'json',
+					        success:function (d){
+					        	var code = d.Resp.code;
+					        	if(code == 0){
+						        	var r = d.Resp.row;
+									var name = r.rname;
+									var mobile = r.mobile;
+									if(name==""){
+										$("#edaystaic").html("亲，请先绑定身份证").attr("href","/account/sminfo.html");
+									}else if(mobile==""){
+										$("#edaystaic").html("亲，请先绑定手机号").attr("href","/account/mobile.html");
+									}else{
+										$("#edaystaic").hide();
+									}
+									
+									
+								  
+					        	} else {
+					        		showTips(d.Resp.desc);
+					        	}
+					        },
+					        error:function(){
+					     	   showTips('网络故障!');
+					     	   return false;
+					        }
+						 });
+					
 				}else{
 					logoutinfo();
+					$("#edaystaic").html("亲，请先登录").attr("href","/user/login.html?bak=3");
 				}
 				
 	       },
