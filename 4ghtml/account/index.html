@@ -18,13 +18,11 @@
 <body>
 <!--#include virtual="/cc/header.html"-->
 <input type="hidden" id='logintype' value="1">
-
-
-
 <section class="buyHeader">
     <h1>用户中心</h1>
     <a href="/" class="backIco2"></a>
-    <a href="/account/set.html" class="goHome goHome-user"></a>
+    <a href="/" class="goHome"></a>
+    <!--<a href="/account/set.html" class="goHome goHome-user"></a>-->
 </section>
 
 <div class="user-set list">
@@ -34,24 +32,42 @@
     </div>
 </div>
 <div class="user-pay"><a href="/account/pay.html">充值</a><a  id="tikuan">提现</a></div>
-<div class="kj-menu user-tz">
-    <div class="kj-menu-b">
-        <ul>
-            <li id="rec" class="cur"><a >投注记录</a></li>
-            <li id="keeprec"><a >追号记录</a></li>
-            <li id="detail"><a >账户明细</a></li>
-        </ul>
+<div class="user-setting">
+    <div class="list">
+        <a href="/#"><p class="ico-click"><i></i><em class="set-icon set-icon8"></em>投注记录</p></a>
+        <a href="/account/bankinfo.html"><p class="ico-click"><i></i><em class="set-icon set-icon1"></em>我的银行卡</p></a>
+        <a href="/account/sminfo.html"><p class="ico-click"><i></i><em class="set-icon set-icon2"></em>实名认证</p></a>
+        <a href="/account/mobile.html"><p class="ico-click list-4"><i></i><em class="set-icon set-icon3"></em>手机绑定</p></a>
+        <a href="/account/revisepwd.html"><p class="ico-click"><i></i><em class="set-icon set-icon4"></em>修改密码</p></a>
+        <a href="http://www.159cai.com/m/" id="downapp"><p class="ico-click"><i></i><em class="set-icon set-icon5"></em>下载159彩票客户端</p></a>
+        <a href="tel:4000696159"><p class="ico-click list-4"><i></i><span class="fr">400-0696-159</span><em class="set-icon set-icon6"></em>客服电话</p></a>
+        <a href="javascript:logout()"><p class="ico-click red"><i></i><em class="set-icon set-icon7"></em>安全退出</p></a>
     </div>
+    <!--<a class="btn btn-reg" onclick="">安全退出</a>-->
 </div>
-<div class="user-tz-his">
-    <ul class="list" id="betlist">
-<!--         <li class="ico-click"><i></i><span class="state">未结算</span> -->
+<script >
+    $(document).ready(function() {
+        function redirect(){
+            location.href = href;
+        }
+        var url_parts = document.URL.split('?');
+        var query = url_parts.length == 2 ? ('?' + url_parts[1]) : '';
+        var href = '/';
+        var ua = navigator.userAgent.toLowerCase();
+        if (/iphone|ipad|ipod/.test(ua)) {
+// 		location.href = 'http://www.159cai.com/ios/';
+            $("#downapp").attr("href","https://itunes.apple.com/us/app/159cai-piao/id839488437?ls=1&mt=8");
+        } else if (/android/.test(ua)) {
+// 		location.href = 'http://www.159cai.com/andriod/';
+            $("#downapp").attr("href","http://www.159cai.com/download/159cai_shouji.apk");
+        } else if (/windows phone|blackberry/.test(ua)) {
+// 	location.href = '/';
+        } else {
+// 	location.href = '/';
+        }
+    });
 
-<!--             <p><b>竞彩足球</b><span>11-26<em>代购订单</em>8.00元</span></p> -->
-<!--         </li> -->
-    </ul>
-    <p class="zd-more">更多详细内容，请登录PC网站查看</p>
-</div>
+</script>
 <div id="divshowprebuy" style="position: absolute; width: 100%; margin: 0px auto; z-index: 1100; top: 120.75px; left: 0px; display: none;" name="divshowprebuy"></div>
 </body>
 </html>
