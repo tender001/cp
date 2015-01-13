@@ -12,12 +12,13 @@ h1,h2,h3,h4,h5,h6{font-size:100%}button,input,select,textarea{font-size:100%}inp
 .pd063{ padding:.63rem}.pdTop08{padding-top:.8rem}.pdLeft06{padding-left: .6rem}.pdLeft04{padding-left:.4rem}.mgTop06{margin-top: .6rem}.pdTop06{padding-top: .6rem;}
 .bottom-padding-bottom{padding-bottom:6em}
 .fixed{position:fixed;bottom:0;left:0;z-index:99;width:100%}
+.top-fixed{position: fixed;top: 0;left: 0;z-index:88;padding:0;width:100%}
 .more{float: right;color: #999}
 /*@media screen and (-webkit-min-device-pixel-ratio:0){input{line-height:normal !important}}*/
-.slide{position: relative}
-.slide img{width:100%;-webkit-transition: height 0.3s linear;-moz-transition: height 0.3s linear;-o-transition: height 0.3s linear;transition: height 0.3s linear;}
-.cue img{height:0}
-.slide span{position: absolute;right:3.5%;top:10%;padding:2.1% 8px;font:1.5em/1.2 Arial;color:#fff}
+.slide{width:100%;position: relative;overflow:hidden;-webkit-transition: height 0.3s linear;-moz-transition: height 0.3s linear;-o-transition: height 0.3s linear;transition: height 0.3s linear;}
+.slide img{width:100%;}
+.cue{height:0}
+.slide span{position: absolute;right:3.5%;top:7%;padding:2.1% 8px;font:1.5em/1.2 Arial;color:#fff}
 .top-mar{margin-top:2.6rem;padding: 10px 0;font-size: 1.14em;background-color: #f1f1f1;}
 .top-margin{margin-top:2.75rem;}.marbottom0{margin-bottom: 0 !important}
 .rightArrow,.hmArrow{position:absolute;width:.45rem;height:.45rem;background:#fff;right:1rem;top:2rem;border-bottom:.16rem solid #ccc;border-right:.16rem solid #ccc;transform:rotate(-45deg);-webkit-transform:rotate(-45deg);-moz-transform:rotate(-45deg)}
@@ -98,6 +99,7 @@ input.fqhmGray{ background:#ebebeb}
 /*** 顶部浮动 ***/
 .tzHeader{ position:relative; margin-bottom:2.6rem; z-index:10}
 .buyHeader,.fcHeader,.pkHeader,.zcHeader{ width:100%; position:fixed; top:0; left:0;z-index:100;height:1.95rem; padding-top:.65rem; background-color:#f40; border-bottom:1px solid #f30;-webkit-box-shadow:0 1px 2px rgba(255,68,0,0.5);-moz-box-shadow:0 1px 2px rgba(255,68,0,0.5);box-shadow:0 1px 2px rgba(255,68,0,0.5)}
+.top-fixed .buyHeader{top: auto}
 /*.buyHeader h1,.hmHeader h1,.kjHeader h1,.fcHeader h1,.pkHeader h1,.zcHeader h1{ width:11rem; margin:0 auto; text-align:center; font-size:1.1rem;letter-spacing:0.07em;color:#fff}*/
 .buyHeader h1{width:12.6em;margin:0 auto; text-align:center; font-size:1.1rem;letter-spacing:0.07em;color:#fff}
 /*.buyHeader h1 s{position:relative;display:inline-block;width:20px;height:20px;margin-left:3px;border-radius:23px;background-color:#ff812d;box-shadow:0 1px 3px rgba(0,0,0,0.5);vertical-align:middle;vertical-align:-3px;}
