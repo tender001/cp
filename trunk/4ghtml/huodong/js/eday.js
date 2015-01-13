@@ -27,10 +27,11 @@ function chklogin(){
 						        	var r = d.Resp.row;
 									var name = r.rname;
 									var mobile = r.mobile;
-									if(name==""){
-										$("#edaystaic").html("亲，请先绑定身份证").attr("href","/account/sminfo.html");
-									}else if(mobile==""){
+									if(mobile==""){
+									
 										$("#edaystaic").html("亲，请先绑定手机号").attr("href","/account/mobile.html");
+									}else if(name==""){
+										$("#edaystaic").html("亲，请先绑定身份证").attr("href","/account/sminfo.html");
 									}else{
 										$("#edaystaic").hide();
 									}
