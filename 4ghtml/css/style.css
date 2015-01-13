@@ -23,7 +23,6 @@
 .nav table td{text-align: center;padding: .3em 0;border:1px solid #e2e2e2;border-top-color: transparent}
 .nav-list{color: #333}
 .nav-list h3{display:inline-block;width:32px;height:32px;margin:0  0 -4px -1px;background-size:34px}
-.top-fixed{position: fixed;top: 0;left: 0;z-index:88;padding: 0}
 .nav-list .login{background-position:-1px -68px}
 .nav-list .reg{background-position:-1px -100px}
 .nav-list .cz{background-position:-1px 1px}
@@ -373,7 +372,8 @@
 .user-tz-history ul{overflow: hidden;border:0.15em solid #f40;border-radius:4px}
 .user-tz-history ul li{float:left;width:50%;padding:0.5em 0;color:#f40;text-align:center;}
 .user-tz-history ul li.cur{color:#fff;background-color:#f40}
-.user-tz{padding-top: 10px;background-color: #a9e9eb;}
+.user-tz{padding-top:10px}
+.user-tz-his{padding-bottom:3.5rem}
 .user-tz-his .list{padding: 2%;}
 .user-tz-his .list .ico-click{line-height:1.5em;padding:0.35em 0;font-size:1.14em;border-bottom:1px solid #eee;overflow: hidden}
 .ico-click .state{float: right;margin-right: 0.5em;padding-top:6px;}
@@ -381,17 +381,19 @@
 .user-tz-his p span{display: block;color: #888}
 .user-tz-his p cite{display:inline-block;width:8em;color: #f40}
 .user-tz-his .money{display:inline-block;width:8em;}
-.user-setting{margin-top: 2.6rem;padding:10px 0 1rem;font-size:1.14em;background-color:#f0f0f0;}
+.user-setting{padding:10px 0 3.5rem;font-size:1.14em;background-color:#eae0d1;}
 .user-setting a{color: #333}
 .user-setting .ico-click{height:2.5em;line-height:2.5em;padding: 0.5em 0;border-bottom:1px solid #e2e2e2;background-color: #fff;overflow: hidden}
 .user-setting .list-4{margin-bottom: 10px;border-bottom: 0}
-.set-icon{float:left;display:inline-block;width:35px;height:30px;margin-top:2px;background: url("/img/set-icon.png") no-repeat;background-size:35px 228px}
+.set-icon{float:left;display:inline-block;width:35px;height:30px;margin:2px 3px 0 0;background: url("/img/set-icon.png") no-repeat;background-size:35px 286px}
 .set-icon1{background-position: 0 -1px}
 .set-icon2{background-position: 0 -33px}
 .set-icon3{background-position: 0 -70px}
 .set-icon4{background-position: 0 -112px}
 .set-icon5{background-position: 0 -151px}
 .set-icon6{background-position: 0 -188px}
+.set-icon7{background-position: 0 -222px}
+.set-icon8{background-position: 0 -255px}
 .user-padding{margin-top:2.5rem;padding: 1em 2% 0;font-size: 1.14em;/*background-color: #f0f0f0*/}
 .user-padding p{color: #666}
 .user-padding .mar{margin-top:0.7em}
@@ -425,7 +427,7 @@
 .zf-pay-true p{line-height: 2.5em;font-size:1.12em;text-align: center}
 .zf-pay-true .true-icon{display: inline-block;margin-right:10px;vertical-align: -3px}
 .zf-pay-true .yz-tel-num .btn{width: 46.5%}
-.user-tz-his .zd-more{padding:1.5em 2%;text-align:center;border-top:1px solid #ccc;background-color: #f0f0f0}
+.zd-more{padding:1em 2%;text-align:center;border-top:1px solid #ccc;background-color: #f0f0f0}
 .user-setting .btn{margin-top:1.5em;color:#f40}
 .ali-pay{margin-top: 15px;padding:0 2%;font-size: 13px;color: gray;}
 .phone_intro{padding: 0 0 1em;text-align: center;color: gray}
@@ -550,13 +552,12 @@ a.hmTxt2{ display:block; color:#606060; padding-right:1.4rem; position:relative}
 .jclqkj .spfzpkNum .spfvs{width:16%}
 /*天天领钱*/
 .eday-kj{background-color: #e94229;color: #fff}
-.eday-kj .eday-kj-top{padding:0.8em 0 1.2em 1%;font-size:1.35em}
+.eday-kj .eday-kj-top{padding:0.8em 0 1.2em 3em;}
 .eday-kj-top .rule{padding:3px 18px 3px 4px;font-size:13px;color: #fff;background-color: rgba(0,0,0,0.3);border-top-left-radius: 4px;border-bottom-left-radius: 4px;position: relative}
 .eday-kj-top .rule:after{content:"";position: absolute;top:6px;right:0;font-size:0;border: 6px solid rgba(255,255,255,0.8);border-color: transparent transparent transparent rgba(255,255,255,0.6)}
 .eday-kj-top .eve-goback{position: relative;padding-left: 15px}
 .eday-kj-top .eve-goback:before{position:absolute;left:6px;top:3px;display: block;content: "";width: 10px;height: 10px;border-left: 0.13em solid #fff;border-bottom: 0.13em solid #fff;-webkit-transform: rotate(45deg);-moz-transform: rotate(45deg);-o-transform: rotate(45deg);transform: rotate(45deg);}
 .eday-kj-money{font-size: 1.14em}
-.eday-kj-money p{text-indent: 3em}
 .eday-kj-money .eday-money{padding:0.1em 0 0.13em;font-size: 3.5em;text-align: center}
 .eday-login{line-height:2.0;padding:0.5em 2%;font-size: 1.14em;border-top: 1px solid rgba(255,255,255,0.2);background-color: #eb4f38}
 .eday-login:after{display: table;content: "";clear: both}
