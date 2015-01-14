@@ -5,14 +5,16 @@
 <!--
 //-->
 $(document).ready(function(){
+	var n=$("#app_xz");
 	if(Storage.Get("Firstopen_cookie")){
-//		n.hide();
+		n.hide();
 	}else{
-		setTimeout(function() {n.addClass("cue")}, 4000);
+		setTimeout(function() {n.addClass("cue")}, 5000);
 		Storage.Set("Firstopen_cookie",1,60*24*30);
 	}
 })
 function closeapp_xz(){
+
 	$("#app_xz").addClass("cue");
 }
 </script>
