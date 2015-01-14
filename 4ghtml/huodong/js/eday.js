@@ -19,6 +19,24 @@ function chklogin(){
 				if (code == 0) {
 					show();
 					 $.ajax({
+					        url: $_user.url.base+"&rnd=" + Math.random(),
+					        dataType:'json',
+					        success:function (d){
+					        	var code = d.Resp.code;
+					        	if(code == 0){
+					        		var r = d.Resp.row;
+									var name = r.nickid;
+									
+									$(".eday-user").html(name);
+								
+					        	}
+					        },
+					        error:function(){
+					     	   showTips('网络故障!');
+					     	   return false;
+					        }
+					    });
+					 $.ajax({
 						 url : $_user.url.safe,
 					        dataType:'json',
 					        success:function (d){
