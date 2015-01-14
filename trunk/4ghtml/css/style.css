@@ -552,13 +552,14 @@ a.hmTxt2{ display:block; color:#606060; padding-right:1.4rem; position:relative}
 .jclqkj .spfzpkNum .spfvs{width:16%}
 /*天天领钱*/
 .eday-kj{background-color: #e94229;color: #fff}
-.eday-kj .eday-kj-top{padding:0.8em 0 1.2em 3em;}
-.eday-kj-top .rule{padding:3px 18px 3px 4px;font-size:13px;color: #fff;background-color: rgba(0,0,0,0.3);border-top-left-radius: 4px;border-bottom-left-radius: 4px;position: relative}
+.eday-kj .eday-kj-top{padding:0.8em 0 1.2em 2em;}
+.eday-kj-top .rule{margin-top:-3px;padding:3px 18px 3px 4px;font-size:13px;color: #fff;background-color: rgba(0,0,0,0.3);border-top-left-radius: 4px;border-bottom-left-radius: 4px;position: relative}
 .eday-kj-top .rule:after{content:"";position: absolute;top:6px;right:0;font-size:0;border: 6px solid rgba(255,255,255,0.8);border-color: transparent transparent transparent rgba(255,255,255,0.6)}
+.eday-user{padding-right: 3px;color: yellow}
 .eday-kj-top .eve-goback{position: relative;padding-left: 15px}
 .eday-kj-top .eve-goback:before{position:absolute;left:6px;top:3px;display: block;content: "";width: 10px;height: 10px;border-left: 0.13em solid #fff;border-bottom: 0.13em solid #fff;-webkit-transform: rotate(45deg);-moz-transform: rotate(45deg);-o-transform: rotate(45deg);transform: rotate(45deg);}
 .eday-kj-money{font-size: 1.14em}
-.eday-kj-money .eday-money{padding:0.1em 0 0.13em;font-size: 3.5em;text-align: center}
+.eday-kj-money .eday-money{padding:0 0 0.13em;font-size: 3.5em;text-align: center}
 .eday-login{display:none;line-height:2.0;padding:0.5em 2%;font-size: 1.14em;border-top: 1px solid rgba(255,255,255,0.2);background-color: #eb4f38}
 .eday-login:after{display: table;content: "";clear: both}
 .eday-login .login{float:right;line-height:1.7em;padding:3px 4px;color:rgba(255,255,255,0.6);border: 0.12em solid rgba(255,255,255,0.6);border-radius: 4px}
