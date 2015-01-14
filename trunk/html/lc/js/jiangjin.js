@@ -84,7 +84,7 @@ Class( 'prizePrediction', {
 			/*spList, ggName, hitCount, ggArr, ismin, mindan, maxdan
 			*/
 		}
-		if (gg_name != '单关') {
+		if (gg_name != '单关' || this.C('dggp')) {
 			max_prize *= 2;
 		}
 		return max_prize = new_round ? this.newRound(max_prize) : (+max_prize).toFixed(2);
