@@ -16,11 +16,12 @@ h1,h2,h3,h4,h5,h6{font-size:100%}button,input,select,textarea{font-size:100%}inp
 .more{float: right;color: #999}
 /*@media screen and (-webkit-min-device-pixel-ratio:0){input{line-height:normal !important}}*/
 .slide{width:100%;position: relative;overflow:hidden;-webkit-transition: height 0.3s linear;-moz-transition: height 0.3s linear;-o-transition: height 0.3s linear;transition: height 0.3s linear;}
-.slide img{width:100%;}
+.slide img{width:100%;max-height:80px}
 .cue{height:0}
 .slide span{position: absolute;right:3.5%;top:7%;padding:2.1% 8px;font:1.5em/1.2 Arial;color:#fff}
 .top-mar{margin-top:2.6rem;padding: 10px 0;font-size: 1.14em;background-color: #f1f1f1;}
 .top-margin{margin-top:2.75rem;}.marbottom0{margin-bottom: 0 !important}
+hr.top-margin{border:0 none}
 .rightArrow,.hmArrow{position:absolute;width:.45rem;height:.45rem;background:#fff;right:1rem;top:2rem;border-bottom:.16rem solid #ccc;border-right:.16rem solid #ccc;transform:rotate(-45deg);-webkit-transform:rotate(-45deg);-moz-transform:rotate(-45deg)}
 .user a,.nav-list h3,.go-top-ico,.kstz-b .inms em:after{background-image:url("../img/app-icon-index.png");background-repeat:no-repeat;}
 /*gotop*/
@@ -92,7 +93,6 @@ input.fqhmGray{ background:#ebebeb}
 .ssqbuyFloat{ text-align:center; line-height:3rem; font-size:.95rem; background:#f9f9f9; border-top:1px solid #d5d5d5}
 .spfjj{ padding:0 1em; color:#8e8e8e; font-size:.7em; line-height:1.7em; border-top:1px solid #dfdfdf; background:#efefef}
 .spfjj mark{ font-size:.85em; color:#f6851f;background:none}
-/*.double input.spfinput{width:5em}*/
 .double{line-height:2.3em; background:#ebebeb; padding:.3em .6em;position:relative}
 .double s{position: absolute;top:8px;left:60px;font-size:0;border:4px solid #f40;border-color: transparent transparent #f40 transparent}
 .double input,.hmbuyInput{ width:3.3em;text-align:center; font-size:1.4em; color:#f6851f; line-height:1.5em; border:none; background:#fff; margin:0 .4em; border-radius:.2em;vertical-align:middle; -webkit-border-radius:.2em; -moz-border-radius:.2em}
@@ -100,10 +100,7 @@ input.fqhmGray{ background:#ebebeb}
 .tzHeader{ position:relative; margin-bottom:2.6rem; z-index:10}
 .buyHeader,.fcHeader,.pkHeader,.zcHeader{ width:100%; position:fixed; top:0; left:0;z-index:100;height:1.95rem; padding-top:.65rem; background-color:#f40; border-bottom:1px solid #f30;-webkit-box-shadow:0 1px 2px rgba(255,68,0,0.5);-moz-box-shadow:0 1px 2px rgba(255,68,0,0.5);box-shadow:0 1px 2px rgba(255,68,0,0.5)}
 .top-fixed .buyHeader{top: auto}
-/*.buyHeader h1,.hmHeader h1,.kjHeader h1,.fcHeader h1,.pkHeader h1,.zcHeader h1{ width:11rem; margin:0 auto; text-align:center; font-size:1.1rem;letter-spacing:0.07em;color:#fff}*/
-.buyHeader h1{width:12.6em;margin:0 auto; text-align:center; font-size:1.1rem;letter-spacing:0.07em;color:#fff}
-/*.buyHeader h1 s{position:relative;display:inline-block;width:20px;height:20px;margin-left:3px;border-radius:23px;background-color:#ff812d;box-shadow:0 1px 3px rgba(0,0,0,0.5);vertical-align:middle;vertical-align:-3px;}
-.buyHeader h1 s cite{position:absolute;top:8px;left:4px;border:6px solid #fff;border-width:6px 6px 0 6px;border-color:#fff transparent #fff transparent}*/
+.buyHeader h1{width:12em;margin:0 auto; text-align:center; font-size:1.1rem;letter-spacing:0.07em;color:#fff}
 .buyHeader h1 s{position:relative;display:inline-block;width:16px;height:16px;margin-left:3px;border-radius:16px;border:2px solid #fff;background-color:transparent;vertical-align:middle;vertical-align:-4px;}
 .buyHeader h1 s cite{position:absolute;top:3px;left:4px;width:6px;height:6px;border-right:2px solid #fff;border-bottom:2px solid #fff;-webkit-transform: rotate(45deg);-moz-transform: rotate(45deg);-o-transform: rotate(45deg);transform: rotate(45deg)}
 .buyHeader h1.cur s cite{top:5px;-webkit-transform: rotate(-135deg);-moz-transform: rotate(-135deg);-o-transform: rotate(-135deg);transform: rotate(-135deg)}
@@ -114,8 +111,9 @@ input.fqhmGray{ background:#ebebeb}
 .hmPull a.cur,.hmSort li.cur,.competitions span.cur{ color:#f6851f}
 .hmPull a.cur:before,.competitions span.cur:before{ content:""; position:absolute; left:-1px; top:-1px; width:100%; height:3em; border:1px solid #f6851f}
 .hmPull a.cur:after,.competitions span.cur:after{ content:""; position:absolute; bottom:-1px; right:-1px; width:1.4em; height:1.4em; background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAC0AAAAtCAYAAAA6GuKaAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAHlSURBVGhD1dm9TsMwEADgvAkDExsbL8Az8AjwBjwAEmJgqNSNGVaYYGJAQgxMLAztghADCxJIDG0gpDkcK4nin+Rsx+e4lipVqmp9vp7vqkuSrMECgP2/hyksjzf4K3oyB99PZjU4erQOHDW6Cxwtug8cJRoDR4c2AUeFNgVHg7YBR4G2BY+OdgGPinYFj4YeAh4FPRQcHO0DHBTtCxwM7RMcBO0bTI6mAJOiqcBkaEowCZoa7B0dAuwVTQFOT7dg9XIHP2e7zfjAG5oM/PbItgYoFp8CfPDcgwK8PNnkEW6vFTuAl2FNKHDx9QrpdGc4ug+cTraFHGxPh3rfswjnsxshwsX3uwB2zuk+cHZ9qOSgEboEP18pYPkSOqExMBS59vJg8PzpQgRLl895loflsGmk5APYgK0ijYE5xDAn2+hyhCusbKHUZfmQRiXPCFzNjnXlSr79NUILPt9DLzGKtgL3wT/m0K4qrmA0PZzAFZy34Kqj1T9/UcGz2yM1JQwijDaXIeB6cy2c1V2xTOTwe3mApgRaPXyA2/AywtrFyqMtWJsePsENnHVIBe4IVtAU4C542TmxhtP1eVM9KMENnP3pKS/nEHAT6RBg16jqvpesG5hHWn6w6DMiVHslVBtT7ruW6H9W8ppOm5u6EQAAAABJRU5ErkJggg==) no-repeat center; background-size:1.4em 1.4em; -webkit-background-size:1.4em 1.4em; -moz-background-size:1.4em 1.4em}
-.backLink,.backIco2{ position:absolute; top:.9rem; left:1.1rem; color:#f6851f; font-size:.91rem}
-.backIco,.backIco2{ display:inline-block; background:none; margin-right:.01rem; width:.7rem; height:.65rem; border-left:.2rem solid #fff; border-bottom:.2rem solid #fff; transform:rotate(-315deg); -webkit-transform:rotate(-315deg); -moz-transform:rotate(-315deg)}
+.backIco2{position:absolute;top:.8rem;left:1.1rem;color:#fff; font-size:1rem}
+.backIco{position: absolute;top: .9rem;left: 1.0rem;font-size: .91rem;display:inline-block;background:none;margin-right:.01rem; width:.7rem; height:.65rem; border-left:2px solid #fff; border-bottom:2px solid #fff; transform:rotate(-315deg); -webkit-transform:rotate(-315deg); -moz-transform:rotate(-315deg)}
+.backIco2:before{position:absolute;top:5px;left:-0.75rem;display:inline-block;content:"";background:none; margin-right:.01rem; width:.7rem; height:.65rem; border-left:2px solid #fff; border-bottom:2px solid #fff; transform:rotate(-315deg); -webkit-transform:rotate(-315deg); -moz-transform:rotate(-315deg)}
 .fcbackLink,.fcbackIco2{ position:absolute; top:.9rem; left:1.1rem; color:#fff; font-size:.91rem}
 .fcbackIco,.fcbackIco2{ display:inline-block; margin-right:.01rem; width:.7rem; height:.65rem; border-left:.2rem solid #fff; border-bottom:.2rem solid #fff; transform:rotate(-315deg); -webkit-transform:rotate(-315deg); -moz-transform:rotate(-315deg)}
 .backHome{ display:block; position:absolute; left:.9rem; top:.6rem; width:1.35rem; height:1.35rem; background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAIpSURBVGhD7VkxUsMwEDQNHSUdkZrMMEPJFyjp8wZeQMfQSAx0PIKOLmVekBfQ09LBYKezuXXiRHEm9smxZGVQZlQkVuzdvb3TSU6S+IkKhKnAjx6fp0rOMi3uw0TYgOpXietUic9MywIj1fItf7k8OwoimR5NSPmsAr8hIT4WTxfjYEkURXJCSj/XgZvfUy2+KTq3wZHY+H1pmUYSSuaZEg8gHASRut/bCBjXp4PnRel3soUF6K3o0H+HyYvK75SseVfwRnKTAKOJNzsh7PTw6aHAt5KbhEABcJ4XKIMIe5/ga0RmKAhOooHyd4jfuaSxAKIw9EYCYUXZ68PvfBJYCHvICxd+55Io5yn5WjxenXaKhmu/s4koMbfOC19+55Jg50Xpd2p/ffqdT0JmhOtur51Kvyv5zr3hUPPQmu/kRTB+b2kE16JRXqxb84UWN1Qmv4ZStPNzCTOwJz4Wp84g21pzaiSTY/D9XgEoZxPUWLLQ3JVKzu5rrg8on+g/4KlqBJUXK79X2IC1tXM1TxWcqcisOsBi3U5EAkx1OdGNEeCo5HJOjABXXXSx5YEubUSwSTdH+Rtd69LpeonAElj7NnB1dmp1HOOHALW53FqNlpgbVczzQ6Bps1Fjho1JJNAWbtuVuHG7FyPgoReKEWjonf5nFbLdpbm0ELC0FZ2d67a12uZ9MObarQMNB1pNzEDCopxOuSpxXpCUfRW9i7CJLPf5cV5UwFDgDx6oX6KnlLfvAAAAAElFTkSuQmCC) no-repeat center; background-size:1.35rem 1.35rem; -webkit-background-size:1.35rem 1.35rem; -moz-background-size:1.35rem 1.35rem}
@@ -160,7 +158,6 @@ input.fqhmGray{ background:#ebebeb}
 .lcbetTable2{ border:1px solid #dedede; border-top:none; border-radius:.5rem .5rem 0 0; -webkit-border-radius:0 0 .5rem .5rem; -moz-border-radius:0 0 .5rem .5rem}
 .lcbetTable2 tr:last-child td,.lcbetTable td.r9Tr{ border-bottom:none}
 /* 帮助中心 */
-/*.wap_h{padding-bottom:90px;}*/
 .help{overflow:hidden}
 .help_box{padding:0 2%;}
 .help_box p{padding-top:0.5em}

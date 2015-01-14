@@ -1,18 +1,15 @@
- <div class="slide"  id="app_xz">
-	<a href="/huodong/eday.html">
+ <div class="slide" id="app_xz">
+	<a href="/huodong/index.html">
 	<img src="/img/imglist/slide.png" alt="159彩票活动"/></a><span onclick="closeapp_xz()">X</span></div>
 <script type="text/javascript">
 <!--
-
 //-->
 $(document).ready(function(){
-	var n=$("#app_xz");
 	if(Storage.Get("Firstopen_cookie")){
-		n.hide();
+//		n.hide();
 	}else{
 		setTimeout(function() {n.addClass("cue")}, 4000);
 		Storage.Set("Firstopen_cookie",1,60*24*30);
-		
 	}
 })
 function closeapp_xz(){
