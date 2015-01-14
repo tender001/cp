@@ -55,8 +55,10 @@ showproj = function(option){
 	}
 			
 	
-	var gid,lotid=$("#lotid").val();
-	var periodid,pid =option.data.Resp.row.periodid;
+	var lotid=$("#lotid").val();
+	var gid=$("#lotid").val();
+	var periodid =option.data.Resp.row.periodid;
+	var pid =option.data.Resp.row.periodid;
 	var zhanji = option.data.Resp.row.aunum;
 	$("[mark=title]").html($_sys.getlotname($("#lotid").val()));
 	$("[mark=expect]").html(periodid);
@@ -221,7 +223,7 @@ showproj = function(option){
     $("#kjCodes").show();
     var acode = $_cache.qcode(lotid, periodid);
     if (acode == "") {
-        $("#kjCodes").hide()
+        $("#zgCode").hide()
     } else {
     	 $("#zgCode").show();
     	if (isflg == 1) {
@@ -240,7 +242,7 @@ showproj = function(option){
             	acode = "等待开奖"
             }
         }
-        $("#kjCodes span").html(acode)
+        $("#zgCode span").html(acode)
     }
     if (award == "2") {
         var wininfostr = "";
