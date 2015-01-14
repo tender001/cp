@@ -171,9 +171,9 @@ function myjoinibonus(){
 	    	  
 		       if(code== "0"){
 		    	  
-		    	  $('.eday-money').html(changeTwoDecimal_f(R.row.itmoney));
+		    	  $('.eday-money').html(changeTwoDecimal_f(R.row.itmoney)+"<i>元</i>");
 		       }else{
-		    	   $('.eday-money').html("0.00");
+		    	   $('.eday-money').html("0.00"+"<i>元</i>");
 		       }
 		       
 	     }
