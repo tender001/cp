@@ -1214,8 +1214,169 @@
                         Y.get('#jjyh_form').doProp('submit')
                     })
            });
+            this.get('#bqch').click(function (e, Y){
+               	var data = Y.C('choose_data'), minNum = Y.C('_isgg') ? 2 : 1,
+                           ggData =  Y.C('-all-gg-type'),
+                           duoc = ggData.dc;
+                       if (data.length < minNum) {
+                           return Y.alert('您好，请至少选择' + minNum + '场比赛!');
+                       }else if(!duoc && ggData.zy.length === 0){
+                           return Y.alert('您好，请选择过关方式！');
+                       }
+                       if (Y.get('#bs').val() > 100000) {
+                           return Y.alert('您好，倍数不能超过100000倍！');
+                       }
+                       
+                       
+                       var chkgroup =ggData.zy.map(function (e){
+                           return parseInt(e);
+                       }).join(',');
+                       Y.checkLimitCode(data, chkgroup, function (){
+                           if (duoc) {//多串
+                               Y.get('#ggtypename').val(duoc);
+                               Y.get('#ggtypeid').val(Y.sgMap[duoc]);   
+                               Y.get('#gggroup').val(2);
+                           }else{//自由
+                               var ziy = ggData.zy, 
+                                   isPt = ziy.length == 1 && data.length == parseInt(ziy[0]);
+                               Y.get('#gggroup').val(isPt ? 1 : 3);
+                               Y.get('#ggtypename').val(ziy.join(','));
+                               Y.get('#ggtypeid').val(ziy.map(function (w){
+                                   return Y.sgMap[w];
+                               }).join(','));
+                            }
+                           var danma = [];
+                           var hxcodes=data.map(function (a){
+                               var c = a.mid+'|'+a.pname+'['+Y._id2Name(a.data).join(',')+']';//格式
+                               if (a.dan) {
+                                   danma.push(c);
+                               }
+                               return c;
+                           }).join('/')
+                           
+                           var ty=Y.get('#ggtypename').val().split('\串');
+                           if(ty[1]>1){
+                           	return this.alert('先发后补仅支持N串1！');
+                           }
+                         
+                           Y.get('#hxbeishu').val(Y.get('#bs').val());
+                           var totalmoney = Y.get('#bs').val()*2*(Y.get('#zs').html()*1);
+                           var hxmoney = $("#schemeTip cite").html()*1;
+                         
+                      
+                           if (totalmoney <hxmoney*0.7) {
+                               return this.alert('您好, 投注金额小于预选金额浮动范围');
+                           }else if (totalmoney >hxmoney*1.3) {
+                               return this.alert('您好, 投注金额大于预选金额浮动范围');
+                           }
+                          
+                         
+                           var MAX_ALL_MONEY = this.C('MAX_ALL_MONEY');
+                           if (totalmoney > MAX_ALL_MONEY) {
+                               return this.alert('您好, 发起方案金额最多不能超过￥'+MAX_ALL_MONEY+'元!');
+                           }
+                          var danma=[];
+                          var param_new={
+                   				 playid:40,// 游戏编号
+                   				
+                   				
+                   				 codes:data.map(function (a){
+                                     var c = a.pname+'='+Y._id2Name(a.data).join('/');//改后
+                                     if (a.dan) {
+                                         danma.push(c);
+                                     }
+                                     return c;
+                                 }).join(','),
+                                 danma:danma.join('/'),
+                                 sgtypename:ziy[0]
+                   				
+                                };	 
+                           this.get("#hxcodes").val(this.swapcode(param_new));
+                           Y.get('#hxform').doProp('submit');
+                       });
+              });
 
         },
+        swapcode:function(param){
+    		switch (parseInt(param.playid)) {
+    		case 34 :    //胜平负
+    			Class.config('playName', 'spf');
+    			Class.config('codeValue', ['胜', '平', '负']);
+    			Class.config('playName_1', 'SPF');
+    			Class.config('codeValue_1', ['3', '1', '0']);
+    			param.lotid=90;
+    			break;
+    		case 72 :    //让球胜平负
+    			Class.config('playName', 'rqspf');
+    			Class.config('codeValue', ['让胜', '让平', '让负']);
+    			Class.config('playName_1', 'RSPF');
+    			Class.config('codeValue_1', ['3', '1', '0']);
+    			param.lotid=72;
+    			break;
+    		case 40 :    //总进球数
+    			Class.config('playName', 'jq');
+    			Class.config('codeValue', ['0', '1', '2', '3', '4', '5', '6', '7\\+']);
+    			Class.config('playName_1', 'JQS');
+    			Class.config('codeValue_1', ['0', '1', '2', '3', '4', '5', '6', '7']);
+    			param.lotid=93;
+    			break;
+    		case 42 :    //比分
+    			Class.config('playName', 'bf');
+    			Class.config('codeValue', [ '胜其它', '1:0', '2:0', '2:1', '3:0', '3:1', '3:2', '4:0', '4:1', '4:2', '5:0', '5:1', '5:2', 
+    			                            '平其它', '0:0', '1:1', '2:2', '3:3', 
+    			                            '负其它', '0:1', '0:2', '1:2', '0:3', '1:3', '2:3', '0:4', '1:4', '2:4', '0:5', '1:5', '2:5' ]);
+    			Class.config('playName_1', 'CBF');
+    			Class.config('codeValue_1', [ '9:0', '1:0', '2:0', '2:1', '3:0', '3:1', '3:2', '4:0', '4:1', '4:2', '5:0', '5:1', '5:2', 
+    			                            '9:9', '0:0', '1:1', '2:2', '3:3', 
+    			                            '0:9', '0:1', '0:2', '1:2', '0:3', '1:3', '2:3', '0:4', '1:4', '2:4', '0:5', '1:5', '2:5' ]);
+    			param.lotid=91;
+    			break;
+    		case 51 :    //半全场
+    			Class.config('playName', 'bq');
+    			Class.config('codeValue', ['胜-胜', '胜-平', '胜-负', '平-胜', '平-平', '平-负', '负-胜', '负-平', '负-负']);
+    			Class.config('playName_1', 'BQC');
+    			Class.config('codeValue_1', ['3-3', '3-1', '3-0', '1-3', '1-1', '1-0', '0-3', '0-1', '0-0']);
+    			param.lotid=92;
+    			break;
+    		default :
+    		}	
+    		var codes=param.codes;
+    		var danma=param.danma;
+    		var ggstr=param.sgtypename;
+    		ggstr=ggstr.replace(/单关/g,'1*1').replace(/串/g,'*');
+    		for (var i=0;i<Class.config('codeValue_1').length;i++){
+    			codes=codes.replace(eval('/'+Class.config('codeValue')[i]+'/g'),Class.config('codeValue_1')[i]);
+    			if(danma){
+    				danma=danma.replace(eval('/'+Class.config('codeValue')[i]+'/g'),Class.config('codeValue_1')[i]);
+    			}
+    			
+    		}
+    		codes=codes.replace(/\[/g, '=').replace(/[\[\]]/g, '').split(",");
+    		if(danma){
+    			danma=danma.replace(/\[/g, '=').replace(/[\[\]]/g, '').split(",");
+    		}
+    		var tuoma=[];		
+    		for(var i=0;i<codes.length;i++){
+    			var find=false;
+    			for (var j=0;j<danma.length;j++){
+    				if (codes[i]==danma[j]){
+    					find=true;
+    					break ;
+    				}
+    			}
+    			if (!find){
+    				tuoma.push(codes[i]);
+    			}
+    		}	
+    		
+    		
+    		if (param.danma.length>1){
+    			codes=Class.config('playName_1')+'|'+danma.join(",")+'$'+tuoma.join(",")+'|'+ggstr;
+    		}else{
+    			codes=Class.config('playName_1')+'|'+tuoma.join(",")+'|'+ggstr;			
+    		}			
+    		return codes;	
+    	},
         maxMoney: 10000,//最多一万注,  20000元
         checkMaxMoney: function (data, type){//检查单票金额
               var sel = data.map(function (d){
@@ -1474,6 +1635,34 @@ Class('ScrollStill', {});
     			this._index();
     			this.sethref();
     		});            
+    		var xfhb = location.search.getParam('xfhb');
+    		if(xfhb.indexOf("CP")!=-1){
+    			this.xfhb(xfhb);
+    			this.get("#hxprojid").val(xfhb);
+    		}
+        },
+        xfhb:function(projid) {
+        	$("#jjyh,#gofilter,#gobuy,#gohm").hide();
+        	$("#schemeTip,#bqch").show();
+        	var data = $_trade.key.gid + "=" + encodeURIComponent(93) + "&" + $_trade.key.hid + "=" + encodeURIComponent(projid) + "&rnd=" + Math.random();
+        	Y.ajax({
+        		url : $_trade.url.pinfo,
+        		type : "POST",
+        		dataType : "json",
+        		data : data,
+        		end: function(d) {
+        			var obj = eval("(" + d.text + ")");
+        			var code = obj.Resp.code;
+        			var desc = obj.Resp.desc;
+        			var canceldate=""
+        			if (code == "0") {
+        				var r = obj.Resp.row;
+        				
+        				
+        				$("#schemeTip cite").html(r.tmoney);
+        			}
+        		}
+        	})
         },
         
         sethref:function() {
