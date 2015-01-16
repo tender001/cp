@@ -414,16 +414,18 @@ a.czbtnhui{color:#666;background:url(../images/cai888/user_03hui.jpg);border:1px
 .aqcenter{padding:0 20px;}
 .aqcc em{color:#f60;font-size:16px;font-weight:bold}
 .aqcc b{width:50px;height:50px;margin:23px 10px 0 20px}
-.aqcc b.cardc{ background:url(../images/cai888/aqtbx_03.jpg) 0 0 no-repeat}
-.aqcc b.cardcur{ background:url(../images/cai888/rzyb_03.jpg) 0 0 no-repeat}
-.aqcc b.telc{ background:url(../images/cai888/aqtbx_07.jpg) 0 0 no-repeat}
-.aqcc b.telcur{ background:url(../images/cai888/rzyb_06.jpg) 0 0 no-repeat}
-.aqcc b.bankc{ background:url(../images/cai888/aqtbx_09.jpg) 0 0 no-repeat}
-.aqcc b.bankcur{ background:url(../images/cai888/rzyb_09.jpg) 0 0 no-repeat}
-.aqcc b.mailc{ background:url(../images/cai888/aqtbx_11.jpg ) 0 0 no-repeat}
-.aqcc b.mibac{ background:url(../images/cai888/aqtbx_15.jpg) 0 0 no-repeat}
-.aqcc b.mibacur{ background:url(../images/cai888/rzyb_14.jpg) 0 0 no-repeat}
-.aqcc b.mailcur{ background:url(../images/cai888/rzyb_12.jpg) 0 0 no-repeat}
+.aqcc b.cardc{ background:url(../images/cai888/aqtbx_03.jpg) no-repeat}
+.aqcc b.cardcur{ background:url(../images/cai888/rzyb_03.jpg) no-repeat}
+.aqcc b.telc{ background:url(../images/cai888/aqtbx_07.jpg) no-repeat}
+.aqcc b.telcur{ background:url(../images/cai888/rzyb_06.jpg) no-repeat}
+.aqcc b.bankc{ background:url(../images/cai888/aqtbx_09.jpg) no-repeat}
+.aqcc b.bankcur{ background:url(../images/cai888/rzyb_09.jpg) no-repeat}
+.aqcc .alipay{ background:url(/images/cai888/alipay.jpg) no-repeat}
+.aqcc .alipaycur{ background:url(../images/cai888/alipaycur.jpg) no-repeat}
+.aqcc b.mailc{ background:url(../images/cai888/aqtbx_11.jpg ) no-repeat}
+.aqcc b.mibac{ background:url(../images/cai888/aqtbx_15.jpg) no-repeat}
+.aqcc b.mibacur{ background:url(../images/cai888/rzyb_14.jpg) no-repeat}
+.aqcc b.mailcur{ background:url(../images/cai888/rzyb_12.jpg) no-repeat}
 .confitp{background:url(../images/cai888/yes_06.jpg) 200px 55px no-repeat;padding:70px 0 30px 275px;line-height:30px;color:#444;font-size:14px;}
 .confitp a{color:#145fab; text-decoration:underline}
 .confitp a:hover{color:#f60}

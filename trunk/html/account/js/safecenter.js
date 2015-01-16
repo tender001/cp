@@ -103,15 +103,12 @@ Class({
 
 							}
 							if (alipay.length > 10) {
-								
-								//$("#bank s").html('').removeClass("cur");
-								$("#alipay s").html('已绑定，<a id="div4" name="bank" class="s"  href="/account/alipayinfo.html">查看</a>').removeClass("cur");;
-								$("#alipay_i").addClass("bankcur");
+								$("#alipay_i").removeClass("alipay").addClass("alipaycur");
+								$("#alipay s").html('已绑定，<a id="div4" name="bank" class="s"  href="/account/alipayinfo.html">查看</a>').removeClass("cur");
 								$("#ali").html('支付宝号：<em id="bank">'+alipay+'</em>');
 								safe += 1;
 							} else {
-							
-								$("#alipay_i").removeClass("bankcur");
+								$("#alipay_i").removeClass("alipaycur");
 								$("#alipay s").html(
 										'<a href="/account/alipayinfo.html">绑定</a>')
 										.addClass("cur");
