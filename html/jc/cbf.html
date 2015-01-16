@@ -223,12 +223,18 @@ class=back_top title=回到顶部 href="#top">回到顶部</A> </div>
 <H2  class="h_4"></H2>
 <P class=dc_qr>投注&nbsp;<i><a mark="minus"></a><input class="mul" type="text" id="bs" value="1" maxlength="6" /><a mark="add"></a></i>倍<BR>共<SPAN 
 id=zs class="eng red">0</SPAN>注,总金额 <STRONG id=buy_money 
-class="eng red">￥0.00</STRONG>元<BR><SPAN>预测最高奖金：<SPAN id=maxmoney 
+class="eng red">￥0.00</STRONG>元<BR>
+<span class="scheme_tip" id="schemeTip" style="display: none;">该方案预设总金额：<cite class="eng red"></cite> 元<b  class="br1"mark="pro_em" data-help='投注金额应为预设总金额的70%—130%' style="z-index: 1;"></b></span>
+									</br>
+<SPAN>预测最高奖金：<SPAN id=maxmoney 
 class="eng red">￥0.00</SPAN></SPAN> <BR>
 <span><A id=seemore href="javascript:void(0);" class="eng red">详细奖金预算</A><a id="jjyh" href="javascript:void(0);">奖金优化</a></span></P>
-<P class=dc_r_btn><A id=gobuy class="jc_mtz" onClick="return false" 
-href="javascript:void 0" >确认代购</A><A id=gohm class="jc_mhm" 
-onclick="return false" href="javascript:void 0" >发起合买</A></P>
+<P class=dc_r_btn>
+	<A id=gobuy  class="jc_mtz" onclick="return false" href="javascript:void 0" >确认代购</A>
+	<A id=gohm  class="jc_mhm" onclick="return false" href="javascript:void 0">发起合买</A>
+	<A id="bqch"  class="jc_mhm" onclick="return false" href="javascript:void 0" style="display: none;">补全方案</A>
+
+</P>
 <!-- <br/><br/>
 <P class="dc_r_btn"> <a id="jjyh" style="DISPLAY: " class="gofilter"></a> 
 <a id="gofilter" class="goyh"></a>
@@ -255,6 +261,16 @@ name=money_limit>
 <INPUT id=muli type=hidden name=muli>
 <INPUT id=pnum type=hidden name=pnum>
 </FORM>
+<form id="hxform" action="/phpt/jc/step_66.phpx" method="post">
+	<input type="hidden" value="91" name="gid" id="hxgid"/>
+	<input type="hidden" value="" name="projid" id="hxprojid"/>
+	<!--玩法（单复式）：<input type="text" id="play" name="play" value="">-->
+
+	<input type="hidden" size="200" value="" name="codes" id="hxcodes"/>
+	<input type="hidden" value="1" name="beishu" id="hxbeishu"/>
+
+	
+</form>
 </div>
 <div class=dc_e>
 <P><STRONG>投注提示：</STRONG></P>

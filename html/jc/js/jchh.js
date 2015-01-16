@@ -1374,9 +1374,11 @@ Class('Buy', {
              }
  			if (true === _self.check()) {
 // 				_self.send();
+ 				
  				Y.get('#project_form').doProp('submit');
  			}
  		});
+
  		Yobj.createIntInput('#bs', function (e){//修改倍数
 	            _self.bs = parseInt(this.value);
 				   _self.bschange();
@@ -1425,7 +1427,124 @@ Class('Buy', {
  				//_self.send();
  			}
  		});
+        this.get('#bqch').click(function (e, Y){
+        	 var totalmoney = Y.get('#bs').val()*2*(Y.get('#zs').html()*1);
+             var hxmoney = $("#schemeTip cite").html()*1;
+           
+        
+             if (totalmoney <hxmoney*0.7) {
+                 return Y.alert('您好, 投注金额小于预选金额浮动范围');
+             }else if (totalmoney >hxmoney*1.3) {
+                 return Y.alert('您好, 投注金额大于预选金额浮动范围');
+             }
+			Y.get('#hxbeishu').val(Y.get('#bs').val());
+        	if (true === _self.check()) {
+//        		Y.get('#hxform').doProp('submit');
+        		 var param_new={
+           				 codes:Y.get('#codes').val(),
+                         danma:Y.get('#danma').val(),
+                         sgtypename:Y.get('#ggtypename').val()
+           				
+                        };	 
+        		
+        		Y.get('#hxcodes').val(Y.swapcode(param_new));
+        		
+        		 
+        		Y.get('#hxform').doProp('submit');
+        	}
+                     
+          });
  	},
+ 	swapcode:function(param){
+			
+		var codes=param.codes;
+		var danma=param.danma;
+		var ggstr=param.sgtypename;
+		ggstr=ggstr.replace(/单关/g,'1*1').replace(/串/g,'*');
+		
+		codes=codes.replace(/\[/g, '=').replace(/[\[\]]/g, '').replace(/\//g, '$').replace(/,/g, '/').replace(/\$/g, ',').split(",");
+		if(danma){
+			danma=danma.replace(/\[/g, '=').replace(/[\[\]]/g, '').replace(/\//g, '$').replace(/,/g, '/').replace(/\$/g, ',').split(",");
+		}
+//		"62669|150114002|SPF>=1"
+//		62668|150114001|SPF>[3,1,0]/62669|150114002|SPF>[3,1,0]
+//		62669|150114002|SPF>=3/1/
+//		HH|150113001>SPF=0/1,150113002>SPF=3|2*1
+//		
+//		
+//		62668|150114001|SPF>[3,1]/62669|150114002|SPF>[3,1]
+//		
+//		HH|150114001>SPF=3/1,150114002>SPF=3/1|2*1
+		
+//		HH|150114003>RSPF=1/0+SPF=1/0,150114004>RSPF=1/0+SPF=1/0|2*1
+//		HH|150114004>RSPF=1/0,150114004>SPF=1/0,150114005>RSPF=1/0,150114005>SPF=1/0|2*1
+//		HH|150114002>RSPF=1,150114002>SPF=1,150114003>RSPF=1,150114003>SPF=1,150114004>RSPF=1,150114004>SPF=1,150114005>RSPF=1,150114005>SPF=1|2*1
+		var tuoma=[];
+		var ecp="";
+		var tm="";
+		var delindex=[];
+		for(var i=0;i<codes.length;i++){
+			var find=false;
+			for (var j=0;j<danma.length;j++){
+				if (codes[i]==danma[j]){
+					find=true;
+					break ;
+				}
+			}
+			if (!find){
+				
+				var co=codes[i].split("|");
+				
+				if(co[2].split(">").length>1){
+					
+					if(ecp==co[1]){
+						
+						delindex.push(i-1);
+						tm+="+"+co[2].split(">").join("")
+					}else{
+						ecp=co[1];
+						tm=co[1]+">"+co[2].split(">").join("");
+					}
+					tuoma.push(tm);
+				}
+				
+				
+			}
+		}
+		for(var i=0;i<delindex.length;i++){
+			
+				
+				tuoma=tuoma.del(delindex[i]-i);
+			
+		}
+		
+		
+//		"HH|150114006>SPF=1/0$150114004>SPF=1/0,150114005>SPF=1/0|2*1"
+//		 HH|150114002>RSPF=1/0$150114001>SPF=1/0,150114003>RSPF=1/0|2*1
+		if (param.danma.length>1){
+			var nedanma=[];
+			if(danma.length>1){
+				for(var i=0;i<danma.length;i++){
+					var co=danma[i].split("|");
+					if(co[2].split(">").length>1){
+						nedanma.push(co[1]+">"+co[2].split(">").join(""));
+					}
+				}
+				danma=nedanma;
+			}else{
+				var co=danma[0].split("|");
+				if(co[2].split(">").length>1){
+					danma=[co[1]+">"+co[2].split(">").join("")];
+				}
+//				danma=danma.split("|")[1]
+////				62671|150114004|SPF>[1,0]
+			}
+			codes='HH|'+danma.join(",")+'$'+tuoma.join(",")+'|'+ggstr;
+		}else{
+			codes='HH|'+tuoma.join(",")+'|'+ggstr;			
+		}			
+		return codes;	
+	},
  	bschange: function (){},//倍数变化时
  	setVals: function (obj){//批量设置表单
  		for(var k in obj){
@@ -1677,7 +1796,38 @@ Class('Main', {
 		if(this.get("#vsTable").html().trim()==""){
 			this.get("#vsTable").html('<div class="event-no event-no1"><p>当前无赛事可投注，请等待官方公布新赛程！<br> <a href="http://bf.159cai.com/jingcai/">查看赛程预告&gt;&gt;</a> <a href="/dating/">购买其他彩种&gt;&gt;</a> </p></div>');
 		}
+		var xfhb = location.search.getParam('xfhb');
+		if(xfhb.indexOf("CP")!=-1){
+			this.xfhb(xfhb);
+			this.get("#hxprojid").val(xfhb);
+		}
 	},
+	xfhb:function(projid) {
+    	$("#jjyh,#gofilter,#gobuy,#gohm").hide();
+    	$("#schemeTip,#bqch").show();
+    	var data = $_trade.key.gid + "=" + encodeURIComponent(70) + "&" + $_trade.key.hid + "=" + encodeURIComponent(projid) + "&rnd=" + Math.random();
+    	Y.ajax({
+    		url : $_trade.url.pinfo,
+    		type : "POST",
+    		dataType : "json",
+    		data : data,
+    		end: function(d) {
+    			var obj = eval("(" + d.text + ")");
+    			var code = obj.Resp.code;
+    			var desc = obj.Resp.desc;
+    			var canceldate=""
+    			if (code == "0") {
+    				var r = obj.Resp.row;
+//    				var cnickid = r.cnickid;// 发起人
+//    				var periodid = r.periodid;// 期次
+//    				var ccodes = r.ccodes;// 投注号码
+    				
+    				
+    				$("#schemeTip cite").html(r.tmoney);
+    			}
+    		}
+    	})
+    },
 	otherEvents: function (){
 		//切换平均欧赔
 		this.get('#sssx div.matchxz').drop( this.get('#sssx div.jcslt'),{focusCss: 'matchxzc', fixed: true, y: -1});
