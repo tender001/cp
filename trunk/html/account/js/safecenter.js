@@ -32,6 +32,7 @@ Class({
 							var idcard = r.idcard;
 							var bank = r.bank;
 							var name=r.name;
+							var alipay=r.alipay;
 							
 							var mobbind = r.mobbind;
 							var mobile = r.mobile;
@@ -101,6 +102,22 @@ Class({
 								$("#bk").html('绑定银行卡是您提款时的唯一用卡，是资金提取的安全保证');
 
 							}
+							if (alipay.length > 10) {
+								
+								//$("#bank s").html('').removeClass("cur");
+								$("#alipay s").html('已绑定，<a id="div4" name="bank" class="s"  href="/account/alipayinfo.html">查看</a>').removeClass("cur");;
+								$("#alipay_i").addClass("bankcur");
+								$("#ali").html('支付宝号：<em id="bank">'+alipay+'</em>');
+								safe += 1;
+							} else {
+							
+								$("#alipay_i").removeClass("bankcur");
+								$("#alipay s").html(
+										'<a href="/account/alipayinfo.html">绑定</a>')
+										.addClass("cur");
+								$("#ali").html('绑定支付宝是您提款时资金提取的安全保证');
+
+							}
 							
 							if (mailbind == 0) {
 								
@@ -139,7 +156,7 @@ Class({
 							} else if (safe == 4) {
 								cascade = "中高";
 								caspaint = "80";
-							} else if (safe == 5) {
+							} else if (safe > 4) {
 								cascade = "高";
 								caspaint = "100";
 //								this.get("#djimg").attr(
