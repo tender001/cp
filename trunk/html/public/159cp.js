@@ -262,6 +262,7 @@ $_user.key = {
 	bankCode : "bankCode",// 银行代码
 	bankCard : "bankCard",// 银行卡号
 	bankName : "bankName",// 银行名称
+	
 	pn : "pn",// 页码
 	ps : "ps",// 页面大小
 	tp : "tp",// 总页数
@@ -325,6 +326,7 @@ $_user.modify = {
 	pwd : "/phpu/mui.phpx?fid=u_modi_pwd", // 修改密码
 	protect : "/phpu/mui.phpx?fid=u_set_pinfo",// 修改密保
 	card : "/phpu/mui.phpx?fid=u_set_bank", // 修改设置银行卡信息
+	alipay : "/phpu/mui.phpx?fid=u_set_alipay", // 修改设置支付宝信息
 	name : "/phpu/mui.phpx?fid=u_modi_rinfo", // 用户实名
 	autostate : "/phpu/mui.phpx?fid=u_modi_auto" // 自动跟单状态
 		
@@ -1205,48 +1207,49 @@ $_sys_getnewwininfo = function(lotid, wininfo) {
  * 为方案详情提供目录匹配
  */
 $_sys.lotfordetail = [];
-$_sys.lotfordetail.push([ 1, "/shuangseqiu/" ]);
-$_sys.lotfordetail.push([ 3, "/3d/" ]);
-$_sys.lotfordetail.push([ 4, "/ssc/" ]);
-$_sys.lotfordetail.push([ 7, "/qilecai/" ]);
-$_sys.lotfordetail.push([ 20, "/nssc/" ]);
-$_sys.lotfordetail.push([ 58, "/klpk/" ]);
+$_sys.lotfordetail.push([ 1, "/shuangseqiu/","/shuangseqiu/" ]);
+$_sys.lotfordetail.push([ 3, "/3d/","/3d/" ]);
+$_sys.lotfordetail.push([ 4, "/ssc/","/ssc/" ]);
+$_sys.lotfordetail.push([ 7, "/qilecai/","/qilecai/" ]);
+$_sys.lotfordetail.push([ 20, "/nssc/","/nssc/" ]);
+$_sys.lotfordetail.push([ 58, "/klpk/","/klpk/" ]);
 
-$_sys.lotfordetail.push([ 50, "/daletou/" ]);
-$_sys.lotfordetail.push([ 51, "/qixingcai/" ]);
-$_sys.lotfordetail.push([ 52, "/paiwu/" ]);
-$_sys.lotfordetail.push([ 53, "/paisan/" ]);
+$_sys.lotfordetail.push([ 50, "/daletou/","/daletou/" ]);
+$_sys.lotfordetail.push([ 51, "/qixingcai/","/qixingcai/" ]);
+$_sys.lotfordetail.push([ 52, "/paiwu/","/paiwu/" ]);
+$_sys.lotfordetail.push([ 53, "/paisan/","/paisan/" ]);
 
-$_sys.lotfordetail.push([ 54, "/11x5/" ]);
-$_sys.lotfordetail.push([ 56, "/11ydj/" ]);
+$_sys.lotfordetail.push([ 54, "/11x5/","/11x5/" ]);
+$_sys.lotfordetail.push([ 56, "/11ydj/","/11ydj/" ]);
 
-$_sys.lotfordetail.push([ 80, "/zc/" ]);
-$_sys.lotfordetail.push([ 81, "/renjiu/" ]);
-$_sys.lotfordetail.push([ 82, "/jinqiu/" ]);
-$_sys.lotfordetail.push([ 83, "/banquan/" ]);
+$_sys.lotfordetail.push([ 80, "/zc/","/zc/" ]);
+$_sys.lotfordetail.push([ 81, "/renjiu/","/renjiu/" ]);
+$_sys.lotfordetail.push([ 82, "/jinqiu/","/jinqiu/" ]);
+$_sys.lotfordetail.push([ 83, "/banquan/","/banquan/" ]);
 
-$_sys.lotfordetail.push([ 84, "/bj/" ]);
-$_sys.lotfordetail.push([ 85, "/bj/" ]);
-$_sys.lotfordetail.push([ 86, "/bj/" ]);
-$_sys.lotfordetail.push([ 87, "/bj/" ]);
-$_sys.lotfordetail.push([ 88, "/bj/" ]);
-$_sys.lotfordetail.push([ 89, "/bj/" ]);
+$_sys.lotfordetail.push([ 84, "/bj/","/bj/sfgg.html" ]);
+$_sys.lotfordetail.push([ 85, "/bj/","/bj/" ]);
+$_sys.lotfordetail.push([ 86, "/bj/","/bj/cbf.html" ]);
+$_sys.lotfordetail.push([ 87, "/bj/","/bj/bqc.html" ]);
+$_sys.lotfordetail.push([ 88, "/bj/","/bj/sxds.html" ]);
+$_sys.lotfordetail.push([ 89, "/bj/","/bj/jqs.html" ]);
 
-$_sys.lotfordetail.push([ 70, "/jc/" ]);
-$_sys.lotfordetail.push([ 72, "/jc/" ]);
-$_sys.lotfordetail.push([ 90, "/jc/" ]);
-$_sys.lotfordetail.push([ 91, "/jc/" ]);
-$_sys.lotfordetail.push([ 92, "/jc/" ]);
-$_sys.lotfordetail.push([ 93, "/jc/" ]);
+$_sys.lotfordetail.push([ 70, "/jc/","/jc/jchh.html" ]);
+$_sys.lotfordetail.push([ 72, "/jc/","/jc/rqspf.html" ]);
+$_sys.lotfordetail.push([ 90, "/jc/","/jc/"  ]);
+$_sys.lotfordetail.push([ 91, "/jc/","/jc/cbf.html" ]);
+$_sys.lotfordetail.push([ 92, "/jc/","/jc/bqc.html" ]);
+$_sys.lotfordetail.push([ 93, "/jc/","/jc/jqs.html" ]);
 
-$_sys.lotfordetail.push([ 71, "/lc/" ]);
-$_sys.lotfordetail.push([ 94, "/lc/" ]);
-$_sys.lotfordetail.push([ 95, "/lc/" ]);
-$_sys.lotfordetail.push([ 96, "/lc/" ]);
-$_sys.lotfordetail.push([ 97, "/lc/" ]);
+$_sys.lotfordetail.push([ 71, "/lc/","/lc/lchh.html" ]);
+$_sys.lotfordetail.push([ 94, "/lc/","/lc/" ]);
+$_sys.lotfordetail.push([ 95, "/lc/","/lc/rfsf.html" ]);
+$_sys.lotfordetail.push([ 96, "/lc/","/lc/sfc.html" ]);
+$_sys.lotfordetail.push([ 97, "/lc/","/lc/dxf.html" ]);
 
-$_sys.lotfordetail.push([ 98, "/worldcup/" ]);
-$_sys.lotfordetail.push([ 99, "/worldcup/" ]);
+
+$_sys.lotfordetail.push([ 98, "/worldcup/","/worldcup/" ]);
+$_sys.lotfordetail.push([ 99, "/worldcup/","/worldcup/" ]);
 
 $_sys.getlotdir = function(f,n) {
 	if (typeof(n)=='undefined'){n=1;};
@@ -1256,6 +1259,7 @@ $_sys.getlotdir = function(f,n) {
 		}
 	}
 };
+
 
 $_sys.showerr = function(desc){
 	alert(desc);
@@ -1757,6 +1761,19 @@ Array.prototype.aSort = function(method){
 	}
 	this.sort(Sort);
 }; 
+Array.prototype.del=function(n) {　//n表示第几项，从0开始算起。
+	//prototype为对象原型，注意这里为对象增加自定义方法的方法。
+	　if(n<0)　//如果n<0，则不进行任何操作。
+	　　return this;
+	　else
+	　　return this.slice(0,n).concat(this.slice(n+1,this.length));
+	　　/*
+	　　　concat方法：返回一个新数组，这个新数组是由两个或更多数组组合而成的。
+	　　　　　　　　　这里就是返回this.slice(0,n)/this.slice(n+1,this.length)
+	　　 　　　　　　组成的新数组，这中间，刚好少了第n项。
+	　　　slice方法： 返回一个数组的一段，两个参数，分别指定开始和结束的位置。
+	　　*/
+	}
 
 $_sys.getSub=function(ar,s){
 	var l=ar.length;
