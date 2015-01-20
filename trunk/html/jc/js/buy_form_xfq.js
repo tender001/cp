@@ -184,10 +184,11 @@ Class( 'XfqBuyForm', {
 
 	// 获取合买页面中必需的一些元素
 	getHmHtmlElement : function() {		
-		this.zhushu = this.need('#zhushu');
+//		this.zhushu = this.need('#zhushu');
 		this.beishu = this.need('#bshu');
-		this.allmoney = this.need('#allmoney');
+		this.allmoney = this.need('#castmoney');
 		this.amoney = this.need('#amoney');
+		this.range = this.need('#Range');
 		
 		this.allnum = this.need('#allnum');
 		this.allnum_piece = this.need('#allnum_piece');
@@ -211,10 +212,10 @@ Class( 'XfqBuyForm', {
 	},
 
 	hmInit : function() {
-		this.zhushu.val(50);
+		this.allmoney.val(100);
 		this.beishu.val(1);
-		this.allmoney.val('￥'+(this.zhushu.val()*this.beishu.val()*2));
-		this.totalMoney = parseInt(this.zhushu.val()*parseInt(this.beishu.val())*2);  //方案总金额
+//		this.allmoney.val('￥'+(this.zhushu.val()*this.beishu.val()*2));
+		this.totalMoney = this.allmoney.val();  //方案总金额
 		this.allnum.html(this.totalMoney);
 		this.amoney.val(this.totalMoney);
 	
@@ -231,13 +232,13 @@ Class( 'XfqBuyForm', {
 	doHmThings : function() {
 		var Y = this;
 		
-		this.zhushu.keyup(function(){
+		this.allmoney.keyup(function(){
 			Y.processZhuBeiNum();
 		} ).blur( function() {
 			Y.processZhuBeiNum();
 		});
 		
-		this.beishu.keyup(function(){
+		this.allmoney.keyup(function(){
 			Y.processZhuBeiNum();
 		} ).blur( function() {
 			Y.processZhuBeiNum();
@@ -309,15 +310,16 @@ Class( 'XfqBuyForm', {
 	
 	processZhuBeiNum:function(){
 		var zhu_num, bei_num,Y = this;
-		if(!isNaN(parseInt(Y.zhushu.val())) && !isNaN(parseInt(Y.beishu.val()))){
-			zhu_num = parseInt(Y.zhushu.val())||1;
+		if(!isNaN(parseInt(Y.allmoney.val())) && !isNaN(parseInt(Y.beishu.val()))){
+//			zhu_num = parseInt(Y.zhushu.val())||1;
 			bei_num = parseInt(Y.beishu.val())||1;
-			Y.zhushu.val(zhu_num);
+//			Y.zhushu.val(zhu_num);
 			Y.beishu.val(bei_num);
-			Y.allmoney.val('￥'+(Y.zhushu.val()*Y.beishu.val()*2));
-			Y.totalMoney = parseInt(Y.zhushu.val()*parseInt(Y.beishu.val())*2);  //			
+//			Y.allmoney.val('￥'+(Y.zhushu.val()*Y.beishu.val()*2));
+			Y.totalMoney = parseInt(Y.allmoney.val());  //			
 			Y.allnum.html(Y.totalMoney);
 			Y.amoney.val(Y.allnum.html());
+			Y.range.html(parseInt(Y.allmoney.val()*0.7)+" ~ "+parseInt(Y.allmoney.val()*1.3));
 			Y.processSplitNum();
 		}
 	},
