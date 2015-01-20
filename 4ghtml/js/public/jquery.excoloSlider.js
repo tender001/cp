@@ -67,7 +67,7 @@
             nextButtonClass: "slide-next",
             activeSlideClass: "es-active",
             slideCaptionClass: "es-caption",
-            pagerClass: "es-pager",
+            pagerClass: "es-pager"
         },
 
         /* Initialization function
@@ -704,18 +704,18 @@
             // Align slides according to bufferShortage
             for (i = 0; i < Math.abs(bufferShortage); i++) {
                 // Find the element with the lowest left position
-                lowest = [].reduce.call($slides, function (sml, cur) {
-                    return $(sml).offset().left < $(cur).offset().left ? sml : cur;
-                });
-                // Find the element with the highest left position
-                highest = [].reduce.call($slides, function (sml, cur) {
-                    return $(sml).offset().left > $(cur).offset().left ? sml : cur;
-                });
+//                lowest = [].foreach.call($slides, function (sml, cur) {
+//                    return $(sml).offset().left < $(cur).offset().left ? sml : cur;
+//                });
+//                // Find the element with the highest left position
+//                highest = [].reduce.call($slides, function (sml, cur) {
+//                    return $(sml).offset().left > $(cur).offset().left ? sml : cur;
+//                });
 
-                if(bufferShortage > 0)
-                    $(lowest).css("left", Math.round($(highest).position().left + width));
-                else
-                    $(highest).css("left", Math.round($(lowest).position().left - width));
+//                if(bufferShortage > 0)
+//                    $(lowest).css("left", Math.round($(highest).position().left + width));
+//                else
+//                    $(highest).css("left", Math.round($(lowest).position().left - width));
                     
             }
 
