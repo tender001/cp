@@ -25,6 +25,7 @@ img{border:0 none;vertical-align:top}
 .ba9{color: #1f5ba9 !important;font-weight: bold;}
 .c3{color: #3c3c3c !important;}
 .c8{color: #8c8c8c !important;}
+.red{color: red !important}.blue{color:#00abf9}
 input[type="text"]:focus{border-color: rgb(255,113,0) !important}
 @media screen and (-webkit-min-device-pixel-ratio:0){input{line-height:normal !important}}
 .bor-container{border: 1px solid #ccc;border-top: 0;}
@@ -988,7 +989,7 @@ table.col_2 td p{text-align:left;line-height:20px;padding:3px 10px; background-c
 table.col_2 td font{color:#f60;font-size:14px;font-weight:bold;padding:0 5px}
 table.col_2 td input.text{width:45px;height:22px;border:1px solid #ddd;text-align:center;margin-right:5px;padding-top:3px\9;height:19px\9}
 :root table.col_2 td input.text{height:22px;padding-top:0}
-.float-explain{padding:0 10px;font-size: 12px;color: #36c;cursor: pointer;position: relative}
+.float-explain{padding:0 10px 0 0;font-size: 12px;color: #36c;cursor: pointer;position: relative}
 .float-explain .explain{display:none;width: 198px;height: auto;position: absolute;top: 30px;left: 0}
 .float-explain:hover .explain{display: block}
 table.col_2 td  input.box{vertical-align: -2px;_vertical-align: -1px;margin-right:3px;}

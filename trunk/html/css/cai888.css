@@ -70,7 +70,8 @@ div,ul,li{ list-style-type:none;overflow:hidden}
 .xqtab1{padding-top:20px;border-bottom:1px solid #ccc;height:31px;overflow:visible;position:relative;zoom:1}
 .xqtab1 b{display:block;height:30px;font:400 14px/30px Tahoma,Helvetica;border:1px solid #ccc; background:#fde9d9;padding:0 15px;color:#444;cursor:pointer;z-index:9;position:absolute;bottom:-1px;_bottom:-2px}
 .xqtab1 b.cur{ background:#fff;border-bottom:1px solid #fff}
-.xqtabm{padding-top:14px;clear:both}
+.xqtabm{padding-top:14px;clear:both;position: relative}
+.xqtabm .bd-explain{position: absolute;right: 7px;bottom: 7px}
 .xqtabm td{line-height:27px;height:27px;text-align:center;color:#444}
 .xqtabm tr.odd td{ background:#f5f5f5;}
 .xqtabm tr.tr1 td{height:27px;line-height:27px;color:#666; background:#f5f5f5;border-right:1px solid #fff}
