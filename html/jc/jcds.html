@@ -103,15 +103,10 @@
             <a href="javascript:void(0);" id="hm_btn" class="a_hm_buya">发起合买</a>
         </div>
 
-        <div id="xfq" class="tan_mid" style="display:block;border:none;">
+        <div id="xfq" class="tan_mid" style="display:none;border:none;">
             <div class="b_th_col">
                 <table width="760" border="0" class="col_2">
-                    <!--<tr>
-                        <th>发起方案</th>
-                        <td><input type="text" class="text" name="zhushu" id="zhushu" maxlength="6" value="50"/>注，<input
-                                type="text" class="text" name="bshu" id="bshu" value="1" maxlength="2"/>倍
-                        </td>
-                    </tr>-->
+
                     <tr>
                         <th>方案金额</th>
                         <td><!--总金额<font id="allmoney">100</font>元-->
@@ -124,7 +119,7 @@
                                     <p>3.上传方案=预计金额时，认购金额不发生变化。</p>
                                 </div>
                             </a>
-                            预设&nbsp;<input class="text" type="text" value="2"/>元&nbsp;&nbsp;方案金额浮动范围：2 ~ 2 元</td>
+                            预设&nbsp;<input class="text" type="text" value="100" id="castmoney"/>元&nbsp;&nbsp;方案金额浮动范围：<cite id="Range">70 ~ 130</cite> 元</td>
                     </tr>
                     <tr>
                         <th>我要分成</th>
@@ -189,6 +184,7 @@
 <input type='hidden' name='amoney' id="amoney" value='0'>
 <input type="hidden" name="gk" id="gk" value="1">
 <input type="hidden" name="tcbili" id="tcbili" value="2">
+<input type="hidden" class="text" name="bshu" id="bshu" value="1" maxlength="2"/>
 
 <div class="caitan" style="DISPLAY: none;width: 640px" id=format_switch>
     <div class="tantop">
