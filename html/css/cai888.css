@@ -402,7 +402,6 @@ a.czbtnhui{color:#666;background:url(../images/cai888/user_03hui.jpg);border:1px
 .usertitle p.ppdj span{padding:0}
 .usertitle p.ppdj span.fontred{color:#f60}
 .aqcc{border-bottom:1px solid #eee;height:85px;margin-top:0;}
-.aqcc b{float:left;width:80px;height:95px;}
 .aqcc img{display:block;margin:30px auto;}
 .aqcc span{float:left;width:110px;height:30px;margin-top:32px;border-right:1px solid #eee;font:20px/30px "Microsoft YaHei";color:#666;}
 .aqcc p{float:left;width:480px;height:95px;padding-left:15px;color:#444;font-size:12px;line-height:95px;}
@@ -414,19 +413,19 @@ a.czbtnhui{color:#666;background:url(../images/cai888/user_03hui.jpg);border:1px
 .aqcc s.cur a:hover{ text-decoration: none;color:#fff;}
 .aqcenter{padding:0 20px;}
 .aqcc em{color:#f60;font-size:16px;font-weight:bold}
-.aqcc b{width:50px;height:50px;margin:23px 10px 0 20px}
-.aqcc b.cardc{ background:url(../images/cai888/aqtbx_03.jpg) no-repeat}
-.aqcc b.cardcur{ background:url(../images/cai888/rzyb_03.jpg) no-repeat}
-.aqcc b.telc{ background:url(../images/cai888/aqtbx_07.jpg) no-repeat}
-.aqcc b.telcur{ background:url(../images/cai888/rzyb_06.jpg) no-repeat}
-.aqcc b.bankc{ background:url(../images/cai888/aqtbx_09.jpg) no-repeat}
-.aqcc b.bankcur{ background:url(../images/cai888/rzyb_09.jpg) no-repeat}
-.aqcc .alipay{ background:url(/images/cai888/alipay.jpg) no-repeat}
-.aqcc .alipaycur{ background:url(../images/cai888/alipaycur.jpg) no-repeat}
-.aqcc b.mailc{ background:url(../images/cai888/aqtbx_11.jpg ) no-repeat}
-.aqcc b.mibac{ background:url(../images/cai888/aqtbx_15.jpg) no-repeat}
-.aqcc b.mibacur{ background:url(../images/cai888/rzyb_14.jpg) no-repeat}
-.aqcc b.mailcur{ background:url(../images/cai888/rzyb_12.jpg) no-repeat}
+.aqcc b{float:left;width:50px;height:50px;margin:23px 10px 0 20px;background:#fff url("/images/cai888/user-safety.jpg") no-repeat}
+.aqcc .cardc{background-position:0 1px}
+.aqcc .cardcur{background-position:0 -50px}
+.aqcc .telc{background-position:-1px -100px}
+.aqcc .telcur{background-position:0 -151px}
+.aqcc .bankc{background-position:0 -200px}
+.aqcc .bankcur{background-position: 0 -252px}
+.aqcc .alipay{background-position: 0 -303px}
+.aqcc .alipaycur{background-position: 0 -354px}
+.aqcc .mailc{background-position:1px -405px}
+.aqcc .mailcur{background-position: 0 -458px}
+.aqcc .mibac{background-position: 0 -508px}
+.aqcc .mibacur{background-position: 0 -559px}
 .confitp{background:url(../images/cai888/yes_06.jpg) 200px 55px no-repeat;padding:70px 0 30px 275px;line-height:30px;color:#444;font-size:14px;}
 .confitp a{color:#145fab; text-decoration:underline}
 .confitp a:hover{color:#f60}
