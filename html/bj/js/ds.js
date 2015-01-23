@@ -244,6 +244,8 @@ Class( 'GuoguanType', {
 		codes = Class.config('formatValue');
 		if (Class.config('playName') == 'rqspf') {
 			_html = '格式转化符：胜→' + codes[0] + '  平→' + codes[1] + '  负→' + codes[2];
+		}else if (Class.config('playName') == 'sfgg') {
+			_html = '格式转化符：胜→' + codes[0] + ' 负→' + codes[1];
 		} else if (Class.config('playName') == 'jq') {
 			_html = '格式转化符：0→' + codes[0] + '  1→' + codes[1] + '  2→' + codes[2] + '  3→' + codes[3] + '  ...';
 		} else if (Class.config('playName') == 'ds') {
@@ -260,6 +262,7 @@ Class( 'GuoguanType', {
 	checkFormat : function(str) {
 		switch (Class.config('playName')) {
 			case 'rqspf' :
+			case 'sfgg' :
 			case 'jq'    :
 			case 'ds'    :
 				return /^\d$/.test(str);
@@ -331,6 +334,12 @@ Class( {
     _index : function() {
 		Class.config('playId', parseInt(this.need('#playid').val()));  //玩法id
 		switch (Class.config('playId')) {
+		case 84 :    //胜负过关
+			Class.config('playName', 'sfgg');
+			Class.config('ggMaxLength', 15);
+			Class.config('formatIndex', [3, 0]);
+			Class.config('formatValue', [3, 0]);
+			break;
 		case 85 :    //让球胜平负
 			Class.config('playName', 'rqspf');
 			Class.config('ggMaxLength', 15);
@@ -477,7 +486,7 @@ Class('Loadduizhen',{
 		if (lotid == "") {
 			lotid = "85";
 		}
-		if(lotid!="85" &&lotid!="86" &&lotid!="87" &&lotid!="88" &&lotid!="89"){
+		if(lotid!="85" &&lotid!="86" &&lotid!="87" &&lotid!="88" &&lotid!="89"&&lotid!="84"){
 			lotid = "85";
 		}
 		$("#playid").val(lotid);
@@ -493,7 +502,7 @@ Class('Loadduizhen',{
 		}		
 		Class.config('playId', parseInt(this.need('#playid').val()) );  //玩法id
 		this.ajax({
-	        url: "/cpdata/game/85/s.json",
+	        url: "/cpdata/game/"+Class.config('playId')+"/s.json",
 	        end : function(data) {
 				var obj = eval("(" + data.text + ")");
 				var code = obj.period.code;
@@ -501,7 +510,8 @@ Class('Loadduizhen',{
 				if (code == "0") {
 					$("#expect").val(pid);
 					this.ajax({
-				        url: "/cpdata/match/beid/"+pid+"/spf.json",
+				        url: Class.config('playId')=="84"?"/cpdata/match/beid/"+pid+"/sfgg.json":"/cpdata/match/beid/"+pid+"/spf.json",
+				 
 				        end : function(data) {
 							var obj = eval("(" + data.text + ")");
 							var code = obj.match.code;
@@ -571,14 +581,14 @@ Class('Loadduizhen',{
 				row.disabled="disabled";
 			}else{//未过期
 				num++;
-				row.dispalay="";
+				row.dispalay=""; 
 				row.disabled="";
 			};
 			
-			if (Class.config('playId')==85 && parseInt(row.close)>0){
+			if ((Class.config('playId')==85||Class.config('playId')==84) && (row.close)*1>0){
 				row.closestr='<strong style="color:red">+'+row.close+'</strong>';
 				html[html.length] = tableTpl[2].tpl(row);
-			}else if (Class.config('playId')==85 && parseInt(row.close)<0){
+			}else if ((Class.config('playId')==85||Class.config('playId')==84) && (row.close)*1<0){
 				row.closestr='<strong style="color:green">'+row.close+'</strong>';
 				html[html.length] = tableTpl[2].tpl(row);
 			}else{
@@ -684,13 +694,20 @@ Class('Loadduizhen',{
 		           
 		               ];	
 		 switch (lotid) {
-			case "85" :    //让球胜平负
-				$("#format_switch").html(tableTmpl[0]);
-				$("#tzurl").attr('href','/bj/index.html');
-				$("#bzgs").click(function(){
-					Yobj.openUrl('/bj/bzgs/SPF.html',450,470)
-				});
-				break;
+			 case "84" :    //胜负过关
+					$("#format_switch").html(tableTmpl[0]);
+					$("#tzurl").attr('href','/bj/sfgg.html');
+					$("#bzgs").click(function(){
+						Yobj.openUrl('/bj/bzgs/SF.html',450,470)
+					});
+					break;	
+			 case "85" :    //让球胜平负
+					$("#format_switch").html(tableTmpl[0]);
+					$("#tzurl").attr('href','/bj/index.html');
+					$("#bzgs").click(function(){
+						Yobj.openUrl('/bj/bzgs/SPF.html',450,470)
+					});
+					break;
 			case "89" :    //总进球数
 				$("#format_switch").html(tableTmpl[1]);
 				$("#tzurl").attr('href','/bj/jqs.html');
