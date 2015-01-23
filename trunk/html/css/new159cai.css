@@ -2343,8 +2343,8 @@ p.yh1 a.dg-btn1{right: 12px}
 .dp-basic .bod .bod-m ul li{float: left;}
 .sf-right .bod .bod-m{width: 86%;padding: 10px 7%}
 .sf-left .bod .bod-m li{width: 190px;height: 134px;padding:0 0 0 24px;position: relative;}
-.sf-left .bod .bod-m li span{display: inline-block;width: 30px;max-height:100px;vertical-align:bottom;background-color:#39a746;position: absolute;bottom: 3px;left: 45%;}
-.sf-left .bod .bod-m li span i{display: inline-block;width: 83px;height: 24px;font: 14px/24px "Microsoft YaHei";color:#39a746;position: absolute;top: -30px;left: -20px;}
+.sf-left .bod .bod-m li span{width: 30px;max-height:100px;vertical-align:bottom;background-color:#39a746;position: absolute;bottom: 3px;left: 45%;}
+.sf-left .bod .bod-m li span i{width: 83px;height: 24px;font: 14px/24px "Microsoft YaHei";color:#39a746;position: absolute;top: -30px;left: -20px;}
 .sf-left .bod .bod-m dl{padding-bottom:35px;overflow: hidden;zoom: 1}
 .sf-left .bod .bod-m dl dd{float:left;width: 189px;height: 52px;margin: 20px 10px 0 14px;padding-top:10px;font: 24px/24px "\9ed1\4f53";text-align: center;color: #2f913e;background-repeat: no-repeat;cursor:pointer;-webkit-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;*font-weight: 700;_display:inline}
 .sf-left .bod .bod-m dl dd.hover{color:#fff;background-position: 0 -63px}
