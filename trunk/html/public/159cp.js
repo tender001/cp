@@ -1178,7 +1178,7 @@ $_sys_getwininfo = function(lotid, wininfo) {
 };
 $_sys_getnewwininfo = function(lotid, wininfo) {
 	var tmp = [];
-	if (lotid==85||lotid==86||lotid==87||lotid==88||lotid==89
+	if (lotid==84||lotid==85||lotid==86||lotid==87||lotid==88||lotid==89
 			||lotid==90
 			||lotid==91
 			||lotid==92
