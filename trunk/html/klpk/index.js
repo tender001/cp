@@ -80,17 +80,17 @@ Class.C('lot_data_dome', {
 
 Class.C('lot_data_wanfa', {
 
-    249: ' 同花包选，开奖号为任意相同花色即中奖<em class="red">22</em>元，中奖率1/19.3；同花单选，与开奖号花色都相同即中奖<em class="red">90</em>元，中奖率1/77.3。',
-    250: '同花顺包选，开奖号是三连号且花色一致即中奖<em class="red">535</em>元；同花顺单选，所选花色与顺子开奖号花色都相同即中奖<em class="red">2150</em>元。',
-    251: ' 顺子包选，开奖号码为三连号即中奖<em class="red">33</em>元，中奖概率1/28.7；顺子单选，所选顺子号与开奖号相同即中奖<em class="red">400</em>元，中奖概率1/345。',
-    252: ' 豹子包选，开奖号为三同号即中奖<em class="red">500</em>元，中奖概率1/425；豹子单选，所选豹子号与开奖号相同即中奖<em class="red">6400</em>元，中奖概率1/5525。',
-    253: '对子包选，开奖号中只出现2个同号即中奖<em class="red">7</em>元，中奖率1/5.9；对子单选，与开奖号中的对子相同即中奖<em class="red">88</em>元，中奖概率1/76.7。',
-    254: '至少选1个号码，所选号码与开奖号码中任意一个相同即中奖<em class="red">5</em>元，中奖概率1/4.6。',
-    255: '至少选2个号码，所选号码至少命中开奖号中2个不同号码即中奖<em class="red">33</em>元，中奖概率1/29.4。',
-    256: '至少选3个号码，所选号码包括当期全部开奖号即中奖<em class="red">116</em>元，中奖概率1/100.45。',
-    257: '至少选4个号码，所选号码包括当期全部开奖号即中奖<em class="red">46</em>元，中奖概率1/39.46。',
-    258: '至少选5个号码，所选号码包括当期全部开奖号即中奖<em class="red">22</em>元，中奖概率1/19.38。 ',
-    259: '至少选6个号码，所选号码包括当期全部开奖号即中奖<em class="red">12</em>元，中奖概率1/10.9。'
+    249: ' 同花包选，开奖号为任意相同花色即中奖<em>22</em>元，中奖率1/19.3；同花单选，与开奖号花色都相同即中奖<em>90</em>元，中奖率1/77.3。',
+    250: '同花顺包选，开奖号是三连号且花色一致即中奖<em>535</em>元；同花顺单选，所选花色与顺子开奖号花色都相同即中奖<em>2150</em>元。',
+    251: ' 顺子包选，开奖号码为三连号即中奖<em>33</em>元，中奖概率1/28.7；顺子单选，所选顺子号与开奖号相同即中奖<em>400</em>元，中奖概率1/345。',
+    252: ' 豹子包选，开奖号为三同号即中奖<em>500</em>元，中奖概率1/425；豹子单选，所选豹子号与开奖号相同即中奖<em>6400</em>元，中奖概率1/5525。',
+    253: '对子包选，开奖号中只出现2个同号即中奖<em>7</em>元，中奖率1/5.9；对子单选，与开奖号中的对子相同即中奖<em>88</em>元，中奖概率1/76.7。',
+    254: '至少选1个号码，所选号码与开奖号码中任意一个相同即中奖<em>5</em>元，中奖概率1/4.6。',
+    255: '至少选2个号码，所选号码至少命中开奖号中2个不同号码即中奖<em>33</em>元，中奖概率1/29.4。',
+    256: '至少选3个号码，所选号码包括当期全部开奖号即中奖<em>116</em>元，中奖概率1/100.45。',
+    257: '至少选4个号码，所选号码包括当期全部开奖号即中奖<em>46</em>元，中奖概率1/39.46。',
+    258: '至少选5个号码，所选号码包括当期全部开奖号即中奖<em>22</em>元，中奖概率1/19.38。 ',
+    259: '至少选6个号码，所选号码包括当期全部开奖号即中奖<em>12</em>元，中奖概率1/10.9。'
 });
 Class.C('wanfa',{// 
 	0: ['th','addTH'],
@@ -2351,7 +2351,7 @@ Class('openCodeList', {
                      el.innerHTML = lastmiss1[i];
                      curMax1 = max1[Y.getInt(i/width1)];
                      if(curMax1 >= 20){
-                    	 el.style.color = lastmiss1[i] == curMax1 ? '#e52e04' : '#B1B1B1';
+                    	 el.style.color = lastmiss1[i] == curMax1 ? '#efd41f' : '#B1B1B1';
                      }
                                         
                  }
@@ -2377,7 +2377,7 @@ Class('openCodeList', {
                      el.innerHTML = lastmiss2[i];
                      curMax2 = max2[Y.getInt(i/width2)];
                      if(curMax2 >= 20){
-                    	 el.style.color = lastmiss2[i] == curMax2 ? 'red' : '#ccc';
+                    	 el.style.color = lastmiss2[i] == curMax2 ? '#efd41f' : '#ccc';
                      }
                                         
                  }
@@ -2403,7 +2403,7 @@ Class('openCodeList', {
                      el.innerHTML = lastmiss3[i];
                      curMax3 = max3[Y.getInt(i/width3)];
                      if(curMax3>= 20){
-                    	 el.style.color = lastmiss3[i] == curMax3 ? '#e52e04' : '#ccc';
+                    	 el.style.color = lastmiss3[i] == curMax3 ? '#efd41f' : '#ccc';
                      }
                                         
                  }
@@ -2429,7 +2429,7 @@ Class('openCodeList', {
                      el.innerHTML = lastmiss5[i];
                      curMax5 = max5[Y.getInt(i/width5)];
                      if(curMax5>= 20){
-                    	 el.style.color = lastmiss5[i] == curMax5 ? '#e52e04' : '#ccc';
+                    	 el.style.color = lastmiss5[i] == curMax5 ? '#efd41f' : '#ccc';
                      }
                                         
                  }
@@ -2453,7 +2453,7 @@ Class('openCodeList', {
                      el.innerHTML = lastmiss0[i];
                      curMax0 = max0[Y.getInt(i/width0)];
                      if(curMax0 >= 20){
-                    	 el.style.color = lastmiss0[i] == curMax0 ? '#e52e04' : '#ccc' ;
+                    	 el.style.color = lastmiss0[i] == curMax0 ? '#efd41f' : '#ccc' ;
                      }
                                         
                  }
