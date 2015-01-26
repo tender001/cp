@@ -1594,7 +1594,7 @@ Class('LoadExpect',{
 		r.each(function(row,i){
 			if(row.ms == -1) return;
 			row.classname=i%2==0?"vs_lines odd":"vs_lines";
-			row.enddate=(((Y.getDate(row.bt).getHours()<10) || (Y.getDate(row.bt).getHours()==10 && Y.getDate(row.bt).getMinutes()==0))?(Y.getDate(Date.parse(Y.getDate(row.bt))-1000*60*60*24).format('YY-MM-DD')):Y.getDate(row.bt).format('YY-MM-DD'));
+			row.enddate=(((Y.getDate(row.bt).getHours()<1) || (Y.getDate(row.bt).getHours()==10 && Y.getDate(row.bt).getMinutes()==0))?(Y.getDate(Date.parse(Y.getDate(row.bt))-1000*60*60*24).format('YY-MM-DD')):Y.getDate(row.bt).format('YY-MM-DD'));
 			if(mathdate[mathdate.length-1]>row.enddate) return;
 			if (mathdate.indexOf(row.enddate)<0){
 				mathdate[mathdate.length]=row.enddate;
