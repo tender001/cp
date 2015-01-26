@@ -182,10 +182,10 @@
 	</div>
  	<section class="w_header" ontouchend="tend(event)" ontouchstart="tstart(event)">
  		<ul>
- 			<li><a href="http://m.159cai.com/ssq/"  target="_blank"><img src="images/index_header/4g1.png" alt=""></a></li>
+ 		
  			<li><a href="http://www.159cai.com/m/"  target="_blank"><img src="images/index_header/4g2.png" alt=""></a></li>
  		</ul>
- 		<div class="jd_bot" ><span class="cur"></span><span></span></div>
+ 		<div class="jd_bot" ><span class="cur"></span></div>
  	</section>
  	<script type="text/javascript">
 
@@ -194,14 +194,14 @@
  		var i=$(".w_header ul li").length;
  		$(".w_header ul").css("width",$(".w_header").width()*i+'px').children("li").css("width",$(".w_header").width()+'px');
  		$(function(){
-	 		var time=setInterval("lb()",2500); 
+	 		//var time=setInterval("lb()",2500); 
 	 		
 
-	 		$(".jd_bot span").click(function(){
-	 			$(".w_header ul").animate({
- 				left: -$(this).index()*100+'%'},300);
- 				$(this).removeClass().addClass('cur').siblings().removeClass('cur');
-	 		});
+	 		//$(".jd_bot span").click(function(){
+	 		//	$(".w_header ul").animate({
+ 			//	left: -$(this).index()*100+'%'},300);
+ 			//	$(this).removeClass().addClass('cur').siblings().removeClass('cur');
+	 		//});
 			
  		});
  		function lb(){
