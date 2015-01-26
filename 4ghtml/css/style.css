@@ -76,7 +76,17 @@
 }
 .cp-list{border-bottom: .2em solid #e2e2e2}
 .cp-list li{border-top: 1px solid #e2e2e2;vertical-align: top;overflow: hidden}
-.caipiao-ap{float: left;width:60px;margin:0 2%}
+.caipiao-ap{float:left;width:60px;height:60px;margin:0 2%;background: url("/img/cp/159caipiao.png") no-repeat;background-size: 60px 791px}
+.caipiao-ap-ssq{background-position:0 -185px}
+.caipiao-ap-dlt{background-position:0 -246px}
+.caipiao-ap-jczq{background-position:0 0}
+.caipiao-ap-jclq{background-position:0 -62px}
+.caipiao-ap-3d{background-position:0 -547px}
+.caipiao-ap-11x5{background-position:0 -306px}
+.caipiao-ap-11ydj{background-position:0 -426px}
+.caipiao-ap-bjdc{background-position:0 -124px}
+.caipiao-ap-sfc{background-position:0 -366px}
+.caipiao-ap-r9{background-position:0 -486px}
 .caipiao-ap img{width: 100%;}
 .caipiao-tit{float: left;width: 75%;font-size: 1.35em;font-family: \5fae\8f6f\96c5\9ed1;color: #040c0f}
 .caipiao-tit em{display: block;height: 1.6em;padding-top: 10px}
