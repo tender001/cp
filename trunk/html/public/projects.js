@@ -932,10 +932,11 @@ var showview = function(lotid,projid){
 				if (upload=="0" &&source!=10){
 					if (((pnum==0&& (istate=="0" || istate=="1"|| istate=="2"))||(pnum!=0 && (istate=="1"|| istate=="2") )) && isself){
 						$("#scfa").show();
-						$("#cp_infotable").html('<p class="xqtbpa"><a id="scfa" target="_blank" class="xqtbpaa">上传方案</a><br><a id="bqfa" target="_blank" class="xqtbpaa" style="display: none;">补全方案</a></p>');
+						$("#cp_infotable").html('<span class="bd-explain" style="display: none;">注：补全保底已清方案时请及时追加保底，避免方案流产</span><p class="xqtbpa"><a id="scfa" target="_blank" class="xqtbpaa">上传方案</a><br><a id="bqfa" target="_blank" class="xqtbpaa" style="display: none;">补全方案</a></p>');
 						if(lotid==90 ||lotid==91 ||lotid==92 ||lotid==93||lotid==72||lotid==70){
 							$("a#scfa").attr("href",""+$_sys.getlotdir(lotid)+"project_upload.html?lotid="+lotid+"&projid="+projid+"");
 							$("a#bqfa").attr("href",""+$_sys.getlotdir(lotid,2)+"?xfhb="+projid+"").show();
+							$(".bd-explain").show();
 						}else if(lotid==94 ||lotid==95 ||lotid==96 ||lotid==97){
 							$("a#scfa").attr("href",""+$_sys.getlotdir(lotid)+"project_upload.html?lotid="+lotid+"&projid="+projid+"");
 						}else if(lotid==84 ||lotid==85 ||lotid==86 ||lotid==87 ||lotid==88 ||lotid==89){
