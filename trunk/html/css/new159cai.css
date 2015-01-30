@@ -1730,11 +1730,11 @@ a.n_gz{color:#fff}
 .hm_right .rig_hm_main table thead td,.hm_right .rig_hm_main table thead th{border-bottom:1px solid #ddd}
 .nwx5{border:1px solid #ccc;border-top:4px solid #f60;}
 .nwx5top{height:60px;background: url(../images/cai888/nwx5_03.jpg);border-bottom:1px solid #ccc}
-.nwx5top a{float:left;display:block;height:60px;padding:0 15px;border-right:1px solid #ccc;_width:34px;_padding:0 13px}
+.nwx5top a{float:left;height:60px;padding:0 15px;border-right:1px solid #ccc;_width:34px;_padding:0 13px}
 .nwssctop a{padding:0 21px}
 .nwx5top a:hover,.nwx5top a.cur{background:#f60;text-decoration: none;}
 .nwx5top a b{color:#333;font-weight:bold;text-align:Center;display:block;font-size:14px;line-height:22px;height:22px;padding-top:2px;}
-.w_con .nwx5top a b{letter-spacing: 1.4px;}
+.w_con .nwx5top a b{letter-spacing: 1.4px;display: inline-block;}
 .nwx5top a span{color:#999;text-align:Center;display:block;font-size:12px;line-height:16px;}
 .nwx5top a.cur b,.nwx5top a.cur span,.nwx5top a:hover b,.nwx5top a:hover span{color:#fff}
 .nwx5top em{float:left;width:134px;padding:6px 0 0 5px;line-height:18px;color:#333}
@@ -1807,7 +1807,8 @@ a.sz_cmt{background: url(../images/cai888/nwx5_112.jpg);width:137px;height:33px}
 /*start 2014.8.11 时时彩更新*/
 #container.w_con{border: 0;}
 .w_con .nwx5top{border: 0;}
-.w_con .nwx5 .nwssctop1 a{padding: 0 12px;width: 61px;}
+.w_con .nwx5 .nwssctop1 a{padding: 0 12px;width: 61px;text-align: center}
+.w_con_k3 .nwx5 .nwssctop1 a{width:auto !important}
 .w_con .nwx5 .nwssctop1 a.cur{background-color: #088959;}
 .w_con .nwx5 .nwssctop1 a:hover{background-color: #088959;}
 .w_con .nwx5{border-top-color: #088959;}
@@ -2020,7 +2021,57 @@ a.sz_cmt{background: url(../images/cai888/nwx5_112.jpg);width:137px;height:33px}
 .w_con .kc_zjz{border: 0;zoom: 1;}
 .w_con .xh_text em{color: #efd41f;}
 .xh_tonghua .pok dl.pok_tonghua{width:680px;margin:12px auto 0;}
-/*end 2014.8.11 时时彩更新*/
+
+
+.span4-k3{float: left}
+.span4-k3 i{display: inline-block;width: 35px;height: 36px;margin-right:8px;background: url("/images/bg/k3-se.png") no-repeat}
+.span4-k3 i.k3-kj-1{background-position: 0 0}
+.span4-k3 i.k3-kj-2{background-position: -41px 0}
+.span4-k3 i.k3-kj-3{background-position: -82px 0}
+.span4-k3 i.k3-kj-4{background-position: -124px 0}
+.span4-k3 i.k3-kj-5{background-position: -165px 0}
+.span4-k3 i.k3-kj-6{background-position: -206px 0}
+.k3-kj-ing{display: none}
+.k3-kj-ing img{}
+.k3-pok a,.k3-pok1 a,.k3-tuodan{background:  transparent url("/images/bg/k3.png") no-repeat;_display:inline}
+.k3-pok-bg-m{padding:10px}
+.k3-pok-bg{padding:10px;background-color: #05a06f}
+.k3-hz{height:285px;overflow: hidden}
+.k3-pok-bg p{zoom: 1}
+.k3-pok-bg p:after{content: "";display: table;clear: both}
+.k3-pok,.k3-pok1{text-align: center;color: #323232;position: relative;z-index: 15}
+.k3-pok-span{float:left;margin:26px 0 0 138px;font-weight:700;color: #333;_display: inline}
+.k3-pok a{float:left;width:126px;height:68px;margin:0 0 0 9px;color: #666;background-position: -1px -1px}
+.k3-pok a:hover{background-position: -1px -140px}
+.k3-pok a.cur{color:#fff;background-position: -1px -70px}
+.k3-pok a.cur strong,.k3-pok1 a.cur strong{color:#fff;}
+.k3-pok1 span{margin:26px 0 0 0;}
+.k3-pok1 a{float:left;width:103px;height:68px;margin:0 0 0 9px;color: #666;background-position: -129px -1px}
+.k3-pok1 a:hover{background-position: -129px -140px}
+.k3-pok1 a.cur{color:#fff;background-position: -129px -70px}
+.k3-pok2 a{margin-top:26px !important}
+.k3-pok2 span{margin-top:51px}
+.k3-pok a strong,.k3-pok1 a strong{display: block;width: 100%;padding:6px 0 4px;font:400 28px/32px "Microsoft YaHei";color: #333}
+.k3-pok-bg a:hover{text-decoration: none}
+.k3-pok-yl{overflow:hidden;}
+.yl-position{height:120px;position: relative;top:-92px;z-index: 13;}
+.k3-pok-yl span{/*height:100px;*/margin:0;}/*遗漏 */
+.k3-pok-yl i{float:left;width: 103px;margin:0 0 0 9px;color: #fff;text-align: center}
+.yl-position i{margin-bottom:76px}
+.k3-pok-span0{height:100px;}
+.marl100{margin-left: 100px !important}
+.k3-tuodan{width: 280px;height:46px;margin: 0 auto 10px;background-position:-1px -255px}
+.k3-tuodan.cur{background-position: -1px -208px;}
+.k3-tuodan span{display: inline-block;width: 50%;font:700 18px/46px "simsun";text-align: center;color: #fff;cursor: pointer}
+.k3-tuodan .tuodan2{color: #333}
+.k3-tuodan.cur span{color: #333}
+.k3-tuodan.cur .tuodan2{color: #fff}
+.k3-pok-tab a{width: auto;border:1px solid #999;border-radius: 3px;background-image: none;background-color: #a9fce2;}
+.k3-pok-tab a.cur{background-color: #ea5f06;background-image:-webkit-linear-gradient(top,#ea5f06,#f59b2d);background-image:-moz-linear-gradient(top,#ea5f06,#f59b2d);background-image:-o-linear-gradient(top,#ea5f06,#f59b2d);background-image:-ms-linear-gradient(top,#ea5f06,#f59b2d);background-image:linear-gradient(top,#ea5f06,#f59b2d);background-position: 0}
+.k3-pok-tab a strong{display: inline-block;width:auto;padding:6px 1em 4px}
+.k3-pok-tab .k3-pok-yl i{width: 635px}
+
+
 /*双色球改版2014.9.3*/
 .ball_top em,.ball b{background: url(../images/bg/shuangs/qiu.jpg) no-repeat;}
 .se_main_top .p3 b s,.se_main_top .p3 i s,.choose-ball .ball-left s,.choose-btn strong a.ball-btn,.choose-show .computer-btn a,.choose-show p span{background: url(../images/bg/shuangs/se_bg.png) no-repeat;}
@@ -2043,7 +2094,6 @@ a.sz_cmt{background: url(../images/cai888/nwx5_112.jpg);width:137px;height:33px}
 .se_main_top .p3 span em{padding: 0 3px;font: bold 20px/22px Arial;border-radius: 3px;text-align: center;color: #e52e04;vertical-align: -3px;}
 .se_main_top .p3 b{float: left;padding-left: 52px;font-weight: 400;_padding-top:8px;}
 .se_main_top .p3 b *{display: inline-block;}
-/*.numcai .se_main_top b{font-weight: 400;}*/
 .numcai .se_main_top b *{display: inline-block;vertical-align: middle;}
 .ball_top cite,.ball_top i{font-weight: 700;font-style: normal;color: #e52e04;}
 .ball_top em{display: inline-block;width: 32px;height: 35px;margin-right: 2px;font: bold 16px/31px Arial;text-align: center;text-indent: -2px;color: #fff;background-position: -204px -11px;float: none;}
