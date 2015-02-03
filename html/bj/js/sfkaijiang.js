@@ -80,7 +80,8 @@ Class('Loadduizhen',{
 			return false;
 		}		
 		this.ajax({
-					url:"/cpdata/match/beid/"+expect+"/sfgg.json",
+//			http://www.159cai.com/cpdata/match/bdsf/150201/150201.json
+					url:"/cpdata/match/bdsf/"+expect+"/"+expect+".json",
 					type : "GET",
 					dataType : "json",
 					cache : false,
