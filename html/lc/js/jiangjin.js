@@ -58,7 +58,9 @@ Class( 'prizePrediction', {
 	predictMaxPrize : function(max_sp, gg_name, dan_sp, new_round) {
 		var max_prize = 0, hasDan = dan_sp && dan_sp.length > 0;
 		if (gg_name == '单关') {
-			max_prize = max_sp.reduce( function(a,b){return ~~a+~~b} );
+			max_prize = max_sp.reduce( function(a,b){
+				return a+b
+				} );
 		} else if (/串1$/.test(gg_name)) {  //自由
 			gg_name = gg_name.split(',');
 			gg_name.each( function(_gg_name) {
