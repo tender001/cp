@@ -211,7 +211,7 @@ function joineday(tid){ //参与分钱
 	
 }
 function geteday(tid){
-	if(Onebet){
+	if(Oneget){
 		$.ajax({
 		     url:'/phpu/p.phpx?fid=ttfq_award&tid='+tid,
 		     type : "POST",
