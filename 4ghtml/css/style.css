@@ -176,8 +176,8 @@
 .news-bann{padding:10px 2% 0;border-top: 1px solid #ccc;}
 .news-bann img{width: 100%;max-height: 230px}
 .news-list-all a{color: #333}
-.news-list-all div{padding:0.8em 2%;border-bottom: 1px solid #ccc}
-.news-list-all h2{height:1.45em;font-size: 1.13em;font-weight: normal;overflow: hidden}
+.news-list-all div{padding:0.5em 2% 0.4em;border-bottom: 1px solid #e3e3e3}
+.news-list-all h2{height:1.5em;line-height:1.73em;font-size:1.15em;font-weight:normal;overflow:hidden}
 .news-list-all span{display:block;height:24px;color: #999;font-size: 1.12em;line-height: 2;;overflow: hidden}
 .news-list-all span em{float: right;padding-left:0.6em}
 .news-list-all span strong{font-weight: normal;}
