@@ -1,0 +1,114 @@
+@charset "utf-8";
+body,section,footer,header,menu,nav,button,dd,dl,dt,fieldset,form,h1,h2,h3,h4,h5,h6,hr,input,legend,li,ul,ol,p,pre,th,td,textarea,center{margin:0;padding:0}
+html{min-height:100%;}
+html{color:#000;-webkit-backface-visibility: hidden;-webkit-font-smoothing: antialiased;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%}
+body{font:75%/1.5 sans-serif,Helvetica,Arial,"Hiragino Sans GB";background-color:#fff;min-width:320px}
+article,aside,details,figcaption,figure,footer,header,menu,nav,section{display:block}
+h1,h2,h3,h4,h5,h6{font-size:100%}
+button,input,select,textarea{font-size:100%}input,button{background-color:transparent}
+input[type="button"],input[type="submit"]{-webkit-appearance:none}
+a,s{text-decoration:none;outline:0}a:active{-webkit-tap-highlight-color:rgba(0,0,0,0)}ol,ul,li{list-style:none}
+i,em,cite{font-style:normal}
+img{max-width:100%;border:0 none;vertical-align:top}
+fieldset{border:0 none}table{border-collapse:collapse;border-spacing:0}.fl{float:left}.left{float:left}.fr{float:right}.right{float:right}
+.clear{clear:both}.fn-clear{zoom:1}.fn-clear:after{visibility:hidden;display:block;font-size:0;content:" ";clear:both}.fn-clearfix:after{content:"";display:table;clear:both}.clearfix{overflow:hidden;zoom:1}.fn-show{display:block}.fn-hide{display:none}
+.bor-0{border:0 none !important}
+.yellow{color:#f6851f}.red{color:#f03d3d}.gray{color:#8e8e8e}.orange{color:#fec502}.blue{color:#177ffc}.black{color:#222}.green{color:#84c73b}
+.pd063{ padding:.63rem}.pdTop08{padding-top:.8rem}.pdLeft06{padding-left: .6rem}.pdLeft04{padding-left:.4rem}.mgTop06{margin-top: .6rem}.pdTop06{padding-top: .6rem;}
+/*资讯与预测*/
+.news-nav{width: 100%;height:2.7em;line-height:2.6em;}
+.news-nav .news-title{width:100%;font-size: 1.26em;border-bottom: 1px solid #e2e2e2}
+.news-nav .news-title:after{display: table;content: "";clear: both}
+.news-title a{float: left;width:20%;text-align:center;color: #333;border-bottom: 2px solid transparent;position: relative;bottom:-0.05em}
+.news-title .cur{color: #f40;border-color: #f40}
+.more-news{display:none;float:right;width:0;margin-top:8px;font-size:0;border-width:7px 10px;border-style:solid;border-color: transparent transparent transparent #999}
+.news-bann{padding:10px 2% 0}
+.news-bann img{width: 100%;max-height: 230px}
+.news-list-all a{color: #333}
+.news-list-all div{padding:0.5em 2% 0.4em;border-bottom: 1px solid #e3e3e3}
+.news-list-all h2{height:1.5em;line-height:1.73em;font-size:1.15em;font-weight:normal;overflow:hidden}
+.news-list-all span{display:block;height:24px;color: #999;font-size: 1.12em;line-height:2;overflow: hidden}
+.news-list-all span em{float: right;padding-left:0.6em}
+.news-list-all span strong{font-weight: normal;}
+.news-top,.m-reg{padding: 10px 3%;border-top:1px solid #ddd}
+.news-top{margin-bottom:4.6rem}
+.news-tit{padding:0 0 0.4em;border-bottom: 1px dotted #ccc}
+.news-tit h1{max-height:4em;line-height:2em;font-size:1.35em;overflow: hidden;word-wrap:break-word;word-break: break-all;}
+.news-tit strong{font-weight:400;color:#777}
+.news-top p{padding:.8em 0 0;font-size: 1.3em;line-height:1.66;text-indent:2em;color:#444;}
+.app-footer{padding-top:1em;background-color: #e3e3e3;}
+/*数字彩票*/
+.numnews .num-title{height:40px;line-height:40px;padding:0 2%;font-size: 1.4em;background-color:#e9e9e9}
+.num-title a{float:right;font-size:0.5em;color:#999}
+.num-body{margin-top: -1px}
+.num-body a{color: #333}
+.num-body li{padding:10px 2%;border-top:1px solid #eee;vertical-align:top;zoom: 1}
+.num-body li:after{content: "";display: table;clear: both}
+.news-pic{float: left;width:100px;height:70px;margin-right:2%}
+.news-pic img{width: 100%;height: 100%}
+/*.numnews-tit{}*/
+.numnews-tit strong{display: block;height: 1.7em;line-height:1.7em;padding-bottom:3px;font-size: 1.2em;font-weight:400;overflow: hidden}
+.numnews-tit span{display:block;max-height:3.2em;font-size:1.1em;color: #999;overflow: hidden}
+/*专家推荐*/
+.doctorfor{padding: 0 2% 3rem;background-color: #f7f7f7}
+.doctorfor li{padding: 10px 0;zoom: 1}
+.doctorfor li:after{content: "";display: table;clear: both}
+.left-pic{float:left;width: 58px;height: 58px;padding:2px;border: 1px solid #ddd;border-radius: 60px;position: relative}
+.left-pic .line{position: absolute;top:63px;left:30px;width: 0;border-left: 1px solid #ddd;overflow: hidden;}
+.left-pic .left-pic-cai{width: 100%;height: 100%;border-radius: 58px}
+.left-pic-cai .doctorfor-icon{display:block;width:50px;height:50px;background-image:url("../img/doctorfor-ico.png");background-size:100%;position: relative;top: 3px;left: 6px}
+.left-pic-cai0{background-color: #ed5e49}
+.left-pic-cai1{background-color: #f06468}
+.left-pic-cai2{background-color: #49b97c}
+.left-pic-cai3{background-color: #c48866}
+.left-pic-cai0 .doctorfor-icon{background-position: 0 0}
+.left-pic-cai1 .doctorfor-icon{background-position: 0 -50px}
+.left-pic-cai2 .doctorfor-icon{background-position: 0 -104px}
+.left-pic-cai3 .doctorfor-icon{background-position: 0 -158px}
+.doctorfor-bod{float:left;width:66%;margin-left:12px;padding:10px;border: 2px solid #ddd;border-radius: 6px;position: relative}
+.doctorfor-bod i{position: absolute;top: 20px;left: -8px;width: 10px;height: 10px;overflow: hidden;border-left: 2px solid #ddd;background-color:#f7f7f7;border-bottom: 2px solid #ddd;-webkit-transform: rotate(45deg);-moz-transform: rotate(45deg);-o-transform: rotate(45deg);transform: rotate(45deg);}
+.doctorfor-bod strong{display: block;width: 100%;height:1.7em;line-height:1.7em;font-size: 1.21em;font-weight: 400;overflow: hidden}
+.doctorfor-bod strong em{float: right;font-size:0.8em;color: #999}
+.doctorfor-bod span{color: #999}
+/*开奖*/
+.ball b{display:inline-block;margin-left:4px;width: 30px;height: 30px;line-height:30px;font-size:1.35em;letter-spacing:0.05em;text-align:center;color:#fff;border-radius:30px;background-color: #f40}
+.ball .blue{background-color: #64a6ea}
+.list .ico-click i{margin-top:0.91em;-webkit-transform: rotate(45deg);-moz-transform: rotate(45deg);-o-transform: rotate(45deg);transform:rotate(45deg)}
+.ico-click i{float:right;width:0.8em;height:0.8em;margin-right:1.4em;border-top:2px solid #ddd;border-right:2px solid #ddd;position:relative;-webkit-transform: rotate(-45deg);-moz-transform: rotate(-45deg);-o-transform: rotate(-45deg);transform:rotate(-45deg)}
+.ico-click .cur{top:-0.2em;-webkit-transform: rotate(135deg);-moz-transform: rotate(135deg);-o-transform: rotate(135deg);transform:rotate(135deg)}
+.kj-menu{padding-bottom: 0}
+.kj-menu .kj-menu-b{padding: 1em 0;border-top:1px solid #ccc;border-bottom:1px solid #ccc;background-color: #fff}
+.kj-menu-b ul{display: table;width: 94.44%;margin:0 auto;border: 0.14em solid #f60;border-radius: 6px}
+.kj-menu-b ul li{display: table-cell;padding:0.52em 0;font-size:1.14em;letter-spacing:0.14em;text-align: center;border-left:0.11em solid #f40}
+.kj-menu-b ul li:first-of-type{border:0}
+.kj-menu-b ul li.cur{background-color: #f40}
+.kj-menu-b ul li a{display:inline-block;width:100%;color:#f40;}
+.kj-menu-b ul li.cur a{color:#fff}
+.kj-list{border-bottom: 1px solid #ccc;margin-bottom: 4em}
+.kj-list ul{width: 97%;margin:-1px auto 0;overflow: hidden}
+.kj-list ul li{border-top: 1px solid #ccc}
+.kj-list ul li a{color: #999}
+.kj{width: 93%;padding:1em 0;}
+.kj-tit{padding: 0.4em 0}
+.kj-tit strong{padding-right:0.8em;font-size: 1.14em;color: #333}
+.kj-tit span{margin-left: 0.8em}
+.kj cite{display:inline-block;margin-left:4px;padding: 0.3em 0.25em;font-size:1.17em;font-weight:700;color:#e52e04;border: 1px solid #e2e2e2;border-radius: 5px}
+.kj b{}
+.kj-list .ico-click i{margin: 2.9em 0.5em 0 0}
+@media screen and (min-width: 320px) and (max-width: 340px){.kj cite{font-size:1.1em}}
+/*开奖详情*/
+.zx-kj .zx-kj-tit{font-size:1.12em}
+.kjBall cite{ display:inline-block; background:#f03d3d; color:#fff; width:1.9em; line-height:1.9em; text-align:center; margin:.4em .3em 0 0; font-size:1em; border-radius:1.9em; -webkit-border-radius:1.9em; -moz-border-radius:1.9em}
+.kjList{ border:1px solid #dedede; margin-top:.8rem; border-radius:.4rem; -webkit-border-radius:.4rem; -moz-border-radius:.4rem}
+.kjList li{ text-align:center; line-height:1.9rem; border-bottom:1px solid #ebebeb}
+.kjList li.gray{ color:#aeacab; background:#f7f5f4; border-radius:.3rem .3rem 0 0; -webkit-border-radius:.3rem .3rem 0 0; -moz-border-radius:.3rem .3rem 0 0}
+.kjList li.gray span{ color:#aeacab}
+.kjList li em{ display:inline-block; width:28%; color:#aeacab; border-right:1px solid #ebebeb}
+.kjList li cite,.kjList li span{ display:inline-block; width:34%}
+.kjList li cite{ border-right:1px solid #ebebeb}
+.kjList li span{ color:#f03d3d}
+.kjList li:last-child{ border-bottom:none}
+.kjBall cite.blueBall{ background:#177ffc}
+
+
+
