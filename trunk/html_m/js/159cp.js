@@ -39,6 +39,7 @@ $_user.url = {
 	checklogin : '/phpu/cl.phpx',// 检测用户是否登录
 	checkexist : "/phpu/q.phpx?fid=u_check_user", // 查询用户名是否可用
 	register : "/phpu/reg.phpx", // 注册
+	regnoyzm : "/phpu/regnoyzm.phpx", // 注册
 	login : "/phpu/login.phpx",// 登录
 	loginout : "/phpu/lout.phpx", // 退出登陆
 	base : "/phpu/q.phpx?fid=u_ainfo", // 查询用户登录名、用户余额、冻结款、用户类型
@@ -80,6 +81,7 @@ $_user.url = {
 	aautobuy : "/phpu/abuy.phpx",// 设置跟单信息	
 	
 	addmoney : "/phpu/addmoney.phpx", // 充值
+	addmoneynew : "/pwap/addmoneynew.phpx", // 触屏充值
 	drawmoney:"/phpu/drawmoney.phpx" //提款	
 };
 
@@ -111,7 +113,7 @@ $_trade.key = {
 	did : "did"//明细编号
 	
 };
-
+var $_cache ={};//缓存相关
 $_trade.url = {
 	pcast : "/phpt/t.phpx?fid=pcast",// 发起方案
 	fcast : "/phpt/t.phpx?fid=fcast",// 过滤发起
@@ -139,6 +141,30 @@ $_trade.url = {
 	systime : "/phpt/t.phpx?fid=time",// 获取服务器时间	
 	filecast:"/filecast.phpx"//单式文本发起方案	
 };
+$_cache.qcode = function(gid, pid) {
+	var cawardcode = "";
+	var data = $_trade.key.gid + "=" + encodeURIComponent(gid) + "&" + $_trade.key.pid + "=" + encodeURIComponent(pid) + "&rnd=" + Math.random();
+	$.ajax({
+		url : $_trade.url.qcode,
+		type : "POST",
+		dataType : "json",
+		async:false,
+		data : data,		
+		success : function(d) {
+			var R = d.Resp;
+			var code = R.code;
+			if (code == "0") {
+				var r = R.row;
+				cawardcode = r.cawardcode;
+//				$("#"+gid+"_"+pid+"cawardcode").html(cawardcode);
+			}
+		}
+	});
+	return cawardcode;
+};
+/**
+ * 为方案详情提供目录匹配
+ */
 
 String.prototype.isDate = function() {
 	var r = this.match(/^(\d{1,4})(-|\/)(\d{1,2})\2(\d{1,2})$/);
@@ -259,41 +285,42 @@ $_sys.biztype = function(f) {
 	return "未定义";
 };
 $_sys.lot = [];
-$_sys.lot.push([ 1, "双色球","", "10" ]);
-$_sys.lot.push([ 3, "福彩3D","", "44" ]);
-$_sys.lot.push([ 4, "时时彩","", "120" ]);
-$_sys.lot.push([ 7, "七乐彩","", "7" ]);
+$_sys.lot.push([ 1, "双色球","", "10","/ssq/" ]);
+$_sys.lot.push([ 3, "福彩3D","", "44","/3d/" ]);
+$_sys.lot.push([ 4, "时时彩","", "120",'/ssc/' ]);
+$_sys.lot.push([ 7, "七乐彩","", "7","/qlc/" ]);
 
-$_sys.lot.push([ 50, "超级大乐透","", "20" ]);
-$_sys.lot.push([ 51, "七星彩","", "25" ]);
-$_sys.lot.push([ 52, "排列五","", "27" ]);
-$_sys.lot.push([ 53, "排列三","", "26" ]); 
-$_sys.lot.push([ 54, "11选5","","119" ]);
-$_sys.lot.push([ 56, "十一运夺金","","115" ]);
+$_sys.lot.push([ 50, "超级大乐透","", "20","/dlt/" ]);
+$_sys.lot.push([ 51, "七星彩","", "25","/qxc/" ]);
+$_sys.lot.push([ 52, "排列五","", "27","/p5/" ]);
+$_sys.lot.push([ 53, "排列三","", "26","/p3/" ]); 
+$_sys.lot.push([ 54, "11选5","","119","/11x5/" ]);
+$_sys.lot.push([ 56, "十一运夺金","","115","/11ydj/" ]);
 
-$_sys.lot.push([ 80, "胜负彩","", "1" ]);
-$_sys.lot.push([ 81, "任选九","", "2" ]);
-$_sys.lot.push([ 82, "进球彩","", "4"  ]);
-$_sys.lot.push([ 83, "半全场","", "3"  ]);
+$_sys.lot.push([ 80, "胜负彩","", "1","/zc/" ]);
+$_sys.lot.push([ 81, "任选九","", "2","/r9/" ]);
+$_sys.lot.push([ 82, "进球彩","", "4" ,"/jq/" ]);
+$_sys.lot.push([ 83, "半全场","", "3" ,"/bq/" ]);
 
-$_sys.lot.push([ 85, "北单胜平负","", "" ]);
-$_sys.lot.push([ 86, "北单猜比分","", "" ]);
-$_sys.lot.push([ 87, "北单半全场","", "" ]);
-$_sys.lot.push([ 88, "北单上下单双","", "" ]);
-$_sys.lot.push([ 89, "北单进球数","", "" ]);
+$_sys.lot.push([ 84, "胜负过关","", "" ,"/bd/sfgg.html"]);
+$_sys.lot.push([ 85, "北单胜平负","", "" ,"/bd/"]);
+$_sys.lot.push([ 86, "北单猜比分","", "","/bd/" ]);
+$_sys.lot.push([ 87, "北单半全场","", "","/bd/" ]);
+$_sys.lot.push([ 88, "北单上下单双","", "" ,"/bd/"]);
+$_sys.lot.push([ 89, "北单进球数","", "","/bd/" ]);
 
-$_sys.lot.push([ 70, "竞彩混合投注","混合投注", "" ]);
-$_sys.lot.push([ 90, "竞彩胜平负","胜平负", "" ]);
-$_sys.lot.push([ 72, "竞彩让球胜平负","让球胜平负", "" ]);
-$_sys.lot.push([ 91, "竞彩猜比分","猜比分", "" ]);
-$_sys.lot.push([ 92, "竞彩半全场","半全场", "" ]);
-$_sys.lot.push([ 93, "竞彩进球数","进球数", "" ]);
+$_sys.lot.push([ 70, "竞彩混合","混投", "","/jczq/jchh.html" ]);
+$_sys.lot.push([ 90, "竞彩胜平负","胜平负","", "/jczq/spf.html" ]);
+$_sys.lot.push([ 72, "竞彩让球胜平负","让球胜平负", "","/jczq/" ]);
+$_sys.lot.push([ 91, "竞彩猜比分","猜比分", "" ,"/jczq/"]);
+$_sys.lot.push([ 92, "竞彩半全场","半全场", "" ,"/jczq/"]);
+$_sys.lot.push([ 93, "竞彩进球数","进球数", "","/jczq/" ]);
 
-$_sys.lot.push([ 71, "篮彩混合投注","混合投注", "" ]);
-$_sys.lot.push([ 94, "篮彩胜负","胜负", "" ]);
-$_sys.lot.push([ 95, "篮彩让分胜负","让分胜负", "" ]);
-$_sys.lot.push([ 96, "篮彩胜分差","胜分差", "" ]);
-$_sys.lot.push([ 97, "篮彩大小分","大小分", "" ]);
+$_sys.lot.push([ 71, "篮彩混合","混投", "" ,"/jclq/hh.html"]);
+$_sys.lot.push([ 94, "篮彩胜负","胜负", "","/jclq/" ]);
+$_sys.lot.push([ 95, "篮彩让分胜负","让分胜负", "","/jclq/rfsf.html" ]);
+$_sys.lot.push([ 96, "篮彩胜分差","胜分差", "","/jclq/" ]);
+$_sys.lot.push([ 97, "篮彩大小分","大小分", "","/jclq/dxf.html" ]);
 $_sys.getlotname = function(f,n) {
 	if (typeof(n)=='undefined'){n=1;};
 	for ( var i = 0; i < $_sys.lot.length; i++) {
@@ -337,13 +364,14 @@ $_sys.getGradeDef=function(lotid){
 	return null;
 };
 $_sys.jjcode = [];
+$_sys.jjcode.push([84,'{"K*":"取消","K3":"主胜","K0":"客胜"}']);
 $_sys.jjcode.push([85,'{"K*":"取消","K3":"胜","K1":"平","K0":"负"}']);
 $_sys.jjcode.push([86,'{"K*":"取消","K1:0":"1:0","K2:0":"2:0","K2:1":"2:1","K3:0":"3:0","K3:1":"3:1","K3:2":"3:2","K4:0":"4:0","K4:1":"4:1","K4:2":"4:2","K9:0":"9:0","K9:9":"9:9","K0:0":"0:0","K1:1":"1:1","K2:2":"2:2","K3:3":"3:3","K0:1":"0:1","K0:2":"0:2","K1:2":"1:2","K0:3":"0:3","K1:3":"1:3","K2:3":"2:3","K0:4":"0:4","K1:4":"1:4","K2:4":"2:4","K0:9":"0:9"}']);
 $_sys.jjcode.push([87,'{"K*":"取消","K3-3":"胜胜","K3-1":"胜平","K3-0":"胜负","K1-3":"平胜","K1-1":"平平","K1-0":"平负","K0-3":"负胜","K0-1":"负平","K0-0":"负负"}']);
 $_sys.jjcode.push([88,'{"K*":"取消","K0":"下双","K1":"下单","K2":"上双","K3":"上单"}']);
 $_sys.jjcode.push([89,'{"K*":"取消","K0":"0","K1":"1","K2":"2","K3":"3","K4":"4","K5":"5","K6":"6","K7":"7+"}']);
 $_sys.jjcode.push([90,'{"K*":"取消","K3":"胜","K1":"平","K0":"负"}']);
-$_sys.jjcode.push([72,'{"K*":"取消","K3":"胜","K1":"平","K0":"负"}']);
+$_sys.jjcode.push([72,'{"K*":"取消","K3":"让胜","K1":"让平","K0":"让负"}']);
 $_sys.jjcode.push([91,'{"K*":"取消","K0:0":"0:0","K0:1":"0:1","K0:2":"0:2","K0:3":"0:3","K1:0":"1:0","K1:1":"1:1","K1:2":"1:2","K1:3":"1:3","K2:0":"2:0","K2:1":"2:1","K2:2":"2:2","K2:3":"2:3","K3:0":"3:0","K3:1":"3:1","K3:2":"3:2","K3:3":"3:3","K4:0":"4:0","K4:1":"4:1","K4:2":"4:2","K0:4":"0:4","K1:4":"1:4","K2:4":"2:4","K5:0":"5:0","K5:1":"5:1","K5:2":"5:2","K0:5":"0:5","K1:5":"1:5","K2:5":"2:5","K9:0":"胜其他","K9:9":"平其他","K0:9":"负其他"}']);
 $_sys.jjcode.push([92,'{"K*":"取消","K3-3":"胜胜","K3-1":"胜平","K3-0":"胜负","K1-3":"平胜","K1-1":"平平","K1-0":"平负","K0-3":"负胜","K0-1":"负平","K0-0":"负负"}']);
 $_sys.jjcode.push([93,'{"K*":"取消","K0":"0","K1":"1","K2":"2","K3":"3","K4":"4","K5":"5","K6":"6","K7":"7+"}']);
@@ -393,7 +421,7 @@ $_sys.getcastm = function(lotid, key){
 
 $_sys.lottype = [];
 $_sys.lottype.push([ "足 彩", "zc", "80,81,82,83" ]);
-$_sys.lottype.push([ "北京单场", "bjdc", "85,86,87,88,89" ]);
+$_sys.lottype.push([ "北京单场", "bjdc", "85,84,86,87,88,89" ]);
 $_sys.lottype.push([ "竞彩足球", "jczq", "90,72,91,92,93,70" ]);
 $_sys.lottype.push([ "竞彩篮球", "jclq", "94,95,96,97,71" ]);
 $_sys.lottype.push([ "高频彩", "gpc", "4,20,54,56" ]);
@@ -414,3 +442,52 @@ $_sys.lottype.istype = function (lotid,type){
 	}
 	return false;
 };
+$_sys.getgrade = function(f, n) {
+	if (typeof (n) == 'undefined') {
+		n = 1;
+	};
+	for ( var i = 0; i < $_sys.grade_def.length; i++) {
+		if ($_sys.grade_def[i][0] == f) {
+			return $_sys.grade_def[i][n].split(",");
+		}
+	}
+};
+$_sys_getwininfo = function(lotid, wininfo) {
+	var tmp = [];
+	if (lotid==85||lotid==86||lotid==87||lotid==88||lotid==89
+			||lotid==90
+			||lotid==91
+			||lotid==92
+			||lotid==93||lotid==94||lotid==95||lotid==96||lotid==97||lotid==70||lotid==71||lotid==72
+			){		
+		wininfo = wininfo.split("|");
+		if (wininfo.length>=3){
+			tmp.push([ "", "共<font class='cm_red'>"+wininfo[1]+"</font>场, 过关方式：<font class='cm_red'> "+wininfo[2].replaceAll("\\*", "串")+"</font>, 中<font class='cm_red'>"+wininfo[0]+"</font>" ]);
+		}		
+	}else{
+		if(wininfo.length > 0){
+			wininfo = wininfo.split(",");
+			var grade = $_sys.getgrade(lotid);
+			if (wininfo.length > 0 && wininfo.length <= grade.length) {
+				for ( var i = 0; i < wininfo.length; i++) {
+					if (wininfo[i] > 0) {
+						tmp.push([ grade[i], wininfo[i] ]);
+					}
+				}
+			}
+		}
+	}	
+	return tmp;
+};
+Array.prototype.remove=function(dx)
+{
+　if(isNaN(dx)||dx>this.length){return false;}
+　for(var i=0,n=0;i<this.length;i++)
+　{
+　　　if(this[i]!=this[dx])
+　　　{
+　　　　　this[n++]=this[i]
+　　　}
+　}
+　this.length-=1
+}
