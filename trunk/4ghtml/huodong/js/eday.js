@@ -139,13 +139,16 @@ function edaylist(isLogin){
 							join='<span">等待分钱</span>';
 						}
 					}else{
-						if(iaward==0){//if(iaward==0){
+						if(iaward==0 ){//if(iaward==0){
 							join='<span class="partake" onclick="joineday('+cttid+')">立即参与</span>';
+						}else if(!isLogin){
+							join='<span class="partake green-bg" onclick="geteday('+cttid+')">领取奖金</span>';
 						}else{
 							join='<span>未参与</span>';
+							
 						}
 					}
-					if(!isLogin)join='<span>--</span>';
+//					if(!isLogin)join='<span>--</span>';
 					if(o<15){
 						html +='<tr ><th onclick="showinfo('+cttid+')"><p>'+day+'</p><p>'+$_sys.getlotname(cgameid)+'</p></th>'
 							+'<td onclick="showinfo('+cttid+')">'+imoney+'元</td >'+ibonus+'<td>'+join+'</td></tr>'
