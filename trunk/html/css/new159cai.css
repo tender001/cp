@@ -1883,7 +1883,7 @@ a.sz_cmt{background: url(../images/cai888/nwx5_112.jpg);width:137px;height:33px}
 .w_con .nsbool b.b_r{background-position: -61px -36px;box-shadow: 0 0 15px rgba(0,0,0,0.3);}
 .w_con .nsbool b.cur{position: relative;top: -16px;left: 0;color: #333;background-position: -61px -36px;}
 .w_con p.xh_text{color: #ccc;}
-.w_con a.sz_cmt{background: url(../images/ssc_bg/a_but_true.png);}
+.w_con a.sz_cmt{background: url(../images/ssc_bg/a_but_true.png);position: relative;z-index: 100;}
 .w_con .sz_a_l a.sz_cmt.cur{background: url(../images/ssc_bg/a_but_true.png) 0 -33px;}
 .w_con .nxszop{width: auto;background: url(../images/ssc_bg/cai_bottom_1.jpg) left bottom no-repeat;padding-bottom: 28px;zoom:1;}
 .w_con a.qc_xh{color: #ccc;}
@@ -2233,7 +2233,7 @@ a.sz_cmt{background: url(../images/cai888/nwx5_112.jpg);width:137px;height:33px}
 .nxyl1{margin-left:-56px;padding:6px 0 0}
 .nxyl1 span{margin:0 !important}
 .nxyl span{float:left;width:49px;height:24px;line-height:18px;margin:0 30px 0 0;/*text-align:Center;*/color:#b1b1b1;_display:inline}
-.nxyl div{float:left}
+.nxyl div{float:left;height: 142px;}
 .nxyl i{float:left;width:44px;height:24px;margin-right:3px;font:12px/18px Arial;text-align:center;color:#888;_display:inline}
 div.iewidth{width:100% !important;}
 col.ie_w{*width:62px;}
