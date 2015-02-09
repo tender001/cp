@@ -781,9 +781,10 @@ showjccode=function(option){
 					var ps = cc[f].split("=");
 					var gg = getJcPlay(gid, ps[0]);
 					lose = lls.length > 1 ? ((gg == 95||gg == 84) ? lls[0] : lls[2]) : r.lose;
-//					if(gg==97){
-//						lose = lls.length > 1?lls[3]: r.lose;
-//					}
+					
+					if(gid==97){
+						lose = lls.length > 1?lls[3]: r.lose;
+					}
 					if(rst){
 						if(gid==70||gid==71){
 							
