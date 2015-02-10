@@ -53,7 +53,7 @@ fieldset{border:0 none}table{border-collapse:collapse;border-spacing:0}.fl{float
 .doctorfor{padding: 0 2% 3rem;background-color: #f7f7f7}
 .doctorfor li{padding: 10px 0;zoom: 1}
 .doctorfor li:after{content: "";display: table;clear: both}
-.left-pic{float:left;width: 58px;height: 58px;padding:2px;border: 1px solid #ddd;border-radius: 60px;position: relative}
+.left-pic{float:left;width: 58px;height: 58px;padding:2px;border: 1px solid #ddd;border-radius: 60px;background-color:#fff;position: relative}
 .left-pic .line{position: absolute;top:63px;left:30px;width: 0;border-left: 1px solid #ddd;overflow: hidden;}
 .left-pic .left-pic-cai{width: 100%;height: 100%;border-radius: 58px}
 .left-pic-cai .doctorfor-icon{display:block;width:50px;height:50px;background-image:url("../img/doctorfor-ico.png");background-size:100%;position: relative;top: 3px;left: 6px}
