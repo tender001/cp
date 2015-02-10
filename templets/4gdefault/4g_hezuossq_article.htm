@@ -1,0 +1,22 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=1' name='viewport'/>
+    <meta content='yes' name='apple-mobile-web-app-capable'/>
+    <meta content='black' name='apple-mobile-web-app-status-bar-style'/>
+    <meta content='telephone=no' name='format-detection'/>
+    <title>双色球资讯</title>
+    <link rel="stylesheet" href="/css/hezuostyle.css" type="text/css">
+</head>
+<body>
+<div class="news-top">
+    <div class="news-tit">
+        <h1>{dede:field.title/}</h1>
+        <strong><span >{dede:field.writer/}</span><span>{dede:field.pubdate function="MyDate('Y-m-d H:i',@me)"/}</span> </strong>
+    </div>
+    {dede:field.body/}
+<p></p>
+</div>
+</body>
+</html>

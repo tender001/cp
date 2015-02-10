@@ -1,0 +1,103 @@
+
+<div class="news-list-all" mark="page">
+	{dede:arclist titlelen='65' row='1' typeid='82'}
+		<a href="[field:arcurl/]">
+        <div>
+            <h2>[中奖][field:title/]</h2>
+            <span><em>[field:pubdate function='strftime("%m-%d",@me)'/]</em><strong>[field:description function="cn_substr(@me,168)"/]</strong></span></div>
+    	</a>
+	{/dede:arclist}
+    {dede:arclist titlelen='65' row='1' typeid='78'}
+		<a href="[field:arcurl/]">
+        <div>
+            <h2>[双色球][field:title/]</h2>
+            <span><em>[field:pubdate function='strftime("%m-%d",@me)'/]</em><strong>[field:description function="cn_substr(@me,168)"/]</strong></span></div>
+    	</a>
+	{/dede:arclist}
+	{dede:arclist titlelen='65' row='1' typeid='79'}
+		<a href="[field:arcurl/]">
+        <div>
+            <h2>[大乐透][field:title/]</h2>
+            <span><em>[field:pubdate function='strftime("%m-%d",@me)'/]</em><strong>[field:description function="cn_substr(@me,168)"/]</strong></span></div>
+    	</a>
+	{/dede:arclist}
+	{dede:arclist titlelen='65' row='1' typeid='80'}
+		<a href="[field:arcurl/]">
+        <div>
+            <h2>[竞足][field:title/]</h2>
+            <span><em>[field:pubdate function='strftime("%m-%d",@me)'/]</em><strong>[field:description function="cn_substr(@me,168)"/]</strong></span></div>
+    	</a>
+	{/dede:arclist}
+	{dede:arclist titlelen='65' row='1' typeid='81'}
+		<a href="[field:arcurl/]">
+        <div>
+            <h2>[竞蓝][field:title/]</h2>
+            <span><em>[field:pubdate function='strftime("%m-%d",@me)'/]</em><strong>[field:description function="cn_substr(@me,168)"/]</strong></span></div>
+    	</a>
+	{/dede:arclist}
+</div>
+<div mark="page" style="display: none;">
+	<div class="numnews">
+	    <p class="num-title"><a href="http://m.159cai.com/ssq/news/">更多>></a>双色球</p>
+	    <ul class="num-body">{dede:arclist titlelen='65' row='3' typeid='78'}<a href="[field:arcurl/]">
+	        <li>
+	            <div class="news-pic"><img src='[field:litpic/]' alt='[field:title function='html2text(@me)'/]'/></div>
+	            <p class="numnews-tit">
+	                <strong>[field:title/]</strong>
+	                <span>[field:description function="cn_substr(@me,168)"/]</span>
+	            </p>
+	        </li>
+	    </a>{/dede:arclist}
+	    
+	   </ul>
+	</div>
+	<div class="numnews">
+	    <p class="num-title"><a href="http://m.159cai.com/dlt/news/">更多>></a>大乐透</p>
+	    <ul class="num-body">{dede:arclist titlelen='65' row='2' typeid='79'}<a href="[field:arcurl/]">
+	        <li>
+	            <div class="news-pic"><img src='[field:litpic/]' alt='[field:title function='html2text(@me)'/]'/></div>
+	            <p class="numnews-tit">
+	                <strong>[field:title/]</strong>
+	                <span>[field:description function="cn_substr(@me,168)"/]</span>
+	            </p>
+	        </li>
+	    </a>{/dede:arclist}
+	    
+	   </ul>
+	</div>
+</div>
+<div mark="page" style="display: none;">
+	<div class="numnews">
+	    <p class="num-title"><a href="http://m.159cai.com/jczq/news/">更多>></a>竞彩足球</p>
+	    <ul class="num-body">{dede:arclist titlelen='65' row='3' typeid='80'}<a href="[field:arcurl/]">
+	        <li>
+	            <div class="news-pic"><img src='[field:litpic/]' alt='[field:title function='html2text(@me)'/]'/></div>
+	            <p class="numnews-tit">
+	                <strong>[field:title/]</strong>
+	                <span>[field:description function="cn_substr(@me,168)"/]</span>
+	            </p>
+	        </li>
+	    </a>{/dede:arclist}
+	    
+	   </ul>
+	</div>
+	<div class="numnews">
+	    <p class="num-title"><a href="http://m.159cai.com/jclq/news/">更多>></a>竞彩篮球</p>
+	    <ul class="num-body">{dede:arclist titlelen='65' row='2' typeid='81'}<a href="[field:arcurl/]">
+	        <li>
+	            <div class="news-pic"><img src='[field:litpic/]' alt='[field:title function='html2text(@me)'/]'/></div>
+	            <p class="numnews-tit">
+	                <strong>[field:title/]</strong>
+	                <span>[field:description function="cn_substr(@me,168)"/]</span>
+	            </p>
+	        </li>
+	    </a>{/dede:arclist}
+	    
+	   </ul>
+	</div>
+</div>
+
+<div class="doctorfor" mark="page" style="display: none;">
+	
+	<!--#include virtual="/dedeinc/expertForecast.html"-->
+</div>
