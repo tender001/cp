@@ -1,62 +1,68 @@
 // 全局配置
 Class.C('play_type', 'x1');
 Class.C('choose_type', 'pt');
-Class.C('lot_name', 'k3');
-Class.C('lot_name_ch', '快3');
-Class.C('lot_name_en', 'k3');
-Class.C('lot_id', '08');
+Class.C('lot_name', 'klpk');
+Class.C('lot_name_ch', '快乐扑克3');
+Class.C('lot_name_en', 'klpk');
+Class.C('lot_id', '58');
 Class.C('price', 2);
 Class.C('playid', 254);
 Class.C('fsfq', $_trade.url.pcast);
 Class.C('fszh', $_trade.url.zcast);
 Class.C('casttype', 0);
 Class.C('iszh', false);
-Class.C('sump', 80);
+Class.C('sump', 79);
 Class.C('limit-code-ischecking', true);
-Class.C('iszg', true);
-Class.C('isjbzh', false);
-Class.C('isgjzh', false);
-
-Class.C('lot_data',{
-    249: ['和值', 6, 1],        // typeName, prix, ballNumber, splitChar
-    250: ['三同号通选', 40, 1],
-    251: ['三同号单选',240, 1],
-    252: ['二同号复选',15, 1],
-    253: ['二同号单选',80, 1],
-    254: ['三不同号',40, 3],
-    241: ['三不同号胆拖' ,40, 3],
-    255: ['二不同号', 8, 2],
-    242: ['二不同号胆拖', 8, 2],
-    256: ['三连号通选' ,10, 2],
-    257: ['猜1个号', 40, 1],
-    
+Class.C('lot_data', {
+    239: ['同花', 90, 1],//同花包选
+    230: ['同花顺', 2150, 1],//同花顺包选
+    231: ['顺子', 400, 1],//顺子包选
+    232: ['豹子', 6400, 1],//豹子包选
+    233: ['对子', 88, 1],//对子包选
+    249: ['同花', 90, 1],//单选
+    250: ['同花顺', 2150, 1],//单选
+    251: ['顺子', 400, 1],//单选
+    252: ['豹子', 6400, 1],//单选
+    253: ['对子', 88, 1],//单选
+    254: ['任选一', 5, 1],
+    255: ['任选二', 33, 2],
+    265: ['任二胆拖', 33, 2],
+    256: ['任选三', 116, 3],
+    266: ['任三胆拖', 116, 3],
+    257: ['任选四', 46, 4],
+    267: ['任四胆拖', 46, 4],
+    258: ['任选五', 22, 5],
+    268: ['任五胆拖', 22, 5],
+    259: ['任选六', 12, 6],
+    269: ['任六胆拖', 12, 6]
 });
-Class.C('lot_data_new',{// 
-	249: [1,4],     //和值   
-    250: [2,1],     //三同号通选
-    251: [3,1],     //三同号单选
-    252: [6,1],     //二同号复选
-    253: [7,1],     //二同号单选
-    254: [4,1],     //三不同号
-    241: [4,5],     //三不同号胆拖
-    255: [8,1],     //二不同号
-    242: [8,5],    //二不同号胆拖
-    256: [5,1],    //三连号通选
-	257: [1,1]     //猜1个号
-});
+Class.C('lot_data_new', {// 老玩法ID, 新库中玩法ID, 投注方式 (1单复式 2单复式 3包号 4和值 5胆拖)
+    249: ['07', 12, "01", 5],
+    250: ['08', 12, "01", 5],
+    251: ['09', 12, "01", 13],
+    252: ['10', 12, "01", 14],
+    253: ['11', 12, "01", 14],
+    254: ['01', 13, "01", 13],
+    255: ['02', 13, "01", 13],
+    256: ['03', 13, "01", 13],
+    257: ['04', 13, "01", 13],
+    258: ['05', 13, "01", 13],
+    259: ['06', 13, "01", 13]
 
+});
 Class.C('lot_sub',{// 
-	249: ['和值',4,14],     //和值   
-    250: ['三同号通选',9,1],     //三同号通选
-    251: ['三同号单选',1,6],     //三同号单选
-    252: ['三同号复选',1,6],     //二同号复选
-    253: ['二同号单选',1,6],     //二同号单选
-    254: ['三不同号',1,6],     //三不同号
-    255: ['二不同号',1,6],     //三不同号胆拖
-    256: ['三连号通选',1,6],     //二不同号
-    257: ['猜1个号', 1,6],    //二不同号胆拖
+	249: ['同花', 4, 1,5],
+	250: ['同花顺', 4, 1,5],
+	251: ['顺子', 12, 1,13],
+	252: ['豹子', 13, 1,14],
+	253: ['对子', 13, 1,14],
+	254: ['任选一', 13, 1,13],
+	255: ['任选二', 13, 1,13],
+	256: ['任选三', 13, 1,13],
+	257: ['任选四', 13, 1,13],
+	258: ['任选五', 13, 1,13],
+	259: ['任选六', 13, 1,13]
 });
-
 Class.C('lot_data_dome', {
     249: '<h5>示例</h5>选号：01 05<br/>开奖：01 02 03 04 05<br/>中奖：<em class="cm_red">6</em>元',
     250: '<h5>示例</h5>选号：01 04 05<br/>开奖：01 02 03 04 05<br/>中奖：<em class="cm_red">19</em>元',
@@ -73,28 +79,30 @@ Class.C('lot_data_dome', {
 
 Class.C('lot_data_wanfa', {
 
-    249: '玩法说明：至少选<em>1</em>个号码，与3个开奖号码相加之和相同即中奖<em>9~240</em>元。',
-    250: '玩法说明：当开奖号码为三同号（111，222，333，444，555，666）中任意一组即中奖<em>40</em>元。',
-    251: ' 玩法说明：对相同的三个号码（111、222、333、444、555、666）中的任意一个进行投注，所选号码开出即中奖，单注奖金<em>240</em>元。',
-    252: '玩法说明：开奖号码的任意2位，与您投注的二同号一致即中奖，单注奖金<em>15</em>元。',
-    253: '玩法说明：选择1个相同号码和1个不同号码投注，选号与开奖号码一致即中奖，单注奖金<em>80</em>元。',
-    254: '玩法说明：至少选择3个不同号码投注，所选号码与开奖号码一致即中奖，单注奖金<em>40</em>元。',
-    255: '玩法说明：选择2个号码投注，与开奖号码的任意2位一致即中奖<em>8</em>元。',
-    256: '玩法说明：对所有3个相连的号码（123、234、345、456）进行投注，任意号码开出即中奖，单注奖金<em>10</em>元。',
-    257: '玩法说明：选择1个您认为一定会开出的号码，系统将智能为您筛选出包含该号码的单选号码组合。 '
-   
+    249: ' 同花包选，开奖号为任意相同花色即中奖<em>22</em>元，中奖率1/19.3；同花单选，与开奖号花色都相同即中奖<em>90</em>元，中奖率1/77.3。',
+    250: '同花顺包选，开奖号是三连号且花色一致即中奖<em>535</em>元；同花顺单选，所选花色与顺子开奖号花色都相同即中奖<em>2150</em>元。',
+    251: ' 顺子包选，开奖号码为三连号即中奖<em>33</em>元，中奖概率1/28.7；顺子单选，所选顺子号与开奖号相同即中奖<em>400</em>元，中奖概率1/345。',
+    252: ' 豹子包选，开奖号为三同号即中奖<em>500</em>元，中奖概率1/425；豹子单选，所选豹子号与开奖号相同即中奖<em>6400</em>元，中奖概率1/5525。',
+    253: '对子包选，开奖号中只出现2个同号即中奖<em>7</em>元，中奖率1/5.9；对子单选，与开奖号中的对子相同即中奖<em>88</em>元，中奖概率1/76.7。',
+    254: '至少选1个号码，所选号码与开奖号码中任意一个相同即中奖<em>5</em>元，中奖概率1/4.6。',
+    255: '至少选2个号码，所选号码至少命中开奖号中2个不同号码即中奖<em>33</em>元，中奖概率1/29.4。',
+    256: '至少选3个号码，所选号码包括当期全部开奖号即中奖<em>116</em>元，中奖概率1/100.45。',
+    257: '至少选4个号码，所选号码包括当期全部开奖号即中奖<em>46</em>元，中奖概率1/39.46。',
+    258: '至少选5个号码，所选号码包括当期全部开奖号即中奖<em>22</em>元，中奖概率1/19.38。 ',
+    259: '至少选6个号码，所选号码包括当期全部开奖号即中奖<em>12</em>元，中奖概率1/10.9。'
 });
 Class.C('wanfa',{// 
-	0: ['hz','addHZ'],
-	1: ['sthtx','addSTHTX'],
-	2: ['sthdx','addSTHDX'],
-	3: ['ethfx','addETHFX'],
-	4: ['ethdx','addETHDX'],
-	5: ['sbth','addSBTH'],
-	6: ['sbthdt','addSBTHDT'],
-	7: ['ebth','addEBTH'],
-	8: ['ebthdt','addEBTHDT'],
-	9: ['slhtx','addSLHTX']
+	0: ['th','addTH'],
+	1: ['ths','addTHS'],
+	2: ['sz','addSZ'],
+	3: ['bz','addBZ'],
+	4: ['dz','addDZ'],
+	5: ['r','addR'],
+	6: ['r','addR'],
+	7: ['r','addR'],
+	8: ['r','addR'],
+	9: ['r','addR'],
+	10: ['r','addR']
 });
 //Class.C('child_wanfa',{
 //    249: '1234,111,222,333,444',
@@ -129,7 +137,7 @@ Class.extend('getPrixRange', function (count, code) {//已选
     var min, max = '', rn, hit, sp, ini, playid, mx, mi, getPlayId = this.getPlayId();
     if (code != '' && code != undefined) {
     	var codes = Y.getInt(code[0]);
-    	if(getPlayId == '251'||getPlayId == '253'){
+    	if(getPlayId == '251'||getPlayId == '252'||getPlayId == '253'){
     		codes = Y.getInt(code[(code.length-1)]);
     	}
         if (getPlayId == '249' && codes == '00') {
@@ -366,8 +374,8 @@ Class('SendBuy', {
         var elist, list, Y;
         Y = this;
         elist = Y.postMsg('msg_get_expect_param').data;
-//        list = Y.postMsg('msg_get_list_data').data;
-//        elist.codes = list.codes;
+        list = Y.postMsg('msg_get_list_data').data;
+        elist.codes = list.codes;
         if (!Y.get('#agreement').prop('checked')) {
             return Y.confirm('您好, 您已阅读并同意《用户合买代购协议》吗?', function () {
                 Y.get('#agreement').prop('checked', true);
@@ -437,67 +445,7 @@ Class('SendBuy', {
 
 
 //选择器
-Class('Ball2', {
-//	【您选择了<em>0</em>注，共 ￥<em>0.00</em>元 】如中奖，奖金 ￥<em>0.00</em> 元，盈利 ￥<em>0.00</em> 元
-	showTxt: '【您选择了<em>{$zhushu}</em>注，共 ￥<em>{$totalmoney}</em>元 】如中奖，奖金 {$prix}，盈利  {$yl} ',
-    index:function (config){
-        this.putBtn = this.get(config.putBtn).concat(this.get(config.put).nodes);
-        this.onMsg('msg_rnd_code_'+this.msgType, function (){
-            this.random(this.rndOpts.val());
-        });
-         this.onMsg('msg_clear_code', function (){
-             this.clearCode();
-         });
-//         this.onMsg('msg_redraw_code', function (code,o){
-//        	 alert(code+"dddddddddddd");
-//             this.redrawCode(code,o);
-//         });
-         this.onMsg('msg_get_choose_code_'+config.msgId, function (isKeepCode){
-             return this.getChooseCode(isKeepCode);
-         });
-    },
-   
-    highlightBtn: function (zs){
-        if (zs) {
-           this.putBtn.addClass('cur');
-        }else{
-           this.putBtn.removeClass('cur');
-        }
-    },
-    random: function (n){// 随机生成号码, [[red],[blue]]
-        var a, b, code, id, len, ini,sp;
-        n = ~~n;
-        code = [];
-        id = this.getPlayId();
-        ini = Class.C('lot_data')[id];
-        len = ini[2];
-        sp = ini[3] || ',';
-        a = this.repeat(11, 1);
-        //如果是胆拖    转换显示玩法
-        if(id==261){id=247;}
-        if(id==278){id=249;}
-        if(id==264){id=248;}
-        if(id==279){id=250;}
-        if(id==265){id=251;}
-        if(id==266){id=252;}
-        if(id==267){id=253;}
-        if(id==267){id=254;}
-        if(id==280){id=255;}
-        for (var i = n; i--;) {
-            code[i] = [a.random(-len), id, 1];
-            if (!ini[3]) {
-                code[i][0].sort(Array.up)
-            }
-        }
-        code.each(function (arr){
-            if (sp==='|') {//直选修饰
-                arr[0] = arr[0].concat('-', '-', '-', '-', '-').slice(0, 5)
-            }
-            arr[0] = String.zero(arr[0].join(sp));
-        });
-        this.postMsg('msg_put_code', code);//广播号码输出消息, 号码列表监听此消息
-    }
-});
+Class('Ball2', {});
 
 //选择器
 Class('Ball', {
@@ -585,15 +533,15 @@ Class('Ball>Single', {
             shuzi = $("#shuzi").val().replace(/\D/g, '');
             Y.random(shuzi);
         });
-//        this.need(ini.setdan).click(function () {
-//            if ($(ini.danma).is(":hidden ")) {
-//                $(ini.danma).show();
-//                $(ini.setdan).addClass("cur");
-//            } else {
-//                $(ini.danma).hide();
-//                $(ini.setdan).removeClass("cur");
-//            }
-//        });
+        this.need(ini.setdan).click(function () {
+            if ($(ini.danma).is(":hidden ")) {
+                $(ini.danma).show();
+                $(ini.setdan).addClass("cur");
+            } else {
+                $(ini.danma).hide();
+                $(ini.setdan).removeClass("cur");
+            }
+        });
         this.need(ini.put).click(function () {
             if (Class.C('stop-buy')) {
                 return;
@@ -647,10 +595,10 @@ Class('Ball>Single', {
             case 249:
             case 250:
             case 251:
+            case 252:
             case 253:
-            	
             case 254:
-            	return len;
+                return len;
             case 255:
             case 256:
             case 257:
@@ -728,185 +676,7 @@ Class('Ball>Single', {
 });
 
 //多行选择器 前二三直选
-Class('Ball2>Multi',{
-    index:function (ini){
-        var Y = this;
-        this.base(ini);
-        this.msgType = "multi";
-        this.addNoop('onchange');
-        this.showbar = this.get(ini.showbar);
-        this.balls = [];
-        this.$(ini.items).each(function (div, i){
-            this.balls[i] = this.lib.Choose2(this.mix({
-                items: div
-            }, ini, false));
-            this.balls[i].onchange = function (){
-                var zhushu, info, prix, tm;
-                zhushu = Y.getCount();
-                prix = zhushu > 0 ? Y.getInt(Y.getPrix()) : 0;
-                tm = zhushu*Class.C('price');
-                info = {// 选择状态显示
-                    ball: this.data.length,
-                    zhushu: zhushu,
-                    prix:  '<em class="">' + prix + '</em>元' ,
-                    yl: '<em class="">' + (prix - tm) + '</em>元',
-                    totalmoney: '<em class="">' + tm + '</em>'           
-                };
-//                【您选择了<em>0</em>注，共 ￥<em>0.00</em>元 】如中奖，奖金 ￥<em>0.00</em> 元，盈利 ￥<em>0.00</em> 元
-                Y.highlightBtn(info.zhushu);
-                Y.showbar.html(Y.showTxt.tpl(info, '0'));
-                Y.onchange(info);
-            };
-        }, this);
-        this.ini = ini;
-        this.bindDom(ini);
-    },
-    bindDom: function (ini){
-       var Y = this;
-        this.need(ini.clear).click(function (){
-            Y.clearCode();
-        });
-        this.need(ini.put).click(function (){
-        	if (Class.C('stop-buy')) {
-        	    return;
-        	}
-        	var code, count, min, id;
-            count = Y.getCount();
-            id = Y.getPlayId();
-            min = Class.C('lot_data')[id][2];           
-            if(count > 0) {
-         
-                if (Y.checkMaxMoney(count*Class.C('price'), this) ){
-                    Y.checkBad(count, function (code){
-//                    	alert(code+".....");
-                        code = Y.getChooseCode(code);
-//                        alert(code+"===");
-                        Y.clearCode();
-                        if (!Y.bad.length) {
-                        	if(!(code[0][0]=="||-|-|-" || code[0][0]=="|||-|-"))
-                        	{
-                        		Y.postMsg('msg_put_code', code);//广播号码输出消息, 列表框应该监听此消息               
-                        	}
-                        	
-                        }
-                    })
-                }
-            }else{
-                if (Y.bad.length) {
-                    Y.alert('您好, 相同号码不能组成有效注，请重新选择')
-                }else{
-                    var w = 0;
-                    Y.balls.each(function (ball, i){
-                        if (ball.data.length === 0) {
-                            w = i ;
-                            return false;
-                        }
-                    });
-                    Y.alert('您好, 第'+('一二三四').charAt(w)+'位没有选择号码, 请选择!')
-                }
-            }
-        });
-    },
-    clearCode: function (){
-        this.balls.each(function (ball){
-            ball.clearCode();
-        });
-    },
-    getCount: function (){
-        var p, len, id, a, b, c, sum, i, j, k, bad, yes;
-        sum = 0;
-        bad = [];
-        yes = [];
-        a = this.balls[0].data;
-        b = this.balls[1].data;
-        if (this.balls.length == 2) {//直二
-            for (i =  a.length; i--;) {
-                for (j =  b.length; j--;) {
-                    if (a[i]!==b[j]) {
-                        yes[yes.length] = [a[i], b[j]];
-                        sum+=1
-                    }else{
-                        bad[bad.length] = [a[i], b[j]]
-                    }
-                }                
-            }            
-        }else{//直三
-            c = this.balls[2].data;
-            for (i =  a.length; i--;) {
-                for (j =  b.length; j--;) {
-                    for (k =  c.length; k--;) {
-                        if (a[i]!==b[j] && a[i]!==c[k] && c[k]!==b[j]) {
-                            yes[yes.length] = [a[i], b[j], c[k]];
-                            sum+=1;
-                        }else{
-                            bad[bad.length] = [a[i], b[j], c[k]].join('|');
-                        }
-                    }   
-                }                
-            } 
-        }
-        this.bad = bad;//无效号码 ['a|b|c', 'a|b|c']
-        this.yes = yes;//有效号码[[a, b,c]]
-        return sum;
-    },
-    checkBad: function (zs, fn){//检查是否有不能出票的无效号码
-    	var Y = this;
-        var uq, aum, code;
-//        if (zs == 1) {//只在注数为1且有无效注的时候执行去除无效号码
-            uq = [{},{},{}];//去重
-            sum = [0, 0, 0];//有效的个数
-            code = [];// 有效的号码
-//            alert(this.yes.join("/"));
-            this.yes.each(function (arr){
-                for (var i = 0, j = arr.length; i < j; i++) {
-                    if (!(i in code)) {
-                        code[i] = []
-                    }                    
-                    if (!uq[i][arr[i]]) {
-                        uq[i][arr[i]] = true;
-                        code[i].push(arr[i]);
-                        sum[i]++;
-                    }
-                }
-            });
-            code.each(function (a){
-                a.sort(Array.up)
-            });
-            if (this.bad.length) {
-              var sty = "";
-            	if (Y.bad.length <= 8) {
-            		sty ="color:red;";
-	           	 }else{
-	           		 sty="color:red;display: block; max-height: 160px; overflow-y: auto;";
-	           	 }
-            	 Y.yes.each(function (arr){
-              		var code = "";
-              		code = [[String.zero(arr.concat('-', '-', '-', '-', '-').slice(0,5).join('|')), Class.C('playid'), 1]];
-              		Y.clearCode();
-              		Y.postMsg('msg_put_code', code);
-              	});
-//                return this.confirm('您好, 您选择号码中的<br/><span style="'+sty+'">'+String.zero(this.bad.join('<br/>'))+'</span><br/>是无效注，确认剔除并投注吗？', function (){
-//                	 if (zs == 1) {
-//                		 fn(code)
-//                	 }else{
-//                		
-//                	 }
-//                })
-            }
-//        }
-        fn()
-    },
-    getChooseCode: function (code){
-        if (!code) {
-            code = [];
-            this.balls.each(function (b){
-                code[code.length] = b.data.join(',');
-            });      
-        }
-        	return [[String.zero(code.concat('-', '-', '-', '-', '-').slice(0,5).join('|')), this.getPlayId(), this.getCount()]];
-    }
-});
-
+Class('Ball2>Multi', {});
 
 Class.extend('exportCode', function () {
     // 传入号码
@@ -928,7 +698,7 @@ Class.extend('exportCode', function () {
 			/* setTimeout(function() {
                 Y.lib.ZhOptions();
             },99);   */
-		var data = $_trade.key.gid + "=" + encodeURIComponent("06") + "&tid=" + encodeURIComponent(zid) + "&rnd=" + Math.random();
+		var data = $_trade.key.gid + "=" + encodeURIComponent("58") + "&tid=" + encodeURIComponent(zid) + "&rnd=" + Math.random();
 		Y.ajax({
 			url :$_user.url.xchase,
 			type : "POST",
@@ -946,7 +716,9 @@ Class.extend('exportCode', function () {
 					var ss = r[0].ccodes;// 投注号码
 					ss = ss.split(':')[1];
 					zhushu = r[0].icmoney*1/2;
+					//ss = ccodes.split(':')[1];
 					
+					//var periodid = r.periodid;//期次
 					if(mulity>1){
 						$("#beishu").val(mulity);
 					}
@@ -1064,18 +836,17 @@ Class('App', {
         this.lib.Dlg();
         this.lib.BuyProject();
         this.lib.openCodeList(false);
-        this.addChoose();
+//        this.addChoose();
         var playTabs, zhTabs, kjTabs;
         this.addTabs();
         Y.exportCode();
         Y.get("#zh_bs_big").val(1);
-        $("#q4zx a").mouseover(function () {
-            $(this).addClass("cur").siblings().removeClass("cur");
+        $("#renxuan b").mouseover(function () {
+            $(this).addClass("b_r").siblings().removeClass("b_r");
             //$(this).addClass("style='display: none;'");
-        })
- //           .mouseout(function () {
-//            $(this).removeClass("cur");
-//        });
+        }).mouseout(function () {
+            $(this).removeClass("b_r");
+        });
         var footer = this.lib.Tabs({
             items: 'div.nwx5kj h1 span',
             focusCss: 'cur',
@@ -1264,26 +1035,112 @@ Class('App', {
         }
         return rest;
     },
-    
-    addChoose: function (){
-    	this.lib.Single({
-     		 items: '#q3zx a',
-            group: '#ballsingle a',
+    addR: function () {
+        this.lib.Single({
+            items: '#renxuan b',
+            group: '#ballsingle b',
             focusCss: 'cur',
-            hoverCss: '',
-            showbar: '#Multi_bar3',
-            put: '#s3_put',
-            clear: '#s3_clear',
-            rnd1: '#s1_jx3',
-            // rnd5: '#s1_jx5',
-            jixuan: '#jixuan3',
+            hoverCss: 'b_r',
+            showbar: '#single_bar',
+            put: '#s0_put',
+            clear: '#s0_clear',
+            rnd1: '#s1_jx',
+            jixuan: '#jixuan',
             setdan: '#setdanma',
+            setdan_i: '#setdanma_i',
             danma: '#danma',
             danmas: '#danma input'
- 	  	 });
-    	 this.lib.Multi({
-             items: '#q5zx a',  //球
-             group: '#ballsingle a',
+        });
+
+
+        this.lib.CodeList({
+            panel: '#code_list',
+            clearBtn1: '#clear_list1',
+            clearBtn: '#clear_list',
+            zsSpan: '#single_zs',
+            moneySpan: '#single_m'
+        });
+//        alert('CodeList');
+
+        this.addR = this.getNoop();
+//        alert('CountDownGp');
+    },
+    addTH: function (){//同花
+  	  	this.lib.Single({
+  	  	 items: '#q1zx dd',  //球
+         group: '#ballsingle b',
+         focusCss: 'cur',
+         hoverCss: '',
+         showbar: '#Multi_bar1',//奖金 盈利
+         put: '#s1_put',//选好了
+         clear: '#s1_clear',
+	       rnd1: '#s1_jx1',
+	       // rnd5: '#s1_jx5',
+	       jixuan: '#jixuan1',
+       setdan: '#setdanma',
+         danma: '#danma',
+         danmas: '#danma input'
+  	  	 });
+         this.addTH = this.getNoop();
+      },
+      addTHS: function (){//同花顺
+      	  	this.lib.Single({
+	      	  	 items: '#q2zx dd',  //球
+	             group: '#ballsingle b',
+	             focusCss: 'cur',
+	             hoverCss: '',
+	             showbar: '#Multi_bar2',//奖金 盈利
+	             put: '#s2_put',//选好了
+	             clear: '#s2_clear',
+	             rnd1: '#s1_jx2',
+	             // rnd5: '#s1_jx5',
+	             jixuan: '#jixuan2',
+	             setdan: '#setdanma',
+	             danma: '#danma',
+	             danmas: '#danma input'
+      	  	 });
+             this.addTHS = this.getNoop();
+      },
+      addSZ: function (){//顺子
+      	this.lib.Single({
+      		 items: '#q3zx dd',
+             group: '#ballsingle b',
+             focusCss: 'cur',
+             hoverCss: '',
+             showbar: '#Multi_bar3',
+             put: '#s3_put',
+             clear: '#s3_clear',
+             rnd1: '#s1_jx3',
+             // rnd5: '#s1_jx5',
+             jixuan: '#jixuan3',
+             setdan: '#setdanma',
+             danma: '#danma',
+             danmas: '#danma input'
+      	  	 });
+             this.addSZ = this.getNoop();
+      },
+      addBZ: function (){//豹子
+      	  this.lib.Single({
+      		 items: '#q4zx dd',
+             group: '#ballsingle b',
+             focusCss: 'cur',
+             hoverCss: '',
+             showbar: '#Multi_bar4',
+             put: '#s4_put',
+             clear: '#s4_clear',
+             rnd1: '#s1_jx4',
+             // rnd5: '#s1_jx5',
+             jixuan: '#jixuan4',
+             setdan: '#setdanma',
+             danma: '#danma',
+             danmas: '#danma input'
+      	  	 });
+             this.addBZ = this.getNoop();
+      },
+      addDZ: function (){//对子
+      	  this.lib.Single({
+      		 items: '#q5zx dd',
+             group: '#ballsingle b',
              focusCss: 'cur',
              hoverCss: '',
              showbar: '#Multi_bar5',
@@ -1291,17 +1148,18 @@ Class('App', {
              clear: '#s5_clear',
              rnd1: '#s1_jx5',
              // rnd5: '#s1_jx5',
-             jixuan: '#jixuan5'
-         });
-    },
-    
-   
-      
+             jixuan: '#jixuan5',
+             setdan: '#setdanma',
+             danma: '#danma',
+             danmas: '#danma input'
+      	  	 });
+             this.addDZ = this.getNoop();
+      },
     addTabs: function () {
        
         Y = this;
       //默认玩法
-//        this[Class.C('wanfa')[5][1]]();
+        this[Class.C('wanfa')[5][1]]();
         this.lib.ExpectList();
         this.lib.CountDownGp({
             stop: Y.C('lot_id'),
@@ -1333,19 +1191,19 @@ Class('App', {
             Y.get("#shil s").attr("data-help",Class.C('lot_data_dome')[pid]);
             
             Y.postMsg('playtabs_onchange'); 
-//            Y.postMsg('danma_onchange');
+            Y.postMsg('danma_onchange');
             Y.postMsg('msg_buy_succeed');
             Y.get("#inputtext").val("");
             $("#sdinput").show();
-//            if (ol != nl) {
-//                Y.postMsg('show_opencodelist', 6);
-//            }
+            if (ol != nl) {
+                Y.postMsg('show_opencodelist', 6);
+            }
             $("#opencodelist,#opencodelist_1,#opencodelist_2,#opencodelist_3,#opencodelist_4,#opencodelist_5,a[mark=s1],a[mark=jx]").hide();
 
-            $("#setdanma_i,#num_header_1,#num_header_2,#haoma_1,#haoma_2,#haoma_3,#haoma_4,#haoma_5,#haoma_6,#haoma_7,#haoma_8,#haoma_9").hide();
-//            Y[Class.C('wanfa')[b][1]]();
-            if (nl == 5) {
-                $("#opencodelist5,#haoma_5,#s1_jx5,#jixuan5").show();
+            $("#setdanma_i,#num_header_1,#num_header_2,#haoma,#haoma_1,#haoma_2,#haoma_3,#haoma_4,#haoma_5").hide();
+            Y[Class.C('wanfa')[b][1]]();
+            if (nl > 5) {
+                $("#opencodelist,#renxuan,#haoma,#s1_jx,#jixuan").show();
                
             } else {
                 $("#opencodelist_" + nl).show();
@@ -1368,7 +1226,7 @@ Class('App', {
 
         });
         zhTabs.onchange = function (a, b) {
-//            var listdata = Y.postMsg('msg_get_list_data').data;
+            var listdata = Y.postMsg('msg_get_list_data').data;
 //            this
 
             if (b != 0) {
@@ -1402,23 +1260,17 @@ Class('App', {
         };
     },
     getopencodelength: function (pid) {
-        var pl = 5;
-        if (pid == 249) {//和值
+        var pl = 6;
+        if (pid == 249) {//同花
             pl = 1;
-        } else if (pid == 250) {//三同号通选
+        } else if (pid == 250) {//同花顺
             pl = 2;
-        } else if (pid == 251) {//三同号单选
+        } else if (pid == 251) {//顺子
             pl = 3;
-        } else if (pid == 252) {//二同号复选
-            pl = 6;
-        } else if (pid == 253) {//二同号单选
-            pl = 7;
-        } else if (pid == 254) {//二同号单选
+        } else if (pid == 252) {//豹子
             pl = 4;
-        } else if (pid == 255) {//二同号单选
-            pl = 8;
-        }else if (pid == 257) {//二同号单选
-            pl = 9;
+        } else if (pid == 253) {//对子
+            pl = 5;
         }
         return pl;
     }
@@ -1442,9 +1294,9 @@ Class('CodeList', {
         this.onMsg('msg_put_code', function (code) {
             this.addCode(code);
         });
-//        this.onMsg('msg_get_list_data', function () {
-//            return this.getData();
-//        });
+        this.onMsg('msg_get_list_data', function () {
+            return this.getData();
+        });
         this.onMsg('msg_buy_succeed', function () {
             this.clearLine();
             this.postMsg("msg_buy_succeed_zhlist");
@@ -1510,7 +1362,7 @@ Class('CodeList', {
             $("#zh_bs_big").val(zh_bs_big);
             Y.bschangess($("#zh_bs_big").val());
 
-//            Y.postMsg('msg_get_list_data').data;// 倒计时下载期号后构建
+            Y.postMsg('msg_get_list_data').data;// 倒计时下载期号后构建
         });
         Y.get("#zh_bs_reduce").click(function () {
             var zh_bs_big = $("#zh_bs_big").val();
@@ -1763,7 +1615,7 @@ Class('ExpectList', {
             }
 
         }).live(':checkbox', 'click', function () {
-//            var listdata = Y.postMsg('msg_get_list_data').data;
+            var listdata = Y.postMsg('msg_get_list_data').data;
             var bs = this.parentNode.parentNode.nextSibling.getElementsByTagName('INPUT')[0];
             var bss = Y.get('#zh_bs').val() == "" ? 1 : Y.get('#zh_bs').val();
             bs.value = this.checked ? bss : 0;
@@ -1802,7 +1654,7 @@ Class('ExpectList', {
     },
     bschange: function (input) {
         var tagM, listdata;
-//        listdata = this.postMsg('msg_get_list_data').data;
+        listdata = this.postMsg('msg_get_list_data').data;
         var ids = input.id;
         var id = ids.split("_");
         if (this.flag == false) {
@@ -1825,7 +1677,7 @@ Class('ExpectList', {
     },
     setAllBs: function (bs) {
         var n = 0;
-//        var listdata = this.postMsg('msg_get_list_data').data;
+        var listdata = this.postMsg('msg_get_list_data').data;
         this.get('#expectListBox :text').each(function (t) {
             if (!t.disabled) {
                 t.value = bs;
@@ -1834,8 +1686,8 @@ Class('ExpectList', {
             }
         }, this);
         this.get('#expect_num').html(n);
-//        this.get('#sum_m').html((n * bs * 2 * listdata.zhushu).rmb(false, 0));
-//        this.setTotalData(listdata);
+        this.get('#sum_m').html((n * bs * 2 * listdata.zhushu).rmb(false, 0));
+        this.setTotalData(listdata);
     },
     setAllMoney: function (m) {
         var tm = 0;
@@ -1849,8 +1701,8 @@ Class('ExpectList', {
     },
     selectMulti: function (count) {//批量选择
         var bs = this.getInt(this.get('#zh_bs').val());
-//        var listdata = this.postMsg('msg_get_list_data').data;
-//        var m = listdata.totalmoney;
+        var listdata = this.postMsg('msg_get_list_data').data;
+        var m = listdata.totalmoney;
         var n = count;
         this.get('#expectListBox :text').each(function (t) {
             if (n) {//选中前N期
@@ -1877,13 +1729,13 @@ Class('ExpectList', {
         var val = Math.min(this.get('#expectListBox ul').size(), count);
         this.get('#zh_qs').val(val).attr('data-prev', val);
         this.get('#zh_qs_big').val(val).attr('data-prev', val);
-//        this.setTotalData(listdata);
+        this.setTotalData(listdata);
     },
     formParam: function (obj) {//使用参数批量设置 {expect: bs}
         var n, m, listdata;
         n = 0;
-//        listdata = this.postMsg('msg_get_list_data').data;
-//        m = listdata.totalmoney;
+        listdata = this.postMsg('msg_get_list_data').data;
+        m = listdata.totalmoney;
         this.get('#expectListBox ul').each(function (tr) {
             var bs, obs, ochk, em;
             obs = tr.getElementsByTagName('li')[2].getElementsByTagName('input')[0];
@@ -1913,38 +1765,38 @@ Class('ExpectList', {
         exp_sum = bs = n = 0;
         bslist = [];
         exlist = [];
-//        var code = this.postMsg('msg_get_list_data').data.codes + '';
-//        if (code.indexOf(';') == -1) {
-//            switch (code) {
-//                case "07:12:01":
-//                    c[0] = 7;
-//                    break;
-//                case "08:13:01":
-//                    c[0] = 8;
-//                    break;
-//                case "09:14:01":
-//                    c[0] = 13;
-//                    break;
-//                case "10:15:01":
-//                    c[0] = 14;
-//                    break;
-//                case "11:16:01":
-//                    c[0] = 14;
-//                    break;
-//            }
-//        }
-//        var cl = code.split(";");
+        var code = this.postMsg('msg_get_list_data').data.codes + '';
+        if (code.indexOf(';') == -1) {
+            switch (code) {
+                case "07:12:01":
+                    c[0] = 7;
+                    break;
+                case "08:13:01":
+                    c[0] = 8;
+                    break;
+                case "09:14:01":
+                    c[0] = 13;
+                    break;
+                case "10:15:01":
+                    c[0] = 14;
+                    break;
+                case "11:16:01":
+                    c[0] = 14;
+                    break;
+            }
+        }
+        var cl = code.split(";");
         var isyl = false;
-//        if (cl.length == 1 && code.length > 0) {
-//            if (code.indexOf('$') > -1) {//胆拖
-//                var dt = code.split('$');
-//                pr = this.getDtPrixRange(dt[0].split(',').length, dt[1].split(',').length);
-//            } else {
-//                var len = this.getPlayId() == 245 ? 2 : this.getPlayId() == 246 ? 3 : this.getPlayId() == 244 ? 1 : code.split(',').length;
-//                pr = this.getPrixRange(len, c);
-//            }
-//            isyl = true;
-//        }
+        if (cl.length == 1 && code.length > 0) {
+            if (code.indexOf('$') > -1) {//胆拖
+                var dt = code.split('$');
+                pr = this.getDtPrixRange(dt[0].split(',').length, dt[1].split(',').length);
+            } else {
+                var len = this.getPlayId() == 245 ? 2 : this.getPlayId() == 246 ? 3 : this.getPlayId() == 244 ? 1 : code.split(',').length;
+                pr = this.getPrixRange(len, c);
+            }
+            isyl = true;
+        }
         this.expectChks.each(function (el) {
             if (el.checked) {
                 exp_sum++;
@@ -2007,7 +1859,7 @@ Class('ExpectList', {
     },
     setCurTopmost: function (expect, now, endtime) {//当期至顶
         var n, trp;
-//        var listdata = this.postMsg('msg_get_list_data').data;
+        var listdata = this.postMsg('msg_get_list_data').data;
         this.get('#expectListBox ul').each(function (tr) {
             var et = +tr.getAttribute('endtime');
             if (et <= now) {
@@ -2091,8 +1943,8 @@ Class('ExpectList', {
 
     createHTML: function (list1) {
         var listdata, t1, table;
-//        listdata = this.postMsg('msg_get_list_data').data;
-//        t1 = obj2Html.call(this, list1, listdata.totalmoney, 1);
+        listdata = this.postMsg('msg_get_list_data').data;
+        t1 = obj2Html.call(this, list1, listdata.totalmoney, 1);
         table = (t1).tpl({hide: 'display:'});
         this.get('#expectListBox').html(table);
         this.expectChks = this.get('#expectListBox :checkbox');
@@ -2194,7 +2046,7 @@ Class('BuyProject', {
     },
     getHTML: function () {
         var ini, cdata;
-//        cdata = this.postMsg('msg_get_list_data').data;
+        cdata = this.postMsg('msg_get_list_data').data;
         ini = this.getIni();
         if (this.expect.value == '') return this.alert('您好，请输入投入期数！');
         if (this.mult.value == '') return this.alert('您好，请输入起始倍数！');
@@ -2203,9 +2055,9 @@ Class('BuyProject', {
         }
         ;
         var len, pr, dt, buyMoney = cdata.zhushu * 2;
-//        var code = this.postMsg('msg_get_list_data').data.codes + '';
-//        var len = code.split(',').length;
-//        pr = this.getPrixRange(len);
+        var code = this.postMsg('msg_get_list_data').data.codes + '';
+        var len = code.split(',').length;
+        pr = this.getPrixRange(len);
         var bonusMoney = pr.max ? pr.max : pr.min;
         var bs = this.mult.value;
         var l = +this.expect.value;
@@ -2335,8 +2187,8 @@ Class('BuyProject', {
                     el.parentNode.parentNode.nextSibling.getElementsByTagName('INPUT')[0].value = data[i].mult;
                 }
             }
-//            var listdata = this.postMsg('msg_get_list_data').data;
-//            this.postMsg('msg_list_change', listdata);
+            var listdata = this.postMsg('msg_get_list_data').data;
+            this.postMsg('msg_list_change', listdata);
         }
     },
     init: function () {
@@ -2344,7 +2196,7 @@ Class('BuyProject', {
         oldSet = {};
         Y = this;
         this.showResult.onclick = function () {
-//            var listdata = Y.postMsg('msg_get_list_data').data;
+            var listdata = Y.postMsg('msg_get_list_data').data;
             if (listdata.zhushu > 1) {
                 Y.postMsg("msg_buy_succeed_zhlist");
                 Y.alert("您好，高级追号功能只支持单注投注方案!");
@@ -2439,372 +2291,240 @@ Class('openCodeList', {
     },
 
     showlist: function (n) {//显示开奖号码列表 球
-//        clearInterval(window.refreshKjTime);
-//        var pid = this.getPlayId();
-//        var dl = this.listdata.length;
-//        var lpid = this.listdata[dl - 1];// 获取listdata里面的最后一个的（ 遗漏） 
-//        var llpid = this.listdata[dl - 1];// 获取listdata里面的最后一个的（ 遗漏） 
-////        var npid = this.getnextpid(lpid.p);//准备开奖的期次	2013022608
-////        var net;
-////        if ((npid + "").substr(8, 2) == "01") {
-////            net = (Y.getDate(Date.parse(Y.getDate(lpid.t)) + 1000 * 60 * 60 * 24).format('YY-MM-DD')) + " 09:10:00";
-////        } else {
-////            net = (Y.getDate(Date.parse(Y.getDate(lpid.t)) + 1000 * 60 * 10).format('YY-MM-DD hh:mm:ss'));//2013-02-26 10:20:00
-////        }
-//
-//
-////        this.get('#lastopenexpect').html('{1}'.format(llpid.p));
-////        this.get('#lastopendata').html('（{1}）'.format(llpid.t));
-//        var ctpl = ' <em class="px3_i_{1}"></em><em class="px3_i_{2}"></em><em class="px3_i_{3}"></em>';
-////        var llcc = llpid.c.split(",");
-////        this.get('#lastopencode').html(ctpl.format(llcc[0], llcc[1], llcc[2]));
-////    	alert("npid="+npid+" \r\n this.C('currentExpect')"+this.C('currentExpect'));
-//        var st = 0; //开奖倒计时
-////        if (npid != this.C('currentExpect')) {
-////            st = 1; //开奖倒计时
-////            this.get('#lastopenexpect').html('{1} '.format(lpid.p));
-////            var ctpl = ' <em class="px3_i_{1}"></em><em class="px3_i_{2}"></em><em class="px3_i_{3}"></em>';
-////            var llcc = llpid.c.split(",");
-////            this.get('#lastopencode').html(ctpl.format(llcc[0], llcc[1], llcc[2]));
-////        }
-//
-//        this.get('#kaijiangexpect').html('');
-//        var ctpl = ' <em class="px3_i_{1}"></em><em class="px3_i_{2}"></em><em class="px3_i_{3}"></em>';
-////        var cc = lpid.c.split(",");
-//        this.get('#kaijiangopencode').html('');
-////		this.get('#kaijianginfo').html('<span>前一：</span><s id="qian1">{1}</s><span>前二：</span><s id="qian2">{2}</s><span>前三：</span><s id="qian3">{3}</s>'.format(cc[0],cc[0]+'&nbsp;&nbsp;'+cc[1],cc[0]+'&nbsp;&nbsp;'+cc[1]+'&nbsp;&nbsp;'+cc[2]));
-//
-//
-//        var ld = this.listdata.slice(dl - (9 - 0), dl);//列表里面的所以值 都在ld里面
-//        var lastmiss=ld[ld.length-1];
-//       if(pid == 249){
-//        	var ctp2 = ' <i>{1}</i><i>{2}</i><i>{3}</i><i>{4}</i><i>{5}</i><i>{6}</i><i>{7}</i><i>{8}</i><i>{9}</i><i>{10}</i><i>{11}</i><i>{12}</i><i>{13}</i><i>{14}</i><i>{15}</i><i>{16}</i>';
-////			var llcc1=llpid.m6.split(",");
-////			var llcc=llpid.m1.split(",");
-////			$("#haoma_1 div.k3-pok-yl").html(ctp2.format(llcc1[0],llcc[1],llcc[2],llcc[3],llcc[4]))
-//	    	lastmiss6=lastmiss.m6;
-//			lastmiss1=lastmiss.m1 ;
-//			lastmiss1 = lastmiss6 +","+ lastmiss1; 
-//			lastmiss1 = lastmiss1.split(",");
-//			var curMax1  ,max1,width1;
-//			 max1 = [];
-//			 width1 = ~~lastmiss1.width || lastmiss1.length;
-//			 for (var i = 1; i < lastmiss1.length; i+=width1) {//多位排列进行折算行最大值
-//                 max1.push(Math.max.apply(Math.max,lastmiss1.slice(i,i+width1)))
-//             }
-//			
-//			 Y.get("#haoma_1 div.k3-pok-yl i").each(function (el, i){//填充到页面
-//                 if (i in lastmiss1) {
-//                     el.innerHTML = lastmiss1[i];
-//                     curMax1 = max1[Y.getInt(i/width1)];
-//                     if(curMax1 >= 20){
-//                    	 el.style.color = lastmiss1[i] == curMax1 ? '#efd41f' : '#B1B1B1';
-//                     }
-//                                        
-//                 }
-//             });      
-//        }else if(pid == 250){
-//        	var ctp2 = ' <i>{1}</i>';
-////			var llcc1=llpid.m7.split(",");
-////			var llcc=llpid.m2.split(",");
-////			$("#haoma_2 div.k3-pok-yl").html(ctp2.format(llcc1[0],llcc[1],llcc[2],llcc[3],llcc[4]));
-//	    	lastmiss7=lastmiss.m7;
-//			lastmiss2=lastmiss.m2 ;
-//			lastmiss2 = lastmiss7 +","+ lastmiss2; 
-//			lastmiss2 = lastmiss2.split(",");
-//			var curMax2  ,max2,width2;
-//			 max2 = [];
-//			 width2 = ~~lastmiss2.width || lastmiss2.length;
-//			 for (var i = 1; i < lastmiss2.length; i+=width2) {//多位排列进行折算行最大值
-//                 max2.push(Math.max.apply(Math.max,lastmiss2.slice(i,i+width2)))
-//             }
-//			
-//			 Y.get("#haoma_2 div.k3-pok-yl i").each(function (el, i){//填充到页面
-//                 if (i in lastmiss2) {
-//                     el.innerHTML = lastmiss2[i];
-//                     curMax2 = max2[Y.getInt(i/width2)];
-//                     if(curMax2 >= 20){
-//                    	 el.style.color = lastmiss2[i] == curMax2 ? '#efd41f' : '#ccc';
-//                     }
-//                                        
-//                 }
-//             });      
-//        }else if(pid == 251){
-//        	var ctp2 = ' <i>{1}</i><i>{2}</i><i>{3}</i><i>{4}</i><i>{5}</i><i>{6}</i>';
-////			var llcc1=llpid.m8.split(",");
-////			var llcc=llpid.m3.split(",");
-////			$("#haoma_3 div.k3-pok-yl").html(ctp2.format(llcc1[0],llcc[0],llcc[1],llcc[2],llcc[3],llcc[4],llcc[5],llcc[6],llcc[7],llcc[8],llcc[9],llcc[10],llcc[11]));
-//	    	lastmiss8=lastmiss.m8;
-//			lastmiss3=lastmiss.m3 ;
-//			lastmiss3 = lastmiss8 +","+ lastmiss3; 
-//			lastmiss3 = lastmiss3.split(",");
-//			var curMax3  ,max3,width3;
-//			 max3 = [];
-//			 width3 = ~~lastmiss3.width || lastmiss3.length;
-//			 for (var i = 1; i < lastmiss3.length; i+=width3) {//多位排列进行折算行最大值
-//                 max3.push(Math.max.apply(Math.max,lastmiss3.slice(i,i+width3)));
-//             }
-//			
-//			 Y.get("#haoma_3 div.k3-pok-yl i").each(function (el, i){//填充到页面
-//                 if (i in lastmiss3) {
-//                     el.innerHTML = lastmiss3[i];
-//                     curMax3 = max3[Y.getInt(i/width3)];
-//                     if(curMax3>= 20){
-//                    	 el.style.color = lastmiss3[i] == curMax3 ? '#efd41f' : '#ccc';
-//                     }
-//                                        
-//                 }
-//             });      
-//        }
-//        else if(pid == 252){
-//        	var ctp2 = ' <i>{1}</i><i>{2}</i><i>{3}</i><i>{4}</i><i>{5}</i><i>{6}</i>';
-////			var llcc1=llpid.m8.split(",");
-////			var llcc=llpid.m3.split(",");
-////			$("#haoma_4 div.k3-pok-yl").html(ctp2.format(llcc1[0],llcc[0],llcc[1],llcc[2],llcc[3],llcc[4],llcc[5],llcc[6],llcc[7],llcc[8],llcc[9],llcc[10],llcc[11]));
-//	    	lastmiss8=lastmiss.m8;
-//			lastmiss3=lastmiss.m3 ;
-//			lastmiss3 = lastmiss8 +","+ lastmiss3; 
-//			lastmiss3 = lastmiss3.split(",");
-//			var curMax3  ,max3,width3;
-//			 max3 = [];
-//			 width3 = ~~lastmiss3.width || lastmiss3.length;
-//			 for (var i = 1; i < lastmiss3.length; i+=width3) {//多位排列进行折算行最大值
-//                 max3.push(Math.max.apply(Math.max,lastmiss3.slice(i,i+width3)));
-//             }
-//			
-//			 Y.get("#haoma_4 div.k3-pok-yl i").each(function (el, i){//填充到页面
-//                 if (i in lastmiss3) {
-//                     el.innerHTML = lastmiss3[i];
-//                     curMax3 = max3[Y.getInt(i/width3)];
-//                     if(curMax3>= 20){
-//                    	 el.style.color = lastmiss3[i] == curMax3 ? '#efd41f' : '#ccc';
-//                     }
-//                                        
-//                 }
-//             });      
-//        }else if(pid == 253){
-//        	var ctp2 = ' <i>{1}</i><i>{2}</i><i>{3}</i><i>{4}</i><i>{5}</i><i>{6}</i><i>{7}</i><i>{8}</i><i>{9}</i><i>{10}</i><i>{11}</i><i>{12}</i>';
-////			var llcc1=llpid.m10.split(",");
-////			var llcc=llpid.m5.split(",");
-////			$("#haoma_5 div.k3-pok-yl").html(ctp2.format(llcc1[0],llcc[0],llcc[1],llcc[2],llcc[3],llcc[4],llcc[5],llcc[6],llcc[7],llcc[8],llcc[9],llcc[10],llcc[11],llcc[12]));
-//	    	lastmiss10=lastmiss.m10;
-//			lastmiss5=lastmiss.m5 ;
-//			lastmiss5 = lastmiss10 +","+ lastmiss5; 
-//			lastmiss5 = lastmiss5.split(",");
-//			var curMax5  ,max5,width5;
-//			 max5 = [];
-//			 width5 = ~~lastmiss5.width || lastmiss5.length;
-//			 for (var i = 1; i < lastmiss5.length; i+=width5) {//多位排列进行折算行最大值
-//                 max5.push(Math.max.apply(Math.max,lastmiss5.slice(i,i+width5)))
-//             }
-//			
-//			 Y.get("#haoma_5 div.k3-pok-yl i").each(function (el, i){//填充到页面
-//                 if (i in lastmiss5) {
-//                     el.innerHTML = lastmiss5[i];
-//                     curMax5 = max5[Y.getInt(i/width5)];
-//                     if(curMax5>= 20){
-//                    	 el.style.color = lastmiss5[i] == curMax5 ? '#efd41f' : '#ccc';
-//                     }
-//                                        
-//                 }
-//             });      
-//        }
-//        else if(pid == 254){
-//        	var ctp2 = ' <i>{1}</i><i>{2}</i><i>{3}</i><i>{4}</i><i>{5}</i><i>{6}</i>';
-////			var llcc1=llpid.m10.split(",");
-////			var llcc=llpid.m5.split(",");
-////			$("#haoma_6 div.k3-pok-yl").html(ctp2.format(llcc1[0],llcc[0],llcc[1],llcc[2],llcc[3],llcc[4],llcc[5],llcc[6],llcc[7],llcc[8],llcc[9],llcc[10],llcc[11],llcc[12]));
-//	    	lastmiss10=lastmiss.m10;
-//			lastmiss5=lastmiss.m5 ;
-//			lastmiss5 = lastmiss10 +","+ lastmiss5; 
-//			lastmiss5 = lastmiss5.split(",");
-//			var curMax5  ,max5,width5;
-//			 max5 = [];
-//			 width5 = ~~lastmiss5.width || lastmiss5.length;
-//			 for (var i = 1; i < lastmiss5.length; i+=width5) {//多位排列进行折算行最大值
-//                 max5.push(Math.max.apply(Math.max,lastmiss5.slice(i,i+width5)))
-//             }
-//			
-//			 Y.get("#haoma_6 div.k3-pok-yl i").each(function (el, i){//填充到页面
-//                 if (i in lastmiss5) {
-//                     el.innerHTML = lastmiss5[i];
-//                     curMax5 = max5[Y.getInt(i/width5)];
-//                     if(curMax5>= 20){
-//                    	 el.style.color = lastmiss5[i] == curMax5 ? '#efd41f' : '#ccc';
-//                     }
-//                                        
-//                 }
-//             });      
-//        } else if(pid == 255){
-//        	var ctp2 = ' <i>{1}</i><i>{2}</i><i>{3}</i><i>{4}</i><i>{5}</i><i>{6}</i>';
-////			var llcc1=llpid.m10.split(",");
-////			var llcc=llpid.m5.split(",");
-////			$("#haoma_7 div.k3-pok-yl").html(ctp2.format(llcc1[0],llcc[0],llcc[1],llcc[2],llcc[3],llcc[4],llcc[5],llcc[6],llcc[7],llcc[8],llcc[9],llcc[10],llcc[11],llcc[12]));
-//	    	lastmiss10=lastmiss.m10;
-//			lastmiss5=lastmiss.m5 ;
-//			lastmiss5 = lastmiss10 +","+ lastmiss5; 
-//			lastmiss5 = lastmiss5.split(",");
-//			var curMax5  ,max5,width5;
-//			 max5 = [];
-//			 width5 = ~~lastmiss5.width || lastmiss5.length;
-//			 for (var i = 1; i < lastmiss5.length; i+=width5) {//多位排列进行折算行最大值
-//                 max5.push(Math.max.apply(Math.max,lastmiss5.slice(i,i+width5)))
-//             }
-//			
-//			 Y.get("#haoma_7 div.k3-pok-yl i").each(function (el, i){//填充到页面
-//                 if (i in lastmiss5) {
-//                     el.innerHTML = lastmiss5[i];
-//                     curMax5 = max5[Y.getInt(i/width5)];
-//                     if(curMax5>= 20){
-//                    	 el.style.color = lastmiss5[i] == curMax5 ? '#efd41f' : '#ccc';
-//                     }
-//                                        
-//                 }
-//             });      
-//        } else if(pid == 256){
-//        	var ctp2 = ' <i>{1}</i>';
-////			var llcc1=llpid.m10.split(",");
-////			var llcc=llpid.m5.split(",");
-////			$("#haoma_8 div.k3-pok-yl").html(ctp2.format(llcc1[0],llcc[0],llcc[1],llcc[2],llcc[3],llcc[4],llcc[5],llcc[6],llcc[7],llcc[8],llcc[9],llcc[10],llcc[11],llcc[12]));
-//	    	lastmiss10=lastmiss.m10;
-//			lastmiss5=lastmiss.m5 ;
-//			lastmiss5 = lastmiss10 +","+ lastmiss5; 
-//			lastmiss5 = lastmiss5.split(",");
-//			var curMax5  ,max5,width5;
-//			 max5 = [];
-//			 width5 = ~~lastmiss5.width || lastmiss5.length;
-//			 for (var i = 1; i < lastmiss5.length; i+=width5) {//多位排列进行折算行最大值
-//                 max5.push(Math.max.apply(Math.max,lastmiss5.slice(i,i+width5)))
-//             }
-//			
-//			 Y.get("#haoma_8 div.k3-pok-yl i").each(function (el, i){//填充到页面
-//                 if (i in lastmiss5) {
-//                     el.innerHTML = lastmiss5[i];
-//                     curMax5 = max5[Y.getInt(i/width5)];
-//                     if(curMax5>= 20){
-//                    	 el.style.color = lastmiss5[i] == curMax5 ? '#efd41f' : '#ccc';
-//                     }
-//                                        
-//                 }
-//             });      
-//        } else if(pid == 257){
-//        	var ctp2 = ' <i>{1}</i><i>{2}</i><i>{3}</i><i>{4}</i><i>{5}</i><i>{6}</i>';
-////			var llcc1=llpid.m10.split(",");
-////			var llcc=llpid.m5.split(",");
-////			$("#haoma_9 div.k3-pok-yl").html(ctp2.format(llcc1[0],llcc[0],llcc[1],llcc[2],llcc[3],llcc[4],llcc[5],llcc[6],llcc[7],llcc[8],llcc[9],llcc[10],llcc[11],llcc[12]));
-//	    	lastmiss10=lastmiss.m10;
-//			lastmiss5=lastmiss.m5 ;
-//			lastmiss5 = lastmiss10 +","+ lastmiss5; 
-//			lastmiss5 = lastmiss5.split(",");
-//			var curMax5  ,max5,width5;
-//			 max5 = [];
-//			 width5 = ~~lastmiss5.width || lastmiss5.length;
-//			 for (var i = 1; i < lastmiss5.length; i+=width5) {//多位排列进行折算行最大值
-//                 max5.push(Math.max.apply(Math.max,lastmiss5.slice(i,i+width5)))
-//             }
-//			
-//			 Y.get("#haoma_9 div.k3-pok-yl i").each(function (el, i){//填充到页面
-//                 if (i in lastmiss5) {
-//                     el.innerHTML = lastmiss5[i];
-//                     curMax5 = max5[Y.getInt(i/width5)];
-//                     if(curMax5>= 20){
-//                    	 el.style.color = lastmiss5[i] == curMax5 ? '#efd41f' : '#ccc';
-//                     }
-//                                        
-//                 }
-//             });      
-//        }else{
-//        	var ctp2 = ' <i>{1}</i><i>{2}</i><i>{3}</i><i>{4}</i><i>{5}</i><i>{6}</i><i>{7}</i><i>{8}</i><i>{9}</i><i>{10}</i><i>{11}</i><i>{12}</i><i>{13}</i>';
-////			var llcc=llpid.m0.split(",");
-////			$("#haoma_1 div.k3-pok-yl").html(ctp2.format(llcc[0],llcc[1],llcc[2],llcc[3],llcc[4],llcc[5],llcc[6],llcc[7],llcc[8],llcc[9],llcc[10],llcc[11],llcc[12]))
-//	    	
-//			lastmiss0=lastmiss.m0;
-//			lastmiss0 = lastmiss0.split(",");
-//			var curMax0  ,max0,width0;
-//			 max0 = [];
-//			 width0 = ~~lastmiss0.width || lastmiss0.length;
-//			 for (var i = 0; i < lastmiss0.length; i+=width0) {//多位排列进行折算行最大值
-//                 max0.push(Math.max.apply(Math.max,lastmiss0.slice(i,i+width0)))
-//             }
-//			
-//			 Y.get("#haoma_1 div.k3-pok-yl i").each(function (el, i){//填充到页面
-//                 if (i in lastmiss0) {
-//                     el.innerHTML = lastmiss0[i];
-//                     curMax0 = max0[Y.getInt(i/width0)];
-//                     if(curMax0 >= 20){
-//                    	 el.style.color = lastmiss0[i] == curMax0 ? '#efd41f' : '#ccc' ;
-//                     }
-//                                        
-//                 }
-//             });      
-//        }
-//        for (var i = 0; i < ld.length; i++) {
-//            var ul = "";
-//            if (pid == 249) {//同花
-//                ul = this.get('[mark=opencodebox]', "#opencodelist_1").slice(i);
-//            } else if (pid == 250) {//同花顺
-//                ul = this.get('[mark=opencodebox]', "#opencodelist_2").slice(i);
-//            } else if (pid == 251) {//顺子
-//                ul = this.get('[mark=opencodebox]', "#opencodelist_3").slice(i);
-//            } else if (pid == 252) {//豹子
-//                ul = this.get('[mark=opencodebox]', "#opencodelist_4").slice(i);
-//            } else if (pid == 253) {//对子
-//                ul = this.get('[mark=opencodebox]', "#opencodelist_5").slice(i);
-//            } else {
-//                ul = this.get('[mark=opencodebox]', "#opencodelist").slice(i);
-//            }
-//            //ul.attr("expect",ld[i].p).attr("endtime",ld[i].t).attr("ol",0).attr("codes","");
-//
-//            if (i % 1 == 0) {
-//                ul.attr("expect", ld[i].p).attr("endtime", ld[i].t).attr("ol", 0).attr("codes", "");
-//            } else {
-//                ul.attr("expect", ld[i].p).attr("endtime", ld[i].t).attr("ol", 0).attr("codes", "");
-//            }
-//
-//            //ul.removeClass("cm_11ydj_text_hover").addClass("cm_11ydj_text_text");
-//            //var castinfolist = this.get('.cm_11ydj_text_xlhover div', ul);
-//            //castinfolist.html("");
-//            var opencode = ld[i].c;
-//            var opentime = ld[i].t;
-//
-//            var omissdata = ld[i].m0;
-//            var opencodelen = 3;
-//            var omissall = 0;
-//            if (pid == 249) { //同花
-//                omissdata = ld[i].m1;
-//                omissall = ld[i].m6;
-//            }
-//            else if (pid == 250) { //同花顺
-//                omissdata = ld[i].m2;
-//                omissall = ld[i].m7;
-//            }
-//            else if (pid == 251) {
-//                omissdata = ld[i].m3;//前三直选遗漏
-//                omissall = ld[i].m8;
-//            }
-//            else if (pid == 252) {
-//                omissdata = ld[i].m4;
-//                omissall = ld[i].m9;
-//            } else if (pid == 253) {
-//                omissdata = ld[i].m5;
-//                omissall = ld[i].m10;
-//            }
-//            if (opencode != "") {
-//                this.get('td', ul).slice(0, 1).html("" + ld[i].p + "");//填写开奖期号的位置
-//                this.showomiss(omissdata, opencodelen, opencode, ul, opentime, omissall); //加载遗漏
-//
-//            } else {
-//                this.countdown(ld[i].t, ld[i].p, ul);
-//            }
-//        }
-//
-////    	alert("st="+st);
-//        if (st == 1) {//拉金矿
-//            this.countdown(net, npid, ul);
-//        }
-//
-////    	this.showcastlist();
-//
+        clearInterval(window.refreshKjTime);
+        var pid = this.getPlayId();
+        var dl = this.listdata.length;
+        var lpid = this.listdata[dl - 1];// 获取listdata里面的最后一个的（ 遗漏） 
+        var llpid = this.listdata[dl - 1];// 获取listdata里面的最后一个的（ 遗漏） 
+        var npid = this.getnextpid(lpid.p);//准备开奖的期次	2013022608
+        var net;
+        if ((npid + "").substr(8, 2) == "01") {
+            net = (Y.getDate(Date.parse(Y.getDate(lpid.t)) + 1000 * 60 * 60 * 24).format('YY-MM-DD')) + " 09:10:00";
+        } else {
+            net = (Y.getDate(Date.parse(Y.getDate(lpid.t)) + 1000 * 60 * 10).format('YY-MM-DD hh:mm:ss'));//2013-02-26 10:20:00
+        }
+
+
+        this.get('#lastopenexpect').html('{1}'.format(llpid.p));
+        this.get('#lastopendata').html('（{1}）'.format(llpid.t));
+        var ctpl = ' <em class="px3_i_{1}"></em><em class="px3_i_{2}"></em><em class="px3_i_{3}"></em>';
+        var llcc = llpid.c.split(",");
+        this.get('#lastopencode').html(ctpl.format(llcc[0], llcc[1], llcc[2]));
+//    	alert("npid="+npid+" \r\n this.C('currentExpect')"+this.C('currentExpect'));
+        var st = 0; //开奖倒计时
+        if (npid != this.C('currentExpect')) {
+            st = 1; //开奖倒计时
+            this.get('#lastopenexpect').html('{1} '.format(lpid.p));
+            var ctpl = ' <em class="px3_i_{1}"></em><em class="px3_i_{2}"></em><em class="px3_i_{3}"></em>';
+            var llcc = llpid.c.split(",");
+            this.get('#lastopencode').html(ctpl.format(llcc[0], llcc[1], llcc[2]));
+        }
+
+        this.get('#kaijiangexpect').html('');
+        var ctpl = ' <em class="px3_i_{1}"></em><em class="px3_i_{2}"></em><em class="px3_i_{3}"></em>';
+        var cc = lpid.c.split(",");
+        this.get('#kaijiangopencode').html('');
+//		this.get('#kaijianginfo').html('<span>前一：</span><s id="qian1">{1}</s><span>前二：</span><s id="qian2">{2}</s><span>前三：</span><s id="qian3">{3}</s>'.format(cc[0],cc[0]+'&nbsp;&nbsp;'+cc[1],cc[0]+'&nbsp;&nbsp;'+cc[1]+'&nbsp;&nbsp;'+cc[2]));
+
+
+        var ld = this.listdata.slice(dl - (9 - 0), dl);//列表里面的所以值 都在ld里面
+        var lastmiss=ld[ld.length-1];
+       if(pid == 249){
+        	var ctp2 = ' <i>{1}</i><i>{2}</i><i>{3}</i><i>{4}</i><i>{5}</i>';
+			var llcc1=llpid.m6.split(",");
+			var llcc=llpid.m1.split(",");
+			$("#haoma_1 div.nxyl div").html(ctp2.format(llcc1[0],llcc[1],llcc[2],llcc[3],llcc[4]))
+	    	lastmiss6=lastmiss.m6;
+			lastmiss1=lastmiss.m1 ;
+			lastmiss1 = lastmiss6 +","+ lastmiss1; 
+			lastmiss1 = lastmiss1.split(",");
+			var curMax1  ,max1,width1;
+			 max1 = [];
+			 width1 = ~~lastmiss1.width || lastmiss1.length;
+			 for (var i = 1; i < lastmiss1.length; i+=width1) {//多位排列进行折算行最大值
+                 max1.push(Math.max.apply(Math.max,lastmiss1.slice(i,i+width1)))
+             }
+			
+			 Y.get("#haoma_1 div.nxyl div i").each(function (el, i){//填充到页面
+                 if (i in lastmiss1) {
+                     el.innerHTML = lastmiss1[i];
+                     curMax1 = max1[Y.getInt(i/width1)];
+                     if(curMax1 >= 20){
+                    	 el.style.color = lastmiss1[i] == curMax1 ? '#efd41f' : '#B1B1B1';
+                     }
+                                        
+                 }
+             });      
+        }else if(pid == 250){
+        	var ctp2 = ' <i>{1}</i><i>{2}</i><i>{3}</i><i>{4}</i><i>{5}</i>';
+			var llcc1=llpid.m7.split(",");
+			var llcc=llpid.m2.split(",");
+			$("#haoma_2 div.nxyl div").html(ctp2.format(llcc1[0],llcc[1],llcc[2],llcc[3],llcc[4]));
+	    	lastmiss7=lastmiss.m7;
+			lastmiss2=lastmiss.m2 ;
+			lastmiss2 = lastmiss7 +","+ lastmiss2; 
+			lastmiss2 = lastmiss2.split(",");
+			var curMax2  ,max2,width2;
+			 max2 = [];
+			 width2 = ~~lastmiss2.width || lastmiss2.length;
+			 for (var i = 1; i < lastmiss2.length; i+=width2) {//多位排列进行折算行最大值
+                 max2.push(Math.max.apply(Math.max,lastmiss2.slice(i,i+width2)))
+             }
+			
+			 Y.get("#haoma_2 div.nxyl div i").each(function (el, i){//填充到页面
+                 if (i in lastmiss2) {
+                     el.innerHTML = lastmiss2[i];
+                     curMax2 = max2[Y.getInt(i/width2)];
+                     if(curMax2 >= 20){
+                    	 el.style.color = lastmiss2[i] == curMax2 ? '#efd41f' : '#ccc';
+                     }
+                                        
+                 }
+             });      
+        }else if(pid == 251){
+        	var ctp2 = ' <i>{1}</i><i>{2}</i><i>{3}</i><i>{4}</i><i>{5}</i><i>{6}</i><i>{7}</i><i>{8}</i><i>{9}</i><i>{10}</i><i>{11}</i><i>{12}</i><i>{13}</i>';
+			var llcc1=llpid.m8.split(",");
+			var llcc=llpid.m3.split(",");
+			$("#haoma_3 div.nxyl div").html(ctp2.format(llcc1[0],llcc[0],llcc[1],llcc[2],llcc[3],llcc[4],llcc[5],llcc[6],llcc[7],llcc[8],llcc[9],llcc[10],llcc[11]));
+	    	lastmiss8=lastmiss.m8;
+			lastmiss3=lastmiss.m3 ;
+			lastmiss3 = lastmiss8 +","+ lastmiss3; 
+			lastmiss3 = lastmiss3.split(",");
+			var curMax3  ,max3,width3;
+			 max3 = [];
+			 width3 = ~~lastmiss3.width || lastmiss3.length;
+			 for (var i = 1; i < lastmiss3.length; i+=width3) {//多位排列进行折算行最大值
+                 max3.push(Math.max.apply(Math.max,lastmiss3.slice(i,i+width3)));
+             }
+			
+			 Y.get("#haoma_3 div.nxyl div i").each(function (el, i){//填充到页面
+                 if (i in lastmiss3) {
+                     el.innerHTML = lastmiss3[i];
+                     curMax3 = max3[Y.getInt(i/width3)];
+                     if(curMax3>= 20){
+                    	 el.style.color = lastmiss3[i] == curMax3 ? '#efd41f' : '#ccc';
+                     }
+                                        
+                 }
+             });      
+        }else if(pid == 253){
+        	var ctp2 = ' <i>{1}</i><i>{2}</i><i>{3}</i><i>{4}</i><i>{5}</i><i>{6}</i><i>{7}</i><i>{8}</i><i>{9}</i><i>{10}</i><i>{11}</i><i>{12}</i><i>{13}</i><i>{14}</i>';
+			var llcc1=llpid.m10.split(",");
+			var llcc=llpid.m5.split(",");
+			$("#haoma_5 div.nxyl div").html(ctp2.format(llcc1[0],llcc[0],llcc[1],llcc[2],llcc[3],llcc[4],llcc[5],llcc[6],llcc[7],llcc[8],llcc[9],llcc[10],llcc[11],llcc[12]));
+	    	lastmiss10=lastmiss.m10;
+			lastmiss5=lastmiss.m5 ;
+			lastmiss5 = lastmiss10 +","+ lastmiss5; 
+			lastmiss5 = lastmiss5.split(",");
+			var curMax5  ,max5,width5;
+			 max5 = [];
+			 width5 = ~~lastmiss5.width || lastmiss5.length;
+			 for (var i = 1; i < lastmiss5.length; i+=width5) {//多位排列进行折算行最大值
+                 max5.push(Math.max.apply(Math.max,lastmiss5.slice(i,i+width5)))
+             }
+			
+			 Y.get("#haoma_5 div.nxyl div i").each(function (el, i){//填充到页面
+                 if (i in lastmiss5) {
+                     el.innerHTML = lastmiss5[i];
+                     curMax5 = max5[Y.getInt(i/width5)];
+                     if(curMax5>= 20){
+                    	 el.style.color = lastmiss5[i] == curMax5 ? '#efd41f' : '#ccc';
+                     }
+                                        
+                 }
+             });      
+        }else{
+        	var ctp2 = ' <i>{1}</i><i>{2}</i><i>{3}</i><i>{4}</i><i>{5}</i><i>{6}</i><i>{7}</i><i>{8}</i><i>{9}</i><i>{10}</i><i>{11}</i><i>{12}</i><i>{13}</i>';
+			var llcc=llpid.m0.split(",");
+			$("#haoma div.nxyl div").html(ctp2.format(llcc[0],llcc[1],llcc[2],llcc[3],llcc[4],llcc[5],llcc[6],llcc[7],llcc[8],llcc[9],llcc[10],llcc[11],llcc[12]))
+	    	
+			lastmiss0=lastmiss.m0;
+			lastmiss0 = lastmiss0.split(",");
+			var curMax0  ,max0,width0;
+			 max0 = [];
+			 width0 = ~~lastmiss0.width || lastmiss0.length;
+			 for (var i = 0; i < lastmiss0.length; i+=width0) {//多位排列进行折算行最大值
+                 max0.push(Math.max.apply(Math.max,lastmiss0.slice(i,i+width0)))
+             }
+			
+			 Y.get("#haoma div.nxyl div i").each(function (el, i){//填充到页面
+                 if (i in lastmiss0) {
+                     el.innerHTML = lastmiss0[i];
+                     curMax0 = max0[Y.getInt(i/width0)];
+                     if(curMax0 >= 20){
+                    	 el.style.color = lastmiss0[i] == curMax0 ? '#efd41f' : '#ccc' ;
+                     }
+                                        
+                 }
+             });      
+        }
+        for (var i = 0; i < ld.length; i++) {
+            var ul = "";
+            if (pid == 249) {//同花
+                ul = this.get('[mark=opencodebox]', "#opencodelist_1").slice(i);
+            } else if (pid == 250) {//同花顺
+                ul = this.get('[mark=opencodebox]', "#opencodelist_2").slice(i);
+            } else if (pid == 251) {//顺子
+                ul = this.get('[mark=opencodebox]', "#opencodelist_3").slice(i);
+            } else if (pid == 252) {//豹子
+                ul = this.get('[mark=opencodebox]', "#opencodelist_4").slice(i);
+            } else if (pid == 253) {//对子
+                ul = this.get('[mark=opencodebox]', "#opencodelist_5").slice(i);
+            } else {
+                ul = this.get('[mark=opencodebox]', "#opencodelist").slice(i);
+            }
+            //ul.attr("expect",ld[i].p).attr("endtime",ld[i].t).attr("ol",0).attr("codes","");
+
+            if (i % 1 == 0) {
+                ul.attr("expect", ld[i].p).attr("endtime", ld[i].t).attr("ol", 0).attr("codes", "");
+            } else {
+                ul.attr("expect", ld[i].p).attr("endtime", ld[i].t).attr("ol", 0).attr("codes", "");
+            }
+
+            //ul.removeClass("cm_11ydj_text_hover").addClass("cm_11ydj_text_text");
+            //var castinfolist = this.get('.cm_11ydj_text_xlhover div', ul);
+            //castinfolist.html("");
+            var opencode = ld[i].c;
+            var opentime = ld[i].t;
+
+            var omissdata = ld[i].m0;
+            var opencodelen = 3;
+            var omissall = 0;
+            if (pid == 249) { //同花
+                omissdata = ld[i].m1;
+                omissall = ld[i].m6;
+            }
+            else if (pid == 250) { //同花顺
+                omissdata = ld[i].m2;
+                omissall = ld[i].m7;
+            }
+            else if (pid == 251) {
+                omissdata = ld[i].m3;//前三直选遗漏
+                omissall = ld[i].m8;
+            }
+            else if (pid == 252) {
+                omissdata = ld[i].m4;
+                omissall = ld[i].m9;
+            } else if (pid == 253) {
+                omissdata = ld[i].m5;
+                omissall = ld[i].m10;
+            }
+            if (opencode != "") {
+                this.get('td', ul).slice(0, 1).html("" + ld[i].p + "");//填写开奖期号的位置
+                this.showomiss(omissdata, opencodelen, opencode, ul, opentime, omissall); //加载遗漏
+
+            } else {
+                this.countdown(ld[i].t, ld[i].p, ul);
+            }
+        }
+
+//    	alert("st="+st);
+        if (st == 1) {//拉金矿
+            this.countdown(net, npid, ul);
+        }
+
+//    	this.showcastlist();
+
     },
     showomiss: function (data, opencodelen, opencode, ul, opentime, omissall) {//填遗漏  (遗漏 ， 开奖号码 长度，开奖号码，指定那一行)
         var pid = this.getPlayId();
@@ -3108,9 +2828,9 @@ Class('openCodeList', {
                 case 253:
                 case 254:
                 case 255:
-//                    if (Y.getInt(playid) > 1 && Y.getInt(playid) < 9) {
-//                        isshow = 1;
-//                    }
+                    if (Y.getInt(playid) > 1 && Y.getInt(playid) < 9) {
+                        isshow = 1;
+                    }
                     break;
             }
             if (isshow == 1) {
