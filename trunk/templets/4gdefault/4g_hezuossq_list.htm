@@ -1,0 +1,52 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=1' name='viewport'/>
+    <meta content='yes' name='apple-mobile-web-app-capable'/>
+    <meta content='black' name='apple-mobile-web-app-status-bar-style'/>
+    <meta content='telephone=no' name='format-detection'/>
+   <title>159彩票网</title>
+    <link rel="stylesheet" href="/css/basic.css" type="text/css"/>
+    <link rel="stylesheet" href="/css/style.css" type="text/css"/>
+         <script src='/js/jquery.js'></script>
+	<script src='/js/159cp.js'></script>
+	<script src='/js/base.js'></script>
+	<script src='/js/login.js'></script>
+</head>
+<body>
+<!--#include virtual="/cc/header.html"-->
+<section class="buyHeader" id="topHeader">
+    <h1>足球资讯</h1>
+    <a href="javascript:history.go(-1)" class="backIco2"></a>
+    <a href="/" class="goHome"></a>
+</section>
+<div class="news-nav top-margin">
+<!--     <em class="more-news"></em> -->
+     <nav class="news-title">
+        <a href="/hotnews/">热点</a><a href="/szc/yc/">数字彩</a><a href="/jczq/yc/"   class="cur">竞技彩</a><a href="/hotnews/awards/" >开奖</a><a href="/gonggao/m/" >公告</a>
+    </nav>
+</div>
+<div style="display:none" class="loadpop"><em></em></div>
+<div class="news-list-all">
+ {dede:list pagesize='25'}
+    	<a href="[field:arcurl/]">
+        <div>
+        <h2>[field:title/]</h2>
+        <span><em>[field:pubdate function='strftime("%m-%d",@me)'/]</em><strong>[field:description function="cn_substr(@me,168)"/]</strong></span></div>
+    </a>
+   {/dede:list} 
+    
+</div>
+
+
+
+
+
+
+
+<div style="display:none;" id="tx_c" class="logints"></div>
+<div style="display: none;" class="transparent_c" id="tm_c"></div>
+
+
+

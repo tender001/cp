@@ -1,0 +1,61 @@
+﻿<div class="doctorfor">
+    <ul>
+    	
+    		<li>
+            <div class="left-pic">
+                <div class="left-pic-cai left-pic-cai0">
+                    <i class="doctorfor-icon"></i>
+                </div>
+                <div class="line" style="height:40px"></div>
+            </div>
+            {dede:arclist  addfields='experttitle,expertdate,expertinfo,experturl' orderby='pubdate' idlist='7993' channelid='24'}
+            <p class="doctorfor-bod"><i></i><strong><em>[field:pubdate function='strftime("%m-%d",@me)'/]</em>[field:experttitle/]</strong><span>[field:expertinfo/]</span></p>
+      		{/dede:arclist}
+      		</li>
+      		
+      		<li>
+            <div class="left-pic">
+                <div class="left-pic-cai left-pic-cai1">
+                    <i class="doctorfor-icon"></i>
+                </div>
+                <div class="line" style="height:40px"></div>
+            </div>
+            {dede:arclist  addfields='experttitle,expertdate,expertinfo,experturl' orderby='pubdate' idlist='7994' channelid='24'}
+            <p class="doctorfor-bod"><i></i><strong><em>[field:pubdate function='strftime("%m-%d",@me)'/]</em>[field:experttitle/]</strong><span>[field:expertinfo/]</span></p>
+      		{/dede:arclist}
+      		</li>
+      		
+      		<li>
+            <div class="left-pic">
+                <div class="left-pic-cai left-pic-cai2">
+                    <i class="doctorfor-icon"></i>
+                </div>
+                <div class="line" style="height:40px"></div>
+            </div>
+            {dede:arclist  addfields='experttitle,expertdate,expertinfo,experturl' orderby='pubdate' idlist='7995' channelid='24'}
+            <p class="doctorfor-bod"><i></i><strong><em>[field:pubdate function='strftime("%m-%d",@me)'/]</em>[field:experttitle/]</strong><span>[field:expertinfo/]</span></p>
+      		{/dede:arclist}
+      		</li>
+      		
+      		<li>
+            <div class="left-pic">
+                <div class="left-pic-cai left-pic-cai3">
+                    <i class="doctorfor-icon"></i>
+                </div>
+                <div class="line" style="height:40px"></div>
+            </div>
+            {dede:arclist  addfields='experttitle,expertdate,expertinfo,experturl' orderby='pubdate' idlist='7996' channelid='24'}
+            <p class="doctorfor-bod"><i></i><strong><em>[field:pubdate function='strftime("%m-%d",@me)'/]</em>[field:experttitle/]</strong><span>[field:expertinfo/]</span></p>
+      		{/dede:arclist}
+      		</li>
+       
+    </ul>
+ </div>
+ <script>
+    $(".line").each(function(){
+            $this=$(this);
+            if(!$this.is($('.line:last')))$this.height($this.parent().siblings(".doctorfor-bod").height()-15);
+            else $this.height(0);
+        }
+    );
+</script>
