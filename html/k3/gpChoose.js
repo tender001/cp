@@ -450,9 +450,9 @@
             this.killData = [];
             this.items.each(function (el){//统计选中数
                 if (this.hasClass(el, this.focusCss)) {
-                    this.data.push(this.getInt($(el).attr('bet')));//选中组
+                    this.data.push(this.getInt(el.innerHTML));//选中组
                 }else if(this.hasKill && this.hasClass(el, this.killCss)){
-                    this.killData.push(this.getInt($(el).attr('bet')));//杀号组
+                    this.killData.push(this.getInt(el.innerHTML));//杀号组
                 }
             }, this);
             this.onchange();
