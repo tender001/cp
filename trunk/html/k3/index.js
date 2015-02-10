@@ -56,18 +56,7 @@ Class.C('lot_sub',{//
     256: ['三连号通选',1,6],     //二不同号
     257: ['猜1个号', 1,6],    //二不同号胆拖
 });
-//Class.C('lot_sub',{// 
-//	249: ['addHZ', '#hz_area','hz',4,14],     //和值   
-//    250: ['addSTHTX', '#sthtx_area','sthtx',9,1],     //三同号通选
-//    251: ['addSTHDX', '#sthdx_area','sthdx',1,6],     //三同号单选
-//    252: ['addETHFX', '#ethfx_area','ethfx',1,6],     //二同号复选
-//    253: ['addETHDX', '#ethdx_area','ethdx',1,6],     //二同号单选
-//    254: ['addSBTH', '#sbth_area','sbth',1,6],     //三不同号
-//    241: ['addSBTHDT', '#sbthdt_area','sbthdt',1,6],     //三不同号胆拖
-//    255: ['addEBTH', '#ebth_area','ebth',1,6],     //二不同号
-//    242: ['addEBTHDT', '#ebthdt_area','ebthdt',1,6],    //二不同号胆拖
-//    256: ['addSLHTX', '#slhtx_area','slhtx',8,1]     //三连号通选
-//});
+
 Class.C('lot_data_dome', {
     249: '<h5>示例</h5>选号：01 05<br/>开奖：01 02 03 04 05<br/>中奖：<em class="cm_red">6</em>元',
     250: '<h5>示例</h5>选号：01 04 05<br/>开奖：01 02 03 04 05<br/>中奖：<em class="cm_red">19</em>元',
@@ -448,7 +437,67 @@ Class('SendBuy', {
 
 
 //选择器
-Class('Ball2', {});
+Class('Ball2', {
+//	【您选择了<em>0</em>注，共 ￥<em>0.00</em>元 】如中奖，奖金 ￥<em>0.00</em> 元，盈利 ￥<em>0.00</em> 元
+	showTxt: '【您选择了<em>{$zhushu}</em>注，共 ￥<em>{$totalmoney}</em>元 】如中奖，奖金 {$prix}，盈利  {$yl} ',
+    index:function (config){
+        this.putBtn = this.get(config.putBtn).concat(this.get(config.put).nodes);
+        this.onMsg('msg_rnd_code_'+this.msgType, function (){
+            this.random(this.rndOpts.val());
+        });
+         this.onMsg('msg_clear_code', function (){
+             this.clearCode();
+         });
+//         this.onMsg('msg_redraw_code', function (code,o){
+//        	 alert(code+"dddddddddddd");
+//             this.redrawCode(code,o);
+//         });
+         this.onMsg('msg_get_choose_code_'+config.msgId, function (isKeepCode){
+             return this.getChooseCode(isKeepCode);
+         });
+    },
+   
+    highlightBtn: function (zs){
+        if (zs) {
+           this.putBtn.addClass('cur');
+        }else{
+           this.putBtn.removeClass('cur');
+        }
+    },
+    random: function (n){// 随机生成号码, [[red],[blue]]
+        var a, b, code, id, len, ini,sp;
+        n = ~~n;
+        code = [];
+        id = this.getPlayId();
+        ini = Class.C('lot_data')[id];
+        len = ini[2];
+        sp = ini[3] || ',';
+        a = this.repeat(11, 1);
+        //如果是胆拖    转换显示玩法
+        if(id==261){id=247;}
+        if(id==278){id=249;}
+        if(id==264){id=248;}
+        if(id==279){id=250;}
+        if(id==265){id=251;}
+        if(id==266){id=252;}
+        if(id==267){id=253;}
+        if(id==267){id=254;}
+        if(id==280){id=255;}
+        for (var i = n; i--;) {
+            code[i] = [a.random(-len), id, 1];
+            if (!ini[3]) {
+                code[i][0].sort(Array.up)
+            }
+        }
+        code.each(function (arr){
+            if (sp==='|') {//直选修饰
+                arr[0] = arr[0].concat('-', '-', '-', '-', '-').slice(0, 5)
+            }
+            arr[0] = String.zero(arr[0].join(sp));
+        });
+        this.postMsg('msg_put_code', code);//广播号码输出消息, 号码列表监听此消息
+    }
+});
 
 //选择器
 Class('Ball', {
@@ -679,7 +728,185 @@ Class('Ball>Single', {
 });
 
 //多行选择器 前二三直选
-Class('Ball2>Multi', {});
+Class('Ball2>Multi',{
+    index:function (ini){
+        var Y = this;
+        this.base(ini);
+        this.msgType = "multi";
+        this.addNoop('onchange');
+        this.showbar = this.get(ini.showbar);
+        this.balls = [];
+        this.$(ini.items).each(function (div, i){
+            this.balls[i] = this.lib.Choose2(this.mix({
+                items: div
+            }, ini, false));
+            this.balls[i].onchange = function (){
+                var zhushu, info, prix, tm;
+                zhushu = Y.getCount();
+                prix = zhushu > 0 ? Y.getInt(Y.getPrix()) : 0;
+                tm = zhushu*Class.C('price');
+                info = {// 选择状态显示
+                    ball: this.data.length,
+                    zhushu: zhushu,
+                    prix:  '<em class="">' + prix + '</em>元' ,
+                    yl: '<em class="">' + (prix - tm) + '</em>元',
+                    totalmoney: '<em class="">' + tm + '</em>'           
+                };
+//                【您选择了<em>0</em>注，共 ￥<em>0.00</em>元 】如中奖，奖金 ￥<em>0.00</em> 元，盈利 ￥<em>0.00</em> 元
+                Y.highlightBtn(info.zhushu);
+                Y.showbar.html(Y.showTxt.tpl(info, '0'));
+                Y.onchange(info);
+            };
+        }, this);
+        this.ini = ini;
+        this.bindDom(ini);
+    },
+    bindDom: function (ini){
+       var Y = this;
+        this.need(ini.clear).click(function (){
+            Y.clearCode();
+        });
+        this.need(ini.put).click(function (){
+        	if (Class.C('stop-buy')) {
+        	    return;
+        	}
+        	var code, count, min, id;
+            count = Y.getCount();
+            id = Y.getPlayId();
+            min = Class.C('lot_data')[id][2];           
+            if(count > 0) {
+         
+                if (Y.checkMaxMoney(count*Class.C('price'), this) ){
+                    Y.checkBad(count, function (code){
+//                    	alert(code+".....");
+                        code = Y.getChooseCode(code);
+//                        alert(code+"===");
+                        Y.clearCode();
+                        if (!Y.bad.length) {
+                        	if(!(code[0][0]=="||-|-|-" || code[0][0]=="|||-|-"))
+                        	{
+                        		Y.postMsg('msg_put_code', code);//广播号码输出消息, 列表框应该监听此消息               
+                        	}
+                        	
+                        }
+                    })
+                }
+            }else{
+                if (Y.bad.length) {
+                    Y.alert('您好, 相同号码不能组成有效注，请重新选择')
+                }else{
+                    var w = 0;
+                    Y.balls.each(function (ball, i){
+                        if (ball.data.length === 0) {
+                            w = i ;
+                            return false;
+                        }
+                    });
+                    Y.alert('您好, 第'+('一二三四').charAt(w)+'位没有选择号码, 请选择!')
+                }
+            }
+        });
+    },
+    clearCode: function (){
+        this.balls.each(function (ball){
+            ball.clearCode();
+        });
+    },
+    getCount: function (){
+        var p, len, id, a, b, c, sum, i, j, k, bad, yes;
+        sum = 0;
+        bad = [];
+        yes = [];
+        a = this.balls[0].data;
+        b = this.balls[1].data;
+        if (this.balls.length == 2) {//直二
+            for (i =  a.length; i--;) {
+                for (j =  b.length; j--;) {
+                    if (a[i]!==b[j]) {
+                        yes[yes.length] = [a[i], b[j]];
+                        sum+=1
+                    }else{
+                        bad[bad.length] = [a[i], b[j]]
+                    }
+                }                
+            }            
+        }else{//直三
+            c = this.balls[2].data;
+            for (i =  a.length; i--;) {
+                for (j =  b.length; j--;) {
+                    for (k =  c.length; k--;) {
+                        if (a[i]!==b[j] && a[i]!==c[k] && c[k]!==b[j]) {
+                            yes[yes.length] = [a[i], b[j], c[k]];
+                            sum+=1;
+                        }else{
+                            bad[bad.length] = [a[i], b[j], c[k]].join('|');
+                        }
+                    }   
+                }                
+            } 
+        }
+        this.bad = bad;//无效号码 ['a|b|c', 'a|b|c']
+        this.yes = yes;//有效号码[[a, b,c]]
+        return sum;
+    },
+    checkBad: function (zs, fn){//检查是否有不能出票的无效号码
+    	var Y = this;
+        var uq, aum, code;
+//        if (zs == 1) {//只在注数为1且有无效注的时候执行去除无效号码
+            uq = [{},{},{}];//去重
+            sum = [0, 0, 0];//有效的个数
+            code = [];// 有效的号码
+//            alert(this.yes.join("/"));
+            this.yes.each(function (arr){
+                for (var i = 0, j = arr.length; i < j; i++) {
+                    if (!(i in code)) {
+                        code[i] = []
+                    }                    
+                    if (!uq[i][arr[i]]) {
+                        uq[i][arr[i]] = true;
+                        code[i].push(arr[i]);
+                        sum[i]++;
+                    }
+                }
+            });
+            code.each(function (a){
+                a.sort(Array.up)
+            });
+            if (this.bad.length) {
+              var sty = "";
+            	if (Y.bad.length <= 8) {
+            		sty ="color:red;";
+	           	 }else{
+	           		 sty="color:red;display: block; max-height: 160px; overflow-y: auto;";
+	           	 }
+            	 Y.yes.each(function (arr){
+              		var code = "";
+              		code = [[String.zero(arr.concat('-', '-', '-', '-', '-').slice(0,5).join('|')), Class.C('playid'), 1]];
+              		Y.clearCode();
+              		Y.postMsg('msg_put_code', code);
+              	});
+//                return this.confirm('您好, 您选择号码中的<br/><span style="'+sty+'">'+String.zero(this.bad.join('<br/>'))+'</span><br/>是无效注，确认剔除并投注吗？', function (){
+//                	 if (zs == 1) {
+//                		 fn(code)
+//                	 }else{
+//                		
+//                	 }
+//                })
+            }
+//        }
+        fn()
+    },
+    getChooseCode: function (code){
+        if (!code) {
+            code = [];
+            this.balls.each(function (b){
+                code[code.length] = b.data.join(',');
+            });      
+        }
+        	return [[String.zero(code.concat('-', '-', '-', '-', '-').slice(0,5).join('|')), this.getPlayId(), this.getCount()]];
+    }
+});
+
 
 Class.extend('exportCode', function () {
     // 传入号码
@@ -837,7 +1064,7 @@ Class('App', {
         this.lib.Dlg();
         this.lib.BuyProject();
         this.lib.openCodeList(false);
-//        this.addChoose();
+        this.addChoose();
         var playTabs, zhTabs, kjTabs;
         this.addTabs();
         Y.exportCode();
@@ -1037,111 +1264,25 @@ Class('App', {
         }
         return rest;
     },
-    addHZ: function () {
-        this.lib.Single({
-            items: '#renxuan a',
+    
+    addChoose: function (){
+    	this.lib.Single({
+     		 items: '#q3zx a',
             group: '#ballsingle a',
             focusCss: 'cur',
             hoverCss: '',
-            showbar: '#Multi_bar',
-            put: '#s0_put',
-            clear: '#s0_clear',
-            rnd1: '#s1_jx',
-            jixuan: '#jixuan',
+            showbar: '#Multi_bar3',
+            put: '#s3_put',
+            clear: '#s3_clear',
+            rnd1: '#s1_jx3',
+            // rnd5: '#s1_jx5',
+            jixuan: '#jixuan3',
             setdan: '#setdanma',
-            setdan_i: '#setdanma_i',
             danma: '#danma',
             danmas: '#danma input'
-        });
-
-
-        this.lib.CodeList({
-            panel: '#code_list',
-            clearBtn1: '#clear_list1',
-            clearBtn: '#clear_list',
-            zsSpan: '#single_zs',
-            moneySpan: '#single_m'
-        });
-//        alert('CodeList');
-
-        this.addHZ = this.getNoop();
-//        alert('CountDownGp');
-    },
-    addSTHTX: function (){//三同号通选
-  	  	this.lib.Single({
-  	  	 items: '#q1zx a',  //球
-         group: '#ballsingle a',
-         focusCss: 'cur',
-         hoverCss: '',
-         showbar: '#Multi_bar1',//奖金 盈利
-         put: '#s1_put',//选好了
-         clear: '#s1_clear',
-	       rnd1: '#s1_jx1',
-	       // rnd5: '#s1_jx5',
-	       jixuan: '#jixuan1',
-       setdan: '#setdanma',
-         danma: '#danma',
-         danmas: '#danma input'
-  	  	 });
-         this.addSTHTX = this.getNoop();
-      },
-      addSTHDX: function (){//三同号单选
-      	  	this.lib.Single({
-	      	  	 items: '#q2zx a',  //球
-	             group: '#ballsingle a',
-	             focusCss: 'cur',
-	             hoverCss: '',
-	             showbar: '#Multi_bar2',//奖金 盈利
-	             put: '#s2_put',//选好了
-	             clear: '#s2_clear',
-	             rnd1: '#s1_jx2',
-	             // rnd5: '#s1_jx5',
-	             jixuan: '#jixuan2',
-	             setdan: '#setdanma',
-	             danma: '#danma',
-	             danmas: '#danma input'
-      	  	 });
-             this.addSTHDX = this.getNoop();
-      },
-      addSBTH: function (){//三不同号
-      	  this.lib.Single({
-      		 items: '#q3zx a',
-             group: '#ballsingle a',
-             focusCss: 'cur',
-             hoverCss: '',
-             showbar: '#Multi_bar3',
-             put: '#s3_put',
-             clear: '#s3_clear',
-             rnd1: '#s1_jx3',
-             // rnd5: '#s1_jx5',
-             jixuan: '#jixuan3',
-             setdan: '#setdanma',
-             danma: '#danma',
-             danmas: '#danma input'
-      	  	 });
-             this.addSBTH = this.getNoop();
-      },
-      addSLHTX: function (){//三连号通选
-      	  this.lib.Single({
-      		 items: '#q4zx a',
-             group: '#ballsingle a',
-             focusCss: 'cur',
-             hoverCss: '',
-             showbar: '#Multi_bar4',
-             put: '#s4_put',
-             clear: '#s4_clear',
-             rnd1: '#s1_jx4',
-             // rnd5: '#s1_jx5',
-             jixuan: '#jixuan4',
-             setdan: '#setdanma',
-             danma: '#danma',
-             danmas: '#danma input'
-      	  	 });
-             this.addSLHTX = this.getNoop();
-      },
-      addETHFX: function (){//二同号复选
-      	this.lib.Single({
-      		 items: '#q5zx a',
+ 	  	 });
+    	 this.lib.Multi({
+             items: '#q5zx a',  //球
              group: '#ballsingle a',
              focusCss: 'cur',
              hoverCss: '',
@@ -1150,92 +1291,17 @@ Class('App', {
              clear: '#s5_clear',
              rnd1: '#s1_jx5',
              // rnd5: '#s1_jx5',
-             jixuan: '#jixuan5',
-             setdan: '#setdanma',
-             danma: '#danma',
-             danmas: '#danma input'
-      	  	 });
-             this.addETHFX = this.getNoop();
-      },
-      addETHDX: function (){//二同号单选
-      	  this.lib.Single({
-      		 items: '#q6zx a',
-             group: '#ballsingle a',
-             focusCss: 'cur',
-             hoverCss: '',
-             showbar: '#Multi_bar6',
-             put: '#s6_put',
-             clear: '#s6_clear',
-             rnd1: '#s1_jx6',
-             // rnd5: '#s1_jx5',
-             jixuan: '#jixuan6',
-             setdan: '#setdanma',
-             danma: '#danma',
-             danmas: '#danma input'
-      	  	 });
-             this.addETHDX = this.getNoop();
-      },
-      
-//      addSBTHDT: function (){//对子
-//      	  this.lib.Single({
-//      		 items: '#q6zx a',
-//             group: '#ballsingle a',
-//             focusCss: 'cur',
-//             hoverCss: '',
-//             showbar: '#Multi_bar6',
-//             put: '#s6_put',
-//             clear: '#s6_clear',
-//             rnd1: '#s1_jx6',
-//             // rnd5: '#s1_jx5',
-//             jixuan: '#jixuan6',
-//             setdan: '#setdanma',
-//             danma: '#danma',
-//             danmas: '#danma input'
-//      	  	 });
-//             this.addSBTHDT = this.getNoop();
-//      },
-      addEBTH: function (){//二不同号
-      	  this.lib.Single({
-      		 items: '#q7zx a',
-             group: '#ballsingle a',
-             focusCss: 'cur',
-             hoverCss: '',
-             showbar: '#Multi_bar7',
-             put: '#s7_put',
-             clear: '#s7_clear',
-             rnd1: '#s1_jx7',
-             // rnd5: '#s1_jx5',
-             jixuan: '#jixuan7',
-             setdan: '#setdanma',
-             danma: '#danma',
-             danmas: '#danma input'
-      	  	 });
-             this.addEBTH = this.getNoop();
-      },
-      addEBTHDT: function (){//猜1个号
-      	  this.lib.Single({
-      		 items: '#q8zx a',
-             group: '#ballsingle a',
-             focusCss: 'cur',
-             hoverCss: '',
-             showbar: '#Multi_bar8',
-             put: '#s8_put',
-             clear: '#s8_clear',
-             rnd1: '#s1_jx8',
-             // rnd5: '#s1_jx5',
-             jixuan: '#jixuan8',
-             setdan: '#setdanma',
-             danma: '#danma',
-             danmas: '#danma input'
-      	  	 });
-             this.addEBTHDT = this.getNoop();
-      },
+             jixuan: '#jixuan5'
+         });
+    },
+    
+   
       
     addTabs: function () {
        
         Y = this;
       //默认玩法
-        this[Class.C('wanfa')[5][1]]();
+//        this[Class.C('wanfa')[5][1]]();
         this.lib.ExpectList();
         this.lib.CountDownGp({
             stop: Y.C('lot_id'),
