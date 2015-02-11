@@ -1730,6 +1730,27 @@ function ScorllNum(n,inputs,fun){
 	this.fun = fun;
 	this.setVal = setInterval(function(){nb.scroll(nb);},10);
 }; 
+function setCANCookie(sName, sValue,dExpires){
+    var tmpdomain;
+    tmpdomain=location.host.split(".");
+    tmpdomain=tmpdomain[tmpdomain.length-2]+"."+tmpdomain[tmpdomain.length-1];
+    if(sName!=null&&sValue!=null){
+        if(dExpires==null){
+        	document.cookie = sName + "=" + escape(sValue) + "; path=/;domain=" + tmpdomain;
+        }else{
+	        try{
+	        	var exp = new Date();
+	        	exp.setTime(exp.getTime() + dExpires*60*1000);
+	        	document.cookie = sName + "=" + escape(sValue) + "; path=/;domain=" + tmpdomain + ";expires=" + exp.toGMTString();
+	        }catch(e){}
+        }
+    }
+};
+function deleteCANCookie(sName){
+    if(sName!=null){
+    	document.cookie = sName + "=" + "; path=/; expires=Fri, 31 Dec 1900 23:59:59 GMT;";
+    }
+};
 
 ScorllNum.prototype.scroll = function(o){
 	if(o.time > 0){
