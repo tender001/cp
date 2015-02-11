@@ -41,18 +41,26 @@ if (typeof(_NTES_COOKIE_WAP_JUMP_PAGES) == 'undefined' || _NTES_COOKIE_WAP_JUMP_
 }
 </script>
     <style>
-        .newyear2015-top .top dl dt s,.newyear2015-top .logo1,.newyear2015-top .top_logo .fr s{background: url("/images/bg/newyear2015/newyear2015-top-l.jpg") no-repeat}
+        .newyear2015-top-close,.newyear2015-top .top dl dt s,.newyear2015-top .logo1,.newyear2015-top .top_logo .fr s{background: url("/images/bg/newyear2015/newyear2015-top-l.jpg") no-repeat}
         .newyear2015-top{background-color:#b60001;overflow: visible}
-        .newyear-say{padding-top:280px;background:#b60001 url("/images/bg/newyear2015/newyear2015-top-bg.jpg") no-repeat;cursor: pointer}
-        .newyear-say-about{width:1035px;height:527px;background:url("/images/bg/newyear2015/newyear2015-say.jpg") no-repeat;position: fixed;top:290px;left:434px;z-index:1000}
-        .newyear-say-about .say-close{position: absolute;top:25px;right:10px;width: 65px;height: 65px;background-color: transparent;cursor:pointer}
+        .newyear-say{height: 280px;background:#b60001 url("/images/bg/newyear2015/newyear2015-top-bg.jpg") center 0 no-repeat;}
+        .say-show{width: 998px;height: 100%;margin:0 auto;overflow:visible;position: relative}
+        .say-show-about{position:absolute;top:20px;right:1px;width:200px;height:200px;cursor:pointer;background-color:rgb(0,0,0);opacity:0;_filter:alpha(opacity=0)}
+        .newyear2015-top-close{position:absolute;top:79%;right:-70px;width: 55px;height: 26px;background-position: -230px -25px;cursor: pointer}
+        .newyear-say-about{width:1035px;height:527px;position:absolute;top:290px;left:434px;z-index:1000}
+        .newyear-say-about img{width:100%;height:100%}
+        .newyear-say-about .say-close{position: absolute;top:25px;right:10px;width: 65px;height: 65px;cursor:pointer;background-color:rgb(0,0,0);opacity:0;_filter:alpha(opacity=0)}
         .newyear2015-top .top{color:#fff;border:0 none;background-color:#b60001}
-        .newyear2015-top .top .fl a{color:#ffdc38}
-        .newyear2015-top .top dl dt s{background-position: -272px -2px}
+        /*.newyear2015-top .top .fl a{color:#ffdc38}*/
+        .newyear2015-top #top_username,.newyear2015-top .mysite dt a{color: #FFDC38 !important}
+        .newyear2015-top .top dl dt s{background-position: -272px -12px}
         .newyear2015-top .top .hover dt{color:#6c6c6c;}
+        .newyear2015-top .mysite.hover dt a{color:#666 !important}
+        .newyear2015-top dl.mysite dd p.y1{color:#666}
         /*.newyear2015-top .top a{color:#fff !important;}*/
         .newyear2015-top .logo1{position: relative;display:block;width: 100%;height: 100%;margin-top: -10px}
-        .newyear2015-top .logo1 img,.newyear2015-top .logo_right{display: none}
+        .newyear2015-top .logo1 img,.newyear2015-top .logo_right,.newyear2015-top .logo_right img{display: none}
+        .newyear2015-top .logo_right{width:175px;height:60px;background:#b60001 url("/images/bg/newyear2015/happy-newyear2015.jpg") no-repeat;cursor: pointer}
         .newyear2015-top .top_logo .fr s{background-position: 0 -64px}
         .newyear2015-bg{border-top:2px solid #690001;background:#9f0005 url("/images/bg/newyear2015/newyear2015-bg.jpg") center 0 no-repeat}
         .newyear2015{width:998px;padding:0 5px;margin:0 auto 20px;border:10px solid #e82f09;background-color:#fff;overflow:visible;/*position: relative;*/*padding-top:10px;}
@@ -64,9 +72,15 @@ if (typeof(_NTES_COOKIE_WAP_JUMP_PAGES) == 'undefined' || _NTES_COOKIE_WAP_JUMP_
 <body>
 <!-- 头部内容 -->
 <!--2015春节-->
-<div class="newyear2015-top" ><div class="newyear-say"></div>
+<div class="newyear2015-top" >
+    <div class="newyear-say">
+        <div class="say-show">
+            <span class="say-show-about"></span>
+            <span class="newyear2015-top-close"></span>
+        </div>
 
-<div class="newyear-say-about" style="display: none;"><span class="say-close" title="关闭"></span></div>
+    </div>
+<div class="newyear-say-about" style="display: none;"><img src="/images/bg/newyear2015/newyear2015-say.jpg"><span class="say-close" title="关闭"></span></div>
 <!--2015春节-->
 <div class="top">
 	<div class="w1000">
