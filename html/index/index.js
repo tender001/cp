@@ -10,6 +10,7 @@ Class(
         this._loadcode();
         this.selectProject();
         this.listHotProject(1, 8, "table_hot_project");
+        this.newyearsay();
 	},
 	selectProject : function(){
 		var P=this;
@@ -24,17 +25,60 @@ Class(
 			}
 		});
 	},
+	newyearsay:function(){
+		var bw = (document.documentElement && document.documentElement.scrollTop) ? document.documentElement : document.body;
+		var d_left = ($(window).width()-$(".newyear-say-about").css("width").replace("px",""))/2;
+		$(".newyear-say-about").css("left", d_left + "px");
+		var _NTES_CAIPIAO_NEW_YEAR_SAY = getcookie("_NTES_CAIPIAO_NEW_YEAR_SAY");
+		if (typeof(_NTES_CAIPIAO_NEW_YEAR_SAY) == 'undefined' || _NTES_CAIPIAO_NEW_YEAR_SAY == null || _NTES_CAIPIAO_NEW_YEAR_SAY == "") {
+			setTimeout(function() {$(".newyear-say-about").slideDown(); }, (1 * 1000));
+		}
+		
+		$('.newyear-say').die().live('click', function(){
+			if($(".newyear-say-about").is(":hidden")){
+				$(".newyear-say-about").slideDown();
+			}
+			
+		});
+		$('.say-close').die().live('click', function(){
+				$(".newyear-say-about").slideUp();
+				setCANCookie("_NTES_CAIPIAO_NEW_YEAR_SAY","ntes_cp_jump_flag",60*24);
+			
+		})
+		
+	},
+	
 	bindOther:function(){
 		$("#scrollDiv").textSlider({
 			line:2,
 			speed:1000,
 			timer:2000
 		});
+		$("[mark=hezuodown]").hover(function(){//合作登录鼠标滑入
+    		$(this).addClass("hover").find("dd").show();
+			$("[mark=hezuodown] dd").clearQueue().animate({
+				height:35
+				})
+		},function(){
+			
+			$("[mark=hezuodown] dd").animate({
+				height:0
+				});
+			$(this).removeClass("hover").find("dd").hide();
+		});
+		
+		
+		
 		Y.use('mask',function(){
 			Y.loading = Y.lib.MaskLay();
 			Y.loading.noMask = true;
+			
 			var dlg_buy_end = Y.lib.MaskLay('#dlg_buysuc', '#dlg_buysuc_content');
 			dlg_buy_end.addClose('#dlg_buysuc_back','#dlg_buysuc_close','#dlg_buysuc_close2');
+			
+			
+			
+			
 			Y.extend('popBuyOk', function(user,lotid,projid){
 				$('#dlg_buysuc_view').die().live('click', function(){
 					window.location= $_sys.getlotdir(lotid)+$_sys.url.viewpath+'?lotid='+lotid+'&projid='+projid;
