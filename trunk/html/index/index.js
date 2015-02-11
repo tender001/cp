@@ -34,7 +34,7 @@ Class(
 			setTimeout(function() {$(".newyear-say-about").slideDown(); }, (1 * 1000));
 		}
 		
-		$('.newyear-say').die().live('click', function(){
+		$('.say-show-about').die().live('click', function(){
 			if($(".newyear-say-about").is(":hidden")){
 				$(".newyear-say-about").slideDown();
 			}
@@ -44,8 +44,13 @@ Class(
 				$(".newyear-say-about").slideUp();
 				setCANCookie("_NTES_CAIPIAO_NEW_YEAR_SAY","ntes_cp_jump_flag",60*24);
 			
-		})
-		
+		});
+		$(".top .fl").children("a").css('color','#ffdc38');
+        $(".top .fr").children("a").css('color','#fff');
+        $(".newyear2015-top-close").live('mousedown',function(){
+            $(".newyear-say").addClass("fn-hide");
+            $(".logo_right").addClass("fn-show");
+        })
 	},
 	
 	bindOther:function(){

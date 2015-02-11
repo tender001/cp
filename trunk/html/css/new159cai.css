@@ -12,8 +12,8 @@ i,em,cite{font-style:normal}
 input{outline:0}
 .fn-clear{zoom:1;}
 .fn-clear:after{visibility:hidden;display:block;font-size:0;content:" ";clear:both;}
-.fn-show{display:block}
-.fn-hide{display:none}
+.fn-show{display:block !important}
+.fn-hide{display:none !important}
 .fl{float:left}
 .fr{float:right}
 img{border:0 none;vertical-align:top}
