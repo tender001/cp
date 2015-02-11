@@ -50,6 +50,7 @@ Class(
         $(".newyear2015-top-close").live('mousedown',function(){
             $(".newyear-say").addClass("fn-hide");
             $(".logo_right").addClass("fn-show");
+            $(".newyear-say-about").slideUp();
         })
 	},
 	
