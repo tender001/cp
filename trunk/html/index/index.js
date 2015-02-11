@@ -47,6 +47,7 @@ Class(
 		});
 		$(".top .fl").children("a").css('color','#ffdc38');
         $(".top .fr").children("a").css('color','#fff');
+        setTimeout(function() {$(".newyear-say-about").slideUp(); }, (5 * 1000));
         $(".newyear2015-top-close").live('mousedown',function(){
             $(".newyear-say").addClass("fn-hide");
             $(".logo_right").addClass("fn-show");
