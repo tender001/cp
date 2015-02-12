@@ -30,6 +30,12 @@ $(document).ready(function() {
 			if($(this).index()==0){}
 		})
 	})
+    $(".line").each(function(){
+            $this=$(this);
+            if(!$this.is($('.line:last')))$this.height($this.parent().siblings(".doctorfor-bod").height()-15);
+            else $this.height(0);
+        }
+    );
 });
 
 </script>
