@@ -616,3 +616,32 @@ a.hmTxt2{ display:block; color:#606060; padding-right:1.4rem; position:relative}
 .firstmd-detail h2{width:4.2em;padding:0.2em 0.8em;font-size: 1.45em;color:rgba(254,223,151,0.8);border:2px solid #fedf97;border-radius:1em;background-color: #e1653c}
 .firstmd-detail .md-detail{padding-left: 2.2em;font-size: 1.15em;color: #fff}
 .firstmd-detail .md-detail p{padding-top: 0.4em;text-indent: -2em}
+/*发起合买*/
+.gohemai-bg,.gohemai-pay{background-color:#f4f4f3}
+.goHomeHelp{width:auto;height:auto;font-size:32px;font-weight:700;color:#fff;top:0;right:2%;background: none}
+.gohemai{padding:.2em 2% .6em;font-size:1.2em;color: #333;background: url("data:image/jpg;base64,/9j/4QAYRXhpZgAASUkqAAgAAAAAAAAAAAAAAP/sABFEdWNreQABAAQAAABkAAD/4QO2aHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wLwA8P3hwYWNrZXQgYmVnaW49Iu+7vyIgaWQ9Ilc1TTBNcENlaGlIenJlU3pOVGN6a2M5ZCI/PiA8eDp4bXBtZXRhIHhtbG5zOng9ImFkb2JlOm5zOm1ldGEvIiB4OnhtcHRrPSJBZG9iZSBYTVAgQ29yZSA1LjMtYzAxMSA2Ni4xNDU2NjEsIDIwMTIvMDIvMDYtMTQ6NTY6MjcgICAgICAgICI+IDxyZGY6UkRGIHhtbG5zOnJkZj0iaHR0cDovL3d3dy53My5vcmcvMTk5OS8wMi8yMi1yZGYtc3ludGF4LW5zIyI+IDxyZGY6RGVzY3JpcHRpb24gcmRmOmFib3V0PSIiIHhtbG5zOnhtcFJpZ2h0cz0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL3JpZ2h0cy8iIHhtbG5zOnhtcE1NPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvbW0vIiB4bWxuczpzdFJlZj0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL3NUeXBlL1Jlc291cmNlUmVmIyIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bXBSaWdodHM6TWFya2VkPSJGYWxzZSIgeG1wTU06T3JpZ2luYWxEb2N1bWVudElEPSJ4bXAuZGlkOkNCQTkyRUQ5NzZDRUUzMTE4NDU0RkJGMTQ1NTAwNDhBIiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOjI5Rjg2RTQ5QjI3QTExRTQ4MUFDQzJDMEVEMUJDM0JDIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOjI5Rjg2RTQ4QjI3QTExRTQ4MUFDQzJDMEVEMUJDM0JDIiB4bXA6Q3JlYXRvclRvb2w9IkFkb2JlIFBob3Rvc2hvcCBDUzMgV2luZG93cyI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ1dWlkOjQ1M0M0ODlFQ0Y2RUU0MTE4NDBGODIzNzZENDVGNUMwIiBzdFJlZjpkb2N1bWVudElEPSJ1dWlkOjVBQzEzRkE3Q0M2RUU0MTFCN0IxRTRCQjQzRDM0MjQ0Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+/+4ADkFkb2JlAGTAAAAAAf/bAIQAAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQICAgICAgICAgICAwMDAwMDAwMDAwEBAQEBAQECAQECAgIBAgIDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMD/8AAEQgAEgAXAwERAAIRAQMRAf/EAG0AAAMBAQAAAAAAAAAAAAAAAAABAwIKAQEBAQEAAAAAAAAAAAAAAAAAAQUGEAABAgQFAgYDAAAAAAAAAAABEQIAMRIDIVEyEwRBQoHBIlJiNHKCYxEBAQEAAwEAAAAAAAAAAAAAAEFhAXGxQv/aAAwDAQACEQMRAD8A7tAHOOy11N9oFd+Qc0HBpdNMQh7o5z1qmDWrra2xaK3hSAbxAxNIwJKH09Fh0EC0t3gE44BaeP7iqLkQXEGqYlE2BoHN2XOLLDQC3kKPUVwGRBXAdEhkAVuEG4HWzaKWW1AbxaMApm4pqkVigUk75ad8NQcfoWyqo1Up254xNonc+ja06/CbtPyzhBTkauJok2cu2X88ocwad99v4/toM/l5Rfof/9k=") repeat}
+.gohemai>p{padding:0.5em 0 0}
+.gohemai p em{padding:0 0.4em;color: #e30000}
+.gohemai hr{margin:0.6em 0 0;border: 0 none;border-top: 1px solid #e2e2e2}
+.gohemai .every-for span{display: inline-block;margin-left:-1px;padding:0.4em 2em;border: 1px solid #e2e2e2;background-color: #fff}
+.gohemai .every-for span:first-of-type{margin-left:1em}
+.gohemai .every-for .cur{color:#fff;border-color:#f40;background-color: #f40}
+.heimai-choose span{display: inline-block;position:relative;width:50px;height:30px;margin-left:12px;font-size:0;border-radius:15px;background-color: #fff;vertical-align: middle;overflow: hidden}
+.heimai-choose span em{position:absolute;top:1px;width:28px;height:28px;font-size:0;border-radius:14px;background-color: #ddd;overflow: hidden}
+.heimai-choose .cur{background-color: #f40}
+.heimai-choose .cur em{right:1px;background-color: #fff}
+.hemai-choose-for{display:block;width: 100%;margin-top:0.5em;zoom: 1}
+.hemai-choose-for:after{display: table;content: "";clear: both}
+.hemai-choose-for li{float:left;width:19.5%;margin:-1px 0 0 -1px;padding:0.2em 0;font-size:1.3em;text-align:center;border:1px solid #e2e2e2;background-color: #fff}
+.hemai-choose-for .cur{color:#fff;background-color: #f40}
+.gohemai p input{width:6em;margin:0 0.3em 0 0.6em;padding:0.4em;border:1px solid #e2e2e2;background-color: #fff}
+.hemai-bd p{padding-top:0.5em}
+.hemai-bd .heimai-choose-more{padding-left:4.5em}
+.hemai-bd .heimai-choose-more input{margin-left: 0}
+.hemai-user-set span{padding:0.4em 0.5em !important;}
+.gohemai .project-explain input{width:72%}
+.gohemai-pay{padding:10px 2% 3em;text-align: center;font-size:1.2em;border-top: 1px solid #e2e2e2}
+.gohemai-pay em{color:#e30000;}
+.gohemai-pay a{display: inline-block;margin-left:1.5em;padding:.4em 1em;color:#fff;background-color: #f40}
+
+
