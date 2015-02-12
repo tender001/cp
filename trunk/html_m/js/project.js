@@ -409,6 +409,9 @@ showjccode=function(option){
 		var bt = r.bt;
 		var lls = new String(r.lose).split("|");
 		var lose = lls.length > 1 ? (gid == 95 ? lls[1] : lls[2]) : r.lose;
+		if(gid==97){
+			lose = lls.length > 1?lls[3]: r.lose;
+		}
 		var cancel = r.cancel;
 		var html = "<div class='ni" + i%2 + "'>";
 		if(lose == 0 || gid == 91 || gid == 92 || gid == 93 | gid==70  || gid == 90){
@@ -451,9 +454,7 @@ showjccode=function(option){
 						var ps = cc[f].split("=");
 						var gg = getJcPlay(gid, ps[0]);
 						lose = lls.length > 1 ? (gg == 95 ? lls[0] : lls[2]) : r.lose;
-//						if(gg==97){
-//							lose = lls.length > 1?lls[3]: r.lose;
-//						}
+						
 						if(rst){
 							mrs = mrs == "*" ? mrs : getjcrs(gg, r.hs, r.vs, r.hhs, r.hvs, (gg==97?lls[3]:lose));
 							
