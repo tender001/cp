@@ -24,7 +24,7 @@
 .m_l1 dt,.m_l1 dd{float: left;line-height: 22px;}
 .m_l1 dt{width:40px;font-weight: bold;color: #585858;}
 .m_l1 dd{width:150px;}
-.m_l1 a{color:#585858;margin-right: 10px; float: left;white-space: nowrap;line-height: 22px;}
+/*.m_l1 a{color:#585858;margin-right: 10px; float: left;white-space: nowrap;line-height: 22px;}*/
 .m_l1 a:hover{color: #e52e04;}
 .m_l1 li p{margin: 9px 0 10px;zoom:1;}
 .m_l1 li p:after{visibility:hidden;display:block;font-size:0;content:" ";clear:both;}

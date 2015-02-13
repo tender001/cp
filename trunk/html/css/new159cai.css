@@ -70,6 +70,7 @@ input[type="text"]:focus{border-color: rgb(255,113,0) !important}
 .top dl dd li p{width: 184px;float: right;*white-space: nowrap;}
 .top dl dd li p a{float: left;margin:0 8px 0 0;position: relative;}
 .top dl dd li p a:hover{color: #e52e04;}
+.kp p a{color:#8c8c8c !important}
 .top a{margin: 0 8px;color:#6c6c6c;}
 .top a.e62{color: #e62e04;}
 .top .fl a{color: #e62e04;cursor: pointer;}
