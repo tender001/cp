@@ -31,8 +31,10 @@ Class(
 		$(".newyear-say-about").css("left", d_left + "px");
 		var _NTES_CAIPIAO_NEW_YEAR_SAY = getcookie("_NTES_CAIPIAO_NEW_YEAR_SAY");
 		if (typeof(_NTES_CAIPIAO_NEW_YEAR_SAY) == 'undefined' || _NTES_CAIPIAO_NEW_YEAR_SAY == null || _NTES_CAIPIAO_NEW_YEAR_SAY == "") {
-			setTimeout(function() {$(".newyear-say-about").slideDown(); }, (1 * 1000));
+//			setTimeout(function() {$(".newyear-say-about").slideDown(); }, (1 * 1000));
+		}else{
 		}
+		
 		
 		$('.say-show-about').die().live('click', function(){
 			if($(".newyear-say-about").is(":hidden")){
@@ -52,6 +54,7 @@ Class(
             $(".newyear-say").addClass("fn-hide");
             $(".logo_right").addClass("fn-show");
             $(".newyear-say-about").slideUp();
+            setCANCookie("_NTES_CAIPIAO_NEW_YEAR_SAY","ntes_cp_jump_flag",60*24);
         })
 	},
 	
