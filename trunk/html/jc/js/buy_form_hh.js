@@ -408,6 +408,9 @@ Class( 'BuyForm', {
         				var balance = r.balance;
         				this.postMsg('msg_show_dlg', '恭喜你投注成功！');
         				location.href = $_sys.getlotdir(this._param.gid)+$_sys.url.viewpath+'?lotid='+this._param.gid+'&projid='+projid;
+        			} else if(code == "1"){
+        				this.postMsg('msg_show_dlg', "该彩种暂时停售");
+        				Class.config('submitting', false);
         			} else {
         				this.postMsg('msg_show_dlg', desc);
         				Class.config('submitting', false);
