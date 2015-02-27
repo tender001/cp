@@ -10,7 +10,7 @@ Class(
         this._loadcode();
         this.selectProject();
         this.listHotProject(1, 8, "table_hot_project");
-        this.newyearsay();
+//        this.newyearsay();
 	},
 	selectProject : function(){
 		var P=this;
