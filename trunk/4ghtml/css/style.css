@@ -672,3 +672,19 @@ a.hmTxt2{ display:block; color:#606060; padding-right:1.4rem; position:relative}
 .jqzpk .spfzpk span b,.jqNum .spfzpk span b{ font-weight:normal; display:block; font-size:.9rem}
 .jqzpk .spfzpk span cite,.jqNum .spfzpk span cite{ font-size:.75rem; color:#aaa}
 .jqzpk .spfzpk span.cur cite,.jqNum .spfzpk span.cur cite{ color:#fff}
+
+
+.tzNum,.spfNum{ border-top:1px solid #e4e4e4; border-bottom:1px solid #e4e4e4;}
+.tzNum p,.spfNum li{ background: none repeat scroll 0 0 white;position:relative;border-bottom:1px solid #ebebeb; overflow:hidden; zoom:1}
+.zq-tz li{padding:.625rem 0 .625rem .56rem;}
+.tzNum p:last-child,.spfNum li:last-child{ border-bottom:none}
+.tzNum p i{ float:left; color:#8e8e8e; font-size:.91rem; width:4.375rem}
+.tzNum p span{ float:left; font-size:.97rem; color:#f03d3d; width:11.5rem}
+.tzNum p span cite,.zfNum p cite{ color:#177ffc; padding-left:.4rem}
+.bfpk .spfzpk span{ width:85%}
+.jqNum .spfzpk span{ width:19%}
+.zq-tz .spfzpk span{margin-top: .6rem}
+.bfpk .bqc-for span cite{display: inline-block;width: 13%;font-size: .95rem;}
+
+
+
