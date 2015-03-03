@@ -1358,7 +1358,7 @@ input.mul{width:60px;margin-right:2px;border:1px solid #bbb;}
 .dc_r_m p.dc_qr a.red{color:#145fab}
 .dc_r_m p.dc_qr a.red:hover{color:#f00;text-decoration:underline}
 a.jc_mtz,a.jc_mhm{width:104px;height:36px;line-height:36px;margin-left:10px;background:url("/images/cai888/jcbtn_03.jpg") no-repeat;}
-a.jc_mhm{background:#999}
+a.jc_mhm{background:#ddd}
 .dc_hs{background:none;border-bottom:1px solid #ccc}
 a.jc_mtz:hover, a.jc_mhm:hover{background-position:-110px 0;text-decoration: none;color: #fff;}
 .box_m{border:1px solid #ccc}
