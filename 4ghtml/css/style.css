@@ -668,4 +668,7 @@ a.hmTxt2{ display:block; color:#606060; padding-right:1.4rem; position:relative}
 .htcom strong,.htzjq strong{ font-weight:normal}
 .htzjq span{ width:24.6%}
 
-
+.jqzpk .spfzpk span,.jqNum .spfzpk span{ width:21.5%; height:1.6rem; padding:.4rem 0; line-height:.85rem}
+.jqzpk .spfzpk span b,.jqNum .spfzpk span b{ font-weight:normal; display:block; font-size:.9rem}
+.jqzpk .spfzpk span cite,.jqNum .spfzpk span cite{ font-size:.75rem; color:#aaa}
+.jqzpk .spfzpk span.cur cite,.jqNum .spfzpk span.cur cite{ color:#fff}
