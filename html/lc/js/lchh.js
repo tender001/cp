@@ -852,7 +852,8 @@ Class('Buy', {
     		 _self.bs =$("#bs").val()
 			   _self.bschange();
 		}, 100000);
-		Yobj.get('#gobuy,#gohm').click(function (){
+ 		Yobj.get('#gobuy').click(function (){
+//		Yobj.get('#gobuy,#gohm').click(function (){
 			_self.ishm = this.id == 'gohm' ? 1 : 0;
 			if (_self.ishm){
             	Y.get("#project_form").attr("action", "/phpt/lc/step_7.phpx");
@@ -1228,7 +1229,11 @@ Class('Main', {
 			}else{
 				return Yobj.alert('请至少选择两场不是同一玩法的比赛');
 			}
-
+			var totalmoney = algo.zs*this.bs*2;
+		
+			if (totalmoney < 10) {
+				return this.alert('您好，暂支持10元起购！');
+			}
 			this.setVals({
 				'#codes': codeList.getCodeString(),
 				'#ggtypeid': ggTypeBox.ggTypeIds.join(','),

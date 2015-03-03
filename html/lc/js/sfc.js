@@ -1085,7 +1085,8 @@
                 this._upView(Y.C('choose_data'), true)
             });
             this.sgMap = this.dejson(this.get('#jsonggtype').val());
-            this.get('#gobuy,#gohm').click(function (e, Y){//提交
+            this.get('#gobuy').click(function (e, Y){//提交
+//              this.get('#gobuy,#gohm').click(function (e, Y){//提交
                 var data = Y.C('choose_data'), minNum =  Y.C('_isgg') && !Y.C('dggp') ? 2 : 1, ishm = this.id == 'gohm' ? 1 : 0,
                     ggData =  Y.C('-all-gg-type'),
                     duoc = ggData.dc, isDg = duoc ? duoc.indexOf('单') > -1 : false;
@@ -1139,6 +1140,9 @@
                     var MAX_ALL_MONEY = this.C('MAX_ALL_MONEY');
                     if (totalmoney > MAX_ALL_MONEY) {
                         return this.alert('您好, 发起方案金额最多不能超过￥'+MAX_ALL_MONEY+'元!')
+                    }
+                    if (totalmoney < 10) {
+                        return this.alert('您好，暂支持10元起购!')
                     }
                     if (ishm){
                     	Y.get("#project_form").attr("action", "/phpt/lc/step_1.phpx");
