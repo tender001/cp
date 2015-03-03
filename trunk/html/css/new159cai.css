@@ -2415,8 +2415,9 @@ p.yh1 a.dg-btn1{right: 12px}
 .sf-right .bod .bod-m li input{width: 50px;margin: 0 4px;text-align: center}
 .sf-right .bod .bod-m li i{margin: 0 4px 0 58px}
 .buylist .bod .bod-m li{width: 100%}
-.sf-right .you{font:700 14px/30px "\5fae\8f6f\96c5\9ed1";color: #145fab}
+.sf-right .you{font:700 14px/30px "\5fae\8f6f\96c5\9ed1";color: #999}
 .btn-dh a{display: inline-block;width: 120px;height: 43px;margin:0 7px 0 0;font:400 18px/43px "\5fae\8f6f\96c5\9ed1";text-align: center;color: #fff;background-position: 0 -187px}
+.btn-dh a#gohm{background:#ddd}
 .sf-left .sf{height:auto;margin: 0 auto;overflow: visible;zoom: 1;_padding:1px 0 0 1px;}
 .sf-left .sf:after{visibility:hidden;display:block;font-size:0;content:" ";clear:both;}
 .sf-left .sf em{float: left;width: 70px;height:43px;margin:-1px 0 0 -1px;padding-top:7px;font:700 14px/18px "\5fae\8f6f\96c5\9ed1";text-align: center;color: #0d753a;border:1px solid #3ba748;background-color: #eff8f0;cursor:pointer;-webkit-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;_display: inline}
