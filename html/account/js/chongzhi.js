@@ -254,7 +254,7 @@ var changdiv=function(divnum){
 			        }  
 				});
 					
-				if(bankid==20 || bankid==15|| bankid==4|| bankid==22|| bankid==3|| bankid==16|| bankid==17|| bankid==18|| bankid==7){
+				if( bankid==15|| bankid==16){
 //					 bankid = "8";
 //					
 					 bconfig= "1";
@@ -263,12 +263,12 @@ var changdiv=function(divnum){
 				if(bankid==15){
 					 banktype = "CEB";
 				 }
-				if(bankid==18){
-					banktype = "BOC";
-				}
-				if(bankid==22){
-					banktype = "POST";
-				}
+//				if(bankid==18){
+//					banktype = "BOC";
+//				}
+//				if(bankid==22){
+//					banktype = "POST";
+//				}
 						Y.get("#bankid").val(bconfig);
 						Y.get("#bid").val(bankid);
 						Y.get("#banktype").val(banktype);
