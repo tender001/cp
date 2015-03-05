@@ -1,0 +1,176 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=1' name='viewport'/>
+    <meta content='yes' name='apple-mobile-web-app-capable'/>
+    <meta content='black' name='apple-mobile-web-app-status-bar-style'/>
+    <meta content='telephone=no' name='format-detection'/>
+    <title>重庆时时彩_159彩票网</title>
+    <link rel="stylesheet" href="/css/basic.css" type="text/css"/>
+    <link rel="stylesheet" href="/css/style.css" type="text/css"/>
+    <script src='/js/jquery.js'></script>
+	<script src='/js/159cp.js'></script>
+	<script src='/js/base.js'></script>
+	<script src='/js/login.js'></script>
+	<script type ="text/javascript" src ="/js/public/ballpanle.js"></script>
+	<script type ="text/javascript" src ="/js/public/shuzicai.js"></script>
+</head>
+<body>
+<script>
+$(document).ready(function() {
+    chklogin();
+    createGamePanle(120);
+    createGameSelect();
+});
+</script>
+<section class="buyHeader" id="buyFooter1">
+    <h1>时时彩</h1>
+    <a href="/" class="backIco2">首页</a>
+    <em class="goHome jc-more">
+         <cite><a class="cur" href="javascript:void(0);">选择比赛</a><a href="/kj/">开奖结果</a><a href="/help/sschelp.html">玩法介绍</a></cite>
+    </em>
+</section>
+<div class="top-margin" id="betpage">
+    <nav>
+        <div class="kpTab syx5Tab clearfix" style="float: none;width: 100%;overflow: hidden;">
+            <ul class="clearfix" id="kpTab"
+                style="display: block; width: 60rem; height: 100%; padding: 0px; transition: transform 0ms; -webkit-transition: transform 0ms; transform-origin: 0px 0px 0px; transform: translate(-8px, 0px) scale(1) translateZ(0px);">
+<!--                 <li class="cur">选第1位</li> -->
+<!--                 <li>选2全中</li> -->
+<!--                 <li>选3全中</li> -->
+<!--                 <li>选4全中</li> -->
+<!--                 <li>选5全中</li> -->
+<!--                 <li>选6中5</li> -->
+<!--                 <li>选7中5</li> -->
+<!--                 <li>选8中5</li> -->
+<!--                 <li>前2直选</li> -->
+<!--                 <li>前3直选</li> -->
+<!--                 <li>前2组选</li> -->
+<!--                 <li>前3组选</li> -->
+            </ul>
+        </div>
+    </nav>
+    <article>
+        <div class="k3kj syx5kj clearfix">
+            <div class="k3kjtext"><p>期开奖</p>
+
+                <div class="kjdice pdTop03 clearfix"><em
+                        class="kjup kjdown"></em></div>
+            </div>
+            <div class="k3kjnum"><p  >距<i id="span_issuenum"></i>期截止</p><strong id="span_stoptime"></strong></div>
+        </div>
+        <div class="ssqkjlist" style="display:none;">
+            <ul>
+                <li class="first">02期</li>
+                <li><span class="red">03 09 01 08 10</span></li>
+                <li class="last"></li>
+            </ul>
+            
+        </div>
+    </article>
+    <article>
+   
+        <div class="relative k3xh" id="bonus_">
+<!--             	<div style="display:none">猜中十位、个位属性,奖金<em class="yellow">4</em>元</div> -->
+            	<div>猜中个位号码，奖金<em class="yellow">10</em>元</div>
+            	<div style="display:none">按顺序猜中十位、个位，奖金<em class="yellow">100</em>元</div>
+                <div style="display:none">按顺序猜中百位、十位、个位，奖金<em class="yellow">1000</em>元</div>
+                <div style="display:none">按顺序猜中全部5位，奖金<em class="yellow">100000</em>元</div>
+                <div style="display:none" class="jxssctitle">
+                	<p>选2个号,猜中后2位组合(顺序不限)，奖金<em class="yellow">50</em>元</p>
+                	<p>3个号以上为复试选号(包含对子)，奖金<em class="yellow">100</em>元</p>
+                </div>
+                <div style="display:none" class="jxssctitle">
+                	<p>&nbsp;&nbsp;猜中十位、个位之和,奖金<em class="yellow">50</em>元</p>
+                	<p>（若开奖号后2位相同，中奖<em class="yellow">100</em>元）</p>
+                </div>
+                <div style="display:none" class="jxssctitle">
+                	<p>按顺序猜中全部5位，奖金<em class="yellow">20440</em>元</p>
+                	<p>按顺序猜中全部前3位或后3位，奖金<em class="yellow">220</em>元</p>
+                	<p>按顺序猜中前2位或后2位，奖金<em class="yellow">20</em>元</p>
+                </div>
+                
+<!--                 <div style="display:none" class="jxssctitle"> -->
+<!--                 	<p>选2个号,猜中后3位组三号码，奖金<em class="yellow">220</em>元</p> -->
+<!--                 	<p>组三:3个号码中有2个相同，如:353</p> -->
+<!--                 </div> -->
+<!--                 <div style="display:none" class="jxssctitle"> -->
+<!--                 	<p>选3个号,猜中后3位组六号码，奖金<em class="yellow">190</em>元</p> -->
+<!--                 	<p>组六:3个号码各不相同，如:865</p> -->
+<!--                 </div> -->
+                
+                <div style="display:none">猜中十位、个位属性,奖金<em class="yellow">4</em>元</div>
+                <p class="shakeomit"><span class="right red" id="shake"><em class="shakeico"></em><cite>摇一注&nbsp;&nbsp;&nbsp;</cite></span></p>
+            </div>
+        <section class="relative" style="z-index:1">
+            <!-- 选11个号码start -->
+            <div style="overflow: hidden;">
+                <div id="divballarea" style="width: 100%; position: relative; left: 0;">
+                    <div  style="float: left; ">
+                        <div class="ssqBall pdLeft08"><cite>01</cite><cite>02</cite><cite>03</cite><cite>04</cite><cite>05</cite><cite>06</cite><cite>07</cite><cite>08</cite><cite>09</cite><cite>10</cite><cite>11</cite></div>
+                        <div class="omitnum pdLeft08" hidden="" style="width: 320px;display: block"><cite>23</cite><cite>4</cite><cite>24</cite><cite>14</cite><cite>3</cite><cite>14</cite><cite>48</cite><cite>8</cite><cite>37</cite><cite>3</cite><cite>14</cite></div>
+                    </div>
+                    <!-- 选11个号码end -->
+                    <!-- 前2直选start -->
+<!--                     <div id="qe" style="float: left; width: 320px;"> -->
+<!--                         <p class="gray center pdTop06">第一位</p> -->
+<!--                         <div class="relative"> -->
+<!--                             <div class="ssqBall pdLeft08"><cite>01</cite><cite>02</cite><cite>03</cite><cite>04</cite><cite>05</cite><cite>06</cite><cite>07</cite><cite>08</cite><cite>09</cite><cite>10</cite><cite>11</cite></div> -->
+<!-- <!--                             <div class="omitnum pdLeft08" hidden="" style="width: 320px;"><cite>23</cite><cite>4</cite><cite>24</cite><cite>14</cite><cite>3</cite><cite>14</cite><cite>48</cite><cite>8</cite><cite>37</cite><cite>3</cite><cite>14</cite></div> --> 
+<!--                         </div> -->
+<!--                         <p class="gray center pdTop06">第二位</p> -->
+<!--                         <div class="relative"> -->
+<!--                             <div class="ssqBall pdLeft08"><cite>01</cite><cite>02</cite><cite>03</cite><cite>04</cite><cite>05</cite><cite>06</cite><cite>07</cite><cite>08</cite><cite>09</cite><cite>10</cite><cite>11</cite></div> -->
+<!-- <!--                             <div class="omitnum pdLeft08" hidden="" style="width: 320px;"><cite>23</cite><cite>4</cite><cite>24</cite><cite>14</cite><cite>3</cite><cite>14</cite><cite>48</cite><cite>8</cite><cite>37</cite><cite>3</cite><cite>14</cite></div> -->
+<!--                         </div> -->
+<!--                     </div> -->
+<!--                     前2直选end -->
+<!--                     前3直选start -->
+<!--                     <div id="qs" style="float: left; width: 320px;"> -->
+<!--                         <p class="gray center pdTop06">第一位</p> -->
+<!--                         <div class="relative"> -->
+<!--                             <div class="ssqBall pdLeft08"><cite>01</cite><cite>02</cite><cite>03</cite><cite>04</cite><cite>05</cite><cite>06</cite><cite>07</cite><cite>08</cite><cite>09</cite><cite>10</cite><cite>11</cite></div> -->
+<!-- <!--                             <div class="omitnum pdLeft08" hidden="" style="width: 320px;"><cite>23</cite><cite>4</cite><cite>24</cite><cite>14</cite><cite>3</cite><cite>14</cite><cite>48</cite><cite>8</cite><cite>37</cite><cite>3</cite><cite>14</cite></div> --> 
+<!--                         </div> -->
+<!--                         <p class="gray center pdTop06">第二位</p> -->
+<!--                         <div class="relative"> -->
+<!--                             <div class="ssqBall pdLeft08"><cite>01</cite><cite>02</cite><cite>03</cite><cite>04</cite><cite>05</cite><cite>06</cite><cite>07</cite><cite>08</cite><cite>09</cite><cite>10</cite><cite>11</cite></div> -->
+<!-- <!--                             <div class="omitnum pdLeft08" hidden="" style="width: 320px;"><cite>23</cite><cite>4</cite><cite>24</cite><cite>14</cite><cite>3</cite><cite>14</cite><cite>48</cite><cite>8</cite><cite>37</cite><cite>3</cite><cite>14</cite></div> --> 
+<!--                         </div> -->
+<!--                         <p class="gray center pdTop06">第三位</p> -->
+<!--                         <div class="relative"> -->
+<!--                             <div class="ssqBall pdLeft08"><cite>01</cite><cite>02</cite><cite>03</cite><cite>04</cite><cite>05</cite><cite>06</cite><cite>07</cite><cite>08</cite><cite>09</cite><cite>10</cite><cite>11</cite></div> -->
+<!-- <!--                             <div class="omitnum pdLeft08" hidden="" style="width: 320px;"><cite>23</cite><cite>4</cite><cite>24</cite><cite>14</cite><cite>3</cite><cite>14</cite><cite>48</cite><cite>8</cite><cite>37</cite><cite>3</cite><cite>14</cite></div> --> 
+<!--                         </div> -->
+<!--                     </div> -->
+                    <!-- 前3直选end -->
+                </div>
+            </div>
+        </section>
+    </article>
+</div>
+
+
+<div class="buyFooter" mark="buyfooter">
+    <div class="buyFloat fixed">
+        <em class="deleted" onclick="Reconfirm()"></em>
+        <span >共<cite mark="betnum" class="yellow">0</cite>注&nbsp;<cite mark="betmoney" class="yellow">0</cite>元</span>
+        <a href="javascript:betconfirm()" class="ture">确 认</a>
+    </div>
+</div>
+<span style="display:none;" id="span_add"><input type="checkbox" onclick="countMoney();" class="textWH" id="addcount">追加</span>
+<!--#include virtual="/cc/gpcbuy.html"-->
+<div id="divshowprebuy" style="position: absolute; width: 100%; margin: 0px auto; z-index: 1100; top: 120.75px; left: 0px; display: none;" name="divshowprebuy"></div>
+<input type="hidden" id="oldt" name="oldt" value="1" />
+<input type="hidden" id="buymoney" name="buymoney" value="0" />
+<input type="hidden" id="buyzs" name="buyzs" value="0" />
+<input type="hidden" id="hidTypeName" value="时时彩" />
+<input type="hidden" id="TypeID" name="TypeID" value="120" />
+<input type="hidden" id="RedBallValue" name="RedBallValue" value="" />
+<input type="hidden" id="BlueBallValue" name="BlueBallValue" value="" />
+<input type="hidden" id="PlayType" name="PlayType" value="1" />
+<input type="hidden" id="Kind" name="Kind" value="2" />
+<input type="hidden" id="expect" name="expect" value="" />
+</body>
+</html>

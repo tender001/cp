@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head><title>
+	提示结果-手机159彩
+</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=1;' name='viewport' />
+<meta content='yes' name='apple-mobile-web-app-capable' />
+<meta content='black' name='apple-mobile-web-app-status-bar-style' />
+<meta content='telephone=no' name='format-detection' />
+<script src='/js/jquery.js'></script>
+<script src='/js/159cp.js'></script>
+<script src='/js/base.js'></script>
+<script src='/js/login.js'></script>
+<link rel='stylesheet' href='/style/main.css' />
+<link href="/images/apple-touch-icon.png" rel="apple-touch-icon-precomposed" /> 
+<link rel='stylesheet' href='/style/user.css' /></head>
+<body>
+<!--#include virtual="/cc/login.html"-->
+<script>
+$(document).ready(function() {
+	chklogin();
+	var rs = location.search.getParam('to');
+	if($("#div_"+rs))$("#div_"+rs).show();
+});
+</script>
+    <div class="topround" id="div_reg" style="display:none;">
+     <div class="areac" >
+         <font color="#F18D8D"><b>您已成功注册159彩票网账号！</b></font>
+     </div>
+        <input type="button" class="sbtn" onclick="location.href='/'" value="返回首页" />&nbsp;
+        <input type="button" class="sbtn" onclick="location.href='/user/account.html'" value="我的账户" />
+    </div>
+<!--#include virtual="/cc/footer.html"-->
+</body>
+</html>

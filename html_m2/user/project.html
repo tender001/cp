@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=1' name='viewport'/>
+    <meta content='yes' name='apple-mobile-web-app-capable'/>
+    <meta content='black' name='apple-mobile-web-app-status-bar-style'/>
+    <meta content='telephone=no' name='format-detection'/>
+    <title>方案详情_159彩票网</title>
+    <link rel="stylesheet" href="/css/basic.css" type="text/css"/>
+    <link rel="stylesheet" href="/css/style.css" type="text/css"/>
+    <script src='/js/jquery.js'></script>
+	<script src='/js/159cp.js'></script>
+	<script src='/js/base.js'></script>
+	<script src='/js/login.js'></script>
+	<script src='/js/public/project.js'></script>
+</head>
+<body>
+<!--#include virtual="/cc/header.html"-->
+<section class="buyHeader">
+    <h1>方案详情</h1>
+    <a href="javascript:history.go(-1)" class="backIco"></a>
+    <a href="/" class="goHome"></a>
+</section>
+
+<div class="top-margin">
+    <section>
+        <div class="hemai" id="tobuy">
+            <div class="pd063">
+                <p class="yellow" style="display:none;">亲，您的合买已发起成功，祝您中大奖！</p>
+
+                <div class="clearfix pdTop08">
+                    <h2 class="left fontSize1" mark="title"></h2>
+                    <cite class="left gray pdLeft06" mark="expect"></cite>
+                    <a href="javascript:main_return_confirm();" style="display:none;" class="cance right">撤单</a>
+                </div>
+            </div>
+            <div class="hmTxt"><em class="fontSize095" id="mainname"></em> <cite class="gray pdLeft04" id="mainzhanji">L0</cite>
+            </div>
+            <div class="hmTxt relative clearfix" id="ww_bdi">
+        	<span class="left w3_6 mgTop04">
+            	<cite class="per" id="rg">0%</cite>
+                <em class="pro mgTop06" id="baoodi"></em>
+            </span>
+
+            <div class="gray right w15">
+                <p id="rgDetail">总额<em class="yellow">元</em>(保底元，提成%)</p>
+
+                <p class="pdTop08" id="surplus">剩余<em class="yellow">元</em></p>
+            </div>
+            </div>
+            <div class="progress relative mgTop2 mgLeft05">
+                <em></em>
+                <i></i>
+                <em></em>
+                <i></i>
+                <em></em>
+                <i></i>
+                <em></em>
+
+                <div class="clear"></div>
+                <cite class="waitKj" id="s_paint" style="left: 2rem;display: none;" >等待出票</cite>
+
+                <div class="progressHover" id="f_paint" style="width: 3.5rem;">
+                    <cite></cite>
+                    <s class="barLine"></s>
+                    <cite class="barCircle2"></cite>
+                    <s class="barLine2"></s>
+                    <cite class="barCircle3"></cite>
+                    <s class="barLine3"></s>
+                    <cite class="barCircle4"></cite>
+                </div>
+            </div>
+            <p class="progressTxt pdTop03"><span>发起</span><cite>出票成功</cite>
+                <s>开奖</s>
+                <i>派奖</i></p>
+            <div class="since mgTop06 clearfix" style="display:none;" id="zgCode"><i>开奖号码</i><span
+                    class="sinceTxt"></span></div>
+            <div class="since mgTop06 clearfix" style="display:none;" id="zgzjSituation"><i>中奖情况</i><span
+                    class="sinceTxt">中奖了，是不可能的</span></div>
+            <a href="javascript:;" class="hmTxt hmTxt2 mgTop06 clearfix" id="zgContent"><span class="left">投注内容</span>
+<!--                 <cite class="right black">截止后对跟单用户公开</cite><em class="hmArrow"></em> -->
+                </a>
+                
+                
+                
+            <div class="pd063 lcbetText" id="content" >
+<!--             <table width="100%" cellspacing="0" cellpadding="0" border="0" class="lcbetTitle mgTop06"><tbody><tr><td width="15%">场次</td><td width="70%" id="hngn"></td><td width="15%" style="border-right:none" id="type"></td></tr></tbody></table> -->
+<!--             <table width="100%" cellspacing="0" cellpadding="0" border="0" class="lcbetTable" id="tcont"><tbody><tr id="141217001"><td width="15%" rowspan="2">周三<br>001</td><td width="70%">泰国<em class="fontSize07">VS</em>马来西亚<span style="color:red" id="dan141217001"></span></td><td width="15%" class="r9last" rowspan="2">半0:0<br>全2:0</td></tr><tr><td><div class="tdleft gray">&nbsp;<span><em class="yellow">胜</em>(1.28)</span></div></td></tr><tr id="141217003"><td rowspan="2">周三<br>003</td><td>马里迪莫<em class="fontSize07">VS</em>里斯本东方<span style="color:red" id="dan141217003"></span></td><td class="r9last" rowspan="2">半1:0<br>全1:1</td></tr><tr><td><div class="tdleft gray">&nbsp;<span>胜(1.23)</span></div></td></tr></tbody></table> -->
+            
+            
+            
+            
+            
+            </div>
+            <a href="javascript:partake();" class="hmTxt hmTxt2 clearfix" id="followme"><span class="left">跟单用户</span> <cite
+                    class="yellow right"></cite><em class="hmArrow"></em></a>
+            <a href="javascript:record();" class="hmTxt hmTxt2">我的认购<em class="hmArrow"></em></a>
+
+            <div class="hmTxt gray mgTop06 line-h-15" id="cdesc">
+                
+            </div>
+            <div class="pd063 gray" id="tDetail"><p>编号 :</p>
+
+                <p>时间 : </p></div>
+<!--                 <p  id="jcts" class="pdLeft08" style="display:none;">*上述sp值仅为投注时的参考值，非计奖sp值</p> -->
+        </div>
+        <!--<div id="zigou" style="display: none;">
+        <p class="yellow pdLeft06 pdTop06" style="display:none;">亲，您已购彩成功，祝你中大奖</p>
+        <p class="clearfix pd063 fontSize095"></p>
+        <div class="progress relative mgTop2 mgLeft05">
+            <em></em>
+            <i></i>
+            <em></em>
+            <i></i>
+            <em></em>
+            <i></i>
+            <em></em>
+            <div class="clear"></div>
+            <cite style="left: 1rem;" id="s_paint_zg" class="waitKj"></cite>
+            <div id="f_paint_zg" class="progressHover" style="width: 2.2rem;">
+                <cite></cite>
+                <o class="barLine"></o>
+                <cite class="barCircle2"></cite>
+                <o class="barLine2"></o>
+                <cite class="barCircle3"></cite>
+                <o class="barLine3"></o>
+                <cite class="barCircle4"></cite>
+            </div>
+        </div>
+
+        <p class="progressTxt pdTop03"><span>发起</span><cite>出票成功</cite><o>开奖</o><i>派奖</i></p>
+        <div class="since mgTop06 clearfix" id="faje"><i>方案金额</i><span class="gray sinceTxt"></span></div>
+        <div class="since clearfix yellow" id="zgzjSituation"><i>中奖情况</i><span class="sinceTxt"></span></div>
+        <div class="since mgTop06 clearfix" id="zgCode"><i>开奖号码</i><span class="sinceTxt"></span></div>
+        <div class="since clearfix" id="zgContent">
+            <i>投注内容</i>
+            <div class="gray sinceTxt">
+            </div>
+        </div>
+        <div class="pd063 lcbetText" id="clasli">
+        </div>
+        <p class="pdLeft08" id="jcts" style="display:none;">*上述sp值仅为投注时的参考值，非计奖sp值</p>
+        <div id="zgDetail">
+            <p class="pdLeft08 pdTop03">编号 <em class="gray"></em></p>
+            <p class="pdLeft08">时间  <em class="gray"></em></p>
+        </div>
+        <div class="pd063" style="display:none;"><a href="recharge.html" class="payment">继续购买此方案</a></div>
+    </div>-->
+    </section>
+    <footer class="buyFooter hm-xq" style="display:none;">
+        <div class="fixed buyFloat">
+            <span class="left pdLeft06">认购
+<!--                 <input type="number" value="1" class="hmbuyInput"  onfocus="this.select()"> -->
+      	<input type="tel" value="1" class="hmbuyInput" onfocus="this.select()" id="hmRenGou">          
+                元</span>
+            <a href="javascript:;" class="ture" onclick="JQConfirm('确定认购吗？','tobuy()')">购买</a>
+        </div>
+    </footer>
+
+    <footer class="buyFooter1" style="display:none;">
+        <div class="fixed kjFloat">
+            <a  id="payment" class="btn btn-true">去投注</a>
+        </div>
+    </footer>
+
+</div>
+<div id="zhezhao" style="position: fixed; left: 0px; top: 0px; width: 100%; height: 100%; display: none; background: none repeat scroll 0% 0% gray; opacity: 0.5; z-index: 999;"></div>
+<section id="zj_bd" style="display:none;position: absolute;z-index: 1000" class="zfPop">
+    <h4>我要保底：</h4>
+    <input type="text" onfocus="this.select()" class="tcinput" value="1">
+    <div class="zfTrue clearfix"><a class="zfqx" id="qx_bd" href="javascript:;">取 消</a><a href="javascript:qdbaodi();">确 定</a></div>
+</section>
+<input type="hidden" id="lotid" value="0" />
+<input type="hidden" id="proid" value="0" />
+<input type="hidden" id="lnums" value="0" />
+<input type="hidden" id="baodi" value="0" />
+</body>
+</html>

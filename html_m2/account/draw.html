@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=1' name='viewport'/>
+    <meta content='yes' name='apple-mobile-web-app-capable'/>
+    <meta content='black' name='apple-mobile-web-app-status-bar-style'/>
+    <meta content='telephone=no' name='format-detection'/>
+    <title>提款_159彩票网</title>
+    <link rel="stylesheet" href="/css/basic.css" type="text/css"/>
+    <link rel="stylesheet" href="/css/style.css" type="text/css"/>
+    <script src='/js/jquery.js'></script>
+	<script src='/js/159cp.js'></script>
+	<script src='/js/base.js'></script>
+	<script src='/js/login.js'></script>
+	<script src='js/drawmoney.js'></script>
+</head>
+<body>
+<!--#include virtual="/cc/header.html"-->
+<input type="hidden" id='logintype' value="1">
+<script>
+$(document).ready(function() {
+	chklogin("account");
+	card();
+	 $("#btnApply").click(function (){
+		 tikuan();
+		 }); 
+});
+</script>
+<section class="buyHeader">
+    <h1>提款</h1>
+      <a href="javascript:window.history.back()" class="backIco"></a>
+    <a href="/account/" class="goHome"></a>
+</section>
+<section class="user-padding" id="div1">
+    <p>提款银行:<i id="bank"></i>(<i id="tkcard"></i> )</p>
+
+    <div class="user-input">
+        <lable>开户姓名</lable>
+        <input type="text" placeholder="请输入开户姓名" id="txtRealName"/></div>
+    <div class="user-input">
+        <lable>提款金额</lable>
+        <input type="text" placeholder="请输入提款金额，最少10元" id="txtDrawMoney"/></div>
+    <a class="btn btn-true" id="btnApply">确认提款</a>
+    <p>温馨提示：<br>
+        1.提款不收取手续费，为防止恶意提现，每日提款次数最多为3次(提款处理中与提款成功次数的总和)。<br>
+        2.为了防止套现和洗钱，每次充值后需消费充值金额30%后才能提现。<br>
+        3.用户提款最快10分钟内到账，若1个工作日还未到账，请您及时联系网站客服：400-0696-159</p>
+</section>
+<section class="user-padding" id="div2"><p><a href="/account/bankinfo.html">请选绑定一张银行卡</a></p></section>
+<div id="mn" style="display:none;"></div>
+
+</body>
+</html>

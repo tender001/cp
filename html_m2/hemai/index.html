@@ -1,0 +1,95 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=1' name='viewport'/>
+    <meta content='yes' name='apple-mobile-web-app-capable'/>
+    <meta content='black' name='apple-mobile-web-app-status-bar-style'/>
+    <meta content='telephone=no' name='format-detection'/>
+    <title>竞彩足球-合买中心</title>
+    <link rel="stylesheet" href="/css/basic.css" type="text/css"/>
+    <link rel="stylesheet" href="/css/style.css" type="text/css"/>
+    <script src='/js/jquery.js'></script>
+    <script src='/js/159cp.js'></script>
+    <script src='/js/base.js'></script>
+    <script src='/js/login.js'></script>
+
+</head>
+<body>
+<script>
+    $(document).ready(function () {
+        chklogin();
+        $("#topHeader h1").click(function() {
+            if ($(this).hasClass("cur")) {
+               
+                $('.hmPull').slideUp('fast');
+                $(this).removeClass('cur');
+                return;
+            }
+
+//          
+            if ($('.hmPull').is(':hidden')) {
+            	$(this).addClass('cur');
+                $('.hmPull').css("top", ($(this).position().top + $(this).height()) + "px");
+                $('.hmPull').slideDown('fast');
+            }
+            //else $('#Filter_Panel').slideUp('fast');
+
+            return false;
+        });
+    });
+</script>
+<section class="buyHeader" id="topHeader">
+    <h1>合买大厅<s id="chowanfa"><cite></cite></s></h1>
+
+    <div style="display: none;" class="hmPull">
+            	<a hm="100" href="/hemai/index.html?lotid=100" class="cur">热门合买</a>
+                <a hm="31" href="/hemai/index.html?lotid=31">竞彩足球</a>
+                <a hm="32" href="/hemai/index.html?lotid=32">竞彩篮球</a>
+            	<a hm="80" href="/hemai/index.html?lotid=80">胜负彩</a>
+            	<a hm="81" href="/hemai/index.html?lotid=81">任选九</a>
+                <a hm="30" href="/hemai/index.html?lotid=30">足球单场</a>
+                <a hm="01" href="/hemai/index.html?lotid=01">双色球</a>
+            	<a hm="03" href="/hemai/index.html?lotid=03">福彩3D</a>
+<!--                 <a hm="07" href="/hemai/index.html?lotid=07">七乐彩</a> -->
+                <a hm="50" href="/hemai/index.html?lotid=50">大乐透</a>
+           
+<!--                 <a hm="53" href="/hemai/index.html?lotid=53">排列三</a> -->
+<!--                 <a hm="52" href="/hemai/index.html?lotid=52">排列五</a> -->
+    </div>
+    <a href="javascript:history.go(-1)" class="backIco"></a>
+    <a href="/" class="goHome"></a>
+</section>
+
+<div class="fa-hm-list top-margin">
+    <nav><a href="javascript:void(0);">进度</a><a href="javascript:void(0);">总额</a><a href="javascript:void(0);">余额</a></nav>
+
+   
+    <div id="hmList">
+
+        <!--               <div class="hm-list"> -->
+        <!--             <div class="fl"> -->
+        <!--                 <h2>竞彩足球</h2> -->
+        <!--                 <strong>82<b>%</b></strong> -->
+        <!--                 <cite>保70%</cite> -->
+        <!--             </div> -->
+        <!--             <dl> -->
+        <!--                 <dt class="peo-name">一个人玩竞彩<em>Lv50</em></dt> -->
+        <!--                 <dd class="peo-hm"><span>188888元</span><span>2%</span><span>688元</span></dd> -->
+        <!--             </dl> -->
+        <!--             <i></i> -->
+        <!--         </div> -->
+        <!--点击弹出-->
+        <!--         <div class="hm-search hm-buy"> -->
+        <!--             <ul> -->
+        <!--                 <li><input type="text" placeholder="每份1元"/><a class="btn-hm-buy" href="#">购买</a></li> -->
+        <!--                 <li><a href="#">详情</a></li> -->
+        <!--             </ul> -->
+        <!--         </div> -->
+    </div>
+
+</div>
+
+<script type="text/javascript" src="js/plist.js"></script>
+</body>
+</html>
