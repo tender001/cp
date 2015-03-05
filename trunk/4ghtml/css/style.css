@@ -658,14 +658,14 @@ a.hmTxt2{ display:block; color:#606060; padding-right:1.4rem; position:relative}
 .competitions{ border-left:1px solid #d5d5d5; border-top:1px solid #d5d5d5; margin:.3rem 4%;background-color:#fff}
 .competitions span.cur:before{ height:2.6rem}
 
-.bfcom span{ width:19.63%; height:2rem; padding:.3rem 0; line-height:1rem;font-size:.95rem;}
-.bfcom  span.cur:before{ height:2.6rem}
-.bfcom span.bflast strong{ letter-spacing:normal; font-weight:normal; color:#333}
-.bfcom strong,.bfcom em{ display:block; color:#5c5c5c; font-size:.81rem}
-.bfcom strong{ letter-spacing:.2rem}
-.bfcom em{ font-size:.75rem; color:#8e8e8e}
-.bfcom span.cur strong,.bfcom span.cur em{ color:#f6851f}
-.htcom strong,.htzjq strong{ font-weight:normal}
+.bfcom span{width:19.63%;height:2rem;padding:.3rem 0;line-height:1rem;font-size:.95rem;}
+.bfcom  span.cur:before{height:2.6rem}
+.bfcom span.bflast strong{letter-spacing:normal;font-weight:normal;color:#333}
+.bfcom strong,.bfcom em{display:block;color:#5c5c5c;font-size:.81rem}
+.bfcom strong{letter-spacing:.2rem}
+.bfcom em{font-size:.75rem; color:#8e8e8e}
+.bfcom span.cur strong,.bfcom span.cur em{color:#f6851f}
+.htcom strong,.htzjq strong{font-weight:normal}
 .htzjq span{ width:24.6%}
 
 .jqzpk .spfzpk span,.jqNum .spfzpk span{ width:21.5%; height:1.6rem; padding:.4rem 0; line-height:.85rem}
