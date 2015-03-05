@@ -654,10 +654,8 @@ a.hmTxt2{ display:block; color:#606060; padding-right:1.4rem; position:relative}
 .bfTitle p em{ position:absolute;top:0; right:-.2rem; z-index:1}
 .bfTitle p:last-child em{ top:1.15rem; right:8.6rem}
 .bfPop .zfTrue{ margin-top:1rem}
-
 .competitions{ border-left:1px solid #d5d5d5; border-top:1px solid #d5d5d5; margin:.3rem 4%;background-color:#fff}
 .competitions span.cur:before{ height:2.6rem}
-
 .bfcom span{ width:19.63%; height:2rem; padding:.3rem 0; line-height:1rem;font-size:.95rem;}
 .bfcom  span.cur:before{ height:2.6rem}
 .bfcom span.bflast strong{ letter-spacing:normal; font-weight:normal; color:#333}
@@ -667,13 +665,11 @@ a.hmTxt2{ display:block; color:#606060; padding-right:1.4rem; position:relative}
 .bfcom span.cur strong,.bfcom span.cur em{ color:#f6851f}
 .htcom strong,.htzjq strong{ font-weight:normal}
 .htzjq span{ width:24.6%}
-
 .jqzpk .spfzpk span,.jqNum .spfzpk span{ width:21.5%; height:1.6rem; padding:.4rem 0; line-height:.85rem}
 .jqzpk .spfzpk span b,.jqNum .spfzpk span b{ font-weight:normal; display:block; font-size:.9rem}
 .jqzpk .spfzpk span cite,.jqNum .spfzpk span cite{ font-size:.75rem; color:#aaa}
 .jqzpk .spfzpk span.cur cite,.jqNum .spfzpk span.cur cite{ color:#fff}
-
-
+/*
 .tzNum,.spfNum{ border-top:1px solid #e4e4e4; border-bottom:1px solid #e4e4e4;}
 .tzNum p,.spfNum li{ background: none repeat scroll 0 0 white;position:relative;border-bottom:1px solid #ebebeb; overflow:hidden; zoom:1}
 .zq-tz li{padding:.625rem 0 .625rem .56rem;}
@@ -684,7 +680,13 @@ a.hmTxt2{ display:block; color:#606060; padding-right:1.4rem; position:relative}
 .bfpk .spfzpk span{ width:85%}
 .jqNum .spfzpk span{ width:19%}
 .zq-tz .spfzpk span{margin-top: .6rem}
-.bfpk .bqc-for span cite{display: inline-block;width: 13%;font-size: .95rem;}
+.bfpk .bqc-for span cite{display: inline-block;width: 13%;font-size: .95rem;}*/
+
+.pdLfrt09 .sfcxs li:first-child{display: none}
+.bqc-tz{border-bottom: 1px solid #e4e4e4}
+.bqc-tz .sfcxs{border: 0 none !important}
+.pdLfrt09{padding-bottom:4.5rem}
+
 
 
 
