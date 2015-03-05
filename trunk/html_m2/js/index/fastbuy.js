@@ -150,17 +150,17 @@ function passBuy(code,gid) {
             	}
             } else {
             	if(desc.indexOf("余额") > 0){
-            		showMS("您的余额不足，请去充值!", function(){
+            		showTips("您的余额不足，请去充值!", function(){
    					setTimeout(function() { window.location.href = "/account/pay.html"; }, (2 * 1000));
             		});
             	} else {
-            		showMS(desc);
+            		showTips(desc);
             	}
             }
             return;
         },
         error: function(XMLHttpRequest, textStatus, errorThrown) {
-            showMS(XMLHttpRequest.responseText);
+        	showTips(XMLHttpRequest.responseText);
             return;
         }
     }
