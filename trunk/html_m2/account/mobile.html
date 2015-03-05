@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=1' name='viewport'/>
+    <meta content='yes' name='apple-mobile-web-app-capable'/>
+    <meta content='black' name='apple-mobile-web-app-status-bar-style'/>
+    <meta content='telephone=no' name='format-detection'/>
+    <title>手机绑定_159彩票网</title>
+    <link rel="stylesheet" href="/css/basic.css" type="text/css"/>
+    <link rel="stylesheet" href="/css/style.css" type="text/css"/>
+    <script src='/js/jquery.js'></script>
+<script src='/js/159cp.js'></script>
+<script src='/js/base.js'></script>
+<script src='/js/login.js'></script>
+<script src='js/mobilebindingset.js'></script>
+</head>
+<body>
+<!--#include virtual="/cc/header.html"-->
+<input type="hidden" id='logintype' value="1">
+<script type="text/javascript">
+
+		$(document).ready(function() {
+			chklogin("need");
+			showinfo();
+			$("#conform_btn").click(function() {
+				btnbind();
+			});
+			$("#conform").click(function() {
+				sub();
+			});
+			$("#again").click(function() {
+				sendbind();
+			});
+			
+		});
+</script>
+<div style="display:none;" id="div4" class="topround">
+	<font color="#F18D8D"><b>您好 请先登录！</b></font>
+</div>
+<section class="buyHeader">
+    <h1>手机绑定</h1>
+    <a href="javascript:history.go(-1)" class="backIco"></a>
+    <a href="/account/" class="goHome"></a>
+</section>
+<section class="user-padding" id="div1">
+    <div class="user-input">
+        <input type="tel" placeholder="请输入您的手机号" id="Phone"/></div>
+    <p class="mar">短信收取大约60秒，如果没有收到验证码，可以重新发送，以新验证码为准。</p>
+    <a class="btn btn-true" id="conform_btn">确认</a>
+</section>
+<section class="user-padding yz-tel-num" id="div2">
+    <div class="user-input">
+        <input type="text" placeholder="请输入手机验证码" id="YZM"/></div>
+    <p class="mar">短信收取大约60秒，如果没有收到验证码，可以重新发送，以新验证码为准。</p>
+    <a class="btn btn-true" id="conform">提交</a><a class="btn btn-true btn-true-re" id="again">重新发送</a>
+</section>
+
+
+<div class="user-padding tel" id="div3">
+    <p>绑定的手机号:<em id="ybdphone">150****4728</em></p>
+
+    <a class="btn btn-true" id="xgphone" onclick="xiugaim()">修改手机号</a>
+</div>
+
+<section class="user-padding" id="div5" style="display: none;">
+    <div class="user-input">
+        <input type="text" placeholder="请输入旧手机号" id=oldPhone /></div>
+    <div class="user-input">
+        <input type="text" placeholder="请输入新手机号" id="newPhone"/></div>
+    <p class="mar">短信收取大约60秒，如果没有收到验证码，可以重新发送，以新验证码为准。</p>
+    <a class="btn btn-true" id="conform_b" onclick="xiugaimbtn()">确认</a>
+</section>
+</body>
+</html>

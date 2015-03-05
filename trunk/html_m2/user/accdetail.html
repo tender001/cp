@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head><title>
+	账户明细-手机159彩票网
+</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=1;' name='viewport' />
+<meta content='yes' name='apple-mobile-web-app-capable' />
+<meta content='black' name='apple-mobile-web-app-status-bar-style' />
+<meta content='telephone=no' name='format-detection' />
+<script src='/js/jquery.js'></script>
+<script src='/js/159cp.js'></script>
+<script src='/js/base.js'></script>
+<script src='/js/login.js'></script>
+<script src='/js/accdetail.js'></script>
+<link rel='stylesheet' href='/style/main.css' />
+<link href="/images/apple-touch-icon.png" rel="apple-touch-icon-precomposed" /> 
+<link rel='stylesheet' href='/style/user.css' /></head>
+<body>
+<!--#include virtual="/cc/login.html"-->
+<ul class="usernav" >
+	<li><a href="/">首页</a></li>
+    <li><a href="account.html">用户中心</a></li>
+    <li><b>账户明细</b></li>
+ </ul>
+<div class="arearound">
+	<select name="sData" id="sData">
+		<option value="7" selected="selected">近一周</option>
+		<option value="30">近一月</option>
+		<option value="90">近三月</option>
+	</select>
+	<select name="dtype" id="dtype">
+		<option selected="selected" value="-1">任何</option>
+		<option value="200">用户充值</option>
+		<option value="201">自购中奖</option>
+		<option value="202">跟单中奖</option>
+		<option value="203">中奖提成</option>
+		<option value="211">认购撤单</option>
+		<option value="215">保底返款</option>
+		<option value="300">转款</option>
+		<option value="105">保底冻结</option>
+		<option value="100">自购</option>
+		<option value="101">认购</option>
+		<option value="102">追号</option>
+		<option value="103">保底认购</option>
+		<option value="104">提现</option>
+		<option value="99">转账</option>
+	</select>
+	<a href="javascript:void(0);" class="btn" id="btnsearch">查询</a>
+</div>
+<table cellpadding="0" cellspacing="0" border=0 style="width:100%;border-bottom:1px solid #A7BCCD;display:none;" id="tdata">
+	<tbody id="accdata">
+		
+	</tbody>
+   </table>
+<div style="line-height:20px;">
+</div>
+<div class="topround" id="page"></div>
+<!--#include virtual="/cc/footer.html"-->
+<div class="clear"></div>
+</body>
+</html>

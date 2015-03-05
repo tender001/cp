@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head><title>
+	账户中心-手机159彩
+</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=1;' name='viewport' />
+<meta content='yes' name='apple-mobile-web-app-capable' />
+<meta content='black' name='apple-mobile-web-app-status-bar-style' />
+<meta content='telephone=no' name='format-detection' />
+<script src='/js/jquery.js'></script>
+<script src='/js/159cp.js'></script>
+<script src='/js/base.js'></script>
+<script src='/js/login.js'></script>
+<script src='/js/changepwd.js'></script>
+<link rel='stylesheet' href='/style/main.css' />
+<link href="/images/apple-touch-icon.png" rel="apple-touch-icon-precomposed" /> 
+<link rel='stylesheet' href='/style/user.css' />
+<style>
+        #tabUL{
+	        margin:0px;
+	        padding:0px;
+	        width: 100%;
+        }
+        #tabUL td{
+	        line-height:30px;
+	        text-align:center;
+	        background:#ECECEC;
+	        padding:0px;
+	        font-weight:bold;
+	        cursor:pointer;
+	        border-bottom-width: 1px;
+	        border-bottom-style: solid;
+	        border-bottom-color: #B6D2E2;
+	        border-left-width: 1px;
+	        border-left-style: solid;
+	        border-left-color: #B6D2E2;
+        }
+        #tabUL .on{
+	        color:#fff;
+	        font-weight:bold;
+	        background-color: #FCA227;
+	        background: -webkit-gradient(linear,0 0,0 60%,from(#74A4E5),to(#96BFEC));
+        }
+     </style>
+</head>
+<body>
+<!--#include virtual="/cc/login.html"-->
+<input type="hidden" id='logintype' value="1">
+<script>
+function loginHdl() {
+    $('#Filter_Panel').slideUp('fast');
+    if ($('#Login_Panel').is(':hidden')) showLogin(true);
+    else closeLogin()
+    return false;
+}
+$(document).ready(function() {
+	chklogin(1);
+	modify();
+});
+</script>
+<ul class="usernav"><li><a href="/">首页</a></li>
+     <li><a href="account.html">用户中心</a></li>
+    <li><b>修改密码</b></li>
+</ul>
+<div class="cm_sfzbd_ts cm_gray">
+     <p class="cm_aqzx_ts">建议使用字母加数字组合、混合大小写、特殊字符（如@）等提高密码强度。</p>
+     </div>
+     <div align="center" height="100%" width="100%" valign="middle" class="topround">
+    <table>
+        <tbody><tr><td width="120px" align="right"><b>当前密码：</b></td><td><input type="password" size="20" id="curPwd"></td></tr>
+        <tr><td align="right"><b>输入新密码：</b></td><td><input type="password" required="required" size="20" id="newPwd1"></td></tr>
+      <!--  <tr><td colspan="2"><span style="color:#999">*6-15个字符，推荐使用数字加字母组合</span></td></tr> -->
+        <tr><td align="right"><b>确认新密码：</b></td><td><input type="password" size="20" id="newPwd2"></td></tr>
+        <tr><td align="center" colspan="2"><a class="btnC" id="submitok" href="javascript:void(0);">确&nbsp;定</a>
+        </td></tr>
+    </tbody></table>
+</div>
+<div class="borderColor">温馨提示：定期更换密码能使账户更安全</div>
+    <div id="bottonAn"></div>
+<!--#include virtual="/cc/footer.html"-->
+</body>
+</html>

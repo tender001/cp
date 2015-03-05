@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=1' name='viewport'/>
+    <meta content='yes' name='apple-mobile-web-app-capable'/>
+    <meta content='black' name='apple-mobile-web-app-status-bar-style'/>
+    <meta content='telephone=no' name='format-detection'/>
+    <title>充值_159彩票网</title>
+    <link rel="stylesheet" href="/css/basic.css" type="text/css"/>
+    <link rel="stylesheet" href="/css/style.css" type="text/css"/>
+    <script src='/js/jquery.js'></script>
+	<script src='/js/159cp.js'></script>
+	<script src='/js/base.js'></script>
+	<script src='/js/login.js'></script>
+</head>
+<body>
+<!--#include virtual="/cc/header.html"-->
+<div id="craddiv">
+<section class="buyHeader">
+    <h1>手机卡充值</h1>
+    <a href="javascript:window.history.back()" class="backIco"></a>
+    <a href="/account/" class="goHome"></a>
+</section>
+<p class="pay-tip top-margin marbottom0">
+    充值卡类型：全国移动充值卡、联通一卡充、电信充值卡。
+</p>
+<div class="pay-money phone-pay">
+    <div class="pay-money-in">
+        <p>选择充值卡</p>
+        <ul class="pay-money-ch" id="cardtypeid">
+            <li ><em class="cur" onclick="setType(1,3)" name="cardtype" value="CMJFK">移动</em></li>
+            <li ><em onclick="setType(2,3)" name="cardtype" value="LTJFK">联通</em></li>
+            <li ><em onclick="setType(3,3)" name="cardtype" value="DXJFK">电信</em></li>
+        </ul>
+    </div>
+</div>
+<div class="pay-money phone-pay" style="margin-top:0.5em">
+    <div class="pay-money-in">
+        <p>选择充值金额(元)</p>
+        <div id="face_type1" ty="CMJFK">
+	        <ul class="pay-money-ch" >
+	            <li><em name="facevalue" value="10" >10</em></li>
+	            <li><em name="facevalue" value="20" >20</em></li>
+	            <li><em name="facevalue" value="30"> 30</em></li>
+	           
+	        </ul>
+	         <ul class="pay-money-ch" >
+	           
+	            <li><em name="facevalue" value="50">50</em></li>
+	            <li><em name="facevalue" value="100" class="cur">100</em></li>
+	            <li><em name="facevalue" value="300">300</em></li>
+	           
+	        </ul>
+	         <ul class="pay-money-ch" >
+	            <li><em name="facevalue" value="500">500</em></li>
+	            <li></li>
+	            <li></li>
+	        </ul>
+        
+        </div>
+        <div id="face_type2" style="display: none" ty="LTJFK">
+        	<ul class="pay-money-ch" >
+	            <li><em name="facevalue" value="20">20</em></li>
+	            <li><em name="facevalue" value="30">30</em></li>
+	            <li><em name="facevalue" value="50" >50</em></li>
+	            
+       		 </ul>
+       		 <ul class="pay-money-ch" >
+	           
+	            <li><em name="facevalue" value="100">100</em></li>
+	            <li><em name="facevalue" value="300">300</em></li>
+	            <li><em name="facevalue" value="500">500</em></li>
+       		 </ul>
+        </div>
+        <div id="face_type3" style="display: none" ty="DXJFK">
+        	<ul class="pay-money-ch" >
+	            <li><em name="facevalue" value="50" >50</em></li>
+	            <li><em name="facevalue" value="100">100</em></li>
+	           	<li></li>
+        	</ul>
+        
+        </div>
+        
+        
+        <span>运营商将收取4%手续费，实际到账<i color="red" id="redMoney">96.00</i>元</span>
+    </div>
+</div>
+
+<p class="pay-tip">
+    温馨提示:<br>
+    为防止套现和洗钱，单笔充值后需消费30%才能提现。
+</p>
+
+<div class="pay-submit fixed"><a class="btn btn-true" id="interCode" href="javascript:interCode(true)">下一步，输入卡密</a></div>
+</div>
+<div id="codediv" style="display: none;">
+<section class="buyHeader">
+    <h1>手机卡充值</h1>
+     <a href="javascript:interCode(false)" class="backIco"></a>
+    <a href="/" class="goHome"></a>
+</section>
+<section class="user-padding">
+    <p>您已选择<i id="cardty">移动</i><i color="red" id="redcard">100</i>元充值卡，卡内金额将一次性扣除</p>
+
+    <div class="user-input">
+        <lable>卡号</lable>
+        <input type="text" placeholder="请输入17位充值卡号" id="cardid"/></div>
+    <div class="user-input">
+        <lable>密码</lable>
+        <input type="text" placeholder="请输入18位充值卡密码" id="passid"/></div>
+    <a class="btn btn-true" href="javascript:subform();">确认充值</a>
+
+    <p class="foot-phone">充值过程中有任何疑问，请致电客服<br><br>
+        <a href="tel:4000696159">客服热线:400-0696-159</a>
+    </p>
+</section>
+<div id="divshowprebuy" style="position: absolute; width: 100%; margin: 0px auto; z-index: 1100; top: 120.75px; left: 0px; display: none;" name="divshowprebuy"></div>
+<script src='js/phonepay.js'></script>
+</div>
+</body>
+</html>

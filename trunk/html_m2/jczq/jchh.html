@@ -1,0 +1,91 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=1' name='viewport'/>
+    <meta content='yes' name='apple-mobile-web-app-capable'/>
+    <meta content='black' name='apple-mobile-web-app-status-bar-style'/>
+    <meta content='telephone=no' name='format-detection'/>
+    <title>竞彩足球_159彩票网</title>
+    <link rel="stylesheet" href="/css/basic.css" type="text/css"/>
+    <link rel="stylesheet" href="/css/style.css" type="text/css"/>
+    <script src='/js/jquery.js'></script>
+	<script src='/js/159cp.js'></script>
+	<script src='/js/base.js'></script>
+	<script src='/js/login.js'></script>
+    <script>
+		var typeID=100;
+		var OddsType=2;
+		var SelX="3,1,0,0:0,0:1,0:2,0:3,1:0,1:1,1:2,1:3,2:0,2:1,2:2,2:3,3:0,3:1,3:2,3:3,4:0,4:1,4:2,0:4,1:4,2:4,5:0,5:1,5:2,0:5,1:5,2:5,9:0,9:9,0:9,0,1,2,3,4,5,6,7,3-3,3-1,3-0,1-3,1-1,1-0,0-3,0-1,0-0,3,1,0";
+		var SelCodes="3,1,0,00,01,02,03,10,11,12,13,20,21,22,23,30,31,32,33,40,41,42,04,14,24,50,51,52,05,15,25,WW,DD,LL,0,1,2,3,4,5,6,7,33,31,30,13,11,10,03,01,00,3,1,0";
+		var SelNames='胜,平,负,0:0,0:1,0:2,0:3,1:0,1:1,1:2,1:3,2:0,2:1,2:2,2:3,3:0,3:1,3:2,3:3,4:0,4:1,4:2,0:4,1:4,2:4,5:0,5:1,5:2,0:5,1:5,2:5,胜其他,平其他,负其他,0,1,2,3,4,5,6,7+,胜胜,胜平,胜负,平胜,平平,平负,负胜,负平,负负,胜,平,负';
+		var SelKeys="wl3,wl1,wl0,sd00,sl01,sl02,sl03,sw10,sd11,sl12,sl13,sw20,sw21,sd22,sl23,sw30,sw31,sw32,sd33,sw40,sw41,sw42,sl04,sl14,sl24,sw50,sw51,sw52,sl05,sl15,sl25,sw5,sd4,sl5,t0,t1,t2,t3,t4,t5,t6,t7,ht33,ht31,ht30,ht13,ht11,ht10,ht03,ht01,ht00,sf3,sf1,sf0";
+		var MaxMatch = 6;
+		var MaxPowNum = 0;
+		<!--#include virtual="/data/jczq/wap_hh.html"-->
+</script>
+</head>
+<body>
+<!--#include virtual="/cc/header.html"-->
+<section class="buyHeader" id="topHeader">
+    <h1>混投<s id="chowanfa"><cite></cite></s></h1>
+    <a href="/" class="backIco2">首页</a>
+    <div class="hmPull" style="display: none;">
+       
+        <a href="/jczq/jchh.html" class="cur">混投</a>
+         <a href="/jczq/spf.html">胜平负</a>
+        <a href="/jczq/">让球胜平负</a>
+        <a href="/jczq/cbf.html">比分</a>
+        <a href="/jczq/jqs.html">总进球</a>
+        <a href="/jczq/bqc.html">半全场</a>
+
+    </div>
+    <em class="goHome jc-more">
+       <cite><a class="cur" href="javascript:void(0);">选择比赛</a><a href="/hemai/index.html?lotid=31">合买跟单</a><a href="/kj/jingcai.html?gid=jczq">开奖结果</a><a href="/help/jc_help.html">玩法介绍</a></cite>
+    </em>
+</section>
+<!-- <div class="top-margin tz-menu ico-click"><i class="cur"></i>12-11 周四(11:30-次日11:30) 24场比赛</div> -->
+<hr class="top-margin"/>
+<!--#include virtual="/cc/appxz.html"-->
+<div id="matchList">加载中...</div>
+<!--     <ul class="sfcxs hhzpk"> -->
+<!--         <li class="li_weige"> -->
+<!--             <em>001</em> -->
+<!--             <p>西甲</p><cite>18:55截止</cite> -->
+<!--         </li> -->
+<!--         <li> -->
+<!--             <p class="spfzpkNum"> -->
+<!--                 <span>西班牙人<em class="blue">(-1)</em> -->
+<!--                 </span> -->
+<!--                 <span class="spfvs">VS</span> -->
+<!--                 <span>格拉纳达C</span> -->
+<!--             </p> -->
+<!--             <p class="spfzpk"> -->
+<!--                 <em>非让球</em> -->
+<!--                 <span>胜 1.62</span> -->
+<!--                 <span class="cur">平  3.35</span> -->
+<!--                 <span>胜  4.85</span> -->
+<!--             </p> -->
+<!--             <p class="spfzpk"><em class="rq">让球</em><span>胜 3.12</span><span>平  3.20</span><span>胜  2.02</span> -->
+<!--             </p> -->
+<!--         </li> -->
+<!--     </ul> -->
+   
+
+<div class="buyFooter" id='buyFooter1'>
+	<div class="buyFloat fixed">
+		<em class="deleted"  onclick="ReChoose();"></em>
+		<span>已选择<cite class="yellow" id="betnum">0</cite>场比赛</span>
+		<a href="javascript:betconfirm()" class="ture" id="isOk_">确 认</a>
+	</div>
+</div>
+
+
+<!--#include virtual="/jczq/buy.html"-->
+<input type="hidden" id="hidAmount" value="0">
+<input type="hidden" value="竞彩混投" id="hidTypeName">
+<input id="gid" type="hidden" value="70">
+</body>
+</html>
+<script type="text/javascript" src='/js/310JQ.js'></script>
+<script type="text/javascript" src="/js/JingJi.js"></script>

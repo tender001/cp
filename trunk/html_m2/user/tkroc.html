@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head><title>
+	账户中心-手机159彩
+</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=1;' name='viewport' />
+<meta content='yes' name='apple-mobile-web-app-capable' />
+<meta content='black' name='apple-mobile-web-app-status-bar-style' />
+<meta content='telephone=no' name='format-detection' />
+<script src='/js/jquery.js'></script>
+<script src='/js/159cp.js'></script>
+<script src='/js/base.js'></script>
+<script src='/js/login.js'></script>
+<script src='/js/tkroc.js'></script>
+<link rel='stylesheet' href='/style/main.css' />
+<link href="/images/apple-touch-icon.png" rel="apple-touch-icon-precomposed" /> 
+<link rel='stylesheet' href='/style/user.css' /></head>
+<body>
+<!--#include virtual="/cc/login.html"-->
+<input type="hidden" id='logintype' value="1">
+<script>
+
+function loginHdl() {
+
+    $('#Filter_Panel').slideUp('fast');
+
+    if ($('#Login_Panel').is(':hidden')) showLogin(true);
+
+    else closeLogin()
+
+    return false;
+
+}
+
+$(document).ready(function() {
+	chklogin(1);
+	tixian();
+	$("#search").click(function(){
+		tixian();
+	});
+});
+
+</script>
+<ul class="usernav"><li><a href="/">首页</a></li>
+        <li><a href="account.html">用户中心</a></li>
+        <li><b>提现记录</b></li>
+    </ul>
+    <div class="arearound">
+		<select id="ddlDate" name="ddlDate">
+			<option value="day">当天</option>
+			<option value="week">近一周</option>
+			<option value="month" selected="selected">近一月</option>
+			<option value="months">近三月</option>
+		</select>
+		<a id="search" class="btn" href="#">查询</a>
+	</div>
+	<div style="display:none;" id="div3" class="topround">
+			         <font color="#F18D8D"><b>您好  请先登录！</b></font>
+</div>
+<div id="div1" class="topround">
+			         <font color="#F18D8D"><b>该时间段没有记录</b></font>
+			</div>
+			<table border="0" cellspacing="0" cellpadding="0" id="div2" style="width: 100%; border-bottom: 1px solid rgb(167, 188, 205); display: none;">
+				<tbody id="tbody1">
+				</tbody>
+	    	</table>
+	    	<div class="borderColor">支出交易笔数：<font color="blue" id="font1">0</font><br>支出金额合计：<font color="blue" id="font2">￥0.00</font>元<br></div>
+   <div id="page" class="topround"></div>
+    <div id="bottonAn"></div>
+<!--#include virtual="/cc/footer.html"-->
+</body>
+</html>

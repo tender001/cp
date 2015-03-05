@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>159彩票网</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+    <link rel="stylesheet" href="css/1.css" type="text/css">
+    <script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+    <script type="text/javascript" src="js/kaijiang.js"></script>
+    <style>
+        body{font: 0.75em/1.13em Arial,Verdana,"\5b8b\4f53";}
+    </style>
+</head>
+<body>
+    <div class="w-tab m-tab">
+    	<h3>
+    		<span class="hover">双色球</span><span>大乐透</span>
+    	</h3>
+    	<div class="bod">
+    		<div class="not-see hover" id="01">
+    			<p class="kj-time">
+    				<a class="btn" href="http://m.159cai.com/from.phpx?comeFrom=30736&backurl=/ssq/" target="_blank">选号投注</a>
+    				第&nbsp;<i mark="qi"></i>&nbsp;期
+    			</p>
+    			<p>
+    				<a class="btn" href="http://m.159cai.com/from.phpx?comeFrom=30736&backurl=/hemai/plist.html?lotid=01" target="_blank">参与合买</a>
+    				开奖号码：<i mark="codes"><b>01</b><b>01</b><b>01</b><b>01</b><b>01</b><b>01</b><b class="blue">01</b></i>
+    			</p>
+    			<p class="cai-jc">
+    				<a class="btn" href="http://m.159cai.com/from.phpx?comeFrom=30736&backurl=/info/szc.html?gid=01" target="_blank">开奖详情</a>
+    				奖池奖金：<span mark="pools"></span>元
+    			</p>
+    		</div>
+    		<div class="not-see" id="50">
+    			<p class="kj-time">
+    				
+    				<a class="btn" href="http://m.159cai.com/from.phpx?comeFrom=30736&backurl=/dlt/" target="_blank">选号投注</a>
+    				第&nbsp;<i mark="qi"></i>&nbsp;期
+    			</p>
+    			<p>
+    				<a class="btn" href="http://m.159cai.com/from.phpx?comeFrom=30736&backurl=/hemai/plist.html?lotid=50" target="_blank">参与合买</a>
+    				开奖号码：<i mark="codes"><b>01</b><b>01</b><b>01</b><b>01</b><b>01</b><b class="blue">01</b><b class="blue">01</b></i>
+    			</p>
+    			<p class="cai-jc">
+    				<a class="btn" href="http://m.159cai.com/from.phpx?comeFrom=30736&backurl=/info/szc.html?gid=50" target="_blank">开奖详情</a>
+    				奖池奖金：<span mark="pools"></span>元
+    			</p>
+    			
+    		</div>
+    	
+    	</div>
+
+    </div>
+    <section class="w_bann">
+        <ul>
+         <li><a href="http://m.159cai.com/from.phpx?comeFrom=30736&backurl=/user/reg.html" target="_blank"><img src="http://m.159cai.com/images/index_header/4g1.png" alt="充值送"></a></li>
+        </ul>
+<!--         <p><span class="cur"></span><span></span></p> -->
+    </section>
+</body>
+<script>
+
+$(document).ready(function() {
+	loadKaiJiang();
+	$(function(){
+        $(".w-tab h3 span").click(function(){
+            $(this).addClass("hover").siblings().removeClass("hover");
+            $(".bod .not-see").eq($(this).index()).addClass("hover").siblings().removeClass("hover");
+        });
+    })
+    $(".w_bann li").css("width",$(".w_bann").width()+"px")
+    $(".w_bann ul").css("width",$(".w_bann").width()*2+"px");
+
+});
+
+
+</script>
+</html>

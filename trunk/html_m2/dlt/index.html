@@ -1,0 +1,111 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=1' name='viewport'/>
+    <meta content='yes' name='apple-mobile-web-app-capable'/>
+    <meta content='black' name='apple-mobile-web-app-status-bar-style'/>
+    <meta content='telephone=no' name='format-detection'/>
+    <title>大乐透_159彩票网</title>
+    <link rel="stylesheet" href="/css/basic.css" type="text/css"/>
+    <link rel="stylesheet" href="/css/style.css" type="text/css"/>
+    <script src='/js/jquery.js'></script>
+	<script src='/js/159cp.js'></script>
+	<script src='/js/base.js'></script>
+	<script src='/js/login.js'></script>
+	<script type ="text/javascript" src ="/js/public/ballpanle.js"></script>
+	<script type ="text/javascript" src ="/js/public/shuzicai.js"></script>
+</head>
+<body>
+<script>
+$(document).ready(function() {
+    chklogin();
+    createGamePanle(20);
+    createGameSelect();
+});
+</script>
+<!--#include virtual="/cc/header.html"-->
+<section class="buyHeader" id="buyFooter1">
+    <h1>大乐透</h1>
+    <a href="/" class="backIco2">首页</a>
+    <em class="goHome jc-more">
+        <cite style="display:none"><a class="cur" href="javascript:void(0);">选号</a><a  kj="50">开奖结果</a><a href="/help/dlthelp.html">玩法介绍</a></cite>
+    </em>
+</section>
+<hr class="top-margin"/>
+<!--#include virtual="/cc/appxz.html"-->
+<div id="betpage">
+    <nav>
+        <div class="kpTab syx5Tab clearfix" style="float: none;width: 100%;overflow: hidden;">
+            <ul class="clearfix" id="kpTab"
+                style="list-style: none; display: block; width: 60rem; height: 100%; padding: 0px; transition: transform 0ms; -webkit-transition: transform 0ms; transform-origin: 0px 0px 0px; transform: translate(-8px, 0px) scale(1) translateZ(0px);">
+<!--                 <li class="cur">选第1位</li> -->
+
+            </ul>
+        </div>
+    </nav>
+    <article>
+        <div class="k3kj syx5kj clearfix">
+            <div class="k3kjtext"><p>期开奖</p>
+
+                <div class="kjdice-ssq pdTop03 clearfix"><em
+                        class="kjup kjdown"></em></div>
+            </div>
+            <div class="k3kjnum"><p  >距<i id="span_issuenum"></i>期截止</p><strong id="span_stoptime"></strong></div>
+        </div>
+<div class="ssqkjlist" style="display:none;">
+           
+        </div>
+    </article>
+    <article>
+    
+        <div id="bonus_" class="relative k3xh sdxh">
+            	<div><p class="gray">至少选择<em class="red">5个红球</em>，<em class="blue">2个蓝球</em></p></div>
+               
+            
+               
+            	<div id="shake" class="shakeOmit" onclick="machineSelect(20,'all')" style="display: block;"><em class="shakeico"></em><cite class="red">摇一注</cite></div>
+            </div>
+        <section class="relative" style="z-index:1">
+            <!-- 选11个号码start -->
+            <div style="overflow: hidden;">
+                <div id="divballarea" style="width: 100%; position: relative; left: 0;">
+                    <div  style="float: left; ">
+                        <div class="ssqBall pdLeft08"><cite>01</cite><cite>02</cite><cite>03</cite><cite>04</cite><cite>05</cite><cite>06</cite><cite>07</cite><cite>08</cite><cite>09</cite><cite>10</cite><cite>11</cite></div>
+                        <div class="omitnum pdLeft08" hidden="" style="width: 320px;display: block"><cite>23</cite><cite>4</cite><cite>24</cite><cite>14</cite><cite>3</cite><cite>14</cite><cite>48</cite><cite>8</cite><cite>37</cite><cite>3</cite><cite>14</cite></div>
+                    </div>
+                    <!-- 选11个号码end -->
+                    <!-- 前2直选start -->
+
+                    <!-- 前3直选end -->
+                </div>
+            </div>
+        </section>
+    </article>
+</div>
+
+
+<div class="buyFooter" mark="buyfooter">
+    <div class="buyFloat fixed">
+        <em class="deleted" onclick="Reconfirm()"></em>
+        <span >共<cite mark="betnum" class="yellow">0</cite>注&nbsp;<cite mark="betmoney" class="yellow">0</cite>元</span>
+        <a href="javascript:betconfirm()" class="ture">确 认</a>
+    </div>
+</div>
+<!-- <span style="display:none;" id="span_add"><input type="checkbox" onclick="countMoney();" class="textWH" id="addcount">追加</span> -->
+<!--#include virtual="/cc/szcbuy.html"-->
+<div id="divshowprebuy" style="position: absolute; width: 100%; margin: 0px auto; z-index: 1100; top: 120.75px; left: 0px; display: none;" name="divshowprebuy"></div>
+<input type="hidden" id="TypeID" name="TypeID" value="20" />
+<input type="hidden" id="RedBallValue" name="RedBallValue" value="" />
+<input type="hidden" id="BlueBallValue" name="BlueBallValue" value="" />
+<input type="hidden" id="PlayType" name="PlayType" value="1" />
+<input type="hidden" id="Kind" name="Kind" value="2" />
+<input type="hidden" id="expect" name="expect" value="" />
+<input type="hidden" id="oldt" name="oldt" value="1" />
+<input type="hidden" id="buymoney" name="buymoney" value="0" />
+<input type="hidden" id="buyzs" name="buyzs" value="0" />
+<input type="hidden" id="hidTypeName" value="大乐透" />
+<input type="hidden" id="commission" name="commission" value="2" />
+<input type="hidden" id="secrecy" name="secrecy" value="0" />
+</body>
+</html>
