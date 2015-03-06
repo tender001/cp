@@ -232,7 +232,7 @@ a.t_a_qc b{display: block;width: 115px;height: 35px;margin:10px auto;font: 400 1
 .dc_qr i{display:inline-block;width:89px;height:22px;margin: 0 2px;background-image:url(../images/bg/jc-a.jpg);vertical-align: middle;-webkit-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;}
 .dc_qr i a{display: inline-block;width: 21px;height: 100%;background: transparent;vertical-align: top;}
 .dc_qr i .mul{width:45px;height:20px;line-height:20px;border:0;background-color:transparent;margin:1px 0 0 0;text-align: center;}
-.dc_qr span a{color: #999;margin-right: 10px;position: relative;}
+.dc_qr span a{color: #10429E;margin-right: 10px;position: relative;}
 .dc_qr span a:hover{color: #900;}
 .dc_qr span a s{width: 23px;height: 12px;top: -11px;background-position: -64px 0;}
 .inacout{float:left;padding-left:18px}
