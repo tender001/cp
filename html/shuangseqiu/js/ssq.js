@@ -299,11 +299,11 @@ Class('CodeList>CodeList_dt', {
            
             
            
-            this.lib.CountChart({
-            	leftXml: '/cpdata/omi/01/yilou/hmyl_red_100.xml',
-                rightXml: '/cpdata/omi/01/yilou/hmyl_blue_100.xml',
-                rqXml: '/cpdata/omi/01/yilou/omission.xml'
-            });
+//            this.lib.CountChart({
+//            	leftXml: '/cpdata/omi/01/yilou/hmyl_red_100.xml',
+//                rightXml: '/cpdata/omi/01/yilou/hmyl_blue_100.xml',
+//                rqXml: '/cpdata/omi/01/yilou/omission.xml'
+//            });
         },
 //        exportCode:function(){},
         createSub: function (){
