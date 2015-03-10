@@ -2093,7 +2093,7 @@ a.sz_cmt{background: url(../images/cai888/nwx5_112.jpg);width:137px;height:33px}
 .se_main_top .p2 i,.paiwu-p2 i{float: right;}
 .se_main_top .p3{height: 48px;line-height: 48px;border-bottom: 1px solid #ccc;}
 .se_main_top .p3 span{float: left;}
-.jz-time{padding-right:1em}
+.jz-time{padding:0 1em 0 0 !important}
 .jz-time em{padding:0 2px;color:#e52e04}
 .se_main_top .p3 span em{padding: 0 3px;font: bold 18px/18px Arial;border-radius: 3px;text-align: center;color: #e52e04;vertical-align: -3px;}
 .se_main_top .p3 b{float: left;padding-left:50px;font-weight: 400;_padding-top:8px;}
