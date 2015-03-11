@@ -2365,16 +2365,16 @@ p.yh1 a.dg-btn1{right: 12px}
 .ad_nav a:hover{color:#ff3300; text-decoration:underline}
 /**/
 .dp-basic .bod p span em,.sf-left .bod .bod-m dl dd,.sf-right .bod p i,.btn-dh a{background-image: url("../images/bg/dggp-ico.png")}
-.dggp-top{width: 100%;height: 158px;background:#d49f41 url("../images/bg/dggp-top.jpg") center 0 no-repeat;}
-.dggp-top .dggp-logo{width: 1000px;margin: 0 auto}
-.dggp-top .dggp-logo a{display: block;width: 210px;height: 98px;text-indent:-999em;background-color: transparent}
-.dggp-nav-bg{width: 100%;height: 45px;background-color: #0d753a}
+.dggp-top{width:100%;height:158px;background:#d49f41 url("../images/bg/dggp-top.jpg") center 0 no-repeat;}
+.dggp-top .dggp-logo{width:1000px;margin:0 auto}
+.dggp-top .dggp-logo a{display:block;width:210px;height:98px;text-indent:-999em;background-color:transparent}
+.dggp-nav-bg{width: 100%;height:45px;background-color: #0d753a}
 .dggp-nav{width: 1000px;margin: 0 auto;}
-.dggp-nav a{float:left;padding: 0 25px;font:700 16px/45px "Microsoft YaHei";color: #fff}
-.dggp-nav a:hover{text-decoration: none}
-.dggp-nav a.hover{color:#629875;background-color: #fff;}
-.dggp-main-bg{width: 100%;height:auto;min-height: 470px;background:#ededed url("../images/bg/dggp-bg.jpg") center 0 repeat-y;}
-.dggp-main{width: 1000px;margin: 15px auto;}
+.dggp-nav a{float:left;padding:0 25px;font:700 16px/45px "Microsoft YaHei";color:#fff}
+.dggp-nav a:hover{text-decoration:none}
+.dggp-nav .hover{color:#629875;background-color:#fff;}
+.dggp-main-bg{width:100%;height:auto;min-height:470px;background:#ededed url("../images/bg/dggp-bg.jpg") center 0 repeat-y;}
+.dggp-main{width:1000px;margin:15px auto;}
 .dggp-main:after{visibility:hidden;display:block;font-size:0;content:" ";clear:both;}
 .shenpinf{position: relative}
 .w-sf-left{float: left;width: 688px;}
@@ -2387,16 +2387,16 @@ p.yh1 a.dg-btn1{right: 12px}
 .choose-match{max-height: 284px;overflow: auto;border: 1px solid #ccc;*overflow-y: scroll;_height:284px;}
 .dp-basic .choose-match .bod{border: 0}
 .dp-basic .bod{border: 1px solid #ccc;border-top-width: 0}
-.dp-basic .bod b{display:inline-block;width: 100%;font: normal 14px/88px "Microsoft YaHei";text-align: center;color: #f30}
-.dp-basic .bod p{width:94%;height: 36px;padding:0 3%;font: 14px/36px "Microsoft YaHei";color: #333;background-color: #e4e4e4}
-.dp-basic .bod p span{float: right;}
-.sf-left .bod p span{font-size: 12px;color: #666}
-.sf-left .bod p i{margin: 0 0 0 13px}
-.dp-basic .bod p span em{display: inline-block;width: 36px;height: 23px;margin:0 3px 0;font:700 18px/23px arial;text-align: center;color:#333;background-position: -124px -205px;*display: inline;zoom:1;}
-.dp-basic .bod .bod-m{width: 94%;padding: 15px 3%;background-color: #fff;zoom: 1;}
-.dp-basic .bod .bod-m ul li{float: left;}
-.sf-right .bod .bod-m{width: 86%;padding: 10px 7%}
-.sf-left .bod .bod-m li{width: 190px;height: 134px;padding:0 0 0 24px;position: relative;}
+.dp-basic .bod b{display:inline-block;width:100%;font:normal 14px/88px "Microsoft YaHei";text-align:center;color:#f30}
+.dp-basic .bod p{width:94%;height:36px;padding:0 3%;font:14px/36px "Microsoft YaHei";color:#333;background-color:#e4e4e4}
+.dp-basic .bod p span{float:right;}
+.sf-left .bod p span{font-size:12px;color:#666}
+.sf-left .bod p i{margin:0 0 0 13px}
+.dp-basic .bod p span em{display:inline-block;width: 36px;height:23px;margin:0 3px 0;font:700 18px/23px arial;text-align:center;color:#333;background-position:-124px -205px;*display:inline;zoom:1;}
+.dp-basic .bod .bod-m{width:94%;padding:15px 3%;background-color:#fff;zoom: 1;}
+.dp-basic .bod .bod-m ul li{float:left;}
+.sf-right .bod .bod-m{width:86%;padding:10px 7%}
+.sf-left .bod .bod-m li{width:190px;height: 134px;padding:0 0 0 24px;position:relative;}
 .sf-left .bod .bod-m li span{width: 30px;max-height:100px;vertical-align:bottom;background-color:#39a746;position: absolute;bottom: 3px;left: 45%;}
 .sf-left .bod .bod-m li span i{width: 83px;height: 24px;font: 14px/24px "Microsoft YaHei";color:#39a746;position: absolute;top: -30px;left: -20px;}
 .sf-left .bod .bod-m dl{padding-bottom:35px;overflow: hidden;zoom: 1}
