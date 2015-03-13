@@ -59,24 +59,24 @@ Class('Application',{
            e.end();
            return false;
        }) ;
-//		this.get("#zxgv").click( function (e,O) {
-//			if($("#zsSpan").text()=="0"){
-//				Y.alert('请选择14场比赛进行过滤');
-//				
-//			}else{
-//				  O.postMsg('msg_login', function (){
-//					 var data = O.postMsg('msg_get_list_data').data
-//						Y.alert('【在线过滤投注】截止时间以单式截止时间为准！');
-//					
-//						$("#yclass_alert_ok").unbind("click").bind("click",function(){
-//						
-//							window.open("/zc/gv/index.html?expect="+Y.get("#expect").val()+"&code="+data.codes+"");
-//						});
-//				
-//				});
-//				
-//			}
-//		});
+		this.get("#zxgv").click( function (e,O) {
+			if($("#zsSpan").text()=="0"){
+				Y.alert('请选择14场比赛进行过滤');
+				
+			}else{
+				  O.postMsg('msg_login', function (){
+					 var data = O.postMsg('msg_get_list_data').data
+						Y.alert('【在线过滤投注】截止时间以单式截止时间为准！');
+					
+						$("#yclass_alert_ok").unbind("click").bind("click",function(){
+						
+							window.open("/zc/gv/index.html?expect="+Y.get("#expect").val()+"&code="+data.codes+"");
+						});
+				
+				});
+				
+			}
+		});
     },
     _addTabs: function (){
 //        var buyTabs = this.lib.Tabs({
