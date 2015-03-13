@@ -49,6 +49,8 @@ Class('Application',{
                         O.alert('对不起，请您至少要购买 <strong class="red">1</strong> 倍！')                    
                     }else if(data.totalmoney <= 0){
                         O.alert('发起方案的金额不能为 <strong class="red">0</strong> ！')                       
+                    }else if(data.totalmoney < 10){
+                        O.alert('您好，暂支持10元起购！')                       
                     }else{
                         O.C('buy_type') == 0 ? O.postMsg('msg_buy_dg', data) : O.postMsg('msg_buy_hm', data)                
                     }                            
@@ -77,11 +79,11 @@ Class('Application',{
 		});
     },
     _addTabs: function (){
-        var buyTabs = this.lib.Tabs({
-            items: '#b_form b',
-            contents: '#dgdiv,#hmdiv',
-            focusCss: 'cur'
-        });
+//        var buyTabs = this.lib.Tabs({
+//            items: '#b_form b',
+//            contents: '#dgdiv,#hmdiv',
+//            focusCss: 'cur'
+//        });
         //购买方式
         var tipTpl =  '<h5 style="{1}">代购：</h5>'+
             '是指方案发起人自己一人全额认购方案的购彩形式。若中奖，奖金也由发起人一人独享。<br/><br/>'+
@@ -91,11 +93,11 @@ Class('Application',{
             var hm = this.C('buy_type') == 1;
             return tipTpl.format(hm? '' : 'color:red', hm?'color:red':'');
         });
-        buyTabs.onchange = function (a, b, c){
-             Class.config('buy_type', b );
-             this.get('#ishm').val(b==1? 1 : 0);
-             !c && this.moveToBuy();
-             //this.get('#b_form span.r').html(['由购买人自行全额购买彩票','由多人共同出资购买彩票'][b]);
-        };
+//        buyTabs.onchange = function (a, b, c){
+//             Class.config('buy_type', b );
+//             this.get('#ishm').val(b==1? 1 : 0);
+//             !c && this.moveToBuy();
+//             //this.get('#b_form span.r').html(['由购买人自行全额购买彩票','由多人共同出资购买彩票'][b]);
+//        };
     }
 });
