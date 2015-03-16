@@ -39,16 +39,16 @@ $(function() {
 		
 		}	
 	});
-	$(".zn_gg_3 #seltype1").bind({
-		click:function(){
-			var pn=1;//页码
-			var ps = $("#ps").val();//页面大小
-			var tp = $("#tp").val();//总页数
-			var tr = $("#tr").val();//总记录数	
-            loadpage($("#lotid").val(),$("#expect").val(),pn,ps,tp,tr);
-            $(this).addClass("cur").siblings().removeClass("cur");
-		}	
-	}); 
+//	$(".zn_gg_3 #seltype1").bind({
+//		click:function(){
+//			var pn=1;//页码
+//			var ps = $("#ps").val();//页面大小
+//			var tp = $("#tp").val();//总页数
+//			var tr = $("#tr").val();//总记录数	
+//            loadpage($("#lotid").val(),$("#expect").val(),pn,ps,tp,tr);
+//            $(this).addClass("cur").siblings().removeClass("cur");
+//		}	
+//	}); 
 });
 
 var myguoguan = function(lotid,expect,pn,ps,tp,tr){
@@ -358,7 +358,7 @@ var loadmain = function(lotid, expect,type) {
 			$("#g_info").html(g_info);
 			
 
-			loadpage(lotid, expect,1,tps,ttp,ttotal);
+//			loadpage(lotid, expect,1,tps,ttp,ttotal);
 		},
 		error : function() {
 			var html=' <colgroup><col width="70"><col width="110"><col width="95"><col width="100"><col width="85"><col width="85"><col width="85"><col width="85"><col width="90"><col width="92"><col width="95"></colgroup>';
