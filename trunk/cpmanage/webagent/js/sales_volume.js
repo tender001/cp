@@ -129,12 +129,14 @@ function drawSailTbody($rows,$table,ep) {
 			var statday = $(this).attr('statday');
 			var gid = textVal($(this).attr('gid'));
 			var sales = $(this).attr('sales');
+			var rs = $(this).attr('rs');
 			tbody += '<tr><td>' + statday + '</td>'
 				+ '<td>' + SYS_CONFIG.getGame(gid) + '</td>'
-				+ '<td>' + FormatMoneyZh(sales) + '</td></tr>';
+				+ '<td>' + FormatMoneyZh(sales) + '</td>'
+				+ '<td>' + rs + '</td></tr>';
 		});	
 	} else {
-		tbody = '<tr><td colspan="3">对不起，当前无数据！</td></tr>';
+		tbody = '<tr><td colspan="4">对不起，当前无数据！</td></tr>';
 	}
 	$('tbody',$table).html(tbody);
 	setZebraTable($table);	
