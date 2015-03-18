@@ -1,0 +1,1 @@
+<%@ page language="java" pageEncoding="UTF-8"%>{"version":"20140107","force":"0","softname":"159彩票手机客户端","downloadurl":"${url}","description":"159彩票手机客户端"}
