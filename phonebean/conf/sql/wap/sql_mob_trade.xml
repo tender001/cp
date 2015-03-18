@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config desc="彩票交易（前台网站SQL配置）">
+    <!-- type: 1 查询语句 2 存储过程 3 更新类语句 -->
+    <sql id="mob_proj_cast" type="2" desc="发起方案">
+	   cpmob.sp_mob_proj_cast
+		<in-parm>
+	   		<parm name="用户编号" property="user"/>
+	   		<parm name="登录密码" property="password"/>
+	   		<parm name="彩种编号" property="159Type"/>
+	   		<parm name="期次编号" property="term"/>
+	   		<parm name="投注号码" property="codesWith159"/>
+	   		<parm name="投注倍数" property="multiple"/>
+	   		<parm name="方案金额" property="money"/>
+	   		<parm name="投注来源" property="source"/>
+	   		<parm name="截止时间" property="endTime"/>
+	   		<parm name="选择场次" property="zid"/>
+	   	</in-parm>
+	   	<out-parm>
+	   		<parm name="错误编号" property="status"/>
+	   		<parm name="错误描叙" property="message"/>
+	   		<parm name="方案编号" property="planNo"/>
+	   		<parm name="用户余额" property="balance"/>
+	   	</out-parm>
+	</sql>
+	
+    <sql id="ios_proj_cast" type="2" desc="发起方案">
+	   cpmob.sp_ios_proj_cast
+		<in-parm>
+	   		<parm name="用户编号" property="user"/>
+	   		<parm name="彩种编号" property="type"/>
+	   		<parm name="期次编号" property="term"/>
+	   		<parm name="投注号码" property="codes"/>
+	   		<parm name="投注倍数" property="multiple"/>
+	   		<parm name="方案金额" property="money"/>
+	   		<parm name="单注金额" property="oneMoney"/>
+	   		<parm name="追号金额" property="chaseMoney"/>
+	   		<parm name="追号期数" property="num"/>
+	   		<parm name="追号终止" property="autocancel"/>
+	   		<parm name="追加投注	" property="addtional"/>
+	   	</in-parm>
+	   	<out-parm>
+	   		<parm name="错误编号" property="status"/>
+	   		<parm name="错误描叙" property="message"/>
+	   	</out-parm>
+	</sql>
+	
+	<sql id="mob_cast_zh" type="2" desc="发起追号">
+    	cpmob.sp_mob_zhuihao_cast
+		<in-parm>
+	   		<parm name="用户编号" property="user"/>
+	   		<parm name="登录密码" property="password"/>
+	   		<parm name="彩种编号" property="159Type"/>
+	   		<parm name="追号标志" property="autocancel"/>
+	   		<parm name="追号金额" property="money"/>
+	   		<parm name="期次列表" property="periodids"/>
+	   		<parm name="投注号码" property="codesWith159"/>
+	   		<parm name="投注倍数" property="multiplies"/>
+	   		<parm name="投注来源" property="source"/>
+	   	</in-parm>
+	   	<out-parm>
+	   		<parm name="错误编号" property="status"/>
+	   		<parm name="错误描叙" property="message"/>
+	   		<parm name="方案编号" property="planNo"/>
+	   		<parm name="用户余额" property="balance"/>
+	   	</out-parm>
+	</sql>
+	
+	<sql id="ios_qbuy" type="1" desc="ios购买信息">
+	<![CDATA[ 
+	    select t.*,t.ios_adddate+5/24/60-sysdate ctime from tb_ios_buy t where ios_buyid=?
+	]]>
+		<in-parm>
+	   		<parm name="购买标识" property="sessionid"/>
+	   	</in-parm>
+	</sql>
+
+	<sql id="ios_qcast" type="1" desc="ios购买信息">
+	<![CDATA[ 
+	    select t.*,t.ios_adddate+5/24/60-sysdate ctime from tb_ios_cast t where ios_castid=?
+	]]>
+		<in-parm>
+	   		<parm name="购买标识" property="sessionid"/>
+	   	</in-parm>
+	</sql>
+
+	<sql id="mob_iso_buy" type="3" desc="首次设置银行信息">
+	<![CDATA[
+		update tb_ios_buy set ios_istate = 1 where ios_buyid = ?
+	]]>
+		<in-parm>
+	   		<parm name="购买标识" property="sessionid"/>
+	   	</in-parm>
+	</sql>
+	
+	<sql id="mob_iso_cast" type="3" desc="首次设置银行信息">
+	<![CDATA[
+		update tb_ios_cast set ios_istate = 1 where ios_castid = ?
+	]]>
+		<in-parm>
+	   		<parm name="购买标识" property="sessionid"/>
+	   	</in-parm>
+	</sql>
+	
+</config>
