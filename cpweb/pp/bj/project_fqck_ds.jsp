@@ -10,6 +10,8 @@ String errcode = (String) request.getAttribute("errcode");
 String errmsg = (String) request.getAttribute("errmsg");
 System.out.println("errcode==="+errcode);
 System.out.println("errmsg==="+errmsg);
+if(errcode == null) errcode = "1";
+if(errmsg == null) errmsg = "";
 if (errcode.equalsIgnoreCase("1")){
 	out.println("<script>alert('"+errmsg+"');if (history.length == 0) {window.opener =\"\";window.close();}else{history.go(-1);}</script>");
 }else{
