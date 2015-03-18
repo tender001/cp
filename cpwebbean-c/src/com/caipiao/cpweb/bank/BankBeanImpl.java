@@ -55,6 +55,39 @@ public class BankBeanImpl extends BaseImpl {
 		logger.info("wap===" + bean.getContents());
 		return 1;
 	}
+	
+	public int wapAddMoneyNew(BankBean bean, RbcFrameContext context, HttpServletRequest request, HttpServletResponse response) throws Exception {
+		if (bean.getBusiErrCode() == 0) {
+			switch (bean.getBankid()) {
+			case BankBean.BANK_ZFB: {
+				Bank_wap_zfb.sendNew(bean, context, request, response);
+				break;
+			}
+			case BankBean.BANK_LLPAY: {
+				bean.setBusiErrCode(1001);
+				bean.setBusiErrDesc("此充值业务已暂停");
+				break;
+				//Bank_ll.sendWap(bean, context, request, response);
+				//break;
+			}
+			default: {
+				bean.setBusiErrCode(1001);
+				bean.setBusiErrDesc("未支持充值渠道:[" + bean.getBankid() + "]");
+				break;
+			}
+			}
+			response.setHeader("Cache-Control", "no-cache");
+			if (!StringUtil.isEmpty(bean.getRedirect())) {
+				response.sendRedirect(bean.getRedirect());
+			} else 
+				if (!StringUtil.isEmpty(bean.getContents())) {
+				write_html_response("<meta http-equiv=\"content-type\" content=\"text/html; charset=UTF-8\" >" + bean.getContents(), response);
+			}
+		}
+		logger.info("wap===" + bean.getRedirect());
+		logger.info("wap===" + bean.getContents());
+		return 1;
+	}
 
 	/**
 	 * @param bean
@@ -115,7 +148,14 @@ public class BankBeanImpl extends BaseImpl {
 					break;
 				}
 				case BankBean.BANK_LLPAY: {
-					Bank_ll.send(bean, context, request, response);
+					bean.setBusiErrCode(1001);
+					bean.setBusiErrDesc("此充值业务已暂停");
+					break;
+					//Bank_ll.send(bean, context, request, response);
+					//break;
+				}
+				case BankBean.BANK_SFT: {
+					Bank_sdo.send(bean, context, request, response);
 					break;
 				}
 				default: {
@@ -192,7 +232,14 @@ public class BankBeanImpl extends BaseImpl {
 					break;
 				}
 				case BankBean.BANK_LLPAY: {
-					Bank_ll.send(bean, context, request, response);
+					bean.setBusiErrCode(1001);
+					bean.setBusiErrDesc("此充值业务已暂停");
+					break;
+					//Bank_ll.send(bean, context, request, response);
+					//break;
+				}
+				case BankBean.BANK_SFT: {
+					Bank_sdo.send(bean, context, request, response);
 					break;
 				}
 				default: {

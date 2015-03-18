@@ -37,6 +37,8 @@ import com.caipiao.cpweb.util.GroupContain;
 import com.caipiao.cpweb.util.Util;
 import com.caipiao.plugin.helper.GamePluginAdapter;
 import com.caipiao.plugin.helper.GamePluginManager;
+import com.caipiao.plugin.jcutil.JcItemBean;
+import com.caipiao.plugin.lqutil.LqItemBean;
 import com.caipiao.plugin.sturct.GameCastCode;
 import com.mina.rbc.logger.Logger;
 import com.mina.rbc.logger.LoggerFactory;
@@ -71,8 +73,8 @@ public class TradeJcBeanImpl extends BaseImpl {
         lotidViewpathMap.put("91", "/jc/");// 比分
         lotidViewpathMap.put("92", "/jc/");// 半全场
         lotidViewpathMap.put("93", "/jc/");// 总进球数
-        lotidViewpathMap.put("72", "/jczq/");// 让球胜平负
-        lotidViewpathMap.put("70", "/jczq/");// 混投
+        lotidViewpathMap.put("72", "/jc/");// 让球胜平负
+        lotidViewpathMap.put("70", "/jc/");// 混投
     }
 
     private static Map<String, String> ds_playid = new HashMap<String, String>();
@@ -2333,6 +2335,323 @@ public class TradeJcBeanImpl extends BaseImpl {
 
             fileOperator(file, bean);
             int rc1 = RemoteBeanCallUtil.RemoteBeanCall(bean2, context, GroupContain.TRADE_GROUP, "proj_upload");
+            if (rc1 != 0 || bean2.getBusiErrCode() != 0) {
+                throw new Exception("方案后上传失败：" + bean2.getBusiErrDesc());
+            }
+
+            // uploadSuccess(out, upload, bean.getHid(),1);
+            // bean.setBusiErrCode(bean2.getBusiErrCode());
+            // bean.setBusiErrDesc(bean2.getBusiErrDesc());
+            // bean.setBusiXml(bean2.getBusiXml());
+            write_html_response("<script>window.location='" + lotidViewpathMap.get(bean.getLotid())
+                    + "project.html?lotid=" + bean.getLotid() + "&projid=" + hid + "'</script>", response);
+        } catch (Exception e) {
+            uploadErr(response, bean, e);
+            write_html_response(
+                    "<script>alert('"
+                            + e.getMessage()
+                            + "');if (history.length == 0){window.opener = '';window.close();} else {history.go(-1);}</script>",
+                    response);
+        }
+        return 0;
+    }
+    
+    
+    // 先发后选，后选投注内容
+    @SuppressWarnings("unchecked")
+    public int project_hx(TradeJcBean bean, RbcFrameContext context, HttpServletRequest request,
+            HttpServletResponse response) throws Exception {
+
+        String uid = null;
+        String pwd = null;
+        try {
+
+            // 检查是否登录
+            HttpSession session = request.getSession();
+            uid = (String) session.getAttribute(UID_KEY);
+            pwd = (String) session.getAttribute(PWD_KEY);
+
+            if (CheckUtil.isNullString(uid) || CheckUtil.isNullString(pwd)) {
+                throw new Exception("尚未登录！");
+            } else {
+                bean.setUid(uid);
+                bean.setPwd(pwd);
+            }
+
+            // 获取参数
+            File file = null;
+            String codes = StringUtil.getNullString(bean.getCodes());// 投注号码（文件投注的文件名）
+            //String str = StringUtil.getNullString(String.valueOf(upload.getRequestField("ggname")), "");// 自定义选项
+            String gid = StringUtil.getNullString(bean.getGid());// 种类玩法
+                                                                                                          // SPF...
+            String hid = StringUtil.getNullString(bean.getProjid());// 方案编号
+            int beishu = bean.getBeishu();
+            //if(beishu < 1) beishu = 1;
+            //String item = StringUtil.getNullString(String.valueOf(upload.getRequestField("matches")), "");// 投注场次列表
+            //String gg = StringUtil.getNullString(String.valueOf(upload.getRequestField("ggtype")), "2*1");// 过关类型
+            //String initems = StringUtil.getNullString(upload.getRequestField("initems"));// 是否包含场次信息
+            //String filename = gid + "_" + DateUtil.getCurrentFormatDate("yyMMddHHmmss") + "_"
+            //        + FileUpload.getFileName(uid, gid, "jczq").toLowerCase();
+            //codes = (filename + "_n.txt").toLowerCase();
+            bean.setLotid(gid);
+            //bean.setRand(filename);
+            //upload.setFileName(UPFILE, filename);
+            //file = upload.getFile(UPFILE);
+
+            // 方案验证
+            TradeBean bean2 = new TradeBean();
+            bean2.setUid(uid);
+            bean2.setGid(gid);
+            bean2.setHid(hid);
+            bean2.setMuli(beishu);
+
+            int rct = RemoteBeanCallUtil.RemoteBeanCall(bean2, context, GroupContain.TRADE_GROUP, "queryProjectInfo");
+            if (rct != 0 || bean2.getBusiErrCode() != 0) {
+                throw new Exception("获取方案信息失败：" + bean2.getBusiErrDesc());
+            }
+
+            JXmlWapper lxml = JXmlWapper.parse(bean2.toXmlString());
+
+            // JXmlWapper myjoin = lxml.getXmlNode("myjoins.myjoin");
+
+            JXmlWapper row = lxml.getXmlNode("row");
+
+            String nickid = "";
+            String cnickid = "";
+            int isupload = 0;
+            String ccodes = "";
+            int ifile = 0;
+
+            int muli = 0;
+            muli = beishu;
+            int money = 0;
+            int play = 0;
+            String pid = ""; // 期次
+            Date firsttime = null;
+
+            if (row != null) {
+                nickid = uid;
+                cnickid = row.getStringValue("@cnickid");
+                isupload = row.getIntValue("@upload");
+                ccodes = row.getStringValue("@ccodes");
+                ifile = row.getIntValue("@ifile");
+                if(muli < 1){
+                	muli = row.getIntValue("@mulity");
+                }
+                money = row.getIntValue("@tmoney");
+                play = row.getIntValue("@play");
+                pid = row.getStringValue("@periodid");
+            } else {
+                throw new Exception("您不是方案的发起人,无权上传方案");
+            }
+
+            System.out.println("play=" + play);
+
+            if (nickid == "" && !nickid.equalsIgnoreCase(cnickid)) {
+                throw new Exception("您不是方案的发起人,无权上传方案,请检查是否登录正确的用户名");
+            }
+            if (isupload == 1 || ccodes != "" || ifile != 1) {
+                throw new Exception("方案已经上传");
+            }
+            if (pid == "") {
+                throw new Exception("方案信息获取失败");
+            }
+
+            int total = 0;
+            
+            Cache cache = null;
+            CacheManager cm = CacheManager.getCacheManager();
+
+            System.out.println(gid);
+
+            cache = cm.getCacheMatch(gid, bean.getExpect());
+            
+            HashMap spfMatchMap = new HashMap<String,MatchBean>();
+            HashMap rspfMatchMap = new HashMap<String,MatchBean>();
+
+            //if (cache == null || cache.isExpired()) {
+
+            	String[] fn = new String[] { "jczq_spf.xml", "jczq_cbf.xml", "jczq_bqc.xml", "jczq_jqs.xml", "jczq_hh.xml",
+                "jczq_rspf.xml" };
+
+                int value = Integer.parseInt(gid) - 90;
+                if (value < 0) {
+                    if(gid.equals("72")) value = 5;
+                    else if(gid.equals("70")) value = 4;
+                }
+                
+                JXmlWapper xml = JXmlWapper.parse(new File("/opt/export/cpdata/match/jczq", fn[value]));
+                int count = xml.countXmlNodes("row");
+                System.out.println(count);
+                List<MatchBean> mList = new ArrayList<MatchBean>();
+                for (int i = 0; i < count; i++) {
+                    String mid = xml.getStringValue("row[" + i + "].@itemid");
+                    String hn = xml.getStringValue("row[" + i + "].@hn");
+                    String gn = xml.getStringValue("row[" + i + "].@gn");
+                    String bt = xml.getStringValue("row[" + i + "].@mt");
+                    String et = xml.getStringValue("row[" + i + "].@et");
+
+                    String fet = "";
+                    Date tmpet = DateUtil.parserDateTime(et);
+                    tmpet.setTime(tmpet.getTime() - 1000 * 60 * Fetdiff);
+                    fet = DateUtil.getDateTime(tmpet.getTime());
+
+                    String b3 = xml.getStringValue("row[" + i + "].@bet3");
+                    String b1 = xml.getStringValue("row[" + i + "].@bet1");
+                    String b0 = xml.getStringValue("row[" + i + "].@bet0");
+                    int close = xml.getIntValue("row[" + i + "].@close", 0);
+                    String mname = xml.getStringValue("row[" + i + "].@name");
+
+                    MatchBean mb = new MatchBean();
+                    mb.setItemid(mid);
+                    mb.setHn(hn);
+                    mb.setGn(gn);
+                    mb.setBt(bt);
+                    mb.setEt(fet);
+                    mb.setB3(b3);
+                    mb.setB1(b1);
+                    mb.setB0(b0);
+                    mb.setClose(close);
+                    mb.setMname(mname);
+
+                    switch (value) {
+                        case 0:
+                            mb.setSpv(xml.getStringValue("row[" + i + "].@spf"));
+                            break;
+                        case 1:
+                            mb.setSpv(xml.getStringValue("row[" + i + "].@cbf"));
+                            break;
+                        case 2:
+                            mb.setSpv(xml.getStringValue("row[" + i + "].@bqc"));
+                            break;
+                        case 3:
+                            mb.setSpv(xml.getStringValue("row[" + i + "].@jqs"));
+                            break;
+                        case 4:
+                            mb.setSpv(xml.getStringValue("row[" + i + "].@bqc") + ","
+                                    + xml.getStringValue("row[" + i + "].@cbf") + ","
+                                    + xml.getStringValue("row[" + i + "].@jqs") + ","
+                                    + xml.getStringValue("row[" + i + "].@spf") + ","
+                                    + xml.getStringValue("row[" + i + "].@rspf"));
+                            
+                            String spf = xml.getStringValue("row[" + i + "].@spf");
+                            String rspf = xml.getStringValue("row[" + i + "].@rspf");
+                            
+                            if(!spf.replaceAll(",", "").trim().equals("")) spfMatchMap.put(mid, mb);
+                            if(!rspf.replaceAll(",", "").trim().equals("")) rspfMatchMap.put(mid, mb);
+                            
+                            break;
+                        case 5:
+                            mb.setSpv(xml.getStringValue("row[" + i + "].@rspf"));
+                            break;
+                        default:
+                            break;
+                    }
+                    mList.add(mb);
+                }
+                Cache ca = new Cache(gid + bean.getExpect(), mList, System.currentTimeMillis() + 1000 * 60, false);
+                cm.putCacheMatch(gid, bean.getExpect(), ca);
+                System.out.println(gid + "_" + bean.getExpect() + "本地缓存更新");
+                cache = ca;
+
+           // } else {
+           //     System.out.println(gid + "_" + bean.getExpect() + "来源本地缓存");
+           // }
+                
+                GamePluginAdapter plugin = GamePluginManager.getDefaultPluginManager().getGamePlugin(gid);
+    			String matches = "";
+                
+                if (!CheckUtil.isNullString(codes)) {
+					String [] tmp = StringUtil.splitter(codes, ";");
+					
+					HashMap<String, Integer> cnums = new HashMap<String, Integer>();
+					for(int i = 0; i < tmp.length; i++){
+						String key = tmp[i];
+						if(!StringUtil.isEmpty(key)){
+							Integer val = cnums.get(key);
+							int _val = (val == null ? 0 : val.intValue()) + 1;
+							cnums.put(key, _val);
+						}
+					}
+					
+					int newmoney = 0;
+					HashMap<String, Long> cvals = new HashMap<String, Long>();
+					for (Iterator<String> keys = cnums.keySet().iterator(); keys.hasNext();) {
+						String key = keys.next();
+						int mul = cnums.get(key);
+						GameCastCode gcc = plugin.parseGameCastCode(key);
+						matches += gcc.getMatchID();	//场次汇总
+						newmoney += gcc.getCastMoney() * mul;//金额汇总
+						//size += gcc.getCombineNum();	//文件注数(无倍数)
+						
+						//投注项汇总
+						if(gcc.getItems() != null){
+							for(Object obj : gcc.getItems()){
+								String itemid = obj instanceof JcItemBean ? ((JcItemBean)obj).getItemid() : ((LqItemBean)obj).getItemid();
+								long _code = obj instanceof JcItemBean ? ((JcItemBean)obj).getCountItemType() : ((LqItemBean)obj).getCountItemType();
+								Long lcode = cvals.get(itemid);
+								long lc = (lcode == null ? 0 : lcode.longValue()) | _code;
+								cvals.put(itemid, lc);
+							}
+						}
+					}
+					cnums.clear(); cnums = null;
+					//checkItem(gid, xml, cvals);
+					cvals.clear(); cvals = null;
+//					if (money != newmoney * muli) {
+//						bean.setBusiErrCode(2);
+//						bean.setBusiErrDesc("上传文件总金额(" + newmoney * muli + ")与方案总金额(" + money + ")不一致！");
+//					}
+				}
+            
+
+
+            if (cache != null) {
+
+                // Date firsttime = null;
+
+                List<MatchBean> mb = (List<MatchBean>) cache.getValue();
+
+                // 获取方案的截至时间
+                String[] itemstr = StringUtil.splitter(matches, ",");
+                int chang = itemstr.length;
+                for (int i = 0; i < chang; i++) {
+                    for (int ii = 0; ii < mb.size(); ii++) {
+                        if (mb.get(ii).getItemid().equals(itemstr[i])) {
+                            Date tmp = DateUtil.parserDateTime(mb.get(ii).getEt());
+                            if (firsttime == null) {
+                                firsttime = tmp;
+                            } else {
+                                if (tmp.getTime() < firsttime.getTime()) {
+                                    firsttime = tmp;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                System.out.println("截至时间为：" + DateUtil.getDateTime(firsttime.getTime()));
+                if (System.currentTimeMillis() > firsttime.getTime()) {
+                    throw new Exception("方案截至时间为：" + DateUtil.getDateTime(firsttime.getTime()) + " 下次请提前");
+                }
+                String dtime = DateUtil.getDateTime(firsttime.getTime());
+                String expect = dtime.substring(0, 4) + "" + dtime.substring(5, 7) + "" + dtime.substring(8, 10);
+                bean.setExpect(expect);
+
+            }
+
+            bean2.setUid(uid);
+            bean2.setPwd(pwd);
+            bean2.setGid(gid);
+            bean2.setHid(hid);
+            bean2.setCodes(codes);
+            bean2.setMoney(money);
+            bean2.setEndTime(String.valueOf(DateUtil.getDateTime(firsttime.getTime())));
+
+            bean2.setPid(bean.getExpect());
+
+            fileOperator(file, bean);
+            int rc1 = RemoteBeanCallUtil.RemoteBeanCall(bean2, context, GroupContain.TRADE_GROUP, "proj_hx");
             if (rc1 != 0 || bean2.getBusiErrCode() != 0) {
                 throw new Exception("方案后上传失败：" + bean2.getBusiErrDesc());
             }

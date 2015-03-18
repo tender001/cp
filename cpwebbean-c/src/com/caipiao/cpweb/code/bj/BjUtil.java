@@ -19,6 +19,10 @@ public class BjUtil {
 			if(gg > 6){
 				return false;
 			}
+		}else if(playtype.equalsIgnoreCase("SF")){
+			if(gg > 15 || gg < 3){
+				return false;
+			}
 		}else{
 			return false;
 		}

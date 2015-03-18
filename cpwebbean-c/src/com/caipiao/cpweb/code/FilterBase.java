@@ -13,6 +13,7 @@ import com.caipiao.cpweb.code.lc.FilterLcDXF;
 import com.caipiao.cpweb.code.bj.FilterBQC;
 import com.caipiao.cpweb.code.bj.FilterCBF;
 import com.caipiao.cpweb.code.bj.FilterJQS;
+import com.caipiao.cpweb.code.bj.FilterSF;
 import com.caipiao.cpweb.code.bj.FilterSPF;
 import com.caipiao.cpweb.code.bj.FilterSXP;
 import com.caipiao.plugin.helper.CodeFormatException;
@@ -31,6 +32,8 @@ public abstract class FilterBase {
             new FilterSXP().filter(bean, result);
         } else if (bean.getLottype() == 89) {
             new FilterJQS().filter(bean, result);
+        } else if (bean.getLottype() == 84) {
+            new FilterSF().filter(bean, result);
         }
     }
 

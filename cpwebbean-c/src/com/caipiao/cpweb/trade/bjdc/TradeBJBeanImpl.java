@@ -650,6 +650,18 @@ public class TradeBJBeanImpl extends BaseImpl {
 						ggname += (String) upload.getRequestField("ggname[" + ggnameArr[i] + "]") + ",";
 					}
 				}
+			} else if (gid.equalsIgnoreCase("84")) {
+				String[] ggnameArr = new String[] { "3", "0" };
+				for (int i = 0; i < ggnameArr.length; i++) {
+					String tmp = ggnameArr[i] + "=" + (String) upload.getRequestField("ggname[" + ggnameArr[i] + "]");
+					if (i == ggnameArr.length - 1) {
+						ggnameStr += tmp;
+						ggname += (String) upload.getRequestField("ggname[" + ggnameArr[i] + "]");
+					} else {
+						ggnameStr += tmp + ",";
+						ggname += (String) upload.getRequestField("ggname[" + ggnameArr[i] + "]") + ",";
+					}
+				}
 			}
 
 			bean.setGgname(ggname);
@@ -2016,8 +2028,14 @@ public class TradeBJBeanImpl extends BaseImpl {
 				if (System.currentTimeMillis() > firsttime.getTime()) {
 					throw new Exception("方案截至时间为：" + DateUtil.getDateTime(firsttime.getTime()) + " 下次请提前");
 				}
+				
+				//logger.info(bean.getExpect());
+				//System.out.println(mMap);
+				//System.out.println(mMap.get(1));
+				
+				int mid = Integer.parseInt(StringUtil.splitter(items, ",")[0]);
 
-				if (!bean.getExpect().equalsIgnoreCase(mMap.get(1).getExpect())) {
+				if (!bean.getExpect().equalsIgnoreCase(mMap.get(mid).getExpect())) {
 					throw new Exception("该期" + bean.getExpect() + "已经过期" + " 下次请提前");
 				}
 
