@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="gbk"?>
+
+<rbc-config userName="admin" passWord="admin">
+
+	<group id="1" desc="用户">
+	  	<node id="2" ip="127.0.0.1" port="6100" />
+	</group>
+
+	<action-modules>
+		<module name="" file="mob/main_action.xml"/>
+	</action-modules>
+
+	<service-config>
+	</service-config>
+
+	<message-resources parameter="MessageResources" />
+</rbc-config>

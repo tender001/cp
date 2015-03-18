@@ -1,0 +1,1 @@
+<%@ page language="java" pageEncoding="UTF-8"%>{"phoneVersion":"20150130","apkhttp":"${url}","content":"更新版本至2.3.0\n1.增加竞彩足球单关固陪\n2.增加竞彩篮球单关固赔\n3.优化合买大厅"}

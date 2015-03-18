@@ -1,0 +1,1 @@
+<%@ page language="java" pageEncoding="UTF-8"%>{"huodong":[{"name":"zcs","status":"0","type":"1","image":"http://phone.19500.com/image/zcs.png","desc":"新用户注册并绑定送三元彩金"},{"name":"czs","status":"0","type":"0","image":"http://phone.19500.com/image/czs.png","desc":"新用户首次充值满40送40"}]}

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>
+	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
+	<classpathentry kind="lib" path="/builder/framework/rbc_f3.jar"/>
+	<classpathentry kind="lib" path="/builder/lib/servlet-api.jar"/>
+	<classpathentry kind="lib" path="/builder/lib/umpay_sign_V40.jar"/>
+	<classpathentry kind="lib" path="/builder/lib/commons-codec-1.6.jar"/>
+	<classpathentry kind="lib" path="/builder/lib/dom4j-1.6.1.jar"/>
+	<classpathentry kind="lib" path="/builder/lib/org.json.jar"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/phonebean"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="output" path="build/classes"/>
+</classpath>

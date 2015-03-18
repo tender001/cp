@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="gbk"?>
+
+<rbc-config>
+	<action-mappings>
+		<!-- user -->
+		<action name="phoneRegister" forward="" bean="com.caipiao.mob.user.UserBean" scope="request" desc="">
+			<execute method="register" group="1" />
+		</action>
+		<action name="checkUserName" forward="" bean="com.caipiao.mob.user.UserBean" scope="request" desc="">
+			<execute method="checkUserName" group="1" />
+		</action>
+		<action name="phoneLogin" forward="" bean="com.caipiao.mob.user.UserBean" scope="request" desc="">
+			<execute method="login" group="1" />
+		</action>
+		<action name="phoneUserSet" forward="" bean="com.caipiao.mob.user.UserBean" scope="request" desc="">
+			<execute method="setRealName" group="1" />
+		</action>
+		<action name="phoneUserSet3" forward="" bean="com.caipiao.mob.user.UserBean" scope="request" desc="">
+			<execute method="getPhoneRandNum" group="1" />
+		</action>
+		<action name="phoneUserSet2" forward="" bean="com.caipiao.mob.user.UserBean" scope="request" desc="">
+			<execute method="setPhone" group="1" />
+		</action>
+		<action name="phoneYhk" forward="" bean="com.caipiao.mob.user.UserBean" scope="request" desc="">
+			<execute method="convertBank" />
+			<execute method="setBankInfo" group="1" />
+		</action>
+		<action name="phoneUserInfo" forward="" bean="com.caipiao.mob.user.UserBean" scope="request" desc="">
+			<execute method="getUserInfo" group="1" />
+		</action>
+		<action name="phoneCharge" forward="" bean="com.caipiao.mob.bank.BankBean" scope="request" desc="">
+			<execute method="addMoney" group="1" />
+			<execute method="addmoneyMsg" />
+			
+		</action>
+		<action name="phoneTixian" forward="" bean="com.caipiao.mob.user.UserBean" scope="request" desc="">
+			<execute method="drawMoney" group="1" />
+		</action>
+		<action name="phoneBuyRecord" forward="" bean="com.caipiao.mob.user.UserBean" scope="request" desc="">
+			<execute method="myAllBuy" group="1" />
+		</action>
+		<action name="phoneRecord" forward="" bean="com.caipiao.mob.user.UserBean" scope="request" desc="">
+			<execute method="myDaiGou" group="1" />
+		</action>
+		<action name="phoneDetail" forward="" bean="com.caipiao.mob.user.UserBean" scope="request" desc="">
+			<execute method="daiGouDetail" group="1" />
+		</action>
+		<action name="phoneMyHemai" forward="" bean="com.caipiao.mob.user.UserBean" scope="request" desc="">
+			<execute method="myHeMai" group="1" />
+		</action>
+		<action name="phoneHemaiDetail" forward="" bean="com.caipiao.mob.user.UserBean" scope="request" desc="">
+			<execute method="daiGouDetail" group="1" />
+		</action>
+		<action name="userTraceList" forward="" bean="com.caipiao.mob.user.UserBean" scope="request" desc="">
+			<execute method="myZhuihao" group="1" />
+		</action>
+		<action name="userTraceDetail" forward="" bean="com.caipiao.mob.user.UserBean" scope="request" desc="">
+			<execute method="zhuihaoDetail" group="1" />
+		</action>
+		<action name="exactMessageOfTouZhuForPhone" forward="" bean="com.caipiao.mob.user.UserBean" scope="request" desc="">
+			<execute method="getUserMoney" group="1" />
+		</action>
+		
+		<action name="getUserRealInfo" forward="" bean="com.caipiao.mob.user.UserBean" scope="request" desc="">
+			<execute method="getUserRealInfo" group="1" />
+		</action>
+		<action name="getUserBindInfo" forward="" bean="com.caipiao.mob.user.UserBean" scope="request" desc="">
+			<execute method="getUserBindInfo" group="1" />
+		</action>
+		<action name="getPhoneYZM" forward="" bean="com.caipiao.mob.user.UserBean" scope="request" desc="">
+			<execute method="getPhoneYZM" group="1" />
+		</action>
+		<action name="checkPhoneYZM" forward="" bean="com.caipiao.mob.user.UserBean" scope="request" desc="">
+			<execute method="checkPhoneYZM" group="1" />
+		</action>
+		<action name="setNewPassword" forward="" bean="com.caipiao.mob.user.UserBean" scope="request" desc="">
+			<execute method="setNewPassword" group="1" />
+		</action>
+		<action name="transactionRecords" forward="" bean="com.caipiao.mob.user.UserBean" scope="request" desc="">
+			<execute method="transactionRecords" group="1" />
+		</action>
+		
+		<!-- trade -->
+		<action name="phoneKaijiang" forward="" bean="com.caipiao.mob.trade.TradeBean" scope="request" desc="">
+			<execute method="kaiJiang" group="1" />
+		</action>
+		<action name="kaiJiangSZC" forward="" bean="com.caipiao.mob.trade.TradeBean" scope="request" desc="">
+			<execute method="kaiJiangSZC" group="1" />
+		</action>
+		<action name="phoneKuaipin" forward="" bean="com.caipiao.mob.trade.TradeBean" scope="request" desc="">
+			<execute method="kaiJiangDetail" group="1" />
+		</action>
+		<action name="phoneKjls" forward="" bean="com.caipiao.mob.trade.TradeBean" scope="request" desc="">
+			<execute method="kaiJiangHistory" group="1" />
+		</action>
+		<action name="phoneKjxq" forward="" bean="com.caipiao.mob.trade.TradeBean" scope="request" desc="">
+			<execute method="kaiJiangGrade" group="1" />
+		</action>
+		<action name="phoneOpenMatch" forward="" bean="com.caipiao.mob.trade.TradeBean" scope="request" desc="">
+			<execute method="matchResult" group="1" />
+		</action>
+		<action name="phoneTermInfo" forward="" bean="com.caipiao.mob.trade.TradeBean" scope="request" desc="">
+			<execute method="periodInfo" group="1" />
+		</action>
+		<action name="ajaxTermForPhone" forward="" bean="com.caipiao.mob.trade.TradeBean" scope="request" desc="">
+			<execute method="getMatch" group="1" />
+		</action>
+		<action name="phoneBuy" forward="" bean="com.caipiao.mob.trade.TradeBean" scope="request" desc="">
+			<execute method="cast" group="1" />
+		</action>
+		<action name="zhCancel" forward="" bean="com.caipiao.mob.trade.TradeBean" scope="request" desc="">
+			<execute method="cancel_zhuihao" group="1" />
+		</action>
+		<action name="phoneBuyNew" forward="" bean="com.caipiao.mob.trade.TradeBean" scope="request" desc="">
+			<execute method="castNew" group="1" />
+		</action>
+		<action name="phoneHemai" forward="" bean="com.caipiao.mob.trade.TradeBean" scope="request" desc="">
+			<execute method="heMaiList" group="1" />
+		</action>
+		<action name="phoneHemaibuy" forward="" bean="com.caipiao.mob.trade.TradeBean" scope="request" desc="">
+			<execute method="join" group="1" />
+		</action>
+		<action name="getMissData" forward="" bean="com.caipiao.mob.trade.TradeBean" scope="request" desc="">
+			<execute method="getMissData" group="1" />
+		</action>
+		<!-- 奖金优化 -->
+		<action name="optimize" forward="" bean="com.caipiao.mob.trade.TradeBean" scope="request" desc="">
+			<execute method="optimize" group="1" />
+		</action>
+		
+		<!-- IOS -->
+		<action name="iosJoin" forward="/ios/join.jsp" bean="com.caipiao.mob.trade.TradeBean" scope="request" desc="">
+			<execute method="iosJoinQuery" group="1" />
+			<execute method="iosJoinQuery"/>
+		</action>
+		<action name="iosJoinResult" forward="/ios/result.jsp" bean="com.caipiao.mob.trade.TradeBean" scope="request" desc="">
+			<execute method="iosJoinResult" group="1" />
+			<execute method="iosResult"/>
+		</action>
+		<action name="iosOrder" forward="/ios/order.jsp" bean="com.caipiao.mob.trade.TradeBean" scope="request" desc="">
+			<execute method="iosOrderQuery" group="1" />
+			<execute method="iosOrderQuery"/>
+		</action>
+		<action name="iosOrderResult" forward="/ios/result.jsp" bean="com.caipiao.mob.trade.TradeBean" scope="request" desc="">
+			<execute method="iosOrderResult" group="1" />
+			<execute method="iosResult"/>
+		</action>
+		
+		<!-- 支付通知 -->
+		<action name="alipayNotify" forward="" bean="com.caipiao.mob.bank.BankBean" scope="request" desc="支付宝充值服务端回调">
+			<execute method="alipayNotify" />
+		</action>
+		<action name="unotify" forward="" bean="com.caipiao.mob.bank.BankBean" scope="request" desc="umpay充值服务端回调">
+			<execute method="alipayNotify_upmp" />
+		</action>
+		<action name="jxpaynotify" forward="" bean="com.caipiao.mob.bank.BankBean" scope="request" desc="19pay充值服务端后台回调">
+			<execute method="alipayNotify_19pay" />
+		</action>
+		
+		<!-- 支付宝Wap支付通知 -->
+		<action name="alipayWapNotify" forward="" bean="com.caipiao.mob.bank.BankBean" scope="request" desc="支付宝充值服务端回调">
+			<execute method="alipayWapNotify" />
+		</action>
+		
+		<!-- mobile -->
+		<action name="phoneCheckversion" forward="/version.jsp" bean="com.caipiao.mob.trade.TradeBean" scope="request" desc="check version">
+			<execute method="checkVersion"/>
+		</action>
+		<action name="phoneCheckversionNew" forward="/version2.jsp" bean="com.caipiao.mob.trade.TradeBean" scope="request" desc="check version">
+			<execute method="checkVersionNew"/>
+		</action>
+		<!-- zcs -->
+		<action name="phoneZcs" forward="" bean="com.caipiao.mob.user.UserBean" scope="request" desc="">
+			<execute method="zcs" group="1" />
+		</action>
+		
+		<action name="hdQuery" forward="/huodong.jsp" bean="com.caipiao.mob.user.UserBean" scope="request" desc="">
+		</action>
+		
+		<action name="gkQuery" forward="/guakao.jsp" bean="com.caipiao.mob.user.UserBean" scope="request" desc="">
+		</action>
+		
+		<action name="hdIndex" forward="" bean="com.caipiao.mob.user.UserBean" scope="request" desc="">
+			<execute method="hdIndex" group="1" />
+		</action>
+		
+    </action-mappings>
+</rbc-config>
