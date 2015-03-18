@@ -27,6 +27,7 @@ public class BankBean extends BaseBean {
 	public final static int BANK_zfbkj = 10;// 支付宝快捷支付
 	public final static int BANK_UMPAY = 11;// umpay支付
 	public final static int BANK_LLPAY = 12;
+	public final static int BANK_SFT = 13;
 	
 	public final static int TK_YH = 0;// 提款到银行
 	public final static int TK_ZFB = 1;// 提款到支付宝
@@ -300,6 +301,9 @@ public class BankBean extends BaseBean {
 			break;
 		}
 		case BANK_LLPAY:{
+			break;
+		}
+		case BANK_SFT:{
 			break;
 		}
 		default: {

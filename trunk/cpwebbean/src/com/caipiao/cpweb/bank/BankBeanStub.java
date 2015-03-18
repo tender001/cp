@@ -164,6 +164,10 @@ public class BankBeanStub {
 				//bean.setHandmoney(0);
 				break;
 			}
+			case BankBean.BANK_SFT:{
+				bean.setApplydate(DateUtil.getCurrentFormatDate("yyyyMMddHHmmss"));
+				break;
+			}
 			default: {
 				bean.setBusiErrCode(1003);
 				bean.setBusiErrDesc("未知的检查类型"+bean.getBankid());

@@ -883,6 +883,8 @@ public class TradeBeanStub {
 
 			String gid = bean.getGid();
 			String npid = bean.getPid();
+			String codes = bean.getCodes();
+			int mulity = bean.getMuli();
 
 			HashMap<String, String> maps = new HashMap<String, String>();
 			maps.put("gameid", bean.getGid());
@@ -896,20 +898,12 @@ public class TradeBeanStub {
 					
 					String pid = jrs.get("periodid");
 					String play = jrs.get("play");
-					int mulity = jrs.getInt("mulity");
+					//int mulity = jrs.getInt("mulity");
 					int tmoney = jrs.getInt("tmoney");
-					String codes = bean.getCodes();
+					//String codes = bean.getCodes();
 
 					if (!gid.equalsIgnoreCase("50")) {
 						play = "1";
-					}
-
-					if (!CheckUtil.isNullString(codes)) {
-						if (CheckUtil.isNullString(npid)) {
-							codes = FileCastCodeUtil.getCodesFromFile(bean.getGid(), pid, BASE_PATH, codes, play, logger);
-						} else {
-							codes = FileCastCodeUtil.getCodesFromFile(bean.getGid(), npid, BASE_PATH, codes, play, logger);
-						}
 					}
 
 					if (!CheckUtil.isNullString(codes)) {
@@ -1025,9 +1019,10 @@ public class TradeBeanStub {
 						}
 
 						if (bean.getBusiErrCode() == 0) {
-							bean.setMoney(money);
+							//bean.setMoney(money);
 
-							if (money * mulity == tmoney) {
+							//if (money * mulity == tmoney) {
+								bean.setMoney(money * mulity);
 								int ret = JdbcSqlMapping.executeUpdate("t_proj_hx", bean, maps, jcn);
 								if (ret != 0) {
 									bean.setBusiErrCode(TradeErrCode.ERR_CALL_SP);
@@ -1041,15 +1036,15 @@ public class TradeBeanStub {
 										}
 									}
 								}
-							} else {
-								bean.setBusiErrCode(6);
-								bean.setBusiErrDesc("上传方案中金额和发起金额不同");
-							}
+							//} else {
+							//	bean.setBusiErrCode(6);
+							//	bean.setBusiErrDesc("上传方案中金额和发起金额不同");
+							//}
 						}
 					} else {
 						logger.info("后选方案   游戏=" + gid + " 期次=" + pid + " 号码=" + bean.getCodes() + " 不存在  npid=" + npid);
 						bean.setBusiErrCode(7);
-						bean.setBusiErrDesc("没有选择方案不存在 " + bean.getCodes());
+						bean.setBusiErrDesc("没有选择方案: " + bean.getCodes());
 					}
 				} else {
 					bean.setBusiErrCode(TradeErrCode.ERR_EXCEPTION);
