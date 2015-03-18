@@ -39,6 +39,8 @@ public class PaymentInfo implements Serializable{
     private String            flag_modify;          // 修改标记
     private String            card_no;              // 银行卡号
     private String            back_url;
+    
+    private String app_request;
 
     public String getVersion()
     {
@@ -309,5 +311,13 @@ public class PaymentInfo implements Serializable{
     {
         this.back_url = back_url;
     }
+
+	public String getApp_request() {
+		return app_request;
+	}
+
+	public void setApp_request(String app_request) {
+		this.app_request = app_request;
+	}
 
 }

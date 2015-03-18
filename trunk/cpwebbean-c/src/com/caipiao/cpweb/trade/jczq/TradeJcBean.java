@@ -42,6 +42,8 @@ public class TradeJcBean extends BaseBean {
 	private String old_codes="";
 	private int danshi=0;
 	
+	private String projid = "";
+	
 	
 	public String getYhtyp() {
 		return yhtyp;
@@ -225,6 +227,12 @@ public class TradeJcBean extends BaseBean {
 	}
 	public void setDanshi(int danshi) {
 		this.danshi = danshi;
+	}
+	public String getProjid() {
+		return projid;
+	}
+	public void setProjid(String projid) {
+		this.projid = projid;
 	}
 	
 	

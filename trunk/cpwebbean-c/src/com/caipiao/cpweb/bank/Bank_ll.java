@@ -13,6 +13,7 @@ import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.caipiao.cpweb.bank.llpay.HttpRequestSimple;
 import com.caipiao.cpweb.bank.llpay.LLPayUtil;
+import com.caipiao.cpweb.bank.llpay.Md5Algorithm;
 import com.caipiao.cpweb.bank.llpay.PayDataBean;
 import com.caipiao.cpweb.bank.llpay.PaymentInfo;
 import com.caipiao.cpweb.bank.llpay.RetBean;
@@ -32,6 +33,10 @@ public class Bank_ll extends BankBeanImpl{
 	private static String PAY_URL = "https://yintong.com.cn/payment/bankgateway.htm"; // 连连支付WEB收银台支付服务地址
 	
 	private static String QUERY_BANKCARD_URL = "https://yintong.com.cn/traderapi/bankcardquery.htm"; //银行卡卡bin信息查询
+	
+	private static String WAP_PAY_URL = "https://yintong.com.cn/llpayh5/payment.htm";
+	
+	private static String APP_REQUEST = "3";
 	
 	private static final String VERSION = "1.0";
 	// 商户编号
@@ -54,6 +59,8 @@ public class Bank_ll extends BankBeanImpl{
 	private static String notify_url = RETURN_HOST + "/phpu/llnotify.phpx";
 
 	private static String return_url = RETURN_HOST + "/phpu/llreceive.phpx";
+	
+	private static String wap_return_url = "/pwap/llwapreceive.phpx";
 	
 	public static void send(BankBean bean, RbcFrameContext context, HttpServletRequest request, HttpServletResponse response) throws Exception {
 		
@@ -134,6 +141,105 @@ public class Bank_ll extends BankBeanImpl{
 		//write_html_response(contents, response);
 	}
 	
+	
+	public static void sendWap(BankBean bean, RbcFrameContext context, HttpServletRequest request, HttpServletResponse response) throws Exception {
+		
+		logger.debug("lianlian-wap-send");
+		
+		String host = request.getServerName();
+		String rurl = "";
+		if(host == null || host.trim().equals("")){
+			rurl = return_url;
+		}else{
+			rurl = "http://" + host + "/pwap/llwapreceive.phpx";
+		}
+		
+		String app_request = "3";
+		
+		StringBuffer strBuf = new StringBuffer();
+		strBuf.append("acct_name=").append(bean.getRealName());
+		strBuf.append("&app_request=").append(app_request);
+	    strBuf.append("&busi_partner=").append(BUSI_PARTNER);
+	    strBuf.append("&card_no=").append(bean.getCardnum());
+	    strBuf.append("&dt_order=").append(bean.getApplydate());
+	    strBuf.append("&flag_modify=1");
+	    strBuf.append("&id_no=").append(bean.getIdCard());
+	    strBuf.append("&info_order=159彩票充值");
+	    strBuf.append("&money_order=").append(String.valueOf(bean.getAddmoney() + bean.getHandmoney()));
+	    strBuf.append("&name_goods=159彩票充值");
+	    //strBuf.append("&no_agree=").append(request.getParameter("no_agree"));
+	    strBuf.append("&no_order=").append(bean.getApplyid());
+	    strBuf.append("&notify_url=").append(notify_url);
+	    strBuf.append("&oid_partner=").append(OID_PARTNER);
+	    //strBuf.append("&risk_item=").append(createRiskItem(bean.getUid(),bean.getRealName(),bean.getIdCard(),bean.getRegdate()));
+	    strBuf.append("&sign_type=").append(SIGN_TYPE);
+	    strBuf.append("&url_return=").append(rurl);
+	    strBuf.append("&user_id=").append(bean.getUid());
+	    strBuf.append("&valid_order=1440");
+	    String sign_src = strBuf.toString();
+	    logger.info(sign_src);
+	    if (sign_src.startsWith("&"))
+	    {
+	        sign_src = sign_src.substring(1);
+	    }
+	    String sign = "";
+	    sign_src += "&key=" + MD5_KEY;
+	    sign = Md5Algorithm.getInstance().md5Digest(sign_src.getBytes("utf-8"));
+		
+		// 构造支付请求对象
+        PaymentInfo payInfo = new PaymentInfo();
+        payInfo.setApp_request("3");
+        payInfo.setBusi_partner(BUSI_PARTNER);
+        //paymentInfo.setVersion(VERSION);
+        payInfo.setOid_partner(OID_PARTNER);
+        payInfo.setUser_id(bean.getUid());
+        payInfo.setSign_type(SIGN_TYPE);
+        
+        payInfo.setNo_order(bean.getApplyid());
+        payInfo.setDt_order(bean.getApplydate());
+        payInfo.setName_goods("159彩票充值");
+        payInfo.setInfo_order("159彩票充值");
+        payInfo.setMoney_order(String.valueOf(bean.getAddmoney() + bean.getHandmoney()));
+        payInfo.setNotify_url(notify_url);
+        payInfo.setUrl_return(rurl);
+        //paymentInfo.setUserreq_ip(bean.getIpAddr());
+        //paymentInfo.setUrl_order("");
+        payInfo.setValid_order("1440");// 单位分钟，可以为空，默认1天
+        //payInfo.setRisk_item(createRiskItem(bean.getUid(),bean.getRealName(),bean.getIdCard(),bean.getRegdate()));
+        //paymentInfo.setTimestamp(getCurrentDateTimeStr());
+        //if (!LLPayUtil.isnull(req.getParameter("no_agree")))
+        //{
+        //    paymentInfo.setNo_agree(req.getParameter("no_agree"));
+        //    paymentInfo.setBack_url("http://www.lianlianpay.com/");
+        //} else
+        //{
+            // 从系统中获取用户身份信息
+            //paymentInfo.setId_type("0");
+            payInfo.setId_no(bean.getIdCard());
+            payInfo.setAcct_name(bean.getRealName());
+            payInfo.setFlag_modify("1");
+            payInfo.setCard_no(bean.getCardnum());
+            //paymentInfo.setBack_url("http://wifi.159cai.com/");
+        //}
+        // 加签名
+        payInfo.setSign(sign);
+        String req_data = JSON.toJSONString(payInfo);
+        
+        logger.info("------------------------------------------------------------");
+        logger.info(req_data);
+        
+        String contents = "<meta http-equiv=\"content-type\" content=\"text/html charsest=UTF-8\"/> \r\n";
+		contents += "<form name=\"payForm1\" method=\"post\" action=\""+WAP_PAY_URL+"\">\r\n";
+		contents += "<input type=\"hidden\" name=\"req_data\" value='" + req_data + "' />\r\n";
+
+		contents += "<input type=\"submit\" name=\"转发中>>\"	value=\"转发中>>\">\r\n";
+		contents += "</form>\r\n";
+		contents += "<script language=\"javascript\">document.payForm1.submit();</script>";
+        
+		bean.setContents(contents);
+		//write_html_response(contents, response);
+	}
+	
 	private static String getCurrentDateTimeStr()
     {
         SimpleDateFormat dataFormat = new SimpleDateFormat("yyyyMMddHHmmss");
@@ -198,6 +304,43 @@ public class Bank_ll extends BankBeanImpl{
 		String money_order = (String) request.getParameter("money_order").trim();
 		String result_pay = (String) request.getParameter("result_pay").trim();
 		String pay_type = (String) request.getParameter("pay_type").trim();
+		
+		int rtnOk = 0;
+		String sMsg = "";
+	    if ("SUCCESS".equals(result_pay)) {
+			sMsg = "支付成功";
+			rtnOk = 1;
+	    } else {
+			sMsg = "支付失败";
+	    }
+		double d_total_fee = Double.parseDouble(money_order);
+		//String Amount = (d_total_fee / 100) + "";
+		//d_total_fee = Double.parseDouble(Amount);
+		request.setAttribute("rtnOk", rtnOk);
+		request.setAttribute("orderid", no_order);
+		request.setAttribute("orderamount", d_total_fee);
+		request.setAttribute("msg", sMsg);
+		return 0;
+	}
+    
+    public int receiveWap(BankBean bean, RbcFrameContext context, HttpServletRequest request, HttpServletResponse response) throws Exception {
+		logger.debug("llpay-wap-receive");
+
+		response.setHeader("Cache-Control", "no-cache");
+		
+		String res_data = (String) request.getParameter("res_data").trim();
+		
+		JSONObject json = JSON.parseObject(res_data);
+		
+		String oid_partner = json.getString("oid_partner");
+		String sign_type = json.getString("sign_type");
+		String sign = json.getString("sign");
+		
+		String dt_order = json.getString("dt_order").trim();
+		String no_order = json.getString("no_order").trim();
+		String oid_paybill = json.getString("oid_paybill").trim();
+		String money_order = json.getString("money_order").trim();
+		String result_pay = json.getString("result_pay").trim();
 		
 		int rtnOk = 0;
 		String sMsg = "";

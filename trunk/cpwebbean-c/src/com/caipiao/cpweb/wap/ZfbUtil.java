@@ -10,7 +10,9 @@ import java.net.URL;
 import java.net.URLDecoder;
 import java.util.HashMap;
 import java.util.Map;
+
 import javax.servlet.http.HttpServletRequest;
+
 import com.alipay.client.base.ResponseResult;
 import com.alipay.client.security.MD5Signature;
 import com.alipay.client.util.ParameterUtil;
@@ -19,6 +21,7 @@ import com.alipay.client.util.XMapUtil;
 import com.alipay.client.vo.ErrorCode;
 import com.caipiao.cpweb.BaseImpl;
 import com.caipiao.cpweb.bank.BankBean;
+import com.mina.rbc.logger.Logger;
 
 public class ZfbUtil {
 	
@@ -66,8 +69,9 @@ public class ZfbUtil {
 		String sellerAccountName =PartnerConfig.SELLER;
 		
 		String path = request.getContextPath();
-        String basePath = request.getScheme() + "://" + request.getLocalAddr() + ":"
+        String basePath = request.getScheme() + "://" + request.getServerName() + ":"
                                    + request.getServerPort() + path + "/";
+        System.out.println(basePath);
 		// 接收支付宝发送的通知的url
 		String notifyUrl = notify;
 		

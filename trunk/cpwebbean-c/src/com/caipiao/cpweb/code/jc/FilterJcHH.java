@@ -92,6 +92,7 @@ public class FilterJcHH extends FilterBase{
 		//String gg = len + "*1";
 		String gg = guoguan.replaceAll("\\s*", "");
 		
+		/*
 		if(bean.getGuoguan().equals("1*1") && !(bean.getGuoguan().equals(gg))){
 			throw new CodeFormatException(-1, "浮动奖金玩法仅支持单关投注", bean.getCode());
 		}
@@ -99,7 +100,7 @@ public class FilterJcHH extends FilterBase{
 		if(gg.equals("1*1") && !(bean.getGuoguan().equals("1*1"))){
 			throw new CodeFormatException(-1, "混投不支持单关投注", bean.getCode());
 		}
-		
+		*/
 		//检查玩法和过关方式是否匹配
 		if(!JcUtil.check(bean.getPlaytype(), gg)){
 			throw new CodeFormatException(-1, "过关方式和玩法不匹配", bean.getCode());
