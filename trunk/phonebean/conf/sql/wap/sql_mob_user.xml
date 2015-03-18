@@ -1,0 +1,345 @@
+<?xml version="1.0" encoding="gbk"?>
+
+<config desc="用户中心（前台网站SQL配置）">
+    <!-- type: 1 查询语句 2 存储过程 3 更新类语句 -->
+    
+    <sql id="mob_register" type="2" desc="用户注册">
+    <![CDATA[
+	    cpmob.sp_user_register
+	]]>
+		<in-parm>
+	   		<parm name="用户编号" property="user"/>
+	   		<parm name="登录密码" property="password"/>
+	   		<parm name="手机号码" property="phone"/>
+	   		<parm name="电子邮件" property="email"/>
+	   		<parm name="用户来源" property="channel"/>
+	   	</in-parm>
+	   	<out-parm>
+	   		<parm name="错误编号" property="status"/>
+	   		<parm name="错误描叙" property="message"/>
+	   	</out-parm>
+	</sql>
+	
+	<sql id="mob_login" type="2" desc="用户登录">
+	<![CDATA[
+	   cpmob.sp_user_login
+	]]>
+		<in-parm>
+	   		<parm name="用户编号" property="user"/>
+	   		<parm name="登录密码" property="password"/>
+	   	</in-parm>
+	   
+	   	<out-parm>
+	   		<parm name="错误编号" property="status"/>
+	   		<parm name="错误描叙" property="message"/>
+	   		<parm name="用户余额" property="balance"/>
+	   	</out-parm>
+	</sql>
+	
+	<sql id="mob_addmoney" type="2" desc="用户充值">
+	<![CDATA[
+	   cpmob.sp_mob_addmoney
+	]]>
+		<in-parm>
+	   		<parm name="用户编号" property="user"/>
+	   		<parm name="登录密码" property="password"/>
+	   		<parm name="充值订单号" property="ordernumber"/>
+	   		<parm name="充值类型" property="channel"/>
+	   		<parm name="充值金额" property="money"/>
+	   		<parm name="充值手续费" property="moneyRate"/>
+	   	</in-parm>
+	   
+	   	<out-parm>
+	   		<parm name="错误编号" property="status"/>
+	   		<parm name="错误描叙" property="message"/>
+	   	</out-parm>
+	</sql>
+	
+	<sql id="mob_set_realname" type="2" desc="设置真实姓名身份证号">
+	<![CDATA[
+		cpmob.sp_user_set_realname
+	]]>
+		<in-parm>
+	   		<parm name="用户编号" property="user"/>
+	   		<parm name="登录密码" property="password"/>
+	   		<parm name="身份号码" property="idno"/>
+	   		<parm name="真实姓名" property="name"/>
+	   	</in-parm>
+	   	<out-parm>
+	   		<parm name="错误编号" property="status"/>
+	   		<parm name="错误描叙" property="message"/>
+	   	</out-parm>		
+	</sql>
+	
+	<sql id="mob_proj_join" type="2" desc="参与方案">
+		cpmob.sp_web_proj_join
+		<in-parm>
+	   		<parm name="用户编号" property="user"/>
+	   		<parm name="登录密码" property="password"/>
+	   		<parm name="方案编号" property="planNo"/>
+	   		<parm name="购买份数" property="part"/>
+	   		<parm name="游戏编号" property="159Type"/>
+	   		<parm name="认购渠道" property="channel"/>
+	   	</in-parm>
+	   	<out-parm>
+	   		<parm name="错误编号" property="status"/>
+	   		<parm name="错误描叙" property="message"/>
+	   	</out-parm>
+	</sql>
+	
+	<sql id="mob_phonenum" type="2" desc="用户绑定信息">
+	<![CDATA[
+	    cpmob.sp_user_phone_bind
+	]]>
+		<in-parm>
+	   		<parm name="用户编号" property="user"/>
+	   		<parm name="登录密码" property="password"/>
+	   		<parm name="手机号码" property="phone"/>
+	   		<parm name="验证码" property="vphone"/>
+	   	</in-parm>	   
+	   	<out-parm>
+	   		<parm name="错误编号" property="status"/>
+	   		<parm name="错误描叙" property="message"/>
+	   	</out-parm>
+	</sql>
+	
+	<sql id="mob_setphone" type="2" desc="用户绑定验证">
+	<![CDATA[
+	   cpmob.sp_user_setphone
+	]]>
+		<in-parm>
+	   		<parm name="用户编号" property="user"/>
+	   		<parm name="登录密码" property="password"/>
+	   		<parm name="手机号码" property="phone"/>
+	   		<parm name="验证码" property="vphone"/>
+	   	</in-parm>	   
+	   	<out-parm>
+	   		<parm name="错误编号" property="status"/>
+	   		<parm name="错误描叙" property="message"/>
+	   	</out-parm>
+	</sql>
+	
+	<sql id="mob_setbank" type="3" desc="首次设置银行信息">
+	<![CDATA[
+		update tb_user set cbankcode = ?, cbankcard = ?, cbankpro = ?, cbankcity = ?, cbankname = ? 
+		where cnickid = ?  and cbankcard is null
+	]]>
+		<in-parm>
+	   		<parm name="银行代码" property="bank"/>
+	   		<parm name="银行卡号" property="bankNumber"/>
+	   		<parm name="银行省份" property="province"/>
+	   		<parm name="银行城市" property="city"/>
+	   		<parm name="银行名称" property="subbranch"/>
+	   		<parm name="用户编号" property="user"/>
+	   	</in-parm>
+	</sql>
+	
+	<sql id="mob_check_user" type="1" desc="查询用户">
+	<![CDATA[ 
+    	select count(1) from tb_user where  cnickid= ? and cpassword=?
+	]]>
+		<in-parm>
+	   		<parm name="用户编号" property="user"/>
+	   		<parm name="登录密码" property="password"/>
+	   	</in-parm>
+	</sql>	
+	
+	<sql id="mob_userinfo" type="1" desc="查询用户信息">
+	<![CDATA[ 
+    	select * from tb_user where  cnickid= ?
+	]]>
+		<in-parm>
+	   		<parm name="用户编号" property="user"/>
+	   	</in-parm>
+	</sql>	
+	
+	<sql id="mob_drawmoney" type="2" desc="用户提现">
+	<![CDATA[
+	   cpmob.sp_user_drawmoney
+	]]>
+		<in-parm>
+	   		<parm name="用户编号" property="user"/>
+	   		<parm name="登录密码" property="password"/>
+	   		<parm name="提款金额" property="money"/>
+	   	</in-parm>	   
+	   	<out-parm>
+	   		<parm name="错误编号" property="status"/>
+	   		<parm name="错误描叙" property="message"/>
+	   	</out-parm>
+	</sql>
+	
+	<sql id="mob_mydg" type="1" desc="我的代购(全部)">
+	<![CDATA[ 
+    	select * from tb_proj_00 t where cnickid=? and itype=0 and cadddate > sysdate - 90
+	]]>
+		<in-parm>
+	   		<parm name="用户编号" property="user"/>
+	   	</in-parm>
+	</sql>	
+	
+	<sql id="mob_mydg_nopass" type="1" desc="我的代购(未开奖)">
+	<![CDATA[ 
+    	select * from tb_proj_00 t where cnickid=? and itype=0 and cadddate > sysdate - 90 and iaward<2
+	]]>
+		<in-parm>
+	   		<parm name="用户编号" property="user"/>
+	   	</in-parm>
+	</sql>	
+	
+	<sql id="mob_mydg_passed" type="1" desc="我的代购(已中奖)">
+	<![CDATA[ 
+    	select * from tb_proj_00 t where cnickid=? and itype=0 and cadddate > sysdate - 90 and iaward=2 and itax > 0 and istate=2
+	]]>
+		<in-parm>
+	   		<parm name="用户编号" property="user"/>
+	   	</in-parm>
+	</sql>	
+	
+	<sql id="mob_mydg_nowin" type="1" desc="我的代购(未中奖)">
+	<![CDATA[ 
+    	select * from tb_proj_00 t where cnickid=? and itype=0 and cadddate > sysdate - 90 and iaward=2 and itax = 0
+	]]>
+		<in-parm>
+	   		<parm name="用户编号" property="user"/>
+	   	</in-parm>
+	</sql>	
+	
+	<sql id="mob_mydg_failure" type="1" desc="我的代购(已作废)">
+	<![CDATA[ 
+    	select * from tb_proj_00 t where cnickid=? and itype=0 and cadddate > sysdate - 90 and iaward=2 and istate > 2
+	]]>
+		<in-parm>
+	   		<parm name="用户编号" property="user"/>
+	   	</in-parm>
+	</sql>	
+	
+	<sql id="mob_proj" type="1" desc="方案详情">
+	<![CDATA[ 
+    	select * from tb_proj_#gid# where cprojid=?
+	]]>
+		<in-parm>
+	   		<parm name="方案编号" property="planNo"/>
+	   	</in-parm>
+	</sql>
+	
+	<sql id="mob_opencode" type="1" desc="开奖号码">
+	<![CDATA[ 
+		select cawardcode,icodeaudit from(
+		select cgameid,cperiodid,cawardcode,icodeaudit from tb_period union
+		select cgameid,cperiodid,cawardcode,icodeaudit from tb_period_hist
+		) where cgameid = ? and cperiodid=?
+	]]>
+		<in-parm>
+	   		<parm name="彩种编号" property="159Type"/>
+	   		<parm name="期次编号" property="term"/>
+	   	</in-parm>
+	</sql>
+		
+	<sql id="mob_myhm" type="1" desc="我的合买">
+	<![CDATA[ 
+    	select * from tb_proj_buyer t where cbuydate > sysdate - 90 and itype=1 and rnickid=? order by cbuydate desc
+	]]>
+		<in-parm>
+	   		<parm name="用户编号" property="user"/>
+	   	</in-parm>
+	</sql>
+	
+	<sql id="mob_zhuihao" type="1" desc="追号纪录">
+	<![CDATA[ 
+    	select * from v_zhuihao where cnickid=? and cadddate > sysdate - 180
+	]]>
+		<in-parm>
+	   		<parm name="用户编号" property="user"/>
+	   	</in-parm>
+	</sql>
+	
+	<sql id="mob_zh_detail" type="1" desc="追号详情">
+	<![CDATA[ 
+    	select t.*,zh_mul(t.cgameid,t.czhid) muls from v_zhuihao t where cnickid=? and czhid=?
+	]]>
+		<in-parm>
+	   		<parm name="用户编号" property="user"/>
+	   		<parm name="方案编号" property="planNo"/>
+	   	</in-parm>
+	</sql>
+		
+	<sql id="mob_period" type="1" desc="追号详情">
+	<![CDATA[ 
+		select * from(
+		select t.*,round((cawardtime-sysdate)*24*60*60,0) ds from tb_period t union
+		select t.*,round((cawardtime-sysdate)*24*60*60,0) ds from tb_period_hist t
+		) where cgameid = ? and cperiodid=?
+	]]>
+		<in-parm>
+	   		<parm name="彩种编号" property="159Type"/>
+	   		<parm name="期次编号" property="term"/>
+	   	</in-parm>
+	</sql>
+		
+	<sql id="mob_period_last" type="1" desc="追号详情">
+	<![CDATA[ 
+		select * from(
+		select t.*,round((cawardtime-sysdate)*24*60*60,0) ds from tb_period t union
+		select t.*,round((cawardtime-sysdate)*24*60*60,0) ds from tb_period_hist t
+		) where cgameid = ? and cperiodid<? order by cperiodid desc
+	]]>
+		<in-parm>
+	   		<parm name="彩种编号" property="159Type"/>
+	   		<parm name="期次编号" property="term"/>
+	   	</in-parm>
+	</sql>
+	
+	<sql id="mob_period_all" type="1" desc="开奖号码">
+	<![CDATA[ 
+	    select * from(
+	    select * from tb_period union
+	    select * from tb_period_hist
+	    ) where cgameid = ? and icodeaudit=1 order by cperiodid desc
+	]]>
+		<in-parm>
+	   		<parm name="彩种编号" property="159Type"/>
+	   	</in-parm>
+	</sql>
+	
+	<sql id="mob_jczq_day_match" type="1" desc="竞彩足彩对阵">
+	<![CDATA[ 
+	    select * from tb_match_jczq where citemid like ?||'%' order by citemid
+	]]>
+		<in-parm>
+	   		<parm name="期次编号" property="term"/>
+	   	</in-parm>
+	</sql>
+	<sql id="mob_jclq_day_match" type="1" desc="竞彩篮球对阵">
+	<![CDATA[ 
+	    select * from tb_match_jclq where citemid like ?||'%' order by citemid
+	]]>
+		<in-parm>
+	   		<parm name="期次编号" property="term"/>
+	   	</in-parm>
+	</sql>
+	<sql id="mob_bd_period_match" type="1" desc="北单期次对阵">
+	<![CDATA[ 
+	    select * from tb_match_bd where cperiodid =? order by imatchid
+	]]>
+		<in-parm>
+	   		<parm name="期次编号" property="term"/>
+	   	</in-parm>
+	</sql>
+	
+	<sql id="mob_user_acct" type="1" desc="用户信息">
+	<![CDATA[ 
+	    select * from tb_user_acct where cnickid=?
+	]]>
+		<in-parm>
+	   		<parm name="用户昵称" property="user"/>
+	   	</in-parm>
+	</sql>
+	
+	<sql id="mob_hemai" type="1" desc="合买方案">
+	<![CDATA[ 
+    	select * from tb_proj_00 t where cgameid in (#type#) and itype=1 and istate = 1 order by ijindu desc
+	]]>
+		<in-parm>
+	   	</in-parm>
+	</sql>	
+</config>

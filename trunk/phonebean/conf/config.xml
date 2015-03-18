@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="gbk"?>
+<config>
+	<service id="1" name="服务"  ip="" port="4001" className="com.rbc.remote.RemoteCallService" path="c:\javawork\cpweb\builder\rbc_s\service">
+	    <dataSource name="default" desc="彩票数据源" 
+	            driverName="oracle.jdbc.driver.OracleDriver" 
+	            dbUrl="jdbc:oracle:thin:@//221.228.229.215:1521/lottery"
+	            userName="cpweb" passWord="cp159web"  
+	            checkSql="select 1+2 FROM dual" interval="1"
+	            startNum="6" maxNum="20"  maxCallNum="10000"
+	            serverType="ORACLE" dbUrlBak="jdbc:oracle:thin:@//221.228.229.215:1521/lottery">
+	             
+			<map file="/opt/export/sqlconf/mob/sql_mob_user.xml"/>
+			<map file="/opt/export/sqlconf/mob/sql_mob_trade.xml"/>
+		</dataSource>
+
+        <threads>
+        </threads>
+	</service>
+</config>
