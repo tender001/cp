@@ -224,5 +224,14 @@
 		<action name="llnotify" forward="" bean="com.caipiao.cpweb.bank.BankBean" scope="request" desc="llpay充值服务端回调">
 			<execute method="com.caipiao.cpweb.bank.Bank_ll.notify" />
 		</action>
+		
+		<!-- 盛付通 -->
+		<action name="sdoreceive" forward="/pp/bank_receive.jsp" bean="com.caipiao.cpweb.bank.BankBean" scope="request" desc="sdopay充值成功跳转">
+			<execute method="com.caipiao.cpweb.bank.Bank_sdo.receive" />
+		</action>
+		<action name="sdonotify" forward="" bean="com.caipiao.cpweb.bank.BankBean" scope="request" desc="sdopay充值服务端回调">
+			<execute method="com.caipiao.cpweb.bank.Bank_sdo.notify" />
+		</action>
+		
     </action-mappings>
 </rbc-config>
