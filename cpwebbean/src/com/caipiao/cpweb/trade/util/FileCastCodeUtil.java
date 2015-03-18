@@ -17,7 +17,7 @@ public class FileCastCodeUtil {
 
 	public final static String getCodesFromFile(String gid, String pid, String basePath, String fileName, String play, Logger logger) throws Exception {
 		int g = Integer.parseInt(gid);
-		if (g >= 85 || g == 70 || g == 71 || g == 72) {
+		if (g >= 84 || g == 70 || g == 71 || g == 72) {
 			return getCodesFromFileJQ(gid, pid, basePath, fileName, play, logger);
 		} else {
 			return getCodesFromFileSZ(gid, pid, basePath, fileName, play, logger);
