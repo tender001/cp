@@ -1115,6 +1115,10 @@
                 }else if(!duoc && ggData.zy.length === 0){
                     return Y.alert('您好，请选择过关方式！');
                 }
+                if(ishm||isfilter){
+                	return;
+                }
+               
                 if (isDg && Y.get('#bs').val() > 100000) {
                     return Y.alert('您好，代购倍数不能超过100000倍！');
                 }
@@ -1181,6 +1185,9 @@
                     var MAX_ALL_MONEY = this.C('MAX_ALL_MONEY');
                     if (totalmoney > MAX_ALL_MONEY) {
                         return this.alert('您好, 发起方案金额最多不能超过￥'+MAX_ALL_MONEY+'元!');
+                    }
+                    if (totalmoney<10) {
+                        return Y.alert('您好，暂支持10元起购！')
                     }
                     if (ishm){
                     	Y.get("#project_form").attr("action", "/phpt/jc/step_1.phpx");
@@ -1282,6 +1289,30 @@
                       c*=arr[i];
                   }
                   return c;
+              }
+        },
+        minMoney: 10,//10元起售
+        checkMimMoney: function (data, type){//检查单票金额
+              var sel = data.map(function (d){
+                  return d.data.length
+              }).sort(Array.up), types;
+              if (type.dc) {//多串直接求值
+                 return this.getDCZs(sel.slice(-this.getInt(type.dc)), type.dc) < this.minMoney
+              }else{//自由遍历求值
+                  types =  type.zy;
+                  for (var i =  types.length; i--;) {
+                      var t = this.getInt(types[i]);
+                      if (getMutil(sel.slice(-t))<this.minMoney) {
+                          return true
+                      }
+                  }                  
+              }
+              function getMutil(arr){//连乘
+                  var  i =  arr.length, c = i ? 1 : 0;
+                  for (; i--;) {
+                      c*=arr[i]
+                  }
+                  return c
               }
         },
         checkLimitCode: function (data, chkgroup,fn){
