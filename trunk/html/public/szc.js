@@ -143,7 +143,10 @@
 							}else{
 								endtime=Y.getDate(expectlist[i][1]).format('YY-MM-DD hh:mm:ss');
 							}
+							
 							this.postMsg('msg_endtime_change', endtime, data.date);
+							
+							
 						}
 					}							
 				} else {
@@ -1569,6 +1572,8 @@
 					            $("#responseJson #serverTime").val(Y.getDate(data.date).format('YY-MM-DD hh:mm:ss'));
 								$("#responseJson #endTime").val(Y.getDate(expectlist[i][1]).format('YY-MM-DD hh:mm:ss'));
 								this.postMsg('msg_show_endtime_CountDown');
+								var endtime=expectlist[i][1];
+								$(".jz-time").html('当前期<em>'+(Y.getDate(endtime).getMonth()+1)+'</em>月<em>'+Y.getDate(endtime).getDate()+'</em>日<em>'+Y.getDate(endtime).format('hh:mm')+'</em>截止');
 							}
 						}
 						if (!find) {
