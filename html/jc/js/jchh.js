@@ -1367,6 +1367,10 @@ Class('Buy', {
  			_self.ishm = this.id == 'gohm' ? 1 : 0;
  			 Y.get('#ishm').val(_self.ishm);//合买与代购
  			Y.get('#beishu').val(Y.get('#bs').val());
+ 			 if(_self.ishm){
+             	return;
+             }
+             
  			if (_self.ishm){
              	Y.get("#project_form").attr("action", "/phpt/jc/step_11.phpx");
              }else{
@@ -2094,6 +2098,9 @@ Class('Main', {
 				totalmoney = algo.zs*this.bs*2;
 			if (totalmoney > MAX_ALL_MONEY) {
 				return this.alert('您好, 方案金额不能超过'+MAX_ALL_MONEY.rmb(true, 0)+'元!');
+			}
+			if (totalmoney < 10) {
+				return this.alert('您好，暂支持10元起购！');
 			}
 			
 			this.setVals({
