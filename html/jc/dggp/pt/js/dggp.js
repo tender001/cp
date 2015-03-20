@@ -968,7 +968,9 @@ Class('Buy', {
            
            
 
-              
+             if(ishm){
+            	 return;
+             }
 //                9739|141023001[3:2,4:0,0:4]/59740|141023002[4:0]
                 var bet=$("#infolist div[mid]");
                 var arrcode=[]
@@ -987,6 +989,9 @@ Class('Buy', {
 //                59968|141027006[2,3]
                 Y.get('#codes').val(arrcode.join('/'));
                 var money=Y.get("#allmoney").html()*1;
+                if(money < 10){
+                	return Y.alert('您好，暂支持10元起购！');
+                }
                 Y.get('#zhushu').val(zs);
                 Y.get('#beishu').val(money/zs/2);
                 Y.get('#ishm').val(ishm);//合买与代购
@@ -998,7 +1003,7 @@ Class('Buy', {
                
                 var MAX_ALL_MONEY = 200000;
                 if (money > MAX_ALL_MONEY) {
-                    return this.alert('您好, 发起方案金额最多不能超过￥'+MAX_ALL_MONEY+'元!');
+                    return Y.alert('您好, 发起方案金额最多不能超过￥'+MAX_ALL_MONEY+'元!');
                 }
                 if (ishm){
                 	Y.get("#project_form").attr("action", "/phpt/jc/step_1.phpx");
