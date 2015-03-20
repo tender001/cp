@@ -59,11 +59,11 @@ Class(
 	},
 	
 	bindOther:function(){
-		$("#scrollDiv").textSlider({
-			line:2,
-			speed:1000,
-			timer:2000
-		});
+//		$("#scrollDiv").textSlider({
+//			line:2,
+//			speed:1000,
+//			timer:2000
+//		});
 		$("[mark=hezuodown]").hover(function(){//合作登录鼠标滑入
     		$(this).addClass("hover").find("dd").show();
 			$("[mark=hezuodown] dd").clearQueue().animate({
