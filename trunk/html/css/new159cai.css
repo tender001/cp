@@ -2372,10 +2372,10 @@ p.yh1 a.dg-btn1{right: 12px}
 .dggp-nav{width: 1000px;margin: 0 auto;}
 .dggp-nav a{float:left;padding:0 25px;font:700 16px/45px "Microsoft YaHei";color:#fff}
 .dggp-nav a:hover{text-decoration:none}
-.dggp-nav .hover{color:#629875;background-color:#fff;}
-.dggp-main-bg{width:100%;height:auto;min-height:470px;background:#ededed url("../images/bg/dggp-bg.jpg") center 0 repeat-y;}
-.dggp-main{width:1000px;margin:15px auto;}
-.dggp-main:after{visibility:hidden;display:block;font-size:0;content:" ";clear:both;}
+.dggp-nav .hover{color:#0d753a;background-color:#ececec}
+.dggp-main-bg{width:100%;height:auto;min-height:470px;background:#ededed url("../images/bg/dggp-bg.jpg") center 0 repeat-y}
+.dggp-main{width:1000px;margin:15px auto}
+.dggp-main:after{visibility:hidden;display:block;font-size:0;content:" ";clear:both}
 .shenpinf{position: relative}
 .w-sf-left{float: left;width: 688px;}
 .w-sf-left .event-no{width:686px;margin:0;padding:30px 0;border:1px solid #ccc;background-color: #fff;background-position: 40px 37px;}
@@ -2384,7 +2384,7 @@ p.yh1 a.dg-btn1{right: 12px}
 .sf-right{width: 100%;}
 .dp-basic h2{height: 40px;font:700 22px/40px "microsoft yahei";color: #fff;text-align:center;background-color: #39a746}
 .sf-right h2{background-color: #488bfe !important}
-.choose-match{max-height: 284px;overflow: auto;border: 1px solid #ccc;*overflow-y: scroll;_height:284px;}
+.choose-match{max-height: 284px;overflow: auto;border: 1px solid #ccc;*overflow-y: scroll;_height:284px}
 .dp-basic .choose-match .bod{border: 0}
 .dp-basic .bod{border: 1px solid #ccc;border-top-width: 0}
 .dp-basic .bod b{display:inline-block;width:100%;font:normal 14px/88px "Microsoft YaHei";text-align:center;color:#f30}
@@ -2394,12 +2394,12 @@ p.yh1 a.dg-btn1{right: 12px}
 .sf-left .bod p i{margin:0 0 0 13px}
 .dp-basic .bod p span em{display:inline-block;width: 36px;height:23px;margin:0 3px 0;font:700 18px/23px arial;text-align:center;color:#333;background-position:-124px -205px;*display:inline;zoom:1;}
 .dp-basic .bod .bod-m{width:94%;padding:15px 3%;background-color:#fff;zoom: 1;}
-.dp-basic .bod .bod-m ul li{float:left;}
+.dp-basic .bod .bod-m ul li{float:left}
 .sf-right .bod .bod-m{width:86%;padding:10px 7%}
 .sf-left .bod .bod-m li{width:190px;height: 134px;padding:0 0 0 24px;position:relative;}
 .sf-left .bod .bod-m li span{width: 30px;max-height:100px;vertical-align:bottom;background-color:#39a746;position: absolute;bottom: 3px;left: 45%;}
 .sf-left .bod .bod-m li span i{width: 83px;height: 24px;font: 14px/24px "Microsoft YaHei";color:#39a746;position: absolute;top: -30px;left: -20px;}
-.sf-left .bod .bod-m dl{padding-bottom:35px;overflow: hidden;zoom: 1}
+.sf-left .bod .bod-m dl{padding-bottom:8px;overflow:hidden;zoom:1}
 .sf-left .bod .bod-m dl dd{float:left;width: 189px;height: 52px;margin: 20px 10px 0 14px;padding-top:10px;font: 24px/24px "\9ed1\4f53";text-align: center;color: #2f913e;background-repeat: no-repeat;cursor:pointer;-webkit-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;*font-weight: 700;_display:inline}
 .sf-left .bod .bod-m dl dd.hover{color:#fff;background-position: 0 -63px}
 .sf-left .bod .bod-m dl dd.cur{height:50px;color:#fff;background-position: 0 -126px}
