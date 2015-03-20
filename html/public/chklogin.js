@@ -529,7 +529,7 @@ Class({
                           timebar.html(this.getDate(now).format('MM月DD日 hh:mm:ss'));
                       }else{
                           timebar.html( ctpl.format.apply(tpl, times).replace(/\b\d\b/g,'0$&'));
-                      }                                
+                      }          
                   }                
               };
               if (this.C('shownowtime')) {

@@ -143,6 +143,7 @@
 							}else{
 								endtime=Y.getDate(expectlist[i][1]).format('YY-MM-DD hh:mm:ss');
 							}
+							$(".jz-time").html('当前期<em>'+(Y.getDate(endtime).getMonth()+1)+'</em>月<em>'+Y.getDate(endtime).getDate()+'</em>日<em>'+Y.getDate(endtime).format('hh:mm')+'</em>截止');
 							this.postMsg('msg_endtime_change', endtime, data.date);
 						}
 					}							
