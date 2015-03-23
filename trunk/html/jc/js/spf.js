@@ -484,17 +484,17 @@
              return this.list;
         },
         _getRqList: function (){
-             if (!this.rqList) {//读取让球与否列表
+        	 if (!this.rqList) {//读取让球与否列表
                  this.rqList = [];
                  this.nrqList = [];
                  this.list.each(function (tr){
-                     if(Y.getInt(tr.getAttribute('rq')) != 0){
+                     if(Y.getInt(tr.getAttribute('dgsale')) != 0){
                         this.rqList[this.rqList.length] = tr;
                      }else{
                         this.nrqList[this.nrqList.length] = tr;                    
                      }
                  }, this);
-             }        
+             }       
         },
           getHideCount: function (sum){//显示隐藏场次
               var s = 0;
@@ -705,7 +705,7 @@
                 }
                 tr = this.get(this.trTpl.cloneNode(true)).insert(this.tbody);
                 tr.prop('id', id).attr('mid', mid).prop('zid', this.getInt(vstr.getAttribute('zid'))).prop('pdate', this.getInt(vstr.getAttribute('pdate'))).prop('pendtime', this.getDate(vstr.getAttribute('pendtime')));
-                tr.attr('mid', vstr.getAttribute('mid')).attr('pname', vstr.getAttribute('pname')).attr('lasttime', vstr.getAttribute('gdate'));
+                tr.attr('mid', vstr.getAttribute('mid')).attr('pname', vstr.getAttribute('pname')).attr('lasttime', vstr.getAttribute('gdate')).attr('dgsale', vstr.getAttribute('dgsale'));
                 //alert(vstr);
                 var A = vstr.cells[3].getElementsByTagName('em')[0].innerHTML,
                     B = vstr.cells[4+offset].getElementsByTagName('em')[0].innerHTML,
@@ -763,10 +763,11 @@
             }            
         },
         _update: function (noPostMessage){
-            var data = [], def = this.C('_isgg') ? 1 : 2, danCount=0, visiTr, count=0,
-                isDg = !this.C('_isgg');
+	    	var data = [], def = this.C('_isgg') ? 1 : 2, danCount=0, visiTr, count=0,
+                 isDg = !this.C('_isgg');
             data.pioneer = Number.MAX_VALUE;
-            //收集选中数据
+            data.isdgsale = 1;
+	             //收集选中数据
             visiTr = this.tbody.find('tr:visited');
             visiTr.each(function (tr){
                 var yTr = this.get(tr), arrKeys = yTr.data('choose_data'),
@@ -779,6 +780,7 @@
                         mid: tr.getAttribute('mid'),
                         time: tr.getAttribute('lasttime'),
                         pname: tr.getAttribute('pname'),
+                        dgsale: tr.getAttribute('dgsale'),
                         data: arrKeys,
                         data2: yTr.data('choose_data2'),
                         selectedSP: arrKeys.map(function (a){
@@ -794,6 +796,7 @@
                 tmpData.maxSP = Math.max.apply(Math, tmpData.selectedSP).rmb(false);//最大赔率
                 data[data.length] = tmpData;
                 data.pioneer = Math.min(tr.pendtime, data.pioneer);
+                if(tmpData.dgsale=="1"){data.isdgsale=0;}
             }, this);         
             //场次中最先截止时间
             this.get('#end_time').html(data.pioneer == Number.MAX_VALUE ? '' : this.getDate(data.pioneer).format('MM-DD hh:mm'));
@@ -903,10 +906,10 @@
 		           '<col width=""><col/>'+
 		           '</colgroup>',//table
 		           '<tbody>'+
-		           '<tr class="{$classname}" style="display: none" lg="{$mname}" isend="1" lost="{$sp0}" draw="{$sp1}" win="{$sp3}" pendtime="{$enddate}" rq="{$close}" pdate="{$itemid}" pname="{$itemid}" mid="{$mid}" zid="{$itemid}" title="已截止场次">'+
-		           '<td style="cursor: pointer"><label for=m{$itemid} title="{$name}"><input id=m{$itemid} value={$itemid}  checked type=checkbox name=m{$itemid}>{$newname}</label></td>'+
+		           '<tr class="{$classname}" style="display: none" lg="{$mname}" isend="1" lost="{$sp0}" draw="{$sp1}" win="{$sp3}" dgsale="{$dsale}" pendtime="{$enddate}" rq="{$close}" pdate="{$itemid}" pname="{$itemid}" mid="{$mid}" zid="{$itemid}" title="已截止场次">'+
+		           '<td style="cursor: pointer"><label for=m{$itemid} title="{$name}" ><input id=m{$itemid} value={$itemid}  checked type=checkbox name=m{$itemid}>{$newname}</label></td>'+
 		           '<td style="background:{$cl}; color: #fff" class=league><a title="{$lmname}" href="" target="_blank" id="mn{$itemid}" style="color: #fff">{$mname}</a></td>'+
-		           '<td><span class="eng end_time" title="开赛时间：{$mt}">{$short_et}</span><span style="display: none" class="eng match_time" title="截止时间：{$et}">{$short_mt}</span></td>'+
+		           '{$dgstr}<span class="eng end_time" title="开赛时间：{$mt}">{$short_et}</span><span style="display: none" class="eng match_time" title="截止时间：{$et}">{$short_mt}</span></td>'+
 		           '<td style="text-align: right; border-left:1px solid #ddd" class="h_br tdhui"><div class="dz_dv" title={$hn}><s class="s_left">&nbsp;</s><span class="eng b span_left"><em class="em_left" id="htid_{$itemid}">{$hn}</em><b class="b_left"> {$sp3}</b></span></div></td>'+
 		           '<td style="text-align: center;" class="h_br tdhui"><span class="eng b">{$sp1}</span></td>'+
 		           '<td style="text-align: left;"  class="h_br tdhui"><div class="dz_dv" title={$gn} style="padding-left:10px"><span class="eng b span_left"><b class="b_right">{$sp0}</b> <em class="em_right" id="gtid_{$itemid}">{$gn}</em></span><s class="s_right"></s></div></td><td>&nbsp;</td>'+
@@ -917,10 +920,10 @@
 		           '</tr>'+
 		           '</tbody>',//已结束对阵
 		           '<tbody>'+
-		           '<tr class="{$classname}" lg="{$mname}" isend="0" lost="{$sp0}" draw="{$sp1}" win="{$sp3}" pendtime="{$enddate}" rq="{$close}" pdate="{$itemid}" pname="{$itemid}" mid="{$mid}" zid="{$itemid}">'+
+		           '<tr class="{$classname}" dgsale="{$dsale}" lg="{$mname}" isend="0" lost="{$sp0}" draw="{$sp1}" win="{$sp3}" pendtime="{$enddate}" rq="{$close}" pdate="{$itemid}" pname="{$itemid}" mid="{$mid}" zid="{$itemid}">'+
 		           '<td style="cursor: pointer"><div class="deltr" style="display:none"><div><a href="#"></a></div></div><label for=m{$itemid}  title="{$name}"><input id=m{$itemid} value={$itemid}  checked type=checkbox name=m{$itemid}>{$newname}</label></td>'+
 		           '<td style="background:{$cl}; color: #fff" class=league><a title="{$lmname}" href="" target="_blank" id="mn{$itemid}" style="color: #fff">{$mname}</a></td>'+
-		           '<td><span class="eng end_time" title="开赛时间：{$mt}">{$short_et}</span><span style="display: none" class="eng match_time" title="截止时间：{$et}">{$short_mt}</span></td>'+
+		           '{$dgstr}<span class="eng end_time" title="开赛时间：{$mt}">{$short_et}</span><span style="display: none" class="eng match_time" title="截止时间：{$et}">{$short_mt}</span></td>'+
 		           '<td style="text-align: right;  cursor: pointer;border-left:1px solid #ddd" class=h_br ><div class="dz_dv" title={$hn}><input class=chbox value=3 type=checkbox style="display: none"><s class="s_left">&nbsp;</s><span class="eng b span_left"><em id="htid_{$itemid}" class="em_left">{$hn}</em> <b class="b_left">{$sp3}</b></span></div></td>'+
 		           '<td style="text-align: center; cursor: pointer" class=h_br><input class=chbox value=1 type=checkbox style="display: none" ><span class="eng b" >{$sp1}</span></td>'+
 		           '<td style="text-align: left;  cursor: pointer" class=h_br ><div class="dz_dv" title={$gn} style="padding-left:10px"><input class=chbox value=0 type=checkbox style="display: none"><span class="eng b span_right"><b class="b_right">{$sp0}</b> <em id="gtid_{$itemid}" class="em_right" >{$gn}</em></span><s class="s_right">&nbsp;</s></div></td><td style="cursor: pointer;border-right:1px solid #ddd"><a href="javascript:void(0);" class="jcq_q">全</a><input style="display: none" type="checkbox" all="0" value = "all"/></td>'+
@@ -991,6 +994,13 @@
     			row.mname=row.mname.substr(0,4);
     			row.name=row.name;
     			row.newname=row.name.substr(2.5).trim();
+    			
+    			row.dsale = (((row.idanguan*1) & 1 << 4) == (1 << 4)) ? 0 : 1;
+				if(row.dsale == 0){
+					row.dgstr = '<td class="dg_time"><i></i><cite>单</cite>';
+				} else {
+					row.dgstr = "<td>";
+				}
     			if (Y.getDate(data.date)>Y.getDate(row.et)){//已经过期的场次
     				out_of_date_matches++;
     					row.shuju='<a href="#">析</a> <a href="#">亚</a> <a href="#">欧</a>';
@@ -1597,7 +1607,14 @@
                 var dan = data.reduce(function (p,c){
                 	return p+(c.dan==0?0:1);
                 },0);
+                var isdgsale =1;//开售单关
+                data.reduce(function (p,c){
+                	if(c.dgsale=="1"){isdgsale=0;}
+                },0);
                 var minVs = this.C('dggp') ? 0 : 1;
+                if (isdgsale == 0) {//木有开售单关
+                	minVs=1;
+                }
 				if (!isbf) {
 					this.lt2_info.show(len < (Y.C('-isdcgg') ? 3 : 2));
 				}				
@@ -1633,9 +1650,9 @@
                 contents: '#ggListFree,#ggList'
             });
             ggTabs.onchange = function (a, b){
-                this.C('-isdcgg', b === 1);
+            	this.C('-isdcgg', b === 1);
 				if (!isbf) {
-					Y.lt2_info.html('请至少选择'+(b===1?3:2)+'场比赛进行投注。');
+					//Y.lt2_info.html('请至少选择'+(b===1?3:2)+'场比赛进行投注。');
 					Y.lt2_info.show(curVsLen < (Y.C('-isdcgg') ? 3 : 2));
 				}
                 allInputs.prop('checked', false);//清空过关方式
@@ -1645,8 +1662,8 @@
                 ggTabs.focus(i);
             });
 			//少于两场的提示
-			if (!isbf) {//比分不加提示
-				this.lt2_info = this.get('<div style="text-align: center;padding-top: 10px;color: red;" id="vslt2">请至少选择2场比赛进行投注。</div>').insert('#ggListFree', 'prev');
+            if (!isbf) {//比分不加提示
+				this.lt2_info = this.get('').insert('#ggListFree', 'prev');
 			}
         },
         getCurrentType: function (){//取得过关方式
@@ -1923,6 +1940,7 @@ Class('ScrollStill', {
                 this.C('optKeys', ['3', '1', '0']);
                 this.C('spXml', 1);
                 this.C('maxSelectVs', 8);
+                this.C('dggp', true);//单关固赔
                 ini.focusCss = 'x_s';
             }
             if (isgg) {
