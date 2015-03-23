@@ -956,7 +956,7 @@
 			row.newname=row.name.substr(2.5).trim();
 			row.dsale = (((row.idanguan*1) & 1 << 0) == (1 << 0)) ? 0 : 1;
 			if(row.dsale == 0){
-				row.dgstr = 'class="red"';
+				row.dgstr = '';
 			} else {
 				row.dgstr = "";
 			}
@@ -1604,7 +1604,7 @@
             ggTabs.onchange = function (a, b){
                 this.C('-isdcgg', b === 1);
 				if (!isbf) {
-					Y.lt2_info.html('请至少选择'+(b===1?3:2)+'场比赛进行投注。');
+//					Y.lt2_info.html('请至少选择'+(b===1?3:2)+'场比赛进行投注。');
 					Y.lt2_info.show(curVsLen < (Y.C('-isdcgg') ? 3 : 2));
 				}
                 allInputs.prop('checked', false);//清空过关方式
@@ -1615,7 +1615,7 @@
             });
 			//少于两场的提示
 			if (!isbf) {//比分不加提示
-				this.lt2_info = this.get('<div style="text-align: center;padding-top: 10px;color: red;" id="vslt2">请至少选择2场比赛进行投注。</div>').insert('#ggListFree', 'prev');
+				this.lt2_info = this.get('').insert('#ggListFree', 'prev');
 			}
         },
         getCurrentType: function (){//取得过关方式
