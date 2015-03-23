@@ -422,7 +422,6 @@ a.btn_buy_m {
     width: 5px;
 }
 .box_m {
-    
     border:1px solid #bbb;
     border-top:none;
     overflow: visible;
@@ -448,23 +447,17 @@ a.btn_buy_m {
 .hide_table .sheng td.xz,.hide_table .ping td.xz,.hide_table .fu td.xz{background:#ffdaa4;}
 .f_bf{color:#0b4361; font-weight:bold;}
 
-.jc_l_t {
+/*.jc_l_t {
     padding-left: 6px;
 	overflow: visible;background: url("/images/jc/lc_25.gif") left center no-repeat;border-top:1px solid #bbb
-}
-.jc_l_t .dc_l_tl {
-    width: auto;
-}
+}*/
+.jc_l_t .dc_l_tl {width: auto}
 .dc_l_tl {
     float: right;
     text-align: left;
     width: 600px;
-	
 }
-.dc_l_tl label {
-    margin-right: 10px
-	
-}
+.dc_l_tl label {margin-right: 10px}
 .dc_ls_w {
     display: inline-block;
     height: 22px;
@@ -555,8 +548,8 @@ a.btn_buy_m {
     height: 35px;
 }
 .dc_r_m h2.h_2{ background: url("/images/jc/lc_28.gif") left top transparent no-repeat;padding:7px 10px 0 0;height:28px}
-.dc_r_m h2.h_3{ background: url("/images/jc/lc_51.gif") left top transparent no-repeat;}
-.dc_r_m h2.h_4{ background: url("/images/jc/lc_54.gif") left top transparent no-repeat;}
+/*.dc_r_m h2.h_3{ background: url("/images/jc/lc_51.gif") left top transparent no-repeat;}
+.dc_r_m h2.h_4{ background: url("/images/jc/lc_54.gif") left top transparent no-repeat;}*/
 .dc_r_m .an_title {
     background: url("/images/oldimg/repeat-x2.png") repeat-x scroll 0 0 transparent;
     height: 29px;
