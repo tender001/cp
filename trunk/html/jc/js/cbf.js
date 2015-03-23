@@ -472,12 +472,12 @@
                  this.rqList = [];
                  this.nrqList = [];
                  this.list.each(function (tr){
-                     if(Y.getInt(tr.getAttribute('rq')) != 0){
-                        this.rqList[this.rqList.length] = tr
-                     }else{
-                        this.nrqList[this.nrqList.length] = tr                     
-                     }
-                 }, this)
+                     if(Y.getInt(tr.getAttribute('dgsale')) != 0){
+                         this.rqList[this.rqList.length] = tr;
+                      }else{
+                         this.nrqList[this.nrqList.length] = tr;                    
+                      }
+                  }, this)
              }        
         },
           getHideCount: function (sum){//显示隐藏场次
@@ -687,7 +687,7 @@
                 }
                 tr = this.get(this.trTpl.cloneNode(true)).insert(this.tbody);
                 tr.prop('id', id).attr('mid', mid).prop('zid', this.getInt(vstr.getAttribute('zid'))).prop('pdate', this.getInt(vstr.getAttribute('pdate'))).prop('pendtime', this.getDate(vstr.getAttribute('pendtime')));
-                tr.attr('mid', vstr.getAttribute('mid')).attr('pname', vstr.getAttribute('pname')).attr('lasttime', vstr.getAttribute('gdate'));
+                tr.attr('mid', vstr.getAttribute('mid')).attr('pname', vstr.getAttribute('pname')).attr('lasttime', vstr.getAttribute('gdate')).attr('dgsale', vstr.getAttribute('dgsale'));
                 var A = vstr.cells[3].getElementsByTagName('A')[0].innerHTML,
                     B = vstr.cells[5+offset].getElementsByTagName('A')[0].innerHTML,
                     date = vstr.cells[0].getElementsByTagName('label')[0].title;
@@ -744,10 +744,11 @@
             }            
         },
         _update: function (noPostMessage){
-            var data = [], def = this.C('_isgg') ? 1 : 2, danCount=0, visiTr, count=0,
-                isDg = !this.C('_isgg');
-            data.pioneer = Number.MAX_VALUE;
-            //收集选中数据
+        	var data = [], def = this.C('_isgg') ? 1 : 2, danCount=0, visiTr, count=0,
+                    isDg = !this.C('_isgg');
+               data.pioneer = Number.MAX_VALUE;
+               data.isdgsale = 1;
+   	             //收集选中数据
             visiTr = this.tbody.find('tr:visited');
             visiTr.each(function (tr){
                 var yTr = this.get(tr), arrKeys = yTr.data('choose_data'),
@@ -760,6 +761,7 @@
                         mid: tr.getAttribute('mid'),
                         time: tr.getAttribute('lasttime'),
                         pname: tr.getAttribute('pname'),
+                        dgsale: tr.getAttribute('dgsale'),
                         data: arrKeys,
                         data2: yTr.data('choose_data2'),
                         selectedSP: arrKeys.map(function (a){
@@ -775,6 +777,7 @@
                 tmpData.maxSP = Math.max.apply(Math, tmpData.selectedSP).rmb(false);//最大赔率
                 data[data.length] = tmpData;
                 data.pioneer = Math.min(tr.pendtime, data.pioneer);
+                if(tmpData.dgsale=="1"){data.isdgsale=0;}
             }, this);         
             //场次中最先截止时间
             this.get('#end_time').html(data.pioneer == Number.MAX_VALUE ? '' : this.getDate(data.pioneer).format('MM-DD hh:mm'));
@@ -888,8 +891,8 @@
                '<COL width=110>'+
                '<COL width=151><COL></COLGROUP>',//2对阵table控制
                '<TBODY>'+
-               '<TR style="DISPLAY:{$display}" class="{$classname}" lg="{$mname}" isend="{$end}" odds="{$ccbf}" pdate="{$itemid}" pendtime="{$enddate}" pname="{$itemid}" mid="{$mid}" zid="{$itemid}">'+
-               '<TD style="CURSOR: pointer"><LABEL for=m{$itemid} title="{$name}"><INPUT id=m{$itemid} value={$itemid} CHECKED type=checkbox name=m{$itemid}>{$newname}</LABEL></TD>'+
+               '<TR style="DISPLAY:{$display}" class="{$classname}" dgsale="{$dsale}" lg="{$mname}" isend="{$end}" odds="{$ccbf}" pdate="{$itemid}" pendtime="{$enddate}" pname="{$itemid}" mid="{$mid}" zid="{$itemid}">'+
+               '<TD style="CURSOR: pointer"><LABEL for=m{$itemid} title="{$name}" {$dgstr}><INPUT id=m{$itemid} value={$itemid} CHECKED type=checkbox name=m{$itemid}>{$newname}</LABEL></TD>'+
                '<TD style="BACKGROUND:{$cl}; COLOR: #fff" class=league><A title={$lmname} href="" target="_blank" id="mn{$itemid}" style="color: #fff">{$mname}</A></TD>'+
                '<TD><SPAN class="eng end_time" title="开赛时间：{$mt}">{$short_et}</SPAN> <SPAN style="DISPLAY: none" class="eng match_time" title="截止时间：{$et}">{$short_mt}</SPAN> </TD>'+
                '<TD style="text-align: right; padding-right:2px;"><s style="float:left"></s><A title={$lhn} href="" target="_blank" id="hn{$itemid}"><em id="htid{$itemid}" class="ew_e ew_eright">{$hn}</em></A></TD>'+
@@ -957,7 +960,7 @@
                '<TD class="tdhui" style="CURSOR: pointer"><LABEL class=eng for=sheng1><SPAN class="eng f_bf">2:5</SPAN><BR><SPAN>{$sp25}</SPAN></LABEL></TD>'+
                '</TR>'+
                '</TBODY></TABLE></TD></TR></TBODY>',//4已截至
-               '<TR style="DISPLAY:{$display2}" id="pltr_{$mid}" class="hide_b">'+
+               '<TR style="DISPLAY:{$display2}" id="pltr_{$mid}" class="hide_b" >'+
                '<TD colSpan=10>'+
                '<TABLE class=hide_table border=0 cellSpacing=0 cellPadding=0 width="100%"><COLGROUP>'+
                '<COL width="10%">'+
@@ -1110,6 +1113,12 @@
     			row.pubone='public_Lblue';
     			row.pubtwo='c_down';
     			row.pub='展开';
+    			row.dsale = (((row.idanguan*1) & 1 << 2) == (1 << 2)) ? 0 : 1;
+				if(row.dsale == 0){
+					row.dgstr = 'class="red"';
+				} else {
+					row.dgstr = "";
+				}
     			var out_of_date=false;
     			if (Y.getDate(data.date)>Y.getDate(row.et)){//已经过期的场次
     				row.end=1;
@@ -1739,7 +1748,14 @@
                 var dan = data.reduce(function (p,c){
                 	return p+(c.dan==0?0:1)
                 },0);
+                var isdgsale =1;//开售单关
+                data.reduce(function (p,c){
+                	if(c.dgsale=="1"){isdgsale=0;}
+                },0);
                 var minVs = this.C('dggp') ? 0 : 1;
+                if (isdgsale == 0) {//木有开售单关
+                	minVs=1;
+                }
 				if (!isbf) {
 					this.lt2_info.show(len < (Y.C('-isdcgg') ? 3 : 2));
 				}				
