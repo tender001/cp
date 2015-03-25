@@ -981,7 +981,7 @@ public class TradeBeanStub extends BeanStub {
 					flag = true;
 				}
 			}else{
-				if(usermoney > money){
+				if(usermoney >= money){
 					flag = true;
 				}
 			}
