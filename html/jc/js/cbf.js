@@ -1381,13 +1381,11 @@
                         
                         var ty=Y.get('#ggtypename').val().split('\串');
                         //单关
-                        if(ty[0]=="单关"){
-                        	return this.alert('奖金优化不支持单关！');
-                        }
+                       
                         if(ty[1]>1){
                         	return this.alert('奖金优化仅支持N串1！');
                         }
-                        Y.get('#pnum').val(ty[0]);
+                        Y.get('#pnum').val(ty[0]=="单关"?"1":ty[0]);
                         Y.get('#danma').val(danma.join('/'));//胆码
                         Y.get('#zhushu').val(Y.get('#zs').html());
                         Y.get('#muli').val(Y.get('#bs').val());
