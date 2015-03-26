@@ -189,7 +189,7 @@ public class AllyLoginImpl {
 			}
 		}else if(bean.getBusiErrCode() == AllyLogin.LOGIN_INVALID){
 			response.sendRedirect("/");
-		}else if(bean.getBusiErrCode() == AllyLogin.LOGIN_NOT_EXIST){
+		}else if(bean.getBusiErrCode() == AllyLogin.LOGIN_NOT_EXIST || bean.getBusiErrCode() ==1010){ //存储为1010
 			if(bean.getType() == AllyLogin.ALIPAY){
 				//String token = StringUtil.getNullString(request.getSession().getAttribute("alipay_token"));
 				//AlipayUtil.logisticsQuery(request, response, token);
