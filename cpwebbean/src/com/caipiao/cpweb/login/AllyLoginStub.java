@@ -1,5 +1,6 @@
 package com.caipiao.cpweb.login;
 
+import com.caipiao.cpweb.ErrCode;
 import com.caipiao.cpweb.trade.util.CheckUtil;
 import com.caipiao.cpweb.user.UserBean;
 import com.caipiao.cpweb.user.UserBeanStub;
@@ -115,7 +116,11 @@ public class AllyLoginStub {
 			
 			//String pwd = MD5Util.compute(bean.getPwd() + UserBeanStub.MD5_KEY);
 			//bean.setPwd(pwd);
-			int rs = JdbcSqlMapping.executeUpdate("u_allylogin", bean, null, jcn);
+			String fid = "u_allylogin";
+			if(bean.getType()==AllyLogin.ZH){
+				fid = "u_login";
+			}
+			int rs = JdbcSqlMapping.executeUpdate(fid, bean, null, jcn);
 			if(rs != 0){
 				if(bean.getBusiErrCode() != 0){
 					//bean.setBusiErrCode(-1);
@@ -195,5 +200,72 @@ public class AllyLoginStub {
 		}catch (Exception e) {
 			logger.error("AllyLoginStub::addAlipayInfo", e);
 		}	
+	}
+	
+	
+	public void registerUser(AllyLogin bean, ServiceContext context) {
+		JdbcConnect jcn = null;
+		try {
+			jcn = context.getJdbcPoolManager().getJdbcConnect();
+			logger.info("用户注册  uid=" + bean.getUid() + " aid=" + bean.getComeFrom());
+			
+			int ret = JdbcSqlMapping.executeUpdate("u_register", bean, null, jcn);
+			if (ret != 0) {
+				bean.setBusiErrCode(ErrCode.ERR_CALL_SP);
+				bean.setBusiErrDesc(ErrCode.getErrDesc(bean.getBusiErrCode()));
+			}else{
+				String sql = "";
+				ret = 0;
+				//绑定手机、邮箱
+				if(!StringUtil.isEmpty(bean.getMobileNo())){
+					try{
+						sql = " update tb_user set imobbind=1,cmobileno=? where cnickid = ?";
+						jcn.executeUpdate(sql, new Object[] { bean.getMobileNo(), bean.getUid() });
+//						System.out.println("==========="+ret); ret =1
+					}catch(Exception e){
+						logger.error(String.format("用户%s，绑定手机%s失败", bean.getUid(),bean.getMobileNo()),e);
+					}
+				}
+				
+				if(!StringUtil.isEmpty(bean.getMailAddr())){
+					try{
+						sql = " update tb_user set cemailaddr = ?,imailbind=1 where cnickid = ?";
+						jcn.executeUpdate(sql, new Object[] { bean.getMailAddr(), bean.getUid() });
+					}catch(Exception e){
+						logger.error(String.format("用户%s，绑定邮箱%s失败", bean.getUid(),bean.getMailAddr()),e);
+					}
+				}
+				//实名制
+				if(!StringUtil.isEmpty(bean.getRealName())&&!StringUtil.isEmpty(bean.getCertNo())){
+					try{
+						sql = " update tb_user set crealname = ? ,cidcard = ? where cnickid = ? and crealname is null and cidcard is null";
+						jcn.executeUpdate(sql, new Object[] { bean.getRealName(), bean.getCertNo(),bean.getUid() });
+					}catch(Exception e){
+						logger.error(String.format("用户%s，实名%s失败", bean.getUid(),bean.getRealName()),e);
+					}
+				}
+				//银行信息
+				if(!StringUtil.isEmpty(bean.getBankCard())&&!StringUtil.isEmpty(bean.getBankCode())&&!StringUtil.isEmpty(bean.getBankName())
+						&&!StringUtil.isEmpty(bean.getCityid())&&!StringUtil.isEmpty(bean.getProvid())){
+					try{
+						ret = JdbcSqlMapping.executeUpdate("u_set_bank", bean, null, jcn);
+						System.out.println("==========="+ret);
+						if (ret != 1) {
+							logger.error(String.format("用户%s，设置银行信息失败", bean.getUid()));
+						}
+					}catch(Exception e){
+						logger.error(String.format("用户%s，设置银行信息失败", bean.getUid()),e);
+					}
+				}
+			}
+		} catch (Exception e) {
+			bean.setBusiErrCode(ErrCode.ERR_EXCEPTION);
+			bean.setBusiErrDesc(ErrCode.getErrDesc(bean.getBusiErrCode()));
+			logger.error("UserBeanStub::registerUser ", e);
+		} finally {
+			if (jcn != null) {
+				jcn.unlock();
+			}
+		}
 	}
 }
