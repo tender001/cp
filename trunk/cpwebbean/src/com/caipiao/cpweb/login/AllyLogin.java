@@ -11,6 +11,7 @@ public class AllyLogin extends BaseBean{
 	public static final int ALIPAY = 1;	//支付宝便捷登录
 	public static final int QQ = 2;		//QQ登录 
 	public static final int BF = 4;		//暴风登录 
+	public static final int ZH = 5;		//智恒登录 
 	public static final int NEW = 0;
 	public static final int OLD = 1;
 
@@ -33,6 +34,12 @@ public class AllyLogin extends BaseBean{
 	private int ishuodong; //是否参与活动
 	private int allyType; //合作网站用户类型
 	private String returnInfo; //是否参与活动
+	
+	private String bankCode = "";//银行代码
+	private String bankCard = "";//银行卡号
+	private String bankName = "";//银行名称
+	private String provid = "";//省份编号
+	private String cityid = "";//地市编号
 	
 	public String getMemo() {
 		return memo;
@@ -136,6 +143,46 @@ public class AllyLogin extends BaseBean{
 
 	public void setReturnInfo(String returnInfo) {
 		this.returnInfo = returnInfo;
+	}
+
+	public String getBankCode() {
+		return bankCode;
+	}
+
+	public void setBankCode(String bankCode) {
+		this.bankCode = bankCode;
+	}
+
+	public String getBankCard() {
+		return bankCard;
+	}
+
+	public void setBankCard(String bankCard) {
+		this.bankCard = bankCard;
+	}
+
+	public String getBankName() {
+		return bankName;
+	}
+
+	public void setBankName(String bankName) {
+		this.bankName = bankName;
+	}
+
+	public String getProvid() {
+		return provid;
+	}
+
+	public void setProvid(String provid) {
+		this.provid = provid;
+	}
+
+	public String getCityid() {
+		return cityid;
+	}
+
+	public void setCityid(String cityid) {
+		this.cityid = cityid;
 	}
 
 
