@@ -1169,6 +1169,9 @@
                 if(isfilter && ggData.zy.length>1){
                 	return Y.alert('智能过滤暂不支持同时选择多个过关方式！');
                 }
+                if(isfilter && duoc.indexOf('单') > -1){
+                	return false;//Y.alert('单智能过滤不需单关！');
+                }
 				//if (!Y.checkMaxTickets(data.length, ggData)) {
 				//	return Y.alert('您好，您的方案已超过单倍最高票数限制，请修改投注内容后重新发起！');
 				//}

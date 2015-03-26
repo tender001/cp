@@ -1150,6 +1150,9 @@
                 if(isfilter && ggData.zy.length>1){
                 	return Y.alert('智能过滤暂不支持同时选择多个过关方式！');
                 }
+                if(isfilter && duoc.indexOf('单') > -1){
+                	return false;//Y.alert('单智能过滤不需单关！');
+                }
 				//if (!Y.checkMaxTickets(data.length, ggData)) {
 				//	return Y.alert('您好，您的方案已超过单倍最高票数限制，请修改投注内容后重新发起！');
 				//}
@@ -1256,7 +1259,7 @@
                         if(ty[1]>1){
                         	return this.alert('奖金优化仅支持N串1！');
                         }
-                        Y.get('#pnum').val(ty[0]);
+                        Y.get('#pnum').val(ty[0]=="单关"?"1":ty[0]);
                         Y.get('#danma').val(danma.join('/'));//胆码
                         Y.get('#zhushu').val(Y.get('#zs').html());
                         Y.get('#muli').val(Y.get('#bs').val());
