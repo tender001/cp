@@ -332,7 +332,7 @@ function createGamePanle(tID) {
     //玩法类型
     if (tID > 25 && tID != 27) {
         if (tID == 26) {
-        	var varr = [0,1,3,5,8];
+        	var varr = [0,1,5,8];
             for (var i = 1; i < varr.length; i++) {
 //                if (i % 2 != 0 && i != 1) html.push("<br />");
             	var c = varr[i];
@@ -340,7 +340,7 @@ function createGamePanle(tID) {
             }
         }
         else if (tID == 44) {
-        	var varr = [0,1,2,3,4,5,6];
+        	var varr = [0,1,3,5];
             for (var i = 1; i < varr.length; i++) {
 //                if (i % 2 != 0 && i != 1) html.push("<br />");
                 var c = varr[i];

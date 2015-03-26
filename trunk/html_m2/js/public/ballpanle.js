@@ -410,7 +410,8 @@ function funClock_pgc() {   //高频彩
     else { //已截止
         if (stopState && stopState == 1) {
             LeaveClock.html("已停售");
-            location.reload();
+//            location.reload();
+            setTimeout(function() { window.location.reload();}, (10 * 1000));
         }
         else {
             LeaveClock.html("已截止");
