@@ -126,9 +126,11 @@ public class AllyLoginImpl {
 //			System.out.println("----------"+messages);
 			JXmlWapper xml = JXmlWapper.parse(messages);
 			userId = xml.getStringValue("userId");
-			String pwd = MD5Util.compute("123456" + MD5_KEY);
-			bean.setPwd(pwd);
-			bean.setUid("QSQ_"+userId);
+			if(!StringUtil.isEmpty(userId)){
+				String pwd = MD5Util.compute("123456" + MD5_KEY);
+				bean.setPwd(pwd);
+				bean.setUid("QSQ_"+userId);
+			}
 		}
 		bean.setType(AllyLogin.ZH);
 		return 1;
