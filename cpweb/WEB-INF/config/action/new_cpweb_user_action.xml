@@ -173,6 +173,11 @@
 			<execute method="login" group="1" />
 			<execute method="result" />
 		</action>
+		<action name="zhiheng" forward="" bean="com.caipiao.cpweb.login.AllyLogin" scope="request" desc="ÖÇºãµÇÂ¼">
+			<execute method="zhiheng" />
+			<execute method="login" group="1" />
+			<execute method="result" />
+		</action>
 		<action name="qq_caibei" forward="" bean="com.caipiao.cpweb.login.AllyLogin" scope="request" desc="±ã½ÝµÇÂ¼-QQ²Ê±´-»Øµ÷">
 			<execute method="qqcaibei" />
 			<execute method="login" group="1" />
