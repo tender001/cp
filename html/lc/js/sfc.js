@@ -363,11 +363,11 @@
                  this.rqList = [];
                  this.nrqList = [];
                  this.list.each(function (tr){
-                     if(Y.getInt(tr.getAttribute('rq')) != 0){
-                        this.rqList[this.rqList.length] = tr
-                     }else{
-                        this.nrqList[this.nrqList.length] = tr                     
-                     }
+                	 if(Y.getInt(tr.getAttribute('dgsale')) != 0){
+                         this.rqList[this.rqList.length] = tr;
+                      }else{
+                         this.nrqList[this.nrqList.length] = tr;                    
+                      }
                  }, this)
              }        
         },
@@ -605,7 +605,7 @@
                 }
                 tr = this.get(this.trTpl.cloneNode(true)).insert(this.tbody);
                 tr.prop('id', id).attr('mid', mid).prop('zid', this.getInt(vstr.getAttribute('zid'))).prop('pdate', this.getInt(vstr.getAttribute('pdate'))).prop('pendtime', this.getDate(vstr.getAttribute('pendtime')));
-                tr.attr('mid', vstr.getAttribute('mid')).attr('pname', vstr.getAttribute('pname'));
+                tr.attr('mid', vstr.getAttribute('mid')).attr('pname', vstr.getAttribute('pname')).attr('lasttime', vstr.getAttribute('gdate')).attr('dgsale', vstr.getAttribute('dgsale'));
 				var A = vstr.getAttribute('guestTeam'),
                     B = vstr.getAttribute('homeTeam'),
                     date = vstr.cells[0].innerHTML.replace(/<[^>]+>/g,'');
@@ -670,6 +670,7 @@
             var data = [], def = this.C('_isgg') ? 1 : 2, visiTr,
                 isDg = !this.C('_isgg');
             data.pioneer = Number.MAX_VALUE;
+            data.isdgsale = 1;
             visiTr = this.tbody.find('tr:visited');
             visiTr.each(function (tr){
                 var yTr = this.get(tr), arrKeys = yTr.data('choose_data'),
@@ -681,6 +682,7 @@
                     tmpData = {
                         mid: tr.getAttribute('mid'),
                         pname: tr.getAttribute('pname'),
+                        dgsale: tr.getAttribute('dgsale'),
                         data: arrKeys,
                         selectedSP: arrKeys.map(function (a){
                             return Math.max(def, parseFloat(oSP[a])||2)
@@ -694,6 +696,7 @@
                 tmpData.maxSP = Math.max.apply(Math, tmpData.selectedSP).rmb(false);//最大赔率
                 data[data.length] = tmpData;
                 data.pioneer = Math.min(tr.pendtime, data.pioneer)
+                if(tmpData.dgsale=="1"){data.isdgsale=0;}
             }, this);
             //场次中最先截止时间
             this.get('#end_time').html(data.pioneer == Number.MAX_VALUE ? '' : this.getDate(data.pioneer).format('MM-DD hh:mm'));
@@ -810,10 +813,10 @@
               '<COLGROUP><COL width="70"><COL width="60"><COL width="75"><COL width="95"><COL width="65">'+
               '<COL width="50"><COL width="50"><COL width="50"><COL width="60"><COL width="60"><COL width="60"><COL width=""></COLGROUP>',//2对阵table控制
               '<TBODY>'+
-              '<TR style="DISPLAY: none" class="{$classname}" lg="{$mname}" isend="1" odds="{$nsfc}" pdate="{$itemid}" pendtime="{$et}" pname="{$itemid}" mid="{$mid}" zid="{$itemid}"  homeTeam="*{$shn}" guestTeam="*{$sgn}">'+
+              '<TR style="DISPLAY: none" class="{$classname}" dgsale="{$dsale}" lg="{$mname}" isend="1" odds="{$nsfc}" pdate="{$itemid}" pendtime="{$et}" pname="{$itemid}" mid="{$mid}" zid="{$itemid}"  homeTeam="*{$shn}" guestTeam="*{$sgn}">'+
               '<TD rowSpan=2><LABEL for=m{$itemid}><INPUT id=m{$itemid} class=i-cr value={$itemid} CHECKED type=checkbox name=m{$itemid}>{$name}</LABEL></TD>'+
 	             '<TD style="BACKGROUND: {$cl}; COLOR: #fff" class=league rowSpan=2><A title={$lmname} href="" target="_blank" id="mn{$itemid}" style="color: #fff">{$mname}</A></TD>'+
-	             '<TD rowSpan=2><SPAN class="eng end_time" title="开赛时间：{$mt}">{$short_et}</SPAN><SPAN style="display:none" class="eng match_time" title="截止时间：{$et}">{$short_mt}</SPAN> </TD>'+
+	             '{$dgstr}<SPAN class="eng end_time" title="开赛时间：{$mt}">{$short_et}</SPAN><SPAN style="display:none" class="eng match_time" title="截止时间：{$et}">{$short_mt}</SPAN> </TD>'+
 	             '<TD style="border-left:1px solid #ddd"><A title={$gn} href="" target="_blank" id="gn{$itemid}">{$gn}</A></TD>'+
 	             '<TD style="color:blue;border-left:1px solid #ddd">客胜</TD>'+
 	             '<TD class="tdhui" style="border-left:1px solid #ddd">{$sp11}</TD>'+
@@ -834,10 +837,10 @@
 	             '<TD class="tdhui">{$sp06}</TD></TR>'+
               '</TBODY>',//3隐藏对阵
               '<TBODY>'+
-              '<TR lg="{$mname}" isend="0" odds="{$nsfc}" pdate="{$itemid}" pendtime="{$et}" class="{$classname}" pname="{$itemid}" mid="{$mid}" zid="{$itemid}"  homeTeam="{$hn}" guestTeam="{$gn}">'+
+              '<TR lg="{$mname}" isend="0" dgsale="{$dsale}" odds="{$nsfc}" pdate="{$itemid}" pendtime="{$et}" class="{$classname}" pname="{$itemid}" mid="{$mid}" zid="{$itemid}"  homeTeam="{$hn}" guestTeam="{$gn}">'+
               '<TD rowSpan=2><LABEL for=m{$itemid}><INPUT id=m{$itemid} class=i-cr value={$itemid} CHECKED type=checkbox name=m{$itemid}>{$name}</LABEL></TD>'+
 	             '<TD style="BACKGROUND: {$cl}; COLOR: #fff" class=league rowSpan=2><A title={$lmname} href="" target="_blank" id="mn{$itemid}" style="color: #fff">{$mname}</A></TD>'+
-	             '<TD rowSpan=2><SPAN class="eng end_time" title="开赛时间：{$mt}">{$short_et}</SPAN><SPAN style="display:none" class="eng match_time" title="截止时间：{$et}">{$short_mt}</SPAN> </TD>'+
+	             '{$dgstr}<SPAN class="eng end_time" title="开赛时间：{$mt}">{$short_et}</SPAN><SPAN style="display:none" class="eng match_time" title="截止时间：{$et}">{$short_mt}</SPAN> </TD>'+
 	             '<TD style="border-left:1px solid #ddd"><A title={$gn} href="" target="_blank" id="gn{$itemid}">{$gn}</A></TD>'+
 	             '<TD style="color:blue;border-left:1px solid #ddd">客胜</TD>'+
 	             '<TD style="CURSOR: pointer;border-left:1px solid #ddd" class=h_br><INPUT style="display: none" value=11 type=checkbox><SPAN>{$sp11}</SPAN></TD>'+
@@ -879,8 +882,7 @@
 			var r = obj.match.row;
 			if(!this.isArray(r)){r=new Array(r);}
 			r.each(function(row,i){
-				if($('#dggp').val() == '0'){
-					if(((row.idanguan*1) & 1 << 2) == (1 << 2)){
+				
 						row.classname=i%2==0?"even odd":"even";
 			   			row.enddate=(Y.getDate(row.mt).getHours()<12?(Y.getDate(Date.parse(Y.getDate(row.mt))-1000*60*60*24).format('YY-MM-DD')):Y.getDate(row.mt).format('YY-MM-DD'));
 			   			if (mathdate.indexOf(row.enddate)<0){
@@ -922,7 +924,12 @@
 			   			row.hn=row.hn.substr(0,6);
 			   			row.gn=row.gn.substr(0,6);
 			   			row.name=row.name.trim();
-			   			
+			   			row.dsale = (((row.idanguan*1) & 1 << 2) == (1 << 2)) ? 0 : 1;
+	   					if(row.dsale == 0){
+	   						row.dgstr = '<td class="dg_time" rowSpan="2"><i></i><cite>单</cite>';
+	   					} else {
+	   						row.dgstr = "<td>";
+	   					}
 			   			if (Y.getDate(data.date)>Y.getDate(row.et)){//已经过期的场次
 			   				out_of_date_matches++;
 			   				row.sp01='<span class="">'+row.sp01+'</span>';
@@ -948,77 +955,6 @@
 			   				html[html.length] = tableTpl[4].tpl(row);
 			   				lgname.push(row.mname);
 			   			};
-						}
-				}else{
-					
-						row.classname=i%2==0?"even odd":"even";
-			   			row.enddate=(Y.getDate(row.mt).getHours()<12?(Y.getDate(Date.parse(Y.getDate(row.mt))-1000*60*60*24).format('YY-MM-DD')):Y.getDate(row.mt).format('YY-MM-DD'));
-			   			if (mathdate.indexOf(row.enddate)<0){
-			   				if(mathdate.length>0){numstr[numstr.length]=num;}
-			   				num=0;
-			   				row.num=numstr.length;
-			   				mathdate[mathdate.length]=row.enddate;
-			   				row.weekday='周'+wk[Y.getDate(row.enddate).getDay()];
-			   				html[html.length] = mathdate.length>1?(tableTpl[5]+tableTpl[1].tpl(row)+tableTpl[2]):tableTpl[1].tpl(row)+tableTpl[2];   
-			   			};
-			   			row.index=row.mid;
-			   			if(row.cl.length<3){row.cl="blue";}
-			   			row.b0=(row.bet3!=''?(parseFloat(row.bet3).rmb(false,2)):'--');
-			   			row.b3=(row.bet0!=''?(parseFloat(row.bet0).rmb(false,2)):'--');	
-			   			
-			   			row.short_et=Y.getDate(row.et).format('MM-DD hh:mm');
-			   			row.short_mt=Y.getDate(row.mt).format('MM-DD hh:mm');
-			   			var spstr=row.sfc.split(",");
-			   			row.sp11=(spstr[0]!=''?(parseFloat(spstr[0]).rmb(false,2)):'--');
-			   			row.sp12=(spstr[1]!=''?(parseFloat(spstr[1]).rmb(false,2)):'--');
-			   			row.sp13=(spstr[2]!=''?(parseFloat(spstr[2]).rmb(false,2)):'--');
-			   			row.sp14=(spstr[3]!=''?(parseFloat(spstr[3]).rmb(false,2)):'--');
-			   			row.sp15=(spstr[4]!=''?(parseFloat(spstr[4]).rmb(false,2)):'--');
-			   			row.sp16=(spstr[5]!=''?(parseFloat(spstr[5]).rmb(false,2)):'--');
-			   			row.sp01=(spstr[6]!=''?(parseFloat(spstr[6]).rmb(false,2)):'--');
-			   			row.sp02=(spstr[7]!=''?(parseFloat(spstr[7]).rmb(false,2)):'--');
-			   			row.sp03=(spstr[8]!=''?(parseFloat(spstr[8]).rmb(false,2)):'--');
-			   			row.sp04=(spstr[9]!=''?(parseFloat(spstr[9]).rmb(false,2)):'--');
-			   			row.sp05=(spstr[10]!=''?(parseFloat(spstr[10]).rmb(false,2)):'--');
-			   			row.sp06=(spstr[11]!=''?(parseFloat(spstr[11]).rmb(false,2)):'--');		
-			   			
-			   			row.nsfc=row.sp01+","+row.sp02+","+row.sp03+","+row.sp04+","+row.sp05+","+row.sp06+","+row.sp11+","+row.sp12+","+row.sp13+","+row.sp14+","+row.sp15+","+row.sp16;
-			   			all_matches++;
-			   			row.lmname=row.mname;
-			   			
-			   			row.lhn=row.hn;
-			   			row.lgn=row.gn;
-			   			row.mname=row.mname.substr(0,4);
-			   			row.hn=row.hn.substr(0,6);
-			   			row.gn=row.gn.substr(0,6);
-			   			row.name=row.name.trim();
-			   			
-			   			if (Y.getDate(data.date)>Y.getDate(row.et)){//已经过期的场次
-			   				out_of_date_matches++;
-			   				row.sp01='<span class="">'+row.sp01+'</span>';
-			   				row.sp02='<span class="">'+row.sp02+'</span>';
-			   				row.sp03='<span class="">'+row.sp03+'</span>';
-			   				
-			   				row.sp04='<span class="">'+row.sp04+'</span>';
-			   				row.sp05='<span class="">'+row.sp05+'</span>';
-			   				row.sp06='<span class="">'+row.sp06+'</span>';
-			   				
-			   				row.sp11='<span class="">'+row.sp11+'</span>';
-			   				row.sp12='<span class="">'+row.sp12+'</span>';
-			   				row.sp13='<span class="">'+row.sp13+'</span>';
-			   				
-			   				row.sp14='<span class="">'+row.sp14+'</span>';
-			   				row.sp15='<span class="">'+row.sp15+'</span>';
-			   				row.sp16='<span class="">'+row.sp16+'</span>';
-			   				
-
-			   				html[html.length] = tableTpl[3].tpl(row);
-			   			}else{//未过期的场次
-			   				num++;    				
-			   				html[html.length] = tableTpl[4].tpl(row);
-			   				lgname.push(row.mname);
-			   			};
-				}
 			
    		}); 
 
@@ -1357,7 +1293,14 @@
                 var dan = data.reduce(function (p,c){
                     return p+(c.dan==0?0:1)
                 },0);
+                var isdgsale =1;//开售单关
+                data.reduce(function (p,c){
+                	if(c.dgsale=="1"){isdgsale=0;}
+                },0);
                 var minVs = this.C('dggp') ? 0 : 1;
+                if (isdgsale == 0) {//木有开售单关
+                	minVs=1;
+                }
                 if (this.C('dggp')) {
                 	this.lt2_info.show(len < 1);
                 }else{
@@ -1555,7 +1498,7 @@
 					this.C('optKeys', ['01','02','03','04','05','06','11','12','13','14','15','16']);
 					this.C('maxSelectVs', 4)
 					this.C('spXml', 3);
-					this.C('dggp', this.get('#dggp').val() == '0');//单关固赔
+					this.C('dggp', true);
 					break;
 				case 'dxf':
 					this.C('optKeys', ['3','0']);

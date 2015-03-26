@@ -372,11 +372,11 @@
                  this.rqList = [];
                  this.nrqList = [];
                  this.list.each(function (tr){
-                     if(Y.getInt(tr.getAttribute('rq')) != 0){
-                        this.rqList[this.rqList.length] = tr
-                     }else{
-                        this.nrqList[this.nrqList.length] = tr                     
-                     }
+                	 if(Y.getInt(tr.getAttribute('dgsale')) != 0){
+                         this.rqList[this.rqList.length] = tr;
+                      }else{
+                         this.nrqList[this.nrqList.length] = tr;                    
+                      }
                  }, this)
              }        
         },
@@ -614,7 +614,7 @@
                 }
                 tr = this.get(this.trTpl.cloneNode(true)).insert(this.tbody);
                 tr.prop('id', id).attr('mid', mid).prop('zid', this.getInt(vstr.getAttribute('zid'))).prop('pdate', this.getInt(vstr.getAttribute('pdate'))).prop('pendtime', this.getDate(vstr.getAttribute('pendtime')));
-                tr.attr('mid', vstr.getAttribute('mid')).attr('pname', vstr.getAttribute('pname'));
+                tr.attr('mid', vstr.getAttribute('mid')).attr('pname', vstr.getAttribute('pname')).attr('lasttime', vstr.getAttribute('gdate')).attr('dgsale', vstr.getAttribute('dgsale'));
 				var A = vstr.getAttribute('guestTeam'),
                     B = vstr.getAttribute('homeTeam'),
                     date = vstr.cells[0].innerHTML.replace(/<[^>]+>/g,'');
@@ -679,6 +679,7 @@
             var data = [], def = this.C('_isgg') ? 1 : 2, visiTr,
                 isDg = !this.C('_isgg');
             data.pioneer = Number.MAX_VALUE;
+            data.isdgsale = 1;
             visiTr = this.tbody.find('tr:visited');
             visiTr.each(function (tr){
                 var yTr = this.get(tr), arrKeys = yTr.data('choose_data'),
@@ -690,6 +691,7 @@
                     tmpData = {
                         mid: tr.getAttribute('mid'),
                         pname: tr.getAttribute('pname'),
+                        dgsale: tr.getAttribute('dgsale'),
                         data: arrKeys,
                         selectedSP: arrKeys.map(function (a){
                             return Math.max(def, parseFloat(oSP[a])||2)
@@ -703,6 +705,7 @@
                 tmpData.maxSP = Math.max.apply(Math, tmpData.selectedSP).rmb(false);//最大赔率
                 data[data.length] = tmpData;
                 data.pioneer = Math.min(tr.pendtime, data.pioneer)
+                if(tmpData.dgsale=="1"){data.isdgsale=0;}
             }, this);
             //场次中最先截止时间
             this.get('#end_time').html(data.pioneer == Number.MAX_VALUE ? '' : this.getDate(data.pioneer).format('MM-DD hh:mm'));
@@ -829,10 +832,10 @@
             '<COL >'+
 	           '</COLGROUP>',//2对阵table控制
    	           '<tbody>'+
-   	           '<tr class="{$classname}" style="display: none" lg="{$mname}" isend="1" lost="{$sp0}" win="{$sp3}" pendtime="{$et}" pdate="{$itemid}" pname="{$itemid}" mid="{$mid}" zid="{$itemid}">'+
+   	           '<tr class="{$classname}" style="display: none" dgsale="{$dsale}" lg="{$mname}" isend="1" lost="{$sp0}" win="{$sp3}" pendtime="{$et}" pdate="{$itemid}" pname="{$itemid}" mid="{$mid}" zid="{$itemid}">'+
    	           '<td style="cursor: pointer"><label for=m{$itemid}><input id=m{$itemid} value={$itemid}  checked type=checkbox name=m{$itemid}>{$name}</label></td>'+
 	           '<td style="background:{$cl}; color: #fff" class=league><a title="{$lmname}" href="" target="_blank" id="mn{$itemid}" style="color: #fff">{$mname}</a></td>'+
-	           '<td><span class="eng end_time" title="开赛时间：{$mt}">{$short_et}</span><span style="display: none" class="eng match_time" title="截止时间：{$et}">{$short_mt}</span></td>'+
+	           '{$dgstr}<span class="eng end_time" title="开赛时间：{$mt}">{$short_et}</span><span style="display: none" class="eng match_time" title="截止时间：{$et}">{$short_mt}</span></td>'+
 	           '<td style="text-align: right; border-left:1px solid #ddd;" class="h_br tdhui"><div class="dz_dv" style="padding-left:10px" title={$gn}><s class="s_left">&nbsp;</s><span class="eng b span_left"><em class="em_left" id="htid_{$itemid}">{$gn}</em><b class="b_left"> {$sp0}</b></span></div></td>'+
 	         
 	           '<td style="text-align: left;" class="h_br tdhui"><div class="dz_dv" title={$hn}><span class="eng b span_left"><b class="b_left">{$sp3}<b> <em class="em_left" id="gtid_{$itemid}">{$hn}</em>{$closestr}</span><s class="s_right"></s></div></td>'+
@@ -842,10 +845,10 @@
 	           '</tr>'+
    	           '</tbody>',//3已结束对阵-隐藏
    	           '<tbody>'+
-   	           '<tr class="{$classname}" lg="{$mname}" isend="0" lost="{$sp0}" win="{$sp3}" pendtime="{$et}" pdate="{$itemid}" pname="{$itemid}" mid="{$mid}" zid="{$itemid}"  homeTeam="{$hn}" guestTeam="{$gn}">'+
+   	           '<tr class="{$classname}" dgsale="{$dsale}" lg="{$mname}" isend="0" lost="{$sp0}" win="{$sp3}" pendtime="{$et}" pdate="{$itemid}" pname="{$itemid}" mid="{$mid}" zid="{$itemid}"  homeTeam="{$hn}" guestTeam="{$gn}">'+
    	           '<td style="cursor: pointer"><label for=m{$itemid}><input id=m{$itemid} value={$itemid}  checked type=checkbox name=m{$itemid}>{$name}</label></td>'+
    	           '<td style="background:{$cl}; color: #fff" class=league><a title="{$lmname}" href="" target="_blank" id="mn{$itemid}" style="color: #fff">{$mname}</a></td>'+
-   	           '<td><span class="eng end_time" title="开赛时间：{$mt}">{$short_et}</span><span style="display: none" class="eng match_time" title="截止时间：{$et}">{$short_mt}</span></td>'+
+   	           '{$dgstr}<span class="eng end_time" title="开赛时间：{$mt}">{$short_et}</span><span style="display: none" class="eng match_time" title="截止时间：{$et}">{$short_mt}</span></td>'+
    	           '<td style="text-align: left;  cursor: pointer;border-left:1px solid #ddd" class=h_br><div class="dz_dv" style="padding-left:10px" title={$gn}><input class=chbox value=0 type=checkbox style="display: none"><span class="eng b span_right"><b class="b_right" style="margin-right:15px">{$sp0}</b> <em id="gtid_{$itemid}" class="em_right">{$gn}</em></span><s class="s_right"></s></div></td>'+
    	      
    	        	'<td style="text-align: right; cursor: pointer;" class=h_br><div class="dz_dv" title={$hn}><input class=chbox value=3 type=checkbox style="display: none"><s class="s_left">&nbsp;</s><span class="eng b span_left"><em id="htid_{$itemid}" class="em_left">{$hn}</em> {$closestr}<b class="b_left">{$sp3}</b></span></div></td>'+
@@ -877,55 +880,6 @@
    		if(!this.isArray(r)){r=new Array(r);}
    		r.each(function(row,i){
    		
-   			if($('#dggp').val() == '0'){
-   				if(((row.idanguan*1) & 1 << 1) == (1 << 1)){
-   					row.classname=i%2==0?"even odd":"even";
-   		   			row.enddate=(Y.getDate(row.mt).getHours()<12?(Y.getDate(Date.parse(Y.getDate(row.mt))-1000*60*60*24).format('YY-MM-DD')):Y.getDate(row.mt).format('YY-MM-DD'));
-   		   			if (mathdate.indexOf(row.enddate)<0){
-   		   				if(mathdate.length>0){numstr[numstr.length]=num;}
-   		   				num=0;
-   		   				row.num=numstr.length;
-   		   				mathdate[mathdate.length]=row.enddate;
-   		   				row.weekday='周'+wk[Y.getDate(row.enddate).getDay()];
-   		   				html[html.length] = mathdate.length>1?(tableTpl[5]+tableTpl[1].tpl(row)+tableTpl[2]):tableTpl[1].tpl(row)+tableTpl[2];
-   		   			};
-   		   			row.index=row.mid;
-   		   			row.b3=(row.bet3!=''?(parseFloat(row.bet3).rmb(false,2)):'--');
-   		   			row.b0=(row.bet0!=''?(parseFloat(row.bet0).rmb(false,2)):'--');	
-   		   			row.short_et=Y.getDate(row.et).format('MM-DD hh:mm');
-   		   			row.short_mt=Y.getDate(row.mt).format('MM-DD hh:mm');
-   		   			
-   		   			var spstr=row.rfsf.split(",");
-   		   			row.sp0=(spstr[0]!=''?(parseFloat(spstr[0]).rmb(false,2)):'--');
-   		   			row.sp3=(spstr[1]!=''?(parseFloat(spstr[1]).rmb(false,2)):'--');
-
-   		   			all_matches++;		
-   		   			
-   		   			if (row.close.indexOf("-")==-1){
-   		   				row.closestr='<STRONG class="eng variable red"><SPAN class=sp_up><STRONG>'+row.close+'</STRONG></SPAN></STRONG>';
-   		   			}else{
-   		   				row.closestr='<STRONG class="eng variable green"><SPAN class=sp_down><STRONG>'+row.close+'</STRONG></SPAN></STRONG>';
-   		   			}
-   		   			if(row.cl.length<3){row.cl="blue";}
-   		   			row.lmname=row.mname;
-   		   			row.lhn=row.hn;
-   		   			row.lgn=row.gn;
-   		   			row.mname=row.mname.substr(0,4);
-   		   			
-   		   			row.name=row.name.trim();
-   		   			if (Y.getDate(data.date)>Y.getDate(row.et)){//已经过期的场次
-   		   				out_of_date_matches++;
-   		   					row.shuju='<a href="#">析</a> <a href="#">亚</a> <a href="#">欧</a>';
-   		   					row.sp3str='<span class="sp_value eng red">'+row.sp3+'</span>';
-   		   					row.sp0str='<span class="sp_value eng red">'+row.sp0+'</span>';
-   		   				html[html.length] = tableTpl[3].tpl(row);
-   		   			}else{//未过期的场次
-   		   				num++;    				
-   		   				html[html.length] = tableTpl[4].tpl(row);
-   		   				lgname.push(row.mname);
-   		   			};
-				}
-   			}else{
    				row.classname=i%2==0?"even odd":"even";
    	   			row.enddate=(Y.getDate(row.mt).getHours()<12?(Y.getDate(Date.parse(Y.getDate(row.mt))-1000*60*60*24).format('YY-MM-DD')):Y.getDate(row.mt).format('YY-MM-DD'));
    	   			if (mathdate.indexOf(row.enddate)<0){
@@ -958,7 +912,12 @@
    	   			row.lhn=row.hn;
    	   			row.lgn=row.gn;
    	   			row.mname=row.mname.substr(0,4);
-   	   			
+   	   			row.dsale = (((row.idanguan*1) & 1 << 1) == (1 << 1)) ? 0 : 1;
+				if(row.dsale == 0){
+					row.dgstr = '<td class="dg_time"><i></i><cite>单</cite>';
+				} else {
+					row.dgstr = "<td>";
+				}
    	   			row.name=row.name.trim();
    	   			if (Y.getDate(data.date)>Y.getDate(row.et)){//已经过期的场次
    	   				out_of_date_matches++;
@@ -971,7 +930,6 @@
    	   				html[html.length] = tableTpl[4].tpl(row);
    	   				lgname.push(row.mname);
    	   			};
-   			}
 				
    		});
    		this.get("#lgList").html(lgstr);
@@ -1307,7 +1265,14 @@
                 var dan = data.reduce(function (p,c){
                     return p+(c.dan==0?0:1)
                 },0);
+                var isdgsale =1;//开售单关
+                data.reduce(function (p,c){
+                	if(c.dgsale=="1"){isdgsale=0;}
+                },0);
                 var minVs = this.C('dggp') ? 0 : 1;
+                if (isdgsale == 0) {//木有开售单关
+                	minVs=1;
+                }
                 if (this.C('dggp')) {
                 	this.lt2_info.show(len < 1);
                 }else{
