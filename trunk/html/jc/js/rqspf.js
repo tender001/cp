@@ -9,9 +9,9 @@
         },
         displaySet: function (){//显隐设置
             var Y = this;
-            this.get('#ck1,#ck2,#ck3,#showAll_btn').prop('checked', true);
+            this.get('#ck2,#ck3,#showAll_btn').prop('checked', true);
             this.get('#ck1').click(function (){
-                Y.postMsg('msg_set_rq', this.checked);//让球
+                Y.postMsg('msg_set_rq', !this.checked);//让球
             }).get('#ck2').click(function (){
                 Y.postMsg('msg_set_nrq', this.checked);//非让球     
             }).get('#showAll_btn').click(function (){
