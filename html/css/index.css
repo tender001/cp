@@ -114,25 +114,25 @@ div.center .body{width:96%;height:320px;}
 .zx{float: right;width: 223px;}
 .zx .zj{margin-bottom: 9px;}
 .zx .zj .body{height: 169px;padding: 8px 0;overflow: hidden;color: #3c3c3c;}
-.zx table td,.zx table th{height:34px;text-align: center;}
-.zx table td:first-of-type{text-align: left;}
-.zx table th{font-weight: 400;color: #f00;text-align: right;}
-.safe-state li{float: left;width: 62px;height: 74px;margin-right: 4px;display: inline;}
+.zx table td,.zx table th{height:34px;text-align:center;}
+.zx table td:first-of-type{text-align:left;}
+.zx table th{font-weight:400;color:#f00;text-align:right;}
+.safe-state li{float:left;width:62px;height:74px;margin-right:4px;display:inline;}
 .safe-state .safe-state1{background-position:0 0}
 .safe-state .safe-state2{background-position:-64px 0}
 .safe-state .safe-state3{background-position:-128px 0}
-.zx .cn .body{padding: 10px 0;}
-.hot{width: 1000px;margin: 10px auto;}
-.hm{width: 776px;float: right;border-bottom: 0;height: 345px;}
-.hm .tit{background: #e85c00 url(../images/bg/hm_rightbg.jpg) right 0 no-repeat;color: #fff;border-bottom-color: #e8e8e8;}
-.hm .tit h3 span{display: inline-block;height:26px;line-height:26px;margin-top: 4px;padding:0 10px;font-size:12px;font-weight: 400;cursor: pointer;*display: inline;*zoom:1;}
+.zx .cn .body{padding:10px 0;}
+.hot{width:1000px;margin:10px auto;}
+.hm{width:776px;float:right;height:345px;}
+.hm .tit{background:#e85c00 url(../images/bg/hm_rightbg.jpg) right 0 no-repeat;color:#fff;border-bottom-color:#e8e8e8;}
+.hm .tit h3 span{display:inline-block;height:26px;line-height:26px;margin-top:4px;padding:0 10px;font-size:12px;font-weight:400;cursor:pointer;*display: inline;*zoom:1;}
 .hm .tit h3 span.hover{background-color: #e8e8e8;font-weight: 700;color:#333;}
-.hm div.body.hover{display: block;}
-.hm .tit .more{color: #fff;}
-.hm .body{width: 100%;display: none;}
-.hm table{width: 100%;}
-.hm table th{height: 33px;color: #333;background-color: #e8e8e8;font-weight: 400;text-align: left;border-bottom: 1px solid #ddd;}
-.hm table td{height: 34px;text-align: left;border-bottom: 1px solid #ddd;color: #3c3c3c;}
+.hm div.body.hover{display:block;}
+.hm .tit .more{color:#fff;}
+.hm .body{width: 100%;display:none;}
+.hm table{width:100%;}
+.hm table th{height:33px;color:#333;background-color:#e8e8e8;font-weight:400;text-align:left;border-bottom:1px solid #ddd;}
+.hm table td{height:34px;text-align:left;border-bottom:1px solid #ddd;color:#3c3c3c;}
 .hm table td.tdmark{position: relative;}
 .hm table tr.odd td{background-color: #f8f8f8}
 .hm table tr:hover td{background-color: #fffee6;}
