@@ -8,9 +8,9 @@
         },
         displaySet: function (){//显隐设置
             var Y = this;
-            this.get('#ck1,#ck2,#ck3,#showAll_btn').prop('checked', true);
+            this.get('#ck2,#ck3,#showAll_btn').prop('checked', true);
             this.get('#ck1').click(function (){
-                Y.postMsg('msg_set_rq', this.checked)//让球
+                Y.postMsg('msg_set_rq', !this.checked);//让球
             }).get('#ck2').click(function (){
                 Y.postMsg('msg_set_nrq', this.checked)//非让球     
             }).get('#showAll_btn').click(function (){
@@ -1318,7 +1318,7 @@
 					Y.lt2_info.show(curVsLen < 1);			
 				}else{
 					if (!issfc) {
-						Y.lt2_info.html('请至少选择'+(b===1?3:2)+'场比赛进行投注。');
+//						Y.lt2_info.html('请至少选择'+(b===1?3:2)+'场比赛进行投注。');
 						Y.lt2_info.show(curVsLen < (Y.C('-isdcgg') ? 3 : 2));				
 					}	
 				}
@@ -1467,7 +1467,7 @@
 					this.C('optKeys', ['0','3']);
 					this.C('single_line', true, true);
 					this.C('spXml', 2);
-					this.C('dggp', this.get('#dggp').val() == '0');//单关固赔
+					this.C('dggp', true);//单关固赔
 					break;
 				case 'sfc':
 					this.C('optKeys', ['01','02','03','04','05','06','11','12','13','14','15','16']);
