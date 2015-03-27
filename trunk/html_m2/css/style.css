@@ -21,7 +21,7 @@
 #index_nav.nav table{background-color: #f4f4f4}
 #index_nav.nav table td{padding: 0.5em 0}
 .nav table td{text-align: center;padding: .3em 0;border:1px solid #e2e2e2;border-top-color: transparent}
-.nav-list{color: #333}
+.nav-list{display:inline-table;width:92%;color:#333}
 .nav-list h3{display:inline-block;width:32px;height:32px;margin:0  0 -4px -1px;background-size:34px}
 .nav-list .login{background-position:-1px -68px}
 .nav-list .reg{background-position:-1px -100px}
@@ -38,7 +38,7 @@
 .tz-2cai ul{padding:0.5em 0;border-top: 1px solid #e2e2e2}
 .tz-2cai ul:after{display: table;content: "";clear: both}
 .tz-2cai ul li{float:left;width:49.5%}
-.tz-2cai ul li a{display: table;width: 99%}
+.tz-2cai ul li a{display:inline-table;width:98%}
 .tz-2cai-first{border-right: 1px solid #eee}
 .tz-2cai-first .caipiao-tit em{color:#fe0000}
 .tz-2cai-second .caipiao-tit em{color:#0089d0}
