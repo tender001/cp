@@ -8,9 +8,9 @@
         },
         displaySet: function (){//显隐设置
             var Y = this;
-            this.get('#ck1,#ck2,#ck3,#showAll_btn').prop('checked', true);
+            this.get('#ck2,#ck3,#showAll_btn').prop('checked', true);
             this.get('#ck1').click(function (){
-                Y.postMsg('msg_set_rq', this.checked)//让球
+                Y.postMsg('msg_set_rq', !this.checked);//让球
             }).get('#ck2').click(function (){
                 Y.postMsg('msg_set_nrq', this.checked)//非让球     
             }).get('#showAll_btn').click(function (){
@@ -1307,7 +1307,7 @@
 					Y.lt2_info.show(curVsLen < 1);			
 				}else{
 					if (!issfc) {
-						Y.lt2_info.html('请至少选择'+(b===1?3:2)+'场比赛进行投注。');
+//						Y.lt2_info.html('请至少选择'+(b===1?3:2)+'场比赛进行投注。');
 						Y.lt2_info.show(curVsLen < (Y.C('-isdcgg') ? 3 : 2));				
 					}	
 				}
@@ -1319,7 +1319,7 @@
             });
 			//少于两场的提示
 			if (!issfc) {//胜分差不显示
-				this.lt2_info = this.get('#vslt2').insert('#ggListFree', 'prev');
+				 this.lt2_info = this.get('#vslt2').insert('#ggListFree', 'prev');
 			}
         },
         getCurrentType: function (){//取得过关方式
@@ -1475,7 +1475,7 @@ Class('SPUpdate', {
 					this.C('optKeys', ['0','3']);
 					this.C('single_line', true, true);
 					this.C('spXml', 1);
-					this.C('dggp', this.get('#dggp').val() == '0');//单关固赔
+					this.C('dggp', true);//单关固赔
 					break;
 				case 'rfsf':
 					this.C('optKeys', ['0','3']);
