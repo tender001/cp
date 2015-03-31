@@ -1078,14 +1078,14 @@
             });
             this.sgMap = this.dejson(this.get('#jsonggtype').val());     
             this.get('#gobuy,#gohm').click(function (e, Y){//提交
-                var data = Y.C('choose_data'), minNum = Y.C('_isgg') ? 2 : 1, ishm = this.id == 'gohm' ? 1 : 0,
-                    ggData =  Y.C('-all-gg-type'),
-                    duoc = ggData.dc, isDg = duoc ? duoc.indexOf('单') > -1 : false;
-                if (data.length < minNum) {
-                    return Y.alert('您好，请至少选择' + minNum + '场比赛!')
-                }else if(!duoc && ggData.zy.length === 0){
-                    return Y.alert('您好，请选择过关方式！')
-                }
+            	var data = Y.C('choose_data'), minNum =  Y.C('_isgg') && !Y.C('dggp') ? 2 : 1, ishm = this.id == 'gohm' ? 1 : 0,
+                        ggData =  Y.C('-all-gg-type'),
+                        duoc = ggData.dc, isDg = duoc ? duoc.indexOf('单') > -1 : false;
+                    if (data.length < minNum) {
+                        return Y.alert('您好，请至少选择' + minNum + '场比赛!')
+                    }else if(!duoc && ggData.zy.length === 0){
+                        return Y.alert('您好，请选择过关方式！')
+                    }
                 if(ishm){
                 	return;
                 }
