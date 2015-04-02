@@ -125,7 +125,8 @@ public class AllyLoginImpl {
 			messages =Des3Util.Decrypt(messages, "123456789123456789123456", new byte[]{});
 //			System.out.println("----------"+messages);
 			JXmlWapper xml = JXmlWapper.parse(messages);
-			userId = xml.getStringValue("userId");
+//			userId = xml.getStringValue("userId");
+			userId = xml.getStringValue("mobileNo");
 			if(!StringUtil.isEmpty(userId)){
 				String pwd = MD5Util.compute("123456" + MD5_KEY);
 				bean.setPwd(pwd);
@@ -233,71 +234,76 @@ public class AllyLoginImpl {
 			}else if(bean.getType() == AllyLogin.ZH){
 				//response.sendRedirect("/user/qq_reg.html");
 //				System.out.println("-----bean.getUid()-------"+bean.getUid());
-				if(!StringUtil.isEmpty(bean.getUid())){
-					//直接注册用户入库
-					HttpSession session = request.getSession();
-					String userId = "";
-					String mailAddr ="";
-					String mobileNo ="";
-					String certNo ="";
-					String realName ="";
-					String bankCode ="";
-					String bankCard ="";
-					String bankName ="";
-					String provid ="";
-					String cityid ="";
-					
-					
-					bean = new AllyLogin();//此处要设置新对象否则RemoteBeanCall调用后，sql映射对象有误。
-					if(request.getParameter("Messages")!=null&&request.getParameter("Messages")!=""){
-						String  messages = new String(Base64.decode(request.getParameter("Messages")), "UTF-8");
-						messages =Des3Util.Decrypt(messages, "123456789123456789123456", new byte[]{});
-						JXmlWapper xml = JXmlWapper.parse(messages);
+				try{
+					if(!StringUtil.isEmpty(bean.getUid())){
+						//直接注册用户入库
+						HttpSession session = request.getSession();
+						String userId = "";
+						String mailAddr ="";
+						String mobileNo ="";
+						String certNo ="";
+						String realName ="";
+						String bankCode ="";
+						String bankCard ="";
+						String bankName ="";
+						String provid ="";
+						String cityid ="";
 						
-						userId = xml.getStringValue("userId");
-						bean.setUid("QSQ_"+userId);
 						
-						bean.setComeFrom("59875");//代理商
-						
-						mailAddr = xml.getStringValue("mailAddr");
-						bean.setMailAddr(mailAddr);
-						
-						mobileNo = xml.getStringValue("mobileNo");
-						bean.setMobileNo(mobileNo);
-						
-						certNo = xml.getStringValue("certNo");
-						bean.setCertNo(certNo);
-						
-						realName = xml.getStringValue("realName");
-						bean.setRealName(realName);
-						
-						bankCode = xml.getStringValue("bankCode");
-						bean.setBankCode(bankCode);
-						
-						bankCard = xml.getStringValue("bankCard");
-						bean.setBankCard(bankCard);
-						
-						bankName = xml.getStringValue("bankName");
-						bean.setBankName(bankName);
-						
-						provid = xml.getStringValue("provid");
-						bean.setProvid(provid);;
-						
-						cityid = xml.getStringValue("cityid");
-						bean.setCityid(cityid);
-						
-						String pwd = MD5Util.compute("123456" + MD5_KEY);
-						bean.setPwd(pwd);
-						
+						bean = new AllyLogin();//此处要设置新对象否则RemoteBeanCall调用后，sql映射对象有误。
+						if(request.getParameter("Messages")!=null&&request.getParameter("Messages")!=""){
+							String  messages = new String(Base64.decode(request.getParameter("Messages")), "UTF-8");
+							messages =Des3Util.Decrypt(messages, "123456789123456789123456", new byte[]{});
+							JXmlWapper xml = JXmlWapper.parse(messages);
+							
+							userId = xml.getStringValue("userId");
+	//						bean.setUid("QSQ_"+userId);使用手机号
+							
+							bean.setComeFrom("59875");//代理商
+							
+							mailAddr = xml.getStringValue("mailAddr");
+							bean.setMailAddr(mailAddr);
+							
+							mobileNo = xml.getStringValue("mobileNo");
+							bean.setUid("QSQ_"+mobileNo);
+							bean.setMobileNo(mobileNo);
+							
+							certNo = xml.getStringValue("certNo");
+							bean.setCertNo(certNo);
+							
+							realName = xml.getStringValue("realName");
+							bean.setRealName(realName);
+							
+							bankCode = xml.getStringValue("bankCode");
+							bean.setBankCode(bankCode);
+							
+							bankCard = xml.getStringValue("bankCard");
+							bean.setBankCard(bankCard);
+							
+							bankName = xml.getStringValue("bankName");
+							bean.setBankName(bankName);
+							
+							provid = xml.getStringValue("provid");
+							bean.setProvid(provid);;
+							
+							cityid = xml.getStringValue("cityid");
+							bean.setCityid(cityid);
+							
+							String pwd = MD5Util.compute("123456" + MD5_KEY);
+							bean.setPwd(pwd);
+							
+						}
+	//					System.out.println("bean.getPwd()======="+bean.getPwd());
+						int rc = RemoteBeanCallUtil.RemoteBeanCall(bean, context, GroupContain.USER_GROUP, "registerUser");
+		                if (rc != 0 || bean.getBusiErrCode() != 0) {
+		                    throw new Exception("失败：" + bean.getBusiErrDesc());
+		                }else{
+		        			session.setAttribute(BaseImpl.UID_KEY, bean.getUid());
+		        			session.setAttribute(BaseImpl.PWD_KEY, bean.getPwd());
+		                }
 					}
-//					System.out.println("bean.getPwd()======="+bean.getPwd());
-					int rc = RemoteBeanCallUtil.RemoteBeanCall(bean, context, GroupContain.USER_GROUP, "registerUser");
-	                if (rc != 0 || bean.getBusiErrCode() != 0) {
-	                    throw new Exception("失败：" + bean.getBusiErrDesc());
-	                }else{
-	        			session.setAttribute(BaseImpl.UID_KEY, bean.getUid());
-	        			session.setAttribute(BaseImpl.PWD_KEY, bean.getPwd());
-	                }
+				}catch(Exception e){
+					e.printStackTrace();
 				}
                 response.sendRedirect("/");
 			}else{
