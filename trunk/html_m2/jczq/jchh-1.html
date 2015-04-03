@@ -54,13 +54,35 @@
          </li>
      </ul>
 
-<div class="buyFooter" id='buyFooter1'>
+<!--<div class="buyFooter" id='buyFooter1'>
     <div class="buyFloat fixed">
         <em class="deleted"  onclick="ReChoose();"></em>
         <span>已选择<cite class="yellow" id="betnum">0</cite>场比赛</span>
         <a href="javascript:betconfirm()" class="ture" id="isOk_">确 认</a>
     </div>
-</div>
+</div>-->
+<footer class="buyFooter">
+    <div class="fixed">
+        <div class="double clearfix">
+            <span class="left">过关<span class="red">(必选)</span><i class="cai-choose-more"><cite></cite></i></span>
+            <span class="right">投<input type="number" size="5" maxlength="5" value="1">倍<a class="yh" href="#">奖金优化</a></span>
+        </div>
+        <ul class="cai-choose fn-clearfix">
+            <li>单关</li>
+            <li class="cur">二串一</li>
+            <li>三串一</li>
+        </ul>
+        <div class="buyFloat">
+            <a id="payment" style="display: none;"></a>
+            <a href="javascript:payhm(1)" class="gohm-btn">合买</a>
+            <span id="preMoney">共<cite class="yellow">2</cite> 注<cite class="yellow">￥4</cite>元</span>
+            <a href="javascript:payconfirm(1)" class="ture" id="isOk_">代购</a>
+        </div>
+    </div>
+</footer>
+
+
+
 <!--#include virtual="/jczq/buy.html"-->
 <input type="hidden" id="hidAmount" value="0">
 <input type="hidden" value="竞彩混投" id="hidTypeName">
