@@ -272,6 +272,14 @@
 .up-jc-jqs .spfzpk{padding-top:5px}
 .up-jc-jqs .spfzpk span{border-left-width:1px;margin:-1px -1px 0 0}
 .up-jc .bfpk span{border-left-width:1px;border-color:#ddd;background-image:-webkit-linear-gradient(top,#fff,#e9e9e9);background-image:-moz-linear-gradient(top,#fff,#e9e9e9);background-image:-o-linear-gradient(top,#fff,#e9e9e9)}
+.cai-choose-more{position:relative;display: inline-block;width:16px;height:16px;margin-left: 3px;border: 1px solid #9b9b9b;border-radius:16px;background-color: transparent;vertical-align:middle;vertical-align:-5px}
+.cai-choose-more cite{position:absolute;top:6px;left:5px;width:6px;height:6px;border-right:1px solid #9b9b9b;border-bottom:1px solid #9b9b9b;-webkit-transform:rotate(-135deg);-moz-transform:rotate(-135deg);-o-transform:rotate(-135deg);transform:rotate(-135deg)}
+.cai-choose{padding:0.7em 0;border-top: 1px solid #d5d5d5}
+.cai-choose li{float:left;width:22%;margin-left:3%;padding:0.35em 0;text-align: center;border: 1px solid #d5d5d5}
+.cai-choose .cur{border-color:#f60;position: relative}
+.cai-choose .cur:after{content:""; position:absolute; bottom:-1px; right:-1px; width:1.4em; height:1.4em; background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAC0AAAAtCAYAAAA6GuKaAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAHlSURBVGhD1dm9TsMwEADgvAkDExsbL8Az8AjwBjwAEmJgqNSNGVaYYGJAQgxMLAztghADCxJIDG0gpDkcK4nin+Rsx+e4lipVqmp9vp7vqkuSrMECgP2/hyksjzf4K3oyB99PZjU4erQOHDW6Cxwtug8cJRoDR4c2AUeFNgVHg7YBR4G2BY+OdgGPinYFj4YeAh4FPRQcHO0DHBTtCxwM7RMcBO0bTI6mAJOiqcBkaEowCZoa7B0dAuwVTQFOT7dg9XIHP2e7zfjAG5oM/PbItgYoFp8CfPDcgwK8PNnkEW6vFTuAl2FNKHDx9QrpdGc4ug+cTraFHGxPh3rfswjnsxshwsX3uwB2zuk+cHZ9qOSgEboEP18pYPkSOqExMBS59vJg8PzpQgRLl895loflsGmk5APYgK0ijYE5xDAn2+hyhCusbKHUZfmQRiXPCFzNjnXlSr79NUILPt9DLzGKtgL3wT/m0K4qrmA0PZzAFZy34Kqj1T9/UcGz2yM1JQwijDaXIeB6cy2c1V2xTOTwe3mApgRaPXyA2/AywtrFyqMtWJsePsENnHVIBe4IVtAU4C542TmxhtP1eVM9KMENnP3pKS/nEHAT6RBg16jqvpesG5hHWn6w6DMiVHslVBtT7ruW6H9W8ppOm5u6EQAAAABJRU5ErkJggg==) no-repeat center; background-size:1.4em 1.4em; -webkit-background-size:1.4em 1.4em; -moz-background-size:1.4em 1.4em}
+.double .yh{display: inline-block;width:4em;margin:0 0 0 1em;padding:0 0.5em;height:2.3em;color:#fff;background-color: #adadad;border-radius:3px;}
+
 /*篮彩*/
 .jclqDxf .sfcxs li:first-child{margin-top:0.7em}
 .spfzpk2 span{ width:35%;height:2.4em;line-height:1.4em;margin-top:0;padding:.4em 0;}
