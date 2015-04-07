@@ -274,11 +274,38 @@
 .up-jc .bfpk span{border-left-width:1px;border-color:#ddd;background-image:-webkit-linear-gradient(top,#fff,#e9e9e9);background-image:-moz-linear-gradient(top,#fff,#e9e9e9);background-image:-o-linear-gradient(top,#fff,#e9e9e9)}
 .cai-choose-more{position:relative;display: inline-block;width:16px;height:16px;margin-left: 3px;border: 1px solid #9b9b9b;border-radius:16px;background-color: transparent;vertical-align:middle;vertical-align:-5px}
 .cai-choose-more cite{position:absolute;top:6px;left:5px;width:6px;height:6px;border-right:1px solid #9b9b9b;border-bottom:1px solid #9b9b9b;-webkit-transform:rotate(-135deg);-moz-transform:rotate(-135deg);-o-transform:rotate(-135deg);transform:rotate(-135deg)}
-.cai-choose{padding:0.7em 0;border-top: 1px solid #d5d5d5}
+.cai-choose{padding:0.7em 0;border-top: 1px solid #d5d5d5;background-color:#fff}
 .cai-choose li{float:left;width:22%;margin-left:3%;padding:0.35em 0;text-align: center;border: 1px solid #d5d5d5}
 .cai-choose .cur{border-color:#f60;position: relative}
 .cai-choose .cur:after{content:""; position:absolute; bottom:-1px; right:-1px; width:1.4em; height:1.4em; background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAC0AAAAtCAYAAAA6GuKaAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAHlSURBVGhD1dm9TsMwEADgvAkDExsbL8Az8AjwBjwAEmJgqNSNGVaYYGJAQgxMLAztghADCxJIDG0gpDkcK4nin+Rsx+e4lipVqmp9vp7vqkuSrMECgP2/hyksjzf4K3oyB99PZjU4erQOHDW6Cxwtug8cJRoDR4c2AUeFNgVHg7YBR4G2BY+OdgGPinYFj4YeAh4FPRQcHO0DHBTtCxwM7RMcBO0bTI6mAJOiqcBkaEowCZoa7B0dAuwVTQFOT7dg9XIHP2e7zfjAG5oM/PbItgYoFp8CfPDcgwK8PNnkEW6vFTuAl2FNKHDx9QrpdGc4ug+cTraFHGxPh3rfswjnsxshwsX3uwB2zuk+cHZ9qOSgEboEP18pYPkSOqExMBS59vJg8PzpQgRLl895loflsGmk5APYgK0ijYE5xDAn2+hyhCusbKHUZfmQRiXPCFzNjnXlSr79NUILPt9DLzGKtgL3wT/m0K4qrmA0PZzAFZy34Kqj1T9/UcGz2yM1JQwijDaXIeB6cy2c1V2xTOTwe3mApgRaPXyA2/AywtrFyqMtWJsePsENnHVIBe4IVtAU4C542TmxhtP1eVM9KMENnP3pKS/nEHAT6RBg16jqvpesG5hHWn6w6DMiVHslVBtT7ruW6H9W8ppOm5u6EQAAAABJRU5ErkJggg==) no-repeat center; background-size:1.4em 1.4em; -webkit-background-size:1.4em 1.4em; -moz-background-size:1.4em 1.4em}
 .double .yh{display: inline-block;width:4em;margin:0 0 0 1em;padding:0 0.5em;height:2.3em;color:#fff;background-color: #adadad;border-radius:3px;}
+.bf-fixed .bf_1{border-radius:0 !important;width:17.5rem;padding:0 0.6rem;font-size:1.2em;background-color: #f0f0f0}
+.bf_1_title{padding:0.5rem;text-align: center}
+.bf_1_title span{display: inline-block;width:43%}
+.choose-bf{/*padding:5px 0;*/text-align: center}
+.choose-bf dt{float: left;width: 1.2rem;line-height:51px;margin-top:-1px;color:#fff;border-bottom:1px solid #7d1ed3;background-color: #7d1ed3}
+.choose-bf .choose-bf-for{float: left;width:16.3rem}
+.choose-bf-for span{position:relative;float: left;width: 5.35rem;margin:-1px 0 0 -1px;padding:0.3em 0;border: 1px solid #ddd;background-color: #fff}
+.choose-bf-for span i{display: block;color: #aaa}
+.choose-bf-for .cur{z-index: 100}
+.choose-bf-for .cur:before{height: 100% !important}
+.choose-submit{padding: 0.3em 0 0.6em;text-align: center}
+.choose-submit span{display: inline-block;width:4rem;padding:0.5em 1em;color: #fff;letter-spacing:0.15em;border-radius:4px}
+.choose-submit .choose-submit-false{background-color: #babcbb}
+.choose-submit .choose-submit-true{margin-left:1.7em;background-color: #f40}
+.pad{padding: 5px 0;}
+.alert-bf{height:20rem;overflow:auto}
+.alert-bf .choose-bf-for span{width:3.15rem}
+.choose-bf .alert-bf-tit1{line-height:155px;border-width:0;background-color:#e9181b}
+.choose-bf .alert-bf-tit2{line-height:53px;border-width:0;background-color:#2173d6}
+.choose-bf .alert-bf-tit3{line-height:155px;border-width:0;background-color:#45be09}
+.alert-bf-hh{height:20rem;overflow:auto}
+.alert-bf-hh .alert-bf{height: auto}
+.alert-jq .choose-bf-for span{width:4.01rem}
+.alert-jq .choose-bf dt{line-height:34px;background-color:#145fab}
+
+
+
 
 /*篮彩*/
 .jclqDxf .sfcxs li:first-child{margin-top:0.7em}
