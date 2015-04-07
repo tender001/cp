@@ -2462,3 +2462,10 @@ p.yh1 a.dg-btn1{right: 12px}
 .event-dj .line{float:left;width: 1px;height: 140px;background: url("../zhuanti/images/zt/event-line.jpg") repeat-y;overflow: hidden}
 .event-dj ul{float: left;width: 380px;padding: 0 0 0 45px}
 .event-dj ul li{float: left;width: 360px;height: 32px;padding: 0 0 0 10px;font:14px/32px "Microsoft YaHei UI","\5fae\8f6f\96c5\9ed1";color:#363636;background: url("../zhuanti/images/zt/list-before.jpg") 0 12px no-repeat;white-space: nowrap;text-overflow: ellipsis;overflow: hidden}
+/**/
+.c159-ts{padding:12px 17px;color:#333;background-color:#fff}
+.c159-ts-tit{font:bold 18px/32px aril;border-bottom:1px solid #999}
+.c159-ts-center{position:relative;padding:10px 0 25px}
+.c159-ts-center p{width:320px;padding:28px 0 0;font-size:14px}
+.c159-ts-bottom{font:20px/32px "Microsoft YaHei";color:#b64a02}
+.c159-ts-pic{position:absolute;top:0;right:14px;width:160px;height:230px;background:url("/images/help/159-ts.jpg") no-repeat}
