@@ -70,7 +70,7 @@ input[type="text"]:focus{border-color: rgb(255,113,0) !important}
 .top dl dd li p{width: 184px;float: right;*white-space: nowrap;}
 .top dl dd li p a{float: left;margin:0 8px 0 0;position: relative;}
 .top dl dd li p a:hover{color: #e52e04;}
-.kp p a{color:#8c8c8c !important}
+/*.kp p a{color:#8c8c8c !important}*/
 .top a{margin: 0 8px;color:#6c6c6c;}
 .top a.e62{color: #e62e04;}
 .top .fl a{color: #e62e04;cursor: pointer;}
@@ -102,7 +102,7 @@ input[type="text"]:focus{border-color: rgb(255,113,0) !important}
 .m_l dt,.m_l dd{float: left;line-height: 22px;}
 .m_l dt{width:40px;font-weight: bold;color: #f60;}
 .m_l dd{width:150px;}
-.m_l a,.m_l1 a{color:#585858;margin-right: 10px; float: left;white-space: nowrap;line-height: 22px;position: relative;}
+.m_l a,.m_l1 a{/*color:#585858;*/color:#8c8c8c;margin-right: 10px; float: left;white-space: nowrap;line-height: 22px;position: relative;}
 .m_l a:hover{color: #e52e04}
 .m_l a i,.m_l1 a i,.top dl dd li p a i,.dc_qr a s,.tzsontab span a i{display:block;width:21px;height:17px;position:absolute;top:-7px;right:-17px;z-index:10;background:url(../images/bg/new.png) no-repeat;}
 .m_l a i.hot,.m_l1 a i.hot,.top dl dd li p a i.hot{background-position: -42px 0;margin: 0;}
