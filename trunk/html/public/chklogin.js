@@ -274,6 +274,7 @@ Class('Loginer', {// 登陆器
 				                    	 div.style.display = "none"; 
 				                     });
 		                     }
+                             
                              if(r.isagent=="1" && (r.vlevel>0)){
                             	
                             	 $("#tuiguang").show();
@@ -309,6 +310,7 @@ Class('Loginer', {// 登陆器
 		                     this.setUserInfo(showText);
 		                    
 					   }else{
+						 
 						   this.setUserInfo('拉取用户信息失败, 请刷新重试!');
 						   cpshowText='您尚未登录,请先<a href="javascript:void(0)" title="" style="color: red;" onclick="Yobj.postMsg(\'msg_login\')">&nbsp;&nbsp;登录&nbsp;&nbsp;</a>';
 					   }      
@@ -357,8 +359,13 @@ Class('Loginer', {// 登陆器
         this.get("#qqcaibei").hide();
     },
   //显示认证信息
+
      showSafe : function(){
-    	Y.ajax({
+    	 
+    	 var d_url=document.location.href;
+    	 
+    	 var buyPage=["jc","lc","bj","zc","renjiu","banquan","jinqiu","shuangseqiu","daletou","3d","paiwu","paisan","qixingcai","qilecai","11ydj","11x5","ssc","klpk"]
+    	 Y.ajax({
             url:Class.C('url-login-safe')+"&rnd=" + Math.random(),
             end:function (data){
             	 if (data.error) {
@@ -369,14 +376,33 @@ Class('Loginer', {// 登陆器
     					   if (code==0){
     						 var u = obj.Resp.row;
     							 var rname = u.rname;
+    							 var open = u.open;
 
     							 if(rname==""){
     								this.get('#user_rz').html("<a href='/account/safecenter.html' target='_blank' alt>未实名</a>");
     							 }else{
     								this.get('#user_rz').html("已实名").addClass("cur");
     							 }
+    							 if(open!=0 ){
+    								
+    								 buyPage.each(function(e){
+        								 if(e==d_url.split("/")[3]&&d_url.indexOf("project")==-1){
+        									 return setTimeout(function() { Y.use('StopAlert',function(){this.lib.StopAlert();}); }, (1 * 1000));
+        								 }
+        							})
+    								 
+    							 }
     							 
     							
+    					   }else{
+    						   
+    						   
+    							buyPage.each(function(e){
+    								 if(e==d_url.split("/")[3]&&d_url.indexOf("project")==-1){
+    									 return setTimeout(function() { Y.use('StopAlert',function(){this.lib.StopAlert();}); }, (1 * 1000));
+    								 }
+    							})
+
     					   }
                  }
             }
@@ -443,6 +469,9 @@ Class({
             if (isLogin) {
                 this.showUserInfo();// 如果已登陆,拉取空间数据.
                 this.get('span.if_buy_yue').show();
+            }else{
+            	
+            	this.showSafe();
             }
         });
         this.get('b.i-hp,s.i-qw,#xianhao1,#xianhao2,#xianhao3,[mark=pro_em]').tip('data-help', 1, false, 360);// 帮助说明
