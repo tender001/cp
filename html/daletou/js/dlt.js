@@ -704,7 +704,7 @@ Class('CodeList>Dlt_CodeList_dt', {
 
             runSub = {
                 'pt': 'empty',
-                'dt': 'createDt',
+//                'dt': 'createDt',
                 'sc': 'createDs'
             }
 
