@@ -2099,9 +2099,9 @@ Class('Main', {
 			if (totalmoney > MAX_ALL_MONEY) {
 				return this.alert('您好, 方案金额不能超过'+MAX_ALL_MONEY.rmb(true, 0)+'元!');
 			}
-			if (totalmoney < 10) {
-				return this.alert('您好，暂支持10元起购！');
-			}
+//			if (totalmoney < 10) {
+//				return this.alert('您好，暂支持10元起购！');
+//			}
 			
 			this.setVals({
 				'#codes': codeList.getCodeString(),

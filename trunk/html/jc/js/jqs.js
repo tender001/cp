@@ -1155,9 +1155,9 @@
                     if (totalmoney > MAX_ALL_MONEY) {
                         return this.alert('您好, 发起方案金额最多不能超过￥'+MAX_ALL_MONEY+'元!')
                     }
-                    if (totalmoney<10) {
-                        return Y.alert('您好，暂支持10元起购！')
-                    }
+//                    if (totalmoney<10) {
+//                        return Y.alert('您好，暂支持10元起购！')
+//                    }
                     if (ishm){
                     	Y.get("#project_form").attr("action", "/phpt/jc/step_1.phpx");
                     }else{
