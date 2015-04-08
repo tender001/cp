@@ -230,6 +230,9 @@
 .errorBg{ position:absolute; padding:.7rem .5rem .6rem .9rem; right:-1.2em; top:0}
 .errorBg .error2{ display:block; width:1.06rem; height:1.06rem; background:url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACMAAAAjCAMAAAApB0NrAAAAQlBMVEUAAADc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nz////p6eno6Ojx8fHi4uLCn5nCAAAAEHRSTlMA8UL2iOjg0HwnFgYDhbm4g6GjowAAAPJJREFUOMuVlO0OgyAMRQtDxKmzgL7/qy5zlsuHCdv5ZcyJrZcWylj0+rKKlX2teqE7nmZgMJhnY8zuwSUPN5fKNHLLOOWKVnyH0pmCOlW9JE34So26ys3opWX8Nu5YOG4kd+aSmtl9lMewp5Y+Oa1QvEjB+yQZomWQQv5DvBRIw0KahSjSqfgg73UqBUkUFNu4lkQRNrKcS1CApTLjCAVZExcEn/4OkKqUVlJkK6WVLG21EmIlbcgH0VWSId0oIh2SM85rvxSRAs6LDM4duUQ8mnJ+sugOzE8+h/e4n+e5vxf9/ervaX/f+/fGX/dP/x57A/nLPBMWHWWgAAAAAElFTkSuQmCC") no-repeat center; background-size:1.06rem 1.06rem; -webkit-background-size:1.06rem 1.06rem; -moz-background-size:1.06rem 1.06rem}
 .sfcxs{ border-bottom:1px solid #e4e4e4; padding:.9em 0 .9em 0; overflow:hidden; zoom:1}
+.dg-for{position:relative}
+.dg-for:before{position:absolute;top:0;left:0;content:"";width:0;height:0;overflow:hidden;border:12px solid #f40;border-color:#f40 transparent transparent #f40}
+.dg-for:after{position:absolute;top:0;left:0;content:"单";width:12px;height:12px;color:#fff}
 .sfcxs li{float:left;width:78.5%;color:#343434}
 .spfpl span{ display:inline-block;width:39%;color:#aaa;font-size:1.12em; text-align:center; margin-top:.2rem}
 .spfpl span.spfvs,.spfNum .spfpl span.spfvs{ width:22%}
