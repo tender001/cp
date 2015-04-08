@@ -6,6 +6,7 @@
 $(document).ready(function() {
 	chklogin(1);
 	$("#btnPay").click(function(){
+		return showTips('充值系统维护暂停充值');
 		if ($("#addmoney").val()<10){
 	    	showTips('存入金额至少为10元');
 			$("#addmoney").focus();
