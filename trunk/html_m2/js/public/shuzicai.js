@@ -83,13 +83,7 @@ loadexp = function(){
 //					$("#span_issuenum").html(r.pid.substring(getIndex($("#TypeID").val())));
 					$("#span_issuenum").html(r.pid.substring(getIndex($("#TypeID").val())));
 					$("#expect").val(r.pid);
-//					$_sys.lottype.push([ "高频彩", "gpc", "4,20,54,56" ]);
-					if(gid=="4"||gid=="20"||gid=="54"||gid=="56"){
-						showCountDownTime_gpc("span_stoptime",curdate,r.et.toDate().getTime());
-					}else{
-						showCountDownTime_szc("span_stoptime",curdate,r.et.toDate().getTime());
-					}
-					
+					showCountDownTime_gpc("span_stoptime",curdate,r.et.toDate().getTime());
 				}
 			},
 			error:function(){
@@ -332,7 +326,7 @@ function createGamePanle(tID) {
     //玩法类型
     if (tID > 25 && tID != 27) {
         if (tID == 26) {
-        	var varr = [0,1,5,8];
+        	var varr = [0,1,3,5,8];
             for (var i = 1; i < varr.length; i++) {
 //                if (i % 2 != 0 && i != 1) html.push("<br />");
             	var c = varr[i];
@@ -340,7 +334,7 @@ function createGamePanle(tID) {
             }
         }
         else if (tID == 44) {
-        	var varr = [0,1,3,5];
+        	var varr = [0,1,2,3,4,5,6];
             for (var i = 1; i < varr.length; i++) {
 //                if (i % 2 != 0 && i != 1) html.push("<br />");
                 var c = varr[i];
@@ -663,28 +657,24 @@ function payhm(ishm){
 	if(ishm){
 		$("#szcbuy,#paybet,[mark=buyfooter],#szcbuy,#issuc").hide();
     	$("#payhm").show();
-    	$("#cpmoney").html($("#buymoney").val());
-    	$("#txtLotDesc").val(GameName[getGameIndex(tID)]+ "复式合买方案");
-    	
 	}else{
 		$("#szcbuy").show();
     	$("#payhm").hide();
 	}
-	
 }
 
 function ispay(ispay){
 	if(ispay){
-    	$("#betpage,#buyFooter1,[mark=buyfooter],#szcbuy,#issuc,#payhm").hide();
+    	$("#betpage,#buyFooter1,[mark=buyfooter],#szcbuy,#issuc").hide();
     	$("#paybet").show();
     }else{
     	$("#szcbuy").show();
-    	$("#paybet,#payhm").hide();
+    	$("#paybet").hide();
     }
 }
 function issuc(ispay){
 	 if(issuc){
-	    	$("#betpage,#buyFooter1,[mark=buyfooter],#szcbuy,#paybet,#payhm").hide();
+	    	$("#betpage,#buyFooter1,[mark=buyfooter],#szcbuy,#paybet").hide();
 	    	$("#issuc").show();
 	    }else{
 	    	$("#paybet").show();
@@ -964,17 +954,6 @@ function getDivShow(value) {
     }
 }
 
-function nocommission(obj){
-	var onClass="cur";
-	if($(obj).hasClass(onClass)){
-		$(obj).removeClass(onClass);
-		$("#selectCommission").slideUp();
-		$("#commission").val(0);
-	}else{
-		$(obj).addClass(onClass);
-		$("#selectCommission").slideDown();
-	}
-}
 function updateViewPrice(obj) {
     var varvalue = obj.value;
     if (isNaN(varvalue) || varvalue.indexOf(".") != -1 || varvalue == "0" || parseInt(varvalue) > 6)
@@ -996,66 +975,31 @@ function isPassWordBuy(obj) {
     }
 }
 
-
-function updatePublicBuyInfo(baodi) {
+function updatePublicBuyInfo() {
     var masterBuy = new Number($("#masterBuy").attr("value"));
-    var varAllmoney = new Number($("#buymoney").val());
-    var hmbetmoney=0;
+    var varAllmoney = new Number($("#money").text());
+
     if (masterBuy > 0 && masterBuy <= varAllmoney) {
         $("#masterBuy").attr("value", (masterBuy).toFixed(0));
         $("#masterBuy_percent").html(Math.floor((masterBuy / varAllmoney) * 10000) / 100 + "%");
-        hmbetmoney=masterBuy;
-       
     } else {
         $("#masterBuy").attr("value", "");
         $("#masterBuy_percent").html("0%");
-       
     }
 
     if (!!$("#baodiAll").attr("checked")) {
-       
+        $("#baodi").attr("value", varAllmoney - masterBuy);
     }
-    if(baodi){
-    	if(!$("#baodiAll").hasClass("cur")){
-	       $("#baodi").attr("value", varAllmoney - masterBuy);
-	       $("#baodiAll").addClass("cur")
-	       $("#baodimx").slideDown();
-    	}else{
-    	   $("#baodiAll").removeClass("cur");
-    	   $("#baodi").attr("value", 0);
-    	   $("#baodimx").slideUp();
-       }
-    }
-    
     var baodi = new Number($("#baodi").attr("value"));
     if (baodi > 0 && baodi + masterBuy <= varAllmoney) {
         $("#baodi").attr("value", (baodi).toFixed(0));
         $("#baodi_percent").html(Math.floor((baodi / varAllmoney) * 10000) / 100 + "%");
-        hmbetmoney+=baodi;
     } else {
         $("#baodi").attr("value", "");
         $("#baodi_percent").html("0%");
     }
-    $("#hmbetmoney").html((hmbetmoney).toFixed(0))
 }
 
-function selectCommission(obj){
-	$("#selectCommission li").removeClass("cur");
-	$(obj).addClass("cur");
-	if(new Number($(obj).attr("v"))>0){
-		$("#commission").val($(obj).attr("v"));
-	}else{
-		$("#commission").val(0);
-	}
-}
-
-function selectSecrecy(obj){
-	$("#selectSecrecy span").removeClass("cur");
-	$(obj).addClass("cur");
-	if(new Number($(obj).attr("v"))>=0){
-		$("#secrecy").val($(obj).attr("v"));
-	}
-}
 function updateInputCheckedCommon(obj) {
     var rform = $($(obj).parent()[0]).children();
     for (var i = 0; i < rform.length; i++) {
@@ -1318,6 +1262,7 @@ function preBuy(bk) {
     chklogin(function(d){
 		if (d.Resp.code == 0) {
         	
+			
 			passBuy(vardata.join(";"),times,buykind);
 //			$("#divshowprebuy").html("");
 //        	var html = "<div class=\"ball_h2\">购买预览信息</div>";
@@ -1362,10 +1307,10 @@ function preBuy(bk) {
  	 var url = $_trade.url.pcast;
      var buykind = bk, data = [];
      var money = parseInt($("#buymoney").val());
-     var secret = $("#secrecy").attr("value");
+     var secret = $("#selectPassword").attr("value");
      var masterBuy = parseInt($("#masterBuy").attr("value"));
      var baodi = parseInt($("#baodi").attr("value"));
-     var deduct = $("#commission").attr("value");
+     var deduct = $("#Deduct").attr("value");
      var lds = $("#txtLotDesc").attr("value");
          
      var isfollow = !!$("#isfollowPass").attr("checked");
@@ -1381,10 +1326,10 @@ function preBuy(bk) {
 
         buykind = 2;
         if (followcount > countexp) {
-        	showMS("追号期数超出最大限" + countexp + "期!");
+        	noticeInfo("追号期数超出最大限" + countexp + "期!");
         	return;
         }else if (followcount < 2) {
-        	showMS("追号期数至少为两期或以上!");
+        	noticeInfo("追号期数至少为两期或以上!");
         	return;
         }
         var pid = $("#expect").val();
@@ -1403,7 +1348,7 @@ function preBuy(bk) {
         	mt += times;
         }
         if(pids.length != followcount){
-        	showMS("追号期数发生错误!");
+        	noticeInfo("追号期数发生错误!");
         	return;
         }
         data.zflag = $("input[id^='stop']:checked").val();
@@ -1422,23 +1367,23 @@ function preBuy(bk) {
      if (buykind == 1) { //合买
 
          if (isNaN(masterBuy)) {
-        	 showMS("认购金额不能小于0元!");
+             noticeInfo("认购金额不能小于0元!");
              return;
          }
          
 
          if (masterBuy < money * 0.05) {
-        	 showMS("认购金额不能低于5%!");
+             noticeInfo("认购金额不能低于5%!");
              return;
          }
          if (masterBuy > money) {
-             showMS("认购金额不能大于总金额!");
+             noticeInfo("认购金额不能大于总金额!");
              return;
          }
          
 
          if(deduct>10 || deduct<0){
-        	 showMS("提成必须为0-10%!");
+        	 noticeInfo("提成必须为0-10%!");
         	 return;
          }
 
@@ -1450,12 +1395,12 @@ function preBuy(bk) {
          }
 
          if (baodi > 0 && baodi < money * 0.05) {
-             showMS("保底金额不能低于5%!");
+             noticeInfo("保底金额不能低于5%!");
              return;
          }
 
          if (baodi + masterBuy > money) {
-             showMS("认购份金额保底金额的总和不能大于方案金额!");
+             noticeInfo("认购份金额保底金额的总和不能大于方案金额!");
              return;
          }
          data.bnum = masterBuy;
@@ -1533,7 +1478,23 @@ function preBuy(bk) {
      $("#noticeInfo").html("提示：" + txt);
  }
 
-
+ function createTwoPanle(bk) {
+	 var html = "";
+     if (bk == 1){
+    	 html += "<div id=\"divBuyInfo\" class=\"mini\" >保密设置：<select id=\"selectPassword\" onchange=\"getDivShow(this.value);\" >";
+    	 html += "<option value=\"0\" selected=\"selected\">对所有人公开</option><option value=\"1\">截止后公开</option><option value=\"2\">对参与人员公开</option><option value=\"3\">截止后对参与人公开</option></select>";
+         html += "<div id=\"divMyBuy\" class=\"mini\">我要认购：<input type=\"text\" name=\"masterBuy\" id=\"masterBuy\" class=\"textWH\" size=\"3\" onkeydown=\"getParsetInt(this);\" onkeyup=\"updatePublicBuyInfo();\" /> 元 (<span id=\"masterBuy_percent\">0%</span>)</div> " +
+         		"<div id=\"divMyRemain\" class=\"mini\">我要保底：<input type=\"text\" name=\"baodi\" class=\"textWH\" id=\"baodi\" size=\"3\"  onkeydown=\"getParsetInt(this);\" onkeyup=\"updatePublicBuyInfo();\" /> 元 (<span id=\"baodi_percent\">0%</span>) </div>" +
+         		"<div class=\"mini\">全额保底：<input type=\"checkbox\" name=\"baodiAll\" id=\"baodiAll\" value=\"all\" onclick=\"updatePublicBuyInfo();\" /> &nbsp; <span style=\"color:#999\">网站保底10%</span></div>" +
+         		"<div id=\"divPercent\" class=\"mini\">提成比例：<select name=\"Deduct\" id=\"Deduct\"><option selected=\"selected\" value=\"0\">0%</option><option value=\"1\">1%</option><option value=\"2\">2%</option><option value=\"3\">3%</option><option value=\"4\">4%</option><option value=\"5\">5%</option><option value=\"6\">6%</option><option value=\"7\">7%</option><option value=\"8\">8%</option><option value=\"9\">9%</option><option value=\"10\">10%</option></select></div>" +
+         		"<div class=\"mini\">方案描述:<input id=\"txtLotDesc\" maxlength=\"200\" type=\"text\" size=\"16\" value='" + GameName[getGameIndex(tID)] + "复式合买方案'/></div>";
+     
+     }else {
+         html += "<div class=\"mini\" >是否追号：<label style=\"cursor:pointer;\" class=\"textWH\" onclick=\"updatefollowPass();\"><input type=\"checkbox\" name=\"isfollowPass\" id=\"isfollowPass\" />我要追号</label></div>";
+         html += "<div id=\"followInfodetail\" style=\"display:none;\"><div class=\"mini\" >追号期数：<input type=\"text\" class=\"textWH\" name=\"issueNumCount\" id=\"issueNumCount\" size=\"2\" maxlength=\"2\" value=\"1\" onkeyup=\"getParsetInt(this);\" />期<span id=\"spanfollowinfo\" style=\"color:#999\">(最多" + (countexp) + "期)</span></div><div id=\"divIssueNumCount\" class=\"mini\" >追号设置：<label style=\"cursor:pointer;\" onclick=\"upateFollowInfo(this);\" ><input id=\"stop0\" name=\"stop0\" type=\"radio\" value=\"0\" />中奖不停</label><label style=\"cursor:pointer;color:red\" onclick=\"upateFollowInfo(this);\" ><input id=\"stop1\" name=\"stop1\" type=\"radio\" value=\"1\" checked/>中奖即停</label> <label style=\"cursor:pointer;\" onclick=\"upateFollowInfo(this);\"><input id=\"stop2\" name=\"stop2\" type=\"radio\" value=\"2\" />盈利停止</label></div></div>";
+     }
+     return html;
+ }
 //判断是否追号
  function updatefollowPass() {
      if (!!$("#isfollowPass").attr("checked")){

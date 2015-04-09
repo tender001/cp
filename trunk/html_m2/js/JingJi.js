@@ -194,6 +194,7 @@ function LoadMatchList() {
 			    		});
 					}	
 					jj.sclass=(jj.sclass).replace("14-15","");
+//					<li><em>274&nbsp;足球</em><p style="color:#993333">澳超</p><cite>13:50 截止</cite></li>
 					newmatchHTML+='<ul class="sfcxs"> <li><em>'+jj.MID+'&nbsp;'+jj.stype+'</em>'
             			+'<p style="color:'+ jj.color +'">'+ jj.sclass +'</p><cite>'+jj.Time.split(" ")[1]+'截止</cite></li>'
             			+'<li><p class="spfzpk spfzpk2">'
@@ -201,47 +202,29 @@ function LoadMatchList() {
             			+'<b>VS</b>'
             			+'<span onclick="ChooseMatch(this)" n="3" value="2" name="'+jj.ID+'"><em>'+ jj.guest +'</em><cite>胜</cite></span></p>'
             			+'<p class="spfpl"><span>赔率'+ ot[0] +'</span><span>赔率'+ ot[1] +'</span></p></li></ul>'
-					}else if(typeID ==103){
-						newmatchHTML+='<ul class="sfcxs jqzpk"> <li class="li_weige"><em>'+jj.MID+'</em>'
-            			+'<p style="color:'+ jj.color +'">'+ jj.sclass +'</p><cite>'+jj.Time.split(" ")[1]+'截止</cite><i class="xzup xzdown"></i></li>'
-            			+'<li><p class="spfzpkNum">'
-            			+'<span >'+ jj.home +'</span><span class="spfvs">VS</span><span>'+ jj.guest +'</span></p>'
-            			+'<p class="spfzpk">'
-            			+'<span onclick="ChooseMatch(this)" n="0" value="1" name="'+jj.ID+'"><b>0</b><cite>'+jj.t0+'</cite></span>'
-            			+'<span onclick="ChooseMatch(this)" n="1" value="2" name="'+jj.ID+'"><b>1</b><cite>'+jj.t1+'</cite></span>'
-            			+'<span onclick="ChooseMatch(this)" n="2" value="3" name="'+jj.ID+'"><b>2</b><cite>'+jj.t2+'</cite></span>'
-            			+'<span onclick="ChooseMatch(this)" n="3" value="4" name="'+jj.ID+'"><b>3</b><cite>'+jj.t3+'</cite></span>'
-            			+'<span onclick="ChooseMatch(this)" n="4" value="5" name="'+jj.ID+'"><b>4</b><cite>'+jj.t4+'</cite></span>'
-            			+'<span onclick="ChooseMatch(this)" n="5" value="6" name="'+jj.ID+'"><b>5</b><cite>'+jj.t5+'</cite></span>'
-            			+'<span onclick="ChooseMatch(this)" n="6" value="7" name="'+jj.ID+'"><b>6</b><cite>'+jj.t6+'</cite></span>'
-            			+'<span onclick="ChooseMatch(this)" n="7" value="8" name="'+jj.ID+'"><b>7+</b><cite>'+jj.t7+'</cite></span>'
-            			
-            			+'</p></li></ul>'
-//            			<ul class="sfcxs jqzpk">
-//            	        <li class="li_weige">
-//            	            <em>001</em>
-//            	            <p style="color:#336600">亚冠</p>
-//            	            <cite>14:30 截止</cite>
-//            	            <i class="xzup xzdown"></i>
-//            	        </li>
-//            	        <li><p class="spfzpkNum">
-//            	            <span>山东鲁能</span>
-//            	            <span class="spfvs">VS</span>
-//            	            <span>全北现代</span></p>
-//            	            <p class="spfzpk">
-//            	                <span><b>0</b><cite>10.00</cite></span><span><b>1</b><cite>4.20</cite></span><span v="2"><b>2</b><cite>3.30</cite></span><span v="3"><b>3</b><cite>3.50</cite></span></p><p class="spfzpk"><span v="4"><b>4</b><cite>5.50</cite></span><span v="5"><b>5</b><cite>9.50</cite></span><span v="6"><b>6</b><cite>18.00</cite></span><span v="7"><b>7+</b><cite>28.00</cite></span>
-//            			newmatchHTML+='<ul class="sfcxs jqzpk"><li class="li_weige"><em>001</em><p style="color:#336600">亚冠</p><cite>14:30 截止</cite><i class="xzup xzdown"></i></li>'
-            			
 					}
                     else {
-//
+                        matchHTML += "<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" class=\"match\">"
+							+ "<tr><td rowspan=\"3\" class='matchL'><div style=\"background-color:" + jj.color + ";\" class=\"Sclass Fillet\">" + jj.sclass + "</div>"
+							+ leftTime + "</td>";
+							if(typeID == 113){
+								matchHTML +=  "<td>" + jj.guest + " VS " + jj.home + "(<font color=red>主</font>)</td>";
+							}else{
+								matchHTML +=  "<td>" + jj.home + " VS " + jj.guest + "</td>";
+							}
+							
+							matchHTML +=  "<td width='20%'><div class=\"mXi\">"+jj.MID+"</div></td></tr>"
+							+"<tr><td>"+oddsHTML+"</td><td class='md'>"+(typeID==103|| typeID==6|| typeID==7?"大小":"欧赔")+"</td></tr>"
+							+ "<tr><td><div class='btn' style='width:150px' id='op_" + jj.ID + "' onclick='openC(" + jj.ID + ")'>展开投注选项</div></td>"
+							+ "<td>" + (OddsType == 2 ? "<div class='mDan1' id='D" + jj.ID + "' onclick='ChooseDan(this)'>胆</div>" : "") + "</td></tr>";
+
                         matchHTML += "<tr id='ch_" + jj.ID + "' class='chooseL' style='display:none;'><td colspan='3'>";
                         var sHTML = ""; //主胜
                         var pHTML = ""; //平
                         var fHTML = ""; //主负
                         var nHTML = "";
                         for (var l = 0; l < kList.length; l++) {
-                            var subHTML = "<span name='" + jj.ID + "' value='" + (l + 1) + "' n='" + cList[l] + "' onclick='ChooseMatch(this)'><strong>" + nList[l] +(typeID == 103 || typeID == 6?"球":"")+ "</strong><em>" + jj[kList[l]] + "</em></span>";
+                            var subHTML = "<div{add}"+(typeID == 113?" style='font-size:14px;'":"")+" class='mBTN' name='" + jj.ID + "' value='" + (l + 1) + "' n='" + cList[l] + "' onclick='ChooseMatch(this)'>" + nList[l] +(typeID == 103 || typeID == 6?"球":"")+ "<br><span class='odds'>" + jj[kList[l]] + "</span></div>";
                             if (typeID == 8 || typeID == 102) {
                                 var subL = nList[l].replace(/胜其.+/gi, "1:0").replace(/平其.+/gi, "0:0").replace(/负其.+/gi, "0:1").split(':');
                                 if (parseInt(subL[0]) > parseInt(subL[1])) sHTML += subHTML.replace("{add}", " style='color:red;' ");
@@ -250,38 +233,11 @@ function LoadMatchList() {
                             }
                             else nHTML += subHTML.replace("{add}", "");
                         }
-                        
+                        if (sHTML != "") matchHTML += "<div>" + sHTML + "</div>";
                         if (pHTML != "") matchHTML += "<div>" + pHTML + "</div>";
                         if (fHTML != "") matchHTML += "<div>" + fHTML + "</div>";
                         if (nHTML != "") matchHTML += "<div>" + nHTML + "</div>";
                         matchHTML += "</td></tr></table>";
-                    	newmatchHTML +='<div id="divop_' + jj.ID + '"><ul class="sfcxs">'
-                    		+'<li class="li_weige"><em>'+jj.MID+'</em> <p style="color:'+ jj.color +'">'+ jj.sclass +'</p><cite>'+jj.Time.split(" ")[1]+' 截止</cite><i class="xzup xzdown"></i></li>'
-                    		+'<li><p class="spfzpkNum"><span>'+jj.home+'</span><span class="spfvs">VS</span><span>'+ jj.guest +'</span></p>'
-                    		+'<p class="spfzpk bfpk"><span ids="op_' + jj.ID + '" onclick="openC(this)">立即投注</span></p></li> </ul>'
-                    		+'<section class="bf-fixed" style="display: none;" id="ch_' + jj.ID + '"><div class="bfPop bf_" style="margin-top:-221.5px">'
-                    		+'<div class="bfTitle clearfix"><p>'+jj.home+'<span class="right"><em>V</em></span></p> <p><span class="left"><em>S</em></span>'+jj.guest+'</p></div>'
-                		newmatchHTML+=typeID == 102?'<div style="height:17rem; overflow:auto">':'<div style=" overflow:auto">';
-                		if (sHTML != "") newmatchHTML +=  '<p class="red">'+jj.home+'&nbsp;&nbsp;胜</p><div class="competitions bfcom">'+sHTML +'<div class="clear"></div> </div>';
-                    	if (pHTML != "") newmatchHTML +=  '<p class="blue">打平</p><div class="competitions bfcom">'+pHTML +'<div class="clear"></div></div>';
-                    	if (fHTML != "") newmatchHTML +=  '<p class="green">'+ jj.guest +'&nbsp;&nbsp;胜</p><div class="competitions bfcom">'+fHTML+' <div class="clear"></div> </div>' ;
-                    	if (nHTML != "") newmatchHTML += '<p class="green">［例］胜负：上半场主胜 且 全场主负</p><div class="competitions bfcom">' + nHTML + '<div class="clear"></div></div>';
-                    	newmatchHTML+='</div><div class="zfTrue clearfix"><a href="javascript:;" onclick="CbfReone(this)" v="'+jj.ID+'" class="zfqx">取 消</a><a href="javascript:;" onclick="closeC(this)">确 定</a></div></div></section></div>';
-                    
-                         
-                    	
-                            
-                             
-                             
-                         
-                         
-                             
-                                 
-                                 
-                                 
-                             
-                         
-                    
                     }
                     $("#matchList").append(newmatchHTML);
                     lastID = jj.ID;
@@ -317,7 +273,7 @@ function ChooseMatch(obj) {
             if (curL[0] == n) {
                 curL[1] = ("," + curL[1] + ",").replace("," + $(obj).attr("value").toString() + ",", ",").replace(/(^,)|(,$)/gi, "");
                 curL[1] += (curL[1] == "" ? "" : ",") + $(obj).attr("value").toString();
-                if ($("span[ids=op_"+n+"]")) $("span[ids=op_"+n+"]").html( "已选" + curL[1].split(',').length + "项");
+                if (byID("op_" + n)) byID("op_" + n).innerHTML = "已选" + curL[1].split(',').length + "项";
                 isNew = false;
                 break;
             }
@@ -332,10 +288,9 @@ function ChooseMatch(obj) {
 //            $(obj).parent().parent().find("li").each(function(i,em){
 //            	bets.push($(em).find('em'))
 //            })
-//            if(){}
-            chooseArray.push([n, $(obj).attr("value").toString(), '0',(typeID == 102||typeID == 104)?$("#divop_"+n): $(obj).parent().parent()]);
+            chooseArray.push([n, $(obj).attr("value").toString(), '0', $(obj).parent().parent()]);
 //            addbetinfo($(obj).parent());
-            if ($("span[ids=op_"+n+"]")) $("span[ids=op_"+n+"]").html("已选1项");
+            if (byID("op_" + n)) byID("op_" + n).innerHTML = "已选1项";
             $('#betnum').html(chooseArray.length)
         }
     }
@@ -347,9 +302,9 @@ function ChooseMatch(obj) {
                 curL[1] = ("," + curL[1] + ",").replace("," + $(obj).attr("value").toString() + ",", ",").replace(/(^,)|(,$)/gi, "");
                 if (curL[1] == "") {
                     chooseArray.splice(i, 1);
-                    if ($("span[ids=op_"+n+"]")) $("span[ids=op_"+n+"]").html("立即投注");
+                    if (byID("op_" + n)) byID("op_" + n).innerHTML = "展开投注选项";
                 }
-                else if ($("span[ids=op_"+n+"]")) $("span[ids=op_"+n+"]").html("已选" + curL[1].split(',').length + "项");
+                else if (byID("op_" + n)) byID("op_" + n).innerHTML = "已选" + curL[1].split(',').length + "项";
                 break;
             }
         }
@@ -392,7 +347,7 @@ function betconfirm(){
 	$("#buyHeader h1").html($_sys.getlotname($("#gid").val())+"_投注")
     for (var i = 0; i < chooseArray.length; i++) {
 		var 
-		cList='<ul class="spfNum list-r bqc-tz fn-clearfix" bet="'+chooseArray[i][0]+'"><cite class="errorBg" onClick="Reone('+chooseArray[i][0]+')"><em class="error2"></em></cite>'+ $(chooseArray[i][3]).html()+'</ul>'
+		cList='<ul class="spfNum list-r fn-clearfix" bet="'+chooseArray[i][0]+'"><cite class="errorBg" onClick="Reone('+chooseArray[i][0]+')"><em class="error2"></em></cite>'+ $(chooseArray[i][3]).html()+'</ul>'
 		$("#confirmhtml").append(cList)
     }
     showbuy(true);
@@ -407,31 +362,18 @@ function payconfirm(){
 	$(".tz-pay").html('<p>'+hidTypeName+' </p><p>应付金额<em>'+amount+'</em>元</p>')
 	ispay(true);
 }
-function payhm(ishm){
-	if(ishm){
-		$("#matchList,#buyFooter1,#szcbuy,#issuc,#content_home").hide();
-    	$("#payhm").show();
-    	
-    	$("#txtLotDesc").val($("#hidTypeName").val()+ "复式合买方案");
-//    	prebuy(4);
-	}else{
-		$("#szcbuy").show();
-    	$("#payhm").hide();
-	}
-	
-}
 function ispay(ispay){
 	if(ispay){
-    	$("#matchList,#buyFooter1,#szcbuy,#issuc,#content_home,#payhm").hide();
+    	$("#matchList,#buyFooter1,#szcbuy,#issuc,#content_home").hide();
     	$("#paybet").show();
     }else{
-    	$("#content_home").show();
-    	$("#paybet,#payhm").hide();
+    	$("#szcbuy").show();
+    	$("#paybet").hide();
     }
 }
 function issuc(ispay){
 	 if(issuc){
-	    	$("#matchList,#buyFooter1,#szcbuy,#paybet,#content_home,#payhm").hide();
+	    	$("#matchList,#buyFooter1,#szcbuy,#paybet,#content_home").hide();
 	    	$("#issuc").show();
 	    }else{
 	    	$("#content_home").show();
@@ -440,7 +382,7 @@ function issuc(ispay){
 }
 function showbuy(istrue){
     if(istrue){
-    	$("#matchList,#buyFooter1,#topHeader,#szcbuy,#paybet,#issuc,#payhm").hide();
+    	$("#matchList,#buyFooter1,#topHeader,#szcbuy,#paybet,#issuc").hide();
     	$("#content_home").show();
     }else{
     	$("#matchList,#buyFooter1,#topHeader").show();
@@ -578,87 +520,8 @@ function calcLot(obj) {
     amount = (noteCount * times * 2);
     byID("hidAmount").value = amount;
 //    byID("preMoney").innerHTML = "金额：(" + chooseArray.length + "场)" + noteCount + "注×" + times + "倍=<span style='color:red'>￥" + amount + "</span>元";
-    byID("preMoney").innerHTML ='共<cite class="yellow">'+ noteCount +'</cite> 注<cite class="yellow">￥'+ amount +'</cite>元';
-    $("#cpmoney").html(amount);
+    byID("preMoney").innerHTML ='共<cite class="yellow">'+ noteCount +'</cite> 注<cite class="yellow">￥'+ amount +'</cite>元'
 }
-function nocommission(obj){
-	var onClass="cur";
-	if($(obj).hasClass(onClass)){
-		$(obj).removeClass(onClass);
-		$("#selectCommission").slideUp();
-		$("#commission").val(0);
-	}else{
-		$(obj).addClass(onClass);
-		$("#selectCommission").slideDown();
-	}
-}
-function selectCommission(obj){
-	$("#selectCommission li").removeClass("cur");
-	$(obj).addClass("cur");
-	if(new Number($(obj).attr("v"))>0){
-		$("#commission").val($(obj).attr("v"));
-	}else{
-		$("#commission").val(0);
-	}
-}
-
-function selectSecrecy(obj){
-	$("#selectSecrecy span").removeClass("cur");
-	$(obj).addClass("cur");
-	if(new Number($(obj).attr("v"))>=0){
-		$("#secrecy").val($(obj).attr("v"));
-	}
-}
-function getParsetInt(obj) {
-    var varvalue = obj.value;
-    if (isNaN(varvalue) || varvalue.indexOf(".") != -1 || varvalue == "0")
-        obj.value = "";
-}
-
-
-
-function updatePublicBuyInfo(baodi) {
-    var masterBuy = new Number($("#masterBuy").attr("value"));
-    var varAllmoney = new Number(amount);
-    var hmbetmoney=0;
-    if (masterBuy > 0 && masterBuy <= varAllmoney) {
-        $("#masterBuy").attr("value", (masterBuy).toFixed(0));
-        $("#masterBuy_percent").html(Math.floor((masterBuy / varAllmoney) * 10000) / 100 + "%");
-        hmbetmoney=masterBuy;
-       
-    } else {
-        $("#masterBuy").attr("value", "");
-        $("#masterBuy_percent").html("0%");
-       
-    }
-
-    if (!!$("#baodiAll").attr("checked")) {
-       
-    }
-    if(baodi){
-    	if(!$("#baodiAll").hasClass("cur")){
-	       $("#baodi").attr("value", varAllmoney - masterBuy);
-	       $("#baodiAll").addClass("cur")
-	       $("#baodimx").slideDown();
-    	}else{
-    	   $("#baodiAll").removeClass("cur");
-    	   $("#baodi").attr("value", 0);
-    	   $("#baodimx").slideUp();
-       }
-    }
-    
-    var baodi = new Number($("#baodi").attr("value"));
-    if (baodi > 0 && baodi + masterBuy <= varAllmoney) {
-        $("#baodi").attr("value", (baodi).toFixed(0));
-        $("#baodi_percent").html(Math.floor((baodi / varAllmoney) * 10000) / 100 + "%");
-        hmbetmoney+=baodi;
-    } else {
-        $("#baodi").attr("value", "");
-        $("#baodi_percent").html("0%");
-    }
-    $("#hmbetmoney").html((hmbetmoney).toFixed(0))
-}
-
 var kind=2;
 //预览
 function prebuy(preKind) {
@@ -763,10 +626,10 @@ function SubmitLot(obj) {
 	var type =0;
 	var err = "";
 	if (kind == 4) {
-        baodi = parseInt($("#baodi").attr("value"));
-        selfbuy = parseInt($("#masterBuy").attr("value"));
-        rate = $("#commission").attr("value");
-		isopen =$("#secrecy").attr("value");;
+        baodi = byID("preBaoDi").value.toInt();
+        selfbuy = byID("preMasterBuy").value.toInt();
+        rate = parseInt(byID("preDeduct").value);
+		isopen =parseInt(byID("preSecret").value);
         if (isNaN(selfbuy)) {
         	 showTips("认购金额不能小于0元");
             return;
@@ -789,7 +652,7 @@ function SubmitLot(obj) {
             return;
         }
         if (baodi > 0 && baodi < amount * 0.05) {
-        	showTips("保底金额不能低于方案金额5%！");
+            noticeInfo("保底金额不能低于方案金额5%！");
             return;
         }
         if (baodi + selfbuy > amount) {
@@ -974,8 +837,8 @@ $("#topHeader h1").click(function() {
 
     return false;
 });
-LoadMatchList();
-//setTimeout("LoadMatchList();$('body').append('<div></div>'); ", 1);
+
+setTimeout("LoadMatchList();$('body').append('<div></div>'); ", 1);
 
 /**页面数据显示**/
 //全清
@@ -1003,24 +866,6 @@ function Reone(id){
 		
 	}
 	CountLot();
-	$("#betnum").html(chooseArray.length);
-}
-function CbfReone(obj){
-	$(obj).parent().parent().find("span").removeClass("cur");
-	var id= $(obj).attr("v");
-	for(var ele in chooseArray){    //移除投注页选择的场次（）
-		if(chooseArray[ele]===undefined){
-			return;
-		}
-		if(chooseArray[ele][0]==id){
-			chooseArray.remove(ele);
-		}
-		
-	}
-	$(obj).parent().parent().parent().slideUp();
-	$("span[ids=op_"+id+"]").html("立即投注")
-	CountLot();
-	
 	$("#betnum").html(chooseArray.length);
 }
 function DisplayFilter() {
@@ -1095,11 +940,9 @@ function ReloadInit() {
     CountLot();
 }
 //展开投注项
-function openC(obj) {
-	$(obj).parent().parent().parent().next().slideDown();
-   
-}
-function closeC(obj) {
-	$(obj).parent().parent().parent().slideUp();
-    
+function openC(id) {
+    var c = byID("ch_" + id);
+    var oriDisplay = c.style.display;
+    c.style.display = (oriDisplay == "none" ? "" : "none");
+    byID("op_" + id).className = (oriDisplay == "none" ? "btnC openC" : "btn");
 }

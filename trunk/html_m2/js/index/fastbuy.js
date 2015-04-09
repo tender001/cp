@@ -150,7 +150,7 @@ function passBuy(code,gid) {
             	}
             } else {
             	if(desc.indexOf("余额") > 0){
-            		showTips("您的余额不足，请去充值!", function(){
+            		showMS("您的余额不足，请去充值!", function(){
    					setTimeout(function() { window.location.href = "/account/pay.html"; }, (2 * 1000));
             		});
             	} else {
@@ -160,7 +160,7 @@ function passBuy(code,gid) {
             return;
         },
         error: function(XMLHttpRequest, textStatus, errorThrown) {
-        	showTips(XMLHttpRequest.responseText);
+            showMS(XMLHttpRequest.responseText);
             return;
         }
     }
@@ -189,7 +189,7 @@ function showTips(tips) {
         'opacity': '0.95'
     });
     setTimeout(function(){
-    	$('div.tipsClass').hide();
+//    	$('div.tipsClass').hide();
     },2000);
 	$('div.tipsClass').click(function(){$(this).hide()});
 

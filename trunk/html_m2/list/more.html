@@ -1,0 +1,103 @@
+<ul class="all2 all3">
+	<li><a href="#type=url&amp;p=list/qlc.html" id='tag_07'> 
+	<em></em>
+	<span class="icoLogo qlcLogo"></span>
+			<h2>七乐彩</h2>
+			<p></p>
+	</a> <a href="#type=url&amp;p=list/sfgg.html" id='tag_84'>
+	<em></em> 
+	<span class="icoLogo sfggLogo"></span>
+			<h2>胜负过关</h2>
+			<p></p>
+	</a></li>
+	<li><a href="#type=url&amp;p=list/11x5.html" id='tag_54'>
+	<em></em>
+	<span class="icoLogo syx5Logo"></span>
+			<h2>11选5</h2>
+			<p></p>
+	</a> <a href="#type=url&amp;p=list/11ydj.html" id='tag_56'>
+	<em></em>
+	 <span class="icoLogo syydjLogo"></span>
+			<h2>11运夺金</h2>
+			<p></p>
+	</a></li>
+	<li><a href="#type=url&amp;p=list/3d.html" id='tag_03'>
+	<em></em>
+	 <span class="icoLogo sdLogo"></span>
+			<h2>福彩3D</h2>
+			<p></p>
+	</a> <a href="#type=url&amp;p=list/p3.html" id='tag_53'>
+	 <em></em>
+	  <span class="icoLogo p3Logo"></span>
+			<h2>排列三</h2>
+			<p></p>
+	</a></li>
+	<li><a href="#type=url&amp;p=list/p5.html" id='tag_52'>
+	<em></em>
+	 <span class="icoLogo p5Logo"></span>
+			<h2>排列五</h2>
+			<p></p>
+	</a> <a href="#type=url&amp;p=list/qxc.html" id='tag_51'>
+	 <em></em>
+	  <span class="icoLogo qxcLogo"></span>
+			<h2>七星彩</h2>
+			<p></p>
+	</a></li>
+	<li><a href="#type=url&amp;p=list/jxssc.html" id='tag_20'>
+	<em></em>
+	 <span class="icoLogo jxsscLogo"></span>
+			<h2>新时时彩</h2>
+			<p></p>
+	</a> <a href="#type=url&amp;p=list/ahk3.html" id=tag_06>
+	<em></em>
+	 <span class="icoLogo ahk3Logo"></span>
+			<h2>快3</h2>
+			<p></p>
+	</a></li>
+	<!-- <li><a href="#type=url&amp;p=list/pk3.html" id='tag_58'> <span
+			class="icoLogo pk3Logo"></span>
+			<h2>快乐扑克3</h2>
+			<p></p>
+	</a></li> -->
+</ul>
+<script>
+$(function(){
+	TopAnch.init({
+        title:'9188彩票',
+        prevShow:true,
+        prevFun:function(){location.href = '#type=index';},
+        nextShow:false
+    });
+	$.ajax({
+		url:CP.Data.data+"/data/app/latest-lottery-touch-brief.xml",
+		success  : function (xml){
+			var brief = $(xml).find('brief');
+			brief.each(function(){
+				var g_ = $(this).attr('gid');
+				var b_ = $(this).attr('brief');//彩种简介
+				var addtional = $(this).attr('addtional');//是否加奖 yes是 no否
+				$('#tag_'+g_).find('p').html(b_);
+				if(addtional === 'yes'){
+					$('#tag_'+g_).find('em').eq(0).addClass('jjico');
+				}
+			});
+		}
+	});
+	$.ajax({
+		url: '/data/info/config/sysexp/gameconfig.xml',
+		type:'GET',
+		dateType:'xml',
+		success : function(xml){
+			var R = $(xml).find('rows');
+			var r = R.find('row');
+			r.each(function(){
+				var gid = $(this).attr('gid');
+				var isale = $(this).attr('isale');
+				if(isale == '0'){
+					$('#tag_'+gid).find('em').addClass('stopico');
+				}
+			});
+		}
+	});
+});
+</script>
