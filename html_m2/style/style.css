@@ -108,12 +108,12 @@ input::-webkit-input-placeholder,input::-moz-placeholder{ color:#d0d0d0}
 /*** 顶部浮动 ***/
 .tzHeader{ position:relative; padding-bottom:2.7rem; z-index:10}
 .zcHeaderpd{ padding-bottom:4.3rem}
-.tzHeader h1{ width:13rem; margin:0 auto; text-align:center; font-size:1.1rem; color:#fff}
+.tzHeader h1{ width:13rem; margin:0 auto; text-align:center; font-size:1.05rem; color:#fff}
 .fcHeader{ width:100%; height:2rem; padding-top:.7rem; background:#f40}
 .zcHeader .fcHeader{ background:#f40}
 .backIco2{position:absolute;top:.75rem;left:1.1rem;color:#fff; font-size:1rem}
 .backIco{position: absolute;top: .9rem;left: 1.0rem;font-size: .91rem;display:inline-block;background:none;margin-right:.01rem; width:.7rem; height:.65rem; border-left:2px solid #fff; border-bottom:2px solid #fff; transform:rotate(-315deg); -webkit-transform:rotate(-315deg); -moz-transform:rotate(-315deg)}
-.backIco2:before{position:absolute;top:6px;left:-0.75rem;display:inline-block;content:"";background:none; margin-right:.01rem; width:.65rem;height:.65rem; border-left:2px solid #fff; border-bottom:2px solid #fff; transform:rotate(-315deg); -webkit-transform:rotate(-315deg); -moz-transform:rotate(-315deg)}
+.backIco2:before{position:absolute;top:5px;left:-0.75rem;display:inline-block;content:"";background:none; margin-right:.01rem; width:.65rem;height:.65rem; border-left:2px solid #fff; border-bottom:2px solid #fff; transform:rotate(-315deg); -webkit-transform:rotate(-315deg); -moz-transform:rotate(-315deg)}
 .fcbackLink,.fcbackIco2{ position:absolute; top:.9rem; left:1.1rem; color:#fff; font-size:.91rem}
 .fcbackIco,.fcbackIco2{ display:inline-block; margin-right:.01rem; width:.7rem; height:.65rem; border-left:.2rem solid #fff; border-bottom:.2rem solid #fff; transform:rotate(-315deg); -webkit-transform:rotate(-315deg); -moz-transform:rotate(-315deg)}
 
