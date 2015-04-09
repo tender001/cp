@@ -24,6 +24,7 @@ function DoLogin() {
 			var code = d.Resp.code;
 			var desc = d.Resp.desc;		
 			if (code == "0") {
+				 localStorage.setItem("username", uname);
 				if(bak=="1"){
 					window.location.href="/";
 				}else if(bak=="2"){
