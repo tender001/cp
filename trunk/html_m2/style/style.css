@@ -123,7 +123,7 @@ input::-webkit-input-placeholder,input::-moz-placeholder{ color:#d0d0d0}
 .pullHover .fcpullIco{ width:1.5rem; height:1.4375rem; background:url(/img/fc/pullDown2.png) no-repeat center; background-size:1.5rem 1.4375rem; -webkit-background-size:1.5rem 1.4375rem; -moz-background-size:1.5rem 1.4375rem}
 .pkHeader{ background:#004329; border-bottom:1px solid #004329}
 .hmPull{ -webkit-transition:all .2s ease;-ms-transition:all .2s ease;-o-transition:all .2s ease;-moz-transition:all .2s ease; position:absolute; z-index:1; border-left:1px solid #d5d5d5; margin-left:1px; top:2.68rem; width:100%; background:#fff}
-.hmPull a,.competitions span{ float:left; position:relative; font-size:1rem; line-height:3rem; width:33%; margin-right:0; text-align:center; border-right:1px solid #d5d5d5; border-bottom:1px solid #d5d5d5}
+.hmPull a,.competitions span{ float:left; position:relative; font-size:1rem; line-height:3rem;color: #666; width:33%; margin-right:0; text-align:center; border-right:1px solid #d5d5d5; border-bottom:1px solid #d5d5d5}
 .hmPull a.cur,.hmSort li.cur,.competitions span.cur{ color:#f6851f}
 .hmPull a.cur:before,.competitions span.cur:before{ content:""; position:absolute; left:-1px; top:-1px; width:100%; height:3rem; border:1px solid #f6851f}
 .hmPull a.cur:after,.competitions span.cur:after,.jczqfsCheck li.cur:after{ content:""; position:absolute; bottom:-1px; right:-1px; width:1.4rem; height:1.4rem; background:url(/img/hmCur.png) no-repeat center; background-size:1.4rem 1.4rem; -webkit-background-size:1.4rem 1.4rem; -moz-background-size:1.4rem 1.4rem}
