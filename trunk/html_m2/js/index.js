@@ -2127,8 +2127,12 @@ CP.Home = function() {
                         dlt = dlt.substr(0, dlt.length - 1);
                         localStorage.setItem("dlt", dlt)
                     }
-                    window.location.href = "/cc/fastbuy.html?notes=1&multiple=1&issue=1&countMoney=2&pattern=0&gid=" + lot_
+                    CP.User.info(function(options) {
+                    	window.location.href = "/cc/fastbuy.html?notes=1&multiple=1&issue=1&countMoney=2&pattern=0&gid=" + lot_
+                    })
+                    
                 });
+               
 //                CP.User.info(function(options) {
 ////                    if (options) {
 ////                        jQuery.extend(data, options)
