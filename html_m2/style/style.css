@@ -130,11 +130,17 @@ input::-webkit-input-placeholder,input::-moz-placeholder{ color:#d0d0d0}
 .hmPull a.cur,.hmSort li.cur,.competitions span.cur{ color:#f6851f}
 .hmPull a.cur:before,.competitions span.cur:before{ content:""; position:absolute; left:-1px; top:-1px; width:100%; height:3rem; border:1px solid #f6851f}
 .hmPull a.cur:after,.competitions span.cur:after,.jczqfsCheck li.cur:after{ content:""; position:absolute; bottom:-1px; right:-1px; width:1.4rem; height:1.4rem; background:url(/img/hmCur.png) no-repeat center; background-size:1.4rem 1.4rem; -webkit-background-size:1.4rem 1.4rem; -moz-background-size:1.4rem 1.4rem}
-.hmHeader h1:after{ content:""; position:absolute; top:1.8rem; border-width:.4rem; border-style:solid; border-color:transparent transparent transparent #fff; transform:rotate(45deg); -webkit-transform:rotate(45deg); -moz-transform:rotate(45deg)}
-.hmHeader .h1Down h1:after{ border-color:#fff transparent transparent transparent; transform:rotate(0deg); -webkit-transform:rotate(0deg); -moz-transform:rotate(0deg)}
+/* .hmHeader h1:after{ content:""; position:absolute; top:1.8rem; border-width:.4rem; border-style:solid; border-color:transparent transparent transparent #fff; transform:rotate(45deg); -webkit-transform:rotate(45deg); -moz-transform:rotate(45deg)} */
+/* .hmHeader .h1Down h1:after{ border-color:#fff transparent transparent transparent; transform:rotate(0deg); -webkit-transform:rotate(0deg); -moz-transform:rotate(0deg)} */
 .tzHeader .hmPull{ opacity: 0; -webkit-transform: translate(0px, 0px) scale(0.2);-ms-transition: translate(0px, 0px) scale(0.2);-o-transition: translate(0px, 0px) scale(0.2);-moz-transform: translate(0px, 0px) scale(0.2);pointer-events: none}
 .pullDown .pullText{ opacity: 0; -webkit-transform: translate(150px, -100px) scale(0.2);-ms-transition: translate(150px, -100px) scale(0.2);-o-transition: translate(150px, -100px) scale(0.2);-moz-transform: translate(150px, -100px) scale(0.2);}
 .hmHeader .h1Down .hmPull,.pullHover .pullDown .pullText{ opacity: 1; -webkit-transform: translate(0px, 0) scale(1);-ms-transition: translate(0px, 0) scale(1);-o-transition: translate(0px, 0) scale(1);-moz-transform: translate(0px, 0) scale(1); pointer-events: auto}
+.buyHeader h1{width:12em;margin:0 auto; text-align:center; font-size:1.1rem;letter-spacing:0.07em;color:#fff}
+.fcHeader h1 s{position:relative;display:inline-block;width:16px;height:16px;margin-left:3px;border-radius:16px;border:2px solid #fff;background-color:transparent;vertical-align:middle;vertical-align:-4px;}
+.fcHeader h1 s cite{top:5px;-webkit-transform: rotate(-135deg);-moz-transform: rotate(-135deg);-o-transform: rotate(-135deg);transform: rotate(-135deg)}
+.fcHeader h1.cur s cite{position:absolute;top:3px;left:4px;width:6px;height:6px;border-right:2px solid #fff;border-bottom:2px solid #fff;-webkit-transform: rotate(45deg);-moz-transform: rotate(45deg);-o-transform: rotate(45deg);transform: rotate(45deg)}
+
+
 
 .buyFooter,.buyFooter1{ padding-top:9rem} 
 .buyFloat{ text-align:center; line-height:3rem; font-size:.95rem; background:#f9f9f9; border-top:1px solid #d5d5d5}
@@ -1002,7 +1008,7 @@ span.lastspfvs{ width:20%;border-left:0 none;}
 .doubt{ width:.88rem; height:.88rem; margin:.6rem 0 0 .3rem; background:url(/img/zc/doubt.png) no-repeat center; -webkit-background-size:.84rem .84rem}
 .jczqfsCheck{ display:none}
 .jczqBlock .jczqfsCheck{ display:block}
-.jczqBlock .jczqdouble li span:before{ bottom:-.1rem; right:.35rem; transform:rotate(0deg); -webkit-transform:rotate(0deg); -moz-transform:rotate(0deg)}
+.jczqBlock .jczqdouble li span:before{ bottom:-.1rem; right:.1rem; transform:rotate(0deg); -webkit-transform:rotate(0deg); -moz-transform:rotate(0deg)}
 .r9double{ width:8.5rem; margin:0 auto}
 .r9double input{ width:66%}
 
