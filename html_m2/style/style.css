@@ -111,9 +111,12 @@ input::-webkit-input-placeholder,input::-moz-placeholder{ color:#d0d0d0}
 .tzHeader h1{ width:13rem; margin:0 auto; text-align:center; font-size:1.1rem; color:#fff}
 .fcHeader{ width:100%; height:2rem; padding-top:.7rem; background:#f40}
 .zcHeader .fcHeader{ background:#f40}
- .fcbackLink,.fcbackIco2{ position:absolute; top:.9rem; left:1.1rem; color:#fff; font-size:.91rem}
- .fcbackIco,.fcbackIco2{ display:inline-block; margin-right:.01rem; width:.7rem; height:.65rem; border-left:.2rem solid #fff; border-bottom:.2rem solid #fff; transform:rotate(-315deg); -webkit-transform:rotate(-315deg); -moz-transform:rotate(-315deg)}
-.fcbackHome{ display:block; position:absolute; left:.9rem; top:.6rem; width:1.56rem; height:1.35rem; background:url(/img/fc/home.png) no-repeat center; background-size:1.56rem 1.35rem; -webkit-background-size:1.56rem 1.35rem; -moz-background-size:1.56rem 1.35rem}
+.backIco2{position:absolute;top:.75rem;left:1.1rem;color:#fff; font-size:1rem}
+.backIco{position: absolute;top: .9rem;left: 1.0rem;font-size: .91rem;display:inline-block;background:none;margin-right:.01rem; width:.7rem; height:.65rem; border-left:2px solid #fff; border-bottom:2px solid #fff; transform:rotate(-315deg); -webkit-transform:rotate(-315deg); -moz-transform:rotate(-315deg)}
+.backIco2:before{position:absolute;top:6px;left:-0.75rem;display:inline-block;content:"";background:none; margin-right:.01rem; width:.65rem;height:.65rem; border-left:2px solid #fff; border-bottom:2px solid #fff; transform:rotate(-315deg); -webkit-transform:rotate(-315deg); -moz-transform:rotate(-315deg)}
+.fcbackLink,.fcbackIco2{ position:absolute; top:.9rem; left:1.1rem; color:#fff; font-size:.91rem}
+.fcbackIco,.fcbackIco2{ display:inline-block; margin-right:.01rem; width:.7rem; height:.65rem; border-left:.2rem solid #fff; border-bottom:.2rem solid #fff; transform:rotate(-315deg); -webkit-transform:rotate(-315deg); -moz-transform:rotate(-315deg)}
+
 .RfcbackHome{ display:block; position:absolute; right:.9rem; top:.6rem; width:1.56rem; height:1.35rem; background:url(/img/fc/home.png) no-repeat center; background-size:1.56rem 1.35rem; -webkit-background-size:1.56rem 1.35rem; -moz-background-size:1.56rem 1.35rem}
 .pullDown{ position:absolute; width:1.5rem; height:1.4375rem; right:.5rem; top:.6rem}
 .pullText{ -webkit-transition:all .2s ease;-ms-transition:all .2s ease;-o-transition:all .2s ease;-moz-transition:all .2s ease; position:absolute; right:0rem; top:1.7rem; width:7rem; background:#fff; border:1px solid #b6b6b6}
