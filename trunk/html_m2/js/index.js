@@ -1942,7 +1942,7 @@ var TopAnch = function() {
                 
             }
             jQuery.extend(confTemp, obj);
-            $dom.title.off().html(confTemp.title);
+            $dom.title.off().html(confTemp.title+'<s id="chowanfa"><cite></cite></s>');
             document.title = confTemp.title;
             $dom.prev[!confTemp.prevShow ? "hide": "show"]();
             $dom.next[!obj.nextShow ? "hide": "show"]();
@@ -2002,6 +2002,7 @@ var TopAnch = function() {
                 $("#lot_title").off().bind(end_ev,
                 function() {
                     $(this).parent().toggleClass("h1Down");
+                    $("#lot_title").toggleClass("cur");
                     obj.menu && $("#fcHeader").removeClass("pullHover")
                 });
                 $("#list_subNav a").off().bind("click",
@@ -2235,6 +2236,7 @@ CP.Home = function() {
             },
             isBack: true
         });
+        $("#chowanfa").hide();
         $("#login").off().keydown(function(e) {
             if (e.which == 13) {
                 b.MiniLogin();
