@@ -1938,7 +1938,7 @@ var TopAnch = function() {
             if (obj.isBack) {
                 $dom.prev.attr("class", "fcbackIco2")
             } else {
-                $dom.prev.attr("class", "fcbackIco2").html("首页")
+                $dom.prev.attr("class", "backIco2").html("首页")
                 
             }
             jQuery.extend(confTemp, obj);
