@@ -703,49 +703,12 @@ a.hmTxt2{ display:block; color:#606060; padding-right:1.4rem; position:relative}
 .gohemai-pay{padding:10px 2% 3em;text-align: center;font-size:1.2em;border-top: 1px solid #e2e2e2}
 .gohemai-pay em{color:#e30000;}
 .gohemai-pay a{display: inline-block;margin-left:1.5em;padding:.4em 1em;color:#fff;background-color: #f40}
-/**/
-/* .bf-fixed{position: fixed;left: 0;top: 0;width: 100%;height: 100%;font-family:Microsoft YaHei;background-color: rgba(0,0,0,.4)} */
-/* .bf_{position:relative;left:50%;top:50%;width: 18.5rem;margin-left:-9.25rem;z-index:1000;background-attachment:scroll;background-clip:border-box;background-color:#FFF;background-image:none;background-origin:padding-box;background-position:0 0;background-repeat:repeat;background-size:auto auto;border-bottom-left-radius:.4rem;border-bottom-right-radius:.4rem;border-top-left-radius:.4rem;border-top-right-radius:.4rem;} */
-/* .bfPop p{ font-size:.8rem; padding:.3rem 0 0 .8rem} */
-/* .bfTitle p{ position:relative; float:left; padding:0; color:#fff; width:8.85rem; text-align:center; background:#f03d3d; line-height:2.2rem; font-size:1rem; border-radius:.4rem 0 0 0; -webkit-border-radius:.4rem 0 0 0; -moz-border-radius:.4rem 0 0 0} */
-/* .bfTitle p span{ font-style:italic; font-size:1rem} */
-/* .bfTitle p:last-child{ background:#6ea5fd; width:9.65rem; border-radius:0 .4rem 0 0; -webkit-border-radius:0 .4rem 0 0; -moz-border-radius:0 .4rem 0 0} */
-/* .bfTitle p:last-child span{ border-color:#f03d3d transparent transparent transparent; border-style:solid; border-width:2.2rem .8rem 0 0; height:0; line-height:0; width:0} */
-/* .bfTitle p em{ position:absolute;top:0; right:-.2rem; z-index:1} */
-/* .bfTitle p:last-child em{ top:1.15rem; right:8.6rem} */
-/* .bfPop .zfTrue{ margin-top:1rem} */
-/* .competitions{ border-left:1px solid #d5d5d5; border-top:1px solid #d5d5d5; margin:.3rem 4%;background-color:#fff} */
-/* .competitions span.cur:before{ height:2.6rem} */
-/* .bfcom span{ width:19.63%; height:2rem; padding:.3rem 0; line-height:1rem;font-size:.95rem;} */
-/* .bfcom  span.cur:before{ height:2.6rem} */
-/* .bfcom span.bflast strong{ letter-spacing:normal; font-weight:normal; color:#333} */
-/* .bfcom strong,.bfcom em{ display:block; color:#5c5c5c; font-size:.81rem} */
-/* .bfcom strong{ letter-spacing:.2rem} */
-/* .bfcom em{ font-size:.75rem; color:#8e8e8e} */
-/* .bfcom span.cur strong,.bfcom span.cur em{ color:#f6851f} */
-/* .htcom strong,.htzjq strong{ font-weight:normal} */
-/* .htzjq span{ width:24.6%} */
-/* .jqzpk .spfzpk span,.jqNum .spfzpk span{ width:21.5%; height:1.6rem; padding:.4rem 0; line-height:.85rem} */
-/* .jqzpk .spfzpk span b,.jqNum .spfzpk span b{ font-weight:normal; display:block; font-size:.9rem} */
-/* .jqzpk .spfzpk span cite,.jqNum .spfzpk span cite{ font-size:.75rem; color:#aaa} */
-/* .jqzpk .spfzpk span.cur cite,.jqNum .spfzpk span.cur cite{ color:#fff} */
-/*
-.tzNum,.spfNum{ border-top:1px solid #e4e4e4; border-bottom:1px solid #e4e4e4;}
-.tzNum p,.spfNum li{ background: none repeat scroll 0 0 white;position:relative;border-bottom:1px solid #ebebeb; overflow:hidden; zoom:1}
-.zq-tz li{padding:.625rem 0 .625rem .56rem;}
-.tzNum p:last-child,.spfNum li:last-child{ border-bottom:none}
-.tzNum p i{ float:left; color:#8e8e8e; font-size:.91rem; width:4.375rem}
-.tzNum p span{ float:left; font-size:.97rem; color:#f03d3d; width:11.5rem}
-.tzNum p span cite,.zfNum p cite{ color:#177ffc; padding-left:.4rem}
-.bfpk .spfzpk span{ width:85%}
-.jqNum .spfzpk span{ width:19%}
-.zq-tz .spfzpk span{margin-top: .6rem}
-.bfpk .bqc-for span cite{display: inline-block;width: 13%;font-size: .95rem;}*/
 
-/* .pdLfrt09 .sfcxs li:first-child{display: none} */
-/* .bqc-tz{border-bottom: 1px solid #e4e4e4} */
-/* .bqc-tz .sfcxs{border: 0 none !important} */
-/* .pdLfrt09{padding-bottom:4.5rem} */
+/*msg弹窗*/
+@-webkit-keyframes boxfade{0%{opacity:0;}20%{opacity:0.8;}80%{opacity:0.8;}100%{opacity:0;}}
+@-o-keyframes boxfade{0%{opacity:0;}20%{opacity:0.8;}80%{opacity:0.8;}100%{opacity:0;}}
+@-ms-keyframes boxfade{0%{opacity:0;}20%{opacity:0.8;}80%{opacity:0.8;}100%{opacity:0;}}
+.alertBox{font-size:15px;text-align: center;border-radius:5px;position: fixed;left:50%;top:80%;margin:-20px 0 0 -150px;background:#E8E8E8;color:#000;width:300px;height:40px;line-height:40px;-webkit-animation:boxfade 2s ease;-ms-animation:boxfade 2s ease;-o-animation:boxfade 2s ease; z-index:10001}
 
 
 
