@@ -681,7 +681,7 @@ a.hmTxt2{ display:block; color:#606060; padding-right:1.4rem; position:relative}
 .bfpk .spfzpkNum span.spfvs{ width:12%}
 .bjdcpk .spfzpk span{ width:83%}
 .hhzpk li{ position:relative}
-.hhmore{ position:absolute; top:2rem; left:88.5%; width:1rem; text-align:center; height:3.9rem; padding:.95rem 2%; font-size:.8rem; color:#333; border:1px solid #d5d5d5; }
+.hhmore{ position:absolute; top:1.8rem; left:88.5%; width:1rem; text-align:center; height:4.5rem; padding:.4rem 2%; font-size:.8rem; color:#333; border: 1px solid #d5d5d5;background: none repeat scroll 0 0 #fff; }
 .hhmore.cur{ border:1px solid #f40; background:#f40; color:#fff}
 .hhscroll .competitions{ margin:0 2%; width:96%}
 .hhscroll .hhcom span{ color:#5c5c5c; font-size:.85rem}

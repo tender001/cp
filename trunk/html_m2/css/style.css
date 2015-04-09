@@ -258,7 +258,7 @@ h1,h2,h3,h4,h5,h6{font-size:100%}button,input,select,textarea{font-size:100%}inp
 .spfzpk,.spfzpkNum{overflow:hidden; zoom:1}
 .hhzpk li{ position:relative}
 .hhzpk li:first-child,.jqzpk li:first-child{ margin-top:2em}
-.hhzpk .spfzpk,.hhNum .spfzpk{padding:0.3em 0}
+/* .hhzpk .spfzpk,.hhNum .spfzpk{padding:0.3em 0} */
 .spfNum .spfzpk span,.hhzpk .spfzpk span{ width:25%; height:3.1em; line-height:3.1em;}
 /* .hhzpk .spfzpk em,.hhNum .spfzpk em{ float:left; width:1em; padding:.16em 1%; height:2.2rem; margin:.3em 1% 0 0; text-align:center; line-height:1; background:#ff9898; color:#fff; font-size:.75em; border-radius:.2em} */
 /* .hhzpk .spfzpk em.rq,.hhNum .spfzpk em.rq{ padding:.5em 1%; height:2.2em; background:#98c5ff} */
@@ -708,7 +708,7 @@ a.hmTxt2{ display:block; color:#606060; padding-right:1.4rem; position:relative}
 @-webkit-keyframes boxfade{0%{opacity:0;}20%{opacity:0.8;}80%{opacity:0.8;}100%{opacity:0;}}
 @-o-keyframes boxfade{0%{opacity:0;}20%{opacity:0.8;}80%{opacity:0.8;}100%{opacity:0;}}
 @-ms-keyframes boxfade{0%{opacity:0;}20%{opacity:0.8;}80%{opacity:0.8;}100%{opacity:0;}}
-.alertBox{font-size:15px;text-align: center;border-radius:5px;position: fixed;left:50%;top:80%;margin:-20px 0 0 -150px;background:#E8E8E8;color:#000;width:300px;height:40px;line-height:40px;-webkit-animation:boxfade 2s ease;-ms-animation:boxfade 2s ease;-o-animation:boxfade 2s ease; z-index:10001}
+f
 
 
 
