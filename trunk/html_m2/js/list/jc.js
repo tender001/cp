@@ -1405,7 +1405,8 @@ CP.JC = function() {
                 	url_ = "/help/bj_help.html";
                 }
                 TopAnch.init({
-                    title: lotteryInfo[lotteryType] + "·" + lotteryInfo[lotteryPlayName],
+//                    title: lotteryInfo[lotteryType] + "·" + lotteryInfo[lotteryPlayName],
+                    title: lotteryInfo[lotteryPlayName],
                     prevShow: true,
                     prevFun: function() {
                         window.location.href = "#type=index"
@@ -1490,7 +1491,7 @@ CP.JC = function() {
             Against.init()
         },
         changePlayType: function(index) {
-            $("#fcHeader").removeClass("h1Down");
+            $("#lot_title").removeClass("cur");
             $item.html('<div style="padding-top:50px;height:200px"><em class="rotate_load" style="margin:auto"></em><div style="text-align: center; padding: 10px;">加载对阵中，请稍候</div></div>');
             switch (lotteryType) {
             case "jczq":
@@ -1522,7 +1523,7 @@ CP.JC = function() {
                 break
             }
             var title = lotteryInfo[lotteryType] + "·" + lotteryInfo[lotteryPlayName];
-            $("#lot_title").html(title);
+            $("#lot_title").html(lotteryInfo[lotteryPlayName]+'<s id="chowanfa"><cite></cite></s>');
             document.title = title;
             Against.clear();
             Against.render()
