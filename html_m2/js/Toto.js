@@ -129,22 +129,9 @@ function payconfirm(){
 	$(".tz-pay").html('<p>'+hidTypeName+' </p><p>应付金额<em>'+amount+'</em>元</p>')
 	ispay(true);
 }
-function payhm(ishm){
-	if(ishm){
-		$("#szcbuy,#paybet,[mark=buyfooter],#szcbuy,#issuc").hide();
-    	$("#payhm").show();
-    	$("#cpmoney").html($("#buymoney").val());
-    	$("#txtLotDesc").val(GameName[getGameIndex(tID)]+ "复式合买方案");
-    	prebuy(4);
-	}else{
-		$("#szcbuy").show();
-    	$("#payhm").hide();
-	}
-	
-}
 function ispay(ispay){
 	if(ispay){
-    	$("#matchList,#buyFooter1,#elist,#topHeader,#szcbuy,#issuc,#content_home,#payhm").hide();
+    	$("#matchList,#buyFooter1,#elist,#topHeader,#szcbuy,#issuc,#content_home").hide();
     	$("#paybet").show();
     }else{
     	$("#szcbuy").show();
@@ -153,7 +140,7 @@ function ispay(ispay){
 }
 function issuc(ispay){
 	 if(issuc){
-	    	$("#matchList,#buyFooter1,#elist,#topHeader,#szcbuy,#paybet,#content_home,#payhm").hide();
+	    	$("#matchList,#buyFooter1,#elist,#topHeader,#szcbuy,#paybet,#content_home").hide();
 	    	$("#issuc").show();
 	    }else{
 	    	$("#content_home").show();
@@ -162,7 +149,7 @@ function issuc(ispay){
 }
 function showbuy(istrue){
     if(istrue){
-    	$("#matchList,#matchnote,#elist,#topHeader,#buyFooter1,#szcbuy,#paybet,#issuc,#payhm").hide();
+    	$("#matchList,#matchnote,#elist,#topHeader,#buyFooter1,#szcbuy,#paybet,#issuc").hide();
     	$("#content_home").show();
     }else{
     	$("#matchList,#buyFooter1,#matchnote,#elist,#topHeader").show();
@@ -185,13 +172,13 @@ function prebuy(preKind) {
         var html = "<div class='preM1'>方案内容</div><div class='preM2'>" + showszccode(gid,getZCcode(choose,gid),0) + "</div>";
         var typeName = byID("hidTypeName").value;    
         html += "<div class='preB'>" + noteCount + "注×" + times + "倍=<span style='color:red'>￥" + amount + "</span>元";
-//        if (kind == 4) {
-//            html += "<section>提成：<SELECT id='preDeduct'><OPTION selected='' value='0'>0%</OPTION><OPTION value='1'>1%</OPTION><OPTION value='2'>2%</OPTION><OPTION value='3'>3%</OPTION><OPTION value='4'>4%</OPTION><OPTION value='5'>5%</OPTION><OPTION value='6'>6%</OPTION><OPTION value='7'>7%</OPTION><OPTION value='8'>8%</OPTION><OPTION value='9'>9%</OPTION><OPTION value='10'>10%</OPTION></SELECT></section>"
-//            	+ "<section>认购：<input value=\"\" type=\"text\" maxLength=\"7\" size=7  id=\"preMasterBuy\" onkeyup='updatePublicBuyInfo();'>元<span id='mbPer'>(0%)</span></section>"
-//				+ "<section>保底：<input value=\"\" type=\"text\" maxLength=\"7\" size=7  id=\"preBaoDi\" onkeyup='updatePublicBuyInfo();'>元<span id='bdPer'>(0%)</span>&nbsp;<input  style=\"vertical-align:middle\" type=\"checkbox\" name=\"baodiAll\" id=\"baodiAll\" value=\"all\" onclick=\"updatePublicBuyInfo();\" />全额保底</section>"
-//				+ "<div>保密：<select id='preSecret'><option value='0'>完全公开</option><option value='1'>截止公开</option><option value='2'>针对跟单人公开</option><option value='3'>截止对跟单人公开</option></select></div>"
-//				+ "<div>方案描述：<input id=\"txtLotDesc\" name=\"txtLotDesc\" maxlength=\"200\" type=\"text\" size=\"16\" value='" + typeName + "复式合买方案'/></div>";
-//        }
+        if (kind == 4) {
+            html += "<section>提成：<SELECT id='preDeduct'><OPTION selected='' value='0'>0%</OPTION><OPTION value='1'>1%</OPTION><OPTION value='2'>2%</OPTION><OPTION value='3'>3%</OPTION><OPTION value='4'>4%</OPTION><OPTION value='5'>5%</OPTION><OPTION value='6'>6%</OPTION><OPTION value='7'>7%</OPTION><OPTION value='8'>8%</OPTION><OPTION value='9'>9%</OPTION><OPTION value='10'>10%</OPTION></SELECT></section>"
+            	+ "<section>认购：<input value=\"\" type=\"text\" maxLength=\"7\" size=7  id=\"preMasterBuy\" onkeyup='updatePublicBuyInfo();'>元<span id='mbPer'>(0%)</span></section>"
+				+ "<section>保底：<input value=\"\" type=\"text\" maxLength=\"7\" size=7  id=\"preBaoDi\" onkeyup='updatePublicBuyInfo();'>元<span id='bdPer'>(0%)</span>&nbsp;<input  style=\"vertical-align:middle\" type=\"checkbox\" name=\"baodiAll\" id=\"baodiAll\" value=\"all\" onclick=\"updatePublicBuyInfo();\" />全额保底</section>"
+				+ "<div>保密：<select id='preSecret'><option value='0'>完全公开</option><option value='1'>截止公开</option><option value='2'>针对跟单人公开</option><option value='3'>截止对跟单人公开</option></select></div>"
+				+ "<div>方案描述：<input id=\"txtLotDesc\" name=\"txtLotDesc\" maxlength=\"200\" type=\"text\" size=\"16\" value='" + typeName + "复式合买方案'/></div>";
+        }
         html += "</div>";
 
         $("#divPreView").html(html);

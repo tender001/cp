@@ -12,7 +12,6 @@ h1,h2,h3,h4,h5,h6{font-size:100%}button,input,select,textarea{font-size:100%}inp
 .pd063{ padding:.63rem}.pdTop08{padding-top:.8rem}.pdLeft06{padding-left: .6rem}.pdLeft04{padding-left:.4rem}.mgTop06{margin-top: .6rem}.pdTop06{padding-top: .6rem;}
 .bottom-padding-bottom{padding-bottom:6em}
 .fixed{position:fixed;bottom:0;left:0;z-index:99;width:100%}
-.top-fixed{position: fixed;top: 0;left: 0;z-index:88;padding:0;width:100%}
 .more{float: right;color: #999}
 /*@media screen and (-webkit-min-device-pixel-ratio:0){input{line-height:normal !important}}*/
 .slide{width:100%;position: relative;overflow:hidden;-webkit-transition: height 0.3s linear;-moz-transition: height 0.3s linear;-o-transition: height 0.3s linear;transition: height 0.3s linear;}
@@ -23,7 +22,7 @@ h1,h2,h3,h4,h5,h6{font-size:100%}button,input,select,textarea{font-size:100%}inp
 .top-margin{margin-top:2.75rem;}.marbottom0{margin-bottom: 0 !important}
 hr.top-margin{border:0 none}
 .rightArrow,.hmArrow{position:absolute;width:.45rem;height:.45rem;background:#fff;right:1rem;top:2rem;border-bottom:.16rem solid #ccc;border-right:.16rem solid #ccc;transform:rotate(-45deg);-webkit-transform:rotate(-45deg);-moz-transform:rotate(-45deg)}
-.user a,.nav-list h3,.go-top-ico,.kstz-b .inms em:after{background-image:url("../img/app-icon-index.png");background-repeat:no-repeat;}
+
 /*gotop*/
 .go-top{position: relative}
 .go-top-ico{position: absolute;top: 0.78em;right: 1em;display:block;width: 25px;height: 25px;background-position:-2px -192px;background-size: 33px}
@@ -98,14 +97,14 @@ input.fqhmGray{ background:#ebebeb}
 .double s{position: absolute;top:8px;left:60px;font-size:0;border:4px solid #f40;border-color: transparent transparent #f40 transparent}
 .double input,.hmbuyInput{ width:3.3em;text-align:center; font-size:1.4em; color:#f6851f; line-height:1.5em; border:none; background:#fff; margin:0 .4em; border-radius:.2em;vertical-align:middle; -webkit-border-radius:.2em; -moz-border-radius:.2em}
 /*** 顶部浮动 ***/
-.tzHeader{ position:relative; margin-bottom:2.6rem; z-index:10}
+.tzHeader{ position:relative;  z-index:10}
 .buyHeader,.fcHeader,.pkHeader,.zcHeader{ width:100%; position:fixed; top:0; left:0;z-index:100;height:1.95rem; padding-top:.65rem; background-color:#f40; border-bottom:1px solid #f30;-webkit-box-shadow:0 1px 2px rgba(255,68,0,0.5);-moz-box-shadow:0 1px 2px rgba(255,68,0,0.5);box-shadow:0 1px 2px rgba(255,68,0,0.5)}
 .top-fixed .buyHeader{top: auto}
 .buyHeader h1{width:12em;margin:0 auto; text-align:center; font-size:1.1rem;letter-spacing:0.07em;color:#fff}
 .buyHeader h1 s{position:relative;display:inline-block;width:16px;height:16px;margin-left:3px;border-radius:16px;border:2px solid #fff;background-color:transparent;vertical-align:middle;vertical-align:-4px;}
 .buyHeader h1 s cite{position:absolute;top:3px;left:4px;width:6px;height:6px;border-right:2px solid #fff;border-bottom:2px solid #fff;-webkit-transform: rotate(45deg);-moz-transform: rotate(45deg);-o-transform: rotate(45deg);transform: rotate(45deg)}
 .buyHeader h1.cur s cite{top:5px;-webkit-transform: rotate(-135deg);-moz-transform: rotate(-135deg);-o-transform: rotate(-135deg);transform: rotate(-135deg)}
-.fcHeader{ background:#db150b; border-bottom:1px solid #d5d5d5}
+.fcHeader{ background:#db150b; }
 .fcHeader h1,.pkHeader h1,.zcHeader h1{color:#fff}
 .hmPull{ position:absolute; z-index:1; border-left:1px solid #d5d5d5; margin-left:1px; top:2.68rem; width:100%; background:#fff}
 .hmPull a,.competitions span{float:left; position:relative; font-size:1em;line-height:3em; width:33%; text-align:center;color:#333;border-right:1px solid #ddd;border-bottom:1px solid #ddd}
@@ -125,7 +124,7 @@ input.fqhmGray{ background:#ebebeb}
 .jc-more cite a{display: block;padding: 0.5em 1em;color: #000;border: 0.1em solid #ddd;border-bottom-width:0;background-color: #fff}
 .jc-more cite .cur{color: #f40}
 .goHome-white{background-position: 0 -29px}
-.fcbackHome{ display:block; position:absolute; left:.9rem; top:.6rem; width:1.56rem; height:1.35rem; background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADUAAAAuCAYAAACI91EoAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAIqSURBVGhD7Vo7UsMwFExFmZqCG3CCzKShpuYIFByBoU7rE+QGuQQVHQfgAnT0aWKza8tBSYj9nn6WZ+QZDQE/S7vSW71F8WKR4Krr+hntA+0uwXBxh2ia5gZEtvjZXvj8g/YQd9SIvYPDLVenJ2QRO+DvrxGHjtM1QK/Qvs8J2b/j/g5tGQdB4F6NfvZDhKxV+0L8fWAI4bo714+ElNEZJ+ApHJJAPV3Tj4IYdVZxYgJB8utGoh8pOcS9c4L8EHk+rdGPlBg3GE6UJzT94676URDbg9iLHpnjE3QF/9UfKWBNnCnccXUGQOux+qMBLYnFeJ/R7BXTAU1UfyRgNTHGXj06JtflY7H1IyUHYtz237yJpdSPgpy7vZpCPwpiens1pX4UxGT2Khf9SIkZ73jdXuWoHwW5S3uVs36kxE7s1Rz0oyDW2SsWNulDc4gjH5I6HozMAfQYRvIhqWUqgzoGyPc+eZDP0XWYzYLnc33jVpntBZyVhZWYx4/eSDJbRh2wtdoHFlLTLGlZqTZVS/qV9As2A2k1Zf713hpfade+/jPPO3j/4EExHSkezogKIXTLOI/DnKSkKk1RpDNwXK10pABQ9Q0G47MnhZlXnc8xvpD6m4F06VdWqtsBS/pZ+ivp15YZpMXKZVdKpSni09TD3qXz5Q61jUlByuBy+27Y5aSJfk8zg4zXZgRxacY4icVgfLdogzb49ooNCrE7zYCMl5IiDuIhrqExfgG5jEdUMRKD7gAAAABJRU5ErkJggg==) no-repeat center; background-size:1.56rem 1.35rem; -webkit-background-size:1.56rem 1.35rem; -moz-background-size:1.56rem 1.35rem}
+/* .fcbackHome{ display:block; position:absolute; left:.9rem; top:.6rem; width:1.56rem; height:1.35rem; background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADUAAAAuCAYAAACI91EoAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAIqSURBVGhD7Vo7UsMwFExFmZqCG3CCzKShpuYIFByBoU7rE+QGuQQVHQfgAnT0aWKza8tBSYj9nn6WZ+QZDQE/S7vSW71F8WKR4Krr+hntA+0uwXBxh2ia5gZEtvjZXvj8g/YQd9SIvYPDLVenJ2QRO+DvrxGHjtM1QK/Qvs8J2b/j/g5tGQdB4F6NfvZDhKxV+0L8fWAI4bo714+ElNEZJ+ApHJJAPV3Tj4IYdVZxYgJB8utGoh8pOcS9c4L8EHk+rdGPlBg3GE6UJzT94676URDbg9iLHpnjE3QF/9UfKWBNnCnccXUGQOux+qMBLYnFeJ/R7BXTAU1UfyRgNTHGXj06JtflY7H1IyUHYtz237yJpdSPgpy7vZpCPwpiens1pX4UxGT2Khf9SIkZ73jdXuWoHwW5S3uVs36kxE7s1Rz0oyDW2SsWNulDc4gjH5I6HozMAfQYRvIhqWUqgzoGyPc+eZDP0XWYzYLnc33jVpntBZyVhZWYx4/eSDJbRh2wtdoHFlLTLGlZqTZVS/qV9As2A2k1Zf713hpfade+/jPPO3j/4EExHSkezogKIXTLOI/DnKSkKk1RpDNwXK10pABQ9Q0G47MnhZlXnc8xvpD6m4F06VdWqtsBS/pZ+ivp15YZpMXKZVdKpSni09TD3qXz5Q61jUlByuBy+27Y5aSJfk8zg4zXZgRxacY4icVgfLdogzb49ooNCrE7zYCMl5IiDuIhrqExfgG5jEdUMRKD7gAAAABJRU5ErkJggg==) no-repeat center; background-size:1.56rem 1.35rem; -webkit-background-size:1.56rem 1.35rem; -moz-background-size:1.56rem 1.35rem} */
 .pullDown{ position:absolute; width:1.5rem; height:1.4375rem; right:.5rem; top:.6rem}
 .pullText{ position:absolute; right:0; top:1.7rem; width:7rem; background:#fff; border:1px solid #b6b6b6}
 .pullText a{ display:block; line-height:2.45rem; text-align:center; color:#9e9e9e; font-size:.93rem; border-bottom:1px solid #cacaca}

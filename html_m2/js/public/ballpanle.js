@@ -410,8 +410,7 @@ function funClock_pgc() {   //高频彩
     else { //已截止
         if (stopState && stopState == 1) {
             LeaveClock.html("已停售");
-//            location.reload();
-            setTimeout(function() { window.location.reload();}, (10 * 1000));
+            location.reload();
         }
         else {
             LeaveClock.html("已截止");
@@ -440,13 +439,12 @@ function funClock_szc() {
     var hour = Math.floor(leave / (1000 * 3600)) - (day * 24);
     var minute = Math.floor(leave / (1000 * 60)) - (day * 24 * 60) - (hour * 60);
     var second = Math.floor(leave / (1000)) - (day * 24 * 60 * 60) - (hour * 60 * 60) - (minute * 60);
-    if (day>0) hour+=day*24;
     if (hour < 10) hour = "0" + hour;
     if (minute < 10) minute = "0" + minute;
     if (second < 10) second = "0" + second;
-    
+
     if (leave > 0)  //还未截止
-        LeaveClock.html(  hour + ":" + minute + ":" + second);
+        LeaveClock.html((type == 1 ? (day + "天 ") : "") + hour + ":" + minute + ":" + second);
     else  //已截止
     {
         if (stopState && stopState == 1) {
