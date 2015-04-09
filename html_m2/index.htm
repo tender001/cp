@@ -366,15 +366,7 @@ background-positon: 100%,100%}
 </div>
 <!-- <script language="javascript" src="http://chat.live800.com/live800/chatClient/monitor.js?jid=4618724443&companyID=331528&configID=123978&codeType=custom"></script> -->
 <!-- <script src='/js/index/index.js'></script> -->
-<script>
-var _hmt = _hmt || [];
-(function() {
-  var hm = document.createElement("script");
-  hm.src = "//hm.baidu.com/hm.js?9749f4d3030abbc90afef9c7646ea0bb";
-  var s = document.getElementsByTagName("script")[0]; 
-  s.parentNode.insertBefore(hm, s);
-})();
-</script> 
+
 </article>
 <script>
 	if(location.href == 'index.htm'/*tpa=http://m.159cai.com/*/ || location.href == 'index.htm#type=index'/*tpa=http://m.159cai.com/#type=index*/){
@@ -389,16 +381,7 @@ var _hmt = _hmt || [];
 
 <!-- 登录[[ -->
 <article  id='login' style='display:none;'>
-<!-- 	<div class="s3"> -->
-<!--     	<div class="clearfix"><cite>账号</cite><input id=username type="text" placeholder="请输入用户名或手机号"><em style='display:none;'></em></div> -->
-<!--     	<div class="s3line"></div> -->
-<!--     </div> -->
-<!-- 	<div class="s3"> -->
-<!--     	<div class="clearfix"><cite>密码</cite><input id=password type="password" placeholder="请输入密码"><em style='display:none;'></em></div> -->
-<!--     	<div class="s3line"></div> -->
-<!--     </div> -->
-<!--     <p class="clearfix pdTop1"><a href="alone/forgotpwd.html" tppabs="http://m.159cai.com/alone/forgotpwd.html" class="right aGreen">忘记密码？</a></p> -->
-<!--     <a href="javascript:;" class="loginBtn" id='loginBtn'>登录</a> -->
+
     
     
     <div class="m-reg">
@@ -469,8 +452,8 @@ var _hmt = _hmt || [];
     <h4>投注确认</h4>
     <div class="poptzText pdLeft1" id=buy_reveal>
     	<p>投注金额： <cite class="red">0元</cite></p>
-    	<p>奖金范围： <cite class="red">2.54~4.98元</cite></p>
-    	<div class="clearfix popuseRed"><p class="left">账户余额： <cite class="red">0元</cite></p><span class="right">使用红包</span></div>
+    	<p>奖金范围： <cite class="red">0.00~0.00元</cite></p>
+    	<div class="clearfix popuseRed"><p class="left">账户余额： <cite class="red">0元</cite></p></div>
     </div>
     <div class="zfRed pdTop08" id='buy_hide'></div> 
     <div class="zfTrue clearfix"><a href="javascript:;" class="zfqx">取消</a><a href="javascript:;" style='display:none;'>去充值</a><a href="javascript:;">确认</a></div>
@@ -486,49 +469,16 @@ var _hmt = _hmt || [];
 <section id="dConfirm" class="zfPop" style="position: fixed;z-index: 10000;top:50%;left:50%;margin-left:-9.25rem;margin-top:-3.35rem;display:none;">
 <h4></h4><div class="clearfix pdLeft08 center"></div>
 <div class="zfTrue clearfix" style='margin-top:2rem'><a href="javascript:;" class="zfqx">取 消</a><a href="javascript:;">确 定</a></div></section>
-<!--
-<style>
-.banner_{-webkit-animation:banner .5s 1 ease-in-out;animation:banner .5s 1 ease-in-out;-webkit-animation-fill-mode:both;animation-fill-mode:both}
-@-webkit-keyframes banner{0%{-webkit-transform:scale(0.0)}100%{-webkit-transform:scale(1.0)}}
-@keyframes banner{0%{transform:scale(0.0)}100%{transform:scale(1.0)}}
-</style>
- 百分百活动弹窗
-<div class='banner_' style="display:none;height: 76%;left: 12%;position: fixed;top: 15%;width: 76%;z-index: 10000;" id='bfbzj_'>
-	<div style="position:relative"><img src="/activity/bfbzj/bfbpic.jpg" width="100%"><em></em><a href="javascript:;">开启有钱任性模式</a></div>
-</div> -->
+
 
 
 <script type="text/javascript">
     var list = {
-	'list/more.html':1,
-	'list/ssq.html': 1,
-	'list/dlt.html':1,
-	'list/qlc.html':1,
+	
 	'list/jczq.html': 1,
 	'list/jclq.html': 1,
-	'list/bjdc.html': 1,
-	'list/11x5.html': 1,
-	'list/11ydj.html': 1,
-	'list/gddg.html': 2,
-	'list/sfgg.html': 1,
-	'list/jxssc.html': 1,
-	'list/ahk3.html': 1,
-	'list/p5.html': 1,
-	'list/qxc.html': 1,
-	'kj/index.html':1,
-	'kj/result.html':1,
-	'yuce/index.html':1,
-	'yuce/forecast.html':1,
-	'user/hallhm.html':1,
-	'user/success.html':1,
-	'user/index.html':1,
-	'user/viewpath.html':1,
-	'user/chase.html':1,
-	'user/detail.html':1,
-	'user/notice.html':1,
-	'user/record.html':1,
-	'user/packet.html':1,
-	'info':20
+	
+	'info':2
 };
 if(!/xoxo/.test(window.location.href)){
 	if(window.localStorage.getItem('list')){
@@ -582,18 +532,7 @@ if(Name!=''&&Name!=undefined){
 <script type='text/javascript'>
 var homeFun;
 $(function(){
-	//百分百中奖活动弹窗 -已下线
-	if(!localStorage.getItem('banner') && location.href == 'index.htm#type=index'/*tpa=http://m.159cai.com/#type=index*/){
-		localStorage.setItem('banner','yes');
-		//$('#bfbzj_,#mask').show();
-		$('#bfbzj_ em').bind('click', function(){
-			$('#bfbzj_,#mask').hide();
-		});
-		$('#bfbzj_ a').bind('click', function(){
-			$('#bfbzj_,#mask').hide();
-			location.href = 'activity/bfbzj/index.htm'/*tpa=http://m.159cai.com/activity/bfbzj/*/;
-		});
-	}
+
 	function banner(){
 		
 		
@@ -634,5 +573,13 @@ $(function(){
     }
 })
 </script>
-
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?9749f4d3030abbc90afef9c7646ea0bb";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script> 
 </body></html>
