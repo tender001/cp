@@ -29,8 +29,9 @@ h1,h2,h3,h4,h5,h6{font-size:100%}button,input,select,textarea{font-size:100%}inp
 #index_nav.nav table{background-color: #f4f4f4}
 #index_nav.nav table td{padding: 0.5em 0}
 .nav table td{text-align: center;padding: .3em 0;border:1px solid #e2e2e2;border-top-color: transparent}
-.nav-list{display:inline-table;width:92%;color:#333}
-.nav-list h3{display:inline-block;width:32px;height:32px;margin:0  0 -4px -1px;background-size:34px}
+.nav-list{display:inline-table;width:92%;color:#666}
+.nav-list h3{display:inline-block;width:32px;height:32px;background-size:34px}
+.nav-list p{font-size:0.9rem}
 .nav-list .login{background-position:-1px -68px}
 .nav-list .reg{background-position:-1px -100px}
 .nav-list .cz{background-position:-1px 1px}
