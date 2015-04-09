@@ -40,7 +40,7 @@ hr.top-margin{border:0 none}
 /*底部灰色*/
 .pay-submit{padding: 1.3em 0 0;background-color: #e3e3e3}
 /*点击按钮*/
-.btn{display: block;padding:0.5em 0;letter-spacing:0.16em;text-align: center;border-radius:5px;box-shadow: 1px 1px 5px rgba(0,0,0,0.5)}
+.btn{display: block;padding:0.5em 0;letter-spacing:0.16em;text-align: center;box-shadow: 1px 1px 5px rgba(0,0,0,0.5)}
 .btn-true{width: 94%;margin:0 auto 10px;font-size:1.3em;color:#fff;background-color: #f60;background-image:-webkit-linear-gradient(top,#f60,#f20);background-image: -moz-linear-gradient(top,#f60,#f20);background-image: -o-linear-gradient(top,#f60,#f20);background-image: linear-gradient(top,#f60,#f20)}
 .btn-reg{width: 94%;margin:0 auto;font-size:1.3em;color:#666;background-color: #fff;}
 /*警告弹框*/
