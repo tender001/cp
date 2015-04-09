@@ -717,11 +717,12 @@ a.hmTxt2{ display:block; color:#606060; padding-right:1.4rem; position:relative}
 .bftkScroll{ position:relative; height:auto}
 .bfPop .zfTrue2{ bottom:-2.2rem; position:absolute; width:100%}
 .spfzpk3 span em{ color:#db150b}
-.spfzpk2 span{ width:38%; font-size:.95rem; height:2.1rem; padding:.4rem 0; line-height:1.2rem; margin-top:0}
+.spfzpk2 span{ width:38%; font-size:.75rem; height:2.1rem; padding:.4rem 0; line-height:1.2rem; margin-top:0}
 .spfzpk2 span.spfvs,.spfNum .spfzpk2 span.spfvs{ width:20%;}
 span.spfvs{ width:20%;border-left:0 none;border-right: 0 none;}
+span.lastspfvs{ width:20%;border-left:0 none;}
 .spfzpk2 span cite{ display:block; font-size:.75rem;color: #aaa;}
-spfzpk
+
 .spfpl span{ display:inline-block; width:39%; color:#aaa; font-size:.75rem; text-align:center; margin-top:.2rem}
 .spfpl span.spfvs,.spfNum .spfpl span.spfvs{ width:22%}
 .spfNum .spfzpk2 span{ width:30%}
