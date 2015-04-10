@@ -171,11 +171,7 @@ var tipsDiv_01 = "";
 function showTips(tips) {
 	 var obj = $('<div class="alertBox">' + tips + "</div>");
      $("body").append(obj);
-//    $('div.tipsClass').css({
-//        'top': ($(window).height() / 2 + $(window).scrollTop()) + 'px',
-//        'left': ($(window).width() - 245) / 2 + "px",
-//       
-//    });
+
     setTimeout(function(){
 //    	$('div.alertBox').hide();
     },2000);
