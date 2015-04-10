@@ -3,9 +3,13 @@
 body,section,footer,header,menu,nav,button,dd,dl,dt,fieldset,form,h1,h2,h3,h4,h5,h6,hr,input,legend,li,ul,ol,p,pre,th,td,textarea,center{margin:0;padding:0}
 html{min-height:100%;}
 html{color:#000;-webkit-backface-visibility: hidden;-webkit-font-smoothing: antialiased;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%}
-body{font:75%/1.5 sans-serif,Helvetica,Arial,"Hiragino Sans GB";background-color:#fff;min-width:320px}
+body{ background:#f7f7f7; min-width:320px; font-size:14px; font-family:arial,Microsoft YaHei, Helvetica, sans-serif; color:#222; tap-highlight-color:rgba(0,0,0,0); -webkit-tap-highlight-color:rgba(0,0,0,0); -moz-tap-highlight-color:rgba(0,0,0,0)}
 article,aside,details,figcaption,figure,footer,header,menu,nav,section{display:block}
 h1,h2,h3,h4,h5,h6{font-size:100%}button,input,select,textarea{font-size:100%}input,button{background-color:transparent}input[type="button"],input[type="submit"]{-webkit-appearance:none}a,s{text-decoration:none;outline:0}a:active{-webkit-tap-highlight-color:rgba(0,0,0,0)}ol,ul,li{list-style:none}i,em,cite{font-style:normal}img{max-width:100%;border:0 none;vertical-align:top}fieldset{border:0 none}table{border-collapse:collapse;border-spacing:0}.fl{float:left}.left{float:left}.fr{float:right}.right{float:right}.clear{clear:both}.fn-clear{zoom:1}.fn-clear:after{visibility:hidden;display:block;font-size:0;content:" ";clear:both}.fn-clearfix:after{content:"";display:table;clear:both}.clearfix{overflow:hidden;zoom:1}.fn-show{display:block}.fn-hide{display:none}
+input{ outline:none; -webkit-tap-highlight-color:rgba(255,255,255,0); -webkit-appearance:none; font-family:"微软雅黑"}
+input::-webkit-input-placeholder,input::-moz-placeholder{ color:#d0d0d0}
+@media screen and (min-width:480px){html,body,button,input,select,textarea{font-size:18px}}
+@media screen and (min-width:640px){html,body,button,input,select,textarea{font-size:24px}}
 .header,.cp-list li,.tz-menu{width:100%;padding:0.4em 0;overflow:hidden}
 .header .user{float: right;}
 .top-login{float: right;line-height:28px;font-size:1.12em;padding-right:10px;}
@@ -31,7 +35,7 @@ h1,h2,h3,h4,h5,h6{font-size:100%}button,input,select,textarea{font-size:100%}inp
 .nav table td{text-align: center;padding: .3em 0;border:1px solid #e2e2e2;border-top-color: transparent}
 .nav-list{display:inline-table;width:92%;color:#666}
 .nav-list h3{display:inline-block;width:32px;height:32px;background-size:34px}
-.nav-list p{font-size:0.9rem}
+/* .nav-list p{font-size:0.9rem} */
 .nav-list .login{background-position:-1px -68px}
 .nav-list .reg{background-position:-1px -100px}
 .nav-list .cz{background-position:-1px 1px}
@@ -457,7 +461,7 @@ h1,h2,h3,h4,h5,h6{font-size:100%}button,input,select,textarea{font-size:100%}inp
 .user-setting a{color: #333}
 .user-setting .ico-click{height:2.5em;line-height:2.5em;padding: 0.5em 0;border-bottom:1px solid #e2e2e2;background-color: #fff;overflow: hidden}
 .user-setting .list-4{margin-bottom: 10px;border-bottom: 0}
-.set-icon{float:left;display:inline-block;width:35px;height:30px;margin:2px 3px 0 0;background: url("/img/set-icon.png") no-repeat;background-size:35px 286px}
+.set-icon{float:left;display:inline-block;width:2.5rem;height:1.4rem;margin:0.8rem 0.6rem 0;background: url("/img/set-icon.png") no-repeat;background-size:35px 286px}
 .set-icon1{background-position: 0 -1px}
 .set-icon2{background-position: 0 -33px}
 .set-icon3{background-position: 0 -70px}
@@ -710,7 +714,7 @@ a.hmTxt2{ display:block; color:#606060; padding-right:1.4rem; position:relative}
 @-webkit-keyframes boxfade{0%{opacity:0;}20%{opacity:0.8;}80%{opacity:0.8;}100%{opacity:0;}}
 @-o-keyframes boxfade{0%{opacity:0;}20%{opacity:0.8;}80%{opacity:0.8;}100%{opacity:0;}}
 @-ms-keyframes boxfade{0%{opacity:0;}20%{opacity:0.8;}80%{opacity:0.8;}100%{opacity:0;}}
-f
+.alertBox{font-size:15px;text-align: center;border-radius:5px;position: fixed;left:50%;top:80%;margin:-20px 0 0 -150px;background:#E8E8E8;color:#3C703A;width:300px;height:40px;line-height:40px;-webkit-animation:boxfade 2s ease;-ms-animation:boxfade 2s ease;-o-animation:boxfade 2s ease; z-index:10001}
 
 
 
