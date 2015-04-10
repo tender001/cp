@@ -48,14 +48,15 @@ loadmatch = function(gid,pid){
 			rs = d.rows.row;
 			var html = [];
 			$.each(rs,function(o,r){
+		
 				if(gid == 80||gid == 81){
-					html.push("<div class=\"tz\"><section class=\"tz-list\"><p class=\"list-l\">" +
+					html.push("<div class=\"tz\"><section class=\"tz-list up-jc\"><p class=\"list-l\">" +
 							"<em>"+(o+1)+"</em><cite style="+r.cl+">"+r.mname+"</cite><i>01:45截止</i></p>" +
-							"<ul class=\"list-r\"><li class=\"tz-true\"><em name="+(o+1)+" value=\"3\" n=\"3\" onclick=\"ChooseMatch(this)\">"+r.hn+"<br>胜</em>" +
-							"<span>赔率"+r.b3+"</span></li><li class=\"tz-true tz-true-middle\">" +
-							"<em name="+(o+1)+" value=\"1\" n=\"1\" onclick=\"ChooseMatch(this)\">vs<br>平</em>" +
-							"<span>赔率"+r.b1+"</span></li><li class=\"tz-true\"><em name="+(o+1)+" value=\"0\" n=\"0\" onclick=\"ChooseMatch(this)\">"+r.gn+"<br>胜</em>" +
-							"<span>赔率"+r.b0+"</span></li></ul></section></div>");
+							"<ul class=\"list-r\"><li class=\"tz-true\"><em name="+(o+1)+" value=\"3\" n=\"3\" onclick=\"ChooseMatch(this)\">"+r.hn+"<i class='up-sp'>胜&nbsp;"+r.b3+"</i></em>" +
+							"</li><li class=\"tz-true tz-true-middle\">" +
+							"<em name="+(o+1)+" value=\"1\" n=\"1\" onclick=\"ChooseMatch(this)\">vs<i class='up-sp'>平&nbsp;"+r.b1+"</i></em>" +
+							"</li><li class=\"tz-true\"><em name="+(o+1)+" value=\"0\" n=\"0\" onclick=\"ChooseMatch(this)\">"+r.gn+"<i class='up-sp'>胜&nbsp;"+r.b0+"</i></em>" +
+							"</li></ul></section></div>");
 					
 					
 					
