@@ -525,13 +525,13 @@ CP.JC = function() {
                                 _out.push('<p class="spfzpkNum ' + (t[n].hot == "yes" ? "spfzpk3": "") + '"><span><em>' + t[n].hn + '</em></span><span class="spfvs"><em>VS</em></span><span><em>' + t[n].gn + "</em></span></p>");
                                 _out.push('<p class="spfzpk">');
                                 if ((((t[n].idanguan*1) & 1 << 1) == (1 << 1)) && lotteryType == "jczq" && lotteryPlayName == "jq") {
-                                    _out.push("<span class=wang-ball my-data=0 dg=dg><b>0</b><cite>" + sp_[0] + "</cite></span><span class='wang-ball spfvs' my-data=1 dg=dg><b>1</b><cite>" + sp_[1] + "</cite></span>        										<span class=wang-ball my-data=2 dg=dg><b>2</b><cite>" + sp_[2] + "</cite></span><span class=wang-ball my-data=3 dg=dg><b>3</b><cite>" + sp_[3] + '</cite></span></p><p class="spfzpk">');
+                                    _out.push("<span class=wang-ball my-data=0 dg=dg><b>0</b><cite>" + sp_[0] + "</cite></span><span class='wang-ball spfvs' my-data=1 dg=dg><b>1</b><cite>" + sp_[1] + "</cite></span>        										<span class=wang-ball my-data=2 dg=dg><b>2</b><cite>" + sp_[2] + "</cite></span><span class='wang-ball lastspfvs' my-data=3 dg=dg><b>3</b><cite>" + sp_[3] + '</cite></span></p><p class="spfzpk">');
                                     _out.push("<span class='wang-ball' my-data=4 dg=dg><b>4</b><cite>" + sp_[4] + "</cite></span><span class='wang-ball spfvs' my-data=5 dg=dg><b>5</b><cite>" + sp_[5] + "</cite></span>");
                                     _out.push("<span class='wang-ball ' my-data=6 dg=dg><b>6</b><cite>" + sp_[6] + "</cite></span><span class='wang-ball lastspfvs' my-data=7 dg=dg><b>7+</b><cite>" + sp_[7] + "</cite></span></p>");
                                     _out.push("</li>");
                                     _out.push('<div class="dgtop"></div>')
                                 } else {
-                                    _out.push("<span class=wang-ball my-data=0><b>0</b><cite>" + sp_[0] + "</cite></span><span class='wang-ball spfvs' my-data=1><b>1</b><cite>" + sp_[1] + "</cite></span>        										<span class=wang-ball my-data=2><b>2</b><cite>" + sp_[2] + "</cite></span><span class=wang-ball my-data=3><b>3</b><cite>" + sp_[3] + '</cite></span></p><p class="spfzpk">');
+                                    _out.push("<span class=wang-ball my-data=0><b>0</b><cite>" + sp_[0] + "</cite></span><span class='wang-ball spfvs' my-data=1><b>1</b><cite>" + sp_[1] + "</cite></span>        										<span class=wang-ball my-data=2><b>2</b><cite>" + sp_[2] + "</cite></span><span class='wang-ball lastspfvs' my-data=3><b>3</b><cite>" + sp_[3] + '</cite></span></p><p class="spfzpk">');
                                     _out.push("<span class='wang-ball' my-data=4><b>4</b><cite>" + sp_[4] + "</cite></span><span class='wang-ball spfvs' my-data=5><b>5</b><cite>" + sp_[5] + "</cite></span>");
                                     _out.push("<span class='wang-ball ' my-data=6><b>6</b><cite>" + sp_[6] + "</cite></span><span class='wang-ball lastspfvs' my-data=7><b>7+</b><cite>" + sp_[7] + "</cite></span></p>");
                                     _out.push("</li>")
@@ -586,17 +586,17 @@ CP.JC = function() {
                                 _out.push('<p class="spfzpk ' + (t[n].hot == "yes" ? "spfzpk3": "") + '"><em class="rq">让分</em>');
                                 sp_ = t[n].rf_sp.split(",");
                                 if ((32 & t[n].isale) > 0) {
-                                    _out.push("<span class=wang-ball my-data=0 dg=dg><b>" + t[n].gn + "</b><cite>" + sp_[0] + "</cite></span><span class=wang-ball my-data=3 dg=dg><b>" + t[n].hn + rq_ + "</b><cite>" + sp_[1] + "</cite></span>")
+                                    _out.push("<span class=wang-ball my-data=0 dg=dg><b>" + t[n].gn + "</b><cite>" + sp_[0] + "</cite></span><span class='wang-ball lastspfvs' my-data=3 dg=dg><b>" + t[n].hn + rq_ + "</b><cite>" + sp_[1] + "</cite></span>")
                                 } else {
-                                    _out.push("<span class=wang-ball my-data=0><b>" + t[n].gn + "</b><cite>" + sp_[0] + "</cite></span><span class=wang-ball my-data=3><b>" + t[n].hn + rq_ + "</b><cite>" + sp_[1] + "</cite></span>")
+                                    _out.push("<span class=wang-ball my-data=0><b>" + t[n].gn + "</b><cite>" + sp_[0] + "</cite></span><span class='wang-ball lastspfvs' my-data=3><b>" + t[n].hn + rq_ + "</b><cite>" + sp_[1] + "</cite></span>")
                                 }
                                 _out.push("</p>");
                                 _out.push('<p class="spfzpk"><em>猜总分</em>');
                                 sp_ = t[n].dxf_sp.split(",");
                                 if ((128 & t[n].isale) > 0) {
-                                    _out.push("<span class=wang-ball my-data=3 dg=dg><b>&gt;" + t[n].zclose + "分</b><cite>" + sp_[0] + "</cite></span><span class=wang-ball my-data=0 dg=dg><b>&lt;" + t[n].zclose + "分</b><cite>" + sp_[1] + "</cite></span>")
+                                    _out.push("<span class=wang-ball my-data=3 dg=dg><b>&gt;" + t[n].zclose + "分</b><cite>" + sp_[0] + "</cite></span><span class='wang-ball lastspfvs' my-data=0 dg=dg><b>&lt;" + t[n].zclose + "分</b><cite>" + sp_[1] + "</cite></span>")
                                 } else {
-                                    _out.push("<span class=wang-ball my-data=3><b>&gt;" + t[n].zclose + "分</b><cite>" + sp_[0] + "</cite></span><span class=wang-ball my-data=0><b>&lt;" + t[n].zclose + "分</b><cite>" + sp_[1] + "</cite></span>")
+                                    _out.push("<span class=wang-ball my-data=3><b>&gt;" + t[n].zclose + "分</b><cite>" + sp_[0] + "</cite></span><span class='wang-ball lastspfvs' my-data=0><b>&lt;" + t[n].zclose + "分</b><cite>" + sp_[1] + "</cite></span>")
                                 }
                                 _out.push("</p>");
                                 _out.push("</li>");
