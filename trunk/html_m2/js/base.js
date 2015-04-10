@@ -91,27 +91,12 @@ var tipsT;
 var tipsTs;
 var tipsDiv_01 = "";
 function showTips(tips,fn) {
-	tipsDiv_01 = '<div class="tipsClass" id="tipsDiv_">' + tips + '</div>';
-	$('body').append(tipsDiv_01);
-    $('div.tipsClass').css({
-        'top': ($(window).height() / 2 + $(window).scrollTop()) + 'px',
-        'left': ($(window).width() - 245) / 2 + "px",
-        'border': '2px solid #E6D30A',
-        'position': 'absolute',
-        'padding': '5px',
-        'background': '#FFF588',
-        'font-size': '12px',
-        'margin': '0 auto',
-        'line-height': '25px',
-        'z-index': '100',
-        'text-align': 'center',
-        'width': '250px',
-        'color': '#6D270A',
-        'opacity': '0.95'
-    });
-	$('div.tipsClass').click(function(){$(this).hide();});
-    $('div.tipsClass').addClass("Fillet");
-    $('div.tipsClass').show();
+
+    var obj = $('<div class="alertBox">' + tips + "</div>");
+    $("body").append(obj);
+	$('div.alertBox').click(function(){$(this).hide();});
+    $('div.alertBox').addClass("Fillet");
+    $('div.alertBox').show();
 	tipsTO = 3;
 	clearTimeout(tipsT);
 	tipsT = setTimeout("HidTips()", 1000);
@@ -178,13 +163,13 @@ function HidTips()
 {
 	if(tipsTO<=0)
 	{
-		$('div.tipsClass').fadeOut();
+		$('div.alertBox').fadeOut();
 		tipsTO=0;
 	}
 	else
 	{
 		tipsTO--;
-		tipsT = setTimeout("HidTips()", 1000);
+		tipsT = setTimeout("HidTips()", 100);
 	}
 }
 //cookie操作
