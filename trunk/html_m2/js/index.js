@@ -1936,7 +1936,7 @@ var TopAnch = function() {
                 }
             }
             if (obj.isBack) {
-                $dom.prev.attr("class", "fcbackIco2")
+                $dom.prev.attr("class", "fcbackIco2").html("")
             } else {
                 $dom.prev.attr("class", "backIco2").html("首页")
                 
