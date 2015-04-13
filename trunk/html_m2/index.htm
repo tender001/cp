@@ -16,358 +16,350 @@
 <!-- <link rel="stylesheet" href="/css/basic.css" type="text/css"/> -->
 <link rel="stylesheet" href="/css/style.css" type="text/css"/>
 <style type="text/css">
-body{ background:#f7f7f7; min-width:320px; font-size:14px; font-family:arial,Microsoft YaHei, Helvetica, sans-serif; color:#222; tap-highlight-color:rgba(0,0,0,0); -webkit-tap-highlight-color:rgba(0,0,0,0); -moz-tap-highlight-color:rgba(0,0,0,0)}
-html,body,button,input,select,textarea,figure,h1,h2,h3,h4,h5,ul,li,dl,dt,dd,p,span{ margin:0; padding:0}
-@media screen and (min-width:480px){html,body,button,input,select,textarea{font-size:18px}}
-@media screen and (min-width:640px){html,body,button,input,select,textarea{font-size:24px}}
-ol, ul, li,input{ list-style:none}
-i,o,cite,em{ font-style:normal}
-img { border:0; }
-.clearfix{ overflow:hidden; zoom:1}
-.clear{ clear:both}
-.left{ float:left}
-.right{ float:right}
-a{ color:#333; text-decoration:none}
-a:visited{ color:#333}
-p{ line-height:1.2rem}
-.float{ font-family:"黑体"; font-size:.75rem; height:3rem; background:#fff; border-top:1px solid #e2e2e2; border-bottom:1px solid #e2e2e2; padding:.3rem 0; margin:.55rem 0; overflow:hidden; zoom:1}
-.float a{ float:left; padding-top:.4rem; height:2.6rem; width:24.7%; text-align:center; border-right:1px solid #e5e5e5}
-.float a:last-child{ border-right:none}
-.float h3{ font-size:.71rem; color:#676767; margin-top:.3rem; font-weight:normal}
-.float .cur h3{ color:#f6851f}
-.banner{ position:relative; height:7.5rem; overflow:hidden;background:url('img/bj.jpg');background-repeat: repeat-x;
-background-positon: 100%,100%}
-.banner li{ height:7.5rem; float:left; width:100%}
-.banner img{ height:7.5rem; width:100%; left:45%}
-.hd{ position: absolute; height:.4rem; bottom:.3rem; right:2%}
-.hd ul{ overflow:hidden; zoom:1}
-.hd li{ float:left; width:.4rem; height:.4rem; background:rgba(0,0,0,0.5); color:#fff; margin-right:.3rem; border-radius:.4rem; -webkit-border-radius:.4rem; -moz-border-radius:.4rem}
-.hd li.cur{ background:rgba(255,255,255,0.7)}
-.all2{ background:#fff; margin-bottom:.65rem; border-top:1px solid #e2e2e2; border-bottom:1px solid #e2e2e2}
-.all2 li{ overflow:hidden; zoom:1; border-bottom:1px solid #ebebeb}
-.all2 li:last-child{ border-bottom:none}
-.all2 li a{ position:relative; float:left; width:33%; padding-top:.75rem; height:6.6rem; color:#676767; text-align:center; border-right:1px solid #ebebeb}
-.all2 li a:last-child{ border-right:none}
-.all2 li a:hover,.float a:hover{ background:#f7f7f7}
-.all2 li a h2{ font-size:1rem; color:#333; font-weight:normal; margin-top:.3rem}
-.all2 li p{ font-size:.75rem; color:#999; line-height:1.3rem}
+    body{font-family:arial,Microsoft YaHei, Helvetica, sans-serif; color:#222; tap-highlight-color:rgba(0,0,0,0); -webkit-tap-highlight-color:rgba(0,0,0,0); -moz-tap-highlight-color:rgba(0,0,0,0)}
+    @media screen and (min-width:480px){html,body,button,input,select,textarea{font-size:18px}}
+    @media screen and (min-width:640px){html,body,button,input,select,textarea{font-size:24px}}
+    ol, ul, li,input{ list-style:none}
+    .float{ font-family:"黑体"; font-size:.75rem; height:3rem; background:#fff; border-top:1px solid #e2e2e2; border-bottom:1px solid #e2e2e2; padding:.3rem 0; margin:.55rem 0; overflow:hidden; zoom:1}
+    .float a{ float:left; padding-top:.4rem; height:2.6rem; width:24.7%; text-align:center; border-right:1px solid #e5e5e5}
+    .float a:last-child{ border-right:none}
+    .float h3{ font-size:.71rem; color:#676767; margin-top:.3rem; font-weight:normal}
+    .float .cur h3{ color:#f6851f}
+    .banner{ position:relative; height:7.5rem; overflow:hidden;background:url('img/bj.jpg');background-repeat: repeat-x;
+        background-positon: 100% 100%}
+    .banner li{ height:7.5rem; float:left; width:100%}
+    .banner img{ height:7.5rem; width:100%; left:45%}
+    .hd{ position: absolute; height:.4rem; bottom:.3rem; right:2%}
+    .hd ul{ overflow:hidden; zoom:1}
+    .hd li{ float:left; width:.4rem; height:.4rem; background:rgba(0,0,0,0.5); color:#fff; margin-right:.3rem; border-radius:.4rem; -webkit-border-radius:.4rem; -moz-border-radius:.4rem}
+    .hd li.cur{ background:rgba(255,255,255,0.7)}
+    .all2{ background:#fff; margin-bottom:.65rem; border-top:1px solid #e2e2e2; border-bottom:1px solid #e2e2e2}
+    .all2 li{ overflow:hidden; zoom:1; border-bottom:1px solid #ebebeb}
+    .all2 li:last-child{ border-bottom:none}
+    .all2 li a{ position:relative; float:left; width:33%; padding-top:.75rem; height:6.6rem; color:#676767; text-align:center; border-right:1px solid #ebebeb}
+    .all2 li a:last-child{ border-right:none}
+    .all2 li a:hover,.float a:hover{ background:#f7f7f7}
+    .all2 li a h2{ font-size:1rem; color:#333; font-weight:normal; margin-top:.3rem}
+    .all2 li p{ font-size:.75rem; color:#999; line-height:1.3rem}
+    /*msg弹窗*/
+    @-webkit-keyframes boxfade{0%{opacity:0;}20%{opacity:0.8;}80%{opacity:0.8;}100%{opacity:0;}}
+    @-o-keyframes boxfade{0%{opacity:0;}20%{opacity:0.8;}80%{opacity:0.8;}100%{opacity:0;}}
+    @-ms-keyframes boxfade{0%{opacity:0;}20%{opacity:0.8;}80%{opacity:0.8;}100%{opacity:0;}}
+    .alertBox{font-size:15px;text-align: center;border-radius:5px;position: fixed;left:50%;top:80%;margin:-20px 0 0 -150px;background:#000;color:#fff;width:300px;height:40px;line-height:40px;-webkit-animation:boxfade 2s ease;-ms-animation:boxfade 2s ease;-o-animation:boxfade 2s ease; z-index:10001}
 
+    /*css3局部佛珠加载样式 */
+    @-webkit-keyframes rotate_load { from { -webkit-transform:rotate(0deg);} to { -webkit-transform:rotate(360deg);}  }
+    @-moz-keyframes rotate_load { from { -moz-transform:rotate(0deg);} to { -moz-transform:rotate(360deg);}  }
+    .rotate_load, #pullUp.loading .pullUpIcon, #pullDown.loading .pullDownIcon{ -webkit-animation:rotate_load 2s linear infinite;-moz-animation:rotate_load 2s linear infinite;}
+    .rotate_load, #pullUp.loading .pullUpIcon, #pullDown.loading .pullDownIcon{ display:block; width:32px; height:32px; background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAEbSURBVFhHxVZbDsIwDNsBgUvxyWl2hT7OBS0fqB15uEkYkypNWuokdp1124xPrfVSSrn31d+NMLZtLeHe1vOwdhva4q6c85VI/i6mf1uEo8MlehvlD66A/m1ENMmk0YsWoOGQrTfwm0YvIoEU03OwMkV1h+J8FbKyMeqcTEUgEiCn3CxBBzcdHqIqF47JPnQRn2mZUjp3WiJSTTFRXXOJRXyXXkCrIj4yWIAcbIiKv+J9SyEqvhpgyTrsUfFdQwMoTpUgcvgIDtAvMH+1IcDkuSFRbIw48CiOGkomHOl3LN5kDgJBJ58SVfXssOlXFxLoxqvRu9LIRARCXVQMa6uo7jQc0ddR+kbZGZZpxSmuyeai15WZsSE85YjkL27WCTEZnfhCAAAAAElFTkSuQmCC) no-repeat}
+    /* --刷新页面初始化加载-- */
+    .loadpop {
+        width: 150px;
+        text-align: center;
+        position: fixed;
+        top:50%;
+        left:50%;
+        margin-left:-75px;
+        z-index:11;
+    }
 
+    .loadpop > div {
+        width: 30px;
+        height: 30px;
+        background-color: #f40;
 
+        border-radius: 100%;
+        display: inline-block;
+        -webkit-animation: bouncedelay 1.4s infinite ease-in-out;
+        animation: bouncedelay 1.4s infinite ease-in-out;
+        /* Prevent first frame from flickering when animation starts */
+        -webkit-animation-fill-mode: both;
+        animation-fill-mode: both;
+    }
 
-/*css3局部佛珠加载样式 */
-@-webkit-keyframes rotate_load { from { -webkit-transform:rotate(0deg);} to { -webkit-transform:rotate(360deg);}  }
-@-moz-keyframes rotate_load { from { -moz-transform:rotate(0deg);} to { -moz-transform:rotate(360deg);}  }
-.rotate_load, #pullUp.loading .pullUpIcon, #pullDown.loading .pullDownIcon{ -webkit-animation:rotate_load 2s linear infinite;-moz-animation:rotate_load 2s linear infinite;}
-.rotate_load, #pullUp.loading .pullUpIcon, #pullDown.loading .pullDownIcon{ display:block; width:32px; height:32px; background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAEbSURBVFhHxVZbDsIwDNsBgUvxyWl2hT7OBS0fqB15uEkYkypNWuokdp1124xPrfVSSrn31d+NMLZtLeHe1vOwdhva4q6c85VI/i6mf1uEo8MlehvlD66A/m1ENMmk0YsWoOGQrTfwm0YvIoEU03OwMkV1h+J8FbKyMeqcTEUgEiCn3CxBBzcdHqIqF47JPnQRn2mZUjp3WiJSTTFRXXOJRXyXXkCrIj4yWIAcbIiKv+J9SyEqvhpgyTrsUfFdQwMoTpUgcvgIDtAvMH+1IcDkuSFRbIw48CiOGkomHOl3LN5kDgJBJ58SVfXssOlXFxLoxqvRu9LIRARCXVQMa6uo7jQc0ddR+kbZGZZpxSmuyeai15WZsSE85YjkL27WCTEZnfhCAAAAAElFTkSuQmCC) no-repeat}
-/* --刷新页面初始化加载-- */
-.loadpop {
-  width: 150px;
-  text-align: center;
-  position: fixed;
-  top:50%;
-  left:50%;
-  margin-left:-75px;
-  z-index:11;
-}
- 
-.loadpop > div {
-  width: 30px;
-  height: 30px;
-  background-color: #f40;
- 
-  border-radius: 100%;
-  display: inline-block;
-  -webkit-animation: bouncedelay 1.4s infinite ease-in-out;
-  animation: bouncedelay 1.4s infinite ease-in-out;
-  /* Prevent first frame from flickering when animation starts */
-  -webkit-animation-fill-mode: both;
-  animation-fill-mode: both;
-}
- 
-.loadpop .bounce1 {
-  -webkit-animation-delay: -0.32s;
-  animation-delay: -0.32s;
-}
- 
-.loadpop .bounce2 {
-  -webkit-animation-delay: -0.16s;
-  animation-delay: -0.16s;
-}
- 
-@-webkit-keyframes bouncedelay {
-  0%, 80%, 100% { -webkit-transform: scale(0.0) }
-  40% { -webkit-transform: scale(1.0) }
-}
- 
-@keyframes bouncedelay {
-  0%, 80%, 100% {
-    transform: scale(0.0);
-    -webkit-transform: scale(0.0);
-  } 40% {
-    transform: scale(1.0);
-    -webkit-transform: scale(1.0);
-  }
-}
+    .loadpop .bounce1 {
+        -webkit-animation-delay: -0.32s;
+        animation-delay: -0.32s;
+    }
 
-/*公共页头样式[[*/
-.home .tzHeader {display: none;}
-/*]]公共页头样式*/
-/*投注页底部公共样式[[*/
-.fo_basket .btn-buy, .fo_basket .btn-hm, .fo_buy .btn-addlist, .fo_buy .btn-hm, .fo_hm .btn-buy, .fo_hm .btn-addlist {display:none;}
+    .loadpop .bounce2 {
+        -webkit-animation-delay: -0.16s;
+        animation-delay: -0.16s;
+    }
 
-.jc_footer #jc_next ,.zcFooter .jczqCheck{display:none;}
-.jc_footer .jczqCheck {display:block;}
-/*]]投注页底部公共样式*/
-/*遮罩层*/
-.mask{background:#000;background: -webkit-radial-gradient(center,rgba(0,0,0,.3),rgba(0,0,0,1) 80%);opacity:.4;width:100%;height:150%;position:fixed;z-index:9999;left:0;top:0; display: none;}
+    @-webkit-keyframes bouncedelay {
+        0%, 80%, 100% { -webkit-transform: scale(0.0) }
+        40% { -webkit-transform: scale(1.0) }
+    }
+
+    @keyframes bouncedelay {
+        0%, 80%, 100% {
+            transform: scale(0.0);
+            -webkit-transform: scale(0.0);
+        } 40% {
+              transform: scale(1.0);
+              -webkit-transform: scale(1.0);
+          }
+    }
+
+    /*公共页头样式[[*/
+    .home .tzHeader {display: none;}
+    /*]]公共页头样式*/
+    /*投注页底部公共样式[[*/
+    .fo_basket .btn-buy, .fo_basket .btn-hm, .fo_buy .btn-addlist, .fo_buy .btn-hm, .fo_hm .btn-buy, .fo_hm .btn-addlist {display:none;}
+
+    .jc_footer #jc_next ,.zcFooter .jczqCheck{display:none;}
+    .jc_footer .jczqCheck {display:block;}
+    /*]]投注页底部公共样式*/
+    /*遮罩层*/
+    .mask{background:#000;background: -webkit-radial-gradient(center,rgba(0,0,0,.3),rgba(0,0,0,1) 80%);opacity:.4;width:100%;height:150%;position:fixed;z-index:9999;left:0;top:0; display: none;}
 </style>
 <body class='home' oncontextmenu=self.event.returnValue=false onselectstart="return false">
 <!-- 页头的导航[[ -->
 <header class="tzHeader" id="box_header">
-	<article class="fixed2">
-    	<a href="#type=index" class="backIco2" id="btn_prev"></a><!-- fcbackIco2回退按钮 -->
-      	<section class="fcHeader " id='fcHeader'>
-    		<h1 id="lot_title" class="cur">【159彩票触屏版】</h1>
-        	<div class="hmPull" id="list_subNav"></div>
-<!--         	<div class="zbico" style='display:none'></div> -->
-        	<article class="pullDown" id='btn_menu' style='display:none'>
-        		<em class="goHome jc-more"></em>
-            	<div class="pullText"></div>
-        	</article>
+    <article class="fixed2">
+        <a href="#type=index" class="backIco2" id="btn_prev"></a><!-- fcbackIco2回退按钮 -->
+        <section class="fcHeader" id='fcHeader'>
+            <h1 id="lot_title">【159彩票触屏版】</h1>
+            <div class="hmPull" id="list_subNav"></div>
+            <!--         	<div class="zbico" style='display:none'></div> -->
+            <article class="pullDown" id='btn_menu' style='display:none'>
+                <em class="goHome jc-more"></em>
+                <div class="pullText"></div>
+            </article>
             <a href="javascript:;" class="cancel" id='btn_next' style='display:none'>帮助</a>
-		</section>
-	</article>
+        </section>
+    </article>
 </header>
 <!-- ]]页头的导航 -->
 <!-- 首页[[ -->
-<article style="background:#f2f2f2;" id='home_page' hidden>
-	<div class="header">
-   
-    <p class="top-login"><i id="say_hi"></i><!-- <a id="toplogin">请登录</a> --></p>
-    <a class="m-logo" href="/"><img src="img/m-logo.png" alt="159彩票"/></a>
-</div>
-<!-- <div id="sliderA" class="slider" style='height:7.5rem;width:100%;'> -->
-<!-- 	<div class="siiderM"> -->
-<!--     #include virtual="/dedeinc/4g_syimages.html" -->
-<!--     </div> -->
-<!-- </div> -->
-<div class="banner" id="slideBox" style='height:7.5rem;width:100%;'>
-	 
-	<div class="bd">
-	<ul><li>
-	<a href="http://wifi.159cai.com/huodong/firstmd.html"><img alt="第一注，我买单" src="/img/index/banner2.png"></a></li>
-	<li><a href="http://wifi.159cai.com/huodong/firstmd.html"><img alt="第一注，我买单" src="/uploads/150108/2-15010Q35544296.png"></a></li>
-	</ul>
-	</div>
-	<div class="hd"><ul><li></li><li></li></ul></div>
-</div>
+<article id='home_page' hidden>
+    <div class="header">
 
-<!--<div class="app-notice">
-    <b class="app-notice-tit">最新中奖</b>
-    <div class="zj_tipBox">
-        <table width="100%" border="0" cellspacing="0">
-            <tbody>
-            &lt;!&ndash;#include virtual="/cc/module/zuixin.html"&ndash;&gt;
-            </tbody>
+        <p class="top-login"><i id="say_hi"></i><!-- <a id="toplogin">请登录</a> --></p>
+        <a class="m-logo" href="/"><img src="img/m-logo.png" alt="159彩票"/></a>
+    </div>
+    <!-- <div id="sliderA" class="slider" style='height:7.5rem;width:100%;'> -->
+    <!-- 	<div class="siiderM"> -->
+    <!--     #include virtual="/dedeinc/4g_syimages.html" -->
+    <!--     </div> -->
+    <!-- </div> -->
+    <div class="banner" id="slideBox" style='height:7.5rem;width:100%;'>
+
+        <div class="bd">
+            <ul><li>
+                <a href="http://wifi.159cai.com/huodong/firstmd.html"><img alt="第一注，我买单" src="/uploads/150108/2-15010Q35544296.png"></a></li>
+                <li><a href="http://wifi.159cai.com/huodong/firstmd.html"><img alt="第一注，我买单" src="/uploads/150108/2-15010Q35544296.png"></a></li>
+            </ul>
+        </div>
+        <div class="hd"><ul><li></li><li></li></ul></div>
+    </div>
+
+    <!--<div class="app-notice">
+        <b class="app-notice-tit">最新中奖</b>
+        <div class="zj_tipBox">
+            <table width="100%" border="0" cellspacing="0">
+                <tbody>
+                &lt;!&ndash;#include virtual="/cc/module/zuixin.html"&ndash;&gt;
+                </tbody>
+            </table>
+        </div>
+
+    </div>-->
+    <div class="nav" id="nav_fixed">
+        <table>
+            <tr>
+                <td mark="isLogin">
+                    <a class="nav-list" href="/user/login.html">
+                        <h3 class="login"></h3>
+                        <p>登录</p></a>
+                </td>
+                <td mark="isPay">
+                    <a class="nav-list" href="/user/reg.html">
+                        <h3 class="reg"></h3>
+                        <p>注册</p></a>
+                </td>
+                <td>
+                    <a class="nav-list" href="/hemai/index.html?lotid=100">
+                        <h3 class="hm"></h3>
+                        <p>合买</p></a>
+                </td>
+                <td>
+                    <a class="nav-list" href="kj/">
+                        <h3 class="lokj"></h3>
+                        <p>开奖</p></a>
+                </td>
+            </tr>
         </table>
     </div>
 
-</div>-->
-<div class="nav" id="nav_fixed">
-    <table>
-        <tr>
-            <td mark="isLogin">
-                <a class="nav-list" href="/user/login.html">
-                    <h3 class="login"></h3>
-                    <p>登录</p></a>
-            </td>
-            <td mark="isPay">
-                <a class="nav-list" href="/user/reg.html">
-                    <h3 class="reg"></h3>
-                    <p>注册</p></a>
-            </td>
-            <td>
-                <a class="nav-list" href="/hemai/index.html?lotid=100">
-                    <h3 class="hm"></h3>
-                    <p>合买</p></a>
-            </td>
-            <td>
-                <a class="nav-list" href="kj/">
-                    <h3 class="lokj"></h3>
-                    <p>开奖</p></a>
-            </td>
-        </tr>
-    </table>
-</div>
-
-<div class="nav top-fixed" id="index_nav" style="display:none">
-    <table>
-        <tr>
-            <td mark="isLogin">
-                <a class="nav-list" href="/user/login.html">
-                    <p>登录</p></a>
-            </td>
-            <td mark="isPay">
-                <a class="nav-list" href="/user/reg.html">
-                    <p>注册</p></a>
-            </td>
-            <td>
-                <a class="nav-list" href="/hemai/index.html?lotid=100">
-                    <p>合买</p></a>
-            </td>
-            <td>
-                <a class="nav-list" href="/kj/">
-                    <p>开奖</p></a>
-            </td>
-        </tr>
-    </table>
-</div>
-<!-- <div class="everyday-bg"> -->
-<!--     <a href="/huodong/eday.html"> -->
-<!--         <div class="everyday"> -->
-<!--             <cite class="free"></cite> -->
-<!--             <p class="everyday-kj"><span>天天领钱</span><i></i></p> -->
-<!--         </div></a> -->
-<!-- </div> -->
-<div class="tz-2cai">
-    <ul>
-        <li class="tz-2cai-first">
-            <a href="/ssq/">
-                <div class="caipiao-ap caipiao-ap-ssq"></div>
-                <p class="caipiao-tit"><em>双色球</em><cite>赢千万大奖</cite></p></a>
-        </li>
-        <li class="tz-2cai-second">
-            <a href="/dlt/">
-                <div class="caipiao-ap caipiao-ap-dlt"></div>
-                <p class="caipiao-tit"><em>大乐透</em><cite>砸中1600万</cite></p></a>
-        </li>
-    </ul>
-</div>
-<div class="kstz" id="handy">
-    <div class="kstz-b">
-        <div class="clearfix inms">
-            <em>换一注</em>
-            <span><strong></strong> 2元赢千万</span>
-        </div>
-        <div class="kstz-choose clearfix">
-            <a  id="fastbuy">立即购买</a>
-            <div class="ks-ball" id="ball">
-                <em>05</em><em class="">07</em><em>18</em><em>25</em><em>29</em><em>31</em><em class="blue">06</em></div>
+    <div class="nav top-fixed" id="index_nav" style="display:none">
+        <table>
+            <tr>
+                <td mark="isLogin">
+                    <a class="nav-list" href="/user/login.html">
+                        <p>登录</p></a>
+                </td>
+                <td mark="isPay">
+                    <a class="nav-list" href="/user/reg.html">
+                        <p>注册</p></a>
+                </td>
+                <td>
+                    <a class="nav-list" href="/hemai/index.html?lotid=100">
+                        <p>合买</p></a>
+                </td>
+                <td>
+                    <a class="nav-list" href="/kj/">
+                        <p>开奖</p></a>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <!-- <div class="everyday-bg"> -->
+    <!--     <a href="/huodong/eday.html"> -->
+    <!--         <div class="everyday"> -->
+    <!--             <cite class="free"></cite> -->
+    <!--             <p class="everyday-kj"><span>天天领钱</span><i></i></p> -->
+    <!--         </div></a> -->
+    <!-- </div> -->
+    <div class="tz-2cai">
+        <ul>
+            <li class="tz-2cai-first">
+                <a href="/ssq/">
+                    <div class="caipiao-ap caipiao-ap-ssq"></div>
+                    <p class="caipiao-tit"><em>双色球</em><cite>赢千万大奖</cite></p></a>
+            </li>
+            <li class="tz-2cai-second">
+                <a href="/dlt/">
+                    <div class="caipiao-ap caipiao-ap-dlt"></div>
+                    <p class="caipiao-tit"><em>大乐透</em><cite>砸中1600万</cite></p></a>
+            </li>
+        </ul>
+    </div>
+    <div class="kstz" id="handy">
+        <div class="kstz-b">
+            <div class="clearfix inms">
+                <em>换一注</em>
+                <span><strong></strong> 2元赢千万</span>
+            </div>
+            <div class="kstz-choose clearfix">
+                <a  id="fastbuy">立即购买</a>
+                <div class="ks-ball" id="ball">
+                    <em>05</em><em class="">07</em><em>18</em><em>25</em><em>29</em><em>31</em><em class="blue">06</em></div>
+            </div>
         </div>
     </div>
-</div>
-<ul class="cp-list">
-    <li>
-        <a href="#type=url&p=list/jczq.html">
-            <div class="caipiao-ap caipiao-ap-jczq"></div>
-            <p class="caipiao-tit"><em>竞彩足球<span>官方推荐</span></em><cite>返奖73%，人气爆棚的足球彩票</cite></p>
-        </a>
-    </li>
-    <li>
-        <a href="#type=url&p=list/jclq.html">
-            <div class="caipiao-ap caipiao-ap-jclq"></div>
-            <p class="caipiao-tit"><em>竞彩篮球<span>激情NBA</span></em><cite>返奖69%，过关固定奖金</cite></p>
-        </a>
-    </li>
-    <li>
-        <a href="/ssq/">
-            <div class="caipiao-ap caipiao-ap-ssq"></div>
-            <p class="caipiao-tit"><em>双色球</em><cite>2元最高可中1000万</cite></p>
-        </a>
-    </li>
-    <li>
-        <a href="/dlt/">
-            <div class="caipiao-ap caipiao-ap-dlt"></div>
-            <p class="caipiao-tit"><em>大乐透</em><cite>3元最高可中1600万</cite></p>
-        </a>
-    </li>
-     </li>
+    <ul class="cp-list">
         <li>
-        <a href="/3d/">
-            <div class="caipiao-ap caipiao-ap-3d"></div>
-            <p class="caipiao-tit"><em>福彩3D</em><cite>三个数字简单玩法，轻松赢千元</cite></p>
-        </a>
-    </li>
-    <li>
-        <a href="/11x5/">
-            <div class="caipiao-ap caipiao-ap-11x5"></div>
-            <p class="caipiao-tit"><em>11选5<span>彩民最爱</span></em><cite>10分钟一期，返奖率高达59%</cite></p>
-        </a>
-    </li>
+            <a href="#type=url&p=list/jczq.html">
+                <div class="caipiao-ap caipiao-ap-jczq"></div>
+                <p class="caipiao-tit"><em>竞彩足球<span>官方推荐</span></em><cite>返奖73%，人气爆棚的足球彩票</cite></p>
+            </a>
+        </li>
         <li>
-        <a href="/11ydj/">
-            <div class="caipiao-ap caipiao-ap-11ydj"></div>
-            <p class="caipiao-tit"><em>11运夺金</em><cite>10分钟开奖一次，返奖率高达59%</cite></p>
-        </a>
-    </li>
+            <a href="#type=url&p=list/jclq.html">
+                <div class="caipiao-ap caipiao-ap-jclq"></div>
+                <p class="caipiao-tit"><em>竞彩篮球<span>激情NBA</span></em><cite>返奖69%，过关固定奖金</cite></p>
+            </a>
+        </li>
         <li>
-        <a href="/bd/">
-            <div class="caipiao-ap caipiao-ap-bjdc"></div>
-            <p class="caipiao-tit"><em>北京单场<span>火热胜负过关</span></em><cite>猜对一场就有奖</cite></p>
-        </a>
-    </li>
-    <li>
-        <a href="/zc/">
-            <div class="caipiao-ap caipiao-ap-sfc"></div>
-            <p class="caipiao-tit"><em>胜负彩</em><cite>最高可中500万，竞猜14场足球比赛</cite></p>
-        </a>
-    </li>
-    <li>
-        <a href="/zc/r9.html">
-            <div class="caipiao-ap caipiao-ap-r9"></div>
-            <p class="caipiao-tit"><em>任9</em><cite>最高可中500万，竞猜任意9场足球比赛</cite></p>
-        </a>
-    </li>
-<!--     <li> -->
-<!--         <a href="/ssc/"> -->
-<!--             <div class="caipiao-ap"><img src="/img/cp/14.png"/></div> -->
-<!--             <p class="caipiao-tit"><em>时时彩</em><cite>10分钟开奖一次，返奖率高达59%</cite></p> -->
-<!--         </a> -->
-<!--     </li> -->
+            <a href="/ssq/">
+                <div class="caipiao-ap caipiao-ap-ssq"></div>
+                <p class="caipiao-tit"><em>双色球</em><cite>2元最高可中1000万</cite></p>
+            </a>
+        </li>
+        <li>
+            <a href="/dlt/">
+                <div class="caipiao-ap caipiao-ap-dlt"></div>
+                <p class="caipiao-tit"><em>大乐透</em><cite>3元最高可中1600万</cite></p>
+            </a>
+        </li>
+        </li>
+        <li>
+            <a href="/3d/">
+                <div class="caipiao-ap caipiao-ap-3d"></div>
+                <p class="caipiao-tit"><em>福彩3D</em><cite>三个数字简单玩法，轻松赢千元</cite></p>
+            </a>
+        </li>
+        <li>
+            <a href="/11x5/">
+                <div class="caipiao-ap caipiao-ap-11x5"></div>
+                <p class="caipiao-tit"><em>11选5<span>彩民最爱</span></em><cite>10分钟一期，返奖率高达59%</cite></p>
+            </a>
+        </li>
+        <li>
+            <a href="/11ydj/">
+                <div class="caipiao-ap caipiao-ap-11ydj"></div>
+                <p class="caipiao-tit"><em>11运夺金</em><cite>10分钟开奖一次，返奖率高达59%</cite></p>
+            </a>
+        </li>
+        <li>
+            <a href="/bd/">
+                <div class="caipiao-ap caipiao-ap-bjdc"></div>
+                <p class="caipiao-tit"><em>北京单场<span>火热胜负过关</span></em><cite>猜对一场就有奖</cite></p>
+            </a>
+        </li>
+        <li>
+            <a href="/zc/">
+                <div class="caipiao-ap caipiao-ap-sfc"></div>
+                <p class="caipiao-tit"><em>胜负彩</em><cite>最高可中500万，竞猜14场足球比赛</cite></p>
+            </a>
+        </li>
+        <li>
+            <a href="/zc/r9.html">
+                <div class="caipiao-ap caipiao-ap-r9"></div>
+                <p class="caipiao-tit"><em>任9</em><cite>最高可中500万，竞猜任意9场足球比赛</cite></p>
+            </a>
+        </li>
+        <!--     <li> -->
+        <!--         <a href="/ssc/"> -->
+        <!--             <div class="caipiao-ap"><img src="/img/cp/14.png"/></div> -->
+        <!--             <p class="caipiao-tit"><em>时时彩</em><cite>10分钟开奖一次，返奖率高达59%</cite></p> -->
+        <!--         </a> -->
+        <!--     </li> -->
 
-<!--     <li> -->
-<!--         <a href="/p3/"> -->
-<!--             <div class="caipiao-ap"><img src="/img/cp/12.png"/></div> -->
-<!--             <p class="caipiao-tit"><em>排3</em><cite>天天开奖，轻松赢千元，每天30:30开奖</cite></p> -->
-<!--         </a> -->
-<!--     </li> -->
-<!--     <li> -->
-<!--         <a href="/p5/"> -->
-<!--             <div class="caipiao-ap"><img src="/img/cp/13.png"/></div> -->
-<!--             <p class="caipiao-tit"><em>排5</em><cite>天天开奖，2元赢10万，每天30:30开奖</cite></p> -->
-<!--         </a> -->
-<!--     </li> -->
-</ul>
-<div class="cp-news">
-    <p class="cp-news-tit"><a class="more" href="/hotnews/">更多</a>最新资讯</p>
-   <ul class="cp-news-list list"> 
-   
- 
-     <!--#include virtual="/dedeinc/wifinews.html"-->
-   
+        <!--     <li> -->
+        <!--         <a href="/p3/"> -->
+        <!--             <div class="caipiao-ap"><img src="/img/cp/12.png"/></div> -->
+        <!--             <p class="caipiao-tit"><em>排3</em><cite>天天开奖，轻松赢千元，每天30:30开奖</cite></p> -->
+        <!--         </a> -->
+        <!--     </li> -->
+        <!--     <li> -->
+        <!--         <a href="/p5/"> -->
+        <!--             <div class="caipiao-ap"><img src="/img/cp/13.png"/></div> -->
+        <!--             <p class="caipiao-tit"><em>排5</em><cite>天天开奖，2元赢10万，每天30:30开奖</cite></p> -->
+        <!--         </a> -->
+        <!--     </li> -->
     </ul>
+    <div class="cp-news">
+        <p class="cp-news-tit"><a class="more" href="/hotnews/">更多</a>最新资讯</p>
+        <ul class="cp-news-list list">
 
-</div>
-<div class="caipiao-pay go-top"><i class="go-top-ico"></i><a id="ischong" href="/user/login.html?bak=1">登录</a>|<a
-        href="/user/reg.html" id="istikuan">注册</a></div>
-<div class="index-footer">
-    <div class="footer-app version"><a id="appdown2" onclick="appdown()">客户端</a>|<a href="/"
-                                                                                                style="color:#f60">触屏版</a>|<a
-            href="http://www.159cai.com/">PC版</a></div>
-    <div class="footer-app call-center"><a
-            href="http://chat.live800.com/live800/chatClient/chatbox.jsp?companyID=331528&jid=4618724443&enterurl=wap-web-livechat">在线客服</a><a
-            href="tel:4000696159">客服热线</a></div>
-    <p class="footer-app ICP">沪ICP备13044715号-1</p>
-</div>
-<!-- <script language="javascript" src="http://chat.live800.com/live800/chatClient/monitor.js?jid=4618724443&companyID=331528&configID=123978&codeType=custom"></script> -->
-<!-- <script src='/js/index/index.js'></script> -->
+
+            <!--#include virtual="/dedeinc/wifinews.html"-->
+
+        </ul>
+
+    </div>
+    <div class="caipiao-pay go-top"><i class="go-top-ico"></i><a id="ischong" href="/user/login.html?bak=1">登录</a>|<a
+            href="/user/reg.html" id="istikuan">注册</a></div>
+    <div class="index-footer">
+        <div class="footer-app version"><a id="appdown2" onclick="appdown()">客户端</a>|<a href="/"
+                                                                                        style="color:#f60">触屏版</a>|<a
+                href="http://www.159cai.com/">PC版</a></div>
+        <div class="footer-app call-center"><a
+                href="http://chat.live800.com/live800/chatClient/chatbox.jsp?companyID=331528&jid=4618724443&enterurl=wap-web-livechat">在线客服</a><a
+                href="tel:4000696159">客服热线</a></div>
+        <p class="footer-app ICP">沪ICP备13044715号-1</p>
+    </div>
+    <!-- <script language="javascript" src="http://chat.live800.com/live800/chatClient/monitor.js?jid=4618724443&companyID=331528&configID=123978&codeType=custom"></script> -->
+    <!-- <script src='/js/index/index.js'></script> -->
 
 </article>
 <script>
-	if(location.href == 'index.htm'/*tpa=http://m.159cai.com/*/ || location.href == 'index.htm#type=index'/*tpa=http://m.159cai.com/#type=index*/){
-		document.getElementById('home_page').style.display = block;
-	}
+    if(location.href == 'index.htm'/*tpa=http://m.159cai.com/*/ || location.href == 'index.htm#type=index'/*tpa=http://m.159cai.com/#type=index*/){
+        document.getElementById('home_page').style.display = block;
+    }
 </script>
 <!-- ]]首页 -->
 
@@ -398,66 +390,66 @@ background-positon: 100%,100%}
         <div class="foot-logo"></div>
     </div>
 
-   <!-- <div class="m-reg">
-    <ul class="reg">
-        <li><label>账号</label><input id=username type="text" placeholder="请输入用户名或手机号"><em style='display:none;'></em></li>
-        <li><label>密码</label><input id=password type="password" placeholder="请输入密码"><em style='display:none;'></em></li>
-    </ul>
-</div>
-<div class="app-footer pay-submit">
-&lt;!&ndash;    <p class="reg-read re-pass"><a href="">忘记密码？</a></p> &ndash;&gt;
-    <a href="javascript:;"  id='loginBtn' class="btn btn-true">登&nbsp;录</a>
-    <a href="/user/reg.html" class="btn btn-reg">没有帐号？马上注册</a>
-    <div class="foot-logo"></div>
-</div>-->
-</article> 
+    <!-- <div class="m-reg">
+     <ul class="reg">
+         <li><label>账号</label><input id=username type="text" placeholder="请输入用户名或手机号"><em style='display:none;'></em></li>
+         <li><label>密码</label><input id=password type="password" placeholder="请输入密码"><em style='display:none;'></em></li>
+     </ul>
+ </div>
+ <div class="app-footer pay-submit">
+ &lt;!&ndash;    <p class="reg-read re-pass"><a href="">忘记密码？</a></p> &ndash;&gt;
+     <a href="javascript:;"  id='loginBtn' class="btn btn-true">登&nbsp;录</a>
+     <a href="/user/reg.html" class="btn btn-reg">没有帐号？马上注册</a>
+     <div class="foot-logo"></div>
+ </div>-->
+</article>
 <!-- ]]登录 -->
 
 <!-- 加载中转的珠子[[ -->
 <div class="loadpop" id="loadpop">
-<div class="bounce1"></div>
-  <div class="bounce2"></div>
-  <div class="bounce3"></div></div>
+    <div class="bounce1"></div>
+    <div class="bounce2"></div>
+    <div class="bounce3"></div></div>
 <!-- ]]加载中转的珠子 -->
 <!-- 收藏首页 -->
 <section class="scpop" style='display:none;'>
     <h4>收藏我们，方便查看中奖信息</h4>
     <article class="scbz" style="display:">
-      <div>
-        <dl>
-        	<dt><em>1</em><cite></cite></dt>
-            <dd>点击下方按钮</dd>
-        </dl>
-      </div>
-      <span>&nbsp;</span>
-      <div>
-    	<dl>
-        	<dt><em>2</em><cite class="collect"></cite></dt>
-            <dd>添加收藏</dd>
-        </dl>
-      </div>
-      <span>&nbsp;</span>
-      <div>
-    	<dl class="sclast">
-        	<dt><em>3</em>添加到书签<br>或</dt>
-            <dd>手机桌面</dd>
-        </dl>
-      </div>
+        <div>
+            <dl>
+                <dt><em>1</em><cite></cite></dt>
+                <dd>点击下方按钮</dd>
+            </dl>
+        </div>
+        <span>&nbsp;</span>
+        <div>
+            <dl>
+                <dt><em>2</em><cite class="collect"></cite></dt>
+                <dd>添加收藏</dd>
+            </dl>
+        </div>
+        <span>&nbsp;</span>
+        <div>
+            <dl class="sclast">
+                <dt><em>3</em>添加到书签<br>或</dt>
+                <dd>手机桌面</dd>
+            </dl>
+        </div>
     </article>
     <article class="scbz iosscbz" style="display:none">
-      <div>
-        <dl>
-        	<dt><em>1</em><cite class="ios"></cite></dt>
-            <dd>点击下方按钮</dd>
-        </dl>
-      </div>
-      <span>&nbsp;</span>
-      <div>
-    	<dl>
-        	<dt><em>2</em><cite class="tianj"></cite></dt>
-            <dd>添加到主屏幕</dd>
-        </dl>
-      </div>
+        <div>
+            <dl>
+                <dt><em>1</em><cite class="ios"></cite></dt>
+                <dd>点击下方按钮</dd>
+            </dl>
+        </div>
+        <span>&nbsp;</span>
+        <div>
+            <dl>
+                <dt><em>2</em><cite class="tianj"></cite></dt>
+                <dd>添加到主屏幕</dd>
+            </dl>
+        </div>
     </article>
 </section>
 <!-- 收藏首页 -->
@@ -465,11 +457,11 @@ background-positon: 100%,100%}
 <section id=buy_box class="zfpop zfpopNone" style="position:fixed; top:50%; left:5%; z-index:10000;display:none;">
     <h4>投注确认</h4>
     <div class="poptzText pdLeft1" id=buy_reveal>
-    	<p>投注金额： <cite class="red">0元</cite></p>
-    	<p>奖金范围： <cite class="red">0.00~0.00元</cite></p>
-    	<div class="clearfix popuseRed"><p class="left">账户余额： <cite class="red">0元</cite></p></div>
+        <p>投注金额： <cite class="red">0元</cite></p>
+        <p>奖金范围： <cite class="red">0.00~0.00元</cite></p>
+        <div class="clearfix popuseRed"><p class="left">账户余额： <cite class="red">0元</cite></p></div>
     </div>
-    <div class="zfRed pdTop08" id='buy_hide'></div> 
+    <div class="zfRed pdTop08" id='buy_hide'></div>
     <div class="zfTrue clearfix"><a href="javascript:;" class="zfqx">取消</a><a href="javascript:;" style='display:none;'>去充值</a><a href="javascript:;">确认</a></div>
 </section>
 <!-- 遮罩层[[ -->
@@ -477,44 +469,44 @@ background-positon: 100%,100%}
 <div class="mask2"></div>
 <!-- 提成弹窗[[ -->
 <section id="dAlert" class="zfPop" style="position: fixed;z-index: 10000;top:50%;left:50%;margin-left:-9.25rem;margin-top:-3.35rem;display:none;">
-<h4></h4><p class="pdTop03 center"></p>
-<a href="javascript:;" class="tureBtn">确定</a></section>
+    <h4></h4><p class="pdTop03 center"></p>
+    <a href="javascript:;" class="tureBtn">确定</a></section>
 <!-- confirm弹窗[[ -->
 <section id="dConfirm" class="zfPop" style="position: fixed;z-index: 10000;top:50%;left:50%;margin-left:-9.25rem;margin-top:-3.35rem;display:none;">
-<h4></h4><div class="clearfix pdLeft08 center"></div>
-<div class="zfTrue clearfix" style='margin-top:2rem'><a href="javascript:;" class="zfqx">取 消</a><a href="javascript:;">确 定</a></div></section>
+    <h4></h4><div class="clearfix pdLeft08 center"></div>
+    <div class="zfTrue clearfix" style='margin-top:2rem'><a href="javascript:;" class="zfqx">取 消</a><a href="javascript:;">确 定</a></div></section>
 
 
 
 <script type="text/javascript">
     var list = {
-	
-	'list/jczq.html': 1,
-	'list/jclq.html': 1,
-	
-	'info':2
-};
-if(!/xoxo/.test(window.location.href)){
-	if(window.localStorage.getItem('list')){
-		var localList = JSON.parse(window.localStorage.getItem('list'));
-		for(var i in list){
-			if(!localList[i]||localList[i]!=list[i]){
-				window.localStorage.setItem(i,'');
-			}
-		}
-	}else{
-		for(var i in list){
-			window.localStorage.setItem(i,'');
-		}
-	}
-	window.localStorage.setItem('list',JSON.stringify(list));
-}
-else{
-	for(var i in list){
-		window.localStorage.setItem(i,'');
-	}
-	alert('版本更新成功');
-}
+
+        'list/jczq.html': 1,
+        'list/jclq.html': 1,
+
+        'info':2
+    };
+    if(!/xoxo/.test(window.location.href)){
+        if(window.localStorage.getItem('list')){
+            var localList = JSON.parse(window.localStorage.getItem('list'));
+            for(var i in list){
+                if(!localList[i]||localList[i]!=list[i]){
+                    window.localStorage.setItem(i,'');
+                }
+            }
+        }else{
+            for(var i in list){
+                window.localStorage.setItem(i,'');
+            }
+        }
+        window.localStorage.setItem('list',JSON.stringify(list));
+    }
+    else{
+        for(var i in list){
+            window.localStorage.setItem(i,'');
+        }
+        alert('版本更新成功');
+    }
 </script>
 <link href="style/style.css" tppabs="/style/style.css" rel="stylesheet" type="text/css">
 
@@ -522,78 +514,78 @@ else{
 <script type="text/javascript" src="js/public/iscroll.js" tppabs="http://m.159cai.com/js/public/iscroll.js"></script>
 <script type="text/javascript" src="js/index.js" tppabs="http://m.159cai.com/js/index.js"></script>
 <script>
-var Time_ = new Date();//本地时间
-var Hours = Time_.getHours();
-var Name = localStorage.getItem("username") || '';
-Hours = '<em>'+(Name?Name+',':'')+'</em>'+((Hours>=18 && '晚上好~') || (Hours>=14 && '下午好~') || (Hours>=11 && '中午好~') || (Hours>=5 && '早上好~') || '晚上好~');
-document.getElementById('say_hi').innerHTML = Hours;
-if(Name!=''&&Name!=undefined){
-	$("[mark=isLogin] p").html("我的");
-	$("#istikuan").html("提款");
-	$("[mark=isPay] p,#ischong").html("充值");
-	$("[mark=isPay] h3").attr("class","cz");
-	$("[mark=isLogin] a,.user-login,#toplogin").attr("href","/account/");
-	$("[mark=isPay] a,#ischong").attr("href","/account/pay.html");
-	$("#istikuan").attr("href","/account/draw.html");
-}else{
-	$("[mark=isLogin] p,#ischong").html("登陆");
-	$("[mark=isPay] p ,#istikuan").html("注册");
-	$("[mark=isPay] h3").attr("class","reg");
-	$("[mark=isLogin] a,.user-login,#toplogin,#ischong").attr("href","/user/login.html?bak=1");
-	$("[mark=isPay] a,#istikuan").attr("href","/user/reg.html"); 
-}
+    var Time_ = new Date();//本地时间
+    var Hours = Time_.getHours();
+    var Name = localStorage.getItem("username") || '';
+    Hours = '<em>'+(Name?Name+',':'')+'</em>'+((Hours>=18 && '晚上好~') || (Hours>=14 && '下午好~') || (Hours>=11 && '中午好~') || (Hours>=5 && '早上好~') || '晚上好~');
+    document.getElementById('say_hi').innerHTML = Hours;
+    if(Name!=''&&Name!=undefined){
+        $("[mark=isLogin] p").html("我的");
+        $("#istikuan").html("提款");
+        $("[mark=isPay] p,#ischong").html("充值");
+        $("[mark=isPay] h3").attr("class","cz");
+        $("[mark=isLogin] a,.user-login,#toplogin").attr("href","/account/");
+        $("[mark=isPay] a,#ischong").attr("href","/account/pay.html");
+        $("#istikuan").attr("href","/account/draw.html");
+    }else{
+        $("[mark=isLogin] p,#ischong").html("登陆");
+        $("[mark=isPay] p ,#istikuan").html("注册");
+        $("[mark=isPay] h3").attr("class","reg");
+        $("[mark=isLogin] a,.user-login,#toplogin,#ischong").attr("href","/user/login.html?bak=1");
+        $("[mark=isPay] a,#istikuan").attr("href","/user/reg.html");
+    }
 </script>
 <script type='text/javascript'>
-var homeFun;
-$(function(){
+    var homeFun;
+    $(function(){
 
-	function banner(){
-		
-		
-		var tag = $('#slideBox .bd ul').find('li').length;
-		if(!!tag){
-			$('#slideBox').show();
-			tag = (tag == 1 ?false:true);
-			TouchSlide({ slideCell:"#slideBox",titCell:".hd ul",mainCell:".bd ul",effect:"leftLoop",autoPage:true,autoPlay:tag});
-		}else{$('#slideBox').hide();}
-	}
-    function getImage(){
-    	if(localStorage.getItem('info')){
-    		banner();
-    	}else{
-    		banner();
-    	}
-       
-    }
-    //初始函数
-    function init(){
-        TopAnch.init({
-            title:'【159彩票触屏版】',
-            prevShow:false,
-            nextShow:false
-        });
-        $("body").addClass("home");
-        if(!homeFun.home){
-            setTimeout(function(){$("#loadpop").fadeOut()},.5e3);
-            setTimeout(function(){getImage()},.5e3);
-            CP.Home.init();
-            homeFun.home = 1;
+        function banner(){
+
+
+            var tag = $('#slideBox .bd ul').find('li').length;
+            if(!!tag){
+                $('#slideBox').show();
+                tag = (tag == 1 ?false:true);
+                TouchSlide({ slideCell:"#slideBox",titCell:".hd ul",mainCell:".bd ul",effect:"leftLoop",autoPage:true,autoPlay:tag});
+            }else{$('#slideBox').hide();}
         }
-    }
-    homeFun = init;
-    if(window.location.hash.indexOf('type=index')>-1||!/#/.test(window.location.href)){
-    	$('#home_page').show()
-        init();
-    }
-})
+        function getImage(){
+            if(localStorage.getItem('info')){
+                banner();
+            }else{
+                banner();
+            }
+
+        }
+        //初始函数
+        function init(){
+            TopAnch.init({
+                title:'【159彩票触屏版】',
+                prevShow:false,
+                nextShow:false
+            });
+            $("body").addClass("home");
+            if(!homeFun.home){
+                setTimeout(function(){$("#loadpop").fadeOut()},.5e3);
+                setTimeout(function(){getImage()},.5e3);
+                CP.Home.init();
+                homeFun.home = 1;
+            }
+        }
+        homeFun = init;
+        if(window.location.hash.indexOf('type=index')>-1||!/#/.test(window.location.href)){
+            $('#home_page').show()
+            init();
+        }
+    })
 </script>
 <script>
-var _hmt = _hmt || [];
-(function() {
-  var hm = document.createElement("script");
-  hm.src = "//hm.baidu.com/hm.js?9749f4d3030abbc90afef9c7646ea0bb";
-  var s = document.getElementsByTagName("script")[0]; 
-  s.parentNode.insertBefore(hm, s);
-})();
+    var _hmt = _hmt || [];
+    (function() {
+        var hm = document.createElement("script");
+        hm.src = "//hm.baidu.com/hm.js?9749f4d3030abbc90afef9c7646ea0bb";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
 </script>
 </body></html>
