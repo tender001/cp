@@ -23,8 +23,9 @@ CP.JC = function() {
         hh: "混投",
         rf: "让分",
         dxf: "大小分",
-        sf: "胜负",
-        sfc: "胜分差"
+//        sfc: "胜分差",
+        sf: "胜负"
+       
     };
     var codeHeader = {
         spf: "SPF",
@@ -36,6 +37,7 @@ CP.JC = function() {
         hh: "HH",
         rf: "RFSF",
         dxf: "DXF",
+//        sfc: "SFC",
         sf: "SF"
     };
     var g = {
@@ -247,6 +249,18 @@ CP.JC = function() {
                 location: {
                     0 : "0",
                     3 : "1"
+                }
+            },
+            sfc: {
+                maxPass: 8,
+                gid: 96,
+                location: {
+                    5 : "5",
+                    4 : "4",
+                    3 : "3",
+                    2 : "2",
+                    1 : "1",
+                    0 : "0"
                 }
             },
             dxf: {
@@ -461,6 +475,7 @@ CP.JC = function() {
                         sf: "jclqVs",
                         rf: "jclqVs",
                         dxf: "jclqDxf",
+//                        sfc: "jclqSfc",
                         hh: "jclqhh"
                     } [lotteryPlayName];
                     $item.attr("class", cl_)
@@ -644,6 +659,22 @@ CP.JC = function() {
                                 _out.push("</li>");
                                 _out.push("</ul>")
                             }
+                        }else if (lotteryPlayName == "sfc") {
+                            sp_ = t[n].sfc_sp.split(",");
+                            _out.push('<ul class="sfcxs jqzpk sxzpk" data-id=' + t[n].itemid + ">");
+                            _out.push("<li class=wangwei><em>" + name_ + "</em><p>" + t[n].mname + "</p><cite>" + t[n].et.substr(11, 5) + ' 截止</cite></li>');
+                            _out.push("<li>");
+                            _out.push('<p class="spfzpkNum ' + (t[n].hot == "yes" ? "spfzpk3": "") + '"><span>' + t[n].hn + '</span><span class="spfvs">VS</span><span>' + t[n].gn + "</span></p>");
+                            _out.push('<p class="spfzpk">');
+                            _out.push("<span class=wang-ball my-data=5><b>1-5</b><cite>" + sp_[5] + "</cite></span>");
+                            _out.push("<span class=wang-ball my-data=4><b>6-10</b><cite>" + sp_[4] + "</cite></span>");
+                            _out.push("<span class=wang-ball my-data=3><b>11-15</b><cite>" + sp_[3] + "</cite></span>");
+                            _out.push("<span class=wang-ball my-data=2><b>16-20</b><cite>" + sp_[2] + "</cite></span>");
+                            _out.push("<span class=wang-ball my-data=1><b>21-25</b><cite>" + sp_[1] + "</cite></span>");
+                            _out.push("<span class=wang-ball my-data=0><b>26+</b><cite>" + sp_[0] + "</cite></span>");
+                            _out.push("</p>");
+                            _out.push("</li>");
+                            _out.push("</ul>")
                         }
 //                        if (lotteryType != "jclq") {
 //                            var jf = "暂无交锋记录";
@@ -1464,7 +1495,11 @@ CP.JC = function() {
                     },
                     {
                         name: "大小分"
-                    },
+                    }
+//                    ,{
+//                    	name: "胜分差"
+//                    }
+                    ,
                     {
                         name: "混投"
                     }] : [{
