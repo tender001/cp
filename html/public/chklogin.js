@@ -386,7 +386,8 @@ Class('Loginer', {// 登陆器
     							 if(open!=0 ){
     								
     								 buyPage.each(function(e){
-        								 if(e==d_url.split("/")[3]&&d_url.indexOf("project")==-1){
+        								 if(e==d_url.split("/")[3]){
+        									 if(d_url.indexOf("project")==-1&&d_url.indexOf("kaijiang")==-1&&d_url.indexOf("history")==-1&&d_url.indexOf("zc_kj")==-1)
         									 return setTimeout(function() { Y.use('StopAlert',function(){this.lib.StopAlert();}); }, (1 * 1000));
         								 }
         							})
@@ -398,8 +399,9 @@ Class('Loginer', {// 登陆器
     						   
     						   
     							buyPage.each(function(e){
-    								 if(e==d_url.split("/")[3]&&d_url.indexOf("project")==-1){
-    									 return setTimeout(function() { Y.use('StopAlert',function(){this.lib.StopAlert();}); }, (1 * 1000));
+    								 if(e==d_url.split("/")[3]){
+    									 if(d_url.indexOf("project")==-1&&d_url.indexOf("kaijiang")==-1&&d_url.indexOf("history")==-1&&d_url.indexOf("zc_kj")==-1)
+        									 return setTimeout(function() { Y.use('StopAlert',function(){this.lib.StopAlert();}); }, (1 * 1000));
     								 }
     							})
 
