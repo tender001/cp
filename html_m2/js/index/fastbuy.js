@@ -173,7 +173,7 @@ function showTips(tips) {
      $("body").append(obj);
 
     setTimeout(function(){
-//    	$('div.alertBox').hide();
+    	$('div.alertBox').hide();
     },2000);
 //	$('div.alertBox').click(function(){$(this).hide()});
 
