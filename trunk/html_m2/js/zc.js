@@ -39,6 +39,7 @@ gpage = function(gid){
 	return "index";
 };
 loadmatch = function(gid,pid){
+//	http://www.159cai.com/cpdata/omi/80/2015053/odds.xml
 	var url = "/cpdata/match/zc/"+gid+"/"+pid+".json?rnd="+Math.random();
 	$.ajax({
 		url:url,
