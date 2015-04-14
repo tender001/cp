@@ -8,10 +8,10 @@ article,aside,details,figcaption,figure,footer,header,menu,nav,section{display:b
 h1,h2,h3,h4,h5,h6{font-size:100%}button,input,select,textarea{font-size:100%}input,button{background-color:transparent}input[type="button"],input[type="submit"]{-webkit-appearance:none}a,s{text-decoration:none;outline:0}a:active{-webkit-tap-highlight-color:rgba(0,0,0,0)}ol,ul,li{list-style:none}i,em,cite{font-style:normal}img{max-width:100%;border:0 none;vertical-align:top}fieldset{border:0 none}table{border-collapse:collapse;border-spacing:0}.fl{float:left}.left{float:left}.fr{float:right}.right{float:right}.clear{clear:both}.fn-clear{zoom:1}.fn-clear:after{visibility:hidden;display:block;font-size:0;content:" ";clear:both}.fn-clearfix:after{content:"";display:table;clear:both}.clearfix{overflow:hidden;zoom:1}.fn-show{display:block}.fn-hide{display:none}
 input{ outline:none; -webkit-tap-highlight-color:rgba(255,255,255,0); -webkit-appearance:none; font-family:"微软雅黑"}
 input::-webkit-input-placeholder,input::-moz-placeholder{ color:#d0d0d0}
-.more{float: right;color: #999}
+.more{float: right;color: #999;font-size:.8rem}
 /*右-点击*/
 .list .ico-click i{margin-top:0.91em;-webkit-transform: rotate(45deg);-moz-transform: rotate(45deg);-o-transform: rotate(45deg);transform:rotate(45deg)}
-.ico-click i{float:right;width:0.8em;height:0.8em;margin-right:1.4em;border-top:2px solid #ddd;border-right:2px solid #ddd;position:relative;-webkit-transform: rotate(-45deg);-moz-transform: rotate(-45deg);-o-transform: rotate(-45deg);transform:rotate(-45deg)}
+.ico-click i{float:right;width:0.8em;height:0.8em;margin-right:1em;border-top:2px solid #ddd;border-right:2px solid #ddd;position:relative;-webkit-transform: rotate(-45deg);-moz-transform: rotate(-45deg);-o-transform: rotate(-45deg);transform:rotate(-45deg)}
 .ico-click .cur{top:-0.2em;-webkit-transform: rotate(135deg);-moz-transform: rotate(135deg);-o-transform: rotate(135deg);transform:rotate(135deg)}
 .header,.cp-list li,.tz-menu{width:100%;padding:0.4em 0;overflow:hidden}
 .header .user{float: right;}
@@ -111,7 +111,7 @@ input::-webkit-input-placeholder,input::-moz-placeholder{ color:#d0d0d0}
 .caipiao-tit em span{margin-left:4px;padding:0 2px;font-size:12px;color:#fff;background-color: #f40;vertical-align:2px}
 .caipiao-tit cite{display: block;height: 1.6em;font-size:0.85rem;color:#888}
 .cp-news{padding:6px 0;font-size:1.1245em;background-color: #f0f0f0}
-.cp-news-tit{width: 96%;height:2.7em;line-height:2.7em;padding: 0 2%;font-size:1.12em;border-top:1px solid #e2e2e2;background-color: #fff}
+.cp-news-tit{height:2.7em;line-height:2.7em;padding: 0 2.35%;font-size:1.12em;border-top:1px solid #e2e2e2;background-color: #fff}
 .cp-news-list{background-color: #fff;overflow: hidden;border-bottom: .2em solid #e2e2e2}
 .cp-news-list li{border-top:1px solid #e2e2e2;vertical-align: top}
 .cp-news-list .ico-click{position: relative}
