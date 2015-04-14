@@ -36,7 +36,6 @@ function DoLogin() {
 				}
 				
 				
-				
 			}else{
 				showTips(desc);
 			}
