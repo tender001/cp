@@ -24,8 +24,8 @@ hr.top-margin{border:0 none}
 .rightArrow,.hmArrow{position:absolute;width:.45rem;height:.45rem;background:#fff;right:1rem;top:2rem;border-bottom:.16rem solid #ccc;border-right:.16rem solid #ccc;transform:rotate(-45deg);-webkit-transform:rotate(-45deg);-moz-transform:rotate(-45deg)}
 
 /*gotop*/
-.go-top{position: relative}
-.go-top-ico{position: absolute;top: 0.78em;right: 1em;display:block;width: 25px;height: 25px;background-position:-2px -192px;background-size: 33px}
+/*.go-top{position: relative}
+.go-top-ico{position: absolute;top: 0.78em;right: 1em;display:block;width: 25px;height: 25px;background-position:-2px -192px;background-size: 33px}*/
 /*数字彩*/
 .ball b{display:inline-block;margin-left:4px;width: 30px;height: 30px;line-height:30px;font-size:1.35em;letter-spacing:0.05em;text-align:center;color:#fff;border-radius:30px;background-color: #f40}
 .ball .blue{background-color: #64a6ea}

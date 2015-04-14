@@ -72,6 +72,9 @@ input{-webkit-tap-highlight-color:rgba(255,255,255,0);font-family:"微软雅黑"
 .kstz-b .kstz-choose a{float: right;padding:4px 0.3em;font-size: 1.12em;color:#fff;border-radius:4px;background-color: #f40;}
 .ks-ball em{display: inline-block;width: 28px;height: 28px;line-height:28px;margin-right:3px;font-size:14px;text-align: center;color:#fff;border-radius:100%;background-color: #f40}
 .ks-ball .blue{background-color: #64a6ea}
+/*gotop*/
+.go-top{position: relative}
+.go-top-ico{position: absolute;top: 0.78em;right: 1em;display:block;width: 25px;height: 25px;background-position:-2px -192px;background-size: 33px}
 .user a,.nav-list h3,.go-top-ico,.kstz-b .inms em:after{background-image:url("../img/app-icon-index.png");background-repeat:no-repeat;}
 /*css3球滚动*/
 .rotate_jx{-webkit-animation:num .2s linear infinite;-moz-animation:num .2s linear infinite;-o-animation:num .2s linear infinite;animation:num .2s linear infinite}
