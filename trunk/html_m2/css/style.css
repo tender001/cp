@@ -6,8 +6,7 @@ html{color:#000;-webkit-backface-visibility: hidden;-webkit-font-smoothing: anti
 body{font-family:arial,Microsoft YaHei, Helvetica, sans-serif;min-width:320px}
 article,aside,details,figcaption,figure,footer,header,menu,nav,section{display:block}
 h1,h2,h3,h4,h5,h6{font-size:100%}button,input,select,textarea{font-size:100%}input,button{background-color:transparent}input[type="button"],input[type="submit"]{-webkit-appearance:none}a,s{text-decoration:none;outline:0}a:active{-webkit-tap-highlight-color:rgba(0,0,0,0)}ol,ul,li{list-style:none}i,em,cite{font-style:normal}img{max-width:100%;border:0 none;vertical-align:top}fieldset{border:0 none}table{border-collapse:collapse;border-spacing:0}.fl{float:left}.left{float:left}.fr{float:right}.right{float:right}.clear{clear:both}.fn-clear{zoom:1}.fn-clear:after{visibility:hidden;display:block;font-size:0;content:" ";clear:both}.fn-clearfix:after{content:"";display:table;clear:both}.clearfix{overflow:hidden;zoom:1}.fn-show{display:block}.fn-hide{display:none}
-input{ outline:none; -webkit-tap-highlight-color:rgba(255,255,255,0); -webkit-appearance:none; font-family:"微软雅黑"}
-input::-webkit-input-placeholder,input::-moz-placeholder{ color:#d0d0d0}
+input{-webkit-tap-highlight-color:rgba(255,255,255,0);font-family:"微软雅黑"}
 .more{float: right;color: #999;font-size:.8rem}
 /*右-点击*/
 .list .ico-click i{margin-top:0.91em;-webkit-transform: rotate(45deg);-moz-transform: rotate(45deg);-o-transform: rotate(45deg);transform:rotate(45deg)}
@@ -213,7 +212,7 @@ input::-webkit-input-placeholder,input::-moz-placeholder{ color:#d0d0d0}
 .reg li{vertical-align:top;padding:0.3em 0;font-size:1.14em}
 .reg li:first-of-type{border-bottom: 1px solid #ddd}
 .reg label{padding: 0 1em 0;vertical-align:middle}
-.reg input{width:70%;height: 1.2em;line-height: 1.2em;padding: 0.6em 0;border: 0 none;}
+.reg input{width:70%;height: 1.2em;line-height: 1.2em;padding: 0.6em 0 0.6em 0.2em;border:0 none;}
 .reg-read{padding:0 0 0.7em;text-align: center;color:#888}
 .re-pass{width:90%;margin:0 auto;text-align: right !important}
 .reg-read input{vertical-align: middle;vertical-align: -3px;margin: 0 0.3em 0 0}
