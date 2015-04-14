@@ -465,7 +465,7 @@ input::-webkit-input-placeholder,input::-moz-placeholder{ color:#d0d0d0}
 .user-setting a{color: #333}
 .user-setting .ico-click{height:2.5em;line-height:2.5em;padding: 0.5em 0;border-bottom:1px solid #e2e2e2;background-color: #fff;overflow: hidden}
 .user-setting .list-4{margin-bottom: 10px;border-bottom: 0}
-.set-icon{float:left;display:inline-block;width:2.5rem;height:1.4rem;margin:0.8rem 0.6rem 0;background: url("/img/set-icon.png") no-repeat;background-size:35px 286px}
+.set-icon{float:left;display:inline-block;width:2.5rem;height:1.8rem;margin:0.2rem 0.6rem 0;background: url("/img/set-icon.png") no-repeat;background-size:35px 286px}
 .set-icon1{background-position: 0 -1px}
 .set-icon2{background-position: 0 -33px}
 .set-icon3{background-position: 0 -70px}
