@@ -1,5 +1,5 @@
-<section id=buy_bjdc>
-     <!-- 页头垃圾[[ -->
+<div id=sfgg>
+<!-- 页头垃圾[[ -->
 	<nav class="jczqNav">
 		<ul class="zkTitle fixed2 clearfix">
 			<li>赛事</li>
@@ -9,13 +9,6 @@
 		</ul>    
 	</nav>
 	<!-- ]]垃圾页头 -->
-	<!-- 比分弹窗[[ -->
-	<div id='tc'  class="zfpop bfPop">
-		<div id='tc_content'></div>
-	</div>
-	<div class='mask' id='jczq_mask'></div>
-	<!-- ]]比分弹窗 -->
-	
 	<!-- 对阵[[ -->
 	<article id="item"><div style="padding-top:50px;height:200px"><em class="rotate_load" style="margin:auto"></em><div style="text-align: center; padding: 10px;">加载对阵中，请稍候</div></div></article>
 	<!-- ]]对阵 -->
@@ -80,12 +73,13 @@
 				</h5>
 				<article id='jc_chuan_list'>
 					<ul class="ssqdouble jczqdouble clearfix">
-						<li><span id='jc_chuan'>3串1</span><em class="doubt left" id=chuan_ts></em></li>
+						<li>
+							<span id='jc_chuan'>3串1</span>
+							<em class="doubt left" id=chuan_ts></em>
+						</li>
 						<li><cite>投</cite><input type="tel" value="1" id='jc_bs' readonly><cite>倍</cite></li>
 					</ul>
 					<ul class="jczqfsCheck" id='ggList'>
-						<li v=1>单关</li>
-						<li v=2>2串1</li>
 						<li v=3>3串1</li>
 						<li v=4>4串1</li>
 						<li v=5>5串1</li>
@@ -131,5 +125,7 @@
 		</div>
 	</section>
 	<!-- ]]温馨提示 -->
-</section>
-
+	
+	<div class='mask' id='sfgg_mask'></div>
+</div>
+<script type="text/javascript" src="/js/list/sfgg.js"></script>
