@@ -372,98 +372,209 @@ CP.JC = function() {
         }
     };
     var Against = {
-        getData: function() {
-            if (lotteryType == "jczq") {
-//                url = "/test/app/jczq/new_jczq_hh.xml"
-            	url = "/cpdata/match/jczq/jczq_hh.xml"
-            } else if (lotteryType == "jclq") {
-                url = "/cpdata/match/jclq/jclq_hh.xml"
-            } else {
-                url = "/test/app/bd/new_bd.xml"
-            }
-            $.ajax({
-                url: CP.Data.data + url,
-                type: "GET",
-                dataType: "xml",
-                success: function(xml) {
-//                    var R = $(xml).find("Resp");
-                    var R = $(xml);
-                    lotteryType == "bjdc" && (g.qihao_id = R.attr("pid"));
-//                    var rows = R.find("rows");
-                    var rows = R.find("match");
-                    againstData = [];
-                    rows.each(function(i) {
-                        var t = {},
-                        t1 = [];
-                        t.addesc = $(this).attr("addesc");
-                        t.desc = $(this).attr("desc");
-                        var r = $(this).find("row");
-                        r.each(function(a) {
-                            var t2 = {};
-                            t2.itemid = $(this).attr("itemid");
-                            t2.hn = $(this).attr("hn").substr(0, 5);
-                            t2.gn = $(this).attr("gn").substr(0, 5);
-                            t2.et = $(this).attr("et");
-                            t2.mt = $(this).attr("mt");
-                            t2.mname = $(this).attr("mname");
-                            t2.mname = $_getleagueshort(t2.mname,2)===undefined?t2.mname.substr(0, 5):$_getleagueshort(t2.mname,2);
-                            t2.name = $(this).attr("name");
-                            t2.cl = $(this).attr("cl");
-                            t2.close = $(this).attr("close");
-                            t2.isale = $(this).attr("isale");
-                            
-                            if (lotteryType == "jczq" || lotteryType == "bjdc") {
-                                t2.hm = $(this).attr("hm") || "--";
-                                t2.gm = $(this).attr("gm") || "--";
-                                t2.htn = $(this).attr("htn") || "--";
-                                t2.gtn = $(this).attr("gtn") || "--";
-                                t2.oh = $(this).attr("oh");
-                                t2.od = $(this).attr("od");
-                                t2.oa = $(this).attr("oa");
-                                t2.htid = $(this).attr("htid");
-                                t2.gtid = $(this).attr("gtid");
-                                t2.spf_sp = $(this).attr("spf") || "";
-                                t2.bf_sp = $(this).attr("cbf") || "";
-                                t2.jq_sp = $(this).attr("jqs") || "";
-                                t2.bqc_sp = $(this).attr("bqc") || "";
-                                t2.sxds_sp = $(this).attr("sxp") || "";
-                                t2.history = $(this).attr("history") || "";
-                                if (lotteryType == "bjdc") {
-                                    t2.ic = $(this).attr("ic")
-                                } else {
-                                    t2.hot = $(this).attr("hot");
-                                    t2.tco = $(this).attr("tco");
-                                    t2.tcoscale = $(this).attr("tcoscale");
-                                    t2.spfscale = $(this).attr("spfscale");
-                                    t2.rqspfscale = $(this).attr("rqspfscale");
-//                                    t2.rq_sp = $(this).attr("rqspf")
-                                    t2.rq_sp = $(this).attr("rspf");
-                                    t2.idanguan = $(this).attr("idanguan")
+    		getData: function() {
+                if (lotteryType == "jczq" ||lotteryType == "jclq") {
+//                    url = "/test/app/jczq/new_jczq_hh.xml"
+                	
+	                if (lotteryType == "jclq") {
+	                    url = "/cpdata/match/jclq/jclq_hh.xml"
+	                }else{
+	                	url = "/cpdata/match/jczq/jczq_hh.xml"
+	                }
+              
+                $.ajax({
+                    url: CP.Data.data + url,
+                    type: "GET",
+                    dataType: "xml",
+                    success: function(xml) {
+//                        var R = $(xml).find("Resp");
+                        var R = $(xml);
+                        lotteryType == "bjdc" && (g.qihao_id = R.attr("pid"));
+//                        var rows = R.find("rows");
+                        var rows = R.find("match");
+                        againstData = [];
+                        rows.each(function(i) {
+                            var t = {},
+                            t1 = [];
+                            t.addesc = $(this).attr("addesc");
+                            t.desc = $(this).attr("desc");
+                            var r = $(this).find("row");
+                            r.each(function(a) {
+                                var t2 = {};
+                                t2.itemid = $(this).attr("itemid");
+                                t2.hn = $(this).attr("hn").substr(0, 5);
+                                t2.gn = $(this).attr("gn").substr(0, 5);
+                                t2.et = $(this).attr("et");
+                                t2.mt = $(this).attr("mt");
+                                t2.mname = $(this).attr("mname");
+                                t2.mname = $_getleagueshort(t2.mname,2)===undefined?t2.mname.substr(0, 5):$_getleagueshort(t2.mname,2);
+                                t2.name = $(this).attr("name");
+                                t2.cl = $(this).attr("cl");
+                                t2.close = $(this).attr("close");
+                                t2.isale = $(this).attr("isale");
+                                
+                                if (lotteryType == "jczq" || lotteryType == "bjdc") {
+                                    t2.hm = $(this).attr("hm") || "--";
+                                    t2.gm = $(this).attr("gm") || "--";
+                                    t2.htn = $(this).attr("htn") || "--";
+                                    t2.gtn = $(this).attr("gtn") || "--";
+                                    t2.oh = $(this).attr("oh");
+                                    t2.od = $(this).attr("od");
+                                    t2.oa = $(this).attr("oa");
+                                    t2.htid = $(this).attr("htid");
+                                    t2.gtid = $(this).attr("gtid");
+                                    t2.spf_sp = $(this).attr("spf") || "";
+                                    t2.bf_sp = $(this).attr("cbf") || "";
+                                    t2.jq_sp = $(this).attr("jqs") || "";
+                                    t2.bqc_sp = $(this).attr("bqc") || "";
+                                    t2.sxds_sp = $(this).attr("sxp") || "";
+                                    t2.history = $(this).attr("history") || "";
+                                    if (lotteryType == "bjdc") {
+                                        t2.ic = $(this).attr("ic")
+                                    } else {
+                                        t2.hot = $(this).attr("hot");
+                                        t2.tco = $(this).attr("tco");
+                                        t2.tcoscale = $(this).attr("tcoscale");
+                                        t2.spfscale = $(this).attr("spfscale");
+                                        t2.rqspfscale = $(this).attr("rqspfscale");
+//                                        t2.rq_sp = $(this).attr("rqspf")
+                                        t2.rq_sp = $(this).attr("rspf");
+                                        t2.idanguan = $(this).attr("idanguan")
+                                    }
+                                } else if (lotteryType == "jclq") {
+                                    t2.bet3 = $(this).attr("bet3");
+                                    t2.bet0 = $(this).attr("bet0");
+                                    t2.zclose = $(this).attr("zclose");
+                                    t2.mid = $(this).attr("mid");
+                                    t2.sf_sp = $(this).attr("sf");
+                                    t2.rf_sp = $(this).attr("rfsf");
+                                    t2.dxf_sp = $(this).attr("dxf");
+                                    t2.sfc_sp = $(this).attr("sfc");
+                                    t2.idanguan = $(this).attr("idanguan");
                                 }
-                            } else if (lotteryType == "jclq") {
-                                t2.bet3 = $(this).attr("bet3");
-                                t2.bet0 = $(this).attr("bet0");
-                                t2.zclose = $(this).attr("zclose");
-                                t2.mid = $(this).attr("mid");
-                                t2.sf_sp = $(this).attr("sf");
-                                t2.rf_sp = $(this).attr("rfsf");
-                                t2.dxf_sp = $(this).attr("dxf");
-                                t2.sfc_sp = $(this).attr("sfc");
-                                t2.idanguan = $(this).attr("idanguan");
-                            }
-                            if (lotteryType == "jclq" && (32 & t2.isale) > 0 || lotteryType == "jczq" && (32 & t2.isale) > 0 || lotteryType == "jczq" && (512 & t2.isale) > 0) {
-                                t1.unshift(t2)
-                            } else {
-                                t1.push(t2)
-                            }
+                                if (lotteryType == "jclq" && (32 & t2.isale) > 0 || lotteryType == "jczq" && (32 & t2.isale) > 0 || lotteryType == "jczq" && (512 & t2.isale) > 0) {
+                                    t1.unshift(t2)
+                                } else {
+                                    t1.push(t2)
+                                }
+                            });
+                            t.info = t1;
+                            againstData[i] = t
                         });
-                        t.info = t1;
-                        againstData[i] = t
-                    });
-                    Against.render()
-                }
-            })
-        },
+                        Against.render()
+                    }
+                })
+    		}else if(lotteryType == "bjdc") {
+	    	               $.ajax({
+	    	       			url : "/cpdata/game/85/c.json?_=" + Math.random(),
+	    	       			type : "get",
+	    	       			dataType : "json",
+	    	       			success  : function (d){
+	    	       				
+	    	       				url ="/cpdata/match/beid/"+d.period.row[0].pid+"/spf.xml"
+	    	       				$.ajax({
+	    	       	                url: CP.Data.data + url,
+	    	       	                type: "GET",
+	    	       	                dataType: "xml",
+	    	       	                success: function(xml) {
+	    	       	                	var R = $(xml);
+	    	       	                    lotteryType == "bjdc" && (g.qihao_id = R.attr("pid"));
+	    	       	                    var rows = R.find("match");
+	    	       	                    againstData = [];
+	    	       	                    rows.each(function(i) {
+	    	       	                        var t = {},
+	    	       	                        t1 = [];
+	    	       	                        t.addesc = $(this).attr("addesc");
+	    	       	                        t.desc = $(this).attr("desc");
+	    	       	                        var r = $(this).find("row");
+	    	       	                        r.each(function(a) {
+	    	       	                            var t2 = {};
+	    	       	                            t2.itemid = $(this).attr("expect");
+	    	       	                            t2.hn = $(this).attr("hn").substr(0, 5);
+	    	       	                            t2.gn = $(this).attr("gn").substr(0, 5);
+	    	       	                            t2.et = $(this).attr("et");
+	    	       	                            t2.mt = $(this).attr("mt");
+	    	       	                            t2.mname = $(this).attr("mname");
+	    	       	                            t2.mname = $_getleagueshort(t2.mname,2)===undefined?t2.mname.substr(0, 5):$_getleagueshort(t2.mname,2);
+	    	       	                            t2.name = $(this).attr("mid");
+	    	       	                            t2.cl = $(this).attr("cl");
+	    	       	                            t2.close = $(this).attr("close");
+	    	       	                            t2.isale = $(this).attr("isale");
+	    	       	                            
+	    	       	                            if (lotteryType == "jczq" || lotteryType == "bjdc") {
+	    	       	                                t2.hm = $(this).attr("hm") || "--";
+	    	       	                                t2.gm = $(this).attr("gm") || "--";
+	    	       	                                t2.htn = $(this).attr("htn") || "--";
+	    	       	                                t2.gtn = $(this).attr("gtn") || "--";
+	    	       	                                t2.oh = $(this).attr("oh");
+	    	       	                                t2.od = $(this).attr("od");
+	    	       	                                t2.oa = $(this).attr("oa");
+	    	       	                                t2.htid = $(this).attr("htid");
+	    	       	                                t2.gtid = $(this).attr("gtid");
+	    	       	                                t2.spf_sp = $(this).attr("spf") || "";
+	    	       	                                t2.bf_sp = $(this).attr("cbf") || "";
+	    	       	                                t2.jq_sp = $(this).attr("jqs") || "";
+	    	       	                                t2.bqc_sp = $(this).attr("bqc") || "";
+	    	       	                                t2.sxds_sp = $(this).attr("sxp") || "";
+	    	       	                                t2.history = $(this).attr("history") || "";
+	    	       	                                if (lotteryType == "bjdc") {
+	    	       	                                    t2.ic = $(this).attr("ic")
+	    	       	                                } else {
+	    	       	                                    t2.hot = $(this).attr("hot");
+	    	       	                                    t2.tco = $(this).attr("tco");
+	    	       	                                    t2.tcoscale = $(this).attr("tcoscale");
+	    	       	                                    t2.spfscale = $(this).attr("spfscale");
+	    	       	                                    t2.rqspfscale = $(this).attr("rqspfscale");
+//	    	       	                                    t2.rq_sp = $(this).attr("rqspf")
+	    	       	                                    t2.rq_sp = $(this).attr("rspf");
+	    	       	                                    t2.idanguan = $(this).attr("idanguan")
+	    	       	                                }
+	    	       	                            } else if (lotteryType == "jclq") {
+	    	       	                                t2.bet3 = $(this).attr("bet3");
+	    	       	                                t2.bet0 = $(this).attr("bet0");
+	    	       	                                t2.zclose = $(this).attr("zclose");
+	    	       	                                t2.mid = $(this).attr("mid");
+	    	       	                                t2.sf_sp = $(this).attr("sf");
+	    	       	                                t2.rf_sp = $(this).attr("rfsf");
+	    	       	                                t2.dxf_sp = $(this).attr("dxf");
+	    	       	                                t2.sfc_sp = $(this).attr("sfc");
+	    	       	                                t2.idanguan = $(this).attr("idanguan");
+	    	       	                            }
+	    	       	                            if (lotteryType == "jclq" && (32 & t2.isale) > 0 || lotteryType == "jczq" && (32 & t2.isale) > 0 || lotteryType == "jczq" && (512 & t2.isale) > 0) {
+	    	       	                                t1.unshift(t2)
+	    	       	                            } else {
+	    	       	                                t1.push(t2)
+	    	       	                            }
+	    	       	                        });
+	    	       	                        t.info = t1;
+	    	       	                        againstData[i] = t
+	    	       	                    });
+	    	       	                    Against.render()
+	    	       	                }
+	    	       	            })		
+	    	       					
+	    	       											
+	    	       									
+	    	       					
+	    	       			},
+	    	       			error : function() {
+	    	       				alert("网络故障!");
+	    	       				return false;
+	    	       			}
+	    	       		});
+	    	           }
+            },
+
+	    					
+	    											
+	    									
+	    					
+	    			
+           
+
+  
+            
+//        },
         render: function() {
             g.loty_id = contrast[lotteryType][lotteryPlayName].gid;
             var _out = [];
@@ -1615,7 +1726,7 @@ CP.JC = function() {
                     pid: g.qihao_id,
                     codes: g.codes,
                     muli: g.bet,
-                    desc: $("#hmDesc").val() || "快乐购彩、欧耶！",
+                    desc: $("#hmDesc").val() || "触屏版合买！",
                     countMoney: g.amount,
                     bnum: $("#rg").val(),
                     pnum: $("#bd").val(),
