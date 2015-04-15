@@ -4,6 +4,8 @@ body,section,footer,header,menu,nav,button,dd,dl,dt,fieldset,form,h1,h2,h3,h4,h5
 html{min-height:100%;}
 html{color:#000;-webkit-backface-visibility: hidden;-webkit-font-smoothing: antialiased;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%}
 body{font-family:arial,Microsoft YaHei, Helvetica, sans-serif;min-width:320px}
+@media screen and (min-width:480px){html,body,button,input,select,textarea{font-size:18px}}
+@media screen and (min-width:640px){html,body,button,input,select,textarea{font-size:24px}}
 article,aside,details,figcaption,figure,footer,header,menu,nav,section{display:block}
 h1,h2,h3,h4,h5,h6{font-size:100%}button,input,select,textarea{font-size:100%}input,button{background-color:transparent}input[type="button"],input[type="submit"]{-webkit-appearance:none}a,s{text-decoration:none;outline:0}a:active{-webkit-tap-highlight-color:rgba(0,0,0,0)}ol,ul,li{list-style:none}i,em,cite{font-style:normal}img{max-width:100%;border:0 none;vertical-align:top}fieldset{border:0 none}table{border-collapse:collapse;border-spacing:0}.fl{float:left}.left{float:left}.fr{float:right}.right{float:right}.clear{clear:both}.fn-clear{zoom:1}.fn-clear:after{visibility:hidden;display:block;font-size:0;content:" ";clear:both}.fn-clearfix:after{content:"";display:table;clear:both}.clearfix{overflow:hidden;zoom:1}.fn-show{display:block}.fn-hide{display:none}
 input{-webkit-tap-highlight-color:rgba(255,255,255,0);font-family:"微软雅黑"}
@@ -357,7 +359,7 @@ input{-webkit-tap-highlight-color:rgba(255,255,255,0);font-family:"微软雅黑"
 .omitIco2{background-image:url(/img/fc/omitHover.png)}
 .shakeOmit{display:none;width:6.6em;position:absolute;right:0; top:0}
 .shakeOmit cite{float:left; margin-top:.4em}
-.shakeico{float:left;width:23px;height:18px;margin:.4em .15em 0 0;background-image:url(/img/fc/shake2.png);background-size:23px 18px}
+.shakeico{float:left;width:1.4rem;height:1.1rem;margin:.45em .15em 0 0;background-image:url(/img/fc/shake2.png);background-size:100%}
 .omitico,.omitico2{ float:left;width:17px;height:14px;margin:.8em .05em 0 .5em;background-image:url(/img/fc/omit2.png);background-size:17px 14px}
 .omitico2{background-image:url(/img/fc/omitHover2.png)}
 .ssqText{ padding-top:.8em; background:linear-gradient(top,#e2e2e2 0.2%,#e8e8e8 0.5%,#f3f3f3 .9%,#f7f7f7 95%); background:-webkit-linear-gradient(top,#e2e2e2 0.1%,#e8e8e8 0.2%,#f3f3f3 .5%,#f7f7f7 95%); background:-moz-linear-gradient(top,#e2e2e2 0.2%,#e8e8e8 0.5%,#f3f3f3 .9%,#f7f7f7 95%)}
