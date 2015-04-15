@@ -1,5 +1,6 @@
 input{ outline:none; -webkit-tap-highlight-color:rgba(255,255,255,0); -webkit-appearance:none; font-family:"微软雅黑"}
 input::-webkit-input-placeholder,input::-moz-placeholder{ color:#d0d0d0}
+a {color: #333;text-decoration: none;}
 .aGreen{ color:#106fe5}
 .downline{ display:block; position:absolute; bottom:1px; height:2px; background:#db150b}
 .float{ font-family:"黑体"; font-size:.75rem; height:3rem; background:#fff; border-top:1px solid #e2e2e2; border-bottom:1px solid #e2e2e2; padding:.3rem 0; margin:.55rem 0; overflow:hidden; zoom:1}
@@ -564,6 +565,29 @@ a.hmTxt2{ display:block; color:#606060; padding-right:1.4rem; position:relative}
 .hhzpk .spfzpk span{ width:26.2%; height:2.4rem; line-height:2.4rem; margin-top:.5rem;}
 .hhzpk .spfzpk em,.hhNum .spfzpk em{ float:left; font-family:"黑体"; width:6%; padding:.2rem 0 0 0; margin:.5rem 1% 0 0; text-align:center; line-height:.8rem; color:#ff9898; font-size:.75rem; }
 .hhzpk .spfzpk em.rq,.hhNum .spfzpk em.rq{ padding:.55rem 0 0 0; color:#98c5ff}
+.sdTab ul {
+    background: none repeat scroll 0 0 #fff;
+    border-bottom: 1px solid #e2e2e2;
+    color: #5c5c5c;
+    font-size: 0.9rem;
+    height: 1.6rem;
+    padding-top: 0.6rem;
+}
+.sdTab li {
+    float: left;
+    text-align: center;
+    width: 18%;
+}
+
+.sdTab li.cur {
+    color: #db150b;
+}
+.gddgTab li {
+    width: 20%;
+}
+
+
+
 .hhzpk .spfzpkNum span.spfvs{ width:18%}
 .hhzpk .spfzpkNum span:last-child{ width:30%}
 .hhNum .spfzpk span{ width:23.5%; height:2.4rem; line-height:2.4rem}
@@ -677,7 +701,7 @@ span.lastspfvs{ width:20%;border-left:0 none;}
 .jsbjList p img{ position:absolute; top:.25rem; left:58%}
 .jsbjList .hmArrow{ top:1.78rem; width:.35rem; height:.35rem}
 .jsbfTk{ width:80%; border-radius:.4rem; -webkit-border-radius:.4rem; -moz-border-radius:.4rem; position:absolute; top:50%; left:50%; margin:-9.25rem 0 0 -9.25rem; z-index:1000}
-.jsbfTktt{ position:relative; line-height:2.5rem; background:#399e5c; color:#fff; text-align:center; font-size:1.2rem; border-radius:.4rem .4rem 0 0; -webkit-border-radius:.4rem .4rem 0 0; -moz-border-radius:.4rem .4rem 0 0;}
+.jsbfTktt{ position:relative; line-height:2.5rem; background:#f40; color:#fff; text-align:center; font-size:1.2rem; border-radius:.4rem .4rem 0 0; -webkit-border-radius:.4rem .4rem 0 0; -moz-border-radius:.4rem .4rem 0 0;}
 .jsbfTktt em{ position:absolute; width:1.1rem; height:1.1rem; top:.6rem; right:.5rem; background:url(/img/zc/clock.jpg) no-repeat center; background-size:1rem 1rem; -webkit-background-size:1rem 1rem; -moz-background-size:1rem 1rem}
 .jsbfTktext{ background:#fff; color:#8d8d8d; line-height:1.8rem; font-size:.8rem; border-top:1px solid #c7c7c7; border-bottom:1px solid #c7c7c7}
 .jsbfTktext li{ float:left; width:23%; text-align:center}
@@ -740,8 +764,8 @@ span.lastspfvs{ width:20%;border-left:0 none;}
 .timeline div{ padding-top:1.2rem; overflow:hidden; zoom:1; line-height:1.3rem}
 .timeIco{ display:block; width:1.5rem; height:1.5rem; margin:0 auto; background:url(/img/zc/time.png) no-repeat center; background-size:1.5rem 1.5rem; -webkit-background-size:1.5rem 1.5rem; -moz-background-size:1.5rem 1.5rem}
 .timeright{ padding-left:8.9rem}
-.timeline b{ position:relative; float:left; width:1.3rem; text-align:center; line-height:1.3rem; font-weight:normal; font-size:.75rem; background:#399e5c; color:#fff; border-radius:1.3rem; -webkit-border-radius:1.3rem; -moz-border-radius:1.3rem}
-.timeline b:after{ content:""; position:absolute; width:.12rem; height:1.2rem; background:#399e5c; top:-1.2rem; left:.6rem}
+.timeline b{ position:relative; float:left; width:1.3rem; text-align:center; line-height:1.3rem; font-weight:normal; font-size:.75rem; background:#f40; color:#fff; border-radius:1.3rem; -webkit-border-radius:1.3rem; -moz-border-radius:1.3rem}
+.timeline b:after{ content:""; position:absolute; width:.12rem; height:1.2rem; background:#f40; top:-1.2rem; left:.6rem}
 .timeline cite{ float:left; margin:0 .3rem 0 .8rem}
 .timeleft em{ float:left; text-align:right; width:6.95rem}
 .timeleft cite{ margin:0 .8rem 0 .3rem}
@@ -751,8 +775,8 @@ span.lastspfvs{ width:20%;border-left:0 none;}
 .timeright2 p{ color:#bbb; font-size:.75rem; margin-left:-.1rem}
 .gddgTab{ background:#fff}
 .gddgTab li{ width:20%}
-.gddgTab li.cur a{ color:#399e5c}
-.gddgTab .downline{ background:#399e5c; bottom:1px}
+.gddgTab li.cur a{ color:#f40}
+.gddgTab .downline{ background:#f40; bottom:1px}
 .gddgxh{ font-size:.75rem; color:#fff; width:100%; height:22.22rem; background:url(/img/zc/gddgpic.jpg) no-repeat center; background-size:100% 22.22rem; -webkit-background-size:100% 22.22rem; -moz-background-size:100% 22.22rem}
 .gddgxh a{ display:block; text-align:right; margin:.8rem 6% .8rem 0; color:#fff17c}
 .gddgScroll{ padding:1.3rem 4% 0 4%}
@@ -774,13 +798,13 @@ span.lastspfvs{ width:20%;border-left:0 none;}
 .gddgxhList ul li span,.gddgmore span{ float:left; width:28.8%; line-height:1.88rem; text-align:center; font-size:.92rem; margin:.95rem 5% 0 0; border:.1rem solid #fff; border-radius:.3rem; -webkit-border-radius:.3rem; -moz-border-radius:.3rem}
 .gddgxhList ul li span:last-child,.gddgxhList ul li em:last-child{ margin-right:0}
 .gddgxhList ul li em{ float:left; width:30%; text-align:center; margin:.45rem 5% 0 0}
-.gddgxhList ul li span.cur,.gddgmore span.cur2{ position:relative; background:#ffeb46; border:.1rem solid #ffeb46; color:#399e5c}
+.gddgxhList ul li span.cur,.gddgmore span.cur2{ position:relative; background:#ffeb46; border:.1rem solid #ffeb46; color:#f40}
 .gddgxhList ul li span.cur:before,.gddgmore span.cur2:before{ position:absolute; content:""; bottom:-.1rem; right:-.1rem; width:1.125rem; height:1rem; background:url(/img/zc/gddgcur.png) no-repeat center; background-size:1.125rem 1rem; -webkit-background-size:1.125rem 1rem; -moz-background-size:1.125rem 1rem}
 .gddgdouble{ text-align:center; width:15rem; font-size:.8rem; padding:1.3rem 0 0 0; margin:0 auto}
 .gddgdouble div cite{ line-height:2.2rem; font-size:1rem;}
-.gddgdouble div span{ border:1px solid #399e5c; width:66%; height:2.1rem; background:#399e5c}
+.gddgdouble div span{ border:1px solid #f40; width:66%; height:2.1rem; background:#f40}
 .gddgdouble div span em{ color:#fff}
-.gddgdouble input{ color:#222; height:2.1rem; border-left:1px solid #399e5c; border-right:1px solid #399e5c}
+.gddgdouble input{ color:#222; height:2.1rem; border-left:1px solid #f40; border-right:1px solid #f40}
 .gddgFloat{ background:#f9f9f9; height:3.7rem; border-top:1px solid #b2b2b2; overflow:hidden; zoom:1}
 .gddgFloat a{ line-height:2.6rem; padding:0; text-align:center}
 .gddgFloat a.ssqdeleted{ width:25%}
@@ -794,7 +818,7 @@ span.lastspfvs{ width:20%;border-left:0 none;}
 .gddgxh3 .gddgxhList ul li em{ width:21.2%}
 .gddgxh4{ height:19.5rem; background-size:100% 19.5rem; -webkit-background-size:100% 19.5rem; -moz-background-size:100% 19.5rem}
 .gddgxh4 .gddgxhList ul li{ height:4.4rem}
-.gddgxh4 .gddgxhList ul li span{ height:3rem; font-size:.75rem; line-height:normal; color:#399e5c; background:#fff; box-shadow:0 .3rem 0 #c8c8c8; -webkit-box-shadow:0 .3rem 0 #c8c8c8; -moz-box-shadow:0 .3rem 0 #c8c8c8}
+.gddgxh4 .gddgxhList ul li span{ height:3rem; font-size:.75rem; line-height:normal; color:#f40; background:#fff; box-shadow:0 .3rem 0 #c8c8c8; -webkit-box-shadow:0 .3rem 0 #c8c8c8; -moz-box-shadow:0 .3rem 0 #c8c8c8}
 .gddgxh4 .gddgxhList ul li span cite{ display:block; font-size:.875rem; padding:.5rem 0 .3rem 0}
 .gddgxh4 .gddgxhList ul li span.cur{ background:#ffeb46}
 .gddghot p{ position:relative; float:left; width:29.6%; font-size:.75rem; color:#c3ffb5; height:5.7rem; margin:.5rem 5% 0 0; text-align:center}
@@ -816,9 +840,9 @@ span.lastspfvs{ width:20%;border-left:0 none;}
 .jjyhText article p span{ float:left}
 .jjyhText article p cite{ float:right; color:#8e8e8e; font-size:.75rem}
 .jjyhbuy{ padding:.63rem 3%; overflow:hidden; zoom:1}
-.jjyhbuy strong{ float:left; background:#399e5c; color:#fff; font-weight:normal; line-height:normal; width:29%; text-align:center; height:2.34rem; padding-top:.44rem; font-size:.75rem; border:.1rem solid #399e5c; border-radius:.2rem; -webkit-border-radius:.2rem; -moz-border-radius:.2rem}
+.jjyhbuy strong{ float:left; background:#f40; color:#fff; font-weight:normal; line-height:normal; width:29%; text-align:center; height:2.34rem; padding-top:.44rem; font-size:.75rem; border:.1rem solid #f40; border-radius:.2rem; -webkit-border-radius:.2rem; -moz-border-radius:.2rem}
 .jjyhbuy strong cite{ display:block; font-size:.81rem; padding-top:.2rem}
-.grayBg2 strong{ color:#399e5c; background:none}
+.grayBg2 strong{ color:#f40; background:none}
 .jjyhbuy i{ float:right; text-align:right; width:16%; font-size:.75rem; line-height:2.8rem; color:#db150b}
 .grayBg2 i{ color:#8e8e8e}
 .jjyhbuy .jjyhdouble{ width:50.5%; float:left; padding:.55rem 0 0 3%}
