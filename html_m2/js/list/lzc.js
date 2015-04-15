@@ -124,15 +124,16 @@ CP.LZC = function() {
         },
         init: function(tag) {
             var pid_ = ""; !! tag && (pid_ = "?pid=" + tag);
+//            var url = "/cpdata/omi/"+gid+"/"+pid+"/odds.xml?rnd="+Math.random();
             $.ajax({
-                url: CP.Data.apps + "/test/queryZucai.xml" + pid_,
+                url: CP.Data.apps + "/cpdata/omi/80/2015053/odds.xml?rnd="+Math.random(),
                 type: "get",
                 DataType: "XML",
                 success: function(xml) {
                     var severtime = new Date(arguments[2].getResponseHeader("Date"));
                     severtime = severtime.getFullYear() + "-" + CP.Util.pad(severtime.getMonth() + 1, 2) + "-" + CP.Util.pad(severtime.getDate(), 2);
-                    var R = $(xml).find("rows");
-                    var pid = R.attr("pid"); ! lzcData[pid] && (lzcData[pid] = {});
+                    var R = $(xml).find("row");
+                    var pid = $(xml).attr("pid"); ! lzcData[pid] && (lzcData[pid] = {});
                     lzcData[pid].pid = pid;
                     lzcData[pid].severtime = severtime;
                     lzcData[pid].et = R.attr("et");

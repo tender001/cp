@@ -267,8 +267,8 @@ CP.GDDG = function() {
         qihao_id: ""
     };
     var lotid = {
-        sf: "72",
-        rq: "90",
+        sf: "90",
+        rq: "72",
         bf: "91",
         jq: "93",
         bqc: "92"
@@ -330,7 +330,7 @@ CP.GDDG = function() {
         },
         init: function() {
             $.ajax({
-                url: CP.Data.data + "/test/app/jczq/new_jczq_hh.xml",
+                url: CP.Data.data + "/cpdata/match/jczq/jczq_hh.xml",
                 type: "get",
                 dataType: "xml",
                 success: function(xml) {
@@ -360,13 +360,14 @@ CP.GDDG = function() {
                         var close = $(this).attr("close");
                         var isale = $(this).attr("isale");
                         var spf = $(this).attr("spf");
-                        var rqspf = $(this).attr("rqspf");
+                        var rqspf = $(this).attr("rspf");
                         var cbf = $(this).attr("cbf");
                         var jqs = $(this).attr("jqs");
                         var bqc1 = $(this).attr("bqc");
-                        var spfscale = $(this).attr("spfscale");
-                        var rqspfscale = $(this).attr("rqspfscale");
-                        if ((512 & isale) > 0) {
+                        var spfscale = "--,--,--";
+                        var rqspfscale = "--,--,--";
+                        var idanguan = $(this).attr("idanguan");
+                        if (((idanguan*1) & 1 << 4) == (1 << 4)) {
                             sf.itemid = itemid;
                             sf.hn = hn;
                             sf.gn = gn;
@@ -377,7 +378,7 @@ CP.GDDG = function() {
                             html_spf += "<li><div><cite>" + hn + "</cite><i>vs</i><em>" + gn + "</em></div><p>" + mname + " " + mt + "开赛</p></li>";
                             spf_a++
                         }
-                        if ((32 & isale) > 0) {
+                        if (((idanguan*1) & 1 << 3) == (1 << 3)) {
                             rq.itemid = itemid;
                             rq.hn = hn;
                             rq.gn = gn;
@@ -389,7 +390,7 @@ CP.GDDG = function() {
                             html_rq += "<li><div><cite>" + hn + "</cite><i>vs</i><em>" + gn + "</em></div><p>" + mname + " " + mt + "开赛</p></li>";
                             rq_a++
                         }
-                        if ((64 & isale) > 0) {
+                        if (((idanguan*1) & 1 << 1) == (1 << 1)) {
                             bf.itemid = itemid;
                             bf.hn = hn;
                             bf.gn = gn;
@@ -399,7 +400,7 @@ CP.GDDG = function() {
                             html_bf += "<li><div><cite>" + hn + "</cite><i>vs</i><em>" + gn + "</em></div><p>" + mname + " " + mt + "开赛</p></li>";
                             bf_a++
                         }
-                        if ((256 & isale) > 0) {
+                        if (((idanguan*1) & 1 << 4) == (1 << 4)) {
                             jq.itemid = itemid;
                             jq.hn = hn;
                             jq.gn = gn;
@@ -409,7 +410,7 @@ CP.GDDG = function() {
                             html_jq += "<li><div><cite>" + hn + "</cite><i>vs</i><em>" + gn + "</em></div><p>" + mname + " " + mt + "开赛</p></li>";
                             jq_a++
                         }
-                        if ((128 & isale) > 0) {
+                        if (((idanguan*1) & 1 << 1) == (1 << 1)) {
                             bqc.itemid = itemid;
                             bqc.hn = hn;
                             bqc.gn = gn;
@@ -685,12 +686,12 @@ CP.GDDG = function() {
             c1 = "";
             if (t == "bf") {
                 $(".bfPop").find(".cur").each(function() {
-                    c += F[t] + "|" + t1 + "=" + $(this).attr("v") + "|1*1_" + bs + ";";
+                    c += F[t] + "|" + t1 + "=" + $(this).attr("v") + "|1*1;";
                     c1 += $(this).attr("v") + ","
                 })
             } else {
                 $("#dg_" + t).find(".tzxx .cur").each(function() {
-                    c += F[t] + "|" + t1 + "=" + $(this).attr("v") + "|1*1_" + bs + ";";
+                    c += F[t] + "|" + t1 + "=" + $(this).attr("v") + "|1*1;";
                     c1 += $(this).attr("v") + ","
                 })
             }
@@ -733,23 +734,23 @@ CP.GDDG = function() {
             switch (t) {
             case 1:
                 buy = {
-                    payUrl: "/trade/jcast.go",
+                    payUrl: "/phpt/t.phpx?fid=jcast",
                     gid: g.loty_id,
                     pid: g.qihao_id,
                     codes: g.codes,
-                    muli: g.bet,
+                    muli: $("#money input").val() / 2,
                     countMoney: g.amount,
                     orderType: "dg"
                 };
                 break;
             case 2:
                 buy = {
-                    payUrl: "/trade/jcast.go",
+                    payUrl: "/phpt/t.phpx?fid=jcast",
                     gid: g.loty_id,
                     pid: g.qihao_id,
                     codes: g.codes,
-                    muli: g.bet,
-                    desc: $("#hmDesc").val() || "快乐购彩、欧耶！",
+                    muli: $("#money input").val() / 2,
+                    desc: $("#hmDesc").val() || "触屏版合买！",
                     countMoney: g.amount,
                     bnum: $("#rg").val(),
                     pnum: $("#bd").val(),
@@ -802,6 +803,7 @@ CP.GDDG = function() {
                     g.loty_id = lotid[t];
                     g.amount = dom.buyFooter.find("a:eq(1)").attr("v");
                     g.codes = o.href_();
+                    
                     if (Q) {
                         window.location.href = "#type=fun&fun=CP.GDDG.doHm"
                     } else {
@@ -810,6 +812,8 @@ CP.GDDG = function() {
                 }
             }
         },
+        
+
         pay: function(opt) {
             var opt_ = opt.payPara || {};
             if (opt_.orderType == "dg") {
@@ -822,16 +826,16 @@ CP.GDDG = function() {
                     content: "自购",
                     title: "自购",
                     ishm: 0,
-                    sgtypename: "单关固赔",
-                    extendtype: "13",
                     money: opt_.countMoney,
                     ffag: 0,
-                    muli: 1,
+                    muli: opt_.muli,
                     type: 0,
                     bnum: 1,
                     tnum: 1,
                     oflag: 0,
-                    isshow: 0
+                    source:100
+                    
+     
                 }
             } else if (opt.payPara.orderType == "hm") {
                 data = {
@@ -843,11 +847,9 @@ CP.GDDG = function() {
                     desc: opt_.desc,
                     title: "快乐购彩",
                     ishm: 1,
-                    sgtypename: "单关固赔",
-                    extendtype: 13,
                     money: opt_.countMoney,
                     fflag: 0,
-                    muli: 1,
+                    muli: opt_.muli,
                     type: "1",
                     bnum: opt_.bnum,
                     tnum: opt_.countMoney,
@@ -856,6 +858,7 @@ CP.GDDG = function() {
                     pnum: opt_.pnum,
                     wrate: opt_.wrate,
                     isshow: 0,
+                    source:100,
                     cupacketid: opt.cupacketid,
                     redpacket_money: opt.redpacket_money
                 }
@@ -876,9 +879,10 @@ CP.GDDG = function() {
                         } else {
                             projid = r.attr("projid")
                         }
+                       
                         window.location.replace("#type=url&p=user/success.html?projid=" + projid)
                     } else {
-                        alert(desc)
+                    	alert(desc)
                     }
                 }
             })
