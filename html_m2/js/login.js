@@ -196,8 +196,8 @@ function UserInfo() {
          			}
          		 }  
 				
-				$("#isLogin").html('<a class="nav-list" href="/user/login.html"><h3 class="login"></h3><p>登录</p></a>')
-			    $("#headlogintd").html("<a href=\"/user/account.html\" id=\"usname\">" + name + "</a>&nbsp;<a onclick=\"location.href='/user/account.html'\" class='mBTN'>账户</a><a onclick='logout()' class='mBTN'>退出</a>");
+//				$("#isLogin").html('<a class="nav-list" href="/user/login.html"><h3 class="login"></h3><p>登录</p></a>')
+//			    $("#headlogintd").html("<a href=\"/user/account.html\" id=\"usname\">" + name + "</a>&nbsp;<a onclick=\"location.href='/user/account.html'\" class='mBTN'>账户</a><a onclick='logout()' class='mBTN'>退出</a>");
 			    closeLogin();	 
         	}else{
         		showTips(d.Resp.desc);

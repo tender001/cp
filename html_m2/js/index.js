@@ -1942,7 +1942,10 @@ var TopAnch = function() {
                 
             }
             jQuery.extend(confTemp, obj);
-            $dom.title.off().html(confTemp.title+'<s id="chowanfa"><cite></cite></s>');
+            if(obj.headerSelect!=undefined){
+            	confTemp.title=confTemp.title+'<s id="chowanfa"><cite></cite></s>';
+            }
+            $dom.title.off().html(confTemp.title);
             document.title = confTemp.title;
             $dom.prev[!confTemp.prevShow ? "hide": "show"]();
             $dom.next[!obj.nextShow ? "hide": "show"]();
@@ -2010,8 +2013,10 @@ var TopAnch = function() {
                     if ($(this).hasClass("cur")) {
                         return
                     }
+                    
                     $(this).addClass("cur").siblings().removeClass("cur");
-                    obj.headerSelect[0].fun($(this).index())
+                    obj.headerSelect[0].fun($(this).index());
+                    $("#fcHeader").removeClass("h1Down");
                 })
             } else {
                 $("#box_header").removeClass("hmHeader")
@@ -2236,7 +2241,6 @@ CP.Home = function() {
             },
             isBack: true
         });
-        $("#chowanfa").hide();
         $("#login").off().keydown(function(e) {
             if (e.which == 13) {
                 b.MiniLogin();
