@@ -27,7 +27,7 @@ hr.top-margin{border:0 none}
 /*.go-top{position: relative}
 .go-top-ico{position: absolute;top: 0.78em;right: 1em;display:block;width: 25px;height: 25px;background-position:-2px -192px;background-size: 33px}*/
 /*数字彩*/
-.ball b{display:inline-block;margin-left:4px;width: 30px;height: 30px;line-height:30px;font-size:1.35em;letter-spacing:0.05em;text-align:center;color:#fff;border-radius:30px;background-color: #f40}
+.ball b{display:inline-block;width:1rem;height:1rem;line-height:1rem;margin-left:4px;padding:0.3rem;text-align:center;color:#fff;border-radius:30px;background-color: #f40}
 .ball .blue{background-color: #64a6ea}
 /*右-点击*/
 .list .ico-click i{margin-top:0.91em;-webkit-transform: rotate(45deg);-moz-transform: rotate(45deg);-o-transform: rotate(45deg);transform:rotate(45deg)}
