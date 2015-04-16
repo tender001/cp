@@ -124,7 +124,10 @@ function betconfirm(){
 function payconfirm(){
 //	var expect=$("#expect").val();
 	var hidTypeName=$("#hidTypeName").val();
-	 
+	if(listinfo.length<MinLen){
+		showTips('至少选择'+MinLen+'场次投注!');
+		return;
+	} 
      
 	$(".tz-pay").html('<p>'+hidTypeName+' </p><p>应付金额<em>'+amount+'</em>元</p>')
 	ispay(true);
