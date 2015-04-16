@@ -233,7 +233,7 @@ input{-webkit-tap-highlight-color:rgba(255,255,255,0);font-family:"微软雅黑"
 .list-r .tz-true:first-of-type{margin:0}
 .list-r .tz-true-middle{width:5em}
 .tz-true em{display: block;line-height:1.8em;text-align:center;color:#f40;border: 1px solid #f40;border-radius: 0.5em}
-.tz-true em.cur{background-color: #f40;color:#fff !important}
+.tz-true em.cur{background-color: #f40 !important;color:#fff !important}
 .tz-true em.cur i{color:#fff !important}
 .tz-true span{display: block;line-height: 2em;color: #aaa;text-align: center}
 .handBtn{ width:46%; line-height:2.1em; text-align:center; color:#f6851f;background:none; font-size:1.3em; border:1px solid #e2e2e2; background:#fff; font-weight:bold; margin:.5rem 0; border-radius:.2rem; -webkit-border-radius:.2rem; -moz-border-radius:.2rem}
@@ -293,7 +293,7 @@ input{-webkit-tap-highlight-color:rgba(255,255,255,0);font-family:"微软雅黑"
 .hh-more{position:absolute;top:26px;left:86%;width:1em;padding:24px 0.8em;border:1px solid #ddd;background-color:#fff}
 .up-jc .spfzpk em{line-height:2.3em;border-radius:0}
 .up-jc .tz-true{margin:0 -1px 0 0 !important}
-.up-jc .tz-true em{padding:0.25em 0;font-size:1.13em;color:#333;border-radius:0;border-color:#ddd}
+.up-jc .tz-true em{line-height:1.6em;padding:0.25em 0;font-size:1.13em;color:#333;border-radius:0;border-color:#ddd;background-color:#fff}
 .up-sp{display:block;font-size:12px;color:#bbb}
 .up-jc-jqs .spfzpk{padding-top:5px}
 .up-jc-jqs .spfzpk span{border-left-width:1px;margin:-1px -1px 0 0}
