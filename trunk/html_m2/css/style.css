@@ -229,7 +229,7 @@ input{-webkit-tap-highlight-color:rgba(255,255,255,0);font-family:"微软雅黑"
 .tz-list .list-l *{display: block;height:1.8em;line-height: 1.8em;overflow: hidden}
 .list-l i{font-size:0.8em;color: #aaa;white-space: normal}
 .tz-list .list-r{float:right;display: table;width:81.8%;box-sizing:border-box}
-.list-r .tz-true{float:left;width: 35.7%;margin-left:0.3em}
+.list-r .tz-true{float:left;width: 37.5%;margin-left:0.3em}
 .list-r .tz-true:first-of-type{margin:0}
 .list-r .tz-true-middle{width:5em}
 .tz-true em{display: block;line-height:1.8em;text-align:center;color:#f40;border: 1px solid #f40;border-radius: 0.5em}
