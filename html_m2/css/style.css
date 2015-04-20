@@ -469,15 +469,15 @@ input{-webkit-tap-highlight-color:rgba(255,255,255,0);font-family:"微软雅黑"
 .user-setting a{color: #333}
 .user-setting .ico-click{height:2.5em;line-height:2.5em;padding: 0.5em 0;border-bottom:1px solid #e2e2e2;background-color: #fff;overflow: hidden}
 .user-setting .list-4{margin-bottom: 10px;border-bottom: 0}
-.set-icon{float:left;display:inline-block;width:2.5rem;height:1.8rem;margin:0.2rem 0.6rem 0;background: url("/img/set-icon.png") no-repeat;background-size:35px 286px}
-.set-icon1{background-position: 0 -1px}
-.set-icon2{background-position: 0 -33px}
-.set-icon3{background-position: 0 -70px}
-.set-icon4{background-position: 0 -112px}
-.set-icon5{background-position: 0 -151px}
-.set-icon6{background-position: 0 -188px}
-.set-icon7{background-position: 0 -222px}
-.set-icon8{background-position: 0 -255px}
+.set-icon{float:left;display:inline-block;width:2.5rem;height:1.8rem;margin:0.2rem 0.6rem 0;background: url("/img/set-icon.png") no-repeat;background-size:100%}
+.set-icon1{background-position:0 0}
+.set-icon2{background-position:0 12%}
+.set-icon3{background-position:0 26.6%}
+.set-icon4{background-position:0 43%}
+.set-icon5{background-position:0 59%}
+.set-icon6{background-position:0 73%}
+.set-icon7{background-position:0 84.8%}
+.set-icon8{background-position:0 98.3%}
 .user-padding{margin-top:2.5rem;padding: 1em 2% 0;font-size: 1.14em;/*background-color: #f0f0f0*/}
 .user-padding p{color: #666}
 .user-padding .mar{margin-top:0.7em}
