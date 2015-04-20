@@ -8,7 +8,13 @@ rec = function(pn){
 	var etime = year+"-"+month+"-"+day;
 	var sd =30;
 	var date = now.dateadd('d', 0-parseInt(sd));
-	var stime = date.format("YY-MM-DD");
+	var stime = date.getFullYear()+"-"+(date.getMonth()*1+1)+"-"+date.getDate();
+	
+	
+	
+
+	
+	
 	
 	var _url = $_user.url.touzhu;
 	var data = $_user.key.stime + "=" + stime + "&" + $_user.key.etime + "=" + etime;
@@ -105,9 +111,9 @@ keeprec=function(pn){
 	var month=now.getMonth()+1;      
 	var day=now.getDate();
 	var etime = year+"-"+month+"-"+day;
-	var sd = 30;
+	var sd =30;
 	var date = now.dateadd('d', 0-parseInt(sd));
-	var stime = date.format("YY-MM-DD");
+	var stime = date.getFullYear()+"-"+(date.getMonth()*1+1)+"-"+date.getDate();
 	var qtype = $("#type").val();
 	var data = $_user.key.stime + "=" + stime + "&" + $_user.key.etime + "=" + etime;
 	var url = $_user.url.chase;
@@ -192,9 +198,9 @@ acc = function(pn){
 	var month=now.getMonth()+1;      
 	var day=now.getDate();
 	var etime = year+"-"+month+"-"+day;
-	var sd = 7;
+	var sd =7;
 	var date = now.dateadd('d', 0-parseInt(sd));
-	var stime = date.format("YY-MM-DD");
+	var stime = date.getFullYear()+"-"+(date.getMonth()*1+1)+"-"+date.getDate();
 	var data = $_user.key.stime+"=" + stime + "&"+$_user.key.etime+"=" + etime;
 //	if (tid != "-1"){
 //		data += "&tid="+tid; 
