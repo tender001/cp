@@ -3,7 +3,7 @@ CP.JC = function() {
     var start_ev = hasTouch ? "touchstart": "mousedown";
     var end_ev = hasTouch ? "touchend": "mouseup";
     var lotteryType = $("#content_home").children().eq(0).attr("id").replace("buy_", "");
-    var lotteryPlayName = lotteryType == "jclq" ? "hh": "spf";
+    var lotteryPlayName = "hh";
     var $item = $("#item");
     var $dom = {
         $dobuy: $("#dobuy"),
@@ -623,7 +623,7 @@ CP.JC = function() {
 //                                    _out.push('<p class="spfpl"><span>赔率' + sp_[lotteryType == "jczq" ? 0 : 2] + '</span><span class="spfvs">赔率' + sp_[1] + "</span><span>赔率" + sp_[lotteryType == "jczq" ? 2 : 0] + "</span></p></li>");
                                     _out.push('<div class="dgtop"></div>')
                                 } else {
-                                	 _out.push("<span class=wang-ball my-data=3 dg=dg><em>" + t[n].hn + "" + rq_ + '</em><cite>胜&nbsp;' + sp_[lotteryType == "jczq" ? 0 : 2] + '</cite></span><span class="spfvs wang-ball" my-data=1 dg=dg><em>VS</em><cite>平&nbsp;'+ sp_[1] + '</cite></span><span class=wang-ball my-data=0 dg=dg><em>' + t[n].gn + "</em><cite>胜&nbsp;"+ sp_[lotteryType == "jczq" ? 2 : 0] + "</cite></span></p>");
+                                	 _out.push("<span class=wang-ball my-data=3 ><em>" + t[n].hn + "" + rq_ + '</em><cite>胜&nbsp;' + sp_[lotteryType == "jczq" ? 0 : 2] + '</cite></span><span class="spfvs wang-ball" my-data=1 ><em>VS</em><cite>平&nbsp;'+ sp_[1] + '</cite></span><span class=wang-ball my-data=0 ><em>' + t[n].gn + "</em><cite>胜&nbsp;"+ sp_[lotteryType == "jczq" ? 2 : 0] + "</cite></span></p>");
                                 }
                                 _out.push("</ul>")
                             }
@@ -690,7 +690,7 @@ CP.JC = function() {
                                 if (((t[n].isale*1) & 1 << 4) == (1 << 4)) {
                                     _out.push("<span class=wang-ball my-data=3>胜 " + sp_[0] + "</span><span class='wang-ball spfvs' my-data=1>平 " + sp_[1] + "</span><span class=wang-ball my-data=0>胜 " + sp_[2] + "</span>")
                                 } else {
-                                    _out.push("<span>--</span><span>--</span><span>--</span>")
+                                    _out.push("<span>--</span><span class='wang-ball spfvs'>--</span><span>--</span>")
                                 }
                                 _out.push("</p>");
                                 _out.push('<p class="spfzpk"><em class="rq">让球</em>');
@@ -698,7 +698,7 @@ CP.JC = function() {
                                 if (((t[n].isale*1) & 1 << 0) == (1 << 0)) {
                                     _out.push("<span class=wang-ball my-data=3>胜 " + sp_[0] + "</span><span class='wang-ball spfvs' my-data=1>平 " + sp_[1] + "</span><span class=wang-ball my-data=0>胜 " + sp_[2] + "</span>")
                                 } else {
-                                    _out.push("<span>--</span><span>--</span><span>--</span>")
+                                    _out.push("<span>--</span><span class='wang-ball spfvs'>--</span><span>--</span>")
                                 }
                                 _out.push("</p>");
                                 _out.push('<div class="hhmore wei-ball">更多玩法</div>');
@@ -747,7 +747,7 @@ CP.JC = function() {
 //                                    _out.push('<p class="spfpl"><span>赔率' + sp_[0] + "</span><span>赔率" + sp_[1] + "</span></p></li>");
                                     _out.push('<div class="dgtop"></div>')
                                 } else {
-                                	_out.push("<span class=wang-ball my-data=0 dg=dg><em>" + t[n].gn + "</em><cite>胜&nbsp;"+ sp_[0] +"</cite></span><b>VS</b><span class=wang-ball my-data=3 dg=dg><em>" + t[n].hn + rq_ + "</em><cite>胜&nbsp;"+ sp_[1] +"</cite></span></p>");
+                                	_out.push("<span class=wang-ball my-data=0 ><em>" + t[n].gn + "</em><cite>胜&nbsp;"+ sp_[0] +"</cite></span><b>VS</b><span class=wang-ball my-data=3 ><em>" + t[n].hn + rq_ + "</em><cite>胜&nbsp;"+ sp_[1] +"</cite></span></p>");
 //                                    _out.push('<p class="spfpl"><span>赔率' + sp_[0] + "</span><span>赔率" + sp_[1] + "</span></p></li>")
                                 }
                                 _out.push("</ul>")

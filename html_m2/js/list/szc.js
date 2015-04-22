@@ -280,7 +280,7 @@ CP.SZC = function() {
             switch (t) {
             case 1:
                 buy = {
-                    payUrl: "/trade/pcast.go",
+                    payUrl: "/phpt/t.phpx?fid=pcast",
                     gid: g.loty_id,
                     pid: g.qihao_id,
                     codes: code,
@@ -291,12 +291,12 @@ CP.SZC = function() {
                 break;
             case 2:
                 buy = {
-                    payUrl: "/trade/pcast.go",
+                    payUrl: "/phpt/t.phpx?fid=pcast",
                     gid: g.loty_id,
                     pid: g.qihao_id,
                     codes: code,
                     muli: g.beishu,
-                    desc: $("#hmDesc").val() || "快乐购彩、欧耶！",
+                    desc: $("#hmDesc").val() || "触屏版合买！",
                     countMoney: g.totalMoney,
                     bnum: $("#rg").val(),
                     pnum: $("#bd").val(),
@@ -315,7 +315,7 @@ CP.SZC = function() {
                 pid = pid.substring(0, pid.length - 1);
                 muli = muli.substring(0, muli.length - 1);
                 buy = {
-                    payUrl: "/trade/zcast.go",
+                    payUrl: "/phpt/t.phpx?fid=pcast",
                     gid: g.loty_id,
                     pid: pid,
                     codes: code,
@@ -397,7 +397,7 @@ CP.SZC = function() {
             if (callback) {
                 $.ajax({
                     url: CP.Data.apps + "/test/01info.xml?gid=" + g.loty_id,
-                    dataType: "xml",
+                	 dataType : "xml",
                     cache: true,
                     success: function(xml) {
                         var data = {},
@@ -409,40 +409,40 @@ CP.SZC = function() {
                         data.tn = R.attr("tn");
                         data.now = new Date(arguments[2].getResponseHeader("Date"));
                         o.renderQihao(data);
-                        var rp = R.find("rowp");
-                        rp.each(function(a) {
-                            var t = {};
-                            t.pid = $(this).attr("pid");
-                            t.acode = $(this).attr("acode");
-                            t.tn = $(this).attr("tn");
-                            issueInfo[a] = t
-                        });
-                        if (lotteryType == "ssq" || lotteryType == "dlt") {
-                            var r = R.find("row");
-                            r.each(function() {
-                                var color = $(this).attr("color");
-                                var curyl = $(this).attr("curyl");
-                                if (color == "red") {
-                                    miss_.red = curyl
-                                } else {
-                                    miss_.blue = curyl
-                                }
-                            });
-                            o.miss(miss_);
-                            $("#yl").bind(start_ev,
-                            function() {
-                                if ($(this).find(".omitico").hasClass("omitico2")) {
-                                    $(this).removeClass("red").addClass("gray");
-                                    $dom.$ballRed.find(".omitnum").hide();
-                                    $dom.$ballBlue.find(".omitnum").hide()
-                                } else {
-                                    $(this).removeClass("gray").addClass("red");
-                                    $dom.$ballRed.find(".omitnum").show();
-                                    $dom.$ballBlue.find(".omitnum").show()
-                                }
-                                $(this).find(".omitico").toggleClass("omitico2")
-                            })
-                        }
+//                        var rp = R.find("rowp");
+//                        rp.each(function(a) {
+//                            var t = {};
+//                            t.pid = $(this).attr("pid");
+//                            t.acode = $(this).attr("acode");
+//                            t.tn = $(this).attr("tn");
+//                            issueInfo[a] = t
+//                        });
+//                        if (lotteryType == "ssq" || lotteryType == "dlt") {
+//                            var r = R.find("row");
+//                            r.each(function() {
+//                                var color = $(this).attr("color");
+//                                var curyl = $(this).attr("curyl");
+//                                if (color == "red") {
+//                                    miss_.red = curyl
+//                                } else {
+//                                    miss_.blue = curyl
+//                                }
+//                            });
+//                            o.miss(miss_);
+//                            $("#yl").bind(start_ev,
+//                            function() {
+//                                if ($(this).find(".omitico").hasClass("omitico2")) {
+//                                    $(this).removeClass("red").addClass("gray");
+//                                    $dom.$ballRed.find(".omitnum").hide();
+//                                    $dom.$ballBlue.find(".omitnum").hide()
+//                                } else {
+//                                    $(this).removeClass("gray").addClass("red");
+//                                    $dom.$ballRed.find(".omitnum").show();
+//                                    $dom.$ballBlue.find(".omitnum").show()
+//                                }
+//                                $(this).find(".omitico").toggleClass("omitico2")
+//                            })
+//                        }
                         callback(issueInfo)
                     },
                     error: function() {
