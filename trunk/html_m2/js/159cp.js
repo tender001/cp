@@ -479,6 +479,504 @@ $_sys_getwininfo = function(lotid, wininfo) {
 	}	
 	return tmp;
 };
+$_sys.getplayname = function(lotid, playid, castdef) {
+	var s = "";	
+
+	switch (lotid) {
+	case 84:
+		s = "胜负过关";
+		break;
+	case 85:
+		s = "让球胜平负";
+		break;
+	case 86:
+		s = "比分";
+		break;
+	case 87:
+		s = "半全场";
+		break;
+	case 88:
+		s = "上下单双";
+		break;	
+	case 89:
+		s = "总进球数";
+		break;			
+	case 90:
+		s = "胜平负";
+		break;
+	case 72:
+		s = "让球胜平负";
+		break;
+	case 91:
+		s = "比分";
+		break;
+	case 92:
+		s = "半全场";
+		break;
+	case 93:
+		s = "总进球数";
+		break;
+	case 4:
+		switch (playid) {
+		case 1:
+			s = "五星";
+			break;
+		case 3:
+			s = "三星";
+			break;
+		case 4:
+			s = "两星";
+			break;
+		case 5:
+			s = "一星";
+			break;
+		case 6:
+			s = "大小单双";
+			break;
+		case 7:
+			s = "二星组选";
+			break;
+		case 12:
+			s = "五星通选";
+			break;
+		case 13:
+			s = "五星复选";
+			break;
+		case 15:
+			s = "三星复选";
+			break;
+		case 16:
+			s = "两星复选";
+			break;
+		}
+		break;
+	case 20:
+		switch (playid) {
+		case 1:
+			s = "一星";
+			break;
+		case 2:
+			s = "二星";
+			break;
+		case 3:
+			s = "三星";
+			break;
+		case 4:
+			s = "四星";
+			break;
+		case 5:
+			s = "五星";
+			break;
+		case 6:
+			s = "二星组合";
+			break;
+		case 7:
+			s = "三星组合";
+			break;
+		case 8:
+			s = "四星组合";
+			break;
+		case 9:
+			s = "五星组合";
+			break;
+		case 10:
+			if(castdef=="1"){
+				s = "二星组选单式";
+			}else{
+				s = "二星组选包号";
+			}
+			break;
+		case 11:
+			s = "大小单双";
+			break;
+		case 12:
+			s = "五星通选";
+			break;
+		case 13:
+			s = "任选一";
+			break;
+		case 14:
+			s = "任选二";
+			break;
+		case 15:
+			if(castdef=="1"){
+				s = "三星组三单式";
+			}else{
+				s = "三星组三包号";
+			}
+			break;
+		case 16:
+			if(castdef=="1"){
+				s = "三星组六单式";
+			}else{
+				s = "三星组六包号";
+			}
+			break;
+		}
+		break;
+	case 3:
+		switch (castdef) {
+		case 1:
+		case 2:
+		case 3:
+		case 5:
+			if(playid=="1"){
+				s = "直选";
+			}else if(playid=="2"){
+				s = "组三";
+			}else{
+				s = "组六";
+			}
+			break;
+		case 4:
+			if(playid=="1"){
+				s = "直选和值";
+			}else{
+				s = "组选和值";
+			}
+			break;
+		}
+		break;
+	case 53://castdef---playid
+		switch (castdef) {
+		case 1:
+		case 2:
+		case 3:
+		case 5:
+			if(playid=="1"){
+				s = "直选";
+			}else if(playid=="2"){
+				s = "组三";
+			}else{
+				s = "组六";
+			}
+			break;
+		case 4:
+			if(playid=="1"){
+				s = "直选和值";
+			}else if(playid=="2"){
+				s = "组三和值";
+			}else{
+				s = "组六和值";
+			}
+			break;
+		}
+		break;
+	case 54:
+	case 55:
+	case 56:
+		switch (playid) {
+		case 1:
+			s = "前一";
+			break;
+		case 2:
+			s = "任选二";
+			break;
+		case 3:
+			s = "任选三";
+			break;
+		case 4:
+			s = "任选四";
+			break;
+		case 5:
+			s = "任选五";
+			break;
+		case 6:
+			s = "任选六";
+			break;
+		case 7:
+			s = "任选七";
+			break;
+		case 8:
+			s = "任选八";
+			break;
+		case 9:
+			s = "前二直选";
+			break;
+		case 10:
+			s = "前三直选";
+			break;
+		case 11:
+			s = "前二组选";
+			break;
+		case 12:
+			s = "前三组选";
+			break;
+		}
+		break;
+	case 58:
+		switch (playid) {
+		case 1:
+			s = "任选一";
+			break;
+		case 2:
+			s = "任选二";
+			break;
+		case 3:
+			s = "任选三";
+			break;
+		case 4:
+			s = "任选四";
+			break;
+		case 5:
+			s = "任选五";
+			break;
+		case 6:
+			s = "任选六";
+			break;
+		case 7:
+			s = "同花";
+			break;
+		case 8:
+			s = "同花顺";
+			break;
+		case 9:
+			s = "顺子";
+			break;
+		case 10:
+			s = "豹子";
+			break;
+		case 11:
+			s = "对子";
+			break;
+		case 12:
+			s = "包选";
+			break;
+		}
+		break;
+	}
+	return s;
+};
+$_sys.showcode = function (lotid,ccodes,oc){
+	var html="";
+	var codes = ccodes.split(";");
+	for ( var i = 0; i < codes.length; i++) {
+		if(lotid==70 ||lotid==90 ||lotid==91 ||lotid==92 ||lotid==93 || lotid==85 ||lotid==86 ||lotid==87 ||lotid==88 ||lotid==89){
+			tmpCode = codes[i].split("|");
+			html += '[' + $_sys.getplayname(lotid, lotid, lotid) + ']|' + tmpCode[1]+'|'+tmpCode[2].replaceAll("\\*","串");
+		}else{
+			tmpCode = codes[i].split(":");
+			pm = tmpCode[1];
+			cm = tmpCode[2];
+			if (lotid=="04"){
+				html += '[' + $_sys.getplayname(lotid, pm, cm) + ']';
+				if(Y.getInt(pm)==6){
+					//大小单双：大用2 表示,小用1 表示,单用5 表示,双用4 表示
+					var tc = tmpCode[0].split(",");
+					for(var ii=0; ii<tc.length; ii++){
+						html +=tc[ii].replace("2","大").replace("1","小").replace("5","单").replace("4","双")+" ";
+					}
+				}else{
+					html +=tmpCode[0];
+				}
+			}else if (lotid=="20"){
+				html += '[' + $_sys.getplayname(lotid, pm, cm) + ']';
+				if(Y.getInt(pm)==11){
+					//大小单双：大用2 表示,小用1 表示,单用5 表示,双用4 表示
+					var tc = tmpCode[0].split(",");
+					for(var ii=0; ii<tc.length; ii++){
+						html +=tc[ii].replace("2","大").replace("1","小").replace("5","单").replace("4","双")+" ";
+					}
+				}else{
+					html +=tmpCode[0];
+				}
+			}else if ( lotid=="55" || lotid=="03" || lotid=="53"){
+//				tmpCode[0]=tmpCode[0].replaceAll(",", "&nbsp;|");
+//				html += '[' + $_sys.getplayname(lotid, pm, cm) + ']' + tmpCode[0];
+				html += '[' + $_sys.getplayname(lotid, pm, cm) + ']' + matchopencode2(lotid, pm, tmpCode[0], oc);
+			}else if (lotid=="01" || lotid=="50" || lotid=="07"){
+				var a,b;
+				html += '<p class="gray ">'+matchopencode(lotid, pm, tmpCode[0], oc)+'</p>';
+			}else if(lotid=="51"|| lotid=="52"){
+				html += matchopencode2(lotid, pm, tmpCode[0], oc);
+			}else if(lotid=="54"|| lotid=="56"){
+//				tmpCode[0]=tmpCode[0].replaceAll(",", "&nbsp;|");
+				if($_sys.getplayname(lotid, pm, cm).indexOf("任")!=-1){
+					html +=  matchopencode(lotid, pm, tmpCode[0], oc);
+				}else{
+					html +=  matchopencode2(lotid, pm, tmpCode[0], oc);
+				}
+				
+			}else if(lotid=="58"){
+					html +=  matchopencode2(lotid, pm, tmpCode[0], oc);
+				
+			}else{
+				html += tmpCode[0];
+			}
+		}	
+		if (i != codes.length - 1) {
+			html += '';
+		}
+	}
+	return html;
+};
+var matchopencode2 = function (lotid, pm, cd, win){
+	var rc = "";
+	var wf = $_sys.getplayname(lotid, pm, 0);
+	if(pm=="12"&&lotid=='58'){
+		  if(cd=="07"){
+			  wf="同花包选";
+		  }else if(cd=="08"){
+			  wf="同花顺包选";
+		  }else if(cd=="09"){
+			  wf="顺子包选";
+		  }else if(cd=="10"){
+			  wf="豹子包选";
+		  }else if(cd=="11"){
+			  wf="对子包选";
+		  }
+		  cd = '[' + wf + ']' ;
+	}else if(wf!=""){
+		if(lotid=="58"){
+			if(wf.indexOf("任")!=-1){
+				cd=cd.replace('01', 'A').replace('11', 'J').replace('12', 'Q').replace('13', 'K');
+			}else if(pm=="07"){
+				cd=cd.replace('01', '黑桃').replace('02', '红桃').replace('03', '梅花').replace('04', '方片');
+			}else if(pm=="08"){
+				cd=cd.replace('01', '黑桃').replace('02', '红桃').replace('03', '梅花').replace('04', '方片');
+			}else if(pm=="09"){
+				cd=cd.replace('10', '10JQ').replace('01', 'A23').replace('02', '234').replace('03', '345')
+              .replace('04', '456').replace('05', '567').replace('06', '678').replace('07', '789').replace('08', '8910').replace('09', '910J')
+              .replace('11', 'JQK').replace('12', 'QKA');
+			}else if(pm=="10"){
+				cd=cd.replace('01', 'AAA').replace('02', '222').replace('03', '333').replace('04', '444')
+              .replace('05', '555').replace('06', '666').replace('07', '777').replace('08', '888').replace('09', '999')
+              .replace('10', '101010').replace('11', 'JJJ').replace('12', 'QQQ').replace('13', 'KKK');
+			}else if(pm=="11"){
+				cd=cd.replace('01', 'AA').replace('02', '22').replace('03', '33').replace('04', '44')
+              .replace('05', '55').replace('06', '66').replace('07', '77').replace('08', '88').replace('09', '99')
+              .replace('10', '1010').replace('11', 'JJ').replace('12', 'QQ').replace('13', 'KK');
+			}
+		}
+		cd = '[' + wf + ']&nbsp;&nbsp;' + cd;
+	}
+	if(win == '' || win == undefined){
+		rc = cd;
+	}else{
+	rc+=arrmatch2(cd, win, "red", ",");
+
+	
+//	rc=rc.replace("|", "&nbsp;┃&nbsp;");
+	}
+	if(lotid=="58"){}else{
+		rc=rc.replaceAll(",", "&nbsp;|&nbsp;");
+	}
+	
+	return '<p class="gray ">'+rc+'</p>';
+	
+}
+
+var matchopencode = function (lotid, pm, cd, win){
+	var rc = "";
+	var wf = $_sys.getplayname(lotid, pm, 0);
+	if(win == '' || win == undefined){
+		if(cd.indexOf("$")!=-1 && cd.indexOf("|")!=-1){
+			var dt = cd.split("|")[0].split("$");
+			rc+= "[前胆:" + dt[0] +"]&nbsp;&nbsp;";
+			rc+= "[前拖:" + dt[1] +"]&nbsp;&nbsp;";
+			var dltl=cd.split("|")[1].split("$");
+			if(lotid ==50&& typeof dltl[1] != "undefined"){
+			
+			rc+= "&nbsp;&nbsp;[后胆:" + dltl[0] +"]&nbsp;&nbsp;";
+			rc+= "[后拖:" + dltl[1] +"]";
+			}else{
+				rc+= "&nbsp;&nbsp;[篮球:" + dltl[0] +"]";
+			}
+		//	rc+= "|" + cd.split("|")[1];
+		}else{
+			
+			if(cd.indexOf("|")!=-1){
+				rc = cd;
+			}else if(lotid ==50 ||lotid ==1){
+				var dt = cd.split("$");
+				rc +="[胆:" + dt[0] +"]&nbsp;&nbsp;"+dt[1];
+			}else{
+				rc = cd;
+			}
+			
+			
+		}
+	}else{
+		
+		var w = win.split("|");
+		var c = cd.split("|");
+		var cl = c[0];
+		var cr = c[1];
+		var wl = w[0];
+		var wr = w[1];
+		
+		if(cl.indexOf("$")!=-1){
+			if(cd.indexOf("|")!=-1){
+				var dan = cl.split("$");
+				rc+= "[前胆:" + arrmatch(dan[0], wl, "red", ",") +"]&nbsp;";
+				rc+= "&nbsp;&nbsp;[前拖:" + arrmatch(dan[1], wl, "red", ",") +"]&nbsp;&nbsp;";
+			}else{
+				var dan = cl.split("$");
+				rc+= "&nbsp;&nbsp;[胆:" + arrmatch(dan[0], wl, "red", ",") +"]&nbsp;&nbsp;&nbsp;" + arrmatch(dan[1], wl, "red", ",") ;
+			}
+			
+			
+		}else{
+			rc+= arrmatch(cl, wl, "red", ",");
+		}
+		
+		if(lotid != "07" && lotid !="54"&& lotid !="56"&& lotid !="58"){
+			if(cr.indexOf("$")!=-1){
+				var dan = cr.split("$");
+				rc+= "[后胆:" + arrmatch(dan[0], wr, "blue", ",") +"]&nbsp;";
+				rc+= "[后拖:" + arrmatch(dan[1], wr, "blue", ",") +"]";
+			}
+			else{
+				rc+="|";
+				rc+=arrmatch(cr, wr, "blue", ",");
+			}
+		}
+		
+		
+	}
+	
+	if(wf!=""){
+		rc = '[' + wf + ']' + rc;
+	}
+	rc=rc.replaceAll(",", "&nbsp;");
+	rc=rc.replace("|", "&nbsp;┃&nbsp;");
+	
+	return rc;
+};
+
+var arrmatch = function(a, w, c, p){
+	var ar = a.split(p);
+	var r = "";
+	for(var i=0;i<ar.length;i++){
+		if(w.indexOf(ar[i])!=-1){
+			r+= "<cite class='"+c+"'>" + ar[i] + "</cite>";
+		}else{
+			r+= ar[i];
+		}
+		if(i!=(ar.length-1)){
+			r+= ",";
+		}
+	}
+	return r;
+};
+var arrmatch2 = function(a, w, c, p){
+	var ar = a.split(p);
+	var wr = w.split(p);
+	var r = "";
+	for(var i=0;i<ar.length;i++){
+		if(ar[i]==wr[i]){
+			r+= "<cite class='"+c+"'>" + ar[i] + "</cite>";
+		}else{
+			
+			r+= ar[i].replace(wr[i], "<cite class='"+c+"'>" + wr[i] + "</cite>");
+		}
+		if(i!=(ar.length-1)){
+			r+= ",";
+		}
+	}
+	return r;
+};
+
 Array.prototype.remove=function(dx)
 {
 　if(isNaN(dx)||dx>this.length){return false;}
