@@ -371,8 +371,17 @@ function getszccodes(vardata,id,pm){
 	}
 	return code.join(";");
 }
-showszccode = function(gid, codes, type){
+
+
+
+
+
+
+showszccode = function(gid, codes, type,oc){
 	var cs = codes.split(";");
+	tmpCode = codes[i].split(":");
+	pm = tmpCode[1];
+	cm = tmpCode[2];
 	var carr = [];
 	for(var i = 0; i < cs.length; i++){
 		var cc = cs[i].split(":");
@@ -447,6 +456,23 @@ showszccode = function(gid, codes, type){
 		}
 	}
 	return carr.join("<br/>");
+};
+var arrmatch2 = function(a, w, c, p){
+	var ar = a.split(p);
+	var wr = w.split(p);
+	var r = "";
+	for(var i=0;i<ar.length;i++){
+		if(ar[i]==wr[i]){
+			r+= "<font class='"+c+"'>" + ar[i] + "</font>";
+		}else{
+			
+			r+= ar[i].replace(wr[i], "<font class='"+c+"'>" + wr[i] + "</font>");
+		}
+		if(i!=(ar.length-1)){
+			r+= ",";
+		}
+	}
+	return r;
 };
 function getZCcode(vardata,gid){
 	var c = vardata + ":1:1";

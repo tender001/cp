@@ -1461,13 +1461,17 @@ $.fn.KeyBoard = function(options) {
             ts: this,
             fn: function() {}
         };
+        
         if (options) {
             jQuery.extend(o, options)
+            
         } else {
             o.val = $(this).val() || 1
         }
         var $ipt = $(this);
+        
         $ipt.val(o.val);
+       
         $ipt.Touch({
             fun: function(event) {
                 if ($(this).parent().find(".keyboard").length) {
@@ -1477,8 +1481,10 @@ $.fn.KeyBoard = function(options) {
                         o.fn()
                     }
                     $(".keyboard").remove()
+                    $(this).select().removeClass("chooe");
                 } else {
                     $(".keyboard").remove();
+                    $(this).select().addClass("chooe");
                     $ipt.parent().append(KeyBoard_);
                     $(".keyboard u").each(function(i) {
                         if (!CP.MobileVer.ios) {
@@ -1504,7 +1510,15 @@ $.fn.KeyBoard = function(options) {
                         children: "u[v=vku]",
                         fun: function() {
                             var Q = $ipt.val() != "0" && $ipt.val() + "" + $(this).html() || $(this).html();
-                            $ipt.val(Q);
+                          
+                            if($ipt.hasClass("chooe")){
+                            	$ipt.val($(this).html() || $(this).html());
+                            	$ipt.removeClass("chooe");
+                            }else{
+                            	$ipt.val(Q);
+                            }
+                            
+                           
                             if ($ipt.val() > o.max) {
                                 alert("最大" + o.max + "" + o.tag);
                                 $ipt.val(o.max)
@@ -1698,8 +1712,8 @@ CP.Pay = function() {
                     muli: opt_.muli,
                     fflag: "0",
                     type: "0 ",
-                    name: "自购",
-                    desc: "自购",
+                    name: "触屏版代购",
+                    desc: "触屏版代购",
                     money: opt_.countMoney,
                     tnum: "1",
                     bnum: "1",
@@ -1712,6 +1726,8 @@ CP.Pay = function() {
                     upay: "",
                     cupacketid: opt.cupacketid,
                     redpacket_money: opt.redpacket_money
+                    
+                    
                 }
             } else if (opt.payPara.orderType == "hm") {
                 data = {
@@ -1722,7 +1738,7 @@ CP.Pay = function() {
                     muli: opt_.muli,
                     fflag: "0",
                     type: "1",
-                    name: "合买",
+                    name: "触屏版合买",
                     desc: opt_.desc,
                     money: opt_.countMoney,
                     tnum: opt_.countMoney,
@@ -1752,10 +1768,12 @@ CP.Pay = function() {
             }
         }
         $.ajax({
-            url: CP.Data.apps + opt_.payUrl,
+        	url: CP.Data.apps + opt_.payUrl,
             type: "POST",
             dataType:'json',
             data: data,
+　　　
+
             success: function(d) {
             	var code = d.Resp.code;
     			var desc = d.Resp.desc;
@@ -1942,11 +1960,12 @@ var TopAnch = function() {
                 
             }
             jQuery.extend(confTemp, obj);
+            document.title = confTemp.title;
             if(obj.headerSelect!=undefined){
             	confTemp.title=confTemp.title+'<s id="chowanfa"><cite></cite></s>';
             }
             $dom.title.off().html(confTemp.title);
-            document.title = confTemp.title;
+            
             $dom.prev[!confTemp.prevShow ? "hide": "show"]();
             $dom.next[!obj.nextShow ? "hide": "show"]();
             if (obj.isScore) {
