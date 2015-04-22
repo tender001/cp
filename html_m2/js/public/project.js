@@ -229,6 +229,8 @@ showproj = function(option){
     	if (isflg == 1) {
             if (acode == "") {
                 acode = "未开奖"
+            }else if (acode != "") {
+                acode = kjcode(acode, lotid)
             }
         } else {
             if (acode != "") {
@@ -288,7 +290,7 @@ showproj = function(option){
     					} else {
     						for(var k = 0; k < gs.length; k++){
     							if(ws[k] > 0){
-    								wss.push(gs[k] + " <font class='yellow'>" + ws[k] + "</span> 注");
+    								wss.push(" <font class='yellow'>"+gs[k]+"" + ws[k] + "</span> 注");
     							}
     						}
     					}
@@ -463,6 +465,7 @@ showcode=function(option){
 	var iopen = option.data.Resp.row.iopen;
 	var upload = option.data.Resp.row.upload;
 	var ifile = option.data.Resp.row.ifile;
+	var periodid = option.data.Resp.row.periodid;
 	var html = [];
 	if(ifile == 1){
 		if(upload == 1){
@@ -476,10 +479,10 @@ showcode=function(option){
 			if(gid == 70 || gid == 71 || gid == 72 || (parseInt(gid)>=90 && parseInt(gid) <= 97) || gid == 85|| gid == 84 || gid == 86 || gid == 87 || gid == 88 || gid == 89){
 				showjjcode(option);
 			} else if(gid == 1 || gid == 7 || gid == 50 || gid == 51 || gid == 52 || gid == 80|| gid == 81|| gid == 82|| gid == 83){
-				$("#content").html(showszccode(gid, codes, 0));
+				$("#content").html($_sys.showcode(gid, codes, $_cache.qcode(gid, periodid)));
 				$("#zgContent").show();
 			} else if(gid == 3 || gid == 4 || gid == 53 || gid == 05 || gid == 54|| gid == 56){
-				$("#content").html(showszccode(gid, codes, 1));
+				$("#content").html(showszccode(gid, codes, 1,$_cache.qcode(gid, periodid)));
 			}
 		}else{
 			html.push(PIOPEN[iopen]);

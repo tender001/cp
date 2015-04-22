@@ -1431,7 +1431,7 @@ function preBuy(bk) {
          url: url,
          type: "POST",
          dataType:'json',
-         data: param,
+         data: 'gid=01&source=100&codes=08,09,10,11,12,13,14|12:1:1&money=14&pid=2015045&muli=1&fflag=0&comeFrom=&play=1&bnum=14&name=手机代购&desc=手机代购&pnum=0&tnum=14&type=0&wrate=0',
          success: function(d) {
              var code = d.Resp.code;
              var desc = d.Resp.desc;
