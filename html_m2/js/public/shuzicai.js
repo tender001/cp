@@ -25,6 +25,8 @@ function createGameSelect() {
     if (tID == 20 || tID == 118)
         $("#span_add").show(); 
     $("#buymoney,#buyzs").val(0);
+    $("#times").val(1);
+    
     
     $("#RedBallValue,#BlueBallValue").val("");
     createBallPanle(2);
@@ -195,6 +197,7 @@ function Reconfirm(){
      $("[mark=betmoney]").html(0);
 	$("#code_list").html("");
     $("#buymoney").val(0);
+    $("#times").val(1);
     vardata=[];
     $("#preMoney").html('共<cite class="yellow">0</cite>注<cite class="yellow">0</cite>元')
 	createGameSelect();
@@ -562,33 +565,39 @@ function selectBall(ball, color) {
     countMoney();
 }
 
-function betconfirm(rnd){
-	 
+function betconfirm(rnd,numberlist){
+	var notes = parseInt($("[mark=betnum]").text());
+    var money = parseInt($("[mark=betmoney]").text()); 
+    var redValue = $("#RedBallValue").attr("value");
+    var blueValue = $("#BlueBallValue").attr("value");
+    var codedata = redValue;
 	if(rnd) {
+		money = rnd*2;
+		notes = rnd;
 		$("#buyzs").val(parseInt($("#buyzs").val())+rnd);
-	    $("#buymoney").val(parseInt($("#buymoney").val())+(rnd*2));
+	    $("#buymoney").val(parseInt($("#buymoney").val())+money);
+	    codedata = numberlist;
 	}else{
-		var redValue = $("#RedBallValue").attr("value");
+		
 	    if (redValue == "" || redValue.length == 0) {
 	        showMS("请先选择号码,再投注!");
 	        return;
 	    }
 	  
-	    var codedata = redValue;
+	    
 	    if ((tID == 10 || tID == 20) && $("#Kind").attr("value") == "2") {
-	        var blueValue = $("#BlueBallValue").attr("value");
+	        
 	        if (blueValue == "" || blueValue.length == 0) {
 	            showMS("请先选择号码,再投注!");
 	            return;
 	        }
-	        codedata += "|" + blueValue;
+	        codedata =redValue+"|"+blueValue;
 	    }
 	   
-	    vardata[vardata.length]=codedata;
+//	    vardata[vardata.length]=codedata;
 	   
 	   
-	    var notes = parseInt($("[mark=betnum]").text());
-	    var money = parseInt($("[mark=betmoney]").text());
+	   
 	    $("#buyzs").val(parseInt($("#buyzs").val())+notes);
 	    $("#buymoney").val(parseInt($("#buymoney").val())+money);
 	    if (notes == 0 || money == 0) {
@@ -602,12 +611,12 @@ function betconfirm(rnd){
 //	$("#buyHeader h1").html($_sys.getlotname($("#gid").val())+"_投注列表");
 //	<span class="revise_ww"><em>08,09,10,11,12,15</em><cite>14</cite></span>
 	    var html="";
-	    var varString=vardata.join(";")
+	    var varString=codedata;
 	    if (varString.split(';').length > 1) {
 	    	for (var i = 0; i < varString.split(';').length; i++) {
 	    		var Ball=varString.split(';')[i].split('|')[i]
-	    	
-	    		html+='<div class="ssqtzNum"><cite class="errorBg"><em class=""></em></cite>'
+	    		
+	    		html='<div class="ssqtzNum"><cite class="errorBg" onclick="removeRowCode(this)"><em class="error2"></em></cite>'
     		    	+'<span class="revise_ww"><span>'
 //	    		
     		    	if(varString.split(';')[i].split("|").length > 1){
@@ -628,28 +637,43 @@ function betconfirm(rnd){
 	    	if(varString.split("|").length > 1){
 	    		varString="<em>"+varString.split("|")[0].replaceAll(","," ")+"</em><cite>"+varString.split("|")[1].replaceAll(","," ")+"</cite>";
 	    	}
-	    	html='<div class="ssqtzNum"><cite class="errorBg"></em></cite>'
+	    	html='<div class="ssqtzNum"><cite class="errorBg" onclick="removeRowCode(this)" c="'+codedata+'" m="'+money+'" n="'+notes+'"><em class="error2"></em></cite>'
     		html +='<span class="revise_ww"><span>'+varString+'</span>'
-        	html +="<p>" + (tID < 26 || tID == 27 ? "普通投注" : tID == 26 ? gameName_pl3[playtype] : tID == 44 ? gameName_3D[playtype] : tID == 56 ? gameName_36s7[playtype - 1] : tID == 115 || tID == 119 ? gameName_11s5[playtype] : tID == 116 ? gameName_happyten[playtype] : tID == 118 ? gameName_happy8[playtype] : gameName_ssc[playtype]) + (isadd && tID == 118 ? "[快乐飞盘]" : isadd ? "[追加]" : "") + "</p>";
+        	html +="<p>" + (tID < 26 || tID == 27 ? "普通投注" : tID == 26 ? gameName_pl3[playtype] : tID == 44 ? gameName_3D[playtype] : tID == 56 ? gameName_36s7[playtype - 1] : tID == 115 || tID == 119 ? gameName_11s5[playtype] : tID == 116 ? gameName_happyten[playtype] : tID == 118 ? gameName_happy8[playtype] : gameName_ssc[playtype]) + (isadd && tID == 118 ? "[快乐飞盘]" : isadd ? "[追加]" : "") + " &nbsp;"+notes+"注"+money+"元</p>";
         	html +='</span></div>'
 	    }
 	    notes=parseInt($("#buyzs").val());
 	    
 	    $("#preMoney").html('共<cite class="yellow">'+ notes +'</cite>注  <cite class="yellow">'+(notes * times * (isadd && tID == 118 ? 4 : isadd ? 3 : 2))+'</cite>元');
 	    
-    	$("#code_list").html(html);
+    	$("#code_list").append(html);
 //    	$("#RedBallValue").val();
     showbuy(true);
     
 //    preBuy(0);
+}
+function removeRowCode (obj) {
+	
+	var n = $(obj).attr("n")*1;
+	$("#buyzs").val(parseInt($("#buyzs").val())-n);
+    $("#buymoney").val(parseInt($("#buymoney").val())-(n*2));
+    $(obj).parent().remove();
+    countMoney(n);
 }
 
 function payconfirm(){
 	var notes=parseInt($("#buymoney").val());
 	var expect=$("#expect").val();
 	var hidTypeName=$("#hidTypeName").val();
-	 
-     
+	var datahtml = $("#code_list .errorBg");
+	if(datahtml.length>1){
+		datahtml.each(function(e,d){
+			vardata.push($(d).attr("c"));
+		})
+	}else{
+		vardata.push(datahtml.attr("c"));
+	}
+	
 	$(".tz-pay").html('<p>'+hidTypeName+' 第'+expect+'期</p><p>应付金额<em>'+notes+'</em>元</p>')
 	ispay(true);
 }
@@ -1164,8 +1188,8 @@ function machineRandom(val) {
 //            $("#divMachineCase").html($("#divMachineCase").html() + "<br />" + numberlist);
 //            $("#RedBallValue").attr("value", $("#RedBallValue").attr("value") + ";" + numberlist);
 //        }
-        vardata[vardata.length]=numberlist;
-        betconfirm(1);
+//        vardata[vardata.length]=numberlist;
+        betconfirm(val,numberlist);
         
     }
 
@@ -1261,41 +1285,7 @@ function preBuy(bk) {
 
     chklogin(function(d){
 		if (d.Resp.code == 0) {
-        	
-			
 			passBuy(vardata.join(";"),times,buykind);
-//			$("#divshowprebuy").html("");
-//        	var html = "<div class=\"ball_h2\">购买预览信息</div>";
-//        	html += "<div class=\"mini\">彩种：" + GameName[getGameIndex(tID)] + " [" + (buykind == 0 ? "代购" : buykind == 1 ? "合买" : "追号") + "]</div>";
-//        	html += "<div class=\"mini\">玩法：" + (tID < 26 || tID == 27 ? "普通投注" : tID == 26 ? gameName_pl3[playtype] : tID == 44 ? gameName_3D[playtype] : tID == 56 ? gameName_36s7[playtype - 1] : tID == 115 || tID == 119 ? gameName_11s5[playtype] : tID == 116 ? gameName_happyten[playtype] : tID == 118 ? gameName_happy8[playtype] : gameName_ssc[playtype]) + (isadd && tID == 118 ? "[快乐飞盘]" : isadd ? "[追加]" : "") + "</div>";
-//        	if (vardata.split(';').length > 1) {
-//            	html += "<div class=\"mini\">方案：";
-//            	for (var i = 0; i < vardata.split(';').length; i++) {
-//                	if (i == 5) {
-//                    	html += "…………";
-//                    	break;
-//                	}
-//                	html += vardata.split(';')[i];
-//                	if (i < vardata.split(';').length - 1){
-//                    	html += "<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
-//                	}
-//            	}
-//            	html += "</div>";
-//        	} else {
-//            	html += "<div class=\"mini\">方案：" + vardata + "</div>";
-//        	}
-//        	html += "<div class=\"mini\">金额：" + notes + "注×" + times + "倍=￥" + (notes * times * (isadd && tID == 118 ? 4 : isadd ? 3 : 2)) + "元</div>";
-//        	html += createTwoPanle(buykind);
-//        	
-//        	html += "<div id=\"noticeInfo\" class=\"mini\" style=\"display:none;color:Red;\" ></div>";
-//
-//        	html += "<div class=\"mini\"><input type=\"button\" value=\"确认购买\" onclick=\"passBuy('" + vardata + "'," + times + "," + buykind + ");\" class =\"btnC\" /> <input type=\"button\" value=\"取消\" onclick=\"showBuyMini(2);\" class =\"btnC\" /></div>";
-//
-//        	$("#divshowprebuy").html(html);
-//        	$("#divshowprebuy").css({
-//            	'top': ($(window).height() / 4 + $(window).scrollTop()) + 'px'
-//        	});
-//        	showBuyMini(1);
 		} else {
 			showLogin();
 		}
@@ -1305,7 +1295,7 @@ function preBuy(bk) {
 //确认购买
  function passBuy(vardata, times, bk) {
  	 var url = $_trade.url.pcast;
-     var buykind = bk, data = [];
+     var buykind = bk, data = {},opt_ = [];
      var money = parseInt($("#buymoney").val());
      var secret = $("#selectPassword").attr("value");
      var masterBuy = parseInt($("#masterBuy").attr("value"));
@@ -1315,9 +1305,9 @@ function preBuy(bk) {
          
      var isfollow = !!$("#isfollowPass").attr("checked");
      var gid = $_sys.get139Gid($("#TypeID").attr("value"));
-     data.gid = gid;
-     data.source = 100;
-     data.codes = getszccodes(vardata,tID,parseInt($("#PlayType").val()));
+     opt_.gid = gid;
+     opt_.source = 100;
+     opt_.codes = getszccodes(vardata,tID,parseInt($("#PlayType").val()));
      var pids = [];
      var muls = [];
      if (isfollow){//追号
@@ -1351,17 +1341,17 @@ function preBuy(bk) {
         	noticeInfo("追号期数发生错误!");
         	return;
         }
-        data.zflag = $("input[id^='stop']:checked").val();
-        data.pid = pids.join(",");
-        data.mulitys = muls.join(",");
-        data.money = money*mt;
+        opt_.zflag = $("input[id^='stop']:checked").val();
+        opt_.pid = pids.join(",");
+        opt_.mulitys = muls.join(",");
+        opt_.money = money*mt;
      } else {
-        data.money = money;
-     	data.pid = $("#expect").val();
-     	data.muli = times;
-     	data.fflag = 0;
-        data.comeFrom = "";
-        data.play = 1;
+        opt_.money = money;
+     	opt_.pid = $("#expect").val();
+     	opt_.muli = times;
+     	opt_.fflag = 0;
+        opt_.comeFrom = "";
+        opt_.play = 1;
      }
 
      if (buykind == 1) { //合买
@@ -1403,35 +1393,78 @@ function preBuy(bk) {
              noticeInfo("认购份金额保底金额的总和不能大于方案金额!");
              return;
          }
-         data.bnum = masterBuy;
-         data.desc = lds;
-         data.name="手机合买";
-         data.oflag = secret;
-         data.pnum = baodi;
-         data.tnum = money;
-         data.type = 1;
-         data.wrate = deduct;
+         opt_.bnum = masterBuy;
+         opt_.desc = lds;
+         opt_.name="触屏版合买";
+         opt_.oflag = secret;
+         opt_.pnum = baodi;
+         opt_.tnum = money;
+         opt_.opt_ = 1;
+         opt_.wrate = deduct;
+         
+         
+         data = {
+                 gid: opt_.gid,
+                 pid: opt_.pid,
+                 play: "1",
+                 codes: opt_.codes,
+                 muli: opt_.muli,
+                 fflag: "0",
+                 type: "1",
+                 name: "触屏版合买",
+                 desc: opt_.desc,
+                 money: opt_.tnum,
+                 tnum: opt_.tnum,
+                 bnum: opt_.bnum,
+                 pnum: opt_.pnum,
+                 oflag: opt_.oflag,
+                 wrate: opt_.wrate,
+                 comeFrom: "",
+                 source: 100,
+                 endTime: "",
+                 upay: ""
+             }
      }else if(buykind == 0){
-     	data.bnum = money;
-        data.name="手机代购";
-        data.desc="手机代购";
-        data.pnum = 0;
-     	data.tnum = money;
-		data.type = 0;
-        data.wrate = 0;
+     	opt_.bnum = money;
+        opt_.name="触屏版代购";
+        opt_.desc="触屏版代购";
+        opt_.pnum = 0;
+     	opt_.tnum = money;
+		opt_.type = 0;
+        opt_.wrate = 0;
+        
+        data = {
+                gid: opt_.gid,
+                pid: opt_.pid,
+                play: "1",
+                codes: opt_.codes,
+                muli: opt_.muli,
+                fflag: "0",
+                type: "0 ",
+                name: "触屏版代购",
+                desc: "触屏版代购",
+                money: opt_.tnum,
+                tnum: "1",
+                bnum: "1",
+                pnum: "0",
+                oflag: "0",
+                wrate: "0",
+                comeFrom: "",
+                source: 100,
+                endTime: "",
+                upay: ""
+                
+                
+            }
      }
-     var param = "";
-  
-     for(var n in data){
-    	 param += n + "=" + data[n] + "&";
-     }
+    
      
      $.ajax(
      {
          url: url,
          type: "POST",
          dataType:'json',
-         data: 'gid=01&source=100&codes=08,09,10,11,12,13,14|12:1:1&money=14&pid=2015045&muli=1&fflag=0&comeFrom=&play=1&bnum=14&name=手机代购&desc=手机代购&pnum=0&tnum=14&type=0&wrate=0',
+         data: data,
          success: function(d) {
              var code = d.Resp.code;
              var desc = d.Resp.desc;

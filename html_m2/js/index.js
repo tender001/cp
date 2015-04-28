@@ -19,6 +19,7 @@ var TouchSlide = function(a) {
         endFun: a.endFun || null,
         switchLoad: a.switchLoad || null
     },
+    
     c = document.getElementById(b.slideCell.replace("#", ""));
     if (!c) return ! 1;
     var d = function(a, b) {
