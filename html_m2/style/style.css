@@ -609,7 +609,7 @@ a.hmTxt2{ display:block; color:#606060; padding-right:1.4rem; position:relative}
 .bfTitle p em{ position:absolute; width:1rem; font-style:italic; top:0; z-index:1}
 .bfTitle p:first-child em{ right:-.3rem}
 .bfTitle p:last-child em{ top:1.15rem; left:.25rem}
-.bfScroll{ height:17rem; padding-bottom:.9rem; overflow:auto}
+.bfScroll{ height:17rem;padding-bottom:.9rem;overflow:auto}
 .bftkScroll{ position:relative; height:auto}
 .bfPop .zfTrue2{ bottom:-2.2rem; position:absolute; width:100%}
 .spfzpk3 span em{ color:#f40}
