@@ -357,13 +357,15 @@ input{-webkit-tap-highlight-color:rgba(255,255,255,0);font-family:"微软雅黑"
 .relative{position:relative}
 .shakeIco2{background-image:url(/img/fc/shake.png)}
 .omitIco2{background-image:url(/img/fc/omitHover.png)}
-/* .shakeOmit{display:none;width:6.6em;position:absolute;right:0; top:0} */
+.shakeOmit{display:none;width:6.6em;position:absolute;right:0; top:0}
+
 .shakeOmit cite{float:left; margin-top:.4em}
 .shakeico{float:left;width:1.4rem;height:1.1rem;margin:.45em .15em 0 0;background-image:url(/img/fc/shake2.png);background-size:100%}
 .omitico,.omitico2{ float:left;width:17px;height:14px;margin:.8em .05em 0 .5em;background-image:url(/img/fc/omit2.png);background-size:17px 14px}
 .omitico2{background-image:url(/img/fc/omitHover2.png)}
 .ssqText{ padding-top:.8em; background:linear-gradient(top,#e2e2e2 0.2%,#e8e8e8 0.5%,#f3f3f3 .9%,#f7f7f7 95%); background:-webkit-linear-gradient(top,#e2e2e2 0.1%,#e8e8e8 0.2%,#f3f3f3 .5%,#f7f7f7 95%); background:-moz-linear-gradient(top,#e2e2e2 0.2%,#e8e8e8 0.5%,#f3f3f3 .9%,#f7f7f7 95%)}
 .ssqText p{line-height:1.6; padding-left:.7em; font-size:1.11em}
+
 .pdLeft08{padding-left:.8em}
 .ssqBall cite{display:inline-block; background:#fff;color:#db150b;font-size:1rem;width:2.2rem;text-align:center;line-height:2.2rem; margin:.47rem .47rem .6rem 0;border-radius:2.2rem; box-shadow:0 0 0 1px #d6d6d6 inset; -webkit-box-shadow:0 0 0 1px #d6d6d6 inset; -moz-box-shadow:0 0 0 1px #d6d6d6 inset;}
 .ssqblueBall{border-top: 1px solid #dedede}
