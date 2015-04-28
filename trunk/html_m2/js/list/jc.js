@@ -3,7 +3,8 @@ CP.JC = function() {
     var start_ev = hasTouch ? "touchstart": "mousedown";
     var end_ev = hasTouch ? "touchend": "mouseup";
     var lotteryType = $("#content_home").children().eq(0).attr("id").replace("buy_", "");
-    var lotteryPlayName = "hh";
+    var lotteryPlayName =  "hh";
+//    var lotteryPlayName = lotteryType == "jclq" ? "hh": "spf";
     var $item = $("#item");
     var $dom = {
         $dobuy: $("#dobuy"),
@@ -688,7 +689,7 @@ CP.JC = function() {
                                 _out.push('<p class="spfzpk"><em>非让球</em>');
                                 sp_ = t[n].spf_sp.split(",");
                                 if (((t[n].isale*1) & 1 << 4) == (1 << 4)) {
-                                    _out.push("<span class=wang-ball my-data=3>胜 " + sp_[0] + "</span><span class='wang-ball spfvs' my-data=1>平 " + sp_[1] + "</span><span class=wang-ball my-data=0>胜 " + sp_[2] + "</span>")
+                                    _out.push("<span class=wang-ball my-data=3 dg=dg>胜 " + sp_[0] + "</span><span class='wang-ball spfvs' my-data=1 dg=dg>平 " + sp_[1] + "</span><span class=wang-ball my-data=0 dg=dg>胜 " + sp_[2] + "</span>")
                                 } else {
                                     _out.push("<span>--</span><span class='wang-ball spfvs'>--</span><span>--</span>")
                                 }
@@ -696,7 +697,7 @@ CP.JC = function() {
                                 _out.push('<p class="spfzpk"><em class="rq">让球</em>');
                                 sp_ = t[n].rq_sp.split(",");
                                 if (((t[n].isale*1) & 1 << 0) == (1 << 0)) {
-                                    _out.push("<span class=wang-ball my-data=3>胜 " + sp_[0] + "</span><span class='wang-ball spfvs' my-data=1>平 " + sp_[1] + "</span><span class=wang-ball my-data=0>胜 " + sp_[2] + "</span>")
+                                    _out.push("<span class=wang-ball my-data=3 dg=dg>胜 " + sp_[0] + "</span><span class='wang-ball spfvs' my-data=1 dg=dg>平 " + sp_[1] + "</span><span class=wang-ball my-data=0 dg=dg>胜 " + sp_[2] + "</span>")
                                 } else {
                                     _out.push("<span>--</span><span class='wang-ball spfvs'>--</span><span>--</span>")
                                 }
@@ -945,30 +946,79 @@ CP.JC = function() {
                     }
                 }
                 var html = "";
+                var idanguan =obj["idanguan"];
                 if (lotteryPlayName == "bf") {
                     var sp = obj[lotteryPlayName + "_sp"].split(",");
                     html = '<div class="bftkScroll">							<div class="bfTitle clearfix"><p>' + obj.hn + '<span class="right"><em>V</em></span></p><p><span class="left"><em>S</em></span>' + obj.gn + '</p></div>							   <div class="bfScroll" style="height:0px" id=tc_c>							    <p class="red">' + obj.hn + '&nbsp;胜</p>							     <div class="competitions bfcom">';
-                    if (lotteryType == "jczq") {
-                        html += "<span my-data=1:0><cite>1:0</cite><em>" + sp[0] + "</em></span>							            	<span my-data=2:0><cite>2:0</cite><em>" + sp[1] + "</em></span>							            	<span my-data=2:1><cite>2:1</cite><em>" + sp[2] + "</em></span>							            	<span my-data=3:0><cite>3:0</cite><em>" + sp[3] + "</em></span>							            	<span my-data=3:1><cite>3:1</cite><em>" + sp[4] + "</em></span>							            	<span my-data=3:2><cite>3:2</cite><em>" + sp[5] + "</em></span>							            	<span my-data=4:0><cite>4:0</cite><em>" + sp[6] + "</em></span>							            	<span my-data=4:1><cite>4:1</cite><em>" + sp[7] + "</em></span>							            	<span my-data=4:2><cite>4:2</cite><em>" + sp[8] + "</em></span>							                <span my-data=5:0><cite>5:0</cite><em>" + sp[9] + "</em></span>							                <span my-data=5:1><cite>5:1</cite><em>" + sp[10] + "</em></span>							                <span my-data=5:2><cite>5:2</cite><em>" + sp[11] + '</em></span>							            	<span class="bflast" my-data=9:0><cite>胜其它</cite><em>' + sp[12] + "</em></span>"
-                    } else {
-                        html += "<span my-data=1:0><cite>1:0</cite><em>" + sp[1] + "</em></span>											<span my-data=2:0><cite>2:0</cite><em>" + sp[2] + "</em></span>											<span my-data=2:1><cite>2:1</cite><em>" + sp[3] + "</em></span>											<span my-data=3:0><cite>3:0</cite><em>" + sp[4] + "</em></span>											<span my-data=3:1><cite>3:1</cite><em>" + sp[5] + "</em></span>											<span my-data=3:2><cite>3:2</cite><em>" + sp[6] + "</em></span>											<span my-data=4:0><cite>4:0</cite><em>" + sp[7] + "</em></span>											<span my-data=4:1><cite>4:1</cite><em>" + sp[8] + "</em></span>											<span my-data=4:2><cite>4:2</cite><em>" + sp[9] + '</em></span>											<span class="bflast" my-data=9:0><cite>胜其它</cite><em>' + sp[0] + "</em></span>"
-                    }
+//                    if (lotteryType == "jczq") {
+                    		html += "<span my-data=1:0 dg=dg><cite>1:0</cite><em>" + sp[0] + "</em></span>" +
+                			"<span my-data=2:0 dg=dg><cite>2:0</cite><em>" + sp[1] + "</em></span>" +
+                			"<span my-data=2:1 dg=dg><cite>2:1</cite><em>" + sp[2] + "</em></span>" +
+        					"<span my-data=3:0 dg=dg><cite>3:0</cite><em>" + sp[3] + "</em></span>" +
+							"<span my-data=3:1 dg=dg><cite>3:1</cite><em>" + sp[4] + "</em></span>" +
+							"<span my-data=3:2 dg=dg><cite>3:2</cite><em>" + sp[5] + "</em></span>" +
+							"<span my-data=4:0 dg=dg><cite>4:0</cite><em>" + sp[6] + "</em></span>" +
+							"<span my-data=4:1 dg=dg><cite>4:1</cite><em>" + sp[7] + "</em></span>" +
+							"<span my-data=4:2 dg=dg><cite>4:2</cite><em>" + sp[8] + "</em></span>" +
+							"<span my-data=5:0 dg=dg><cite>5:0</cite><em>" + sp[9] + "</em></span>" +
+							"<span my-data=5:1 dg=dg><cite>5:1</cite><em>" + sp[10] + "</em></span>" +
+							"<span my-data=5:2 dg=dg><cite>5:2</cite><em>" + sp[11] + "</em></span>" +							            	
+							"<span class='bflast' my-data=9:0 dg=dg><cite>胜其它</cite><em>" + sp[12] + "</em></span>"
+                    		
+                    	
+//                    } else {
+//                        html += "<span my-data=1:0><cite>1:0</cite><em>" + sp[1] + "</em></span>											<span my-data=2:0><cite>2:0</cite><em>" + sp[2] + "</em></span>											<span my-data=2:1><cite>2:1</cite><em>" + sp[3] + "</em></span>											<span my-data=3:0><cite>3:0</cite><em>" + sp[4] + "</em></span>											<span my-data=3:1><cite>3:1</cite><em>" + sp[5] + "</em></span>											<span my-data=3:2><cite>3:2</cite><em>" + sp[6] + "</em></span>											<span my-data=4:0><cite>4:0</cite><em>" + sp[7] + "</em></span>											<span my-data=4:1><cite>4:1</cite><em>" + sp[8] + "</em></span>											<span my-data=4:2><cite>4:2</cite><em>" + sp[9] + '</em></span>											<span class="bflast" my-data=9:0><cite>胜其它</cite><em>' + sp[0] + "</em></span>"
+//                    }
                     html += '<div class="clear"></div>							     </div>							  	<p class="blue pdTop06 pdLeft08 pdBot03">打平</p>							     <div class="competitions bfcom">';
                     if (lotteryType == "jczq") {
-                        html += "<span my-data=0:0><cite>0:0</cite><em>" + sp[13] + "</em></span>								            	<span my-data=1:1><cite>1:1</cite><em>" + sp[14] + "</em></span>								            	<span my-data=2:2><cite>2:2</cite><em>" + sp[15] + "</em></span>								            	<span my-data=3:3><cite>3:3</cite><em>" + sp[16] + '</em></span>								            	<span my-data=9:9 class="bflast"><cite>平其它</cite><em>' + sp[17] + "</em></span>"
+                        
+                    	html += "<span my-data=0:0 dg=dg><cite>0:0</cite><em>" + sp[13] + "</em></span>" +
+                    			"<span my-data=1:1 dg=dg><cite>1:1</cite><em>" + sp[14] + "</em></span>" +
+            					"<span my-data=2:2 dg=dg><cite>2:2</cite><em>" + sp[15] + "</em></span>" +
+    							"<span my-data=3:3 dg=dg><cite>3:3</cite><em>" + sp[16] + "</em></span>" +
+    							"<span my-data=9:9 dg=dg class='bflast'><cite>平其它</cite><em>" + sp[17] + "</em></span>"
                     } else {
-                        html += "<span my-data=0:0><cite>0:0</cite><em>" + sp[11] + "</em></span>													<span my-data=1:1><cite>1:1</cite><em>" + sp[12] + "</em></span>													<span my-data=2:2><cite>2:2</cite><em>" + sp[13] + "</em></span>													<span my-data=3:3><cite>3:3</cite><em>" + sp[14] + '</em></span>													<span my-data=9:9 class="bflast"><cite>平其它</cite><em>' + sp[10] + "</em></span>"
+                        html += "<span my-data=0:0><cite>0:0</cite><em>" + sp[11] + "</em></span><span my-data=1:1><cite>1:1</cite><em>" + sp[12] + "</em></span><span my-data=2:2><cite>2:2</cite><em>" + sp[13] + "</em></span><span my-data=3:3><cite>3:3</cite><em>" + sp[14] + '</em></span><span my-data=9:9 class="bflast"><cite>平其它</cite><em>' + sp[10] + "</em></span>"
                     }
                     html += '<div class="clear"></div>							     </div>							  	<p class="green pdTop06 pdLeft08 pdBot03">' + obj.gn + '&nbsp;胜</p>							     <div class="competitions bfcom">';
                     if (lotteryType == "jczq") {
-                        html += "<span my-data=0:1><cite>0:1</cite><em>" + sp[18] + "</em></span>								            	<span my-data=0:2><cite>0:2</cite><em>" + sp[19] + "</em></span>								            	<span my-data=1:2><cite>1:2</cite><em>" + sp[20] + "</em></span>								            	<span my-data=0:3><cite>0:3</cite><em>" + sp[21] + "</em></span>								            	<span my-data=1:3><cite>1:3</cite><em>" + sp[22] + "</em></span>								            	<span my-data=2:3><cite>2:3</cite><em>" + sp[23] + "</em></span>								            	<span my-data=0:4><cite>0:4</cite><em>" + sp[24] + "</em></span>								            	<span my-data=1:4><cite>1:4</cite><em>" + sp[25] + "</em></span>								            	<span my-data=2:4><cite>2:4</cite><em>" + sp[26] + "</em></span>								                <span my-data=0:5><cite>0:5</cite><em>" + sp[27] + "</em></span>								                <span my-data=1:5><cite>1:5</cite><em>" + sp[28] + "</em></span>								                <span my-data=2:5><cite>2:5</cite><em>" + sp[29] + '</em></span>								            	<span my-data=0:9 class="bflast"><cite>负其它</cite><em>' + sp[30] + "</em></span>"
+                        html += "<span my-data=0:1 dg=dg><cite>0:1</cite><em>" + sp[18] + "</em></span>" +
+                        		"<span my-data=0:2 dg=dg><cite>0:2</cite><em>" + sp[19] + "</em></span>" +
+                        		"<span my-data=1:2 dg=dg><cite>1:2</cite><em>" + sp[20] + "</em></span>" +
+                        		"<span my-data=0:3 dg=dg><cite>0:3</cite><em>" + sp[21] + "</em></span>" +
+                        		"<span my-data=1:3 dg=dg><cite>1:3</cite><em>" + sp[22] + "</em></span>" +
+                        		"<span my-data=2:3 dg=dg><cite>2:3</cite><em>" + sp[23] + "</em></span>" +
+                        		"<span my-data=0:4 dg=dg><cite>0:4</cite><em>" + sp[24] + "</em></span>" +
+                        		"<span my-data=1:4 dg=dg><cite>1:4</cite><em>" + sp[25] + "</em></span>" +
+                        		"<span my-data=2:4 dg=dg><cite>2:4</cite><em>" + sp[26] + "</em></span>" +
+                        		"<span my-data=0:5 dg=dg><cite>0:5</cite><em>" + sp[27] + "</em></span>" +
+                        		"<span my-data=1:5 dg=dg><cite>1:5</cite><em>" + sp[28] + "</em></span>" +
+                        		"<span my-data=2:5 dg=dg><cite>2:5</cite><em>" + sp[29] + "</em></span>" +
+                        		"<span my-data=0:9 dg=dg class='bflast'><cite>负其它</cite><em>" + sp[30] + "</em></span>"
                     } else {
-                        html += "<span my-data=0:1><cite>0:1</cite><em>" + sp[16] + "</em></span>													<span my-data=0:2><cite>0:2</cite><em>" + sp[17] + "</em></span>													<span my-data=1:2><cite>1:2</cite><em>" + sp[18] + "</em></span>													<span my-data=0:3><cite>0:3</cite><em>" + sp[19] + "</em></span>													<span my-data=1:3><cite>1:3</cite><em>" + sp[20] + "7</em></span>													<span my-data=2:3><cite>2:3</cite><em>" + sp[21] + "</em></span>													<span my-data=0:4><cite>0:4</cite><em>" + sp[22] + "</em></span>													<span my-data=1:4><cite>1:4</cite><em>" + sp[23] + "</em></span>													<span my-data=2:4><cite>2:4</cite><em>" + sp[24] + '</em></span>													<span my-data=0:9 class="bflast"><cite>负其它</cite><em>' + sp[15] + "</em></span>"
+                        html += "<span my-data=0:1><cite>0:1</cite><em>" + sp[16] + "</em></span><span my-data=0:2><cite>0:2</cite><em>" + sp[17] + "</em></span><span my-data=1:2><cite>1:2</cite><em>" + sp[18] + "</em></span><span my-data=0:3><cite>0:3</cite><em>" + sp[19] + "</em></span><span my-data=1:3><cite>1:3</cite><em>" + sp[20] + "7</em></span><span my-data=2:3><cite>2:3</cite><em>" + sp[21] + "</em></span><span my-data=0:4><cite>0:4</cite><em>" + sp[22] + "</em></span><span my-data=1:4><cite>1:4</cite><em>" + sp[23] + "</em></span><span my-data=2:4><cite>2:4</cite><em>" + sp[24] + '</em></span><span my-data=0:9 class="bflast"><cite>负其它</cite><em>' + sp[15] + "</em></span>"
                     }
-                    html += '<div class="clear"></div>							     </div>							  </div>							    <div class="zfTrue zfTrue2 clearfix"><a href="javascript:;" class="zfqx" id=tc_cancel>取 消</a><a id=tc_ok href="javascript:;">确 定</a></div>							</div>'
+                    html += '<div class="clear"></div></div></div><div class="zfTrue zfTrue2 clearfix"><a href="javascript:;" class="zfqx" id=tc_cancel>取 消</a><a id=tc_ok href="javascript:;">确 定</a></div>							</div>'
                 } else if (lotteryPlayName == "bqc") {
                     var sp = obj[lotteryPlayName + "_sp"].split(",");
-                    html = '<div class="bfTitle clearfix">							<p>' + obj.hn + '<span class="right"><em>V</em></span></p><p><span class="left"><em>S</em></span>' + obj.gn + '</p>							</div>							<p class="gray mgTop03">［例］胜负：上半场主胜 且 全场主负</p>							<div style="margin-top:.4rem" class="competitions bqccom" id=tc_c>								<span my-data=3-3><cite>胜胜</cite><em>' + sp[0] + "</em></span>								<span my-data=3-1><cite>胜平</cite><em>" + sp[1] + "</em></span>								<span my-data=3-0><cite>胜负</cite><em>" + sp[2] + "</em></span>								<span my-data=1-3><cite>平胜</cite><em>" + sp[3] + "</em></span>								<span my-data=1-1><cite>平平</cite><em>" + sp[4] + "</em></span>								<span my-data=1-0><cite>平负</cite><em>" + sp[5] + "</em></span>								<span my-data=0-3><cite>负胜</cite><em>" + sp[6] + "</em></span>								<span my-data=0-1><cite>负平</cite><em>" + sp[7] + "</em></span>								<span my-data=0-0><cite>负负</cite><em>" + sp[8] + '</em></span>							<div class="clear"></div>							</div>							<div class="zfTrue clearfix"><a class="zfqx" href="javascript:;" id=tc_cancel>取 消</a><a id=tc_ok href="javascript:;">确 定</a></div>'
+                    if(((idanguan*1) & 1 << 0) == (1 << 0)){
+                    	html = '<div class="bfTitle clearfix"><p>' + obj.hn + '<span class="right"><em>V</em></span></p><p><span class="left"><em>S</em></span>'+
+                    	'' + obj.gn + '</p></div><p class="gray mgTop03">［例］胜负：上半场主胜 且 全场主负</p>'+
+                    	'<div style="margin-top:.4rem" class="competitions bqccom" id=tc_c>'+
+                    	'<span my-data=3-3 dg=dg><cite>胜胜</cite><em>' + sp[0] + '</em></span>'+								
+                    	'<span my-data=3-1 dg=dg><cite>胜平</cite><em>' + sp[1] + '</em></span>	'+							
+                    	'<span my-data=3-0 dg=dg><cite>胜负</cite><em>' + sp[2] + '</em></span>	'+							
+                    	'<span my-data=1-3 dg=dg><cite>平胜</cite><em>' + sp[3] + '</em></span>	'+							
+                    	'<span my-data=1-1 dg=dg><cite>平平</cite><em>' + sp[4] + '</em></span>	'+							
+                    	'<span my-data=1-0 dg=dg><cite>平负</cite><em>' + sp[5] + '</em></span>	'+							
+                    	'<span my-data=0-3 dg=dg><cite>负胜</cite><em>' + sp[6] + '</em></span>	'+							
+                    	'<span my-data=0-1 dg=dg><cite>负平</cite><em>' + sp[7] + '</em></span>	'+							
+                    	'<span my-data=0-0 dg=dg><cite>负负</cite><em>' + sp[8] + '</em></span>	<div class="clear"></div></div>' +
+                    			'<div class="zfTrue clearfix"><a class="zfqx" href="javascript:;" id=tc_cancel>取 消</a><a id=tc_ok href="javascript:;">确 定</a></div>'
+                    }else{
+                    	html = '<div class="bfTitle clearfix"><p>' + obj.hn + '<span class="right"><em>V</em></span></p><p><span class="left"><em>S</em></span>' + obj.gn + '</p>							</div>							<p class="gray mgTop03">［例］胜负：上半场主胜 且 全场主负</p>							<div style="margin-top:.4rem" class="competitions bqccom" id=tc_c>								<span my-data=3-3><cite>胜胜</cite><em>' + sp[0] + "</em></span>								<span my-data=3-1><cite>胜平</cite><em>" + sp[1] + "</em></span>								<span my-data=3-0><cite>胜负</cite><em>" + sp[2] + "</em></span>								<span my-data=1-3><cite>平胜</cite><em>" + sp[3] + "</em></span>								<span my-data=1-1><cite>平平</cite><em>" + sp[4] + "</em></span>								<span my-data=1-0><cite>平负</cite><em>" + sp[5] + "</em></span>								<span my-data=0-3><cite>负胜</cite><em>" + sp[6] + "</em></span>								<span my-data=0-1><cite>负平</cite><em>" + sp[7] + "</em></span>								<span my-data=0-0><cite>负负</cite><em>" + sp[8] + '</em></span>							<div class="clear"></div>							</div>							<div class="zfTrue clearfix"><a class="zfqx" href="javascript:;" id=tc_cancel>取 消</a><a id=tc_ok href="javascript:;">确 定</a></div>'
+                    }
+                    html = '<div class="bfTitle clearfix"><p>' + obj.hn + '<span class="right"><em>V</em></span></p><p><span class="left"><em>S</em></span>' + obj.gn + '</p>							</div>							<p class="gray mgTop03">［例］胜负：上半场主胜 且 全场主负</p>							<div style="margin-top:.4rem" class="competitions bqccom" id=tc_c>								<span my-data=3-3><cite>胜胜</cite><em>' + sp[0] + "</em></span>								<span my-data=3-1><cite>胜平</cite><em>" + sp[1] + "</em></span>								<span my-data=3-0><cite>胜负</cite><em>" + sp[2] + "</em></span>								<span my-data=1-3><cite>平胜</cite><em>" + sp[3] + "</em></span>								<span my-data=1-1><cite>平平</cite><em>" + sp[4] + "</em></span>								<span my-data=1-0><cite>平负</cite><em>" + sp[5] + "</em></span>								<span my-data=0-3><cite>负胜</cite><em>" + sp[6] + "</em></span>								<span my-data=0-1><cite>负平</cite><em>" + sp[7] + "</em></span>								<span my-data=0-0><cite>负负</cite><em>" + sp[8] + '</em></span>							<div class="clear"></div>							</div>							<div class="zfTrue clearfix"><a class="zfqx" href="javascript:;" id=tc_cancel>取 消</a><a id=tc_ok href="javascript:;">确 定</a></div>'
                 } else if (lotteryPlayName == "hh") {
                     var spf_sp = obj["spf_sp"].split(",");
                     var rq_sp = obj["rq_sp"].split(",");
@@ -1370,7 +1420,7 @@ CP.JC = function() {
             var Q = parseInt($("#lot_cur_match").html());
             var dg = false;
             if (Q >= 1) {
-                $("#item ul.sfcxs .cur").each(function() {
+                $("#item ul.sfcxs span.cur").each(function() {
                     if ($(this).attr("dg") == "dg") {
                         dg = true
                     } else {
@@ -1795,7 +1845,7 @@ CP.JC = function() {
                                             if (_selectData[n]) {
                                                 var Q3 = {
                                                     0 : "SPF",
-                                                    1 : "RQSPF",
+                                                    1 : "RSPF",
                                                     2 : "CBF",
                                                     3 : "JQS",
                                                     4 : "BQC"
