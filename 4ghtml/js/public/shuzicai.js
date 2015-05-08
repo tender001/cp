@@ -653,6 +653,15 @@ function payconfirm(){
 	$(".tz-pay").html('<p>'+hidTypeName+' 第'+expect+'期</p><p>应付金额<em>'+notes+'</em>元</p>')
 	ispay(true);
 }
+function payhm(ishm){
+	if(ishm){
+		$("#szcbuy,#paybet,[mark=buyfooter],#szcbuy,#issuc").hide();
+    	$("#payhm").show();
+	}else{
+		$("#szcbuy").show();
+    	$("#payhm").hide();
+	}
+}
 
 function ispay(ispay){
 	if(ispay){
