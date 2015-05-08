@@ -154,7 +154,8 @@ function passBuy(code,gid) {
    					setTimeout(function() { window.location.href = "/account/pay.html"; }, (2 * 1000));
             		});
             	} else {
-            		showMS(desc);
+            		
+            		showTips(desc);
             	}
             }
             return;
