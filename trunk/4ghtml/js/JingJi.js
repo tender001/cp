@@ -28,6 +28,12 @@ function LoadMatchList() {
             var kList = SelKeys.split(',');
             var sclassL = sclass.split(',');
             $("#matchList").html("");
+            if(typeID=='110'||typeID=='111'||typeID=='112'||typeID=='114'){
+            	$("#matchList").html('<nav class="jczqNav"><ul class="zkTitle fixed2"><li>赛事</li><li>客队</li><li class="zkVS">VS</li><li>主队</li></ul></nav>');
+            }else{
+            	$("#matchList").html('<nav class="jczqNav"><ul class="zkTitle fixed2"><li>赛事</li><li>主队</li><li class="zkVS">VS</li><li>客队</li></ul></nav>');
+            }
+            
             for (var c = 0; c < listContent.length; c++) {
                 var jj = eval("(" + listContent[c] + ")");
                 if (jj.ID) {
